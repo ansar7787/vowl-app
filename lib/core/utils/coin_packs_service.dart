@@ -44,6 +44,8 @@ class CoinPack {
     );
   }
 
+  /// Formatted INR price string. Only use for Razorpay (India) display.
+  /// For Google Play, use the localized `ProductDetails.price` instead.
   String get priceString => '₹${price.toInt()}';
 }
 
@@ -102,23 +104,11 @@ class CoinPacksService {
           .map((doc) => CoinPack.fromMap(doc.data(), doc.id))
           .toList();
 
-      // Auto-seed the database if it's completely empty
       if (packs.isEmpty) {
         sl<AppLogger>().debug(
-          'CoinPacksService: No packs found, auto-seeding defaults...',
+          'CoinPacksService: No packs found, returning fallback packs without caching',
         );
-        await _seedDefaultPacks();
-
-        // Fetch again after seeding
-        final newSnapshot = await _firestore
-            .collection(_packsCollection)
-            .orderBy('displayOrder')
-            .get()
-            .timeout(_fetchTimeout);
-
-        packs = newSnapshot.docs
-            .map((doc) => CoinPack.fromMap(doc.data(), doc.id))
-            .toList();
+        return _defaultPacks;
       }
 
       _cachedPacks = packs;
@@ -136,69 +126,44 @@ class CoinPacksService {
     }
   }
 
-  Future<void> _seedDefaultPacks() async {
-    final batch = _firestore.batch();
-
-    final defaultPacks = [
-      {
-        'id': 'starter_pack',
-        'titleKey': 'store.starter_pack',
-        'titleFallback': 'Starter Pack',
-        'coins': 500,
-        'keys': 0,
-        'price': 9,
-        'iconName': 'monetization_on_rounded',
-        'colorHex': '#FFC107',
-        'displayOrder': 0,
-        'isBestValue': false,
-      },
-      {
-        'id': 'explorer_pack',
-        'titleKey': 'store.explorer_pack',
-        'titleFallback': 'Explorer Pack',
-        'coins': 1200,
-        'keys': 2,
-        'price': 19,
-        'iconName': 'explore_rounded',
-        'colorHex': '#3B82F6',
-        'displayOrder': 1,
-        'isBestValue': false,
-      },
-      {
-        'id': 'master_pack',
-        'titleKey': 'store.master_pack',
-        'titleFallback': 'Master Pack',
-        'coins': 4000,
-        'keys': 8,
-        'price': 29,
-        'iconName': 'diamond_rounded',
-        'colorHex': '#EC4899',
-        'displayOrder': 2,
-        'isBestValue': true,
-      },
-    ];
-
-    for (var pack in defaultPacks) {
-      final docRef = _firestore
-          .collection(_packsCollection)
-          .doc(pack['id'] as String);
-      final data = Map<String, dynamic>.from(pack);
-      data.remove('id');
-      batch.set(docRef, data);
-    }
-
-    try {
-      await batch.commit();
-      sl<AppLogger>().debug(
-        'CoinPacksService: Successfully seeded default packs',
-      );
-    } catch (e) {
-      sl<AppLogger>().error(
-        'CoinPacksService: Failed to seed default packs',
-        error: e,
-      );
-    }
-  }
+  static const List<CoinPack> _defaultPacks = [
+    CoinPack(
+      id: 'starter_pack',
+      titleKey: 'store.starter_pack',
+      titleFallback: 'Starter Pack',
+      coins: 500,
+      keys: 0,
+      price: 9,
+      iconName: 'monetization_on_rounded',
+      colorHex: '#FFC107',
+      displayOrder: 0,
+      isBestValue: false,
+    ),
+    CoinPack(
+      id: 'explorer_pack',
+      titleKey: 'store.explorer_pack',
+      titleFallback: 'Explorer Pack',
+      coins: 1200,
+      keys: 2,
+      price: 19,
+      iconName: 'explore_rounded',
+      colorHex: '#3B82F6',
+      displayOrder: 1,
+      isBestValue: false,
+    ),
+    CoinPack(
+      id: 'master_pack',
+      titleKey: 'store.master_pack',
+      titleFallback: 'Master Pack',
+      coins: 4000,
+      keys: 8,
+      price: 29,
+      iconName: 'diamond_rounded',
+      colorHex: '#EC4899',
+      displayOrder: 2,
+      isBestValue: true,
+    ),
+  ];
 
   void clearCache() {
     _cachedPacks = null;

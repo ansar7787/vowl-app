@@ -44,14 +44,20 @@ class InAppPurchaseService {
   // Callbacks
   void Function(PurchaseDetails)? onPurchaseSuccess;
   void Function(String error)? onPurchaseError;
+  void Function(String)? onPurchaseCanceled;
   void Function()? onPurchaseRestored;
 
   Future<void> initialize() async {
-    _fetchGeoIpCountry(); // Run asynchronously in the background
+    // Load the cached country code from SharedPreferences FIRST (awaited)
+    // so isUserInIndia is reliable immediately. The HTTP refresh runs
+    // in the background after — it only updates the cache for next launch.
+    await _loadCachedCountryCode();
+    _refreshGeoIpCountryInBackground(); // fire-and-forget HTTP refresh
     
     isAvailable = await _iap.isAvailable();
     if (!isAvailable) return;
 
+    await _subscription?.cancel();
     _subscription = _iap.purchaseStream.listen(
       _handlePurchaseUpdates,
       onDone: () => _subscription?.cancel(),
@@ -63,14 +69,29 @@ class InAppPurchaseService {
     await loadProducts();
   }
 
+  /// Synchronously loads the cached country code from SharedPreferences.
+  /// This is fast (local disk) and ensures isUserInIndia works on first check.
+  Future<void> _loadCachedCountryCode() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _cachedCountryCode = prefs.getString('cached_geoip_country');
+    } catch (e) {
+      if (kDebugMode) debugPrint('Failed to load cached country: $e');
+    }
+  }
+
+  /// Refreshes the GeoIP country code via HTTP in the background.
+  /// Updates SharedPreferences cache for future app launches.
+  void _refreshGeoIpCountryInBackground() {
+    _fetchGeoIpCountry();
+  }
+
   Future<void> _fetchGeoIpCountry() async {
     final client = HttpClient();
     client.connectionTimeout = const Duration(seconds: 5);
     try {
-      final prefs = await SharedPreferences.getInstance();
-      _cachedCountryCode = prefs.getString('cached_geoip_country');
-
-      // Refresh it in the background
+      // Only refresh via HTTP — the cached value was already loaded
+      // by _loadCachedCountryCode() in initialize().
       final request = await client.getUrl(Uri.parse('https://api.country.is/'));
       final response = await request.close();
       if (response.statusCode == 200) {
@@ -78,6 +99,7 @@ class InAppPurchaseService {
         final data = jsonDecode(responseBody);
         if (data['country'] != null) {
           _cachedCountryCode = data['country'];
+          final prefs = await SharedPreferences.getInstance();
           await prefs.setString('cached_geoip_country', _cachedCountryCode!);
         }
       }
@@ -94,17 +116,25 @@ class InAppPurchaseService {
       if (kDebugMode) debugPrint('IAP query error: ${response.error}');
       return;
     }
+    if (response.notFoundIDs.isNotEmpty) {
+      debugPrint('IAP: Products not found: ${response.notFoundIDs}');
+    }
     products = response.productDetails;
   }
 
   Future<void> buyProduct(ProductDetails product) async {
     final purchaseParam = PurchaseParam(productDetails: product);
 
-    // Consumables (coins) vs non-consumables (premium)
-    if (_isConsumable(product.id)) {
-      await _iap.buyConsumable(purchaseParam: purchaseParam);
-    } else {
-      await _iap.buyNonConsumable(purchaseParam: purchaseParam);
+    // All products are consumable:
+    // - Coin packs are obviously consumable (one-time credit).
+    // - Premium plans are TIME-LIMITED (weekly/monthly/yearly) with no
+    //   auto-renewal ("one-time payment, no recurring charges"), so they
+    //   must also be consumable. Using buyNonConsumable would make Google
+    //   Play treat them as permanent one-time purchases, blocking
+    //   re-purchase after expiry and restoring expired premium forever.
+    final launched = await _iap.buyConsumable(purchaseParam: purchaseParam);
+    if (!launched) {
+      onPurchaseError?.call('Could not launch purchase. Please try again.');
     }
   }
 
@@ -112,11 +142,12 @@ class InAppPurchaseService {
     await _iap.restorePurchases();
   }
 
-  void _handlePurchaseUpdates(List<PurchaseDetails> purchases) {
+  Future<void> _handlePurchaseUpdates(List<PurchaseDetails> purchases) async {
     for (final purchase in purchases) {
       switch (purchase.status) {
         case PurchaseStatus.pending:
-          // Show loading indicator
+          // Purchase is pending (e.g. parental approval, slow bank)
+          // Don't reset processing state - the purchase stream will update later
           break;
         case PurchaseStatus.purchased:
         case PurchaseStatus.restored:
@@ -125,13 +156,13 @@ class InAppPurchaseService {
         case PurchaseStatus.error:
           onPurchaseError?.call(purchase.error?.message ?? 'Purchase failed');
           if (purchase.pendingCompletePurchase) {
-            _iap.completePurchase(purchase);
+            await _iap.completePurchase(purchase);
           }
           break;
         case PurchaseStatus.canceled:
-          onPurchaseError?.call('Purchase cancelled');
+          onPurchaseCanceled?.call('Purchase cancelled');
           if (purchase.pendingCompletePurchase) {
-            _iap.completePurchase(purchase);
+            await _iap.completePurchase(purchase);
           }
           break;
       }
@@ -140,35 +171,70 @@ class InAppPurchaseService {
 
   Future<void> _verifyAndDeliver(PurchaseDetails purchase) async {
     try {
-      // Call Cloud Function for server-side validation
+      // Call Cloud Function for server-side validation AND granting.
+      // The Cloud Function must both validate the Google Play receipt
+      // and grant the purchased item (premium days or coins+keys),
+      // mirroring the Razorpay verifyPayment/verifyCoinPurchase flow.
       final callable = FirebaseFunctions.instance.httpsCallable(
         'validateIAPReceipt',
       );
-      final result = await callable.call({
+
+      final Map<String, dynamic> payload = {
         'purchaseToken': purchase.verificationData.serverVerificationData,
         'productId': purchase.productID,
-      });
+      };
 
-      if (result.data['success'] == true) {
+      // Tell the Cloud Function what to grant based on product type.
+      // The Cloud Function should use productId to determine exact amounts,
+      // but we pass the type hint for routing to the correct granting logic.
+      if (_isPremiumProduct(purchase.productID)) {
+        payload['grantType'] = 'premium';
+        // Days are derived from productId on the server, but pass as hint:
+        payload['days'] = _getPremiumDays(purchase.productID);
+      } else {
+        payload['grantType'] = 'coins';
+      }
+
+      final result = await callable.call<dynamic>(payload);
+      final data = result.data;
+
+      if (data is Map && data['success'] == true) {
+        // Only complete purchase AFTER successful server verification
+        if (purchase.pendingCompletePurchase) {
+          await _iap.completePurchase(purchase);
+        }
         onPurchaseSuccess?.call(purchase);
         if (purchase.status == PurchaseStatus.restored) {
           onPurchaseRestored?.call();
         }
       } else {
-        onPurchaseError?.call('Purchase validation failed');
+        onPurchaseError?.call('Verification failed. Contact support.');
+        // Do NOT complete purchase - let Google Play retry later
       }
     } catch (e) {
       // If server validation fails, don't deliver
       onPurchaseError?.call('Could not verify purchase. Please try again.');
-    } finally {
-      if (purchase.pendingCompletePurchase) {
-        await _iap.completePurchase(purchase);
-      }
+      // Do NOT complete purchase - let Google Play retry on next app launch
     }
   }
 
-  bool _isConsumable(String productId) {
-    return productId.contains('coins');
+  bool _isPremiumProduct(String productId) {
+    return productId == premiumWeekly ||
+        productId == premiumMonthly ||
+        productId == premiumYearly;
+  }
+
+  int _getPremiumDays(String productId) {
+    switch (productId) {
+      case premiumWeekly:
+        return 7;
+      case premiumMonthly:
+        return 30;
+      case premiumYearly:
+        return 365;
+      default:
+        return 30; // safe fallback
+    }
   }
 
   /// Whether the user is located in India based on GeoIP (or locale fallback).

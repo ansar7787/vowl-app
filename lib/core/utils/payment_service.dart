@@ -2,8 +2,7 @@ import 'dart:async';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:cloud_functions/cloud_functions.dart';
 
 /// Abstract contract defining the payment processing system.
@@ -13,8 +12,6 @@ import 'package:cloud_functions/cloud_functions.dart';
 abstract class PaymentService {
   /// Factory constructor to support seamless backwards compatibility for callers.
   factory PaymentService({
-    required GetCurrentUser getCurrentUser,
-    required FirebaseFirestore firestore,
     required FirebaseFunctions functions,
   }) = RazorpayPaymentService;
 
@@ -50,7 +47,6 @@ abstract class PaymentService {
     required String contact,
     required String email,
     required String planId,
-    required double amount,
     required int days,
     required String planName,
     String currency = 'INR',
@@ -80,15 +76,11 @@ abstract class PaymentService {
 
 /// Concrete implementation of [PaymentService] integrated with Razorpay gateway.
 class RazorpayPaymentService implements PaymentService {
-  final GetCurrentUser getCurrentUser;
-  final FirebaseFirestore firestore;
   final FirebaseFunctions functions;
 
   Razorpay? _razorpay;
 
   RazorpayPaymentService({
-    required this.getCurrentUser,
-    required this.firestore,
     required this.functions,
   });
 
@@ -194,7 +186,6 @@ class RazorpayPaymentService implements PaymentService {
     required String contact,
     required String email,
     required String planId,
-    required double amount,
     required int days,
     required String planName,
     String currency = 'INR',
@@ -251,7 +242,7 @@ class RazorpayPaymentService implements PaymentService {
             ),
           );
 
-      final data = response.data as Map<String, dynamic>;
+      final data = Map<String, dynamic>.from(response.data as Map);
       if (data['success'] != true) {
         throw Exception('Server rejected the payment verification.');
       }
@@ -294,7 +285,7 @@ class RazorpayPaymentService implements PaymentService {
             ),
           );
 
-      final data = response.data as Map<String, dynamic>;
+      final data = Map<String, dynamic>.from(response.data as Map);
       if (data['success'] != true) {
         throw Exception('Server rejected the coin purchase verification.');
       }

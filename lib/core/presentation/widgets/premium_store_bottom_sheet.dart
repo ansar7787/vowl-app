@@ -18,6 +18,8 @@ import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/services/in_app_purchase_service.dart';
+import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
@@ -126,11 +128,15 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
   @override
   void dispose() {
-    // PaymentService manages its own cleanup when dispose is called
-    // We shouldn't dispose it here if it's a singleton, but PaymentService
-    // init/dispose in stateful widgets is the current pattern.
+    final iap = InAppPurchaseService.instance;
+    iap.onPurchaseSuccess = null;
+    iap.onPurchaseError = null;
+    iap.onPurchaseCanceled = null;
     _stateHash.dispose();
-    _paymentService.dispose();
+    // NOTE: Do NOT call _paymentService.dispose() here.
+    // PaymentService is a DI singleton — disposing it here would destroy
+    // the Razorpay instance for ALL other screens. Each widget's init()
+    // already re-creates the Razorpay instance safely.
     super.dispose();
   }
 
@@ -283,6 +289,21 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
             type: CustomSnackBarType.error,
           );
         };
+        iap.onPurchaseCanceled = (message) {
+          if (!mounted) return;
+          _isProcessing = false;
+          _updateState();
+          _pendingPack = null;
+          di.sl<HapticService>().light();
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'store.purchase_cancelled',
+              fallback: 'Purchase cancelled.',
+            ),
+            type: CustomSnackBarType.info,
+          );
+        };
         await iap.buyProduct(product);
       } catch (e) {
         if (!mounted) return;
@@ -291,7 +312,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         _pendingPack = null;
         CustomSnackBar.show(
           context: context,
-          message: context.tr('store.checkout_error', fallback: 'Product not found'),
+          message: context.tr(
+            'store.checkout_error',
+            fallback: 'Product not found',
+          ),
           type: CustomSnackBarType.error,
         );
       }
@@ -329,6 +353,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         }
       }
     } catch (e) {
+      di.sl<AppLogger>().error(
+        'Razorpay order creation failed',
+        error: e,
+      );
       if (mounted) {
         _isProcessing = false;
         _updateState();
@@ -337,7 +365,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
           context: context,
           message: context.tr(
             'store.order_error',
-            fallback: 'Failed to create payment order. Please try again.',
+            fallback: 'Unable to process payment right now. Please try again later.',
           ),
           type: CustomSnackBarType.error,
         );
@@ -379,7 +407,9 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     return ValueListenableBuilder<int>(
       valueListenable: _stateHash,
       builder: (context, _, child) {
-        return BackdropFilter(
+        return PopScope(
+          canPop: !_isProcessing,
+          child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.85,
@@ -477,7 +507,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                             ),
                           ),
                           ScaleButton(
-                            onTap: () => Navigator.pop(context),
+                            onTap: _isProcessing ? null : () => Navigator.pop(context),
                             child: Container(
                               padding: EdgeInsets.all(8.r),
                               decoration: BoxDecoration(
@@ -501,75 +531,124 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
                     // Content
                     Expanded(
-                      child: ListView(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        physics: const BouncingScrollPhysics(),
+                      child: Stack(
                         children: [
-                          // Vowl Premium Subscription Upsell
-                          _buildPremiumUpsell(context, isDark)
-                              .animate()
-                              .fadeIn()
-                              .moveX(begin: -20, end: 0, delay: 100.ms),
+                          ListView(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            physics: const BouncingScrollPhysics(),
+                            children: [
+                              // Vowl Premium Subscription Upsell
+                              _buildPremiumUpsell(context, isDark)
+                                  .animate()
+                                  .fadeIn()
+                                  .moveX(begin: -20, end: 0, delay: 100.ms),
 
-                          SizedBox(height: 32.h),
+                              SizedBox(height: 32.h),
 
-                          Text(
-                            context.tr(
-                              'store.coins_and_keys_label',
-                              fallback: 'COINS & KEYS',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w800,
-                              color: isDark
-                                  ? Colors.grey.withValues(alpha: 0.7)
-                                  : Colors.grey.shade600,
-                              letterSpacing: 1.5,
-                            ),
-                          ).animate().fadeIn(delay: 200.ms),
+                              Text(
+                                context.tr(
+                                  'store.coins_and_keys_label',
+                                  fallback: 'COINS & KEYS',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: isDark
+                                      ? Colors.grey.withValues(alpha: 0.7)
+                                      : Colors.grey.shade600,
+                                  letterSpacing: 1.5,
+                                ),
+                              ).animate().fadeIn(delay: 200.ms),
 
-                          SizedBox(height: 16.h),
-                          _buildPaymentMethodSelector(isDark),
-                          SizedBox(height: 8.h),
+                              SizedBox(height: 16.h),
+                              _buildPaymentMethodSelector(isDark),
+                              SizedBox(height: 8.h),
 
-                          if (_isLoadingPacks)
-                            Column(
-                              children: List.generate(
-                                3,
-                                (index) => Padding(
-                                  padding: EdgeInsets.only(bottom: 16.h),
-                                  child: ShimmerLoading.rounded(
-                                    width: double.infinity,
-                                    height: 100.h,
-                                    borderRadius: 24,
+                              if (_isLoadingPacks)
+                                Column(
+                                  children: List.generate(
+                                    3,
+                                    (index) => Padding(
+                                      padding: EdgeInsets.only(bottom: 16.h),
+                                      child: ShimmerLoading.rounded(
+                                        width: double.infinity,
+                                        height: 100.h,
+                                        borderRadius: 24,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              else
+                                // Real coin packs
+                                ...List.generate(_activePacks.length, (index) {
+                                  final pack = _activePacks[index];
+                                  return Padding(
+                                    padding: EdgeInsets.only(bottom: 16.h),
+                                    child: _buildPackCard(
+                                      context: context,
+                                      isDark: isDark,
+                                      pack: pack,
+                                      delay: 300 + (index * 100),
+                                    ),
+                                  );
+                                }),
+
+                              SizedBox(height: 16.h),
+                              TextButton(
+                                onPressed: _isProcessing ? null : () async {
+                                  final iap = InAppPurchaseService.instance;
+                                  await iap.restorePurchases();
+                                },
+                                child: Text(
+                                  'Restore Purchases',
+                                  style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  TextButton(
+                                    onPressed: () => launchUrl(Uri.parse('https://ansar7787.github.io/vowl-legal/terms.html')),
+                                    child: Text('Terms', style: TextStyle(fontSize: 10.sp, color: Colors.grey)),
+                                  ),
+                                  Text(' • ', style: TextStyle(color: Colors.grey)),
+                                  TextButton(
+                                    onPressed: () => launchUrl(Uri.parse('https://ansar7787.github.io/vowl-legal/privacy.html')),
+                                    child: Text('Privacy', style: TextStyle(fontSize: 10.sp, color: Colors.grey)),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 40.h),
+                            ],
+                          ),
+                          if (_isProcessing)
+                            Positioned.fill(
+                              child: Container(
+                                color: Colors.black26,
+                                child: Center(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const CircularProgressIndicator(color: Colors.white),
+                                      SizedBox(height: 12.h),
+                                      Text(
+                                        'Processing purchase...',
+                                        style: TextStyle(color: Colors.white, fontSize: 14.sp),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
-                            )
-                          else
-                            // Real coin packs
-                            ...List.generate(_activePacks.length, (index) {
-                              final pack = _activePacks[index];
-                              return Padding(
-                                padding: EdgeInsets.only(bottom: 16.h),
-                                child: _buildPackCard(
-                                  context: context,
-                                  isDark: isDark,
-                                  pack: pack,
-                                  delay: 300 + (index * 100),
-                                ),
-                              );
-                            }),
-
-                          SizedBox(height: 40.h),
+                            ),
                         ],
                       ),
                     ),
                   ],
                 ),
               ),
-            )
+            ),
+        )
             .animate()
             .fadeIn(duration: 300.ms)
             .moveY(begin: 40, end: 0, curve: Curves.easeOutBack);
@@ -671,7 +750,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 4.w),
           child: Text(
-            context.tr('premium.select_payment_method', fallback: 'PAYMENT METHOD'),
+            context.tr(
+              'premium.select_payment_method',
+              fallback: 'PAYMENT METHOD',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               color: isDark ? Colors.white54 : AppColors.slate500,
@@ -684,27 +766,33 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         SizedBox(height: 12.h),
         Container(
           decoration: BoxDecoration(
-            color: isDark ? AppColors.slate800.withValues(alpha: 0.5) : Colors.white,
+            color: isDark
+                ? AppColors.slate800.withValues(alpha: 0.5)
+                : Colors.white,
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate200,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.05)
+                  : AppColors.slate200,
               width: 1,
             ),
-            boxShadow: isDark ? [] : [
-              BoxShadow(
-                color: AppColors.slate200.withValues(alpha: 0.5),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              ),
-            ],
+            boxShadow: isDark
+                ? []
+                : [
+                    BoxShadow(
+                      color: AppColors.slate200.withValues(alpha: 0.5),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
           ),
           child: Column(
             children: [
               _buildPaymentMethodOption(
                 isGooglePlay: false,
                 isDark: isDark,
-                title: 'UPI / Credit Card',
-                subtitle: 'Zero extra platform fees',
+                title: context.tr('premium.payment_razorpay', fallback: 'UPI / Credit Card'),
+                subtitle: context.tr('premium.payment_razorpay_subtitle', fallback: 'Zero extra platform fees'),
                 icon: Icons.account_balance_wallet_rounded,
                 iconColor: AppColors.violet500,
                 isFirst: true,
@@ -713,14 +801,16 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
               Divider(
                 height: 1,
                 thickness: 1,
-                color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate100,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : AppColors.slate100,
                 indent: 56.w,
               ),
               _buildPaymentMethodOption(
                 isGooglePlay: true,
                 isDark: isDark,
-                title: 'Google Play Billing',
-                subtitle: 'Includes local taxes & fees',
+                title: context.tr('premium.payment_google_play', fallback: 'Google Play Billing'),
+                subtitle: context.tr('premium.payment_google_play_subtitle', fallback: 'Includes local taxes & fees'),
                 icon: Icons.play_arrow_rounded,
                 iconColor: AppColors.emerald500,
                 isFirst: false,
@@ -757,7 +847,9 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         duration: const Duration(milliseconds: 200),
         padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.indigo500.withValues(alpha: 0.15) : Colors.transparent,
+          color: isSelected
+              ? AppColors.indigo500.withValues(alpha: 0.15)
+              : Colors.transparent,
           borderRadius: BorderRadius.vertical(
             top: isFirst ? Radius.circular(20.r) : Radius.zero,
             bottom: isLast ? Radius.circular(20.r) : Radius.zero,
@@ -807,7 +899,11 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                   color: AppColors.indigo500,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.check_rounded, color: Colors.white, size: 14.sp),
+                child: Icon(
+                  Icons.check_rounded,
+                  color: Colors.white,
+                  size: 14.sp,
+                ),
               )
             else
               Container(
@@ -916,7 +1012,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                 ),
                                 SizedBox(width: 4.w),
                                 Text(
-                                  '${pack.coins}',
+                                  NumberFormat('#,###').format(pack.coins),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 14.sp,
@@ -962,14 +1058,41 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           color: color,
                           borderRadius: BorderRadius.circular(12.r),
                         ),
-                        child: Text(
-                          '₹${(_useGooglePlay ? (pack.price * 1.30) : pack.price).toInt()}',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.white,
-                          ),
+                        child: Builder(
+                          builder: (context) {
+                            // For Google Play, show the actual localized price
+                            // from the product details (correct currency symbol).
+                            // For Razorpay (India), show ₹ price from Firestore.
+                            String priceText;
+                            if (_useGooglePlay) {
+                              String productId;
+                              if (pack.id == 'starter_pack') {
+                                productId = InAppPurchaseService.coinPack100;
+                              } else if (pack.id == 'explorer_pack') {
+                                productId = InAppPurchaseService.coinPack500;
+                              } else if (pack.id == 'master_pack') {
+                                productId = InAppPurchaseService.coinPack1000;
+                              } else {
+                                productId = InAppPurchaseService.coinPack100;
+                              }
+                              final iap = InAppPurchaseService.instance;
+                              final match = iap.products.where((p) => p.id == productId);
+                              priceText = match.isNotEmpty
+                                  ? match.first.price
+                                  : (_useGooglePlay && match.isEmpty ? '...' : '₹${pack.price.toInt()}');
+                            } else {
+                              priceText = '₹${pack.price.toInt()}';
+                            }
+                            return Text(
+                              priceText,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ],

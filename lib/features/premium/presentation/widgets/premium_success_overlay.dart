@@ -219,7 +219,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            color: Colors.black87,
+                            color: Colors.white,
                             fontWeight: FontWeight.w900,
                             fontSize: 15.sp,
                             letterSpacing: 1.2,

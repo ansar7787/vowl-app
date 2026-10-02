@@ -20,6 +20,7 @@ import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 
 class VowlCoinsScreen extends StatelessWidget {
   const VowlCoinsScreen({super.key});
@@ -262,6 +263,9 @@ class VowlCoinsScreen extends StatelessWidget {
                               ],
                             ),
                             SizedBox(height: 32.h),
+                            // ── Buy Coins with Real Money ──
+                            _buildBuyCoinsCard(context),
+                            SizedBox(height: 32.h),
                             _buildCoinHistory(context, user),
                             SizedBox(height: 48.h),
                           ]),
@@ -310,6 +314,75 @@ class VowlCoinsScreen extends StatelessWidget {
         di.sl<HapticService>().heavy(); // Premium haptic
         HintPurchaseDialog.showSuccessSnackbar(context, amount);
       },
+    );
+  }
+
+  Widget _buildBuyCoinsCard(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return ScaleButton(
+      onTap: () {
+        di.sl<HapticService>().selection();
+        PremiumStoreBottomSheet.show(context: context);
+      },
+      child: GlassTile(
+        padding: EdgeInsets.all(20.r),
+        borderRadius: BorderRadius.circular(24.r),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [AppColors.indigo500, AppColors.violet500],
+                ),
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+              child: Icon(
+                Icons.diamond_rounded,
+                color: Colors.white,
+                size: 24.r,
+              ),
+            ),
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    context.tr(
+                      'economy.buy_coins',
+                      fallback: 'Buy More Coins',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w800,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
+                  ),
+                  Text(
+                    context.tr(
+                      'economy.buy_coins_subtitle',
+                      fallback: 'Get coin packs with real money',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white54 : Colors.black54,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: isDark ? Colors.white38 : Colors.black38,
+              size: 16.r,
+            ),
+          ],
+        ),
+      ),
     );
   }
 

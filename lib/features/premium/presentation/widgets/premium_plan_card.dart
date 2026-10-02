@@ -10,18 +10,24 @@ class PremiumPlanCard extends StatelessWidget {
   final SubscriptionPlan plan;
   final bool isSelected;
   final VoidCallback onTap;
+  /// When Google Play is the selected payment method, pass the localized
+  /// `ProductDetails.price` string (e.g. "\$1.99", "€1.79") to override
+  /// the INR price from Firestore. Null means use the default INR price.
+  final String? googlePlayPrice;
 
   const PremiumPlanCard({
     super.key,
     required this.plan,
     required this.isSelected,
     required this.onTap,
+    this.googlePlayPrice,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final accentColor = plan.getColorFromHex();
+    final isGooglePlay = googlePlayPrice != null;
 
     final currencyFormat = NumberFormat.simpleCurrency(
       locale: Localizations.localeOf(context).toString(),
@@ -29,21 +35,23 @@ class PremiumPlanCard extends StatelessWidget {
       decimalDigits: 0,
     );
 
-    // Conversion optimization: show price per day and savings %
-    final pricePerDay = plan.price / plan.days;
+    // When Google Play is selected, these INR-based calculations don't apply
+    // since Play Console has its own pricing per country.
+    final pricePerDay = plan.days > 0 ? plan.price / plan.days : plan.price;
     final pricePerDayFormatted = NumberFormat.simpleCurrency(
       locale: Localizations.localeOf(context).toString(),
       name: plan.currency,
       decimalDigits: pricePerDay < 10 ? 1 : 0,
     ).format(pricePerDay);
-    final savingsPercent = ((plan.oldPrice - plan.price) / plan.oldPrice * 100)
-        .round();
+    final savingsPercent = plan.oldPrice > plan.price && plan.oldPrice > 0
+        ? ((plan.oldPrice - plan.price) / plan.oldPrice * 100).round()
+        : 0;
 
     return Semantics(
       button: true,
       selected: isSelected,
       label:
-          '${plan.name}, ${currencyFormat.format(plan.price)}, '
+          '${plan.name}, ${isGooglePlay ? googlePlayPrice! : currencyFormat.format(plan.price)}, '
           '${context.tr('premium.days_of_elite_access', fallback: 'Days of Elite Access', args: ['${plan.days}'])}',
       child: GestureDetector(
         onTap: onTap,
@@ -154,91 +162,98 @@ class PremiumPlanCard extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(height: 2.h),
-                                  FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      '$pricePerDayFormatted/${context.tr('premium.per_day', fallback: 'day')}',
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        color: accentColor.withValues(
-                                          alpha: 0.8,
+                                  if (!isGooglePlay)
+                                    FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        '$pricePerDayFormatted/${context.tr('premium.per_day', fallback: 'day')}',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          color: accentColor.withValues(
+                                            alpha: 0.8,
+                                          ),
+                                          fontSize: 11.sp,
+                                          fontWeight: FontWeight.w700,
                                         ),
-                                        fontSize: 11.sp,
-                                        fontWeight: FontWeight.w700,
                                       ),
                                     ),
-                                  ),
                                 ],
                               ),
                             ),
 
                             SizedBox(width: 8.w),
 
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  alignment: Alignment.centerRight,
-                                  child: Text(
-                                    currencyFormat.format(plan.oldPrice),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      color: isDark
-                                          ? Colors.white30
-                                          : Colors.black38,
-                                      fontSize: 14.sp,
-                                      decoration: TextDecoration.lineThrough,
-                                      decorationColor: isDark
-                                          ? Colors.white54
-                                          : Colors.black54,
+                            ConstrainedBox(
+                              constraints: BoxConstraints(maxWidth: 120.w),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  if (!isGooglePlay)
+                                    FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      alignment: Alignment.centerRight,
+                                      child: Text(
+                                        currencyFormat.format(plan.oldPrice),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          color: isDark
+                                              ? Colors.white30
+                                              : Colors.black38,
+                                          fontSize: 14.sp,
+                                          decoration: TextDecoration.lineThrough,
+                                          decorationColor: isDark
+                                              ? Colors.white54
+                                              : Colors.black54,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                                SizedBox(height: 2.h),
-                                FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  alignment: Alignment.centerRight,
-                                  child: Text(
-                                    currencyFormat.format(plan.price),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      color: isDark
-                                          ? Colors.white
-                                          : Colors.black,
-                                      fontSize: 24.sp,
-                                      fontWeight: FontWeight.w900,
-                                      letterSpacing: -0.5,
-                                    ),
-                                  ),
-                                ),
-                                if (savingsPercent > 0) ...[
-                                  SizedBox(height: 4.h),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 6.w,
-                                      vertical: 2.h,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: const Color(
-                                        0xFF10B981,
-                                      ).withValues(alpha: 0.15),
-                                      borderRadius: BorderRadius.circular(6.r),
-                                    ),
+                                  if (!isGooglePlay) SizedBox(height: 2.h),
+                                  FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    alignment: Alignment.centerRight,
                                     child: Text(
-                                      '${context.tr('premium.save', fallback: 'SAVE')} $savingsPercent%',
+                                      isGooglePlay
+                                          ? googlePlayPrice!
+                                          : currencyFormat.format(plan.price),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        color: AppColors.emerald500,
-                                        fontSize: 9.sp,
-                                        fontWeight: FontWeight.w800,
-                                        letterSpacing: 0.5,
+                                        color: isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: 24.sp,
+                                        fontWeight: FontWeight.w900,
+                                        letterSpacing: -0.5,
                                       ),
                                     ),
                                   ),
+                                  if (!isGooglePlay && savingsPercent > 0) ...[
+                                    SizedBox(height: 4.h),
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 6.w,
+                                        vertical: 2.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: const Color(
+                                          0xFF10B981,
+                                        ).withValues(alpha: 0.15),
+                                        borderRadius: BorderRadius.circular(6.r),
+                                      ),
+                                      child: Text(
+                                        '${context.tr('premium.save', fallback: 'SAVE')} $savingsPercent%',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          color: AppColors.emerald500,
+                                          fontSize: 9.sp,
+                                          fontWeight: FontWeight.w800,
+                                          letterSpacing: 0.5,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ],
-                              ],
+                              ),
                             ),
                           ],
                         ),

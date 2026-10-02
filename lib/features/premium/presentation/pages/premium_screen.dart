@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'dart:async';
+import 'dart:io';
 import 'dart:ui' as ui;
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -51,6 +52,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   String? _errorMessageVal;
   String? _transactionIdVal;
   Timer? _paymentTimeout;
+  Timer? _restoreTimer;
   late ConfettiController _confettiController;
 
   static const List<SubscriptionPlan> _fallbackPlans = [
@@ -116,6 +118,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
       final plans = await di.sl<SubscriptionPlansService>().fetchPlans();
       if (mounted && plans.isNotEmpty) {
         _activePlansVal = plans;
+        if (_selectedPlanIndexVal >= _activePlansVal.length) {
+          _selectedPlanIndexVal = _activePlansVal.isNotEmpty ? 0 : 0;
+        }
         _updateState();
       }
     } catch (e) {
@@ -126,6 +131,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   void _startPaymentTimeout() {
+    _paymentTimeout?.cancel();
     // Timeout after 2 minutes if no response
     _paymentTimeout = Timer(const Duration(minutes: 2), () {
       if (mounted && _isProcessingVal) {
@@ -182,6 +188,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
           _errorMessageVal = null;
           _updateState();
         }
+      } else {
+        _isProcessingVal = false;
+        _paymentCompletedVal = true;
+        _paymentSuccessVal = false;
+        _errorMessageVal = 'Session expired. Please restart the app.';
+        _updateState();
       }
     } catch (e, stackTrace) {
       // SECURITY / UX FIX: the original code surfaced `e.toString()`
@@ -245,7 +257,16 @@ class _PremiumScreenState extends State<PremiumScreen> {
   void dispose() {
     _confettiController.dispose();
     _cancelPaymentTimeout();
-    _paymentService.dispose();
+    _restoreTimer?.cancel();
+    final iap = InAppPurchaseService.instance;
+    iap.onPurchaseSuccess = null;
+    iap.onPurchaseError = null;
+    iap.onPurchaseRestored = null;
+    iap.onPurchaseCanceled = null;
+    // NOTE: Do NOT call _paymentService.dispose() here.
+    // PaymentService is a DI singleton — disposing it here would destroy
+    // the Razorpay instance for ALL other screens. Each widget's init()
+    // already re-creates the Razorpay instance safely.
     super.dispose();
   }
 
@@ -477,7 +498,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
           if (user.premiumExpiryDate != null) ...[
             SizedBox(height: 8.h),
             Text(
-              "Valid until: ${user.premiumExpiryDate!.toLocal().toString().split(' ')[0]}",
+              '${context.tr('premium.valid_until', fallback: 'Valid until:')} ${DateFormat.yMMMd().format(user.premiumExpiryDate!.toLocal())}',
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
@@ -493,7 +514,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   Widget _buildScrollableBody() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final user = context.read<AuthBloc>().state.user;
+    final user = context.watch<AuthBloc>().state.user;
     final isPremium = user?.isPremium ?? false;
 
     return Padding(
@@ -555,7 +576,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
                   // If there are no past purchases, the stream won't emit anything.
                   // We should timeout the loading state just in case.
-                  Future.delayed(const Duration(seconds: 5), () {
+                  _restoreTimer?.cancel();
+                  _restoreTimer = Timer(const Duration(seconds: 5), () {
                     if (mounted && _isProcessingVal) {
                       _isProcessingVal = false;
                       _updateState();
@@ -567,7 +589,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     message: context.tr(
                       'premium.restore_not_supported',
                       fallback:
-                          'Restore is only available for Google Play purchases.',
+                          'Your premium is linked to your account and restored automatically when you sign in. Contact support if you need help.',
                     ),
                     type: CustomSnackBarType.info,
                   );
@@ -679,7 +701,13 @@ class _PremiumScreenState extends State<PremiumScreen> {
             child: _paymentSuccessVal == true
                 ? PremiumSuccessOverlay(
                     transactionId: _transactionIdVal,
-                    onBeginAdventure: () => context.pop(),
+                    onBeginAdventure: () {
+                      if (context.canPop()) {
+                        context.pop();
+                      } else {
+                        context.go('/home');
+                      }
+                    },
                   )
                 : PremiumFailureOverlay(
                     errorMessage: _errorMessageVal,
@@ -690,7 +718,13 @@ class _PremiumScreenState extends State<PremiumScreen> {
                       _transactionIdVal = null;
                       _updateState();
                     },
-                    onClose: () => context.pop(),
+                    onClose: () {
+                      if (context.canPop()) {
+                        context.pop();
+                      } else {
+                        context.go('/home');
+                      }
+                    },
                   ),
           ),
         ),
@@ -701,9 +735,36 @@ class _PremiumScreenState extends State<PremiumScreen> {
   Widget _buildPlanList() {
     return Column(
       children: List.generate(_activePlansVal.length, (index) {
+        final plan = _activePlansVal[index];
+
+        // When Google Play is selected, find the matching product price
+        String? googlePlayPrice;
+        if (_selectedPaymentMethod == PaymentMethod.googlePlay) {
+          String productId;
+          switch (plan.id) {
+            case 'weekly':
+              productId = InAppPurchaseService.premiumWeekly;
+              break;
+            case 'monthly':
+              productId = InAppPurchaseService.premiumMonthly;
+              break;
+            case 'yearly':
+              productId = InAppPurchaseService.premiumYearly;
+              break;
+            default:
+              productId = InAppPurchaseService.premiumMonthly;
+          }
+          final iap = InAppPurchaseService.instance;
+          final match = iap.products.where((p) => p.id == productId);
+          if (match.isNotEmpty) {
+            googlePlayPrice = match.first.price;
+          }
+        }
+
         return PremiumPlanCard(
-          plan: _activePlansVal[index],
+          plan: plan,
           isSelected: _selectedPlanIndexVal == index,
+          googlePlayPrice: googlePlayPrice,
           onTap: () {
             di.sl<HapticService>().selection();
             _selectedPlanIndexVal = index;
@@ -768,8 +829,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 _buildPaymentTile(
                   isDark: isDark,
                   method: PaymentMethod.razorpay,
-                  title: 'UPI / Credit Card',
-                  subtitle: 'Zero extra platform fees',
+                  title: context.tr('premium.payment_razorpay', fallback: 'UPI / Credit Card'),
+                  subtitle: context.tr('premium.payment_razorpay_subtitle', fallback: 'Zero extra platform fees'),
                   icon: Icons.account_balance_wallet_rounded,
                   iconColor: AppColors.violet500,
                   isFirst: true,
@@ -786,9 +847,18 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 _buildPaymentTile(
                   isDark: isDark,
                   method: PaymentMethod.googlePlay,
-                  title: 'Google Play Billing',
-                  subtitle: 'Includes local taxes & fees',
-                  icon: Icons.play_arrow_rounded,
+                  title: context.tr(
+                    Platform.isIOS
+                        ? 'premium.payment_app_store'
+                        : 'premium.payment_google_play',
+                    fallback: Platform.isIOS
+                        ? 'App Store'
+                        : 'Google Play Billing',
+                  ),
+                  subtitle: context.tr('premium.payment_google_play_subtitle', fallback: 'Includes local taxes & fees'),
+                  icon: Platform.isIOS
+                      ? Icons.apple_rounded
+                      : Icons.play_arrow_rounded,
                   iconColor: AppColors.emerald500,
                   isFirst: false,
                   isLast: true,
@@ -903,16 +973,44 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   Widget _buildCTAButton() {
     final selectedPlan = _activePlansVal[_selectedPlanIndexVal];
-    double displayPrice = selectedPlan.price;
-    if (_selectedPaymentMethod == PaymentMethod.googlePlay) {
-      displayPrice = displayPrice * 1.30; // 30% Google Play markup
-    }
 
-    final priceFormatted = NumberFormat.simpleCurrency(
-      locale: Localizations.localeOf(context).toString(),
-      name: selectedPlan.currency,
-      decimalDigits: 0,
-    ).format(displayPrice);
+    String priceFormatted;
+    if (_selectedPaymentMethod == PaymentMethod.googlePlay) {
+      // Use the ACTUAL Google Play price (localized, with correct currency)
+      // instead of guessing with a hardcoded 30% markup.
+      String productId;
+      switch (selectedPlan.id) {
+        case 'weekly':
+          productId = InAppPurchaseService.premiumWeekly;
+          break;
+        case 'monthly':
+          productId = InAppPurchaseService.premiumMonthly;
+          break;
+        case 'yearly':
+          productId = InAppPurchaseService.premiumYearly;
+          break;
+        default:
+          productId = InAppPurchaseService.premiumMonthly;
+      }
+      final iap = InAppPurchaseService.instance;
+      final matchingProducts = iap.products.where((p) => p.id == productId);
+      if (matchingProducts.isNotEmpty) {
+        priceFormatted = matchingProducts.first.price;
+      } else {
+        // Products not loaded yet — show Razorpay price as fallback
+        priceFormatted = NumberFormat.simpleCurrency(
+          locale: Localizations.localeOf(context).toString(),
+          name: selectedPlan.currency,
+          decimalDigits: 0,
+        ).format(selectedPlan.price);
+      }
+    } else {
+      priceFormatted = NumberFormat.simpleCurrency(
+        locale: Localizations.localeOf(context).toString(),
+        name: selectedPlan.currency,
+        decimalDigits: 0,
+      ).format(selectedPlan.price);
+    }
 
     final leftText = _isProcessingVal
         ? context.tr('premium.cta_processing', fallback: 'Processing...')
@@ -952,16 +1050,35 @@ class _PremiumScreenState extends State<PremiumScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  leftText,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: Colors.white,
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1,
+                if (_isProcessingVal)
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const VowlButtonSpinner(color: Colors.white),
+                      SizedBox(width: 12.w),
+                      Text(
+                        leftText,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: Colors.white,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                    ],
+                  )
+                else
+                  Text(
+                    leftText,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: Colors.white,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1,
+                    ),
                   ),
-                ),
                 if (!_isProcessingVal)
                   Row(
                     mainAxisSize: MainAxisSize.min,
@@ -995,6 +1112,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
     di.sl<HapticService>().heavy();
     final user = context.read<AuthBloc>().state.user;
     if (user == null) return;
+
+    _restoreTimer?.cancel();
 
     _isProcessingVal = true;
     _updateState();
@@ -1036,13 +1155,27 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
         final iap = InAppPurchaseService.instance;
         try {
-          final product = iap.products.firstWhere((p) => p.id == productId);
+          final matchingProducts = iap.products.where((p) => p.id == productId).toList();
+          if (matchingProducts.isEmpty) {
+            // Reset processing and show error
+            _isProcessingVal = false;
+            _paymentCompletedVal = true;
+            _paymentSuccessVal = false;
+            _errorMessageVal = 'Product not available. Please try again later.';
+            _updateState();
+            return;
+          }
+          final product = matchingProducts.first;
           iap.onPurchaseSuccess = (purchase) async {
             _cancelPaymentTimeout();
             if (!mounted) return;
             try {
               final user = context.read<AuthBloc>().state.user;
               if (user != null) {
+                // The InAppPurchaseService._verifyAndDeliver() has already
+                // called the validateIAPReceipt Cloud Function which validates
+                // the receipt AND grants premium on the server. Now refresh
+                // the local user state to reflect the new premium status.
                 if (mounted) {
                   context.read<AuthBloc>().add(const AuthReloadUser());
                   di.sl<HapticService>().success();
@@ -1054,6 +1187,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   _errorMessageVal = null;
                   _updateState();
                 }
+              } else {
+                _isProcessingVal = false;
+                _paymentCompletedVal = true;
+                _paymentSuccessVal = false;
+                _errorMessageVal = 'Session expired. Please restart the app.';
+                _updateState();
               }
             } catch (e, stackTrace) {
               di.sl<AppLogger>().error(
@@ -1085,6 +1224,14 @@ class _PremiumScreenState extends State<PremiumScreen> {
               _updateState();
             }
           };
+          iap.onPurchaseCanceled = (message) {
+            if (!mounted) return;
+            _cancelPaymentTimeout();
+            _isProcessingVal = false;
+            // Just reset to plan selection, no error overlay
+            _updateState();
+            di.sl<HapticService>().light();
+          };
           await iap.buyProduct(product);
           _startPaymentTimeout();
         } catch (e) {
@@ -1103,7 +1250,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
           contact: '',
           email: user.email,
           planId: plan.id,
-          amount: plan.price,
           days: plan.days,
           planName: plan.name,
           currency: plan.currency,
@@ -1183,22 +1329,26 @@ class _PremiumScreenState extends State<PremiumScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GestureDetector(
+            InkWell(
+              borderRadius: BorderRadius.circular(4.r),
               onTap: () {
                 final url = Uri.parse(
                   'https://ansar7787.github.io/vowl-legal/terms.html',
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },
-              child: Text(
-                context.tr('premium.terms', fallback: 'Terms'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: muted,
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w600,
-                  decoration: TextDecoration.underline,
-                  decorationColor: muted,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                child: Text(
+                  context.tr('premium.terms', fallback: 'Terms'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: muted,
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: muted,
+                  ),
                 ),
               ),
             ),
@@ -1209,22 +1359,26 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 style: TextStyle(color: muted, fontSize: 10.sp),
               ),
             ),
-            GestureDetector(
+            InkWell(
+              borderRadius: BorderRadius.circular(4.r),
               onTap: () {
                 final url = Uri.parse(
                   'https://ansar7787.github.io/vowl-legal/privacy.html',
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },
-              child: Text(
-                context.tr('premium.privacy', fallback: 'Privacy'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: muted,
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w600,
-                  decoration: TextDecoration.underline,
-                  decorationColor: muted,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                child: Text(
+                  context.tr('premium.privacy', fallback: 'Privacy'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: muted,
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: muted,
+                  ),
                 ),
               ),
             ),
@@ -1235,22 +1389,26 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 style: TextStyle(color: muted, fontSize: 10.sp),
               ),
             ),
-            GestureDetector(
+            InkWell(
+              borderRadius: BorderRadius.circular(4.r),
               onTap: () {
                 final url = Uri.parse(
                   'https://ansar7787.github.io/vowl-legal/refund.html',
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },
-              child: Text(
-                context.tr('premium.refund_policy', fallback: 'Refund Policy'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: muted,
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w600,
-                  decoration: TextDecoration.underline,
-                  decorationColor: muted,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                child: Text(
+                  context.tr('premium.refund_policy', fallback: 'Refund Policy'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: muted,
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: muted,
+                  ),
                 ),
               ),
             ),

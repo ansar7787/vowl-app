@@ -4,7 +4,7 @@ const admin = require('firebase-admin');
 const crypto = require('crypto');
 admin.initializeApp();
 
-// ─── SECURITY: Rate Limiting Helper ──────────────────────────────────
+// â”€â”€â”€ SECURITY: Rate Limiting Helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Prevents abuse by limiting payment verification calls per user.
 const RATE_LIMIT_COOLDOWN_MS = 10000; // 10 seconds between payment calls
 
@@ -27,7 +27,7 @@ async function checkRateLimit(db, uid, operationType) {
   await rateLimitRef.set({ [operationType]: now }, { merge: true });
 }
 
-// ─── SECURITY: Razorpay Credential Validator ─────────────────────────
+// â”€â”€â”€ SECURITY: Razorpay Credential Validator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Hard-fails if Razorpay keys are not configured. Never silently bypass.
 function requireRazorpayKeys() {
   const keyId = process.env.RAZORPAY_KEY_ID;
@@ -46,7 +46,7 @@ function requireRazorpayKeys() {
   return { keyId, secret };
 }
 
-// ─── SECURITY: Razorpay API Verification ─────────────────────────────
+// â”€â”€â”€ SECURITY: Razorpay API Verification â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Fetches payment details from Razorpay and validates status + amount.
 async function verifyRazorpayPayment(
   keyId,
@@ -88,10 +88,10 @@ async function verifyRazorpayPayment(
     throw new HttpsError('permission-denied', 'Payment not successful.');
   }
 
-  // Verify payment amount (prevents ₹1-for-premium attacks)
+  // Verify payment amount (prevents â‚¹1-for-premium attacks)
   if (expectedAmountPaise && paymentData.amount < expectedAmountPaise) {
     console.warn(
-      `Payment ${paymentId} amount mismatch. Expected ≥${expectedAmountPaise}, got ${paymentData.amount}`,
+      `Payment ${paymentId} amount mismatch. Expected â‰¥${expectedAmountPaise}, got ${paymentData.amount}`,
     );
     throw new HttpsError('permission-denied', 'Payment amount mismatch.');
   }
@@ -99,7 +99,7 @@ async function verifyRazorpayPayment(
   return paymentData;
 }
 
-// ─── SECURITY: Razorpay Signature Verification ──────────────────────
+// â”€â”€â”€ SECURITY: Razorpay Signature Verification â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Verifies HMAC-SHA256 signature to prevent payment replay attacks.
 function verifyRazorpaySignature(orderId, paymentId, signature, secret) {
   if (!orderId || !signature) {
@@ -117,13 +117,15 @@ function verifyRazorpaySignature(orderId, paymentId, signature, secret) {
     .update(orderId + '|' + paymentId)
     .digest('hex');
 
-  if (signature !== expectedSignature) {
+  const sigBuf = Buffer.from(signature, 'hex');
+  const expectedBuf = Buffer.from(expectedSignature, 'hex');
+  if (sigBuf.length !== expectedBuf.length || !crypto.timingSafeEqual(sigBuf, expectedBuf)) {
     console.error(`Signature mismatch for payment ${paymentId}`);
     throw new HttpsError('permission-denied', 'Invalid payment signature.');
   }
 }
 
-// ─── SERVER-SIDE ORDER CREATION ──────────────────────────────────────
+// â”€â”€â”€ SERVER-SIDE ORDER CREATION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Creates a Razorpay order with the correct amount locked server-side.
 // This prevents amount-tampering attacks where a client modifies the
 // checkout amount before the SDK opens.
@@ -142,7 +144,7 @@ exports.createOrder = onCall(async (request) => {
 
   const db = admin.firestore();
 
-  // 2. Rate Limiting — prevent order-spam
+  // 2. Rate Limiting â€” prevent order-spam
   await checkRateLimit(db, uid, 'lastOrderCreate');
 
   // 3. Fetch item from Firestore to get the real price
@@ -169,10 +171,21 @@ exports.createOrder = onCall(async (request) => {
     itemDays = planData.days;
   } else if (packId) {
     const packDoc = await db.collection('coinPacks').doc(packId).get();
+    let packData;
     if (!packDoc.exists) {
-      throw new HttpsError('not-found', 'Invalid coin pack.');
+      const fallbackPacks = {
+        starter_pack: { coins: 500, keys: 0, price: 9, currency: 'INR' },
+        explorer_pack: { coins: 1200, keys: 2, price: 19, currency: 'INR' },
+        master_pack: { coins: 4000, keys: 8, price: 29, currency: 'INR' },
+      };
+      if (fallbackPacks[packId]) {
+        packData = fallbackPacks[packId];
+      } else {
+        throw new HttpsError('not-found', 'Invalid coin pack.');
+      }
+    } else {
+      packData = packDoc.data();
     }
-    const packData = packDoc.data();
     amountInSmallestUnit = Math.round(packData.price * 100);
     currency = packData.currency || 'INR';
     itemName = packData.titleFallback || 'Coin Pack';
@@ -207,16 +220,18 @@ exports.createOrder = onCall(async (request) => {
 
     if (!response.ok) {
       const errorBody = await response.text();
-      console.error(
-        `Razorpay order creation failed: HTTP ${response.status} - ${errorBody}`,
-      );
+      let errorDesc = 'Unknown error';
+      try {
+        errorDesc = JSON.parse(errorBody).error.description || 'Unknown error';
+      } catch (e) {}
+      console.error(`Razorpay order creation failed: HTTP ${response.status} - ${errorDesc}`);
       throw new HttpsError('internal', 'Failed to create payment order.');
     }
 
     orderData = await response.json();
   } catch (error) {
     if (error instanceof HttpsError) throw error;
-    console.error('Error creating Razorpay order:', error);
+    console.error('Error creating Razorpay order:', error.message || 'Unknown error');
     throw new HttpsError('internal', 'Failed to create payment order.');
   }
 
@@ -244,7 +259,7 @@ exports.createOrder = onCall(async (request) => {
   };
 });
 
-// ─── PAYMENT VERIFICATION (Server-Side Only) ────────────────────────
+// â”€â”€â”€ PAYMENT VERIFICATION (Server-Side Only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Called from the Flutter app after Razorpay success callback.
 // Verifies the payment via Razorpay API before granting premium status.
 exports.verifyPayment = onCall(async (request) => {
@@ -262,10 +277,10 @@ exports.verifyPayment = onCall(async (request) => {
 
   const db = admin.firestore();
 
-  // 2. Rate Limiting — prevent abuse/DDoS
+  // 2. Rate Limiting â€” prevent abuse/DDoS
   await checkRateLimit(db, uid, 'lastPremiumVerify');
 
-  // 3. Validate plan duration — only allow real subscription plans
+  // 3. Validate plan duration â€” only allow real subscription plans
   const days = typeof durationDays === 'number' ? durationDays : 0;
 
   // Fetch the matching subscription plan from Firestore to get the expected price
@@ -317,10 +332,7 @@ exports.verifyPayment = onCall(async (request) => {
     throw new HttpsError('internal', 'Failed to verify payment with gateway.');
   }
 
-  // 5. Payment verified — Grant Premium
-  const expiryDate = new Date();
-  expiryDate.setDate(expiryDate.getDate() + days);
-
+  // 5. Payment verified - Grant Premium
   const userRef = db.collection('users').doc(uid);
 
   await db.runTransaction(async (transaction) => {
@@ -329,11 +341,17 @@ exports.verifyPayment = onCall(async (request) => {
       throw new HttpsError('not-found', 'User not found.');
     }
 
+    const userData = userDoc.data();
+
     // Prevent duplicate claims for the same payment
-    if (userDoc.data().lastPaymentId === paymentId) {
+    if (userData.lastPaymentId === paymentId) {
       console.warn(`Payment ${paymentId} already processed for user ${uid}`);
       return;
     }
+
+    const currentExpiry = userData.premiumExpiryDate?.toDate?.() || null;
+    const base = (currentExpiry && currentExpiry > new Date()) ? currentExpiry : new Date();
+    const expiryDate = new Date(base.getTime() + days * 24 * 60 * 60 * 1000);
 
     transaction.update(userRef, {
       isPremium: true,
@@ -343,13 +361,20 @@ exports.verifyPayment = onCall(async (request) => {
     });
   });
 
+  if (orderId) {
+    const orderQuery = await db.collection('orders').where('orderId', '==', orderId).limit(1).get();
+    if (!orderQuery.empty) {
+      await orderQuery.docs[0].ref.update({ status: 'paid', paidAt: admin.firestore.FieldValue.serverTimestamp() });
+    }
+  }
+
   console.log(
     `Premium granted to user ${uid} until ${expiryDate.toISOString()}`,
   );
   return { success: true, expiryDate: expiryDate.toISOString() };
 });
 
-// ─── COIN PURCHASE VERIFICATION (Server-Side Only) ──────────────────
+// â”€â”€â”€ COIN PURCHASE VERIFICATION (Server-Side Only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Called from the Flutter app after Razorpay success callback.
 // Verifies the payment via Razorpay API and grants items securely.
 exports.verifyCoinPurchase = onCall(async (request) => {
@@ -366,19 +391,30 @@ exports.verifyCoinPurchase = onCall(async (request) => {
 
   const db = admin.firestore();
 
-  // 1. Rate Limiting — prevent abuse/DDoS
+  // 1. Rate Limiting â€” prevent abuse/DDoS
   await checkRateLimit(db, uid, 'lastCoinVerify');
 
   // 2. Fetch the pack from the database to know how much it costs and what it gives
   const packDoc = await db.collection('coinPacks').doc(packId).get();
+  let packData;
   if (!packDoc.exists) {
-    throw new HttpsError('not-found', 'Invalid pack ID.');
+    const fallbackPacks = {
+      starter_pack: { coins: 500, keys: 0, price: 9, currency: 'INR' },
+      explorer_pack: { coins: 1200, keys: 2, price: 19, currency: 'INR' },
+      master_pack: { coins: 4000, keys: 8, price: 29, currency: 'INR' },
+    };
+    if (fallbackPacks[packId]) {
+      packData = fallbackPacks[packId];
+    } else {
+      throw new HttpsError('not-found', 'Invalid pack ID.');
+    }
+  } else {
+    packData = packDoc.data();
   }
-  const packData = packDoc.data();
   const expectedAmountPaise = Math.round(packData.price * 100);
   const expectedCurrency = packData.currency || 'INR';
 
-  // 3. Verify Razorpay Payment (Zero Trust — hard-fail if keys missing)
+  // 3. Verify Razorpay Payment (Zero Trust â€” hard-fail if keys missing)
   const { keyId, secret } = requireRazorpayKeys();
 
   try {
@@ -457,13 +493,20 @@ exports.verifyCoinPurchase = onCall(async (request) => {
     });
   });
 
+  if (orderId) {
+    const orderQuery = await db.collection('orders').where('orderId', '==', orderId).limit(1).get();
+    if (!orderQuery.empty) {
+      await orderQuery.docs[0].ref.update({ status: 'paid', paidAt: admin.firestore.FieldValue.serverTimestamp() });
+    }
+  }
+
   console.log(
     `Granted ${coinsGranted} coins and ${keysGranted} keys to user ${uid}`,
   );
   return { success: true, coinsGranted, keysGranted };
 });
 
-// ─── PREMIUM EXPIRY CHECKER (Runs Daily) ─────────────────────────────
+// â”€â”€â”€ PREMIUM EXPIRY CHECKER (Runs Daily) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Automatically revokes premium when the subscription expires.
 exports.checkPremiumExpiry = onSchedule('0 3 * * *', async (event) => {
   const db = admin.firestore();
@@ -480,16 +523,17 @@ exports.checkPremiumExpiry = onSchedule('0 3 * * *', async (event) => {
     return;
   }
 
-  const batch = db.batch();
-  expiredUsers.forEach((doc) => {
-    batch.update(doc.ref, { isPremium: false });
-  });
-
-  await batch.commit();
+  const BATCH_LIMIT = 500;
+  for (let i = 0; i < expiredUsers.size; i += BATCH_LIMIT) {
+    const batch = db.batch();
+    const chunk = expiredUsers.docs.slice(i, i + BATCH_LIMIT);
+    chunk.forEach((doc) => batch.update(doc.ref, { isPremium: false }));
+    await batch.commit();
+  }
   console.log(`Revoked premium for ${expiredUsers.size} users.`);
 });
 
-// 🏆 THE ULTIMATE WEEKLY RECAP (v2)
+// ðŸ† THE ULTIMATE WEEKLY RECAP (v2)
 // Runs every Sunday at 11:59 PM (Final Results)
 exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
   const db = admin.firestore();
@@ -512,20 +556,20 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
 
     if (token) {
       let body = '';
-      let title = 'Weekly Recap 📊';
+      let title = 'Weekly Recap ðŸ“Š';
 
       if (rank === 1) {
-        title = 'The Crown is Yours! 👑';
+        title = 'The Crown is Yours! ðŸ‘‘';
         body =
-          'UNBELIEVABLE! You are the #1 Vowl player in the world this week! 🥇 Defend your throne!';
+          'UNBELIEVABLE! You are the #1 Vowl player in the world this week! ðŸ¥‡ Defend your throne!';
       } else if (rank === 2) {
-        title = 'Silver Medalist! 🥈';
+        title = 'Silver Medalist! ðŸ¥ˆ';
         body = `Incredible! You finished #2 in the world! Can you hit #1 next week?`;
       } else if (rank === 3) {
-        title = 'Podium Finish! 🥉';
+        title = 'Podium Finish! ðŸ¥‰';
         body = `Amazing! You finished #3 in the world! You're on the podium!`;
       } else {
-        body = `Great job! You finished #${rank} in the Global Rankings! 🏆 Keep climbing!`;
+        body = `Great job! You finished #${rank} in the Global Rankings! ðŸ† Keep climbing!`;
       }
 
       messages.push({
@@ -562,8 +606,8 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
   }
 });
 
-// 🔥 STREAK-AT-RISK REMINDER (v2)
-// Runs daily at 8:00 PM — nudges users who haven't logged in today
+// ðŸ”¥ STREAK-AT-RISK REMINDER (v2)
+// Runs daily at 8:00 PM â€” nudges users who haven't logged in today
 exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
   const db = admin.firestore();
 
@@ -593,7 +637,7 @@ exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
       messages.push({
         token: token,
         notification: {
-          title: 'Your Streak is in Danger! 🔥',
+          title: 'Your Streak is in Danger! ðŸ”¥',
           body: `Don't lose your ${streak}-day streak! Open Vowl and play a quick quest.`,
         },
         data: {
@@ -618,6 +662,7 @@ exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
       );
 
       // Clean up invalid tokens
+      const cleanupPromises = [];
       response.responses.forEach((resp, idx) => {
         if (
           resp.error &&
@@ -626,25 +671,30 @@ exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
         ) {
           const failedToken = messages[idx].token;
           // Remove stale token from Firestore
-          db.collection('users')
-            .where('fcmToken', '==', failedToken)
-            .get()
-            .then((snapshot) => {
-              snapshot.forEach((doc) => {
-                doc.ref.update({
-                  fcmToken: admin.firestore.FieldValue.delete(),
+          cleanupPromises.push(
+            db.collection('users')
+              .where('fcmToken', '==', failedToken)
+              .get()
+              .then((snapshot) => {
+                const deletes = [];
+                snapshot.forEach((doc) => {
+                  deletes.push(doc.ref.update({
+                    fcmToken: admin.firestore.FieldValue.delete(),
+                  }));
                 });
-              });
-            });
+                return Promise.all(deletes);
+              })
+          );
         }
       });
+      await Promise.all(cleanupPromises);
     } catch (error) {
       console.error('Error sending streak reminders:', error);
     }
   }
 });
 
-// ─── LEADERBOARD CACHE UPDATER (Runs Every 4 Hours) ─────────────────────────
+// â”€â”€â”€ LEADERBOARD CACHE UPDATER (Runs Every 4 Hours) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Calculates top 50 users server-side to prevent Cache Stampedes on mobile clients.
 exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
   const db = admin.firestore();
@@ -733,12 +783,18 @@ exports.validateIAPReceipt = onCall(async (request) => {
   if (!request.auth) {
     throw new HttpsError('unauthenticated', 'User must be logged in');
   }
-  
-  const { purchaseToken, productId, packageName } = request.data;
-  
+
+  const uid = request.auth.uid;
+  const { purchaseToken, productId, grantType, days } = request.data;
+
   if (!purchaseToken || !productId) {
     throw new HttpsError('invalid-argument', 'Missing purchase data');
   }
+
+  const db = admin.firestore();
+
+  // Rate limiting
+  await checkRateLimit(db, uid, 'lastIAPVerify');
 
   try {
     const { google } = require('googleapis');
@@ -746,47 +802,161 @@ exports.validateIAPReceipt = onCall(async (request) => {
     const auth = new google.auth.GoogleAuth({
       scopes: ['https://www.googleapis.com/auth/androidpublisher'],
     });
-    
+
     const androidPublisher = google.androidpublisher({ version: 'v3', auth });
-    
+
     // Verify the purchase with Google Play
     const response = await androidPublisher.purchases.products.get({
-      packageName: packageName || 'com.ansar.vowl',
+      packageName: 'com.vowl.app',
       productId: productId,
       token: purchaseToken,
     });
-    
+
     const purchase = response.data;
-    
+
     // Check purchase state (0 = purchased, 1 = canceled)
     if (purchase.purchaseState !== 0) {
       throw new HttpsError('failed-precondition', 'Purchase is not valid');
     }
-    
-    // Update user document with premium status
-    const uid = request.auth.uid;
-    const db = admin.firestore();
-    
-    // Determine duration based on product ID
-    let days = 30; // default
-    if (productId.includes('weekly')) days = 7;
-    if (productId.includes('yearly')) days = 365;
-    
-    const now = admin.firestore.Timestamp.now();
-    const expiryDate = new Date(now.toDate().getTime() + days * 24 * 60 * 60 * 1000);
-    
-    await db.collection('users').doc(uid).update({
-      isPremium: true,
-      premiumExpiryDate: admin.firestore.Timestamp.fromDate(expiryDate),
-      lastPurchaseToken: purchaseToken,
-      lastPurchaseProductId: productId,
-      lastPurchaseDate: now,
-    });
-    
-    return { success: true, expiryDate: expiryDate.toISOString() };
-    
+
+    // Prevent duplicate processing
+    const userRef = db.collection('users').doc(uid);
+    const userDoc = await userRef.get();
+    if (!userDoc.exists) {
+      throw new HttpsError('not-found', 'User not found');
+    }
+    if (userDoc.data().lastPurchaseToken === purchaseToken) {
+      console.warn(`Purchase token already processed for user ${uid}`);
+      return { success: true, message: 'Already processed' };
+    }
+
+    if (grantType === 'coins') {
+      // â”€â”€â”€ COIN PURCHASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+      // Map IAP product IDs to coin pack IDs in Firestore
+      const productToPackMap = {
+        vowl_coins_100: 'starter_pack',
+        vowl_coins_500: 'explorer_pack',
+        vowl_coins_1000: 'master_pack',
+      };
+
+      const packId = productToPackMap[productId];
+      if (!packId) {
+        throw new HttpsError(
+          'invalid-argument',
+          `Unknown coin product: ${productId}`,
+        );
+      }
+
+      const packDoc = await db.collection('coinPacks').doc(packId).get();
+      if (!packDoc.exists) {
+        // Fallback amounts if Firestore packs not seeded yet
+        const fallbackPacks = {
+          starter_pack: { coins: 500, keys: 0 },
+          explorer_pack: { coins: 1200, keys: 2 },
+          master_pack: { coins: 4000, keys: 8 },
+        };
+        const fallback = fallbackPacks[packId] || { coins: 0, keys: 0 };
+
+        await db.runTransaction(async (transaction) => {
+          const freshUser = await transaction.get(userRef);
+          const currentCoins = freshUser.data().coins || 0;
+          const currentKeys = freshUser.data().goldenKeys || 0;
+          const currentCoinHistory = freshUser.data().coinHistory || [];
+
+          currentCoinHistory.unshift({
+            titleKey: 'coin_history.purchased_coin_pack',
+            amount: fallback.coins,
+            isEarned: true,
+            date: new Date().toISOString(),
+          });
+          if (currentCoinHistory.length > 20) currentCoinHistory.length = 20;
+
+          transaction.update(userRef, {
+            coins: currentCoins + fallback.coins,
+            goldenKeys: currentKeys + fallback.keys,
+            lastPurchaseToken: purchaseToken,
+            lastPurchaseProductId: productId,
+            lastPurchaseDate: admin.firestore.FieldValue.serverTimestamp(),
+            coinHistory: currentCoinHistory,
+          });
+        });
+
+        console.log(
+          `Granted ${fallback.coins} coins (fallback) to user ${uid}`,
+        );
+        return {
+          success: true,
+          coinsGranted: fallback.coins,
+          keysGranted: fallback.keys,
+        };
+      }
+
+      const packData = packDoc.data();
+      const coinsGranted = packData.coins || 0;
+      const keysGranted = packData.keys || 0;
+
+      await db.runTransaction(async (transaction) => {
+        const freshUser = await transaction.get(userRef);
+        const currentCoins = freshUser.data().coins || 0;
+        const currentKeys = freshUser.data().goldenKeys || 0;
+        const currentCoinHistory = freshUser.data().coinHistory || [];
+
+        currentCoinHistory.unshift({
+          titleKey: 'coin_history.purchased_coin_pack',
+          amount: coinsGranted,
+          isEarned: true,
+          date: new Date().toISOString(),
+        });
+        if (currentCoinHistory.length > 20) currentCoinHistory.length = 20;
+
+        transaction.update(userRef, {
+          coins: currentCoins + coinsGranted,
+          goldenKeys: currentKeys + keysGranted,
+          lastPurchaseToken: purchaseToken,
+          lastPurchaseProductId: productId,
+          lastPurchaseDate: admin.firestore.FieldValue.serverTimestamp(),
+          coinHistory: currentCoinHistory,
+        });
+      });
+
+      console.log(
+        `Granted ${coinsGranted} coins and ${keysGranted} keys to user ${uid} via IAP`,
+      );
+      return { success: true, coinsGranted, keysGranted };
+    } else {
+      // â”€â”€â”€ PREMIUM PURCHASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+      const validPremiumProducts = ['vowl_premium_weekly', 'vowl_premium_monthly', 'vowl_premium_yearly'];
+      if (!validPremiumProducts.includes(productId)) {
+        throw new HttpsError('invalid-argument', 'Invalid premium product ID');
+      }
+
+      let premiumDays;
+      if (productId.includes('weekly')) premiumDays = 7;
+      else if (productId.includes('yearly')) premiumDays = 365;
+      else premiumDays = 30; // monthly default
+
+      const userData = userDoc.data();
+      const currentExpiry = userData.premiumExpiryDate?.toDate?.() || null;
+      const base = (currentExpiry && currentExpiry > new Date()) ? currentExpiry : new Date();
+      const expiryDate = new Date(base.getTime() + premiumDays * 24 * 60 * 60 * 1000);
+
+      await userRef.update({
+        isPremium: true,
+        premiumExpiryDate: admin.firestore.Timestamp.fromDate(expiryDate),
+        lastPurchaseToken: purchaseToken,
+        lastPurchaseProductId: productId,
+        lastPurchaseDate: now,
+      });
+
+      console.log(
+        `Premium granted to user ${uid} until ${expiryDate.toISOString()} via IAP`,
+      );
+      return { success: true, expiryDate: expiryDate.toISOString() };
+    }
+
   } catch (error) {
-    console.error('IAP validation failed:', error);
+    if (error instanceof HttpsError) throw error;
+    console.error('IAP validation failed:', error.message || 'Unknown error');
     throw new HttpsError('internal', 'Purchase validation failed');
   }
 });
