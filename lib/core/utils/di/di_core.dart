@@ -132,8 +132,6 @@ Future<void> initExternalAndCore(GetIt sl) async {
   // directly, eliminating competing loads against the same ad unit ID.
   sl.registerLazySingleton<PaymentService>(
     () => PaymentService(
-      getCurrentUser: sl<GetCurrentUser>(),
-      firestore: sl<FirebaseFirestore>(),
       functions: sl<FirebaseFunctions>(),
     ),
     // FIX (HIGH — RESOURCE LEAK): PaymentService.dispose() clears the
