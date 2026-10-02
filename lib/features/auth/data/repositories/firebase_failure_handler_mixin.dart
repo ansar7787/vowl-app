@@ -84,5 +84,6 @@ mixin FirebaseFailureHandlerMixin {
   bool _looksLikeNetworkError(String errStr) =>
       errStr.contains('SocketException') ||
       errStr.contains('NetworkError') ||
-      errStr.contains('XMLHttpRequest');
+      errStr.contains('XMLHttpRequest') ||
+      errStr.contains('TimeoutException');
 }

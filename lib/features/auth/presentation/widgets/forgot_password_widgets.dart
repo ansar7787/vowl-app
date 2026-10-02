@@ -72,6 +72,8 @@ class ForgotPasswordEmailInput extends StatelessWidget {
           FilteringTextInputFormatter.deny(AuthValidators.emojiRegex),
         ],
         autofillHints: const [AutofillHints.email],
+        autocorrect: false,
+        enableSuggestions: false,
         style: TextStyle(color: contrastColor),
         decoration: buildAuthDecoration(
           context: context,

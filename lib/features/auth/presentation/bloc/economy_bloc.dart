@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/core/utils/auth_error_handler.dart'; // ignore: unused_import — false positive: used 10+ times in handlers below
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/usecases/award_kids_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_daily_chest.dart';
@@ -178,6 +180,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   /// refreshes after mutations. Note: this creates a BLoC-to-BLoC dependency.
   /// Prefer stream-based composition when the architecture is revisited.
   final AuthBloc authBloc;
+  final NetworkInfo _networkInfo;
 
   EconomyBloc({
     required this.updateUserCoins,
@@ -190,7 +193,9 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     required this.awardKidsCoins,
     required this.useHint,
     required this.authBloc,
-  }) : super(const EconomyState()) {
+    required NetworkInfo networkInfo,
+  }) : _networkInfo = networkInfo,
+       super(const EconomyState()) {
     on<EconomyAddCoinsRequested>(_onAddCoins);
     on<EconomyAddKidsCoinsRequested>(_onAddKidsCoins);
     on<EconomyPurchaseHintRequested>(_onPurchaseHint);
@@ -220,7 +225,16 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyAddCoinsRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     _log('EconomyBloc: Adding ${event.amount} coins…');
 
     final result = await updateUserCoins(
@@ -233,10 +247,11 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     result.fold(
       (failure) {
         _log('EconomyBloc: AddCoins FAILED: ${failure.message}');
-        emit(state.copyWith(message: () => failure.message));
+        emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
       },
       (_) {
         _log('EconomyBloc: AddCoins SUCCESS');
+        emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
       },
     );
@@ -246,11 +261,23 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyAddKidsCoinsRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await awardKidsCoins(event.amount);
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => authBloc.add(const AuthRefreshUser()),
+      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (_) {
+        emit(state.copyWith(isLoading: false));
+        authBloc.add(const AuthRefreshUser());
+      },
     );
   }
 
@@ -258,26 +285,37 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyPurchaseHintRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await purchaseHint(
       PurchaseHintParams(cost: event.cost, hintAmount: event.hintAmount),
     );
     result.fold(
       (failure) => emit(
         state.copyWith(
-          message: () => failure.message,
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
           lastPurchaseType: () => 'hint',
           lastPurchaseSuccess: () => false,
         ),
       ),
       (_) {
-        authBloc.add(const AuthRefreshUser());
         emit(
           state.copyWith(
+            isLoading: false,
             lastPurchaseType: () => 'hint',
             lastPurchaseSuccess: () => true,
           ),
         );
+        authBloc.add(const AuthRefreshUser());
       },
     );
   }
@@ -286,16 +324,26 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyConsumeHintRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     _log('EconomyBloc: Consuming hint…');
     final result = await useHint(const NoParams());
     result.fold(
       (failure) {
         _log('EconomyBloc: Hint consumption FAILED: ${failure.message}');
-        emit(state.copyWith(message: () => failure.message));
+        emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
       },
       (_) {
         _log('EconomyBloc: Hint consumption SUCCESS');
+        emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
       },
     );
@@ -305,11 +353,23 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyClaimVipGiftRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await claimVipGift(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => authBloc.add(const AuthRefreshUser()),
+      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (_) {
+        emit(state.copyWith(isLoading: false));
+        authBloc.add(const AuthRefreshUser());
+      },
     );
   }
 
@@ -317,11 +377,23 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyClaimDailyGiftRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await claimDailyGift(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => authBloc.add(const AuthRefreshUser()),
+      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (_) {
+        emit(state.copyWith(isLoading: false));
+        authBloc.add(const AuthRefreshUser());
+      },
     );
   }
 
@@ -335,9 +407,18 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyTripleUpRewardsRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
     final user = authBloc.state.user;
     if (user == null) return;
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
 
     // ── Bonus coins: use the proper atomic path with coinHistory logging ──
     if (event.bonusCoins > 0) {
@@ -348,14 +429,18 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
           isEarned: true,
         ),
       );
+      bool hasError = false;
       coinResult.fold(
         (failure) {
           _log('EconomyBloc: TripleUp coins FAILED: ${failure.message}');
-          emit(state.copyWith(message: () => failure.message));
+          emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
+          hasError = true;
+          return;
         },
         (_) =>
             _log('EconomyBloc: TripleUp coins SUCCESS (+${event.bonusCoins})'),
       );
+      if (hasError) return;
     }
 
     // ── Bonus XP: still uses updateUser (no atomic XP-increment use case) ──
@@ -368,6 +453,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       await updateUser(UpdateUserParams(user: updatedUser));
     }
 
+    emit(state.copyWith(isLoading: false));
     authBloc.add(const AuthRefreshUser());
   }
 
@@ -376,8 +462,18 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyAddBonusRewardsRequested event,
     Emitter<EconomyState> emit,
   ) async {
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
     final user = authBloc.state.user;
     if (user == null) return;
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
 
     // ── Bonus coins: use the proper atomic path with coinHistory logging ──
     if (event.bonusCoins > 0) {
@@ -388,13 +484,17 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
           isEarned: true,
         ),
       );
+      bool hasError = false;
       coinResult.fold(
         (failure) {
           _log('EconomyBloc: Bonus coins FAILED: ${failure.message}');
-          emit(state.copyWith(message: () => failure.message));
+          emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
+          hasError = true;
+          return;
         },
         (_) => _log('EconomyBloc: Bonus coins SUCCESS (+${event.bonusCoins})'),
       );
+      if (hasError) return;
     }
 
     // ── Bonus XP: still uses updateUser (no atomic XP-increment use case) ──
@@ -407,6 +507,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       await updateUser(UpdateUserParams(user: updatedUser));
     }
 
+    emit(state.copyWith(isLoading: false));
     authBloc.add(const AuthRefreshUser());
   }
 
@@ -414,16 +515,26 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyClaimDailyChestRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     _log('EconomyBloc: Claiming daily chest (${event.amount} coins)…');
     final result = await claimDailyChest(event.amount);
     result.fold(
       (failure) {
         _log('EconomyBloc: Daily chest FAILED: ${failure.message}');
-        emit(state.copyWith(message: () => failure.message));
+        emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
       },
       (_) {
         _log('EconomyBloc: Daily chest SUCCESS');
+        emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
       },
     );
@@ -433,16 +544,26 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyClaimKidsDailyRewardRequested event,
     Emitter<EconomyState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     _log('EconomyBloc: Claiming kids daily reward (${event.amount} coins)…');
     final result = await claimKidsDailyReward(event.amount);
     result.fold(
       (failure) {
         _log('EconomyBloc: Kids daily reward FAILED: ${failure.message}');
-        emit(state.copyWith(message: () => failure.message));
+        emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
       },
       (_) {
         _log('EconomyBloc: Kids daily reward SUCCESS');
+        emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
       },
     );

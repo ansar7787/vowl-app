@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
@@ -169,6 +171,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   final UpdateUser updateUser;
   final AuthBloc authBloc;
   final NotificationService notificationService;
+  final NetworkInfo _networkInfo;
 
   // Added to replace unsafe client-side purchase/claim logic — see each
   // handler's doc comment below for what changed and why.
@@ -193,7 +196,9 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     required this.purchasePermanentXPBoost,
     required this.claimStreakMilestone,
     required this.claimLevelMilestone,
-  }) : super(const ProgressionState()) {
+    required NetworkInfo networkInfo,
+  }) : _networkInfo = networkInfo,
+       super(const ProgressionState()) {
     on<ProgressionRepairStreakRequested>(_onRepairStreak);
     on<ProgressionRepairStreakWithAdRequested>(_onRepairStreakWithAd);
     on<ProgressionPurchaseStreakFreezeRequested>(_onPurchaseStreakFreeze);
@@ -232,9 +237,21 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     ProgressionCheckDailyStreakRequested event,
     Emitter<ProgressionState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final user = authBloc.state.user;
-    if (user == null || _lastProcessedUser == user) return;
+    if (user == null || _lastProcessedUser == user) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     _lastProcessedUser = user;
 
     final now = DateTime.now();
@@ -245,6 +262,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       final updatedUser = user.copyWith(currentStreak: 1, lastLoginDate: now);
       await updateUser(UpdateUserParams(user: updatedUser));
       notificationService.scheduleStreakReminder(1);
+      emit(state.copyWith(isLoading: false));
       return;
     }
 
@@ -259,6 +277,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     if (dayDifference == 0) {
       // Already processed today
       notificationService.scheduleStreakReminder(user.currentStreak);
+      emit(state.copyWith(isLoading: false));
       return;
     }
 
@@ -279,7 +298,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       final result = await updateUser(UpdateUserParams(user: updatedUser));
       if (result.isRight()) {
         notificationService.scheduleStreakReminder(newStreak);
-        emit(state.copyWith(streakUpdatedToday: true));
+        emit(state.copyWith(streakUpdatedToday: true, isLoading: false));
 
         // Milestone auto-claim now goes through the same atomic,
         // server-validated ClaimStreakMilestone use case as the
@@ -298,6 +317,8 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         if (isNewMilestone) {
           await claimStreakMilestone(newStreak);
         }
+      } else {
+        emit(state.copyWith(isLoading: false));
       }
     } else {
       // Missed day — check for streak protection
@@ -315,6 +336,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         notificationService.scheduleStreakReminder(updatedUser.currentStreak);
         emit(
           state.copyWith(
+            isLoading: false,
             streakUpdatedToday: true,
             message: () => hasAutoShield
                 ? 'progression.elite_shield_protected'
@@ -327,6 +349,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         notificationService.scheduleStreakReminder(1);
         emit(
           state.copyWith(
+            isLoading: false,
             streakUpdatedToday: true,
             message: () => 'progression.streak_lost_reset',
           ),
@@ -339,11 +362,20 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     ProgressionRepairStreakRequested event,
     Emitter<ProgressionState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await repairStreak(event.cost);
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => emit(state.copyWith(message: () => 'progression.streak_repaired')),
+      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (_) => emit(state.copyWith(isLoading: false, message: () => 'progression.streak_repaired')),
     );
   }
 
@@ -360,12 +392,21 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     ProgressionRepairStreakWithAdRequested event,
     Emitter<ProgressionState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await repairStreakFree(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
       (_) {
-        emit(state.copyWith(message: () => 'progression.streak_repaired'));
+        emit(state.copyWith(isLoading: false, message: () => 'progression.streak_repaired'));
         authBloc.add(const AuthRefreshUser());
       },
     );
@@ -375,18 +416,29 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     ProgressionPurchaseStreakFreezeRequested event,
     Emitter<ProgressionState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await purchaseStreakFreeze(event.cost);
     result.fold(
       (failure) => emit(
         state.copyWith(
-          message: () => failure.message,
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
           lastPurchaseType: () => 'shield',
           lastPurchaseSuccess: () => false,
         ),
       ),
       (_) => emit(
         state.copyWith(
+          isLoading: false,
           message: () => 'progression.streak_shield_purchased',
           lastPurchaseType: () => 'shield',
           lastPurchaseSuccess: () => true,
@@ -399,18 +451,29 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     ProgressionActivateDoubleXPRequested event,
     Emitter<ProgressionState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await activateDoubleXP(event.cost);
     result.fold(
       (failure) => emit(
         state.copyWith(
-          message: () => failure.message,
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
           lastPurchaseType: () => 'warp',
           lastPurchaseSuccess: () => false,
         ),
       ),
       (_) => emit(
         state.copyWith(
+          isLoading: false,
           message: () => 'progression.double_xp_activated',
           lastPurchaseType: () => 'warp',
           lastPurchaseSuccess: () => true,
@@ -432,12 +495,22 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     ProgressionPurchasePermanentXPBoostRequested event,
     Emitter<ProgressionState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await purchasePermanentXPBoost(event.cost);
     result.fold(
       (failure) => emit(
         state.copyWith(
-          message: () => failure.message,
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
           lastPurchaseType: () => 'scroll',
           lastPurchaseSuccess: () => false,
         ),
@@ -446,6 +519,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         authBloc.add(const AuthRefreshUser());
         emit(
           state.copyWith(
+            isLoading: false,
             message: () => 'progression.permanent_xp_boost_activated',
             lastPurchaseType: () => 'scroll',
             lastPurchaseSuccess: () => true,
@@ -470,12 +544,21 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     ProgressionClaimStreakMilestoneRequested event,
     Emitter<ProgressionState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await claimStreakMilestone(event.milestone);
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
       (_) {
-        emit(state.copyWith(message: () => 'progression.milestone_claimed'));
+        emit(state.copyWith(isLoading: false, message: () => 'progression.milestone_claimed'));
         authBloc.add(const AuthRefreshUser());
       },
     );
@@ -495,7 +578,16 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     ProgressionClaimLevelMilestoneRequested event,
     Emitter<ProgressionState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final result = await claimLevelMilestone(
       ClaimLevelMilestoneParams(
         milestone: event.milestone,
@@ -503,10 +595,11 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       ),
     );
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
       (_) {
         emit(
           state.copyWith(
+            isLoading: false,
             message: () => 'progression.milestone_claimed:${event.reward}',
           ),
         );
@@ -534,15 +627,30 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     ProgressionAddXpRequested event,
     Emitter<ProgressionState> emit,
   ) async {
-    if (!_isAuthenticated) return;
+    if (state.isLoading) return;
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      return;
+    }
+    emit(state.copyWith(isLoading: true));
+    if (!_isAuthenticated) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
     final user = authBloc.state.user;
-    if (user == null) return;
+    if (user == null) {
+      emit(state.copyWith(isLoading: false));
+      return;
+    }
 
     final updatedUser = user.copyWith(totalExp: user.totalExp + event.amount);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => authBloc.add(const AuthRefreshUser()),
+      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (_) {
+        emit(state.copyWith(isLoading: false));
+        authBloc.add(const AuthRefreshUser());
+      },
     );
   }
 

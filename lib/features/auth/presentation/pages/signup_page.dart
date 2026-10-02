@@ -156,8 +156,12 @@ class _SignUpViewState extends State<SignUpView> {
                   'auth.preparing_journey',
                   fallback: 'Getting things ready...',
                 ),
-                child: Scaffold(
-                  backgroundColor: bgColor,
+                child: PopScope(
+                  canPop: !state.isSubmitting && !state.isSuccess,
+                  child: GestureDetector(
+                    onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                    child: Scaffold(
+                      backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
                   body: Stack(
                     children: [
@@ -621,8 +625,10 @@ class _SignUpViewState extends State<SignUpView> {
                     ],
                   ),
                 ),
-              );
-            },
+              ),
+            ),
+          );
+        },
           );
         },
       ),

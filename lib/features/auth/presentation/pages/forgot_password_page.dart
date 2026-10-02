@@ -122,8 +122,12 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   'auth.sending_recovery_link',
                   fallback: 'Sending recovery link...',
                 ),
-                child: Scaffold(
-                  backgroundColor: bgColor,
+                child: PopScope(
+                  canPop: !state.isSubmitting && !state.isSuccess,
+                  child: GestureDetector(
+                    onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                    child: Scaffold(
+                      backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
                   body: Stack(
                     children: [
@@ -387,8 +391,10 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                     ],
                   ),
                 ),
-              );
-            },
+              ),
+            ),
+          );
+        },
           );
         },
       ),

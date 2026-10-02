@@ -541,7 +541,7 @@ class UserModel extends UserEntity {
 
   /// Parses a Firestore map of {String → num} to {String → int} defensively.
   static Map<String, int> _parseIntMap(dynamic raw) {
-    if (raw == null) return const {};
+    if (raw is! Map) return const {};
     final map = raw as Map<Object?, Object?>;
     return map.map((k, v) => MapEntry(k.toString(), (v as num?)?.toInt() ?? 0));
   }
@@ -550,7 +550,7 @@ class UserModel extends UserEntity {
   /// entry whose value isn't actually a [String] (e.g. a `null` written by
   /// some future "unequip" flow) instead of throwing mid-parse.
   static Map<String, String> _parseStringMap(dynamic raw) {
-    if (raw == null) return const {};
+    if (raw is! Map) return const {};
     final map = raw as Map<Object?, Object?>;
     final result = <String, String>{};
     for (final entry in map.entries) {
@@ -564,22 +564,22 @@ class UserModel extends UserEntity {
 
   /// Parses a Firestore list of strings defensively.
   static List<String> _parseStringList(dynamic raw) {
-    if (raw == null) return const [];
-    return (raw as List<dynamic>).map((e) => e.toString()).toList();
+    if (raw is! List) return const [];
+    return raw.map((e) => e.toString()).toList();
   }
 
   /// Parses a Firestore list of integers defensively.
   static List<int> _parseIntList(dynamic raw) {
-    if (raw == null) return const [];
-    return (raw as List<dynamic>)
+    if (raw is! List) return const [];
+    return raw
         .map((e) => (e as num?)?.toInt() ?? 0)
         .toList();
   }
 
   /// Parses a Firestore list of dynamic maps defensively.
   static List<Map<String, dynamic>> _parseDynamicMapList(dynamic raw) {
-    if (raw == null) return const [];
-    return (raw as List<dynamic>)
+    if (raw is! List) return <Map<String, dynamic>>[];
+    return raw
         .whereType<Map<Object?, Object?>>()
         .map((m) => m.map((k, v) => MapEntry(k.toString(), v)))
         .toList();
@@ -587,7 +587,7 @@ class UserModel extends UserEntity {
 
   /// Parses the nested [completedLevels] map: `{String → List<int>}`.
   static Map<String, List<int>> _parseCompletedLevels(dynamic raw) {
-    if (raw == null) return const {};
+    if (raw is! Map) return const {};
     final outer = raw as Map<Object?, Object?>;
     return outer.map((key, value) {
       final levels = (value as List<dynamic>)
@@ -599,7 +599,7 @@ class UserModel extends UserEntity {
 
   /// Parses the nested [starRatings] map: `{String → {String → int}}`.
   static Map<String, Map<String, int>> _parseStarRatings(dynamic raw) {
-    if (raw == null) return const {};
+    if (raw is! Map) return const {};
     final outer = raw as Map<Object?, Object?>;
     return outer.map((categoryKey, categoryMapRaw) {
       if (categoryMapRaw == null) {

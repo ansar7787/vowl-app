@@ -146,8 +146,12 @@ class _LoginViewState extends State<LoginView> {
                   'auth.preparing_adventure',
                   fallback: 'Getting things ready...',
                 ),
-                child: Scaffold(
-                  backgroundColor: bgColor,
+                child: PopScope(
+                  canPop: !state.isSubmitting && !state.isSuccess,
+                  child: GestureDetector(
+                    onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                    child: Scaffold(
+                      backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
                   body: Stack(
                     children: [
@@ -416,8 +420,10 @@ class _LoginViewState extends State<LoginView> {
                     ],
                   ),
                 ),
-              );
-            },
+              ),
+            ),
+          );
+        },
           );
         },
       ),

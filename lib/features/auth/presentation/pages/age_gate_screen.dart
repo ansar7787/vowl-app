@@ -23,13 +23,24 @@ import 'package:vowl/core/theme/app_colors.dart';
 /// ### User flow
 /// 1. First launch → splash → age gate → home
 /// 2. All future launches → splash → home (age gate skipped)
-class AgeGateScreen extends StatelessWidget {
+class AgeGateScreen extends StatefulWidget {
   const AgeGateScreen({super.key});
+
+  @override
+  State<AgeGateScreen> createState() => _AgeGateScreenState();
+}
+
+class _AgeGateScreenState extends State<AgeGateScreen> {
+  // ignore: unused_field — false positive: used in _handleSelection for double-tap prevention (L40, L41, L187, L191, L206)
+  bool _isProcessing = false;
 
   Future<void> _handleSelection(
     BuildContext context, {
     required bool isAdult,
   }) async {
+    if (_isProcessing) return;
+    _isProcessing = true;
+
     HapticFeedback.mediumImpact();
 
     if (!isAdult) {
@@ -173,8 +184,12 @@ class AgeGateScreen extends StatelessWidget {
         },
       );
 
-      if (confirm == null) return; // User dismissed by swiping down
+      if (confirm == null) {
+        _isProcessing = false;
+        return; // User dismissed by swiping down
+      }
       if (!confirm) {
+        _isProcessing = false;
         if (!context.mounted) return;
         return _handleSelection(context, isAdult: true);
       }
@@ -188,7 +203,10 @@ class AgeGateScreen extends StatelessWidget {
       // Ignored if AdService is not yet registered
     }
 
-    if (!context.mounted) return;
+    if (!context.mounted) {
+      _isProcessing = false;
+      return;
+    }
 
     if (isAdult) {
       CustomSnackBar.show(

@@ -286,6 +286,7 @@ void initAuthFeature(GetIt sl) {
       awardKidsCoins: sl<AwardKidsCoins>(),
       useHint: sl<UseHint>(),
       authBloc: sl<AuthBloc>(),
+      networkInfo: sl<NetworkInfo>(),
     ),
     dispose: (bloc) => bloc.close(),
   );
@@ -301,6 +302,7 @@ void initAuthFeature(GetIt sl) {
       purchasePermanentXPBoost: sl<PurchasePermanentXPBoost>(),
       claimStreakMilestone: sl<ClaimStreakMilestone>(),
       claimLevelMilestone: sl<ClaimLevelMilestone>(),
+      networkInfo: sl<NetworkInfo>(),
     ),
     dispose: (bloc) => bloc.close(),
   );
@@ -318,6 +320,7 @@ void initAuthFeature(GetIt sl) {
       buyVowlAccessory: sl<BuyVowlAccessory>(),
       purchaseGoldenKey: sl<PurchaseGoldenKey>(),
       addGoldenKey: sl<AddGoldenKey>(),
+      networkInfo: sl<NetworkInfo>(),
     ),
     dispose: (bloc) => bloc.close(),
   );

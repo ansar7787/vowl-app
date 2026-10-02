@@ -126,7 +126,8 @@ class SettingsDialogs {
                   // FIX (HIGH-2): Was hardcoded English. Now localised.
                   context.tr(
                     'settings_dialogs.sign_out_body',
-                    fallback: 'Are you sure you want to sign out?',
+                    fallback:
+                        'Are you sure you want to sign out? Any unsaved progress may be lost. You will need an internet connection to sign back in.',
                   ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -433,7 +434,7 @@ class SettingsDialogs {
                   context.tr(
                     'settings_dialogs.delete_account_body',
                     fallback:
-                        'This action cannot be undone. All your progress will be lost.',
+                        'This action cannot be undone. All your data will be permanently deleted, including:\n\n• Learning progress & levels\n• Coins & purchases\n• Streak history\n• Premium subscription (if any)',
                   ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -868,6 +869,8 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
           // Name field
           TextField(
             controller: _nameController,
+            maxLength: 30,
+            buildCounter: (context, {required currentLength, required isFocused, maxLength}) => null,
             style: TextStyle(
               fontFamily: 'Outfit',
               color: isDark ? Colors.white : AppColors.slate900,
@@ -920,8 +923,10 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
                 child: ElevatedButton(
                   onPressed: () {
                     final trimmed = _nameController.text.trim();
-                    if (trimmed.isNotEmpty &&
-                        trimmed != widget.user.displayName) {
+                    if (trimmed.isEmpty) return;
+                    if (trimmed.length < 2) return;
+                    if (trimmed != widget.user.displayName) {
+                      FocusScope.of(context).unfocus(); // L-05: dismiss keyboard on save
                       context.read<ProfileBloc>().add(
                         ProfileUpdateDisplayNameRequested(trimmed),
                       );

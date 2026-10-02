@@ -42,6 +42,10 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
     AppRouter.premiumRoute,
     AppRouter.splashRoute,
     AppRouter.ageGateRoute,
+    AppRouter.loginRoute,
+    AppRouter.signupRoute,
+    AppRouter.forgotPasswordRoute,
+    AppRouter.verifyEmailRoute,
   };
 
   /// Routes that should never trigger the Quota Exhausted block.

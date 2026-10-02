@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
@@ -373,16 +372,9 @@ class AuthRepositoryImpl
         _log('DeleteAccount: FCM token deletion failed: $e');
       }
 
-      // Step 3 — Clear all locally-persisted preferences so they don't bleed
-      // into a subsequent user session on the same device.
-      try {
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.clear();
-      } catch (e) {
-        _log(
-          'DeleteAccount: SharedPreferences clear failed (non-critical): $e',
-        );
-      }
+      // Step 3 — SharedPreferences cleanup is handled by the BLoC's
+      // _clearAllLocalData() which selectively preserves device-scoped
+      // preferences (theme, locale, age gate, etc.) before clearing.
 
       return const Right(null);
     } on firebase_auth.FirebaseAuthException catch (e) {

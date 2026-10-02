@@ -68,6 +68,8 @@ class LoginEmailInput extends StatelessWidget {
               FilteringTextInputFormatter.deny(AuthValidators.emojiRegex),
             ],
             autofillHints: const [AutofillHints.email],
+            autocorrect: false,
+            enableSuggestions: false,
             style: TextStyle(color: contrastColor),
             decoration: buildAuthDecoration(
               context: context,
@@ -145,6 +147,10 @@ class LoginPasswordInput extends StatelessWidget {
               FilteringTextInputFormatter.deny(AuthValidators.emojiRegex),
             ],
             autofillHints: const [AutofillHints.password],
+            autocorrect: false,
+            enableSuggestions: false,
+            maxLength: 128,
+            buildCounter: (context, {required currentLength, required isFocused, maxLength}) => null,
             style: TextStyle(color: contrastColor),
             decoration: buildAuthDecoration(
               context: context,

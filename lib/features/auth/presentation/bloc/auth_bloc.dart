@@ -16,6 +16,7 @@ import 'package:vowl/features/auth/domain/usecases/send_email_verification.dart'
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:flutter/painting.dart' show imageCache;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -228,17 +229,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(message: () => 'auth.stream_error'));
   }
 
-  Future<void> _onLogoutRequested(
-    AuthLogoutRequested event,
-    Emitter<AuthState> emit,
-  ) async {
-    if (state.status == AuthStatus.loggingOut) return;
-    emit(state.copyWith(status: AuthStatus.loggingOut));
-
-    // Cancel all scheduled local notifications (streak reminders, weekly
-    // motivation, etc.) so they don't fire for the NEXT user who logs in on
-    // this device. Without this, User A's streak reminder could appear after
-    // User B signs in — a privacy and UX violation.
+  /// Clears all local session data that must not survive a user change.
+  ///
+  /// Shared between [_onLogoutRequested] and [_onDeleteAccountRequested]
+  /// to guarantee identical cleanup for both flows.
+  Future<void> _clearAllLocalData() async {
+    // Cancel all scheduled local notifications so they don't fire for the
+    // NEXT user who logs in on this device.
     try {
       await di.sl<NotificationService>().cancelAllReminders();
     } catch (e) {
@@ -263,6 +260,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final notificationCardDismissedTime = prefs.getInt(
         'notification_card_dismissed_time',
       );
+      // Age gate is device-scoped, not user-scoped — must survive logout/delete.
+      final ageGateCompleted = prefs.getBool('age_gate_completed');
+      final ageGateIsAdult = prefs.getBool('age_gate_is_adult');
 
       await prefs.clear();
 
@@ -293,12 +293,35 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           notificationCardDismissedTime,
         );
       }
+      if (ageGateCompleted != null) {
+        await prefs.setBool('age_gate_completed', ageGateCompleted);
+      }
+      if (ageGateIsAdult != null) {
+        await prefs.setBool('age_gate_is_adult', ageGateIsAdult);
+      }
     } catch (e) {
       if (kDebugMode) {
         debugPrint('AuthBloc: SharedPreferences cleanup failed: $e');
       }
     }
+  }
 
+  Future<void> _onLogoutRequested(
+    AuthLogoutRequested event,
+    Emitter<AuthState> emit,
+  ) async {
+    if (state.status == AuthStatus.loggingOut) return;
+
+    // Warn if offline — sign-out can work locally but data won't sync
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(
+        message: () => AuthErrorHandler.getKey('network-unreachable'),
+      ));
+      // Still proceed with logout (it works locally via Firebase)
+    }
+
+    emit(state.copyWith(status: AuthStatus.loggingOut));
+    await _clearAllLocalData();
     await _logOut(const NoParams());
     emit(const AuthState.unauthenticated());
   }
@@ -316,9 +339,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     AuthRefreshUser event,
     Emitter<AuthState> emit,
   ) async {
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(
+        message: () => AuthErrorHandler.getKey('network-unreachable'),
+      ));
+      return;
+    }
     final result = await _getCurrentUser(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (failure) => emit(state.copyWith(
+        message: () => AuthErrorHandler.getKey(failure.message),
+      )),
       (user) {
         if (user != null) emit(AuthState.authenticated(user));
       },
@@ -330,13 +361,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     if (state.status == AuthStatus.loggingOut) return;
+
+    // C-01: Network check — account deletion requires internet
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(
+        message: () => AuthErrorHandler.getKey('network-unreachable'),
+      ));
+      return;
+    }
+
     emit(state.copyWith(status: AuthStatus.loggingOut));
 
-    try {
-      await di.sl<NotificationService>().cancelAllReminders();
-    } catch (e) {
-      if (kDebugMode) debugPrint('AuthBloc: notification cleanup failed: $e');
-    }
+    // C-03: Clear ALL local data (same cleanup as logout)
+    await _clearAllLocalData();
 
     final result = await _deleteAccount(const NoParams());
     await result.fold(
@@ -353,7 +390,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(
             state.copyWith(
               status: AuthStatus.authenticated,
-              message: () => failure.message,
+              message: () => AuthErrorHandler.getKey(failure.message),
             ),
           );
         }
@@ -374,26 +411,37 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     AuthPasswordResetRequested event,
     Emitter<AuthState> emit,
   ) async {
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(
+        message: () => AuthErrorHandler.getKey('network-unreachable'),
+      ));
+      return;
+    }
     final result = await _forgotPassword(event.email);
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (failure) => emit(state.copyWith(
+        message: () => AuthErrorHandler.getKey(failure.message),
+      )),
       (_) => emit(state.copyWith(message: () => 'auth.password_reset_sent')),
     );
   }
 
   /// Sends a verification email to the currently authenticated user.
-  ///
-  /// On success emits [AuthState.message] = `'auth.email_verification_sent'`
-  /// (a localization key). The global [BlocListener] in [main.dart] translates
-  /// and shows this as a snackbar; the [VerifyEmailPage] listener uses it
-  /// to restart the resend cooldown timer.
   Future<void> _onSendEmailVerification(
     AuthSendEmailVerificationRequested event,
     Emitter<AuthState> emit,
   ) async {
+    if (!(await _networkInfo.isConnected)) {
+      emit(state.copyWith(
+        message: () => AuthErrorHandler.getKey('network-unreachable'),
+      ));
+      return;
+    }
     final result = await _sendEmailVerification(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (failure) => emit(state.copyWith(
+        message: () => AuthErrorHandler.getKey(failure.message),
+      )),
       (_) =>
           emit(state.copyWith(message: () => 'auth.email_verification_sent')),
     );

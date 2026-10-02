@@ -16,7 +16,22 @@ abstract class NetworkInfo {
   Stream<AppNetworkStatus> get onStatusChange;
 
   /// Sets a persistent override that forces network checks to return online.
-  /// Used to enable offline-play for Premium users seamlessly.
+  ///
+  /// ### Why this exists (Premium Offline Play)
+  /// Premium users are never shown offline gates, banners, or quota blocks.
+  /// This override makes all bloc-level network checks pass, allowing
+  /// Firestore write operations to proceed even when the device is offline.
+  ///
+  /// ### Why a custom queue isn't needed
+  /// The Firestore SDK has **built-in offline persistence** on mobile
+  /// (Android/iOS). When a premium user writes data while offline:
+  /// 1. The SDK queues the write in its local SQLite cache.
+  /// 2. When the device reconnects, the SDK automatically syncs.
+  /// 3. Reads are served from the local cache (no stale data risk).
+  ///
+  /// Operations that truly require live network (Firebase Auth: delete account,
+  /// sign out) are caught by [FirebaseFailureHandlerMixin] and surfaced as
+  /// [NetworkFailure] → the user sees a clear "No internet" error message.
   void setPremiumOverride(bool isPremium);
 }
 
