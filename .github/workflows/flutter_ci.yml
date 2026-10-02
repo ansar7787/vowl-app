@@ -1,32 +1,50 @@
+# Save as: .github/workflows/flutter_ci.yml
 name: Flutter CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ['master']
   pull_request:
-    branches: [ "master" ]
+    branches: ['master']
+  workflow_dispatch: # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v3
-        
+        uses: actions/checkout@v4
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
-          
-      - name: Install dependencies
-        run: flutter pub get
-        
-      - name: Create dummy .env file
+          channel: stable
+          # Use the SAME version as on your PC. Run `flutter --version` and write the number here:
+          # flutter-version: "3.XX.X"
+          cache: true
+
+      - name: Show Flutter and Dart versions
+        run: flutter --version
+
+      - name: Create empty .env file (pubspec.yaml lists it as an asset)
         run: touch .env
 
-      - name: Check formatting and linting
+      - name: Install dependencies
+        run: flutter pub get
+
+      # "!cancelled()" = run this step even if an earlier step failed,
+      # so you can see ALL the problems in one run.
+      - name: Analyze
+        if: ${{ !cancelled() }}
         run: flutter analyze
-        
-      - name: Run tests
+        # While you clean old issues you can use: flutter analyze --no-fatal-infos
+
+      # Runs only if you have test files (*_test.dart). Add real tests soon.
+      - name: Test
+        if: ${{ !cancelled() && hashFiles('test/**/*_test.dart') != '' }}
         run: flutter test
