@@ -11,6 +11,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/connectivity_wrapper.dart';
 import 'package:vowl/core/presentation/widgets/global_audio_feedback_listener.dart';
 import 'package:vowl/core/presentation/widgets/global_error_boundary.dart';
@@ -211,6 +213,15 @@ void main() async {
     if (kDebugMode) {
       debugPrint('Warning: NotificationService initialization failed: $e');
     }
+  }
+
+  // Load custom Low Animation Mode override from local preferences
+  try {
+    final prefs = await SharedPreferences.getInstance();
+    VowlMotion.lowAnimationModeOverride.value = 
+        prefs.getBool('low_animation_mode') ?? false;
+  } catch (e) {
+    if (kDebugMode) debugPrint('Warning: Failed to load low_animation_mode pref: $e');
   }
 
   runApp(const MyApp());

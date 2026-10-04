@@ -14,6 +14,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_widgets.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
@@ -49,6 +50,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _notificationsEnabledVal = true;
   bool _soundEnabledVal = true;
   bool _reduceComplexGesturesVal = false;
+  bool _lowAnimationModeVal = false;
   bool _analyticsEnabledVal = true;
   bool _isLoadingVal = true;
   String? _translationLanguageNameVal;
@@ -80,6 +82,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final savedPref = prefs.getBool('notifications_enabled') ?? true;
     final soundPref = prefs.getBool('sound_enabled') ?? true;
     final gesturesPref = prefs.getBool('reduce_complex_gestures') ?? false;
+    final lowAnimationPref = prefs.getBool('low_animation_mode') ?? false;
     final analyticsPref = prefs.getBool('analytics_enabled') ?? true;
 
     if (!mounted) return;
@@ -88,6 +91,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _notificationsEnabledVal = savedPref && isGranted;
     _soundEnabledVal = soundPref;
     _reduceComplexGesturesVal = gesturesPref;
+    _lowAnimationModeVal = lowAnimationPref;
     _analyticsEnabledVal = analyticsPref;
     _isLoadingVal = false;
     _updateState();
@@ -146,6 +150,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _updateState();
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('reduce_complex_gestures', value);
+  }
+
+  Future<void> _toggleLowAnimationMode(bool value) async {
+    _lowAnimationModeVal = value;
+    _updateState();
+    
+    // Update synchronous override used across the app
+    VowlMotion.lowAnimationModeOverride.value = value;
+    
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('low_animation_mode', value);
   }
 
   Future<void> _toggleAnalytics(bool value) async {
@@ -385,6 +400,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                   _notificationsEnabledVal,
                                               reduceComplexGestures:
                                                   _reduceComplexGesturesVal,
+                                              lowAnimationMode:
+                                                  _lowAnimationModeVal,
                                               analyticsEnabled:
                                                   _analyticsEnabledVal,
                                               isLoading: _isLoadingVal,
@@ -392,6 +409,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                               onToggleNotifications:
                                                   _toggleNotifications,
                                               onToggleGestures: _toggleGestures,
+                                              onToggleLowAnimationMode:
+                                                  _toggleLowAnimationMode,
                                               onToggleAnalytics:
                                                   _toggleAnalytics,
                                               onTapTranslationLanguage: () async {
@@ -595,6 +614,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
   final bool soundEnabled;
   final bool notificationsEnabled;
   final bool reduceComplexGestures;
+  final bool lowAnimationMode;
   final bool analyticsEnabled;
   final bool isLoading;
   final String? translationLanguageName;
@@ -602,6 +622,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
   final ValueChanged<bool> onToggleSound;
   final ValueChanged<bool> onToggleNotifications;
   final ValueChanged<bool> onToggleGestures;
+  final ValueChanged<bool> onToggleLowAnimationMode;
   final ValueChanged<bool> onToggleAnalytics;
 
   const _SettingsPreferencesGroup({
@@ -609,6 +630,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
     required this.soundEnabled,
     required this.notificationsEnabled,
     required this.reduceComplexGestures,
+    required this.lowAnimationMode,
     required this.analyticsEnabled,
     required this.isLoading,
     required this.translationLanguageName,
@@ -616,6 +638,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
     required this.onToggleSound,
     required this.onToggleNotifications,
     required this.onToggleGestures,
+    required this.onToggleLowAnimationMode,
     required this.onToggleAnalytics,
   });
 
@@ -677,6 +700,21 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               value: reduceComplexGestures,
               isLoading: isLoading,
               onChanged: onToggleGestures,
+            ),
+            SettingsSwitchTile(
+              title: context.tr(
+                'settings.low_animation_mode',
+                fallback: 'Low Animation Mode',
+              ),
+              subtitle: context.tr(
+                'settings.low_animation_mode_subtitle',
+                fallback: 'Reduce motion and save battery',
+              ),
+              icon: Icons.battery_saver_rounded,
+              color: AppColors.rose500,
+              value: lowAnimationMode,
+              isLoading: isLoading,
+              onChanged: onToggleLowAnimationMode,
             ),
             SettingsSwitchTile(
               title: context.tr('settings.analytics', fallback: 'Analytics'),
