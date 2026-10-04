@@ -36,10 +36,7 @@ class PremiumFailureOverlay extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: const LinearGradient(
-          colors: [
-            _LocalPalette.colorfb7185,
-            AppColors.rose700,
-          ],
+          colors: [_LocalPalette.colorfb7185, AppColors.rose700],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -55,17 +52,14 @@ class PremiumFailureOverlay extends StatelessWidget {
           width: 2,
         ),
       ),
-      child: Icon(
-        LucideIcons.alertTriangle,
-        color: Colors.white,
-        size: 44.r,
-      ),
+      child: Icon(LucideIcons.alertTriangle, color: Colors.white, size: 44.r),
     );
 
     if (!reduceMotion) {
-      iconWidget = iconWidget
-          .animate()
-          .scale(duration: 500.ms, curve: Curves.elasticOut);
+      iconWidget = iconWidget.animate().scale(
+        duration: 500.ms,
+        curve: Curves.elasticOut,
+      );
     }
 
     Widget titleWidget = ShaderMask(
@@ -75,10 +69,7 @@ class PremiumFailureOverlay extends StatelessWidget {
         end: Alignment.bottomRight,
       ).createShader(bounds),
       child: Text(
-        context.tr(
-          'premium.failure_title',
-          fallback: 'Payment Failed',
-        ),
+        context.tr('premium.failure_title', fallback: 'Payment Failed'),
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
@@ -92,7 +83,10 @@ class PremiumFailureOverlay extends StatelessWidget {
     );
 
     if (!reduceMotion) {
-      titleWidget = titleWidget.animate().fadeIn(duration: 500.ms).slideY(begin: 0.2, end: 0);
+      titleWidget = titleWidget
+          .animate()
+          .fadeIn(duration: 500.ms)
+          .slideY(begin: 0.2, end: 0);
     }
 
     Widget? errorWidget;
@@ -105,9 +99,7 @@ class PremiumFailureOverlay extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.black.withValues(alpha: 0.2),
             borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(
-              color: AppColors.rose500.withValues(alpha: 0.3),
-            ),
+            border: Border.all(color: AppColors.rose500.withValues(alpha: 0.3)),
           ),
           child: Text(
             errorMessage!,
@@ -156,9 +148,7 @@ class PremiumFailureOverlay extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(
-          color: Colors.white.withValues(alpha: 0.1),
-        ),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
       ),
       child: Column(
         children: [
@@ -242,20 +232,14 @@ class PremiumFailureOverlay extends StatelessWidget {
           flex: 2,
           child: Semantics(
             button: true,
-            label: context.tr(
-              'premium.retry_button',
-              fallback: 'Retry',
-            ),
+            label: context.tr('premium.retry_button', fallback: 'Retry'),
             child: ScaleButton(
               onTap: onRetry,
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 16.h),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [
-                      _LocalPalette.colorfb7185,
-                      AppColors.rose700,
-                    ],
+                    colors: [_LocalPalette.colorfb7185, AppColors.rose700],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -269,7 +253,9 @@ class PremiumFailureOverlay extends StatelessWidget {
                   ],
                 ),
                 child: Text(
-                  context.tr('premium.retry_button', fallback: 'Retry').toUpperCase(),
+                  context
+                      .tr('premium.retry_button', fallback: 'Retry')
+                      .toUpperCase(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -327,6 +313,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                 SizedBox(height: 28.h),
                 titleWidget,
                 SizedBox(height: 12.h),
+                // ignore: use_null_aware_elements
                 if (errorWidget != null) errorWidget,
                 bodyWidget,
                 SizedBox(height: 16.h),

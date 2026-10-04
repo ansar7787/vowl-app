@@ -271,9 +271,12 @@ class KidsGameDialogs {
                                         );
                                       },
                                     );
-                                    
-                                    if (!VowlMotion.shouldReduceMotion(context)) {
-                                      btn = btn.animate(onPlay: (c) => c.repeat())
+
+                                    if (!VowlMotion.shouldReduceMotion(
+                                      context,
+                                    )) {
+                                      btn = btn
+                                          .animate(onPlay: (c) => c.repeat())
                                           .shimmer(
                                             duration: 2.seconds,
                                             color: Colors.white.withValues(
@@ -413,16 +416,17 @@ class KidsGameDialogs {
                             size: 60.sp,
                           ),
                         );
-                        
+
                         if (!VowlMotion.shouldReduceMotion(context)) {
-                          heart = heart.animate(onPlay: (c) => c.repeat(reverse: true))
+                          heart = heart
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
                               .scale(
                                 begin: const Offset(1, 1),
                                 end: const Offset(1.1, 1.1),
                                 duration: 1.seconds,
                               );
                         }
-                        
+
                         return heart;
                       },
                     ),

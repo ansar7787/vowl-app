@@ -117,23 +117,20 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                     child: Center(
                       child: Builder(
                         builder: (context) {
-                          final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                          final reduceMotion = MediaQuery.disableAnimationsOf(
+                            context,
+                          );
                           Widget instructions = ClipRRect(
                             borderRadius: BorderRadius.circular(30.r),
                             child: BackdropFilter(
-                              filter: ImageFilter.blur(
-                                sigmaX: 15,
-                                sigmaY: 15,
-                              ),
+                              filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
                               child: Container(
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 24.w,
                                   vertical: 12.h,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: Colors.white.withValues(
-                                    alpha: 0.6,
-                                  ),
+                                  color: Colors.white.withValues(alpha: 0.6),
                                   borderRadius: BorderRadius.circular(30.r),
                                   border: Border.all(
                                     color: Colors.white,
@@ -162,7 +159,7 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                                 );
                           }
                           return instructions;
-                        }
+                        },
                       ),
                     ),
                   ),
@@ -244,7 +241,10 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                                 children: [
                                   Builder(
                                     builder: (context) {
-                                      final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                      final reduceMotion =
+                                          MediaQuery.disableAnimationsOf(
+                                            context,
+                                          );
                                       Widget icon = Icon(
                                         Icons.auto_awesome_rounded,
                                         size: 56.sp,
@@ -253,7 +253,8 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                                       if (!reduceMotion) {
                                         icon = icon
                                             .animate(
-                                              onPlay: (c) => c.repeat(reverse: true),
+                                              onPlay: (c) =>
+                                                  c.repeat(reverse: true),
                                             )
                                             .scale(
                                               begin: const Offset(0.9, 0.9),
@@ -262,7 +263,7 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                                             );
                                       }
                                       return icon;
-                                    }
+                                    },
                                   ),
                                   SizedBox(height: 16.h),
                                   Text(

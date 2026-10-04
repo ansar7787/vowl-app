@@ -314,9 +314,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     // Warn if offline — sign-out can work locally but data won't sync
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(
-        message: () => AuthErrorHandler.getKey('network-unreachable'),
-      ));
+      emit(
+        state.copyWith(
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       // Still proceed with logout (it works locally via Firebase)
     }
 
@@ -340,16 +342,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(
-        message: () => AuthErrorHandler.getKey('network-unreachable'),
-      ));
+      emit(
+        state.copyWith(
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     final result = await _getCurrentUser(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(
-        message: () => AuthErrorHandler.getKey(failure.message),
-      )),
+      (failure) => emit(
+        state.copyWith(message: () => AuthErrorHandler.getKey(failure.message)),
+      ),
       (user) {
         if (user != null) emit(AuthState.authenticated(user));
       },
@@ -364,9 +368,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     // C-01: Network check — account deletion requires internet
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(
-        message: () => AuthErrorHandler.getKey('network-unreachable'),
-      ));
+      emit(
+        state.copyWith(
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
 
@@ -412,16 +418,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(
-        message: () => AuthErrorHandler.getKey('network-unreachable'),
-      ));
+      emit(
+        state.copyWith(
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     final result = await _forgotPassword(event.email);
     result.fold(
-      (failure) => emit(state.copyWith(
-        message: () => AuthErrorHandler.getKey(failure.message),
-      )),
+      (failure) => emit(
+        state.copyWith(message: () => AuthErrorHandler.getKey(failure.message)),
+      ),
       (_) => emit(state.copyWith(message: () => 'auth.password_reset_sent')),
     );
   }
@@ -432,16 +440,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(
-        message: () => AuthErrorHandler.getKey('network-unreachable'),
-      ));
+      emit(
+        state.copyWith(
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     final result = await _sendEmailVerification(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(
-        message: () => AuthErrorHandler.getKey(failure.message),
-      )),
+      (failure) => emit(
+        state.copyWith(message: () => AuthErrorHandler.getKey(failure.message)),
+      ),
       (_) =>
           emit(state.copyWith(message: () => 'auth.email_verification_sent')),
     );

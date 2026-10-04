@@ -870,7 +870,13 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
           TextField(
             controller: _nameController,
             maxLength: 30,
-            buildCounter: (context, {required currentLength, required isFocused, maxLength}) => null,
+            buildCounter:
+                (
+                  context, {
+                  required currentLength,
+                  required isFocused,
+                  maxLength,
+                }) => null,
             style: TextStyle(
               fontFamily: 'Outfit',
               color: isDark ? Colors.white : AppColors.slate900,
@@ -926,7 +932,9 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
                     if (trimmed.isEmpty) return;
                     if (trimmed.length < 2) return;
                     if (trimmed != widget.user.displayName) {
-                      FocusScope.of(context).unfocus(); // L-05: dismiss keyboard on save
+                      FocusScope.of(
+                        context,
+                      ).unfocus(); // L-05: dismiss keyboard on save
                       context.read<ProfileBloc>().add(
                         ProfileUpdateDisplayNameRequested(trimmed),
                       );

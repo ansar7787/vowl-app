@@ -259,8 +259,10 @@ class StreakHero extends StatelessWidget {
                           ],
                         ),
                       );
-                      
-                      final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+                      final reduceMotion = MediaQuery.disableAnimationsOf(
+                        context,
+                      );
                       if (!reduceMotion) {
                         container = container
                             .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -268,9 +270,9 @@ class StreakHero extends StatelessWidget {
                             .then()
                             .fade(begin: 1.0, end: 0.6, duration: 1500.ms);
                       }
-                      
+
                       return container;
-                    }
+                    },
                   ),
                 ],
               ],

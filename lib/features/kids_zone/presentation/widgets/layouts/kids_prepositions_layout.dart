@@ -111,110 +111,100 @@ class KidsPrepositionsLayout extends StatelessWidget {
     dynamic quest,
   ) {
     Widget stage = DragTarget<String>(
-          onAcceptWithDetails: (details) {
-            final text = details.data;
-            final isCorrect = (text == quest.correctAnswer);
-            if (!isCorrect) {
-              di.sl<KidsTTSService>().speak(text);
-            }
-            context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-          },
-          builder: (context, candidateData, rejectedData) {
-            final isHovering = candidateData.isNotEmpty;
-            return InkWell(
-              onTap: state.answerStatus.isAnswered
-                  ? null
-                  : () {
-                      if (InstructionHelper.getInstruction(quest).isNotEmpty) {
-                        di.sl<KidsTTSService>().speak(
-                          InstructionHelper.getInstruction(quest),
-                        );
-                      }
-                    },
-              child: Container(
-                width: 280.w,
-                height: 200.h,
-                decoration: BoxDecoration(
-                  color: isHovering
-                      ? _LocalPalette.color4c1d95
-                      : _LocalPalette.color2e1065, // Deep magical purple
-                  borderRadius: BorderRadius.circular(
-                    100.r,
-                  ), // Magical orb shape
-                  border: Border.all(
-                    color: isHovering
-                        ? _LocalPalette.colore9d5ff
-                        : _LocalPalette.colorc084fc,
-                    width: 4.r,
-                  ), // Glowing border
-                  boxShadow: [
-                    BoxShadow(
-                      color: _LocalPalette.color9333ea.withValues(alpha: 0.5),
-                      blurRadius: isHovering ? 30 : 20,
-                      spreadRadius: isHovering ? 10 : 5,
-                    ),
-                  ],
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        if (!isCorrect) {
+          di.sl<KidsTTSService>().speak(text);
+        }
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return InkWell(
+          onTap: state.answerStatus.isAnswered
+              ? null
+              : () {
+                  if (InstructionHelper.getInstruction(quest).isNotEmpty) {
+                    di.sl<KidsTTSService>().speak(
+                      InstructionHelper.getInstruction(quest),
+                    );
+                  }
+                },
+          child: Container(
+            width: 280.w,
+            height: 200.h,
+            decoration: BoxDecoration(
+              color: isHovering
+                  ? _LocalPalette.color4c1d95
+                  : _LocalPalette.color2e1065, // Deep magical purple
+              borderRadius: BorderRadius.circular(100.r), // Magical orb shape
+              border: Border.all(
+                color: isHovering
+                    ? _LocalPalette.colore9d5ff
+                    : _LocalPalette.colorc084fc,
+                width: 4.r,
+              ), // Glowing border
+              boxShadow: [
+                BoxShadow(
+                  color: _LocalPalette.color9333ea.withValues(alpha: 0.5),
+                  blurRadius: isHovering ? 30 : 20,
+                  spreadRadius: isHovering ? 10 : 5,
                 ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    // Magic sparkles
-                    Positioned(top: 30.h, left: 40.w, child: _buildSparkle(15)),
-                    Positioned(
-                      bottom: 40.h,
-                      right: 30.w,
-                      child: _buildSparkle(20),
-                    ),
-                    Positioned(
-                      top: 80.h,
-                      right: 20.w,
-                      child: _buildSparkle(10),
-                    ),
+              ],
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Magic sparkles
+                Positioned(top: 30.h, left: 40.w, child: _buildSparkle(15)),
+                Positioned(bottom: 40.h, right: 30.w, child: _buildSparkle(20)),
+                Positioned(top: 80.h, right: 20.w, child: _buildSparkle(10)),
 
-                    Center(
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          if (quest.emoji != null)
-                            state.answerStatus == AnswerStatus.correct
-                                ? Text(
-                                    quest.emoji!,
-                                    style: TextStyle(fontSize: 80.sp),
-                                  )
-                                : ColorFiltered(
-                                    colorFilter: ColorFilter.mode(
-                                      const Color(
-                                        0xFFC084FC,
-                                      ).withValues(alpha: 0.15),
-                                      BlendMode.srcIn,
-                                    ),
-                                    child: Text(
-                                      quest.emoji!,
-                                      style: TextStyle(fontSize: 80.sp),
-                                    ),
-                                  ),
-                          if (state.answerStatus != AnswerStatus.correct)
-                            KidsFittedText(
-                              "?",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 60.sp,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(
-                                  0xFFC084FC,
-                                ).withValues(alpha: 0.7),
+                Center(
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      if (quest.emoji != null)
+                        state.answerStatus == AnswerStatus.correct
+                            ? Text(
+                                quest.emoji!,
+                                style: TextStyle(fontSize: 80.sp),
+                              )
+                            : ColorFiltered(
+                                colorFilter: ColorFilter.mode(
+                                  const Color(
+                                    0xFFC084FC,
+                                  ).withValues(alpha: 0.15),
+                                  BlendMode.srcIn,
+                                ),
+                                child: Text(
+                                  quest.emoji!,
+                                  style: TextStyle(fontSize: 80.sp),
+                                ),
                               ),
-                            ),
-                        ],
-                      ),
-                    ),
-                  ],
+                      if (state.answerStatus != AnswerStatus.correct)
+                        KidsFittedText(
+                          "?",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 60.sp,
+                            fontWeight: FontWeight.w900,
+                            color: const Color(
+                              0xFFC084FC,
+                            ).withValues(alpha: 0.7),
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
-              ),
-            );
-          },
+              ],
+            ),
+          ),
         );
-        
+      },
+    );
+
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
     if (!reduceMotion) {
       stage = stage
@@ -233,7 +223,11 @@ class KidsPrepositionsLayout extends StatelessWidget {
     return Builder(
       builder: (context) {
         final reduceMotion = MediaQuery.disableAnimationsOf(context);
-        Widget sparkle = Icon(Icons.star_rounded, color: Colors.yellow, size: size.r);
+        Widget sparkle = Icon(
+          Icons.star_rounded,
+          color: Colors.yellow,
+          size: size.r,
+        );
         if (!reduceMotion) {
           sparkle = sparkle
               .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -244,7 +238,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
               );
         }
         return sparkle;
-      }
+      },
     );
   }
 

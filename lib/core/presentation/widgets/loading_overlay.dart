@@ -147,9 +147,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
       label = label
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .fadeIn(duration: 1000.ms)
-          .shimmer(
-            color: AppColors.indigo500.withValues(alpha: 0.3),
-          );
+          .shimmer(color: AppColors.indigo500.withValues(alpha: 0.3));
     }
 
     Widget content = Stack(
@@ -163,8 +161,9 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
 
         // 2. Solid color tint layer
         ColoredBox(
-          color: (isDark ? AppColors.slate950 : AppColors.slate50)
-              .withValues(alpha: 0.85),
+          color: (isDark ? AppColors.slate950 : AppColors.slate50).withValues(
+            alpha: 0.85,
+          ),
         ),
 
         // 3. Animated content layer
@@ -204,10 +203,9 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w700,
-                              color: (isDark
-                                      ? Colors.white
-                                      : AppColors.slate500)
-                                  .withValues(alpha: 0.4),
+                              color:
+                                  (isDark ? Colors.white : AppColors.slate500)
+                                      .withValues(alpha: 0.4),
                               letterSpacing: 1.5,
                             ),
                           ),
@@ -225,9 +223,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
 
     if (!reduceMotion) {
       content = Animate(
-        effects: const [
-          FadeEffect(duration: Duration(milliseconds: 300)),
-        ],
+        effects: const [FadeEffect(duration: Duration(milliseconds: 300))],
         child: content,
       );
     }
@@ -243,9 +239,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
               'loading.synchronizing_title',
               fallback: 'Synchronizing...',
             ),
-            child: AbsorbPointer(
-              child: content,
-            ),
+            child: AbsorbPointer(child: content),
           ),
       ],
     );

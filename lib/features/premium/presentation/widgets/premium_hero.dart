@@ -45,8 +45,12 @@ class PremiumHero extends StatelessWidget {
               child: Builder(
                 builder: (context) {
                   final reduceMotion = MediaQuery.disableAnimationsOf(context);
-                  Widget crownIcon = Icon(LucideIcons.crown, color: Colors.white, size: 40.r);
-                  
+                  Widget crownIcon = Icon(
+                    LucideIcons.crown,
+                    color: Colors.white,
+                    size: 40.r,
+                  );
+
                   if (!reduceMotion) {
                     crownIcon = crownIcon
                         .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -57,9 +61,9 @@ class PremiumHero extends StatelessWidget {
                           curve: Curves.easeInOut,
                         );
                   }
-                  
+
                   return crownIcon;
-                }
+                },
               ),
             )
             .animate()

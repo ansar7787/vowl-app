@@ -55,7 +55,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+    final isMidnight =
+        (Theme.of(context).brightness == Brightness.dark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
         : (isDark ? AppColors.slate900 : AppColors.slate50);

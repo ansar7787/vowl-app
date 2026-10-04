@@ -53,7 +53,7 @@ class InAppPurchaseService {
     // in the background after — it only updates the cache for next launch.
     await _loadCachedCountryCode();
     _refreshGeoIpCountryInBackground(); // fire-and-forget HTTP refresh
-    
+
     isAvailable = await _iap.isAvailable();
     if (!isAvailable) return;
 

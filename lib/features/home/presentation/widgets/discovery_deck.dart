@@ -339,7 +339,10 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                         ),
                                         Builder(
                                           builder: (context) {
-                                            final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                            final reduceMotion =
+                                                MediaQuery.disableAnimationsOf(
+                                                  context,
+                                                );
                                             Widget circle = Container(
                                               width: 12,
                                               height: 12,
@@ -355,9 +358,14 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                             );
                                             if (!reduceMotion) {
                                               circle = circle
-                                                  .animate(onPlay: (c) => c.repeat())
+                                                  .animate(
+                                                    onPlay: (c) => c.repeat(),
+                                                  )
                                                   .scale(
-                                                    begin: const Offset(0.5, 0.5),
+                                                    begin: const Offset(
+                                                      0.5,
+                                                      0.5,
+                                                    ),
                                                     end: const Offset(2, 2),
                                                     duration: 2.seconds,
                                                     curve: Curves.easeOutExpo,
@@ -365,7 +373,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                                   .fadeOut(duration: 2.seconds);
                                             }
                                             return circle;
-                                          }
+                                          },
                                         ),
                                       ],
                                     ),
@@ -529,7 +537,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
               );
         }
         return button;
-      }
+      },
     );
   }
 }

@@ -351,7 +351,9 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
           // PERF: context.select instead of context.watch — only rebuild
           // when `isMidnight` actually changes, not on every ThemeCubit emission.
-          final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+          final isMidnight =
+              (Theme.of(context).brightness == Brightness.dark &&
+              Theme.of(context).scaffoldBackgroundColor == Colors.black);
           final bgColor = isMidnight
               ? Colors.black
               : (isDark

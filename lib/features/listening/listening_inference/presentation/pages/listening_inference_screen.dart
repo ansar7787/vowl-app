@@ -54,7 +54,6 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

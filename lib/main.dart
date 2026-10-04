@@ -218,10 +218,12 @@ void main() async {
   // Load custom Low Animation Mode override from local preferences
   try {
     final prefs = await SharedPreferences.getInstance();
-    VowlMotion.lowAnimationModeOverride.value = 
+    VowlMotion.lowAnimationModeOverride.value =
         prefs.getBool('low_animation_mode') ?? false;
   } catch (e) {
-    if (kDebugMode) debugPrint('Warning: Failed to load low_animation_mode pref: $e');
+    if (kDebugMode) {
+      debugPrint('Warning: Failed to load low_animation_mode pref: $e');
+    }
   }
 
   runApp(const MyApp());
@@ -354,7 +356,8 @@ class _MyAppState extends State<MyApp> {
                       builder: (context, lowAnim, shellChild) {
                         return MediaQuery(
                           data: MediaQuery.of(context).copyWith(
-                            disableAnimations: lowAnim ||
+                            disableAnimations:
+                                lowAnim ||
                                 MediaQuery.disableAnimationsOf(context),
                           ),
                           child: _AppShell(
@@ -459,3 +462,4 @@ class _AppShell extends StatelessWidget {
     );
   }
 }
+

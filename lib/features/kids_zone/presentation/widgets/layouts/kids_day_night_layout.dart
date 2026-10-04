@@ -136,7 +136,7 @@ class KidsDayNightLayout extends StatelessWidget {
               );
         }
         return cloud;
-      }
+      },
     );
   }
 
@@ -286,7 +286,7 @@ class KidsDayNightLayout extends StatelessWidget {
               );
         }
         return star;
-      }
+      },
     );
   }
 
@@ -339,7 +339,7 @@ class KidsDayNightLayout extends StatelessWidget {
                       );
                 }
                 return icon;
-              }
+              },
             ),
 
             SizedBox(height: 12.h),

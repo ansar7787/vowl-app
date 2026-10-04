@@ -57,6 +57,9 @@ void main() {
   );
 
   setUp(() {
+    mockNetworkInfo = MockNetworkInfo();
+    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     mockGetUserStream = MockGetUserStream();
     mockLogOut = MockLogOut();
     mockReloadUser = MockReloadUser();
@@ -64,7 +67,7 @@ void main() {
     mockForgotPassword = MockForgotPassword();
     mockGetCurrentUser = MockGetCurrentUser();
     mockSendEmailVerification = MockSendEmailVerification();
-    mockNetworkInfo = MockNetworkInfo();
+    
     userStreamController = StreamController<UserEntity?>();
 
     when(() => mockNetworkInfo.setPremiumOverride(any())).thenReturn(null);

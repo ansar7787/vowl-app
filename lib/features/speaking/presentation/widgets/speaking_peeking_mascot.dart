@@ -54,10 +54,7 @@ class SpeakingPeekingMascot extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-          ),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10),
         ],
       ),
       child: Text(
@@ -90,20 +87,12 @@ class SpeakingPeekingMascot extends StatelessWidget {
     if (!reduceMotion) {
       mascot = mascot
           .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(
-            begin: 0,
-            end: 5,
-            duration: 1500.ms,
-            curve: Curves.easeInOut,
-          );
+          .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
     }
 
     Widget column = Column(
       crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        bubble,
-        mascot,
-      ],
+      children: [bubble, mascot],
     );
 
     if (!reduceMotion) {

@@ -83,7 +83,6 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
     initRoleplayGame();
   }
 
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -91,7 +90,9 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
     if (reduceMotion) {
       if (_rippleController.isAnimating) _rippleController.stop();
     } else {
-      if (!_rippleController.isAnimating) _rippleController.repeat(reverse: true);
+      if (!_rippleController.isAnimating) {
+          _rippleController.repeat(reverse: true);
+        }
     }
   }
 
@@ -361,3 +362,4 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
     );
   }
 }
+

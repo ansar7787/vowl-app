@@ -1367,4 +1367,3 @@ class _ValidatorMatrixPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant _ValidatorMatrixPainter old) => old.t != t;
 }
-

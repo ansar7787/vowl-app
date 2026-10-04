@@ -46,7 +46,7 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
                   size: 24.r,
                 ),
               );
-              
+
               if (!reduceMotion) {
                 icon = icon
                     .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -58,7 +58,7 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
                     );
               }
               return icon;
-            }
+            },
           ),
           SizedBox(width: 16.w),
           Expanded(

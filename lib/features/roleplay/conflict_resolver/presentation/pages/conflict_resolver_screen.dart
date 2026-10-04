@@ -84,7 +84,6 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     initRoleplayGame();
   }
 
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

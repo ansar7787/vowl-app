@@ -528,9 +528,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       if (state.isTranslating)
                         Padding(
                           padding: EdgeInsets.only(right: 12.w),
-                          child:
-                              RepaintBoundary(
-                                child: Text(
+                          child: RepaintBoundary(
+                            child:
+                                Text(
                                       context.tr(
                                         'translation.translating',
                                         fallback: 'Translating...',
@@ -546,10 +546,11 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                       ),
                                     )
                                     .animate(
-                                      onPlay: (controller) => controller.repeat(),
+                                      onPlay: (controller) =>
+                                          controller.repeat(),
                                     )
                                     .shimmer(duration: 1.seconds),
-                              ),
+                          ),
                         ),
                       if (state.isModelDownloading)
                         SizedBox(
@@ -964,4 +965,3 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
     );
   }
 }
-

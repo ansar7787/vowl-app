@@ -100,10 +100,7 @@ class _SpeechBubble extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-          ),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10),
         ],
       ),
       // ACCESSIBILITY: clamp text scaling so the bubble doesn't overflow at
@@ -150,14 +147,18 @@ class _MascotAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    Widget mascot = VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId);
-    
+    Widget mascot = VowlMascot(
+      state: mascotState,
+      size: 45.r,
+      mascotId: mascotId,
+    );
+
     if (!reduceMotion) {
       mascot = mascot
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
     }
-    
+
     return mascot;
   }
 }

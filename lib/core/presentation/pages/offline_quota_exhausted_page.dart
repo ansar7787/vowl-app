@@ -276,7 +276,10 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                     ),
                   );
                   if (!reduceMotion) {
-                    subtitle = subtitle.animate().fadeIn(delay: 400.ms, duration: 600.ms);
+                    subtitle = subtitle.animate().fadeIn(
+                      delay: 400.ms,
+                      duration: 600.ms,
+                    );
                   }
 
                   Widget? watchAdBtn;
@@ -350,9 +353,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                         color: Colors.amber.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
-                          color: Colors.amber.withValues(
-                            alpha: 0.4,
-                          ),
+                          color: Colors.amber.withValues(alpha: 0.4),
                         ),
                       ),
                       child: Row(
@@ -368,8 +369,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                             child: Text(
                               context.tr(
                                 'connectivity.go_premium',
-                                fallback:
-                                    'Play Offline with Premium',
+                                fallback: 'Play Offline with Premium',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -483,11 +483,7 @@ class _QuotaIcon extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                LucideIcons.wifiOff,
-                size: 36.r,
-                color: Colors.amber[400],
-              ),
+              Icon(LucideIcons.wifiOff, size: 36.r, color: Colors.amber[400]),
               SizedBox(height: 4.h),
               Text(
                 '$levelsPlayed/${OfflinePlayGateService.maxOfflineLevels}',

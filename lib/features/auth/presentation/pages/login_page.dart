@@ -152,178 +152,195 @@ class _LoginViewState extends State<LoginView> {
                     onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
                     child: Scaffold(
                       backgroundColor: bgColor,
-                  resizeToAvoidBottomInset: false,
-                  body: Stack(
-                    children: [
-                      ListenableBuilder(
-                        listenable: _passwordFocus,
-                        builder: (context, _) {
-                          Color? auraColor;
-                          if (_passwordFocus.hasFocus &&
-                              state.password.isNotEmpty) {
-                            if (state.password.length < 6) {
-                              auraColor = Colors.red;
-                            } else if (state.password.length < 10) {
-                              auraColor = Colors.blue;
-                            } else {
-                              auraColor = Colors.green;
-                            }
-                          }
-                          return MeshGradientBackground(auraColor: auraColor);
-                        },
-                      ),
-                      SafeArea(
-                        child: LayoutBuilder(
-                          builder: (context, constraints) {
-                            return SingleChildScrollView(
-                              physics: const BouncingScrollPhysics(),
-                              padding: EdgeInsets.only(
-                                bottom:
-                                    MediaQuery.of(context).viewInsets.bottom +
-                                    20.h,
-                              ),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  minHeight: constraints.maxHeight,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                    vertical: 10.h,
+                      resizeToAvoidBottomInset: false,
+                      body: Stack(
+                        children: [
+                          ListenableBuilder(
+                            listenable: _passwordFocus,
+                            builder: (context, _) {
+                              Color? auraColor;
+                              if (_passwordFocus.hasFocus &&
+                                  state.password.isNotEmpty) {
+                                if (state.password.length < 6) {
+                                  auraColor = Colors.red;
+                                } else if (state.password.length < 10) {
+                                  auraColor = Colors.blue;
+                                } else {
+                                  auraColor = Colors.green;
+                                }
+                              }
+                              return MeshGradientBackground(
+                                auraColor: auraColor,
+                              );
+                            },
+                          ),
+                          SafeArea(
+                            child: LayoutBuilder(
+                              builder: (context, constraints) {
+                                return SingleChildScrollView(
+                                  physics: const BouncingScrollPhysics(),
+                                  padding: EdgeInsets.only(
+                                    bottom:
+                                        MediaQuery.of(
+                                          context,
+                                        ).viewInsets.bottom +
+                                        20.h,
                                   ),
-                                  child: Form(
-                                    key: _formKey,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        // --- Header: Brand (Perfectly Centered) ---
-                                        Hero(
-                                          tag: 'auth_title',
-                                          child: Material(
-                                            color: Colors.transparent,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: Text(
-                                                'Vowl',
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 48.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                  color: const Color(
-                                                    0xFF6366F1,
-                                                  ), // Solid premium brand color
-                                                  letterSpacing: -1.5,
-                                                  height: 1.0,
+                                  child: ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      minHeight: constraints.maxHeight,
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 24.w,
+                                        vertical: 10.h,
+                                      ),
+                                      child: Form(
+                                        key: _formKey,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            // --- Header: Brand (Perfectly Centered) ---
+                                            Hero(
+                                              tag: 'auth_title',
+                                              child: Material(
+                                                color: Colors.transparent,
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    'Vowl',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 48.sp,
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                      color: const Color(
+                                                        0xFF6366F1,
+                                                      ), // Solid premium brand color
+                                                      letterSpacing: -1.5,
+                                                      height: 1.0,
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 36.h,
-                                        ), // Perfect premium gap without disconnecting the UI
-                                        // --- Interactive Form Card ---
-                                        Stack(
-                                          clipBehavior: Clip.none,
-                                          alignment: Alignment.topCenter,
-                                          children: [
-                                            // The card itself, pushed down slightly so the mascot can straddle the top border
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                top: 30.r,
-                                              ),
-                                              child: HolographicCard(
-                                                child: Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment
-                                                          .stretch,
-                                                  children: [
-                                                    ValueListenableBuilder<int>(
-                                                      valueListenable:
-                                                          _emailShake,
-                                                      builder:
-                                                          (
-                                                            context,
-                                                            shakeCount,
-                                                            child,
-                                                          ) {
-                                                            return ShakeableWrapper(
-                                                              shakeCount:
-                                                                  shakeCount,
-                                                              child: child!,
-                                                            );
-                                                          },
-                                                      child: LoginEmailInput(
-                                                        fieldKey: _emailKey,
-                                                        focusNode: _emailFocus,
-                                                        onSubmitted: () => _passwordFocus.requestFocus(),
-                                                      ),
-                                                    ),
-                                                    SizedBox(height: 16.h),
-                                                    ValueListenableBuilder<int>(
-                                                      valueListenable:
-                                                          _passwordShake,
-                                                      builder:
-                                                          (
-                                                            context,
-                                                            shakeCount,
-                                                            child,
-                                                          ) {
-                                                            return ShakeableWrapper(
-                                                              shakeCount:
-                                                                  shakeCount,
-                                                              child: child!,
-                                                            );
-                                                          },
-                                                      child: LoginPasswordInput(
-                                                        fieldKey: _passwordKey,
-                                                        focusNode:
-                                                            _passwordFocus,
-                                                        onSubmitted: () => _submitForm(context),
-                                                      ),
-                                                    ),
-                                                    Align(
-                                                      // AlignmentDirectional.centerEnd,
-                                                      // not Alignment.centerRight —
-                                                      // the latter is a physical
-                                                      // (non-mirroring) alignment
-                                                      // that would stay pinned to
-                                                      // the visual right even in
-                                                      // Arabic, where this link
-                                                      // should sit on the visual
-                                                      // left (the "end" of the
-                                                      // line in an RTL layout).
-                                                      alignment:
-                                                          AlignmentDirectional
-                                                              .centerEnd,
-                                                      child: TextButton(
-                                                        onPressed: () =>
-                                                            context.push(
-                                                              AppRouter
-                                                                  .forgotPasswordRoute,
-                                                            ),
-                                                        style: TextButton.styleFrom(
-                                                          minimumSize:
-                                                              const Size(
-                                                                48,
-                                                                48,
-                                                              ),
-                                                          splashFactory: NoSplash
-                                                              .splashFactory,
-                                                          overlayColor: Colors
-                                                              .transparent,
+                                            SizedBox(
+                                              height: 36.h,
+                                            ), // Perfect premium gap without disconnecting the UI
+                                            // --- Interactive Form Card ---
+                                            Stack(
+                                              clipBehavior: Clip.none,
+                                              alignment: Alignment.topCenter,
+                                              children: [
+                                                // The card itself, pushed down slightly so the mascot can straddle the top border
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                    top: 30.r,
+                                                  ),
+                                                  child: HolographicCard(
+                                                    child: Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .stretch,
+                                                      children: [
+                                                        ValueListenableBuilder<
+                                                          int
+                                                        >(
+                                                          valueListenable:
+                                                              _emailShake,
+                                                          builder:
+                                                              (
+                                                                context,
+                                                                shakeCount,
+                                                                child,
+                                                              ) {
+                                                                return ShakeableWrapper(
+                                                                  shakeCount:
+                                                                      shakeCount,
+                                                                  child: child!,
+                                                                );
+                                                              },
+                                                          child: LoginEmailInput(
+                                                            fieldKey: _emailKey,
+                                                            focusNode:
+                                                                _emailFocus,
+                                                            onSubmitted: () =>
+                                                                _passwordFocus
+                                                                    .requestFocus(),
+                                                          ),
                                                         ),
-                                                        child: FittedBox(
-                                                          fit: BoxFit.scaleDown,
-                                                          child: Text(
-                                                            context.tr(
-                                                              'auth.forgot_password_question',
-                                                              fallback:
-                                                                  'Forgot your password?',
+                                                        SizedBox(height: 16.h),
+                                                        ValueListenableBuilder<
+                                                          int
+                                                        >(
+                                                          valueListenable:
+                                                              _passwordShake,
+                                                          builder:
+                                                              (
+                                                                context,
+                                                                shakeCount,
+                                                                child,
+                                                              ) {
+                                                                return ShakeableWrapper(
+                                                                  shakeCount:
+                                                                      shakeCount,
+                                                                  child: child!,
+                                                                );
+                                                              },
+                                                          child: LoginPasswordInput(
+                                                            fieldKey:
+                                                                _passwordKey,
+                                                            focusNode:
+                                                                _passwordFocus,
+                                                            onSubmitted: () =>
+                                                                _submitForm(
+                                                                  context,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        Align(
+                                                          // AlignmentDirectional.centerEnd,
+                                                          // not Alignment.centerRight —
+                                                          // the latter is a physical
+                                                          // (non-mirroring) alignment
+                                                          // that would stay pinned to
+                                                          // the visual right even in
+                                                          // Arabic, where this link
+                                                          // should sit on the visual
+                                                          // left (the "end" of the
+                                                          // line in an RTL layout).
+                                                          alignment:
+                                                              AlignmentDirectional
+                                                                  .centerEnd,
+                                                          child: TextButton(
+                                                            onPressed: () =>
+                                                                context.push(
+                                                                  AppRouter
+                                                                      .forgotPasswordRoute,
+                                                                ),
+                                                            style: TextButton.styleFrom(
+                                                              minimumSize:
+                                                                  const Size(
+                                                                    48,
+                                                                    48,
+                                                                  ),
+                                                              splashFactory:
+                                                                  NoSplash
+                                                                      .splashFactory,
+                                                              overlayColor: Colors
+                                                                  .transparent,
                                                             ),
-                                                            style:
-                                                                const TextStyle(
+                                                            child: FittedBox(
+                                                              fit: BoxFit
+                                                                  .scaleDown,
+                                                              child: Text(
+                                                                context.tr(
+                                                                  'auth.forgot_password_question',
+                                                                  fallback:
+                                                                      'Forgot your password?',
+                                                                ),
+                                                                style: const TextStyle(
                                                                   fontFamily:
                                                                       'Outfit',
                                                                   color: Color(
@@ -333,97 +350,109 @@ class _LoginViewState extends State<LoginView> {
                                                                       FontWeight
                                                                           .w700,
                                                                 ),
+                                                              ),
+                                                            ),
                                                           ),
                                                         ),
+                                                        SizedBox(height: 8.h),
+                                                        LoginButton(
+                                                          onPressed: () =>
+                                                              _submitForm(
+                                                                context,
+                                                              ),
+                                                        ),
+                                                        SizedBox(height: 16.h),
+                                                        const GoogleLoginButton(),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ), // Close Padding
+                                                Positioned(
+                                                  top: 0,
+                                                  child: VowlyAuthCompanion(
+                                                    emailFocus: _emailFocus,
+                                                    passwordFocus:
+                                                        _passwordFocus,
+                                                    size: 60,
+                                                  ),
+                                                ),
+                                              ],
+                                            ), // Close Stack
+                                            SizedBox(height: 16.h),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                // FittedBox ensures the text
+                                                // scales down on narrow devices
+                                                // instead of overflowing.
+                                                Flexible(
+                                                  child: FittedBox(
+                                                    fit: BoxFit.scaleDown,
+                                                    alignment:
+                                                        Alignment.centerLeft,
+                                                    child: Text(
+                                                      context.tr(
+                                                        'auth.no_account_prompt',
+                                                        fallback:
+                                                            'New to Vowl?',
+                                                      ),
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        color: secondaryColor,
+                                                        fontWeight:
+                                                            FontWeight.w600,
                                                       ),
                                                     ),
-                                                    SizedBox(height: 8.h),
-                                                    LoginButton(
-                                                      onPressed: () => _submitForm(context),
+                                                  ),
+                                                ),
+                                                TextButton(
+                                                  onPressed: () => context.push(
+                                                    AppRouter.signupRoute,
+                                                  ),
+                                                  style: TextButton.styleFrom(
+                                                    minimumSize: const Size(
+                                                      48,
+                                                      48,
                                                     ),
-                                                    SizedBox(height: 16.h),
-                                                    const GoogleLoginButton(),
-                                                  ],
-                                                ),
-                                              ),
-                                            ), // Close Padding
-                                            Positioned(
-                                              top: 0,
-                                              child: VowlyAuthCompanion(
-                                                emailFocus: _emailFocus,
-                                                passwordFocus: _passwordFocus,
-                                                size: 60,
-                                              ),
-                                            ),
-                                          ],
-                                        ), // Close Stack
-                                        SizedBox(height: 16.h),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            // FittedBox ensures the text
-                                            // scales down on narrow devices
-                                            // instead of overflowing.
-                                            Flexible(
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                alignment: Alignment.centerLeft,
-                                                child: Text(
-                                                  context.tr(
-                                                    'auth.no_account_prompt',
-                                                    fallback: 'New to Vowl?',
+                                                    splashFactory:
+                                                        NoSplash.splashFactory,
+                                                    overlayColor:
+                                                        Colors.transparent,
                                                   ),
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    color: secondaryColor,
-                                                    fontWeight: FontWeight.w600,
+                                                  child: Text(
+                                                    context.tr(
+                                                      'auth.signup',
+                                                      fallback: 'Sign Up',
+                                                    ),
+                                                    style: const TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      color:
+                                                          AppColors.indigo500,
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
+                                              ],
                                             ),
-                                            TextButton(
-                                              onPressed: () => context.push(
-                                                AppRouter.signupRoute,
-                                              ),
-                                              style: TextButton.styleFrom(
-                                                minimumSize: const Size(48, 48),
-                                                splashFactory:
-                                                    NoSplash.splashFactory,
-                                                overlayColor:
-                                                    Colors.transparent,
-                                              ),
-                                              child: Text(
-                                                context.tr(
-                                                  'auth.signup',
-                                                  fallback: 'Sign Up',
-                                                ),
-                                                style: const TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  color: AppColors.indigo500,
-                                                  fontWeight: FontWeight.w900,
-                                                ),
-                                              ),
-                                            ),
+                                            SizedBox(height: 24.h),
                                           ],
                                         ),
-                                        SizedBox(height: 24.h),
-                                      ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-          );
-        },
+              );
+            },
           );
         },
       ),
@@ -442,4 +471,3 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 }
-

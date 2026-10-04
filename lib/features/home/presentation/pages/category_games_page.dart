@@ -79,7 +79,9 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     // 10/10 Optimization: Select precise state slices instead of watching entire objects
     // This prevents the page from rebuilding entirely if an unrelated state property changes.
-    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+    final isMidnight =
+        (Theme.of(context).brightness == Brightness.dark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final user = context.select((AuthBloc bloc) => bloc.state.user);
 
     final theme = LevelThemeHelper.getCategoryTheme(

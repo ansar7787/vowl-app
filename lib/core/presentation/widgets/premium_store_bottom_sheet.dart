@@ -353,10 +353,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         }
       }
     } catch (e) {
-      di.sl<AppLogger>().error(
-        'Razorpay order creation failed',
-        error: e,
-      );
+      di.sl<AppLogger>().error('Razorpay order creation failed', error: e);
       if (mounted) {
         _isProcessing = false;
         _updateState();
@@ -365,7 +362,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
           context: context,
           message: context.tr(
             'store.order_error',
-            fallback: 'Unable to process payment right now. Please try again later.',
+            fallback:
+                'Unable to process payment right now. Please try again later.',
           ),
           type: CustomSnackBarType.error,
         );
@@ -408,247 +406,287 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
       valueListenable: _stateHash,
       builder: (context, _, child) {
         return PopScope(
-          canPop: !_isProcessing,
-          child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.85,
-                decoration: BoxDecoration(
-                  color: isDark ? AppColors.slate900 : AppColors.slate50,
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(40.r),
-                  ),
-                  border: Border(
-                    top: BorderSide(
-                      color: Colors.white.withValues(alpha: 0.2),
-                      width: 1,
+              canPop: !_isProcessing,
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.85,
+                  decoration: BoxDecoration(
+                    color: isDark ? AppColors.slate900 : AppColors.slate50,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(40.r),
                     ),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.4),
-                      blurRadius: 40,
-                      offset: const Offset(0, -10),
+                    border: Border(
+                      top: BorderSide(
+                        color: Colors.white.withValues(alpha: 0.2),
+                        width: 1,
+                      ),
                     ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    // Handle
-                    Center(
-                      child: Container(
-                        margin: EdgeInsets.only(top: 12.h, bottom: 20.h),
-                        width: 48.w,
-                        height: 5.h,
-                        decoration: BoxDecoration(
-                          color: isDark ? Colors.white24 : Colors.black12,
-                          borderRadius: BorderRadius.circular(10.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.4),
+                        blurRadius: 40,
+                        offset: const Offset(0, -10),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      // Handle
+                      Center(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 12.h, bottom: 20.h),
+                          width: 48.w,
+                          height: 5.h,
+                          decoration: BoxDecoration(
+                            color: isDark ? Colors.white24 : Colors.black12,
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
                         ),
                       ),
-                    ),
 
-                    // Header
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(12.r),
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [
-                                  AppColors.indigo500,
-                                  AppColors.violet500,
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
-                              borderRadius: BorderRadius.circular(16.r),
-                            ),
-                            child: Icon(
-                              Icons.storefront_rounded,
-                              color: Colors.white,
-                              size: 28.r,
-                            ),
-                          ),
-                          SizedBox(width: 16.w),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  context.tr(
-                                    'store.premium_store_label',
-                                    fallback: 'PREMIUM STORE',
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: AppColors.violet500,
-                                    letterSpacing: 2,
-                                  ),
-                                ),
-                                Text(
-                                  context.tr(
-                                    'store.stock_up',
-                                    fallback: 'Stock up on supplies!',
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 22.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: isDark
-                                        ? Colors.white
-                                        : AppColors.slate900,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          ScaleButton(
-                            onTap: _isProcessing ? null : () => Navigator.pop(context),
-                            child: Container(
-                              padding: EdgeInsets.all(8.r),
+                      // Header
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(12.r),
                               decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.white10
-                                    : Colors.black.withValues(alpha: 0.05),
-                                shape: BoxShape.circle,
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    AppColors.indigo500,
+                                    AppColors.violet500,
+                                  ],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                ),
+                                borderRadius: BorderRadius.circular(16.r),
                               ),
                               child: Icon(
-                                Icons.close_rounded,
-                                color: isDark ? Colors.white70 : Colors.black54,
-                                size: 20.r,
+                                Icons.storefront_rounded,
+                                color: Colors.white,
+                                size: 28.r,
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    SizedBox(height: 24.h),
-
-                    // Content
-                    Expanded(
-                      child: Stack(
-                        children: [
-                          ListView(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            physics: const BouncingScrollPhysics(),
-                            children: [
-                              // Vowl Premium Subscription Upsell
-                              _buildPremiumUpsell(context, isDark)
-                                  .animate()
-                                  .fadeIn()
-                                  .moveX(begin: -20, end: 0, delay: 100.ms),
-
-                              SizedBox(height: 32.h),
-
-                              Text(
-                                context.tr(
-                                  'store.coins_and_keys_label',
-                                  fallback: 'COINS & KEYS',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isDark
-                                      ? Colors.grey.withValues(alpha: 0.7)
-                                      : Colors.grey.shade600,
-                                  letterSpacing: 1.5,
-                                ),
-                              ).animate().fadeIn(delay: 200.ms),
-
-                              SizedBox(height: 16.h),
-                              _buildPaymentMethodSelector(isDark),
-                              SizedBox(height: 8.h),
-
-                              if (_isLoadingPacks)
-                                Column(
-                                  children: List.generate(
-                                    3,
-                                    (index) => Padding(
-                                      padding: EdgeInsets.only(bottom: 16.h),
-                                      child: ShimmerLoading.rounded(
-                                        width: double.infinity,
-                                        height: 100.h,
-                                        borderRadius: 24,
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              else
-                                // Real coin packs
-                                ...List.generate(_activePacks.length, (index) {
-                                  final pack = _activePacks[index];
-                                  return Padding(
-                                    padding: EdgeInsets.only(bottom: 16.h),
-                                    child: _buildPackCard(
-                                      context: context,
-                                      isDark: isDark,
-                                      pack: pack,
-                                      delay: 300 + (index * 100),
-                                    ),
-                                  );
-                                }),
-
-                              SizedBox(height: 16.h),
-                              TextButton(
-                                onPressed: _isProcessing ? null : () async {
-                                  final iap = InAppPurchaseService.instance;
-                                  await iap.restorePurchases();
-                                },
-                                child: Text(
-                                  'Restore Purchases',
-                                  style: TextStyle(fontSize: 12.sp, color: Colors.grey),
-                                ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                            SizedBox(width: 16.w),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  TextButton(
-                                    onPressed: () => launchUrl(Uri.parse('https://ansar7787.github.io/vowl-legal/terms.html')),
-                                    child: Text('Terms', style: TextStyle(fontSize: 10.sp, color: Colors.grey)),
+                                  Text(
+                                    context.tr(
+                                      'store.premium_store_label',
+                                      fallback: 'PREMIUM STORE',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: AppColors.violet500,
+                                      letterSpacing: 2,
+                                    ),
                                   ),
-                                  Text(' • ', style: TextStyle(color: Colors.grey)),
-                                  TextButton(
-                                    onPressed: () => launchUrl(Uri.parse('https://ansar7787.github.io/vowl-legal/privacy.html')),
-                                    child: Text('Privacy', style: TextStyle(fontSize: 10.sp, color: Colors.grey)),
+                                  Text(
+                                    context.tr(
+                                      'store.stock_up',
+                                      fallback: 'Stock up on supplies!',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 22.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: isDark
+                                          ? Colors.white
+                                          : AppColors.slate900,
+                                    ),
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 40.h),
-                            ],
-                          ),
-                          if (_isProcessing)
-                            Positioned.fill(
+                            ),
+                            ScaleButton(
+                              onTap: _isProcessing
+                                  ? null
+                                  : () => Navigator.pop(context),
                               child: Container(
-                                color: Colors.black26,
-                                child: Center(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      const CircularProgressIndicator(color: Colors.white),
-                                      SizedBox(height: 12.h),
-                                      Text(
-                                        'Processing purchase...',
-                                        style: TextStyle(color: Colors.white, fontSize: 14.sp),
-                                      ),
-                                    ],
-                                  ),
+                                padding: EdgeInsets.all(8.r),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white10
+                                      : Colors.black.withValues(alpha: 0.05),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.close_rounded,
+                                  color: isDark
+                                      ? Colors.white70
+                                      : Colors.black54,
+                                  size: 20.r,
                                 ),
                               ),
                             ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+
+                      SizedBox(height: 24.h),
+
+                      // Content
+                      Expanded(
+                        child: Stack(
+                          children: [
+                            ListView(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              physics: const BouncingScrollPhysics(),
+                              children: [
+                                // Vowl Premium Subscription Upsell
+                                _buildPremiumUpsell(context, isDark)
+                                    .animate()
+                                    .fadeIn()
+                                    .moveX(begin: -20, end: 0, delay: 100.ms),
+
+                                SizedBox(height: 32.h),
+
+                                Text(
+                                  context.tr(
+                                    'store.coins_and_keys_label',
+                                    fallback: 'COINS & KEYS',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: isDark
+                                        ? Colors.grey.withValues(alpha: 0.7)
+                                        : Colors.grey.shade600,
+                                    letterSpacing: 1.5,
+                                  ),
+                                ).animate().fadeIn(delay: 200.ms),
+
+                                SizedBox(height: 16.h),
+                                _buildPaymentMethodSelector(isDark),
+                                SizedBox(height: 8.h),
+
+                                if (_isLoadingPacks)
+                                  Column(
+                                    children: List.generate(
+                                      3,
+                                      (index) => Padding(
+                                        padding: EdgeInsets.only(bottom: 16.h),
+                                        child: ShimmerLoading.rounded(
+                                          width: double.infinity,
+                                          height: 100.h,
+                                          borderRadius: 24,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                else
+                                  // Real coin packs
+                                  ...List.generate(_activePacks.length, (
+                                    index,
+                                  ) {
+                                    final pack = _activePacks[index];
+                                    return Padding(
+                                      padding: EdgeInsets.only(bottom: 16.h),
+                                      child: _buildPackCard(
+                                        context: context,
+                                        isDark: isDark,
+                                        pack: pack,
+                                        delay: 300 + (index * 100),
+                                      ),
+                                    );
+                                  }),
+
+                                SizedBox(height: 16.h),
+                                TextButton(
+                                  onPressed: _isProcessing
+                                      ? null
+                                      : () async {
+                                          final iap =
+                                              InAppPurchaseService.instance;
+                                          await iap.restorePurchases();
+                                        },
+                                  child: Text(
+                                    'Restore Purchases',
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () => launchUrl(
+                                        Uri.parse(
+                                          'https://ansar7787.github.io/vowl-legal/terms.html',
+                                        ),
+                                      ),
+                                      child: Text(
+                                        'Terms',
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      ' • ',
+                                      style: TextStyle(color: Colors.grey),
+                                    ),
+                                    TextButton(
+                                      onPressed: () => launchUrl(
+                                        Uri.parse(
+                                          'https://ansar7787.github.io/vowl-legal/privacy.html',
+                                        ),
+                                      ),
+                                      child: Text(
+                                        'Privacy',
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 40.h),
+                              ],
+                            ),
+                            if (_isProcessing)
+                              Positioned.fill(
+                                child: Container(
+                                  color: Colors.black26,
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const CircularProgressIndicator(
+                                          color: Colors.white,
+                                        ),
+                                        SizedBox(height: 12.h),
+                                        Text(
+                                          'Processing purchase...',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 14.sp,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-        )
+            )
             .animate()
             .fadeIn(duration: 300.ms)
             .moveY(begin: 40, end: 0, curve: Curves.easeOutBack);
@@ -791,8 +829,14 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
               _buildPaymentMethodOption(
                 isGooglePlay: false,
                 isDark: isDark,
-                title: context.tr('premium.payment_razorpay', fallback: 'UPI / Credit Card'),
-                subtitle: context.tr('premium.payment_razorpay_subtitle', fallback: 'Zero extra platform fees'),
+                title: context.tr(
+                  'premium.payment_razorpay',
+                  fallback: 'UPI / Credit Card',
+                ),
+                subtitle: context.tr(
+                  'premium.payment_razorpay_subtitle',
+                  fallback: 'Zero extra platform fees',
+                ),
                 icon: Icons.account_balance_wallet_rounded,
                 iconColor: AppColors.violet500,
                 isFirst: true,
@@ -809,8 +853,14 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
               _buildPaymentMethodOption(
                 isGooglePlay: true,
                 isDark: isDark,
-                title: context.tr('premium.payment_google_play', fallback: 'Google Play Billing'),
-                subtitle: context.tr('premium.payment_google_play_subtitle', fallback: 'Includes local taxes & fees'),
+                title: context.tr(
+                  'premium.payment_google_play',
+                  fallback: 'Google Play Billing',
+                ),
+                subtitle: context.tr(
+                  'premium.payment_google_play_subtitle',
+                  fallback: 'Includes local taxes & fees',
+                ),
                 icon: Icons.play_arrow_rounded,
                 iconColor: AppColors.emerald500,
                 isFirst: false,
@@ -1076,10 +1126,14 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                 productId = InAppPurchaseService.coinPack100;
                               }
                               final iap = InAppPurchaseService.instance;
-                              final match = iap.products.where((p) => p.id == productId);
+                              final match = iap.products.where(
+                                (p) => p.id == productId,
+                              );
                               priceText = match.isNotEmpty
                                   ? match.first.price
-                                  : (_useGooglePlay && match.isEmpty ? '...' : '₹${pack.price.toInt()}');
+                                  : (_useGooglePlay && match.isEmpty
+                                        ? '...'
+                                        : '₹${pack.price.toInt()}');
                             } else {
                               priceText = '₹${pack.price.toInt()}';
                             }

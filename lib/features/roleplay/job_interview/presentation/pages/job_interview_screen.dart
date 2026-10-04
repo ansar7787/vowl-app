@@ -83,7 +83,6 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
     initRoleplayGame();
   }
 
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

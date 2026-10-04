@@ -56,19 +56,13 @@ class VocabularyPeekingMascot extends StatelessWidget {
     // FIX: Semantics label added so screen readers announce the mascot's
     // current game message (was previously invisible to assistive tech).
     Widget bubble = Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 12.w,
-        vertical: 6.h,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       constraints: BoxConstraints(maxWidth: 200.w),
       decoration: BoxDecoration(
         color: isDark ? Colors.grey.shade900 : Colors.white,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-          ),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10),
         ],
       ),
       child: Text(
@@ -94,26 +88,22 @@ class VocabularyPeekingMascot extends StatelessWidget {
           );
     }
 
-    Widget mascot = VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId);
+    Widget mascot = VowlMascot(
+      state: mascotState,
+      size: 45.r,
+      mascotId: mascotId,
+    );
     if (!reduceMotion) {
       mascot = mascot
           .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(
-            begin: 0,
-            end: 8,
-            duration: 1200.ms,
-            curve: Curves.easeInOut,
-          )
+          .moveY(begin: 0, end: 8, duration: 1200.ms, curve: Curves.easeInOut)
           .rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
     }
 
     Widget column = Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisSize: MainAxisSize.min,
-      children: [
-        bubble,
-        mascot,
-      ],
+      children: [bubble, mascot],
     );
 
     if (!reduceMotion) {

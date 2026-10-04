@@ -56,10 +56,7 @@ class ScanEmptyState extends StatelessWidget {
       context,
       icon: LucideIcons.camera,
       label: context.tr('common.camera', fallback: 'Camera'),
-      subtitle: context.tr(
-        'translation.scan_live',
-        fallback: 'Scan live text',
-      ),
+      subtitle: context.tr('translation.scan_live', fallback: 'Scan live text'),
       onTap: () => onPickImage(ImageSource.camera),
       isDark: isDark,
     );
@@ -79,7 +76,10 @@ class ScanEmptyState extends StatelessWidget {
       isDark: isDark,
     );
     if (!reduceMotion) {
-      galleryBtn = galleryBtn.animate(delay: 300.ms).fadeIn().slideY(begin: 0.2);
+      galleryBtn = galleryBtn
+          .animate(delay: 300.ms)
+          .fadeIn()
+          .slideY(begin: 0.2);
     }
 
     Widget content = Center(
@@ -143,10 +143,7 @@ class ScanEmptyState extends StatelessWidget {
           SizedBox(height: 32.h),
           Text(
             context
-                .tr(
-                  'translation.system_standby',
-                  fallback: 'SYSTEM STANDBY',
-                )
+                .tr('translation.system_standby', fallback: 'SYSTEM STANDBY')
                 .toUpperCase(),
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -205,7 +202,7 @@ class ScanEmptyState extends StatelessWidget {
     if (!reduceMotion) {
       content = content.animate().fadeIn(duration: 800.ms);
     }
-    
+
     return content;
   }
 

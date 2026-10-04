@@ -18,7 +18,12 @@ class SignUpNameInput extends StatelessWidget {
   final FocusNode? focusNode;
   final VoidCallback? onSubmitted;
 
-  const SignUpNameInput({super.key, this.fieldKey, this.focusNode, this.onSubmitted});
+  const SignUpNameInput({
+    super.key,
+    this.fieldKey,
+    this.focusNode,
+    this.onSubmitted,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +98,12 @@ class SignUpEmailInput extends StatelessWidget {
   final FocusNode? focusNode;
   final VoidCallback? onSubmitted;
 
-  const SignUpEmailInput({super.key, this.fieldKey, this.focusNode, this.onSubmitted});
+  const SignUpEmailInput({
+    super.key,
+    this.fieldKey,
+    this.focusNode,
+    this.onSubmitted,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -230,7 +240,13 @@ class SignUpPasswordInput extends StatelessWidget {
                 autocorrect: false,
                 enableSuggestions: false,
                 maxLength: 128,
-                buildCounter: (context, {required currentLength, required isFocused, maxLength}) => null,
+                buildCounter:
+                    (
+                      context, {
+                      required currentLength,
+                      required isFocused,
+                      maxLength,
+                    }) => null,
                 style: TextStyle(color: contrastColor),
                 decoration: buildAuthDecoration(
                   context: context,
@@ -284,10 +300,7 @@ class SignUpPasswordInput extends StatelessWidget {
 class SignUpButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const SignUpButton({
-    super.key,
-    required this.onPressed,
-  });
+  const SignUpButton({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -299,9 +312,7 @@ class SignUpButton extends StatelessWidget {
           button: true,
           label: context.tr('auth.signup', fallback: 'Sign Up'),
           child: ElevatedButton(
-            onPressed: state.isSubmitting
-                ? null
-                : onPressed,
+            onPressed: state.isSubmitting ? null : onPressed,
             style: ElevatedButton.styleFrom(
               minimumSize: const Size(double.infinity, 56),
             ),

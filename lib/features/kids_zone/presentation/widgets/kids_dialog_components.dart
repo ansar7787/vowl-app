@@ -26,10 +26,7 @@ class KidsSunburstBackground extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: RadialGradient(
-          colors: [
-            color.withValues(alpha: 0.3),
-            Colors.transparent,
-          ],
+          colors: [color.withValues(alpha: 0.3), Colors.transparent],
           stops: const [0.1, 0.8],
         ),
       ),
@@ -41,11 +38,7 @@ class KidsSunburstBackground extends StatelessWidget {
           .rotate(duration: 10.seconds, curve: Curves.linear);
     }
 
-    return RepaintBoundary(
-      child: Center(
-        child: background,
-      ),
-    );
+    return RepaintBoundary(child: Center(child: background));
   }
 }
 

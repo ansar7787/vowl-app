@@ -227,7 +227,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -247,7 +252,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     result.fold(
       (failure) {
         _log('EconomyBloc: AddCoins FAILED: ${failure.message}');
-        emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
+        emit(
+          state.copyWith(
+            isLoading: false,
+            message: () => AuthErrorHandler.getKey(failure.message),
+          ),
+        );
       },
       (_) {
         _log('EconomyBloc: AddCoins SUCCESS');
@@ -263,7 +273,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -273,7 +288,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     }
     final result = await awardKidsCoins(event.amount);
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
@@ -287,7 +307,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -326,7 +351,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -339,7 +369,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     result.fold(
       (failure) {
         _log('EconomyBloc: Hint consumption FAILED: ${failure.message}');
-        emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
+        emit(
+          state.copyWith(
+            isLoading: false,
+            message: () => AuthErrorHandler.getKey(failure.message),
+          ),
+        );
       },
       (_) {
         _log('EconomyBloc: Hint consumption SUCCESS');
@@ -355,7 +390,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -365,7 +405,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     }
     final result = await claimVipGift(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
@@ -379,7 +424,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -389,7 +439,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     }
     final result = await claimDailyGift(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());
@@ -409,7 +464,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     final user = authBloc.state.user;
@@ -433,7 +493,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       coinResult.fold(
         (failure) {
           _log('EconomyBloc: TripleUp coins FAILED: ${failure.message}');
-          emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
+          emit(
+            state.copyWith(
+              isLoading: false,
+              message: () => AuthErrorHandler.getKey(failure.message),
+            ),
+          );
           hasError = true;
           return;
         },
@@ -464,7 +529,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     final user = authBloc.state.user;
@@ -488,7 +558,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       coinResult.fold(
         (failure) {
           _log('EconomyBloc: Bonus coins FAILED: ${failure.message}');
-          emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
+          emit(
+            state.copyWith(
+              isLoading: false,
+              message: () => AuthErrorHandler.getKey(failure.message),
+            ),
+          );
           hasError = true;
           return;
         },
@@ -517,7 +592,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -530,7 +610,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     result.fold(
       (failure) {
         _log('EconomyBloc: Daily chest FAILED: ${failure.message}');
-        emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
+        emit(
+          state.copyWith(
+            isLoading: false,
+            message: () => AuthErrorHandler.getKey(failure.message),
+          ),
+        );
       },
       (_) {
         _log('EconomyBloc: Daily chest SUCCESS');
@@ -546,7 +631,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -559,7 +649,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     result.fold(
       (failure) {
         _log('EconomyBloc: Kids daily reward FAILED: ${failure.message}');
-        emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message)));
+        emit(
+          state.copyWith(
+            isLoading: false,
+            message: () => AuthErrorHandler.getKey(failure.message),
+          ),
+        );
       },
       (_) {
         _log('EconomyBloc: Kids daily reward SUCCESS');

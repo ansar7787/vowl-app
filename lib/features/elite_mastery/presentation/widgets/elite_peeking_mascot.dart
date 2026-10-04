@@ -89,9 +89,7 @@ class ElitePeekingMascot extends StatelessWidget {
           // RepaintBoundary: the bobbing float and pulse-scale animations run
           // on a continuous loop. Isolating them prevents every animation frame
           // from propagating a repaint up through the full parent Stack tree.
-          child: RepaintBoundary(
-            child: column,
-          ),
+          child: RepaintBoundary(child: column),
         );
       },
     );
@@ -171,14 +169,18 @@ class _MascotAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    Widget mascot = VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId);
-    
+    Widget mascot = VowlMascot(
+      state: mascotState,
+      size: 45.r,
+      mascotId: mascotId,
+    );
+
     if (!reduceMotion) {
       mascot = mascot
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
     }
-    
+
     return mascot;
   }
 }

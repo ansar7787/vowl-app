@@ -131,9 +131,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
   // The sole call site (profile/rewarded_ad_card.dart) now uses AdService
   // directly, eliminating competing loads against the same ad unit ID.
   sl.registerLazySingleton<PaymentService>(
-    () => PaymentService(
-      functions: sl<FirebaseFunctions>(),
-    ),
+    () => PaymentService(functions: sl<FirebaseFunctions>()),
     // FIX (HIGH — RESOURCE LEAK): PaymentService.dispose() clears the
     // Razorpay SDK instance and its event listeners; same gap, same fix.
     dispose: (service) => service.dispose(),

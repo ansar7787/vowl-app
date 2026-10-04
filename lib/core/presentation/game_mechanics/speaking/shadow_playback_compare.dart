@@ -767,31 +767,44 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                         // Simplified without waveform (fallback)
                                         if (isPlaying)
                                           RepaintBoundary(
-                                            child: Container(
-                                              height: 70.r,
-                                              width: 70.r,
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                color: widget.primaryColor
-                                                    .withValues(alpha: 0.15),
-                                              ),
-                                              child: Center(
-                                                child: Icon(
-                                                  Icons.graphic_eq_rounded,
-                                                  color: widget.primaryColor,
-                                                  size: 32.sp,
-                                                ),
-                                              ),
-                                            )
-                                            .animate(
-                                              onPlay: (c) =>
-                                                  c.repeat(reverse: true),
-                                            )
-                                            .scale(
-                                              begin: const Offset(0.9, 0.9),
-                                              end: const Offset(1.15, 1.15),
-                                              duration: 600.ms,
-                                            ),
+                                            child:
+                                                Container(
+                                                      height: 70.r,
+                                                      width: 70.r,
+                                                      decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: widget
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.15,
+                                                            ),
+                                                      ),
+                                                      child: Center(
+                                                        child: Icon(
+                                                          Icons
+                                                              .graphic_eq_rounded,
+                                                          color: widget
+                                                              .primaryColor,
+                                                          size: 32.sp,
+                                                        ),
+                                                      ),
+                                                    )
+                                                    .animate(
+                                                      onPlay: (c) => c.repeat(
+                                                        reverse: true,
+                                                      ),
+                                                    )
+                                                    .scale(
+                                                      begin: const Offset(
+                                                        0.9,
+                                                        0.9,
+                                                      ),
+                                                      end: const Offset(
+                                                        1.15,
+                                                        1.15,
+                                                      ),
+                                                      duration: 600.ms,
+                                                    ),
                                           ),
                                       ],
 

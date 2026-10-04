@@ -165,9 +165,7 @@ class _HintButton extends StatelessWidget {
 
     if (shouldGlow && !reduceMotion) {
       button = button
-          .animate(
-            onPlay: (c) => c.repeat(reverse: true),
-          )
+          .animate(onPlay: (c) => c.repeat(reverse: true))
           .shimmer(
             color: Colors.white.withValues(alpha: 0.5),
             duration: 1.seconds,

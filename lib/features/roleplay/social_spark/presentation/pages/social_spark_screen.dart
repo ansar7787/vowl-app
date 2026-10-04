@@ -77,7 +77,6 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
     initRoleplayGame();
   }
 
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

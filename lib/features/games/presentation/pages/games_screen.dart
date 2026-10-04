@@ -31,7 +31,9 @@ class GamesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+    final isMidnight =
+        (Theme.of(context).brightness == Brightness.dark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight
         ? Colors.black

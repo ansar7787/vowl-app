@@ -123,7 +123,10 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                   RepaintBoundary(
                                     child: Builder(
                                       builder: (context) {
-                                        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                        final reduceMotion =
+                                            MediaQuery.disableAnimationsOf(
+                                              context,
+                                            );
                                         Widget iconContainer = Container(
                                           padding: EdgeInsets.all(16.r),
                                           decoration: BoxDecoration(
@@ -148,8 +151,9 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                             ),
                                             shape: BoxShape.circle,
                                             border: Border.all(
-                                              color: Colors.white
-                                                  .withValues(alpha: 0.3),
+                                              color: Colors.white.withValues(
+                                                alpha: 0.3,
+                                              ),
                                               width: 1.0,
                                             ),
                                             boxShadow: [

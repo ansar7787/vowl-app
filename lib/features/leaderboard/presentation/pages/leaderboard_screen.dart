@@ -49,7 +49,9 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     // FIX (MEDIUM-1): Use context.select instead of context.watch to scope
     // rebuilds to only the isMidnight boolean, not the entire ThemeCubit state.
-    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+    final isMidnight =
+        (Theme.of(context).brightness == Brightness.dark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
         : (isDark ? AppColors.slate900 : Colors.white);

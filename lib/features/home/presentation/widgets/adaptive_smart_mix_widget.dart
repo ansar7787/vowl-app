@@ -118,14 +118,18 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
               Builder(
                 builder: (context) {
                   final reduceMotion = MediaQuery.disableAnimationsOf(context);
-                  Widget icon = Icon(Icons.auto_awesome, color: displayColor, size: 20.r);
+                  Widget icon = Icon(
+                    Icons.auto_awesome,
+                    color: displayColor,
+                    size: 20.r,
+                  );
                   if (!reduceMotion) {
                     icon = icon
                         .animate(onPlay: (controller) => controller.repeat())
                         .shimmer(duration: 2000.ms, color: Colors.white54);
                   }
                   return icon;
-                }
+                },
               ),
               SizedBox(width: 8.w),
               AutoSizeText(

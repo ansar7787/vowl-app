@@ -155,10 +155,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Future<void> _toggleLowAnimationMode(bool value) async {
     _lowAnimationModeVal = value;
     _updateState();
-    
+
     // Update synchronous override used across the app
     VowlMotion.lowAnimationModeOverride.value = value;
-    
+
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('low_animation_mode', value);
   }

@@ -82,7 +82,6 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
     initRoleplayGame();
   }
 
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

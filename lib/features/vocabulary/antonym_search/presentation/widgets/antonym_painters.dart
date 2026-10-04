@@ -81,7 +81,7 @@ class PlasmaArcPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant PlasmaArcPainter oldDelegate) {
     return oldDelegate.start != start ||
-           oldDelegate.end != end ||
-           oldDelegate.color != color;
+        oldDelegate.end != end ||
+        oldDelegate.color != color;
   }
 }

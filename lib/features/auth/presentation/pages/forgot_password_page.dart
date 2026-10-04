@@ -128,273 +128,291 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                     onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
                     child: Scaffold(
                       backgroundColor: bgColor,
-                  resizeToAvoidBottomInset: false,
-                  body: Stack(
-                    children: [
-                      ListenableBuilder(
-                        listenable: _emailFocus,
-                        builder: (context, _) {
-                          return MeshGradientBackground(
-                            auraColor: _emailFocus.hasFocus
-                                ? Colors.blue
-                                : null,
-                          );
-                        },
-                      ),
-                      SafeArea(
-                        child: LayoutBuilder(
-                          builder: (context, constraints) {
-                            return SingleChildScrollView(
-                              physics: const BouncingScrollPhysics(),
-                              padding: EdgeInsets.only(
-                                bottom:
-                                    MediaQuery.of(context).viewInsets.bottom +
-                                    20.h,
-                              ),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  minHeight: constraints.maxHeight,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                    vertical: 10.h,
+                      resizeToAvoidBottomInset: false,
+                      body: Stack(
+                        children: [
+                          ListenableBuilder(
+                            listenable: _emailFocus,
+                            builder: (context, _) {
+                              return MeshGradientBackground(
+                                auraColor: _emailFocus.hasFocus
+                                    ? Colors.blue
+                                    : null,
+                              );
+                            },
+                          ),
+                          SafeArea(
+                            child: LayoutBuilder(
+                              builder: (context, constraints) {
+                                return SingleChildScrollView(
+                                  physics: const BouncingScrollPhysics(),
+                                  padding: EdgeInsets.only(
+                                    bottom:
+                                        MediaQuery.of(
+                                          context,
+                                        ).viewInsets.bottom +
+                                        20.h,
                                   ),
-                                  child: Form(
-                                    key: _formKey,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        // --- Header: Brand (Perfectly Centered) ---
-                                        Hero(
-                                          tag: 'auth_title',
-                                          child: Material(
-                                            color: Colors.transparent,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: Text(
-                                                'Vowl',
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 48.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                  color: const Color(
-                                                    0xFF6366F1,
-                                                  ), // Solid premium brand color
-                                                  letterSpacing: -1.5,
-                                                  height: 1.0,
+                                  child: ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      minHeight: constraints.maxHeight,
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 24.w,
+                                        vertical: 10.h,
+                                      ),
+                                      child: Form(
+                                        key: _formKey,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            // --- Header: Brand (Perfectly Centered) ---
+                                            Hero(
+                                              tag: 'auth_title',
+                                              child: Material(
+                                                color: Colors.transparent,
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    'Vowl',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 48.sp,
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                      color: const Color(
+                                                        0xFF6366F1,
+                                                      ), // Solid premium brand color
+                                                      letterSpacing: -1.5,
+                                                      height: 1.0,
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 36.h,
-                                        ), // Perfect premium gap without disconnecting the UI
-                                        // --- Interactive Form Card ---
-                                        Stack(
-                                          clipBehavior: Clip.none,
-                                          alignment: Alignment.topCenter,
-                                          children: [
-                                            // Pushed down slightly so the mascot can straddle the top border
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                top: 30.r,
-                                              ),
-                                              child: HolographicCard(
-                                                child: state.isSuccess
-                                                    ? Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .stretch,
-                                                        children: [
-                                                          Icon(
-                                                            Icons
-                                                                .mark_email_read_outlined,
-                                                            size: 64.sp,
-                                                            color: Colors
-                                                                .greenAccent,
-                                                          ),
-                                                          SizedBox(
-                                                            height: 16.h,
-                                                          ),
-                                                          Text(
-                                                            context.tr(
-                                                              'auth.reset_link_sent_title',
-                                                              fallback:
-                                                                  'Check your email',
-                                                            ),
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize: 24.sp,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                              color:
-                                                                  contrastColor,
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                          ),
-                                                          SizedBox(
-                                                            height: 16.h,
-                                                          ),
-                                                          Text(
-                                                            context.tr(
-                                                              'auth.reset_link_sent_desc',
-                                                              fallback:
-                                                                  'We have sent a password reset link to your email address.',
-                                                            ),
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize: 14.sp,
-                                                              color: contrastColor
-                                                                  .withValues(
-                                                                    alpha: 0.8,
-                                                                  ),
-                                                              height: 1.5,
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                          ),
-                                                          SizedBox(
-                                                            height: 32.h,
-                                                          ),
-                                                          ElevatedButton(
-                                                            onPressed: () {
-                                                              if (context
-                                                                  .canPop()) {
-                                                                context.pop();
-                                                              } else {
-                                                                context.go(
-                                                                  AppRouter
-                                                                      .loginRoute,
-                                                                );
-                                                              }
-                                                            },
-                                                            style: ElevatedButton.styleFrom(
-                                                              minimumSize:
-                                                                  const Size(
-                                                                    double
-                                                                        .infinity,
-                                                                    56,
-                                                                  ),
-                                                            ),
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: Text(
+                                            SizedBox(
+                                              height: 36.h,
+                                            ), // Perfect premium gap without disconnecting the UI
+                                            // --- Interactive Form Card ---
+                                            Stack(
+                                              clipBehavior: Clip.none,
+                                              alignment: Alignment.topCenter,
+                                              children: [
+                                                // Pushed down slightly so the mascot can straddle the top border
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                    top: 30.r,
+                                                  ),
+                                                  child: HolographicCard(
+                                                    child: state.isSuccess
+                                                        ? Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .stretch,
+                                                            children: [
+                                                              Icon(
+                                                                Icons
+                                                                    .mark_email_read_outlined,
+                                                                size: 64.sp,
+                                                                color: Colors
+                                                                    .greenAccent,
+                                                              ),
+                                                              SizedBox(
+                                                                height: 16.h,
+                                                              ),
+                                                              Text(
                                                                 context.tr(
-                                                                  'auth.back_to_login',
+                                                                  'auth.reset_link_sent_title',
                                                                   fallback:
-                                                                      'Back to Login',
+                                                                      'Check your email',
+                                                                ),
+                                                                style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      24.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  color:
+                                                                      contrastColor,
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                              ),
+                                                              SizedBox(
+                                                                height: 16.h,
+                                                              ),
+                                                              Text(
+                                                                context.tr(
+                                                                  'auth.reset_link_sent_desc',
+                                                                  fallback:
+                                                                      'We have sent a password reset link to your email address.',
+                                                                ),
+                                                                style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      14.sp,
+                                                                  color: contrastColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.8,
+                                                                      ),
+                                                                  height: 1.5,
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                              ),
+                                                              SizedBox(
+                                                                height: 32.h,
+                                                              ),
+                                                              ElevatedButton(
+                                                                onPressed: () {
+                                                                  if (context
+                                                                      .canPop()) {
+                                                                    context
+                                                                        .pop();
+                                                                  } else {
+                                                                    context.go(
+                                                                      AppRouter
+                                                                          .loginRoute,
+                                                                    );
+                                                                  }
+                                                                },
+                                                                style: ElevatedButton.styleFrom(
+                                                                  minimumSize:
+                                                                      const Size(
+                                                                        double
+                                                                            .infinity,
+                                                                        56,
+                                                                      ),
+                                                                ),
+                                                                child: FittedBox(
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                  child: Text(
+                                                                    context.tr(
+                                                                      'auth.back_to_login',
+                                                                      fallback:
+                                                                          'Back to Login',
+                                                                    ),
+                                                                  ),
                                                                 ),
                                                               ),
-                                                            ),
+                                                            ],
+                                                          )
+                                                        : Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .stretch,
+                                                            children: [
+                                                              Text(
+                                                                context.tr(
+                                                                  'auth.forgot_password_instructions',
+                                                                  fallback:
+                                                                      'Enter your email address and we will send you a link to reset your password.',
+                                                                ),
+                                                                style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      14.sp,
+                                                                  color: contrastColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.8,
+                                                                      ),
+                                                                  height: 1.5,
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                              ),
+                                                              SizedBox(
+                                                                height: 32.h,
+                                                              ),
+                                                              ValueListenableBuilder<
+                                                                int
+                                                              >(
+                                                                valueListenable:
+                                                                    _emailShake,
+                                                                builder:
+                                                                    (
+                                                                      context,
+                                                                      shakeCount,
+                                                                      child,
+                                                                    ) {
+                                                                      return ShakeableWrapper(
+                                                                        shakeCount:
+                                                                            shakeCount,
+                                                                        child:
+                                                                            child!,
+                                                                      );
+                                                                    },
+                                                                child: ForgotPasswordEmailInput(
+                                                                  fieldKey:
+                                                                      _emailKey,
+                                                                  focusNode:
+                                                                      _emailFocus,
+                                                                  contrastColor:
+                                                                      contrastColor,
+                                                                  onSubmitted: () =>
+                                                                      _submitForm(
+                                                                        context,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                height: 24.h,
+                                                              ),
+                                                              SendResetLinkButton(
+                                                                isSubmitting: state
+                                                                    .isSubmitting,
+                                                                onPressed: () =>
+                                                                    _submitForm(
+                                                                      context,
+                                                                    ),
+                                                              ),
+                                                            ],
                                                           ),
-                                                        ],
-                                                      )
-                                                    : Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .stretch,
-                                                        children: [
-                                                          Text(
-                                                            context.tr(
-                                                              'auth.forgot_password_instructions',
-                                                              fallback:
-                                                                  'Enter your email address and we will send you a link to reset your password.',
-                                                            ),
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize: 14.sp,
-                                                              color: contrastColor
-                                                                  .withValues(
-                                                                    alpha: 0.8,
-                                                                  ),
-                                                              height: 1.5,
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                          ),
-                                                          SizedBox(
-                                                            height: 32.h,
-                                                          ),
-                                                          ValueListenableBuilder<
-                                                            int
-                                                          >(
-                                                            valueListenable:
-                                                                _emailShake,
-                                                            builder:
-                                                                (
-                                                                  context,
-                                                                  shakeCount,
-                                                                  child,
-                                                                ) {
-                                                                  return ShakeableWrapper(
-                                                                    shakeCount:
-                                                                        shakeCount,
-                                                                    child:
-                                                                        child!,
-                                                                  );
-                                                                },
-                                                            child: ForgotPasswordEmailInput(
-                                                              fieldKey:
-                                                                  _emailKey,
-                                                              focusNode:
-                                                                  _emailFocus,
-                                                              contrastColor:
-                                                                  contrastColor,
-                                                              onSubmitted: () => _submitForm(context),
-                                                            ),
-                                                          ),
-                                                          SizedBox(
-                                                            height: 24.h,
-                                                          ),
-                                                          SendResetLinkButton(
-                                                            isSubmitting: state
-                                                                .isSubmitting,
-                                                            onPressed: () => _submitForm(context),
-                                                          ),
-                                                        ],
-                                                      ),
-                                              ),
-                                            ), // Close Padding
-                                            Positioned(
-                                              top: 0,
-                                              child: VowlyAuthCompanion(
-                                                emailFocus: _emailFocus,
-                                                size: 60,
-                                                isForgotPassword: true,
-                                              ),
+                                                  ),
+                                                ), // Close Padding
+                                                Positioned(
+                                                  top: 0,
+                                                  child: VowlyAuthCompanion(
+                                                    emailFocus: _emailFocus,
+                                                    size: 60,
+                                                    isForgotPassword: true,
+                                                  ),
+                                                ),
+                                              ],
+                                            ), // Close Stack
+                                            SizedBox(height: 16.h),
+                                            RememberPasswordFooter(
+                                              secondaryColor: secondaryColor,
                                             ),
+                                            SizedBox(height: 24.h),
                                           ],
-                                        ), // Close Stack
-                                        SizedBox(height: 16.h),
-                                        RememberPasswordFooter(
-                                          secondaryColor: secondaryColor,
                                         ),
-                                        SizedBox(height: 24.h),
-                                      ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-          );
-        },
+              );
+            },
           );
         },
       ),
@@ -413,4 +431,3 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
     );
   }
 }
-

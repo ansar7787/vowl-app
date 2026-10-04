@@ -61,6 +61,9 @@ void main() {
   late MockNetworkInfo mockNetworkInfo;
 
   setUp(() {
+    mockNetworkInfo = MockNetworkInfo();
+    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     mockUpdateProfilePicture = MockUpdateProfilePicture();
     mockUpdateDisplayName = MockUpdateDisplayName();
     mockUpdateKidsMascot = MockUpdateKidsMascot();
@@ -73,7 +76,7 @@ void main() {
     mockBuyVowlAccessory = MockBuyVowlAccessory();
     mockPurchaseGoldenKey = MockPurchaseGoldenKey();
     mockAddGoldenKey = MockAddGoldenKey();
-    mockNetworkInfo = MockNetworkInfo();
+    
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
     );

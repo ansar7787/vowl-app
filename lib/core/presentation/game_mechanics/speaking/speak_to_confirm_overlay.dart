@@ -110,7 +110,8 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                             children: [
                               Builder(
                                 builder: (context) {
-                                  final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                  final reduceMotion =
+                                      MediaQuery.disableAnimationsOf(context);
                                   Widget iconContainer = Container(
                                     padding: EdgeInsets.all(10.r),
                                     decoration: BoxDecoration(
@@ -133,7 +134,10 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
 
                                   if (!reduceMotion) {
                                     iconContainer = iconContainer
-                                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                                        .animate(
+                                          onPlay: (c) =>
+                                              c.repeat(reverse: true),
+                                        )
                                         .scale(
                                           begin: const Offset(1, 1),
                                           end: const Offset(1.05, 1.05),

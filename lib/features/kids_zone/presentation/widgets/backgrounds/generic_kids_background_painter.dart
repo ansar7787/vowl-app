@@ -53,7 +53,7 @@ class GenericKidsBackgroundPainter extends StatelessWidget {
                 .fadeOut(begin: 0.3, duration: 2.seconds);
           }
           return content;
-        }
+        },
       ),
     );
   }

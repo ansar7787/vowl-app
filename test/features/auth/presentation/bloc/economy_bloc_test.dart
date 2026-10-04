@@ -17,6 +17,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 import 'package:vowl/core/network/network_info.dart';
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
@@ -63,6 +64,9 @@ void main() {
   late MockNetworkInfo mockNetworkInfo;
 
   setUp(() {
+    mockNetworkInfo = MockNetworkInfo();
+    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     mockUpdateUserCoins = MockUpdateUserCoins();
     mockPurchaseHint = MockPurchaseHint();
     mockClaimVipGift = MockClaimVipGift();
@@ -73,7 +77,7 @@ void main() {
     mockAwardKidsCoins = MockAwardKidsCoins();
     mockUseHint = MockUseHint();
     mockAuthBloc = MockAuthBloc();
-    mockNetworkInfo = MockNetworkInfo();
+    
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
     );

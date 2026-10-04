@@ -466,23 +466,28 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                     SizedBox(height: 12.h),
                     if (_isExtracting.value)
                       RepaintBoundary(
-                        child: Text(
-                              widget.passage!,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w500,
-                                color: widget.isDark
-                                    ? Colors.white70
-                                    : Colors.black87,
-                                height: 1.5,
-                              ),
-                            )
-                            .animate(onPlay: (controller) => controller.repeat())
-                            .shimmer(
-                              duration: 1500.ms,
-                              color: widget.shadowColor.withValues(alpha: 0.3),
-                            ),
+                        child:
+                            Text(
+                                  widget.passage!,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: widget.isDark
+                                        ? Colors.white70
+                                        : Colors.black87,
+                                    height: 1.5,
+                                  ),
+                                )
+                                .animate(
+                                  onPlay: (controller) => controller.repeat(),
+                                )
+                                .shimmer(
+                                  duration: 1500.ms,
+                                  color: widget.shadowColor.withValues(
+                                    alpha: 0.3,
+                                  ),
+                                ),
                       )
                     else if (_entitiesRevealed.value && _entities.value != null)
                       EntityHighlightedText(

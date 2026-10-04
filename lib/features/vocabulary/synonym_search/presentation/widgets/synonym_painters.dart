@@ -51,8 +51,7 @@ class TrailPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant TrailPainter oldDelegate) {
-    return oldDelegate.points != points ||
-           oldDelegate.color != color;
+    return oldDelegate.points != points || oldDelegate.color != color;
   }
 }
 

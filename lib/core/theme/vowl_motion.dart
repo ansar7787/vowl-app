@@ -56,7 +56,9 @@ class VowlMotion {
 
   /// In-app setting toggle that forces motion reduction even if the OS allows it.
   /// This is controlled by the user in the SettingsScreen.
-  static final ValueNotifier<bool> lowAnimationModeOverride = ValueNotifier(false);
+  static final ValueNotifier<bool> lowAnimationModeOverride = ValueNotifier(
+    false,
+  );
 
   /// Returns `true` when the OS "Reduce Motion" accessibility setting is
   /// enabled, or when the user has enabled "Low Animation Mode" in the app settings.

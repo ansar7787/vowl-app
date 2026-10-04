@@ -18,10 +18,7 @@ class SpeakingVoicePulseBg extends StatelessWidget {
     Widget pulse = Container(
       width: 300.r,
       height: 300.r,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: color,
-      ),
+      decoration: BoxDecoration(shape: BoxShape.circle, color: color),
     );
 
     if (!reduceMotion) {
@@ -37,11 +34,7 @@ class SpeakingVoicePulseBg extends StatelessWidget {
     }
 
     return Positioned.fill(
-      child: ExcludeSemantics(
-        child: Center(
-          child: pulse,
-        ),
-      ),
+      child: ExcludeSemantics(child: Center(child: pulse)),
     );
   }
 }

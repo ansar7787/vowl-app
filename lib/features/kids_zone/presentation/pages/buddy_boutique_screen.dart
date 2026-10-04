@@ -57,7 +57,9 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+    final isMidnight =
+        (Theme.of(context).brightness == Brightness.dark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
         : (isDark ? _LocalPalette.color1e3a8a : AppColors.slate50);

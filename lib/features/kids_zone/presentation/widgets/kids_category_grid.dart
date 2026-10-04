@@ -269,18 +269,22 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                           completedCount: completed,
                           trailing: _isCheckingModel.value
                               ? RepaintBoundary(
-                                  child: Icon(
-                                    Icons.sync_rounded,
-                                    color: game.color,
-                                    size: 24.sp,
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .rotate(duration: 1.5.seconds),
+                                  child:
+                                      Icon(
+                                            Icons.sync_rounded,
+                                            color: game.color,
+                                            size: 24.sp,
+                                          )
+                                          .animate(onPlay: (c) => c.repeat())
+                                          .rotate(duration: 1.5.seconds),
                                 )
                               : (!_isModelDownloaded.value
                                     ? Builder(
                                         builder: (context) {
-                                          final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                          final reduceMotion =
+                                              MediaQuery.disableAnimationsOf(
+                                                context,
+                                              );
                                           Widget icon = Icon(
                                             Icons.cloud_download_rounded,
                                             color: game.color,
@@ -299,7 +303,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                                                 );
                                           }
                                           return icon;
-                                        }
+                                        },
                                       )
                                     : null),
                         );
@@ -581,7 +585,7 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
                       .moveY(begin: -5, end: 5, duration: 1.seconds);
                 }
                 return icon;
-              }
+              },
             ),
             SizedBox(height: 24.h),
             Text(

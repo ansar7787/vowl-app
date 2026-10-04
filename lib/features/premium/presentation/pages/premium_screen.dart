@@ -829,8 +829,14 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 _buildPaymentTile(
                   isDark: isDark,
                   method: PaymentMethod.razorpay,
-                  title: context.tr('premium.payment_razorpay', fallback: 'UPI / Credit Card'),
-                  subtitle: context.tr('premium.payment_razorpay_subtitle', fallback: 'Zero extra platform fees'),
+                  title: context.tr(
+                    'premium.payment_razorpay',
+                    fallback: 'UPI / Credit Card',
+                  ),
+                  subtitle: context.tr(
+                    'premium.payment_razorpay_subtitle',
+                    fallback: 'Zero extra platform fees',
+                  ),
                   icon: Icons.account_balance_wallet_rounded,
                   iconColor: AppColors.violet500,
                   isFirst: true,
@@ -855,7 +861,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
                         ? 'App Store'
                         : 'Google Play Billing',
                   ),
-                  subtitle: context.tr('premium.payment_google_play_subtitle', fallback: 'Includes local taxes & fees'),
+                  subtitle: context.tr(
+                    'premium.payment_google_play_subtitle',
+                    fallback: 'Includes local taxes & fees',
+                  ),
                   icon: Platform.isIOS
                       ? Icons.apple_rounded
                       : Icons.play_arrow_rounded,
@@ -1155,7 +1164,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
         final iap = InAppPurchaseService.instance;
         try {
-          final matchingProducts = iap.products.where((p) => p.id == productId).toList();
+          final matchingProducts = iap.products
+              .where((p) => p.id == productId)
+              .toList();
           if (matchingProducts.isEmpty) {
             // Reset processing and show error
             _isProcessingVal = false;
@@ -1400,7 +1411,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
                 child: Text(
-                  context.tr('premium.refund_policy', fallback: 'Refund Policy'),
+                  context.tr(
+                    'premium.refund_policy',
+                    fallback: 'Refund Policy',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: muted,

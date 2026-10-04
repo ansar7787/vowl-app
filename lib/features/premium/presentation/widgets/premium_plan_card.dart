@@ -10,6 +10,7 @@ class PremiumPlanCard extends StatelessWidget {
   final SubscriptionPlan plan;
   final bool isSelected;
   final VoidCallback onTap;
+
   /// When Google Play is the selected payment method, pass the localized
   /// `ProductDetails.price` string (e.g. "\$1.99", "€1.79") to override
   /// the INR price from Firestore. Null means use the default INR price.
@@ -201,7 +202,8 @@ class PremiumPlanCard extends StatelessWidget {
                                               ? Colors.white30
                                               : Colors.black38,
                                           fontSize: 14.sp,
-                                          decoration: TextDecoration.lineThrough,
+                                          decoration:
+                                              TextDecoration.lineThrough,
                                           decorationColor: isDark
                                               ? Colors.white54
                                               : Colors.black54,
@@ -238,7 +240,9 @@ class PremiumPlanCard extends StatelessWidget {
                                         color: const Color(
                                           0xFF10B981,
                                         ).withValues(alpha: 0.15),
-                                        borderRadius: BorderRadius.circular(6.r),
+                                        borderRadius: BorderRadius.circular(
+                                          6.r,
+                                        ),
                                       ),
                                       child: Text(
                                         '${context.tr('premium.save', fallback: 'SAVE')} $savingsPercent%',

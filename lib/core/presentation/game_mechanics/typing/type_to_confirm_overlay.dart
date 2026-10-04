@@ -216,7 +216,9 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                   children: [
                     Builder(
                       builder: (context) {
-                        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                        final reduceMotion = MediaQuery.disableAnimationsOf(
+                          context,
+                        );
                         Widget iconContainer = Container(
                           padding: EdgeInsets.all(10.r),
                           decoration: BoxDecoration(
@@ -232,7 +234,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                             size: 22.r,
                           ),
                         );
-                        
+
                         if (!reduceMotion) {
                           iconContainer = iconContainer
                               .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -242,7 +244,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                 duration: 1.5.seconds,
                               );
                         }
-                        
+
                         return iconContainer;
                       },
                     ),

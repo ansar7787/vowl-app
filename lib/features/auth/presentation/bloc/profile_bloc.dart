@@ -324,7 +324,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -334,14 +339,24 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     }
     final result = await updateDisplayName(event.displayName);
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         // 'profile.display_name_updated' is a stable key, not English
         // display text — see GamificationRepositoryImpl's class doc for the
         // full localization rationale applied consistently across this
         // review; the previous literal ('Name updated!') could never be
         // localized for any of this app's other 17 target languages.
-        emit(state.copyWith(isLoading: false, message: () => 'profile.display_name_updated'));
+        emit(
+          state.copyWith(
+            isLoading: false,
+            message: () => 'profile.display_name_updated',
+          ),
+        );
         authBloc.add(const AuthReloadUser());
       },
     );
@@ -353,7 +368,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -363,7 +383,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     }
     final result = await updateProfilePicture(event.filePath);
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (downloadUrl) {
         // Previously this branch was `(_) { ... }` — discarding the
         // download URL entirely and relying solely on AuthReloadUser's
@@ -388,7 +413,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -398,7 +428,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     }
     final result = await updateKidsMascot(event.mascotId);
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -412,7 +447,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -424,7 +464,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       BuyKidsAccessoryParams(accessoryId: event.accessoryId, cost: event.cost),
     );
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -438,7 +483,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -448,7 +498,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     }
     final result = await equipKidsAccessory(event.accessoryId);
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -468,7 +523,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     // benign last-write-wins between two equip taps, not a currency bug.
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -487,7 +547,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final updatedUser = user.copyWith(kidsEquippedFurniture: newEquipped);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -508,7 +573,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -524,7 +594,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       ),
     );
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -540,7 +615,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     // the generic updateUser path.
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -557,7 +637,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final updatedUser = user.copyWith(vowlMascot: event.mascotId);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -574,7 +659,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -617,7 +707,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -656,7 +751,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -673,7 +773,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final updatedUser = user.copyWith(vowlEquippedAccessory: event.accessoryId);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -687,7 +792,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -704,7 +814,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final updatedUser = user.copyWith(kidsEquippedSticker: event.stickerId);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -732,7 +847,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -742,7 +862,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     }
     final result = await addGoldenKey(AddGoldenKeyParams(amount: event.amount));
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -766,7 +891,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -778,7 +908,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       PurchaseGoldenKeyParams(cost: event.cost, isKidsMode: event.isKidsMode),
     );
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
@@ -796,7 +931,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -839,10 +979,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthReloadUser());
       } catch (e) {
-        emit(state.copyWith(
-          isLoading: false,
-          message: () => AuthErrorHandler.getKey('unexpected-error'),
-        ));
+        emit(
+          state.copyWith(
+            isLoading: false,
+            message: () => AuthErrorHandler.getKey('unexpected-error'),
+          ),
+        );
       }
     }
   }

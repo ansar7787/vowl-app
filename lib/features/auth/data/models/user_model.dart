@@ -571,9 +571,7 @@ class UserModel extends UserEntity {
   /// Parses a Firestore list of integers defensively.
   static List<int> _parseIntList(dynamic raw) {
     if (raw is! List) return const [];
-    return raw
-        .map((e) => (e as num?)?.toInt() ?? 0)
-        .toList();
+    return raw.map((e) => (e as num?)?.toInt() ?? 0).toList();
   }
 
   /// Parses a Firestore list of dynamic maps defensively.

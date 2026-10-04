@@ -48,7 +48,10 @@ class KidsRoomMoodIndicator extends StatelessWidget {
               Builder(
                 builder: (context) {
                   final reduceMotion = MediaQuery.disableAnimationsOf(context);
-                  Widget emoji = Text(moodData.emoji, style: TextStyle(fontSize: 20.sp));
+                  Widget emoji = Text(
+                    moodData.emoji,
+                    style: TextStyle(fontSize: 20.sp),
+                  );
                   if (!reduceMotion) {
                     emoji = emoji
                         .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -59,7 +62,7 @@ class KidsRoomMoodIndicator extends StatelessWidget {
                         );
                   }
                   return emoji;
-                }
+                },
               ),
               SizedBox(width: 8.w),
 
@@ -92,7 +95,9 @@ class KidsRoomMoodIndicator extends StatelessWidget {
                   children: [
                     Builder(
                       builder: (context) {
-                        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                        final reduceMotion = MediaQuery.disableAnimationsOf(
+                          context,
+                        );
                         Widget fire = Icon(
                           Icons.local_fire_department_rounded,
                           color: Colors.orange,
@@ -107,7 +112,7 @@ class KidsRoomMoodIndicator extends StatelessWidget {
                               );
                         }
                         return fire;
-                      }
+                      },
                     ),
                     SizedBox(width: 4.w),
                     Text(

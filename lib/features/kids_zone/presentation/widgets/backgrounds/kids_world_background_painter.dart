@@ -46,7 +46,10 @@ class KidsWorldBackgroundPainter extends StatelessWidget {
       child: Builder(
         builder: (context) {
           final reduceMotion = MediaQuery.disableAnimationsOf(context);
-          Widget content = Text(emoji, style: TextStyle(fontSize: (20 + random.nextInt(15)).sp));
+          Widget content = Text(
+            emoji,
+            style: TextStyle(fontSize: (20 + random.nextInt(15)).sp),
+          );
           if (!reduceMotion) {
             content = content
                 .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -60,7 +63,7 @@ class KidsWorldBackgroundPainter extends StatelessWidget {
                 .fadeOut(begin: 0.15, duration: 2.seconds);
           }
           return content;
-        }
+        },
       ),
     );
   }

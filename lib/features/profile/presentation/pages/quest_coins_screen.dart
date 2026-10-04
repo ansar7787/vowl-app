@@ -75,7 +75,9 @@ class VowlCoinsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+    final isMidnight =
+        (Theme.of(context).brightness == Brightness.dark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
         : (isDark ? AppColors.slate900 : AppColors.slate50);
@@ -349,10 +351,7 @@ class VowlCoinsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    context.tr(
-                      'economy.buy_coins',
-                      fallback: 'Buy More Coins',
-                    ),
+                    context.tr('economy.buy_coins', fallback: 'Buy More Coins'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,

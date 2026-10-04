@@ -35,7 +35,8 @@ class AnimatedKidsAsset extends StatelessWidget {
       child = Icon(icon!, size: size, color: color);
     }
 
-    if (animation == KidsAssetAnimation.none || VowlMotion.shouldReduceMotion(context)) {
+    if (animation == KidsAssetAnimation.none ||
+        VowlMotion.shouldReduceMotion(context)) {
       return child;
     }
 

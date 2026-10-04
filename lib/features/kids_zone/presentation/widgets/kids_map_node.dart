@@ -191,7 +191,8 @@ class _KidsMapNodeState extends State<KidsMapNode> {
   }
 
   Widget _buildBuddySpeechBubble(String text, bool isNearRightEdge) {
-    Widget bubble = Container(
+    Widget bubble =
+        Container(
           constraints: BoxConstraints(maxWidth: 180.w),
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           decoration: BoxDecoration(
@@ -228,16 +229,14 @@ class _KidsMapNodeState extends State<KidsMapNode> {
             maxLines: 4,
             overflow: TextOverflow.ellipsis,
           ),
-        )
-        .animate()
-        .scale(
+        ).animate().scale(
           alignment: isNearRightEdge
               ? Alignment.bottomRight
               : Alignment.bottomLeft,
           curve: Curves.elasticOut,
           duration: 700.ms,
-          );
-          
+        );
+
     if (!VowlMotion.shouldReduceMotion(context)) {
       bubble = bubble
           .animate(onPlay: (c) => c.repeat(reverse: true), delay: 700.ms)
@@ -281,124 +280,115 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     }
 
     Widget stickerContent = Column(
-                children: [
-                  Container(
-                    width: 75.r,
-                    height: 75.r,
-                    decoration: BoxDecoration(
+      children: [
+        Container(
+          width: 75.r,
+          height: 75.r,
+          decoration: BoxDecoration(
+            color: isLocked
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.white,
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: isLocked ? Colors.white24 : borderColor,
+              width: 3,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: (isLocked ? Colors.black : borderColor).withValues(
+                  alpha: 0.2,
+                ),
+                blurRadius: 15,
+                offset: const Offset(0, 8),
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(40.r),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: isLocked ? 10 : 0,
+                sigmaY: isLocked ? 10 : 0,
+              ),
+              child: Center(
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    AnimatedKidsAsset(
+                      emoji: stickerEmoji,
+                      size: 50.r,
+                      animation: isLocked
+                          ? KidsAssetAnimation.none
+                          : KidsAssetAnimation.pulse,
                       color: isLocked
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : Colors.white,
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: isLocked ? Colors.white24 : borderColor,
-                        width: 3,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: (isLocked ? Colors.black : borderColor)
-                              .withValues(alpha: 0.2),
-                          blurRadius: 15,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
+                          ? Colors.grey[400]?.withValues(alpha: 0.3)
+                          : null,
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(40.r),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(
-                          sigmaX: isLocked ? 10 : 0,
-                          sigmaY: isLocked ? 10 : 0,
+                    if (isLocked)
+                      Container(
+                        padding: EdgeInsets.all(6.r),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.2),
+                          shape: BoxShape.circle,
                         ),
-                        child: Center(
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              AnimatedKidsAsset(
-                                emoji: stickerEmoji,
-                                size: 50.r,
-                                animation: isLocked
-                                    ? KidsAssetAnimation.none
-                                    : KidsAssetAnimation.pulse,
-                                color: isLocked
-                                    ? Colors.grey[400]?.withValues(alpha: 0.3)
-                                    : null,
-                              ),
-                              if (isLocked)
-                                Container(
-                                  padding: EdgeInsets.all(6.r),
-                                  decoration: BoxDecoration(
-                                    color: Colors.black.withValues(alpha: 0.2),
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Text(
-                                    '🔒',
-                                    style: TextStyle(
-                                      fontSize: 16.sp,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                            ],
+                        child: Text(
+                          '🔒',
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 8.h),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+          decoration: BoxDecoration(
+            color: isLocked
+                ? Colors.black.withValues(alpha: 0.3)
+                : Colors.amber,
+            borderRadius: BorderRadius.circular(10.r),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+          ),
+          child: Text(
+            isLocked
+                ? context.tr(
+                    'kids_zone.lvl_tier',
+                    args: ['$level', tierName],
+                    fallback: "LVL $level $tierName",
+                  )
+                : context.tr(
+                    'kids_zone.sticker_won',
+                    fallback: "STICKER WON! ✨",
                   ),
-                  SizedBox(height: 8.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: isLocked
-                          ? Colors.black.withValues(alpha: 0.3)
-                          : Colors.amber,
-                      borderRadius: BorderRadius.circular(10.r),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.1),
-                      ),
-                    ),
-                    child: Text(
-                      isLocked
-                          ? context.tr(
-                              'kids_zone.lvl_tier',
-                              args: ['$level', tierName],
-                              fallback: "LVL $level $tierName",
-                            )
-                          : context.tr(
-                              'kids_zone.sticker_won',
-                              fallback: "STICKER WON! ✨",
-                            ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              );
-              
-      if (!VowlMotion.shouldReduceMotion(context)) {
-        stickerContent = stickerContent
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .moveY(
-              begin: -5,
-              end: 5,
-              duration: 2.seconds,
-              curve: Curves.easeInOutSine,
-            );
-      }
-
-    return Positioned(
-      top: -85.h,
-      left: 0,
-      right: 0,
-      child: stickerContent,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 9.sp,
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
     );
+
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      stickerContent = stickerContent
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(
+            begin: -5,
+            end: 5,
+            duration: 2.seconds,
+            curve: Curves.easeInOutSine,
+          );
+    }
+
+    return Positioned(top: -85.h, left: 0, right: 0, child: stickerContent);
   }
 
   Widget _buildShimmerSegment(BuildContext context) {
@@ -679,7 +669,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                     ],
                   ),
                 );
-                
+
                 Widget outerRing = Container(
                   width: 130.r,
                   height: 130.r,
@@ -702,7 +692,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                         curve: Curves.easeInOutSine,
                       )
                       .fadeIn(begin: 0.5);
-                      
+
                   outerRing = outerRing
                       .animate(onPlay: (c) => c.repeat())
                       .scale(

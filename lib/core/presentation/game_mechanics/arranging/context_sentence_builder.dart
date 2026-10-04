@@ -290,7 +290,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     size: 22.r,
                   ),
                 );
-                
+
                 if (!reduceMotion) {
                   iconContainer = iconContainer
                       .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -300,7 +300,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         duration: 1.5.seconds,
                       );
                 }
-                
+
                 return iconContainer;
               },
             ),

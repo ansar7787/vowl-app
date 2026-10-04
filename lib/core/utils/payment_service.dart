@@ -11,9 +11,8 @@ import 'package:cloud_functions/cloud_functions.dart';
 /// satisfying the Dependency Inversion Principle (DIP).
 abstract class PaymentService {
   /// Factory constructor to support seamless backwards compatibility for callers.
-  factory PaymentService({
-    required FirebaseFunctions functions,
-  }) = RazorpayPaymentService;
+  factory PaymentService({required FirebaseFunctions functions}) =
+      RazorpayPaymentService;
 
   /// Initializes payment listener handlers.
   void init({
@@ -80,9 +79,7 @@ class RazorpayPaymentService implements PaymentService {
 
   Razorpay? _razorpay;
 
-  RazorpayPaymentService({
-    required this.functions,
-  });
+  RazorpayPaymentService({required this.functions});
 
   @override
   void init({

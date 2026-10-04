@@ -239,7 +239,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -364,7 +369,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -374,8 +384,18 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     }
     final result = await repairStreak(event.cost);
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
-      (_) => emit(state.copyWith(isLoading: false, message: () => 'progression.streak_repaired')),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
+      (_) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => 'progression.streak_repaired',
+        ),
+      ),
     );
   }
 
@@ -394,7 +414,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -404,9 +429,19 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     }
     final result = await repairStreakFree(const NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
-        emit(state.copyWith(isLoading: false, message: () => 'progression.streak_repaired'));
+        emit(
+          state.copyWith(
+            isLoading: false,
+            message: () => 'progression.streak_repaired',
+          ),
+        );
         authBloc.add(const AuthRefreshUser());
       },
     );
@@ -418,7 +453,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -453,7 +493,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -497,7 +542,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -546,7 +596,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -556,9 +611,19 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     }
     final result = await claimStreakMilestone(event.milestone);
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
-        emit(state.copyWith(isLoading: false, message: () => 'progression.milestone_claimed'));
+        emit(
+          state.copyWith(
+            isLoading: false,
+            message: () => 'progression.milestone_claimed',
+          ),
+        );
         authBloc.add(const AuthRefreshUser());
       },
     );
@@ -580,7 +645,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -595,7 +665,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       ),
     );
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(
           state.copyWith(
@@ -629,7 +704,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   ) async {
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
-      emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey('network-unreachable')));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
       return;
     }
     emit(state.copyWith(isLoading: true));
@@ -646,7 +726,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final updatedUser = user.copyWith(totalExp: user.totalExp + event.amount);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(isLoading: false, message: () => AuthErrorHandler.getKey(failure.message))),
+      (failure) => emit(
+        state.copyWith(
+          isLoading: false,
+          message: () => AuthErrorHandler.getKey(failure.message),
+        ),
+      ),
       (_) {
         emit(state.copyWith(isLoading: false));
         authBloc.add(const AuthRefreshUser());

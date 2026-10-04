@@ -124,7 +124,9 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                   Center(
                     child: Builder(
                       builder: (context) {
-                        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                        final reduceMotion = MediaQuery.disableAnimationsOf(
+                          context,
+                        );
                         Widget button = ScaleButton(
                           onTap: onClaim,
                           child: Container(
@@ -137,9 +139,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20.r),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.green.withValues(
-                                    alpha: 0.9,
-                                  ),
+                                  color: Colors.green.withValues(alpha: 0.9),
                                   offset: Offset(0, 4.h),
                                 ),
                               ],
@@ -165,7 +165,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                               );
                         }
                         return button;
-                      }
+                      },
                     ),
                   ),
                 ],

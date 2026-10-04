@@ -76,7 +76,9 @@ class AdventureXPScreen extends StatelessWidget {
       },
       child: Builder(
         builder: (context) {
-          final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+          final isMidnight =
+              (Theme.of(context).brightness == Brightness.dark &&
+              Theme.of(context).scaffoldBackgroundColor == Colors.black);
           final bgColor = isMidnight
               ? Colors.black
               : (isDark ? AppColors.slate900 : AppColors.slate50);

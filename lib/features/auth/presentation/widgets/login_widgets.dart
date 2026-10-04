@@ -19,7 +19,12 @@ class LoginEmailInput extends StatelessWidget {
   final FocusNode? focusNode;
   final VoidCallback? onSubmitted;
 
-  const LoginEmailInput({super.key, this.fieldKey, this.focusNode, this.onSubmitted});
+  const LoginEmailInput({
+    super.key,
+    this.fieldKey,
+    this.focusNode,
+    this.onSubmitted,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +155,13 @@ class LoginPasswordInput extends StatelessWidget {
             autocorrect: false,
             enableSuggestions: false,
             maxLength: 128,
-            buildCounter: (context, {required currentLength, required isFocused, maxLength}) => null,
+            buildCounter:
+                (
+                  context, {
+                  required currentLength,
+                  required isFocused,
+                  maxLength,
+                }) => null,
             style: TextStyle(color: contrastColor),
             decoration: buildAuthDecoration(
               context: context,
@@ -197,10 +208,7 @@ class LoginPasswordInput extends StatelessWidget {
 class LoginButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const LoginButton({
-    super.key,
-    required this.onPressed,
-  });
+  const LoginButton({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -212,9 +220,7 @@ class LoginButton extends StatelessWidget {
           button: true,
           label: context.tr('auth.login', fallback: 'Log In'),
           child: ElevatedButton(
-            onPressed: state.isSubmitting
-                ? null
-                : onPressed,
+            onPressed: state.isSubmitting ? null : onPressed,
             style: ElevatedButton.styleFrom(
               minimumSize: const Size(double.infinity, 56),
             ),

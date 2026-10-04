@@ -45,7 +45,8 @@ class _TrophyRoomView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Scaffold(
       backgroundColor: isMidnight ? _LocalPalette.color020617 : null,

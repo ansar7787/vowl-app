@@ -196,11 +196,8 @@ class VowlMascot extends StatelessWidget {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color:
-                      (level >= 100
-                              ? Colors.amberAccent
-                              : Colors.blueAccent)
-                          .withValues(alpha: 0.3),
+                  color: (level >= 100 ? Colors.amberAccent : Colors.blueAccent)
+                      .withValues(alpha: 0.3),
                   blurRadius: 15,
                   spreadRadius: 2,
                 ),
@@ -216,13 +213,7 @@ class VowlMascot extends StatelessWidget {
                   duration: 2.seconds,
                 );
           }
-          bot = Stack(
-            alignment: Alignment.center,
-            children: [
-              aura,
-              bot,
-            ],
-          );
+          bot = Stack(alignment: Alignment.center, children: [aura, bot]);
         }
 
         // ── Accessory overlay ─────────────────────────────────────────────
@@ -292,7 +283,8 @@ class VowlMascot extends StatelessWidget {
         }
 
         if (state == VowlMascotState.happy) {
-          animatedBot = animatedBot.animate()
+          animatedBot = animatedBot
+              .animate()
               .shake(hz: 4, curve: Curves.easeInOutCubic)
               .scale(
                 begin: const Offset(1, 1),
@@ -308,7 +300,8 @@ class VowlMascot extends StatelessWidget {
         }
 
         if (state == VowlMascotState.worried) {
-          animatedBot = animatedBot.animate()
+          animatedBot = animatedBot
+              .animate()
               .shake(hz: 8, curve: Curves.easeInOut)
               .tint(color: Colors.blue.withValues(alpha: 0.2));
         }
@@ -353,11 +346,7 @@ class VowlMascot extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 animatedBot,
-                Positioned(
-                  bottom: botSize * 0.1,
-                  right: 0,
-                  child: emojiWidget,
-                ),
+                Positioned(bottom: botSize * 0.1, right: 0, child: emojiWidget),
               ],
             ),
           );

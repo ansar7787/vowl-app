@@ -24,7 +24,9 @@ class FixTheSentenceScratchOverlayPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant FixTheSentenceScratchOverlayPainter oldDelegate) {
+  bool shouldRepaint(
+    covariant FixTheSentenceScratchOverlayPainter oldDelegate,
+  ) {
     return oldDelegate.points != points;
   }
 }

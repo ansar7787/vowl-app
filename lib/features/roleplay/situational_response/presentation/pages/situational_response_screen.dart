@@ -102,7 +102,6 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     initRoleplayGame();
   }
 
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

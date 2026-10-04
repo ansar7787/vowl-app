@@ -83,7 +83,6 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     initRoleplayGame();
   }
 
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

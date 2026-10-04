@@ -79,6 +79,8 @@ void main() {
   });
 
   setUp(() {
+    mockNetworkInfo = MockNetworkInfo();
+    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     mockGetQuest = MockGetRoleplayQuest();
     mockPreloadQuests = MockPreloadRoleplayQuests();
     mockUpdateUserRewards = MockUpdateUserRewards();
@@ -89,7 +91,7 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
-    mockNetworkInfo = MockNetworkInfo();
+    
 
     bloc = RoleplayBloc(
       getQuest: mockGetQuest,

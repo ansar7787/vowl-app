@@ -79,7 +79,10 @@ class PhotoEmptyState extends StatelessWidget {
       isDark: isDark,
     );
     if (!reduceMotion) {
-      galleryBtn = galleryBtn.animate(delay: 300.ms).fadeIn().slideY(begin: 0.2);
+      galleryBtn = galleryBtn
+          .animate(delay: 300.ms)
+          .fadeIn()
+          .slideY(begin: 0.2);
     }
 
     Widget content = Center(
@@ -198,11 +201,11 @@ class PhotoEmptyState extends StatelessWidget {
         ],
       ),
     );
-    
+
     if (!reduceMotion) {
       content = content.animate().fadeIn(duration: 800.ms);
     }
-    
+
     return content;
   }
 

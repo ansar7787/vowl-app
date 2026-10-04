@@ -90,7 +90,6 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     initRoleplayGame();
   }
 
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

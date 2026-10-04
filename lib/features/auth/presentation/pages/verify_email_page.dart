@@ -117,7 +117,9 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
 
   Color _bgColor(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+    final isMidnight =
+        (Theme.of(context).brightness == Brightness.dark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black);
     return isMidnight
         ? _LocalPalette.color000000
         : (isDark ? AppColors.slate900 : AppColors.slate50);

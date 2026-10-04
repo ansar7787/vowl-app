@@ -77,6 +77,8 @@ void main() {
   });
 
   setUp(() {
+    mockNetworkInfo = MockNetworkInfo();
+    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     mockGetQuest = MockGetAccentQuest();
     mockPreloadQuest = MockPreloadAccentQuest();
     mockClearCache = MockClearAccentQuestCache();
@@ -88,7 +90,7 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
-    mockNetworkInfo = MockNetworkInfo();
+    
 
     bloc = AccentBloc(
       getQuest: mockGetQuest,

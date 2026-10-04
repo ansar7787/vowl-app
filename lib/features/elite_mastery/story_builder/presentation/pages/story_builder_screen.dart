@@ -150,7 +150,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+    final isMidnight =
+        (Theme.of(context).brightness == Brightness.dark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final theme = LevelThemeHelper.getTheme(
       widget.gameType.name,
       level: widget.level,

@@ -320,7 +320,7 @@ class KidsNumbersLayout extends StatelessWidget {
                 );
           }
           return child;
-        }
+        },
       ),
     );
   }

@@ -114,7 +114,7 @@ class _BlueprintPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant _BlueprintPainter oldDelegate) {
     return oldDelegate.pattern != pattern ||
-           oldDelegate.color != color ||
-           oldDelegate.progress != progress;
+        oldDelegate.color != color ||
+        oldDelegate.progress != progress;
   }
 }

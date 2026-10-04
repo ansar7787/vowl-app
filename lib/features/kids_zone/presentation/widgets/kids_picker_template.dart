@@ -129,95 +129,97 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
     final isEmoji = _isEmoji(displayValue);
 
     Widget visual = Stack(
-          alignment: Alignment.center,
-          clipBehavior: Clip.none,
-          children: [
-            // Solid, high-contrast circle
-            Container(
-              width: 200.r,
-              height: 200.r,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: isHighlighted
-                      ? widget.primaryColor
-                      : widget.primaryColor.withValues(alpha: 0.3),
-                  width: isHighlighted ? 8 : 4,
+      alignment: Alignment.center,
+      clipBehavior: Clip.none,
+      children: [
+        // Solid, high-contrast circle
+        Container(
+          width: 200.r,
+          height: 200.r,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: isHighlighted
+                  ? widget.primaryColor
+                  : widget.primaryColor.withValues(alpha: 0.3),
+              width: isHighlighted ? 8 : 4,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: widget.primaryColor.withValues(
+                  alpha: isHighlighted ? 0.3 : 0.15,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: widget.primaryColor.withValues(
-                      alpha: isHighlighted ? 0.3 : 0.15,
-                    ),
-                    blurRadius: isHighlighted ? 30 : 15,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
+                blurRadius: isHighlighted ? 30 : 15,
+                offset: const Offset(0, 10),
               ),
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.all(20.r),
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      displayValue,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: _getCentralFontSize(displayValue, isEmoji),
-                        fontWeight: FontWeight.w900,
-                        color: AppColors.slate800,
-                        letterSpacing: isEmoji ? 4 : 0,
-                        height: 1.0,
-                      ),
-                      textAlign: TextAlign.center,
-                      softWrap: false,
-                      overflow: TextOverflow.visible,
-                    ),
+            ],
+          ),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(20.r),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  displayValue,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: _getCentralFontSize(displayValue, isEmoji),
+                    fontWeight: FontWeight.w900,
+                    color: AppColors.slate800,
+                    letterSpacing: isEmoji ? 4 : 0,
+                    height: 1.0,
                   ),
+                  textAlign: TextAlign.center,
+                  softWrap: false,
+                  overflow: TextOverflow.visible,
                 ),
               ),
             ),
+          ),
+        ),
 
-            if (isHighlighted)
-              Positioned(
-                bottom: -15.h,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 8.h,
+        if (isHighlighted)
+          Positioned(
+            bottom: -15.h,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+              decoration: BoxDecoration(
+                color: widget.primaryColor,
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(color: Colors.white, width: 3),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 4,
+                    offset: Offset(0, 4),
                   ),
-                  decoration: BoxDecoration(
-                    color: widget.primaryColor,
-                    borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(color: Colors.white, width: 3),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Text(
-                    context.tr('games.kids_drop_here', fallback: 'Drop here'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                    ),
-                  ),
-                ).animate().fadeIn().scale(),
+                ],
               ),
-          ],
-        );
+              child: Text(
+                context.tr('games.kids_drop_here', fallback: 'Drop here'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                ),
+              ),
+            ).animate().fadeIn().scale(),
+          ),
+      ],
+    );
 
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
     if (!reduceMotion) {
       visual = visual
           .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut);
+          .moveY(
+            begin: -5,
+            end: 5,
+            duration: 2.seconds,
+            curve: Curves.easeInOut,
+          );
     }
     return visual;
   }

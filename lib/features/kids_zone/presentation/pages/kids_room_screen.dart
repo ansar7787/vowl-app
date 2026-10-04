@@ -328,7 +328,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           child: Builder(
             builder: (context) {
               final reduceMotion = VowlMotion.shouldReduceMotion(context);
-              final isMidnight = (Theme.of(context).brightness == Brightness.dark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+              final isMidnight =
+                  (Theme.of(context).brightness == Brightness.dark &&
+                  Theme.of(context).scaffoldBackgroundColor == Colors.black);
               final isDark = Theme.of(context).brightness == Brightness.dark;
               final bgColor = isMidnight
                   ? Colors.black
@@ -558,34 +560,41 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                           ).withValues(alpha: 0.6),
                                           child: Stack(
                                             children: [
-                                              ...List.generate(
-                                                5,
-                                                (i) {
-                                                  Widget star = const Text(
-                                                    "⭐",
-                                                    style: TextStyle(
-                                                      fontSize: 10,
-                                                      color: Colors.white30,
-                                                    ),
-                                                  );
-                                                  if (!reduceMotion) {
-                                                    star = star
-                                                        .animate(
-                                                          onPlay: (c) => c.repeat(
-                                                            reverse: true,
-                                                          ),
-                                                        )
-                                                        .fadeOut(
-                                                          duration: (1 + Random().nextDouble() * 2).seconds,
-                                                        );
-                                                  }
-                                                  return Positioned(
-                                                    top: _sleepStarPositions[i].dy * 1.sh,
-                                                    left: _sleepStarPositions[i].dx * 1.sw,
-                                                    child: star,
-                                                  );
-                                                },
-                                              ),
+                                              ...List.generate(5, (i) {
+                                                Widget star = const Text(
+                                                  "⭐",
+                                                  style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Colors.white30,
+                                                  ),
+                                                );
+                                                if (!reduceMotion) {
+                                                  star = star
+                                                      .animate(
+                                                        onPlay: (c) => c.repeat(
+                                                          reverse: true,
+                                                        ),
+                                                      )
+                                                      .fadeOut(
+                                                        duration:
+                                                            (1 +
+                                                                    Random().nextDouble() *
+                                                                        2)
+                                                                .seconds,
+                                                      );
+                                                }
+                                                return Positioned(
+                                                  top:
+                                                      _sleepStarPositions[i]
+                                                          .dy *
+                                                      1.sh,
+                                                  left:
+                                                      _sleepStarPositions[i]
+                                                          .dx *
+                                                      1.sw,
+                                                  child: star,
+                                                );
+                                              }),
                                               Center(
                                                 child: Column(
                                                   mainAxisAlignment:
@@ -595,35 +604,59 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                                     Builder(
                                                       builder: (context) {
                                                         Widget btn = Container(
-                                                          padding: EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
-                                                            vertical: 12.h,
-                                                          ),
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    24.w,
+                                                                vertical: 12.h,
+                                                              ),
                                                           decoration: BoxDecoration(
-                                                            color: Colors.white.withValues(alpha: 0.1),
-                                                            borderRadius: BorderRadius.circular(30.r),
-                                                            border: Border.all(color: Colors.white24),
+                                                            color: Colors.white
+                                                                .withValues(
+                                                                  alpha: 0.1,
+                                                                ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  30.r,
+                                                                ),
+                                                            border: Border.all(
+                                                              color: Colors
+                                                                  .white24,
+                                                            ),
                                                           ),
                                                           child: Row(
-                                                            mainAxisSize: MainAxisSize.min,
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
                                                             children: [
                                                               Icon(
-                                                                Icons.touch_app_rounded,
-                                                                color: Colors.white,
+                                                                Icons
+                                                                    .touch_app_rounded,
+                                                                color: Colors
+                                                                    .white,
                                                                 size: 20.sp,
                                                               ),
-                                                              SizedBox(width: 10.w),
+                                                              SizedBox(
+                                                                width: 10.w,
+                                                              ),
                                                               Text(
                                                                 context.tr(
                                                                   'games.kids_tap_wake',
-                                                                  fallback: 'Tap to wake',
+                                                                  fallback:
+                                                                      'Tap to wake',
                                                                 ),
                                                                 style: TextStyle(
-                                                                  fontFamily: 'Outfit',
-                                                                  fontSize: 12.sp,
-                                                                  fontWeight: FontWeight.w900,
-                                                                  color: Colors.white,
-                                                                  letterSpacing: 1,
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      12.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w900,
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      1,
                                                                 ),
                                                               ),
                                                             ],
@@ -631,11 +664,27 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                                         );
 
                                                         if (!reduceMotion) {
-                                                          btn = btn.animate(onPlay: (c) => c.repeat(reverse: true))
+                                                          btn = btn
+                                                              .animate(
+                                                                onPlay: (c) =>
+                                                                    c.repeat(
+                                                                      reverse:
+                                                                          true,
+                                                                    ),
+                                                              )
                                                               .scale(
-                                                                begin: const Offset(1, 1),
-                                                                end: const Offset(1.05, 1.05),
-                                                                duration: 1.seconds,
+                                                                begin:
+                                                                    const Offset(
+                                                                      1,
+                                                                      1,
+                                                                    ),
+                                                                end:
+                                                                    const Offset(
+                                                                      1.05,
+                                                                      1.05,
+                                                                    ),
+                                                                duration:
+                                                                    1.seconds,
                                                               );
                                                         }
 
@@ -778,69 +827,67 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                           children: [
                             if (user.kidsBuddyMood == 'excited' ||
                                 user.kidsBuddyMood == 'happy')
-                                  Builder(
-                                    builder: (context) {
-                                      Widget aura = Container(
-                                        width: 150.r,
-                                        height: 150.r,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: Colors.amber.withValues(
-                                                alpha:
-                                                    user.kidsBuddyMood == 'excited'
-                                                    ? 0.3
-                                                    : 0.1,
-                                              ),
-                                              blurRadius:
-                                                  user.kidsBuddyMood == 'excited'
-                                                  ? 40
-                                                  : 20,
-                                              spreadRadius:
-                                                  user.kidsBuddyMood == 'excited'
-                                                  ? 20
-                                                  : 10,
-                                            ),
-                                          ],
+                              Builder(
+                                builder: (context) {
+                                  Widget aura = Container(
+                                    width: 150.r,
+                                    height: 150.r,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.amber.withValues(
+                                            alpha:
+                                                user.kidsBuddyMood == 'excited'
+                                                ? 0.3
+                                                : 0.1,
+                                          ),
+                                          blurRadius:
+                                              user.kidsBuddyMood == 'excited'
+                                              ? 40
+                                              : 20,
+                                          spreadRadius:
+                                              user.kidsBuddyMood == 'excited'
+                                              ? 20
+                                              : 10,
                                         ),
-                                      );
-                                      if (!reduceMotion) {
-                                        aura = aura
-                                            .animate(
-                                              onPlay: (c) => c.repeat(reverse: true),
-                                            )
-                                            .scale(
-                                              begin: const Offset(0.9, 0.9),
-                                              end: const Offset(1.1, 1.1),
-                                              duration: 2.seconds,
-                                            );
-                                      }
-                                      return aura;
-                                    },
-                                  ),
-
-                            if (user.kidsBuddyMood == 'excited')
-                              ...List.generate(
-                                5,
-                                (i) {
-                                  Widget sparkle = const Text(
-                                    "✨",
-                                    style: TextStyle(fontSize: 16),
+                                      ],
+                                    ),
                                   );
                                   if (!reduceMotion) {
-                                    sparkle = sparkle
-                                        .animate(onPlay: (c) => c.repeat())
-                                        .scale(duration: 1.seconds)
-                                        .fadeOut();
+                                    aura = aura
+                                        .animate(
+                                          onPlay: (c) =>
+                                              c.repeat(reverse: true),
+                                        )
+                                        .scale(
+                                          begin: const Offset(0.9, 0.9),
+                                          end: const Offset(1.1, 1.1),
+                                          duration: 2.seconds,
+                                        );
                                   }
-                                  return Positioned(
-                                    top: _sparklePositions[i].dy,
-                                    left: _sparklePositions[i].dx,
-                                    child: sparkle,
-                                  );
+                                  return aura;
                                 },
                               ),
+
+                            if (user.kidsBuddyMood == 'excited')
+                              ...List.generate(5, (i) {
+                                Widget sparkle = const Text(
+                                  "✨",
+                                  style: TextStyle(fontSize: 16),
+                                );
+                                if (!reduceMotion) {
+                                  sparkle = sparkle
+                                      .animate(onPlay: (c) => c.repeat())
+                                      .scale(duration: 1.seconds)
+                                      .fadeOut();
+                                }
+                                return Positioned(
+                                  top: _sparklePositions[i].dy,
+                                  left: _sparklePositions[i].dx,
+                                  child: sparkle,
+                                );
+                              }),
 
                             // The Theme-Specific Nest underneath the mascot
                             Positioned(
@@ -930,7 +977,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         ],
                       ),
                     );
-                    
+
                     if (!reduceMotion) {
                       bubble = bubble
                           .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -1041,7 +1088,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     ),
                   ),
                 );
-                
+
                 final reduceMotion = VowlMotion.shouldReduceMotion(context);
                 if (!reduceMotion) {
                   badge = badge

@@ -52,18 +52,12 @@ class AccentPeekingMascot extends StatelessWidget {
     );
 
     Widget bubble = Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 12.w,
-        vertical: 6.h,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-          ),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10),
         ],
       ),
       child: Text(
@@ -87,16 +81,15 @@ class AccentPeekingMascot extends StatelessWidget {
           );
     }
 
-    Widget mascot = VowlMascot(state: mascotVisualState, size: 45.r, mascotId: mascotId);
+    Widget mascot = VowlMascot(
+      state: mascotVisualState,
+      size: 45.r,
+      mascotId: mascotId,
+    );
     if (!reduceMotion) {
       mascot = mascot
           .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(
-            begin: 0,
-            end: 5,
-            duration: 1500.ms,
-            curve: Curves.easeInOut,
-          );
+          .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
     }
 
     Widget column = Column(

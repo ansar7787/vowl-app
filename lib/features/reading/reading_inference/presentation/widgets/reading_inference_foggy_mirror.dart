@@ -117,7 +117,7 @@ class FogPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant FogPainter oldDelegate) {
     return oldDelegate.points != points ||
-           oldDelegate.clarity != clarity ||
-           oldDelegate.color != color;
+        oldDelegate.clarity != clarity ||
+        oldDelegate.color != color;
   }
 }
