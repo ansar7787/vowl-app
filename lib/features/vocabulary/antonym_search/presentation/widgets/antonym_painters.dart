@@ -38,7 +38,9 @@ class CorePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant CorePainter oldDelegate) {
+    return oldDelegate.color != color;
+  }
 }
 
 class PlasmaArcPainter extends CustomPainter {
@@ -77,5 +79,9 @@ class PlasmaArcPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant PlasmaArcPainter oldDelegate) {
+    return oldDelegate.start != start ||
+           oldDelegate.end != end ||
+           oldDelegate.color != color;
+  }
 }

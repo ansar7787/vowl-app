@@ -172,30 +172,34 @@ class _HintButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    Widget button = QuestHintButton(
+      used: hintUsed,
+      primaryColor: theme.primaryColor,
+      hintText: hintText,
+      soundService: soundService,
+      // FIX: QuestHintButton.onTap is VoidCallback (non-nullable).
+      // Pass a no-op when used — never null. The `used: hintUsed` flag
+      // already disables the button visually; this just ensures the
+      // callback slot satisfies the non-nullable type contract.
+      onTap: hintUsed ? () {} : onTap,
+    );
+
+    if (shouldGlow && !reduceMotion) {
+      button = button
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .shimmer(
+            color: Colors.white.withValues(alpha: 0.5),
+            duration: 1.seconds,
+          )
+          .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
+    }
+
     return Semantics(
       label: hintUsed ? 'Hint already used' : 'Use hint',
       button: !hintUsed,
-      child:
-          QuestHintButton(
-                used: hintUsed,
-                primaryColor: theme.primaryColor,
-                hintText: hintText,
-                soundService: soundService,
-                // FIX: QuestHintButton.onTap is VoidCallback (non-nullable).
-                // Pass a no-op when used — never null. The `used: hintUsed` flag
-                // already disables the button visually; this just ensures the
-                // callback slot satisfies the non-nullable type contract.
-                onTap: hintUsed ? () {} : onTap,
-              )
-              .animate(
-                target: shouldGlow ? 1 : 0,
-                onPlay: (c) => c.repeat(reverse: true),
-              )
-              .shimmer(
-                color: Colors.white.withValues(alpha: 0.5),
-                duration: 1.seconds,
-              )
-              .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+      child: button,
     );
   }
 }

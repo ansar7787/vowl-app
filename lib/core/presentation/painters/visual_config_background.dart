@@ -147,7 +147,17 @@ class _FrequencyLockWidgetState extends State<_FrequencyLockWidget>
       duration: Duration(
         milliseconds: (4000 / widget.intensity.clamp(0.1, 10.0)).round(),
       ),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -232,7 +242,17 @@ class _DataLogWidgetState extends State<_DataLogWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 6),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -319,7 +339,7 @@ class _NeuralNetworkWidgetState extends State<_NeuralNetworkWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 8),
-    )..repeat();
+    );
 
     final rng = Random(42);
     for (int i = 0; i < 12; i++) {
@@ -331,6 +351,16 @@ class _NeuralNetworkWidgetState extends State<_NeuralNetworkWidget>
           dy: (rng.nextDouble() - 0.5) * 0.02,
         ),
       );
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
     }
   }
 
@@ -432,7 +462,17 @@ class _ArchiveDecryptWidgetState extends State<_ArchiveDecryptWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 5),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -521,7 +561,17 @@ class _CouncilHallWidgetState extends State<_CouncilHallWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -602,7 +652,17 @@ class _PurgeGridWidgetState extends State<_PurgeGridWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -700,7 +760,17 @@ class _VocabNexusWidgetState extends State<_VocabNexusWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 10),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -810,7 +880,17 @@ class _BlueprintGridWidgetState extends State<_BlueprintGridWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 8),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -886,7 +966,17 @@ class _SonarScanWidgetState extends State<_SonarScanWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -958,7 +1048,17 @@ class _MechanicalLinkWidgetState extends State<_MechanicalLinkWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 12),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -1035,7 +1135,17 @@ class _MagneticFieldWidgetState extends State<_MagneticFieldWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 6),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -1117,6 +1227,16 @@ class _SemanticAuraWidgetState extends State<_SemanticAuraWidget>
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
+  }
+
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
@@ -1186,7 +1306,17 @@ class _ValidatorMatrixWidgetState extends State<_ValidatorMatrixWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 15),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _controller.stop();
+    } else if (!_controller.isAnimating) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -1237,3 +1367,4 @@ class _ValidatorMatrixPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant _ValidatorMatrixPainter old) => old.t != t;
 }
+

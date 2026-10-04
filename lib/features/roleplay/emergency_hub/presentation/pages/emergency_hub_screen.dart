@@ -76,11 +76,23 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat();
+    );
 
     _codeController = TextEditingController();
 
     initRoleplayGame();
+  }
+
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      if (_pulseController.isAnimating) _pulseController.stop();
+    } else {
+      if (!_pulseController.isAnimating) _pulseController.repeat();
+    }
   }
 
   @override

@@ -337,7 +337,10 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                             shape: BoxShape.circle,
                                           ),
                                         ),
-                                        Container(
+                                        Builder(
+                                          builder: (context) {
+                                            final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                            Widget circle = Container(
                                               width: 12,
                                               height: 12,
                                               decoration: BoxDecoration(
@@ -349,15 +352,21 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                                   width: 1,
                                                 ),
                                               ),
-                                            )
-                                            .animate(onPlay: (c) => c.repeat())
-                                            .scale(
-                                              begin: const Offset(0.5, 0.5),
-                                              end: const Offset(2, 2),
-                                              duration: 2.seconds,
-                                              curve: Curves.easeOutExpo,
-                                            )
-                                            .fadeOut(duration: 2.seconds),
+                                            );
+                                            if (!reduceMotion) {
+                                              circle = circle
+                                                  .animate(onPlay: (c) => c.repeat())
+                                                  .scale(
+                                                    begin: const Offset(0.5, 0.5),
+                                                    end: const Offset(2, 2),
+                                                    duration: 2.seconds,
+                                                    curve: Curves.easeOutExpo,
+                                                  )
+                                                  .fadeOut(duration: 2.seconds);
+                                            }
+                                            return circle;
+                                          }
+                                        ),
                                       ],
                                     ),
                                     SizedBox(width: 8.w),
@@ -494,7 +503,10 @@ class _DiscoveryCollectionCard extends StatelessWidget {
   }
 
   Widget _buildStartButton(Color color, bool isRtl) {
-    return Container(
+    return Builder(
+      builder: (context) {
+        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+        Widget button = Container(
           padding: EdgeInsets.all(12.r),
           decoration: BoxDecoration(
             color: color.withValues(alpha: 0.12),
@@ -506,12 +518,18 @@ class _DiscoveryCollectionCard extends StatelessWidget {
             size: 16.r,
             color: color,
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(
-          delay: 1.seconds,
-          duration: 2500.ms,
-          color: color.withValues(alpha: 0.3),
         );
+        if (!reduceMotion) {
+          button = button
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .shimmer(
+                delay: 1.seconds,
+                duration: 2500.ms,
+                color: color.withValues(alpha: 0.3),
+              );
+        }
+        return button;
+      }
+    );
   }
 }

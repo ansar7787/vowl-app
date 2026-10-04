@@ -39,6 +39,13 @@ class _GameConfettiState extends State<GameConfetti> {
     IllustrationColors.vibrantPink, // Pink
   ];
 
+  static const int _maxReplays = 2;
+  int _replayCount = 0;
+
+  /// Cached during [build] so the listener can reference it safely
+  /// (MediaQuery lookups are only valid during the build phase).
+  bool _reduceMotion = false;
+
   @override
   void initState() {
     super.initState();
@@ -46,9 +53,14 @@ class _GameConfettiState extends State<GameConfetti> {
 
     _controller.addListener(() {
       if (_controller.state == ConfettiControllerState.stopped && mounted) {
-        Future.delayed(const Duration(milliseconds: 1500), () {
-          if (mounted) _controller.play();
-        });
+        if (_reduceMotion) return;
+
+        if (_replayCount < _maxReplays) {
+          _replayCount++;
+          Future.delayed(const Duration(milliseconds: 1500), () {
+            if (mounted) _controller.play();
+          });
+        }
       }
     });
 
@@ -96,6 +108,7 @@ class _GameConfettiState extends State<GameConfetti> {
 
   @override
   Widget build(BuildContext context) {
+    _reduceMotion = MediaQuery.disableAnimationsOf(context);
     return RepaintBoundary(
       child: Stack(
         children: [

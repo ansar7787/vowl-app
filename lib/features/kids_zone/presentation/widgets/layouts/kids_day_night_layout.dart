@@ -117,18 +117,27 @@ class KidsDayNightLayout extends StatelessWidget {
   }
 
   Widget _buildCloud(double size) {
-    return Icon(
+    return Builder(
+      builder: (context) {
+        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+        Widget cloud = Icon(
           Icons.cloud_rounded,
           color: Colors.white.withValues(alpha: 0.2),
           size: size,
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveX(
-          begin: -10.w,
-          end: 10.w,
-          duration: 6.seconds,
-          curve: Curves.easeInOutSine,
         );
+        if (!reduceMotion) {
+          cloud = cloud
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveX(
+                begin: -10.w,
+                end: 10.w,
+                duration: 6.seconds,
+                curve: Curves.easeInOutSine,
+              );
+        }
+        return cloud;
+      }
+    );
   }
 
   Widget _buildSkyView(BuildContext context, KidsLoaded state, dynamic quest) {
@@ -258,18 +267,27 @@ class KidsDayNightLayout extends StatelessWidget {
   }
 
   Widget _buildTwinklingStar() {
-    return Icon(
+    return Builder(
+      builder: (context) {
+        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+        Widget star = Icon(
           Icons.star_rounded,
           color: Colors.white.withValues(alpha: 0.8),
           size: 12.r,
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .fade(begin: 0.2, end: 1.0, duration: 1500.ms)
-        .scale(
-          begin: const Offset(0.8, 0.8),
-          end: const Offset(1.2, 1.2),
-          duration: 1500.ms,
         );
+        if (!reduceMotion) {
+          star = star
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .fade(begin: 0.2, end: 1.0, duration: 1500.ms)
+              .scale(
+                begin: const Offset(0.8, 0.8),
+                end: const Offset(1.2, 1.2),
+                duration: 1500.ms,
+              );
+        }
+        return star;
+      }
+    );
   }
 
   Widget _buildCelestialCard(
@@ -302,18 +320,27 @@ class KidsDayNightLayout extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             // Bouncing icon (Sun or Moon)
-            Icon(
+            Builder(
+              builder: (context) {
+                final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                Widget icon = Icon(
                   isDay ? Icons.wb_sunny_rounded : Icons.mode_night_rounded,
                   color: isDay ? _LocalPalette.colorfef08a : AppColors.slate200,
                   size: 42.sp,
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .moveY(
-                  begin: -2.h,
-                  end: 2.h,
-                  duration: 2.seconds,
-                  curve: Curves.easeInOutSine,
-                ),
+                );
+                if (!reduceMotion) {
+                  icon = icon
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .moveY(
+                        begin: -2.h,
+                        end: 2.h,
+                        duration: 2.seconds,
+                        curve: Curves.easeInOutSine,
+                      );
+                }
+                return icon;
+              }
+            ),
 
             SizedBox(height: 12.h),
 

@@ -302,17 +302,26 @@ class KidsNumbersLayout extends StatelessWidget {
         ),
       ),
       childWhenDragging: Opacity(opacity: 0.3, child: planetWidget),
-      child: planetWidget
-          .animate(
-            onPlay: (controller) => controller.repeat(reverse: true),
-            delay: Duration(milliseconds: 300 * index), // Staggered start
-          )
-          .moveY(
-            begin: -5,
-            end: 5,
-            duration: 2.seconds,
-            curve: Curves.easeInOut,
-          ),
+      child: Builder(
+        builder: (context) {
+          final reduceMotion = MediaQuery.disableAnimationsOf(context);
+          Widget child = planetWidget;
+          if (!reduceMotion) {
+            child = child
+                .animate(
+                  onPlay: (controller) => controller.repeat(reverse: true),
+                  delay: Duration(milliseconds: 300 * index), // Staggered start
+                )
+                .moveY(
+                  begin: -5,
+                  end: 5,
+                  duration: 2.seconds,
+                  curve: Curves.easeInOut,
+                );
+          }
+          return child;
+        }
+      ),
     );
   }
 }

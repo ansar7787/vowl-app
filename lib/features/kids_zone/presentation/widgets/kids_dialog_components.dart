@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -19,25 +20,30 @@ class KidsSunburstBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget background = Container(
+      width: 800.w,
+      height: 800.w,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: RadialGradient(
+          colors: [
+            color.withValues(alpha: 0.3),
+            Colors.transparent,
+          ],
+          stops: const [0.1, 0.8],
+        ),
+      ),
+    );
+
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      background = background
+          .animate(onPlay: (c) => c.repeat())
+          .rotate(duration: 10.seconds, curve: Curves.linear);
+    }
+
     return RepaintBoundary(
       child: Center(
-        child:
-            Container(
-                  width: 800.w,
-                  height: 800.w,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: RadialGradient(
-                      colors: [
-                        color.withValues(alpha: 0.3),
-                        Colors.transparent,
-                      ],
-                      stops: const [0.1, 0.8],
-                    ),
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat())
-                .rotate(duration: 10.seconds, curve: Curves.linear),
+        child: background,
       ),
     );
   }

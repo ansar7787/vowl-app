@@ -78,9 +78,21 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
     _reactorController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
-    )..repeat();
+    );
 
     initRoleplayGame();
+  }
+
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      if (_reactorController.isAnimating) _reactorController.stop();
+    } else {
+      if (!_reactorController.isAnimating) _reactorController.repeat();
+    }
   }
 
   @override

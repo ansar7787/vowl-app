@@ -147,6 +147,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
     final adService = di.sl<AdService>();
     final hasAdReady = adService.isRewardedAdLoaded;
     final gate = OfflinePlayGateService.instance;
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
     return Scaffold(
       backgroundColor: Colors.transparent,
@@ -223,6 +224,173 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
             child: SafeArea(
               child: LayoutBuilder(
                 builder: (context, constraints) {
+                  Widget iconCounter = _QuotaIcon(
+                    isDark: isDark,
+                    levelsPlayed: gate.offlineLevelsPlayed,
+                  );
+                  if (!reduceMotion) {
+                    iconCounter = iconCounter
+                        .animate()
+                        .fadeIn(duration: 600.ms)
+                        .scale(
+                          begin: const Offset(0.8, 0.8),
+                          end: const Offset(1.0, 1.0),
+                          curve: Curves.easeOutBack,
+                        );
+                  }
+
+                  Widget title = Text(
+                    context.tr(
+                      'connectivity.quota_title',
+                      fallback: 'OFFLINE LIMIT REACHED',
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 2,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
+                  );
+                  if (!reduceMotion) {
+                    title = title
+                        .animate()
+                        .fadeIn(delay: 200.ms, duration: 600.ms)
+                        .moveY(begin: 10, end: 0);
+                  }
+
+                  Widget subtitle = Text(
+                    context.tr(
+                      'connectivity.quota_subtitle',
+                      fallback:
+                          'You\'ve played ${gate.offlineLevelsPlayed} levels offline. Reconnect or watch an ad to keep playing!',
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                      height: 1.5,
+                    ),
+                  );
+                  if (!reduceMotion) {
+                    subtitle = subtitle.animate().fadeIn(delay: 400.ms, duration: 600.ms);
+                  }
+
+                  Widget? watchAdBtn;
+                  if (hasAdReady) {
+                    watchAdBtn = ValueListenableBuilder<int>(
+                      valueListenable: _stateHash,
+                      builder: (context, _, child) {
+                        return _ActionButton(
+                          isDark: isDark,
+                          isLoading: _isLoadingAd,
+                          onTap: _handleWatchAd,
+                          icon: LucideIcons.play,
+                          label: context.tr(
+                            'connectivity.watch_ad_continue',
+                            fallback: 'WATCH AD FOR +3 LEVELS',
+                          ),
+                          gradient: const [
+                            AppColors.emerald500,
+                            _LocalPalette.color059669,
+                          ],
+                          glowColor: AppColors.emerald500,
+                        );
+                      },
+                    );
+                    if (!reduceMotion) {
+                      watchAdBtn = watchAdBtn
+                          .animate()
+                          .fadeIn(delay: 500.ms, duration: 600.ms)
+                          .moveY(begin: 20, end: 0);
+                    }
+                  }
+
+                  Widget reconnectBtn = ValueListenableBuilder<int>(
+                    valueListenable: _stateHash,
+                    builder: (context, _, child) {
+                      return _ActionButton(
+                        isDark: isDark,
+                        isLoading: _isChecking,
+                        onTap: _handleRetry,
+                        icon: LucideIcons.wifi,
+                        label: context.tr(
+                          'connectivity.retry_button',
+                          fallback: 'RECONNECT',
+                        ),
+                        gradient: [
+                          Theme.of(context).colorScheme.primary,
+                          _LocalPalette.color1d4ed8,
+                        ],
+                        glowColor: Colors.blue,
+                      );
+                    },
+                  );
+                  if (!reduceMotion) {
+                    reconnectBtn = reconnectBtn
+                        .animate()
+                        .fadeIn(delay: 600.ms, duration: 600.ms)
+                        .moveY(begin: 20, end: 0);
+                  }
+
+                  Widget premiumBtn = GestureDetector(
+                    onTap: () {
+                      Haptics.vibrate(HapticsType.light);
+                      AppRouter.router.push(AppRouter.premiumRoute);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 14.h,
+                        horizontal: 24.w,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.amber.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: Colors.amber.withValues(
+                            alpha: 0.4,
+                          ),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            LucideIcons.crown,
+                            color: Colors.amber,
+                            size: 20.r,
+                          ),
+                          SizedBox(width: 8.w),
+                          Flexible(
+                            child: Text(
+                              context.tr(
+                                'connectivity.go_premium',
+                                fallback:
+                                    'Play Offline with Premium',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                color: Colors.amber,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                  if (!reduceMotion) {
+                    premiumBtn = premiumBtn
+                        .animate()
+                        .fadeIn(delay: 800.ms, duration: 600.ms)
+                        .moveY(begin: 10, end: 0);
+                  }
+
                   return SingleChildScrollView(
                     padding: EdgeInsets.symmetric(
                       horizontal: 24.w,
@@ -235,170 +403,19 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          // ── Icon + counter ──────────────────────────
-                          _QuotaIcon(
-                                isDark: isDark,
-                                levelsPlayed: gate.offlineLevelsPlayed,
-                              )
-                              .animate()
-                              .fadeIn(duration: 600.ms)
-                              .scale(
-                                begin: const Offset(0.8, 0.8),
-                                end: const Offset(1.0, 1.0),
-                                curve: Curves.easeOutBack,
-                              ),
-
+                          iconCounter,
                           SizedBox(height: 36.h),
-
-                          // ── Title ───────────────────────────────────
-                          Text(
-                                context.tr(
-                                  'connectivity.quota_title',
-                                  fallback: 'OFFLINE LIMIT REACHED',
-                                ),
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 24.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 2,
-                                  color: isDark
-                                      ? Colors.white
-                                      : AppColors.slate900,
-                                ),
-                              )
-                              .animate()
-                              .fadeIn(delay: 200.ms, duration: 600.ms)
-                              .moveY(begin: 10, end: 0),
-
+                          title,
                           SizedBox(height: 12.h),
-
-                          // ── Subtitle ────────────────────────────────
-                          Text(
-                            context.tr(
-                              'connectivity.quota_subtitle',
-                              fallback:
-                                  'You\'ve played ${gate.offlineLevelsPlayed} levels offline. Reconnect or watch an ad to keep playing!',
-                            ),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400,
-                              color: isDark ? Colors.white60 : Colors.black54,
-                              height: 1.5,
-                            ),
-                          ).animate().fadeIn(delay: 400.ms, duration: 600.ms),
-
+                          subtitle,
                           SizedBox(height: 40.h),
-
-                          // ── Watch Ad Button (Primary CTA) ───────────
-                          if (hasAdReady)
-                            ValueListenableBuilder<int>(
-                                  valueListenable: _stateHash,
-                                  builder: (context, _, child) {
-                                    return _ActionButton(
-                                      isDark: isDark,
-                                      isLoading: _isLoadingAd,
-                                      onTap: _handleWatchAd,
-                                      icon: LucideIcons.play,
-                                      label: context.tr(
-                                        'connectivity.watch_ad_continue',
-                                        fallback: 'WATCH AD FOR +3 LEVELS',
-                                      ),
-                                      gradient: const [
-                                        AppColors.emerald500,
-                                        _LocalPalette.color059669,
-                                      ],
-                                      glowColor: AppColors.emerald500,
-                                    );
-                                  },
-                                )
-                                .animate()
-                                .fadeIn(delay: 500.ms, duration: 600.ms)
-                                .moveY(begin: 20, end: 0),
-
-                          if (hasAdReady) SizedBox(height: 16.h),
-
-                          // ── Reconnect Button ────────────────────────
-                          ValueListenableBuilder<int>(
-                                valueListenable: _stateHash,
-                                builder: (context, _, child) {
-                                  return _ActionButton(
-                                    isDark: isDark,
-                                    isLoading: _isChecking,
-                                    onTap: _handleRetry,
-                                    icon: LucideIcons.wifi,
-                                    label: context.tr(
-                                      'connectivity.retry_button',
-                                      fallback: 'RECONNECT',
-                                    ),
-                                    gradient: [
-                                      Theme.of(context).colorScheme.primary,
-                                      _LocalPalette.color1d4ed8,
-                                    ],
-                                    glowColor: Colors.blue,
-                                  );
-                                },
-                              )
-                              .animate()
-                              .fadeIn(delay: 600.ms, duration: 600.ms)
-                              .moveY(begin: 20, end: 0),
-
+                          if (watchAdBtn != null) ...[
+                            watchAdBtn,
+                            SizedBox(height: 16.h),
+                          ],
+                          reconnectBtn,
                           SizedBox(height: 20.h),
-
-                          // ── Premium Upsell ──────────────────────────
-                          GestureDetector(
-                                onTap: () {
-                                  Haptics.vibrate(HapticsType.light);
-                                  AppRouter.router.push(AppRouter.premiumRoute);
-                                },
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: 14.h,
-                                    horizontal: 24.w,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: Colors.amber.withValues(alpha: 0.12),
-                                    borderRadius: BorderRadius.circular(16.r),
-                                    border: Border.all(
-                                      color: Colors.amber.withValues(
-                                        alpha: 0.4,
-                                      ),
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        LucideIcons.crown,
-                                        color: Colors.amber,
-                                        size: 20.r,
-                                      ),
-                                      SizedBox(width: 8.w),
-                                      Flexible(
-                                        child: Text(
-                                          context.tr(
-                                            'connectivity.go_premium',
-                                            fallback:
-                                                'Play Offline with Premium',
-                                          ),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            color: Colors.amber,
-                                            fontSize: 14.sp,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              )
-                              .animate()
-                              .fadeIn(delay: 800.ms, duration: 600.ms)
-                              .moveY(begin: 10, end: 0),
+                          premiumBtn,
                         ],
                       ),
                     ),
@@ -427,77 +444,64 @@ class _QuotaIcon extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        // Pulsing rings
+        // Static rings
         ...List.generate(3, (i) {
           return Container(
-                width: (140 + i * 36).r,
-                height: (140 + i * 36).r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.amber.withValues(alpha: 0.04 * (3 - i)),
-                    width: 1.5,
-                  ),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat())
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.08, 1.08),
-                duration: (2000 + i * 400).ms,
-                curve: Curves.easeInOut,
-              )
-              .fadeOut();
+            width: (140 + i * 36).r,
+            height: (140 + i * 36).r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: Colors.amber.withValues(alpha: 0.04 * (3 - i)),
+                width: 1.5,
+              ),
+            ),
+          );
         }),
 
         // Core disk
         Container(
-              width: 120.r,
-              height: 120.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: isDark
-                    ? Colors.amber.withValues(alpha: 0.1)
-                    : Colors.amber.withValues(alpha: 0.12),
-                border: Border.all(
-                  color: Colors.amber.withValues(alpha: 0.3),
-                  width: 2,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.amber.withValues(alpha: isDark ? 0.1 : 0.06),
-                    blurRadius: 20,
-                    spreadRadius: 4,
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    LucideIcons.wifiOff,
-                    size: 36.r,
-                    color: Colors.amber[400],
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    '$levelsPlayed/${OfflinePlayGateService.maxOfflineLevels}',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.amber[400],
-                      letterSpacing: 1,
-                    ),
-                  ),
-                ],
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .shimmer(
-              duration: 3000.ms,
-              color: Colors.amber.withValues(alpha: 0.15),
+          width: 120.r,
+          height: 120.r,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: isDark
+                ? Colors.amber.withValues(alpha: 0.1)
+                : Colors.amber.withValues(alpha: 0.12),
+            border: Border.all(
+              color: Colors.amber.withValues(alpha: 0.3),
+              width: 2,
             ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.amber.withValues(alpha: isDark ? 0.1 : 0.06),
+                blurRadius: 20,
+                spreadRadius: 4,
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                LucideIcons.wifiOff,
+                size: 36.r,
+                color: Colors.amber[400],
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                '$levelsPlayed/${OfflinePlayGateService.maxOfflineLevels}',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.amber[400],
+                  letterSpacing: 1,
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

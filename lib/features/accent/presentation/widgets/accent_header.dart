@@ -184,29 +184,33 @@ class _HintButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    Widget button = QuestHintButton(
+      used: hintUsed,
+      primaryColor: primaryColor,
+      hintText: quest.hint,
+      soundService: soundService,
+      onTap: onTap,
+    );
+
+    if (shouldGlow && !reduceMotion) {
+      button = button
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .shimmer(
+            color: Colors.white.withValues(alpha: 0.5),
+            duration: 1.seconds,
+          )
+          .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
+    }
+
     return Tooltip(
       message: hintUsed ? 'Hint already used' : 'Use hint',
       child: Semantics(
         label: hintUsed ? 'Hint already used' : 'Use hint',
         hint: 'Costs coins. Reveals a clue for the current question.',
         button: true,
-        child:
-            QuestHintButton(
-                  used: hintUsed,
-                  primaryColor: primaryColor,
-                  hintText: quest.hint,
-                  soundService: soundService,
-                  onTap: onTap,
-                )
-                .animate(
-                  target: shouldGlow ? 1 : 0,
-                  onPlay: (c) => c.repeat(reverse: true),
-                )
-                .shimmer(
-                  color: Colors.white.withValues(alpha: 0.5),
-                  duration: 1.seconds,
-                )
-                .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+        child: button,
       ),
     );
   }

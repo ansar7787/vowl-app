@@ -45,13 +45,22 @@ class KidsRoomMoodIndicator extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               // Mood Emoji
-              Text(moodData.emoji, style: TextStyle(fontSize: 20.sp))
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.15, 1.15),
-                    duration: 1.seconds,
-                  ),
+              Builder(
+                builder: (context) {
+                  final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                  Widget emoji = Text(moodData.emoji, style: TextStyle(fontSize: 20.sp));
+                  if (!reduceMotion) {
+                    emoji = emoji
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.15, 1.15),
+                          duration: 1.seconds,
+                        );
+                  }
+                  return emoji;
+                }
+              ),
               SizedBox(width: 8.w),
 
               // Mood Label
@@ -81,16 +90,25 @@ class KidsRoomMoodIndicator extends StatelessWidget {
                 // Streak Counter
                 Row(
                   children: [
-                    Icon(
+                    Builder(
+                      builder: (context) {
+                        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                        Widget fire = Icon(
                           Icons.local_fire_department_rounded,
                           color: Colors.orange,
                           size: 18.sp,
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .scale(
-                          begin: const Offset(0.9, 0.9),
-                          end: const Offset(1.1, 1.1),
-                        ),
+                        );
+                        if (!reduceMotion) {
+                          fire = fire
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .scale(
+                                begin: const Offset(0.9, 0.9),
+                                end: const Offset(1.1, 1.1),
+                              );
+                        }
+                        return fire;
+                      }
+                    ),
                     SizedBox(width: 4.w),
                     Text(
                       "${user.kidsCareStreak}",

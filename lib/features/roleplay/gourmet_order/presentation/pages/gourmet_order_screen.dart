@@ -73,13 +73,27 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
     _steamController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 2200),
-    )..repeat();
+    );
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat(reverse: true);
+    );
 
     initRoleplayGame();
+  }
+
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      if (_steamController.isAnimating) _steamController.stop();
+      if (_pulseController.isAnimating) _pulseController.stop();
+    } else {
+      if (!_steamController.isAnimating) _steamController.repeat();
+      if (!_pulseController.isAnimating) _pulseController.repeat(reverse: true);
+    }
   }
 
   @override

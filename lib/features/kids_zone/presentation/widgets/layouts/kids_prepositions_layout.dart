@@ -110,7 +110,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
     KidsLoaded state,
     dynamic quest,
   ) {
-    return DragTarget<String>(
+    Widget stage = DragTarget<String>(
           onAcceptWithDetails: (details) {
             final text = details.data;
             final isCorrect = (text == quest.correctAnswer);
@@ -213,24 +213,39 @@ class KidsPrepositionsLayout extends StatelessWidget {
               ),
             );
           },
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(
-          begin: -5.h,
-          end: 5.h,
-          duration: 2.seconds,
-          curve: Curves.easeInOutSine,
         );
+        
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (!reduceMotion) {
+      stage = stage
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(
+            begin: -5.h,
+            end: 5.h,
+            duration: 2.seconds,
+            curve: Curves.easeInOutSine,
+          );
+    }
+    return stage;
   }
 
   Widget _buildSparkle(double size) {
-    return Icon(Icons.star_rounded, color: Colors.yellow, size: size.r)
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .scale(
-          begin: const Offset(0.5, 0.5),
-          end: const Offset(1.5, 1.5),
-          duration: 1.seconds,
-        );
+    return Builder(
+      builder: (context) {
+        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+        Widget sparkle = Icon(Icons.star_rounded, color: Colors.yellow, size: size.r);
+        if (!reduceMotion) {
+          sparkle = sparkle
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(0.5, 0.5),
+                end: const Offset(1.5, 1.5),
+                duration: 1.seconds,
+              );
+        }
+        return sparkle;
+      }
+    );
   }
 
   Widget _buildTopHatOption(

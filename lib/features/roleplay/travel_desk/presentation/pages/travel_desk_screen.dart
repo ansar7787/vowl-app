@@ -78,9 +78,21 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat(reverse: true);
+    );
 
     initRoleplayGame();
+  }
+
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      if (_rippleController.isAnimating) _rippleController.stop();
+    } else {
+      if (!_rippleController.isAnimating) _rippleController.repeat(reverse: true);
+    }
   }
 
   @override

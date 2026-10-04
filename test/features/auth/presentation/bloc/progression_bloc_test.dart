@@ -15,6 +15,9 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/core/network/network_info.dart';
+
+class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 class MockRepairStreak extends Mock implements RepairStreak {}
 
@@ -58,6 +61,7 @@ void main() {
   late MockPurchasePermanentXPBoost mockPurchasePermanentXPBoost;
   late MockClaimStreakMilestone mockClaimStreakMilestone;
   late MockClaimLevelMilestone mockClaimLevelMilestone;
+  late MockNetworkInfo mockNetworkInfo;
 
   setUp(() {
     mockRepairStreak = MockRepairStreak();
@@ -65,14 +69,15 @@ void main() {
     mockActivateDoubleXP = MockActivateDoubleXP();
     mockUpdateUser = MockUpdateUser();
     mockAuthBloc = MockAuthBloc();
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
-    );
     mockNotificationService = MockNotificationService();
     mockRepairStreakFree = MockRepairStreakFree();
     mockPurchasePermanentXPBoost = MockPurchasePermanentXPBoost();
     mockClaimStreakMilestone = MockClaimStreakMilestone();
     mockClaimLevelMilestone = MockClaimLevelMilestone();
+    mockNetworkInfo = MockNetworkInfo();
+    when(() => mockAuthBloc.state).thenReturn(
+      AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
+    );
 
     bloc = ProgressionBloc(
       repairStreak: mockRepairStreak,
@@ -85,6 +90,7 @@ void main() {
       purchasePermanentXPBoost: mockPurchasePermanentXPBoost,
       claimStreakMilestone: mockClaimStreakMilestone,
       claimLevelMilestone: mockClaimLevelMilestone,
+      networkInfo: mockNetworkInfo,
     );
   });
 

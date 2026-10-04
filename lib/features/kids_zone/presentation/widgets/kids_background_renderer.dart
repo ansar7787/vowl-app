@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -100,6 +101,8 @@ class KidsBackgroundRenderer extends StatelessWidget {
             ];
     }
 
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Stack(
       children: [
         Positioned.fill(
@@ -108,49 +111,51 @@ class KidsBackgroundRenderer extends StatelessWidget {
           ).animate().fadeIn(duration: 400.ms),
         ),
 
-        // Top Cloud - Moving left to right
-        Positioned(
-              top: 100.h,
-              left: -150.w, // Start fully off-screen left
-              child: _buildCloud(context, 180.w),
-            )
-            .animate(
-              onPlay: (controller) => controller.repeat(),
-            ) // No reverse, infinite loop
-            .moveX(
-              begin: 0,
-              end: screenWidth + 300.w, // Move fully off-screen right
-              duration: 25.seconds,
-              curve: Curves.linear,
-            ),
+        if (!reduceMotion) ...[
+          // Top Cloud - Moving left to right
+          Positioned(
+                top: 100.h,
+                left: -150.w, // Start fully off-screen left
+                child: _buildCloud(context, 180.w),
+              )
+              .animate(
+                onPlay: (controller) => controller.repeat(),
+              ) // No reverse, infinite loop
+              .moveX(
+                begin: 0,
+                end: screenWidth + 300.w, // Move fully off-screen right
+                duration: 25.seconds,
+                curve: Curves.linear,
+              ),
 
-        // Bottom Cloud - Moving right to left
-        Positioned(
-              bottom: 250.h,
-              right: -150.w, // Start fully off-screen right
-              child: _buildCloud(context, 160.w),
-            )
-            .animate(onPlay: (controller) => controller.repeat())
-            .moveX(
-              begin: 0,
-              end: -(screenWidth + 300.w), // Move fully off-screen left
-              duration: 35.seconds,
-              curve: Curves.linear,
-            ),
+          // Bottom Cloud - Moving right to left
+          Positioned(
+                bottom: 250.h,
+                right: -150.w, // Start fully off-screen right
+                child: _buildCloud(context, 160.w),
+              )
+              .animate(onPlay: (controller) => controller.repeat())
+              .moveX(
+                begin: 0,
+                end: -(screenWidth + 300.w), // Move fully off-screen left
+                duration: 35.seconds,
+                curve: Curves.linear,
+              ),
 
-        // Extra middle cloud for depth
-        Positioned(
-              top: 300.h,
-              left: -100.w,
-              child: _buildCloud(context, 100.w, opacity: 0.5),
-            )
-            .animate(onPlay: (controller) => controller.repeat())
-            .moveX(
-              begin: 0,
-              end: screenWidth + 200.w,
-              duration: 45.seconds,
-              curve: Curves.linear,
-            ),
+          // Extra middle cloud for depth
+          Positioned(
+                top: 300.h,
+                left: -100.w,
+                child: _buildCloud(context, 100.w, opacity: 0.5),
+              )
+              .animate(onPlay: (controller) => controller.repeat())
+              .moveX(
+                begin: 0,
+                end: screenWidth + 200.w,
+                duration: 45.seconds,
+                curve: Curves.linear,
+              ),
+        ],
       ],
     );
   }

@@ -268,28 +268,39 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                           game.icon,
                           completedCount: completed,
                           trailing: _isCheckingModel.value
-                              ? Icon(
-                                      Icons.sync_rounded,
-                                      color: game.color,
-                                      size: 24.sp,
-                                    )
-                                    .animate(onPlay: (c) => c.repeat())
-                                    .rotate(duration: 1.5.seconds)
+                              ? RepaintBoundary(
+                                  child: Icon(
+                                    Icons.sync_rounded,
+                                    color: game.color,
+                                    size: 24.sp,
+                                  )
+                                  .animate(onPlay: (c) => c.repeat())
+                                  .rotate(duration: 1.5.seconds),
+                                )
                               : (!_isModelDownloaded.value
-                                    ? Icon(
+                                    ? Builder(
+                                        builder: (context) {
+                                          final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                          Widget icon = Icon(
                                             Icons.cloud_download_rounded,
                                             color: game.color,
                                             size: 28.sp,
-                                          )
-                                          .animate(
-                                            onPlay: (c) =>
-                                                c.repeat(reverse: true),
-                                          )
-                                          .scaleXY(
-                                            begin: 1.0,
-                                            end: 1.15,
-                                            duration: 1.seconds,
-                                          )
+                                          );
+                                          if (!reduceMotion) {
+                                            icon = icon
+                                                .animate(
+                                                  onPlay: (c) =>
+                                                      c.repeat(reverse: true),
+                                                )
+                                                .scaleXY(
+                                                  begin: 1.0,
+                                                  end: 1.15,
+                                                  duration: 1.seconds,
+                                                );
+                                          }
+                                          return icon;
+                                        }
+                                      )
                                     : null),
                         );
                       },
@@ -556,13 +567,22 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
+            Builder(
+              builder: (context) {
+                final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                Widget icon = Icon(
                   Icons.cloud_download_rounded,
                   size: 80.r,
                   color: widget.primaryColor,
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .moveY(begin: -5, end: 5, duration: 1.seconds),
+                );
+                if (!reduceMotion) {
+                  icon = icon
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .moveY(begin: -5, end: 5, duration: 1.seconds);
+                }
+                return icon;
+              }
+            ),
             SizedBox(height: 24.h),
             Text(
               context.tr(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 enum KidsAssetAnimation { none, hover, pulse, shake, bounce, scale }
 
@@ -32,6 +33,10 @@ class AnimatedKidsAsset extends StatelessWidget {
       child = Text(emoji!, style: TextStyle(fontSize: size));
     } else {
       child = Icon(icon!, size: size, color: color);
+    }
+
+    if (animation == KidsAssetAnimation.none || VowlMotion.shouldReduceMotion(context)) {
+      return child;
     }
 
     var animated = child.animate(
@@ -80,7 +85,7 @@ class AnimatedKidsAsset extends StatelessWidget {
         );
         break;
       case KidsAssetAnimation.none:
-        return child;
+        break;
     }
 
     return animated;

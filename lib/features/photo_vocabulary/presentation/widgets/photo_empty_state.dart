@@ -22,8 +22,67 @@ class PhotoEmptyState extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final textColor = isDark ? Colors.white : Colors.black87;
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
-    return Center(
+    Widget radarSweep = Positioned.fill(
+      child: Center(
+        child: Container(
+          width: 2.w,
+          height: 180.r,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                const Color(0xFF14B8A6).withValues(alpha: 0.0),
+                const Color(0xFF14B8A6).withValues(alpha: 0.8),
+                const Color(0xFF14B8A6).withValues(alpha: 0.0),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+        ),
+      ),
+    );
+
+    if (!reduceMotion) {
+      radarSweep = RepaintBoundary(
+        child: radarSweep
+            .animate(onPlay: (c) => c.repeat())
+            .rotate(duration: 4.seconds),
+      );
+    }
+
+    Widget cameraBtn = _buildGlassAction(
+      context,
+      icon: LucideIcons.camera,
+      label: context.tr('common.camera', fallback: 'Camera'),
+      subtitle: context.tr(
+        'vocabulary.take_photo',
+        fallback: 'Take live photo',
+      ),
+      onTap: () => onPickImage(ImageSource.camera),
+      isDark: isDark,
+    );
+    if (!reduceMotion) {
+      cameraBtn = cameraBtn.animate(delay: 200.ms).fadeIn().slideY(begin: 0.2);
+    }
+
+    Widget galleryBtn = _buildGlassAction(
+      context,
+      icon: LucideIcons.image,
+      label: context.tr('common.gallery', fallback: 'Gallery'),
+      subtitle: context.tr(
+        'vocabulary.pick_saved',
+        fallback: 'Pick saved photo',
+      ),
+      onTap: () => onPickImage(ImageSource.gallery),
+      isDark: isDark,
+    );
+    if (!reduceMotion) {
+      galleryBtn = galleryBtn.animate(delay: 300.ms).fadeIn().slideY(begin: 0.2);
+    }
+
+    Widget content = Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -44,20 +103,16 @@ class PhotoEmptyState extends StatelessWidget {
                 children: [
                   // Pulsing rings
                   Container(
-                        height: 140.r,
-                        width: 140.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: const Color(
-                              0xFF14B8A6,
-                            ).withValues(alpha: 0.4),
-                            width: 1.5.w,
-                          ),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .scaleXY(begin: 0.9, end: 1.1, duration: 2.seconds),
+                    height: 140.r,
+                    width: 140.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                        width: 1.5.w,
+                      ),
+                    ),
+                  ),
                   // Glowing Core
                   Container(
                     height: 80.r,
@@ -73,62 +128,31 @@ class PhotoEmptyState extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child:
-                        Icon(
-                              Icons.camera_alt_rounded,
-                              size: 40.r,
-                              color: AppColors.teal500,
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .fade(begin: 0.5, end: 1.0, duration: 1.seconds),
+                    child: Icon(
+                      Icons.camera_alt_rounded,
+                      size: 40.r,
+                      color: AppColors.teal500,
+                    ),
                   ),
                   // Radar sweep line
-                  Positioned.fill(
-                        child: Center(
-                          child: Container(
-                            width: 2.w,
-                            height: 180.r,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  const Color(
-                                    0xFF14B8A6,
-                                  ).withValues(alpha: 0.0),
-                                  const Color(
-                                    0xFF14B8A6,
-                                  ).withValues(alpha: 0.8),
-                                  const Color(
-                                    0xFF14B8A6,
-                                  ).withValues(alpha: 0.0),
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat())
-                      .rotate(duration: 4.seconds),
+                  radarSweep,
                 ],
               ),
             ),
           ),
           SizedBox(height: 32.h),
           Text(
-                context
-                    .tr('vocabulary.system_standby', fallback: 'SYSTEM STANDBY')
-                    .toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w900,
-                  color: AppColors.teal500,
-                  letterSpacing: 4.0,
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .fade(duration: 800.ms),
+            context
+                .tr('vocabulary.system_standby', fallback: 'SYSTEM STANDBY')
+                .toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w900,
+              color: AppColors.teal500,
+              letterSpacing: 4.0,
+            ),
+          ),
           SizedBox(height: 8.h),
           Text(
             context.tr(
@@ -166,34 +190,20 @@ class PhotoEmptyState extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildGlassAction(
-                context,
-                icon: LucideIcons.camera,
-                label: context.tr('common.camera', fallback: 'Camera'),
-                subtitle: context.tr(
-                  'vocabulary.take_photo',
-                  fallback: 'Take live photo',
-                ),
-                onTap: () => onPickImage(ImageSource.camera),
-                isDark: isDark,
-              ).animate(delay: 200.ms).fadeIn().slideY(begin: 0.2),
+              cameraBtn,
               SizedBox(width: 24.w),
-              _buildGlassAction(
-                context,
-                icon: LucideIcons.image,
-                label: context.tr('common.gallery', fallback: 'Gallery'),
-                subtitle: context.tr(
-                  'vocabulary.pick_saved',
-                  fallback: 'Pick saved photo',
-                ),
-                onTap: () => onPickImage(ImageSource.gallery),
-                isDark: isDark,
-              ).animate(delay: 300.ms).fadeIn().slideY(begin: 0.2),
+              galleryBtn,
             ],
           ),
         ],
       ),
-    ).animate().fadeIn(duration: 800.ms);
+    );
+    
+    if (!reduceMotion) {
+      content = content.animate().fadeIn(duration: 800.ms);
+    }
+    
+    return content;
   }
 
   Widget _buildGlassAction(

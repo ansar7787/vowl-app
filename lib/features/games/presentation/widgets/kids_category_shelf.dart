@@ -1,6 +1,5 @@
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -97,28 +96,13 @@ class _KidsCategoryShelfState extends State<KidsCategoryShelf> {
                     child: Opacity(opacity: opacity, child: child),
                   );
                 },
-                child:
-                    Padding(
-                          padding: EdgeInsets.only(right: 16.w),
-                          child: _KidsGameEntryCard(
-                            metadata: games[index],
-                            user: widget.user,
-                          ),
-                        )
-                        .animate(delay: (index < 3 ? 50 * index : 0).ms)
-                        .fade(duration: 400.ms)
-                        .scale(
-                          begin: const Offset(0.9, 0.9),
-                          end: const Offset(1, 1),
-                          curve: Curves.easeOutBack,
-                          duration: 500.ms,
-                        )
-                        .slideX(
-                          begin: 0.1,
-                          end: 0,
-                          curve: Curves.easeOutCubic,
-                          duration: 400.ms,
-                        ),
+                child: Padding(
+                  padding: EdgeInsets.only(right: 16.w),
+                  child: _KidsGameEntryCard(
+                    metadata: games[index],
+                    user: widget.user,
+                  ),
+                ),
               );
             },
           ),

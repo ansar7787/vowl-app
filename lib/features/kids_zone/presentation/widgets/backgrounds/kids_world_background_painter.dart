@@ -43,16 +43,25 @@ class KidsWorldBackgroundPainter extends StatelessWidget {
     return Positioned(
       top: random.nextDouble() * 1.sh,
       left: random.nextDouble() * 1.sw,
-      child: Text(emoji, style: TextStyle(fontSize: (20 + random.nextInt(15)).sp))
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(
-            begin: 0,
-            end: (random.nextBool() ? 20.h : -20.h),
-            duration: (5 + random.nextDouble() * 5).seconds,
-            curve: Curves.easeInOutSine,
-          )
-          // Fade out slowly to make them very subtle and not distract from the game
-          .fadeOut(begin: 0.15, duration: 2.seconds),
+      child: Builder(
+        builder: (context) {
+          final reduceMotion = MediaQuery.disableAnimationsOf(context);
+          Widget content = Text(emoji, style: TextStyle(fontSize: (20 + random.nextInt(15)).sp));
+          if (!reduceMotion) {
+            content = content
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .moveY(
+                  begin: 0,
+                  end: (random.nextBool() ? 20.h : -20.h),
+                  duration: (5 + random.nextDouble() * 5).seconds,
+                  curve: Curves.easeInOutSine,
+                )
+                // Fade out slowly to make them very subtle and not distract from the game
+                .fadeOut(begin: 0.15, duration: 2.seconds);
+          }
+          return content;
+        }
+      ),
     );
   }
 

@@ -38,14 +38,23 @@ class GenericKidsBackgroundPainter extends StatelessWidget {
     return Positioned(
       top: random.nextDouble() * 1.sh,
       left: random.nextDouble() * 1.sw,
-      child: _buildContent(random)
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(
-            begin: 0,
-            end: (random.nextBool() ? 30.h : -30.h),
-            duration: (4 + random.nextDouble() * 4).seconds,
-          )
-          .fadeOut(begin: 0.3, duration: 2.seconds),
+      child: Builder(
+        builder: (context) {
+          final reduceMotion = MediaQuery.disableAnimationsOf(context);
+          Widget content = _buildContent(random);
+          if (!reduceMotion) {
+            content = content
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .moveY(
+                  begin: 0,
+                  end: (random.nextBool() ? 30.h : -30.h),
+                  duration: (4 + random.nextDouble() * 4).seconds,
+                )
+                .fadeOut(begin: 0.3, duration: 2.seconds);
+          }
+          return content;
+        }
+      ),
     );
   }
 

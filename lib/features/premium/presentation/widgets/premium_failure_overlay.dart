@@ -28,7 +28,269 @@ class PremiumFailureOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    Widget iconWidget = Container(
+      width: 90.r,
+      height: 90.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: const LinearGradient(
+          colors: [
+            _LocalPalette.colorfb7185,
+            AppColors.rose700,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFFE11D48).withValues(alpha: 0.5),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.5),
+          width: 2,
+        ),
+      ),
+      child: Icon(
+        LucideIcons.alertTriangle,
+        color: Colors.white,
+        size: 44.r,
+      ),
+    );
+
+    if (!reduceMotion) {
+      iconWidget = iconWidget
+          .animate()
+          .scale(duration: 500.ms, curve: Curves.elasticOut);
+    }
+
+    Widget titleWidget = ShaderMask(
+      shaderCallback: (bounds) => const LinearGradient(
+        colors: [_LocalPalette.colorfb7185, AppColors.rose700],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ).createShader(bounds),
+      child: Text(
+        context.tr(
+          'premium.failure_title',
+          fallback: 'Payment Failed',
+        ),
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 26.sp,
+          fontWeight: FontWeight.w900,
+          color: Colors.white,
+          letterSpacing: 0.5,
+          height: 1.2,
+        ),
+      ),
+    );
+
+    if (!reduceMotion) {
+      titleWidget = titleWidget.animate().fadeIn(duration: 500.ms).slideY(begin: 0.2, end: 0);
+    }
+
+    Widget? errorWidget;
+    if (errorMessage != null && errorMessage!.isNotEmpty) {
+      errorWidget = Padding(
+        padding: EdgeInsets.only(bottom: 16.h),
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.all(16.r),
+          decoration: BoxDecoration(
+            color: Colors.black.withValues(alpha: 0.2),
+            borderRadius: BorderRadius.circular(12.r),
+            border: Border.all(
+              color: AppColors.rose500.withValues(alpha: 0.3),
+            ),
+          ),
+          child: Text(
+            errorMessage!,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.sp,
+              color: _LocalPalette.colorfb7185,
+              height: 1.4,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+      );
+      if (!reduceMotion) {
+        errorWidget = errorWidget.animate().fadeIn(delay: 200.ms);
+      }
+    }
+
+    Widget bodyWidget = Text(
+      errorMessage == null
+          ? context.tr(
+              'premium.failure_body_default',
+              fallback: 'We could not process your payment.',
+            )
+          : context.tr(
+              'premium.failure_body_retry_hint',
+              fallback: 'Please check your connection and try again.',
+            ),
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontFamily: 'Outfit',
+        fontSize: 15.sp,
+        color: Colors.white.withValues(alpha: 0.8),
+        height: 1.4,
+      ),
+    );
+
+    if (!reduceMotion) {
+      bodyWidget = bodyWidget.animate().fadeIn(delay: 300.ms);
+    }
+
+    Widget helpWidget = Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(12.r),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.1),
+        ),
+      ),
+      child: Column(
+        children: [
+          Text(
+            context.tr('premium.need_help', fallback: 'Need help?'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              color: Colors.white.withValues(alpha: 0.6),
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          SizedBox(height: 6.h),
+          GestureDetector(
+            onTap: () {
+              final uri = Uri(
+                scheme: 'mailto',
+                path: 'support@vowl.app',
+                queryParameters: {
+                  'subject': 'Premium Payment Issue',
+                  'body':
+                      'Hi, I made a payment but my premium was not activated. Please help.',
+                },
+              );
+              launchUrl(uri);
+            },
+            child: Text(
+              'support@vowl.app',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 13.sp,
+                color: _LocalPalette.color8b9cf7,
+                fontWeight: FontWeight.w700,
+                decoration: TextDecoration.underline,
+                decorationColor: _LocalPalette.color8b9cf7,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+
+    if (!reduceMotion) {
+      helpWidget = helpWidget.animate().fadeIn(delay: 400.ms);
+    }
+
+    Widget buttonsWidget = Row(
+      children: [
+        Expanded(
+          child: Semantics(
+            button: true,
+            label: context.tr('common.close', fallback: 'Close'),
+            child: ScaleButton(
+              onTap: onClose,
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 16.h),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(24.r),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.2),
+                  ),
+                ),
+                child: Text(
+                  context.tr('common.close', fallback: 'Close').toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 13.sp,
+                    letterSpacing: 1,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(width: 12.w),
+        Expanded(
+          flex: 2,
+          child: Semantics(
+            button: true,
+            label: context.tr(
+              'premium.retry_button',
+              fallback: 'Retry',
+            ),
+            child: ScaleButton(
+              onTap: onRetry,
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 16.h),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [
+                      _LocalPalette.colorfb7185,
+                      AppColors.rose700,
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(24.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFFE11D48).withValues(alpha: 0.4),
+                      blurRadius: 15,
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  context.tr('premium.retry_button', fallback: 'Retry').toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 14.sp,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+
+    if (!reduceMotion) {
+      buttonsWidget = buttonsWidget.animate().fadeIn(delay: 500.ms);
+    }
+
+    Widget content = ClipRRect(
       borderRadius: BorderRadius.circular(32.r),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
@@ -60,260 +322,32 @@ class PremiumFailureOverlay extends StatelessWidget {
                     'premium.failure_title',
                     fallback: 'Payment Failed',
                   ),
-                  child:
-                      Container(
-                            width: 90.r,
-                            height: 90.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              gradient: const LinearGradient(
-                                colors: [
-                                  _LocalPalette.colorfb7185,
-                                  AppColors.rose700,
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: const Color(
-                                    0xFFE11D48,
-                                  ).withValues(alpha: 0.5),
-                                  blurRadius: 20,
-                                  offset: const Offset(0, 10),
-                                ),
-                              ],
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.5),
-                                width: 2,
-                              ),
-                            ),
-                            child: Icon(
-                              LucideIcons.alertTriangle,
-                              color: Colors.white,
-                              size: 44.r,
-                            ),
-                          )
-                          .animate()
-                          .scale(duration: 500.ms, curve: Curves.elasticOut)
-                          .shake(hz: 4, delay: 500.ms, duration: 400.ms),
+                  child: iconWidget,
                 ),
                 SizedBox(height: 28.h),
-                ShaderMask(
-                  shaderCallback: (bounds) => const LinearGradient(
-                    colors: [_LocalPalette.colorfb7185, AppColors.rose700],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ).createShader(bounds),
-                  child: Text(
-                    context.tr(
-                      'premium.failure_title',
-                      fallback: 'Payment Failed',
-                    ),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 26.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 0.5,
-                      height: 1.2,
-                    ),
-                  ),
-                ).animate().fadeIn(duration: 500.ms).slideY(begin: 0.2, end: 0),
+                titleWidget,
                 SizedBox(height: 12.h),
-                if (errorMessage != null && errorMessage!.isNotEmpty)
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 16.h),
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.all(16.r),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(
-                          color: AppColors.rose500.withValues(alpha: 0.3),
-                        ),
-                      ),
-                      child: Text(
-                        errorMessage!,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          color: _LocalPalette.colorfb7185,
-                          height: 1.4,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ).animate().fadeIn(delay: 200.ms),
-                Text(
-                  errorMessage == null
-                      ? context.tr(
-                          'premium.failure_body_default',
-                          fallback: 'We could not process your payment.',
-                        )
-                      : context.tr(
-                          'premium.failure_body_retry_hint',
-                          fallback:
-                              'Please check your connection and try again.',
-                        ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    color: Colors.white.withValues(alpha: 0.8),
-                    height: 1.4,
-                  ),
-                ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.2, end: 0),
+                if (errorWidget != null) errorWidget,
+                bodyWidget,
                 SizedBox(height: 16.h),
-                Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.05),
-                    borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.1),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        context.tr('premium.need_help', fallback: 'Need help?'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          color: Colors.white.withValues(alpha: 0.6),
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      SizedBox(height: 6.h),
-                      GestureDetector(
-                        onTap: () {
-                          final uri = Uri(
-                            scheme: 'mailto',
-                            path: 'support@vowl.app',
-                            queryParameters: {
-                              'subject': 'Premium Payment Issue',
-                              'body':
-                                  'Hi, I made a payment but my premium was not activated. Please help.',
-                            },
-                          );
-                          launchUrl(uri);
-                        },
-                        child: Text(
-                          'support@vowl.app',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            color: _LocalPalette.color8b9cf7,
-                            fontWeight: FontWeight.w700,
-                            decoration: TextDecoration.underline,
-                            decorationColor: _LocalPalette.color8b9cf7,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ).animate().fadeIn(delay: 400.ms),
+                helpWidget,
                 SizedBox(height: 32.h),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Semantics(
-                        button: true,
-                        label: context.tr('common.close', fallback: 'Close'),
-                        child: ScaleButton(
-                          onTap: onClose,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 16.h),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(24.r),
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.2),
-                              ),
-                            ),
-                            child: Text(
-                              context
-                                  .tr('common.close', fallback: 'Close')
-                                  .toUpperCase(),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                color: Colors.white,
-                                fontWeight: FontWeight.w900,
-                                fontSize: 13.sp,
-                                letterSpacing: 1,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 12.w),
-                    Expanded(
-                      flex: 2,
-                      child: Semantics(
-                        button: true,
-                        label: context.tr(
-                          'premium.retry_button',
-                          fallback: 'Retry',
-                        ),
-                        child: ScaleButton(
-                          onTap: onRetry,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 16.h),
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [
-                                  _LocalPalette.colorfb7185,
-                                  AppColors.rose700,
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
-                              borderRadius: BorderRadius.circular(24.r),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: const Color(
-                                    0xFFE11D48,
-                                  ).withValues(alpha: 0.4),
-                                  blurRadius: 15,
-                                  offset: const Offset(0, 5),
-                                ),
-                              ],
-                            ),
-                            child: Text(
-                              context
-                                  .tr('premium.retry_button', fallback: 'Retry')
-                                  .toUpperCase(),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                color: Colors.white,
-                                fontWeight: FontWeight.w900,
-                                fontSize: 14.sp,
-                                letterSpacing: 1.2,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.2, end: 0),
+                buttonsWidget,
               ],
             ),
           ),
         ),
       ),
-    ).animate().fade().scale(
-      begin: const Offset(0.95, 0.95),
-      curve: Curves.easeOutBack,
-      duration: 400.ms,
     );
+
+    if (!reduceMotion) {
+      content = content.animate().fade().scale(
+        begin: const Offset(0.95, 0.95),
+        curve: Curves.easeOutBack,
+        duration: 400.ms,
+      );
+    }
+
+    return content;
   }
 }

@@ -29,6 +29,7 @@ class SpeakingPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
     final message = MascotMessageHelper.getMessage(
       context,
       category: 'speaking',
@@ -47,58 +48,73 @@ class SpeakingPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
-    return Column(
+    Widget bubble = Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 10,
+          ),
+        ],
+      ),
+      child: Text(
+        message,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 11.sp,
+          fontWeight: FontWeight.bold,
+          color: Colors.orangeAccent,
+        ),
+      ),
+    );
+
+    if (!reduceMotion) {
+      bubble = bubble
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.05, 1.05),
+            duration: 2.seconds,
+          );
+    }
+
+    Widget mascot = VowlMascot(
+      state: mascotState,
+      size: 45.r,
+      mascotId: mascotId,
+    );
+
+    if (!reduceMotion) {
+      mascot = mascot
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(
+            begin: 0,
+            end: 5,
+            duration: 1500.ms,
+            curve: Curves.easeInOut,
+          );
+    }
+
+    Widget column = Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Semantics(
-              label: 'Mascot says: $message',
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.1),
-                      blurRadius: 10,
-                    ),
-                  ],
-                ),
-                child: ExcludeSemantics(
-                  child: Text(
-                    message,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orangeAccent,
-                    ),
-                  ),
-                ),
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scale(
-              begin: const Offset(1, 1),
-              end: const Offset(1.05, 1.05),
-              duration: 2.seconds,
-            ),
-        Semantics(
-              label: '$mascotName mascot',
-              child: VowlMascot(
-                state: mascotState,
-                size: 45.r,
-                mascotId: mascotId,
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .moveY(
-              begin: 0,
-              end: 5,
-              duration: 1500.ms,
-              curve: Curves.easeInOut,
-            ),
+        bubble,
+        mascot,
       ],
-    ).animate().fadeIn().slideX(begin: 0.1, end: 0);
+    );
+
+    if (!reduceMotion) {
+      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
+    }
+
+    return Semantics(
+      liveRegion: true,
+      label: message,
+      excludeSemantics: true,
+      child: column,
+    );
   }
 }

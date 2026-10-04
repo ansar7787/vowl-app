@@ -47,6 +47,7 @@ class ElitePeekingMascot extends StatelessWidget {
     return BlocSelector<AuthBloc, AuthState, String>(
       selector: (authState) => authState.user?.vowlMascot ?? 'vowl_prime',
       builder: (context, mascotId) {
+        final reduceMotion = MediaQuery.disableAnimationsOf(context);
         final mascotState = MascotMessageHelper.getMascotState(
           isComplete: state is EliteMasteryGameComplete,
           isGameOver: state is EliteMasteryGameOver,
@@ -64,23 +65,32 @@ class ElitePeekingMascot extends StatelessWidget {
           lives: lives,
         );
 
-        // ExcludeSemantics: the mascot bubble is motivational / decorative.
+        Widget column = Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            _SpeechBubble(message: message),
+            _MascotAvatar(mascotId: mascotId, mascotState: mascotState),
+          ],
+        );
+
+        if (!reduceMotion) {
+          column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
+        }
+
+        // Semantics: the mascot bubble is motivational / decorative.
         // The TTS service already speaks nudges at the right moment; having a
         // screen reader additionally read "Vowl Prime is watching! 🦉" on
-        // every state change would be noisy and unhelpful.
-        return ExcludeSemantics(
+        // every state change would be noisy and unhelpful, so we use liveRegion.
+        return Semantics(
+          liveRegion: true,
+          label: message,
+          excludeSemantics: true,
           // RepaintBoundary: the bobbing float and pulse-scale animations run
           // on a continuous loop. Isolating them prevents every animation frame
           // from propagating a repaint up through the full parent Stack tree.
           child: RepaintBoundary(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                _SpeechBubble(message: message),
-                _MascotAvatar(mascotId: mascotId, mascotState: mascotState),
-              ],
-            ).animate().fadeIn().slideX(begin: 0.1, end: 0),
+            child: column,
           ),
         );
       },
@@ -97,6 +107,7 @@ class _SpeechBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
     // FIX: this bubble is placed (by EliteBaseLayout) inside a `Positioned`
     // with only a `left` offset and no `right` constraint, so nothing
     // previously stopped it from growing as wide as `message` needed. A
@@ -109,39 +120,45 @@ class _SpeechBubble extends StatelessWidget {
     // device without needing to touch the parent's positioning.
     final maxBubbleWidth = MediaQuery.sizeOf(context).width * 0.6;
 
-    return ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: maxBubbleWidth),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12.r),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  blurRadius: 10,
-                ),
-              ],
+    Widget bubble = ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: maxBubbleWidth),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 10,
             ),
-            child: Text(
-              message,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.amber500,
-              ),
-            ),
+          ],
+        ),
+        child: Text(
+          message,
+          maxLines: 3,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 11.sp,
+            fontWeight: FontWeight.bold,
+            color: AppColors.amber500,
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .scale(
-          begin: const Offset(1, 1),
-          end: const Offset(1.05, 1.05),
-          duration: 2.seconds,
-        );
+        ),
+      ),
+    );
+
+    if (!reduceMotion) {
+      bubble = bubble
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.05, 1.05),
+            duration: 2.seconds,
+          );
+    }
+
+    return bubble;
   }
 }
 
@@ -153,8 +170,15 @@ class _MascotAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId)
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    Widget mascot = VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId);
+    
+    if (!reduceMotion) {
+      mascot = mascot
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
+    }
+    
+    return mascot;
   }
 }

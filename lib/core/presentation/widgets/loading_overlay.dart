@@ -88,6 +88,149 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    Widget spinner = SizedBox(
+      width: 120.r,
+      height: 120.r,
+      child: CircularProgressIndicator(
+        strokeWidth: 2,
+        valueColor: AlwaysStoppedAnimation<Color>(
+          AppColors.indigo500.withValues(alpha: 0.5),
+        ),
+      ),
+    ).animate(onPlay: (c) => c.repeat()).rotate(duration: 2000.ms);
+
+    Widget logo = Container(
+      width: 80.r,
+      height: 80.r,
+      padding: EdgeInsets.all(12.r),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.white.withValues(alpha: 0.05),
+      ),
+      child: Image.asset(
+        'assets/images/vowl_logo.webp',
+        fit: BoxFit.contain,
+        semanticLabel: 'Vowl Logo',
+      ),
+    );
+
+    if (!reduceMotion) {
+      logo = logo
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            duration: 1000.ms,
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.1, 1.1),
+            curve: Curves.easeInOut,
+          );
+    }
+
+    Widget label = Text(
+      (widget.message ??
+              context.tr(
+                'loading.synchronizing_title',
+                fallback: 'Synchronizing...',
+              ))
+          .toUpperCase(),
+      style: TextStyle(
+        fontFamily: 'Outfit',
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w900,
+        color: isDark ? Colors.white : AppColors.slate800,
+        letterSpacing: 4.0,
+      ),
+    );
+
+    if (!reduceMotion) {
+      label = label
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .fadeIn(duration: 1000.ms)
+          .shimmer(
+            color: AppColors.indigo500.withValues(alpha: 0.3),
+          );
+    }
+
+    Widget content = Stack(
+      fit: StackFit.expand,
+      children: [
+        // 1. Isolated blur layer
+        BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+          child: const SizedBox.expand(),
+        ),
+
+        // 2. Solid color tint layer
+        ColoredBox(
+          color: (isDark ? AppColors.slate950 : AppColors.slate50)
+              .withValues(alpha: 0.85),
+        ),
+
+        // 3. Animated content layer
+        RepaintBoundary(
+          child: Material(
+            type: MaterialType.transparency,
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Spinner + pulsing logo
+                  RepaintBoundary(
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [spinner, logo],
+                    ),
+                  ),
+
+                  SizedBox(height: 48.h),
+
+                  // Main loading label
+                  RepaintBoundary(child: label),
+
+                  SizedBox(height: 12.h),
+
+                  // Dynamic status sub-text
+                  RepaintBoundary(
+                    child: ValueListenableBuilder<int>(
+                      valueListenable: _stateHash,
+                      builder: (context, _, child) {
+                        return AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 500),
+                          child: Text(
+                            context.tr(_statusKeys[_statusIndex]),
+                            key: ValueKey(_statusIndex),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w700,
+                              color: (isDark
+                                      ? Colors.white
+                                      : AppColors.slate500)
+                                  .withValues(alpha: 0.4),
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+
+    if (!reduceMotion) {
+      content = Animate(
+        effects: const [
+          FadeEffect(duration: Duration(milliseconds: 300)),
+        ],
+        child: content,
+      );
+    }
 
     return Stack(
       children: [
@@ -101,155 +244,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
               fallback: 'Synchronizing...',
             ),
             child: AbsorbPointer(
-              child: Animate(
-                effects: const [
-                  FadeEffect(duration: Duration(milliseconds: 300)),
-                ],
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    // 1. Isolated blur layer
-                    BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-                      child: const SizedBox.expand(),
-                    ),
-
-                    // 2. Solid color tint layer
-                    ColoredBox(
-                      color: (isDark ? AppColors.slate950 : AppColors.slate50)
-                          .withValues(alpha: 0.85),
-                    ),
-
-                    // 3. Animated content layer
-                    RepaintBoundary(
-                      child: Material(
-                        type: MaterialType.transparency,
-                        child: Center(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              // Spinner + pulsing logo
-                              RepaintBoundary(
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    SizedBox(
-                                          width: 120.r,
-                                          height: 120.r,
-                                          child: CircularProgressIndicator(
-                                            strokeWidth: 2,
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                                  AppColors.indigo500
-                                                      .withValues(alpha: 0.5),
-                                                ),
-                                          ),
-                                        )
-                                        .animate(onPlay: (c) => c.repeat())
-                                        .rotate(duration: 2000.ms),
-                                    Container(
-                                          width: 80.r,
-                                          height: 80.r,
-                                          padding: EdgeInsets.all(12.r),
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: Colors.white.withValues(
-                                              alpha: 0.05,
-                                            ),
-                                          ),
-                                          child: Image.asset(
-                                            'assets/images/vowl_logo.webp',
-                                            fit: BoxFit.contain,
-                                            semanticLabel: 'Vowl Logo',
-                                          ),
-                                        )
-                                        .animate(
-                                          onPlay: (c) =>
-                                              c.repeat(reverse: true),
-                                        )
-                                        .scale(
-                                          duration: 1000.ms,
-                                          begin: const Offset(1.0, 1.0),
-                                          end: const Offset(1.1, 1.1),
-                                          curve: Curves.easeInOut,
-                                        ),
-                                  ],
-                                ),
-                              ),
-
-                              SizedBox(height: 48.h),
-
-                              // Main loading label
-                              RepaintBoundary(
-                                child:
-                                    Text(
-                                          (widget.message ??
-                                                  context.tr(
-                                                    'loading.synchronizing_title',
-                                                    fallback:
-                                                        'Synchronizing...',
-                                                  ))
-                                              .toUpperCase(),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w900,
-                                            color: isDark
-                                                ? Colors.white
-                                                : AppColors.slate800,
-                                            letterSpacing: 4.0,
-                                          ),
-                                        )
-                                        .animate(
-                                          onPlay: (c) =>
-                                              c.repeat(reverse: true),
-                                        )
-                                        .fadeIn(duration: 1000.ms)
-                                        .shimmer(
-                                          color: AppColors.indigo500.withValues(
-                                            alpha: 0.3,
-                                          ),
-                                        ),
-                              ),
-
-                              SizedBox(height: 12.h),
-
-                              // Dynamic status sub-text
-                              RepaintBoundary(
-                                child: ValueListenableBuilder<int>(
-                                  valueListenable: _stateHash,
-                                  builder: (context, _, child) {
-                                    return AnimatedSwitcher(
-                                      duration: const Duration(
-                                        milliseconds: 500,
-                                      ),
-                                      child: Text(
-                                        context.tr(_statusKeys[_statusIndex]),
-                                        key: ValueKey(_statusIndex),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 10.sp,
-                                          fontWeight: FontWeight.w700,
-                                          color:
-                                              (isDark
-                                                      ? Colors.white
-                                                      : AppColors.slate500)
-                                                  .withValues(alpha: 0.4),
-                                          letterSpacing: 1.5,
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              child: content,
             ),
           ),
       ],

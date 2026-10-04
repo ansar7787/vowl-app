@@ -212,7 +212,9 @@ class StreakHero extends StatelessWidget {
                 ),
                 if (!hasPlayedToday && streak > 0) ...[
                   SizedBox(height: 8.h),
-                  Container(
+                  Builder(
+                    builder: (context) {
+                      Widget container = Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 10.w,
                           vertical: 6.h,
@@ -256,11 +258,20 @@ class StreakHero extends StatelessWidget {
                             ),
                           ],
                         ),
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .fadeIn()
-                      .then()
-                      .fade(begin: 1.0, end: 0.6, duration: 1500.ms),
+                      );
+                      
+                      final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                      if (!reduceMotion) {
+                        container = container
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .fadeIn()
+                            .then()
+                            .fade(begin: 1.0, end: 0.6, duration: 1500.ms);
+                      }
+                      
+                      return container;
+                    }
+                  ),
                 ],
               ],
             ),

@@ -37,6 +37,7 @@ class ListeningPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
     final mascotState = MascotMessageHelper.getMascotState(
       isComplete: state is ListeningGameComplete,
       isGameOver: state is ListeningGameOver,
@@ -55,16 +56,25 @@ class ListeningPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
+    Widget column = Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        _SpeechBubble(message: message, color: theme.primaryColor),
+        _MascotSprite(mascotId: mascotId, mascotState: mascotState),
+      ],
+    );
+
+    if (!reduceMotion) {
+      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
+    }
+
     // The entire peeking mascot is decorative; the game header Semantics node
     // already communicates lives and level to screen readers.
-    return ExcludeSemantics(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          _SpeechBubble(message: message, color: theme.primaryColor),
-          _MascotSprite(mascotId: mascotId, mascotState: mascotState),
-        ],
-      ).animate().fadeIn().slideX(begin: 0.1, end: 0),
+    return Semantics(
+      liveRegion: true,
+      label: message,
+      excludeSemantics: true,
+      child: column,
     );
   }
 }
@@ -80,34 +90,41 @@ class _SpeechBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 10,
-              ),
-            ],
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    Widget bubble = Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 10,
           ),
-          child: Text(
-            message,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 11.sp,
-              fontWeight: FontWeight.bold,
-              color: color,
-            ),
-          ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .scale(
-          begin: const Offset(1, 1),
-          end: const Offset(1.05, 1.05),
-          duration: 2.seconds,
-        );
+        ],
+      ),
+      child: Text(
+        message,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 11.sp,
+          fontWeight: FontWeight.bold,
+          color: color,
+        ),
+      ),
+    );
+
+    if (!reduceMotion) {
+      bubble = bubble
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.05, 1.05),
+            duration: 2.seconds,
+          );
+    }
+
+    return bubble;
   }
 }
 
@@ -122,9 +139,16 @@ class _MascotSprite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId)
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(begin: 0, end: 8, duration: 1200.ms, curve: Curves.easeInOut)
-        .rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    Widget mascot = VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId);
+    
+    if (!reduceMotion) {
+      mascot = mascot
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(begin: 0, end: 8, duration: 1200.ms, curve: Curves.easeInOut)
+          .rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
+    }
+    
+    return mascot;
   }
 }

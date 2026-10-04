@@ -124,5 +124,9 @@ class _TrackPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant _TrackPainter oldDelegate) {
+    return oldDelegate.contour != contour ||
+           oldDelegate.color != color ||
+           oldDelegate.progress != progress;
+  }
 }

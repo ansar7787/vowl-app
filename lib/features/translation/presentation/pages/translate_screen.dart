@@ -529,25 +529,27 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         Padding(
                           padding: EdgeInsets.only(right: 12.w),
                           child:
-                              Text(
-                                    context.tr(
-                                      'translation.translating',
-                                      fallback: 'Translating...',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: const Color(
-                                        0xFF10B981,
-                                      ).withValues(alpha: 0.8),
-                                      fontStyle: FontStyle.italic,
-                                    ),
-                                  )
-                                  .animate(
-                                    onPlay: (controller) => controller.repeat(),
-                                  )
-                                  .shimmer(duration: 1.seconds),
+                              RepaintBoundary(
+                                child: Text(
+                                      context.tr(
+                                        'translation.translating',
+                                        fallback: 'Translating...',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: const Color(
+                                          0xFF10B981,
+                                        ).withValues(alpha: 0.8),
+                                        fontStyle: FontStyle.italic,
+                                      ),
+                                    )
+                                    .animate(
+                                      onPlay: (controller) => controller.repeat(),
+                                    )
+                                    .shimmer(duration: 1.seconds),
+                              ),
                         ),
                       if (state.isModelDownloading)
                         SizedBox(
@@ -962,3 +964,4 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
     );
   }
 }
+

@@ -87,7 +87,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
-    )..repeat(reverse: true);
+    );
 
     _timerController.addListener(() {
       _checkTickWarnings();
@@ -100,6 +100,18 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     });
 
     initRoleplayGame();
+  }
+
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      if (_timerController.isAnimating) _timerController.stop();
+    } else {
+      if (!_timerController.isAnimating) _timerController.repeat(reverse: true);
+    }
   }
 
   @override

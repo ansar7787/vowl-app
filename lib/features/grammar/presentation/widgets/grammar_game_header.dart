@@ -183,25 +183,31 @@ class _HintButton extends StatelessWidget {
     final hintUsed = isFinalFailure
         ? false
         : (isLoaded ? (state as GrammarLoaded).hintUsed : false);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
-    return QuestHintButton(
-          used: hintUsed,
-          primaryColor: primaryColor,
-          hintText: quest.hint,
-          soundService: soundService,
-          onTap: () {
-            context.read<GrammarBloc>().add(const GrammarHintUsed());
-            onHint();
-          },
-        )
-        .animate(
-          target: hintShouldGlow ? 1 : 0,
-          onPlay: (c) => c.repeat(reverse: true),
-        )
-        .shimmer(
-          color: Colors.white.withValues(alpha: 0.5),
-          duration: 1.seconds,
-        )
-        .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
+    Widget button = QuestHintButton(
+      used: hintUsed,
+      primaryColor: primaryColor,
+      hintText: quest.hint,
+      soundService: soundService,
+      onTap: () {
+        context.read<GrammarBloc>().add(const GrammarHintUsed());
+        onHint();
+      },
+    );
+
+    if (hintShouldGlow && !reduceMotion) {
+      button = button
+          .animate(
+            onPlay: (c) => c.repeat(reverse: true),
+          )
+          .shimmer(
+            color: Colors.white.withValues(alpha: 0.5),
+            duration: 1.seconds,
+          )
+          .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
+    }
+
+    return button;
   }
 }

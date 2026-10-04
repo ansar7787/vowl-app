@@ -50,7 +50,10 @@ class TrailPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(TrailPainter oldDelegate) => true;
+  bool shouldRepaint(covariant TrailPainter oldDelegate) {
+    return oldDelegate.points != points ||
+           oldDelegate.color != color;
+  }
 }
 
 class VortexPainter extends CustomPainter {

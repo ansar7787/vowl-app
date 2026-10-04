@@ -14,6 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_dialog_components.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -230,7 +231,9 @@ class KidsGameDialogs {
                               SizedBox(height: 32.h),
 
                               if (!rewardsDoubled) ...[
-                                Kids3DButton(
+                                Builder(
+                                  builder: (context) {
+                                    Widget btn = Kids3DButton(
                                       text: isPremium
                                           ? context.tr(
                                               'kids_zone.claim_3x_rewards',
@@ -267,14 +270,20 @@ class KidsGameDialogs {
                                           onDismissed: () {},
                                         );
                                       },
-                                    )
-                                    .animate(onPlay: (c) => c.repeat())
-                                    .shimmer(
-                                      duration: 2.seconds,
-                                      color: Colors.white.withValues(
-                                        alpha: 0.4,
-                                      ),
-                                    ),
+                                    );
+                                    
+                                    if (!VowlMotion.shouldReduceMotion(context)) {
+                                      btn = btn.animate(onPlay: (c) => c.repeat())
+                                          .shimmer(
+                                            duration: 2.seconds,
+                                            color: Colors.white.withValues(
+                                              alpha: 0.4,
+                                            ),
+                                          );
+                                    }
+                                    return btn;
+                                  },
+                                ),
                               ] else
                                 Container(
                                   width: double.infinity,
@@ -380,7 +389,9 @@ class KidsGameDialogs {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Container(
+                    Builder(
+                      builder: (context) {
+                        Widget heart = Container(
                           padding: EdgeInsets.all(24.r),
                           decoration: BoxDecoration(
                             color: AppColors.gameIncorrect.withValues(
@@ -401,13 +412,20 @@ class KidsGameDialogs {
                             color: AppColors.gameIncorrect,
                             size: 60.sp,
                           ),
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.1, 1.1),
-                          duration: 1.seconds,
-                        ),
+                        );
+                        
+                        if (!VowlMotion.shouldReduceMotion(context)) {
+                          heart = heart.animate(onPlay: (c) => c.repeat(reverse: true))
+                              .scale(
+                                begin: const Offset(1, 1),
+                                end: const Offset(1.1, 1.1),
+                                duration: 1.seconds,
+                              );
+                        }
+                        
+                        return heart;
+                      },
+                    ),
 
                     SizedBox(height: 16.h),
                     Text(

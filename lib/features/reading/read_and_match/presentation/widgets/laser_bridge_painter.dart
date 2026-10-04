@@ -47,5 +47,10 @@ class LaserBridgePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(LaserBridgePainter oldDelegate) => true;
+  bool shouldRepaint(covariant LaserBridgePainter oldDelegate) {
+    return oldDelegate.matches != matches ||
+           oldDelegate.activeKey != activeKey ||
+           oldDelegate.color != color ||
+           oldDelegate.colorMap != colorMap;
+  }
 }

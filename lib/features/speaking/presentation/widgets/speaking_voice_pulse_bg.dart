@@ -13,26 +13,33 @@ class SpeakingVoicePulseBg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    Widget pulse = Container(
+      width: 300.r,
+      height: 300.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: color,
+      ),
+    );
+
+    if (!reduceMotion) {
+      pulse = pulse
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.2, 1.2),
+            duration: 2.seconds,
+            curve: Curves.easeInOut,
+          )
+          .blur(begin: const Offset(40, 40), end: const Offset(60, 60));
+    }
+
     return Positioned.fill(
       child: ExcludeSemantics(
         child: Center(
-          child:
-              Container(
-                    width: 300.r,
-                    height: 300.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: color,
-                    ),
-                  )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.2, 1.2),
-                    duration: 2.seconds,
-                    curve: Curves.easeInOut,
-                  )
-                  .blur(begin: const Offset(40, 40), end: const Offset(60, 60)),
+          child: pulse,
         ),
       ),
     );

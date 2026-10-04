@@ -54,6 +54,18 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      if (_pulseController.isAnimating) _pulseController.stop();
+    } else {
+      if (!_pulseController.isAnimating) _pulseController.repeat();
+    }
+  }
+
   @override
   void dispose() {
     _selectedIndex.dispose();
@@ -69,7 +81,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat();
+    );
     initListeningGame();
   }
 

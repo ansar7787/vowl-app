@@ -48,7 +48,7 @@ class _HolographicCardState extends State<HolographicCard>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 6),
-    )..repeat();
+    );
   }
 
   @override
@@ -60,6 +60,14 @@ class _HolographicCardState extends State<HolographicCard>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    if (reduceMotion && _controller.isAnimating) {
+      _controller.stop();
+      _controller.value = 0.5; // static midpoint
+    } else if (!reduceMotion && !_controller.isAnimating) {
+      _controller.repeat();
+    }
 
     return GlassTile(
       padding: EdgeInsets.zero,

@@ -128,7 +128,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
     final displayValue = widget.centerTextOverride ?? quest.question ?? "?";
     final isEmoji = _isEmoji(displayValue);
 
-    return Stack(
+    Widget visual = Stack(
           alignment: Alignment.center,
           clipBehavior: Clip.none,
           children: [
@@ -211,9 +211,15 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
                 ).animate().fadeIn().scale(),
               ),
           ],
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut);
+        );
+
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (!reduceMotion) {
+      visual = visual
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut);
+    }
+    return visual;
   }
 
   Widget _buildOptions(

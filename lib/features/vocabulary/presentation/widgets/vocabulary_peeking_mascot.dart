@@ -29,6 +29,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final mascotId =
         context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime';
@@ -51,64 +52,79 @@ class VocabularyPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
-    return Column(
+    // Speech bubble — maxWidth clamps on tablets and landscape.
+    // FIX: Semantics label added so screen readers announce the mascot's
+    // current game message (was previously invisible to assistive tech).
+    Widget bubble = Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: 12.w,
+        vertical: 6.h,
+      ),
+      constraints: BoxConstraints(maxWidth: 200.w),
+      decoration: BoxDecoration(
+        color: isDark ? Colors.grey.shade900 : Colors.white,
+        borderRadius: BorderRadius.circular(12.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 10,
+          ),
+        ],
+      ),
+      child: Text(
+        message,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 11.sp,
+          fontWeight: FontWeight.bold,
+          color: isDark ? Colors.indigo.shade200 : Colors.indigo,
+        ),
+      ),
+    );
+
+    if (!reduceMotion) {
+      bubble = bubble
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.05, 1.05),
+            duration: 2.seconds,
+          );
+    }
+
+    Widget mascot = VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId);
+    if (!reduceMotion) {
+      mascot = mascot
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(
+            begin: 0,
+            end: 8,
+            duration: 1200.ms,
+            curve: Curves.easeInOut,
+          )
+          .rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
+    }
+
+    Widget column = Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Speech bubble — maxWidth clamps on tablets and landscape.
-        // FIX: Semantics label added so screen readers announce the mascot's
-        // current game message (was previously invisible to assistive tech).
-        Semantics(
-          label: 'Mascot says: $message',
-          child:
-              Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 6.h,
-                    ),
-                    constraints: BoxConstraints(maxWidth: 200.w),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.grey.shade900 : Colors.white,
-                      borderRadius: BorderRadius.circular(12.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.1),
-                          blurRadius: 10,
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      message,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.bold,
-                        color: isDark ? Colors.indigo.shade200 : Colors.indigo,
-                      ),
-                    ),
-                  )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.05, 1.05),
-                    duration: 2.seconds,
-                  ),
-        ),
-        Semantics(
-          label: 'Game mascot',
-          child: VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId)
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .moveY(
-                begin: 0,
-                end: 8,
-                duration: 1200.ms,
-                curve: Curves.easeInOut,
-              )
-              .rotate(begin: -0.05, end: 0.05, duration: 2.seconds),
-        ),
+        bubble,
+        mascot,
       ],
-    ).animate().fadeIn().slideX(begin: 0.1, end: 0);
+    );
+
+    if (!reduceMotion) {
+      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
+    }
+
+    return Semantics(
+      liveRegion: true,
+      label: message,
+      excludeSemantics: true,
+      child: column,
+    );
   }
 }

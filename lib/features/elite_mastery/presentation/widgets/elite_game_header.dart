@@ -224,6 +224,26 @@ class _HintButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    Widget button = QuestHintButton(
+      used: isHintUsed,
+      primaryColor: primaryColor,
+      hintText: hintText,
+      soundService: di.sl<SoundService>(),
+      onTap: onTap,
+    );
+
+    if (hintShouldGlow && !reduceMotion) {
+      button = button
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .shimmer(
+            color: Colors.white.withValues(alpha: 0.5),
+            duration: 1.seconds,
+          )
+          .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
+    }
+
     return Semantics(
       // FIX: another hardcoded English pair found alongside the ones fixed
       // above — same issue, same fix. NOTE: `games.semantic_hint_used` /
@@ -233,23 +253,7 @@ class _HintButton extends StatelessWidget {
           ? context.tr('games.semantic_hint_used', fallback: 'Hint Used')
           : context.tr('games.semantic_show_hint', fallback: 'Show Hint'),
       button: true,
-      child:
-          QuestHintButton(
-                used: isHintUsed,
-                primaryColor: primaryColor,
-                hintText: hintText,
-                soundService: di.sl<SoundService>(),
-                onTap: onTap,
-              )
-              .animate(
-                target: hintShouldGlow ? 1 : 0,
-                onPlay: (c) => c.repeat(reverse: true),
-              )
-              .shimmer(
-                color: Colors.white.withValues(alpha: 0.5),
-                duration: 1.seconds,
-              )
-              .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+      child: button,
     );
   }
 }

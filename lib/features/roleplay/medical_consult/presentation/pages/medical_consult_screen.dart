@@ -80,14 +80,28 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     _sweepController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
-    )..repeat();
+    );
 
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat(reverse: true);
+    );
 
     initRoleplayGame();
+  }
+
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      if (_sweepController.isAnimating) _sweepController.stop();
+      if (_pulseController.isAnimating) _pulseController.stop();
+    } else {
+      if (!_sweepController.isAnimating) _sweepController.repeat();
+      if (!_pulseController.isAnimating) _pulseController.repeat(reverse: true);
+    }
   }
 
   @override

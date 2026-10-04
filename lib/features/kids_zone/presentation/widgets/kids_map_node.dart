@@ -24,6 +24,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_toll_gate_bott
 import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_painter.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -190,7 +191,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
   }
 
   Widget _buildBuddySpeechBubble(String text, bool isNearRightEdge) {
-    return Container(
+    Widget bubble = Container(
           constraints: BoxConstraints(maxWidth: 180.w),
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           decoration: BoxDecoration(
@@ -235,15 +236,19 @@ class _KidsMapNodeState extends State<KidsMapNode> {
               : Alignment.bottomLeft,
           curve: Curves.elasticOut,
           duration: 700.ms,
-        )
-        .then()
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .scale(
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(1.05, 1.05),
-          duration: 1.5.seconds,
-          curve: Curves.easeInOutSine,
-        );
+          );
+          
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      bubble = bubble
+          .animate(onPlay: (c) => c.repeat(reverse: true), delay: 700.ms)
+          .scale(
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.05, 1.05),
+            duration: 1.5.seconds,
+            curve: Curves.easeInOutSine,
+          );
+    }
+    return bubble;
   }
 
   Widget _buildStickerGoal(int level, bool isLocked) {
@@ -275,12 +280,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
       tierName = context.tr('kids_zone.tier_gold', fallback: "GOLD TIER");
     }
 
-    return Positioned(
-      top: -85.h,
-      left: 0,
-      right: 0,
-      child:
-          Column(
+    Widget stickerContent = Column(
                 children: [
                   Container(
                     width: 75.r,
@@ -380,14 +380,24 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                     ),
                   ),
                 ],
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .moveY(
-                begin: -5,
-                end: 5,
-                duration: 2.seconds,
-                curve: Curves.easeInOutSine,
-              ),
+              );
+              
+      if (!VowlMotion.shouldReduceMotion(context)) {
+        stickerContent = stickerContent
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .moveY(
+              begin: -5,
+              end: 5,
+              duration: 2.seconds,
+              curve: Curves.easeInOutSine,
+            );
+      }
+
+    return Positioned(
+      top: -85.h,
+      left: 0,
+      right: 0,
+      child: stickerContent,
     );
   }
 
@@ -528,7 +538,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
           ),
 
           // 2. Main Disk Body
-          Container(
+          Builder(
+            builder: (context) {
+              Widget disk = Container(
                 width: 100.r,
                 height: 100.r,
                 decoration: BoxDecoration(
@@ -628,19 +640,28 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                           ),
                         ),
                 ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .moveY(
-                begin: -5.r,
-                end: 5.r,
-                duration: 2.seconds,
-                curve: Curves.easeInOutSine,
-              ),
+              );
+
+              if (!VowlMotion.shouldReduceMotion(context)) {
+                disk = disk
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .moveY(
+                      begin: -5.r,
+                      end: 5.r,
+                      duration: 2.seconds,
+                      curve: Curves.easeInOutSine,
+                    );
+              }
+
+              return disk;
+            },
+          ),
 
           // 3. Current Level – Double-Ring Glow Beacon
-          if (widget.isCurrent) ...[
-            // Inner soft glow ring
-            Container(
+          if (widget.isCurrent)
+            Builder(
+              builder: (context) {
+                Widget innerRing = Container(
                   width: 115.r,
                   height: 115.r,
                   decoration: BoxDecoration(
@@ -657,17 +678,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       ),
                     ],
                   ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(
-                  begin: const Offset(0.92, 0.92),
-                  end: const Offset(1.05, 1.05),
-                  duration: 1.8.seconds,
-                  curve: Curves.easeInOutSine,
-                )
-                .fadeIn(begin: 0.5),
-            // Outer expanding pulse ring
-            Container(
+                );
+                
+                Widget outerRing = Container(
                   width: 130.r,
                   height: 130.r,
                   decoration: BoxDecoration(
@@ -677,16 +690,36 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       width: 2.r,
                     ),
                   ),
-                )
-                .animate(onPlay: (c) => c.repeat())
-                .scale(
-                  begin: const Offset(0.8, 0.8),
-                  end: const Offset(1.3, 1.3),
-                  duration: 2.seconds,
-                  curve: Curves.easeOut,
-                )
-                .fadeOut(duration: 2.seconds),
-          ],
+                );
+
+                if (!VowlMotion.shouldReduceMotion(context)) {
+                  innerRing = innerRing
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scale(
+                        begin: const Offset(0.92, 0.92),
+                        end: const Offset(1.05, 1.05),
+                        duration: 1.8.seconds,
+                        curve: Curves.easeInOutSine,
+                      )
+                      .fadeIn(begin: 0.5);
+                      
+                  outerRing = outerRing
+                      .animate(onPlay: (c) => c.repeat())
+                      .scale(
+                        begin: const Offset(0.8, 0.8),
+                        end: const Offset(1.3, 1.3),
+                        duration: 2.seconds,
+                        curve: Curves.easeOut,
+                      )
+                      .fadeOut(duration: 2.seconds);
+                }
+
+                return Stack(
+                  alignment: Alignment.center,
+                  children: [innerRing, outerRing],
+                );
+              },
+            ),
         ],
       ),
     );

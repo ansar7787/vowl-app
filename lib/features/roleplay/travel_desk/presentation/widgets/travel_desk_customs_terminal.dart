@@ -31,7 +31,10 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          Builder(
+            builder: (context) {
+              final reduceMotion = MediaQuery.disableAnimationsOf(context);
+              Widget icon = Container(
                 padding: EdgeInsets.all(12.r),
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: 0.1),
@@ -42,14 +45,21 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
                   color: color,
                   size: 24.r,
                 ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.15, 1.15),
-                duration: 1.5.seconds,
-                curve: Curves.easeInOut,
-              ),
+              );
+              
+              if (!reduceMotion) {
+                icon = icon
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(1.15, 1.15),
+                      duration: 1.5.seconds,
+                      curve: Curves.easeInOut,
+                    );
+              }
+              return icon;
+            }
+          ),
           SizedBox(width: 16.w),
           Expanded(
             child: Column(

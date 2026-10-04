@@ -42,14 +42,25 @@ class PremiumHero extends StatelessWidget {
                   width: 1.5,
                 ),
               ),
-              child: Icon(LucideIcons.crown, color: Colors.white, size: 40.r)
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(0.9, 0.9),
-                    end: const Offset(1.1, 1.1),
-                    duration: 1.5.seconds,
-                    curve: Curves.easeInOut,
-                  ),
+              child: Builder(
+                builder: (context) {
+                  final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                  Widget crownIcon = Icon(LucideIcons.crown, color: Colors.white, size: 40.r);
+                  
+                  if (!reduceMotion) {
+                    crownIcon = crownIcon
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(0.9, 0.9),
+                          end: const Offset(1.1, 1.1),
+                          duration: 1.5.seconds,
+                          curve: Curves.easeInOut,
+                        );
+                  }
+                  
+                  return crownIcon;
+                }
+              ),
             )
             .animate()
             .slideY(

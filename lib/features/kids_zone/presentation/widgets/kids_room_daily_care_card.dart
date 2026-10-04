@@ -122,43 +122,51 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                 if (allDone) ...[
                   SizedBox(height: 16.h),
                   Center(
-                    child:
-                        ScaleButton(
-                              onTap: onClaim,
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 20.w,
-                                  vertical: 8.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.green.shade500,
-                                  borderRadius: BorderRadius.circular(20.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.green.withValues(
-                                        alpha: 0.9,
-                                      ),
-                                      offset: Offset(0, 4.h),
-                                    ),
-                                  ],
-                                ),
-                                child: Text(
-                                  "CLAIM 25 ⭐",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .scale(
-                              begin: const Offset(0.95, 0.95),
-                              end: const Offset(1.05, 1.05),
-                              duration: 1.seconds,
+                    child: Builder(
+                      builder: (context) {
+                        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                        Widget button = ScaleButton(
+                          onTap: onClaim,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 20.w,
+                              vertical: 8.h,
                             ),
+                            decoration: BoxDecoration(
+                              color: Colors.green.shade500,
+                              borderRadius: BorderRadius.circular(20.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.green.withValues(
+                                    alpha: 0.9,
+                                  ),
+                                  offset: Offset(0, 4.h),
+                                ),
+                              ],
+                            ),
+                            child: Text(
+                              "CLAIM 25 ⭐",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        );
+                        if (!reduceMotion) {
+                          button = button
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .scale(
+                                begin: const Offset(0.95, 0.95),
+                                end: const Offset(1.05, 1.05),
+                                duration: 1.seconds,
+                              );
+                        }
+                        return button;
+                      }
+                    ),
                   ),
                 ],
               ],

@@ -37,5 +37,9 @@ class BridgePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant BridgePainter oldDelegate) {
+    return oldDelegate.start != start ||
+           oldDelegate.end != end ||
+           oldDelegate.color != color;
+  }
 }

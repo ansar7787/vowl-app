@@ -75,13 +75,27 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     _waveController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat();
+    );
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat(reverse: true);
+    );
 
     initRoleplayGame();
+  }
+
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      if (_waveController.isAnimating) _waveController.stop();
+      if (_pulseController.isAnimating) _pulseController.stop();
+    } else {
+      if (!_waveController.isAnimating) _waveController.repeat();
+      if (!_pulseController.isAnimating) _pulseController.repeat(reverse: true);
+    }
   }
 
   @override

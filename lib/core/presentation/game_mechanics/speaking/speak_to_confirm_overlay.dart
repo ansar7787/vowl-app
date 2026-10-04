@@ -108,7 +108,10 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                           // ── Header ──
                           Row(
                             children: [
-                              Container(
+                              Builder(
+                                builder: (context) {
+                                  final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                  Widget iconContainer = Container(
                                     padding: EdgeInsets.all(10.r),
                                     decoration: BoxDecoration(
                                       color: widget.primaryColor.withValues(
@@ -126,15 +129,21 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                                       color: widget.primaryColor,
                                       size: 22.r,
                                     ),
-                                  )
-                                  .animate(
-                                    onPlay: (c) => c.repeat(reverse: true),
-                                  )
-                                  .scale(
-                                    begin: const Offset(1, 1),
-                                    end: const Offset(1.05, 1.05),
-                                    duration: 1.5.seconds,
-                                  ),
+                                  );
+
+                                  if (!reduceMotion) {
+                                    iconContainer = iconContainer
+                                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                                        .scale(
+                                          begin: const Offset(1, 1),
+                                          end: const Offset(1.05, 1.05),
+                                          duration: 1.5.seconds,
+                                        );
+                                  }
+
+                                  return iconContainer;
+                                },
+                              ),
                               SizedBox(width: 12.w),
                               Expanded(
                                 child: Column(

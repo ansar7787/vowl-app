@@ -121,59 +121,69 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                 children: [
                                   // Animated hero icon
                                   RepaintBoundary(
-                                    child:
-                                        Container(
-                                              padding: EdgeInsets.all(16.r),
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    widget.primaryColor,
-                                                    HSLColor.fromColor(
-                                                          widget.primaryColor,
-                                                        )
-                                                        .withLightness(
-                                                          (HSLColor.fromColor(
-                                                                    widget
-                                                                        .primaryColor,
-                                                                  ).lightness -
-                                                                  0.12)
-                                                              .clamp(0.0, 1.0),
-                                                        )
-                                                        .toColor(),
-                                                  ],
-                                                  begin: Alignment.topCenter,
-                                                  end: Alignment.bottomCenter,
-                                                ),
-                                                shape: BoxShape.circle,
-                                                border: Border.all(
-                                                  color: Colors.white
-                                                      .withValues(alpha: 0.3),
-                                                  width: 1.0,
-                                                ),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: widget.primaryColor
-                                                        .withValues(alpha: 0.5),
-                                                    blurRadius: 20,
-                                                    offset: const Offset(0, 10),
-                                                  ),
-                                                ],
-                                              ),
-                                              child: Icon(
-                                                widget.icon,
-                                                color: Colors.white,
-                                                size: 32.r,
-                                              ),
-                                            )
-                                            .animate(
-                                              onPlay: (c) =>
-                                                  c.repeat(reverse: true),
-                                            )
-                                            .scale(
-                                              begin: const Offset(1, 1),
-                                              end: const Offset(1.1, 1.1),
-                                              duration: 1.seconds,
+                                    child: Builder(
+                                      builder: (context) {
+                                        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                        Widget iconContainer = Container(
+                                          padding: EdgeInsets.all(16.r),
+                                          decoration: BoxDecoration(
+                                            gradient: LinearGradient(
+                                              colors: [
+                                                widget.primaryColor,
+                                                HSLColor.fromColor(
+                                                      widget.primaryColor,
+                                                    )
+                                                    .withLightness(
+                                                      (HSLColor.fromColor(
+                                                                widget
+                                                                    .primaryColor,
+                                                              ).lightness -
+                                                              0.12)
+                                                          .clamp(0.0, 1.0),
+                                                    )
+                                                    .toColor(),
+                                              ],
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
                                             ),
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                              color: Colors.white
+                                                  .withValues(alpha: 0.3),
+                                              width: 1.0,
+                                            ),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: widget.primaryColor
+                                                    .withValues(alpha: 0.5),
+                                                blurRadius: 20,
+                                                offset: const Offset(0, 10),
+                                              ),
+                                            ],
+                                          ),
+                                          child: Icon(
+                                            widget.icon,
+                                            color: Colors.white,
+                                            size: 32.r,
+                                          ),
+                                        );
+
+                                        if (!reduceMotion) {
+                                          iconContainer = iconContainer
+                                              .animate(
+                                                onPlay: (c) =>
+                                                    c.repeat(reverse: true),
+                                              )
+                                              .scale(
+                                                begin: const Offset(1, 1),
+                                                end: const Offset(1.1, 1.1),
+                                                duration: 1.seconds,
+                                              );
+                                        }
+
+                                        return iconContainer;
+                                      },
+                                    ),
                                   ),
 
                                   SizedBox(height: 24.h),

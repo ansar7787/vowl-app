@@ -134,6 +134,7 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
     required Color primaryColor,
     required VocabularyQuest currentQuest,
   }) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
     final button = QuestHintButton(
       used: hintUsed,
       primaryColor: primaryColor,
@@ -154,7 +155,7 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
     );
 
     Widget animatedButton = button;
-    if (hintShouldGlow) {
+    if (hintShouldGlow && !reduceMotion) {
       animatedButton = button
           .animate(
             key: ValueKey<bool>(hintShouldGlow),

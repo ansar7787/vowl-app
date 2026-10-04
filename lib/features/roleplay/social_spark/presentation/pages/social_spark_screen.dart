@@ -72,9 +72,21 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat(reverse: true);
+    );
 
     initRoleplayGame();
+  }
+
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      if (_pulseController.isAnimating) _pulseController.stop();
+    } else {
+      if (!_pulseController.isAnimating) _pulseController.repeat(reverse: true);
+    }
   }
 
   @override

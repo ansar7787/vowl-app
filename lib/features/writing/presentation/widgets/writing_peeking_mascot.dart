@@ -33,6 +33,7 @@ class WritingPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
     final authState = context.read<AuthBloc>().state;
     final mascotId = authState.user?.vowlMascot ?? 'vowl_prime';
     final mascotState = MascotMessageHelper.getMascotState(
@@ -52,17 +53,26 @@ class WritingPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
+    Widget column = Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        _SpeechBubble(message: message, theme: theme),
+        // FIX: Removed SizedBox(height: 0.h) — was dead code.
+        _MascotAvatar(mascotId: mascotId, mascotState: mascotState),
+      ],
+    );
+
+    if (!reduceMotion) {
+      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
+    }
+
     // ACCESSIBILITY: The mascot is a decorative animated element.
     // Excluding it prevents screen readers from announcing animation updates.
-    return ExcludeSemantics(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          _SpeechBubble(message: message, theme: theme),
-          // FIX: Removed SizedBox(height: 0.h) — was dead code.
-          _MascotAvatar(mascotId: mascotId, mascotState: mascotState),
-        ],
-      ).animate().fadeIn().slideX(begin: 0.1, end: 0),
+    return Semantics(
+      liveRegion: true,
+      label: message,
+      excludeSemantics: true,
+      child: column,
     );
   }
 }
@@ -83,44 +93,51 @@ class _SpeechBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 10,
-              ),
-            ],
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    Widget bubble = Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 10,
           ),
-          // ACCESSIBILITY: clamp text scaling so the bubble doesn't overflow at
-          // extreme accessibility font sizes (the mascot is decorative context).
-          child: MediaQuery(
-            data: MediaQuery.of(context).copyWith(
-              textScaler: TextScaler.linear(
-                MediaQuery.of(context).textScaler.scale(1).clamp(0.8, 1.3),
-              ),
-            ),
-            child: Text(
-              message,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.bold,
-                // FIX: was Colors.blueAccent — now theme-aware.
-                color: theme.primaryColor,
-              ),
-            ),
+        ],
+      ),
+      // ACCESSIBILITY: clamp text scaling so the bubble doesn't overflow at
+      // extreme accessibility font sizes (the mascot is decorative context).
+      child: MediaQuery(
+        data: MediaQuery.of(context).copyWith(
+          textScaler: TextScaler.linear(
+            MediaQuery.of(context).textScaler.scale(1).clamp(0.8, 1.3),
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .scale(
-          begin: const Offset(1, 1),
-          end: const Offset(1.05, 1.05),
-          duration: 2.seconds,
-        );
+        ),
+        child: Text(
+          message,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 11.sp,
+            fontWeight: FontWeight.bold,
+            // FIX: was Colors.blueAccent — now theme-aware.
+            color: theme.primaryColor,
+          ),
+        ),
+      ),
+    );
+
+    if (!reduceMotion) {
+      bubble = bubble
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.05, 1.05),
+            duration: 2.seconds,
+          );
+    }
+
+    return bubble;
   }
 }
 
@@ -132,8 +149,15 @@ class _MascotAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId)
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    Widget mascot = VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId);
+    
+    if (!reduceMotion) {
+      mascot = mascot
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
+    }
+    
+    return mascot;
   }
 }

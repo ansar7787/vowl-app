@@ -153,31 +153,35 @@ class _HintButton extends StatelessWidget {
     final used = state is ListeningLoaded
         ? (state as ListeningLoaded).hintUsed
         : false;
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    Widget button = QuestHintButton(
+      used: used,
+      primaryColor: theme.primaryColor,
+      hintText: null,
+      soundService: soundService,
+      onTap: onHint,
+    );
+
+    if (shouldGlow && !reduceMotion) {
+      button = button
+          .animate(
+            onPlay: (c) => c.repeat(reverse: true),
+          )
+          .shimmer(
+            color: Colors.white.withValues(alpha: 0.5),
+            duration: 1.seconds,
+          )
+          .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
+    }
+
     return Semantics(
       button: true,
       label: used ? 'Hint already used' : 'Use hint',
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          QuestHintButton(
-                used: used,
-                primaryColor: theme.primaryColor,
-                // Suppress the generic JSON text hint for Listening games.
-                // Instead, the BaseLayout intercepts this to visually
-                // show a custom snackbar and auto-replay the audio track.
-                hintText: null,
-                soundService: soundService,
-                onTap: onHint,
-              )
-              .animate(
-                target: shouldGlow ? 1 : 0,
-                onPlay: (c) => c.repeat(reverse: true),
-              )
-              .shimmer(
-                color: Colors.white.withValues(alpha: 0.5),
-                duration: 1.seconds,
-              )
-              .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+          button,
           if (quest.hint != null && used) ...[
             SizedBox(width: 8.w),
             TranslateButtonWidget(

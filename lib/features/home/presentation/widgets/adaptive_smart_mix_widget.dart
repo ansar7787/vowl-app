@@ -115,9 +115,18 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
         children: [
           Row(
             children: [
-              Icon(Icons.auto_awesome, color: displayColor, size: 20.r)
-                  .animate(onPlay: (controller) => controller.repeat())
-                  .shimmer(duration: 2000.ms, color: Colors.white54),
+              Builder(
+                builder: (context) {
+                  final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                  Widget icon = Icon(Icons.auto_awesome, color: displayColor, size: 20.r);
+                  if (!reduceMotion) {
+                    icon = icon
+                        .animate(onPlay: (controller) => controller.repeat())
+                        .shimmer(duration: 2000.ms, color: Colors.white54);
+                  }
+                  return icon;
+                }
+              ),
               SizedBox(width: 8.w),
               AutoSizeText(
                 context.tr('category.daily_mix', fallback: 'DAILY SMART MIX'),

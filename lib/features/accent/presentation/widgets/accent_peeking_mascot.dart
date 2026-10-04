@@ -31,6 +31,8 @@ class AccentPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
     final message = MascotMessageHelper.getMessage(
       context,
       category: 'accent',
@@ -49,59 +51,73 @@ class AccentPeekingMascot extends StatelessWidget {
       lives: lives,
     );
 
+    Widget bubble = Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: 12.w,
+        vertical: 6.h,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 10,
+          ),
+        ],
+      ),
+      child: Text(
+        message,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 11.sp,
+          fontWeight: FontWeight.bold,
+          color: Colors.orangeAccent,
+        ),
+      ),
+    );
+
+    if (!reduceMotion) {
+      bubble = bubble
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.05, 1.05),
+            duration: 2.seconds,
+          );
+    }
+
+    Widget mascot = VowlMascot(state: mascotVisualState, size: 45.r, mascotId: mascotId);
+    if (!reduceMotion) {
+      mascot = mascot
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(
+            begin: 0,
+            end: 5,
+            duration: 1500.ms,
+            curve: Curves.easeInOut,
+          );
+    }
+
+    Widget column = Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      mainAxisSize: MainAxisSize.min,
+      children: [bubble, mascot],
+    );
+
+    if (!reduceMotion) {
+      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
+    }
+
     // RepaintBoundary isolates the continuous bob + shimmer animations from
     // the parent Stack so they never trigger an ancestor repaint.
     return RepaintBoundary(
-      child: ExcludeSemantics(
+      child: Semantics(
+        liveRegion: true,
+        label: message,
+        excludeSemantics: true,
         // Decorative widget — TTS nudge handles audio accessibility.
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Speech bubble
-            Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 12.w,
-                    vertical: 6.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.1),
-                        blurRadius: 10,
-                      ),
-                    ],
-                  ),
-                  child: Text(
-                    message,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orangeAccent,
-                    ),
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.05, 1.05),
-                  duration: 2.seconds,
-                ),
-
-            // Mascot avatar — bobs up and down continuously
-            VowlMascot(state: mascotVisualState, size: 45.r, mascotId: mascotId)
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .moveY(
-                  begin: 0,
-                  end: 5,
-                  duration: 1500.ms,
-                  curve: Curves.easeInOut,
-                ),
-          ],
-        ).animate().fadeIn().slideX(begin: 0.1, end: 0),
+        child: column,
       ),
     );
   }

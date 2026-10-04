@@ -115,47 +115,55 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                     left: 0,
                     right: 0,
                     child: Center(
-                      child:
-                          ClipRRect(
-                                borderRadius: BorderRadius.circular(30.r),
-                                child: BackdropFilter(
-                                  filter: ImageFilter.blur(
-                                    sigmaX: 15,
-                                    sigmaY: 15,
+                      child: Builder(
+                        builder: (context) {
+                          final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                          Widget instructions = ClipRRect(
+                            borderRadius: BorderRadius.circular(30.r),
+                            child: BackdropFilter(
+                              filter: ImageFilter.blur(
+                                sigmaX: 15,
+                                sigmaY: 15,
+                              ),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 24.w,
+                                  vertical: 12.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withValues(
+                                    alpha: 0.6,
                                   ),
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 24.w,
-                                      vertical: 12.h,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white.withValues(
-                                        alpha: 0.6,
-                                      ),
-                                      borderRadius: BorderRadius.circular(30.r),
-                                      border: Border.all(
-                                        color: Colors.white,
-                                        width: 2.w,
-                                      ),
-                                    ),
-                                    child: Text(
-                                      "Swipe to wipe the bubbles! 🧽",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 20.sp,
-                                        fontWeight: FontWeight.w800,
-                                        color: Colors.blue.shade800,
-                                      ),
-                                    ),
+                                  borderRadius: BorderRadius.circular(30.r),
+                                  border: Border.all(
+                                    color: Colors.white,
+                                    width: 2.w,
                                   ),
                                 ),
-                              )
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
-                              .scale(
-                                begin: const Offset(0.95, 0.95),
-                                end: const Offset(1.05, 1.05),
-                                duration: 1.seconds,
+                                child: Text(
+                                  "Swipe to wipe the bubbles! 🧽",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 20.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.blue.shade800,
+                                  ),
+                                ),
                               ),
+                            ),
+                          );
+                          if (!reduceMotion) {
+                            instructions = instructions
+                                .animate(onPlay: (c) => c.repeat(reverse: true))
+                                .scale(
+                                  begin: const Offset(0.95, 0.95),
+                                  end: const Offset(1.05, 1.05),
+                                  duration: 1.seconds,
+                                );
+                          }
+                          return instructions;
+                        }
+                      ),
                     ),
                   ),
 
@@ -234,19 +242,28 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Icon(
+                                  Builder(
+                                    builder: (context) {
+                                      final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                                      Widget icon = Icon(
                                         Icons.auto_awesome_rounded,
                                         size: 56.sp,
                                         color: Colors.amber.shade400,
-                                      )
-                                      .animate(
-                                        onPlay: (c) => c.repeat(reverse: true),
-                                      )
-                                      .scale(
-                                        begin: const Offset(0.9, 0.9),
-                                        end: const Offset(1.1, 1.1),
-                                        duration: 1.seconds,
-                                      ),
+                                      );
+                                      if (!reduceMotion) {
+                                        icon = icon
+                                            .animate(
+                                              onPlay: (c) => c.repeat(reverse: true),
+                                            )
+                                            .scale(
+                                              begin: const Offset(0.9, 0.9),
+                                              end: const Offset(1.1, 1.1),
+                                              duration: 1.seconds,
+                                            );
+                                      }
+                                      return icon;
+                                    }
+                                  ),
                                   SizedBox(height: 16.h),
                                   Text(
                                     "SQUEAKY\nCLEAN!",
