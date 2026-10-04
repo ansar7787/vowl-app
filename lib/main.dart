@@ -349,9 +349,21 @@ class _MyAppState extends State<MyApp> {
                       GlobalCupertinoLocalizations.delegate,
                     ],
                     routerConfig: AppRouter.router,
-                    builder: (context, child) => _AppShell(
-                      isActuallyDark: isActuallyDark,
-                      isMidnight: themeState.isMidnight,
+                    builder: (context, child) => ValueListenableBuilder<bool>(
+                      valueListenable: VowlMotion.lowAnimationModeOverride,
+                      builder: (context, lowAnim, shellChild) {
+                        return MediaQuery(
+                          data: MediaQuery.of(context).copyWith(
+                            disableAnimations: lowAnim ||
+                                MediaQuery.disableAnimationsOf(context),
+                          ),
+                          child: _AppShell(
+                            isActuallyDark: isActuallyDark,
+                            isMidnight: themeState.isMidnight,
+                            child: shellChild,
+                          ),
+                        );
+                      },
                       child: child,
                     ),
                   );
