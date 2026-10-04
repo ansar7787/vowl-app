@@ -312,14 +312,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     if (state.status == AuthStatus.loggingOut) return;
 
-    // Warn if offline — sign-out can work locally but data won't sync
+    // C-01: Network check — must be online to logout to prevent permanent data loss
+    // of any offline progress (since logout clears the local persistence cache).
     if (!(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
           message: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
-      // Still proceed with logout (it works locally via Firebase)
+      return; // Block logout entirely to protect offline data
     }
 
     emit(state.copyWith(status: AuthStatus.loggingOut));
