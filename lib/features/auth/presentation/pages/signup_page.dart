@@ -113,10 +113,41 @@ class _SignUpViewState extends State<SignUpView> {
               // visible without flashing any intermediate UI during the transition.
             }
             if (state.errorMessage != null) {
+              // 10/10 UX: Intentionally mute the error if the user cancelled the flow.
+              if (!state.errorMessage!.contains('cancel')) {
+                _showSnackBar(
+                  context,
+                  state.errorMessage!,
+                  CustomSnackBarType.error,
+                );
+              }
+            }
+          },
+        ),
+        BlocListener<LoginCubit, LoginState>(
+          listenWhen: (previous, current) =>
+              previous.isSuccess != current.isSuccess ||
+              previous.errorMessage != current.errorMessage ||
+              previous.successMessage != current.successMessage,
+          listener: (context, state) {
+            if (state.isSuccess) {
+              context.read<AuthBloc>().add(const AuthReloadUser());
+            }
+            if (state.errorMessage != null) {
+              // 10/10 UX: Intentionally mute the error if the user cancelled the flow.
+              if (!state.errorMessage!.contains('cancel')) {
+                _showSnackBar(
+                  context,
+                  state.errorMessage!,
+                  CustomSnackBarType.error,
+                );
+              }
+            }
+            if (state.successMessage != null) {
               _showSnackBar(
                 context,
-                state.errorMessage!,
-                CustomSnackBarType.error,
+                state.successMessage!,
+                CustomSnackBarType.success,
               );
             }
           },
@@ -139,51 +170,52 @@ class _SignUpViewState extends State<SignUpView> {
         builder: (context) {
           final bgColor = Theme.of(context).scaffoldBackgroundColor;
 
-          return BlocBuilder<SignUpCubit, SignUpState>(
-            buildWhen: (previous, current) =>
-                previous.password != current.password ||
-                previous.isSubmitting != current.isSubmitting ||
-                previous.isSuccess != current.isSuccess,
-            builder: (context, state) {
-              final contrastColor = MeshGradientBackground.getContrastColor(
-                context,
-              );
-              final secondaryColor = contrastColor.withValues(alpha: 0.6);
+          final signUpPassword = context.select((SignUpCubit c) => c.state.password);
+          final signUpName = context.select((SignUpCubit c) => c.state.name);
+          final signUpSubmitting = context.select((SignUpCubit c) => c.state.isSubmitting);
+          final signUpSuccess = context.select((SignUpCubit c) => c.state.isSuccess);
 
-              return LoadingOverlay(
-                isLoading: state.isSubmitting || state.isSuccess,
-                message: context.tr(
-                  'auth.preparing_journey',
-                  fallback: 'Getting things ready...',
-                ),
-                child: PopScope(
-                  canPop: !state.isSubmitting && !state.isSuccess,
-                  child: GestureDetector(
-                    onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-                    child: Scaffold(
-                      backgroundColor: bgColor,
-                      resizeToAvoidBottomInset: false,
-                      body: Stack(
-                        children: [
-                          ListenableBuilder(
-                            listenable: _passwordFocus,
-                            builder: (context, _) {
-                              Color? auraColor;
-                              if (_passwordFocus.hasFocus &&
-                                  state.password.isNotEmpty) {
-                                if (state.password.length < 6) {
-                                  auraColor = Colors.red;
-                                } else if (state.password.length < 10) {
-                                  auraColor = Colors.blue;
-                                } else {
-                                  auraColor = Colors.green;
-                                }
-                              }
-                              return MeshGradientBackground(
-                                auraColor: auraColor,
-                              );
-                            },
-                          ),
+          final loginSubmitting = context.select((LoginCubit c) => c.state.isSubmitting);
+          final loginSuccess = context.select((LoginCubit c) => c.state.isSuccess);
+
+          final isLoading = signUpSubmitting || signUpSuccess || loginSubmitting || loginSuccess;
+
+          final contrastColor = MeshGradientBackground.getContrastColor(context);
+          final secondaryColor = contrastColor.withValues(alpha: 0.6);
+
+          return LoadingOverlay(
+            isLoading: isLoading,
+            message: context.tr(
+              'auth.preparing_journey',
+              fallback: 'Getting things ready...',
+            ),
+            child: PopScope(
+              canPop: !isLoading,
+              child: GestureDetector(
+                onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                child: Scaffold(
+                  backgroundColor: bgColor,
+                  resizeToAvoidBottomInset: false,
+                  body: Stack(
+                    children: [
+                      ListenableBuilder(
+                        listenable: _passwordFocus,
+                        builder: (context, _) {
+                          Color? auraColor;
+                          if (_passwordFocus.hasFocus && signUpPassword.isNotEmpty) {
+                            if (signUpPassword.length < 6) {
+                              auraColor = Colors.red;
+                            } else if (signUpPassword.length < 10) {
+                              auraColor = Colors.blue;
+                            } else {
+                              auraColor = Colors.green;
+                            }
+                          }
+                          return MeshGradientBackground(
+                            auraColor: auraColor,
+                          );
+                        },
+                      ),
                           SafeArea(
                             child: LayoutBuilder(
                               builder: (context, constraints) {
@@ -573,7 +605,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                   top: 0,
                                                   child: VowlyAuthCompanion(
                                                     nameFocus: _nameFocus,
-                                                    nameValue: state.name,
+                                                    nameValue: signUpName,
                                                     emailFocus: _emailFocus,
                                                     passwordFocus:
                                                         _passwordFocus,
@@ -663,8 +695,6 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                 ),
               );
-            },
-          );
         },
       ),
     );

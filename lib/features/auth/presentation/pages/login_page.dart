@@ -91,18 +91,15 @@ class _LoginViewState extends State<LoginView> {
               // visible without flashing the login form during the transition.
             }
             if (state.errorMessage != null) {
-              // errorMessage is a stable code (from AuthErrorHandler.getKey),
-              // never already-localized text, so checking for a "cancel"-style
-              // code here is locale-independent — this runs before
-              // _showSnackBar's context.tr() call translates it for display.
-              final isWarning = state.errorMessage!.contains('cancel');
-              _showSnackBar(
-                context,
-                state.errorMessage!,
-                isWarning
-                    ? CustomSnackBarType.warning
-                    : CustomSnackBarType.error,
-              );
+              // 10/10 UX: Intentionally mute the error if the user cancelled the flow.
+              // We do not want to show a warning for a standard user choice.
+              if (!state.errorMessage!.contains('cancel')) {
+                _showSnackBar(
+                  context,
+                  state.errorMessage!,
+                  CustomSnackBarType.error,
+                );
+              }
             }
             if (state.successMessage != null) {
               _showSnackBar(
