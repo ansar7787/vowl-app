@@ -28,7 +28,7 @@ import 'package:vowl/features/home/presentation/widgets/home_section_header.dart
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

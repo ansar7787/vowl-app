@@ -27,7 +27,7 @@ import 'package:vowl/features/profile/presentation/widgets/profile_stickers_prog
 import 'package:vowl/features/profile/presentation/widgets/profile_feature_card.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_preferences_list.dart';
 import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
+
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 

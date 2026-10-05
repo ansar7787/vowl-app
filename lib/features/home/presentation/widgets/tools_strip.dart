@@ -13,7 +13,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
+
 
 class _LocalPalette {
   _LocalPalette._();
