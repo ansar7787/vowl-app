@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Premium frosted-glass card with physically realistic blur and gradient overlay.
 ///
@@ -59,7 +60,10 @@ class GlassTile extends StatelessWidget {
         isDark && theme.scaffoldBackgroundColor.computeLuminance() < 0.02;
 
     final r = borderRadius ?? BorderRadius.circular(32.r);
-    final sigma = blur ?? 14.0;
+    
+    // PERF: Force disable expensive blur on low-end devices / low animation mode
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final sigma = reduceMotion ? 0.0 : (blur ?? 14.0);
     final hasBlur = sigma > 0;
 
     // border prop takes precedence; otherwise build from color/width fields.
