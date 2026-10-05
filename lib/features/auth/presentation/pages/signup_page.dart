@@ -10,7 +10,6 @@ import 'package:vowl/core/presentation/widgets/holographic_card.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
-import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart';
@@ -602,19 +601,18 @@ class _SignUpViewState extends State<SignUpView> {
                                                     ),
                                                   ),
                                                 ), // Close Padding
-                                                if (!AgeGateService.isAdultCached)
-                                                  Positioned(
-                                                    top: 0,
-                                                    child: VowlyAuthCompanion(
-                                                      nameFocus: _nameFocus,
-                                                      nameValue: signUpName,
-                                                      emailFocus: _emailFocus,
-                                                      passwordFocus:
-                                                          _passwordFocus,
-                                                      size: 60,
-                                                      isSignup: true,
-                                                    ),
+                                                Positioned(
+                                                  top: 0,
+                                                  child: VowlyAuthCompanion(
+                                                    nameFocus: _nameFocus,
+                                                    nameValue: signUpName,
+                                                    emailFocus: _emailFocus,
+                                                    passwordFocus:
+                                                        _passwordFocus,
+                                                    size: 60,
+                                                    isSignup: true,
                                                   ),
+                                                ),
                                               ],
                                             ), // Close Stack
                                             SizedBox(height: 16.h),
