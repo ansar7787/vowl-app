@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/praise_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -114,6 +115,7 @@ class _GlobalAudioFeedbackListenerState
   }
 
   void _onPraiseSignal() {
+    if (!di.sl<SoundService>().isGameSoundsEnabled) return;
     di.sl<PraiseService>().givePraise();
   }
 

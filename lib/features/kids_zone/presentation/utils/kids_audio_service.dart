@@ -20,7 +20,8 @@ class KidsAudioService {
   Future<bool> isSfxEnabled() async {
     final prefs = await SharedPreferences.getInstance();
     final globalEnabled = prefs.getBool('sound_enabled') ?? true;
-    if (!globalEnabled) return false;
+    final gameSoundsEnabled = prefs.getBool('game_sounds_enabled') ?? true;
+    if (!globalEnabled || !gameSoundsEnabled) return false;
     return prefs.getBool(_sfxKey) ?? true;
   }
 
