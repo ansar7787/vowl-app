@@ -14,6 +14,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Header row: progress + lives, briefing info button, conditional hint button.
 ///
@@ -159,6 +160,7 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
       animatedButton = button
           .animate(
             key: ValueKey<bool>(hintShouldGlow),
+            target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
             onPlay: (c) => c.repeat(reverse: true),
           )
           .shimmer(

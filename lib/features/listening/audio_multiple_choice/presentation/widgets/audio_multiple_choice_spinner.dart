@@ -114,7 +114,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                         child: Text(emoji!, style: TextStyle(fontSize: 36.r)),
                       ).animate().scale(
                         duration: 400.ms,
-                        curve: Curves.easeOutBack,
+                        curve: Curves.easeOutCubic,
                       )
                     : Column(
                         mainAxisAlignment: MainAxisAlignment.center,

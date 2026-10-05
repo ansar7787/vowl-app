@@ -148,7 +148,7 @@ class MainWrapper extends StatelessWidget {
           child: ExcludeSemantics(
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutBack,
+              curve: Curves.easeOutCubic,
               padding: EdgeInsets.symmetric(
                 horizontal: isSelected ? 12.w : 8.w,
                 vertical: 8.h,
@@ -191,7 +191,7 @@ class MainWrapper extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           color: accentColor,
                           letterSpacing: 0.5,
                         ),

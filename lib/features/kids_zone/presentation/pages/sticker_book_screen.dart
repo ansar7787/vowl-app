@@ -340,7 +340,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         )
         .animate()
         .fadeIn(duration: 600.ms)
-        .slideY(begin: -0.1, end: 0, curve: Curves.easeOutBack);
+        .slideY(begin: -0.1, end: 0, curve: Curves.easeOutCubic);
   }
 
   Widget _buildCategoryTabs(bool isDark, bool isMidnight) {
@@ -744,7 +744,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
           begin: 0.15,
           end: 0,
           duration: 500.ms,
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
         );
   }
 

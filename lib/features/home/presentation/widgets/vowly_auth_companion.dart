@@ -98,7 +98,7 @@ class _VowlyAuthCompanionState extends State<VowlyAuthCompanion> {
     if (widget.isSignup) {
       return context.tr(
         'auth_companion.default_signup',
-        fallback: 'Begin your learning adventure.',
+        fallback: 'Create your account to get started.',
       );
     }
     if (widget.isForgotPassword) {
@@ -109,7 +109,7 @@ class _VowlyAuthCompanionState extends State<VowlyAuthCompanion> {
     }
     return context.tr(
       'auth_companion.default_login',
-      fallback: 'Ready to continue your journey?',
+      fallback: 'Welcome back. Ready to learn?',
     );
   }
 

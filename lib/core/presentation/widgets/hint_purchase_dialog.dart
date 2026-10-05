@@ -162,7 +162,7 @@ class HintPurchaseDialog {
             ),
           ),
         ),
-      ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack).fadeIn(),
+      ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic).fadeIn(),
     );
   }
 

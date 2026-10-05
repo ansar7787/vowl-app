@@ -2,7 +2,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:async';
 import 'dart:math' as math;
-
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -145,7 +145,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     _glowController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1800),
-    )..repeat(reverse: true);
+    );
 
     // Kick off smooth entry after initial build
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -160,6 +160,17 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     }
 
     _loadCurriculum();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      if (!_glowController.isAnimating) _glowController.repeat(reverse: true);
+    } else {
+      _glowController.stop();
+      _glowController.value = 0.5;
+    }
   }
 
   Future<void> _loadCurriculum() async {

@@ -39,7 +39,7 @@ class ContextualUsageCard extends StatelessWidget {
               .scale(
                 begin: const Offset(0.5, 0.5),
                 end: const Offset(1.5, 1.5),
-                curve: Curves.easeOutBack,
+                curve: Curves.easeOutCubic,
               ),
           AnimatedContainer(
                 duration: const Duration(milliseconds: 600),

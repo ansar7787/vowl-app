@@ -6,7 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/utils/kids_game_helper.dart';
+import 'package:vowl/features/kids_zone/domain/services/kids_game_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class _LocalPalette {

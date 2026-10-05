@@ -128,7 +128,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
           _scrollController.animateTo(
             0,
             duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOutBack,
+            curve: Curves.easeOutCubic,
           );
         }
         _lastQuest = state.currentQuest;

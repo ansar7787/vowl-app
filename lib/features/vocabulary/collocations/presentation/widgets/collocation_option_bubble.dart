@@ -124,7 +124,7 @@ class CollocationOptionBubble extends StatelessWidget {
         .scale(
           end: const Offset(1.8, 1.8),
           duration: 600.ms,
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
         )
         .fadeOut(duration: 500.ms);
 

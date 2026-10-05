@@ -173,7 +173,7 @@ class _SituationSpeakingBriefingCardState
                             ),
                           ).animate().scale(
                             duration: 300.ms,
-                            curve: Curves.easeOutBack,
+                            curve: Curves.easeOutCubic,
                           ),
                       ],
                     ),

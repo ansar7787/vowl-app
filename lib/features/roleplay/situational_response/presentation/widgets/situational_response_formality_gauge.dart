@@ -103,7 +103,7 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
               ),
               AnimatedContainer(
                 duration: const Duration(milliseconds: 800),
-                curve: Curves.easeOutBack,
+                curve: Curves.easeOutCubic,
                 height: 6.h,
                 width: (1.sw - 64.w) * score,
                 decoration: BoxDecoration(

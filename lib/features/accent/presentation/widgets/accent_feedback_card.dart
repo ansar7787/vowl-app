@@ -266,7 +266,7 @@ class AccentFeedbackCard extends StatelessWidget {
                 .slideY(
                   begin: 0.1,
                   end: 0,
-                  curve: Curves.easeOutBack,
+                  curve: Curves.easeOutCubic,
                   duration: 300.ms,
                 ),
           ],
@@ -444,7 +444,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
               begin: 0.2,
               end: 0,
               duration: 300.ms,
-              curve: Curves.easeOutBack,
+              curve: Curves.easeOutCubic,
             );
       },
     );

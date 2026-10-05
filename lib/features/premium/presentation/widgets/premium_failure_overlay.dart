@@ -330,7 +330,7 @@ class PremiumFailureOverlay extends StatelessWidget {
     if (!reduceMotion) {
       content = content.animate().fade().scale(
         begin: const Offset(0.95, 0.95),
-        curve: Curves.easeOutBack,
+        curve: Curves.easeOutCubic,
         duration: 400.ms,
       );
     }

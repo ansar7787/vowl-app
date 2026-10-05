@@ -70,17 +70,10 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 /// resolve that BLoC's own per-screen instance. See the file-level doc
 /// comment above for the full rationale and required call sites.
 class GamePraiseSignal extends ChangeNotifier {
-  bool _isKidsMode = false;
-
-  /// Whether the most recent [fire] call was from the Kids Zone (selects
-  /// [PraiseService.givePraise]'s `isKids` phrase pool).
-  bool get isKidsMode => _isKidsMode;
-
   /// Call the instant a BLoC transitions into "just answered correctly" or
   /// "just completed the level" state - the two conditions the old
   /// per-Bloc `listenWhen` clauses checked.
-  void fire({bool isKids = false}) {
-    _isKidsMode = isKids;
+  void fire() {
     notifyListeners();
   }
 }
@@ -121,7 +114,7 @@ class _GlobalAudioFeedbackListenerState
   }
 
   void _onPraiseSignal() {
-    di.sl<PraiseService>().givePraise(isKids: _signal.isKidsMode);
+    di.sl<PraiseService>().givePraise();
   }
 
   /// Resolves the shared [GamePraiseSignal], self-registering a lazy

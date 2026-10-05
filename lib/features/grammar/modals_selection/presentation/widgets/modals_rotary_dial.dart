@@ -107,7 +107,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
 
     _snapAnimation = Tween<double>(begin: currentRotation, end: targetAngle)
         .animate(
-          CurvedAnimation(parent: _snapController, curve: Curves.easeOutBack),
+          CurvedAnimation(parent: _snapController, curve: Curves.easeOutCubic),
         );
     _snapController.forward(from: 0);
   }

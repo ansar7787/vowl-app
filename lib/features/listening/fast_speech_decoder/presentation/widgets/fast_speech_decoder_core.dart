@@ -112,7 +112,7 @@ class FastSpeechDecoderCore extends StatelessWidget {
                     if (isCorrectState == true && emoji != null)
                       Text(emoji!, style: TextStyle(fontSize: 48.r))
                           .animate()
-                          .scale(duration: 400.ms, curve: Curves.easeOutBack)
+                          .scale(duration: 400.ms, curve: Curves.easeOutCubic)
                     else ...[
                       Icon(
                         Icons.play_arrow_rounded,

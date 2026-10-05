@@ -173,7 +173,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                         begin: const Offset(1, 1),
                         end: const Offset(1.2, 1.2),
                         duration: 200.ms,
-                        curve: Curves.easeOutBack,
+                        curve: Curves.easeOutCubic,
                       )
                       .then()
                       .scale(
@@ -185,7 +185,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
               );
             },
           ),
-        ).animate().scale(curve: Curves.easeOutBack).fadeIn();
+        ).animate().scale(curve: Curves.easeOutCubic).fadeIn();
       },
     );
   }
@@ -492,7 +492,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                   blastDirectionality: BlastDirectionality.explosive,
                   shouldLoop: false,
                   emissionFrequency: isMilestone ? 0.05 : 0.1,
-                  numberOfParticles: isMilestone ? 80 : 20,
+                  numberOfParticles: isMilestone ? 20 : 5,
                   gravity: isMilestone ? 0.1 : 0.2,
                   colors: const [
                     Colors.green,

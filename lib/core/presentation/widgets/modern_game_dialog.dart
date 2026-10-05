@@ -340,7 +340,7 @@ class ModernGameDialog extends StatelessWidget {
             ],
           ),
         ),
-      ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+      ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
     );
   }
 

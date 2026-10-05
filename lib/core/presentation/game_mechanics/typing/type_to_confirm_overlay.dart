@@ -383,7 +383,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                               begin: const Offset(0, 0),
                               end: const Offset(1, 1),
                               duration: 400.ms,
-                              curve: Curves.easeOutBack,
+                              curve: Curves.easeOutCubic,
                             ),
                             SizedBox(height: 12.h),
                             Text(

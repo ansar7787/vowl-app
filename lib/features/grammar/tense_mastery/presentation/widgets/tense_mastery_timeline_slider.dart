@@ -160,7 +160,7 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                 duration: isDragging
                     ? Duration.zero
                     : const Duration(milliseconds: 300),
-                curve: Curves.easeOutBack,
+                curve: Curves.easeOutCubic,
                 left: leftPos,
                 top: 0,
                 child: Semantics(

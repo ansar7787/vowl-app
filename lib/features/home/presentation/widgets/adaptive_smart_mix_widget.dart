@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -117,7 +118,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
             children: [
               Builder(
                 builder: (context) {
-                  final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                  final reduceMotion = VowlMotion.shouldReduceMotion(context);
                   Widget icon = Icon(
                     Icons.auto_awesome,
                     color: displayColor,
@@ -125,7 +126,10 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
                   );
                   if (!reduceMotion) {
                     icon = icon
-                        .animate(onPlay: (controller) => controller.repeat())
+                        .animate(
+                          target: reduceMotion ? 0 : 1,
+                          onPlay: (controller) => controller.repeat(),
+                        )
                         .shimmer(duration: 2000.ms, color: Colors.white54);
                   }
                   return icon;
@@ -196,7 +200,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
                         delay: (200 + entry.key * 100).ms,
                         duration: 400.ms,
                       )
-                      .slideY(begin: 0.2, end: 0, curve: Curves.easeOutBack);
+                      .slideY(begin: 0.2, end: 0, curve: Curves.easeOutCubic);
                 }).toList(),
               );
             },

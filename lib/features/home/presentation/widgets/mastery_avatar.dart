@@ -41,7 +41,7 @@ class MasteryAvatar extends StatelessWidget {
                 color: AppColors.indigo500,
                 strokeCap: StrokeCap.round,
               ),
-            ).animate().scale(duration: 600.ms, curve: Curves.easeOutBack),
+            ).animate().scale(duration: 600.ms, curve: Curves.easeOutCubic),
             Container(
               width: 62.r,
               height: 62.r,

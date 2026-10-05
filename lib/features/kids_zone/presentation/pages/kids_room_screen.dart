@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/core/utils/buddy_lifecycle_service.dart';
+import 'package:vowl/features/kids_zone/domain/services/buddy_lifecycle_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_layout.dart';
@@ -803,7 +803,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                       ),
                     )
                     .animate()
-                    .scale(curve: Curves.easeOutBack, duration: 400.ms)
+                    .scale(curve: Curves.easeOutCubic, duration: 400.ms)
                     .fadeIn(),
           ),
         Stack(
@@ -1003,7 +1003,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                           begin: -50,
                           end: 120,
                           duration: 800.ms,
-                          curve: Curves.bounceOut,
+                          curve: Curves.easeOutCubic,
                         )
                         .scale(
                           begin: const Offset(1, 1),

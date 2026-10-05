@@ -353,7 +353,7 @@ class StreakCalendar extends StatelessWidget {
                                 begin: const Offset(0.5, 0.5),
                                 end: const Offset(1, 1),
                                 duration: 800.ms,
-                                curve: Curves.easeOutBack,
+                                curve: Curves.easeOutCubic,
                               )
                             : null)),
           ),

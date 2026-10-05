@@ -328,7 +328,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                               begin: const Offset(0, -100),
                                               end: Offset.zero,
                                               duration: 500.ms,
-                                              curve: Curves.bounceOut,
+                                              curve: Curves.easeOutCubic,
                                             )
                                             .fadeIn();
                                       },

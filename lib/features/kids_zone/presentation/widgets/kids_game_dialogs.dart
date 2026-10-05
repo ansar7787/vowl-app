@@ -323,7 +323,7 @@ class KidsGameDialogs {
                                       ],
                                     ),
                                   ),
-                                ).animate().scale(curve: Curves.easeOutBack),
+                                ).animate().scale(curve: Curves.easeOutCubic),
 
                               SizedBox(height: 16.h),
 
@@ -345,7 +345,7 @@ class KidsGameDialogs {
                         ),
                       ).animate().scale(
                         duration: 500.ms,
-                        curve: Curves.easeOutBack,
+                        curve: Curves.easeOutCubic,
                       ),
                 ),
                 const Positioned.fill(
@@ -488,7 +488,7 @@ class KidsGameDialogs {
                     ),
                   ],
                 ),
-              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
             ),
           ),
         ),
@@ -544,7 +544,7 @@ class KidsGameDialogs {
                     ),
                   ).animate().scale(
                     duration: 400.ms,
-                    curve: Curves.easeOutBack,
+                    curve: Curves.easeOutCubic,
                   ),
 
                   SizedBox(height: 20.h),
@@ -662,7 +662,7 @@ class KidsGameDialogs {
               ),
             ),
           ),
-        ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+        ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
       ),
     );
     return result ?? false;
@@ -695,7 +695,7 @@ class KidsGameDialogs {
         ).animate().scale(
           delay: 200.ms,
           duration: 400.ms,
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
         ),
 
         SizedBox(height: 8.h),

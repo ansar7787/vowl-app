@@ -164,44 +164,14 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                     ),
                   ),
 
-                // Dirt/Bubbles Particles
-                ..._dustParticles.value.map((dust) {
-                  return Positioned(
-                    left:
-                        MediaQuery.of(context).size.width * dust.x -
-                        (dust.size / 2),
-                    top:
-                        MediaQuery.of(context).size.height * dust.y -
-                        (dust.size / 2),
-                    child: Container(
-                      width: dust.size,
-                      height: dust.size,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: RadialGradient(
-                          colors: [
-                            Colors.white.withValues(alpha: 0.7),
-                            Colors.lightBlueAccent.withValues(alpha: 0.5),
-                          ],
-                        ),
-                        border: Border.all(color: Colors.white, width: 2),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.blueAccent.withValues(alpha: 0.4),
-                            blurRadius: 10,
-                            spreadRadius: 2,
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Text(
-                          "🫧",
-                          style: TextStyle(fontSize: dust.size * 0.5),
-                        ),
-                      ),
+                // Dirt/Bubbles Particles rendered in a single Canvas for performance
+                Positioned.fill(
+                  child: RepaintBoundary(
+                    child: CustomPaint(
+                      painter: _DustPainter(_dustParticles.value),
                     ),
-                  );
-                }),
+                  ),
+                ),
 
                 // Finished overlay
                 if (_isFinished.value)
@@ -299,7 +269,7 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                           ),
                         ).animate().scale(
                           duration: 400.ms,
-                          curve: Curves.easeOutBack,
+                          curve: Curves.easeOutCubic,
                         ),
                   ),
               ],
@@ -308,6 +278,75 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
         ),
       ),
     );
+  }
+}
+
+class _DustPainter extends CustomPainter {
+  final List<_Dust> particles;
+
+  _DustPainter(this.particles);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (particles.isEmpty) return;
+
+    final paint = Paint()..style = PaintingStyle.fill;
+    final borderPaint = Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2;
+
+    for (final dust in particles) {
+      final rect = Rect.fromCenter(
+        center: Offset(size.width * dust.x, size.height * dust.y),
+        width: dust.size,
+        height: dust.size,
+      );
+
+      // Draw shadow
+      canvas.drawShadow(
+        Path()..addOval(rect),
+        Colors.blueAccent.withValues(alpha: 0.4),
+        10,
+        true,
+      );
+
+      // Draw bubble background
+      paint.shader = RadialGradient(
+        colors: [
+          Colors.white.withValues(alpha: 0.7),
+          Colors.lightBlueAccent.withValues(alpha: 0.5),
+        ],
+      ).createShader(rect);
+      
+      canvas.drawOval(rect, paint);
+      
+      // Draw border
+      canvas.drawOval(rect, borderPaint);
+
+      // We draw the emoji or a simple inner highlight
+      // Using TextPainter is expensive if drawn per frame for many particles,
+      // but 15 particles is acceptable. We can just draw a simple highlight.
+      final highlightPaint = Paint()
+        ..color = Colors.white.withValues(alpha: 0.8)
+        ..style = PaintingStyle.fill;
+      canvas.drawOval(
+        Rect.fromCenter(
+          center: Offset(
+            size.width * dust.x - dust.size * 0.15,
+            size.height * dust.y - dust.size * 0.15,
+          ),
+          width: dust.size * 0.3,
+          height: dust.size * 0.3,
+        ),
+        highlightPaint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _DustPainter oldDelegate) {
+    return oldDelegate.particles != particles;
   }
 }
 

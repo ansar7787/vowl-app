@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -115,7 +116,7 @@ class StreakHero extends StatelessWidget {
                           begin: const Offset(0.5, 0.5),
                           end: const Offset(1, 1),
                           duration: 800.ms,
-                          curve: Curves.easeOutBack,
+                          curve: Curves.easeOutCubic,
                         )
                         .fadeIn(duration: 800.ms),
                     Container(
@@ -141,7 +142,7 @@ class StreakHero extends StatelessWidget {
                       begin: const Offset(0.5, 0.5),
                       end: const Offset(1, 1),
                       duration: 800.ms,
-                      curve: Curves.easeOutBack,
+                      curve: Curves.easeOutCubic,
                     ),
                   ],
                 ),
@@ -159,7 +160,7 @@ class StreakHero extends StatelessWidget {
                       ),
                     ).animate().scale(
                       duration: 600.ms,
-                      curve: Curves.easeOutBack,
+                      curve: Curves.easeOutCubic,
                       delay: 200.ms,
                     ),
                     SizedBox(height: 4.h),
@@ -260,9 +261,7 @@ class StreakHero extends StatelessWidget {
                         ),
                       );
 
-                      final reduceMotion = MediaQuery.disableAnimationsOf(
-                        context,
-                      );
+                      final reduceMotion = VowlMotion.shouldReduceMotion(context);
                       if (!reduceMotion) {
                         container = container
                             .animate(onPlay: (c) => c.repeat(reverse: true))

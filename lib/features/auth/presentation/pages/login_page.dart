@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/widgets/holographic_card.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart';
@@ -364,15 +365,16 @@ class _LoginViewState extends State<LoginView> {
                                                     ),
                                                   ),
                                                 ), // Close Padding
-                                                Positioned(
-                                                  top: 0,
-                                                  child: VowlyAuthCompanion(
-                                                    emailFocus: _emailFocus,
-                                                    passwordFocus:
-                                                        _passwordFocus,
-                                                    size: 60,
+                                                if (!AgeGateService.isAdultCached)
+                                                  Positioned(
+                                                    top: 0,
+                                                    child: VowlyAuthCompanion(
+                                                      emailFocus: _emailFocus,
+                                                      passwordFocus:
+                                                          _passwordFocus,
+                                                      size: 60,
+                                                    ),
                                                   ),
-                                                ),
                                               ],
                                             ), // Close Stack
                                             SizedBox(height: 16.h),

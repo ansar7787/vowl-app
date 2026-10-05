@@ -700,7 +700,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                   begin: const Offset(0, 0),
                   end: const Offset(1, 1),
                   duration: 500.ms,
-                  curve: Curves.easeOutBack,
+                  curve: Curves.easeOutCubic,
                 ),
                 SizedBox(height: 12.h),
                 AutoSizeText(

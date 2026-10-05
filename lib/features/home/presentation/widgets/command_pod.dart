@@ -132,7 +132,7 @@ class CommandPod extends StatelessWidget {
                       begin: const Offset(1.15, 1.15),
                       end: const Offset(1, 1),
                       duration: 800.ms,
-                      curve: Curves.easeOutBack,
+                      curve: Curves.easeOutCubic,
                     ),
 
                     MasteryAvatar(user: user, progress: progress),

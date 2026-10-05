@@ -665,7 +665,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                               .scaleXY(
                                                 begin: 0.9,
                                                 end: 1.0,
-                                                curve: Curves.easeOutBack,
+                                                curve: Curves.easeOutCubic,
                                                 duration: 200.ms,
                                               ),
                                     ),

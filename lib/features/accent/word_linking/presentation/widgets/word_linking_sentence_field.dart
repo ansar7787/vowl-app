@@ -220,7 +220,7 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
                                     ).animate().scale(
                                       delay: 300.ms,
                                       duration: 400.ms,
-                                      curve: Curves.easeOutBack,
+                                      curve: Curves.easeOutCubic,
                                     ),
                               ),
                           ],

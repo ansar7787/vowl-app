@@ -602,7 +602,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                                   .scaleXY(
                                                     begin: 0.8,
                                                     end: 1.0,
-                                                    curve: Curves.easeOutBack,
+                                                    curve: Curves.easeOutCubic,
                                                     duration: 250.ms,
                                                   ),
                                         ),
@@ -690,7 +690,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                           .scaleXY(
                                             begin: 0.9,
                                             end: 1.0,
-                                            curve: Curves.easeOutBack,
+                                            curve: Curves.easeOutCubic,
                                             duration: 200.ms,
                                           ),
                                 ),

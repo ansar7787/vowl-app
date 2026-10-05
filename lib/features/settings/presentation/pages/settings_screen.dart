@@ -49,6 +49,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String _buildNumberVal = '1';
   bool _notificationsEnabledVal = true;
   bool _soundEnabledVal = true;
+  bool _gameSoundsEnabledVal = true;
   bool _reduceComplexGesturesVal = false;
   bool _lowAnimationModeVal = false;
   bool _analyticsEnabledVal = true;
@@ -81,6 +82,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final isGranted = await Permission.notification.isGranted;
     final savedPref = prefs.getBool('notifications_enabled') ?? true;
     final soundPref = prefs.getBool('sound_enabled') ?? true;
+    final gameSoundsPref = prefs.getBool('game_sounds_enabled') ?? true;
     final gesturesPref = prefs.getBool('reduce_complex_gestures') ?? false;
     final lowAnimationPref = prefs.getBool('low_animation_mode') ?? false;
     final analyticsPref = prefs.getBool('analytics_enabled') ?? true;
@@ -90,6 +92,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _buildNumberVal = info.buildNumber;
     _notificationsEnabledVal = savedPref && isGranted;
     _soundEnabledVal = soundPref;
+    _gameSoundsEnabledVal = gameSoundsPref;
     _reduceComplexGesturesVal = gesturesPref;
     _lowAnimationModeVal = lowAnimationPref;
     _analyticsEnabledVal = analyticsPref;
@@ -143,6 +146,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
     if (!value) {
       await di.sl<KidsTTSService>().stop();
     }
+  }
+
+  Future<void> _toggleGameSounds(bool value) async {
+    _gameSoundsEnabledVal = value;
+    _updateState();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('game_sounds_enabled', value);
+    di.sl<SoundService>().setGameSoundsEnabled(value);
   }
 
   Future<void> _toggleGestures(bool value) async {
@@ -396,6 +407,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                   _translationLanguageNameVal,
                                               isDark: isDark,
                                               soundEnabled: _soundEnabledVal,
+                                              gameSoundsEnabled: _gameSoundsEnabledVal,
                                               notificationsEnabled:
                                                   _notificationsEnabledVal,
                                               reduceComplexGestures:
@@ -406,6 +418,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                   _analyticsEnabledVal,
                                               isLoading: _isLoadingVal,
                                               onToggleSound: _toggleSound,
+                                              onToggleGameSounds: _toggleGameSounds,
                                               onToggleNotifications:
                                                   _toggleNotifications,
                                               onToggleGestures: _toggleGestures,
@@ -471,7 +484,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                         begin: 0.95,
                                         end: 1.0,
                                         duration: 600.ms,
-                                        curve: Curves.easeOutBack,
+                                        curve: Curves.easeOutCubic,
                                       )
                                       .slideY(
                                         begin: 0.05,
@@ -612,6 +625,7 @@ class _SettingsAccountGroup extends StatelessWidget {
 class _SettingsPreferencesGroup extends StatelessWidget {
   final bool isDark;
   final bool soundEnabled;
+  final bool gameSoundsEnabled;
   final bool notificationsEnabled;
   final bool reduceComplexGestures;
   final bool lowAnimationMode;
@@ -620,6 +634,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
   final String? translationLanguageName;
   final VoidCallback onTapTranslationLanguage;
   final ValueChanged<bool> onToggleSound;
+  final ValueChanged<bool> onToggleGameSounds;
   final ValueChanged<bool> onToggleNotifications;
   final ValueChanged<bool> onToggleGestures;
   final ValueChanged<bool> onToggleLowAnimationMode;
@@ -628,6 +643,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
   const _SettingsPreferencesGroup({
     required this.isDark,
     required this.soundEnabled,
+    required this.gameSoundsEnabled,
     required this.notificationsEnabled,
     required this.reduceComplexGestures,
     required this.lowAnimationMode,
@@ -636,6 +652,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
     required this.translationLanguageName,
     required this.onTapTranslationLanguage,
     required this.onToggleSound,
+    required this.onToggleGameSounds,
     required this.onToggleNotifications,
     required this.onToggleGestures,
     required this.onToggleLowAnimationMode,
@@ -663,13 +680,28 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               ),
               subtitle: context.tr(
                 'settings.sound_effects_subtitle',
-                fallback: 'Game sounds and music',
+                fallback: 'App sounds and speech',
               ),
               icon: Icons.volume_up_rounded,
               color: IllustrationColors.vibrantPink,
               value: soundEnabled,
               isLoading: isLoading,
               onChanged: onToggleSound,
+            ),
+            SettingsSwitchTile(
+              title: context.tr(
+                'settings.game_sounds',
+                fallback: 'Game Sounds',
+              ),
+              subtitle: context.tr(
+                'settings.game_sounds_subtitle',
+                fallback: 'Celebratory sounds like cheering',
+              ),
+              icon: Icons.celebration_rounded,
+              color: IllustrationColors.vibrantPink,
+              value: gameSoundsEnabled,
+              isLoading: isLoading,
+              onChanged: onToggleGameSounds,
             ),
             SettingsSwitchTile(
               title: context.tr(

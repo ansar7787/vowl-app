@@ -206,7 +206,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                   ],
                 ),
               ),
-            ).animate().scale(delay: 200.ms, curve: Curves.easeOutBack),
+            ).animate().scale(delay: 200.ms, curve: Curves.easeOutCubic),
 
             SizedBox(height: 16.h),
 

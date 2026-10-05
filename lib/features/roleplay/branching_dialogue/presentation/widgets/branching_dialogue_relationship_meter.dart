@@ -78,7 +78,7 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
               ),
               AnimatedContainer(
                 duration: const Duration(milliseconds: 600),
-                curve: Curves.easeOutBack,
+                curve: Curves.easeOutCubic,
                 height: 8.h,
                 width: (1.sw - 64.w) * value,
                 decoration: BoxDecoration(

@@ -689,7 +689,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
             )
             .animate()
             .fadeIn(duration: 300.ms)
-            .moveY(begin: 40, end: 0, curve: Curves.easeOutBack);
+            .moveY(begin: 40, end: 0, curve: Curves.easeOutCubic);
       },
     );
   }
@@ -1209,6 +1209,6 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         )
         .animate()
         .fadeIn(delay: delay.ms)
-        .moveY(begin: 20, end: 0, curve: Curves.easeOutBack);
+        .moveY(begin: 20, end: 0, curve: Curves.easeOutCubic);
   }
 }

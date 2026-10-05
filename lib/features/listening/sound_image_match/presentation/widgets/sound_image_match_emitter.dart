@@ -55,7 +55,7 @@ class SoundImageMatchEmitter extends StatelessWidget {
             ? Text(
                 emoji!,
                 style: TextStyle(fontSize: 52.r),
-              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic)
             : Icon(Icons.volume_up_rounded, color: color, size: 52.r)
                   .animate(onPlay: (controller) => controller.repeat())
                   .shimmer(

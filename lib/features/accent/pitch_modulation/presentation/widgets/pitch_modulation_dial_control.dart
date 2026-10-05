@@ -101,7 +101,7 @@ class PitchModulationDialControl extends StatelessWidget {
                 duration: isDragging
                     ? Duration.zero
                     : const Duration(milliseconds: 300),
-                curve: Curves.easeOutBack,
+                curve: Curves.easeOutCubic,
                 // dialRotation: -1.0 is bottom (Option 0), +1.0 is top (Option 1).
                 // Alignment.y goes from -1.0 (top) to +1.0 (bottom).
                 // Therefore, we negate dialRotation for Alignment.y.

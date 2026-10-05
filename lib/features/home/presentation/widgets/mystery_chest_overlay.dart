@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:confetti/confetti.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -85,14 +86,14 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       curve: Curves.easeOut,
     );
     _entranceScale = Tween<double>(begin: 0.7, end: 1.0).animate(
-      CurvedAnimation(parent: _entranceCtrl, curve: Curves.easeOutBack),
+      CurvedAnimation(parent: _entranceCtrl, curve: Curves.easeOutCubic),
     );
 
     // 2) Idle breathing pulse on closed chest (loops)
     _idlePulseCtrl = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1800),
-    )..repeat(reverse: true);
+    );
 
     // 3) Opening sequence (1200ms total, sub-intervals via Interval)
     _openSequenceCtrl = AnimationController(
@@ -146,7 +147,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
     _rewardSlide = Tween<double>(begin: 40.0, end: 0.0).animate(
       CurvedAnimation(
         parent: _openSequenceCtrl,
-        curve: const Interval(0.60, 1.0, curve: Curves.easeOutBack),
+        curve: const Interval(0.60, 1.0, curve: Curves.easeOutCubic),
       ),
     );
     _rewardFade = Tween<double>(begin: 0.0, end: 1.0).animate(
@@ -177,7 +178,6 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
     if (widget.isOpened) {
       _openSequenceCtrl.value = 1.0;
       _idlePulseCtrl.stop();
-      _glowPulseCtrl.repeat(reverse: true);
       _hasTriggeredOpen = true;
     }
   }
@@ -188,6 +188,28 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
     if (widget.isOpened && !_hasTriggeredOpen) {
       _hasTriggeredOpen = true;
       _triggerOpenSequence();
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    
+    if (!_hasTriggeredOpen) {
+      if (!reduceMotion) {
+        if (!_idlePulseCtrl.isAnimating) _idlePulseCtrl.repeat(reverse: true);
+      } else {
+        _idlePulseCtrl.stop();
+        _idlePulseCtrl.value = 0.5;
+      }
+    } else {
+      if (!reduceMotion) {
+        if (!_glowPulseCtrl.isAnimating) _glowPulseCtrl.repeat(reverse: true);
+      } else {
+        _glowPulseCtrl.stop();
+        _glowPulseCtrl.value = 0.5;
+      }
     }
   }
 
@@ -202,7 +224,13 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
 
     // Start glow pulse after chest appears
     Future.delayed(const Duration(milliseconds: 700), () {
-      if (mounted) _glowPulseCtrl.repeat(reverse: true);
+      if (mounted) {
+        if (!VowlMotion.shouldReduceMotion(context)) {
+          _glowPulseCtrl.repeat(reverse: true);
+        } else {
+          _glowPulseCtrl.value = 0.5;
+        }
+      }
     });
 
     _openSequenceCtrl.forward();

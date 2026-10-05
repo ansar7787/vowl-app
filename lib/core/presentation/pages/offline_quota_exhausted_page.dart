@@ -235,7 +235,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                         .scale(
                           begin: const Offset(0.8, 0.8),
                           end: const Offset(1.0, 1.0),
-                          curve: Curves.easeOutBack,
+                          curve: Curves.easeOutCubic,
                         );
                   }
 

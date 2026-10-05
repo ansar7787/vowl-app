@@ -61,7 +61,7 @@ class AudioSentenceOrderOscilloscope extends StatelessWidget {
               isCorrectState == true && emoji != null
                   ? Text(emoji!, style: TextStyle(fontSize: 48.r))
                         .animate()
-                        .scale(duration: 400.ms, curve: Curves.easeOutBack)
+                        .scale(duration: 400.ms, curve: Curves.easeOutCubic)
                   : Icon(
                       Icons.graphic_eq_rounded,
                       color: Colors.white,

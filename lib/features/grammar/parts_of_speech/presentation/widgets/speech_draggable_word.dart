@@ -33,7 +33,7 @@ class SpeechDraggableWord extends StatelessWidget {
       child: AnimatedScale(
         scale: isSelected ? 1.15 : 1.0,
         duration: const Duration(milliseconds: 200),
-        curve: Curves.easeOutBack,
+        curve: Curves.easeOutCubic,
         child: ConstrainedBox(
           constraints: BoxConstraints(maxWidth: maxWidth),
           child: GlassTile(

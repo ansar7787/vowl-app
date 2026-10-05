@@ -406,14 +406,14 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                                     end: 0,
                                     duration: 500.ms,
                                     delay: (index < 12 ? index * 40 : 0).ms,
-                                    curve: Curves.easeOutBack,
+                                    curve: Curves.easeOutCubic,
                                   )
                                   .scaleXY(
                                     begin: 0.9,
                                     end: 1.0,
                                     duration: 500.ms,
                                     delay: (index < 12 ? index * 40 : 0).ms,
-                                    curve: Curves.easeOutBack,
+                                    curve: Curves.easeOutCubic,
                                   ),
                         ),
                       );
@@ -553,7 +553,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       )
                       .animate()
                       .fadeIn(duration: 400.ms, delay: 800.ms)
-                      .slideY(begin: 0.3, end: 0, curve: Curves.easeOutBack),
+                      .slideY(begin: 0.3, end: 0, curve: Curves.easeOutCubic),
             ),
           ),
       ],

@@ -28,6 +28,7 @@ import 'package:vowl/features/home/presentation/widgets/home_section_header.dart
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -140,11 +141,13 @@ class _HomeScreenState extends State<HomeScreen> {
             listener: (context, state) {
               if (!_hasCheckedDailyChestThisSession) {
                 _hasCheckedDailyChestThisSession = true;
-                showDialog(
-                  context: context,
-                  barrierDismissible: false,
-                  builder: (context) => const MysteryChestDialog(),
-                );
+                if (!AgeGateService.isAdultCached) {
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (context) => const MysteryChestDialog(),
+                  );
+                }
               }
             },
           ),
@@ -285,11 +288,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               HomeSectionHeader(
                                 title: context.tr(
                                   'home.quest_arena_title',
-                                  fallback: 'Your Journey',
+                                  fallback: 'Your Progress',
                                 ),
                                 subtitle: context.tr(
                                   'home.quest_arena_subtitle',
-                                  fallback: 'Continue your adventure',
+                                  fallback: 'Pick up where you left off',
                                 ),
                                 localizedTitleKey: 'home.quest_arena_title',
                                 localizedSubtitleKey:
@@ -349,7 +352,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       HomeSliverSectionHeader(
                         title: context.tr(
                           'home.discovery_hub_title',
-                          fallback: 'Discovery Hub',
+                          fallback: 'Recommended for You',
                         ),
                         subtitle: context.tr(
                           'home.discovery_hub_subtitle',

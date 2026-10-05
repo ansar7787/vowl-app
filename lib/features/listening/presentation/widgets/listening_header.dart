@@ -9,6 +9,7 @@ import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Top navigation and progress bar for the listening game.
 ///
@@ -165,7 +166,10 @@ class _HintButton extends StatelessWidget {
 
     if (shouldGlow && !reduceMotion) {
       button = button
-          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .animate(
+            target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
+            onPlay: (c) => c.repeat(reverse: true),
+          )
           .shimmer(
             color: Colors.white.withValues(alpha: 0.5),
             duration: 1.seconds,

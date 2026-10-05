@@ -14,6 +14,7 @@ import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart'
 import 'package:vowl/features/auth/presentation/widgets/forgot_password_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
 
 // ---------------------------------------------------------------------------
@@ -382,14 +383,15 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                           ),
                                                   ),
                                                 ), // Close Padding
-                                                Positioned(
-                                                  top: 0,
-                                                  child: VowlyAuthCompanion(
-                                                    emailFocus: _emailFocus,
-                                                    size: 60,
-                                                    isForgotPassword: true,
+                                                if (!AgeGateService.isAdultCached)
+                                                  Positioned(
+                                                    top: 0,
+                                                    child: VowlyAuthCompanion(
+                                                      emailFocus: _emailFocus,
+                                                      size: 60,
+                                                      isForgotPassword: true,
+                                                    ),
                                                   ),
-                                                ),
                                               ],
                                             ), // Close Stack
                                             SizedBox(height: 16.h),

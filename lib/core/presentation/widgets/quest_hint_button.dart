@@ -12,6 +12,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 /// Interactive hint button providing TTS-enabled hints, ad-backed rewarded
@@ -148,6 +149,7 @@ class QuestHintButton extends StatelessWidget {
                           size: 26.r,
                         )
                         .animate(
+                          target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
                           onPlay: (c) =>
                               used ? c.stop() : c.repeat(reverse: true),
                         )

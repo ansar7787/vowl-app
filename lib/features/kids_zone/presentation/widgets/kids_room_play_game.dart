@@ -157,7 +157,7 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                         ),
                       ).animate().scale(
                         duration: 200.ms,
-                        curve: Curves.easeOutBack,
+                        curve: Curves.easeOutCubic,
                       ),
                 );
               }),
@@ -258,7 +258,7 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                         ),
                       ).animate().scale(
                         duration: 400.ms,
-                        curve: Curves.easeOutBack,
+                        curve: Curves.easeOutCubic,
                       ),
                 ),
             ],

@@ -27,6 +27,7 @@ import 'package:vowl/features/profile/presentation/widgets/profile_stickers_prog
 import 'package:vowl/features/profile/presentation/widgets/profile_feature_card.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_preferences_list.dart';
 import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
@@ -207,20 +208,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children:
                             [
                                   // ── 0. Vowl Mascot / Companion ──
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(height: 8.h),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 24.w,
+                                  if (!AgeGateService.isAdultCached)
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 8.h),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 24.w,
+                                          ),
+                                          child: const VowlMascotCard(),
                                         ),
-                                        child: const VowlMascotCard(),
-                                      ),
-                                      SizedBox(height: 16.h),
-                                    ],
-                                  ),
+                                        SizedBox(height: 16.h),
+                                      ],
+                                    ),
 
                                   // ── 1. Adventure Stats ──
                                   Column(
@@ -325,8 +327,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ),
 
                                   // ── 4. Kids Zone (conditional) ──
-                                  if (user.kidsStickers.isNotEmpty ||
-                                      user.kidsTotalLevelsCompleted > 0)
+                                  if (!AgeGateService.isAdultCached && (user.kidsStickers.isNotEmpty ||
+                                      user.kidsTotalLevelsCompleted > 0))
                                     Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -422,7 +424,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   begin: 0.95,
                                   end: 1.0,
                                   duration: 600.ms,
-                                  curve: Curves.easeOutBack,
+                                  curve: Curves.easeOutCubic,
                                 )
                                 .slideY(
                                   begin: 0.05,

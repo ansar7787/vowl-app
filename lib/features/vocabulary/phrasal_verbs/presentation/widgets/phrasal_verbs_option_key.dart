@@ -107,7 +107,7 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
       keyCard = keyCard.animate().scale(
         end: const Offset(1.1, 1.1),
         duration: 300.ms,
-        curve: Curves.easeOutBack,
+        curve: Curves.easeOutCubic,
       );
     } else if (isWrong) {
       keyCard = keyCard.animate().shakeX(amount: 5, duration: 400.ms);

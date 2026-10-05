@@ -49,8 +49,8 @@ class VowlMotion {
   /// General-purpose symmetric ease.
   static const Curve defaultCurve = Curves.easeInOut;
 
-  /// Bouncy feedback for playful interactions (e.g., game rewards).
-  static const Curve bounceCurve = Curves.easeOutBack;
+  /// Subtle overshoot for interactive feedback.
+  static const Curve bounceCurve = Curves.easeOutCubic;
 
   // ── Helpers ───────────────────────────────────────────────────────────────
 

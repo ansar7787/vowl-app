@@ -810,8 +810,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         )
         .animate()
         .fadeIn(delay: (index < 8 ? index * 60 : 0).ms, duration: 400.ms)
-        .slideY(begin: 0.1, end: 0, curve: Curves.easeOutBack)
-        .scaleXY(begin: 0.95, end: 1.0, curve: Curves.easeOutBack);
+        .slideY(begin: 0.1, end: 0, curve: Curves.easeOutCubic)
+        .scaleXY(begin: 0.95, end: 1.0, curve: Curves.easeOutCubic);
   }
 
   Widget _buildLiquidProgressBar({

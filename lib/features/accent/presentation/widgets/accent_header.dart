@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Header bar for the Accent game screen.
 ///
@@ -196,7 +197,10 @@ class _HintButton extends StatelessWidget {
 
     if (shouldGlow && !reduceMotion) {
       button = button
-          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .animate(
+            target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
+            onPlay: (c) => c.repeat(reverse: true),
+          )
           .shimmer(
             color: Colors.white.withValues(alpha: 0.5),
             duration: 1.seconds,

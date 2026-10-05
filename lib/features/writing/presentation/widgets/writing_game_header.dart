@@ -13,6 +13,7 @@ import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class WritingGameHeader extends StatelessWidget {
   final WritingState state;
@@ -188,7 +189,10 @@ class _HintButton extends StatelessWidget {
 
     if (shouldGlow && !reduceMotion) {
       button = button
-          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .animate(
+            target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
+            onPlay: (c) => c.repeat(reverse: true),
+          )
           .shimmer(
             color: Colors.white.withValues(alpha: 0.5),
             duration: 1.seconds,

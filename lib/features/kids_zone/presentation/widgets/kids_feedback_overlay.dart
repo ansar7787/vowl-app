@@ -242,7 +242,7 @@ class _KidsFeedbackOverlayContentState
         .fadeIn(delay: 600.ms, duration: 400.ms)
         .slideY(
           begin: 0.2,
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
           delay: 600.ms,
           duration: 400.ms,
         );

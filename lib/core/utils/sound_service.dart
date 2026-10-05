@@ -20,6 +20,12 @@ abstract class SoundService {
   /// Sets the system mute state toggled by user configuration settings.
   void setMuted(bool muted);
 
+  /// Whether game-specific celebratory sounds are enabled.
+  bool get isGameSoundsEnabled;
+
+  /// Sets whether game-specific sounds are enabled.
+  void setGameSoundsEnabled(bool enabled);
+
   /// Releases audio players, resources, and event listeners.
   Future<void> dispose();
 
@@ -73,6 +79,7 @@ class SoundServiceImpl implements SoundService {
   final AudioPlayer _overlayPlayer = AudioPlayer();
 
   bool _isMuted = false;
+  bool _isGameSoundsEnabled = true;
 
   /// RACE-CONDITION FIX: `_init()` loads the persisted mute preference
   /// asynchronously. The previous code fired it from the constructor and
@@ -91,6 +98,7 @@ class SoundServiceImpl implements SoundService {
   static const String assetLevelCompleted = 'sounds/level_completed.mp3';
 
   static const String _prefsKeySoundEnabled = 'sound_enabled';
+  static const String _prefsKeyGameSoundsEnabled = 'game_sounds_enabled';
 
   SoundServiceImpl(this._ttsService) {
     _initFuture = _init();
@@ -100,6 +108,7 @@ class SoundServiceImpl implements SoundService {
     try {
       final prefs = await SharedPreferences.getInstance();
       _isMuted = !(prefs.getBool(_prefsKeySoundEnabled) ?? true);
+      _isGameSoundsEnabled = prefs.getBool(_prefsKeyGameSoundsEnabled) ?? true;
     } catch (e) {
       di.sl<AppLogger>().error(
         'SoundService: SharedPreferences loading error',
@@ -110,6 +119,9 @@ class SoundServiceImpl implements SoundService {
 
   @override
   bool get isMuted => _isMuted;
+
+  @override
+  bool get isGameSoundsEnabled => _isGameSoundsEnabled;
 
   @override
   void setMuted(bool muted) {
@@ -124,6 +136,12 @@ class SoundServiceImpl implements SoundService {
     unawaited(_persistMuted(muted));
   }
 
+  @override
+  void setGameSoundsEnabled(bool enabled) {
+    _isGameSoundsEnabled = enabled;
+    unawaited(_persistGameSoundsEnabled(enabled));
+  }
+
   Future<void> _persistMuted(bool muted) async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -131,6 +149,18 @@ class SoundServiceImpl implements SoundService {
     } catch (e) {
       di.sl<AppLogger>().error(
         'SoundService: Failed to persist mute preference',
+        error: e,
+      );
+    }
+  }
+
+  Future<void> _persistGameSoundsEnabled(bool enabled) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setBool(_prefsKeyGameSoundsEnabled, enabled);
+    } catch (e) {
+      di.sl<AppLogger>().error(
+        'SoundService: Failed to persist game sounds preference',
         error: e,
       );
     }
@@ -224,7 +254,7 @@ class SoundServiceImpl implements SoundService {
   @override
   Future<void> playLevelComplete() async {
     await _initFuture;
-    if (_isMuted) return;
+    if (_isMuted || !_isGameSoundsEnabled) return;
     try {
       if (_overlayPlayer.state == PlayerState.playing) {
         await _overlayPlayer.stop();

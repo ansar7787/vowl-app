@@ -213,7 +213,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
           ).animate().scale(
             delay: 200.ms,
             duration: 400.ms,
-            curve: Curves.easeOutBack,
+            curve: Curves.easeOutCubic,
           ),
     );
   }

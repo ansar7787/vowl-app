@@ -452,7 +452,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         ),
                       ).animate().scale(
                         duration: 200.ms,
-                        curve: Curves.easeOutBack,
+                        curve: Curves.easeOutCubic,
                       ),
                   ],
                 ),

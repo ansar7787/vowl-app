@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
@@ -188,7 +189,7 @@ class WritingBaseLayout extends StatelessWidget {
                         },
                       )
                       .animate(
-                        target: hintShouldGlow ? 1 : 0,
+                        target: (hintShouldGlow && !VowlMotion.shouldReduceMotion(context)) ? 1 : 0,
                         onPlay: (c) => c.repeat(reverse: true),
                       )
                       .shimmer(
@@ -231,17 +232,17 @@ class WritingBaseLayout extends StatelessWidget {
     String mascotName,
   ) {
     final mascotState = _getMascotState(state, lives);
-    String message = "Write with flair! 🖋️";
+    String message = "Write your answer";
     if (isCorrect == true) {
-      message = "Literary Genius! ✨";
+      message = "Well written!";
     } else if (lives < 3 && !isAnswered) {
-      message = "Find your voice! 💡";
+      message = "Try rephrasing";
     } else if (isCorrect == false) {
-      message = "Refine the prose! 📜";
+      message = "Review and revise";
     } else if (state is WritingGameComplete) {
-      message = "Author Extraordinaire! 🏆";
+      message = "Section complete";
     } else {
-      message = "$mascotName is waiting! 🦉";
+      message = "Ready when you are";
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -270,22 +271,9 @@ class WritingBaseLayout extends StatelessWidget {
                   color: isDark ? Colors.white70 : Colors.blueAccent,
                 ),
               ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scale(
-              begin: const Offset(1, 1),
-              end: const Offset(1.05, 1.05),
-              duration: 2.seconds,
             ),
         SizedBox(height: 0.h),
-        VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId)
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .moveY(
-              begin: 0,
-              end: 5,
-              duration: 1500.ms,
-              curve: Curves.easeInOut,
-            ),
+        VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId),
       ],
     ).animate().fadeIn().slideX(begin: 0.1, end: 0);
   }

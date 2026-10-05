@@ -143,7 +143,7 @@ class _VictoryFlightOverlayState extends State<VictoryFlightOverlay> {
                           begin: const Offset(0.8, 0.8),
                           end: const Offset(1.2, 1.2),
                           duration: 300.ms,
-                          curve: Curves.easeOutBack,
+                          curve: Curves.easeOutCubic,
                         )
                         .then()
                         .scale(

@@ -257,7 +257,7 @@ class _TrophyRoomView extends StatelessWidget {
                 color: Colors.white,
                 size: 32.r,
               ),
-            ).animate().scale(duration: 600.ms, curve: Curves.easeOutBack),
+            ).animate().scale(duration: 600.ms, curve: Curves.easeOutCubic),
           ],
         );
       },

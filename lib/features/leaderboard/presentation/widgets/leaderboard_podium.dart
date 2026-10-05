@@ -354,11 +354,11 @@ class _PodiumSlot extends StatelessWidget {
         .animate(delay: delay.ms)
         .fadeIn(duration: 400.ms, curve: Curves.easeOut)
         .blurXY(begin: 8, end: 0, duration: 400.ms, curve: Curves.easeOut)
-        .slideY(begin: 0.4, end: 0, curve: Curves.easeOutBack, duration: 700.ms)
+        .slideY(begin: 0.4, end: 0, curve: Curves.easeOutCubic, duration: 700.ms)
         .scaleXY(
           begin: 0.8,
           end: 1.0,
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
           duration: 700.ms,
         )
         .shimmer(

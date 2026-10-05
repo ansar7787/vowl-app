@@ -33,7 +33,7 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
         children: [
           AnimatedPositioned(
             duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOutBack,
+            curve: Curves.easeOutCubic,
             left: isNatural ? 2.w : 138.w,
             top: 2.h,
             bottom: 2.h,

@@ -40,7 +40,7 @@ class DetailSpotlightEmitter extends StatelessWidget {
             ? Text(
                 emoji!,
                 style: TextStyle(fontSize: 32.r),
-              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic)
             : Icon(Icons.volume_up_rounded, color: color, size: 36.r),
       ),
     );

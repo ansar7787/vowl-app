@@ -327,7 +327,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                   size: 120,
                   animation: KidsAssetAnimation.hover,
                 ),
-              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
               SizedBox(height: 32.h),
               Text(
                 context.tr('games.kids_error_title', fallback: 'Oops!'),
@@ -506,7 +506,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     ).animate().scale(
       begin: Offset.zero,
       duration: 400.ms,
-      curve: Curves.easeOutBack,
+      curve: Curves.easeOutCubic,
     );
   }
 }

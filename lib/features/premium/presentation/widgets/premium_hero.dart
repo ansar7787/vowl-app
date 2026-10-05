@@ -70,7 +70,7 @@ class PremiumHero extends StatelessWidget {
             .slideY(
               begin: 0.2,
               end: 0,
-              curve: Curves.easeOutBack,
+              curve: Curves.easeOutCubic,
               duration: 800.ms,
             )
             .fadeIn(),

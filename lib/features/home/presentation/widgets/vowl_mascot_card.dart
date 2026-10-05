@@ -130,7 +130,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                           size: 40.r,
                           accessoryId: equippedAccessory,
                           level: data.level,
-                          useFloatingAnimation: true,
+                          useFloatingAnimation: false,
                         ),
                       ),
                       SizedBox(width: 16.w),

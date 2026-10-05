@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Top bar for grammar quiz screens.
 ///
@@ -198,7 +199,10 @@ class _HintButton extends StatelessWidget {
 
     if (hintShouldGlow && !reduceMotion) {
       button = button
-          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .animate(
+            target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
+            onPlay: (c) => c.repeat(reverse: true),
+          )
           .shimmer(
             color: Colors.white.withValues(alpha: 0.5),
             duration: 1.seconds,

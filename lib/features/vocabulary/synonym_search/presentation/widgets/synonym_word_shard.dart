@@ -70,7 +70,7 @@ class SynonymWordShard extends StatelessWidget {
                         final isActive = activeIndex == index;
                         return TweenAnimationBuilder<double>(
                           duration: 400.ms,
-                          curve: Curves.easeOutBack,
+                          curve: Curves.easeOutCubic,
                           tween: Tween(
                             begin: 1.0,
                             end: isWarping ? 0.0 : (isActive ? 1.15 : 1.0),

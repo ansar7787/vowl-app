@@ -249,7 +249,7 @@ class GrammarFeedbackCard extends StatelessWidget {
         )
         .animate()
         .fadeIn(delay: 250.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+        .scale(duration: 400.ms, curve: Curves.easeOutCubic);
   }
 
   Widget _buildActionButton(
@@ -393,7 +393,7 @@ class _ExplanationCardState extends State<_ExplanationCard> {
             )
             .animate()
             .fadeIn(delay: 300.ms)
-            .scale(duration: 400.ms, curve: Curves.easeOutBack);
+            .scale(duration: 400.ms, curve: Curves.easeOutCubic);
       },
     );
   }

@@ -153,14 +153,14 @@ class ModifierMagneticArena extends StatelessWidget {
                               begin: const Offset(1, 1),
                               end: const Offset(1.15, 1.15),
                               duration: 200.ms,
-                              curve: Curves.easeOutBack,
+                              curve: Curves.easeOutCubic,
                             )
                             .animate(target: isOccupied ? 1 : 0)
                             .scale(
                               begin: const Offset(1, 1),
                               end: const Offset(1.05, 1.05),
                               duration: 300.ms,
-                              curve: Curves.easeOutBack,
+                              curve: Curves.easeOutCubic,
                             ),
                   );
                 },

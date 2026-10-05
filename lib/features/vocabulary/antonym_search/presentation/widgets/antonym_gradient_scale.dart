@@ -130,7 +130,7 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
                             ),
                           )
                           .animate(key: ValueKey(currentWord))
-                          .scale(duration: 200.ms, curve: Curves.easeOutBack),
+                          .scale(duration: 200.ms, curve: Curves.easeOutCubic),
 
                       SizedBox(height: 12.h),
 

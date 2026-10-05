@@ -283,7 +283,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
         .animate()
         .scale(
           begin: const Offset(0.8, 0.8),
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
           duration: 400.ms,
         )
         .shimmer(
@@ -471,7 +471,7 @@ class _MagneticDropZoneState extends State<_MagneticDropZone> {
       begin: const Offset(1.3, 1.3),
       end: const Offset(1.0, 1.0),
       duration: 250.ms,
-      curve: Curves.easeOutBack,
+      curve: Curves.easeOutCubic,
     );
   }
 }

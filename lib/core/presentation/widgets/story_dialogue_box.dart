@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Glassmorphic story-beat dialog presenting narrative moments before levels.
 ///
@@ -66,7 +67,7 @@ class StoryDialogueBox extends StatelessWidget {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            _buildHeader(),
+                            _buildHeader(context),
                             _buildBody(context, isDark),
                             _buildFooter(context),
                           ],
@@ -75,14 +76,14 @@ class StoryDialogueBox extends StatelessWidget {
                     ),
                   )
                   .animate()
-                  .scale(duration: 400.ms, curve: Curves.easeOutBack)
+                  .scale(duration: 400.ms, curve: Curves.easeOutCubic)
                   .fadeIn(duration: 300.ms),
         ),
       ),
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(vertical: 16.h),
@@ -122,7 +123,10 @@ class StoryDialogueBox extends StatelessWidget {
                           ],
                         ),
                       )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .animate(
+                        target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
+                        onPlay: (c) => c.repeat(reverse: true),
+                      )
                       .scale(begin: const Offset(0.8, 0.8), duration: 800.ms),
             ),
             SizedBox(width: 12.w),

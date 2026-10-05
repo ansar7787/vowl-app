@@ -172,7 +172,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
         .fadeIn(duration: 200.ms)
         .scale(
           alignment: isLeft ? Alignment.bottomLeft : Alignment.bottomRight,
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
         );
   }
 
@@ -708,7 +708,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                                       emissionFrequency: isMilestone
                                           ? 0.05
                                           : 0.1,
-                                      numberOfParticles: isMilestone ? 80 : 20,
+                                      numberOfParticles: isMilestone ? 20 : 5,
                                       gravity: isMilestone ? 0.1 : 0.2,
                                       colors: const [
                                         Colors.green,

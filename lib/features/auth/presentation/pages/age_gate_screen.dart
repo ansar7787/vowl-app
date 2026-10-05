@@ -295,7 +295,7 @@ class _AgeGateScreenState extends State<AgeGateScreen> {
                                         .fadeIn(duration: 600.ms)
                                         .scale(
                                           begin: const Offset(0.8, 0.8),
-                                          curve: Curves.easeOutBack,
+                                          curve: Curves.easeOutCubic,
                                         ),
                               ),
 

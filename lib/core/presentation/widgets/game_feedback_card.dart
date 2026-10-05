@@ -401,7 +401,7 @@ class _ExplanationCardState extends State<_ExplanationCard> {
               begin: 0.2,
               end: 0,
               duration: 300.ms,
-              curve: Curves.easeOutBack,
+              curve: Curves.easeOutCubic,
             );
       },
     );

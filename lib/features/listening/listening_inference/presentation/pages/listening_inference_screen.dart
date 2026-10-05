@@ -415,7 +415,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                           duration: const Duration(
                                             milliseconds: 400,
                                           ),
-                                          curve: Curves.easeOutBack,
+                                          curve: Curves.easeOutCubic,
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(
                                               horizontal: 16.w,

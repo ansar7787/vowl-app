@@ -571,7 +571,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                         begin: const Offset(0.8, 0.8),
                                         end: const Offset(1, 1),
                                         duration: 400.ms,
-                                        curve: Curves.easeOutBack,
+                                        curve: Curves.easeOutCubic,
                                       ),
                             ),
                         ],

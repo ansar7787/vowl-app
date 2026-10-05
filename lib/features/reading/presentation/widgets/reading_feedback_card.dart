@@ -629,7 +629,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
           card = card
               .animate()
               .fadeIn(delay: 300.ms)
-              .scale(duration: 400.ms, curve: Curves.easeOutBack);
+              .scale(duration: 400.ms, curve: Curves.easeOutCubic);
         }
 
         return card;

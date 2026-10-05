@@ -505,7 +505,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
       begin: const Offset(0.8, 0.8),
       end: const Offset(1, 1),
       duration: 800.ms,
-      curve: Curves.easeOutBack,
+      curve: Curves.easeOutCubic,
     );
   }
 }

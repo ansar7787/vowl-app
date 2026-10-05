@@ -220,7 +220,7 @@ class FlashcardGameBody extends StatelessWidget {
               builder: (context, child) {
                 return AnimatedContainer(
                   duration: (isAnswered || isRetrying) ? 400.ms : Duration.zero,
-                  curve: Curves.easeOutBack,
+                  curve: Curves.easeOutCubic,
                   transform: Matrix4.identity()
                     ..setTranslationRaw(
                       dragOffset.value.dx,

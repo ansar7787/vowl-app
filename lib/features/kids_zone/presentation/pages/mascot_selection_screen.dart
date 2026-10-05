@@ -433,7 +433,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
             )
             .animate()
             .fadeIn(delay: (200 + widget.index * 100).ms)
-            .scale(begin: const Offset(0.8, 0.8), curve: Curves.easeOutBack);
+            .scale(begin: const Offset(0.8, 0.8), curve: Curves.easeOutCubic);
       },
     );
   }

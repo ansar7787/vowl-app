@@ -139,7 +139,7 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
           begin: const Offset(1, 1),
           end: const Offset(1.05, 1.05),
           duration: 200.ms,
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
         );
   }
 }

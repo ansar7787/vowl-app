@@ -82,7 +82,7 @@ class AnimatedKidsAsset extends StatelessWidget {
           begin: Offset.zero,
           end: const Offset(1, 1),
           duration: 500.ms,
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
         );
         break;
       case KidsAssetAnimation.none:

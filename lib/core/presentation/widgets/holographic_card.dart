@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Interactive card with a slow-drifting holographic neon-pastel gradient
 /// sheen over a frosted-glass base. Rendering ticks are isolated behind a
@@ -60,7 +61,7 @@ class _HolographicCardState extends State<HolographicCard>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     if (reduceMotion && _controller.isAnimating) {
       _controller.stop();

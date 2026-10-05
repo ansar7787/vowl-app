@@ -147,7 +147,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                     ),
                   )
                   .animate()
-                  .scale(curve: Curves.easeOutBack, duration: 400.ms)
+                  .scale(curve: Curves.easeOutCubic, duration: 400.ms)
                   .fadeIn(),
         ),
       ),

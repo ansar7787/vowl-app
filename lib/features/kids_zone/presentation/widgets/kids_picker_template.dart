@@ -281,7 +281,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
                 .scale(
                   delay: (index * 100).ms,
                   duration: 500.ms,
-                  curve: Curves.easeOutBack,
+                  curve: Curves.easeOutCubic,
                 )
                 .slideY(begin: 0.2, end: 0);
 

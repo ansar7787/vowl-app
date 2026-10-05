@@ -738,7 +738,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                     .animate(target: hasMarks ? 1 : 0)
                     .scale(
                       duration: 300.ms,
-                      curve: Curves.easeOutBack,
+                      curve: Curves.easeOutCubic,
                       begin: Offset(
                         isHighlight ? 1.0 : 0.2,
                         isHighlight ? 1.0 : 0.8,

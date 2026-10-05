@@ -178,7 +178,7 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
       begin: 1.0,
       end: 0.0,
       duration: 400.ms,
-      curve: Curves.easeOutBack,
+      curve: Curves.easeOutCubic,
     );
   }
 }

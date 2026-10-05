@@ -251,7 +251,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                                                     begin: -0.5,
                                                     end: 0,
                                                     duration: 500.ms,
-                                                    curve: Curves.easeOutBack,
+                                                    curve: Curves.easeOutCubic,
                                                   ),
                                         ),
                                         SizedBox(height: gapMiddle * 0.4),
@@ -291,7 +291,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                                               begin: const Offset(0.8, 0.8),
                                               end: const Offset(1.0, 1.0),
                                               duration: 600.ms,
-                                              curve: Curves.easeOutBack,
+                                              curve: Curves.easeOutCubic,
                                             )
                                             .fadeIn(duration: 600.ms),
 

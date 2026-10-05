@@ -55,7 +55,7 @@ class StageOneContextView extends StatelessWidget {
                     ),
                   ).animate().scale(
                     duration: 400.ms,
-                    curve: Curves.easeOutBack,
+                    curve: Curves.easeOutCubic,
                   ),
                   SizedBox(height: 24.h),
 
@@ -140,7 +140,7 @@ class StageOneContextView extends StatelessWidget {
                 ),
               ),
             ),
-          ).animate().scale(delay: 600.ms, curve: Curves.easeOutBack),
+          ).animate().scale(delay: 600.ms, curve: Curves.easeOutCubic),
         ],
       ),
     );

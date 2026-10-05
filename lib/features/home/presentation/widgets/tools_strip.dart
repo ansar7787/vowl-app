@@ -13,6 +13,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -47,21 +48,22 @@ class ToolsStrip extends StatelessWidget {
 
     final tools = [
       // ── FEATURED TIER (gradient hero cards) ───────────────────────
-      _ToolDef(
-        title: context.tr('home.tools_kids_zone', fallback: 'Kids Zone'),
-        subtitle: context.tr('home.tools_kids_fun', fallback: 'Fun & Learn'),
-        tooltip: context.tr(
-          'home.tools_kids_zone_tip',
-          fallback: 'Safe, playful games designed for young learners',
+      if (!AgeGateService.isAdultCached)
+        _ToolDef(
+          title: context.tr('home.tools_kids_zone', fallback: 'Kids Zone'),
+          subtitle: context.tr('home.tools_kids_fun', fallback: 'Fun & Learn'),
+          tooltip: context.tr(
+            'home.tools_kids_zone_tip',
+            fallback: 'Safe, playful games designed for young learners',
+          ),
+          icon: Icons.child_care_rounded,
+          emoji: '🧩',
+          color: AppColors.rose500, // Rose — 0°
+          darkColor: _LocalPalette.colorbe123c,
+          route: AppRouter.kidsZoneRoute,
+          requiresAd: false,
+          isFeatured: true,
         ),
-        icon: Icons.child_care_rounded,
-        emoji: '🧩',
-        color: AppColors.rose500, // Rose — 0°
-        darkColor: _LocalPalette.colorbe123c,
-        route: AppRouter.kidsZoneRoute,
-        requiresAd: false,
-        isFeatured: true,
-      ),
       _ToolDef(
         title: context.tr('home.tools_daily_words', fallback: 'Daily Words'),
         subtitle: context.tr('home.tools_daily_new', fallback: 'New Today'),
@@ -188,7 +190,7 @@ class ToolsStrip extends StatelessWidget {
                 .scale(
                   begin: const Offset(0.8, 0.8),
                   duration: 400.ms,
-                  curve: Curves.easeOutBack,
+                  curve: Curves.easeOutCubic,
                 ),
           ),
         ),
