@@ -124,6 +124,7 @@ class GlassTile extends StatelessWidget {
                         isMidnight: isMidnight,
                         usePremiumStyle: usePremiumStyle,
                         color: color,
+                        hasBlur: hasBlur,
                       ),
                     )
                   : _GlassOverlay(
@@ -131,6 +132,7 @@ class GlassTile extends StatelessWidget {
                       isMidnight: isMidnight,
                       usePremiumStyle: usePremiumStyle,
                       color: color,
+                      hasBlur: hasBlur,
                     ),
             ),
             // 2. Content — isolated in its own repaint boundary so child
@@ -154,16 +156,27 @@ class _GlassOverlay extends StatelessWidget {
   final bool isMidnight;
   final bool usePremiumStyle;
   final Color? color;
+  final bool hasBlur;
 
   const _GlassOverlay({
     required this.isDark,
     required this.isMidnight,
     required this.usePremiumStyle,
     required this.color,
+    required this.hasBlur,
   });
 
   @override
   Widget build(BuildContext context) {
+    // PERF/READABILITY FIX: If there is no blur (e.g. Low Animation Mode is ON),
+    // we MUST use a solid, fully opaque color. Otherwise, the semi-transparent
+    // gradient will let background text bleed through, ruining readability.
+    if (!hasBlur) {
+      return Container(
+        color: color ?? (isMidnight ? Theme.of(context).scaffoldBackgroundColor : Theme.of(context).colorScheme.surface),
+      );
+    }
+
     return Container(
       decoration: BoxDecoration(
         gradient: usePremiumStyle
