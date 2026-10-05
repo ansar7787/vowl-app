@@ -1,4 +1,4 @@
-import 'package:vowl/core/theme/app_colors.dart';
+﻿import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -112,7 +112,7 @@ class _AboutScreenState extends State<AboutScreen> {
                       _buildInfoTile(
                         context,
                         title: 'Developer',
-                        subtitle: 'Ansar',
+                        subtitle: 'Vowl Team',
                         icon: Icons.person_rounded,
                         isDark: isDark,
                       ),
@@ -152,7 +152,7 @@ class _AboutScreenState extends State<AboutScreen> {
                         icon: Icons.policy_rounded,
                         isDark: isDark,
                         onTap: () => _launchUrl(
-                          'https://ansar7787.github.io/vowl-legal/privacy.html',
+                          'https://vowl-official.github.io/vowl-legal/privacy.html',
                         ),
                       ),
                       SizedBox(height: 16.h),
@@ -162,7 +162,7 @@ class _AboutScreenState extends State<AboutScreen> {
                         icon: Icons.description_rounded,
                         isDark: isDark,
                         onTap: () => _launchUrl(
-                          'https://ansar7787.github.io/vowl-legal/terms.html',
+                          'https://vowl-official.github.io/vowl-legal/terms.html',
                         ),
                       ),
                     ],
@@ -334,3 +334,4 @@ class _AboutScreenState extends State<AboutScreen> {
     );
   }
 }
+

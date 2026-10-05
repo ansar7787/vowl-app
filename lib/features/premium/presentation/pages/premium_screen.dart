@@ -1,4 +1,4 @@
-import 'package:vowl/core/theme/app_colors.dart';
+﻿import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -264,7 +264,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     iap.onPurchaseRestored = null;
     iap.onPurchaseCanceled = null;
     // NOTE: Do NOT call _paymentService.dispose() here.
-    // PaymentService is a DI singleton — disposing it here would destroy
+    // PaymentService is a DI singleton â€” disposing it here would destroy
     // the Razorpay instance for ALL other screens. Each widget's init()
     // already re-creates the Razorpay instance safely.
     super.dispose();
@@ -443,11 +443,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
   /// feature bar and CTA button. That works only as long as the sum of the
   /// *fixed-size* children (hero text, 3 plan cards, feature bar, CTA
   /// button, secure-transaction label) is shorter than the available
-  /// screen height. On a small phone (e.g. 320×568), at larger
-  /// accessibility text-scale factors (1.3x–3x), or once strings are
+  /// screen height. On a small phone (e.g. 320Ã—568), at larger
+  /// accessibility text-scale factors (1.3xâ€“3x), or once strings are
   /// translated into a longer language (German, Indian regional scripts
   /// routinely run 30-50% longer than English), that sum can exceed the
-  /// screen height — and a `Column` containing `Expanded`/`Spacer`
+  /// screen height â€” and a `Column` containing `Expanded`/`Spacer`
   /// children cannot be made scrollable without changes, because flexible
   /// children require *bounded* height, which a scroll view's main axis
   /// does not provide. The previous structure would either throw a
@@ -456,7 +456,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   ///
   /// Fix: the layout now scrolls when content doesn't fit, and is
   /// perfectly centered (matching the original "stretch to fill" look)
-  /// when it does — the standard `LayoutBuilder` +
+  /// when it does â€” the standard `LayoutBuilder` +
   /// `ConstrainedBox(minHeight: ...)` + `Column(mainAxisSize: min,
   /// mainAxisAlignment: center)` idiom. The `Spacer()`s are replaced with
   /// fixed, screen-aware gaps (kept at roughly the same 1:1:1:2 ratio the
@@ -1006,7 +1006,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       if (matchingProducts.isNotEmpty) {
         priceFormatted = matchingProducts.first.price;
       } else {
-        // Products not loaded yet — show Razorpay price as fallback
+        // Products not loaded yet â€” show Razorpay price as fallback
         priceFormatted = NumberFormat.simpleCurrency(
           locale: Localizations.localeOf(context).toString(),
           name: selectedPlan.currency,
@@ -1344,7 +1344,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               borderRadius: BorderRadius.circular(4.r),
               onTap: () {
                 final url = Uri.parse(
-                  'https://ansar7787.github.io/vowl-legal/terms.html',
+                  'https://vowl-official.github.io/vowl-legal/terms.html',
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },
@@ -1374,7 +1374,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               borderRadius: BorderRadius.circular(4.r),
               onTap: () {
                 final url = Uri.parse(
-                  'https://ansar7787.github.io/vowl-legal/privacy.html',
+                  'https://vowl-official.github.io/vowl-legal/privacy.html',
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },
@@ -1404,7 +1404,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               borderRadius: BorderRadius.circular(4.r),
               onTap: () {
                 final url = Uri.parse(
-                  'https://ansar7787.github.io/vowl-legal/refund.html',
+                  'https://vowl-official.github.io/vowl-legal/refund.html',
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },
@@ -1432,3 +1432,4 @@ class _PremiumScreenState extends State<PremiumScreen> {
     );
   }
 }
+

@@ -1,4 +1,4 @@
-import 'package:vowl/core/theme/app_colors.dart';
+﻿import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -220,8 +220,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
         context.tr('settings.terms_of_service', fallback: 'Terms of Service');
 
     final urlString = isTerms
-        ? 'https://ansar7787.github.io/vowl-legal/terms.html'
-        : 'https://ansar7787.github.io/vowl-legal/privacy.html';
+        ? 'https://vowl-official.github.io/vowl-legal/terms.html'
+        : 'https://vowl-official.github.io/vowl-legal/privacy.html';
 
     final Uri url = Uri.parse(urlString);
 
@@ -246,7 +246,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     try {
       // FIX (CRITICAL-2): Never call SharedPreferences.clear() from a
       // "clear cache" action. User preferences (notifications, sound, locale)
-      // are NOT cache — destroying them silently is a critical UX regression.
+      // are NOT cache â€” destroying them silently is a critical UX regression.
       //
       // True cache = in-memory image cache + temporary files on disk.
       imageCache.clear();
@@ -967,3 +967,4 @@ class _SettingsDangerGroup extends StatelessWidget {
     );
   }
 }
+

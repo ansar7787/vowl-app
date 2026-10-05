@@ -1,4 +1,4 @@
-import 'dart:ui';
+﻿import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -134,13 +134,13 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     iap.onPurchaseCanceled = null;
     _stateHash.dispose();
     // NOTE: Do NOT call _paymentService.dispose() here.
-    // PaymentService is a DI singleton — disposing it here would destroy
+    // PaymentService is a DI singleton â€” disposing it here would destroy
     // the Razorpay instance for ALL other screens. Each widget's init()
     // already re-creates the Razorpay instance safely.
     super.dispose();
   }
 
-  // ─── Payment Handlers ──────────────────────────────────────────────────────
+  // â”€â”€â”€ Payment Handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) async {
     final pack = _pendingPack;
@@ -230,7 +230,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     }
   }
 
-  // ─── Purchase Flow ─────────────────────────────────────────────────────────
+  // â”€â”€â”€ Purchase Flow â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   Future<void> _onPackTap(CoinPack pack) async {
     if (_isProcessing) return;
@@ -396,7 +396,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     return Color(int.tryParse(hexColor, radix: 16) ?? 0xFFFFC107);
   }
 
-  // ─── Build ─────────────────────────────────────────────────────────────────
+  // â”€â”€â”€ Build â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   @override
   Widget build(BuildContext context) {
@@ -621,7 +621,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                     TextButton(
                                       onPressed: () => launchUrl(
                                         Uri.parse(
-                                          'https://ansar7787.github.io/vowl-legal/terms.html',
+                                          'https://vowl-official.github.io/vowl-legal/terms.html',
                                         ),
                                       ),
                                       child: Text(
@@ -639,7 +639,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                     TextButton(
                                       onPressed: () => launchUrl(
                                         Uri.parse(
-                                          'https://ansar7787.github.io/vowl-legal/privacy.html',
+                                          'https://vowl-official.github.io/vowl-legal/privacy.html',
                                         ),
                                       ),
                                       child: Text(
@@ -1112,7 +1112,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           builder: (context) {
                             // For Google Play, show the actual localized price
                             // from the product details (correct currency symbol).
-                            // For Razorpay (India), show ₹ price from Firestore.
+                            // For Razorpay (India), show â‚¹ price from Firestore.
                             String priceText;
                             if (_useGooglePlay) {
                               String productId;
@@ -1133,9 +1133,9 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                   ? match.first.price
                                   : (_useGooglePlay && match.isEmpty
                                         ? '...'
-                                        : '₹${pack.price.toInt()}');
+                                        : 'â‚¹${pack.price.toInt()}');
                             } else {
-                              priceText = '₹${pack.price.toInt()}';
+                              priceText = 'â‚¹${pack.price.toInt()}';
                             }
                             return Text(
                               priceText,
@@ -1212,3 +1212,4 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         .moveY(begin: 20, end: 0, curve: Curves.easeOutCubic);
   }
 }
+

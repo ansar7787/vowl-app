@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -152,9 +152,9 @@ class _SignUpViewState extends State<SignUpView> {
             }
           },
         ),
-        // Added for parity with LoginPage's equivalent listener — AuthBloc
+        // Added for parity with LoginPage's equivalent listener â€” AuthBloc
         // can independently emit a message (e.g. the new
-        // AuthStreamErrorOccurred → 'auth.stream_error' path), and this
+        // AuthStreamErrorOccurred â†’ 'auth.stream_error' path), and this
         // page previously had no way to surface that while the user was
         // still on the sign-up screen.
         BlocListener<AuthBloc, AuthState>(
@@ -500,7 +500,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                                       final url = Uri.parse(
                                                                                         context.tr(
                                                                                           'settings.terms_url',
-                                                                                          fallback: 'https://ansar7787.github.io/vowl-legal/terms.html',
+                                                                                          fallback: 'https://vowl-official.github.io/vowl-legal/terms.html',
                                                                                         ),
                                                                                       );
                                                                                       if (await canLaunchUrl(
@@ -544,7 +544,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                                       final url = Uri.parse(
                                                                                         context.tr(
                                                                                           'settings.privacy_url',
-                                                                                          fallback: 'https://ansar7787.github.io/vowl-legal/privacy.html',
+                                                                                          fallback: 'https://vowl-official.github.io/vowl-legal/privacy.html',
                                                                                         ),
                                                                                       );
                                                                                       if (await canLaunchUrl(
@@ -712,3 +712,4 @@ class _SignUpViewState extends State<SignUpView> {
     );
   }
 }
+

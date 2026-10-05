@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD033 MD041 MD029 -->
+﻿<!-- markdownlint-disable MD033 MD041 MD029 -->
 <div align="center">
   <img src="assets/images/vowly_mascot.png" alt="Vowl mascot" width="140"/>
   <h1>Vowl</h1>
@@ -100,24 +100,24 @@ The project uses a feature-first structure:
 
 ```text
 lib/
- ├── core/
- │    ├── presentation/      # Shared mixins and base widgets (e.g. GameScreenMixin)
- │    ├── theme/             # AppTheme, dimensions, colors
- │    └── utils/             # Helpers, lifecycle handlers
- ├── features/
- │    ├── auth/              # OAuth, email login, legal consents
- │    ├── home/              # Dashboards, category shelves
- │    ├── games/             # The 100+ game types
- │    ├── kids_zone/         # Parental gate, kids UI
- │    ├── profile/           # Streaks, leaderboards, settings
- │    └── monetization/      # IAP repositories, paywalls
- ├── config/                 # Environment variables, keys
- └── main.dart               # Entry point and DI setup
+ â”œâ”€â”€ core/
+ â”‚    â”œâ”€â”€ presentation/      # Shared mixins and base widgets (e.g. GameScreenMixin)
+ â”‚    â”œâ”€â”€ theme/             # AppTheme, dimensions, colors
+ â”‚    â””â”€â”€ utils/             # Helpers, lifecycle handlers
+ â”œâ”€â”€ features/
+ â”‚    â”œâ”€â”€ auth/              # OAuth, email login, legal consents
+ â”‚    â”œâ”€â”€ home/              # Dashboards, category shelves
+ â”‚    â”œâ”€â”€ games/             # The 100+ game types
+ â”‚    â”œâ”€â”€ kids_zone/         # Parental gate, kids UI
+ â”‚    â”œâ”€â”€ profile/           # Streaks, leaderboards, settings
+ â”‚    â””â”€â”€ monetization/      # IAP repositories, paywalls
+ â”œâ”€â”€ config/                 # Environment variables, keys
+ â””â”€â”€ main.dart               # Entry point and DI setup
 extensions/                  # Infrastructure-as-Code for Firebase Extensions
- └── delete-user-data.env    # Safe, non-secret configuration (Firebase Best Practice)
+ â””â”€â”€ delete-user-data.env    # Safe, non-secret configuration (Firebase Best Practice)
 functions/
- ├── index.js                # Server-side purchase validation (Node.js)
- └── package.json            # googleapis, firebase-admin
+ â”œâ”€â”€ index.js                # Server-side purchase validation (Node.js)
+ â””â”€â”€ package.json            # googleapis, firebase-admin
 ```
 
 > **Note on Infrastructure-as-Code:** The `extensions/` directory is safely committed to source control following Firebase's modern "Extensions-as-Code" architecture. It contains structural configuration parameters (like Firestore deletion paths) and no sensitive secrets, ensuring infrastructure reproducibility across environments.
@@ -210,7 +210,7 @@ The function is written in Node.js and uses `googleapis` and `firebase-admin`.
 1. Clone the repo:
 
 ```bash
-   git clone https://github.com/ansar7787/vowl-app.git
+   git clone https://github.com/vowl-official/vowl-app.git
    cd vowl-app
 ```
 
@@ -246,13 +246,13 @@ The function is written in Node.js and uses `googleapis` and `firebase-admin`.
 
 Policies are hosted on GitHub Pages for store listings:
 
-- [Privacy Policy](https://ansar7787.github.io/vowl-legal/privacy.html)
-- [Terms of Service](https://ansar7787.github.io/vowl-legal/terms.html)
-- [Refund Policy](https://ansar7787.github.io/vowl-legal/refund.html)
+- [Privacy Policy](https://vowl-official.github.io/vowl-legal/privacy.html)
+- [Terms of Service](https://vowl-official.github.io/vowl-legal/terms.html)
+- [Refund Policy](https://vowl-official.github.io/vowl-legal/refund.html)
 
 ---
 
-<p align="center">Built by <b>Muhammed Ansar A</b> · <a href="https://github.com/ansar7787">GitHub</a> · <a href="https://www.linkedin.com/in/ansar7">LinkedIn</a></p>
+<p align="center">Built by <b>Vowl Team</b> · <a href="https://github.com/vowl-official">GitHub</a> </p>
 
 <!-- When live on Google Play: replace the "status" badge at the top with this -->
 [![Google Play](https://img.shields.io/badge/Google_Play-Get_it-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=YOUR.APP.ID)
@@ -265,7 +265,8 @@ flutter analyze
 flutter test
 ```
 
-[![CI](https://github.com/ansar7787/vowl-app/actions/workflows/ci.yml/badge.svg)](https://github.com/ansar7787/vowl-app/actions/workflows/ci.yml)
+[![CI](https://github.com/vowl-official/vowl-app/actions/workflows/ci.yml/badge.svg)](https://github.com/vowl-official/vowl-app/actions/workflows/ci.yml)
 
 <!-- Only after you verify your rules block client writes to entitlement fields: add to the Security Rules list -->
 - Clients cannot write entitlement fields such as Premium; only the Cloud Function can.
+
