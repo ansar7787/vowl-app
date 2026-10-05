@@ -208,10 +208,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children:
                             [
                                   // ── 0. Vowl Mascot / Companion ──
-                                  if (!AgeGateService.isAdultCached)
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                       children: [
                                         SizedBox(height: 8.h),
                                         Padding(
@@ -327,8 +326,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ),
 
                                   // ── 4. Kids Zone (conditional) ──
-                                  if (!AgeGateService.isAdultCached && (user.kidsStickers.isNotEmpty ||
-                                      user.kidsTotalLevelsCompleted > 0))
+                                  if (user.kidsStickers.isNotEmpty || user.kidsTotalLevelsCompleted > 0)
                                     Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,

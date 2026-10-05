@@ -141,13 +141,11 @@ class _HomeScreenState extends State<HomeScreen> {
             listener: (context, state) {
               if (!_hasCheckedDailyChestThisSession) {
                 _hasCheckedDailyChestThisSession = true;
-                if (!AgeGateService.isAdultCached) {
-                  showDialog(
-                    context: context,
-                    barrierDismissible: false,
-                    builder: (context) => const MysteryChestDialog(),
-                  );
-                }
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) => const MysteryChestDialog(),
+                );
               }
             },
           ),

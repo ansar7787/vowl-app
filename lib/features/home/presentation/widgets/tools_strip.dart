@@ -48,20 +48,19 @@ class ToolsStrip extends StatelessWidget {
 
     final tools = [
       // ── FEATURED TIER (gradient hero cards) ───────────────────────
-      if (!AgeGateService.isAdultCached)
-        _ToolDef(
-          title: context.tr('home.tools_kids_zone', fallback: 'Kids Zone'),
-          subtitle: context.tr('home.tools_kids_fun', fallback: 'Fun & Learn'),
-          tooltip: context.tr(
-            'home.tools_kids_zone_tip',
-            fallback: 'Safe, playful games designed for young learners',
-          ),
-          icon: Icons.child_care_rounded,
-          emoji: '🧩',
-          color: AppColors.rose500, // Rose — 0°
-          darkColor: _LocalPalette.colorbe123c,
-          route: AppRouter.kidsZoneRoute,
-          requiresAd: false,
+      _ToolDef(
+        title: context.tr('home.tools_kids_zone', fallback: 'Kids Zone'),
+        subtitle: context.tr('home.tools_kids_fun', fallback: 'Fun & Learn'),
+        tooltip: context.tr(
+          'home.tools_kids_zone_tip',
+          fallback: 'Safe, playful games designed for young learners',
+        ),
+        icon: Icons.child_care_rounded,
+        emoji: '🧩',
+        color: AppColors.rose500, // Rose — 0°
+        darkColor: _LocalPalette.colorbe123c,
+        route: AppRouter.kidsZoneRoute,
+        requiresAd: false,
           isFeatured: true,
         ),
       _ToolDef(
