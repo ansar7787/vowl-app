@@ -13,6 +13,8 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:audioplayers/audioplayers.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class MistakesPracticeScreen extends StatefulWidget {
   const MistakesPracticeScreen({super.key});
@@ -22,11 +24,11 @@ class MistakesPracticeScreen extends StatefulWidget {
 }
 
 class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
-  bool _isLoading = true;
-  List<ErrorJournalEntry> _entries = [];
-  int _currentIndex = 0;
+  final ValueNotifier<bool> _isLoading = ValueNotifier(true);
+  final ValueNotifier<List<ErrorJournalEntry>> _entries = ValueNotifier([]);
+  final ValueNotifier<int> _currentIndex = ValueNotifier(0);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   late String _userId;
-  bool _isAnswered = false;
 
   final AudioPlayer _audioPlayer = AudioPlayer();
 
@@ -38,47 +40,45 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
 
   @override
   void dispose() {
+    _isLoading.dispose();
+    _entries.dispose();
+    _currentIndex.dispose();
+    _isAnswered.dispose();
     _audioPlayer.dispose();
     super.dispose();
   }
 
   Future<void> _loadPracticeSession() async {
+    _isLoading.value = true;
     final authState = context.read<AuthBloc>().state;
     _userId = authState.user?.id ?? 'local';
 
     final allEntries = await ErrorJournalCollector.fetch(
       userId: _userId,
-      limit: 100, // Fetch pool
+      limit: 100, 
     );
     
-    // Grab up to 10 random entries for the session
     allEntries.shuffle();
     final sessionEntries = allEntries.take(10).toList();
 
     if (mounted) {
-      setState(() {
-        _entries = sessionEntries;
-        _isLoading = false;
-      });
+      _entries.value = sessionEntries;
+      _isLoading.value = false;
     }
   }
 
   void _submitAnswer(bool isCorrect) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
     
-    setState(() {
-      _isAnswered = true;
-    });
+    _isAnswered.value = true;
 
     if (isCorrect) {
       di.sl<HapticService>().success();
-      // Safe play sound
       _audioPlayer.play(AssetSource('sounds/correct_chime.mp3')).catchError((_) {});
       
-      // Auto dismiss from journal since they got it right!
       ErrorJournalCollector.dismiss(
         userId: _userId, 
-        entryId: _entries[_currentIndex].id
+        entryId: _entries.value[_currentIndex.value].id
       );
     } else {
       di.sl<HapticService>().error();
@@ -87,13 +87,10 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
   }
 
   void _nextCard() {
-    if (_currentIndex < _entries.length - 1) {
-      setState(() {
-        _currentIndex++;
-        _isAnswered = false;
-      });
+    if (_currentIndex.value < _entries.value.length - 1) {
+      _currentIndex.value++;
+      _isAnswered.value = false;
     } else {
-      // Session Complete
       context.pop();
     }
   }
@@ -106,61 +103,59 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
       body: Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
-          SafeArea(
-            child: Column(
-              children: [
-                _buildHeader(context, isDark),
-                Expanded(
-                  child: _isLoading 
-                      ? const Center(child: CircularProgressIndicator())
-                      : _entries.isEmpty 
-                          ? _buildEmptyState(context, isDark)
-                          : AnimatedSwitcher(
-                              duration: const Duration(milliseconds: 300),
-                              transitionBuilder: (child, animation) {
-                                return FadeTransition(
-                                  opacity: animation,
-                                  child: SlideTransition(
-                                    position: Tween<Offset>(
-                                      begin: const Offset(0.05, 0),
-                                      end: Offset.zero,
-                                    ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOutCubic)),
-                                    child: child,
-                                  ),
-                                );
-                              },
-                              child: _buildFlashcard(context, isDark),
+          ValueListenableBuilder<bool>(
+            valueListenable: _isLoading,
+            builder: (context, isLoading, _) {
+              return ValueListenableBuilder<List<ErrorJournalEntry>>(
+                valueListenable: _entries,
+                builder: (context, entries, _) {
+                  return ValueListenableBuilder<int>(
+                    valueListenable: _currentIndex,
+                    builder: (context, currentIndex, _) {
+                      return CustomScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverAppBar(
+                            backgroundColor: Colors.transparent,
+                            surfaceTintColor: Colors.transparent,
+                            elevation: 0,
+                            pinned: true,
+                            leading: IconButton(
+                              icon: Icon(Icons.close_rounded, color: isDark ? Colors.white : Colors.black),
+                              onPressed: () => context.pop(),
                             ),
-                ),
-              ],
-            ),
+                            title: (!isLoading && entries.isNotEmpty) 
+                                ? Text(
+                                    '${currentIndex + 1} / ${entries.length}',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.bold,
+                                      color: isDark ? Colors.white : Colors.black,
+                                    ),
+                                  ).animate(key: ValueKey(currentIndex)).scale(duration: 200.ms, curve: Curves.easeOutBack)
+                                : const SizedBox.shrink(),
+                            centerTitle: true,
+                          ),
+                          SliverFillRemaining(
+                            hasScrollBody: false,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+                              child: isLoading 
+                                  ? _buildShimmerLoading(context, isDark)
+                                  : entries.isEmpty 
+                                      ? _buildEmptyState(context, isDark)
+                                      : _buildFlashcard(context, entries[currentIndex], isDark).animate(key: ValueKey(entries[currentIndex].id)).slideX(begin: 0.1).fadeIn(duration: 300.ms),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+              );
+            },
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHeader(BuildContext context, bool isDark) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-            icon: Icon(Icons.close_rounded, color: isDark ? Colors.white : Colors.black),
-            onPressed: () => context.pop(),
-          ),
-          if (!_isLoading && _entries.isNotEmpty)
-            Text(
-              '${_currentIndex + 1} / ${_entries.length}',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.bold,
-                color: isDark ? Colors.white : Colors.black,
-              ),
-            ),
-          SizedBox(width: 48.w), // Balance spacer
         ],
       ),
     );
@@ -183,136 +178,168 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
             ),
           ),
         ],
-      ),
+      ).animate().scale(delay: 100.ms, duration: 400.ms, curve: Curves.easeOutBack).fadeIn(),
     );
   }
 
-  Widget _buildFlashcard(BuildContext context, bool isDark) {
-    final entry = _entries[_currentIndex];
+  Widget _buildShimmerLoading(BuildContext context, bool isDark) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Shimmer.fromColors(
+          baseColor: isDark ? AppColors.slate800.withValues(alpha: 0.5) : Colors.white54,
+          highlightColor: isDark ? AppColors.slate700 : Colors.white,
+          child: Container(
+            width: double.infinity,
+            height: 350.h,
+            decoration: BoxDecoration(
+              color: isDark ? AppColors.slate800 : Colors.white,
+              borderRadius: BorderRadius.circular(24.r),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 
+  Widget _buildFlashcard(BuildContext context, ErrorJournalEntry entry, bool isDark) {
     String wrongAnswer = entry.userAnswer.trim();
     if (wrongAnswer.isEmpty || wrongAnswer.toLowerCase() == entry.correctAnswer.trim().toLowerCase()) {
       wrongAnswer = context.tr('practice.timeout_answer', fallback: '(No Answer / Timeout)');
     }
 
-    // Generate options: their old wrong answer, and the correct one.
-    // Use a Set literal to ensure options are strictly unique, then toList.
     final options = {wrongAnswer, entry.correctAnswer}.toList();
     
-    // Use the ID as a random seed so the shuffle is consistent for this specific card
-    // but random across cards.
     final random = Random(entry.id.hashCode);
     options.shuffle(random);
 
-    return Padding(
-      key: ValueKey(entry.id),
-      padding: EdgeInsets.all(24.w),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: AppColors.indigo500.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Text(
-              entry.gameType.toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.indigo500,
-                letterSpacing: 1,
-              ),
-            ),
-          ),
-          SizedBox(height: 32.h),
-          GlassTile(
-            borderRadius: BorderRadius.circular(24.r),
-            padding: EdgeInsets.all(32.r),
-            child: Text(
-              entry.question,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white : Colors.black,
-              ),
-            ),
-          ),
-          SizedBox(height: 48.h),
-          ...options.map((option) => Padding(
-            padding: EdgeInsets.only(bottom: 16.h),
-            child: _buildOptionButton(option, option == entry.correctAnswer, isDark),
-          )),
-          
-          if (_isAnswered) ...[
-            SizedBox(height: 24.h),
-            ElevatedButton(
-              onPressed: _nextCard,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.indigo500,
-                minimumSize: Size(double.infinity, 56.h),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16.r),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        GlassTile(
+          borderRadius: BorderRadius.circular(24.r),
+          padding: EdgeInsets.all(24.w),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                decoration: BoxDecoration(
+                  color: AppColors.indigo500.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                child: Text(
+                  entry.gameType.toUpperCase(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.indigo500,
+                  ),
                 ),
               ),
-              child: Text(
-                _currentIndex == _entries.length - 1 
-                  ? context.tr('common.finish', fallback: 'FINISH') 
-                  : context.tr('common.next', fallback: 'NEXT'),
+              SizedBox(height: 24.h),
+              Text(
+                entry.question,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : Colors.black,
+                  height: 1.3,
                 ),
               ),
-            ),
-          ]
-        ],
-      ),
+              SizedBox(height: 32.h),
+              
+              ValueListenableBuilder<bool>(
+                valueListenable: _isAnswered,
+                builder: (context, isAnswered, _) {
+                  return Column(
+                    children: options.map((text) {
+                      final isCorrectOption = text == entry.correctAnswer;
+                      return Padding(
+                        padding: EdgeInsets.only(bottom: 12.h),
+                        child: _buildOptionButton(text, isCorrectOption, isAnswered, isDark),
+                      );
+                    }).toList(),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+        
+        ValueListenableBuilder<bool>(
+          valueListenable: _isAnswered,
+          builder: (context, isAnswered, _) {
+            if (!isAnswered) return const SizedBox.shrink();
+            
+            return Padding(
+              padding: EdgeInsets.only(top: 24.h),
+              child: ElevatedButton(
+                onPressed: _nextCard,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.indigo500,
+                  minimumSize: Size(double.infinity, 56.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                  ),
+                ),
+                child: Text(
+                  _currentIndex.value == _entries.value.length - 1 
+                      ? context.tr('common.finish', fallback: 'FINISH') 
+                      : context.tr('common.next', fallback: 'NEXT'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ).animate().slideY(begin: 0.5).fadeIn(duration: 300.ms),
+            );
+          },
+        ),
+      ],
     );
   }
 
-  Widget _buildOptionButton(String text, bool isCorrectOption, bool isDark) {
+  Widget _buildOptionButton(String text, bool isCorrectOption, bool isAnswered, bool isDark) {
     Color bgColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05);
     Color borderColor = Colors.transparent;
+    Color textColor = isDark ? Colors.white : Colors.black;
 
-    if (_isAnswered) {
+    if (isAnswered) {
       if (isCorrectOption) {
-        bgColor = AppColors.emerald500.withValues(alpha: 0.1);
+        bgColor = AppColors.emerald500.withValues(alpha: 0.15);
         borderColor = AppColors.emerald500;
+        textColor = AppColors.emerald500;
       } else {
-        bgColor = AppColors.red500.withValues(alpha: 0.1);
-        borderColor = AppColors.red500.withValues(alpha: 0.5);
+        bgColor = isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02);
+        textColor = isDark ? Colors.white38 : Colors.black38;
       }
     }
 
     return ScaleButton(
-      onTap: () {
-        if (!_isAnswered) {
-          _submitAnswer(isCorrectOption);
-        }
-      },
-      child: Container(
+      onTap: isAnswered ? null : () => _submitAnswer(isCorrectOption),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 24.w),
+        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
         decoration: BoxDecoration(
           color: bgColor,
-          borderRadius: BorderRadius.circular(16.r),
           border: Border.all(color: borderColor, width: 2),
+          borderRadius: BorderRadius.circular(16.r),
         ),
         child: Text(
           text,
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 18.sp,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w600,
-            color: isDark ? Colors.white : Colors.black,
+            color: textColor,
           ),
         ),
       ),
