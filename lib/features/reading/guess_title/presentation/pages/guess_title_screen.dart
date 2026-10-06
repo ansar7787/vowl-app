@@ -13,7 +13,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_instruction.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_cargo_crate.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_label_rack.dart';
-import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+
 import 'package:vowl/core/services/error_journal_collector.dart';
 
 class GuessTitleScreen extends StatefulWidget {
@@ -42,13 +42,11 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
   final ValueNotifier<String?> _selectedTitle = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
-    _showTypeToConfirm.dispose();
     _selectedTitle.dispose();
     _scrollController.dispose();
     disposeReadingGame();
@@ -58,19 +56,6 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
   @override
   void initState() {
     super.initState();
-    _showTypeToConfirm.addListener(() {
-      if (_showTypeToConfirm.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
     initReadingGame();
   }
 
@@ -79,7 +64,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
     ReadingQuest? quest,
     String? selectedOption,
   ]) {
-    if (isAnsweredNotifier.value || _showTypeToConfirm.value) return;
+    if (isAnsweredNotifier.value) return;
 
     isAnsweredNotifier.value = true;
     isCorrectNotifier.value = isCorrect;
@@ -87,7 +72,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
     if (isCorrect) {
       hapticService.success();
       soundService.playCorrect();
-      _showTypeToConfirm.value = true;
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       hapticService.error();
       soundService.playWrong();
@@ -105,14 +90,8 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
     }
   }
 
-  void _onTypeConfirmed() {
-    _showTypeToConfirm.value = false;
-    context.read<ReadingBloc>().add(const SubmitAnswer(true));
-  }
-
   @override
   void onQuestionReset() {
-    _showTypeToConfirm.value = false;
     _selectedTitle.value = null;
   }
 
@@ -133,7 +112,6 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
             isAnsweredNotifier,
             isCorrectNotifier,
             showConfettiNotifier,
-            _showTypeToConfirm,
           ]),
           builder: (context, _) {
             final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -183,24 +161,35 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                                             color: theme.primaryColor,
                                             isDark: isDark,
                                             selectedTitle: selectedTitle,
-                                            isAnswered: isAnsweredNotifier.value,
+                                            isAnswered:
+                                                isAnsweredNotifier.value,
                                             isCorrect: isCorrectNotifier.value,
                                             onAccept: (title) {
                                               _selectedTitle.value = title;
-                                              final isCorrect = title.trim().toLowerCase() ==
-                                                  (quest.correctAnswer ?? "").trim().toLowerCase();
-                                              _submitFinalAnswer(isCorrect, quest, title);
+                                              final isCorrect =
+                                                  title.trim().toLowerCase() ==
+                                                  (quest.correctAnswer ?? "")
+                                                      .trim()
+                                                      .toLowerCase();
+                                              _submitFinalAnswer(
+                                                isCorrect,
+                                                quest,
+                                                title,
+                                              );
                                             },
                                           ),
                                           SizedBox(height: 32.h),
-                                          if (!isAnsweredNotifier.value || isCorrectNotifier.value == false)
+                                          if (!isAnsweredNotifier.value ||
+                                              isCorrectNotifier.value == false)
                                             GuessTitleLabelRack(
                                               labels: quest.options ?? [],
-                                              correct: quest.correctAnswer ?? "",
+                                              correct:
+                                                  quest.correctAnswer ?? "",
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                               selectedTitle: selectedTitle,
-                                              isAnswered: isAnsweredNotifier.value,
+                                              isAnswered:
+                                                  isAnsweredNotifier.value,
                                             ),
                                         ],
                                       );
@@ -208,37 +197,19 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                                   ),
                                   if (isAnsweredNotifier.value) ...[
                                     SizedBox(height: 24.h),
-                                    _buildExplanationCard(quest, theme.primaryColor, isDark),
+                                    _buildExplanationCard(
+                                      quest,
+                                      theme.primaryColor,
+                                      isDark,
+                                    ),
                                   ],
                                 ],
                               ),
                             ),
                           ),
                           SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  (_showTypeToConfirm.value &&
-                                      isAnsweredNotifier.value)
-                                  ? 32.h
-                                  : 60.h,
-                            ),
+                            child: SizedBox(height: 60.h),
                           ),
-
-                          if (_showTypeToConfirm.value &&
-                              isAnsweredNotifier.value)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: TypeToConfirmOverlay(
-                                  expectedText: quest.correctAnswer ?? '',
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: _onTypeConfirmed,
-                                  onSkipped: _onTypeConfirmed,
-                                  allowSkip: true,
-                                  isPositioned: false,
-                                ),
-                              ),
-                            ),
                           SliverToBoxAdapter(
                             child: SizedBox(
                               height:
@@ -258,8 +229,6 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
     );
   }
 
-
-
   Widget _buildExplanationCard(
     ReadingQuest quest,
     Color primaryColor,
@@ -275,9 +244,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: primaryColor.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

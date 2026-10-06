@@ -38,7 +38,7 @@ class ErrorJournalCollector {
     required int level,
   }) async {
     try {
-      if (userId.isEmpty || question.isEmpty) return;
+      if (userId.isEmpty || userId == 'local' || question.isEmpty) return;
 
       final entry = {
         'gameType': gameType,
