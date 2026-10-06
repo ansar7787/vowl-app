@@ -3,9 +3,9 @@ name: Flutter CI
 
 on:
   push:
-    branches: ['master']
+    branches: ['master', 'portfolio']
   pull_request:
-    branches: ['master']
+    branches: ['master', 'portfolio']
   workflow_dispatch: # lets you run it by hand from the Actions tab
 
 permissions:
