@@ -1,4 +1,7 @@
 import 'dart:math';
+import 'dart:async';
+import 'package:vowl/core/utils/reward_limit_service.dart';
+import 'package:vowl/core/services/ad_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -75,6 +78,15 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     if (mounted) {
       _entries.value = sessionEntries;
       _isLoading.value = false;
+
+      if (sessionEntries.isNotEmpty) {
+        WidgetsBinding.instance.addPostFrameCallback((_) async {
+          final canProceed = await _checkMonetizationGate();
+          if (!canProceed && mounted) {
+            context.pop();
+          }
+        });
+      }
     }
   }
 
@@ -101,13 +113,262 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     }
   }
 
-  void _nextCard() {
+  void _nextCard() async {
     if (_currentIndex.value < _entries.value.length - 1) {
+      final canProceed = await _checkMonetizationGate();
+      if (!canProceed) return;
+
       _currentIndex.value++;
       _isAnswered.value = false;
     } else {
       context.pop();
     }
+  }
+
+  Future<bool> _checkMonetizationGate() async {
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    if (isPremium) return true;
+
+    final hasReachedLimit = await RewardLimitService.hasReachedDailyLimit(
+      'practice',
+    );
+    if (!hasReachedLimit) {
+      await RewardLimitService.incrementClaimCount('practice');
+      return true;
+    }
+
+    final unlocked = await _showMonetizationGate();
+    return unlocked;
+  }
+
+  Future<bool> _showMonetizationGate() async {
+    final completer = Completer<bool>();
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      isDismissible: false,
+      enableDrag: false,
+      builder: (context) {
+        return Container(
+          padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
+          decoration: BoxDecoration(
+            color: isDark ? AppColors.slate900 : Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 20,
+                offset: const Offset(0, -5),
+              ),
+            ],
+          ),
+          child: SafeArea(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(20.r),
+                  decoration: BoxDecoration(
+                    color: AppColors.amber500.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.amber500.withValues(alpha: 0.2),
+                        blurRadius: 30,
+                        spreadRadius: 5,
+                      ),
+                    ],
+                  ),
+                  child: Icon(
+                    Icons.local_fire_department_rounded,
+                    color: AppColors.amber500,
+                    size: 56.r,
+                  ),
+                ),
+                SizedBox(height: 24.h),
+                Text(
+                  context.tr(
+                    'practice.limit_reached_title',
+                    fallback: 'Daily Limit Reached',
+                  ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 28.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : AppColors.slate900,
+                    letterSpacing: -0.5,
+                  ),
+                ),
+                SizedBox(height: 12.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: Text(
+                    context.tr(
+                      'practice.limit_reached_desc',
+                      fallback:
+                          'You\'ve used your 5 free practice attempts today. Watch an ad to get 1 more, or go Premium for unlimited practice.',
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white70 : AppColors.slate600,
+                      height: 1.5,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40.h),
+                Container(
+                  width: double.infinity,
+                  height: 60.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.r),
+                    gradient: const LinearGradient(
+                      colors: [AppColors.indigo500, AppColors.violet500],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.indigo500.withValues(alpha: 0.3),
+                        blurRadius: 20,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(20.r),
+                      onTap: () {
+                        final adService = di.sl<AdService>();
+                        adService.showRewardedAd(
+                          context: context,
+                          isPremium: false,
+                          childSafe: false,
+                          onUserEarnedReward: (_) {
+                            if (!completer.isCompleted) {
+                              completer.complete(true);
+                            }
+                          },
+                          onDismissed: () {
+                            if (!completer.isCompleted) {
+                              completer.complete(false);
+                            }
+                            if (context.mounted) {
+                              context.pop();
+                            }
+                          },
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.play_circle_fill_rounded,
+                            color: Colors.white,
+                            size: 24.r,
+                          ),
+                          SizedBox(width: 12.w),
+                          Text(
+                            context.tr(
+                              'daily_words.watch_ad',
+                              fallback: 'Watch Ad to Unlock',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16.h),
+                Container(
+                  width: double.infinity,
+                  height: 60.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(
+                      color: AppColors.amber500.withValues(alpha: 0.3),
+                      width: 2,
+                    ),
+                    color: AppColors.amber500.withValues(alpha: 0.05),
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(20.r),
+                      onTap: () {
+                        context.pop();
+                        context.push('/premium');
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.workspace_premium_rounded,
+                            color: AppColors.amber500,
+                            size: 24.r,
+                          ),
+                          SizedBox(width: 12.w),
+                          Text(
+                            context.tr(
+                              'daily_words.go_premium',
+                              fallback: 'Unlock Premium',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w800,
+                              color: AppColors.amber500,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20.h),
+                TextButton(
+                  onPressed: () => context.pop(),
+                  style: TextButton.styleFrom(
+                    foregroundColor: isDark
+                        ? Colors.white54
+                        : AppColors.slate400,
+                  ),
+                  child: Text(
+                    context.tr(
+                      'daily_words.maybe_later',
+                      fallback: 'Maybe Later',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    ).then((_) {
+      if (!completer.isCompleted) completer.complete(false);
+    });
+
+    return completer.future;
   }
 
   @override

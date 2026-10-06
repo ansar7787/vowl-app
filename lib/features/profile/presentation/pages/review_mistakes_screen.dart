@@ -56,8 +56,15 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
 
     if (mounted) {
       _entries.value = entries;
-      // Reset to first page when loaded
-      _currentPage.value = 0;
+      
+      // Preserve the user's page unless it's now out of bounds
+      final totalPages = (entries.length / 10).ceil();
+      if (_currentPage.value >= totalPages && totalPages > 0) {
+        _currentPage.value = totalPages - 1;
+      } else if (totalPages == 0) {
+        _currentPage.value = 0;
+      }
+      
       _isLoading.value = false;
     }
   }

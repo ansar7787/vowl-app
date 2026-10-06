@@ -156,6 +156,15 @@ class ModernFeatureBar extends StatelessWidget {
               ),
               _buildListFeature(
                 context,
+                icon: LucideIcons.dumbbell,
+                title: context.tr(
+                  'premium.feature_unlimited_practice',
+                  fallback: 'Unlimited Practice Weaknesses',
+                ),
+                color: AppColors.orange500,
+              ),
+              _buildListFeature(
+                context,
                 icon: LucideIcons.award,
                 title: context.tr(
                   'premium.feature_vip_badges',
