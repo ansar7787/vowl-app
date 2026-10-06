@@ -1,34 +1,21 @@
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// A lightweight, fire-and-forget service that captures wrong answers
-/// across all 100 games and persists them to Firestore for review.
-///
-/// Usage in any BLoC:
-/// ```dart
-/// if (!isCorrect) {
-///   ErrorJournalCollector.record(
-///     userId: user.id,
-///     gameType: 'grammarQuest',
-///     question: quest.question ?? quest.instruction,
-///     userAnswer: selectedOption,
-///     correctAnswer: quest.correctAnswer ?? '',
-///     level: state.level,
-///   );
-/// }
-/// ```
+/// across all 100 games and persists them to Firestore (or locally for guests) for review.
 class ErrorJournalCollector {
   ErrorJournalCollector._();
 
   static final _firestore = FirebaseFirestore.instance;
+  static const String _localKey = 'vowl_local_error_journal';
 
   /// Maximum number of error journal entries to keep per user.
-  /// Oldest entries are pruned when this limit is exceeded.
   static const int maxEntries = 200;
 
-  /// Records a wrong answer to Firestore under `users/{uid}/errorJournal`.
-  /// This is fire-and-forget — errors are silently swallowed so it never
-  /// disrupts gameplay.
+  /// Records a wrong answer to Firestore under `users/{uid}/errorJournal`
+  /// or to local storage if the user is a guest ('local').
   static Future<void> record({
     required String userId,
     required String gameType,
@@ -38,9 +25,37 @@ class ErrorJournalCollector {
     required int level,
   }) async {
     try {
-      if (userId.isEmpty || userId == 'local' || question.isEmpty) return;
+      if (userId.isEmpty || question.isEmpty) return;
 
-      final entry = {
+      final now = DateTime.now();
+      
+      if (userId == 'local') {
+        // Local Guest Storage
+        final prefs = await SharedPreferences.getInstance();
+        final List<String> logs = prefs.getStringList(_localKey) ?? [];
+        
+        final entry = ErrorJournalEntry(
+          id: now.millisecondsSinceEpoch.toString(),
+          gameType: gameType,
+          question: question,
+          userAnswer: userAnswer,
+          correctAnswer: correctAnswer,
+          level: level,
+          timestamp: now,
+        );
+
+        logs.add(jsonEncode(entry.toJson()));
+        
+        if (logs.length > maxEntries) {
+          logs.removeAt(0); // Prune oldest
+        }
+        
+        await prefs.setStringList(_localKey, logs);
+        return;
+      }
+
+      // Authenticated Cloud Storage
+      final entryMap = {
         'gameType': gameType,
         'question': question,
         'userAnswer': userAnswer,
@@ -53,23 +68,40 @@ class ErrorJournalCollector {
           .collection('users')
           .doc(userId)
           .collection('errorJournal')
-          .add(entry);
+          .add(entryMap);
     } catch (e) {
-      // Silent — never disrupt gameplay for analytics
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to record: $e');
       }
     }
   }
 
-  /// Fetches the most recent [limit] error journal entries for a user,
-  /// ordered by timestamp descending (newest first).
+  /// Fetches the most recent [limit] error journal entries.
   static Future<List<ErrorJournalEntry>> fetch({
     required String userId,
     int limit = 50,
     String? filterGameType,
   }) async {
     try {
+      if (userId == 'local') {
+        final prefs = await SharedPreferences.getInstance();
+        final List<String> logs = prefs.getStringList(_localKey) ?? [];
+        
+        var entries = logs
+            .map((str) => ErrorJournalEntry.fromJson(jsonDecode(str)))
+            .toList();
+
+        if (filterGameType != null && filterGameType.isNotEmpty) {
+          entries = entries.where((e) => e.gameType == filterGameType).toList();
+        }
+
+        // Sort descending (newest first)
+        entries.sort((a, b) => (b.timestamp ?? DateTime.now())
+            .compareTo(a.timestamp ?? DateTime.now()));
+
+        return entries.take(limit).toList();
+      }
+
       Query<Map<String, dynamic>> query = _firestore
           .collection('users')
           .doc(userId)
@@ -109,6 +141,19 @@ class ErrorJournalCollector {
     required String entryId,
   }) async {
     try {
+      if (userId == 'local') {
+        final prefs = await SharedPreferences.getInstance();
+        final List<String> logs = prefs.getStringList(_localKey) ?? [];
+        
+        final filteredLogs = logs.where((str) {
+          final decoded = jsonDecode(str);
+          return decoded['id'] != entryId;
+        }).toList();
+
+        await prefs.setStringList(_localKey, filteredLogs);
+        return;
+      }
+
       await _firestore
           .collection('users')
           .doc(userId)
@@ -122,9 +167,15 @@ class ErrorJournalCollector {
     }
   }
 
-  /// Clears all error journal entries for a user (safely chunked to avoid 500-limit).
+  /// Clears all error journal entries.
   static Future<void> clearAll({required String userId}) async {
     try {
+      if (userId == 'local') {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.remove(_localKey);
+        return;
+      }
+
       final collection = _firestore
           .collection('users')
           .doc(userId)
@@ -138,8 +189,6 @@ class ErrorJournalCollector {
           batch.delete(doc.reference);
         }
         await batch.commit();
-
-        // Fetch next batch
         snapshot = await collection.limit(500).get();
       }
     } catch (e) {
@@ -170,4 +219,30 @@ class ErrorJournalEntry {
     required this.level,
     this.timestamp,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'gameType': gameType,
+      'question': question,
+      'userAnswer': userAnswer,
+      'correctAnswer': correctAnswer,
+      'level': level,
+      'timestamp': timestamp?.toIso8601String(),
+    };
+  }
+
+  factory ErrorJournalEntry.fromJson(Map<String, dynamic> json) {
+    return ErrorJournalEntry(
+      id: json['id'] as String? ?? '',
+      gameType: json['gameType'] as String? ?? '',
+      question: json['question'] as String? ?? '',
+      userAnswer: json['userAnswer'] as String? ?? '',
+      correctAnswer: json['correctAnswer'] as String? ?? '',
+      level: json['level'] as int? ?? 1,
+      timestamp: json['timestamp'] != null 
+          ? DateTime.tryParse(json['timestamp'] as String) 
+          : null,
+    );
+  }
 }
