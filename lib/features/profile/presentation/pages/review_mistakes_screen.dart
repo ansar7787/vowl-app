@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -25,6 +26,7 @@ class ReviewMistakesScreen extends StatefulWidget {
 class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   final ValueNotifier<bool> _isLoading = ValueNotifier(true);
   final ValueNotifier<List<ErrorJournalEntry>> _entries = ValueNotifier([]);
+  final ValueNotifier<int> _currentPage = ValueNotifier(0);
   late String _userId;
 
   @override
@@ -37,6 +39,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   void dispose() {
     _isLoading.dispose();
     _entries.dispose();
+    _currentPage.dispose();
     super.dispose();
   }
 
@@ -48,11 +51,13 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
 
     final entries = await ErrorJournalCollector.fetch(
       userId: _userId,
-      limit: 50,
+      limit: 200, // Fetch more for pagination
     );
 
     if (mounted) {
       _entries.value = entries;
+      // Reset to first page when loaded
+      _currentPage.value = 0;
       _isLoading.value = false;
     }
   }
@@ -63,6 +68,12 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       final current = List<ErrorJournalEntry>.from(_entries.value);
       current.removeWhere((e) => e.id == id);
       _entries.value = current;
+
+      // Adjust current page if current page becomes empty
+      final totalPages = (current.length / 10).ceil();
+      if (_currentPage.value >= totalPages && totalPages > 0) {
+        _currentPage.value = totalPages - 1;
+      }
     }
   }
 
@@ -107,6 +118,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       await ErrorJournalCollector.clearAll(userId: _userId);
       if (mounted) {
         _entries.value = [];
+        _currentPage.value = 0;
       }
     }
   }
@@ -128,167 +140,293 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           return ValueListenableBuilder<List<ErrorJournalEntry>>(
             valueListenable: _entries,
             builder: (context, entries, _) {
-              return Stack(
-                children: [
-                  RawScrollbar(
-                    thumbColor: AppColors.indigo500.withValues(alpha: 0.3),
-                    thickness: 6.w,
-                    radius: Radius.circular(8.r),
-                    interactive: true,
-                    child: CustomScrollView(
-                      physics: const AlwaysScrollableScrollPhysics(
-                        parent: BouncingScrollPhysics(),
-                      ),
-                      slivers: [
-                        SliverAppBar(
-                          expandedHeight: 80.h,
-                          collapsedHeight: 60.h,
-                          pinned: true,
-                          backgroundColor: bgColor,
-                          elevation: 0,
-                          surfaceTintColor: Colors.transparent,
-                          leading: IconButton(
-                            icon: Icon(
-                              Icons.arrow_back_ios_new_rounded,
-                              color: isDark ? Colors.white : Colors.black,
-                            ),
-                            onPressed: () => context.pop(),
+              return ValueListenableBuilder<int>(
+                valueListenable: _currentPage,
+                builder: (context, currentPageIndex, _) {
+                  final totalPages = (entries.length / 10).ceil();
+                  final validPageIndex = currentPageIndex.clamp(
+                    0,
+                    (totalPages - 1).clamp(0, 999999),
+                  );
+                  final paginatedEntries = entries
+                      .skip(validPageIndex * 10)
+                      .take(10)
+                      .toList();
+
+                  return Stack(
+                    children: [
+                      RawScrollbar(
+                        thumbColor: AppColors.indigo500.withValues(alpha: 0.3),
+                        thickness: 6.w,
+                        radius: Radius.circular(8.r),
+                        interactive: true,
+                        child: CustomScrollView(
+                          physics: const AlwaysScrollableScrollPhysics(
+                            parent: BouncingScrollPhysics(),
                           ),
-                          title: Text(
-                            context.tr(
-                              'profile.review_mistakes',
-                              fallback: 'My Mistakes',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontWeight: FontWeight.bold,
-                              color: isDark ? Colors.white : Colors.black,
-                            ),
-                          ),
-                          actions: [
-                            if (entries.isNotEmpty && !isLoading)
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.delete_sweep_rounded,
-                                  color: AppColors.red500,
+                          slivers: [
+                            SliverAppBar(
+                              expandedHeight: 110.h,
+                              collapsedHeight: 60.h,
+                              pinned: true,
+                              backgroundColor: bgColor.withValues(alpha: 0.8),
+                              elevation: 0,
+                              surfaceTintColor: Colors.transparent,
+                              flexibleSpace: ClipRect(
+                                child: BackdropFilter(
+                                  filter: ImageFilter.blur(
+                                    sigmaX: 16,
+                                    sigmaY: 16,
+                                  ),
+                                  child: FlexibleSpaceBar(
+                                    titlePadding: EdgeInsets.only(
+                                      left: 56.w,
+                                      bottom: 16.h,
+                                      right: 16.w,
+                                    ),
+                                    title: Text(
+                                      context.tr(
+                                        'profile.review_mistakes',
+                                        fallback: 'My Mistakes',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontWeight: FontWeight.w800,
+                                        color: isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        letterSpacing: -0.5,
+                                      ),
+                                    ),
+                                    centerTitle: false,
+                                  ),
                                 ),
-                                tooltip: context.tr(
-                                  'profile.clear_all',
-                                  fallback: 'Clear All',
+                              ),
+                              leading: IconButton(
+                                icon: Icon(
+                                  Icons.arrow_back_ios_new_rounded,
+                                  color: isDark ? Colors.white : Colors.black,
                                 ),
-                                onPressed: _clearAll,
+                                onPressed: () => context.pop(),
+                              ),
+                              actions: [
+                                if (entries.isNotEmpty && !isLoading)
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.delete_sweep_rounded,
+                                      color: AppColors.red500,
+                                    ),
+                                    tooltip: context.tr(
+                                      'profile.clear_all',
+                                      fallback: 'Clear All',
+                                    ),
+                                    onPressed: _clearAll,
+                                  ),
+                              ],
+                            ),
+
+                            if (isLoading)
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20.w,
+                                  vertical: 16.h,
+                                ),
+                                sliver: SliverList.separated(
+                                  itemCount: 6,
+                                  separatorBuilder: (_, _) =>
+                                      SizedBox(height: 12.h),
+                                  itemBuilder: (context, index) =>
+                                      _buildShimmerItem(isDark),
+                                ),
+                              )
+                            else if (entries.isEmpty)
+                              SliverFillRemaining(
+                                child: _buildEmptyState(context, isDark),
+                              )
+                            else
+                              SliverPadding(
+                                padding: EdgeInsets.only(
+                                  left: 20.w,
+                                  right: 20.w,
+                                  top: 16.h,
+                                  bottom: 16.h,
+                                ),
+                                sliver: SliverList.separated(
+                                  itemCount: paginatedEntries.length,
+                                  separatorBuilder: (_, _) =>
+                                      SizedBox(height: 12.h),
+                                  itemBuilder: (context, index) =>
+                                      _buildMistakeCard(
+                                        paginatedEntries[index],
+                                        index,
+                                        isDark,
+                                      ),
+                                ),
+                              ),
+
+                            if (entries.isNotEmpty &&
+                                !isLoading &&
+                                totalPages > 1)
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                    top: 16.h,
+                                    bottom: 120.h,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(
+                                          Icons.chevron_left_rounded,
+                                        ),
+                                        color: isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        onPressed: validPageIndex > 0
+                                            ? () {
+                                                _currentPage.value =
+                                                    validPageIndex - 1;
+                                                di
+                                                    .sl<HapticService>()
+                                                    .selection();
+                                              }
+                                            : null,
+                                      ),
+                                      SizedBox(width: 16.w),
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                          vertical: 8.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: isDark
+                                              ? AppColors.slate800
+                                              : Colors.white,
+                                          borderRadius: BorderRadius.circular(
+                                            12.r,
+                                          ),
+                                          border: Border.all(
+                                            color: isDark
+                                                ? AppColors.slate700
+                                                : AppColors.slate200,
+                                          ),
+                                        ),
+                                        child: Text(
+                                          '${validPageIndex + 1} / $totalPages',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: isDark
+                                                ? Colors.white
+                                                : Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(width: 16.w),
+                                      IconButton(
+                                        icon: const Icon(
+                                          Icons.chevron_right_rounded,
+                                        ),
+                                        color: isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        onPressed:
+                                            validPageIndex < totalPages - 1
+                                            ? () {
+                                                _currentPage.value =
+                                                    validPageIndex + 1;
+                                                di
+                                                    .sl<HapticService>()
+                                                    .selection();
+                                              }
+                                            : null,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            else if (entries.isNotEmpty && !isLoading)
+                              SliverToBoxAdapter(
+                                child: SizedBox(height: 120.h),
                               ),
                           ],
                         ),
-
-                        if (isLoading)
-                          SliverPadding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20.w,
-                              vertical: 16.h,
-                            ),
-                            sliver: SliverList.separated(
-                              itemCount: 6,
-                              separatorBuilder: (_, _) =>
-                                  SizedBox(height: 12.h),
-                              itemBuilder: (context, index) =>
-                                  _buildShimmerItem(isDark),
-                            ),
-                          )
-                        else if (entries.isEmpty)
-                          SliverFillRemaining(
-                            child: _buildEmptyState(context, isDark),
-                          )
-                        else
-                          SliverPadding(
-                            padding: EdgeInsets.only(
-                              left: 20.w,
-                              right: 20.w,
-                              top: 16.h,
-                              bottom: 120.h,
-                            ),
-                            sliver: SliverList.separated(
-                              itemCount: entries.length,
-                              separatorBuilder: (_, _) =>
-                                  SizedBox(height: 12.h),
-                              itemBuilder: (context, index) =>
-                                  _buildMistakeCard(
-                                    entries[index],
-                                    index,
-                                    isDark,
-                                  ),
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
-
-                  if (entries.isNotEmpty && !isLoading)
-                    Positioned(
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      child: SafeArea(
-                        child: Container(
-                          padding: EdgeInsets.all(20.w),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                              colors: [
-                                bgColor,
-                                bgColor.withValues(alpha: 0.9),
-                                bgColor.withValues(alpha: 0.0),
-                              ],
-                              stops: const [0.5, 0.8, 1.0],
-                            ),
-                          ),
-                          child: () {
-                            Widget button = ElevatedButton.icon(
-                              onPressed: () async {
-                                await context.push('/practice-mistakes');
-                                if (mounted) {
-                                  _loadMistakes();
-                                }
-                              },
-                              icon: const Icon(Icons.psychology_rounded),
-                              label: Text(
-                                context.tr(
-                                  'profile.practice_weaknesses',
-                                  fallback: 'Practice Weaknesses',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.indigo500,
-                                foregroundColor: Colors.white,
-                                minimumSize: Size(double.infinity, 56.h),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16.r),
-                                ),
-                                elevation: 0,
-                              ),
-                            );
-                            if (!VowlMotion.shouldReduceMotion(context)) {
-                              button = button
-                                  .animate()
-                                  .slideY(
-                                    begin: 1,
-                                    duration: 400.ms,
-                                    curve: Curves.easeOut,
-                                  )
-                                  .fadeIn();
-                            }
-                            return button;
-                          }(),
-                        ),
                       ),
-                    ),
-                ],
+
+                      if (entries.isNotEmpty && !isLoading)
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: SafeArea(
+                            child: Container(
+                              padding: EdgeInsets.all(20.w),
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.bottomCenter,
+                                  end: Alignment.topCenter,
+                                  colors: [
+                                    bgColor,
+                                    bgColor.withValues(alpha: 0.9),
+                                    bgColor.withValues(alpha: 0.0),
+                                  ],
+                                  stops: const [0.5, 0.8, 1.0],
+                                ),
+                              ),
+                              child: () {
+                                Widget button = ElevatedButton.icon(
+                                  onPressed: () async {
+                                    // Pass ONLY the current paginated entries
+                                    await context.push(
+                                      '/practice-mistakes',
+                                      extra: paginatedEntries,
+                                    );
+                                    if (mounted) {
+                                      _loadMistakes();
+                                    }
+                                  },
+                                  icon: const Icon(Icons.psychology_rounded),
+                                  label: Text(
+                                    context.tr(
+                                      'profile.practice_weaknesses',
+                                      fallback: 'Practice Weaknesses',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.indigo500,
+                                    foregroundColor: Colors.white,
+                                    minimumSize: Size(double.infinity, 56.h),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16.r),
+                                    ),
+                                    elevation: 0,
+                                  ),
+                                );
+                                if (!VowlMotion.shouldReduceMotion(context)) {
+                                  button = button
+                                      .animate()
+                                      .slideY(
+                                        begin: 1,
+                                        duration: 400.ms,
+                                        curve: Curves.easeOut,
+                                      )
+                                      .fadeIn();
+                                }
+                                return button;
+                              }(),
+                            ),
+                          ),
+                        ),
+                    ],
+                  );
+                },
               );
             },
           );
@@ -355,6 +493,13 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   }
 
   Widget _buildMistakeCard(ErrorJournalEntry entry, int index, bool isDark) {
+    final String uAnswer = entry.userAnswer.trim().isEmpty
+        ? context.tr('profile.missed', fallback: 'Missed / No text')
+        : entry.userAnswer;
+    final String cAnswer = entry.correctAnswer.trim().isEmpty
+        ? context.tr('profile.no_text', fallback: 'Visual match')
+        : entry.correctAnswer;
+
     Widget card = ScaleButton(
       onTap: () async {
         di.sl<HapticService>().selection();
@@ -401,15 +546,25 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                     ),
                   ),
                 ),
-                IconButton(
-                  icon: Icon(
-                    Icons.close_rounded,
-                    size: 20.r,
-                    color: isDark ? Colors.white54 : Colors.black54,
-                  ),
+                TextButton(
                   onPressed: () => _dismissMistake(entry.id),
-                  padding: EdgeInsets.zero,
-                  constraints: const BoxConstraints(),
+                  style: TextButton.styleFrom(
+                    foregroundColor: AppColors.red500,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 4.h,
+                    ),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(
+                    context.tr('profile.remove_mistake', fallback: 'Remove'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -429,7 +584,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
               Icons.close_rounded,
               AppColors.red500,
               context.tr('profile.you_answered', fallback: 'You answered:'),
-              entry.userAnswer,
+              uAnswer,
             ),
             SizedBox(height: 8.h),
             _buildAnswerRow(
@@ -437,22 +592,18 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
               Icons.check_rounded,
               AppColors.emerald500,
               context.tr('profile.correct_answer', fallback: 'Correct answer:'),
-              entry.correctAnswer,
+              cAnswer,
             ),
           ],
         ),
       ),
     );
 
+    // Removed the dynamic delay index to eliminate lag during scroll
     if (!VowlMotion.shouldReduceMotion(context)) {
       return card
           .animate()
-          .slideY(
-            begin: 0.2,
-            delay: (index.clamp(0, 10) * 50).ms,
-            duration: 300.ms,
-            curve: Curves.easeOutCubic,
-          )
+          .slideY(begin: 0.1, duration: 300.ms, curve: Curves.easeOutCubic)
           .fadeIn();
     }
 
