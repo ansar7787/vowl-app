@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class GuessTitleLabelRack extends StatelessWidget {
   final List<String> labels;
@@ -28,12 +29,24 @@ class GuessTitleLabelRack extends StatelessWidget {
       children: List.generate(labels.length, (index) {
         final label = labels[index];
         final isSelected = selectedTitle == label;
+        final isCorrectOption = label == correct;
 
-        if (isAnswered && !isSelected) {
-          return Opacity(
-            opacity: 0.2,
-            child: _buildLabelCard(label, color, isDark, enabled: false),
-          );
+        if (isAnswered) {
+          if (isSelected) {
+            return Visibility(
+              maintainSize: true,
+              maintainAnimation: true,
+              maintainState: true,
+              visible: false,
+              child: _buildLabelCard(label, color, isDark, enabled: false),
+            );
+          }
+          if (!isCorrectOption) {
+            return Opacity(
+              opacity: 0.2,
+              child: _buildLabelCard(label, color, isDark, enabled: false),
+            );
+          }
         }
 
         return Draggable<String>(
@@ -47,7 +60,13 @@ class GuessTitleLabelRack extends StatelessWidget {
             opacity: 0.4,
             child: _buildLabelCard(label, color, isDark),
           ),
-          child: _buildLabelCard(label, color, isDark),
+          child: _buildLabelCard(
+            label, 
+            color, 
+            isDark, 
+            isAnswered: isAnswered, 
+            isCorrectOption: isCorrectOption,
+          ),
         );
       }),
     );
@@ -59,24 +78,34 @@ class GuessTitleLabelRack extends StatelessWidget {
     bool isDark, {
     bool isFeedback = false,
     bool enabled = true,
+    bool isAnswered = false,
+    bool isCorrectOption = false,
   }) {
+    final showCorrect = isAnswered && isCorrectOption;
+    
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: isDark ? Colors.grey.shade900 : Colors.white,
+        color: showCorrect 
+            ? AppColors.gameCorrect.withValues(alpha: 0.15) 
+            : (isDark ? Colors.grey.shade900 : Colors.white),
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
           BoxShadow(
-            color: isDark ? Colors.black45 : Colors.black12,
+            color: showCorrect
+                ? AppColors.gameCorrect.withValues(alpha: 0.3)
+                : (isDark ? Colors.black45 : Colors.black12),
             blurRadius: isFeedback ? 15 : 6,
             offset: Offset(0, isFeedback ? 8 : 2),
           ),
         ],
         border: Border.all(
-          color: isFeedback
-              ? color
-              : (isDark ? Colors.white10 : Colors.grey.shade300),
-          width: 2,
+          color: showCorrect 
+              ? AppColors.gameCorrect 
+              : (isFeedback
+                  ? color
+                  : (isDark ? Colors.white10 : Colors.grey.shade300)),
+          width: showCorrect ? 2 : (isFeedback ? 2 : 1.5),
         ),
       ),
       child: Text(
@@ -86,7 +115,9 @@ class GuessTitleLabelRack extends StatelessWidget {
           fontFamily: 'Outfit',
           fontSize: 12.sp,
           fontWeight: FontWeight.w900,
-          color: isDark ? Colors.white70 : Colors.black87,
+          color: showCorrect 
+              ? AppColors.gameCorrect 
+              : (isDark ? Colors.white70 : Colors.black87),
         ),
       ),
     );

@@ -11,7 +11,8 @@ import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mi
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_instruction.dart';
-import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_options.dart';
+import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_cargo_crate.dart';
+import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_label_rack.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 
@@ -42,11 +43,13 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
+  final ValueNotifier<String?> _selectedTitle = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _showTypeToConfirm.dispose();
+    _selectedTitle.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
@@ -110,6 +113,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
   @override
   void onQuestionReset() {
     _showTypeToConfirm.value = false;
+    _selectedTitle.value = null;
   }
 
   @override
@@ -168,47 +172,43 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                                         InstructionHelper.getInstruction(quest),
                                   ),
                                   SizedBox(height: 24.h),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: EdgeInsets.all(24.r),
-                                    decoration: BoxDecoration(
-                                      color: isDark
-                                          ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(
-                                              alpha: 0.02,
+                                  ValueListenableBuilder<String?>(
+                                    valueListenable: _selectedTitle,
+                                    builder: (context, selectedTitle, _) {
+                                      return Column(
+                                        children: [
+                                          GuessTitleCargoCrate(
+                                            passage: quest.passage ?? "",
+                                            correct: quest.correctAnswer ?? "",
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            selectedTitle: selectedTitle,
+                                            isAnswered: isAnsweredNotifier.value,
+                                            isCorrect: isCorrectNotifier.value,
+                                            onAccept: (title) {
+                                              _selectedTitle.value = title;
+                                              final isCorrect = title.trim().toLowerCase() ==
+                                                  (quest.correctAnswer ?? "").trim().toLowerCase();
+                                              _submitFinalAnswer(isCorrect, quest, title);
+                                            },
+                                          ),
+                                          SizedBox(height: 32.h),
+                                          if (!isAnsweredNotifier.value || isCorrectNotifier.value == false)
+                                            GuessTitleLabelRack(
+                                              labels: quest.options ?? [],
+                                              correct: quest.correctAnswer ?? "",
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                              selectedTitle: selectedTitle,
+                                              isAnswered: isAnsweredNotifier.value,
                                             ),
-                                      borderRadius: BorderRadius.circular(20.r),
-                                      border: Border.all(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.3,
-                                        ),
-                                        width: 1,
-                                      ),
-                                    ),
-                                    child: _buildPassageContent(
-                                      quest,
-                                      theme.primaryColor,
-                                      isDark,
-                                    ),
+                                        ],
+                                      );
+                                    },
                                   ),
-                                  if (!isAnsweredNotifier.value ||
-                                      isCorrectNotifier.value == null) ...[
+                                  if (isAnsweredNotifier.value) ...[
                                     SizedBox(height: 24.h),
-                                    GuessTitleOptions(
-                                      options: quest.options ?? [],
-                                      correctAnswer: quest.correctAnswer ?? "",
-                                      primaryColor: theme.primaryColor,
-                                      isDark: isDark,
-                                      isAnswered: isAnsweredNotifier.value,
-                                      onOptionSelected:
-                                          (isCorrect, selectedOption) {
-                                            _submitFinalAnswer(
-                                              isCorrect,
-                                              quest,
-                                              selectedOption,
-                                            );
-                                          },
-                                    ),
+                                    _buildExplanationCard(quest, theme.primaryColor, isDark),
                                   ],
                                 ],
                               ),
@@ -219,7 +219,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                               height:
                                   (_showTypeToConfirm.value &&
                                       isAnsweredNotifier.value)
-                                  ? 380.h
+                                  ? 32.h
                                   : 60.h,
                             ),
                           ),
@@ -258,60 +258,73 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
     );
   }
 
-  Widget _buildPassageContent(
+
+
+  Widget _buildExplanationCard(
     ReadingQuest quest,
     Color primaryColor,
     bool isDark,
   ) {
-    final passage = quest.passage ?? "";
-    final evidence = quest.evidenceLine ?? "";
-
-    if (!isAnsweredNotifier.value ||
-        evidence.isEmpty ||
-        !passage.contains(evidence)) {
-      return Text(
-        passage,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 18.sp,
-          height: 1.6,
-          color: isDark ? Colors.white70 : Colors.black87,
-        ),
-      );
+    if (quest.whyThisTitle == null && quest.explanation == null) {
+      return const SizedBox.shrink();
     }
 
-    final parts = passage.split(evidence);
-    if (parts.length != 2) {
-      return Text(
-        passage,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 18.sp,
-          height: 1.6,
-          color: isDark ? Colors.white70 : Colors.black87,
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.3),
         ),
-      );
-    }
-
-    return RichText(
-      text: TextSpan(
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 18.sp,
-          height: 1.6,
-          color: isDark ? Colors.white70 : Colors.black87,
-        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextSpan(text: parts[0]),
-          TextSpan(
-            text: evidence,
-            style: TextStyle(
-              backgroundColor: primaryColor.withValues(alpha: 0.2),
-              color: primaryColor,
-              fontWeight: FontWeight.w700,
-            ),
+          Row(
+            children: [
+              Icon(
+                Icons.lightbulb_outline_rounded,
+                color: primaryColor,
+                size: 24.sp,
+              ),
+              SizedBox(width: 8.w),
+              Text(
+                'Why this title?',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w700,
+                  color: primaryColor,
+                ),
+              ),
+            ],
           ),
-          TextSpan(text: parts[1]),
+          SizedBox(height: 12.h),
+          if (quest.whyThisTitle != null) ...[
+            Text(
+              quest.whyThisTitle!,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white : Colors.black87,
+                height: 1.5,
+              ),
+            ),
+            SizedBox(height: 12.h),
+          ],
+          if (quest.explanation != null)
+            Text(
+              quest.explanation!,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                color: isDark ? Colors.white70 : Colors.black54,
+                height: 1.5,
+              ),
+            ),
         ],
       ),
     );

@@ -72,33 +72,52 @@ class GuessTitleCargoCrate extends StatelessWidget {
                     style: BorderStyle.solid,
                   ),
                 ),
-                child: Center(
-                  child: AnimatedSwitcher(
-                    duration: 300.milliseconds,
-                    child: selectedTitle != null
-                        ? Text(
-                            selectedTitle!.toUpperCase(),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isCorrect == true
-                                  ? tokens.gameCorrect
-                                  : tokens.gameIncorrect,
-                            ),
-                          )
-                        : Text(
-                            "DRAG & DROP TITLE HERE",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              color: color.withValues(
-                                alpha: isHovered ? 0.8 : 0.4,
-                              ),
-                              fontSize: 13.sp,
-                              letterSpacing: 1.5,
-                            ),
-                          ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(14.r),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      // Subtle crate vector in the background
+                      Positioned(
+                        right: -10.w,
+                        bottom: -15.h,
+                        child: Icon(
+                          Icons.inventory_2_rounded,
+                          size: 90.r,
+                          color: borderClr.withValues(alpha: 0.12),
+                        ),
+                      ),
+                      // Text content
+                      Center(
+                        child: AnimatedSwitcher(
+                          duration: 300.milliseconds,
+                          child: selectedTitle != null
+                              ? Text(
+                                  selectedTitle!.toUpperCase(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isCorrect == true
+                                        ? tokens.gameCorrect
+                                        : (isCorrect == false ? tokens.gameIncorrect : color),
+                                  ),
+                                )
+                              : Text(
+                                  "DRAG & DROP TITLE HERE",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    color: color.withValues(
+                                      alpha: isHovered ? 0.8 : 0.4,
+                                    ),
+                                    fontSize: 13.sp,
+                                    letterSpacing: 1.5,
+                                  ),
+                                ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               );

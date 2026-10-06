@@ -656,14 +656,14 @@ class GameInstructionService {
           "Don't subvocalize (read out loud in your head)! Let your eyes glide over the text.",
     ),
     GameSubtype.guessTitle: GameBriefing(
-      title: "Title Tactician",
+      title: "Name That Story",
       icon: Icons.title_rounded,
       objective:
-          "Read the passage and choose the most appropriate title. Mastering reading comprehension allows you to quickly extract key information in the real world.",
-      rules: ["Identify main theme", "Check all options", "Summarize the core"],
-      actionText: "Deduce Title",
+          "Read the passage and figure out what it's mostly about. Picking the right title helps you quickly grasp the big picture of any English text.",
+      rules: ["Read the whole story", "Look for the main point", "Drag the best title into the crate"],
+      actionText: "Play Now",
       tip:
-          "A great title captures the 'big picture'. Look for the most repeated themes!",
+          "PRO TIP: A good title covers the whole story, not just one small detail that was mentioned once!",
     ),
     GameSubtype.readAndMatch: GameBriefing(
       title: "Semantic Bridge",
