@@ -659,11 +659,11 @@ class GameInstructionService {
       title: "Name That Story",
       icon: Icons.title_rounded,
       objective:
-          "Read the passage and figure out what it's mostly about. Picking the right title helps you quickly grasp the big picture of any English text.",
-      rules: ["Read the whole story", "Look for the main point", "Drag the best title into the crate"],
+          "Read the story and figure out the main point. Picking the right title proves you understand the whole picture, not just a random detail.",
+      rules: ["Read the whole story", "Find the main point", "Drag the best title"],
       actionText: "Play Now",
       tip:
-          "PRO TIP: A good title covers the whole story, not just one small detail that was mentioned once!",
+          "PRO TIP: Don't get tricked by a word that only appeared once. A good title summarizes the entire text!",
     ),
     GameSubtype.readAndMatch: GameBriefing(
       title: "Semantic Bridge",

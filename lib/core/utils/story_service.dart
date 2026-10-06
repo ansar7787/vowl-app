@@ -129,7 +129,7 @@ class StoryServiceImpl implements StoryService {
     'findWordMeaning':
         "Let's be vocabulary detectives! We'll look at the definition, scan the passage, and tap the exact word that matches it.",
     'guessTitle':
-        "Name that story! Read the passage and figure out what it's mostly about. Picking the right title helps you quickly grasp the big picture of any English text.",
+        "Name that story! Read the story and figure out the main point. Picking the right title proves you understand the whole picture, not just a random detail.",
     'paragraphSummary':
         "Let's get to the point! Read the text and practice condensing complex ideas into a simple, clear summary.",
     'readAndAnswer':
@@ -943,11 +943,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'guesstitle': [
       "",
-      "Great start! You're already getting a feel for spotting the main ideas.",
-      "Nice work! You're picking up on the themes much faster now.",
-      "Level 50! You're flying through these stories.",
-      "Level 100! You can spot the main point of a story in seconds.",
-      "Level 200! You read and understand the big picture just like a native speaker.",
+      "Off to a solid start! You're already getting a feel for the main ideas.",
+      "Look at you go! You're picking up on the themes much faster now.",
+      "50 levels down! You're practically skimming these stories now.",
+      "100 levels! You're spotting the main point without even breaking a sweat.",
+      "200 levels! You're reading the big picture just like a native speaker.",
     ],
     'paragraphsummary': [
       "",

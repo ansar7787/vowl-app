@@ -175,9 +175,15 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
   Widget _buildFlashcard(BuildContext context, bool isDark) {
     final entry = _entries[_currentIndex];
 
-    // Generate 2 options: their old wrong answer, and the correct one.
-    // Shuffle them so they don't know which is which.
-    final options = [entry.userAnswer, entry.correctAnswer];
+    String wrongAnswer = entry.userAnswer.trim();
+    if (wrongAnswer.isEmpty || wrongAnswer.toLowerCase() == entry.correctAnswer.trim().toLowerCase()) {
+      wrongAnswer = context.tr('practice.timeout_answer', fallback: '(No Answer / Timeout)');
+    }
+
+    // Generate options: their old wrong answer, and the correct one.
+    // Use a Set to ensure options are strictly unique, then toList.
+    final options = [wrongAnswer, entry.correctAnswer].toSet().toList();
+    
     // Use the ID as a random seed so the shuffle is consistent for this specific card
     // but random across cards.
     final random = Random(entry.id.hashCode);

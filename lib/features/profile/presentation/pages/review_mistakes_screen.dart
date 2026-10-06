@@ -56,11 +56,61 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   }
 
   Future<void> _clearAll() async {
-    await ErrorJournalCollector.clearAll(userId: _userId);
-    if (mounted) {
-      setState(() {
-        _entries.clear();
-      });
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+          backgroundColor: isDark ? AppColors.slate800 : Colors.white,
+          title: Text(
+            context.tr('profile.clear_all_title', fallback: 'Clear All Mistakes?'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontWeight: FontWeight.bold,
+              color: isDark ? Colors.white : Colors.black,
+            ),
+          ),
+          content: Text(
+            context.tr('profile.clear_all_desc', fallback: 'This will permanently delete your entire error journal. You will not be able to practice these mistakes again.'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              color: isDark ? Colors.white70 : Colors.black87,
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(
+                context.tr('general.cancel', fallback: 'Cancel'),
+                style: TextStyle(color: isDark ? Colors.white60 : Colors.black54, fontFamily: 'Outfit', fontWeight: FontWeight.bold),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.red500,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+                elevation: 0,
+              ),
+              child: Text(
+                context.tr('general.delete', fallback: 'Delete'),
+                style: const TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (confirmed == true) {
+      await ErrorJournalCollector.clearAll(userId: _userId);
+      if (mounted) {
+        setState(() {
+          _entries.clear();
+        });
+      }
     }
   }
 
