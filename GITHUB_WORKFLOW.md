@@ -25,16 +25,21 @@ The repository has been split into two isolated branches to protect the real AdM
 When you wake up and want to code a new feature, just follow these 3 steps:
 
 ### Step 1: Check your branch
+
 Before you write any code, make sure you are on the private production branch.
+
 ```bash
 git checkout master
 ```
 
 ### Step 2: Write your code & test
+
 Code your new feature, run it on your phone, and make sure it works!
 
 ### Step 3: Save and Backup (Private)
+
 When your feature is finished, save it to your Private GitHub repository so you don't lose it:
+
 ```bash
 git add .
 git commit -m "feat: added a new cool feature"
@@ -42,8 +47,10 @@ git push private master
 ```
 
 ### (Optional) Step 4: Show it to HR
-If the feature is amazing and you want recruiters to see it on your public GitHub, **do not merge it yourself.** 
-Just open an AI chat and say: 
+
+If the feature is amazing and you want recruiters to see it on your public GitHub, **do not merge it yourself.**
+Just open an AI chat and say:
+
 > *"Read GITHUB_WORKFLOW.md and safely copy my new feature over to the portfolio branch."*
 
 The AI will handle the complicated merging to ensure your private AdMob IDs don't accidentally leak to the public!
