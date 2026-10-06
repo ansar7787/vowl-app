@@ -269,11 +269,12 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             ),
           ),
         ],
-      );
-      if (!VowlMotion.shouldReduceMotion(context)) {
-        w = w.animate().scale(delay: 200.ms, duration: 400.ms, curve: Curves.easeOutBack).fadeIn();
-      }
-      return w;
+      ),
+    );
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      w = w.animate().scale(delay: 200.ms, duration: 400.ms, curve: Curves.easeOutBack).fadeIn();
+    }
+    return w;
   }
 
   Widget _buildShimmerItem(bool isDark) {
@@ -372,6 +373,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             ),
           ],
         ),
+      ),
     );
     
     if (!VowlMotion.shouldReduceMotion(context)) {
@@ -421,6 +423,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     );
   }
 }
+
 
 
 
