@@ -88,7 +88,8 @@ class ErrorJournalCollector {
         final List<String> logs = prefs.getStringList(_localKey) ?? [];
         
         var entries = logs
-            .map((str) => ErrorJournalEntry.fromJson(jsonDecode(str)))
+            .map((str) => ErrorJournalEntry.fromJson(
+                jsonDecode(str) as Map<String, dynamic>))
             .toList();
 
         if (filterGameType != null && filterGameType.isNotEmpty) {
@@ -146,7 +147,7 @@ class ErrorJournalCollector {
         final List<String> logs = prefs.getStringList(_localKey) ?? [];
         
         final filteredLogs = logs.where((str) {
-          final decoded = jsonDecode(str);
+          final decoded = jsonDecode(str) as Map<String, dynamic>;
           return decoded['id'] != entryId;
         }).toList();
 
