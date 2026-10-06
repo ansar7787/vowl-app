@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'dart:async';
 import 'package:vowl/core/utils/reward_limit_service.dart';
-import 'package:vowl/core/services/ad_service.dart';
+import 'package:vowl/core/utils/ad_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
