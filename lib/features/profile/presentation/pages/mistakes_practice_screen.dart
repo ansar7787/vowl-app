@@ -18,7 +18,12 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class MistakesPracticeScreen extends StatefulWidget {
-  const MistakesPracticeScreen({super.key});
+  final List<ErrorJournalEntry>? initialEntries;
+
+  const MistakesPracticeScreen({
+    super.key,
+    this.initialEntries,
+  });
 
   @override
   State<MistakesPracticeScreen> createState() => _MistakesPracticeScreenState();
@@ -54,13 +59,20 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     final authState = context.read<AuthBloc>().state;
     _userId = authState.user?.id ?? 'local';
 
-    final allEntries = await ErrorJournalCollector.fetch(
-      userId: _userId,
-      limit: 100, 
-    );
-    
-    allEntries.shuffle();
-    final sessionEntries = allEntries.take(10).toList();
+    List<ErrorJournalEntry> sessionEntries;
+
+    if (widget.initialEntries != null && widget.initialEntries!.isNotEmpty) {
+      sessionEntries = List.from(widget.initialEntries!);
+      sessionEntries.shuffle();
+    } else {
+      final allEntries = await ErrorJournalCollector.fetch(
+        userId: _userId,
+        limit: 100, 
+      );
+      
+      allEntries.shuffle();
+      sessionEntries = allEntries.take(10).toList();
+    }
 
     if (mounted) {
       _entries.value = sessionEntries;
