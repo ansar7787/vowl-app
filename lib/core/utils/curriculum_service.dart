@@ -1,148 +1,71 @@
-import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vowl/core/data/constants/quest_registry.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 
 /// Centralised coordinator that maps dynamic curriculum skill categories,
 /// gates level configurations, and pre-warms local asset indices safely.
 ///
-/// ### Caching strategy
-/// Level counts are cached in a static Map so that multiple service
-/// instances (e.g., in tests) share the same results and avoid redundant
-/// asset probes. The cache can be cleared via [clearCache] for test isolation.
+/// ### Architecture (v2 — Build-Time Manifest)
+/// Level counts are now resolved from [CurriculumManifest], a const Map
+/// generated at build time by `scripts/generate_curriculum_manifest.dart`.
+/// This eliminates all runtime asset probing, manifest loading, and async
+/// overhead. The cache is retained only as a compatibility shim for callers
+/// that still read [levelCache] or call [getCachedLevels].
 ///
-/// ### Testability
-/// FIX (MEDIUM-4): Previously `_levelCache` and `_pendingFetches` were private
-/// static fields with no way to reset them between tests. Static state that
-/// persists across test runs causes order-dependent failures. [clearCache]
-/// provides a clean reset point.
+/// ### Migration
+/// - [prewarmCache] is now a no-op (all data is compile-time const).
+/// - [getTotalLevels] returns synchronously via `Future.value`.
+/// - Callers should migrate to [CurriculumManifest.getLevels] directly.
 class CurriculumService {
   CurriculumService._(); // Non-instantiable utility class.
 
-  // ── Cache ─────────────────────────────────────────────────────────────────
+  // ── Cache (compatibility shim) ──────────────────────────────────────────
 
   /// Resolved level counts keyed by game-type string.
+  /// Now backed by [CurriculumManifest.levelCounts] — retained for backward
+  /// compatibility with callers that read this map directly.
   @visibleForTesting
   static final Map<String, int> levelCache = {};
-
-  /// In-flight fetch futures — deduplicate parallel calls for the same type.
-  static final Map<String, Future<int>> _pendingFetches = {};
 
   /// Clears all cached results. Call in test [setUp] or [tearDown] to prevent
   /// cross-test pollution.
   static void clearCache() {
     levelCache.clear();
-    _pendingFetches.clear();
   }
 
   // ── Public API ────────────────────────────────────────────────────────────
 
-  /// Returns the cached level count for [gameType], or `null` if not yet
-  /// resolved. Does not trigger a fetch.
-  static int? getCachedLevels(String gameType) => levelCache[gameType];
+  /// Returns the level count for [gameType] instantly from the build-time
+  /// manifest. Always returns a value (never `null`).
+  static int? getCachedLevels(String gameType) =>
+      levelCache[gameType] ?? CurriculumManifest.levelCounts[gameType];
 
-  /// Pre-warms the level count cache for a list of game types in the
-  /// background. Safe to call during app startup — completions are ignored.
+  /// Pre-warms the level count cache. Now a no-op since level counts are
+  /// resolved from the build-time [CurriculumManifest].
+  ///
+  /// Retained for backward compatibility — existing call sites do not need
+  /// to be updated. This method does nothing and returns immediately.
   static void prewarmCache(List<String> gameTypes) {
-    unawaited(_prewarmCacheFromManifest(gameTypes));
-  }
+    // No-op: CurriculumManifest provides all data at compile time.
+    // Populate levelCache for any code that reads it directly.
+    for (final type in gameTypes) {
+      levelCache.putIfAbsent(type, () => CurriculumManifest.getLevels(type));
+    }
 
-  static Future<void> _prewarmCacheFromManifest(List<String> gameTypes) async {
-    try {
-      // 1. Load the manifest using the official future-proof API (handles .json or .bin natively).
-      final AssetManifest manifest = await AssetManifest.loadFromAssetBundle(
-        rootBundle,
+    if (kDebugMode) {
+      debugPrint(
+        'CurriculumService: prewarmCache called for ${gameTypes.length} '
+        'types (resolved from build-time manifest).',
       );
-
-      // Convert to Set for O(1) lookups in memory.
-      final Set<String> manifestPaths = manifest.listAssets().toSet();
-
-      // 2. Loop through games and count levels instantly in RAM.
-      for (final type in gameTypes) {
-        if (!levelCache.containsKey(type)) {
-          int totalLevels = 0;
-          int batchIndex = 1;
-
-          while (batchIndex <= 20) {
-            final start = (batchIndex - 1) * 10 + 1;
-            final path = QuestRegistry.getAssetPath(type, start);
-
-            if (manifestPaths.contains(path)) {
-              totalLevels += 10;
-              batchIndex++;
-            } else {
-              break;
-            }
-          }
-
-          final finalCount = totalLevels > 0 ? totalLevels : 10;
-          levelCache[type] = finalCount;
-
-          if (kDebugMode) {
-            debugPrint(
-              'CurriculumService: "$type" resolved as $finalCount levels.',
-            );
-          }
-        }
-      }
-    } catch (e) {
-      // Fallback if AssetManifest parsing fails for any reason
-      for (final type in gameTypes) {
-        if (!levelCache.containsKey(type)) {
-          unawaited(getTotalLevels(type));
-        }
-      }
     }
   }
 
   /// Returns the total number of available levels for [gameType].
   ///
-  /// Results are cached after the first call. Parallel calls for the same
-  /// type share a single in-flight future to avoid redundant asset probes.
+  /// Now resolves instantly from [CurriculumManifest] — no async I/O needed.
+  /// Returns a [Future] only for API compatibility with existing callers.
   static Future<int> getTotalLevels(String gameType) {
-    final cached = levelCache[gameType];
-    if (cached != null) return Future.value(cached);
-
-    // Return the in-flight future if already resolving.
-    return _pendingFetches.putIfAbsent(gameType, () => _fetch(gameType));
-  }
-
-  // ── Internals ─────────────────────────────────────────────────────────────
-
-  static Future<int> _fetch(String gameType) async {
-    int totalLevels = 0;
-    int batchIndex = 1;
-
-    try {
-      // Safety cap: maximum 20 batches × 10 levels = 200 levels.
-      while (batchIndex <= 20) {
-        final start = (batchIndex - 1) * 10 + 1;
-        final path = QuestRegistry.getAssetPath(gameType, start);
-
-        try {
-          await rootBundle.load(path);
-          totalLevels += 10;
-          batchIndex++;
-        } catch (_) {
-          // No asset at this batch index — we've found the boundary.
-          break;
-        }
-      }
-
-      // Guarantee at least 10 levels (level 1 is always seeded).
-      final finalCount = totalLevels > 0 ? totalLevels : 10;
-      levelCache[gameType] = finalCount;
-
-      if (kDebugMode) {
-        debugPrint(
-          'CurriculumService: "$gameType" resolved as $finalCount levels (Fallback).',
-        );
-      }
-
-      return finalCount;
-    } finally {
-      // Always remove from pending so a future retry can enter the fetch path.
-      _pendingFetches.remove(gameType);
-    }
+    final count = CurriculumManifest.getLevels(gameType);
+    levelCache[gameType] = count;
+    return Future.value(count);
   }
 }

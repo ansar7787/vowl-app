@@ -10,7 +10,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:confetti/confetti.dart';
 
-import 'package:vowl/core/utils/curriculum_service.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -152,14 +152,11 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       if (mounted) _entryController.forward();
     });
 
-    // Check Cache Synchronously for Instant Load
-    final cachedLevels = CurriculumService.getCachedLevels(widget.gameType);
-    if (cachedLevels != null) {
-      _totalLevels = cachedLevels;
-      _isLoading = false;
-    }
+    // Resolve level count synchronously from build-time manifest — no async needed
+    _totalLevels = CurriculumManifest.getLevels(widget.gameType);
+    _isLoading = false;
 
-    _loadCurriculum();
+    _loadPrerequisites();
   }
 
   @override
@@ -173,11 +170,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     }
   }
 
-  Future<void> _loadCurriculum() async {
-    final levels = await CurriculumService.getTotalLevels(widget.gameType);
-    if (!mounted) return;
-
-    // Preload current quest batch
+  Future<void> _loadPrerequisites() async {
+    // Preload current quest batch for instant game start
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
       final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
@@ -185,12 +179,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     }
 
     if (mounted) {
-      if (_totalLevels != levels || _isLoading) {
-        _totalLevels = levels;
-        _isLoading = false;
-        _updateState();
-      }
-
+      _updateState();
       WidgetsBinding.instance.addPostFrameCallback((_) {
         _checkAndShowStoryBeat();
       });

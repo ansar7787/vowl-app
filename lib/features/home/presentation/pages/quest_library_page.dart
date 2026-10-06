@@ -14,7 +14,6 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class _LocalPalette {
@@ -57,15 +56,6 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     ];
     _allSubtypes = GameSubtype.values.where((s) => !s.isLegacy).toList();
     _searchController.addListener(_onSearchChanged);
-
-    // FIX: Prewarm the curriculum cache for ALL game subtypes so that when the
-    // user taps any quest card, ModernCategoryMap can read the level count
-    // synchronously from cache instead of doing a cold async asset probe.
-    // Moved to addPostFrameCallback to guarantee 60fps page transition animations
-    // by deferring the heavy JSON parsing (78 files) until after the layout builds.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      CurriculumService.prewarmCache(_allSubtypes.map((s) => s.name).toList());
-    });
   }
 
   void _onSearchChanged() {

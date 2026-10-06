@@ -15,6 +15,7 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/curriculum_service.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/category_radar_chart.dart';
@@ -22,9 +23,6 @@ import 'package:vowl/features/home/presentation/widgets/adaptive_smart_mix_widge
 import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-
-/// Configuration for category games scaling and rules
-const int _kMaxLevelsPerGame = 200;
 
 class CategoryGamesPage extends StatefulWidget {
   const CategoryGamesPage({super.key, required this.categoryId});
@@ -392,14 +390,15 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     final contentColor = Theme.of(context).colorScheme.onSurface;
     final displayColor = theme.primaryColor;
 
-    // Calculate Progress dynamically
+    // Calculate Progress dynamically using real per-game level counts
     int clearedLevels = 0;
+    int totalLevels = 0;
     for (var g in games) {
+      final gameLevels = CurriculumManifest.getLevels(g.name);
       final completed = user.completedLevels[g.name]?.length ?? 0;
-      clearedLevels += completed.clamp(0, _kMaxLevelsPerGame);
+      clearedLevels += completed.clamp(0, gameLevels);
+      totalLevels += gameLevels;
     }
-
-    final totalLevels = games.length * _kMaxLevelsPerGame;
     // 10/10 Safeguard: Prevents NaN crashes if a category has no mapped games
     final targetProgress = totalLevels > 0
         ? (clearedLevels / totalLevels)
@@ -674,10 +673,13 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     final displayColor = theme.primaryColor;
     final contentColor = Theme.of(context).colorScheme.onSurface;
 
+    // Use build-time manifest for accurate per-game level count
+    final gameTotalLevels = CurriculumManifest.getLevels(subtype.name);
+
     // Abstract the math out of the widget parameters to ensure raw floats are clean
     final double cardProgress =
-        ((currentLevel - 1).clamp(0, _kMaxLevelsPerGame)) /
-        _kMaxLevelsPerGame.toDouble();
+        ((currentLevel - 1).clamp(0, gameTotalLevels)) /
+        gameTotalLevels.toDouble();
     final missionPercent = (cardProgress * 100).toInt();
 
     return Semantics(

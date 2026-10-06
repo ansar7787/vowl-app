@@ -7,6 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:confetti/confetti.dart';
+
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -50,9 +52,12 @@ class _KidsLevelMapState extends State<KidsLevelMap>
   final ValueNotifier<int?> _celebratingLevel = ValueNotifier(null);
   late ConfettiController _confettiController;
 
+  late final int _totalLevels;
+
   @override
   void initState() {
     super.initState();
+    _totalLevels = CurriculumManifest.getKidsLevels(widget.gameType);
 
     // Calculate initial scroll position so the user instantly lands on their current level
     double initialOffset = 0.0;
@@ -63,7 +68,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       final highestCompleted = completedLevels.isEmpty
           ? 0
           : completedLevels.reduce(math.max);
-      final targetLevel = math.min(200, highestCompleted + 1);
+      final targetLevel = math.min(_totalLevels, highestCompleted + 1);
 
       final targetOffset = (targetLevel - 1) * 200.h;
       initialOffset = math.max(0.0, targetOffset - 300.h);
@@ -210,7 +215,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
               : completedLevels.reduce(math.max);
 
           // Always scroll to the node the user actually needs to interact with next
-          final targetLevel = math.min(200, highestCompleted + 1);
+          final targetLevel = math.min(_totalLevels, highestCompleted + 1);
 
           // Store for unlock-animation delta detection
           _previousActiveNode ??= targetLevel;
@@ -300,7 +305,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         final highestCompleted = completedLevels.isEmpty
             ? 0
             : completedLevels.reduce(math.max);
-        final currLevel = math.min(200, highestCompleted + 1);
+        final currLevel = math.min(_totalLevels, highestCompleted + 1);
         _previousActiveNode = currLevel;
 
         if (prevLevel != null && currLevel > prevLevel) {
@@ -528,7 +533,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                                   isUnlockAnimating: _isUnlockAnimating.value,
                                   celebratingLevel: _celebratingLevel.value,
                                 );
-                              }, childCount: 200),
+                              }, childCount: _totalLevels),
                             ),
                           ),
                         ],
