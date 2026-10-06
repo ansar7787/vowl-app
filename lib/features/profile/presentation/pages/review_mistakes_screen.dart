@@ -11,6 +11,8 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:shimmer/shimmer.dart';
+import 'package:vowl/core/data/constants/quest_registry.dart';
 
 class ReviewMistakesScreen extends StatefulWidget {
   const ReviewMistakesScreen({super.key});
@@ -150,7 +152,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
         ],
       ),
       body: _isLoading 
-        ? const Center(child: CircularProgressIndicator())
+        ? _buildShimmerLoading(context, isDark)
         : _entries.isEmpty 
           ? _buildEmptyState(context, isDark)
           : _buildList(context, isDark),
@@ -225,6 +227,27 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     );
   }
 
+  Widget _buildShimmerLoading(BuildContext context, bool isDark) {
+    return ListView.separated(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+      itemCount: 6,
+      separatorBuilder: (_, _) => SizedBox(height: 12.h),
+      itemBuilder: (context, index) {
+        return Shimmer.fromColors(
+          baseColor: isDark ? AppColors.slate800 : Colors.grey[300]!,
+          highlightColor: isDark ? AppColors.slate700 : Colors.grey[100]!,
+          child: Container(
+            height: 140.h,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16.r),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   Widget _buildList(BuildContext context, bool isDark) {
     return ListView.separated(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
@@ -247,19 +270,25 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             );
           },
           child: ScaleButton(
-            onTap: () {
+            onTap: () async {
               di.sl<HapticService>().selection();
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    context.tr('profile.use_practice_btn', fallback: "Use 'Practice Weaknesses' to replay this mistake!"),
-                    style: const TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
-                  ),
-                  behavior: SnackBarBehavior.floating,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
-                  duration: const Duration(seconds: 2),
-                ),
+              
+              final category = QuestRegistry.gameToCategory[entry.gameType] ?? 'reading';
+              final uri = Uri(
+                path: '/game',
+                queryParameters: {
+                  'category': category,
+                  'subtype': entry.gameType,
+                  'level': entry.level.toString(),
+                },
               );
+              
+              await context.push(uri.toString());
+              
+              // Reload if they created new mistakes while replaying
+              if (mounted) {
+                _loadMistakes();
+              }
             },
             child: GlassTile(
               borderRadius: BorderRadius.circular(16.r),
