@@ -17,6 +17,8 @@ import 'package:vowl/features/home/presentation/pages/streak_screen.dart';
 import 'package:vowl/features/home/presentation/pages/quest_library_page.dart';
 import 'package:vowl/features/profile/presentation/pages/trophy_room_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/progress_dashboard_screen.dart';
+import 'package:vowl/features/profile/presentation/pages/review_mistakes_screen.dart';
+import 'package:vowl/features/profile/presentation/pages/mistakes_practice_screen.dart';
 import 'package:vowl/features/scan_and_learn/presentation/pages/scan_and_learn_screen.dart';
 import 'package:vowl/features/photo_vocabulary/presentation/pages/photo_vocabulary_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -150,6 +152,20 @@ class HomeRoutes {
       path: AppRouter.progressDashboardRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
         child: const ProgressDashboardScreen(),
+        state: state,
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.reviewMistakesRoute,
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: const ReviewMistakesScreen(),
+        state: state,
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.practiceMistakesRoute,
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: const MistakesPracticeScreen(),
         state: state,
       ),
     ),

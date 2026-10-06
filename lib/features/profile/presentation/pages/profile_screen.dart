@@ -281,6 +281,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           },
                                         ),
                                       ),
+                                      SizedBox(height: 16.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: ProfileFeatureCard(
+                                          iconContent: Icon(
+                                            Icons.psychology_alt_rounded,
+                                            color: Colors.white,
+                                            size: 24.r,
+                                          ),
+                                          color: const Color(0xFFF59E0B), // Amber/Orange for review
+                                          shadowColor: const Color(0xFFD97706),
+                                          title: context.tr(
+                                            'profile.review_mistakes',
+                                            fallback: 'Review Mistakes',
+                                          ),
+                                          subtitle: context.tr(
+                                            'profile.review_mistakes_subtitle',
+                                            fallback: 'Targeted practice for past errors.',
+                                          ),
+                                          onTap: () {
+                                            di.sl<HapticService>().selection();
+                                            context.push(
+                                              AppRouter.reviewMistakesRoute,
+                                            );
+                                          },
+                                        ),
+                                      ),
                                     ],
                                   ),
 
