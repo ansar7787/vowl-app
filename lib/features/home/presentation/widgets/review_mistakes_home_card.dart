@@ -13,11 +13,8 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ReviewMistakesHomeCard extends StatefulWidget {
   final UserEntity user;
-  
-  const ReviewMistakesHomeCard({
-    super.key,
-    required this.user,
-  });
+
+  const ReviewMistakesHomeCard({super.key, required this.user});
 
   @override
   State<ReviewMistakesHomeCard> createState() => _ReviewMistakesHomeCardState();
@@ -31,7 +28,7 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
     super.initState();
     _loadMistakeCount();
   }
-  
+
   @override
   void dispose() {
     _mistakeCount.dispose();
@@ -54,7 +51,7 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
       valueListenable: _mistakeCount,
       builder: (context, count, _) {
         if (count == 0) return const SizedBox.shrink();
-        
+
         Widget card = ScaleButton(
           onTap: () async {
             di.sl<HapticService>().selection();
@@ -67,10 +64,10 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
             margin: EdgeInsets.only(top: 16.h),
             padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
-              color: AppColors.red500.withValues(alpha: 0.1),
+              color: AppColors.orange500.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: AppColors.red500.withValues(alpha: 0.2),
+                color: AppColors.orange500.withValues(alpha: 0.2),
                 width: 1,
               ),
             ),
@@ -79,12 +76,12 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
                 Container(
                   padding: EdgeInsets.all(12.r),
                   decoration: BoxDecoration(
-                    color: AppColors.red500.withValues(alpha: 0.15),
+                    color: AppColors.orange500.withValues(alpha: 0.15),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
-                    Icons.psychology_alt_rounded,
-                    color: AppColors.red500,
+                    Icons.fitness_center_rounded,
+                    color: AppColors.orange500,
                     size: 24.r,
                   ),
                 ),
@@ -94,26 +91,29 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        context.tr('home.review_mistakes_title', fallback: 'Review Mistakes'),
+                        context.tr(
+                          'home.review_mistakes_title',
+                          fallback: 'Review Mistakes',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.red500,
+                          color: AppColors.orange500,
                         ),
                       ),
                       SizedBox(height: 4.h),
                       Text(
                         context.tr(
-                          'home.review_mistakes_subtitle', 
-                          fallback: 'You have \$count mistakes to practice',
-                          args: [count.toString()]
+                          'home.review_mistakes_subtitle',
+                          fallback: 'You have {0} mistakes to practice',
+                          args: [count.toString()],
                         ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
-                          color: Theme.of(context).brightness == Brightness.dark 
-                              ? Colors.white70 
+                          color: Theme.of(context).brightness == Brightness.dark
+                              ? Colors.white70
                               : Colors.black87,
                         ),
                       ),
@@ -122,18 +122,18 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
                 ),
                 Icon(
                   Icons.arrow_forward_ios_rounded,
-                  color: AppColors.red500,
+                  color: AppColors.orange500,
                   size: 16.r,
                 ),
               ],
             ),
           ),
         );
-        
+
         if (!VowlMotion.shouldReduceMotion(context)) {
           card = card.animate().fadeIn().slideY(begin: 0.1);
         }
-        
+
         return card;
       },
     );
