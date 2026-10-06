@@ -32,7 +32,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     super.initState();
     _loadMistakes();
   }
-  
+
   @override
   void dispose() {
     _isLoading.dispose();
@@ -42,7 +42,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
 
   Future<void> _loadMistakes() async {
     _isLoading.value = true;
-    
+
     final authState = context.read<AuthBloc>().state;
     _userId = authState.user?.id ?? 'local';
 
@@ -50,7 +50,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       userId: _userId,
       limit: 50,
     );
-    
+
     if (mounted) {
       _entries.value = entries;
       _isLoading.value = false;
@@ -74,17 +74,22 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
         return AlertDialog(
           backgroundColor: isDark ? AppColors.slate800 : Colors.white,
           title: Text(
-            context.tr('profile.clear_all_title', fallback: 'Clear All Mistakes?'),
+            context.tr(
+              'profile.clear_all_title',
+              fallback: 'Clear All Mistakes?',
+            ),
           ),
           content: Text(
-            context.tr('profile.clear_all_desc', fallback: 'This will permanently delete your entire error journal. You will not be able to practice these mistakes again.'),
+            context.tr(
+              'profile.clear_all_desc',
+              fallback:
+                  'This will permanently delete your entire error journal. You will not be able to practice these mistakes again.',
+            ),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(false),
-              child: Text(
-                context.tr('general.cancel', fallback: 'Cancel'),
-              ),
+              child: Text(context.tr('general.cancel', fallback: 'Cancel')),
             ),
             TextButton(
               onPressed: () => Navigator.of(context).pop(true),
@@ -109,9 +114,12 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = (isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
-    final bgColor = isMidnight ? Colors.black : (isDark ? AppColors.slate900 : AppColors.slate50);
-    
+    final isMidnight =
+        (isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
+    final bgColor = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
+
     return Scaffold(
       backgroundColor: bgColor,
       body: ValueListenableBuilder<bool>(
@@ -122,63 +130,99 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             builder: (context, entries, _) {
               return Stack(
                 children: [
-                  CustomScrollView(
-                    physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
-                    slivers: [
-                      SliverAppBar(
-                        expandedHeight: 80.h,
-                        collapsedHeight: 60.h,
-                        pinned: true,
-                        backgroundColor: bgColor,
-                        elevation: 0,
-                        surfaceTintColor: Colors.transparent,
-                        leading: IconButton(
-                          icon: Icon(Icons.arrow_back_ios_new_rounded, color: isDark ? Colors.white : Colors.black),
-                          onPressed: () => context.pop(),
-                        ),
-                        title: Text(
-                          context.tr('profile.review_mistakes', fallback: 'My Mistakes'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontWeight: FontWeight.bold,
-                            color: isDark ? Colors.white : Colors.black,
-                          ),
-                        ),
-                        actions: [
-                          if (entries.isNotEmpty && !isLoading)
-                            IconButton(
-                              icon: const Icon(Icons.delete_sweep_rounded, color: AppColors.red500),
-                              tooltip: context.tr('profile.clear_all', fallback: 'Clear All'),
-                              onPressed: _clearAll,
-                            ),
-                        ],
+                  RawScrollbar(
+                    thumbColor: AppColors.indigo500.withValues(alpha: 0.3),
+                    thickness: 6.w,
+                    radius: Radius.circular(8.r),
+                    interactive: true,
+                    child: CustomScrollView(
+                      physics: const AlwaysScrollableScrollPhysics(
+                        parent: BouncingScrollPhysics(),
                       ),
-                      
-                      if (isLoading)
-                        SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-                          sliver: SliverList.separated(
-                            itemCount: 6,
-                            separatorBuilder: (_, _) => SizedBox(height: 12.h),
-                            itemBuilder: (context, index) => _buildShimmerItem(isDark),
+                      slivers: [
+                        SliverAppBar(
+                          expandedHeight: 80.h,
+                          collapsedHeight: 60.h,
+                          pinned: true,
+                          backgroundColor: bgColor,
+                          elevation: 0,
+                          surfaceTintColor: Colors.transparent,
+                          leading: IconButton(
+                            icon: Icon(
+                              Icons.arrow_back_ios_new_rounded,
+                              color: isDark ? Colors.white : Colors.black,
+                            ),
+                            onPressed: () => context.pop(),
                           ),
-                        )
-                      else if (entries.isEmpty)
-                        SliverFillRemaining(
-                          child: _buildEmptyState(context, isDark),
-                        )
-                      else
-                        SliverPadding(
-                          padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 16.h, bottom: 120.h),
-                          sliver: SliverList.separated(
-                            itemCount: entries.length,
-                            separatorBuilder: (_, _) => SizedBox(height: 12.h),
-                            itemBuilder: (context, index) => _buildMistakeCard(entries[index], index, isDark),
+                          title: Text(
+                            context.tr(
+                              'profile.review_mistakes',
+                              fallback: 'My Mistakes',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.bold,
+                              color: isDark ? Colors.white : Colors.black,
+                            ),
                           ),
+                          actions: [
+                            if (entries.isNotEmpty && !isLoading)
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.delete_sweep_rounded,
+                                  color: AppColors.red500,
+                                ),
+                                tooltip: context.tr(
+                                  'profile.clear_all',
+                                  fallback: 'Clear All',
+                                ),
+                                onPressed: _clearAll,
+                              ),
+                          ],
                         ),
-                    ],
+
+                        if (isLoading)
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 20.w,
+                              vertical: 16.h,
+                            ),
+                            sliver: SliverList.separated(
+                              itemCount: 6,
+                              separatorBuilder: (_, _) =>
+                                  SizedBox(height: 12.h),
+                              itemBuilder: (context, index) =>
+                                  _buildShimmerItem(isDark),
+                            ),
+                          )
+                        else if (entries.isEmpty)
+                          SliverFillRemaining(
+                            child: _buildEmptyState(context, isDark),
+                          )
+                        else
+                          SliverPadding(
+                            padding: EdgeInsets.only(
+                              left: 20.w,
+                              right: 20.w,
+                              top: 16.h,
+                              bottom: 120.h,
+                            ),
+                            sliver: SliverList.separated(
+                              itemCount: entries.length,
+                              separatorBuilder: (_, _) =>
+                                  SizedBox(height: 12.h),
+                              itemBuilder: (context, index) =>
+                                  _buildMistakeCard(
+                                    entries[index],
+                                    index,
+                                    isDark,
+                                  ),
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
-                  
+
                   if (entries.isNotEmpty && !isLoading)
                     Positioned(
                       bottom: 0,
@@ -200,37 +244,47 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                             ),
                           ),
                           child: () {
-                          Widget button = ElevatedButton.icon(
-                            onPressed: () async {
-                              await context.push('/practice-mistakes');
-                              if (mounted) {
-                                _loadMistakes();
-                              }
-                            },
-                            icon: const Icon(Icons.psychology_rounded),
-                            label: Text(
-                              context.tr('profile.practice_weaknesses', fallback: 'Practice Weaknesses'),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
+                            Widget button = ElevatedButton.icon(
+                              onPressed: () async {
+                                await context.push('/practice-mistakes');
+                                if (mounted) {
+                                  _loadMistakes();
+                                }
+                              },
+                              icon: const Icon(Icons.psychology_rounded),
+                              label: Text(
+                                context.tr(
+                                  'profile.practice_weaknesses',
+                                  fallback: 'Practice Weaknesses',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppColors.indigo500,
-                              foregroundColor: Colors.white,
-                              minimumSize: Size(double.infinity, 56.h),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16.r),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.indigo500,
+                                foregroundColor: Colors.white,
+                                minimumSize: Size(double.infinity, 56.h),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.r),
+                                ),
+                                elevation: 0,
                               ),
-                              elevation: 0,
-                            ),
-                          );
-                          if (!VowlMotion.shouldReduceMotion(context)) {
-                            button = button.animate().slideY(begin: 1, duration: 400.ms, curve: Curves.easeOut).fadeIn();
-                          }
-                          return button;
-                        }(),
+                            );
+                            if (!VowlMotion.shouldReduceMotion(context)) {
+                              button = button
+                                  .animate()
+                                  .slideY(
+                                    begin: 1,
+                                    duration: 400.ms,
+                                    curve: Curves.easeOut,
+                                  )
+                                  .fadeIn();
+                            }
+                            return button;
+                          }(),
                         ),
                       ),
                     ),
@@ -251,7 +305,10 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           Icon(Icons.verified_rounded, size: 64.r, color: AppColors.emerald500),
           SizedBox(height: 16.h),
           Text(
-            context.tr('profile.no_mistakes_title', fallback: "You're All Caught Up!"),
+            context.tr(
+              'profile.no_mistakes_title',
+              fallback: "You're All Caught Up!",
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 20.sp,
@@ -261,7 +318,10 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           ),
           SizedBox(height: 8.h),
           Text(
-            context.tr('profile.no_mistakes_subtitle', fallback: 'Your error journal is completely empty.'),
+            context.tr(
+              'profile.no_mistakes_subtitle',
+              fallback: 'Your error journal is completely empty.',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
@@ -272,7 +332,10 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       ),
     );
     if (!VowlMotion.shouldReduceMotion(context)) {
-      w = w.animate().scale(delay: 200.ms, duration: 400.ms, curve: Curves.easeOutBack).fadeIn();
+      w = w
+          .animate()
+          .scale(delay: 200.ms, duration: 400.ms, curve: Curves.easeOutBack)
+          .fadeIn();
     }
     return w;
   }
@@ -295,8 +358,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     Widget card = ScaleButton(
       onTap: () async {
         di.sl<HapticService>().selection();
-        
-        final category = QuestRegistry.gameToCategory[entry.gameType] ?? 'reading';
+
+        final category =
+            QuestRegistry.gameToCategory[entry.gameType] ?? 'reading';
         final uri = Uri(
           path: '/game',
           queryParameters: {
@@ -305,9 +369,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             'level': entry.level.toString(),
           },
         );
-        
+
         await context.push(uri.toString());
-        
+
         if (mounted) {
           _loadMistakes();
         }
@@ -338,7 +402,11 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.close_rounded, size: 20.r, color: isDark ? Colors.white54 : Colors.black54),
+                  icon: Icon(
+                    Icons.close_rounded,
+                    size: 20.r,
+                    color: isDark ? Colors.white54 : Colors.black54,
+                  ),
                   onPressed: () => _dismissMistake(entry.id),
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
@@ -357,38 +425,47 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             ),
             SizedBox(height: 16.h),
             _buildAnswerRow(
-              context, 
-              Icons.close_rounded, 
-              AppColors.red500, 
-              context.tr('profile.you_answered', fallback: 'You answered:'), 
+              context,
+              Icons.close_rounded,
+              AppColors.red500,
+              context.tr('profile.you_answered', fallback: 'You answered:'),
               entry.userAnswer,
             ),
             SizedBox(height: 8.h),
             _buildAnswerRow(
-              context, 
-              Icons.check_rounded, 
-              AppColors.emerald500, 
-              context.tr('profile.correct_answer', fallback: 'Correct answer:'), 
+              context,
+              Icons.check_rounded,
+              AppColors.emerald500,
+              context.tr('profile.correct_answer', fallback: 'Correct answer:'),
               entry.correctAnswer,
             ),
           ],
         ),
       ),
     );
-    
+
     if (!VowlMotion.shouldReduceMotion(context)) {
-      return card.animate().slideY(
-        begin: 0.2, 
-        delay: (index.clamp(0, 10) * 50).ms, 
-        duration: 300.ms, 
-        curve: Curves.easeOutCubic,
-      ).fadeIn();
+      return card
+          .animate()
+          .slideY(
+            begin: 0.2,
+            delay: (index.clamp(0, 10) * 50).ms,
+            duration: 300.ms,
+            curve: Curves.easeOutCubic,
+          )
+          .fadeIn();
     }
-    
+
     return card;
   }
 
-  Widget _buildAnswerRow(BuildContext context, IconData icon, Color color, String label, String value) {
+  Widget _buildAnswerRow(
+    BuildContext context,
+    IconData icon,
+    Color color,
+    String label,
+    String value,
+  ) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -423,11 +500,3 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     );
   }
 }
-
-
-
-
-
-
-
-
