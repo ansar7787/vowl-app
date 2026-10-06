@@ -8,6 +8,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class ReviewMistakesScreen extends StatefulWidget {
   const ReviewMistakesScreen({super.key});
@@ -229,15 +232,44 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       separatorBuilder: (_, _) => SizedBox(height: 12.h),
       itemBuilder: (context, index) {
         final entry = _entries[index];
-        return GlassTile(
-          borderRadius: BorderRadius.circular(16.r),
-          padding: EdgeInsets.all(16.r),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        return TweenAnimationBuilder<double>(
+          // Staggered delay based on index (max 10 to avoid too long delay)
+          tween: Tween(begin: 0.0, end: 1.0),
+          duration: Duration(milliseconds: 400 + (index.clamp(0, 10) * 100)),
+          curve: Curves.easeOutCubic,
+          builder: (context, value, child) {
+            return Transform.translate(
+              offset: Offset(0, 20 * (1 - value)),
+              child: Opacity(
+                opacity: value,
+                child: child,
+              ),
+            );
+          },
+          child: ScaleButton(
+            onTap: () {
+              di.sl<HapticService>().selection();
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    context.tr('profile.use_practice_btn', fallback: "Use 'Practice Weaknesses' to replay this mistake!"),
+                    style: const TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
+                  ),
+                  behavior: SnackBarBehavior.floating,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+                  duration: const Duration(seconds: 2),
+                ),
+              );
+            },
+            child: GlassTile(
+              borderRadius: BorderRadius.circular(16.r),
+              padding: EdgeInsets.all(16.r),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                     decoration: BoxDecoration(
@@ -290,6 +322,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
               ),
             ],
           ),
+        ),
         );
       },
     );

@@ -115,7 +115,22 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
                       ? const Center(child: CircularProgressIndicator())
                       : _entries.isEmpty 
                           ? _buildEmptyState(context, isDark)
-                          : _buildFlashcard(context, isDark),
+                          : AnimatedSwitcher(
+                              duration: const Duration(milliseconds: 300),
+                              transitionBuilder: (child, animation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: SlideTransition(
+                                    position: Tween<Offset>(
+                                      begin: const Offset(0.05, 0),
+                                      end: Offset.zero,
+                                    ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOutCubic)),
+                                    child: child,
+                                  ),
+                                );
+                              },
+                              child: _buildFlashcard(context, isDark),
+                            ),
                 ),
               ],
             ),
@@ -190,6 +205,7 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     options.shuffle(random);
 
     return Padding(
+      key: ValueKey(entry.id),
       padding: EdgeInsets.all(24.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
