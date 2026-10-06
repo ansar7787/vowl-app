@@ -15,6 +15,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
+import 'package:go_router/go_router.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -49,6 +50,7 @@ class GameDialogHelper {
     String? buttonText,
     Object? popResult = true,
     bool enableDoubleUp = false,
+    int mistakesMade = 0,
   }) {
     if (!context.mounted) return;
 
@@ -538,3 +540,4 @@ class GameDialogHelper {
     );
   }
 }
+

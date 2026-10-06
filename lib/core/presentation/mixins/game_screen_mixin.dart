@@ -25,6 +25,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
 
   int lastProcessedIndex = -1;
   int? lastLives;
+  int sessionMistakes = 0;
   GlobalKey<SpeedChallengeTimerState>? timerKey;
   AppLifecycleListener? _gameLifecycleListener;
 
@@ -67,6 +68,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
       coins: coinsEarned,
       title: getCompletionTitle(context),
       enableDoubleUp: true,
+      mistakesMade: sessionMistakes,
     );
   }
 
@@ -97,6 +99,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   void submitSharedWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     timerKey?.currentState?.stop();
+    sessionMistakes++;
 
     hapticService.error();
     soundService.playWrong();
