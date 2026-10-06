@@ -147,6 +147,15 @@ class ModernFeatureBar extends StatelessWidget {
               ),
               _buildListFeature(
                 context,
+                icon: LucideIcons.calendarClock,
+                title: context.tr(
+                  'premium.feature_unlimited_daily_words',
+                  fallback: 'Unlimited Daily Words',
+                ),
+                color: AppColors.violet500,
+              ),
+              _buildListFeature(
+                context,
                 icon: LucideIcons.award,
                 title: context.tr(
                   'premium.feature_vip_badges',
