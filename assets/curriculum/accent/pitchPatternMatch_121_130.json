@@ -5,753 +5,753 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L121_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. The chair has just said the vendor contract is settled.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Guess what happened: the whole kitchen flooded overnight.",
-            "textToSpeak": "Guess what happened: the whole kitchen flooded overnight.",
+            "word": "That leaves the hiring plan and the release date.",
+            "textToSpeak": "That leaves the hiring plan and the release date.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on KITCHEN Only"
+                "Emphasis on PLAN and DATE",
+                "Emphasis on HIRING and RELEASE"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on HIRING and RELEASE",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                2,
+                3,
                 1,
-                2,
+                3,
                 1
             ],
-            "hint": "Nothing here was already known — the entire sentence is fresh news, so no single word should jump out above the rest.",
-            "explanation": "Nothing in this sentence was already known, so the whole clause counts as news — the stress spreads out instead of sharpening on one word.",
-            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "Both remaining items are compound nouns. Which word in each carries the label?",
+            "explanation": "In 'hiring plan' and 'release date', the first noun is the label that tells items apart, so HIRING and RELEASE take the peaks. PLAN and DATE are generic second parts.",
+            "emphasisRule": "In compound item names, the first noun usually carries the peak, even in a list.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L121_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. Pricing was discussed earlier and a participant asks to return to it.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Something triggered the alarm - turns out it was a false sensor.",
-            "textToSpeak": "Something triggered the alarm - turns out it was a false sensor.",
+            "word": "Can we revisit the pricing after lunch?",
+            "textToSpeak": "Can we revisit the pricing after lunch?",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on SENSOR Only"
+                "Emphasis on LUNCH",
+                "Emphasis on PRICING"
             ],
-            "correctAnswer": "Narrow Focus on SENSOR Only",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on LUNCH",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "Most of this idea was already established by the first clause — only the final detail is genuinely new.",
-            "explanation": "Everything except SENSOR was already implied by the first clause, which is why the pitch peak narrows onto just SENSOR.",
-            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed.",
-            "emotionContext": "Neutral Statement"
+            "hint": "The topic has already been named. What is the new element of the proposal?",
+            "explanation": "PRICING is given, so it stays low. LUNCH is the new timing being proposed, so the peak lands on it, and the rise makes the suggestion polite.",
+            "emphasisRule": "In a proposal to return to a topic, the new timing takes the peak.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L121_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the chair most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Guess what: I adopted a rescue dog this weekend.",
-            "textToSpeak": "Guess what: I adopted a rescue dog this weekend.",
+            "word": "Omar will lead the Tuesday session.",
+            "textToSpeak": "Omar will lead the Tuesday session.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on DOG Only"
+                "Who is leading the Tuesday session?",
+                "When is Omar leading a session?"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "Who is leading the Tuesday session?",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                3,
                 1,
-                2,
                 1,
-                2,
+                1,
                 1
             ],
-            "hint": "Since everything in this sentence is new to the listener, the stress spreads across the sentence instead of sharpening on one word.",
-            "explanation": "Since there's no already-given information to contrast against, the whole sentence carries roughly equal weight — that's broad focus.",
-            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "Work backwards from the peak. What information was missing?",
+            "explanation": "The early peak on OMAR shows that the person was the new information, so the chair must have asked who. A question about timing would have put the peak on TUESDAY.",
+            "emphasisRule": "A peak on the subject answers a who-question.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L122_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Does Wednesday work for a catch-up?\" B's Wednesday is full, but Thursday is open.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Here's some news: my sister just got engaged.",
-            "textToSpeak": "Here's some news: my sister just got engaged.",
+            "word": "Wednesday's full, but Thursday works.",
+            "textToSpeak": "Wednesday's full, but Thursday works.",
             "options": [
-                "Narrow Focus on SISTER Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on WEDNESDAY'S and WORKS",
+                "Emphasis on FULL and THURSDAY"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "Emphasis on FULL and THURSDAY",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                2,
+                3,
                 1,
-                2,
+                3,
                 1
             ],
-            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
-            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "Wednesday came from A. Which part of the first half is new?",
+            "explanation": "WEDNESDAY'S repeats A's suggestion and stays low. FULL is the new information, and THURSDAY is the alternative, so they take the peaks.",
+            "emphasisRule": "In a counter-offer, the reason and the new option take the peaks; the repeated day stays low.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L122_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Can we meet before lunch?\" B has a standing meeting then, but is free afterwards.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Someone requested the room change - turns out it was the coach.",
-            "textToSpeak": "Someone requested the room change - turns out it was the coach.",
+            "word": "Before lunch is difficult, but after is fine.",
+            "textToSpeak": "Before lunch is difficult, but after is fine.",
             "options": [
-                "Narrow Focus on COACH Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on BEFORE and AFTER",
+                "Emphasis on DIFFICULT and AFTER"
             ],
-            "correctAnswer": "Narrow Focus on COACH Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DIFFICULT and AFTER",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "This sentence answers one narrow question (who or what, specifically) — the answer word gets a single strong peak.",
-            "explanation": "The setup already establishes the event, leaving only COACH as new information — so the stress narrows sharply onto COACH alone.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
+            "hint": "'Before lunch' came from A. What is new in the first half?",
+            "explanation": "BEFORE is given, so it stays low even though it opens the sentence. DIFFICULT is B's response, and AFTER is the new alternative, so they take the peaks.",
+            "emphasisRule": "A given time phrase stays low in a reply; the evaluation and the alternative take the peaks.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L122_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Shall we say ten?\" B wants a later start.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You'll never guess: a major app update just launched.",
-            "textToSpeak": "You'll never guess: a major app update just launched.",
+            "word": "Could we make it a bit later?",
+            "textToSpeak": "Could we make it a bit later?",
             "options": [
-                "Narrow Focus on UPDATE Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on BIT",
+                "Emphasis on LATER"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "Emphasis on LATER",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                2,
                 1,
                 2,
-                1
+                2,
+                3
             ],
-            "hint": "Nothing here was already known — the entire sentence is fresh news, so no single word should jump out above the rest.",
-            "explanation": "This announces an entirely new event, so prominence is distributed across the sentence rather than narrowed onto a single word.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "A has proposed a time. What is B asking to change?",
+            "explanation": "'A bit' softens the request, so it stays light. LATER is the change B wants, so it gets the main lift, and the rise keeps it polite.",
+            "emphasisRule": "In a polite request to change a time, the direction word takes the peak.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L123_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. The team lead is splitting the work: front end and back end.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Something caused the delay - turns out it was a software glitch.",
-            "textToSpeak": "Something caused the delay - turns out it was a software glitch.",
+            "word": "Maya, you take the front end.",
+            "textToSpeak": "Maya, you take the front end.",
             "options": [
-                "Narrow Focus on GLITCH Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on MAYA and FRONT",
+                "Emphasis on TAKE and END"
             ],
-            "correctAnswer": "Narrow Focus on GLITCH Only",
+            "correctAnswer": "Emphasis on MAYA and FRONT",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
+                3,
                 1,
                 1,
                 3,
                 1
             ],
-            "hint": "Most of this idea was already established by the first clause — only the final detail is genuinely new.",
-            "explanation": "Since the event itself is already known, only GLITCH — the answer to who or what, specifically — carries the narrow stress.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
+            "hint": "Two things are being matched: a person and a part. Which words carry that match?",
+            "explanation": "MAYA picks out the person and FRONT picks out the part. TAKE and END are the common frame. In 'front end' the first word is the distinguishing one.",
+            "emphasisRule": "In an assignment, the person and the distinguishing part each take a peak.",
+            "emotionContext": "Instruction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L123_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. The summary is the task. You split it between you and your colleague.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Big news: the power went out across the entire city.",
-            "textToSpeak": "Big news: the power went out across the entire city.",
+            "word": "I'll draft the summary and you review it.",
+            "textToSpeak": "I'll draft the summary and you review it.",
             "options": [
-                "Narrow Focus on POWER Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on DRAFT and REVIEW",
+                "Emphasis on SUMMARY and IT"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DRAFT and REVIEW",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 2,
+                3,
                 1,
-                2,
+                3,
                 1
             ],
-            "hint": "Since everything in this sentence is new to the listener, the stress spreads across the sentence instead of sharpening on one word.",
-            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "The task itself is shared knowledge. What differs between the two jobs?",
+            "explanation": "SUMMARY and IT refer to the same shared task, so they sit low. DRAFT and REVIEW are the different jobs, so they take the peaks.",
+            "emphasisRule": "When one task is split, the different actions take the peaks.",
+            "emotionContext": "Instruction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L123_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. Everyone knows the audit needs an owner.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You won't believe it: a pipe burst at the clinic this morning.",
-            "textToSpeak": "You won't believe it: a pipe burst at the clinic this morning.",
+            "word": "Who's taking the lead on the audit?",
+            "textToSpeak": "Who's taking the lead on the audit?",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on PIPE Only"
+                "Emphasis on LEAD",
+                "Emphasis on AUDIT"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "Emphasis on LEAD",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 2,
+                3,
                 1,
-                2,
                 1
             ],
-            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
-            "explanation": "Nothing in this sentence was already known, so the whole clause counts as news — the stress spreads out instead of sharpening on one word.",
-            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "The audit has already been discussed. What is the manager actually asking about?",
+            "explanation": "AUDIT is given, so it is spoken lightly. LEAD is what the manager wants someone to take on, so it carries the peak.",
+            "emphasisRule": "In a who-question about ownership, the role word takes the peak and the given topic stays low.",
+            "emotionContext": "Instruction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L124_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Is the database done? And the files?\" B gives a status.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Guess what: the gym installed brand new equipment.",
-            "textToSpeak": "Guess what: the gym installed brand new equipment.",
+            "word": "The database is done, but the files are still copying.",
+            "textToSpeak": "The database is done, but the files are still copying.",
             "options": [
-                "Narrow Focus on GYM Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on DONE and COPYING",
+                "Emphasis on DATABASE and FILES"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DONE and COPYING",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
+                3,
                 1,
-                2,
+                3,
                 1
             ],
-            "hint": "Try reading this as one big announcement rather than a pointed correction — nothing here needs a single sharp peak.",
-            "explanation": "This announces an entirely new event, so prominence is distributed across the sentence rather than narrowed onto a single word.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "A has already named both items. What does B tell A about each?",
+            "explanation": "DATABASE and FILES were in A's question, so they are spoken lightly. DONE and COPYING are the status words, which are the new information.",
+            "emphasisRule": "In a status update, the status words take the peaks and the named items stay low.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L124_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show? A: \"Is it on track?\" B has a small delay but is confident.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Something jammed the printer - turns out it was a paperclip.",
-            "textToSpeak": "Something jammed the printer - turns out it was a paperclip.",
+            "word": "We're slightly behind, but it's recoverable.",
+            "textToSpeak": "We're slightly behind, but it's recoverable.",
             "options": [
-                "Narrow Focus on PAPERCLIP Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "One peak on BEHIND: raising an alarm about the delay, nothing more",
+                "Peaks on BEHIND and RECOVERABLE: stating the delay, then reassuring"
             ],
-            "correctAnswer": "Narrow Focus on PAPERCLIP Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Peaks on BEHIND and RECOVERABLE: stating the delay, then reassuring",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "Notice the setup already tells you what happened — only one detail is still missing. That word gets the sharp peak.",
-            "explanation": "Since the event itself is already known, only PAPERCLIP — the answer to who or what, specifically — carries the narrow stress.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
+            "hint": "B gives bad news and then good news. How many peaks would reflect that?",
+            "explanation": "BEHIND carries the problem and RECOVERABLE carries the reassurance, so there are two peaks. A single peak would make the sentence a warning.",
+            "emphasisRule": "A status with a problem and a reassurance uses a peak for each.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L124_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Has QA signed off?\" B reports partial progress.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You'll never guess: the server crashed during the live demo.",
-            "textToSpeak": "You'll never guess: the server crashed during the live demo.",
+            "word": "QA has signed off on the first half.",
+            "textToSpeak": "QA has signed off on the first half.",
             "options": [
-                "Narrow Focus on SERVER Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on SIGNED",
+                "Emphasis on FIRST"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "Emphasis on FIRST",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                2,
                 1,
                 2,
+                3,
                 1
             ],
-            "hint": "This is announcing a whole new event, not answering a specific question about one detail — expect fairly even prominence throughout.",
-            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "'Signed off' came from A's question. What is the new detail?",
+            "explanation": "The sign-off is given, so SIGNED stays low. FIRST narrows it to part of the work, so it takes the peak, even though 'half' follows.",
+            "emphasisRule": "A narrowing word such as first, second, or partial takes the peak in a status reply.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L125_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A client asks for 'a report'. You need to know which kind.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Someone won the office raffle - turns out it was the intern.",
-            "textToSpeak": "Someone won the office raffle - turns out it was the intern.",
+            "word": "Do you mean a summary or the full report?",
+            "textToSpeak": "Do you mean a summary or the full report?",
             "options": [
-                "Narrow Focus on INTERN Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on MEAN and REPORT",
+                "Emphasis on SUMMARY and FULL"
             ],
-            "correctAnswer": "Narrow Focus on INTERN Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SUMMARY and FULL",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "The event itself isn't news here; only the specific answer at the end is — that's where the pitch should sharpen.",
-            "explanation": "The setup already establishes the event, leaving only INTERN as new information — so the stress narrows sharply onto INTERN alone.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
+            "hint": "You are offering two kinds. Which words differ?",
+            "explanation": "REPORT is shared by both options, so it falls away. SUMMARY and FULL are the two alternatives, so they carry the peaks.",
+            "emphasisRule": "In a clarifying 'or' question, the contrasting modifiers take the peaks.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L125_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. The client said \"next week\". You're not sure whether that means the start or the end.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You won't believe this: our flight got upgraded to first class.",
-            "textToSpeak": "You won't believe this: our flight got upgraded to first class.",
+            "word": "Do you mean the start of next week?",
+            "textToSpeak": "Do you mean the start of next week?",
             "options": [
-                "Narrow Focus on FLIGHT Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on NEXT",
+                "Emphasis on START"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "Emphasis on START",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
-                1
+                3,
+                1,
+                3
             ],
-            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
-            "explanation": "This announces an entirely new event, so prominence is distributed across the sentence rather than narrowed onto a single word.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "'Next week' is the client's own phrase. What are you narrowing down?",
+            "explanation": "NEXT WEEK is given, so it stays low. START is the guess you want confirmed, so it takes the peak.",
+            "emphasisRule": "In a clarification, the narrowing guess takes the peak and the client's own words stay low.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L125_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. The brief says the app must work offline.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Something delayed the shipment - turns out it was customs.",
-            "textToSpeak": "Something delayed the shipment - turns out it was customs.",
+            "word": "Does that include the settings pages?",
+            "textToSpeak": "Does that include the settings pages?",
             "options": [
-                "Narrow Focus on CUSTOMS Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on SETTINGS",
+                "Emphasis on INCLUDE"
             ],
-            "correctAnswer": "Narrow Focus on CUSTOMS Only",
+            "correctAnswer": "Emphasis on SETTINGS",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                1,
+                3
             ],
-            "hint": "This sentence answers one narrow question (who or what, specifically) — the answer word gets a single strong peak.",
-            "explanation": "Since the event itself is already known, only CUSTOMS — the answer to who or what, specifically — carries the narrow stress.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
+            "hint": "You are asking whether the requirement covers part of the app. Which word names that part?",
+            "explanation": "'Pages' is generic, and INCLUDE is the verb of the question. SETTINGS is the part in doubt, so it gets the main lift.",
+            "emphasisRule": "In a scope question, the part being checked takes the peak.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L126_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Can you send it by Friday?\" B can only deliver part of it.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Here's what happened: our luggage got lost at the airport.",
-            "textToSpeak": "Here's what happened: our luggage got lost at the airport.",
+            "word": "I can send a draft by Friday.",
+            "textToSpeak": "I can send a draft by Friday.",
             "options": [
-                "Narrow Focus on LUGGAGE Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on FRIDAY",
+                "Emphasis on DRAFT"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "Emphasis on DRAFT",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 2,
+                3,
                 1,
-                2,
                 1
             ],
-            "hint": "Nothing here was already known — the entire sentence is fresh news, so no single word should jump out above the rest.",
-            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "A has given the deadline. What is B changing?",
+            "explanation": "FRIDAY is given, so it stays low at the end. DRAFT is the limit on what B can deliver, so the peak lands on it.",
+            "emphasisRule": "In a partial commitment, the reduced deliverable takes the peak and the given deadline falls.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L126_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show? A colleague asks for an extension and you can only give a conditional answer.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Someone left the review online - turns out it was a regular customer.",
-            "textToSpeak": "Someone left the review online - turns out it was a regular customer.",
+            "word": "I could give you until Wednesday.",
+            "textToSpeak": "I could give you until Wednesday.",
             "options": [
-                "Narrow Focus on CUSTOMER Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "A fall on WEDNESDAY: a definite offer of the extension",
+                "Fall-rise on WEDNESDAY: a conditional, not a promise"
             ],
-            "correctAnswer": "Narrow Focus on CUSTOMER Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Fall-rise on WEDNESDAY: a conditional, not a promise",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
-                1
+                2
             ],
-            "hint": "Most of this idea was already established by the first clause — only the final detail is genuinely new.",
-            "explanation": "The setup already establishes the event, leaving only CUSTOMER as new information — so the stress narrows sharply onto CUSTOMER alone.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
+            "hint": "The verb is 'could', not 'will'. What does the end of the sentence add?",
+            "explanation": "The lift after WEDNESDAY leaves the offer open, matching 'could'. A flat fall would sound like a decision.",
+            "emphasisRule": "A fall-rise on a conditional offer signals that it isn't a firm commitment.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L126_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A manager asks for a status, and you are running late.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Something delayed the surgery - turns out it was a staffing issue.",
-            "textToSpeak": "Something delayed the surgery - turns out it was a staffing issue.",
+            "word": "To be honest, we'll miss it.",
+            "textToSpeak": "To be honest, we'll miss it.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on ISSUE Only"
+                "Emphasis on HONEST",
+                "Emphasis on MISS"
             ],
-            "correctAnswer": "Narrow Focus on ISSUE Only",
+            "correctAnswer": "Emphasis on MISS",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "The event itself isn't news here; only the specific answer at the end is — that's where the pitch should sharpen.",
-            "explanation": "Everything except ISSUE was already implied by the first clause, which is why the pitch peak narrows onto just ISSUE.",
-            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed.",
-            "emotionContext": "Neutral Statement"
+            "hint": "The opener signals frankness. Is it the news?",
+            "explanation": "'To be honest' only prepares the listener, so it stays low. MISS is the bad news, which is why it carries the peak.",
+            "emphasisRule": "A frankness opener stays low; the bad news takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L127_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Where did you put the notes?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Big news: the cafeteria changed its whole menu today.",
-            "textToSpeak": "Big news: the cafeteria changed its whole menu today.",
+            "word": "They're in the shared folder.",
+            "textToSpeak": "They're in the shared folder.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on MENU Only"
+                "Emphasis on FOLDER",
+                "Emphasis on SHARED"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "Emphasis on FOLDER",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
                 2,
+                3,
                 1
             ],
-            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
-            "explanation": "Since there's no already-given information to contrast against, the whole sentence carries roughly equal weight — that's broad focus.",
-            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "A is asking where, not what. Which word completes the location?",
+            "explanation": "SHARED describes the folder, but the place the notes can be found is FOLDER, so it takes the peak.",
+            "emphasisRule": "In a location reply, the final place noun takes the peak and the modifier is lighter.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L127_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Can you loop in the legal team?\" B has already done it.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Someone canceled the reservation - turns out it was my brother.",
-            "textToSpeak": "Someone canceled the reservation - turns out it was my brother.",
+            "word": "I've already looped them in.",
+            "textToSpeak": "I've already looped them in.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on BROTHER Only"
+                "Emphasis on ALREADY",
+                "Emphasis on LOOPED"
             ],
-            "correctAnswer": "Narrow Focus on BROTHER Only",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ALREADY",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "This sentence answers one narrow question (who or what, specifically) — the answer word gets a single strong peak.",
-            "explanation": "BROTHER is the single new piece of information here, so it gets a sharp, isolated peak instead of spreading emphasis across the sentence.",
-            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed.",
-            "emotionContext": "Neutral Statement"
+            "hint": "B's message is about timing, not about whether it happens. Which word carries that?",
+            "explanation": "LOOPED is given from A's request, and THEM is a pronoun. ALREADY is the new information, so it gets the main lift.",
+            "emphasisRule": "A timing adverb such as already takes the peak when the action is given.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L127_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A teammate offers to share the workload and you accept warmly.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Something caused the allergic reaction - turns out it was shellfish.",
-            "textToSpeak": "Something caused the allergic reaction - turns out it was shellfish.",
+            "word": "That would be great, thanks.",
+            "textToSpeak": "That would be great, thanks.",
             "options": [
-                "Narrow Focus on SHELLFISH Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on THANKS",
+                "Emphasis on GREAT"
             ],
-            "correctAnswer": "Narrow Focus on SHELLFISH Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on GREAT",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "Notice the setup already tells you what happened — only one detail is still missing. That word gets the sharp peak.",
-            "explanation": "The setup already establishes the event, leaving only SHELLFISH as new information — so the stress narrows sharply onto SHELLFISH alone.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
+            "hint": "The reply ends with a thank-you. Which word carries the real feeling?",
+            "explanation": "THANKS is a closing courtesy, so it falls away. GREAT carries the warmth of the acceptance.",
+            "emphasisRule": "In a warm reply, the evaluative word takes the peak; the thank-you tag stays low.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L128_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. You praise one specific part of a colleague's work.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Someone donated the piano to the school - turns out it was the mayor.",
-            "textToSpeak": "Someone donated the piano to the school - turns out it was the mayor.",
+            "word": "I especially liked the opening.",
+            "textToSpeak": "I especially liked the opening.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on MAYOR Only"
+                "Emphasis on ESPECIALLY",
+                "Emphasis on OPENING"
             ],
-            "correctAnswer": "Narrow Focus on MAYOR Only",
+            "correctAnswer": "Emphasis on OPENING",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Most of this idea was already established by the first clause — only the final detail is genuinely new.",
-            "explanation": "Everything except MAYOR was already implied by the first clause, which is why the pitch peak narrows onto just MAYOR.",
-            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed.",
-            "emotionContext": "Neutral Statement"
+            "hint": "The praise is about one part. Which word names it?",
+            "explanation": "ESPECIALLY marks the praise as strong, but the colleague needs to know which part. OPENING takes the peak.",
+            "emphasisRule": "In specific praise, the thing praised takes the peak.",
+            "emotionContext": "Opinion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L128_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A colleague asks whether the whole report needs rewriting. It doesn't.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Someone fixed the leaky faucet - turns out it was our neighbor.",
-            "textToSpeak": "Someone fixed the leaky faucet - turns out it was our neighbor.",
+            "word": "No, it's just the introduction that needs work.",
+            "textToSpeak": "No, it's just the introduction that needs work.",
             "options": [
-                "Narrow Focus on NEIGHBOR Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on INTRODUCTION",
+                "Emphasis on WORK"
             ],
-            "correctAnswer": "Narrow Focus on NEIGHBOR Only",
+            "correctAnswer": "Emphasis on INTRODUCTION",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "The event itself isn't news here; only the specific answer at the end is — that's where the pitch should sharpen.",
-            "explanation": "Since the event itself is already known, only NEIGHBOR — the answer to who or what, specifically — carries the narrow stress.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
+            "hint": "'Rewriting' is given in the question. What does the reply narrow it to?",
+            "explanation": "'Needs work' echoes the idea of rewriting, so it is spoken lightly. INTRODUCTION is the narrowed part and takes the peak.",
+            "emphasisRule": "When feedback narrows a broad question, the narrowed part takes the peak.",
+            "emotionContext": "Opinion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L128_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Do you think the charts need work?\" B says no, the text does.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Here's the update: turbulence delayed the entire meal service.",
-            "textToSpeak": "Here's the update: turbulence delayed the entire meal service.",
+            "word": "The charts are fine; it's the writing that needs work.",
+            "textToSpeak": "The charts are fine; it's the writing that needs work.",
             "options": [
-                "Narrow Focus on SERVICE Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on FINE and WRITING",
+                "Emphasis on CHARTS and WORK"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on FINE and WRITING",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
+                3,
                 1,
-                2,
+                3,
                 1
             ],
-            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
-            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "Charts came from A. What does B say about them, and what is the real issue?",
+            "explanation": "CHARTS is given, so it sits low. FINE is the verdict on them, and WRITING is the real problem, so those take the peaks.",
+            "emphasisRule": "A feedback contrast puts peaks on the verdict and on the new issue.",
+            "emotionContext": "Opinion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L129_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show? A: \"We should drop the second feature.\" B disagrees but wants to keep rapport.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Someone reported the outage first - turns out it was the doorman.",
-            "textToSpeak": "Someone reported the outage first - turns out it was the doorman.",
+            "word": "I'd be a bit cautious about that.",
+            "textToSpeak": "I'd be a bit cautious about that.",
             "options": [
-                "Narrow Focus on DOORMAN Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Fall-rise on CAUTIOUS: tactful disagreement",
+                "A flat fall on CAUTIOUS: blunt rejection"
             ],
-            "correctAnswer": "Narrow Focus on DOORMAN Only",
+            "correctAnswer": "Fall-rise on CAUTIOUS: tactful disagreement",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                1,
+                2
             ],
-            "hint": "This sentence answers one narrow question (who or what, specifically) — the answer word gets a single strong peak.",
-            "explanation": "The setup already establishes the event, leaving only DOORMAN as new information — so the stress narrows sharply onto DOORMAN alone.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
+            "hint": "'A bit' softens the sentence. What does the end of it do?",
+            "explanation": "The lift after CAUTIOUS matches the softening 'a bit' and leaves A room to respond. A flat fall would sound like a verdict.",
+            "emphasisRule": "A fall-rise on a mild objection keeps the disagreement tactful.",
+            "emotionContext": "Disagreement"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L129_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"The vendor is cheaper.\" B has seen the quotes.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Someone approved the budget increase - turns out it was the board.",
-            "textToSpeak": "Someone approved the budget increase - turns out it was the board.",
+            "word": "Their quote came in higher than ours.",
+            "textToSpeak": "Their quote came in higher than ours.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on BOARD Only"
+                "Emphasis on QUOTE",
+                "Emphasis on HIGHER"
             ],
-            "correctAnswer": "Narrow Focus on BOARD Only",
+            "correctAnswer": "Emphasis on HIGHER",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "Notice the setup already tells you what happened — only one detail is still missing. That word gets the sharp peak.",
-            "explanation": "Everything except BOARD was already implied by the first clause, which is why the pitch peak narrows onto just BOARD.",
-            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed.",
-            "emotionContext": "Neutral Statement"
+            "hint": "A claimed the vendor is cheaper. How does B contradict that?",
+            "explanation": "QUOTE is the shared topic, so it stays low. HIGHER directly contradicts 'cheaper', so it gets the main lift.",
+            "emphasisRule": "A comparative that contradicts a claim takes the peak.",
+            "emotionContext": "Disagreement"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L129_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. Which continuation would most naturally follow?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Get this: a fire alarm went off in the middle of class.",
-            "textToSpeak": "Get this: a fire alarm went off in the middle of class.",
+            "word": "I appreciate the effort.",
+            "textToSpeak": "I appreciate the effort.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on ALARM Only"
+                "...and I'll approve it today.",
+                "...but I don't think it solves the problem."
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                2,
-                1,
-                2,
-                1
-            ],
-            "hint": "This is announcing a whole new event, not answering a specific question about one detail — expect fairly even prominence throughout.",
-            "explanation": "Since there's no already-given information to contrast against, the whole sentence carries roughly equal weight — that's broad focus.",
-            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word.",
-            "emotionContext": "the Whole Sentence is News"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L130_Q1",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "Get this: the band's van broke down before the wedding.",
-            "textToSpeak": "Get this: the band's van broke down before the wedding.",
-            "options": [
-                "Narrow Focus on VAN Only",
-                "Broad Focus (the Whole Sentence is News)"
-            ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "...but I don't think it solves the problem.",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
-                1
+                3,
+                1,
+                2
             ],
-            "hint": "Since everything in this sentence is new to the listener, the stress spreads across the sentence instead of sharpening on one word.",
-            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "Listen to how the voice ends. Is the praise being closed, or held open for something else?",
+            "explanation": "The lift after EFFORT signals a 'but'. The natural continuation raises an objection. A fall would have ended the sentence with praise.",
+            "emphasisRule": "A fall-rise on praise sets up an objection.",
+            "emotionContext": "Disagreement"
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L130_Q2",
-            "instruction": "Identify the emphasis",
+            "id": "ACC_PITCHPATTERNMATCH_L130_Q1",
+            "instruction": "Identify the emphasis. A: \"Did QA finish testing the login page?\" B explains where QA is now.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Something spoiled in the fridge - turns out it was the milk.",
-            "textToSpeak": "Something spoiled in the fridge - turns out it was the milk.",
+            "word": "They're testing the payment page now.",
+            "textToSpeak": "They're testing the payment page now.",
             "options": [
-                "Narrow Focus on MILK Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on PAYMENT",
+                "Emphasis on NOW"
             ],
-            "correctAnswer": "Narrow Focus on MILK Only",
+            "correctAnswer": "Emphasis on PAYMENT",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
+                1
+            ],
+            "hint": "'Testing' came from A. What is different about B's page?",
+            "explanation": "TESTING is given. PAYMENT replaces 'login' as the page being tested, so it gets the main lift. In 'payment page' the first noun carries the label.",
+            "emphasisRule": "A replaced compound label takes the peak, and the given verb stays low.",
+            "emotionContext": "Given information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L130_Q2",
+            "instruction": "Identify the pitch pattern. What did A most likely ask?",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "We moved the review to Thursday.",
+            "textToSpeak": "We moved the review to Thursday.",
+            "options": [
+                "Who moved the review?",
+                "When is the review now?"
+            ],
+            "correctAnswer": "When is the review now?",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "Look at which word in the reply has the highest pitch. What did A not know?",
+            "explanation": "THURSDAY carries the peak, so the day was the missing piece. If A had asked who, the peak would sit on WE.",
+            "emphasisRule": "A peak on a time phrase answers a when-question.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L130_Q3",
+            "instruction": "Identify the emphasis. A manager asks if you can take on a new project. You're at capacity.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'd like to, but my plate's full.",
+            "textToSpeak": "I'd like to, but my plate's full.",
+            "options": [
+                "Emphasis on PLATE'S and FULL",
+                "Emphasis on LIKE and FULL"
+            ],
+            "correctAnswer": "Emphasis on LIKE and FULL",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "Everything except the last word was already implied — listen for a single, sharp peak there instead of spread-out stress.",
-            "explanation": "The setup already establishes the event, leaving only MILK as new information — so the stress narrows sharply onto MILK alone.",
-            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word.",
-            "emotionContext": "Neutral Statement"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L130_Q3",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "Big news: the bakery is closing for good next month.",
-            "textToSpeak": "Big news: the bakery is closing for good next month.",
-            "options": [
-                "Narrow Focus on BAKERY Only",
-                "Broad Focus (the Whole Sentence is News)"
-            ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                2,
-                1,
-                2,
-                1
-            ],
-            "hint": "Try reading this as one big announcement rather than a pointed correction — nothing here needs a single sharp peak.",
-            "explanation": "This announces an entirely new event, so prominence is distributed across the sentence rather than narrowed onto a single word.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "The refusal has two parts: a polite wish and a reason. Which words carry them?",
+            "explanation": "LIKE carries the polite wish and FULL the reason. PLATE'S is only the metaphor's subject and stays low.",
+            "emphasisRule": "A polite refusal peaks on the wish and the reason.",
+            "emotionContext": "Declining politely"
         }
     ]
 }

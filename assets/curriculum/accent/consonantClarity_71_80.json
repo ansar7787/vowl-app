@@ -1,577 +1,577 @@
 {
-    "gameType": "consonantClarity",
-    "batchIndex": 8,
-    "levels": "71-80",
-    "quests": [
-        {
-            "id": "ACC_CONSONANTCLARITY_L71_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "rose",
-            "textToSpeak": "rose",
-            "options": [
-                "/s/",
-                "/z/"
-            ],
-            "correctAnswer": "/z/",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"rose\" slowly and isolate just the target consonant. To make /z/, you push a thin stream of air over your tongue tip with your voice on. To make /s/, you push a thin stream of air over your tongue tip with no voice. Which one are you actually doing?",
-            "explanation": "\"rose\" features /z/ rather than /s/. /z/ comes from pushing a thin stream of air over your tongue tip with your voice on, which is why it sounds distinct from the voiceless alveolar fricative /s/ used in words like \"see\".",
-            "mouthPosition": "Push a thin stream of air over your tongue tip with your voice on.",
-            "voicing": "voiced",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L71_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "shed",
-            "textToSpeak": "shed",
-            "options": [
-                "/ʃ/",
-                "/tʃ/"
-            ],
-            "correctAnswer": "/ʃ/",
-            "correctAnswerIndex": 0,
-            "hint": "In \"shed\", focus on the target sound. /ʃ/ comes from rounding your lips slightly and pushing air across your tongue with no voice, while /tʃ/ comes from stopping the air just behind your top teeth, then releasing it as a hiss, with no voice — which one is really happening?",
-            "explanation": "In \"shed\", the target sound is /ʃ/, made by rounding your lips slightly and pushing air across your tongue with no voice. The distractor /tʃ/ would instead require you to stop the air just behind your top teeth, then release it as a hiss, with no voice — a clearly different sound once you isolate it.",
-            "mouthPosition": "To produce this sound, round your lips slightly and push air across your tongue with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L71_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "price",
-            "textToSpeak": "price",
-            "options": [
-                "/z/",
-                "/s/"
-            ],
-            "correctAnswer": "/s/",
-            "correctAnswerIndex": 1,
-            "hint": "Think about what your mouth is doing during the target sound in \"price\". Does it push a thin stream of air over your tongue tip with no voice? Or does it push a thin stream of air over your tongue tip with your voice on?",
-            "explanation": "The word \"price\" contains /s/, a voiceless alveolar fricative, made by pushing a thin stream of air over your tongue tip with no voice. It's easy to confuse with /z/, a voiced alveolar fricative, but the two are produced quite differently.",
-            "mouthPosition": "Feel it in the mouth: push a thin stream of air over your tongue tip with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L72_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "job",
-            "textToSpeak": "job",
-            "options": [
-                "/tʃ/",
-                "/dʒ/"
-            ],
-            "correctAnswer": "/dʒ/",
-            "correctAnswerIndex": 1,
-            "hint": "\"job\" holds either /dʒ/ or /tʃ/. One is a voiced postalveolar affricate; the other, a voiceless postalveolar affricate. Isolate the sound and compare it to both.",
-            "explanation": "\"job\" is a good example of /dʒ/: you stop the air just behind your top teeth, then release it as a hiss, with your voice on. Compare that with /tʃ/, where you'd instead stop the air just behind your top teeth, then release it as a hiss, with no voice — the two shouldn't be mixed up once you feel the difference.",
-            "mouthPosition": "Stop the air just behind your top teeth, then release it as a hiss, with your voice on.",
-            "voicing": "voiced",
-            "airflow": "affricate"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L72_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "sign",
-            "textToSpeak": "sign",
-            "options": [
-                "/s/",
-                "/ʃ/"
-            ],
-            "correctAnswer": "/s/",
-            "correctAnswerIndex": 0,
-            "hint": "Try producing \"sign\" yourself. To make /s/, you push a thin stream of air over your tongue tip with no voice — quite different from /ʃ/, which needs you to round your lips slightly and push air across your tongue with no voice.",
-            "explanation": "The consonant in \"sign\" is /s/, not /ʃ/. To produce /s/, you push a thin stream of air over your tongue tip with no voice; /ʃ/ is made differently, by rounding your lips slightly and pushing air across your tongue with no voice.",
-            "mouthPosition": "To produce this sound, push a thin stream of air over your tongue tip with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L72_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "jeep",
-            "textToSpeak": "jeep",
-            "options": [
-                "/tʃ/",
-                "/dʒ/"
-            ],
-            "correctAnswer": "/dʒ/",
-            "correctAnswerIndex": 1,
-            "hint": "Here's the key contrast in \"jeep\": /dʒ/ is made by stopping the air just behind your top teeth, then releasing it as a hiss, with your voice on, and /tʃ/ is made by stopping the air just behind your top teeth, then releasing it as a hiss, with no voice. Which description fits what you hear?",
-            "explanation": "Here, /dʒ/ is correct because \"jeep\" is made by stopping the air just behind your top teeth, then releasing it as a hiss, with your voice on. If it were /tʃ/ instead, you'd be doing this: stopping the air just behind your top teeth, then releasing it as a hiss, with no voice — a noticeably different articulation.",
-            "mouthPosition": "Feel it in the mouth: stop the air just behind your top teeth, then release it as a hiss, with your voice on.",
-            "voicing": "voiced",
-            "airflow": "affricate"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L73_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "glass",
-            "textToSpeak": "glass",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/g/",
-            "correctAnswerIndex": 1,
-            "hint": "Don't let the spelling of \"glass\" guide you — isolate the exact consonant sound and test it against both options.",
-            "explanation": "\"glass\" uses /g/, a voiced velar plosive. This contrasts with the voiceless velar plosive /k/, heard in words like \"key\", which is produced by raising the back of your tongue to the soft palate with no voice instead.",
-            "mouthPosition": "Raise the back of your tongue to the soft palate with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L73_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "vault",
-            "textToSpeak": "vault",
-            "options": [
-                "/v/",
-                "/f/"
-            ],
-            "correctAnswer": "/v/",
-            "correctAnswerIndex": 0,
-            "hint": "For /v/, the trick is to rest your top teeth lightly on your bottom lip and blow with your voice on — like the start of \"van\". Check whether \"vault\" really does that.",
-            "explanation": "The reason /v/ is correct for \"vault\" is simple: you rest your top teeth lightly on your bottom lip and blow with your voice on. That's a completely different action from /f/, which needs you to rest your top teeth lightly on your bottom lip and blow with no voice.",
-            "mouthPosition": "To produce this sound, rest your top teeth lightly on your bottom lip and blow with your voice on.",
-            "voicing": "voiced",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L73_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "three",
-            "textToSpeak": "three",
-            "options": [
-                "/θ/",
-                "/t/"
-            ],
-            "correctAnswer": "/θ/",
-            "correctAnswerIndex": 0,
-            "hint": "\"three\" needs careful listening. A voiceless dental fricative like /θ/ can sound close to a voiceless alveolar plosive like /t/ if you're not paying attention to exactly what your mouth is doing.",
-            "explanation": "\"three\" targets /θ/. Made by placing your tongue tip lightly behind your top teeth and blowing with no voice, it's a voiceless dental fricative — distinct from the voiceless alveolar plosive /t/, which instead calls for tapping your tongue tip on the ridge behind your top teeth with no voice.",
-            "mouthPosition": "Feel it in the mouth: place your tongue tip lightly behind your top teeth and blow with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L74_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "seep",
-            "textToSpeak": "seep",
-            "options": [
-                "/ʃ/",
-                "/s/"
-            ],
-            "correctAnswer": "/s/",
-            "correctAnswerIndex": 1,
-            "hint": "Whisper \"seep\" to yourself and freeze on the target consonant. Is your mouth doing this — pushing a thin stream of air over your tongue tip with no voice — or this — rounding your lips slightly and pushing air across your tongue with no voice?",
-            "explanation": "What makes \"seep\" contain /s/ rather than /ʃ/ comes down to articulation: /s/ means you push a thin stream of air over your tongue tip with no voice, while /ʃ/ would instead mean rounding your lips slightly and pushing air across your tongue with no voice.",
-            "mouthPosition": "Push a thin stream of air over your tongue tip with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L74_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "pass",
-            "textToSpeak": "pass",
-            "options": [
-                "/ʃ/",
-                "/s/"
-            ],
-            "correctAnswer": "/s/",
-            "correctAnswerIndex": 1,
-            "hint": "The two candidates for \"pass\" feel different in the mouth: /s/ means you push a thin stream of air over your tongue tip with no voice, and /ʃ/ means you round your lips slightly and push air across your tongue with no voice. Which matches?",
-            "explanation": "Once you isolate the consonant in \"pass\", it's clearly /s/ — produced by pushing a thin stream of air over your tongue tip with no voice. Words with /ʃ/ instead, like \"shoe\", require rounding your lips slightly and pushing air across your tongue with no voice.",
-            "mouthPosition": "To produce this sound, push a thin stream of air over your tongue tip with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L74_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "rush",
-            "textToSpeak": "rush",
-            "options": [
-                "/s/",
-                "/ʃ/"
-            ],
-            "correctAnswer": "/ʃ/",
-            "correctAnswerIndex": 1,
-            "hint": "Isolate the target sound in \"rush\" and hold it for a second. /ʃ/ should feel like you round your lips slightly and push air across your tongue with no voice — does it?",
-            "explanation": "/ʃ/ is the sound in \"rush\", formed by rounding your lips slightly and pushing air across your tongue with no voice. Learners often mix this up with /s/, a voiceless alveolar fricative made by pushing a thin stream of air over your tongue tip with no voice, but the mouth is doing something different each time.",
-            "mouthPosition": "Feel it in the mouth: round your lips slightly and push air across your tongue with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L75_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "wish",
-            "textToSpeak": "wish",
-            "options": [
-                "/ʃ/",
-                "/s/"
-            ],
-            "correctAnswer": "/ʃ/",
-            "correctAnswerIndex": 0,
-            "hint": "Break \"wish\" down sound by sound. The consonant you want is either a voiceless postalveolar fricative or a voiceless alveolar fricative — remember that /ʃ/ means you round your lips slightly and push air across your tongue with no voice.",
-            "explanation": "This is /ʃ/, not /s/: in \"wish\", you round your lips slightly and push air across your tongue with no voice. The distractor would instead need pushing a thin stream of air over your tongue tip with no voice, which changes the sound completely.",
-            "mouthPosition": "Round your lips slightly and push air across your tongue with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L75_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "guard",
-            "textToSpeak": "guard",
-            "options": [
-                "/g/",
-                "/k/"
-            ],
-            "correctAnswer": "/g/",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"guard\" at normal speed, then again in slow motion. Isolating the consonant this way makes it much easier to tell /g/ from /k/.",
-            "explanation": "\"guard\" is built on /g/ — raising the back of your tongue to the soft palate with your voice on is how it's made. That's a voiced velar plosive, easy to tell apart from the voiceless velar plosive /k/ once you know both feel different in the mouth.",
-            "mouthPosition": "To produce this sound, raise the back of your tongue to the soft palate with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L75_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "gym",
-            "textToSpeak": "gym",
-            "options": [
-                "/tʃ/",
-                "/dʒ/"
-            ],
-            "correctAnswer": "/dʒ/",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to \"gym\". For /dʒ/, you stop the air just behind your top teeth, then release it as a hiss, with your voice on — like the start of \"judge\". Does that match what you hear?",
-            "explanation": "\"gym\" features /dʒ/ rather than /tʃ/. /dʒ/ comes from stopping the air just behind your top teeth, then releasing it as a hiss, with your voice on, which is why it sounds distinct from the voiceless postalveolar affricate /tʃ/ used in words like \"chip\".",
-            "mouthPosition": "Feel it in the mouth: stop the air just behind your top teeth, then release it as a hiss, with your voice on.",
-            "voicing": "voiced",
-            "airflow": "affricate"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L76_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "tier",
-            "textToSpeak": "tier",
-            "options": [
-                "/t/",
-                "/d/"
-            ],
-            "correctAnswer": "/t/",
-            "correctAnswerIndex": 0,
-            "hint": "\"tier\" contains one of these two sounds. /t/ is a voiceless alveolar plosive, made when you tap your tongue tip on the ridge behind your top teeth with no voice. /d/ is a voiced alveolar plosive instead.",
-            "explanation": "In \"tier\", the target sound is /t/, made by tapping your tongue tip on the ridge behind your top teeth with no voice. The distractor /d/ would instead require you to tap your tongue tip on the ridge behind your top teeth with your voice on — a clearly different sound once you isolate it.",
-            "mouthPosition": "Tap your tongue tip on the ridge behind your top teeth with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L76_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "shop",
-            "textToSpeak": "shop",
-            "options": [
-                "/s/",
-                "/ʃ/"
-            ],
-            "correctAnswer": "/ʃ/",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"shop\" slowly and isolate just the target consonant. To make /ʃ/, you round your lips slightly and push air across your tongue with no voice. To make /s/, you push a thin stream of air over your tongue tip with no voice. Which one are you actually doing?",
-            "explanation": "The word \"shop\" contains /ʃ/, a voiceless postalveolar fricative, made by rounding your lips slightly and pushing air across your tongue with no voice. It's easy to confuse with /s/, a voiceless alveolar fricative, but the two are produced quite differently.",
-            "mouthPosition": "To produce this sound, round your lips slightly and push air across your tongue with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L76_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "share",
-            "textToSpeak": "share",
-            "options": [
-                "/ʃ/",
-                "/tʃ/"
-            ],
-            "correctAnswer": "/ʃ/",
-            "correctAnswerIndex": 0,
-            "hint": "In \"share\", focus on the target sound. /ʃ/ comes from rounding your lips slightly and pushing air across your tongue with no voice, while /tʃ/ comes from stopping the air just behind your top teeth, then releasing it as a hiss, with no voice — which one is really happening?",
-            "explanation": "\"share\" is a good example of /ʃ/: you round your lips slightly and push air across your tongue with no voice. Compare that with /tʃ/, where you'd instead stop the air just behind your top teeth, then release it as a hiss, with no voice — the two shouldn't be mixed up once you feel the difference.",
-            "mouthPosition": "Feel it in the mouth: round your lips slightly and push air across your tongue with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L77_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "throw",
-            "textToSpeak": "throw",
-            "options": [
-                "/t/",
-                "/θ/"
-            ],
-            "correctAnswer": "/θ/",
-            "correctAnswerIndex": 1,
-            "hint": "Think about what your mouth is doing during the target sound in \"throw\". Does it place your tongue tip lightly behind your top teeth and blow with no voice? Or does it tap your tongue tip on the ridge behind your top teeth with no voice?",
-            "explanation": "The consonant in \"throw\" is /θ/, not /t/. To produce /θ/, you place your tongue tip lightly behind your top teeth and blow with no voice; /t/ is made differently, by tapping your tongue tip on the ridge behind your top teeth with no voice.",
-            "mouthPosition": "Place your tongue tip lightly behind your top teeth and blow with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L77_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "tale",
-            "textToSpeak": "tale",
-            "options": [
-                "/t/",
-                "/d/"
-            ],
-            "correctAnswer": "/t/",
-            "correctAnswerIndex": 0,
-            "hint": "\"tale\" holds either /t/ or /d/. One is a voiceless alveolar plosive; the other, a voiced alveolar plosive. Isolate the sound and compare it to both.",
-            "explanation": "Here, /t/ is correct because \"tale\" is made by tapping your tongue tip on the ridge behind your top teeth with no voice. If it were /d/ instead, you'd be doing this: tapping your tongue tip on the ridge behind your top teeth with your voice on — a noticeably different articulation.",
-            "mouthPosition": "To produce this sound, tap your tongue tip on the ridge behind your top teeth with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L77_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "fault",
-            "textToSpeak": "fault",
-            "options": [
-                "/f/",
-                "/v/"
-            ],
-            "correctAnswer": "/f/",
-            "correctAnswerIndex": 0,
-            "hint": "Try producing \"fault\" yourself. To make /f/, you rest your top teeth lightly on your bottom lip and blow with no voice — quite different from /v/, which needs you to rest your top teeth lightly on your bottom lip and blow with your voice on.",
-            "explanation": "\"fault\" uses /f/, a voiceless labiodental fricative. This contrasts with the voiced labiodental fricative /v/, heard in words like \"van\", which is produced by resting your top teeth lightly on your bottom lip and blowing with your voice on instead.",
-            "mouthPosition": "Feel it in the mouth: rest your top teeth lightly on your bottom lip and blow with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L78_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "age",
-            "textToSpeak": "age",
-            "options": [
-                "/tʃ/",
-                "/dʒ/"
-            ],
-            "correctAnswer": "/dʒ/",
-            "correctAnswerIndex": 1,
-            "hint": "Here's the key contrast in \"age\": /dʒ/ is made by stopping the air just behind your top teeth, then releasing it as a hiss, with your voice on, and /tʃ/ is made by stopping the air just behind your top teeth, then releasing it as a hiss, with no voice. Which description fits what you hear?",
-            "explanation": "The reason /dʒ/ is correct for \"age\" is simple: you stop the air just behind your top teeth, then release it as a hiss, with your voice on. That's a completely different action from /tʃ/, which needs you to stop the air just behind your top teeth, then release it as a hiss, with no voice.",
-            "mouthPosition": "Stop the air just behind your top teeth, then release it as a hiss, with your voice on.",
-            "voicing": "voiced",
-            "airflow": "affricate"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L78_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "ship",
-            "textToSpeak": "ship",
-            "options": [
-                "/s/",
-                "/ʃ/"
-            ],
-            "correctAnswer": "/ʃ/",
-            "correctAnswerIndex": 1,
-            "hint": "Don't let the spelling of \"ship\" guide you — isolate the exact consonant sound and test it against both options.",
-            "explanation": "\"ship\" targets /ʃ/. Made by rounding your lips slightly and pushing air across your tongue with no voice, it's a voiceless postalveolar fricative — distinct from the voiceless alveolar fricative /s/, which instead calls for pushing a thin stream of air over your tongue tip with no voice.",
-            "mouthPosition": "To produce this sound, round your lips slightly and push air across your tongue with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L78_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "thank",
-            "textToSpeak": "thank",
-            "options": [
-                "/θ/",
-                "/s/"
-            ],
-            "correctAnswer": "/θ/",
-            "correctAnswerIndex": 0,
-            "hint": "For /θ/, the trick is to place your tongue tip lightly behind your top teeth and blow with no voice — like the start of \"think\". Check whether \"thank\" really does that.",
-            "explanation": "What makes \"thank\" contain /θ/ rather than /s/ comes down to articulation: /θ/ means you place your tongue tip lightly behind your top teeth and blow with no voice, while /s/ would instead mean pushing a thin stream of air over your tongue tip with no voice.",
-            "mouthPosition": "Feel it in the mouth: place your tongue tip lightly behind your top teeth and blow with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L79_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "much",
-            "textToSpeak": "much",
-            "options": [
-                "/tʃ/",
-                "/dʒ/"
-            ],
-            "correctAnswer": "/tʃ/",
-            "correctAnswerIndex": 0,
-            "hint": "\"much\" needs careful listening. A voiceless postalveolar affricate like /tʃ/ can sound close to a voiced postalveolar affricate like /dʒ/ if you're not paying attention to exactly what your mouth is doing.",
-            "explanation": "Once you isolate the consonant in \"much\", it's clearly /tʃ/ — produced by stopping the air just behind your top teeth, then releasing it as a hiss, with no voice. Words with /dʒ/ instead, like \"judge\", require stopping the air just behind your top teeth, then releasing it as a hiss, with your voice on.",
-            "mouthPosition": "Stop the air just behind your top teeth, then release it as a hiss, with no voice.",
-            "voicing": "voiceless",
-            "airflow": "affricate"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L79_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "width",
-            "textToSpeak": "width",
-            "options": [
-                "/θ/",
-                "/t/"
-            ],
-            "correctAnswer": "/θ/",
-            "correctAnswerIndex": 0,
-            "hint": "Whisper \"width\" to yourself and freeze on the target consonant. Is your mouth doing this — placing your tongue tip lightly behind your top teeth and blowing with no voice — or this — tapping your tongue tip on the ridge behind your top teeth with no voice?",
-            "explanation": "/θ/ is the sound in \"width\", formed by placing your tongue tip lightly behind your top teeth and blowing with no voice. Learners often mix this up with /t/, a voiceless alveolar plosive made by tapping your tongue tip on the ridge behind your top teeth with no voice, but the mouth is doing something different each time.",
-            "mouthPosition": "To produce this sound, place your tongue tip lightly behind your top teeth and blow with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L79_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "depth",
-            "textToSpeak": "depth",
-            "options": [
-                "/t/",
-                "/θ/"
-            ],
-            "correctAnswer": "/θ/",
-            "correctAnswerIndex": 1,
-            "hint": "The two candidates for \"depth\" feel different in the mouth: /θ/ means you place your tongue tip lightly behind your top teeth and blow with no voice, and /t/ means you tap your tongue tip on the ridge behind your top teeth with no voice. Which matches?",
-            "explanation": "This is /θ/, not /t/: in \"depth\", you place your tongue tip lightly behind your top teeth and blow with no voice. The distractor would instead need tapping your tongue tip on the ridge behind your top teeth with no voice, which changes the sound completely.",
-            "mouthPosition": "Feel it in the mouth: place your tongue tip lightly behind your top teeth and blow with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L80_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "wealth",
-            "textToSpeak": "wealth",
-            "options": [
-                "/θ/",
-                "/s/"
-            ],
-            "correctAnswer": "/θ/",
-            "correctAnswerIndex": 0,
-            "hint": "Isolate the target sound in \"wealth\" and hold it for a second. /θ/ should feel like you place your tongue tip lightly behind your top teeth and blow with no voice — does it?",
-            "explanation": "\"wealth\" is built on /θ/ — placing your tongue tip lightly behind your top teeth and blowing with no voice is how it's made. That's a voiceless dental fricative, easy to tell apart from the voiceless alveolar fricative /s/ once you know both feel different in the mouth.",
-            "mouthPosition": "Place your tongue tip lightly behind your top teeth and blow with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L80_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "chase",
-            "textToSpeak": "chase",
-            "options": [
-                "/tʃ/",
-                "/ʃ/"
-            ],
-            "correctAnswer": "/tʃ/",
-            "correctAnswerIndex": 0,
-            "hint": "Break \"chase\" down sound by sound. The consonant you want is either a voiceless postalveolar affricate or a voiceless postalveolar fricative — remember that /tʃ/ means you stop the air just behind your top teeth, then release it as a hiss, with no voice.",
-            "explanation": "\"chase\" features /tʃ/ rather than /ʃ/. /tʃ/ comes from stopping the air just behind your top teeth, then releasing it as a hiss, with no voice, which is why it sounds distinct from the voiceless postalveolar fricative /ʃ/ used in words like \"shoe\".",
-            "mouthPosition": "To produce this sound, stop the air just behind your top teeth, then release it as a hiss, with no voice.",
-            "voicing": "voiceless",
-            "airflow": "affricate"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L80_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "shawl",
-            "textToSpeak": "shawl",
-            "options": [
-                "/ʃ/",
-                "/tʃ/"
-            ],
-            "correctAnswer": "/ʃ/",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"shawl\" at normal speed, then again in slow motion. Isolating the consonant this way makes it much easier to tell /ʃ/ from /tʃ/.",
-            "explanation": "In \"shawl\", the target sound is /ʃ/, made by rounding your lips slightly and pushing air across your tongue with no voice. The distractor /tʃ/ would instead require you to stop the air just behind your top teeth, then release it as a hiss, with no voice — a clearly different sound once you isolate it.",
-            "mouthPosition": "Feel it in the mouth: round your lips slightly and push air across your tongue with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        }
-    ]
+  "gameType": "consonantClarity",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "id": "ACC_CONSONANTCLARITY_L71_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "bad",
+      "textToSpeak": "bad",
+      "options": [
+        "/d/",
+        "/t/"
+      ],
+      "correctAnswer": "/d/",
+      "correctAnswerIndex": 0,
+      "hint": "Stretch the vowel before the last sound. Does it feel roomy, and does the buzz carry all the way to the tongue's closure?",
+      "explanation": "'Bad' ends in /d/ after a long vowel, and the voice continues into the tongue tip's closure. Ending with /t/ makes the word 'bat', and listeners take a shorter vowel as evidence of a voiceless final. For a final /d/, it's the buzz and the vowel that tell the story.",
+      "mouthPosition": "Following the vowel, press your tongue tip to the ridge behind your upper teeth with the voice still on. Don't add a vowel after it.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L71_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "late",
+      "textToSpeak": "late",
+      "options": [
+        "/t/",
+        "/d/"
+      ],
+      "correctAnswer": "/t/",
+      "correctAnswerIndex": 0,
+      "hint": "Compare the vowel length with the vowel in 'laid'. Does the word you're given sound closer to the shorter one or the longer one?",
+      "explanation": "'Late' ends in /t/, with a shorter vowel than 'laid'. The tongue tip closes on the ridge and the voice stops, so the word ends quietly. Turning it into /d/ gives 'laid', which changes the meaning of the sentence.",
+      "mouthPosition": "Straight after the 'ay' glide, close the tongue tip against the ridge and stop the air. Voice off, no extra vowel.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L71_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "side",
+      "textToSpeak": "side",
+      "options": [
+        "/t/",
+        "/d/"
+      ],
+      "correctAnswer": "/d/",
+      "correctAnswerIndex": 1,
+      "hint": "The final sound follows a long vowel. Keep your voice on right up to the closure. Do you hear the ending as a soft stop?",
+      "explanation": "'Side' ends in /d/. Devoice it and you have 'site', which turns part of a road into part of the internet. The long 'igh' and the continuing buzz are the clues.",
+      "mouthPosition": "After the long 'igh', touch the tongue tip to the ridge with your voice still on, then let it fade.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L72_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "duck",
+      "textToSpeak": "duck",
+      "options": [
+        "/g/",
+        "/k/"
+      ],
+      "correctAnswer": "/k/",
+      "correctAnswerIndex": 1,
+      "hint": "At the end of the word, notice whether your voice has stopped before the back of the tongue closes.",
+      "explanation": "'Duck' ends in /k/, silent at the closure. A voiced ending gives 'dug'. The vowel is short before /k/, and the closure is quiet.",
+      "mouthPosition": "Once the short 'u' is said, lift the back of your tongue to the soft palate to stop the air. Voice off; no puff needed.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L72_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "tab",
+      "textToSpeak": "tab",
+      "options": [
+        "/p/",
+        "/b/"
+      ],
+      "correctAnswer": "/b/",
+      "correctAnswerIndex": 1,
+      "hint": "Say the word without releasing your lips at the end. Is your throat still buzzing as they close?",
+      "explanation": "'Tab' ends in /b/; devoice it and you get 'tap'. On a screen or at a bar, that's a big change. The vowel is longer before /b/ and the voice runs right up to the closure.",
+      "mouthPosition": "Following the vowel, close your lips with the voice on and let it fade rather than popping open.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L72_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "chip",
+      "textToSpeak": "chip",
+      "options": [
+        "/p/",
+        "/k/"
+      ],
+      "correctAnswer": "/p/",
+      "correctAnswerIndex": 0,
+      "hint": "Does the word end at the lips or at the back of the tongue? Freeze on the final closure and feel where it is.",
+      "explanation": "'Chip' ends in /p/: the lips close and the air stops. Ending at the back of the tongue would give 'chick'. The vowel is identical, so the location of the closure is the only difference.",
+      "mouthPosition": "Straight after the short 'i', close both lips to stop the air, voice off. A tiny puff is optional.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L73_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "lose",
+      "textToSpeak": "lose",
+      "options": [
+        "/s/",
+        "/z/"
+      ],
+      "correctAnswer": "/z/",
+      "correctAnswerIndex": 1,
+      "hint": "Rest a finger on your throat while you say the word. Where in the word does the buzz stop?",
+      "explanation": "'Lose' ends in /z/, spelled SE. Its look-alike 'loose' ends in /s/, and the pair is among the most commonly mixed up in writing and speech. In 'lose' the buzz runs all the way to the end.",
+      "mouthPosition": "After the long 'oo', put the tongue tip near the ridge and let a buzz run through to the end.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L73_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "advice",
+      "textToSpeak": "advice",
+      "options": [
+        "/z/",
+        "/s/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 1,
+      "hint": "This word ends with the letters CE. Stretch the last sound and check your throat for a buzz.",
+      "explanation": "'Advice' ends in /s/: a voiceless hiss. The verb 'advise' ends in /z/. Learners often use the buzz for both, so keep the noun voiceless.",
+      "mouthPosition": "Once the stressed 'eye' is said, keep your tongue tip near the ridge and blow a voiceless hiss to the end.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L73_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "raise",
+      "textToSpeak": "raise",
+      "options": [
+        "/z/",
+        "/s/"
+      ],
+      "correctAnswer": "/z/",
+      "correctAnswerIndex": 0,
+      "hint": "Stretch the vowel glide. Does the voice carry all the way through the final consonant?",
+      "explanation": "'Raise' ends in /z/. Devoice it and you'll say 'race'. The vowel glide is longer, and the voice keeps going, so the ending sounds soft and buzzy.",
+      "mouthPosition": "Following the 'ay' glide, put the tongue tip near the ridge with your voice on and let the buzz carry to the end.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L74_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "north",
+      "textToSpeak": "north",
+      "options": [
+        "/f/",
+        "/θ/"
+      ],
+      "correctAnswer": "/θ/",
+      "correctAnswerIndex": 1,
+      "hint": "At the end of the word, does the tongue peek between your teeth, or does your lip touch them?",
+      "explanation": "'North' ends in /θ/, right after the /r/ sound. The tongue tip has to slide forward between the teeth, and the air flows softly. Some accents use /f/ here, but /θ/ is the most widely clear form.",
+      "mouthPosition": "Pull the tongue forward from the r position until its tip meets the edge of your top teeth; breathe out softly, no voice.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L74_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "half",
+      "textToSpeak": "half",
+      "options": [
+        "/f/",
+        "/v/"
+      ],
+      "correctAnswer": "/f/",
+      "correctAnswerIndex": 0,
+      "hint": "The L is silent here. What touches at the end: lip to teeth, with plain air or with a buzz?",
+      "explanation": "'Half' ends in /f/; the L is silent. Voice the ending and you get 'halve', the verb. A quiet, voiceless hiss at the end marks 'half'.",
+      "mouthPosition": "After the 'a' vowel, rest your top teeth on your bottom lip and blow a smooth voiceless stream of air.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L74_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "leave",
+      "textToSpeak": "leave",
+      "options": [
+        "/v/",
+        "/f/"
+      ],
+      "correctAnswer": "/v/",
+      "correctAnswerIndex": 0,
+      "hint": "Keep your voice on to the very end of this word. Does the last sound still buzz against your lip?",
+      "explanation": "'Leave' ends in /v/, and the E is silent. Without the buzz you'd say 'leaf', the part of a plant. The long vowel and the final buzz go together.",
+      "mouthPosition": "Once the 'ee' is said, put your top teeth on your bottom lip, voice on, and let a buzz run out before you stop.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L75_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "page",
+      "textToSpeak": "page",
+      "options": [
+        "/tʃ/",
+        "/dʒ/"
+      ],
+      "correctAnswer": "/dʒ/",
+      "correctAnswerIndex": 1,
+      "hint": "The word ends with a silent E. Check for a buzz in the last sound.",
+      "explanation": "'Page' ends in /dʒ/: the tongue seals against the roof and releases into a buzzy hush. Without voice it would sound like 'paitch'. G before E stands for /dʒ/ here.",
+      "mouthPosition": "Following the 'ay' glide, seal your tongue against the roof behind the ridge with your voice on, and release into a short buzzy hush.",
+      "voicing": "voiced",
+      "airflow": "affricate"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L75_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "wish",
+      "textToSpeak": "wish",
+      "options": [
+        "/tʃ/",
+        "/ʃ/"
+      ],
+      "correctAnswer": "/ʃ/",
+      "correctAnswerIndex": 1,
+      "hint": "The word ends in SH. Does the air keep flowing at the end, or is there a closure first?",
+      "explanation": "'Wish' ends in /ʃ/, a smooth hush. Add a stop and you get 'which'. Both words are so common that the small closure matters.",
+      "mouthPosition": "Straight after the short 'i', pull the tongue slightly back and round your lips, hushing air out steadily.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L75_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "much",
+      "textToSpeak": "much",
+      "options": [
+        "/tʃ/",
+        "/ʃ/"
+      ],
+      "correctAnswer": "/tʃ/",
+      "correctAnswerIndex": 0,
+      "hint": "The word ends in CH. Is there a closure before the hush, or does the hush start straight away?",
+      "explanation": "'Much' ends in /tʃ/: a brief seal and then a hush. Without the seal it becomes 'mush'. A tiny closure turns a word about quantity into a soft food.",
+      "mouthPosition": "After the short 'u', seal the front of your tongue behind the ridge and release a short voiceless hush.",
+      "voicing": "voiceless",
+      "airflow": "affricate"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L76_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "team",
+      "textToSpeak": "team",
+      "options": [
+        "/n/",
+        "/m/"
+      ],
+      "correctAnswer": "/m/",
+      "correctAnswerIndex": 1,
+      "hint": "Freeze your mouth at the end of the word and look in a mirror. What do you see happening between the lips?",
+      "explanation": "'Team' ends in /m/: the lips close and voiced air goes through the nose. Lifting the tongue tip gives 'teen'. The closing lips are the visible action.",
+      "mouthPosition": "Once the 'ee' is said, close both lips and hum through your nose.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L76_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "bang",
+      "textToSpeak": "bang",
+      "options": [
+        "/ŋ/",
+        "/n/"
+      ],
+      "correctAnswer": "/ŋ/",
+      "correctAnswerIndex": 0,
+      "hint": "Don't look for a G. Feel whether the back of your tongue is raised at the end.",
+      "explanation": "'Bang' ends in /ŋ/; the G isn't released. Lift the tongue tip and it becomes 'ban'. The two words share everything except the place where the tongue ends up.",
+      "mouthPosition": "Lift the back of the tongue to the soft palate at the end of the vowel and keep humming through the nose; stop there.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L76_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "learn",
+      "textToSpeak": "learn",
+      "options": [
+        "/n/",
+        "/m/"
+      ],
+      "correctAnswer": "/n/",
+      "correctAnswerIndex": 0,
+      "hint": "The word ends after an r-coloured vowel. At the end, is your tongue tip up, or are your lips closed?",
+      "explanation": "'Learn' ends in /n/: the tongue tip rises to the ridge and voiced air passes through the nose with the lips apart. Closing the lips would give 'lerm'. Since /r/ comes just before, the tongue has to move forward and up for the /n/.",
+      "mouthPosition": "Straight after the 'er' sound, lift your tongue tip to the ridge behind your upper teeth and hum through your nose, lips apart.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L77_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "fall",
+      "textToSpeak": "fall",
+      "options": [
+        "/l/",
+        "/n/"
+      ],
+      "correctAnswer": "/l/",
+      "correctAnswerIndex": 0,
+      "hint": "At the end, does the sound leave over the sides of your tongue or through your nose?",
+      "explanation": "'Fall' ends in /l/: tongue tip on the ridge and air flowing over the sides. With /n/ it becomes 'fawn'. Hold the tongue-tip contact for a moment, because it's easy to skip.",
+      "mouthPosition": "After the 'aw' vowel, press your tongue tip firmly on the ridge behind your upper teeth, voice on, and hold.",
+      "voicing": "voiced",
+      "airflow": "approximant"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L77_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "main",
+      "textToSpeak": "main",
+      "options": [
+        "/l/",
+        "/n/"
+      ],
+      "correctAnswer": "/n/",
+      "correctAnswerIndex": 1,
+      "hint": "Feel whether the last sound can be hummed through your nose.",
+      "explanation": "'Main' ends in /n/: air passes through the nose. Making it /l/ gives 'mail', a real word with a different meaning. Both use the tongue tip on the ridge, so the airflow route is what separates them.",
+      "mouthPosition": "Once the 'ay' glide is said, touch your tongue tip to the ridge and hum through your nose.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L77_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "hill",
+      "textToSpeak": "hill",
+      "options": [
+        "/d/",
+        "/l/"
+      ],
+      "correctAnswer": "/l/",
+      "correctAnswerIndex": 1,
+      "hint": "Does the tongue stay pressed to the ridge while the sound flows around it, or does it tap and stop?",
+      "explanation": "'Hill' ends in /l/: the tongue touches the ridge and the air flows out around the sides, with no stop. Stopping the air gives /d/ and 'hid'. Sustaining the contact is the point.",
+      "mouthPosition": "Following the short 'i', keep your tongue tip pressed to the ridge with your voice on and let air run around the sides.",
+      "voicing": "voiced",
+      "airflow": "approximant"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L78_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "breathe",
+      "textToSpeak": "breathe",
+      "options": [
+        "/ð/",
+        "/θ/"
+      ],
+      "correctAnswer": "/ð/",
+      "correctAnswerIndex": 0,
+      "hint": "This verb has a final E. Keep your voice on: is there a buzz at the end?",
+      "explanation": "'Breathe' ends in /ð/, the voiced th. The noun 'breath' ends in /θ/. Voicing at the end marks the verb, and the vowel is longer too.",
+      "mouthPosition": "Straight after the 'ee', rest your tongue tip against your upper teeth with your voice on and let it buzz softly.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L78_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "month",
+      "textToSpeak": "month",
+      "options": [
+        "/θ/",
+        "/t/"
+      ],
+      "correctAnswer": "/θ/",
+      "correctAnswerIndex": 0,
+      "hint": "After the 'n', the tongue slides forward. Does it end between the teeth, or stay on the ridge?",
+      "explanation": "'Month' ends in /θ/ after /n/: the tongue tip slides forward from the ridge to between the teeth. Many learners stop at the ridge and say 'mont'. Slide forward and let a soft voiceless stream out.",
+      "mouthPosition": "After the nasal 'n', slide your tongue tip forward between your teeth and breathe out softly with your voice off.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L78_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "path",
+      "textToSpeak": "path",
+      "options": [
+        "/s/",
+        "/θ/"
+      ],
+      "correctAnswer": "/θ/",
+      "correctAnswerIndex": 1,
+      "hint": "Does your tongue tip sit behind the teeth or between them at the end?",
+      "explanation": "'Path' ends in /θ/; move the tongue back behind the teeth and it becomes 'pass'. Soft air over a forward tongue is the mark of /θ/.",
+      "mouthPosition": "Once the 'a' is said, slide your tongue tip between your teeth and let a soft voiceless stream of air pass.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L79_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "cat",
+      "textToSpeak": "cat",
+      "options": [
+        "/t/",
+        "/p/"
+      ],
+      "correctAnswer": "/t/",
+      "correctAnswerIndex": 0,
+      "hint": "At the end, is the closure made by your tongue tip or by your lips?",
+      "explanation": "'Cat' ends in /t/; close the lips and you get 'cap'. Same start and same vowel, so the final closure decides whether you mean an animal or a piece of clothing.",
+      "mouthPosition": "Following the short 'a', tap your tongue tip against the ridge to stop the air. Voice off, no extra vowel.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L79_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "ham",
+      "textToSpeak": "ham",
+      "options": [
+        "/t/",
+        "/m/"
+      ],
+      "correctAnswer": "/m/",
+      "correctAnswerIndex": 1,
+      "hint": "Does your mouth end closed at the lips with a hum, or does the tongue tip stop the air?",
+      "explanation": "'Ham' ends in /m/: lips closed, hum through the nose. A stop with the tongue tip gives 'hat'. Food or clothing, the ending decides.",
+      "mouthPosition": "Straight after the short 'a', close both lips and hum through your nose until the sound fades.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L79_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "bus",
+      "textToSpeak": "bus",
+      "options": [
+        "/t/",
+        "/s/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 1,
+      "hint": "Stretch the last sound. Can it keep going as a hiss?",
+      "explanation": "'Bus' ends in /s/: a continuing hiss. Stop the air instead and it becomes 'but', which changes the whole sentence. Fricatives can be stretched; stops can't.",
+      "mouthPosition": "After the short 'u', put your tongue tip near the ridge and blow a thin stream of air. Keep it going for a beat.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L80_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "thing",
+      "textToSpeak": "thing",
+      "options": [
+        "/ŋ/",
+        "/n/"
+      ],
+      "correctAnswer": "/ŋ/",
+      "correctAnswerIndex": 0,
+      "hint": "The word starts with one sound and ends with another. Focus on the last one: tongue tip or back of the tongue?",
+      "explanation": "'Thing' ends in /ŋ/, made at the back of the tongue with no /g/ released. Ending with the tongue tip gives 'thin'. The starting /θ/ is a separate task.",
+      "mouthPosition": "Once the short 'i' is said, raise the back of your tongue to the soft palate and hum through your nose.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L80_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "give",
+      "textToSpeak": "give",
+      "options": [
+        "/b/",
+        "/v/"
+      ],
+      "correctAnswer": "/v/",
+      "correctAnswerIndex": 1,
+      "hint": "Hold the last sound of this word. What touches what: lip on lip, or lip on teeth?",
+      "explanation": "'Give' ends in /v/, and the E is silent. Closing both lips for /b/ would turn it into 'gib'. The lip-teeth buzz at the end is the target.",
+      "mouthPosition": "Following the short 'i', rest your top teeth on your bottom lip, voice on, and let a brief buzz run out.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L80_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "rush",
+      "textToSpeak": "rush",
+      "options": [
+        "/ʃ/",
+        "/s/"
+      ],
+      "correctAnswer": "/ʃ/",
+      "correctAnswerIndex": 0,
+      "hint": "Look in a mirror: at the end, are your lips slightly rounded?",
+      "explanation": "'Rush' ends in /ʃ/: tongue slightly back, lips rounded, and a broad hush. A thin /s/ would give 'russ'. The rounding of the lips is the visible clue.",
+      "mouthPosition": "Straight after the short 'u', pull the tongue slightly back and round your lips, hushing air out steadily.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    }
+  ]
 }

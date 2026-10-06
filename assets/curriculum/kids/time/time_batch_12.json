@@ -1,622 +1,622 @@
 [
-    {
+  {
+    "level": 111,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L111_Q1",
+        "gameType": "time",
         "level": 111,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L111_Q1",
-                "gameType": "time",
-                "level": 111,
-                "instruction": "It is five minutes past six, and the first plate is placed on the table. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:05 PM ⏱️",
-                "options": [
-                    "6:00 PM 🍲",
-                    "6:05 PM ⏱️",
-                    "6:10 PM 🕐"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after six, the minute hand is on 1.",
-                "emoji": "⏱️",
-                "explanation": "Since 5 minutes have passed six, the clock reads 6:05 PM.",
-                "funFact": "Placing the first plate is often how a family dinner begins.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L111_Q2",
-                "gameType": "time",
-                "level": 111,
-                "instruction": "The minute hand rests on the 8 and the hour hand is just past the 9, in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:40 AM 🕐",
-                "options": [
-                    "9:45 AM 📅",
-                    "9:40 AM 🕐",
-                    "9:35 AM"
-                ],
-                "hint": "Starting from nine o'clock, count by fives until you reach 40 minutes.",
-                "emoji": "🕐",
-                "explanation": "9:40 AM is 40 minutes after nine o'clock — the minute hand rests on 8.",
-                "funFact": "9:40 AM is a common time for a morning lesson to be in full swing.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L111_Q3",
-                "gameType": "time",
-                "level": 111,
-                "instruction": "It is fifty-five minutes past eleven, just moments before the lunch bell. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:55 AM ⏱️",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "11:55 AM ⏱️",
-                    "11:50 AM"
-                ],
-                "hint": "After eleven o'clock, the minute hand on 11 means 11 times 5, which is 55 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 11 means 11 × 5 = 55 minutes, so the time is 11:55 AM.",
-                "funFact": "The last minutes before a bell can feel like the longest of the day.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A bus calls at Stop A at 8:00, Stop B at 8:12, Stop C at 8:27 and Stop D at 8:41. How long does the bus take to go from Stop B to Stop D?",
+        "question": "?",
+        "correctAnswer": "29 minutes",
+        "options": [
+          "41 minutes",
+          "29 minutes",
+          "31 minutes"
+        ],
+        "hint": "Count from 8:12 up to 8:30 first, then on to 8:41.",
+        "emoji": "🛰️",
+        "explanation": "8:12 to 8:30 is 18 minutes, and 8:30 to 8:41 is 11 more. 18 + 11 = 29 minutes.",
+        "funFact": "The Hubble Space Telescope circles the Earth about once every 95 minutes.",
+        "subtype": "timetable",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L111_Q2",
+        "gameType": "time",
+        "level": 111,
+        "instruction": "A tram calls at Stop P at 3:05, Stop Q at 3:22, Stop R at 3:35 and Stop S at 3:58. Which part of the journey takes the longest?",
+        "question": "?",
+        "correctAnswer": "From R to S",
+        "options": [
+          "From P to Q",
+          "From R to S",
+          "From Q to R"
+        ],
+        "hint": "Find the time taken by each leg of the trip.",
+        "emoji": "🚊",
+        "explanation": "P to Q takes 17 minutes, Q to R takes 13 minutes and R to S takes 23 minutes. The longest part is R to S.",
+        "funFact": "On busy lines, trains in the Tokyo subway can arrive every two or three minutes.",
+        "subtype": "timetable",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L111_Q3",
+        "gameType": "time",
+        "level": 111,
+        "instruction": "A bus is due at Stop A at 8:00 and at Stop B at 8:12. Today it is 6 minutes late at Stop A but makes up 2 minutes on the way to Stop B. When does it reach Stop B?",
+        "question": "?",
+        "correctAnswer": "8:16",
+        "options": [
+          "8:18",
+          "8:12",
+          "8:16"
+        ],
+        "hint": "Start from the late time at Stop A, then use the shorter journey time.",
+        "emoji": "🐌",
+        "explanation": "At Stop A the bus is at 8:06. The journey to Stop B normally takes 12 minutes, but today it takes 10. So it reaches Stop B at 8:16.",
+        "funFact": "The Trans-Siberian railway journey across Russia takes about six days.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 112,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L112_Q1",
+        "gameType": "time",
         "level": 112,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L112_Q1",
-                "gameType": "time",
-                "level": 112,
-                "instruction": "The minute hand rests on the 5 and the hour hand is just past the 7, in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:25 AM 🕐",
-                "options": [
-                    "7:20 AM ⏱️",
-                    "7:30 AM ⏱️",
-                    "7:25 AM 🕐"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after seven, the minute hand is on 5.",
-                "emoji": "🕐",
-                "explanation": "Since 25 minutes have passed seven, the clock reads 7:25 AM.",
-                "funFact": "7:25 AM is a common time to be finishing up the morning routine.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L112_Q2",
-                "gameType": "time",
-                "level": 112,
-                "instruction": "It is five minutes past three, and the final worksheet gets passed out. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:05 PM ⏱️",
-                "options": [
-                    "3:00 PM 🎒",
-                    "3:10 PM 🕐",
-                    "3:05 PM ⏱️"
-                ],
-                "hint": "Starting from three o'clock, count by fives until you reach 5 minutes.",
-                "emoji": "⏱️",
-                "explanation": "3:05 PM is 5 minutes after three o'clock — the minute hand rests on 1.",
-                "funFact": "A final worksheet often means the school day is nearly complete.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L112_Q3",
-                "gameType": "time",
-                "level": 112,
-                "instruction": "It is forty minutes past eight, and the last page of the story is read. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:40 PM ⏱️",
-                "options": [
-                    "8:45 PM ⏮️",
-                    "8:40 PM ⏱️",
-                    "8:35 PM"
-                ],
-                "hint": "After eight o'clock, the minute hand on 8 means 8 times 5, which is 40 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 8 means 8 × 5 = 40 minutes, so the time is 8:40 PM.",
-                "funFact": "Finishing the last page is a cozy way to end a bedtime story.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A train leaves at 11:20 AM and arrives at 1:05 PM. How long is the journey?",
+        "question": "?",
+        "correctAnswer": "1 hour 45 minutes",
+        "options": [
+          "2 hours 15 minutes",
+          "1 hour 45 minutes",
+          "1 hour 15 minutes"
+        ],
+        "hint": "Count to noon first, then on to 1:05.",
+        "emoji": "🚆",
+        "explanation": "11:20 AM to 12:00 PM is 40 minutes, and 12:00 to 1:05 PM is 1 hour 5 minutes. 40 + 65 = 105 minutes, which is 1 hour 45 minutes.",
+        "funFact": "The supersonic plane Concorde could fly across the Atlantic Ocean in under three and a half hours.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L112_Q2",
+        "gameType": "time",
+        "level": 112,
+        "instruction": "Journey 1 runs 10:50 AM to 12:20 PM. Journey 2 runs 11:15 AM to 12:40 PM. Journey 3 runs 11:40 AM to 1:15 PM. Which journey is the shortest?",
+        "question": "?",
+        "correctAnswer": "Journey 2",
+        "options": [
+          "Journey 3",
+          "Journey 2",
+          "Journey 1"
+        ],
+        "hint": "Find the length of each journey. They all cross noon.",
+        "emoji": "🚢",
+        "explanation": "Journey 1 takes 1 hour 30 minutes, Journey 2 takes 1 hour 25 minutes and Journey 3 takes 1 hour 35 minutes. So Journey 2 is the shortest.",
+        "funFact": "Pilots around the world use one shared clock called UTC, so that every flight plan uses the same time.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L112_Q3",
+        "gameType": "time",
+        "level": 112,
+        "instruction": "You must arrive by 1:00 PM and the journey takes 1 hour 50 minutes. What is the latest time you can leave?",
+        "question": "?",
+        "correctAnswer": "11:10 AM",
+        "options": [
+          "11:10 AM",
+          "11:50 AM",
+          "2:50 PM"
+        ],
+        "hint": "Go back from 1:00 PM by the length of the journey.",
+        "emoji": "🧷",
+        "explanation": "1 hour before 1:00 PM is 12:00 noon, and 50 more minutes back is 11:10 AM.",
+        "funFact": "The Olympic Games take place every four years.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 113,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L113_Q1",
+        "gameType": "time",
         "level": 113,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L113_Q1",
-                "gameType": "time",
-                "level": 113,
-                "instruction": "It is ten minutes past nine, and a math problem appears on the whiteboard. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:10 AM ⏱️",
-                "options": [
-                    "9:05 AM ⏱️",
-                    "9:10 AM ⏱️",
-                    "9:15 AM ⏱️"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after nine, the minute hand is on 2.",
-                "emoji": "⏱️",
-                "explanation": "Since 10 minutes have passed nine, the clock reads 9:10 AM.",
-                "funFact": "A whiteboard is a handy place for practicing new math problems.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L113_Q2",
-                "gameType": "time",
-                "level": 113,
-                "instruction": "The minute hand rests on the 4 and the hour hand is just past the 12, at midday. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:20 PM 🕐",
-                "options": [
-                    "12:20 PM 🕐",
-                    "12:15 PM ⏱️",
-                    "12:25 PM"
-                ],
-                "hint": "Starting from twelve o'clock, count by fives until you reach 20 minutes.",
-                "emoji": "🕐",
-                "explanation": "12:20 PM is 20 minutes after twelve o'clock — the minute hand rests on 4.",
-                "funFact": "12:20 PM is a common time for a midday meal to already be underway.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L113_Q3",
-                "gameType": "time",
-                "level": 113,
-                "instruction": "It is forty minutes past seven, and pajamas are pulled from the drawer. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:40 PM ⏱️",
-                "options": [
-                    "7:45 PM ⏰",
-                    "7:35 PM ⏱️",
-                    "7:40 PM ⏱️"
-                ],
-                "hint": "After seven o'clock, the minute hand on 8 means 8 times 5, which is 40 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 8 means 8 × 5 = 40 minutes, so the time is 7:40 PM.",
-                "funFact": "Choosing pajamas is often one of the first steps toward bedtime.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A ride has a 35-minute queue and then lasts 5 minutes. Sam joins the queue at 2:50 PM. When does his ride end?",
+        "question": "?",
+        "correctAnswer": "3:30 PM",
+        "options": [
+          "3:35 PM",
+          "3:25 PM",
+          "3:30 PM"
+        ],
+        "hint": "Add the queue time first, then the ride.",
+        "emoji": "🎢",
+        "explanation": "2:50 PM plus 35 minutes is 3:25 PM. Then 5 minutes more makes 3:30 PM.",
+        "funFact": "Some roller coasters last only one to three minutes, even though the queue can take an hour.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L113_Q2",
+        "gameType": "time",
+        "level": 113,
+        "instruction": "Each ride has a 20-minute queue and lasts 5 minutes. Eva joins her first queue at 1:10 PM and goes on three rides, one after another. When does her third ride end?",
+        "question": "?",
+        "correctAnswer": "2:25 PM",
+        "options": [
+          "2:25 PM",
+          "2:10 PM",
+          "2:40 PM"
+        ],
+        "hint": "How long does one ride take altogether, including its queue?",
+        "emoji": "🤹",
+        "explanation": "Each ride takes 20 + 5 = 25 minutes. Three rides take 75 minutes, which is 1 hour 15 minutes. 1:10 PM plus 1 hour 15 minutes is 2:25 PM.",
+        "funFact": "Mathematicians study queues, and the first queueing theory was developed in 1909 to improve telephone calls.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L113_Q3",
+        "gameType": "time",
+        "level": 113,
+        "instruction": "A park's last ride must be finished by 5:00 PM. The queue takes 30 minutes and the ride lasts 6 minutes. What is the latest time to join the queue?",
+        "question": "?",
+        "correctAnswer": "4:24 PM",
+        "options": [
+          "4:30 PM",
+          "4:36 PM",
+          "4:24 PM"
+        ],
+        "hint": "Find the total time for the queue and the ride, then count back from 5:00.",
+        "emoji": "🔚",
+        "explanation": "30 + 6 = 36 minutes. 36 minutes before 5:00 PM is 4:24 PM.",
+        "funFact": "Many parks and attractions announce a last-entry time that is earlier than their closing time.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 114,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L114_Q1",
+        "gameType": "time",
         "level": 114,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L114_Q1",
-                "gameType": "time",
-                "level": 114,
-                "instruction": "It is twenty-five minutes past ten, and a fresh fruit tray appears at snack time. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:25 AM ⏱️",
-                "options": [
-                    "10:25 AM ⏱️",
-                    "10:20 AM ⏱️",
-                    "10:30 AM 🕓"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after ten, the minute hand is on 5.",
-                "emoji": "⏱️",
-                "explanation": "Since 25 minutes have passed ten, the clock reads 10:25 AM.",
-                "funFact": "A fresh fruit tray is a healthy treat during a morning snack break.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L114_Q2",
-                "gameType": "time",
-                "level": 114,
-                "instruction": "The minute hand rests on the 7 and the hour hand is just past the 4, in the afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:35 PM 🕐",
-                "options": [
-                    "4:30 PM ⏮️",
-                    "4:40 PM ⏳",
-                    "4:35 PM 🕐"
-                ],
-                "hint": "Starting from four o'clock, count by fives until you reach 35 minutes.",
-                "emoji": "🕐",
-                "explanation": "4:35 PM is 35 minutes after four o'clock — the minute hand rests on 7.",
-                "funFact": "4:35 PM is a common time for afternoon play to still be going strong.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L114_Q3",
-                "gameType": "time",
-                "level": 114,
-                "instruction": "It is fifty minutes past six, and the last bite of dinner disappears. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:50 PM ⏱️",
-                "options": [
-                    "6:45 PM ⏱️",
-                    "6:55 PM",
-                    "6:50 PM ⏱️"
-                ],
-                "hint": "After six o'clock, the minute hand on 10 means 10 times 5, which is 50 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 10 means 10 × 5 = 50 minutes, so the time is 6:50 PM.",
-                "funFact": "The last bite of dinner often means it's almost time to clear the table.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Sessions start every 40 minutes, beginning at 9:00 AM. What time does the sixth session start?",
+        "question": "?",
+        "correctAnswer": "12:20 PM",
+        "options": [
+          "12:00 PM",
+          "11:40 AM",
+          "12:20 PM"
+        ],
+        "hint": "List the start times: begin at 9:00 and add 40 minutes each time.",
+        "emoji": "🪧",
+        "explanation": "The start times are 9:00, 9:40, 10:20, 11:00, 11:40 and 12:20. The sixth session starts at 12:20 PM.",
+        "funFact": "A metronome set to 60 beats per minute ticks once every second.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L114_Q2",
+        "gameType": "time",
+        "level": 114,
+        "instruction": "A shuttle leaves at 7:10, 7:35 and 8:00, and keeps going every 25 minutes. Which of these is a shuttle time?",
+        "question": "?",
+        "correctAnswer": "8:25",
+        "options": [
+          "8:20",
+          "8:25",
+          "8:30"
+        ],
+        "hint": "Continue the pattern by adding 25 minutes each time.",
+        "emoji": "🚖",
+        "explanation": "After 8:00, adding 25 minutes gives 8:25. The times 8:20 and 8:30 do not fit the pattern.",
+        "funFact": "Trees grow one ring each year, so the rings inside a trunk can be counted to find the tree's age.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L114_Q3",
+        "gameType": "time",
+        "level": 114,
+        "instruction": "A ship's bell sounds at every half hour. It first sounds at 12:30. How many times has it sounded by the time the clock shows 2:00?",
+        "question": "?",
+        "correctAnswer": "4 times",
+        "options": [
+          "5 times",
+          "4 times",
+          "3 times"
+        ],
+        "hint": "List the bell times one by one, starting at 12:30.",
+        "emoji": "🛳️",
+        "explanation": "The bell sounds at 12:30, 1:00, 1:30 and 2:00. That is 4 times.",
+        "funFact": "On old sailing ships, a bell was rung every half hour to tell the crew how much of their watch had passed.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 115,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L115_Q1",
+        "gameType": "time",
         "level": 115,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L115_Q1",
-                "gameType": "time",
-                "level": 115,
-                "instruction": "The minute hand rests on the 11 and the hour hand is just past the 2, in the afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:55 PM 🕐",
-                "options": [
-                    "3:00 PM 🎒",
-                    "2:55 PM 🕐",
-                    "2:50 PM"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after two, the minute hand is on 11.",
-                "emoji": "🕐",
-                "explanation": "Since 55 minutes have passed two, the clock reads 2:55 PM.",
-                "funFact": "2:55 PM is a common time to be just moments from a new hour.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L115_Q2",
-                "gameType": "time",
-                "level": 115,
-                "instruction": "It is ten minutes past eleven, and paintbrushes are dipped into fresh colors. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:10 AM ⏱️",
-                "options": [
-                    "11:15 AM ⏱️",
-                    "11:10 AM ⏱️",
-                    "11:05 AM"
-                ],
-                "hint": "Starting from eleven o'clock, count by fives until you reach 10 minutes.",
-                "emoji": "⏱️",
-                "explanation": "11:10 AM is 10 minutes after eleven o'clock — the minute hand rests on 2.",
-                "funFact": "Dipping a paintbrush in fresh color is the start of a new art project.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L115_Q3",
-                "gameType": "time",
-                "level": 115,
-                "instruction": "It is thirty-five minutes past nine, and the nightlight is the only glow left. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:35 PM ⏱️",
-                "options": [
-                    "9:40 PM",
-                    "9:35 PM ⏱️",
-                    "9:30 PM ⏱️"
-                ],
-                "hint": "After nine o'clock, the minute hand on 7 means 7 times 5, which is 35 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 7 means 7 × 5 = 35 minutes, so the time is 9:35 PM.",
-                "funFact": "A single nightlight glow often means the rest of the house is asleep.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Clock A has its short hand just past 2 and its long hand on 6. Clock B has its short hand almost on 5 and its long hand on 9. How much time passes from Clock A to Clock B?",
+        "question": "?",
+        "correctAnswer": "2 hours 15 minutes",
+        "options": [
+          "1 hour 45 minutes",
+          "2 hours 45 minutes",
+          "2 hours 15 minutes"
+        ],
+        "hint": "Read each clock as a digital time first.",
+        "emoji": "📈",
+        "explanation": "Clock A shows 2:30 and Clock B shows 4:45. 2:30 to 4:30 is 2 hours, and 4:30 to 4:45 is 15 more minutes. Altogether it is 2 hours 15 minutes.",
+        "funFact": "Adult mayflies live for only about a day, and some live for just a few hours.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L115_Q2",
+        "gameType": "time",
+        "level": 115,
+        "instruction": "A film starts at twenty to six and a second film starts at quarter past eight. How long is it between the two starts?",
+        "question": "?",
+        "correctAnswer": "2 hours 35 minutes",
+        "options": [
+          "2 hours 35 minutes",
+          "2 hours 25 minutes",
+          "3 hours 25 minutes"
+        ],
+        "hint": "Turn the words into digital times, then count on from the earlier one.",
+        "emoji": "🎬",
+        "explanation": "Twenty to six is 5:40 and quarter past eight is 8:15. 5:40 to 8:00 is 2 hours 20 minutes, and 8:00 to 8:15 is 15 more. Altogether 2 hours 35 minutes.",
+        "funFact": "In the 1700s, the English clockmaker John Harrison built a very accurate sea clock that helped sailors find their position.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L115_Q3",
+        "gameType": "time",
+        "level": 115,
+        "instruction": "Which time is exactly halfway between 2:10 and 3:00?",
+        "question": "?",
+        "correctAnswer": "2:35",
+        "options": [
+          "2:40",
+          "2:35",
+          "2:30"
+        ],
+        "hint": "Find the gap between the two times, then take half of it.",
+        "emoji": "🪃",
+        "explanation": "From 2:10 to 3:00 is 50 minutes. Half of 50 is 25 minutes, and 2:10 plus 25 minutes is 2:35.",
+        "funFact": "The astronomical clock in Bern, Switzerland, was built in 1405 and still shows the time today.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 116,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L116_Q1",
+        "gameType": "time",
         "level": 116,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L116_Q1",
-                "gameType": "time",
-                "level": 116,
-                "instruction": "It is twenty minutes past seven, and one shoe is already tied. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:20 AM ⏱️",
-                "options": [
-                    "7:15 AM 🕰️",
-                    "7:25 AM 🕐",
-                    "7:20 AM ⏱️"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after seven, the minute hand is on 4.",
-                "emoji": "⏱️",
-                "explanation": "Since 20 minutes have passed seven, the clock reads 7:20 AM.",
-                "funFact": "Tying just one shoe means the morning rush is still underway.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L116_Q2",
-                "gameType": "time",
-                "level": 116,
-                "instruction": "The minute hand rests on the 10 and the hour hand is just past the 3, in the afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:50 PM 🕐",
-                "options": [
-                    "3:50 PM 🕐",
-                    "3:55 PM",
-                    "3:45 PM ⏰"
-                ],
-                "hint": "Starting from three o'clock, count by fives until you reach 50 minutes.",
-                "emoji": "🕐",
-                "explanation": "3:50 PM is 50 minutes after three o'clock — the minute hand rests on 10.",
-                "funFact": "3:50 PM is a common time to be just moments from a new hour.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L116_Q3",
-                "gameType": "time",
-                "level": 116,
-                "instruction": "It is forty minutes past one, and the globe is spun once more in class. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:40 PM ⏱️",
-                "options": [
-                    "1:40 PM ⏱️",
-                    "1:35 PM",
-                    "1:45 PM ⏱️"
-                ],
-                "hint": "After one o'clock, the minute hand on 8 means 8 times 5, which is 40 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 8 means 8 × 5 = 40 minutes, so the time is 1:40 PM.",
-                "funFact": "Spinning a globe is a fun way to explore geography in class.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "It is 4:25 PM. A film started 1 hour 10 minutes ago and lasts 2 hours. How much of the film is left?",
+        "question": "?",
+        "correctAnswer": "50 minutes",
+        "options": [
+          "50 minutes",
+          "40 minutes",
+          "1 hour 10 minutes"
+        ],
+        "hint": "Find the start time, then the end time, then count to the end.",
+        "emoji": "🕓",
+        "explanation": "The film started at 3:15 PM and lasts 2 hours, so it ends at 5:15 PM. From 4:25 PM to 5:15 PM is 50 minutes.",
+        "funFact": "A day on Saturn lasts only about 10 and a half hours.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L116_Q2",
+        "gameType": "time",
+        "level": 116,
+        "instruction": "It is 11:40 AM. The next bus comes in 35 minutes, and the bus after that comes 20 minutes later. When does the second bus come?",
+        "question": "?",
+        "correctAnswer": "12:35 PM",
+        "options": [
+          "12:55 PM",
+          "12:35 PM",
+          "12:15 PM"
+        ],
+        "hint": "Find the first bus time, then add the 20 minutes.",
+        "emoji": "🛻",
+        "explanation": "35 minutes after 11:40 AM is 12:15 PM. The second bus comes 20 minutes later, at 12:35 PM.",
+        "funFact": "Phones and computers keep the correct time by checking with time servers over the internet.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L116_Q3",
+        "gameType": "time",
+        "level": 116,
+        "instruction": "It is 9:05 AM. Which happened more recently: something 75 minutes ago, or something 1 hour 10 minutes ago?",
+        "question": "?",
+        "correctAnswer": "1 hour 10 minutes ago",
+        "options": [
+          "75 minutes ago",
+          "1 hour 10 minutes ago",
+          "They happened at the same time"
+        ],
+        "hint": "Compare the two lengths using the same unit: minutes.",
+        "emoji": "🪨",
+        "explanation": "1 hour 10 minutes is 70 minutes. Something 70 minutes ago is more recent than something 75 minutes ago.",
+        "funFact": "Geologists read the layers in rocks to work out how long ago something happened.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 117,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L117_Q1",
+        "gameType": "time",
         "level": 117,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L117_Q1",
-                "gameType": "time",
-                "level": 117,
-                "instruction": "It is twenty-five minutes past eight, and the last backpack is zipped shut. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:25 AM ⏱️",
-                "options": [
-                    "8:20 AM ⏱️",
-                    "8:30 AM ⏱️",
-                    "8:25 AM ⏱️"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after eight, the minute hand is on 5.",
-                "emoji": "⏱️",
-                "explanation": "Since 25 minutes have passed eight, the clock reads 8:25 AM.",
-                "funFact": "A zipped-up backpack means everyone is ready for the school day.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L117_Q2",
-                "gameType": "time",
-                "level": 117,
-                "instruction": "The minute hand rests on the 1 and the hour hand is just past the 5, in the evening. What time is it?",
-                "question": "?",
-                "correctAnswer": "5:05 PM 🕐",
-                "options": [
-                    "5:00 PM 🧃",
-                    "5:05 PM 🕐",
-                    "5:10 PM"
-                ],
-                "hint": "Starting from five o'clock, count by fives until you reach 5 minutes.",
-                "emoji": "🕐",
-                "explanation": "5:05 PM is 5 minutes after five o'clock — the minute hand rests on 1.",
-                "funFact": "5:05 PM is a common time for evening plans to be just beginning.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L117_Q3",
-                "gameType": "time",
-                "level": 117,
-                "instruction": "It is forty minutes past ten, and the class returns from a quick water break. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:40 AM ⏱️",
-                "options": [
-                    "10:45 AM ⏱️",
-                    "10:35 AM",
-                    "10:40 AM ⏱️"
-                ],
-                "hint": "After ten o'clock, the minute hand on 8 means 8 times 5, which is 40 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 8 means 8 × 5 = 40 minutes, so the time is 10:40 AM.",
-                "funFact": "A quick water break helps children stay refreshed during class.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Each worksheet takes 15 minutes. How many worksheets can Noor finish in 2 hours 15 minutes?",
+        "question": "?",
+        "correctAnswer": "9",
+        "options": [
+          "9",
+          "10",
+          "8"
+        ],
+        "hint": "Change the time into minutes first, then think about how many 15s fit.",
+        "emoji": "📃",
+        "explanation": "2 hours 15 minutes is 135 minutes. 135 ÷ 15 = 9 worksheets.",
+        "funFact": "A good typing speed for an adult is around 40 words per minute.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L117_Q2",
+        "gameType": "time",
+        "level": 117,
+        "instruction": "Kabir reads 5 pages in 10 minutes. At the same speed, how long will 20 pages take?",
+        "question": "?",
+        "correctAnswer": "40 minutes",
+        "options": [
+          "40 minutes",
+          "30 minutes",
+          "50 minutes"
+        ],
+        "hint": "20 pages is how many times as many as 5 pages?",
+        "emoji": "📔",
+        "explanation": "20 pages is 4 times as many as 5 pages, so the time is 4 × 10 = 40 minutes.",
+        "funFact": "Children usually read about 100 to 150 words every minute.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L117_Q3",
+        "gameType": "time",
+        "level": 117,
+        "instruction": "A tap fills one bucket every 3 minutes. How long will it take to fill 12 buckets?",
+        "question": "?",
+        "correctAnswer": "36 minutes",
+        "options": [
+          "15 minutes",
+          "4 minutes",
+          "36 minutes"
+        ],
+        "hint": "Each bucket needs 3 minutes. How many buckets are there?",
+        "emoji": "🚰",
+        "explanation": "12 buckets × 3 minutes = 36 minutes.",
+        "funFact": "An Olympic swimming pool holds about 2.5 million litres of water, so it takes days to fill.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 118,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L118_Q1",
+        "gameType": "time",
         "level": 118,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L118_Q1",
-                "gameType": "time",
-                "level": 118,
-                "instruction": "It is fifty-five minutes past four, just moments before five o'clock. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:55 PM ⏱️",
-                "options": [
-                    "4:50 PM 🕐",
-                    "5:00 PM 🧃",
-                    "4:55 PM ⏱️"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after four, the minute hand is on 11.",
-                "emoji": "⏱️",
-                "explanation": "Since 55 minutes have passed four, the clock reads 4:55 PM.",
-                "funFact": "The last few minutes before a new hour can feel like they fly by.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L118_Q2",
-                "gameType": "time",
-                "level": 118,
-                "instruction": "The minute hand rests on the 8 and the hour hand is just past the 11, in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:40 AM 🕐",
-                "options": [
-                    "11:35 AM ⏱️",
-                    "11:45 AM 🔁",
-                    "11:40 AM 🕐"
-                ],
-                "hint": "Starting from eleven o'clock, count by fives until you reach 40 minutes.",
-                "emoji": "🕐",
-                "explanation": "11:40 AM is 40 minutes after eleven o'clock — the minute hand rests on 8.",
-                "funFact": "11:40 AM is a common time for morning activities to be wrapping up.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L118_Q3",
-                "gameType": "time",
-                "level": 118,
-                "instruction": "It is ten minutes past two, and a quiet hush falls over the room. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:10 PM ⏱️",
-                "options": [
-                    "2:05 PM",
-                    "2:15 PM 🕰️",
-                    "2:10 PM ⏱️"
-                ],
-                "hint": "After two o'clock, the minute hand on 2 means 2 times 5, which is 10 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 2 means 2 × 5 = 10 minutes, so the time is 2:10 PM.",
-                "funFact": "A quiet hush often means everyone is deep in focused work.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Trains leave at 7:15, 7:50 and 8:25, and they arrive at 7:45, 8:20 and 8:55. What is true about the journeys?",
+        "question": "?",
+        "correctAnswer": "They all take 30 minutes",
+        "options": [
+          "They all take 35 minutes",
+          "They get longer each time",
+          "They all take 30 minutes"
+        ],
+        "hint": "Subtract each leaving time from its arriving time.",
+        "emoji": "📊",
+        "explanation": "7:15 to 7:45, 7:50 to 8:20 and 8:25 to 8:55 are each 30 minutes. It is the gap between departures that is 35 minutes.",
+        "funFact": "The world's first underground railway opened in London in 1863.",
+        "subtype": "timetable",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L118_Q2",
+        "gameType": "time",
+        "level": 118,
+        "instruction": "Buses leave at 4:05, 4:30 and 4:55, and keep leaving at the same gap. What time is the next bus after 4:55?",
+        "question": "?",
+        "correctAnswer": "5:20",
+        "options": [
+          "5:20",
+          "5:25",
+          "5:00"
+        ],
+        "hint": "Find the gap between buses first.",
+        "emoji": "🔂",
+        "explanation": "The gap between buses is 25 minutes. 4:55 plus 25 minutes is 5:20.",
+        "funFact": "Timetables with a steady gap, such as every 25 minutes, are easier to remember than uneven ones.",
+        "subtype": "timetable",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L118_Q3",
+        "gameType": "time",
+        "level": 118,
+        "instruction": "Slow train: leaves 9:05, arrives 9:50. Fast train: leaves 9:20, arrives 9:55. Anna reaches the station at 9:10. Which train should she take to arrive earliest?",
+        "question": "?",
+        "correctAnswer": "The fast train",
+        "options": [
+          "Either one; they arrive together",
+          "The slow train",
+          "The fast train"
+        ],
+        "hint": "Check which train has not left yet at 9:10.",
+        "emoji": "🚅",
+        "explanation": "The slow train left at 9:05, so Anna has missed it. The fast train leaves at 9:20 and arrives at 9:55.",
+        "funFact": "Some train timetables print fast and slow services in different colours to help travellers choose.",
+        "subtype": "timetable",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 119,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L119_Q1",
+        "gameType": "time",
         "level": 119,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L119_Q1",
-                "gameType": "time",
-                "level": 119,
-                "instruction": "The minute hand rests on the 7 and the hour hand is just past the 6, in the evening. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:35 PM 🕐",
-                "options": [
-                    "6:30 PM 🕓",
-                    "6:40 PM",
-                    "6:35 PM 🕐"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after six, the minute hand is on 7.",
-                "emoji": "🕐",
-                "explanation": "Since 35 minutes have passed six, the clock reads 6:35 PM.",
-                "funFact": "6:35 PM is a common time for an evening meal to be in full swing.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L119_Q2",
-                "gameType": "time",
-                "level": 119,
-                "instruction": "It is twenty-five minutes past nine, and a counting song fills the room. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:25 AM ⏱️",
-                "options": [
-                    "9:25 AM ⏱️",
-                    "9:30 AM 🕓",
-                    "9:20 AM"
-                ],
-                "hint": "Starting from nine o'clock, count by fives until you reach 25 minutes.",
-                "emoji": "⏱️",
-                "explanation": "9:25 AM is 25 minutes after nine o'clock — the minute hand rests on 5.",
-                "funFact": "A counting song is a fun way to practice numbers in class.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L119_Q3",
-                "gameType": "time",
-                "level": 119,
-                "instruction": "It is fifty minutes past twelve, and the lunchroom begins to empty out. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:50 PM ⏱️",
-                "options": [
-                    "12:45 PM 🌗",
-                    "12:55 PM",
-                    "12:50 PM ⏱️"
-                ],
-                "hint": "After twelve o'clock, the minute hand on 10 means 10 times 5, which is 50 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 10 means 10 × 5 = 50 minutes, so the time is 12:50 PM.",
-                "funFact": "An emptying lunchroom usually means lunch period is almost over.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A lesson ended at 11:15 AM. A 10-minute break followed, and then another lesson of 40 minutes. When did the second lesson end?",
+        "question": "?",
+        "correctAnswer": "12:05 PM",
+        "options": [
+          "12:05 PM",
+          "12:15 PM",
+          "11:55 AM"
+        ],
+        "hint": "Start from 11:15, add the break, and then add the lesson.",
+        "emoji": "🏷️",
+        "explanation": "11:15 plus 10 minutes is 11:25. Then 40 minutes later is 12:05 PM.",
+        "funFact": "In many countries the school year has between 180 and 220 days.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L119_Q2",
+        "gameType": "time",
+        "level": 119,
+        "instruction": "A show begins at 7:00 PM. The interval starts at 7:50 and lasts 20 minutes, and the second half lasts 45 minutes. When does the show end?",
+        "question": "?",
+        "correctAnswer": "8:55 PM",
+        "options": [
+          "8:55 PM",
+          "9:15 PM",
+          "8:35 PM"
+        ],
+        "hint": "Find when the interval ends, then add the second half.",
+        "emoji": "🪘",
+        "explanation": "The interval ends at 8:10 PM. The second half lasts 45 minutes, so the show ends at 8:55 PM.",
+        "funFact": "Theatre intervals usually last 15 to 20 minutes.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L119_Q3",
+        "gameType": "time",
+        "level": 119,
+        "instruction": "A train leaves at 10:05 AM and the journey takes 2 hours 50 minutes. Then there is a 15-minute walk to the hotel. When does the traveller reach the hotel?",
+        "question": "?",
+        "correctAnswer": "1:10 PM",
+        "options": [
+          "12:55 PM",
+          "1:10 PM",
+          "1:25 PM"
+        ],
+        "hint": "Find the arrival time of the train first, then add the walk.",
+        "emoji": "🏨",
+        "explanation": "10:05 AM plus 2 hours is 12:05 PM, and 50 more minutes makes 12:55 PM. The 15-minute walk ends at 1:10 PM.",
+        "funFact": "Airlines often add spare minutes to the scheduled flight time, so that planes can arrive on time even after small delays.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 120,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L120_Q1",
+        "gameType": "time",
         "level": 120,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L120_Q1",
-                "gameType": "time",
-                "level": 120,
-                "instruction": "It is ten minutes past seven, and the bathwater is still warm. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:10 PM ⏱️",
-                "options": [
-                    "7:05 PM",
-                    "7:10 PM ⏱️",
-                    "7:15 PM ⏳"
-                ],
-                "hint": "Each number on the clock face stands for 5 minutes — after seven, the minute hand is on 2.",
-                "emoji": "⏱️",
-                "explanation": "Since 10 minutes have passed seven, the clock reads 7:10 PM.",
-                "funFact": "Warm bathwater helps make bath time cozy and relaxing.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L120_Q2",
-                "gameType": "time",
-                "level": 120,
-                "instruction": "The minute hand rests on the 4 and the hour hand is just past the 8, in the evening. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:20 PM 🕐",
-                "options": [
-                    "8:25 PM",
-                    "8:15 PM ⏮️",
-                    "8:20 PM 🕐"
-                ],
-                "hint": "Starting from eight o'clock, count by fives until you reach 20 minutes.",
-                "emoji": "🕐",
-                "explanation": "8:20 PM is 20 minutes after eight o'clock — the minute hand rests on 4.",
-                "funFact": "8:20 PM is a common time for evening routines to be well underway.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L120_Q3",
-                "gameType": "time",
-                "level": 120,
-                "instruction": "It is thirty-five minutes past ten, deep into a quiet, sleepy night. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:35 PM ⏱️",
-                "options": [
-                    "10:40 PM",
-                    "10:30 PM 🕥",
-                    "10:35 PM ⏱️"
-                ],
-                "hint": "After ten o'clock, the minute hand on 7 means 7 times 5, which is 35 minutes.",
-                "emoji": "⏱️",
-                "explanation": "The minute hand on 7 means 7 × 5 = 35 minutes, so the time is 10:35 PM.",
-                "funFact": "A quiet, sleepy night often means the whole house is fast asleep.",
-                "subtype": "five_minute_intervals",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    }
+        "instruction": "Bus A runs 6:15 to 6:58. Bus B runs 6:30 to 7:05. Bus C runs 6:45 to 7:15. Which bus has the longest journey?",
+        "question": "?",
+        "correctAnswer": "Bus A",
+        "options": [
+          "Bus A",
+          "Bus B",
+          "Bus C"
+        ],
+        "hint": "Work out how long each journey takes.",
+        "emoji": "🚚",
+        "explanation": "Bus A takes 43 minutes, Bus B takes 35 minutes and Bus C takes 30 minutes. So Bus A takes the longest.",
+        "funFact": "In British English a list of departure times is a timetable, while in American English it is often called a schedule.",
+        "subtype": "timetable",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L120_Q2",
+        "gameType": "time",
+        "level": 120,
+        "instruction": "Pia reads for 35 minutes, draws for 1 hour 5 minutes and plays for 50 minutes. How long is that altogether?",
+        "question": "?",
+        "correctAnswer": "2 hours 30 minutes",
+        "options": [
+          "2 hours 40 minutes",
+          "2 hours 20 minutes",
+          "2 hours 30 minutes"
+        ],
+        "hint": "Change everything into minutes before you add.",
+        "emoji": "🧑‍🎨",
+        "explanation": "35 + 65 + 50 = 150 minutes, which is 2 hours 30 minutes.",
+        "funFact": "Changing every length of time into minutes is the safest way to add up a long list.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L120_Q3",
+        "gameType": "time",
+        "level": 120,
+        "instruction": "It is 3:25 PM. A match started 50 minutes ago and lasts 90 minutes. How long is left?",
+        "question": "?",
+        "correctAnswer": "40 minutes",
+        "options": [
+          "1 hour 30 minutes",
+          "50 minutes",
+          "40 minutes"
+        ],
+        "hint": "Find the start time, and then the end time.",
+        "emoji": "⚾",
+        "explanation": "The match started at 2:35 PM and ends at 4:05 PM. From 3:25 PM to 4:05 PM is 40 minutes.",
+        "funFact": "A baseball game has no clock. It ends when all the innings have been played.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

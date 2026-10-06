@@ -1,622 +1,622 @@
 [
-    {
+  {
+    "level": 161,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L161_Q1",
+        "gameType": "time",
         "level": 161,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L161_Q1",
-                "gameType": "time",
-                "level": 161,
-                "instruction": "Which time is earliest: 8:30 AM, 2:15 PM, or 6:00 PM?",
-                "question": "?",
-                "correctAnswer": "8:30 AM ⏳",
-                "options": [
-                    "2:15 PM 🕰️",
-                    "6:00 PM 🍲",
-                    "8:30 AM ⏳"
-                ],
-                "hint": "Look at 8:30 AM, 2:15 PM, 6:00 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 8:30 AM happens first, ahead of 2:15 PM and 6:00 PM.",
-                "funFact": "Every AM time happens before every PM time on the very same day.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L161_Q2",
-                "gameType": "time",
-                "level": 161,
-                "instruction": "Recess is at 9:00 AM. Lunch is at 12:00 PM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "9:00 AM 📅",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "3:00 PM 🎒",
-                    "9:00 AM 📅"
-                ],
-                "hint": "Picture a daily schedule with 9:00 AM and 12:00 PM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 9:00 AM is the earlier one.",
-                "funFact": "Recess is a common mid-morning break before the midday meal.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L161_Q3",
-                "gameType": "time",
-                "level": 161,
-                "instruction": "The school day begins at 9:00 AM and lasts 6 hours. What time does it end?",
-                "question": "?",
-                "correctAnswer": "3:00 PM 🗓️",
-                "options": [
-                    "4:00 PM 🛝",
-                    "3:00 PM 🗓️",
-                    "2:00 PM 😴"
-                ],
-                "hint": "Counting 6 hours past 9:00 AM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the school day, 6 hours after 9:00 AM is 3:00 PM.",
-                "funFact": "Six hours is a common length for a full school day.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Yesterday was Tuesday. What day is tomorrow?",
+        "question": "?",
+        "correctAnswer": "Thursday",
+        "options": [
+          "Thursday",
+          "Friday",
+          "Wednesday"
+        ],
+        "hint": "Find today first, then move one day forward.",
+        "emoji": "📅",
+        "explanation": "If yesterday was Tuesday, then today is Wednesday. So tomorrow is Thursday.",
+        "funFact": "Sunday is named after the Sun and Monday is named after the Moon.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L161_Q2",
+        "gameType": "time",
+        "level": 161,
+        "instruction": "The day before yesterday was Sunday. What day is today?",
+        "question": "?",
+        "correctAnswer": "Tuesday",
+        "options": [
+          "Monday",
+          "Tuesday",
+          "Wednesday"
+        ],
+        "hint": "Count forward from Sunday: first yesterday, then today.",
+        "emoji": "📌",
+        "explanation": "The day after Sunday is Monday, and that is yesterday. So today is Tuesday.",
+        "funFact": "Thursday is named after Thor, the Norse god of thunder.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L161_Q3",
+        "gameType": "time",
+        "level": 161,
+        "instruction": "Which day is two days after Saturday?",
+        "question": "?",
+        "correctAnswer": "Monday",
+        "options": [
+          "Tuesday",
+          "Monday",
+          "Sunday"
+        ],
+        "hint": "After Saturday, the week starts again.",
+        "emoji": "➕",
+        "explanation": "One day after Saturday is Sunday, and two days after Saturday is Monday.",
+        "funFact": "Saturday is named after Saturn, the Roman god of farming.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 162,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L162_Q1",
+        "gameType": "time",
         "level": 162,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L162_Q1",
-                "gameType": "time",
-                "level": 162,
-                "instruction": "Which time is latest: 7:15 AM, 1:00 PM, or 9:45 PM?",
-                "question": "?",
-                "correctAnswer": "9:45 PM ⏳",
-                "options": [
-                    "9:45 PM ⏳",
-                    "7:15 AM 🕰️",
-                    "1:00 PM 📚"
-                ],
-                "hint": "Look at 7:15 AM, 1:00 PM, 9:45 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 9:45 PM happens last, after 7:15 AM and 1:00 PM.",
-                "funFact": "Evening times with PM are always later in the day than morning AM times.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L162_Q2",
-                "gameType": "time",
-                "level": 162,
-                "instruction": "Breakfast is at 7:30 AM. The school bus comes at 8:15 AM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "7:30 AM 📅",
-                "options": [
-                    "7:30 AM 📅",
-                    "8:15 AM 🔁",
-                    "9:00 AM 🏫"
-                ],
-                "hint": "Picture a daily schedule with 7:30 AM and 8:15 AM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 7:30 AM is the earlier one.",
-                "funFact": "Breakfast usually happens before the school bus arrives.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L162_Q3",
-                "gameType": "time",
-                "level": 162,
-                "instruction": "The county fair opens at 9:00 AM and runs for 5 hours. What time does it close for the afternoon break?",
-                "question": "?",
-                "correctAnswer": "2:00 PM 🗓️",
-                "options": [
-                    "3:00 PM 🎒",
-                    "2:00 PM 🗓️",
-                    "1:00 PM 📚"
-                ],
-                "hint": "Counting 5 hours past 9:00 AM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the county fair, 5 hours after 9:00 AM is 2:00 PM.",
-                "funFact": "Five hours gives visitors plenty of time to enjoy fair rides and games.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "How many days are in 3 weeks and 2 days?",
+        "question": "?",
+        "correctAnswer": "23 days",
+        "options": [
+          "19 days",
+          "32 days",
+          "23 days"
+        ],
+        "hint": "Change the 3 weeks into days first.",
+        "emoji": "🧮",
+        "explanation": "3 weeks is 3 × 7 = 21 days. Then 21 + 2 = 23 days.",
+        "funFact": "During the French Revolution, a ten-day week was tried for a few years.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L162_Q2",
+        "gameType": "time",
+        "level": 162,
+        "instruction": "A holiday lasts 10 days. How can this be written in weeks and days?",
+        "question": "?",
+        "correctAnswer": "1 week 3 days",
+        "options": [
+          "1 week 3 days",
+          "1 week 4 days",
+          "2 weeks 3 days"
+        ],
+        "hint": "Take away 7 days for each whole week.",
+        "emoji": "🏖️",
+        "explanation": "10 − 7 = 3, so 10 days is 1 week and 3 days.",
+        "funFact": "The seven-day week does not match any cycle in the sky, unlike the day, the month and the year.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L162_Q3",
+        "gameType": "time",
+        "level": 162,
+        "instruction": "Which is longer: 3 weeks or 20 days?",
+        "question": "?",
+        "correctAnswer": "3 weeks",
+        "options": [
+          "20 days",
+          "3 weeks",
+          "They are the same length"
+        ],
+        "hint": "Change both lengths into days.",
+        "emoji": "🥈",
+        "explanation": "3 weeks is 21 days, which is 1 day longer than 20 days.",
+        "funFact": "In some countries the calendar week starts on Monday, and in others it starts on Sunday.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 163,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L163_Q1",
+        "gameType": "time",
         "level": 163,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L163_Q1",
-                "gameType": "time",
-                "level": 163,
-                "instruction": "Which time is earliest: 6:45 AM, 11:30 AM, or 4:00 PM?",
-                "question": "?",
-                "correctAnswer": "6:45 AM ⏳",
-                "options": [
-                    "6:45 AM ⏳",
-                    "11:30 AM ⏱️",
-                    "4:00 PM 🛝"
-                ],
-                "hint": "Look at 6:45 AM, 11:30 AM, 4:00 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 6:45 AM happens first, ahead of 11:30 AM and 4:00 PM.",
-                "funFact": "The clock keeps moving forward through morning, noon, and afternoon in that order.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L163_Q2",
-                "gameType": "time",
-                "level": 163,
-                "instruction": "Art class is at 11:00 AM. Lunch is at 12:30 PM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "11:00 AM 📅",
-                "options": [
-                    "12:30 PM 🕧",
-                    "2:00 PM 😴",
-                    "11:00 AM 📅"
-                ],
-                "hint": "Picture a daily schedule with 11:00 AM and 12:30 PM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 11:00 AM is the earlier one.",
-                "funFact": "Art class often happens in the late morning, right before lunch.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L163_Q3",
-                "gameType": "time",
-                "level": 163,
-                "instruction": "The art museum opens at 9:00 AM and stays open 4 hours before its afternoon break. What time does the break begin?",
-                "question": "?",
-                "correctAnswer": "1:00 PM 🗓️",
-                "options": [
-                    "2:00 PM 😴",
-                    "12:00 PM 🍽️",
-                    "1:00 PM 🗓️"
-                ],
-                "hint": "Counting 4 hours past 9:00 AM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the art museum, 4 hours after 9:00 AM is 1:00 PM.",
-                "funFact": "Four hours gives visitors plenty of time to see every painting.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Which month is the shortest?",
+        "question": "?",
+        "correctAnswer": "February",
+        "options": [
+          "February",
+          "June",
+          "April"
+        ],
+        "hint": "Only one month has fewer than 30 days.",
+        "emoji": "✂️",
+        "explanation": "February has 28 days in a normal year and 29 in a leap year. April and June have 30 days each.",
+        "funFact": "Sweden once had a 30 February, in the year 1712, because of a calendar change.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L163_Q2",
+        "gameType": "time",
+        "level": 163,
+        "instruction": "Which of these months has 30 days?",
+        "question": "?",
+        "correctAnswer": "April",
+        "options": [
+          "May",
+          "July",
+          "April"
+        ],
+        "hint": "Try the rhyme about 30 days, or use your knuckles.",
+        "emoji": "✊",
+        "explanation": "April has 30 days. May and July both have 31 days.",
+        "funFact": "You can use your knuckles to remember the months. A knuckle is a 31-day month and a gap between knuckles is a shorter month.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L163_Q3",
+        "gameType": "time",
+        "level": 163,
+        "instruction": "How many months of the year have exactly 30 days?",
+        "question": "?",
+        "correctAnswer": "4",
+        "options": [
+          "7",
+          "4",
+          "5"
+        ],
+        "hint": "Leave out February and every month with 31 days.",
+        "emoji": "🟦",
+        "explanation": "April, June, September and November have exactly 30 days. That is 4 months.",
+        "funFact": "The word month comes from the word moon, because the Moon takes about a month to go through its phases.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 164,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L164_Q1",
+        "gameType": "time",
         "level": 164,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L164_Q1",
-                "gameType": "time",
-                "level": 164,
-                "instruction": "Which time is latest: 9:15 AM, 12:45 PM, or 5:00 PM?",
-                "question": "?",
-                "correctAnswer": "5:00 PM ⏳",
-                "options": [
-                    "9:15 AM ⏱️",
-                    "12:45 PM 🌗",
-                    "5:00 PM ⏳"
-                ],
-                "hint": "Look at 9:15 AM, 12:45 PM, 5:00 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 5:00 PM happens last, after 9:15 AM and 12:45 PM.",
-                "funFact": "Afternoon and evening PM times always come after morning AM times.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L164_Q2",
-                "gameType": "time",
-                "level": 164,
-                "instruction": "The library visit is at 10:00 AM. Swim class is at 1:00 PM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "10:00 AM 📅",
-                "options": [
-                    "10:00 AM 📅",
-                    "3:00 PM 🎒",
-                    "1:00 PM 📚"
-                ],
-                "hint": "Picture a daily schedule with 10:00 AM and 1:00 PM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 10:00 AM is the earlier one.",
-                "funFact": "A morning library visit is a calm way to start the school day.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L164_Q3",
-                "gameType": "time",
-                "level": 164,
-                "instruction": "The amusement park opens at 10:00 AM and the family stays for 6 hours. What time do they leave?",
-                "question": "?",
-                "correctAnswer": "4:00 PM 🗓️",
-                "options": [
-                    "4:00 PM 🗓️",
-                    "3:00 PM 🎒",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Counting 6 hours past 10:00 AM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the amusement park, 6 hours after 10:00 AM is 4:00 PM.",
-                "funFact": "Six hours at an amusement park allows time for lots of rides.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Which month is three months after November?",
+        "question": "?",
+        "correctAnswer": "February",
+        "options": [
+          "March",
+          "February",
+          "January"
+        ],
+        "hint": "Count on month by month: December comes next, and then a new year starts.",
+        "emoji": "🔜",
+        "explanation": "Three months after November: December, then January, then February.",
+        "funFact": "July is named after the Roman leader Julius Caesar, and August is named after the emperor Augustus.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L164_Q2",
+        "gameType": "time",
+        "level": 164,
+        "instruction": "Which month is two months before March?",
+        "question": "?",
+        "correctAnswer": "January",
+        "options": [
+          "December",
+          "February",
+          "January"
+        ],
+        "hint": "Count back one month at a time from March.",
+        "emoji": "◀️",
+        "explanation": "One month before March is February, and two months before March is January.",
+        "funFact": "September means \"seventh month\" in Latin, even though it is now the ninth month.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L164_Q3",
+        "gameType": "time",
+        "level": 164,
+        "instruction": "Which month is five months after August?",
+        "question": "?",
+        "correctAnswer": "January",
+        "options": [
+          "February",
+          "December",
+          "January"
+        ],
+        "hint": "Count on from August, one month at a time.",
+        "emoji": "🧭",
+        "explanation": "September, October, November, December, January: five months after August is January.",
+        "funFact": "The first Roman calendar had only ten months, and winter was left without any.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 165,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L165_Q1",
+        "gameType": "time",
         "level": 165,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L165_Q1",
-                "gameType": "time",
-                "level": 165,
-                "instruction": "Which time is earliest: 7:00 AM, 12:15 PM, or 8:00 PM?",
-                "question": "?",
-                "correctAnswer": "7:00 AM ⏳",
-                "options": [
-                    "7:00 AM ⏳",
-                    "12:15 PM ⏱️",
-                    "8:00 PM 📖"
-                ],
-                "hint": "Look at 7:00 AM, 12:15 PM, 8:00 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 7:00 AM happens first, ahead of 12:15 PM and 8:00 PM.",
-                "funFact": "Any time written with AM comes before noon, and PM comes after.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L165_Q2",
-                "gameType": "time",
-                "level": 165,
-                "instruction": "School starts at 8:00 AM. The first recess is at 10:15 AM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "8:00 AM 📅",
-                "options": [
-                    "8:00 AM 📅",
-                    "10:15 AM ⏮️",
-                    "12:00 PM 🍽️"
-                ],
-                "hint": "Picture a daily schedule with 8:00 AM and 10:15 AM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 8:00 AM is the earlier one.",
-                "funFact": "The start of the school day always comes before the first recess.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L165_Q3",
-                "gameType": "time",
-                "level": 165,
-                "instruction": "The science fair opens at 10:00 AM and runs for 5 hours. What time does it end?",
-                "question": "?",
-                "correctAnswer": "3:00 PM 🗓️",
-                "options": [
-                    "3:00 PM 🗓️",
-                    "4:00 PM 🛝",
-                    "2:00 PM 😴"
-                ],
-                "hint": "Counting 5 hours past 10:00 AM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the science fair, 5 hours after 10:00 AM is 3:00 PM.",
-                "funFact": "Five hours gives every student time to show off their project.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "How many months are in 2 years and 3 months?",
+        "question": "?",
+        "correctAnswer": "27 months",
+        "options": [
+          "27 months",
+          "15 months",
+          "36 months"
+        ],
+        "hint": "Change the 2 years into months first.",
+        "emoji": "🌞",
+        "explanation": "2 years is 24 months, and 24 + 3 = 27 months.",
+        "funFact": "A year is the time that the Earth takes to travel once around the Sun.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L165_Q2",
+        "gameType": "time",
+        "level": 165,
+        "instruction": "About how many weeks are in a year?",
+        "question": "?",
+        "correctAnswer": "52",
+        "options": [
+          "48",
+          "365",
+          "52"
+        ],
+        "hint": "Divide the number of days in a year by the number of days in a week.",
+        "emoji": "🧷",
+        "explanation": "A year has 365 days and a week has 7 days. 365 ÷ 7 is a little more than 52.",
+        "funFact": "The Islamic calendar follows the Moon, so its year has only about 354 days.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L165_Q3",
+        "gameType": "time",
+        "level": 165,
+        "instruction": "Which is the longest: 1 year, 400 days or 50 weeks?",
+        "question": "?",
+        "correctAnswer": "400 days",
+        "options": [
+          "400 days",
+          "50 weeks",
+          "1 year"
+        ],
+        "hint": "Change each length into days.",
+        "emoji": "🎖️",
+        "explanation": "1 year is about 365 days and 50 weeks is 350 days. So 400 days is the longest.",
+        "funFact": "The Ethiopian calendar has 13 months: twelve months of 30 days and one very short month at the end.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 166,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L166_Q1",
+        "gameType": "time",
         "level": 166,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L166_Q1",
-                "gameType": "time",
-                "level": 166,
-                "instruction": "Which time is latest: 6:45 AM, 2:00 PM, or 6:30 PM?",
-                "question": "?",
-                "correctAnswer": "6:30 PM ⏳",
-                "options": [
-                    "6:45 AM ⏳",
-                    "2:00 PM 😴",
-                    "6:30 PM ⏳"
-                ],
-                "hint": "Look at 6:45 AM, 2:00 PM, 6:30 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 6:30 PM happens last, after 6:45 AM and 2:00 PM.",
-                "funFact": "Even a late afternoon PM time comes after any time in the morning.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L166_Q2",
-                "gameType": "time",
-                "level": 166,
-                "instruction": "Music class is at 9:30 AM. The class trip to the park is at 1:00 PM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "9:30 AM 📅",
-                "options": [
-                    "9:30 AM 📅",
-                    "3:00 PM 🎒",
-                    "1:00 PM 📚"
-                ],
-                "hint": "Picture a daily schedule with 9:30 AM and 1:00 PM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 9:30 AM is the earlier one.",
-                "funFact": "Morning music class often comes before an afternoon outing.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L166_Q3",
-                "gameType": "time",
-                "level": 166,
-                "instruction": "The road trip begins at 8:00 AM and lasts 6 hours. What time does the family arrive?",
-                "question": "?",
-                "correctAnswer": "2:00 PM 🗓️",
-                "options": [
-                    "3:00 PM 🎒",
-                    "1:00 PM 📚",
-                    "2:00 PM 🗓️"
-                ],
-                "hint": "Counting 6 hours past 8:00 AM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the road trip, 6 hours after 8:00 AM is 2:00 PM.",
-                "funFact": "Six hours can carry a family a long way down the road.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "In the same year, which date is earliest: 12 March, 3 April or 28 February?",
+        "question": "?",
+        "correctAnswer": "28 February",
+        "options": [
+          "28 February",
+          "12 March",
+          "3 April"
+        ],
+        "hint": "Put the months in order first.",
+        "emoji": "🥇",
+        "explanation": "February comes before March and April, so 28 February is the earliest date.",
+        "funFact": "The word calendar comes from a Latin word for the first day of the month.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L166_Q2",
+        "gameType": "time",
+        "level": 166,
+        "instruction": "What date comes the day after 30 April?",
+        "question": "?",
+        "correctAnswer": "1 May",
+        "options": [
+          "31 April",
+          "30 May",
+          "1 May"
+        ],
+        "hint": "Check how many days April has.",
+        "emoji": "🗒️",
+        "explanation": "April has only 30 days, so the day after 30 April is the first day of the next month: 1 May.",
+        "funFact": "When the Gregorian calendar began in 1582, ten days were skipped to bring the dates back in line with the seasons.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L166_Q3",
+        "gameType": "time",
+        "level": 166,
+        "instruction": "In a normal year that is not a leap year, which date comes the day before 1 March?",
+        "question": "?",
+        "correctAnswer": "28 February",
+        "options": [
+          "27 February",
+          "28 February",
+          "29 February"
+        ],
+        "hint": "Think about how many days February has in a normal year.",
+        "emoji": "🔙",
+        "explanation": "In a normal year, February has 28 days, so the day before 1 March is 28 February.",
+        "funFact": "The Chinese calendar follows both the Moon and the Sun.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 167,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L167_Q1",
+        "gameType": "time",
         "level": 167,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L167_Q1",
-                "gameType": "time",
-                "level": 167,
-                "instruction": "Which time is earliest: 6:15 AM, 3:30 PM, or 9:00 PM?",
-                "question": "?",
-                "correctAnswer": "6:15 AM ⏳",
-                "options": [
-                    "6:15 AM ⏳",
-                    "9:00 PM 🌙",
-                    "3:30 PM 🕓"
-                ],
-                "hint": "Look at 6:15 AM, 3:30 PM, 9:00 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 6:15 AM happens first, ahead of 3:30 PM and 9:00 PM.",
-                "funFact": "Early morning AM times are the very first hours of a new day.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L167_Q2",
-                "gameType": "time",
-                "level": 167,
-                "instruction": "Lunch is at 12:00 PM. Afternoon recess is at 2:00 PM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "12:00 PM 📅",
-                "options": [
-                    "12:00 PM 📅",
-                    "4:00 PM 🛝",
-                    "2:00 PM 😴"
-                ],
-                "hint": "Picture a daily schedule with 12:00 PM and 2:00 PM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 12:00 PM is the earlier one.",
-                "funFact": "Lunch usually comes before the afternoon recess break.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L167_Q3",
-                "gameType": "time",
-                "level": 167,
-                "instruction": "The farmers market opens at 8:00 AM and stays open 5 hours. What time does it close?",
-                "question": "?",
-                "correctAnswer": "1:00 PM 🗓️",
-                "options": [
-                    "2:00 PM 😴",
-                    "1:00 PM 🗓️",
-                    "12:00 PM 🍽️"
-                ],
-                "hint": "Counting 5 hours past 8:00 AM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the farmers market, 5 hours after 8:00 AM is 1:00 PM.",
-                "funFact": "Five hours gives shoppers plenty of time to visit every stall.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A school project runs from 5 March to 12 March. How many days is it from the start date to the end date?",
+        "question": "?",
+        "correctAnswer": "7 days",
+        "options": [
+          "8 days",
+          "6 days",
+          "7 days"
+        ],
+        "hint": "Subtract the start date from the end date.",
+        "emoji": "➖",
+        "explanation": "From 5 March to 12 March is 12 − 5 = 7 days.",
+        "funFact": "The ancient Maya used a calendar with a cycle of 260 days.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L167_Q2",
+        "gameType": "time",
+        "level": 167,
+        "instruction": "How many days are there from 28 April to 3 May?",
+        "question": "?",
+        "correctAnswer": "5 days",
+        "options": [
+          "6 days",
+          "25 days",
+          "5 days"
+        ],
+        "hint": "April has 30 days. Count to the end of April, then into May.",
+        "emoji": "🗓️",
+        "explanation": "From 28 April to 30 April is 2 days. From 30 April to 3 May is 3 more days. 2 + 3 = 5 days.",
+        "funFact": "The Malayalam calendar used in Kerala begins its new year in the month of Chingam, around mid-August.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L167_Q3",
+        "gameType": "time",
+        "level": 167,
+        "instruction": "A camp runs from 14 June to 21 June, including both the first day and the last day. How many days does the camp last?",
+        "question": "?",
+        "correctAnswer": "8 days",
+        "options": [
+          "7 days",
+          "8 days",
+          "9 days"
+        ],
+        "hint": "Count both ends: the first day counts as one.",
+        "emoji": "🪵",
+        "explanation": "The days are 14, 15, 16, 17, 18, 19, 20 and 21. That is 8 days, one more than the difference between the dates.",
+        "funFact": "The Chinese calendar names its years after twelve animals.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 168,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L168_Q1",
+        "gameType": "time",
         "level": 168,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L168_Q1",
-                "gameType": "time",
-                "level": 168,
-                "instruction": "Which time is latest: 8:00 AM, 4:45 PM, or 10:00 PM?",
-                "question": "?",
-                "correctAnswer": "10:00 PM ⏳",
-                "options": [
-                    "8:00 AM 🍳",
-                    "4:45 PM ⏱️",
-                    "10:00 PM ⏳"
-                ],
-                "hint": "Look at 8:00 AM, 4:45 PM, 10:00 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 10:00 PM happens last, after 8:00 AM and 4:45 PM.",
-                "funFact": "Nighttime PM hours are the very last hours of the day.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L168_Q2",
-                "gameType": "time",
-                "level": 168,
-                "instruction": "Homework time is at 3:00 PM. Dinner is at 6:00 PM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "3:00 PM 📅",
-                "options": [
-                    "6:00 PM 🍲",
-                    "8:00 PM 📖",
-                    "3:00 PM 📅"
-                ],
-                "hint": "Picture a daily schedule with 3:00 PM and 6:00 PM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 3:00 PM is the earlier one.",
-                "funFact": "Homework is often finished before the family sits down for dinner.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L168_Q3",
-                "gameType": "time",
-                "level": 168,
-                "instruction": "The county parade begins at 12:00 PM and festivities continue for 4 hours. What time do they end?",
-                "question": "?",
-                "correctAnswer": "4:00 PM 🗓️",
-                "options": [
-                    "4:00 PM 🗓️",
-                    "3:00 PM 🎒",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Counting 4 hours past 12:00 PM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the county parade, 4 hours after 12:00 PM is 4:00 PM.",
-                "funFact": "Four hours gives a parade plenty of time to pass through town.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "If 1 March is a Monday, what day is 8 March?",
+        "question": "?",
+        "correctAnswer": "Monday",
+        "options": [
+          "Sunday",
+          "Tuesday",
+          "Monday"
+        ],
+        "hint": "A week is 7 days long.",
+        "emoji": "🔁",
+        "explanation": "8 March is exactly 7 days after 1 March, so it falls on the same day of the week: Monday.",
+        "funFact": "The Moon takes about 29 and a half days to go from one new moon to the next.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L168_Q2",
+        "gameType": "time",
+        "level": 168,
+        "instruction": "If 5 May is a Tuesday, what day is 9 May?",
+        "question": "?",
+        "correctAnswer": "Saturday",
+        "options": [
+          "Sunday",
+          "Saturday",
+          "Friday"
+        ],
+        "hint": "Count 4 days forward from Tuesday.",
+        "emoji": "⏭️",
+        "explanation": "9 May is 4 days after 5 May. Four days after Tuesday is Saturday.",
+        "funFact": "Weekdays repeat every 7 days, so a calendar page has the same pattern every week.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L168_Q3",
+        "gameType": "time",
+        "level": 168,
+        "instruction": "If 1 September is a Friday, what day is 30 August of the same year?",
+        "question": "?",
+        "correctAnswer": "Wednesday",
+        "options": [
+          "Thursday",
+          "Tuesday",
+          "Wednesday"
+        ],
+        "hint": "August has 31 days. Count back from 1 September.",
+        "emoji": "🚪",
+        "explanation": "The day before 1 September is 31 August, a Thursday. The day before that, 30 August, is a Wednesday.",
+        "funFact": "A date moves one weekday later each year, or two weekdays later after a leap year.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 169,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L169_Q1",
+        "gameType": "time",
         "level": 169,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L169_Q1",
-                "gameType": "time",
-                "level": 169,
-                "instruction": "Which time is earliest: 7:45 AM, 1:15 PM, or 5:30 PM?",
-                "question": "?",
-                "correctAnswer": "7:45 AM ⏳",
-                "options": [
-                    "1:15 PM 📅",
-                    "5:30 PM ⏱️",
-                    "7:45 AM ⏳"
-                ],
-                "hint": "Look at 7:45 AM, 1:15 PM, 5:30 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 7:45 AM happens first, ahead of 1:15 PM and 5:30 PM.",
-                "funFact": "Comparing hours works best when you first check AM or PM.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L169_Q2",
-                "gameType": "time",
-                "level": 169,
-                "instruction": "The class trip departs at 9:00 AM. The picnic lunch is at 12:30 PM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "9:00 AM 📅",
-                "options": [
-                    "2:00 PM 😴",
-                    "9:00 AM 📅",
-                    "12:30 PM 🕧"
-                ],
-                "hint": "Picture a daily schedule with 9:00 AM and 12:30 PM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 9:00 AM is the earlier one.",
-                "funFact": "A class trip often departs well before the midday picnic.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L169_Q3",
-                "gameType": "time",
-                "level": 169,
-                "instruction": "The bake sale setup begins at 7:00 AM and takes 5 hours to finish. What time is everything ready?",
-                "question": "?",
-                "correctAnswer": "12:00 PM 🗓️",
-                "options": [
-                    "11:00 AM 🎨",
-                    "12:00 PM 🗓️",
-                    "1:00 PM 📚"
-                ],
-                "hint": "Counting 5 hours past 7:00 AM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the bake sale setup, 5 hours after 7:00 AM is 12:00 PM.",
-                "funFact": "Five hours gives plenty of time to bake and set up every table.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A bus leaves at 11:30 PM on Tuesday and takes 2 hours 45 minutes. When does it arrive?",
+        "question": "?",
+        "correctAnswer": "Wednesday at 2:15 AM",
+        "options": [
+          "Wednesday at 2:15 AM",
+          "Tuesday at 2:15 AM",
+          "Wednesday at 2:15 PM"
+        ],
+        "hint": "Midnight starts a new day. How long is it until midnight?",
+        "emoji": "🌛",
+        "explanation": "11:30 PM to midnight is 30 minutes. The remaining 2 hours 15 minutes after midnight reach 2:15 AM, which is on Wednesday.",
+        "funFact": "Delivery companies record the date and the time of every step of a parcel's journey.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L169_Q2",
+        "gameType": "time",
+        "level": 169,
+        "instruction": "A shop opens from 9:00 AM to 6:00 PM, Monday to Saturday. For how many hours is it open in one week?",
+        "question": "?",
+        "correctAnswer": "54 hours",
+        "options": [
+          "54 hours",
+          "63 hours",
+          "45 hours"
+        ],
+        "hint": "Find the hours in one day, then count the days.",
+        "emoji": "🏬",
+        "explanation": "9:00 AM to 6:00 PM is 9 hours. Monday to Saturday is 6 days. 6 × 9 = 54 hours.",
+        "funFact": "In many countries a full-time working week is about 40 hours.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L169_Q3",
+        "gameType": "time",
+        "level": 169,
+        "instruction": "A parcel leaves on Monday at 9:00 AM and takes 36 hours to arrive. When does it arrive?",
+        "question": "?",
+        "correctAnswer": "Tuesday at 9:00 PM",
+        "options": [
+          "Wednesday at 9:00 AM",
+          "Tuesday at 9:00 PM",
+          "Tuesday at 9:00 AM"
+        ],
+        "hint": "36 hours is 1 day and 12 hours.",
+        "emoji": "📦",
+        "explanation": "24 hours after Monday 9:00 AM is Tuesday 9:00 AM. Another 12 hours makes Tuesday 9:00 PM.",
+        "funFact": "The first postage stamp, the Penny Black, was issued in 1840.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 170,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L170_Q1",
+        "gameType": "time",
         "level": 170,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L170_Q1",
-                "gameType": "time",
-                "level": 170,
-                "instruction": "Which time is latest: 6:00 AM, 11:45 AM, or 7:15 PM?",
-                "question": "?",
-                "correctAnswer": "7:15 PM ⏳",
-                "options": [
-                    "6:00 AM 🌅",
-                    "11:45 AM 🔁",
-                    "7:15 PM ⏳"
-                ],
-                "hint": "Look at 6:00 AM, 11:45 AM, 7:15 PM — check which are AM and which are PM first.",
-                "emoji": "⏳",
-                "explanation": "Comparing all three, 7:15 PM happens last, after 6:00 AM and 11:45 AM.",
-                "funFact": "When comparing times, PM hours always outrank AM hours from the same day.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L170_Q2",
-                "gameType": "time",
-                "level": 170,
-                "instruction": "The class assembly is at 10:30 AM. Afternoon reading time is at 1:30 PM. Which happens first?",
-                "question": "?",
-                "correctAnswer": "10:30 AM 📅",
-                "options": [
-                    "1:30 PM 🕜",
-                    "10:30 AM 📅",
-                    "3:00 PM 🎒"
-                ],
-                "hint": "Picture a daily schedule with 10:30 AM and 1:30 PM on it.",
-                "emoji": "📅",
-                "explanation": "Comparing the two times, 10:30 AM is the earlier one.",
-                "funFact": "Morning assemblies often set the tone for the rest of the school day.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L170_Q3",
-                "gameType": "time",
-                "level": 170,
-                "instruction": "The garden club begins planting at 9:00 AM and works for 4 hours. What time do they finish?",
-                "question": "?",
-                "correctAnswer": "1:00 PM 🗓️",
-                "options": [
-                    "2:00 PM 😴",
-                    "1:00 PM 🗓️",
-                    "12:00 PM 🍽️"
-                ],
-                "hint": "Counting 4 hours past 9:00 AM lands you at the answer.",
-                "emoji": "🗓️",
-                "explanation": "For the garden club, 4 hours after 9:00 AM is 1:00 PM.",
-                "funFact": "Four hours gives a garden club plenty of time to plant a whole bed of flowers.",
-                "subtype": "schedule_reasoning",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    }
+        "instruction": "The day after tomorrow is Sunday. What day was yesterday?",
+        "question": "?",
+        "correctAnswer": "Thursday",
+        "options": [
+          "Thursday",
+          "Wednesday",
+          "Friday"
+        ],
+        "hint": "Work out today first.",
+        "emoji": "🧠",
+        "explanation": "If the day after tomorrow is Sunday, then tomorrow is Saturday and today is Friday. So yesterday was Thursday.",
+        "funFact": "German and some other languages have a single word for the day after tomorrow, but English does not.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L170_Q2",
+        "gameType": "time",
+        "level": 170,
+        "instruction": "A project starts on 25 June and ends on 4 July. How many days is it from the start date to the end date?",
+        "question": "?",
+        "correctAnswer": "9 days",
+        "options": [
+          "9 days",
+          "10 days",
+          "21 days"
+        ],
+        "hint": "June has 30 days. Count to the end of June, then into July.",
+        "emoji": "🧰",
+        "explanation": "25 June to 30 June is 5 days. 30 June to 4 July is 4 more days. 5 + 4 = 9 days.",
+        "funFact": "The number of days between two dates changes by one depending on whether you count the first day, so always read the question carefully.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L170_Q3",
+        "gameType": "time",
+        "level": 170,
+        "instruction": "A night train leaves on Saturday at 10:40 PM and takes 4 hours 35 minutes. When does it arrive?",
+        "question": "?",
+        "correctAnswer": "Sunday at 3:15 AM",
+        "options": [
+          "Saturday at 3:15 AM",
+          "Sunday at 3:15 AM",
+          "Sunday at 3:15 PM"
+        ],
+        "hint": "Count to midnight first. It is 1 hour 20 minutes away.",
+        "emoji": "🚞",
+        "explanation": "10:40 PM to midnight is 1 hour 20 minutes. The remaining 3 hours 15 minutes after midnight reach 3:15 AM, which is on Sunday.",
+        "funFact": "Overnight train tickets often show two dates, one for leaving and one for arriving.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

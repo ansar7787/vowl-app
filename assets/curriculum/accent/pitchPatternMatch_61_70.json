@@ -5,753 +5,753 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L61_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Is the cake ready for the party?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Contrary to expectations, the small clinic reduced the backlog.",
-            "textToSpeak": "Contrary to expectations, the small clinic reduced the backlog.",
+            "word": "I haven't baked the cake.",
+            "textToSpeak": "I haven't baked the cake.",
             "options": [
-                "Emphasis on CLINIC (Subject focus)",
-                "Emphasis on BACKLOG (Object focus)"
+                "Emphasis on BAKED",
+                "Emphasis on CAKE"
             ],
-            "correctAnswer": "Emphasis on CLINIC (Subject focus)",
+            "correctAnswer": "Emphasis on BAKED",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 3,
-                1,
                 1,
                 1
             ],
-            "hint": "The opening phrase signals something surprising about the subject — that's usually where the peak lands, not the final word.",
-            "explanation": "The lead-in marks CLINIC as the surprising or noteworthy element, so the nuclear stress shifts there instead of staying on BACKLOG.",
-            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word.",
-            "emotionContext": "Subject focus"
+            "hint": "The cake is already part of the conversation. What has B added that A doesn't know?",
+            "explanation": "A's question put the cake on the table, so it's old information and stays low even at the end of the sentence. BAKED is the news, so it gets the main lift.",
+            "emphasisRule": "A noun already named in the conversation stays low, even in final position; the new verb takes the peak.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L61_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Are you going to the concert on Friday?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Surprisingly, the new librarian solved the funding issue.",
-            "textToSpeak": "Surprisingly, the new librarian solved the funding issue.",
+            "word": "The concert was cancelled.",
+            "textToSpeak": "The concert was cancelled.",
             "options": [
-                "Emphasis on ISSUE (Object focus)",
-                "Emphasis on LIBRARIAN (Subject focus)"
+                "Emphasis on CANCELLED",
+                "Emphasis on CONCERT"
             ],
-            "correctAnswer": "Emphasis on LIBRARIAN (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CANCELLED",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                2,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "Words like this at the start often mark the subject itself as the surprising news — listen for an early peak.",
-            "explanation": "Because the introduction flags LIBRARIAN specifically, the pitch peak moves earlier in the sentence to highlight it.",
-            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject.",
-            "emotionContext": "Subject focus"
+            "hint": "Which word in B's sentence did A not already say?",
+            "explanation": "CONCERT came from A's question, so it is old. The news is that it was CANCELLED, and that word takes the peak.",
+            "emphasisRule": "A given subject stays low; the new predicate carries the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L61_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Have you cleaned the garage?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Right after landing, the pilot thanked the crew.",
-            "textToSpeak": "Right after landing, the pilot thanked the crew.",
+            "word": "I'm cleaning the garage right now.",
+            "textToSpeak": "I'm cleaning the garage right now.",
             "options": [
-                "Emphasis on CREW (Object focus)",
-                "Emphasis on PILOT (Subject focus)"
+                "Emphasis on GARAGE",
+                "Emphasis on NOW"
             ],
-            "correctAnswer": "Emphasis on CREW (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on NOW",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "This opening phrase just sets the time or scene — it doesn't make the subject special, so the peak still falls late.",
-            "explanation": "The opening phrase only sets the scene — it doesn't make PILOT special, so the default stress still lands on CREW.",
-            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent.",
-            "emotionContext": "Object focus"
+            "hint": "A's question already supplies the activity and the place. What detail does B add?",
+            "explanation": "Cleaning and the garage both came from A, so they stay low. The new piece is the time, NOW, so the peak lands at the very end.",
+            "emphasisRule": "When both verb and object are given, a new time detail takes the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L62_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Have you met the new accountant?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Oddly enough, the free app outperformed the paid version.",
-            "textToSpeak": "Oddly enough, the free app outperformed the paid version.",
+            "word": "I met her at the orientation.",
+            "textToSpeak": "I met her at the orientation.",
             "options": [
-                "Emphasis on VERSION (Object focus)",
-                "Emphasis on APP (Subject focus)"
+                "Emphasis on ORIENTATION",
+                "Emphasis on MET"
             ],
-            "correctAnswer": "Emphasis on APP (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ORIENTATION",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "This isn't just scene-setting — the introduction makes the subject noteworthy, so the stress shifts there.",
-            "explanation": "APP is the genuinely newsworthy part of this sentence, so it takes the stress rather than the final word VERSION.",
-            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word.",
-            "emotionContext": "Subject focus"
+            "hint": "'Her' stands for someone already known. What is genuinely new?",
+            "explanation": "HER replaces the accountant and MET repeats A's verb, so both stay low. ORIENTATION tells A where it happened, so the peak lands on it.",
+            "emphasisRule": "A pronoun and a repeated verb stay unstressed; the new detail takes the peak.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L62_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Did anyone call the plumber?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "To everyone's surprise, the youngest sister organized the wedding.",
-            "textToSpeak": "To everyone's surprise, the youngest sister organized the wedding.",
+            "word": "I called him twice.",
+            "textToSpeak": "I called him twice.",
             "options": [
-                "Emphasis on SISTER (Subject focus)",
-                "Emphasis on WEDDING (Object focus)"
+                "Emphasis on CALLED",
+                "Emphasis on TWICE"
             ],
-            "correctAnswer": "Emphasis on SISTER (Subject focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on TWICE",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                1,
+                2,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "The lead-in flags the subject as unexpected, which pulls the pitch peak forward instead of leaving it at the end.",
-            "explanation": "The context makes SISTER unexpected, which is why the pitch accent lands there instead of on WEDDING.",
-            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject.",
-            "emotionContext": "Subject focus"
+            "hint": "Even a very short word can be the news. Which word is B adding?",
+            "explanation": "HIM and CALLED are both old. TWICE is new, and even though it is just one short word it takes the peak.",
+            "emphasisRule": "After a pronoun, the new detail takes the peak, however short it is.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L62_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did A most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "During the sale, the store restocked the shelves.",
-            "textToSpeak": "During the sale, the store restocked the shelves.",
+            "word": "I sent it to Priya.",
+            "textToSpeak": "I sent it to Priya.",
             "options": [
-                "Emphasis on STORE (Subject focus)",
-                "Emphasis on SHELVES (Object focus)"
+                "What did you send to Priya?",
+                "Who did you send the file to?"
             ],
-            "correctAnswer": "Emphasis on SHELVES (Object focus)",
+            "correctAnswer": "Who did you send the file to?",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Even with an introduction, nothing marks the subject as surprising here, so the default final-word stress still applies.",
-            "explanation": "Since nothing marks STORE as surprising, the sentence still follows the neutral pattern, stressing SHELVES at the end.",
-            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies.",
-            "emotionContext": "Object focus"
+            "hint": "'It' tells you the thing is already known. What was the listener missing?",
+            "explanation": "IT means the file was already known, so the missing piece was the recipient. That is why PRIYA carries the peak. A question about the item would have led to a peak on a noun like FILE.",
+            "emphasisRule": "A pronoun object signals that the thing is given, so the peak goes to the new element.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L63_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"When does the airport shuttle leave?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Remarkably, the smallest gym trained the most champions.",
-            "textToSpeak": "Remarkably, the smallest gym trained the most champions.",
+            "word": "The shuttle to the airport leaves at five.",
+            "textToSpeak": "The shuttle to the airport leaves at five.",
             "options": [
-                "Emphasis on GYM (Subject focus)",
-                "Emphasis on CHAMPIONS (Object focus)"
+                "Emphasis on FIVE",
+                "Emphasis on AIRPORT"
             ],
-            "correctAnswer": "Emphasis on GYM (Subject focus)",
+            "correctAnswer": "Emphasis on FIVE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "Notice the sentence is really about who did it, not just what happened — listen for the peak near the start.",
-            "explanation": "The lead-in marks GYM as the surprising or noteworthy element, so the nuclear stress shifts there instead of staying on CHAMPIONS.",
-            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word.",
-            "emotionContext": "Subject focus"
+            "hint": "B repeats several of A's words. Which single word is the answer?",
+            "explanation": "Nearly all of B's sentence repeats A's question, so only FIVE is new. Even AIRPORT, a strong content word, is given and stays low.",
+            "emphasisRule": "In a full-sentence answer to a wh-question, only the answer word takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L63_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"How did you get here from the station?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Against expectations, the smallest bakery earned the award.",
-            "textToSpeak": "Against expectations, the smallest bakery earned the award.",
+            "word": "I took a taxi from the station.",
+            "textToSpeak": "I took a taxi from the station.",
             "options": [
-                "Emphasis on AWARD (Object focus)",
-                "Emphasis on BAKERY (Subject focus)"
+                "Emphasis on STATION",
+                "Emphasis on TAXI"
             ],
-            "correctAnswer": "Emphasis on BAKERY (Subject focus)",
+            "correctAnswer": "Emphasis on TAXI",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                2,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "The opening phrase signals something surprising about the subject — that's usually where the peak lands, not the final word.",
-            "explanation": "Because the introduction flags BAKERY specifically, the pitch peak moves earlier in the sentence to highlight it.",
-            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject.",
-            "emotionContext": "Subject focus"
+            "hint": "The ending of B's sentence repeats part of A's question. Does it need the peak?",
+            "explanation": "A asked about the way of travelling, so TAXI is the answer. STATION is repeated at the end, so it drops.",
+            "emphasisRule": "The answer to 'how?' takes the peak; a repeated place at the end of the sentence drops.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L63_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Why is the café closed today?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Against expectations, the free clinic treated the celebrity.",
-            "textToSpeak": "Against expectations, the free clinic treated the celebrity.",
+            "word": "The owner's gone to a wedding.",
+            "textToSpeak": "The owner's gone to a wedding.",
             "options": [
-                "Emphasis on CLINIC (Subject focus)",
-                "Emphasis on CELEBRITY (Object focus)"
+                "Emphasis on WEDDING",
+                "Emphasis on GONE"
             ],
-            "correctAnswer": "Emphasis on CLINIC (Subject focus)",
+            "correctAnswer": "Emphasis on WEDDING",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "Words like this at the start often mark the subject itself as the surprising news — listen for an early peak.",
-            "explanation": "CLINIC is the genuinely newsworthy part of this sentence, so it takes the stress rather than the final word CELEBRITY.",
-            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word.",
-            "emotionContext": "Subject focus"
+            "hint": "A wants a reason. Which word names it?",
+            "explanation": "The owner is a background fact, and GONE is just the route to the answer. WEDDING is the reason A asked for, which is why it carries the peak.",
+            "emphasisRule": "A reason noun takes the peak; the verb that leads to it stays in the background.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L64_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"What are you cooking tonight?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "This week, the clinic extended its hours.",
-            "textToSpeak": "This week, the clinic extended its hours.",
+            "word": "I'm cooking fish curry for dinner.",
+            "textToSpeak": "I'm cooking fish curry for dinner.",
             "options": [
-                "Emphasis on CLINIC (Subject focus)",
-                "Emphasis on HOURS (Object focus)"
+                "Emphasis on FISH",
+                "Emphasis on COOKING"
             ],
-            "correctAnswer": "Emphasis on HOURS (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on FISH",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "The lead-in only tells you when or where — the real news is still the action described at the end.",
-            "explanation": "This introduction gives background information only, so the nuclear stress still falls on HOURS, the final content word.",
-            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent.",
-            "emotionContext": "Object focus"
+            "hint": "'Cooking' came from A, and 'dinner' is implied by 'tonight'. Which word in the dish is the answer?",
+            "explanation": "COOKING is repeated and DINNER is understood from 'tonight', so both stay low. The dish is FISH CURRY, and in this compound the first word carries the peak.",
+            "emphasisRule": "In a compound noun that answers a question, the first word takes the peak; repeated and implied words stay low.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L64_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"What does Dev do for a living?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Over the weekend, my cousin repainted the fence.",
-            "textToSpeak": "Over the weekend, my cousin repainted the fence.",
+            "word": "He sells used cars.",
+            "textToSpeak": "He sells used cars.",
             "options": [
-                "Emphasis on FENCE (Object focus)",
-                "Emphasis on COUSIN (Subject focus)"
+                "Emphasis on CARS",
+                "Emphasis on USED"
             ],
-            "correctAnswer": "Emphasis on FENCE (Object focus)",
+            "correctAnswer": "Emphasis on CARS",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Don't be fooled by the introduction — it's just context, so the stress still lands on the final content word.",
-            "explanation": "Even with a lead-in, COUSIN isn't presented as unexpected, so the stress stays on FENCE as usual.",
-            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies.",
-            "emotionContext": "Object focus"
+            "hint": "The whole job is new information here. Which word does the voice build toward?",
+            "explanation": "A asked about the whole job, so the entire predicate is new. In that case the peak goes on the last content word, CARS, with USED lighter.",
+            "emphasisRule": "When a whole predicate is new, the peak lands on its last content word.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L64_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did A most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Yesterday afternoon, the technician replaced the battery.",
-            "textToSpeak": "Yesterday afternoon, the technician replaced the battery.",
+            "word": "She teaches primary school.",
+            "textToSpeak": "She teaches primary school.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on BATTERY (Object focus)"
+                "Does your sister teach primary or secondary?",
+                "What does your sister do for a living?"
             ],
-            "correctAnswer": "Emphasis on BATTERY (Object focus)",
+            "correctAnswer": "What does your sister do for a living?",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "This opening phrase doesn't single out the subject, so the sentence behaves like an ordinary neutral statement.",
-            "explanation": "The opening phrase only sets the scene — it doesn't make TECHNICIAN special, so the default stress still lands on BATTERY.",
-            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent.",
-            "emotionContext": "Object focus"
+            "hint": "Listen for the single main peak. Is the speaker choosing between two things, or describing a job?",
+            "explanation": "The single peak on SCHOOL with TEACHES left low is the pattern for describing a job. A choice between levels would have put the peak on PRIMARY.",
+            "emphasisRule": "A single peak at the end of a predicate suggests the whole predicate was the answer.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L65_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"The contract's still sitting on my desk.\" B responds in surprise:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Every morning, my father waters the garden.",
-            "textToSpeak": "Every morning, my father waters the garden.",
+            "word": "You haven't read the contract?",
+            "textToSpeak": "You haven't read the contract?",
             "options": [
-                "Emphasis on GARDEN (Object focus)",
-                "Emphasis on FATHER (Subject focus)"
+                "Emphasis on READ",
+                "Emphasis on CONTRACT"
             ],
-            "correctAnswer": "Emphasis on GARDEN (Object focus)",
+            "correctAnswer": "Emphasis on READ",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 1,
                 3
             ],
-            "hint": "This opening phrase just sets the time or scene — it doesn't make the subject special, so the peak still falls late.",
-            "explanation": "Since nothing marks FATHER as surprising, the sentence still follows the neutral pattern, stressing GARDEN at the end.",
-            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies.",
-            "emotionContext": "Object focus"
+            "hint": "The contract has just been mentioned. What action is B asking about?",
+            "explanation": "CONTRACT is old, so it can't take the stress even though a rising question ends on it. READ is what B is checking, which is why it carries the peak early.",
+            "emphasisRule": "In a yes/no question, a given noun at the end carries only the rise; the peak goes to the new word.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L65_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Where did the old printer go?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Believe it or not, the substitute teacher solved the mystery.",
-            "textToSpeak": "Believe it or not, the substitute teacher solved the mystery.",
+            "word": "We recycled the printer.",
+            "textToSpeak": "We recycled the printer.",
             "options": [
-                "Emphasis on MYSTERY (Object focus)",
-                "Emphasis on TEACHER (Subject focus)"
+                "Emphasis on RECYCLED",
+                "Emphasis on PRINTER"
             ],
-            "correctAnswer": "Emphasis on TEACHER (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on RECYCLED",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "This isn't just scene-setting — the introduction makes the subject noteworthy, so the stress shifts there.",
-            "explanation": "The context makes TEACHER unexpected, which is why the pitch accent lands there instead of on MYSTERY.",
-            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject.",
-            "emotionContext": "Subject focus"
+            "hint": "A already said 'printer'. What is the news about it?",
+            "explanation": "PRINTER is repeated from A's question, so it is low. RECYCLED tells A what happened and takes the peak.",
+            "emphasisRule": "A repeated object at the end falls; the new verb takes the peak.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L65_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"What did you do with the spare room?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "On Monday, the office received a new shipment.",
-            "textToSpeak": "On Monday, the office received a new shipment.",
+            "word": "We turned the spare room into a nursery.",
+            "textToSpeak": "We turned the spare room into a nursery.",
             "options": [
-                "Emphasis on SHIPMENT (Object focus)",
-                "Emphasis on OFFICE (Subject focus)"
+                "Emphasis on TURNED",
+                "Emphasis on NURSERY"
             ],
-            "correctAnswer": "Emphasis on SHIPMENT (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on NURSERY",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Even with an introduction, nothing marks the subject as surprising here, so the default final-word stress still applies.",
-            "explanation": "This introduction gives background information only, so the nuclear stress still falls on SHIPMENT, the final content word.",
-            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent.",
-            "emotionContext": "Object focus"
+            "hint": "The spare room is given and sits in the middle of the sentence. What does the voice do on it?",
+            "explanation": "SPARE ROOM is repeated from A, so it stays low in the middle of the sentence. NURSERY is the new result and takes the peak at the end.",
+            "emphasisRule": "A given phrase in the middle of a sentence stays low; the new element after it takes the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L66_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"What are you doing on Saturday?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "During rehearsal, the band adjusted the setlist.",
-            "textToSpeak": "During rehearsal, the band adjusted the setlist.",
+            "word": "On Saturday I'm visiting my parents.",
+            "textToSpeak": "On Saturday I'm visiting my parents.",
             "options": [
-                "Emphasis on BAND (Subject focus)",
-                "Emphasis on SETLIST (Object focus)"
+                "Emphasis on SATURDAY",
+                "Emphasis on PARENTS"
             ],
-            "correctAnswer": "Emphasis on SETLIST (Object focus)",
+            "correctAnswer": "Emphasis on PARENTS",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "The lead-in only tells you when or where — the real news is still the action described at the end.",
-            "explanation": "Even with a lead-in, BAND isn't presented as unexpected, so the stress stays on SETLIST as usual.",
-            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies.",
-            "emotionContext": "Object focus"
+            "hint": "B starts by repeating A's time. Does that repeated time need a peak?",
+            "explanation": "SATURDAY opens B's sentence but was already named, so it sits low. PARENTS is the new information and carries the peak.",
+            "emphasisRule": "A given time at the start of a sentence stays low; the new content later takes the peak.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L66_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Is the bakery open on Sundays?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After the update, the app fixed the bug.",
-            "textToSpeak": "After the update, the app fixed the bug.",
+            "word": "The bakery's closed on Sundays.",
+            "textToSpeak": "The bakery's closed on Sundays.",
             "options": [
-                "Emphasis on BUG (Object focus)",
-                "Emphasis on APP (Subject focus)"
+                "Emphasis on CLOSED",
+                "Emphasis on SUNDAYS"
             ],
-            "correctAnswer": "Emphasis on BUG (Object focus)",
+            "correctAnswer": "Emphasis on CLOSED",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "Don't be fooled by the introduction — it's just context, so the stress still lands on the final content word.",
-            "explanation": "The opening phrase only sets the scene — it doesn't make APP special, so the default stress still lands on BUG.",
-            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent.",
-            "emotionContext": "Object focus"
+            "hint": "The sentence ends with a word from A's question. Is that the news?",
+            "explanation": "BAKERY and SUNDAYS both come from A. The news is CLOSED, which is why it takes the peak even though it sits in the middle.",
+            "emphasisRule": "A given word at the end of a sentence can drop when new information sits earlier.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L66_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"I'm free on Thursday afternoon.\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After class, the students reviewed their notes.",
-            "textToSpeak": "After class, the students reviewed their notes.",
+            "word": "I have a dentist appointment on Thursday afternoon.",
+            "textToSpeak": "I have a dentist appointment on Thursday afternoon.",
             "options": [
-                "Emphasis on STUDENTS (Subject focus)",
-                "Emphasis on NOTES (Object focus)"
+                "Emphasis on AFTERNOON",
+                "Emphasis on DENTIST"
             ],
-            "correctAnswer": "Emphasis on NOTES (Object focus)",
+            "correctAnswer": "Emphasis on DENTIST",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "This opening phrase doesn't single out the subject, so the sentence behaves like an ordinary neutral statement.",
-            "explanation": "Since nothing marks STUDENTS as surprising, the sentence still follows the neutral pattern, stressing NOTES at the end.",
-            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies.",
-            "emotionContext": "Object focus"
+            "hint": "The time phrase is repeated word for word. What is B adding?",
+            "explanation": "THURSDAY AFTERNOON is a repeated time, so it is low. The new fact is a DENTIST appointment, and in a compound noun the first word carries the peak.",
+            "emphasisRule": "A fully repeated time phrase stays low; a new compound before it takes the peak on its first word.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L67_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"What happened?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Before the trip, we confirmed the reservation.",
-            "textToSpeak": "Before the trip, we confirmed the reservation.",
+            "word": "My neighbour lost his keys.",
+            "textToSpeak": "My neighbour lost his keys.",
             "options": [
-                "Emphasis on RESERVATION (Object focus)",
-                "Emphasis on WE (Subject focus)"
+                "Emphasis on KEYS",
+                "Emphasis on NEIGHBOUR"
             ],
-            "correctAnswer": "Emphasis on RESERVATION (Object focus)",
+            "correctAnswer": "Emphasis on KEYS",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "This opening phrase just sets the time or scene — it doesn't make the subject special, so the peak still falls late.",
-            "explanation": "This introduction gives background information only, so the nuclear stress still falls on RESERVATION, the final content word.",
-            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent.",
-            "emotionContext": "Object focus"
+            "hint": "Nothing has been mentioned yet. Where does the neutral peak go when everything is new?",
+            "explanation": "A gave no information, so the entire sentence is new. Neutral speech then peaks on the last content word, KEYS.",
+            "emphasisRule": "When everything is new, the peak falls on the last content word.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L67_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Why is everyone standing outside?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "To everyone's surprise, the junior chef won the competition.",
-            "textToSpeak": "To everyone's surprise, the junior chef won the competition.",
+            "word": "There's a fire drill.",
+            "textToSpeak": "There's a fire drill.",
             "options": [
-                "Emphasis on COMPETITION (Object focus)",
-                "Emphasis on CHEF (Subject focus)"
+                "Emphasis on DRILL",
+                "Emphasis on FIRE"
             ],
-            "correctAnswer": "Emphasis on CHEF (Subject focus)",
+            "correctAnswer": "Emphasis on FIRE",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 3,
-                1,
                 1,
                 1
             ],
-            "hint": "The lead-in flags the subject as unexpected, which pulls the pitch peak forward instead of leaving it at the end.",
-            "explanation": "The lead-in marks CHEF as the surprising or noteworthy element, so the nuclear stress shifts there instead of staying on COMPETITION.",
-            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word.",
-            "emotionContext": "Subject focus"
+            "hint": "The reply is a two-word label. Which half does the voice treat as the name?",
+            "explanation": "The whole answer is new, but 'fire drill' works like a compound noun, so the first word carries the peak and DRILL falls away.",
+            "emphasisRule": "In a compound noun, the first element normally carries the peak even when the whole phrase is new.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L67_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"I heard the neighbour's selling his car.\" B responds:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Against expectations, the smaller hotel got the best reviews.",
-            "textToSpeak": "Against expectations, the smaller hotel got the best reviews.",
+            "word": "The neighbour's selling his house too.",
+            "textToSpeak": "The neighbour's selling his house too.",
             "options": [
-                "Emphasis on HOTEL (Subject focus)",
-                "Emphasis on REVIEWS (Object focus)"
+                "Emphasis on HOUSE",
+                "Emphasis on TOO"
             ],
-            "correctAnswer": "Emphasis on HOTEL (Subject focus)",
+            "correctAnswer": "Emphasis on HOUSE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                2,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "Notice the sentence is really about who did it, not just what happened — listen for the peak near the start.",
-            "explanation": "Because the introduction flags HOTEL specifically, the pitch peak moves earlier in the sentence to highlight it.",
-            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject.",
-            "emotionContext": "Subject focus"
+            "hint": "'Too' ends the sentence. Is it carrying the news?",
+            "explanation": "The neighbour and the selling are given. HOUSE is the new item, which is why it carries the peak, and TOO is a quick closing word.",
+            "emphasisRule": "A closing 'too' stays light; the added item before it takes the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L68_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Did you pack the charger and the adapter?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After the exam, the professor reviewed the answers.",
-            "textToSpeak": "After the exam, the professor reviewed the answers.",
+            "word": "I packed the charger, but I forgot the adapter.",
+            "textToSpeak": "I packed the charger, but I forgot the adapter.",
             "options": [
-                "Emphasis on PROFESSOR (Subject focus)",
-                "Emphasis on ANSWERS (Object focus)"
+                "Emphasis on PACKED and FORGOT",
+                "Emphasis on CHARGER and ADAPTER"
             ],
-            "correctAnswer": "Emphasis on ANSWERS (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PACKED and FORGOT",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "Even with an introduction, nothing marks the subject as surprising here, so the default final-word stress still applies.",
-            "explanation": "Even with a lead-in, PROFESSOR isn't presented as unexpected, so the stress stays on ANSWERS as usual.",
-            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies.",
-            "emotionContext": "Object focus"
+            "hint": "Both items are already known. What differs between the two halves?",
+            "explanation": "CHARGER and ADAPTER were both named by A, so they stay low. What differs is the outcome, so PACKED and FORGOT take the peaks.",
+            "emphasisRule": "When items are given, the peaks go on the new information attached to each item.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L68_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"How many of the kids can swim?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "At the meeting today, the team discussed the new budget.",
-            "textToSpeak": "At the meeting today, the team discussed the new budget.",
+            "word": "Tina can swim, and so can Raj.",
+            "textToSpeak": "Tina can swim, and so can Raj.",
             "options": [
-                "Emphasis on BUDGET (Object focus)",
-                "Emphasis on TEAM (Subject focus)"
+                "Emphasis on CAN and SWIM",
+                "Emphasis on TINA and RAJ"
             ],
-            "correctAnswer": "Emphasis on BUDGET (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on TINA and RAJ",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
+                3,
                 1,
                 1,
                 3,
                 1
             ],
-            "hint": "The lead-in only tells you when or where — the real news is still the action described at the end.",
-            "explanation": "The opening phrase only sets the scene — it doesn't make TEAM special, so the default stress still lands on BUDGET.",
-            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent.",
-            "emotionContext": "Object focus"
+            "hint": "'Can swim' is repeated in both halves. What changes?",
+            "explanation": "The ability is the same for both people, so CAN SWIM stays low. The names are the new information, so TINA and RAJ carry the peaks.",
+            "emphasisRule": "In repeated structures, the peak goes on the part that is new each time.",
+            "emotionContext": "List"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L68_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Are you bringing anything to the potluck?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Remarkably, the smallest clinic treated the most patients.",
-            "textToSpeak": "Remarkably, the smallest clinic treated the most patients.",
+            "word": "I'm bringing rice and a salad.",
+            "textToSpeak": "I'm bringing rice and a salad.",
             "options": [
-                "Emphasis on PATIENTS (Object focus)",
-                "Emphasis on CLINIC (Subject focus)"
+                "Emphasis on RICE and SALAD",
+                "Emphasis on BRINGING and RICE"
             ],
-            "correctAnswer": "Emphasis on CLINIC (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on RICE and SALAD",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
+                3,
                 1
             ],
-            "hint": "The opening phrase signals something surprising about the subject — that's usually where the peak lands, not the final word.",
-            "explanation": "CLINIC is the genuinely newsworthy part of this sentence, so it takes the stress rather than the final word PATIENTS.",
-            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word.",
-            "emotionContext": "Subject focus"
+            "hint": "A's question gives the action. How many new items does B add?",
+            "explanation": "BRINGING comes from A's question, so it's low. The two items, RICE and SALAD, are the new information, and each takes a peak.",
+            "emphasisRule": "In a short list of new items, each item gets its own peak.",
+            "emotionContext": "List"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L69_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"That's a lovely red scarf.\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Before closing, the barista wiped down the counters.",
-            "textToSpeak": "Before closing, the barista wiped down the counters.",
+            "word": "I have a red coat too.",
+            "textToSpeak": "I have a red coat too.",
             "options": [
-                "Emphasis on COUNTERS (Object focus)",
-                "Emphasis on BARISTA (Subject focus)"
+                "Emphasis on RED",
+                "Emphasis on COAT"
             ],
-            "correctAnswer": "Emphasis on COUNTERS (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on COAT",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Don't be fooled by the introduction — it's just context, so the stress still lands on the final content word.",
-            "explanation": "Since nothing marks BARISTA as surprising, the sentence still follows the neutral pattern, stressing COUNTERS at the end.",
-            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies.",
-            "emotionContext": "Object focus"
+            "hint": "'Red' has just been mentioned. What is new in B's sentence?",
+            "explanation": "RED is repeated from A, so it sits low. COAT is the new item and takes the peak.",
+            "emphasisRule": "A repeated adjective stays low; the new noun takes the peak.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L69_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"I bought a laptop yesterday.\" B reacts with a quick question:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Surprisingly, my grandmother beat the video game.",
-            "textToSpeak": "Surprisingly, my grandmother beat the video game.",
+            "word": "A gaming laptop?",
+            "textToSpeak": "A gaming laptop?",
             "options": [
-                "Emphasis on GAME (Object focus)",
-                "Emphasis on GRANDMOTHER (Subject focus)"
+                "Emphasis on GAMING",
+                "Emphasis on LAPTOP"
             ],
-            "correctAnswer": "Emphasis on GRANDMOTHER (Subject focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                3,
-                1,
-                1,
-                1,
-                1
-            ],
-            "hint": "Words like this at the start often mark the subject itself as the surprising news — listen for an early peak.",
-            "explanation": "The context makes GRANDMOTHER unexpected, which is why the pitch accent lands there instead of on GAME.",
-            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject.",
-            "emotionContext": "Subject focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L69_Q3",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "Surprisingly, the quietest student won the debate.",
-            "textToSpeak": "Surprisingly, the quietest student won the debate.",
-            "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on DEBATE (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on STUDENT (Subject focus)",
+            "correctAnswer": "Emphasis on GAMING",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
-                1,
-                1,
-                1
-            ],
-            "hint": "This isn't just scene-setting — the introduction makes the subject noteworthy, so the stress shifts there.",
-            "explanation": "The lead-in marks STUDENT as the surprising or noteworthy element, so the nuclear stress shifts there instead of staying on DEBATE.",
-            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word.",
-            "emotionContext": "Subject focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L70_Q1",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "Against all odds, the underdog team won the tournament.",
-            "textToSpeak": "Against all odds, the underdog team won the tournament.",
-            "options": [
-                "Emphasis on TOURNAMENT (Object focus)",
-                "Emphasis on TEAM (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on TEAM (Subject focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                3,
-                1,
-                1,
-                1,
-                1
-            ],
-            "hint": "The lead-in flags the subject as unexpected, which pulls the pitch peak forward instead of leaving it at the end.",
-            "explanation": "Because the introduction flags TEAM specifically, the pitch peak moves earlier in the sentence to highlight it.",
-            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject.",
-            "emotionContext": "Subject focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L70_Q2",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "Before the concert, the band tested the microphones.",
-            "textToSpeak": "Before the concert, the band tested the microphones.",
-            "options": [
-                "Emphasis on MICROPHONES (Object focus)",
-                "Emphasis on BAND (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on MICROPHONES (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "This opening phrase doesn't single out the subject, so the sentence behaves like an ordinary neutral statement.",
-            "explanation": "This introduction gives background information only, so the nuclear stress still falls on MICROPHONES, the final content word.",
-            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent.",
-            "emotionContext": "Object focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L70_Q3",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "This year, the hospital renovated the lobby.",
-            "textToSpeak": "This year, the hospital renovated the lobby.",
-            "options": [
-                "Emphasis on HOSPITAL (Subject focus)",
-                "Emphasis on LOBBY (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on LOBBY (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
                 1,
                 1,
                 3
             ],
-            "hint": "This opening phrase just sets the time or scene — it doesn't make the subject special, so the peak still falls late.",
-            "explanation": "Even with a lead-in, HOSPITAL isn't presented as unexpected, so the stress stays on LOBBY as usual.",
-            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies.",
-            "emotionContext": "Object focus"
+            "hint": "The laptop is already known. What detail is B checking?",
+            "explanation": "LAPTOP is given, so the rise at the end sits on it without making it the stress point. GAMING is the detail B is asking about, and it takes the peak.",
+            "emphasisRule": "In an echo question, the new modifier takes the peak.",
+            "emotionContext": "Confirmation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L69_Q3",
+            "instruction": "Identify the emphasis. A says: \"I'm looking for a quiet café.\" B answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "There's a quiet café near the library.",
+            "textToSpeak": "There's a quiet café near the library.",
+            "options": [
+                "Emphasis on QUIET",
+                "Emphasis on LIBRARY"
+            ],
+            "correctAnswer": "Emphasis on LIBRARY",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "Both the adjective and the noun are repeated from A. What new information remains?",
+            "explanation": "QUIET CAFÉ is given, so it falls away. The new information is where it is, so LIBRARY takes the peak.",
+            "emphasisRule": "A repeated description stays low; the new place gets the peak.",
+            "emotionContext": "Given information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L70_Q1",
+            "instruction": "Identify the emphasis. A asks: \"Has anyone fed the cat?\" B answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I fed the cat at six.",
+            "textToSpeak": "I fed the cat at six.",
+            "options": [
+                "Emphasis on SIX",
+                "Emphasis on FED"
+            ],
+            "correctAnswer": "Emphasis on SIX",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "Verb and object both repeat A's question. What is left?",
+            "explanation": "FED and CAT are both given, so SIX, the new time, takes the peak.",
+            "emphasisRule": "When a question's verb and object are repeated, the extra detail takes the peak.",
+            "emotionContext": "Given information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L70_Q2",
+            "instruction": "Identify the pitch pattern. What did A most likely say?",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'll ask my manager about it.",
+            "textToSpeak": "I'll ask my manager about it.",
+            "options": [
+                "I can't approve the discount on my own.",
+                "I already asked my manager about it."
+            ],
+            "correctAnswer": "I can't approve the discount on my own.",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "'About it' points back to something. What new action is being announced?",
+            "explanation": "The peak on MANAGER shows asking the manager is the new step, and IT refers back to the discount issue. A would have raised the problem, not mentioned asking her.",
+            "emphasisRule": "The peak marks the new element; given material, including pronouns, stays low.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L70_Q3",
+            "instruction": "Identify the emphasis. A asks: \"Whose turn is it to cook tonight?\" B answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It's Maya's turn.",
+            "textToSpeak": "It's Maya's turn.",
+            "options": [
+                "Emphasis on TURN",
+                "Emphasis on MAYA'S"
+            ],
+            "correctAnswer": "Emphasis on MAYA'S",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "'Turn' is already in A's question. Which word is the answer?",
+            "explanation": "TURN ends the sentence but it's repeated, so it drops. MAYA'S is the answer and takes the peak.",
+            "emphasisRule": "A given noun at the end falls; the answering word before it takes the peak.",
+            "emotionContext": "Answering a question"
         }
     ]
 }

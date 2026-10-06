@@ -5,543 +5,568 @@
     "quests": [
         {
             "id": "ACC_WORDLINKING_L81_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which link joins a vowel straight to a vowel?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "here",
-                "is",
-                "the",
-                "plan"
+                "we",
+                "all",
+                "agree"
             ],
-            "textToSpeak": "here is the plan",
-            "correctAnswer": "here is",
-            "hint": "The written 'r' at the end of 'here' is usually silent, but because 'is' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'here' to 'is'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'here' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'hee-riz'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "we all agree",
+            "correctAnswer": "we all",
+            "hint": "Two words meet with a vowel on each side of the boundary. Which pair?",
+            "explanation": "Both words touch at a vowel: 'we' finishes on /iː/ and 'all' starts on /ɔː/, so there is no consonant to link through. The voice keeps going, and many speakers add a faint /j/ between them. 'All agree' is the familiar consonant-to-vowel kind, so it is not the answer here.",
+            "flowRule": "Vowel-to-Vowel Linking: When one word ends in a vowel sound and the next begins with a vowel sound, the voice flows straight from one to the other with no pause. Many speakers add a faint glide between them, but the transition is smooth either way.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L81_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Find the connection between two vowel sounds",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "for",
-                "a",
-                "long",
-                "time"
+                "I",
+                "agree",
+                "with",
+                "that"
             ],
-            "textToSpeak": "for a long time",
-            "correctAnswer": "for a",
-            "hint": "The written 'r' at the end of 'for' is usually silent, but because 'a' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'for' to 'a'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'for' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'fo-ra'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "I agree with that",
+            "correctAnswer": "I agree",
+            "hint": "Look at where one word ends and the next begins, and check for a vowel on both sides.",
+            "explanation": "No consonant sits between 'I' and 'agree': /aɪ/ flows straight into /ə/. A faint glide may appear, but nothing stops the voice. Every other boundary in the sentence has a consonant on one side.",
+            "flowRule": "Vowel-to-Vowel Linking: When one word ends in a vowel sound and the next begins with a vowel sound, the voice flows straight from one to the other with no pause. Many speakers add a faint glide between them, but the transition is smooth either way.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L81_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Spot the place where two vowel sounds touch",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "more",
-                "of",
-                "this",
-                "please"
+                "see",
+                "you",
+                "at",
+                "nine"
             ],
-            "textToSpeak": "more of this please",
-            "correctAnswer": "more of",
-            "hint": "The written 'r' at the end of 'more' is usually silent, but because 'of' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'more' to 'of'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'more' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'mo-rof'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "see you at nine",
+            "correctAnswer": "you at",
+            "hint": "A pronoun looks as if it could link, but it starts with a consonant sound. Find the pair where two real vowels meet.",
+            "explanation": "Rounded lips at the end of 'you' (/uː/) lead into the /æ/ of 'at', and a faint /w/ often appears between them. The start of 'you' is /j/, a consonant, so 'see you' is not a vowel-to-vowel link.",
+            "flowRule": "Vowel-to-Vowel Linking: When one word ends in a vowel sound and the next begins with a vowel sound, the voice flows straight from one to the other with no pause. Many speakers add a faint glide between them, but the transition is smooth either way.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L82_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which link has a light /j/ ('y') glide between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "your",
-                "opinion",
-                "really",
-                "matters"
+                "tea",
+                "or",
+                "coffee",
+                "please"
             ],
-            "textToSpeak": "your opinion really matters",
-            "correctAnswer": "your opinion",
-            "hint": "The written 'r' at the end of 'your' is usually silent, but because 'opinion' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'your' to 'opinion'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'your' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'you-ropinion'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "tea or coffee please",
+            "correctAnswer": "tea or",
+            "hint": "Two vowel sounds touch with no consonant between. After a high, smiling vowel, listen for a faint 'y'.",
+            "explanation": "After the high, smiling vowel /iː/ of 'tea', many speakers slide through a faint /j/ before the /ɔː/ of 'or', giving something like 'tea-yor'. It is a transition rather than an extra letter, and some people simply run the vowels together.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L82_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link that slides through a 'y' sound",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "there",
-                "are",
-                "two",
-                "options"
+                "it's",
+                "free",
+                "of",
+                "charge"
             ],
-            "textToSpeak": "there are two options",
-            "correctAnswer": "there are",
-            "hint": "The written 'r' at the end of 'there' is usually silent, but because 'are' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'there' to 'are'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'there' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'thei-rare'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "it's free of charge",
+            "correctAnswer": "free of",
+            "hint": "The word before the link ends in the sound of the letter 'e'. Find what follows it.",
+            "explanation": "The tongue stays high and forward after the /iː/ of 'free', so a light /j/ slips in before 'of'. 'Of charge' has no link, because /v/ meets /tʃ/. A shop sign read aloud keeps this smooth.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L82_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Where does a faint 'y' appear between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "where",
-                "is",
-                "the",
-                "station"
+                "please",
+                "be",
+                "on",
+                "time"
             ],
-            "textToSpeak": "where is the station",
-            "correctAnswer": "where is",
-            "hint": "The written 'r' at the end of 'where' is usually silent, but because 'is' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'where' to 'is'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'where' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'whei-ris'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "please be on time",
+            "correctAnswer": "be on",
+            "hint": "Say the short verb and notice that your mouth ends in a smile. What does the next word begin with?",
+            "explanation": "Say 'be' and your mouth ends in a smile; keep it there as 'on' begins and a light /j/ glides across. 'Please be' and 'on time' do not link, because each has a consonant on one side.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L83_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Spot the vowel-to-vowel link that takes a 'y' glide",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "over",
-                "and",
-                "over",
-                "again"
+                "let",
+                "me",
+                "try",
+                "on",
+                "a",
+                "jacket"
             ],
-            "textToSpeak": "over and over again",
-            "correctAnswer": "over and",
-            "hint": "The written 'r' at the end of 'over' is usually silent, but because 'and' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'over' to 'and'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'over' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'ove-rand'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "let me try on a jacket",
+            "correctAnswer": "try on",
+            "hint": "There are two links. One has a consonant on the left, the other a vowel. Find the vowel one.",
+            "explanation": "The diphthong /aɪ/ in 'try' finishes moving towards /ɪ/, so a light /j/ often follows before the vowel of 'on'. 'On a' is the consonant-to-vowel link in this sentence, so it is not the answer.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L83_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which link has a light /j/ ('y') glide between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "after",
+                "they",
                 "all",
-                "we",
-                "tried"
+                "enjoyed",
+                "it"
             ],
-            "textToSpeak": "after all we tried",
-            "correctAnswer": "after all",
-            "hint": "The written 'r' at the end of 'after' is usually silent, but because 'all' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'after' to 'all'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'after' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'afte-rall'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "they all enjoyed it",
+            "correctAnswer": "they all",
+            "hint": "Say each candidate slowly. A light /j/ appears between two vowels only once.",
+            "explanation": "'They' finishes with /eɪ/ gliding towards /ɪ/, and 'all' begins with /ɔː/; a light /j/ eases the move. The other two links are consonant to vowel: 'all enjoyed' through /l/ and 'enjoyed it' through /d/.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L83_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link that slides through a 'y' sound",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "their",
-                "idea",
-                "was",
-                "clever"
+                "you",
+                "can",
+                "pay",
+                "in",
+                "cash"
             ],
-            "textToSpeak": "their idea was clever",
-            "correctAnswer": "their idea",
-            "hint": "The written 'r' at the end of 'their' is usually silent, but because 'idea' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'their' to 'idea'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'their' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'thei-ridea'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "you can pay in cash",
+            "correctAnswer": "pay in",
+            "hint": "'Can pay' is consonant to consonant. Find the link with vowels on both sides.",
+            "explanation": "Many learners separate 'pay' and 'in' with a pause, which makes the sentence slower than it needs to be. The /eɪ/ ends high and forward, so a faint /j/ slides straight into the /ɪ/ of 'in'.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L84_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which link has a light /w/ glide between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "never",
-                "accept",
-                "defeat",
-                "here"
+                "who",
+                "is",
+                "coming",
+                "tonight"
             ],
-            "textToSpeak": "never accept defeat here",
-            "correctAnswer": "never accept",
-            "hint": "The written 'r' at the end of 'never' is usually silent, but because 'accept' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'never' to 'accept'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'never' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'neve-raccept'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "who is coming tonight",
+            "correctAnswer": "who is",
+            "hint": "After rounded lips, a faint 'w' often appears. Which link joins two vowels?",
+            "explanation": "Rounded lips at the end of /uː/ ('who') lead into /ɪ/, and a light /w/ often appears, so it can sound like 'who-wis'. It is a transition, not a letter, and speakers differ in how clear it is.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L84_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link that slides through a 'w' sound",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "four",
-                "of",
-                "us",
-                "went"
+                "go",
+                "on",
+                "I'm",
+                "listening"
             ],
-            "textToSpeak": "four of us went",
-            "correctAnswer": "four of",
-            "hint": "The written 'r' at the end of 'four' is usually silent, but because 'of' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'four' to 'of'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'four' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'fou-rof'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "go on I'm listening",
+            "correctAnswer": "go on",
+            "hint": "Two vowel sounds touch with no consonant between. After rounded lips, listen for a faint 'w'.",
+            "explanation": "'Go' finishes with the lips rounding (/əʊ/), and 'on' begins with a vowel, so a light /w/ eases the transition. 'On I'm' is a consonant-to-vowel link through the /n/, so it is not what the question wants.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L84_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Where does a faint 'w' appear between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "better",
-                "always",
-                "aim",
-                "high"
+                "I",
+                "visit",
+                "her",
+                "now",
+                "and",
+                "then"
             ],
-            "textToSpeak": "better always aim high",
-            "correctAnswer": "better always",
-            "hint": "The written 'r' at the end of 'better' is usually silent, but because 'always' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'better' to 'always'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'better' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'bette-ralways'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "I visit her now and then",
+            "correctAnswer": "now and",
+            "hint": "The first word ends with your lips rounding. What follows it?",
+            "explanation": "The /aʊ/ in 'now' finishes with rounded lips, so a light /w/ glides across into 'and'. The weak form of 'and' makes it even easier to run the words together.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L85_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Spot the vowel-to-vowel link that takes a 'w' glide",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "player",
-                "enters",
-                "the",
-                "field"
+                "we",
+                "asked",
+                "a",
+                "few",
+                "of",
+                "them"
             ],
-            "textToSpeak": "player enters the field",
-            "correctAnswer": "player enters",
-            "hint": "The written 'r' at the end of 'player' is usually silent, but because 'enters' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'player' to 'enters'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'player' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'playe-renters'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "we asked a few of them",
+            "correctAnswer": "few of",
+            "hint": "Say each candidate slowly. A light /w/ appears between two vowels only once.",
+            "explanation": "A rounded vowel, /uː/, ends 'few', and 'of' starts with a vowel, so a light /w/ eases across. 'We asked' joins vowels too, but after /iː/, which calls for /j/ instead. Telling the two glides apart is the point of this question.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L85_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which link joins a consonant to a vowel, not a vowel to a vowel?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "order",
-                "another",
-                "round",
-                "please"
+                "they",
+                "ate",
+                "lunch",
+                "at",
+                "one"
             ],
-            "textToSpeak": "order another round please",
-            "correctAnswer": "order another",
-            "hint": "The written 'r' at the end of 'order' is usually silent, but because 'another' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'order' to 'another'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'order' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'orde-ranother'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
+            "textToSpeak": "they ate lunch at one",
+            "correctAnswer": "lunch at",
+            "hint": "One link is vowel to vowel and one is consonant to vowel. Choose the consonant one.",
+            "explanation": "Of the two links here, 'lunch at' is the consonant-to-vowel one: the 'ch' is released into 'at'. 'They ate' joins two vowels, and 'at one' does not link at all, because 'one' begins with /w/.",
+            "flowRule": "Vowel-to-Vowel Linking: When one word ends in a vowel sound and the next begins with a vowel sound, the voice flows straight from one to the other with no pause. Many speakers add a faint glide between them, but the transition is smooth either way.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L85_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair has no consonant between its two sounds?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "clear",
-                "all",
-                "old",
-                "data"
+                "he",
+                "knew",
+                "it",
+                "at",
+                "once"
             ],
-            "textToSpeak": "clear all old data",
-            "correctAnswer": "clear all",
-            "hint": "The written 'r' at the end of 'clear' is usually silent, but because 'all' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'clear' to 'all'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'clear' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'clea-rall'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "he knew it at once",
+            "correctAnswer": "knew it",
+            "hint": "A vowel-to-vowel link and a consonant-to-vowel link both appear. Take the vowel one.",
+            "explanation": "A faint /w/ often slides between the /uː/ of 'knew' and the /ɪ/ of 'it'. 'It at' is the consonant-to-vowel link, and 'at once' is a trap: 'once' begins with /w/, so there is nothing to join.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L86_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which connection of any kind comes first?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "doctor",
-                "asked",
-                "the",
-                "patient"
+                "he",
+                "is",
+                "on",
+                "holiday",
+                "until",
+                "Friday"
             ],
-            "textToSpeak": "doctor asked the patient",
-            "correctAnswer": "doctor asked",
-            "hint": "The written 'r' at the end of 'doctor' is usually silent, but because 'asked' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'doctor' to 'asked'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'doctor' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'docto-rasked'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "he is on holiday until Friday",
+            "correctAnswer": "he is",
+            "hint": "Say the sentence and take the earliest link of any kind, vowel or consonant.",
+            "explanation": "A faint /j/ often links 'he' (/iː/) and 'is' (/ɪ/). 'Is on' is the next link, then 'holiday until'. This sentence has both kinds of link, which is why the question has to say which one it wants.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L86_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which link has a light /w/ glide between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "cover",
-                "all",
-                "the",
-                "costs"
+                "I'd",
+                "like",
+                "to",
+                "go",
+                "away",
+                "on",
+                "holiday"
             ],
-            "textToSpeak": "cover all the costs",
-            "correctAnswer": "cover all",
-            "hint": "The written 'r' at the end of 'cover' is usually silent, but because 'all' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'cover' to 'all'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'cover' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'cove-rall'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "I'd like to go away on holiday",
+            "correctAnswer": "go away",
+            "hint": "The first word ends with the lips rounded, like 'oo', 'oh' or 'ow'. What comes next?",
+            "explanation": "'Go' ends in /əʊ/ with the lips rounding, and 'away' begins with /ə/, so a faint /w/ eases across. 'Away on' joins vowels too, but 'away' ends in /eɪ/, which calls for /j/. Telling the two apart is the point of this question.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L86_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Where does a faint 'y' appear between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "whether",
-                "or",
-                "not",
-                "works"
+                "I",
+                "do",
+                "enjoy",
+                "it"
             ],
-            "textToSpeak": "whether or not works",
-            "correctAnswer": "whether or",
-            "hint": "The written 'r' at the end of 'whether' is usually silent, but because 'or' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'whether' to 'or'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'whether' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'whethe-ror'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "I do enjoy it",
+            "correctAnswer": "enjoy it",
+            "hint": "Look for a vowel sound ending a word and another starting the next. One of them ends like 'ee' or 'eye'.",
+            "explanation": "Say 'enjoy it' fast and it becomes one beat: /ɔɪ/ ends high and forward, so a light /j/ eases into the vowel of 'it'. 'Do enjoy' is the other link, after /uː/, which calls for /w/.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L87_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Spot the vowel-to-vowel link that takes a 'y' glide",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "summer",
-                "is",
-                "coming",
-                "soon"
+                "we",
+                "should",
+                "agree",
+                "on",
+                "a",
+                "date"
             ],
-            "textToSpeak": "summer is coming soon",
-            "correctAnswer": "summer is",
-            "hint": "The written 'r' at the end of 'summer' is usually silent, but because 'is' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'summer' to 'is'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'summer' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'summe-ris'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "we should agree on a date",
+            "correctAnswer": "agree on",
+            "hint": "No consonant is released here. The tongue just glides from one vowel to the next.",
+            "explanation": "Planning phrases often include a link like this. The /iː/ at the end of 'agree' calls for a light /j/ before 'on', and 'on a' follows as a consonant-to-vowel link.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L87_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link that slides through a 'w' sound",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "under",
-                "an",
-                "hour",
-                "away"
+                "who",
+                "else",
+                "is",
+                "joining",
+                "us"
             ],
-            "textToSpeak": "under an hour away",
-            "correctAnswer": "under an",
-            "hint": "The written 'r' at the end of 'under' is usually silent, but because 'an' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'under' to 'an'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'under' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'unde-ran'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "who else is joining us",
+            "correctAnswer": "who else",
+            "hint": "No consonant is released here. The lips just relax from one vowel into the next.",
+            "explanation": "Rounded lips at the end of 'who' lead into the /ɛ/ of 'else', so a light /w/ may slide in. 'Else is' and 'joining us' are consonant-to-vowel links. A host asking this would say it in one breath.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L87_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which link joins a vowel straight to a vowel?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "water",
-                "is",
-                "scarce",
-                "here"
+                "I'll",
+                "do",
+                "it",
+                "as",
+                "soon",
+                "as",
+                "I",
+                "can"
             ],
-            "textToSpeak": "water is scarce here",
-            "correctAnswer": "water is",
-            "hint": "The written 'r' at the end of 'water' is usually silent, but because 'is' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'water' to 'is'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'water' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'wate-ris'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "I'll do it as soon as I can",
+            "correctAnswer": "do it",
+            "hint": "Skip the consonant links. Where does one vowel run straight into another?",
+            "explanation": "After the /uː/ of 'do', a light /w/ often slides into the /ɪ/ of 'it', so 'do it' is heard as one beat. 'It as', 'soon as' and 'as I' are consonant-to-vowel links, which is why the question has to say which kind you want.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L88_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which link has a light /j/ ('y') glide between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "gather",
-                "all",
                 "the",
-                "evidence"
+                "fee",
+                "is",
+                "included"
             ],
-            "textToSpeak": "gather all the evidence",
-            "correctAnswer": "gather all",
-            "hint": "The written 'r' at the end of 'gather' is usually silent, but because 'all' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'gather' to 'all'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'gather' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'gathe-rall'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "the fee is included",
+            "correctAnswer": "fee is",
+            "hint": "Which pair has a vowel on both sides and a high front vowel on the left?",
+            "explanation": "A faint /j/ slips between the /iː/ of 'fee' and the /ɪ/ of 'is'. 'Is included' links through /z/ instead. Customer-service lines about fees are said quickly and smoothly.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L88_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Where does a faint 'w' appear between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "whether",
-                "it",
-                "works",
-                "out"
+                "we'll",
+                "refund",
+                "you",
+                "in",
+                "full"
             ],
-            "textToSpeak": "whether it works out",
-            "correctAnswer": "whether it",
-            "hint": "The written 'r' at the end of 'whether' is usually silent, but because 'it' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'whether' to 'it'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'whether' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'whethe-rit'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "we'll refund you in full",
+            "correctAnswer": "you in",
+            "hint": "A pronoun looks as if it links to the verb before it, but it begins with a consonant sound. Find the real vowel link.",
+            "explanation": "'Refund you' looks like it links, but 'you' begins with /j/, a consonant. The real link is the /uː/ of 'you' into the /ɪ/ of 'in', with a light /w/ between. A friendly reassurance runs on without a break.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L88_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Find the connection between two vowel sounds",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "pair",
-                "of",
-                "shoes",
-                "on"
+                "so",
+                "I",
+                "rang",
+                "a",
+                "manager"
             ],
-            "textToSpeak": "pair of shoes on",
-            "correctAnswer": "pair of",
-            "hint": "The written 'r' at the end of 'pair' is usually silent, but because 'of' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'pair' to 'of'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'pair' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'pai-rof'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "so I rang a manager",
+            "correctAnswer": "so I",
+            "hint": "A short vowel-to-vowel link opens the sentence. Find it.",
+            "explanation": "The lips round for the /əʊ/ of 'so' and relax into /aɪ/, so a faint /w/ is common. 'Rang a' is the consonant-to-vowel link later in the sentence.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L89_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link that slides through a 'y' sound",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "lower",
-                "and",
-                "lower",
-                "prices"
+                "the",
+                "taxi",
+                "is",
+                "outside"
             ],
-            "textToSpeak": "lower and lower prices",
-            "correctAnswer": "lower and",
-            "hint": "The written 'r' at the end of 'lower' is usually silent, but because 'and' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'lower' to 'and'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'lower' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'lowe-rand'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "the taxi is outside",
+            "correctAnswer": "taxi is",
+            "hint": "The first word ends in a sound like 'ee'. What comes after it?",
+            "explanation": "'Taxi' ends in a sound close to /iː/, so a light /j/ may appear before 'is'. 'Is outside' links through /z/. A hotel porter might say this in one breath.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L89_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Spot the vowel-to-vowel link that takes a 'w' glide",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "consider",
-                "all",
-                "the",
-                "options"
+                "I'm",
+                "so",
+                "excited",
+                "about",
+                "it"
             ],
-            "textToSpeak": "consider all the options",
-            "correctAnswer": "consider all",
-            "hint": "The written 'r' at the end of 'consider' is usually silent, but because 'all' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'consider' to 'all'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'consider' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'conside-rall'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "I'm so excited about it",
+            "correctAnswer": "so excited",
+            "hint": "Which pair has a vowel on both sides and a rounded vowel on the left?",
+            "explanation": "Excitement speeds speech up, which makes glides more audible. The /əʊ/ of 'so' leads into the /ɪ/ of 'excited' with a light /w/. 'Excited about' and 'about it' are consonant-to-vowel links.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L89_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Spot the place where two vowel sounds touch",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "wherever",
-                "it",
-                "is",
-                "kept"
+                "we",
+                "flew",
+                "out",
+                "on",
+                "Tuesday"
             ],
-            "textToSpeak": "wherever it is kept",
-            "correctAnswer": "wherever it",
-            "hint": "The written 'r' at the end of 'wherever' is usually silent, but because 'it' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'wherever' to 'it'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'wherever' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'whereve-rit'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "we flew out on Tuesday",
+            "correctAnswer": "flew out",
+            "hint": "A vowel-to-vowel link and a consonant-to-vowel link both appear. Take the vowel one.",
+            "explanation": "A faint /w/ often slides between the /uː/ of 'flew' and the /aʊ/ of 'out'. 'Out on' is the consonant-to-vowel link. The two links give this sentence a smooth glide followed by a release.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L90_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Where does a faint 'y' appear between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "nature",
-                "is",
-                "beautiful",
-                "here"
+                "the",
+                "movie",
+                "ended",
+                "early"
             ],
-            "textToSpeak": "nature is beautiful here",
-            "correctAnswer": "nature is",
-            "hint": "The written 'r' at the end of 'nature' is usually silent, but because 'is' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'nature' to 'is'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'nature' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'natu-ris'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "the movie ended early",
+            "correctAnswer": "movie ended",
+            "hint": "The first word ends in a sound like 'ee', 'ay' or 'eye'. What comes next?",
+            "explanation": "Talking about films is casual, so the glide is quick: the /i/ at the end of 'movie' leads into /ɛ/ with a light /j/. 'Ended early' is a consonant-to-vowel link through /d/.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L90_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which link has a light /w/ glide between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "answer",
-                "each",
-                "question",
-                "clearly"
+                "I",
+                "know",
+                "all",
+                "about",
+                "it"
             ],
-            "textToSpeak": "answer each question clearly",
-            "correctAnswer": "answer each",
-            "hint": "The written 'r' at the end of 'answer' is usually silent, but because 'each' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'answer' to 'each'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'answer' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'answe-reach'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "I know all about it",
+            "correctAnswer": "know all",
+            "hint": "Lips rounded, then straight into a new vowel. Where?",
+            "explanation": "People say this phrase very fast, which blends three links together. The vowel link is the /əʊ/ of 'know' into the /ɔː/ of 'all', with a faint /w/. 'All about' and 'about it' are consonant-to-vowel links.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L90_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link that slides through a 'w' sound",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "proper",
-                "attention",
-                "is",
-                "needed"
+                "prices",
+                "grow",
+                "every",
+                "year"
             ],
-            "textToSpeak": "proper attention is needed",
-            "correctAnswer": "proper attention",
-            "hint": "The written 'r' at the end of 'proper' is usually silent, but because 'attention' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'proper' to 'attention'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'proper' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'prope-rattention'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "prices grow every year",
+            "correctAnswer": "grow every",
+            "hint": "Which link has rounded lips on one side and a vowel on the other?",
+            "explanation": "A news sentence like this is read steadily, but the link still holds: the /əʊ/ in 'grow' relaxes into the /e/ of 'every' with a light /w/. 'Every year' does not link as vowel to vowel, because 'year' begins with /j/.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         }
     ]
 }

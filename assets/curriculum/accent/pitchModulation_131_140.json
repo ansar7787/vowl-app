@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L131_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague apologises for being ten minutes late. Either reading is possible.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's... interesting.",
-            "textToSpeak": "It's... interesting.",
+            "word": "No worries.",
+            "textToSpeak": "No worries.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Polite Way of Saying Not Impressed)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Covering irritation",
+                "Genuinely relaxed"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Polite Way of Saying Not Impressed)",
-            "correctAnswerIndex": 0,
-            "hint": "Calling something merely 'interesting' is a classic polite dodge. Listen for the pitch to dip and lift carefully.",
-            "explanation": "A fall-rise on 'interesting' is a diplomatic hedge - a polite way of avoiding real praise without sounding openly critical.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - polite way of saying not impressed and a genuine, enthusiastic feedback."
+            "correctAnswer": "Genuinely relaxed",
+            "correctAnswerIndex": 1,
+            "hint": "How much does the voice lift on 'no', and how fast does it end?",
+            "explanation": "Relaxed reassurance gives 'no' a small lift and lets 'worries' glide down. Covering irritation leaves the first word flat and cuts the second short, so the phrase sounds shut.",
+            "modulationPattern": "Small lift on 'no', gliding fall on 'worries'.",
+            "meaningShift": "A lift and a glide put the colleague at ease; a flat start with a cut-off end hides annoyance."
         },
         {
             "id": "ACC_PITCHMODULATION_L131_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You walk in on two colleagues having a private chat.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's brilliant!",
-            "textToSpeak": "It's brilliant!",
+            "word": "Don't mind me.",
+            "textToSpeak": "Don't mind me.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Polite Way of Saying Not Impressed)"
+                "Pointed and hurt",
+                "Light and considerate"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
-            "correctAnswerIndex": 0,
-            "hint": "'Brilliant' leaves no doubt about the speaker's opinion. Listen for the pitch to fall fully and energetically.",
-            "explanation": "'It's brilliant!' falls with full energy, giving genuine, enthusiastic feedback with nothing held back.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - polite way of saying not impressed."
+            "correctAnswer": "Light and considerate",
+            "correctAnswerIndex": 1,
+            "hint": "Judge how much weight lands on 'me'.",
+            "explanation": "Considerate speakers keep the phrase quick and low-key, with no particular weight on 'me'. If 'me' stands out and falls heavily, the line starts to hint that the speaker feels left out.",
+            "modulationPattern": "Quick, even contour with a light 'me'.",
+            "meaningShift": "A light, quick phrase puts everyone at ease; weight on 'me' implies feeling excluded."
         },
         {
             "id": "ACC_PITCHMODULATION_L131_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "After a heated email exchange, a colleague stops by your desk.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's one approach.",
-            "textToSpeak": "That's one approach.",
+            "word": "All good.",
+            "textToSpeak": "All good.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Implies Disagreement)"
+                "Making peace",
+                "Avoiding the topic"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Implies Disagreement)",
-            "correctAnswerIndex": 1,
-            "hint": "Calling it 'one approach' avoids saying it's the best one. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "A fall-rise on 'one approach' is a diplomatic hedge, politely implying the speaker would have chosen differently.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - implies disagreement."
+            "correctAnswer": "Making peace",
+            "correctAnswerIndex": 0,
+            "hint": "Decide whether the voice lingers, or closes the door.",
+            "explanation": "Peacemaking tends to slow the phrase down and let 'good' fall gently, inviting a real reset. Avoidance is quicker and flatter, as if to prevent any discussion.",
+            "modulationPattern": "Slower pace, gentle fall on 'good'.",
+            "meaningShift": "A slow, gentle fall opens a reset; a quick, flat one shuts the topic."
         },
         {
             "id": "ACC_PITCHMODULATION_L132_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague sees you about to send an email to the wrong list.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's a great approach!",
-            "textToSpeak": "That's a great approach!",
+            "word": "You might want to check that first.",
+            "textToSpeak": "You might want to check that first.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Implies Disagreement)"
+                "A casual optional tip",
+                "A strong hint, urgent"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
-            "correctAnswerIndex": 0,
-            "hint": "'Great' is direct, confident praise. Listen for the pitch to fall fully and enthusiastically.",
-            "explanation": "'That's a great approach!' falls with full enthusiasm, giving genuine, direct praise.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - implies disagreement."
+            "correctAnswer": "A strong hint, urgent",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'might' sound light, or is the speaker hurrying?",
+            "explanation": "'Might' softens the words, but a faster pace and weight on 'check' reveal the urgency underneath. A genuinely optional tip would have an unhurried 'might' and a relaxed fall.",
+            "modulationPattern": "Faster tempo, weight on 'check'.",
+            "meaningShift": "A quick pace and weight on 'check' make it urgent; a relaxed, even one would be optional."
         },
         {
             "id": "ACC_PITCHMODULATION_L132_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend plans to quit without another job lined up.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's a bit different.",
-            "textToSpeak": "It's a bit different.",
+            "word": "I'd think twice about that.",
+            "textToSpeak": "I'd think twice about that.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Polite Criticism)"
+                "Caring caution",
+                "Plain disapproval"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Polite Criticism)",
-            "correctAnswerIndex": 1,
-            "hint": "Calling something 'different' often softens a real criticism. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "A fall-rise on 'different' is a diplomatic hedge, softening what is really a polite way of expressing disapproval.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - polite criticism."
+            "correctAnswer": "Caring caution",
+            "correctAnswerIndex": 0,
+            "hint": "Notice whether the voice stays warm while it warns.",
+            "explanation": "Care shows in a slower pace and a softly lifted 'twice', which leaves room for the friend to respond. Disapproval would hit 'twice' hard and fall flat on 'that'.",
+            "modulationPattern": "Slow tempo, soft lift on 'twice'.",
+            "meaningShift": "A slow, soft 'twice' shows concern; a hard, flat one shows disapproval."
         },
         {
             "id": "ACC_PITCHMODULATION_L132_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A junior colleague offers an idea in a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's exactly right.",
-            "textToSpeak": "It's exactly right.",
+            "word": "Just a thought.",
+            "textToSpeak": "Just a thought.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Polite Criticism)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Strong proposal in disguise",
+                "Tentative offering"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "Tentative offering",
             "correctAnswerIndex": 1,
-            "hint": "'Exactly right' leaves no room for doubt. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'It's exactly right' falls with full confidence, giving genuine, unreserved approval.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - polite criticism and a genuine, enthusiastic feedback."
+            "hint": "How firmly does the phrase land?",
+            "explanation": "Tentative ideas end on a small lift or an unfinished fall, since the speaker hopes the room will respond. A proposal that is disguised would land firmly on 'thought', hiding a clear opinion.",
+            "modulationPattern": "Small lift or unfinished fall on 'thought'.",
+            "meaningShift": "A small lift leaves the idea open; a firm landing hides a confident view."
         },
         {
             "id": "ACC_PITCHMODULATION_L133_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Friends jump out and shout 'surprise' at your door.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's certainly one way to do it.",
-            "textToSpeak": "That's certainly one way to do it.",
+            "word": "I didn't see that coming.",
+            "textToSpeak": "I didn't see that coming.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Polite Skepticism)"
+                "Dismay",
+                "Delight"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Polite Skepticism)",
+            "correctAnswer": "Delight",
             "correctAnswerIndex": 1,
-            "hint": "Saying 'one way' rather than 'the right way' is a classic polite dodge. Listen for the pitch to dip and lift carefully.",
-            "explanation": "A fall-rise here is a diplomatic hedge, politely expressing doubt about the method without directly criticizing it.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - polite skepticism."
+            "hint": "Is the energy up in the voice, or down?",
+            "explanation": "A surprise party can leave someone delighted or dismayed, so the pitch has to carry the feeling. Delight lifts the voice early, which makes 'see' and 'coming' bright and fast and shows pleasure at being caught out. Dismay would drop low and slow, with 'coming' trailing away, as if the surprise were unwelcome.",
+            "modulationPattern": "Lifted onset, bright fall on 'coming'.",
+            "meaningShift": "A lifted onset expresses delight; a low, slow trail expresses dismay."
         },
         {
             "id": "ACC_PITCHMODULATION_L133_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager announces a reorganisation that affects your team.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's exactly how to do it.",
-            "textToSpeak": "That's exactly how to do it.",
+            "word": "That's a surprise.",
+            "textToSpeak": "That's a surprise.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Polite Skepticism)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Uneasy",
+                "Pleased"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
-            "correctAnswerIndex": 1,
-            "hint": "'Exactly' shows clear, confident approval. Listen for the pitch to fall fully and decisively.",
-            "explanation": "'That's exactly how to do it' falls decisively, giving genuine, confident approval of the method.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - polite skepticism and a genuine, enthusiastic feedback."
+            "correctAnswer": "Uneasy",
+            "correctAnswerIndex": 0,
+            "hint": "Where does 'surprise' end up?",
+            "explanation": "A reorganisation announcement can sound unwelcome or pleasantly unexpected. Unease lowers the voice and lets 'surprise' sink with a small hesitation, which suggests the speaker is calculating what it means for them. Being pleased would raise the pitch and add a lift on the last syllable, as though the news were a gift.",
+            "modulationPattern": "Lowered, sinking 'surprise'.",
+            "meaningShift": "A low, sinking contour is uneasy; a lifted one would be pleased."
         },
         {
             "id": "ACC_PITCHMODULATION_L133_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend reveals how much she earns.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I see what you were going for.",
-            "textToSpeak": "I see what you were going for.",
+            "word": "Wow, okay.",
+            "textToSpeak": "Wow, okay.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Implies It Didn't Quite Work)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Annoyed, envious",
+                "Impressed, taking it in"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Implies It Didn't Quite Work)",
-            "correctAnswerIndex": 0,
-            "hint": "This phrase often softens the message that the result didn't succeed. Listen for the pitch to dip and lift carefully.",
-            "explanation": "A fall-rise here is a diplomatic hedge, politely acknowledging the intention while quietly implying it didn't fully succeed.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - implies it didn't quite work and a genuine, enthusiastic feedback."
+            "correctAnswer": "Impressed, taking it in",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'okay' carry a sigh?",
+            "explanation": "Impressed reactions give 'wow' a wide, high fall and treat 'okay' as a thoughtful aside. Envy would flatten 'wow' and drag 'okay' lower, with a trace of reluctance.",
+            "modulationPattern": "Wide high fall on 'wow', thoughtful 'okay'.",
+            "meaningShift": "A wide 'wow' sounds impressed; a flat, dragged one sounds envious."
         },
         {
             "id": "ACC_PITCHMODULATION_L134_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are always the first to arrive, and a friend teases you.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I love what you were going for.",
-            "textToSpeak": "I love what you were going for.",
+            "word": "Are you always this punctual?",
+            "textToSpeak": "Are you always this punctual?",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Implies It Didn't Quite Work)"
+                "Teasing",
+                "A genuine query"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "Teasing",
             "correctAnswerIndex": 0,
-            "hint": "'I love' is a direct, enthusiastic statement. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'I love what you were going for' falls warmly, giving genuine, enthusiastic approval of the idea.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - implies it didn't quite work."
+            "hint": "Is there a smile in the voice?",
+            "explanation": "Teasing a friend who always arrives first could be mistaken for a genuine question. Giving 'always' a playful lift and 'punctual' a drawn-out, bright fall puts a smile in the voice and tells the friend it is a joke. A genuine query would be even and would wait for an actual answer.",
+            "modulationPattern": "Playful lift on 'always', drawn-out fall on 'punctual'.",
+            "meaningShift": "A playful lift and long fall tease; an even contour would simply ask."
         },
         {
             "id": "ACC_PITCHMODULATION_L134_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A new acquaintance at dinner has been very chatty.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It has potential.",
-            "textToSpeak": "It has potential.",
+            "word": "Do you always talk this much?",
+            "textToSpeak": "Do you always talk this much?",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Not There Yet)"
+                "Playful tease",
+                "Rude"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Not There Yet)",
-            "correctAnswerIndex": 1,
-            "hint": "Saying something 'has potential' often means it isn't good enough yet. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "A fall-rise on 'potential' is a diplomatic hedge, politely signalling the work isn't finished or successful yet.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - not there yet."
+            "correctAnswer": "Playful tease",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the voice sounds warm, or dry.",
+            "explanation": "Remarks about talking too much can be banter or a rude put-down, depending on delivery. A warm voice with a wide, bouncing contour makes the question sound like friendly teasing. Rudeness would use a flat, narrow range and press on 'always', which turns the same words into criticism.",
+            "modulationPattern": "Wide, bouncing contour with a warm fall.",
+            "meaningShift": "A bouncing, warm contour is banter; a flat, pressed one is rude."
         },
         {
             "id": "ACC_PITCHMODULATION_L134_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your sibling is heading to a job interview.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's outstanding work.",
-            "textToSpeak": "It's outstanding work.",
+            "word": "Is that what you're wearing?",
+            "textToSpeak": "Is that what you're wearing?",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Not There Yet)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "A neutral check",
+                "Critical"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "Critical",
             "correctAnswerIndex": 1,
-            "hint": "'Outstanding' leaves no room for doubt. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'It's outstanding work' falls with full confidence, giving genuine, unreserved praise.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - not there yet and a genuine, enthusiastic feedback."
+            "hint": "Find the word that gets the weight.",
+            "explanation": "Weight on 'that' with a rising ending shows disapproval disguised as a question. A neutral check would be level and light, and would not single anything out.",
+            "modulationPattern": "Weight on 'that', rise on 'wearing'.",
+            "meaningShift": "A weighted 'that' criticises; a light, level question would simply check."
         },
         {
             "id": "ACC_PITCHMODULATION_L135_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager gives you a last-minute task at five to six.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's a solid first draft.",
-            "textToSpeak": "It's a solid first draft.",
+            "word": "I'll get right on it.",
+            "textToSpeak": "I'll get right on it.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - More Work Needed)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Eager",
+                "Sarcastic"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - More Work Needed)",
-            "correctAnswerIndex": 0,
-            "hint": "Calling it a 'first draft' politely signals it isn't finished. Listen for the pitch to dip and lift carefully.",
-            "explanation": "A fall-rise here is a diplomatic hedge, politely acknowledging effort while signalling that more revision is needed.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - more work needed and a genuine, enthusiastic feedback."
+            "correctAnswer": "Sarcastic",
+            "correctAnswerIndex": 1,
+            "hint": "How flat is 'right'?",
+            "explanation": "An unwelcome task at five to six can draw an eager reply or a sarcastic one. Sarcasm drags out 'right' at a low level and falls onto 'it' with a sigh, which lets the manager hear the speaker's reluctance behind polite words. Eagerness would lift 'get' and move quickly, and would sound like someone already reaching for the work.",
+            "modulationPattern": "Dragged flat 'right', low fall on 'it'.",
+            "meaningShift": "A dragged, flat 'right' is sarcastic; a quick, lifted 'get' is eager."
         },
         {
             "id": "ACC_PITCHMODULATION_L135_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks you to water her plants while she is away.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's a perfect final draft.",
-            "textToSpeak": "It's a perfect final draft.",
+            "word": "Consider it done.",
+            "textToSpeak": "Consider it done.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - More Work Needed)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Showing off",
+                "Reassuring"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "Reassuring",
             "correctAnswerIndex": 1,
-            "hint": "'Perfect final' leaves no room for more changes. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'It's a perfect final draft' falls with full confidence, giving genuine approval with nothing left to fix.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - more work needed and a genuine, enthusiastic feedback."
+            "hint": "Hear whether the voice sounds calm, or proud.",
+            "explanation": "A friend asking for plant-watering help can be reassured or told how easy it will be. Reassurance falls steadily on 'done' at a calm pace, so the friend can stop worrying. Showing off would lift 'consider' and sound a little too bright, as if the speaker wanted credit.",
+            "modulationPattern": "Calm tempo, steady fall on 'done'.",
+            "meaningShift": "A calm, steady fall reassures; a bright, lifted opener sounds like showing off."
         },
         {
             "id": "ACC_PITCHMODULATION_L135_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is going through a bad breakup.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You're getting there.",
-            "textToSpeak": "You're getting there.",
+            "word": "Whatever you need.",
+            "textToSpeak": "Whatever you need.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Not Quite There Yet)"
+                "Wholehearted",
+                "Politely formulaic"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Not Quite There Yet)",
-            "correctAnswerIndex": 1,
-            "hint": "This sounds encouraging but cautious. Listen for the pitch to dip and lift, hinting it isn't finished.",
-            "explanation": "A fall-rise on 'there' is a diplomatic hedge, encouraging progress while quietly admitting the goal hasn't been reached yet.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - not quite there yet."
+            "correctAnswer": "Wholehearted",
+            "correctAnswerIndex": 0,
+            "hint": "How slowly does 'need' arrive?",
+            "explanation": "After a bad breakup, a friend can hear a real offer or a stock phrase. Wholehearted offers slow down and let 'need' fall warmly, which shows the speaker is prepared to be asked. Formulaic versions are brisk and even, and sound like a line that closes the topic.",
+            "modulationPattern": "Slow pace, warm fall on 'need'.",
+            "meaningShift": "A slow, warm fall is wholehearted; a brisk, even one is a formula."
         },
         {
             "id": "ACC_PITCHMODULATION_L136_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks about a long meeting with the new director.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You've really mastered this.",
-            "textToSpeak": "You've really mastered this.",
+            "word": "It was something.",
+            "textToSpeak": "It was something.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Not Quite There Yet)"
+                "Overwhelming",
+                "Pleasantly unusual"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "Overwhelming",
             "correctAnswerIndex": 0,
-            "hint": "'Mastered' is a strong, confident claim. Listen for the pitch to fall fully and proudly.",
-            "explanation": "'You've really mastered this' falls with full confidence, giving genuine, unreserved praise for the achievement.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - not quite there yet."
+            "hint": "How heavy is 'something'?",
+            "explanation": "Asked about a long meeting with a new director, 'something' could mean daunting or interestingly odd. Overwhelm lengthens the word and drops the final fall low, with a trace of exhaustion, so the listener hears a draining experience. A pleasant surprise would lift and sound curious.",
+            "modulationPattern": "Lengthened 'something', low fall.",
+            "meaningShift": "A long, low fall shows overwhelm; a lifted, curious one shows pleasant surprise."
         },
         {
             "id": "ACC_PITCHMODULATION_L136_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks about the budget hotel you stayed at.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's not bad.",
-            "textToSpeak": "It's not bad.",
+            "word": "Well, the bed was clean.",
+            "textToSpeak": "Well, the bed was clean.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Mild, Limited Praise)"
+                "Faint praise, the rest was poor",
+                "Real praise, the rest was fine"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Mild, Limited Praise)",
-            "correctAnswerIndex": 1,
-            "hint": "'Not bad' is a famously understated compliment. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "A fall-rise on 'bad' makes 'not bad' a diplomatic hedge - mild approval that stops well short of real enthusiasm.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - mild, limited praise."
+            "correctAnswer": "Faint praise, the rest was poor",
+            "correctAnswerIndex": 0,
+            "hint": "Is 'clean' the end of the praise, or the start of a list that never arrives?",
+            "explanation": "Praising one modest feature with a dip and lift on 'clean' makes the listener wonder what else there was to say, so the sentence works as faint praise. A genuine positive would fall firmly on 'clean' and sound complete, as though the bed were the highlight of a good stay.",
+            "modulationPattern": "Falling-rising on 'clean' after a hedging 'well'.",
+            "meaningShift": "A dip and lift on 'clean' implies the rest was poor; a firm fall would be sincere praise."
         },
         {
             "id": "ACC_PITCHMODULATION_L136_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks about the film you were unsure about.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's absolutely wonderful.",
-            "textToSpeak": "It's absolutely wonderful.",
+            "word": "Not what I expected.",
+            "textToSpeak": "Not what I expected.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Mild, Limited Praise)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Disappointed",
+                "Pleasantly different"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "Pleasantly different",
             "correctAnswerIndex": 1,
-            "hint": "'Absolutely wonderful' leaves no doubt about the speaker's opinion. Listen for the pitch to fall fully.",
-            "explanation": "'It's absolutely wonderful' falls with full enthusiasm, giving genuine, unreserved praise.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - mild, limited praise and a genuine, enthusiastic feedback."
+            "hint": "Does 'expected' fall bright or flat?",
+            "explanation": "After a film the speaker was unsure about, 'not what I expected' could be good or bad news. Positive surprise puts a lift on 'not' and a bright fall on 'expected', so the listener hears pleasure. Disappointment would flatten the whole phrase and sink at the end.",
+            "modulationPattern": "Lift on 'not', bright fall on 'expected'.",
+            "meaningShift": "A lifted, bright contour is pleasantly different; a flat, sinking one is disappointed."
         },
         {
             "id": "ACC_PITCHMODULATION_L137_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is struggling with a big box.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's a bold choice.",
-            "textToSpeak": "That's a bold choice.",
+            "word": "Do you need a hand with that?",
+            "textToSpeak": "Do you need a hand with that?",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Polite Skepticism)"
+                "Teasing",
+                "A real offer"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Polite Skepticism)",
+            "correctAnswer": "A real offer",
             "correctAnswerIndex": 1,
-            "hint": "Calling a choice 'bold' often hides real doubt about it. Listen for the pitch to dip and lift carefully.",
-            "explanation": "A fall-rise on 'bold' is a diplomatic hedge, politely questioning the choice rather than openly disagreeing with it.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - polite skepticism."
+            "hint": "Does 'that' sound kind or cheeky?",
+            "explanation": "Watching a colleague struggle with a heavy box, a speaker could be offering help or enjoying the sight. A real offer lifts 'hand' and keeps a warm, even pace, so the listener hears kindness. Teasing would stretch 'that' and add a laugh in the voice, and would sound like a comment on the struggle.",
+            "modulationPattern": "Lift on 'hand', warm even pace.",
+            "meaningShift": "A warm lift offers help; a stretched 'that' teases."
         },
         {
             "id": "ACC_PITCHMODULATION_L137_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is nervous about the dentist.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's the perfect choice.",
-            "textToSpeak": "That's the perfect choice.",
+            "word": "Do you want me to come with you?",
+            "textToSpeak": "Do you want me to come with you?",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Polite Skepticism)"
+                "A gentle offer",
+                "Hoping you say no"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "A gentle offer",
             "correctAnswerIndex": 0,
-            "hint": "'Perfect choice' leaves no room for doubt. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'That's the perfect choice' falls with full confidence, giving genuine, unreserved approval.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - polite skepticism."
+            "hint": "Pay attention to whether the voice hesitates.",
+            "explanation": "For a nervous friend, offering company can be sincere or half-hearted. Gentle offers are slow and soft, with a lift on 'come', which shows the speaker has time and wants to help. Hoping for a refusal would speed up and flatten at the end, as though a no would be a relief.",
+            "modulationPattern": "Slow, soft lift on 'come'.",
+            "meaningShift": "A slow, soft lift offers sincerely; a quick, flat finish hopes for a no."
         },
         {
             "id": "ACC_PITCHMODULATION_L137_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "After a bitter argument, one person speaks quietly.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's a fine presentation.",
-            "textToSpeak": "It's a fine presentation.",
+            "word": "Would you like me to leave?",
+            "textToSpeak": "Would you like me to leave?",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Could Be Better)"
+                "Genuinely asking",
+                "Hurt"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Could Be Better)",
+            "correctAnswer": "Hurt",
             "correctAnswerIndex": 1,
-            "hint": "'Fine' is a fairly modest, careful word for feedback. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "A fall-rise on 'fine' is a diplomatic hedge, politely implying the presentation was acceptable but not impressive.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - could be better."
+            "hint": "How low does the voice go?",
+            "explanation": "After a bitter argument, this question could be a genuine offer or a wounded one. Hurt makes it quiet and slow, with weight on 'leave', so the listener hears pain behind the words. A genuine question would be steady and open, with a lifted ending that invites an answer.",
+            "modulationPattern": "Quiet, slow, weight on 'leave'.",
+            "meaningShift": "A quiet, slow, weighted question is hurt; a steady lifted one is a real offer."
         },
         {
             "id": "ACC_PITCHMODULATION_L138_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague corrects your number, and they are right.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's an excellent presentation.",
-            "textToSpeak": "It's an excellent presentation.",
+            "word": "No, no, you're right.",
+            "textToSpeak": "No, no, you're right.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Could Be Better)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Sarcastic",
+                "Graciously conceding"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "Graciously conceding",
             "correctAnswerIndex": 1,
-            "hint": "'Excellent' is direct, confident praise. Listen for the pitch to fall fully and enthusiastically.",
-            "explanation": "'It's an excellent presentation' falls with full enthusiasm, giving genuine, direct praise.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - could be better and a genuine, enthusiastic feedback."
+            "hint": "Is there a smile, or an edge?",
+            "explanation": "When a colleague's correction is right, the reply can be gracious or sarcastic. Gracious concessions lift 'right' and fall warmly, which shows the speaker is happy to be corrected. Sarcasm would stress 'you're' and finish flat, turning the concession into a jab.",
+            "modulationPattern": "Lift on 'right', warm fall.",
+            "meaningShift": "A lift and warm fall concedes; a stressed 'you're' with a flat finish mocks."
         },
         {
             "id": "ACC_PITCHMODULATION_L138_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague suggests restarting the router for the fifth time.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We'll see how it goes.",
-            "textToSpeak": "We'll see how it goes.",
+            "word": "Yes, because that always works.",
+            "textToSpeak": "Yes, because that always works.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Implies Real Doubt)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Sarcastic",
+                "Hopeful"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Implies Real Doubt)",
+            "correctAnswer": "Sarcastic",
             "correctAnswerIndex": 0,
-            "hint": "This phrase often softens real doubt about success. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "A fall-rise here is a diplomatic hedge, politely masking genuine doubt about whether the plan will succeed.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - implies real doubt and a genuine, enthusiastic feedback."
+            "hint": "Hear which word has the dry drag.",
+            "explanation": "After four failed router restarts, a fifth suggestion invites either hope or exasperation. Sarcasm drags 'always' and flattens it, in contrast with the cheerful words, which lets the listener hear the opposite meaning. Hope would lift 'works' and speed up, as though the speaker truly expected success.",
+            "modulationPattern": "Dragged flat 'always'.",
+            "meaningShift": "A dragged, flat 'always' is sarcastic; a lifted 'works' is hopeful."
         },
         {
             "id": "ACC_PITCHMODULATION_L138_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your partner insists on a different holiday plan.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This is going to work perfectly.",
-            "textToSpeak": "This is going to work perfectly.",
+            "word": "Okay, if that's what you want.",
+            "textToSpeak": "Okay, if that's what you want.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Implies Real Doubt)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Giving in unhappily",
+                "Truly happy"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
-            "correctAnswerIndex": 1,
-            "hint": "'Perfectly' shows full confidence. Listen for the pitch to fall fully and assuredly.",
-            "explanation": "'This is going to work perfectly' falls with full confidence, expressing genuine certainty about success.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - implies real doubt and a genuine, enthusiastic feedback."
+            "correctAnswer": "Giving in unhappily",
+            "correctAnswerIndex": 0,
+            "hint": "How much does 'want' sink?",
+            "explanation": "When a partner insists on another plan, 'if that's what you want' can sound contented or defeated. Unhappy compliance leans on 'if' and lets 'want' sink with a small sigh, so the listener hears the real feeling. Happiness would be bright from the start, with no weight on 'if'.",
+            "modulationPattern": "Weight on 'if', sinking 'want'.",
+            "meaningShift": "A weighted 'if' with a sinking end shows reluctant compliance; a bright start shows real happiness."
         },
         {
             "id": "ACC_PITCHMODULATION_L139_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A salesperson calls back after two hours.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's quite a unique design.",
-            "textToSpeak": "That's quite a unique design.",
+            "word": "I said I'd think about it.",
+            "textToSpeak": "I said I'd think about it.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Unusual in a Not-Entirely-Good Way)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "A mildly annoyed reminder",
+                "A friendly update"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Unusual in a Not-Entirely-Good Way)",
+            "correctAnswer": "A mildly annoyed reminder",
             "correctAnswerIndex": 0,
-            "hint": "Calling a design 'unique' can politely avoid saying it doesn't quite work. Listen for the pitch to dip and lift.",
-            "explanation": "A fall-rise on 'unique' is a diplomatic hedge, politely hinting the design is unusual in a way the speaker isn't fully comfortable with.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - unusual in a not-entirely-good way and a genuine, enthusiastic feedback."
+            "hint": "Which word does the speaker push?",
+            "explanation": "A salesperson who calls back after two hours may hear patience or irritation. Pushing 'said' reminds the caller of the earlier answer and ends with a clipped finish, which is why it lands as mildly annoyed. A friendly update would be softer and lifted at the end, as though simply sharing a progress report.",
+            "modulationPattern": "Weight on 'said', clipped fall on 'it'.",
+            "meaningShift": "A pushed 'said' with a clipped finish is annoyed; a soft lift would update."
         },
         {
             "id": "ACC_PITCHMODULATION_L139_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "An hour before the event, a colleague says the venue was never booked.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's a beautiful design.",
-            "textToSpeak": "That's a beautiful design.",
+            "word": "You're telling me now?",
+            "textToSpeak": "You're telling me now?",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Unusual in a Not-Entirely-Good Way)"
+                "Calm checking",
+                "Alarmed disbelief"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
-            "correctAnswerIndex": 0,
-            "hint": "'Beautiful' is direct, confident praise. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'That's a beautiful design' falls with full warmth, giving genuine, unreserved praise.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - unusual in a not-entirely-good way."
+            "correctAnswer": "Alarmed disbelief",
+            "correctAnswerIndex": 1,
+            "hint": "How high does the voice start?",
+            "explanation": "An hour before an event, news that the venue was never booked can prompt calm checking or alarm. Alarm starts high and tight, with a hard stress on 'now', which shows how much the timing matters. Calm checking would be level and low, as if gathering facts.",
+            "modulationPattern": "High onset, hard stress on 'now'.",
+            "meaningShift": "A high, tight start with a hard 'now' is alarm; a low, level one is calm."
         },
         {
             "id": "ACC_PITCHMODULATION_L139_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A speaker finishes a long complaint about the new system.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's a valid point.",
-            "textToSpeak": "It's a valid point.",
+            "word": "Couldn't agree more.",
+            "textToSpeak": "Couldn't agree more.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Implies Disagreement)"
+                "Warm",
+                "Ironic"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Implies Disagreement)",
-            "correctAnswerIndex": 1,
-            "hint": "Calling a point 'valid' often precedes a polite disagreement. Listen for the pitch to dip and lift carefully.",
-            "explanation": "A fall-rise on 'valid' is a diplomatic hedge, politely acknowledging the point while quietly preparing to disagree.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - implies disagreement."
+            "correctAnswer": "Warm",
+            "correctAnswerIndex": 0,
+            "hint": "Decide whether the voice lifts on 'agree'.",
+            "explanation": "After a long complaint, 'couldn't agree more' can be warm or ironic. Warm agreement lifts 'agree' and falls firmly, which sounds as if the speaker shares the frustration. Irony would drag 'more' and flatten, implying the opposite.",
+            "modulationPattern": "Lift on 'agree', firm fall on 'more'.",
+            "meaningShift": "A lift on 'agree' is warm; a dragged, flat 'more' is ironic."
         },
         {
             "id": "ACC_PITCHMODULATION_L140_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A client offers you a tiny discount.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's a brilliant point.",
-            "textToSpeak": "It's a brilliant point.",
+            "word": "That's very generous of you.",
+            "textToSpeak": "That's very generous of you.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Implies Disagreement)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Genuine thanks",
+                "Veiled disappointment"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "Veiled disappointment",
             "correctAnswerIndex": 1,
-            "hint": "'Brilliant' shows clear, confident agreement. Listen for the pitch to fall fully and enthusiastically.",
-            "explanation": "'It's a brilliant point' falls with full enthusiasm, giving genuine agreement with nothing held back.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - implies disagreement and a genuine, enthusiastic feedback."
+            "hint": "How dry is 'generous'?",
+            "explanation": "A tiny discount from a client can bring thanks or hidden disappointment. Veiled disappointment is carried by a level, dry 'generous' with a slight drop on 'you', so the listener senses what the polite words avoid. Genuine thanks would lift and sound warmer, with no dryness.",
+            "modulationPattern": "Level dry 'generous', slight drop on 'you'.",
+            "meaningShift": "A level, dry 'generous' veils disappointment; a lifted warm one thanks."
         },
         {
             "id": "ACC_PITCHMODULATION_L140_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A boss hesitates before disagreeing with you.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I suppose that could work.",
-            "textToSpeak": "I suppose that could work.",
+            "word": "I'm not saying you're wrong.",
+            "textToSpeak": "I'm not saying you're wrong.",
             "options": [
-                "Fall-Rise Tone (Diplomatic Hedge - Implies Real Doubt)",
-                "Falling Tone (Genuine, Enthusiastic Feedback)"
+                "Preparing a 'but'",
+                "Full agreement"
             ],
-            "correctAnswer": "Fall-Rise Tone (Diplomatic Hedge - Implies Real Doubt)",
+            "correctAnswer": "Preparing a 'but'",
             "correctAnswerIndex": 0,
-            "hint": "'I suppose' often softens real doubt about a plan. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "A fall-rise here is a diplomatic hedge, politely masking genuine doubt about whether the idea will actually work.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a diplomatic hedge - implies real doubt and a genuine, enthusiastic feedback."
+            "hint": "Where does the voice leave off?",
+            "explanation": "A boss who hesitates before disagreeing can sound conciliatory or genuinely supportive. A lifted, unfinished ending on 'wrong' prepares the listener for what comes next, usually a 'but'. Full agreement would fall and finish, closing the sentence.",
+            "modulationPattern": "Lift on 'wrong', unfinished.",
+            "meaningShift": "A lifted, open end sets up a 'but'; a firm fall would agree."
         },
         {
             "id": "ACC_PITCHMODULATION_L140_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend thanks you for a gift you worked hard on.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That will definitely work.",
-            "textToSpeak": "That will definitely work.",
+            "word": "It's nothing.",
+            "textToSpeak": "It's nothing.",
             "options": [
-                "Falling Tone (Genuine, Enthusiastic Feedback)",
-                "Fall-Rise Tone (Diplomatic Hedge - Implies Real Doubt)"
+                "Modest pride",
+                "Truly nothing"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Enthusiastic Feedback)",
+            "correctAnswer": "Modest pride",
             "correctAnswerIndex": 0,
-            "hint": "'Definitely' shows full confidence. Listen for the pitch to fall fully and assuredly.",
-            "explanation": "'That will definitely work' falls with full confidence, expressing genuine certainty rather than polite doubt.",
-            "modulationPattern": "In feedback, a fall-rise on the key word softens honest criticism into a diplomatic hedge; a full falling tone delivers direct, enthusiastic approval.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic feedback and a diplomatic hedge - implies real doubt."
+            "hint": "How warm is 'nothing'?",
+            "explanation": "A friend thanking you for a gift you worked hard on may hear modesty or dismissal. Modest pride softens 'nothing' with a warm, lingering fall, so the listener hears that it mattered. Truly nothing would be quick and light, with no warmth at all.",
+            "modulationPattern": "Warm, lingering fall on 'nothing'.",
+            "meaningShift": "A warm, lingering fall hides pride; a quick, light one means nothing."
         }
     ]
 }

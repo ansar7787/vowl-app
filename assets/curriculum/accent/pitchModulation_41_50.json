@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L41_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Listen to this everyday comment and find the word carrying the strongest pitch movement.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's a nice day, isn't it?",
-            "textToSpeak": "It's a nice day, isn't it?",
+            "word": "She bought a new laptop.",
+            "textToSpeak": "She bought a new laptop.",
             "options": [
-                "Rising Tag (Genuine Question, Unsure)",
-                "Falling Tag (Confident Comment, Inviting Agreement)"
+                "Strongest on 'laptop'",
+                "Strongest on 'bought'"
             ],
-            "correctAnswer": "Falling Tag (Confident Comment, Inviting Agreement)",
-            "correctAnswerIndex": 1,
-            "hint": "The sun is clearly out - the speaker already knows the answer. Listen for the tag 'isn't it' to drop, not lift.",
-            "explanation": "With clear sunshine all around, 'isn't it?' falls like a comment rather than a real question, since the speaker is already sure.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a genuine question, unsure and a confident comment, inviting agreement."
+            "correctAnswer": "Strongest on 'laptop'",
+            "correctAnswerIndex": 0,
+            "hint": "Which word tells the listener the news? The voice usually spends its effort there.",
+            "explanation": "In a neutral statement the strongest pitch movement usually lands on the last important word, here 'laptop', because it names the thing the listener didn't know. A peak on 'bought' would suggest a contrast, such as buying as opposed to borrowing.",
+            "modulationPattern": "Nuclear prominence on the final content word 'laptop'.",
+            "meaningShift": "Prominence on 'laptop' reports what she got; on 'bought' it would set the action against some other possibility."
         },
         {
             "id": "ACC_PITCHMODULATION_L41_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your friend asks, 'Where are you going in May?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You haven't seen my glasses, have you?",
-            "textToSpeak": "You haven't seen my glasses, have you?",
+            "word": "We're going to Lisbon in May.",
+            "textToSpeak": "We're going to Lisbon in May.",
             "options": [
-                "Falling Tag (Confident Comment, Inviting Agreement)",
-                "Rising Tag (Genuine Question, Unsure)"
+                "Strongest on 'Lisbon'",
+                "Strongest on 'May'"
             ],
-            "correctAnswer": "Rising Tag (Genuine Question, Unsure)",
-            "correctAnswerIndex": 1,
-            "hint": "The speaker has actually lost their glasses and doesn't know the answer. Listen for the tag 'have you' to lift at the end.",
-            "explanation": "Because the speaker truly doesn't know where the glasses are, 'have you?' rises as a real request for information.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a confident comment, inviting agreement and a genuine question, unsure."
+            "correctAnswer": "Strongest on 'Lisbon'",
+            "correctAnswerIndex": 0,
+            "hint": "The question already contains one part of the answer. Which part is new?",
+            "explanation": "'In May' was mentioned in the question, so it is background. The new piece of information is 'Lisbon', and that is where the pitch peak belongs. Peaking on 'May' would answer a different question, like 'When are you going?'.",
+            "modulationPattern": "Prominence on the answer to the question, 'Lisbon'; given information 'in May' stays low.",
+            "meaningShift": "A peak on 'Lisbon' answers where; a peak on 'May' would answer when."
         },
         {
             "id": "ACC_PITCHMODULATION_L41_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your friend asks, 'What time are you meeting Sam?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This cake tastes great, doesn't it?",
-            "textToSpeak": "This cake tastes great, doesn't it?",
+            "word": "I'm meeting Sam at noon.",
+            "textToSpeak": "I'm meeting Sam at noon.",
             "options": [
-                "Rising Tag (Genuine Question, Unsure)",
-                "Falling Tag (Confident Comment, Inviting Agreement)"
+                "Strongest on 'Sam'",
+                "Strongest on 'noon'"
             ],
-            "correctAnswer": "Falling Tag (Confident Comment, Inviting Agreement)",
+            "correctAnswer": "Strongest on 'noon'",
             "correctAnswerIndex": 1,
-            "hint": "The speaker is already enjoying the cake and expects agreement. The tag should fall like a shared opinion.",
-            "explanation": "'Doesn't it?' falls here because the speaker is confidently sharing an opinion and expects the listener to agree.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a genuine question, unsure and a confident comment, inviting agreement."
+            "hint": "Which piece of information did the friend not already have?",
+            "explanation": "'Sam' is already in the question, so it drops into the background. 'Noon' is what was asked for, so it takes the peak. Putting the peak on 'Sam' would suggest the speaker is correcting who it is, not answering when.",
+            "modulationPattern": "Prominence on 'noon' as the requested new information.",
+            "meaningShift": "A peak on 'noon' gives the time; a peak on 'Sam' would point to who the speaker is meeting."
         },
         {
             "id": "ACC_PITCHMODULATION_L42_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks, 'Did you call the client or email them?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You're coming to the party, aren't you?",
-            "textToSpeak": "You're coming to the party, aren't you?",
+            "word": "I called them.",
+            "textToSpeak": "I called them.",
             "options": [
-                "Falling Tag (Confident Assumption)",
-                "Rising Tag (Genuine Question, Unsure)"
+                "Strongest on 'called'",
+                "Strongest on 'them'"
             ],
-            "correctAnswer": "Falling Tag (Confident Assumption)",
+            "correctAnswer": "Strongest on 'called'",
             "correctAnswerIndex": 0,
-            "hint": "The speaker assumes the answer is yes and is just double-checking casually. Expect the tag to fall.",
-            "explanation": "'Aren't you?' falls because the speaker already assumes the listener is coming and is simply confirming a known plan.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a confident assumption and a genuine question, unsure."
+            "hint": "The pronoun stands in for someone already named. Should it be loud?",
+            "explanation": "'Them' refers to the client, who has just been mentioned, so it stays light. The choice the colleague asked about is between calling and emailing, so 'called' takes the strongest pitch.",
+            "modulationPattern": "Prominence on the verb 'called'; the pronoun stays unaccented.",
+            "meaningShift": "A peak on 'called' answers the either/or; a peak on 'them' would make the client the point."
         },
         {
             "id": "ACC_PITCHMODULATION_L42_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks, 'What did the manager say about the budget?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She didn't call you, did she?",
-            "textToSpeak": "She didn't call you, did she?",
+            "word": "She said it's too high.",
+            "textToSpeak": "She said it's too high.",
             "options": [
-                "Falling Tag (Confident Assumption)",
-                "Rising Tag (Genuine Question, Unsure)"
+                "Strongest on 'high'",
+                "Strongest on 'said'"
             ],
-            "correctAnswer": "Rising Tag (Genuine Question, Unsure)",
-            "correctAnswerIndex": 1,
-            "hint": "The speaker truly doesn't know whether the call happened. Listen for the tag 'did she' to lift at the end.",
-            "explanation": "'Did she?' rises here because the speaker has no idea what happened and is genuinely asking for new information.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a confident assumption and a genuine question, unsure."
+            "correctAnswer": "Strongest on 'high'",
+            "correctAnswerIndex": 0,
+            "hint": "The question already tells you she spoke. What is left to find out?",
+            "explanation": "Since the colleague knows she said something, 'said' isn't news. What the listener wants is the content of her comment, and 'high' carries it. A peak on 'said' would sound like someone insisting she did speak.",
+            "modulationPattern": "Prominence on 'high', the content of the report.",
+            "meaningShift": "A peak on 'high' delivers the content; a peak on 'said' would insist she said it."
         },
         {
             "id": "ACC_PITCHMODULATION_L42_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone asks, 'Is the printer broken?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's the right address, isn't it?",
-            "textToSpeak": "That's the right address, isn't it?",
+            "word": "It's out of paper.",
+            "textToSpeak": "It's out of paper.",
             "options": [
-                "Rising Tag (Genuine Question, Unsure)",
-                "Falling Tag (Fairly Confident, Seeking Agreement)"
+                "Strongest on 'out'",
+                "Strongest on 'paper'"
             ],
-            "correctAnswer": "Falling Tag (Fairly Confident, Seeking Agreement)",
+            "correctAnswer": "Strongest on 'paper'",
             "correctAnswerIndex": 1,
-            "hint": "The speaker is fairly sure of the address and just wants a quick nod. Expect the tag to fall.",
-            "explanation": "'Isn't it?' falls because the speaker is fairly confident already and simply wants the listener to confirm it.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a genuine question, unsure and a fairly confident, seeking agreement."
+            "hint": "Find the word that replaces 'broken' with the real reason.",
+            "explanation": "Worried about a fault, the listener gets 'paper' as the answer, which explains what is wrong. That word takes the peak. Pushing 'out' would suggest that another supply, such as ink, is not the problem.",
+            "modulationPattern": "Final content word 'paper' carries the nuclear pitch.",
+            "meaningShift": "A peak on 'paper' names the cause; a peak on 'out' would contrast being out with having some."
         },
         {
             "id": "ACC_PITCHMODULATION_L43_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A waiter has brought two coffees. You ordered the smaller one.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You can drive, can't you?",
-            "textToSpeak": "You can drive, can't you?",
+            "word": "I asked for the small one.",
+            "textToSpeak": "I asked for the small one.",
             "options": [
-                "Rising Tag (Genuine Question, Unsure)",
-                "Falling Tag (Confident Assumption)"
+                "Strongest on 'asked'",
+                "Strongest on 'small'"
             ],
-            "correctAnswer": "Falling Tag (Confident Assumption)",
+            "correctAnswer": "Strongest on 'small'",
             "correctAnswerIndex": 1,
-            "hint": "The speaker assumes the answer is obviously yes. Listen for a falling tag, almost like a statement.",
-            "explanation": "'Can't you?' falls because the speaker takes the answer for granted and is barely asking at all.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a genuine question, unsure and a confident assumption."
+            "hint": "Two options are on the table. What distinguishes them?",
+            "explanation": "When the discussion is about which of two things, the word that separates them takes the peak. 'Small' is what sets this cup apart from the large one. A peak on 'asked' would stress the request, not the size.",
+            "modulationPattern": "Contrastive prominence on 'small'.",
+            "meaningShift": "A peak on 'small' separates the two cups; a peak on 'asked' would emphasise having made a request."
         },
         {
             "id": "ACC_PITCHMODULATION_L43_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are being shown two flats, one on the ground floor and one at the top.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We haven't met before, have we?",
-            "textToSpeak": "We haven't met before, have we?",
+            "word": "I prefer the top floor.",
+            "textToSpeak": "I prefer the top floor.",
             "options": [
-                "Falling Tag (Confident Assumption)",
-                "Rising Tag (Genuine Question, Unsure)"
+                "Strongest on 'top'",
+                "Strongest on 'floor'"
             ],
-            "correctAnswer": "Rising Tag (Genuine Question, Unsure)",
-            "correctAnswerIndex": 1,
-            "hint": "The speaker truly can't remember whether they've met. Listen for the tag 'have we' to climb upward.",
-            "explanation": "'Have we?' rises because the speaker genuinely isn't sure and is asking to find out for certain.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a confident assumption and a genuine question, unsure."
+            "correctAnswer": "Strongest on 'top'",
+            "correctAnswerIndex": 0,
+            "hint": "Both flats are on a floor. Which word actually separates them?",
+            "explanation": "Without a context, the peak would fall on the last word, 'floor'. Here, both options are floors, so the differing word is 'top', and it takes the peak. This is how the situation, not the sentence, decides where the peak goes.",
+            "modulationPattern": "Contrastive prominence moved from the final word to 'top'.",
+            "meaningShift": "A peak on 'top' picks between the two flats; a peak on 'floor' would sound as if floors were the topic."
         },
         {
             "id": "ACC_PITCHMODULATION_L43_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your friend says she is always late. You are defending her.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's getting late, isn't it?",
-            "textToSpeak": "It's getting late, isn't it?",
+            "word": "She's late sometimes, not always.",
+            "textToSpeak": "She's late sometimes, not always.",
             "options": [
-                "Falling Tag (Shared Observation)",
-                "Rising Tag (Genuine Question, Unsure)"
+                "Only 'late' stands out",
+                "Both 'sometimes' and 'always' stand out"
             ],
-            "correctAnswer": "Falling Tag (Shared Observation)",
-            "correctAnswerIndex": 0,
-            "hint": "Both speakers can clearly see the time. The tag here just confirms what's already obvious.",
-            "explanation": "'Isn't it?' falls because this is an obvious shared observation, not a real request for new information.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a shared observation and a genuine question, unsure."
+            "correctAnswer": "Both 'sometimes' and 'always' stand out",
+            "correctAnswerIndex": 1,
+            "hint": "Are two words being set against each other?",
+            "explanation": "Because the speaker is setting one frequency against another, both 'sometimes' and 'always' carry noticeable pitch movement, with 'sometimes' usually the stronger. Only 'late' would stand out if the speaker were simply reporting her lateness.",
+            "modulationPattern": "Contrastive prominence on a pair of words.",
+            "meaningShift": "Two peaks set frequencies against each other; one peak on 'late' would just state that she's late."
         },
         {
             "id": "ACC_PITCHMODULATION_L44_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager asks, 'Did you send the invoice?' You have sent it twice already.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You locked the door, didn't you?",
-            "textToSpeak": "You locked the door, didn't you?",
+            "word": "I did send it.",
+            "textToSpeak": "I did send it.",
             "options": [
-                "Rising Tag (Anxious, Unsure)",
-                "Falling Tag (Confident Assumption)"
+                "Strongest on 'did': insisting it happened",
+                "Strongest on 'send': choosing this action over another"
             ],
-            "correctAnswer": "Rising Tag (Anxious, Unsure)",
+            "correctAnswer": "Strongest on 'did': insisting it happened",
             "correctAnswerIndex": 0,
-            "hint": "The speaker suddenly isn't sure and feels a flicker of worry. Listen for the tag to lift nervously.",
-            "explanation": "'Didn't you?' rises here because a sudden doubt makes the speaker genuinely unsure, turning it into a real, anxious question.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a anxious, unsure and a confident assumption."
+            "hint": "Which small word sounds pushed?",
+            "explanation": "Stressing 'did' confirms that the sentence is true, and it often comes with a note of 'I've said so already'. A peak on 'send' would be more suited to choosing between actions, such as sending versus printing.",
+            "modulationPattern": "Prominence on the auxiliary 'did' to assert truth.",
+            "meaningShift": "A peak on 'did' insists that it's true; a peak on 'send' would contrast sending with another action."
         },
         {
             "id": "ACC_PITCHMODULATION_L44_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend claims you never keep your promises.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You finished the report, didn't you?",
-            "textToSpeak": "You finished the report, didn't you?",
+            "word": "I do keep my promises.",
+            "textToSpeak": "I do keep my promises.",
             "options": [
-                "Falling Tag (Confident, Expecting Yes)",
-                "Rising Tag (Anxious, Unsure)"
+                "Strongest on 'keep': preferring it to breaking",
+                "Strongest on 'do': pushing back on the claim"
             ],
-            "correctAnswer": "Falling Tag (Confident, Expecting Yes)",
-            "correctAnswerIndex": 0,
-            "hint": "The manager fully expects the work is done. Listen for the tag to fall like a quick confirmation.",
-            "explanation": "'Didn't you?' falls because the speaker is confident the report is finished and is only checking out of habit.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a confident, expecting yes and a anxious, unsure."
+            "correctAnswer": "Strongest on 'do': pushing back on the claim",
+            "correctAnswerIndex": 1,
+            "hint": "Notice which of the first two words is stronger.",
+            "explanation": "Because the friend's claim was negative, the reply rejects it by putting the peak on 'do'. A peak on 'keep' would treat keeping and breaking as the two options, which isn't the issue here.",
+            "modulationPattern": "Prominence on the auxiliary 'do' contradicting a negative claim.",
+            "meaningShift": "A peak on 'do' reverses the friend's negative claim; a peak on 'keep' would pick between two actions."
         },
         {
             "id": "ACC_PITCHMODULATION_L44_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are declining help, but feeling guilty.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You're not allergic to nuts, are you?",
-            "textToSpeak": "You're not allergic to nuts, are you?",
+            "word": "I would if I could.",
+            "textToSpeak": "I would if I could.",
             "options": [
-                "Rising Tag (Genuine Concern, Checking Carefully)",
-                "Falling Tag (Confident Assumption)"
+                "Strongest on 'I': it's about who is helping",
+                "Strongest on 'would' and 'could': the pair carries the meaning"
             ],
-            "correctAnswer": "Rising Tag (Genuine Concern, Checking Carefully)",
-            "correctAnswerIndex": 0,
-            "hint": "This matters for safety, so the speaker genuinely needs to know. Listen for the tag to rise carefully.",
-            "explanation": "'Are you?' rises because allergy information is important and the speaker is genuinely checking before serving food.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a genuine concern, checking carefully and a confident assumption."
+            "correctAnswer": "Strongest on 'would' and 'could': the pair carries the meaning",
+            "correctAnswerIndex": 1,
+            "hint": "Which words hold the whole point of the sentence?",
+            "explanation": "Since the sentence contrasts willingness with ability, 'would' and 'could' carry the movement. Putting the peak on 'I' would suggest that someone else is able to help and the speaker isn't.",
+            "modulationPattern": "Contrastive prominence on 'would' and 'could'.",
+            "meaningShift": "Peaks on 'would' and 'could' express willingness without ability; a peak on 'I' would compare people."
         },
         {
             "id": "ACC_PITCHMODULATION_L45_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "The venue confirmed Friday, but a colleague wrote Thursday on the invitation.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This is the right platform, isn't it?",
-            "textToSpeak": "This is the right platform, isn't it?",
+            "word": "It's on Friday, not Thursday.",
+            "textToSpeak": "It's on Friday, not Thursday.",
             "options": [
-                "Rising Tag (Lost Traveler, Genuinely Unsure)",
-                "Falling Tag (Confident Assumption)"
+                "Highest on 'Friday': the corrected item",
+                "Highest on 'Thursday': the item being dismissed"
             ],
-            "correctAnswer": "Rising Tag (Lost Traveler, Genuinely Unsure)",
+            "correctAnswer": "Highest on 'Friday': the corrected item",
             "correctAnswerIndex": 0,
-            "hint": "A traveler who isn't sure of the way will let the tag rise, asking for real reassurance.",
-            "explanation": "'Isn't it?' rises because the traveler genuinely doesn't know if they're in the right place and needs a real answer.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a lost traveler, genuinely unsure and a confident assumption."
+            "hint": "Which day is the speaker asking you to write down?",
+            "explanation": "In a correction, the right item takes the strongest peak and the rejected item is lighter and often trails off. Putting the height on 'Thursday' would make it sound like the speaker's main point, and the correction would be confusing.",
+            "modulationPattern": "Strongest prominence on the corrected item 'Friday'; secondary on 'Thursday'.",
+            "meaningShift": "A higher peak on 'Friday' shows it is the answer; a peak on 'Thursday' would blur what is correct."
         },
         {
             "id": "ACC_PITCHMODULATION_L45_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone has misheard your floor number.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You take cards here, don't you?",
-            "textToSpeak": "You take cards here, don't you?",
+            "word": "No, I said the second floor.",
+            "textToSpeak": "No, I said the second floor.",
             "options": [
-                "Falling Tag (Fairly Confident Shopper)",
-                "Rising Tag (Genuinely Unsure)"
+                "Strongest on 'second'",
+                "Strongest on 'said'"
             ],
-            "correctAnswer": "Falling Tag (Fairly Confident Shopper)",
+            "correctAnswer": "Strongest on 'second'",
             "correctAnswerIndex": 0,
-            "hint": "Most shops accept cards nowadays, so the shopper expects a 'yes'. Listen for the tag to fall.",
-            "explanation": "'Don't you?' falls because the shopper is fairly confident cards are accepted and is simply confirming the obvious.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a fairly confident shopper and a genuinely unsure."
+            "hint": "What did the listener get wrong: the floor, or the fact that you spoke?",
+            "explanation": "Because the listener missed the number, 'second' carries the main peak. A peak on 'said' is possible when the speaker is exasperated at being ignored, but the correction itself belongs on the mistaken item.",
+            "modulationPattern": "Contrastive prominence on 'second' in a correction.",
+            "meaningShift": "A peak on 'second' fixes the detail; a peak on 'said' would emphasise having spoken, and could sound irritated."
         },
         {
             "id": "ACC_PITCHMODULATION_L45_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is asking whether the ticket is worth it.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You backed up the files, didn't you?",
-            "textToSpeak": "You backed up the files, didn't you?",
+            "word": "It only costs ten pounds.",
+            "textToSpeak": "It only costs ten pounds.",
             "options": [
-                "Rising Tag (Worried, Genuinely Unsure)",
-                "Falling Tag (Confident Assumption)"
+                "Strongest on 'ten': the exact amount",
+                "Strongest on 'only': it's cheap"
             ],
-            "correctAnswer": "Rising Tag (Worried, Genuinely Unsure)",
-            "correctAnswerIndex": 0,
-            "hint": "Losing files would be a disaster, so the speaker is nervously checking. Listen for the tag to lift with worry.",
-            "explanation": "'Didn't you?' rises because the speaker is genuinely worried and needs real reassurance, not just a casual nod.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a worried, genuinely unsure and a confident assumption."
+            "correctAnswer": "Strongest on 'only': it's cheap",
+            "correctAnswerIndex": 1,
+            "hint": "Check whether the speaker is giving a number or a judgment about the number.",
+            "explanation": "Extra prominence on 'only' adds an evaluation, so the listener hears that the price is low, which supports buying the ticket. A peak on 'ten' would simply state the amount, without any opinion attached.",
+            "modulationPattern": "Prominence on 'only' as an evaluative word.",
+            "meaningShift": "A peak on 'only' judges the price as small; a peak on 'ten' merely states it."
         },
         {
             "id": "ACC_PITCHMODULATION_L46_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Three colleagues are asked who will run the workshop. You step forward.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The meeting's at three, isn't it?",
-            "textToSpeak": "The meeting's at three, isn't it?",
+            "word": "I'll do it.",
+            "textToSpeak": "I'll do it.",
             "options": [
-                "Rising Tag (Double-Checking, Unsure)",
-                "Falling Tag (Confident Assumption)"
+                "Strongest on 'I'll': volunteering yourself",
+                "Strongest on 'do': choosing the action"
             ],
-            "correctAnswer": "Rising Tag (Double-Checking, Unsure)",
+            "correctAnswer": "Strongest on 'I'll': volunteering yourself",
             "correctAnswerIndex": 0,
-            "hint": "The speaker isn't fully certain about the time and wants to confirm it for real. Listen for a rising tag.",
-            "explanation": "'Isn't it?' rises because the speaker genuinely isn't sure of the time and is asking to avoid showing up wrong.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a double-checking, unsure and a confident assumption."
+            "hint": "The question is about people, not tasks. Which word matters?",
+            "explanation": "When several people could take the job, the peak moves to the pronoun to say 'me, not them'. Without such a contrast, the neutral peak would sit on 'do'.",
+            "modulationPattern": "Contrastive prominence on the subject pronoun 'I'll'.",
+            "meaningShift": "A peak on 'I'll' volunteers over others; a peak on 'do' would treat the task as the point."
         },
         {
             "id": "ACC_PITCHMODULATION_L46_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend assumes you booked the hotel. Ravi did.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You did your homework, didn't you?",
-            "textToSpeak": "You did your homework, didn't you?",
+            "word": "I didn't book it, Ravi did.",
+            "textToSpeak": "I didn't book it, Ravi did.",
             "options": [
-                "Falling Tag (Parent Expecting Yes)",
-                "Rising Tag (Genuinely Unsure)"
+                "Strongest on 'I' and 'Ravi': contrasting people",
+                "Strongest on 'book' and 'did': contrasting actions"
             ],
-            "correctAnswer": "Falling Tag (Parent Expecting Yes)",
+            "correctAnswer": "Strongest on 'I' and 'Ravi': contrasting people",
             "correctAnswerIndex": 0,
-            "hint": "A parent who expects the answer to be yes will let the tag fall, almost like a gentle reminder.",
-            "explanation": "'Didn't you?' falls because the parent expects a 'yes' and is using the tag mainly as a gentle prompt.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a parent expecting yes and a genuinely unsure."
+            "hint": "Look at which words stand in direct contrast with each other.",
+            "explanation": "Since the correction is about who booked the hotel, 'I' and 'Ravi' carry the peaks. Emphasising 'book' and 'did' would suggest that the issue was a difference between booking and doing something else.",
+            "modulationPattern": "Contrastive prominence on two subjects.",
+            "meaningShift": "Peaks on the two people frame a who-did-it contrast; peaks on the verbs would frame a what-was-done contrast."
         },
         {
             "id": "ACC_PITCHMODULATION_L46_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two flatmates are arguing about the washing-up rota.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Grandma's visiting this weekend, isn't she?",
-            "textToSpeak": "Grandma's visiting this weekend, isn't she?",
+            "word": "It's your turn.",
+            "textToSpeak": "It's your turn.",
             "options": [
-                "Falling Tag (Casual Confirmation)",
-                "Rising Tag (Genuinely Unsure)"
+                "Strongest on 'turn': it's about the rota",
+                "Strongest on 'your': not mine"
             ],
-            "correctAnswer": "Falling Tag (Casual Confirmation)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a known family plan, so the speaker just wants a quick nod. Listen for the tag to fall.",
-            "explanation": "'Isn't she?' falls because this is an already-known plan, so the tag simply confirms shared information.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a casual confirmation and a genuinely unsure."
+            "correctAnswer": "Strongest on 'your': not mine",
+            "correctAnswerIndex": 1,
+            "hint": "In this argument, who is being blamed?",
+            "explanation": "Since the argument is about whose job it is, 'your' takes the peak, and the listener hears an implied 'not mine'. Peaking on 'turn' would be the neutral choice, more like a reminder that the rota exists.",
+            "modulationPattern": "Contrastive prominence on the possessive 'your'.",
+            "meaningShift": "A peak on 'your' blames a person; a peak on 'turn' would remind about the rota."
         },
         {
             "id": "ACC_PITCHMODULATION_L47_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Listen to the emphasis. What is the speaker actually saying?",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That movie was fantastic, wasn't it?",
-            "textToSpeak": "That movie was fantastic, wasn't it?",
+            "word": "I didn't invite everyone.",
+            "textToSpeak": "I didn't invite everyone.",
             "options": [
-                "Falling Tag (Confident, Shared Enthusiasm)",
-                "Rising Tag (Genuinely Unsure)"
+                "Nobody was invited",
+                "Some people were invited, not all"
             ],
-            "correctAnswer": "Falling Tag (Confident, Shared Enthusiasm)",
-            "correctAnswerIndex": 0,
-            "hint": "The speaker clearly loved the movie and expects agreement. Listen for the tag to fall with confidence.",
-            "explanation": "'Wasn't it?' falls because the speaker is confidently sharing an enthusiastic opinion, expecting the listener to agree.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a confident, shared enthusiasm and a genuinely unsure."
+            "correctAnswer": "Some people were invited, not all",
+            "correctAnswerIndex": 1,
+            "hint": "One word is stronger than the others. What does that word limit?",
+            "explanation": "The peak on 'everyone' turns the sentence into 'not all', so the guest list existed but was selective. A peak on 'didn't' would rule the invitation out completely, and 'everyone' would fade.",
+            "modulationPattern": "Prominence on 'everyone' after a negative.",
+            "meaningShift": "A peak on 'everyone' means a partial guest list; a peak on 'didn't' would deny the invitation."
         },
         {
             "id": "ACC_PITCHMODULATION_L47_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks if the phone is worth buying.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You're feeling better today, aren't you?",
-            "textToSpeak": "You're feeling better today, aren't you?",
+            "word": "It's not that expensive.",
+            "textToSpeak": "It's not that expensive.",
             "options": [
-                "Rising Tag (Genuinely Checking on Someone's Health)",
-                "Falling Tag (Confident Assumption)"
+                "Fairly priced, though not cheap",
+                "Really cheap"
             ],
-            "correctAnswer": "Rising Tag (Genuinely Checking on Someone's Health)",
+            "correctAnswer": "Fairly priced, though not cheap",
             "correctAnswerIndex": 0,
-            "hint": "When someone has been unwell, this question is asked with real concern. Listen for the tag to lift gently.",
-            "explanation": "'Aren't you?' rises because the speaker genuinely wants to know how the person is doing, not just confirm an assumption.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a genuinely checking on someone's health and a confident assumption."
+            "hint": "Think about which word stands out, and how big the claim is.",
+            "explanation": "Putting the peak on 'that' softens the negative: the price is not extreme, but nobody is calling it cheap. A blunt 'not expensive' with the peak on the last word could suggest a bargain.",
+            "modulationPattern": "Prominence on 'that' in a negated adjective phrase.",
+            "meaningShift": "A peak on 'that' downplays expensiveness; a peak on 'expensive' would deny it more completely."
         },
         {
             "id": "ACC_PITCHMODULATION_L47_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are being accused of insulting a colleague.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You closed the windows, didn't you?",
-            "textToSpeak": "You closed the windows, didn't you?",
+            "word": "I never said you were wrong.",
+            "textToSpeak": "I never said you were wrong.",
             "options": [
-                "Rising Tag (Worried It Might Rain)",
-                "Falling Tag (Confident Assumption)"
+                "Implied, but never spoken aloud",
+                "Never even thought"
             ],
-            "correctAnswer": "Rising Tag (Worried It Might Rain)",
+            "correctAnswer": "Implied, but never spoken aloud",
             "correctAnswerIndex": 0,
-            "hint": "Dark clouds are rolling in and the speaker suddenly isn't sure. Listen for a worried, rising tag.",
-            "explanation": "'Didn't you?' rises because sudden worry about the weather makes the speaker genuinely unsure and in need of reassurance.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a worried it might rain and a confident assumption."
+            "hint": "Which verb carries the weight, and what does that leave open?",
+            "explanation": "The strongest pitch on 'said' limits the denial to speech, which leaves room for thinking or hinting. A peak on 'wrong' would deny the idea itself, which is a bigger claim.",
+            "modulationPattern": "Prominence on 'said' limiting the denial to speech.",
+            "meaningShift": "A peak on 'said' denies only the speaking; a peak on 'wrong' would deny the judgment."
         },
         {
             "id": "ACC_PITCHMODULATION_L48_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Listen to the second sentence and hear which word stays low.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We still have time to catch the train, don't we?",
-            "textToSpeak": "We still have time to catch the train, don't we?",
+            "word": "Have you met Kavya? I sat next to Kavya at lunch.",
+            "textToSpeak": "Have you met Kavya? I sat next to Kavya at lunch.",
             "options": [
-                "Rising Tag (Anxious Traveler, Unsure)",
-                "Falling Tag (Confident Assumption)"
+                "The repeated name stands out again",
+                "The repeated name stays low; 'lunch' stands out"
             ],
-            "correctAnswer": "Rising Tag (Anxious Traveler, Unsure)",
-            "correctAnswerIndex": 0,
-            "hint": "A traveler glancing nervously at the clock genuinely doesn't know the answer. Listen for the tag to rise.",
-            "explanation": "'Don't we?' rises because the anxious traveler genuinely isn't sure there's enough time and needs a real answer.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a anxious traveler, unsure and a confident assumption."
+            "correctAnswer": "The repeated name stays low; 'lunch' stands out",
+            "correctAnswerIndex": 1,
+            "hint": "Once a name has been used, does it need to be pushed again?",
+            "explanation": "When a word has just been mentioned, speakers usually reduce its prominence because the listener already has it. The new part of the sentence, 'lunch', takes the peak. Pushing 'Kavya' again would sound as if someone else had been expected.",
+            "modulationPattern": "Deaccenting of repeated 'Kavya', with prominence on the new element 'lunch'.",
+            "meaningShift": "A low, repeated name keeps focus on what's new; a pushed repeat would treat the name as fresh or contrasted."
         },
         {
             "id": "ACC_PITCHMODULATION_L48_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager is briefing a team.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This jacket suits me, doesn't it?",
-            "textToSpeak": "This jacket suits me, doesn't it?",
+            "word": "As you know, the deadline has moved to Monday.",
+            "textToSpeak": "As you know, the deadline has moved to Monday.",
             "options": [
-                "Falling Tag (Confident, Fishing for a Compliment)",
-                "Rising Tag (Genuinely Unsure)"
+                "'Deadline' is highest; 'as you know' stays light",
+                "'Monday' is highest; 'as you know' stays light"
             ],
-            "correctAnswer": "Falling Tag (Confident, Fishing for a Compliment)",
-            "correctAnswerIndex": 0,
-            "hint": "The shopper already feels good about the jacket and just wants praise. Listen for the tag to fall confidently.",
-            "explanation": "'Doesn't it?' falls because the speaker already believes the jacket suits them and is simply inviting a compliment.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a confident, fishing for a compliment and a genuinely unsure."
+            "correctAnswer": "'Monday' is highest; 'as you know' stays light",
+            "correctAnswerIndex": 1,
+            "hint": "Which part of the sentence would the team not have known yet?",
+            "explanation": "Everyone already knows the deadline exists; what's changed is the day. So 'Monday' takes the highest pitch. 'Deadline' would only stand out if the manager was contrasting it with something else, like an event.",
+            "modulationPattern": "Prominence on new information 'Monday', with 'deadline' and the opening tag reduced.",
+            "meaningShift": "A peak on 'Monday' highlights the change; a peak on 'deadline' would suggest the topic was new."
         },
         {
             "id": "ACC_PITCHMODULATION_L48_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A guest reports on dinner.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You sent the email already, didn't you?",
-            "textToSpeak": "You sent the email already, didn't you?",
+            "word": "We ordered soup and salad. The soup was cold.",
+            "textToSpeak": "We ordered soup and salad. The soup was cold.",
             "options": [
-                "Falling Tag (Confident Assumption)",
-                "Rising Tag (Genuinely Unsure)"
+                "'Cold' carries the peak; 'soup' stays light",
+                "'Soup' carries the peak; 'cold' stays light"
             ],
-            "correctAnswer": "Falling Tag (Confident Assumption)",
+            "correctAnswer": "'Cold' carries the peak; 'soup' stays light",
             "correctAnswerIndex": 0,
-            "hint": "The speaker is fairly sure the task is done and is just checking it off. Listen for the tag to fall.",
-            "explanation": "'Didn't you?' falls because the speaker confidently assumes the email was already sent and is simply confirming it.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a confident assumption and a genuinely unsure."
+            "hint": "Which word has just been introduced, and which word is the news?",
+            "explanation": "'Soup' has just been named, so it is given information and drops in prominence. 'Cold' is the news, and it takes the pitch peak. If the speaker were comparing soup with salad, 'soup' would peak instead.",
+            "modulationPattern": "Prominence on the new predicate 'cold'; 'soup' is deaccented.",
+            "meaningShift": "A peak on 'cold' reports the problem; a peak on 'soup' would contrast the soup with the salad."
         },
         {
             "id": "ACC_PITCHMODULATION_L49_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend says, 'Was that Emma who called?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You charged your phone, didn't you?",
-            "textToSpeak": "You charged your phone, didn't you?",
+            "word": "It's Jenna, actually.",
+            "textToSpeak": "It's Jenna, actually.",
             "options": [
-                "Rising Tag (Worried, Genuinely Unsure)",
-                "Falling Tag (Confident Assumption)"
+                "Strongest on 'Jenna': the fix",
+                "Strongest on 'actually': softening the fix"
             ],
-            "correctAnswer": "Rising Tag (Worried, Genuinely Unsure)",
+            "correctAnswer": "Strongest on 'Jenna': the fix",
             "correctAnswerIndex": 0,
-            "hint": "A low battery before an important call makes the speaker genuinely uneasy. Listen for a rising, worried tag.",
-            "explanation": "'Didn't you?' rises because the speaker is genuinely worried the phone might be dead and needs a true answer.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a worried, genuinely unsure and a confident assumption."
+            "hint": "Which word gives the friend the information they need to change?",
+            "explanation": "With the friend holding the wrong name, 'Jenna' takes the peak, and 'actually' trails behind it as a gentle marker of correction. Peaking on 'actually' would suggest the speaker cared more about the disagreement than about the name.",
+            "modulationPattern": "Contrastive prominence on the corrected name; 'actually' is weak.",
+            "meaningShift": "A peak on 'Jenna' is the correction; a peak on 'actually' would highlight the contradiction."
         },
         {
             "id": "ACC_PITCHMODULATION_L49_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says you missed the deadline. You didn't.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Dad's cooking tonight, isn't he?",
-            "textToSpeak": "Dad's cooking tonight, isn't he?",
+            "word": "I submitted it on Tuesday.",
+            "textToSpeak": "I submitted it on Tuesday.",
             "options": [
-                "Rising Tag (Genuinely Unsure)",
-                "Falling Tag (Casual Confirmation)"
+                "'Submitted' stands out: the action, not the timing",
+                "'Tuesday' stands out: proving it was on time"
             ],
-            "correctAnswer": "Falling Tag (Casual Confirmation)",
+            "correctAnswer": "'Tuesday' stands out: proving it was on time",
             "correctAnswerIndex": 1,
-            "hint": "This is part of the usual family routine, so the speaker just wants a quick nod. Listen for the tag to fall.",
-            "explanation": "'Isn't he?' falls because this follows a known routine, so the tag merely confirms what's already expected.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a genuinely unsure and a casual confirmation."
+            "hint": "What is the speaker trying to prove?",
+            "explanation": "Because the accusation is about timing, the evidence is 'Tuesday', and that word carries the peak. A peak on 'submitted' would be answering someone who doubted that the report had been sent at all.",
+            "modulationPattern": "Prominence on the time expression 'Tuesday' supporting a correction.",
+            "meaningShift": "A peak on 'Tuesday' argues about timing; a peak on 'submitted' would argue about whether it was sent."
         },
         {
             "id": "ACC_PITCHMODULATION_L49_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend says, 'You hated that film, didn't you?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This isn't too spicy for you, is it?",
-            "textToSpeak": "This isn't too spicy for you, is it?",
+            "word": "I loved it.",
+            "textToSpeak": "I loved it.",
             "options": [
-                "Falling Tag (Confident Assumption)",
-                "Rising Tag (Genuinely Checking)"
+                "'Loved' stands out: rejecting the assumption",
+                "'It' stands out: rejecting the film"
             ],
-            "correctAnswer": "Rising Tag (Genuinely Checking)",
-            "correctAnswerIndex": 1,
-            "hint": "A thoughtful host genuinely wants to know before someone takes a bite. Listen for the tag to lift with real concern.",
-            "explanation": "'Is it?' rises because the host genuinely doesn't know the guest's spice tolerance and is asking for real feedback.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a confident assumption and a genuinely checking."
+            "correctAnswer": "'Loved' stands out: rejecting the assumption",
+            "correctAnswerIndex": 0,
+            "hint": "Hear which word in the reply pushes back against the friend's guess.",
+            "explanation": "Since the friend's assumption was 'hated', 'loved' takes the peak to overturn it. A peak on 'it' would be an odd answer, as though the speaker were comparing the film with something else.",
+            "modulationPattern": "Contrastive prominence on 'loved', the opposite of the friend's word.",
+            "meaningShift": "A peak on 'loved' reverses the assumption; a peak on 'it' would shift the topic to a different item."
         },
         {
             "id": "ACC_PITCHMODULATION_L50_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone announces a change at the start of a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The exam's next Monday, isn't it?",
-            "textToSpeak": "The exam's next Monday, isn't it?",
+            "word": "We're moving the launch to March.",
+            "textToSpeak": "We're moving the launch to March.",
             "options": [
-                "Rising Tag (Unsure, Double-Checking)",
-                "Falling Tag (Confident Assumption)"
+                "Strongest on 'launch'",
+                "Strongest on 'March'"
             ],
-            "correctAnswer": "Rising Tag (Unsure, Double-Checking)",
-            "correctAnswerIndex": 0,
-            "hint": "The student isn't completely sure of the date and is checking to avoid a mistake. Listen for the tag to rise.",
-            "explanation": "'Isn't it?' rises because the student genuinely isn't certain of the exam date and wants a real confirmation.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a unsure, double-checking and a confident assumption."
+            "correctAnswer": "Strongest on 'March'",
+            "correctAnswerIndex": 1,
+            "hint": "The change is the point. Which word describes the change?",
+            "explanation": "Since the team knows there's a launch, what's new is the date, 'March'. A peak on 'launch' would suggest it's the launch that's being moved, not something else, like a training day.",
+            "modulationPattern": "Prominence on the new element 'March'.",
+            "meaningShift": "A peak on 'March' announces the new date; a peak on 'launch' would identify which event moves."
         },
         {
             "id": "ACC_PITCHMODULATION_L50_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer is talking to a shop assistant.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You'll be home for dinner, won't you?",
-            "textToSpeak": "You'll be home for dinner, won't you?",
+            "word": "I wanted the green one.",
+            "textToSpeak": "I wanted the green one.",
             "options": [
-                "Rising Tag (Genuinely Unsure)",
-                "Falling Tag (Confident Assumption)"
+                "Green is the customer's favourite colour",
+                "Green was requested; a different colour arrived"
             ],
-            "correctAnswer": "Falling Tag (Confident Assumption)",
+            "correctAnswer": "Green was requested; a different colour arrived",
             "correctAnswerIndex": 1,
-            "hint": "A parent expecting the usual routine will let the tag fall, almost like a gentle reminder.",
-            "explanation": "'Won't you?' falls because the speaker confidently expects the usual routine and is simply reminding, not really asking.",
-            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer.",
-            "meaningShift": "The meaning shifts between a genuinely unsure and a confident assumption."
+            "hint": "Which word is pushed, and what would it be set against?",
+            "explanation": "In this situation, the peak on 'green' sets the colour against other colours, so the assistant hears a complaint about receiving the wrong item. This context, plus the pitch, points to the correction. Preference for green would need no contrast at all.",
+            "modulationPattern": "Contrastive prominence on 'green'.",
+            "meaningShift": "A peak on 'green' implies another colour was supplied; without contrast the phrase would be a plain statement of taste."
         },
         {
             "id": "ACC_PITCHMODULATION_L50_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are pointing out that only one folder from the shelf is missing.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That was a great concert, wasn't it?",
-            "textToSpeak": "That was a great concert, wasn't it?",
+            "word": "It's the blue folder that's missing.",
+            "textToSpeak": "It's the blue folder that's missing.",
             "options": [
-                "Rising Tag (Genuinely Unsure)",
-                "Falling Tag (Confident, Shared Enjoyment)"
+                "Strongest on 'missing'",
+                "Strongest on 'blue'"
             ],
-            "correctAnswer": "Falling Tag (Confident, Shared Enjoyment)",
+            "correctAnswer": "Strongest on 'blue'",
             "correctAnswerIndex": 1,
-            "hint": "The speaker clearly enjoyed the show and expects agreement. Listen for a confident, falling tag.",
-            "explanation": "'Wasn't it?' falls because the speaker is confidently sharing enjoyment and expects the listener to feel the same way.",
-            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer.",
-            "meaningShift": "The meaning shifts between a genuinely unsure and a confident, shared enjoyment."
+            "hint": "Which word separates the folder from the others?",
+            "explanation": "Because the listener knows something is missing, the useful piece of information is which folder. 'Blue' distinguishes it from the others and takes the peak. Highlighting 'missing' would only repeat what the listener knows.",
+            "modulationPattern": "Contrastive prominence on 'blue' in a cleft sentence.",
+            "meaningShift": "A peak on 'blue' picks out the folder; a peak on 'missing' would repeat the known problem."
         }
     ]
 }

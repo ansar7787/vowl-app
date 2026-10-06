@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L101_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague proposes moving the meeting to Friday afternoon.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I think I did okay on the interview.",
-            "textToSpeak": "I think I did okay on the interview.",
+            "word": "Sure, Friday works.",
+            "textToSpeak": "Sure, Friday works.",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "Going along with it",
+                "Happy with the change"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswer": "Happy with the change",
             "correctAnswerIndex": 1,
-            "hint": "The phrase 'I think' already hints at doubt. Listen for the pitch to lift at the very end instead of settling down.",
-            "explanation": "Ending on a rising note, this statement uses uptalk, making it sound tentative even though 'I did okay' is a plain statement.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "hint": "Track what 'works' does. Does it lift away or sag at the end?",
+            "explanation": "When someone really is fine with a plan, 'works' tends to land with a clean, light fall and the opening 'sure' sounds quick and bright. Going along with something usually shows up as a heavier, slower 'works' that sinks with less energy, and the words alone would never tell you.",
+            "modulationPattern": "Light, clean fall on 'works' after a bright 'sure'.",
+            "meaningShift": "A light landing says the change suits them; a heavy, sagging landing says they're accepting it."
         },
         {
             "id": "ACC_PITCHMODULATION_L101_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two flatmates are choosing a film.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I aced the interview.",
-            "textToSpeak": "I aced the interview.",
+            "word": "Fine by me.",
+            "textToSpeak": "Fine by me.",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "Easygoing: any option suits",
+                "Hiding a real preference"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswer": "Easygoing: any option suits",
             "correctAnswerIndex": 0,
-            "hint": "This is a bold, certain claim. Listen for the pitch to settle down firmly at the end, not lift uncertainly.",
-            "explanation": "'I aced the interview' falls confidently at the end, sounding sure of itself rather than tentative.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "hint": "Hear whether the voice sounds open to alternatives, or closing the topic down.",
+            "explanation": "Relaxed flexibility comes across with an unforced, mid-level fall and no weight on 'me'. Hearing extra weight on 'me' or a flat, clipped finish is what makes listeners suspect the speaker has a preference they aren't mentioning.",
+            "modulationPattern": "Mid-level, unforced fall with no weight on 'me'.",
+            "meaningShift": "An unforced fall shows real flexibility; a clipped, weighted one hints at a hidden preference."
         },
         {
             "id": "ACC_PITCHMODULATION_L101_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager asks whether the new rota suits you.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We're meeting at the cafe around noon, I guess.",
-            "textToSpeak": "We're meeting at the cafe around noon, I guess.",
+            "word": "I can live with that.",
+            "textToSpeak": "I can live with that.",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "A hearty, unreserved yes",
+                "A compromise, not a win"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswer": "A compromise, not a win",
             "correctAnswerIndex": 1,
-            "hint": "Ending with 'I guess' already signals some doubt. Listen for the pitch to lift at the very end.",
-            "explanation": "The trailing 'I guess' paired with a rising pitch makes this plan sound tentative rather than firmly fixed.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "hint": "Where does the energy sit: on 'live', or on 'that'?",
+            "explanation": "'Live with' already carries the idea of tolerating something, so the pitch decides how far it goes. Pressing 'live' downward and letting 'that' trail off sounds like a concession. If the speaker were truly pleased, 'that' would carry a lift.",
+            "modulationPattern": "Weight on 'live', low trailing fall on 'that'.",
+            "meaningShift": "A weighted 'live' and low landing sound like a concession; a lift on 'that' would sound pleased."
         },
         {
             "id": "ACC_PITCHMODULATION_L102_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague mentions the client signed the deal this morning.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This is the right house.",
-            "textToSpeak": "This is the right house.",
+            "word": "They signed it already?",
+            "textToSpeak": "They signed it already?",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Surprised it was so quick",
+                "Asking about progress"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
-            "correctAnswerIndex": 1,
-            "hint": "The speaker sounds certain they've found the place. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'This is the right house' falls confidently, showing the speaker is sure they've found the correct address.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "correctAnswer": "Surprised it was so quick",
+            "correctAnswerIndex": 0,
+            "hint": "How high does the voice get on 'already'?",
+            "explanation": "'Already' is the word that signals the timeline was a surprise, and a high, wide rise on it makes that audible. If the speaker only wanted a status update, the rise would be low and the word would hardly stand out.",
+            "modulationPattern": "High, wide rise on 'already'.",
+            "meaningShift": "A high rise on 'already' registers surprise at the speed; a low, flat one would simply ask for an update."
         },
         {
             "id": "ACC_PITCHMODULATION_L102_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are filling in a form at a reception desk.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I think this might be the right house?",
-            "textToSpeak": "I think this might be the right house?",
+            "word": "Is this your first visit?",
+            "textToSpeak": "Is this your first visit?",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "A routine form question",
+                "Mild surprise at a newcomer"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
-            "correctAnswerIndex": 1,
-            "hint": "Words like 'I think' and 'might' already signal doubt. Listen for the pitch to climb at the very end.",
-            "explanation": "With 'I think' and 'might', plus a rising pitch at the end, this sounds genuinely unsure rather than confident.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "correctAnswer": "A routine form question",
+            "correctAnswerIndex": 0,
+            "hint": "Pay attention to whether the speaker sounds as if they are reading from a script.",
+            "explanation": "Receptionists ask this dozens of times a day, so the rise is small and even, with no extra weight on 'first'. When someone is surprised, 'first' would stand out, as though a long-time visitor had been expected.",
+            "modulationPattern": "Small, even rise at the end; 'first' not stressed.",
+            "meaningShift": "A small, even rise sounds routine; a stressed 'first' would suggest surprise."
         },
         {
             "id": "ACC_PITCHMODULATION_L102_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague pulls up in a vintage sports car.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I finished the entire project by myself.",
-            "textToSpeak": "I finished the entire project by myself.",
+            "word": "That's your car?",
+            "textToSpeak": "That's your car?",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "Impressed disbelief",
+                "Checking whose it is"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswer": "Impressed disbelief",
             "correctAnswerIndex": 0,
-            "hint": "This sounds like a proud, certain claim. Listen for the pitch to settle down firmly at the end.",
-            "explanation": "'I finished the entire project by myself' falls firmly, sounding like a confident, proud claim.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "hint": "Decide whether the voice stays low and flat, or climbs with some wonder.",
+            "explanation": "Climbing on 'car' with a bright, drawn-out vowel lets the speaker convey amazement that the car belongs to this particular person. Checking ownership would be brisk, with a short, light rise and no wonder.",
+            "modulationPattern": "Wide, drawn-out rise on 'car'.",
+            "meaningShift": "A wide, bright rise shows astonishment; a short, light one just checks the facts."
         },
         {
             "id": "ACC_PITCHMODULATION_L103_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend of ten years sees your new haircut.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm pretty sure the answer is B.",
-            "textToSpeak": "I'm pretty sure the answer is B.",
+            "word": "I love the new look.",
+            "textToSpeak": "I love the new look.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Social politeness",
+                "Real admiration"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
-            "correctAnswerIndex": 0,
-            "hint": "'Pretty sure' leaves a little room for doubt. Listen for the pitch to lift slightly at the very end.",
-            "explanation": "'Pretty sure' paired with a rising pitch keeps a hint of doubt, sounding tentative rather than fully certain.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "correctAnswer": "Real admiration",
+            "correctAnswerIndex": 1,
+            "hint": "How much does the voice invest in 'love'?",
+            "explanation": "Real appreciation shows in extra range on 'love' and a slower, rounder fall. With social politeness, the same words come out quicker and with less movement, because the speaker is filling a gap in conversation.",
+            "modulationPattern": "Extra range on 'love', slow rounded fall on 'look'.",
+            "meaningShift": "A fuller, slower contour sounds genuine; a quick, narrow one sounds polite filler."
         },
         {
             "id": "ACC_PITCHMODULATION_L103_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A guest tastes the soup you made.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The answer is definitely B.",
-            "textToSpeak": "The answer is definitely B.",
+            "word": "Mmm, this is delicious.",
+            "textToSpeak": "Mmm, this is delicious.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Ritual praise for a host",
+                "Spontaneous enjoyment"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
-            "correctAnswerIndex": 1,
-            "hint": "'Definitely' rules out any doubt about the answer. Listen for the pitch to fall firmly and decisively.",
-            "explanation": "'The answer is definitely B' falls firmly, matching the certainty expressed by the word 'definitely'.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "correctAnswer": "Ritual praise for a host",
+            "correctAnswerIndex": 0,
+            "hint": "Does the 'mmm' sound like it happened before the words, or alongside them?",
+            "explanation": "Because spontaneous delight comes out before the speaker has time to plan, the 'mmm' is usually longer and the word 'delicious' peaks sharply. A ritual compliment tends to keep every part of the sentence at the same level and pace.",
+            "modulationPattern": "Even pitch and pace through the sentence, small peak on 'delicious'.",
+            "meaningShift": "An even contour reads as ritual praise; a sharp, spontaneous peak reads as real enjoyment."
         },
         {
             "id": "ACC_PITCHMODULATION_L103_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A stranger in the lift glances at your shoes.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I guess we could try the new restaurant.",
-            "textToSpeak": "I guess we could try the new restaurant.",
+            "word": "Nice shoes.",
+            "textToSpeak": "Nice shoes.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "A friendly passing remark",
+                "A heartfelt compliment"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswer": "A friendly passing remark",
             "correctAnswerIndex": 0,
-            "hint": "'I guess' already softens this into a tentative suggestion. Listen for the pitch to lift at the very end.",
-            "explanation": "'I guess' combined with a rising pitch makes this sound like a tentative, unsure suggestion rather than a firm plan.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "hint": "Judge whether this is a comment to start a conversation or to move someone.",
+            "explanation": "A quick, light fall suits an offhand remark between strangers, where the aim is to be friendly for a moment. A heartfelt compliment would linger on 'nice' and carry more range, since the speaker would want it to land.",
+            "modulationPattern": "Short, light fall on 'shoes' with little range.",
+            "meaningShift": "A light, quick fall is a friendly aside; a lingering, wider one would be heartfelt."
         },
         {
             "id": "ACC_PITCHMODULATION_L104_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague wants you at the team dinner.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We should be there by six, probably.",
-            "textToSpeak": "We should be there by six, probably.",
+            "word": "You should come along.",
+            "textToSpeak": "You should come along.",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "A warm invitation",
+                "A mild obligation"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
-            "correctAnswerIndex": 1,
-            "hint": "The word 'probably' already hints this isn't certain. Listen for the pitch to lift at the very end.",
-            "explanation": "'Probably' paired with a rising pitch keeps the arrival time uncertain rather than firmly fixed.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "correctAnswer": "A warm invitation",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'should' sound like advice or a rule?",
+            "explanation": "Warmth shows when 'come' gets a lift and the fall on 'along' is soft and slow, making it sound like something the speaker hopes for. Obligation hides in a firm, flat 'should' and a quick, clipped finish.",
+            "modulationPattern": "Lift on 'come', soft slow fall on 'along'.",
+            "meaningShift": "A lift and soft landing invite; a firm, clipped delivery would turn it into an expectation."
         },
         {
             "id": "ACC_PITCHMODULATION_L104_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager asks about Saturday.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We'll be there at six o'clock.",
-            "textToSpeak": "We'll be there at six o'clock.",
+            "word": "Can you come in on Saturday?",
+            "textToSpeak": "Can you come in on Saturday?",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "A request that expects yes",
+                "A real question, open to no"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
-            "correctAnswerIndex": 0,
-            "hint": "This sounds like a firm, certain commitment. Listen for the pitch to settle down at the end.",
-            "explanation": "'We'll be there at six o'clock' falls firmly, sounding like a confident, fixed commitment.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "correctAnswer": "A real question, open to no",
+            "correctAnswerIndex": 1,
+            "hint": "What does the end of the sentence do: open up, or close?",
+            "explanation": "An open rise on 'Saturday' puts the decision in your hands, and sounds as if a 'no' would be accepted. When the speaker already expects you to come, the question tends to fall at the end, which closes off the option.",
+            "modulationPattern": "Open rise on 'Saturday'.",
+            "meaningShift": "An open rise leaves room to refuse; a falling finish would assume you'd agree."
         },
         {
             "id": "ACC_PITCHMODULATION_L104_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A host holds out the plate for a third time.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm fairly certain I locked the car.",
-            "textToSpeak": "I'm fairly certain I locked the car.",
+            "word": "Go on, have another.",
+            "textToSpeak": "Go on, have another.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Pushy, hard insistence",
+                "Friendly encouragement"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
-            "correctAnswerIndex": 0,
-            "hint": "'Fairly certain' leaves a little room for doubt. Listen for the pitch to lift slightly at the end.",
-            "explanation": "'Fairly certain' paired with a rising pitch keeps a hint of doubt about whether the car was actually locked.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "correctAnswer": "Friendly encouragement",
+            "correctAnswerIndex": 1,
+            "hint": "Is 'go on' playful, or firm?",
+            "explanation": "Playful coaxing is full of bounce: 'go on' lifts, 'another' has a smiling fall, and the speaker slows down. Pushiness shows up as a harder fall on 'have' and little variation in the rest.",
+            "modulationPattern": "Bouncy lift on 'go on', smiling fall on 'another'.",
+            "meaningShift": "A bouncy contour coaxes; a harder, flatter one pressures."
         },
         {
             "id": "ACC_PITCHMODULATION_L105_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer says the delivery is late again.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I locked the car.",
-            "textToSpeak": "I locked the car.",
+            "word": "I'm sure it'll arrive soon.",
+            "textToSpeak": "I'm sure it'll arrive soon.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Fobbing them off",
+                "Genuinely comforting"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswer": "Genuinely comforting",
             "correctAnswerIndex": 1,
-            "hint": "This is a short, plain claim with no hedging words. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'I locked the car' falls firmly, sounding like a clear, confident statement of fact.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "hint": "Check whether the speaker takes time over 'sure'.",
+            "explanation": "Comfort needs a slower pace and a settling fall, so the listener can believe it. Someone fobbing a customer off tends to speed through the sentence and keep a flat tone, as if the sentence were a way to end the call.",
+            "modulationPattern": "Slow tempo, settling fall on 'soon'.",
+            "meaningShift": "A slow, settling contour reassures; a fast, flat one deflects."
         },
         {
             "id": "ACC_PITCHMODULATION_L105_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague admits they forgot to send the invite.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I think the medicine is helping, sort of.",
-            "textToSpeak": "I think the medicine is helping, sort of.",
+            "word": "It's not a big deal.",
+            "textToSpeak": "It's not a big deal.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Easing their guilt",
+                "Brushing off a problem"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswer": "Easing their guilt",
             "correctAnswerIndex": 0,
-            "hint": "'Sort of' at the end already weakens the claim. Listen for the pitch to lift at the very end.",
-            "explanation": "'Sort of' paired with a rising pitch makes the improvement sound uncertain rather than clearly confirmed.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "hint": "How does 'big' sound compared with 'deal'?",
+            "explanation": "To lift a colleague's embarrassment, the speaker usually gives 'big' a gentle emphasis and ends softly, which feels like permission to relax. Brushing aside a real problem sounds clipped, with 'deal' dropped sharply.",
+            "modulationPattern": "Gentle emphasis on 'big', soft final fall.",
+            "meaningShift": "A soft contour eases the guilt; a sharp, clipped one waves the problem away."
         },
         {
             "id": "ACC_PITCHMODULATION_L105_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend apologises for spilling coffee on your notes.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The medicine is definitely working.",
-            "textToSpeak": "The medicine is definitely working.",
+            "word": "Don't give it another thought.",
+            "textToSpeak": "Don't give it another thought.",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "Generous forgiveness",
+                "Closing the subject"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswer": "Generous forgiveness",
             "correctAnswerIndex": 0,
-            "hint": "'Definitely' shows there's no doubt left about the treatment. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'The medicine is definitely working' falls firmly, matching the certainty expressed by 'definitely'.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "hint": "Judge whether the voice stays with the friend or moves away.",
+            "explanation": "Generosity lingers: 'another' and 'thought' get a gentle, slow fall that gives the friend time to feel forgiven. Closing the subject would be faster and slightly lower, as though the speaker wanted to move on.",
+            "modulationPattern": "Slow fall across 'another thought'.",
+            "meaningShift": "A slow fall sounds forgiving; a quick, low one would sound like moving on."
         },
         {
             "id": "ACC_PITCHMODULATION_L106_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says she is leaving the company.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I believe the meeting got moved, maybe.",
-            "textToSpeak": "I believe the meeting got moved, maybe.",
+            "word": "Why are you leaving?",
+            "textToSpeak": "Why are you leaving?",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "A hidden challenge",
+                "Genuine curiosity"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
-            "correctAnswerIndex": 0,
-            "hint": "'Maybe' at the end already weakens the claim. Listen for the pitch to lift at the very end.",
-            "explanation": "'Maybe' paired with a rising pitch keeps this news uncertain rather than firmly confirmed.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "correctAnswer": "Genuine curiosity",
+            "correctAnswerIndex": 1,
+            "hint": "Is there warmth in the voice, or tension?",
+            "explanation": "Curiosity can be heard in a soft fall on 'leaving' and an unhurried pace. A challenge squeezes the pitch range, puts weight on 'why', and lands hard.",
+            "modulationPattern": "Unhurried fall on 'leaving'.",
+            "meaningShift": "A soft, unhurried fall invites an answer; a tight, weighted 'why' demands one."
         },
         {
             "id": "ACC_PITCHMODULATION_L106_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A junior colleague says the plan has flaws.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The meeting got moved to Thursday.",
-            "textToSpeak": "The meeting got moved to Thursday.",
+            "word": "What makes you say that?",
+            "textToSpeak": "What makes you say that?",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "Defensive, sceptical pushback",
+                "Interested in the reasoning"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
-            "correctAnswerIndex": 0,
-            "hint": "This sounds like settled, confirmed information. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'The meeting got moved to Thursday' falls firmly, sounding like confirmed, settled information.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "correctAnswer": "Interested in the reasoning",
+            "correctAnswerIndex": 1,
+            "hint": "What does the voice do on 'makes'?",
+            "explanation": "A genuine invitation to explain usually has a lifted, open 'makes' and a relaxed fall on 'that'. Defensiveness would hit 'say' hard and sound sceptical about the claim.",
+            "modulationPattern": "Lift on 'makes', relaxed fall on 'that'.",
+            "meaningShift": "A lifted, relaxed contour asks for reasons; a hard 'say' pushes back."
         },
         {
             "id": "ACC_PITCHMODULATION_L106_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone spots a number that looks wrong on your slide.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I think I saw him at the mall earlier?",
-            "textToSpeak": "I think I saw him at the mall earlier?",
+            "word": "Where did that number come from?",
+            "textToSpeak": "Where did that number come from?",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "A challenge to the source",
+                "Simple, friendly curiosity"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswer": "A challenge to the source",
             "correctAnswerIndex": 0,
-            "hint": "'I think' already hints the speaker isn't fully sure. Listen for the pitch to lift at the very end.",
-            "explanation": "'I think' paired with a rising pitch makes this sighting sound uncertain rather than fully confirmed.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "hint": "Is 'that' pushed?",
+            "explanation": "Pressing on 'that' separates this number from the others and implies it needs defending. Plain curiosity would give 'come' the peak and sound relaxed.",
+            "modulationPattern": "Prominence on 'that' with a firm fall on 'from'.",
+            "meaningShift": "A stressed 'that' targets the number; a relaxed 'come' would just ask where it originated."
         },
         {
             "id": "ACC_PITCHMODULATION_L107_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague gives a firm view but softens it in a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I saw him at the mall earlier.",
-            "textToSpeak": "I saw him at the mall earlier.",
+            "word": "I might be wrong, but I think this needs more time.",
+            "textToSpeak": "I might be wrong, but I think this needs more time.",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "Real, honest uncertainty",
+                "Softening a firm view"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a plain, certain claim. Listen for the pitch to settle down at the end.",
-            "explanation": "'I saw him at the mall earlier' falls firmly, sounding like a clear, confident statement of fact.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "correctAnswer": "Softening a firm view",
+            "correctAnswerIndex": 1,
+            "hint": "Hear whether the second half sounds as unsure as the first.",
+            "explanation": "People who truly doubt themselves keep their voices tentative throughout. Here the pitch settles firmly on 'more time', which shows the real view is held with confidence despite the opener.",
+            "modulationPattern": "Hedged opener, firm fall on 'more time'.",
+            "meaningShift": "A firm fall after the hedge shows the view is solid; a lift would show real doubt."
         },
         {
             "id": "ACC_PITCHMODULATION_L107_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A student has no idea what the answer is.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This recipe should work, I hope.",
-            "textToSpeak": "This recipe should work, I hope.",
+            "word": "Um, maybe Tuesday?",
+            "textToSpeak": "Um, maybe Tuesday?",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Guessing, hoping for help",
+                "Politely suggesting a day"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswer": "Guessing, hoping for help",
             "correctAnswerIndex": 0,
-            "hint": "'Should' and 'I hope' both hint at doubt. Listen for the pitch to lift at the very end.",
-            "explanation": "'Should' and 'I hope', along with a rising pitch, make this sound hopeful but genuinely uncertain.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "hint": "Is there any sign of searching in the voice?",
+            "explanation": "Guessers lengthen words, add 'um' and finish on a wobbly rise that asks for help. A polite suggestion would sound smoother and more controlled, because the speaker has a reason for the idea.",
+            "modulationPattern": "Hesitation and a wobbly rise on 'Tuesday'.",
+            "meaningShift": "A searching, wobbly rise is a guess; a smooth, controlled one would be a suggestion."
         },
         {
             "id": "ACC_PITCHMODULATION_L107_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is declining an invitation gently.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This recipe always works perfectly.",
-            "textToSpeak": "This recipe always works perfectly.",
+            "word": "I'm not sure I can make it.",
+            "textToSpeak": "I'm not sure I can make it.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "A real maybe",
+                "A polite no"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswer": "A polite no",
             "correctAnswerIndex": 1,
-            "hint": "'Always' and 'perfectly' signal full confidence. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'This recipe always works perfectly' falls firmly, matching the certainty of 'always' and 'perfectly'.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "hint": "How firmly does 'make it' land?",
+            "explanation": "Because 'not sure' is a well-known way to say no without sounding blunt, a settled fall on 'make it' often gives it away. If the speaker truly hasn't decided, the end would lift and they'd sound ready to hear more.",
+            "modulationPattern": "Settled fall on 'make it' after a hedge.",
+            "meaningShift": "A settled fall turns the hedge into a gentle refusal; a lift would leave it open."
         },
         {
             "id": "ACC_PITCHMODULATION_L108_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says the report is already done.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm not totally sure, but I think it's this way.",
-            "textToSpeak": "I'm not totally sure, but I think it's this way.",
+            "word": "Oh, you've finished already.",
+            "textToSpeak": "Oh, you've finished already.",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "Suspicious of the speed",
+                "Pleasantly surprised"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswer": "Pleasantly surprised",
             "correctAnswerIndex": 1,
-            "hint": "'Not totally sure' openly admits doubt. Listen for the pitch to lift at the very end.",
-            "explanation": "Admitting 'not totally sure', this statement rises at the end, sounding genuinely tentative about the direction.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "hint": "Pay attention to whether the voice rises with delight, or presses down.",
+            "explanation": "Pleasure comes from a lifted 'oh' and a warm, falling 'already'. Suspicion would sit lower, with a flatter 'already' that makes the listener wonder how it was done so fast.",
+            "modulationPattern": "Lifted 'oh', warm fall on 'already'.",
+            "meaningShift": "A lifted, warm contour pleases; a flat, low 'already' would doubt."
         },
         {
             "id": "ACC_PITCHMODULATION_L108_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend promises, once again, that he'll be on time.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's definitely this way.",
-            "textToSpeak": "It's definitely this way.",
+            "word": "That's what you said last time.",
+            "textToSpeak": "That's what you said last time.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Mild disbelief",
+                "Warm reminder"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
-            "correctAnswerIndex": 1,
-            "hint": "'Definitely' signals complete confidence. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'It's definitely this way' falls firmly, matching the strong certainty of the word 'definitely'.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "correctAnswer": "Mild disbelief",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the speaker is smiling, or tired.",
+            "explanation": "Mild disbelief puts weight on 'said' and finishes with a flat or slightly sinking 'time', suggesting the claim has been heard before. A warm reminder would be bouncier and end brighter.",
+            "modulationPattern": "Weight on 'said', flat or sinking finish.",
+            "meaningShift": "A weighted 'said' and flat finish doubt the promise; a bouncy contour would tease."
         },
         {
             "id": "ACC_PITCHMODULATION_L108_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says the bug is fixed, but you need to be sure.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I think the test went pretty well, maybe.",
-            "textToSpeak": "I think the test went pretty well, maybe.",
+            "word": "So it's definitely fixed.",
+            "textToSpeak": "So it's definitely fixed.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Stating a conclusion",
+                "Seeking reassurance"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
-            "correctAnswerIndex": 0,
-            "hint": "'I think' and 'maybe' both hint at doubt. Listen for the pitch to lift at the very end.",
-            "explanation": "'I think' and the trailing 'maybe', along with a rising pitch, make this sound uncertain rather than confident.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "correctAnswer": "Seeking reassurance",
+            "correctAnswerIndex": 1,
+            "hint": "Where does the voice end: down, or up?",
+            "explanation": "A slight rise at the end converts a statement into a request for confirmation, and lets the colleague answer. A fall would sound like a summary and wouldn't invite a reply.",
+            "modulationPattern": "Slight rise on 'fixed'.",
+            "meaningShift": "A final rise asks to be reassured; a final fall would just sum things up."
         },
         {
             "id": "ACC_PITCHMODULATION_L109_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A flatmate sees the dishes still in the sink.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The test went really well.",
-            "textToSpeak": "The test went really well.",
+            "word": "Are you going to do those dishes?",
+            "textToSpeak": "Are you going to do those dishes?",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "A genuine query about plans",
+                "A hint, not a real question"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
-            "correctAnswerIndex": 0,
-            "hint": "This sounds like a clear, satisfied claim. Listen for the pitch to settle down at the end.",
-            "explanation": "'The test went really well' falls firmly, sounding like a confident, satisfied statement.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "correctAnswer": "A hint, not a real question",
+            "correctAnswerIndex": 1,
+            "hint": "Notice whether the speaker seems to want information.",
+            "explanation": "Because the speaker already knows the answer, the voice carries a flat, weighted 'those', with a fall instead of the open rise that real queries use. That mismatch is the cue that it works as a nudge.",
+            "modulationPattern": "Weight on 'those', fall at the end of a yes/no question.",
+            "meaningShift": "A weighted 'those' and falling finish nudge; an open rise would ask."
         },
         {
             "id": "ACC_PITCHMODULATION_L109_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone is dominating a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I guess the new phone is okay so far.",
-            "textToSpeak": "I guess the new phone is okay so far.",
+            "word": "Maybe we could hear from someone else.",
+            "textToSpeak": "Maybe we could hear from someone else.",
             "options": [
-                "Falling at the End (Confident Declarative)",
-                "Rising at the End (Uptalk - Sounds Unsure)"
+                "A polite interruption",
+                "A tentative suggestion"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
-            "correctAnswerIndex": 1,
-            "hint": "'I guess' and 'so far' both leave room for doubt. Listen for the pitch to lift at the very end.",
-            "explanation": "'I guess' and 'so far', combined with a rising pitch, make this opinion sound tentative rather than settled.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a confident declarative and a uptalk - sounds unsure."
+            "correctAnswer": "A polite interruption",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the speaker sounds unsure about the idea itself.",
+            "explanation": "'Maybe' and 'could' soften the language, but the pitch lands with confidence on 'else', and the speaker does not trail off. That mix is typical of a polite way of taking control.",
+            "modulationPattern": "Confident fall on 'else' after soft modals.",
+            "meaningShift": "A confident fall after soft words is a polite redirect; a trailing lift would sound unsure."
         },
         {
             "id": "ACC_PITCHMODULATION_L109_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You have been on a call for an hour and your colleague wants to finish.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The new phone works perfectly.",
-            "textToSpeak": "The new phone works perfectly.",
+            "word": "Well, I should let you get on.",
+            "textToSpeak": "Well, I should let you get on.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "A real wish to help you work",
+                "A hint that the call is ending"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswer": "A hint that the call is ending",
             "correctAnswerIndex": 1,
-            "hint": "'Perfectly' signals full confidence. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'The new phone works perfectly' falls firmly, matching the strong confidence of the word 'perfectly'.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "hint": "Whose needs is the speaker thinking about?",
+            "explanation": "'Well' lowers the energy, and 'I should' sets the sentence up as an exit. The fall on 'on' lands with finality, which reveals it is the speaker who wants to close the call.",
+            "modulationPattern": "Low-energy 'well', final fall on 'on'.",
+            "meaningShift": "A low, final fall closes the call; a warm lift would sound like a real offer."
         },
         {
             "id": "ACC_PITCHMODULATION_L110_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager responds to your proposal.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I think the movie starts at eight, I'm not totally sure.",
-            "textToSpeak": "I think the movie starts at eight, I'm not totally sure.",
+            "word": "That's a bold idea.",
+            "textToSpeak": "That's a bold idea.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "Openly, warmly admiring",
+                "Cautious, not convinced"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
-            "correctAnswerIndex": 0,
-            "hint": "Admitting 'I'm not totally sure' makes the doubt explicit. Listen for the pitch to lift at the very end.",
-            "explanation": "Ending with 'not totally sure' and a rising pitch, this statement sounds genuinely uncertain about the showtime.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "correctAnswer": "Cautious, not convinced",
+            "correctAnswerIndex": 1,
+            "hint": "What does the voice do to 'bold'?",
+            "explanation": "Admiration would stretch 'bold' upward and finish brightly. A cautious reaction holds 'bold' flat or lets it fall with a trailing ending, which is how people say something is risky without saying so.",
+            "modulationPattern": "Flat or sinking contour on 'bold'.",
+            "meaningShift": "A flat or sinking 'bold' signals caution; a bright peak would signal admiration."
         },
         {
             "id": "ACC_PITCHMODULATION_L110_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend you rarely see is leaving a café.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The movie starts at eight o'clock.",
-            "textToSpeak": "The movie starts at eight o'clock.",
+            "word": "We should do coffee sometime.",
+            "textToSpeak": "We should do coffee sometime.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "A vague, friendly gesture",
+                "A firm, real invitation"
             ],
-            "correctAnswer": "Falling at the End (Confident Declarative)",
-            "correctAnswerIndex": 1,
-            "hint": "This sounds like a clear, settled fact. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'The movie starts at eight o'clock' falls firmly, sounding like confirmed, settled information.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "correctAnswer": "A vague, friendly gesture",
+            "correctAnswerIndex": 0,
+            "hint": "Is there any sign of a plan?",
+            "explanation": "Without a day or a time, and with a light, quick fall on 'sometime', the sentence signals warmth without commitment. A firm invitation would have weight on a specific detail and a rise on the end of a question.",
+            "modulationPattern": "Light, quick fall on 'sometime'.",
+            "meaningShift": "A light fall with no specifics is a vague gesture; a weighted, specific invitation would be firm."
         },
         {
             "id": "ACC_PITCHMODULATION_L110_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A client reacts to your price.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm pretty sure that's my umbrella, I think.",
-            "textToSpeak": "I'm pretty sure that's my umbrella, I think.",
+            "word": "I'll have to think about it.",
+            "textToSpeak": "I'll have to think about it.",
             "options": [
-                "Rising at the End (Uptalk - Sounds Unsure)",
-                "Falling at the End (Confident Declarative)"
+                "A soft, polite no",
+                "A real need for time"
             ],
-            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswer": "A soft, polite no",
             "correctAnswerIndex": 0,
-            "hint": "'Pretty sure' and the trailing 'I think' both hint at doubt. Listen for the pitch to lift at the very end.",
-            "explanation": "'Pretty sure' paired with a trailing 'I think' and a rising pitch keeps a hint of real doubt about ownership.",
-            "modulationPattern": "A rising pitch at the end of a statement (uptalk) makes it sound unsure or hesitant, even when the words themselves are confident; a falling pitch sounds settled and certain.",
-            "meaningShift": "The meaning shifts between a uptalk - sounds unsure and a confident declarative."
+            "hint": "Does 'think' sound open, or closing?",
+            "explanation": "Where someone does need time, 'think' is typically unhurried and the sentence ends with a gentle lift. A fall on 'it', following a flat 'think', gives the sentence a polite finality that many sellers learn to hear as a refusal.",
+            "modulationPattern": "Flat 'think', final fall on 'it'.",
+            "meaningShift": "A flat 'think' and final fall close the topic; a gentle lift would leave it open."
         }
     ]
 }

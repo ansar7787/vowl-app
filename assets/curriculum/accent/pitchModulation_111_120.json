@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L111_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague reacts to your new office decoration.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm meeting Sarah at the CAFE.",
-            "textToSpeak": "I'm meeting Sarah at the CAFE.",
+            "word": "Well, it's certainly different.",
+            "textToSpeak": "Well, it's certainly different.",
             "options": [
-                "Stress on 'CAFE' (New Information - Highlighting Where)",
-                "Stress on 'CAFE' (Correcting an Earlier Mistake)"
+                "A polite put-down",
+                "A neutral observation"
             ],
-            "correctAnswer": "Stress on 'CAFE' (New Information - Highlighting Where)",
+            "correctAnswer": "A polite put-down",
             "correctAnswerIndex": 0,
-            "hint": "No mistake is being fixed here - the speaker is simply answering 'where?'. Listen for the natural final emphasis on 'cafe'.",
-            "explanation": "The stress on 'CAFE' highlights new information answering 'where', not a correction of any previous error.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a new information - highlighting where and a correcting an earlier mistake."
+            "hint": "Pay attention to 'certainly'. Does it stretch, or stay brief?",
+            "explanation": "Stretching 'certainly' and dropping onto a low, flat 'different' is a common way to say something unflattering without saying it. If the speaker only meant 'it's not like the others', the sentence would move along quickly with no special weight on either word.",
+            "modulationPattern": "Lengthened 'certainly', low flat fall on 'different'.",
+            "meaningShift": "A stretched, low contour hides a criticism; a quick, even one would just observe."
         },
         {
             "id": "ACC_PITCHMODULATION_L111_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A new team member says this after a month of working with you.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We're leaving on FRIDAY, not Saturday.",
-            "textToSpeak": "We're leaving on FRIDAY, not Saturday.",
+            "word": "You're much nicer than I expected.",
+            "textToSpeak": "You're much nicer than I expected.",
             "options": [
-                "Stress on 'FRIDAY' (New Information - Simply Announcing the Day)",
-                "Stress on 'FRIDAY' (Correcting the Departure Day)"
+                "Simple, edge-free kindness",
+                "A compliment with a sting"
             ],
-            "correctAnswer": "Stress on 'FRIDAY' (Correcting the Departure Day)",
+            "correctAnswer": "A compliment with a sting",
             "correctAnswerIndex": 1,
-            "hint": "The trailing 'not Saturday' shows this corrects an earlier assumption, not just shares news. Listen for a pointed emphasis on 'FRIDAY'.",
-            "explanation": "The stress on 'FRIDAY', followed by 'not Saturday', corrects a mistaken date rather than simply announcing new information.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a new information - simply announcing the day and a correcting the departure day."
+            "hint": "Find the word that carries most of the weight.",
+            "explanation": "Weight on 'expected' reminds the listener that the speaker had a low opinion first, so the praise comes with a sting attached. Kindness without edges would lean on 'nicer' and sound warmer on the way down.",
+            "modulationPattern": "Prominence on 'expected', flat fall.",
+            "meaningShift": "Weight on 'expected' implies a poor starting opinion; weight on 'nicer' would simply praise."
         },
         {
             "id": "ACC_PITCHMODULATION_L111_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager watches you fix a problem nobody else could solve.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She works as a NURSE.",
-            "textToSpeak": "She works as a NURSE.",
+            "word": "I'm impressed you managed that.",
+            "textToSpeak": "I'm impressed you managed that.",
             "options": [
-                "Stress on 'NURSE' (New Information - Highlighting Her Role)",
-                "Stress on 'NURSE' (Fixing a Misunderstanding)"
+                "Genuinely impressed",
+                "Surprised you could"
             ],
-            "correctAnswer": "Stress on 'NURSE' (New Information - Highlighting Her Role)",
+            "correctAnswer": "Genuinely impressed",
             "correctAnswerIndex": 0,
-            "hint": "This answers 'what does she do?' with new information. Listen for the natural emphasis on 'nurse'.",
-            "explanation": "The stress on 'NURSE' highlights new information about her profession, simply answering the question, not correcting anyone.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a new information - highlighting her role and a fixing a misunderstanding."
+            "hint": "Does 'you' stand out, or does 'impressed' carry the energy?",
+            "explanation": "Energy on 'impressed' with a smooth fall makes the praise sound wholehearted. Pushing 'you' and 'managed' turns it into a remark about the speaker's low expectations, which changes the compliment completely.",
+            "modulationPattern": "Peak on 'impressed', smooth fall on 'managed'.",
+            "meaningShift": "A peak on 'impressed' praises; a peak on 'you' would hint at doubt that it was possible."
         },
         {
             "id": "ACC_PITCHMODULATION_L112_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague at the next desk is on a long call and you are trying to focus.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's bringing the DESSERT, not the drinks.",
-            "textToSpeak": "He's bringing the DESSERT, not the drinks.",
+            "word": "I can hardly hear myself think.",
+            "textToSpeak": "I can hardly hear myself think.",
             "options": [
-                "Stress on 'DESSERT' (Correcting Who's Bringing What)",
-                "Stress on 'DESSERT' (New Information - Simply Sharing the Plan)"
+                "A simple observation",
+                "A hint to be quieter"
             ],
-            "correctAnswer": "Stress on 'DESSERT' (Correcting Who's Bringing What)",
-            "correctAnswerIndex": 0,
-            "hint": "The trailing 'not the drinks' shows this fixes a mix-up about assignments. Listen for a pointed emphasis on 'DESSERT'.",
-            "explanation": "The stress on 'DESSERT', followed by 'not the drinks', corrects a misunderstanding about who's bringing what, rather than simply sharing a plan.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a correcting who's bringing what and a new information - simply sharing the plan."
+            "correctAnswer": "A hint to be quieter",
+            "correctAnswerIndex": 1,
+            "hint": "Is the remark meant for everyone, or aimed at a person?",
+            "explanation": "Hints are often delivered with a slightly lowered, lingering fall on the final word, as the speaker doesn't want to accuse. A casual remark about noise would sound lighter and move on quickly, with no waiting afterwards.",
+            "modulationPattern": "Lowered, lingering fall on 'think'.",
+            "meaningShift": "A lingering, lowered fall invites action; a light, quick fall just comments."
         },
         {
             "id": "ACC_PITCHMODULATION_L112_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone asks a favour at work.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I left my umbrella at the OFFICE, not the gym.",
-            "textToSpeak": "I left my umbrella at the OFFICE, not the gym.",
+            "word": "Would you mind helping me with this?",
+            "textToSpeak": "Would you mind helping me with this?",
             "options": [
-                "Stress on 'OFFICE' (New Information - Simply Reporting the Location)",
-                "Stress on 'OFFICE' (Correcting Where It Was Left)"
+                "A command in disguise",
+                "A genuine request"
             ],
-            "correctAnswer": "Stress on 'OFFICE' (Correcting Where It Was Left)",
+            "correctAnswer": "A genuine request",
             "correctAnswerIndex": 1,
-            "hint": "The trailing 'not the gym' shows this corrects a wrong guess about the location. Listen for a pointed emphasis on 'OFFICE'.",
-            "explanation": "The stress on 'OFFICE', followed by 'not the gym', corrects a mistaken guess about where the umbrella was left.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a new information - simply reporting the location and a correcting where it was left."
+            "hint": "What happens to the pitch at the end?",
+            "explanation": "Real requests give the listener room to say no, so the voice lifts on 'this' and stays open. A disguised order drops at the end with weight on 'help', leaving only one reasonable answer.",
+            "modulationPattern": "Open rise on 'this'.",
+            "meaningShift": "An open rise leaves room to decline; a falling finish with weight on 'help' expects agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L112_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A shy colleague asks to borrow your charger.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "They're flying to BARCELONA.",
-            "textToSpeak": "They're flying to BARCELONA.",
+            "word": "I don't suppose you could lend me a charger?",
+            "textToSpeak": "I don't suppose you could lend me a charger?",
             "options": [
-                "Stress on 'BARCELONA' (Fixing a Misunderstanding)",
-                "Stress on 'BARCELONA' (New Information - Highlighting the Destination)"
+                "Sarcastic and mocking",
+                "Tentative and deferential"
             ],
-            "correctAnswer": "Stress on 'BARCELONA' (New Information - Highlighting the Destination)",
+            "correctAnswer": "Tentative and deferential",
             "correctAnswerIndex": 1,
-            "hint": "This answers 'where are they flying to?' with new information. Listen for the natural emphasis on 'Barcelona'.",
-            "explanation": "The stress on 'BARCELONA' highlights new information about the destination, not a correction of any earlier guess.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a fixing a misunderstanding and a new information - highlighting the destination."
+            "hint": "Hear whether the speaker sounds unsure, or mocking.",
+            "explanation": "Softer pitch and a high, hesitant rise at the end signal that the speaker expects a no and would accept it. Sarcasm would be flatter and sharper, with a bite on 'you could'.",
+            "modulationPattern": "Soft onset, high hesitant rise on 'charger'.",
+            "meaningShift": "A high, hesitant rise sounds deferential; a flat, sharp contour would sound mocking."
         },
         {
             "id": "ACC_PITCHMODULATION_L113_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your printer jams as you start a big print job.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'll see you at SEVEN.",
-            "textToSpeak": "I'll see you at SEVEN.",
+            "word": "Oh, brilliant.",
+            "textToSpeak": "Oh, brilliant.",
             "options": [
-                "Stress on 'SEVEN' (Correcting an Earlier Mistake)",
-                "Stress on 'SEVEN' (New Information - Highlighting When)"
+                "Sarcastic",
+                "Pleased"
             ],
-            "correctAnswer": "Stress on 'SEVEN' (New Information - Highlighting When)",
-            "correctAnswerIndex": 1,
-            "hint": "This answers 'what time?' with new information. Listen for the natural emphasis landing on 'seven'.",
-            "explanation": "The stress on 'SEVEN' highlights new information about the meeting time, simply answering the question.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a correcting an earlier mistake and a new information - highlighting when."
+            "correctAnswer": "Sarcastic",
+            "correctAnswerIndex": 0,
+            "hint": "How bright is 'brilliant'?",
+            "explanation": "Sarcasm usually flattens 'brilliant' and lengthens it, and the pitch drops low instead of climbing. Real pleasure would spring up on the first syllable and sound bright.",
+            "modulationPattern": "Flat, drawn-out 'brilliant' with a low fall.",
+            "meaningShift": "A flat, low delivery turns praise into complaint; a bright peak would be real pleasure."
         },
         {
             "id": "ACC_PITCHMODULATION_L113_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A presentation has just collapsed in front of a client.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She adopted a RABBIT, not a hamster.",
-            "textToSpeak": "She adopted a RABBIT, not a hamster.",
+            "word": "Well, that went well.",
+            "textToSpeak": "Well, that went well.",
             "options": [
-                "Stress on 'RABBIT' (Correcting the Type of Pet)",
-                "Stress on 'RABBIT' (New Information - Simply Sharing the News)"
+                "Ironic",
+                "Satisfied"
             ],
-            "correctAnswer": "Stress on 'RABBIT' (Correcting the Type of Pet)",
+            "correctAnswer": "Ironic",
             "correctAnswerIndex": 0,
-            "hint": "The trailing 'not a hamster' shows this corrects a wrong guess about the pet. Listen for a pointed emphasis on 'RABBIT'.",
-            "explanation": "The stress on 'RABBIT', followed by 'not a hamster', corrects an incorrect guess about which animal she adopted.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a correcting the type of pet and a new information - simply sharing the news."
+            "hint": "Does anything in the voice match the words?",
+            "explanation": "Irony depends on a mismatch, and the pitch provides it: a low, dry delivery with weight on 'well'. If the speaker were satisfied, the sentence would be easy and settled with a smile in the voice.",
+            "modulationPattern": "Low, dry contour with weight on 'well'.",
+            "meaningShift": "A low, dry delivery contradicts the words; a settled, warm one would agree with them."
         },
         {
             "id": "ACC_PITCHMODULATION_L113_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has just shared a shortcut that saved you an hour.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We're studying for the SCIENCE exam.",
-            "textToSpeak": "We're studying for the SCIENCE exam.",
+            "word": "That's actually really helpful.",
+            "textToSpeak": "That's actually really helpful.",
             "options": [
-                "Stress on 'SCIENCE' (Fixing a Misunderstanding)",
-                "Stress on 'SCIENCE' (New Information - Highlighting Which Subject)"
+                "Sarcastic, dry-voiced",
+                "Pleasantly surprised"
             ],
-            "correctAnswer": "Stress on 'SCIENCE' (New Information - Highlighting Which Subject)",
+            "correctAnswer": "Pleasantly surprised",
             "correctAnswerIndex": 1,
-            "hint": "This answers 'which exam?' with new information. Listen for the natural emphasis on 'science'.",
-            "explanation": "The stress on 'SCIENCE' highlights new information about the subject, simply answering the question.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a fixing a misunderstanding and a new information - highlighting which subject."
+            "hint": "Find the word that carries the lift: 'actually' or 'helpful'.",
+            "explanation": "Brightness on 'actually' tells the listener that the usefulness exceeded expectations, and the rest of the sentence falls warmly. Sarcasm would sound flatter, stretching 'really' with a low, dry finish.",
+            "modulationPattern": "Bright peak on 'actually', warm fall on 'helpful'.",
+            "meaningShift": "A bright peak on 'actually' shows real surprise; a flat, stretched 'really' would be sarcasm."
         },
         {
             "id": "ACC_PITCHMODULATION_L114_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is explaining a process you already know well.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's allergic to PEANUTS, not tree nuts.",
-            "textToSpeak": "He's allergic to PEANUTS, not tree nuts.",
+            "word": "Yeah, yeah.",
+            "textToSpeak": "Yeah, yeah.",
             "options": [
-                "Stress on 'PEANUTS' (New Information - Simply Sharing Health Information)",
-                "Stress on 'PEANUTS' (Correcting the Allergen)"
+                "Impatient: speed it up",
+                "Enthusiastic agreement"
             ],
-            "correctAnswer": "Stress on 'PEANUTS' (Correcting the Allergen)",
-            "correctAnswerIndex": 1,
-            "hint": "The trailing 'not tree nuts' shows this corrects a mix-up about the allergy. Listen for a pointed emphasis on 'PEANUTS'.",
-            "explanation": "The stress on 'PEANUTS', followed by 'not tree nuts', corrects a specific mix-up about the allergen, rather than simply sharing new information.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a new information - simply sharing health information and a correcting the allergen."
+            "correctAnswer": "Impatient: speed it up",
+            "correctAnswerIndex": 0,
+            "hint": "Listen to how quickly the two words come, and how they sit against each other.",
+            "explanation": "Rapid, flat repetition is a way of saying 'I've got it, move on'. Enthusiasm would slow down, stretch the first 'yeah' upward and stay warm.",
+            "modulationPattern": "Fast, flat repetition with a falling pattern.",
+            "meaningShift": "Quick, flat repeats hurry the speaker; a slower, lifted one would show real interest."
         },
         {
             "id": "ACC_PITCHMODULATION_L114_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is telling you about a bereavement.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The package arrived this MORNING, not last night.",
-            "textToSpeak": "The package arrived this MORNING, not last night.",
+            "word": "Mm.",
+            "textToSpeak": "Mm.",
             "options": [
-                "Stress on 'MORNING' (Correcting the Arrival Time)",
-                "Stress on 'MORNING' (New Information - Simply Reporting the Time)"
+                "Bored acknowledgement",
+                "Sympathetic listening"
             ],
-            "correctAnswer": "Stress on 'MORNING' (Correcting the Arrival Time)",
-            "correctAnswerIndex": 0,
-            "hint": "The trailing 'not last night' shows this corrects a wrong guess about timing. Listen for a pointed emphasis on 'MORNING'.",
-            "explanation": "The stress on 'MORNING', followed by 'not last night', corrects a mistaken assumption about when the package arrived.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a correcting the arrival time and a new information - simply reporting the time."
+            "correctAnswer": "Sympathetic listening",
+            "correctAnswerIndex": 1,
+            "hint": "How long does it last, and does it sound alert?",
+            "explanation": "In a sad moment, a low, slow 'mm' that stays with the listener tells the speaker they're being heard. A bored version would be short, with less pitch variation, giving the impression the listener was somewhere else.",
+            "modulationPattern": "Low, slow, slightly falling 'mm'.",
+            "meaningShift": "A slow, low 'mm' shows attention; a short, flat one shows indifference."
         },
         {
             "id": "ACC_PITCHMODULATION_L114_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague makes the point you were about to make.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I downloaded a new FITNESS app.",
-            "textToSpeak": "I downloaded a new FITNESS app.",
+            "word": "Exactly.",
+            "textToSpeak": "Exactly.",
             "options": [
-                "Stress on 'FITNESS' (New Information - Highlighting What Kind)",
-                "Stress on 'FITNESS' (Fixing a Misunderstanding)"
+                "Warm agreement",
+                "Impatient agreement"
             ],
-            "correctAnswer": "Stress on 'FITNESS' (New Information - Highlighting What Kind)",
+            "correctAnswer": "Warm agreement",
             "correctAnswerIndex": 0,
-            "hint": "This answers 'what kind of app?' with new information. Listen for the natural emphasis on 'fitness'.",
-            "explanation": "The stress on 'FITNESS' highlights new information about the type of app, simply answering the question.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a new information - highlighting what kind and a fixing a misunderstanding."
+            "hint": "Does 'exactly' rise before falling, or just drop?",
+            "explanation": "Lifting on 'exact-' and then falling smoothly expresses enthusiasm that the speaker has put the thought into words. Impatience would drop sharply and quickly, as if the speaker wanted them to get on with it.",
+            "modulationPattern": "Lift on 'exact-', smooth fall.",
+            "meaningShift": "A lift then fall shares the point warmly; a quick drop sounds hurried."
         },
         {
             "id": "ACC_PITCHMODULATION_L115_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A salesperson is closing a sale.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We watched a HORROR movie.",
-            "textToSpeak": "We watched a HORROR movie.",
+            "word": "You won't regret it.",
+            "textToSpeak": "You won't regret it.",
             "options": [
-                "Stress on 'HORROR' (New Information - Highlighting the Genre)",
-                "Stress on 'HORROR' (Correcting an Earlier Mistake)"
+                "Sincere assurance",
+                "Sales pressure"
             ],
-            "correctAnswer": "Stress on 'HORROR' (New Information - Highlighting the Genre)",
+            "correctAnswer": "Sincere assurance",
             "correctAnswerIndex": 0,
-            "hint": "This answers 'what kind of movie?' with new information. Listen for the natural emphasis on 'horror'.",
-            "explanation": "The stress on 'HORROR' highlights new information about the genre, simply sharing what was watched.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a new information - highlighting the genre and a correcting an earlier mistake."
+            "hint": "Does the speaker slow down, or push?",
+            "explanation": "Sincerity usually slows the pace and lets 'regret' fall softly. Pressure speeds up and places a hard emphasis on 'won't', as if closing a door.",
+            "modulationPattern": "Slower pace, soft fall on 'regret'.",
+            "meaningShift": "A slower, softer fall sounds sincere; a hard, quick emphasis sounds pushy."
         },
         {
             "id": "ACC_PITCHMODULATION_L115_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A salesperson stands back while you decide.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She's training to be a PILOT, not a flight attendant.",
-            "textToSpeak": "She's training to be a PILOT, not a flight attendant.",
+            "word": "It's up to you, of course.",
+            "textToSpeak": "It's up to you, of course.",
             "options": [
-                "Stress on 'PILOT' (New Information - Simply Sharing Her Plan)",
-                "Stress on 'PILOT' (Correcting Her Career Path)"
+                "Applying gentle pressure",
+                "Genuinely leaving it open"
             ],
-            "correctAnswer": "Stress on 'PILOT' (Correcting Her Career Path)",
+            "correctAnswer": "Genuinely leaving it open",
             "correctAnswerIndex": 1,
-            "hint": "The trailing 'not a flight attendant' shows this corrects a wrong guess about her career. Listen for a pointed emphasis on 'PILOT'.",
-            "explanation": "The stress on 'PILOT', followed by 'not a flight attendant', corrects a mistaken guess about her career path.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a new information - simply sharing her plan and a correcting her career path."
+            "hint": "How does the voice treat 'of course'?",
+            "explanation": "If the speaker wants you to choose freely, the sentence ends lightly, with 'of course' dropping away gently. A hint of pressure would add weight to 'you' and a firm landing on 'course', as if the answer were obvious.",
+            "modulationPattern": "Light fall on 'of course'.",
+            "meaningShift": "A light ending leaves the choice free; a weighted one steers you."
         },
         {
             "id": "ACC_PITCHMODULATION_L115_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A host sees you checking your watch.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm cooking PASTA tonight.",
-            "textToSpeak": "I'm cooking PASTA tonight.",
+            "word": "No rush at all.",
+            "textToSpeak": "No rush at all.",
             "options": [
-                "Stress on 'PASTA' (New Information - Highlighting What's for Dinner)",
-                "Stress on 'PASTA' (Fixing a Misunderstanding)"
+                "Politely hurrying you",
+                "Truly unhurried"
             ],
-            "correctAnswer": "Stress on 'PASTA' (New Information - Highlighting What's for Dinner)",
-            "correctAnswerIndex": 0,
-            "hint": "This answers 'what are you cooking?' with new information. Listen for the natural emphasis on 'pasta'.",
-            "explanation": "The stress on 'PASTA' highlights new information about dinner, simply answering the question, not correcting anyone.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a new information - highlighting what's for dinner and a fixing a misunderstanding."
+            "correctAnswer": "Truly unhurried",
+            "correctAnswerIndex": 1,
+            "hint": "Decide whether the speaker sounds relaxed, or watchful.",
+            "explanation": "Slow tempo plus a long, soft fall on 'all' gives the impression of ample time. Hurrying you politely would involve a brisk pace and a clipped finish that tells you time is, in fact, short.",
+            "modulationPattern": "Slow tempo, long soft fall on 'all'.",
+            "meaningShift": "A slow, soft contour sounds relaxed; a brisk, clipped one hints at a deadline."
         },
         {
             "id": "ACC_PITCHMODULATION_L116_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague argues strongly for a plan you doubt.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The train leaves from PLATFORM nine, not platform six.",
-            "textToSpeak": "The train leaves from PLATFORM nine, not platform six.",
+            "word": "I can see why you'd say that.",
+            "textToSpeak": "I can see why you'd say that.",
             "options": [
-                "Stress on 'PLATFORM' (Correcting the Departure Point)",
-                "Stress on 'PLATFORM' (New Information - Simply Announcing Where)"
+                "Disagreeing gently",
+                "Agreeing wholeheartedly"
             ],
-            "correctAnswer": "Stress on 'PLATFORM' (Correcting the Departure Point)",
+            "correctAnswer": "Disagreeing gently",
             "correctAnswerIndex": 0,
-            "hint": "The trailing 'not platform six' shows this corrects a wrong platform number. Listen for a pointed emphasis on 'PLATFORM'.",
-            "explanation": "The stress on 'PLATFORM', followed by 'not platform six', corrects a mistaken platform number rather than simply announcing one.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a correcting the departure point and a new information - simply announcing where."
+            "hint": "Which word does the speaker lean on?",
+            "explanation": "Leaning on 'see' and falling on 'say' acknowledges the argument while stepping back from it, which is a classic opening to a disagreement. Agreement would put the weight on 'why' and sound warmer, with no hint of a 'but' to come.",
+            "modulationPattern": "Weight on 'see', fall on 'say'.",
+            "meaningShift": "A leaning 'see' sets up a polite 'but'; weight on 'why' would sound like agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L116_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A negotiator hears a proposal for the first time.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He fixed it with a SCREWDRIVER, not a hammer.",
-            "textToSpeak": "He fixed it with a SCREWDRIVER, not a hammer.",
+            "word": "I'm not convinced yet.",
+            "textToSpeak": "I'm not convinced yet.",
             "options": [
-                "Stress on 'SCREWDRIVER' (New Information - Simply Sharing How)",
-                "Stress on 'SCREWDRIVER' (Correcting the Tool Used)"
+                "Closed to the idea",
+                "Open to persuasion"
             ],
-            "correctAnswer": "Stress on 'SCREWDRIVER' (Correcting the Tool Used)",
+            "correctAnswer": "Open to persuasion",
             "correctAnswerIndex": 1,
-            "hint": "The trailing 'not a hammer' shows this corrects a wrong guess about the tool. Listen for a pointed emphasis on 'SCREWDRIVER'.",
-            "explanation": "The stress on 'SCREWDRIVER', followed by 'not a hammer', corrects a mistaken guess about which tool was used.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a new information - simply sharing how and a correcting the tool used."
+            "hint": "What does the stress on 'yet' do?",
+            "explanation": "Letting 'yet' rise slightly makes the sentence sound as though the door is open, because the speaker is promising to keep listening. A closed mind would stress 'not' and fall hard on 'convinced'.",
+            "modulationPattern": "Slight lift on 'yet'.",
+            "meaningShift": "A lifted 'yet' leaves room to persuade; a hard 'not' would close the topic."
         },
         {
             "id": "ACC_PITCHMODULATION_L116_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A long debate between two colleagues is going in circles.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We're celebrating at my AUNT's house.",
-            "textToSpeak": "We're celebrating at my AUNT's house.",
+            "word": "We'll have to agree to differ.",
+            "textToSpeak": "We'll have to agree to differ.",
             "options": [
-                "Stress on 'AUNT's' (New Information - Highlighting Whose House)",
-                "Stress on 'AUNT's' (Fixing a Misunderstanding)"
+                "Ending the debate politely",
+                "Reaching real agreement"
             ],
-            "correctAnswer": "Stress on 'AUNT's' (New Information - Highlighting Whose House)",
+            "correctAnswer": "Ending the debate politely",
             "correctAnswerIndex": 0,
-            "hint": "This answers 'celebrating where?' with new information. Listen for the natural emphasis on 'aunt's'.",
-            "explanation": "The stress on 'AUNT's' highlights new information about the location, simply sharing the plan.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a new information - highlighting whose house and a fixing a misunderstanding."
+            "hint": "Is there warmth, or finality?",
+            "explanation": "Closing with a steady fall on 'differ' at a quick pace gives the line a conclusive feel, and it signals that further debate won't change anything. Reaching agreement would be warmer, with a lift on 'agree'.",
+            "modulationPattern": "Steady fall on 'differ'.",
+            "meaningShift": "A final fall closes the debate; a lift on 'agree' would indicate a real meeting of minds."
         },
         {
             "id": "ACC_PITCHMODULATION_L117_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks, 'Did you speak to Dan or Mia?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I ordered the package from JAPAN.",
-            "textToSpeak": "I ordered the package from JAPAN.",
+            "word": "I spoke to Mia.",
+            "textToSpeak": "I spoke to Mia.",
             "options": [
-                "Stress on 'JAPAN' (Correcting an Earlier Mistake)",
-                "Stress on 'JAPAN' (New Information - Highlighting Where From)"
+                "'Mia' stands out: it fills the gap",
+                "'Spoke' stands out: not a message"
             ],
-            "correctAnswer": "Stress on 'JAPAN' (New Information - Highlighting Where From)",
-            "correctAnswerIndex": 1,
-            "hint": "This answers 'ordered from where?' with new information. Listen for the natural emphasis on 'Japan'.",
-            "explanation": "The stress on 'JAPAN' highlights new information about the package's origin, simply answering the question.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a correcting an earlier mistake and a new information - highlighting where from."
+            "correctAnswer": "'Mia' stands out: it fills the gap",
+            "correctAnswerIndex": 0,
+            "hint": "The question names two people. Hear which part of the reply makes the choice.",
+            "explanation": "Dan and Mia were the options, so the name decides the answer. Pushing 'spoke' would only make sense if someone had wondered whether it was a conversation or a message.",
+            "modulationPattern": "Prominence on 'Mia'.",
+            "meaningShift": "A peak on 'Mia' picks the person; a peak on 'spoke' would contrast the means of contact."
         },
         {
             "id": "ACC_PITCHMODULATION_L117_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are replying to a colleague who suggested a meeting day.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She's learning to play the VIOLIN, not the cello.",
-            "textToSpeak": "She's learning to play the VIOLIN, not the cello.",
+            "word": "I can't do Tuesday.",
+            "textToSpeak": "I can't do Tuesday.",
             "options": [
-                "Stress on 'VIOLIN' (Correcting the Instrument)",
-                "Stress on 'VIOLIN' (New Information - Simply Sharing the News)"
+                "'Tuesday' stands out: other days may work",
+                "'Can't' stands out: a firm, flat refusal"
             ],
-            "correctAnswer": "Stress on 'VIOLIN' (Correcting the Instrument)",
+            "correctAnswer": "'Tuesday' stands out: other days may work",
             "correctAnswerIndex": 0,
-            "hint": "The trailing 'not the cello' shows this corrects a wrong guess about the instrument. Listen for a pointed emphasis on 'VIOLIN'.",
-            "explanation": "The stress on 'VIOLIN', followed by 'not the cello', corrects a mistaken guess about which instrument she's learning.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a correcting the instrument and a new information - simply sharing the news."
+            "hint": "Which word hints at what remains possible?",
+            "explanation": "Putting the peak on 'Tuesday' singles that day out as the problem, and listeners usually hear an unspoken 'but another day could work'. Weight on 'can't' would stress the impossibility, as in 'there's no way'.",
+            "modulationPattern": "Prominence on 'Tuesday'.",
+            "meaningShift": "A peak on 'Tuesday' signals other days could work; a peak on 'can't' stresses the refusal."
         },
         {
             "id": "ACC_PITCHMODULATION_L117_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says you should have prepared a full analysis.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The class starts at NINE.",
-            "textToSpeak": "The class starts at NINE.",
+            "word": "I only asked for a quick opinion.",
+            "textToSpeak": "I only asked for a quick opinion.",
             "options": [
-                "Stress on 'NINE' (Fixing a Misunderstanding)",
-                "Stress on 'NINE' (New Information - Highlighting the Time)"
+                "'Opinion' stands out: stating what was asked",
+                "'Only' stands out: defending a small request"
             ],
-            "correctAnswer": "Stress on 'NINE' (New Information - Highlighting the Time)",
+            "correctAnswer": "'Only' stands out: defending a small request",
             "correctAnswerIndex": 1,
-            "hint": "This answers 'what time does it start?' with new information. Listen for the natural emphasis on 'nine'.",
-            "explanation": "The stress on 'NINE' highlights new information about the start time, simply answering the question.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a fixing a misunderstanding and a new information - highlighting the time."
+            "hint": "What is the speaker pushing back against?",
+            "explanation": "The complaint is about the amount of work, so 'only' takes the peak and presents the request as modest. 'Opinion' would be stressed if the speaker were correcting what was wanted, not how much.",
+            "modulationPattern": "Prominence on 'only'.",
+            "meaningShift": "A peak on 'only' shrinks the request; a peak on 'opinion' would specify its type."
         },
         {
             "id": "ACC_PITCHMODULATION_L118_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks whether you want to go to the gig.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He works at the HOSPITAL, not the clinic.",
-            "textToSpeak": "He works at the HOSPITAL, not the clinic.",
+            "word": "Honestly, I'd rather not.",
+            "textToSpeak": "Honestly, I'd rather not.",
             "options": [
-                "Stress on 'HOSPITAL' (New Information - Simply Answering the Question)",
-                "Stress on 'HOSPITAL' (Correcting His Workplace)"
+                "Gentle honesty",
+                "Blunt refusal"
             ],
-            "correctAnswer": "Stress on 'HOSPITAL' (Correcting His Workplace)",
-            "correctAnswerIndex": 1,
-            "hint": "The trailing 'not the clinic' shows this corrects a wrong guess about his workplace. Listen for a pointed emphasis on 'HOSPITAL'.",
-            "explanation": "The stress on 'HOSPITAL', followed by 'not the clinic', corrects a mistaken guess about where he works.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a new information - simply answering the question and a correcting his workplace."
+            "correctAnswer": "Gentle honesty",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'honestly' sound warm or sharp?",
+            "explanation": "Softening 'honestly' slightly and then easing down on 'not' sounds like the speaker is trusting the friend with the truth. Bluntness would cut 'honestly' short and clip the end.",
+            "modulationPattern": "Soft 'honestly', easy fall on 'not'.",
+            "meaningShift": "A soft, easy contour sounds like candid warmth; a clipped one sounds blunt."
         },
         {
             "id": "ACC_PITCHMODULATION_L118_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks what you think of the draft.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We're driving to the MOUNTAINS, not the coast.",
-            "textToSpeak": "We're driving to the MOUNTAINS, not the coast.",
+            "word": "Frankly, it's a mess.",
+            "textToSpeak": "Frankly, it's a mess.",
             "options": [
-                "Stress on 'MOUNTAINS' (Correcting the Destination)",
-                "Stress on 'MOUNTAINS' (New Information - Simply Sharing the Plan)"
+                "Gentle and sympathetic",
+                "Blunt and unsoftened"
             ],
-            "correctAnswer": "Stress on 'MOUNTAINS' (Correcting the Destination)",
-            "correctAnswerIndex": 0,
-            "hint": "The trailing 'not the coast' shows this corrects a wrong guess about the destination. Listen for a pointed emphasis on 'MOUNTAINS'.",
-            "explanation": "The stress on 'MOUNTAINS', followed by 'not the coast', corrects a mistaken guess about where they're headed.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a correcting the destination and a new information - simply sharing the plan."
+            "correctAnswer": "Blunt and unsoftened",
+            "correctAnswerIndex": 1,
+            "hint": "Is there any cushioning in the sentence?",
+            "explanation": "Falling firmly and flatly on 'mess', with no softening on 'frankly', leaves the criticism exposed. A gentle version would lift slightly, spreading the weight and sounding apologetic.",
+            "modulationPattern": "Firm, flat fall on 'mess'.",
+            "meaningShift": "A firm fall with no cushioning is blunt; a softened contour would cushion the news."
         },
         {
             "id": "ACC_PITCHMODULATION_L118_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your colleague missed a deadline, but a warning had been given to the team.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I bought it at the FARMERS market.",
-            "textToSpeak": "I bought it at the FARMERS market.",
+            "word": "To be fair, she did warn us.",
+            "textToSpeak": "To be fair, she did warn us.",
             "options": [
-                "Stress on 'FARMERS' (Fixing a Misunderstanding)",
-                "Stress on 'FARMERS' (New Information - Highlighting Where)"
+                "A defensive, blaming excuse",
+                "A fair-minded concession"
             ],
-            "correctAnswer": "Stress on 'FARMERS' (New Information - Highlighting Where)",
+            "correctAnswer": "A fair-minded concession",
             "correctAnswerIndex": 1,
-            "hint": "This answers 'bought it where?' with new information. Listen for the natural emphasis on 'farmers'.",
-            "explanation": "The stress on 'FARMERS' highlights new information about where the item was bought, simply answering the question.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a fixing a misunderstanding and a new information - highlighting where."
+            "hint": "How do the words 'to be fair' sound?",
+            "explanation": "Slowing down on 'fair' and letting 'warn' stand out calmly signals a speaker who wants to be accurate. A defensive tone would speed up and push 'she' as if shifting blame.",
+            "modulationPattern": "Slower 'fair', calm peak on 'warn'.",
+            "meaningShift": "A calm peak on 'warn' reads as fair-minded; a pushed 'she' would deflect blame."
         },
         {
             "id": "ACC_PITCHMODULATION_L119_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend announces she is getting married.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She's reading a MYSTERY novel.",
-            "textToSpeak": "She's reading a MYSTERY novel.",
+            "word": "I'm so happy for you.",
+            "textToSpeak": "I'm so happy for you.",
             "options": [
-                "Stress on 'MYSTERY' (New Information - Highlighting the Genre)",
-                "Stress on 'MYSTERY' (Correcting an Earlier Mistake)"
+                "Wholehearted",
+                "Tinged with envy"
             ],
-            "correctAnswer": "Stress on 'MYSTERY' (New Information - Highlighting the Genre)",
+            "correctAnswer": "Wholehearted",
             "correctAnswerIndex": 0,
-            "hint": "This answers 'what kind of novel?' with new information. Listen for the natural emphasis on 'mystery'.",
-            "explanation": "The stress on 'MYSTERY' highlights new information about the genre, simply sharing what she's reading.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a new information - highlighting the genre and a correcting an earlier mistake."
+            "hint": "Does 'happy' lift and linger, or sink?",
+            "explanation": "Lifting and sustaining 'happy', then falling warmly on 'you', makes the feeling sound complete. A thread of envy would flatten 'happy' and make 'you' land a little heavily, as though the words took effort.",
+            "modulationPattern": "Lift and sustain on 'happy', warm fall on 'you'.",
+            "meaningShift": "A lifted, lingering 'happy' sounds wholehearted; a flat, heavy contour would sound strained."
         },
         {
             "id": "ACC_PITCHMODULATION_L119_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has been given a promotion you wanted.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's allergic to SHELLFISH, not dairy.",
-            "textToSpeak": "He's allergic to SHELLFISH, not dairy.",
+            "word": "Well, good for her.",
+            "textToSpeak": "Well, good for her.",
             "options": [
-                "Stress on 'SHELLFISH' (New Information - Simply Sharing Health Information)",
-                "Stress on 'SHELLFISH' (Correcting the Allergen)"
+                "Grudging",
+                "Warm"
             ],
-            "correctAnswer": "Stress on 'SHELLFISH' (Correcting the Allergen)",
-            "correctAnswerIndex": 1,
-            "hint": "The trailing 'not dairy' shows this corrects a mix-up about the allergy. Listen for a pointed emphasis on 'SHELLFISH'.",
-            "explanation": "The stress on 'SHELLFISH', followed by 'not dairy', corrects a specific mix-up about the allergen.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a new information - simply sharing health information and a correcting the allergen."
+            "correctAnswer": "Grudging",
+            "correctAnswerIndex": 0,
+            "hint": "Where does the voice sit on 'good'?",
+            "explanation": "Dropping 'good' to a low pitch and letting 'her' trail off gives the line a grudging edge. Warmth would use a high, round 'good' that rises before falling.",
+            "modulationPattern": "Low 'good', trailing fall on 'her'.",
+            "meaningShift": "A low, trailing contour sounds grudging; a high, round one sounds warm."
         },
         {
             "id": "ACC_PITCHMODULATION_L119_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A neighbour tells you their son has won a place at university.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We're meeting on ZOOM this time.",
-            "textToSpeak": "We're meeting on ZOOM this time.",
+            "word": "That's wonderful news.",
+            "textToSpeak": "That's wonderful news.",
             "options": [
-                "Stress on 'ZOOM' (Fixing a Misunderstanding)",
-                "Stress on 'ZOOM' (New Information - Highlighting How)"
+                "Genuinely glad",
+                "Politely glad"
             ],
-            "correctAnswer": "Stress on 'ZOOM' (New Information - Highlighting How)",
-            "correctAnswerIndex": 1,
-            "hint": "This answers 'meeting how?' with new information. Listen for the natural emphasis on 'Zoom'.",
-            "explanation": "The stress on 'ZOOM' highlights new information about the meeting method, simply answering the question.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a fixing a misunderstanding and a new information - highlighting how."
+            "correctAnswer": "Genuinely glad",
+            "correctAnswerIndex": 0,
+            "hint": "How much range does 'wonderful' get?",
+            "explanation": "Range on 'wonderful', maybe a lift on the first syllable and a long fall, makes the gladness sound unforced. Polite gladness uses a narrower range and arrives faster, with the words doing most of the work.",
+            "modulationPattern": "Wide range on 'wonderful', long fall on 'news'.",
+            "meaningShift": "A wide, long contour sounds glad; a narrow, quick one sounds courteous."
         },
         {
             "id": "ACC_PITCHMODULATION_L120_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You ask your manager about a pay rise.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I left the keys with the RECEPTIONIST, not the security guard.",
-            "textToSpeak": "I left the keys with the RECEPTIONIST, not the security guard.",
+            "word": "I'll see what I can do.",
+            "textToSpeak": "I'll see what I can do.",
             "options": [
-                "Stress on 'RECEPTIONIST' (Correcting Who Has the Keys)",
-                "Stress on 'RECEPTIONIST' (New Information - Simply Answering the Question)"
+                "A firm promise to act on it",
+                "Noncommittal, probably no"
             ],
-            "correctAnswer": "Stress on 'RECEPTIONIST' (Correcting Who Has the Keys)",
-            "correctAnswerIndex": 0,
-            "hint": "The trailing 'not the security guard' shows this corrects a wrong guess about who has the keys. Listen for a pointed emphasis on 'RECEPTIONIST'.",
-            "explanation": "The stress on 'RECEPTIONIST', followed by 'not the security guard', corrects a mistaken guess about who has the keys.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a correcting who has the keys and a new information - simply answering the question."
+            "correctAnswer": "Noncommittal, probably no",
+            "correctAnswerIndex": 1,
+            "hint": "Does the end feel like a commitment?",
+            "explanation": "Finishing flat on 'do', with no emphasis on 'can', sounds like a polite way of avoiding a decision. A promise would give 'will' or 'do' weight and a firm landing.",
+            "modulationPattern": "Flat fall on 'do' with no weight on 'can'.",
+            "meaningShift": "A flat finish is a polite deflection; a weighted, firm one would be a commitment."
         },
         {
             "id": "ACC_PITCHMODULATION_L120_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend has just heard a secret from you.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The concert starts at EIGHT, not seven.",
-            "textToSpeak": "The concert starts at EIGHT, not seven.",
+            "word": "Your secret's safe with me.",
+            "textToSpeak": "Your secret's safe with me.",
             "options": [
-                "Stress on 'EIGHT' (New Information - Simply Announcing the Time)",
-                "Stress on 'EIGHT' (Correcting the Start Time)"
+                "A casual quip",
+                "A solemn promise"
             ],
-            "correctAnswer": "Stress on 'EIGHT' (Correcting the Start Time)",
+            "correctAnswer": "A solemn promise",
             "correctAnswerIndex": 1,
-            "hint": "The trailing 'not seven' shows this corrects a wrong guess about the start time. Listen for a pointed emphasis on 'EIGHT'.",
-            "explanation": "The stress on 'EIGHT', followed by 'not seven', corrects a mistaken assumption about the start time.",
-            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted.",
-            "meaningShift": "The meaning shifts between a new information - simply announcing the time and a correcting the start time."
+            "hint": "How serious is the pace?",
+            "explanation": "Slowing down and landing firmly low on 'me' gives the line the seriousness of a vow. A casual quip would be brisk and bouncy, with a smile in the voice.",
+            "modulationPattern": "Slow pace, firm low fall on 'me'.",
+            "meaningShift": "A slow, low fall promises; a brisk, bouncy one jokes."
         },
         {
             "id": "ACC_PITCHMODULATION_L120_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague listens to your weak rehearsal and answers kindly.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We're flying with a BUDGET airline.",
-            "textToSpeak": "We're flying with a BUDGET airline.",
+            "word": "It's coming along.",
+            "textToSpeak": "It's coming along.",
             "options": [
-                "Stress on 'BUDGET' (New Information - Highlighting What Kind)",
-                "Stress on 'BUDGET' (Fixing a Misunderstanding)"
+                "Genuinely pleased",
+                "Kind but reserved"
             ],
-            "correctAnswer": "Stress on 'BUDGET' (New Information - Highlighting What Kind)",
-            "correctAnswerIndex": 0,
-            "hint": "This answers 'flying with what kind of airline?' with new information. Listen for the natural emphasis on 'budget'.",
-            "explanation": "The stress on 'BUDGET' highlights new information about the type of airline, simply answering the question.",
-            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed.",
-            "meaningShift": "The meaning shifts between a new information - highlighting what kind and a fixing a misunderstanding."
+            "correctAnswer": "Kind but reserved",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'along' lift, or settle?",
+            "explanation": "Keeping 'coming' level and settling on 'along' gives the sentence a tone of encouragement without enthusiasm. Real pleasure would lift on 'coming' and sound more energetic.",
+            "modulationPattern": "Level 'coming', settled fall on 'along'.",
+            "meaningShift": "A level, settled contour is kind but reserved; a lift on 'coming' would be pleased."
         }
     ]
 }

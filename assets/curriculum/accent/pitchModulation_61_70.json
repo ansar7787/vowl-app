@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L61_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks, 'Did the client reply to your email?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You won the lottery?",
-            "textToSpeak": "You won the lottery?",
+            "word": "She replied this morning.",
+            "textToSpeak": "She replied this morning.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "The reply is old news; the timing is new",
+                "The timing is old news; the reply is new"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "The reply is old news; the timing is new",
             "correctAnswerIndex": 0,
-            "hint": "This is huge, unexpected news. Listen for the pitch to leap upward sharply, almost demanding to be told it's true.",
-            "explanation": "'You won the lottery?' said in disbelief shoots up sharply at the end - a high Rising tone used to echo shocking news.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "hint": "Which part of the answer had the colleague already asked about?",
+            "explanation": "Since the question already contains the idea of a reply, 'replied' is background and stays low. The new information is when it happened, and 'morning' takes the peak. Reversing the roles would suit a different question, such as 'Has anything happened today?'.",
+            "modulationPattern": "Prominence on 'morning'; 'replied' is reduced as given information.",
+            "meaningShift": "A peak on 'morning' answers the timing; a peak on 'replied' would announce the reply as new."
         },
         {
             "id": "ACC_PITCHMODULATION_L61_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are describing a small incident at work.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What time does the train leave?",
-            "textToSpeak": "What time does the train leave?",
+            "word": "I found a wallet in the car park. I gave the wallet to security.",
+            "textToSpeak": "I found a wallet in the car park. I gave the wallet to security.",
             "options": [
-                "Falling Tone (Calm Request for Information)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "The second 'wallet' is light; 'security' stands out",
+                "The second 'wallet' is heavy; 'security' is light"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
+            "correctAnswer": "The second 'wallet' is light; 'security' stands out",
             "correctAnswerIndex": 0,
-            "hint": "This is just an everyday question, with nothing surprising about it. Expect the pitch to fall calmly at the end.",
-            "explanation": "'What time does the train leave?' is a calm, neutral question, so the pitch falls evenly rather than jumping up in shock.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm request for information and a astonished disbelief."
+            "hint": "The wallet was just mentioned. Would the speaker push the word again?",
+            "explanation": "Because the first sentence introduces the wallet, in the second it is given information and is spoken with less pitch movement. 'Security' is the new element and takes the peak. If the wallet were pushed again, it would sound as if there were a second wallet to compare.",
+            "modulationPattern": "Deaccenting of repeated 'wallet'; prominence on the new element 'security'.",
+            "meaningShift": "A light 'wallet' keeps attention on where it went; a heavy 'wallet' would imply a contrast with another object."
         },
         {
             "id": "ACC_PITCHMODULATION_L61_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says, 'I met the new director yesterday.' You reply.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You quit your job?",
-            "textToSpeak": "You quit your job?",
+            "word": "What did you think of her?",
+            "textToSpeak": "What did you think of her?",
             "options": [
-                "Falling Tone (Calm Confirmation)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "'Her' stands out; 'think' is known",
+                "'Think' stands out; 'her' is known"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "'Think' stands out; 'her' is known",
             "correctAnswerIndex": 1,
-            "hint": "This is surprising, unplanned news for the listener. Listen for the pitch to spike upward in disbelief.",
-            "explanation": "'You quit your job?' echoed in shock rises sharply at the end, a high Rising tone reacting to unexpected news.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm confirmation and a astonished disbelief."
+            "hint": "Who has already been mentioned in the conversation?",
+            "explanation": "Because the director has just entered the conversation, 'her' stands in for something known and stays light. What the speaker wants to learn is the impression, so 'think' takes the peak. Pushing 'her' would suggest a comparison with someone else.",
+            "modulationPattern": "Prominence on 'think'; the pronoun 'her' is deaccented.",
+            "meaningShift": "A peak on 'think' asks for an opinion; a peak on 'her' would compare her with other people."
         },
         {
             "id": "ACC_PITCHMODULATION_L62_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You were told the meeting is in Room 4 and want to double-check.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She said what?",
-            "textToSpeak": "She said what?",
+            "word": "Room 4, right?",
+            "textToSpeak": "Room 4, right?",
             "options": [
-                "Falling Tone (Calm Clarification)",
-                "Sharp Rising Tone (Demanding Repetition in Shock)"
+                "Rises on 'right': asking for a quick confirmation",
+                "Falls on 'right': assuming agreement"
             ],
-            "correctAnswer": "Sharp Rising Tone (Demanding Repetition in Shock)",
-            "correctAnswerIndex": 1,
-            "hint": "The listener can't believe what they just heard and wants it repeated. Expect the pitch to shoot upward on 'what'.",
-            "explanation": "'She said what?' as a shocked echo rises sharply on 'what', demanding the statement be repeated because it seems unbelievable.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm clarification and a demanding repetition in shock."
+            "correctAnswer": "Rises on 'right': asking for a quick confirmation",
+            "correctAnswerIndex": 0,
+            "hint": "Think about whether hearing a different answer would surprise the speaker.",
+            "explanation": "On 'right', the rise turns the tag into a real check, leaving room for the answer to be different. A fall would mean the speaker expects a nod, and is only looking for agreement.",
+            "modulationPattern": "Rising on the tag 'right' after a repeated detail.",
+            "meaningShift": "A rise asks for real confirmation; a fall assumes the answer is yes."
         },
         {
             "id": "ACC_PITCHMODULATION_L62_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend confirms your guess about which flat is theirs.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What's the capital of France?",
-            "textToSpeak": "What's the capital of France?",
+            "word": "Yes, that's the one.",
+            "textToSpeak": "Yes, that's the one.",
             "options": [
-                "Falling Tone (Calm Request for Information)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "Dips and lifts: partial agreement",
+                "Falls: settled confirmation"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a plain factual question with nothing shocking about it. Expect the pitch to fall calmly at the end.",
-            "explanation": "'What's the capital of France?' is a calm, neutral question, so it falls at the end like an ordinary request for facts.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm request for information and a astonished disbelief."
+            "correctAnswer": "Falls: settled confirmation",
+            "correctAnswerIndex": 1,
+            "hint": "Does the answer sound complete?",
+            "explanation": "The fall on 'one' gives an unhesitating confirmation, so the listener can stop looking. A dip and lift would leave a but hanging, as if the friend wanted to add a detail.",
+            "modulationPattern": "Falling at the end of a confirmation.",
+            "meaningShift": "A fall closes the question; a dip and lift would qualify the yes."
         },
         {
             "id": "ACC_PITCHMODULATION_L62_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks if you have read the contract. You skimmed it.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You did this all alone?",
-            "textToSpeak": "You did this all alone?",
+            "word": "I've read it.",
+            "textToSpeak": "I've read it.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "Dip and lift: read it, but not closely",
+                "Falls: read it thoroughly"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "Dip and lift: read it, but not closely",
             "correctAnswerIndex": 0,
-            "hint": "The listener is impressed and can hardly believe it. Listen for the pitch to climb sharply at the end.",
-            "explanation": "'You did this all alone?' echoed in amazement rises sharply, reacting with disbelief to an impressive achievement.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "hint": "Hear whether the voice sounds sure of itself.",
+            "explanation": "The dip and lift on 'read' leaves the claim open, so the listener suspects that reading wasn't complete. A confident fall would make a full-strength claim, and would suit someone who had studied every clause.",
+            "modulationPattern": "Falling-rising on 'read' with the lift at the end.",
+            "meaningShift": "A dip and lift hints at a limit on the claim; a fall states it fully."
         },
         {
             "id": "ACC_PITCHMODULATION_L63_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says, 'Send me the file.' You have several.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He proposed to her?",
-            "textToSpeak": "He proposed to her?",
+            "word": "Which file do you mean?",
+            "textToSpeak": "Which file do you mean?",
             "options": [
-                "Falling Tone (Calm Confirmation)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "'Which' stands out: asking to pick one",
+                "'Mean' stands out: challenging the wording"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "This is exciting, unexpected gossip. Listen for the pitch to leap upward sharply in surprise.",
-            "explanation": "'He proposed to her?' echoed in surprise rises sharply, reflecting genuine shock at unexpected news.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm confirmation and a astonished disbelief."
+            "correctAnswer": "'Which' stands out: asking to pick one",
+            "correctAnswerIndex": 0,
+            "hint": "What does the speaker need in order to act?",
+            "explanation": "With several files to choose from, the speaker asks for a choice and 'which' takes the peak. A peak on 'mean' would sound like the speaker doubted the colleague's phrasing.",
+            "modulationPattern": "Prominence on the question word 'which'.",
+            "meaningShift": "A peak on 'which' requests a selection; a peak on 'mean' would question the colleague's wording."
         },
         {
             "id": "ACC_PITCHMODULATION_L63_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You realise you asked for the wrong document.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Where's the nearest pharmacy?",
-            "textToSpeak": "Where's the nearest pharmacy?",
+            "word": "Sorry, not that file, the other one.",
+            "textToSpeak": "Sorry, not that file, the other one.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Request for Information)"
+                "'That' and 'other' stand out: sorting the files",
+                "'File' stands out: naming the item"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
-            "correctAnswerIndex": 1,
-            "hint": "This is a routine, practical question. Expect the pitch to fall calmly rather than jump up in shock.",
-            "explanation": "'Where's the nearest pharmacy?' is a calm, practical question, so the pitch falls evenly at the end.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm request for information."
+            "correctAnswer": "'That' and 'other' stand out: sorting the files",
+            "correctAnswerIndex": 0,
+            "hint": "Both documents are files, so ask what actually tells them apart.",
+            "explanation": "Both files are files, so the distinguishing words 'that' and 'other' carry the peaks, and 'file' stays low. Peaking on 'file' would be pointless, since both options are already that.",
+            "modulationPattern": "Contrastive prominence on 'that' and 'other'.",
+            "meaningShift": "Peaks on 'that' and 'other' separate the two documents; a peak on 'file' would repeat known information."
         },
         {
             "id": "ACC_PITCHMODULATION_L63_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A presenter has just said the deadline is 'soon'.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You broke the world record?",
-            "textToSpeak": "You broke the world record?",
+            "word": "What do you mean by 'soon'?",
+            "textToSpeak": "What do you mean by 'soon'?",
             "options": [
-                "Falling Tone (Calm Confirmation)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "'Mean' stands out: challenging the speaker",
+                "'Soon' stands out: questioning that word"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "'Soon' stands out: questioning that word",
             "correctAnswerIndex": 1,
-            "hint": "This is an extraordinary achievement that's hard to believe. Listen for the pitch to spike upward in awe.",
-            "explanation": "'You broke the world record?' echoed in awe rises sharply at the end, expressing genuine disbelief at the news.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm confirmation and a astonished disbelief."
+            "hint": "Hear which word is under the microscope.",
+            "explanation": "The peak on 'soon' isolates that word as the thing that needs to be pinned down, which keeps the question neutral and useful. A peak on 'mean' can sound more confrontational, as though the speaker's intention were being questioned.",
+            "modulationPattern": "Prominence on the quoted word 'soon'.",
+            "meaningShift": "A peak on 'soon' asks for a specific time; a peak on 'mean' would challenge the speaker."
         },
         {
             "id": "ACC_PITCHMODULATION_L64_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager summarises what you have just said.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "They moved to Canada?",
-            "textToSpeak": "They moved to Canada?",
+            "word": "So you're saying we should wait?",
+            "textToSpeak": "So you're saying we should wait?",
             "options": [
-                "Falling Tone (Calm Confirmation)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "Falls on 'wait': drawing a conclusion",
+                "Rises on 'wait': checking the summary"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "Rises on 'wait': checking the summary",
             "correctAnswerIndex": 1,
-            "hint": "This is sudden, unexpected family news. Listen for the pitch to shoot upward in surprise.",
-            "explanation": "'They moved to Canada?' echoed in surprise rises sharply, reacting to news the listener didn't expect at all.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm confirmation and a astonished disbelief."
+            "hint": "Pay attention to whether the speaker sounds as if they want you to correct them.",
+            "explanation": "The lift on 'wait' invites the other person to confirm or correct the summary. A fall would sound as if the manager had made up their mind and was announcing the conclusion.",
+            "modulationPattern": "Rising at the end of a summarising question.",
+            "meaningShift": "A rise opens the summary to correction; a fall would present it as a conclusion."
         },
         {
             "id": "ACC_PITCHMODULATION_L64_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A trainer checks the group has followed a process.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "How much does this cost?",
-            "textToSpeak": "How much does this cost?",
+            "word": "Does that make sense?",
+            "textToSpeak": "Does that make sense?",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Request for Information)"
+                "Falls: assuming it does",
+                "Rises: genuinely inviting doubts"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
+            "correctAnswer": "Rises: genuinely inviting doubts",
             "correctAnswerIndex": 1,
-            "hint": "This is an everyday shopping question, nothing shocking about it. Expect the pitch to fall calmly at the end.",
-            "explanation": "'How much does this cost?' is a calm, neutral question, so the pitch falls evenly like a typical request for a price.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm request for information."
+            "hint": "Would a nervous learner feel able to speak up?",
+            "explanation": "With 'sense', the lift shows that the trainer is really asking, so a learner feels safe raising a doubt. A fall makes the question sound rhetorical and can discourage anyone from admitting confusion.",
+            "modulationPattern": "Rising on 'sense' at the end of a yes/no check.",
+            "meaningShift": "A rise invites questions; a fall makes the check feel like a formality."
         },
         {
             "id": "ACC_PITCHMODULATION_L64_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are unsure whether you heard the street name correctly.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You forgot the wedding rings?",
-            "textToSpeak": "You forgot the wedding rings?",
+            "word": "Was that Mill Road or Hill Road?",
+            "textToSpeak": "Was that Mill Road or Hill Road?",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "Up on 'Mill', down on 'Hill'",
+                "Down on 'Mill', up on 'Hill'"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "Up on 'Mill', down on 'Hill'",
             "correctAnswerIndex": 0,
-            "hint": "This is a shocking mistake on a very important day. Listen for the pitch to leap upward in disbelief.",
-            "explanation": "'You forgot the wedding rings?' echoed in disbelief rises sharply, reacting to an alarming, unexpected mistake.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "hint": "Which of the two options sounds unfinished?",
+            "explanation": "In an either-or question, the first option lifts because there is more to come, and the last falls to close the choice. Reversing this would make 'Hill Road' sound like the start of another option.",
+            "modulationPattern": "Rise on the first option, fall on the second in an alternative question.",
+            "meaningShift": "Rise then fall presents two closed options; fall then rise would leave the choice open-ended."
         },
         {
             "id": "ACC_PITCHMODULATION_L65_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager opens a quarterly review.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The flight got cancelled?",
-            "textToSpeak": "The flight got cancelled?",
+            "word": "What matters most is the customer.",
+            "textToSpeak": "What matters most is the customer.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "'Customer' takes the peak: the point",
+                "'Most' takes the peak: a ranking"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "'Customer' takes the peak: the point",
             "correctAnswerIndex": 0,
-            "hint": "This is unwelcome, sudden travel news. Listen for the pitch to spike upward in frustration and disbelief.",
-            "explanation": "'The flight got cancelled?' echoed in disbelief rises sharply, reacting to sudden, unwelcome travel news.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "hint": "What does the manager want you to remember when you leave?",
+            "explanation": "Setting up 'what matters' as an introduction, the sentence lets 'customer' complete it with the answer, so it takes the strongest peak. A peak on 'most' would emphasise a ranking against other factors and would sound as if the customer were being compared.",
+            "modulationPattern": "Prominence on the final content word 'customer' after a framing clause.",
+            "meaningShift": "A peak on 'customer' names what matters; a peak on 'most' would rank it above others."
         },
         {
             "id": "ACC_PITCHMODULATION_L65_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A speaker signals the key number in a presentation.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What's today's date?",
-            "textToSpeak": "What's today's date?",
+            "word": "The figure to remember is ninety percent.",
+            "textToSpeak": "The figure to remember is ninety percent.",
             "options": [
-                "Falling Tone (Calm Request for Information)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "'Remember' stands out: instructing memory",
+                "'Ninety' stands out: the key figure"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a plain, everyday question. Expect the pitch to fall calmly at the end, with nothing dramatic about it.",
-            "explanation": "'What's today's date?' is a calm, neutral question, so the pitch falls evenly like an ordinary request for facts.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm request for information and a astonished disbelief."
+            "correctAnswer": "'Ninety' stands out: the key figure",
+            "correctAnswerIndex": 1,
+            "hint": "Which word would you write in your notes?",
+            "explanation": "Since the listener has been told to remember a figure, and the figure is what's needed, 'ninety' carries the peak. Stressing 'remember' would highlight the instruction and take attention away from the number.",
+            "modulationPattern": "Prominence on the numeral 'ninety'.",
+            "meaningShift": "A peak on 'ninety' gives the figure; a peak on 'remember' would spotlight the instruction."
         },
         {
             "id": "ACC_PITCHMODULATION_L65_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is weighing a job offer.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You ate the whole cake?",
-            "textToSpeak": "You ate the whole cake?",
+            "word": "Honestly, it's the commute that worries me.",
+            "textToSpeak": "Honestly, it's the commute that worries me.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "'Worries' stands out: the feeling itself",
+                "'Commute' stands out: the specific worry"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a surprising, almost funny discovery. Listen for the pitch to leap upward in disbelief.",
-            "explanation": "'You ate the whole cake?' echoed in disbelief rises sharply, reacting with surprise to an unexpected discovery.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "correctAnswer": "'Commute' stands out: the specific worry",
+            "correctAnswerIndex": 1,
+            "hint": "Think about whether the speaker is pointing at a cause or at an emotion.",
+            "explanation": "Because the friend's main issue is a specific thing, 'commute' points to it in a way that separates it from all the other parts of the job. A peak on 'worries' would put the emotional state ahead of the cause.",
+            "modulationPattern": "Prominence on 'commute' in a cleft sentence.",
+            "meaningShift": "A peak on 'commute' isolates the cause of concern; a peak on 'worries' would highlight the emotion."
         },
         {
             "id": "ACC_PITCHMODULATION_L66_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You told a colleague about the deadline last week and are reminding them.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's only sixteen?",
-            "textToSpeak": "He's only sixteen?",
+            "word": "Remember, it's due on Friday.",
+            "textToSpeak": "Remember, it's due on Friday.",
             "options": [
-                "Falling Tone (Calm Confirmation)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "Peak on 'Friday', light opener: a friendly reminder",
+                "Peak on 'remember': scolding forgetfulness"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "The listener expected him to be much older. Listen for the pitch to shoot upward in surprise.",
-            "explanation": "'He's only sixteen?' echoed in surprise rises sharply, reacting to an age that doesn't match expectations.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm confirmation and a astonished disbelief."
+            "correctAnswer": "Peak on 'Friday', light opener: a friendly reminder",
+            "correctAnswerIndex": 0,
+            "hint": "Which word would the colleague hear as the main message?",
+            "explanation": "Even though 'remember' begins the sentence, the useful information is still the date, so 'Friday' carries the peak. A peak on 'remember' would focus on the colleague's memory and could sound like a reprimand.",
+            "modulationPattern": "Prominence on 'Friday', with 'remember' as a light opener.",
+            "meaningShift": "A peak on 'Friday' reminds; a peak on 'remember' would draw attention to a lapse."
         },
         {
             "id": "ACC_PITCHMODULATION_L66_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are telling a colleague something for the first time.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Which floor is the office on?",
-            "textToSpeak": "Which floor is the office on?",
+            "word": "Just so you know, the office closes early on Friday.",
+            "textToSpeak": "Just so you know, the office closes early on Friday.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Request for Information)"
+                "'Early' stands out: the surprising bit",
+                "'Friday' stands out: the day is the news"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
-            "correctAnswerIndex": 1,
-            "hint": "This is a routine question with nothing surprising about it. Expect the pitch to fall calmly at the end.",
-            "explanation": "'Which floor is the office on?' is a calm, neutral question, so the pitch falls evenly at the end.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm request for information."
+            "correctAnswer": "'Early' stands out: the surprising bit",
+            "correctAnswerIndex": 0,
+            "hint": "What would the colleague not expect?",
+            "explanation": "Listeners would expect the office to close on Friday as usual, so the news is that it closes early, and 'early' carries the peak. Stressing 'Friday' would suggest it was the day that they did not know.",
+            "modulationPattern": "Prominence on 'early' as the new element.",
+            "meaningShift": "A peak on 'early' announces the change; a peak on 'Friday' would announce the day."
         },
         {
             "id": "ACC_PITCHMODULATION_L66_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has forgotten what you told them.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You sold the car already?",
-            "textToSpeak": "You sold the car already?",
+            "word": "I did tell you it was due on Friday.",
+            "textToSpeak": "I did tell you it was due on Friday.",
             "options": [
-                "Falling Tone (Calm Confirmation)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "'Told' stands out: pointing to the earlier message",
+                "'Friday' stands out: correcting the date"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "This happened much faster than the listener expected. Listen for the pitch to leap upward in surprise.",
-            "explanation": "'You sold the car already?' echoed in surprise rises sharply, reacting to news that happened faster than expected.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm confirmation and a astonished disbelief."
+            "correctAnswer": "'Told' stands out: pointing to the earlier message",
+            "correctAnswerIndex": 0,
+            "hint": "Ask what the colleague actually got wrong: the date, or something else?",
+            "explanation": "Nothing is wrong with the date; it is that the colleague didn't register the message. A peak on 'told' points back to the earlier moment, and can carry a note of frustration. A peak on 'Friday' would correct a wrong day.",
+            "modulationPattern": "Prominence on the verb 'told' with an emphatic 'did'.",
+            "meaningShift": "A peak on 'told' refers to the earlier message; a peak on 'Friday' would fix the date."
         },
         {
             "id": "ACC_PITCHMODULATION_L67_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks, 'How did you get here?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She's your boss now?",
-            "textToSpeak": "She's your boss now?",
+            "word": "By train, mostly.",
+            "textToSpeak": "By train, mostly.",
             "options": [
-                "Falling Tone (Calm Confirmation)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "'Mostly' stands out",
+                "'Train' stands out"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "'Train' stands out",
             "correctAnswerIndex": 1,
-            "hint": "This is an unexpected change in the workplace. Listen for the pitch to spike upward in surprise.",
-            "explanation": "'She's your boss now?' echoed in surprise rises sharply, reacting to an unexpected workplace change.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm confirmation and a astonished disbelief."
+            "hint": "The question asked how. Which word answers it?",
+            "explanation": "Because the question is about the method, 'train' takes the peak. 'Mostly' is a qualifier, and a peak on it would sound as if the speaker were correcting an assumption that it was always the train.",
+            "modulationPattern": "Prominence on 'train' as the answer to a how-question.",
+            "meaningShift": "A peak on 'train' answers how; a peak on 'mostly' would qualify how often."
         },
         {
             "id": "ACC_PITCHMODULATION_L67_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone asks, 'Why were you late?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What's the wifi password?",
-            "textToSpeak": "What's the wifi password?",
+            "word": "Because of the roadworks.",
+            "textToSpeak": "Because of the roadworks.",
             "options": [
-                "Falling Tone (Calm Request for Information)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "'Because' stands out: emphasising the logic",
+                "'Roadworks' stands out: the reason"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a routine, practical request. Expect the pitch to fall calmly at the end, nothing dramatic here.",
-            "explanation": "'What's the wifi password?' is a calm, practical question, so the pitch falls evenly at the end.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm request for information and a astonished disbelief."
+            "correctAnswer": "'Roadworks' stands out: the reason",
+            "correctAnswerIndex": 1,
+            "hint": "Pick out the part of the sentence that would still answer 'why' if everything else were deleted.",
+            "explanation": "Since the reason is the new information, 'roadworks' carries the peak. 'Because' is a grammatical link and stays light unless the speaker is defending the reason against doubt.",
+            "modulationPattern": "Prominence on the noun 'roadworks'.",
+            "meaningShift": "A peak on 'roadworks' gives the cause; a peak on 'because' would defend the explanation."
         },
         {
             "id": "ACC_PITCHMODULATION_L67_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone asks, 'Who's covering the front desk?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The whole building flooded?",
-            "textToSpeak": "The whole building flooded?",
+            "word": "Nobody, actually.",
+            "textToSpeak": "Nobody, actually.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "'Nobody' stands out: the unexpected answer",
+                "'Actually' stands out: softening the news"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "'Nobody' stands out: the unexpected answer",
             "correctAnswerIndex": 0,
-            "hint": "This sounds like a major, alarming event. Listen for the pitch to leap upward in shock.",
-            "explanation": "'The whole building flooded?' echoed in shock rises sharply, reacting to alarming, unexpected news.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "hint": "Work out which word contains the surprising information.",
+            "explanation": "Because the surprising answer is that nobody is covering it, 'nobody' takes the peak, and 'actually' follows lightly. A peak on 'actually' would put the softening ahead of the news.",
+            "modulationPattern": "Prominence on 'nobody'; 'actually' is weaker.",
+            "meaningShift": "A peak on 'nobody' delivers the news; a peak on 'actually' would shift the focus to the manner."
         },
         {
             "id": "ACC_PITCHMODULATION_L68_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager wants to schedule you for one of two days.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You climbed the mountain alone?",
-            "textToSpeak": "You climbed the mountain alone?",
+            "word": "Are you free on Monday or Tuesday?",
+            "textToSpeak": "Are you free on Monday or Tuesday?",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "Up on both days: any of them?",
+                "Up on 'Monday', down on 'Tuesday': pick one"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
-            "correctAnswerIndex": 0,
-            "hint": "This sounds like an impressive, slightly risky feat. Listen for the pitch to shoot upward in amazement.",
-            "explanation": "'You climbed the mountain alone?' echoed in amazement rises sharply, reacting to an impressive, surprising feat.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "correctAnswer": "Up on 'Monday', down on 'Tuesday': pick one",
+            "correctAnswerIndex": 1,
+            "hint": "How many answers does the speaker expect?",
+            "explanation": "With a rise on 'Monday' and a fall on 'Tuesday' the question offers two options and expects one to be chosen. A rise on both would ask whether either day works, which is a yes/no question.",
+            "modulationPattern": "Rise-fall across an alternative question.",
+            "meaningShift": "Rise then fall asks for a choice; rise then rise asks whether either day is possible."
         },
         {
             "id": "ACC_PITCHMODULATION_L68_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A guest is asked whether they want anything in their tea.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "How far is the airport?",
-            "textToSpeak": "How far is the airport?",
+            "word": "Would you like milk or sugar?",
+            "textToSpeak": "Would you like milk or sugar?",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Request for Information)"
+                "Rises then falls: pick one",
+                "Rises on both: 'either, or neither?'"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
+            "correctAnswer": "Rises on both: 'either, or neither?'",
             "correctAnswerIndex": 1,
-            "hint": "This is a routine travel question. Expect the pitch to fall calmly at the end, with no surprise involved.",
-            "explanation": "'How far is the airport?' is a calm, neutral question, so the pitch falls evenly like a typical travel query.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm request for information."
+            "hint": "Is the guest being asked to choose, or asked whether they want any?",
+            "explanation": "In a yes/no question, both options rise because the guest may want either, both or neither. A rise then fall would sound like a forced choice between the two.",
+            "modulationPattern": "Rising on both options in a yes/no question.",
+            "meaningShift": "Two rises leave the answer open; a rise then a fall would force a choice."
         },
         {
             "id": "ACC_PITCHMODULATION_L68_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are offering someone a choice about who calls the customer.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "They cancelled the entire festival?",
-            "textToSpeak": "They cancelled the entire festival?",
+            "word": "Should I call her, or would you rather?",
+            "textToSpeak": "Should I call her, or would you rather?",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "Lifts on 'call her', lower on 'rather'",
+                "Falls on 'call her', higher on 'rather'"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "Lifts on 'call her', lower on 'rather'",
             "correctAnswerIndex": 0,
-            "hint": "This is disappointing, unexpected news for someone looking forward to the event. Listen for the pitch to spike upward.",
-            "explanation": "'They cancelled the entire festival?' echoed in disbelief rises sharply, reacting to disappointing, unexpected news.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "hint": "Which of the two options is left open at first?",
+            "explanation": "In a choice question, the first option lifts because the sentence has not finished, and the second falls to close the choice. Reversing that order would make the second option sound like the beginning of something else.",
+            "modulationPattern": "Rising on the first alternative, falling on the last.",
+            "meaningShift": "A rise then fall marks a closed two-way choice; the reverse would leave it unfinished."
         },
         {
             "id": "ACC_PITCHMODULATION_L69_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager asks, 'Will you finish it today?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He memorized the whole speech?",
-            "textToSpeak": "He memorized the whole speech?",
+            "word": "I will.",
+            "textToSpeak": "I will.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "'Will' stands out: firm commitment",
+                "'I' stands out: contrast with others"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
+            "correctAnswer": "'Will' stands out: firm commitment",
             "correctAnswerIndex": 0,
-            "hint": "This sounds like an impressive mental feat. Listen for the pitch to leap upward in admiration and disbelief.",
-            "explanation": "'He memorized the whole speech?' echoed in admiration rises sharply, reacting to an impressive, surprising feat.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "hint": "Which word makes this a promise?",
+            "explanation": "Since the question is about whether the task will happen, 'will' answers it by taking the peak. A peak on 'I' would suggest that someone else might not, and the speaker is different.",
+            "modulationPattern": "Prominence on the auxiliary 'will'.",
+            "meaningShift": "A peak on 'will' makes a commitment; a peak on 'I' would contrast the speaker with others."
         },
         {
             "id": "ACC_PITCHMODULATION_L69_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks if you'll come to the party. You aren't sure.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What's the doctor's number?",
-            "textToSpeak": "What's the doctor's number?",
+            "word": "I might.",
+            "textToSpeak": "I might.",
             "options": [
-                "Falling Tone (Calm Request for Information)",
-                "Sharp Rising Tone (Astonished Disbelief)"
+                "'I' stands out: it's me, not others",
+                "'Might' stands out: a real possibility"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a plain, practical question. Expect the pitch to fall calmly at the end.",
-            "explanation": "'What's the doctor's number?' is a calm, practical question, so the pitch falls evenly at the end.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a calm request for information and a astonished disbelief."
+            "correctAnswer": "'Might' stands out: a real possibility",
+            "correctAnswerIndex": 1,
+            "hint": "Pinpoint which word is the answer to the question.",
+            "explanation": "'Might' answers 'will you come?', which shows a possibility that has neither been confirmed nor ruled out. A peak on 'I' would suggest others are definitely coming or not.",
+            "modulationPattern": "Prominence on the modal 'might'.",
+            "meaningShift": "A peak on 'might' leaves the answer open; a peak on 'I' would compare people."
         },
         {
             "id": "ACC_PITCHMODULATION_L69_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are asked whether you have booked the tickets. You haven't.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You found my phone under the couch?",
-            "textToSpeak": "You found my phone under the couch?",
+            "word": "I haven't, no.",
+            "textToSpeak": "I haven't, no.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "Lifts on 'no': hoping for leniency",
+                "Falls: plain answer, then a light 'no'"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a relieving, slightly funny surprise. Listen for the pitch to shoot upward in delighted disbelief.",
-            "explanation": "'You found my phone under the couch?' echoed in relief rises sharply, reacting with happy surprise to good news.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "correctAnswer": "Falls: plain answer, then a light 'no'",
+            "correctAnswerIndex": 1,
+            "hint": "Decide whether the speaker sounds apologetic.",
+            "explanation": "The fall on 'haven't' gives a factual answer, and the trailing 'no' simply confirms it. A lift on 'no' would leave the door open and could sound like the speaker was hoping the questioner wouldn't mind.",
+            "modulationPattern": "Falling on 'haven't' with a low 'no'.",
+            "meaningShift": "A fall states the fact; a lift on 'no' would soften it, seeking forgiveness."
         },
         {
             "id": "ACC_PITCHMODULATION_L70_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has been told the wrong price and is now checking.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The museum is free today?",
-            "textToSpeak": "The museum is free today?",
+            "word": "Wasn't it thirty pounds?",
+            "textToSpeak": "Wasn't it thirty pounds?",
             "options": [
-                "Sharp Rising Tone (Pleasantly Surprised Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "Falling, 'wasn't' stands out: accusing",
+                "Rising, 'thirty' stands out: checking the price"
             ],
-            "correctAnswer": "Sharp Rising Tone (Pleasantly Surprised Disbelief)",
-            "correctAnswerIndex": 0,
-            "hint": "This is unexpected good news for a visitor. Listen for the pitch to leap upward in pleasant surprise.",
-            "explanation": "'The museum is free today?' echoed in pleasant surprise rises sharply, reacting to unexpected good news.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a pleasantly surprised disbelief and a calm confirmation."
+            "correctAnswer": "Rising, 'thirty' stands out: checking the price",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the speaker is unsure or annoyed.",
+            "explanation": "Recalling a price and asking for confirmation, the speaker places the peak on 'thirty' and the question rises. A fall with weight on 'wasn't' would sound like a complaint that the price had been misrepresented.",
+            "modulationPattern": "Rising with prominence on 'thirty'.",
+            "meaningShift": "A rise with a peak on 'thirty' checks the memory; a fall with a peak on 'wasn't' would accuse."
         },
         {
             "id": "ACC_PITCHMODULATION_L70_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A team lead is clarifying a report.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Where do I sign?",
-            "textToSpeak": "Where do I sign?",
+            "word": "I said the project is late, not that it's failing.",
+            "textToSpeak": "I said the project is late, not that it's failing.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Request for Information)"
+                "'Late' and 'failing' stand out: two separate claims",
+                "'Said' and 'that' stand out: who spoke"
             ],
-            "correctAnswer": "Falling Tone (Calm Request for Information)",
-            "correctAnswerIndex": 1,
-            "hint": "This is a routine question while filling out paperwork. Expect the pitch to fall calmly at the end.",
-            "explanation": "'Where do I sign?' is a calm, practical question, so the pitch falls evenly like a typical request for instructions.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm request for information."
+            "correctAnswer": "'Late' and 'failing' stand out: two separate claims",
+            "correctAnswerIndex": 0,
+            "hint": "Notice which two evaluative words the speaker sets side by side.",
+            "explanation": "Since the speaker is separating a mild problem from a severe one, the two evaluation words carry the peaks. Peaks on 'said' and 'that' would shift the conversation to who spoke and what they meant.",
+            "modulationPattern": "Contrastive prominence on 'late' and 'failing'.",
+            "meaningShift": "Peaks on 'late' and 'failing' separate two claims; peaks on 'said' and 'that' would dispute what was spoken."
         },
         {
             "id": "ACC_PITCHMODULATION_L70_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager updates a client on a visit.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You learned that in one week?",
-            "textToSpeak": "You learned that in one week?",
+            "word": "The visit is still in Leeds; only the date has changed.",
+            "textToSpeak": "The visit is still in Leeds; only the date has changed.",
             "options": [
-                "Sharp Rising Tone (Astonished Disbelief)",
-                "Falling Tone (Calm Confirmation)"
+                "'Leeds' is the news; 'date' is the reassurance",
+                "'Date' is the news; 'Leeds' is the reassurance"
             ],
-            "correctAnswer": "Sharp Rising Tone (Astonished Disbelief)",
-            "correctAnswerIndex": 0,
-            "hint": "This sounds like a surprisingly fast achievement. Listen for the pitch to spike upward in admiration.",
-            "explanation": "'You learned that in one week?' echoed in admiration rises sharply, reacting to a surprisingly fast achievement.",
-            "modulationPattern": "A sharp, high rising tone on an echo question signals shock or disbelief, quite different from the calmer tone of a genuine request for information.",
-            "meaningShift": "The meaning shifts between a astonished disbelief and a calm confirmation."
+            "correctAnswer": "'Date' is the news; 'Leeds' is the reassurance",
+            "correctAnswerIndex": 1,
+            "hint": "What is the client being told is different?",
+            "explanation": "Reassuring the listener about the venue in the first clause, the speaker delivers the change in the second. So 'date' carries the highest peak, and 'Leeds' has only a weaker one.",
+            "modulationPattern": "Primary prominence on 'date', secondary on 'Leeds'.",
+            "meaningShift": "A peak on 'date' reports the change; a peak on 'Leeds' would announce the location."
         }
     ]
 }

@@ -5,753 +5,753 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L191_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A radio presenter says: \"Shares in the airline rose sharply this morning.\" The co-host asks: \"Was that the earnings report?\" The presenter replies:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even though the reviews were mixed, the restaurant did stay fully booked all month.",
-            "textToSpeak": "Even though the reviews were mixed, the restaurant did stay fully booked all month.",
+            "word": "Analysts say it was the new routes.",
+            "textToSpeak": "Analysts say it was the new routes.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on MONTH (Time focus)"
+                "Emphasis on ANALYSTS",
+                "Emphasis on ROUTES"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on ROUTES",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "The opening concession suggests low turnout was likely — listen for the word that firmly contradicts that.",
-            "explanation": "The mixed reviews set up an expectation of empty tables, so ‘did’ is stressed to firmly confirm the opposite happened.",
-            "emphasisRule": "When a sentence confirms something happened despite a stated reason for doubt, the auxiliary verb carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The co-host proposed one explanation. What does the presenter put in its place?",
+            "explanation": "ANALYSTS and SAY only attribute the claim, so they stay in the background. The replaced explanation is what matters: 'new routes' takes over from 'earnings report', and its noun carries the peak.",
+            "emphasisRule": "A noun phrase that replaces a proposed cause takes the peak on its head noun; the attribution stays low.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L191_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Which sector is driving the rally?\" An analyst answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Despite the skeptics, the small clinic's trial did receive federal approval.",
-            "textToSpeak": "Despite the skeptics, the small clinic's trial did receive federal approval.",
+            "word": "It's the chip makers that are driving it.",
+            "textToSpeak": "It's the chip makers that are driving it.",
             "options": [
-                "Emphasis on APPROVAL (Object focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on CHIP",
+                "Emphasis on DRIVING"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CHIP",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "Skeptics doubted this outcome — the word confirming it happened anyway carries the peak, not the final noun.",
-            "explanation": "Because skeptics are mentioned first, ‘did’ is stressed to assert that approval genuinely came through.",
-            "emphasisRule": "Emphatic auxiliaries are stressed when a sentence pushes back against an explicitly stated doubt.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "A's question supplies 'driving'. How is the answering noun phrase stressed?",
+            "explanation": "DRIVING comes from the question and falls. In the cleft, the focused phrase 'chip makers' behaves like a compound label, so CHIP takes the peak.",
+            "emphasisRule": "In a cleft answer, the focused compound takes the peak on its first word.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L191_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the presenter most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Although the launch was rushed, the app did pass every safety review.",
-            "textToSpeak": "Although the launch was rushed, the app did pass every safety review.",
+            "word": "The central bank decided to leave rates unchanged.",
+            "textToSpeak": "The central bank decided to leave rates unchanged.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on REVIEW (Object focus)"
+                "What did the central bank do about rates?",
+                "Who decided to leave rates unchanged?"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "What did the central bank do about rates?",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "A rushed launch implies corners were cut — listen for the word insisting that isn't true.",
-            "explanation": "The rushed launch implies a likely failure, so ‘did’ is stressed to confirm the review was actually passed.",
-            "emphasisRule": "When a sentence confirms success despite a reason to doubt it, the auxiliary carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "Look at the word that carries the main peak. What is missing from the presenter's question?",
+            "explanation": "The peak on UNCHANGED shows the decision itself was the unknown. If the presenter had asked who decided, the peak would sit on BANK.",
+            "emphasisRule": "A peak on the outcome answers a question about what was done; a peak on the agent answers who.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L192_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A professor asks: \"What does the author mean by 'soft power'?\" A student answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even with half the usual staff, the shift did finish every order on time.",
-            "textToSpeak": "Even with half the usual staff, the shift did finish every order on time.",
+            "word": "She means influence that comes from attraction rather than coercion.",
+            "textToSpeak": "She means influence that comes from attraction rather than coercion.",
             "options": [
-                "Emphasis on TIME (Time focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on ATTRACTION and COERCION",
+                "Emphasis on MEANS and INFLUENCE"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ATTRACTION and COERCION",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
+                3,
                 1
             ],
-            "hint": "Being short-staffed suggests delays — the word confirming that didn't happen gets the stress.",
-            "explanation": "Short staffing sets up an expectation of delay, so ‘did’ is stressed to confirm everything still finished on time.",
-            "emphasisRule": "Emphatic auxiliaries are stressed when a sentence confirms an outcome despite a clear obstacle.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The professor's question supplied the term. What does the answer set against what?",
+            "explanation": "MEANS and INFLUENCE only frame the definition. The definition itself is a contrast, so ATTRACTION and COERCION each take a peak.",
+            "emphasisRule": "In a definition by contrast, the two opposed terms take the peaks.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L192_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A professor asks: \"Why did the second experiment fail?\" A student answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Despite years of doubt, the old bridge did withstand the earthquake.",
-            "textToSpeak": "Despite years of doubt, the old bridge did withstand the earthquake.",
+            "word": "It failed because the samples were contaminated.",
+            "textToSpeak": "It failed because the samples were contaminated.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on EARTHQUAKE (Object focus)"
+                "Emphasis on FAILED",
+                "Emphasis on CONTAMINATED"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on CONTAMINATED",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "Years of doubt suggest the bridge was expected to fail — listen for the word confirming it held.",
-            "explanation": "Long-standing doubt sets up an expectation of failure, so ‘did’ is stressed to confirm the bridge held after all.",
-            "emphasisRule": "When a sentence confirms something happened despite long-standing doubt, the auxiliary carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The professor has already told you the experiment failed. What is new?",
+            "explanation": "FAILED repeats the professor's word and sinks. The cause, CONTAMINATED, is the new information and takes the peak.",
+            "emphasisRule": "The cause in a because-clause takes the peak when the result is given.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L192_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the professor most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "It wasn't the marketing team that missed the deadline - it was legal.",
-            "textToSpeak": "It wasn't the marketing team that missed the deadline - it was legal.",
+            "word": "The results were replicated in a larger sample.",
+            "textToSpeak": "The results were replicated in a larger sample.",
             "options": [
-                "Emphasis on LEGAL (Correcting WHO Did It)",
-                "Emphasis on DEADLINE (Given/Old Information)"
+                "Who replicated the results?",
+                "How were the results replicated?"
             ],
-            "correctAnswer": "Emphasis on LEGAL (Correcting WHO Did It)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "How were the results replicated?",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Both teams agree a deadline was missed — what's corrected is which department is responsible.",
-            "explanation": "The missed deadline is already established; the correction is about which team is responsible, so LEGAL takes the stress.",
-            "emphasisRule": "Correcting who is responsible places stress on the true party, even when the rest of the sentence is unchanged.",
-            "emotionContext": "Correcting WHO Did It"
+            "hint": "One word in the sentence stands out. What kind of information is it?",
+            "explanation": "LARGER qualifies how the replication was done, so the question was about how. A who-question would have put the peak on a name.",
+            "emphasisRule": "A peak on a modifier of the method answers a how-question.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L193_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A doctor asks: \"Which patient needs the scan first?\" The nurse answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The recall wasn't about a software flaw - it was about a battery defect.",
-            "textToSpeak": "The recall wasn't about a software flaw - it was about a battery defect.",
+            "word": "The man by the window needs it first.",
+            "textToSpeak": "The man by the window needs it first.",
             "options": [
-                "Emphasis on BATTERY (New/Corrected Information)",
-                "Emphasis on SOFTWARE (Given/Rejected Information)"
+                "Emphasis on FIRST",
+                "Emphasis on WINDOW"
             ],
-            "correctAnswer": "Emphasis on BATTERY (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on WINDOW",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "One possible cause is firmly ruled out here — the real cause named afterward gets the stress.",
-            "explanation": "SOFTWARE is explicitly ruled out, so the stress shifts to BATTERY, the actual cause of the recall.",
-            "emphasisRule": "A firmly rejected explanation stays unstressed; the confirmed explanation carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "The doctor asked 'which'. The nurse's sentence ends with 'first', which is also in the question. What carries the answer?",
+            "explanation": "FIRST repeats the doctor's wording, so it falls. The identifying detail is WINDOW, which tells the doctor which patient, which is why it carries the peak.",
+            "emphasisRule": "The word that answers 'which?' takes the peak, even when a repeated word closes the sentence.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L193_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A pharmacist asks: \"Do you take this with food?\" The patient answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The board didn't merely approve the merger - they accelerated it.",
-            "textToSpeak": "The board didn't merely approve the merger - they accelerated it.",
+            "word": "I take it with breakfast every day.",
+            "textToSpeak": "I take it with breakfast every day.",
             "options": [
-                "Emphasis on MERGER (Object focus)",
-                "Emphasis on ACCELERATED (Correcting the Action)"
+                "Emphasis on BREAKFAST",
+                "Emphasis on TAKE"
             ],
-            "correctAnswer": "Emphasis on ACCELERATED (Correcting the Action)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BREAKFAST",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                2,
                 3,
                 1,
                 1
             ],
-            "hint": "The object doesn't change between the two clauses — only the strength of the action does.",
-            "explanation": "Since the merger itself doesn't change, the stress falls on ACCELERATED, the stronger action that actually took place.",
-            "emphasisRule": "When a sentence upgrades a modest action to a stronger one on the same object, the stress falls on the corrected action.",
-            "emotionContext": "Correcting the Action"
+            "hint": "The pharmacist's question contains 'take' and 'food'. What specific detail does the patient give?",
+            "explanation": "TAKE and IT are already known, so they sit low. BREAKFAST is the particular meal, which is why it carries the peak, and 'every day' trails off.",
+            "emphasisRule": "A specific instance answering a general question takes the peak, and a closing frequency phrase stays low.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L193_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the patient most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "It wasn't a scheduling error - it was a deliberate decision.",
-            "textToSpeak": "It wasn't a scheduling error - it was a deliberate decision.",
+            "word": "It should settle down within a few days.",
+            "textToSpeak": "It should settle down within a few days.",
             "options": [
-                "Emphasis on DELIBERATE (New/Corrected Information)",
-                "Emphasis on SCHEDULING (Given/Rejected Information)"
+                "How long until it improves?",
+                "Is there anything I can do to help it settle?"
             ],
-            "correctAnswer": "Emphasis on DELIBERATE (New/Corrected Information)",
+            "correctAnswer": "How long until it improves?",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "One explanation is being ruled out in favor of a more pointed one — stress the real explanation.",
-            "explanation": "SCHEDULING is dismissed as an innocent explanation, so the stress falls on DELIBERATE, the real, more pointed one.",
-            "emphasisRule": "When a sentence replaces an innocent explanation with a pointed one, the stress lands on the corrected explanation.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "The doctor's sentence has a time phrase at the end. What question would that answer?",
+            "explanation": "The peak on DAYS gives a duration, which answers a question about how long. A what-can-I-do question would have been answered with a verb such as REST or AVOID.",
+            "emphasisRule": "A peak on a time span answers a how-long question.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L194_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A support agent asks: \"Have you tried restarting the router?\" The customer answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The complaint wasn't filed against the driver - it was filed against the dispatcher.",
-            "textToSpeak": "The complaint wasn't filed against the driver - it was filed against the dispatcher.",
+            "word": "I restarted it twice this morning.",
+            "textToSpeak": "I restarted it twice this morning.",
             "options": [
-                "Emphasis on DISPATCHER (Correcting WHO Did It)",
-                "Emphasis on DRIVER (Given/Old Information)"
+                "Emphasis on RESTARTED",
+                "Emphasis on TWICE"
             ],
-            "correctAnswer": "Emphasis on DISPATCHER (Correcting WHO Did It)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on TWICE",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "The complaint itself isn't in question — only who it targets is being corrected.",
-            "explanation": "The complaint is already established; the correction is about its target, so DISPATCHER carries the stress.",
-            "emphasisRule": "Correcting who an action targets places the stress on the corrected name, not the shared action.",
-            "emotionContext": "Correcting WHO Did It"
+            "hint": "The agent's question gave you the action. What detail does the customer add?",
+            "explanation": "RESTARTED and IT are given by the agent's question, so they stay low. TWICE is the additional fact, and the closing 'this morning' trails after it.",
+            "emphasisRule": "A count added to a given action takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L194_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A support agent asks: \"Which cable did you replace?\" The customer answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You won't believe this: the entire warehouse shipment arrived a week early.",
-            "textToSpeak": "You won't believe this: the entire warehouse shipment arrived a week early.",
+            "word": "I replaced the power cable.",
+            "textToSpeak": "I replaced the power cable.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on SHIPMENT Only"
+                "Emphasis on REPLACED",
+                "Emphasis on POWER"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on POWER",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 2,
+                3,
                 1,
-                2,
                 1
             ],
-            "hint": "Nothing here was already expected — the whole update is fresh news, so no single word should dominate.",
-            "explanation": "Since nothing here was already known, the entire sentence counts as news, so focus stays broad rather than narrowing onto one word.",
-            "emphasisRule": "When an entire event is reported as news for the first time, prominence spreads across the sentence instead of narrowing.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "'Replaced' and 'cable' are in the agent's question. What does the customer name?",
+            "explanation": "REPLACED comes from the question. 'Power cable' acts as a compound name, so its first word carries the peak and CABLE falls.",
+            "emphasisRule": "A compound answering 'which?' takes the peak on its first word.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L194_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A support agent asks: \"Did you plug it into the wall socket directly?\" The customer answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Someone finally cracked the encryption - turns out it was a summer intern.",
-            "textToSpeak": "Someone finally cracked the encryption - turns out it was a summer intern.",
+            "word": "I plugged it into an extension lead.",
+            "textToSpeak": "I plugged it into an extension lead.",
             "options": [
-                "Narrow Focus on INTERN Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on PLUGGED",
+                "Emphasis on EXTENSION"
             ],
-            "correctAnswer": "Narrow Focus on INTERN Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on EXTENSION",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "The event is already established — only the identity of who did it is still missing.",
-            "explanation": "The first clause already establishes the event, leaving only INTERN as new information, so the stress narrows sharply there.",
-            "emphasisRule": "When most of a sentence is already established, the stress narrows onto the single new element.",
-            "emotionContext": "Neutral Statement"
+            "hint": "The agent assumed a direct connection. What does the customer say instead?",
+            "explanation": "PLUGGED and IT are in the agent's question. EXTENSION replaces 'wall socket directly', and 'extension lead' is a compound whose first word takes the peak.",
+            "emphasisRule": "A replaced compound takes the peak on its first word.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L195_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A parent asks: \"How is Aisha doing in maths?\" The teacher answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Big news: the two rival firms just announced a full merger.",
-            "textToSpeak": "Big news: the two rival firms just announced a full merger.",
+            "word": "She's doing well, especially with fractions.",
+            "textToSpeak": "She's doing well, especially with fractions.",
             "options": [
-                "Narrow Focus on FIRMS Only",
-                "Broad Focus (the Whole Sentence is News)"
+                "Emphasis on DOING and ESPECIALLY",
+                "Emphasis on WELL and FRACTIONS"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswer": "Emphasis on WELL and FRACTIONS",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                2,
+                3,
                 1,
-                2,
+                3,
                 1
             ],
-            "hint": "This opener signals a fresh announcement, not an answer to a narrow question — expect even prominence throughout.",
-            "explanation": "This announces an entirely new event, so prominence spreads across the sentence rather than narrowing onto FIRMS alone.",
-            "emphasisRule": "Broad focus applies when nothing in the sentence is already known - the whole clause is new information.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "The parent's question includes 'doing'. What are the two pieces of news?",
+            "explanation": "DOING comes from the parent's question and ESPECIALLY is only a link. WELL answers how, and FRACTIONS narrows it down, so each takes a peak.",
+            "emphasisRule": "A general answer plus a specific detail takes two peaks, with the linking adverb kept low.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L195_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch do here? A teacher raises a concern gently.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Something delayed the vaccine rollout - turns out it was a labeling issue.",
-            "textToSpeak": "Something delayed the vaccine rollout - turns out it was a labeling issue.",
+            "word": "I've noticed she's been a little quiet lately.",
+            "textToSpeak": "I've noticed she's been a little quiet lately.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on LABELING Only"
+                "A peak on NOTICED: stressing that she has been watching her",
+                "A peak on QUIET with a gentle fall: raising a concern softly"
             ],
-            "correctAnswer": "Narrow Focus on LABELING Only",
+            "correctAnswer": "A peak on QUIET with a gentle fall: raising a concern softly",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "The delay itself is already old news here — only its specific cause is new.",
-            "explanation": "The delay is already established by the first clause, so the stress narrows onto LABELING, the newly revealed cause.",
-            "emphasisRule": "Narrow focus applies when a sentence answers a specific question about an already-known event.",
-            "emotionContext": "Neutral Statement"
+            "hint": "The teacher doesn't want to alarm the parent. Which word is the concern, and how is it said?",
+            "explanation": "QUIET is the concern. 'A little' and 'lately' soften it, so the peak is gentle and the voice falls away. Stressing NOTICED would make the sentence about the teacher.",
+            "emphasisRule": "A gentle concern puts the peak on the problem word, not on the speaker's own observation.",
+            "emotionContext": "Softening"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L195_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A parent asks: \"Will she move up to the top group?\" The teacher answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Guess what: the company is opening three new offices overseas.",
-            "textToSpeak": "Guess what: the company is opening three new offices overseas.",
+            "word": "That's something we'll review at Christmas.",
+            "textToSpeak": "That's something we'll review at Christmas.",
             "options": [
-                "Broad Focus (the Whole Sentence is News)",
-                "Narrow Focus on OFFICES Only"
+                "Emphasis on REVIEW",
+                "Emphasis on CHRISTMAS"
             ],
-            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on CHRISTMAS",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                2,
                 1,
                 2,
+                3,
                 1
             ],
-            "hint": "This is a fresh announcement with nothing already known — expect the stress to spread rather than sharpen on one word.",
-            "explanation": "Nothing here was previously known, so the whole announcement counts as news, keeping focus broad instead of narrow.",
-            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence.",
-            "emotionContext": "the Whole Sentence is News"
+            "hint": "The parent has asked about the future. What does the teacher give?",
+            "explanation": "REVIEW tells the parent it isn't decided, but the answer to 'will she?' is the point in time. CHRISTMAS takes the peak.",
+            "emphasisRule": "An answer about timing takes the peak on the time, even when the verb is the polite hedge.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L196_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A radio host asks: \"What made you start the project?\" The author answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The merger talks concluded after eighteen months.",
-            "textToSpeak": "The merger talks concluded after eighteen months.",
+            "word": "It began with a conversation on a train.",
+            "textToSpeak": "It began with a conversation on a train.",
             "options": [
-                "Emphasis on MONTHS (Time focus)",
-                "Emphasis on TALKS (Subject focus)"
+                "Emphasis on CONVERSATION",
+                "Emphasis on TRAIN"
             ],
-            "correctAnswer": "Emphasis on MONTHS (Time focus)",
+            "correctAnswer": "Emphasis on CONVERSATION",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "The subject just names what was happening — the real detail added at the end is how long it took.",
-            "explanation": "With no special contrast, the pitch peak still falls on the final content word, MONTHS, functioning as a time focus.",
-            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays.",
-            "emotionContext": "Time focus"
+            "hint": "The host asked what started it. Which noun is the answer?",
+            "explanation": "TRAIN is where it happened, which is a setting. The answer to 'what made you start?' is the conversation, so CONVERSATION takes the peak.",
+            "emphasisRule": "The noun that answers a 'what made you…' question takes the peak, not the setting after it.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L196_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A host asks: \"Who inspired the main character?\" The author answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The keynote speech will be delivered at the main auditorium.",
-            "textToSpeak": "The keynote speech will be delivered at the main auditorium.",
+            "word": "She's loosely based on my grandmother.",
+            "textToSpeak": "She's loosely based on my grandmother.",
             "options": [
-                "Emphasis on SPEECH (Subject focus)",
-                "Emphasis on AUDITORIUM (Place focus)"
+                "Emphasis on LOOSELY",
+                "Emphasis on GRANDMOTHER"
             ],
-            "correctAnswer": "Emphasis on AUDITORIUM (Place focus)",
+            "correctAnswer": "Emphasis on GRANDMOTHER",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "The subject only tells you what's happening — listen for the location named at the end.",
-            "explanation": "The sentence saves its strongest beat for AUDITORIUM, the closing place detail, rather than SPEECH at the start.",
-            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays.",
-            "emotionContext": "Place focus"
+            "hint": "The author softens the claim with an adverb. Who is the answer?",
+            "explanation": "LOOSELY hedges the claim, so it stays light. GRANDMOTHER is the person the host asked about, so she takes the peak.",
+            "emphasisRule": "A hedging adverb stays low; the person who answers 'who?' takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L196_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the host most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The negotiators resolved the standoff remarkably diplomatically.",
-            "textToSpeak": "The negotiators resolved the standoff remarkably diplomatically.",
+            "word": "I'm working on one now.",
+            "textToSpeak": "I'm working on one now.",
             "options": [
-                "Emphasis on DIPLOMATICALLY (Manner focus)",
-                "Emphasis on NEGOTIATORS (Subject focus)"
+                "What are you working on at the moment?",
+                "Is there a sequel planned?"
             ],
-            "correctAnswer": "Emphasis on DIPLOMATICALLY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Is there a sequel planned?",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "The subject opens the sentence, but listen for how the action was carried out, described at the very end.",
-            "explanation": "DIPLOMATICALLY is the final content word here, so it takes the nuclear stress as the manner focus of the sentence.",
-            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays.",
-            "emotionContext": "Manner focus"
+            "hint": "The author says 'one' instead of naming something. What does the peak sit on, and what does that imply?",
+            "explanation": "'One' stands in for a sequel that the host has just mentioned, so it is weak. WORKING carries the peak, which answers a yes/no question about plans. A what-question would have needed a noun.",
+            "emphasisRule": "A pronoun substitute for the topic and a peak on the verb answer a question about the topic itself.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L197_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A tourist asks: \"How old is this building?\" The guide answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The firm finally sent the settlement offer to opposing counsel.",
-            "textToSpeak": "The firm finally sent the settlement offer to opposing counsel.",
+            "word": "It was built in the twelfth century.",
+            "textToSpeak": "It was built in the twelfth century.",
             "options": [
-                "Emphasis on OFFER (Item focus)",
-                "Emphasis on COUNSEL (Recipient focus)"
+                "Emphasis on BUILT",
+                "Emphasis on TWELFTH"
             ],
-            "correctAnswer": "Emphasis on COUNSEL (Recipient focus)",
+            "correctAnswer": "Emphasis on TWELFTH",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "The item being sent is mentioned early — listen for who it was actually sent to, at the end.",
-            "explanation": "COUNSEL is the final content word, so it carries the stress as the recipient, ahead of OFFER earlier in the sentence.",
-            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays.",
-            "emotionContext": "Recipient focus"
+            "hint": "The tourist asked about age. Which word gives it?",
+            "explanation": "BUILT supports the answer, but the tourist wanted to know when. TWELFTH takes the peak, and 'century' is the unit that follows.",
+            "emphasisRule": "In an answer giving an ordinal date, the ordinal takes the peak and the unit falls.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L197_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. Visitors are standing right in front of the paintings, and the guide speaks politely.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The committee awarded the visiting professor a lifetime achievement prize.",
-            "textToSpeak": "The committee awarded the visiting professor a lifetime achievement prize.",
+            "word": "Please don't touch the paintings.",
+            "textToSpeak": "Please don't touch the paintings.",
             "options": [
-                "Emphasis on PROFESSOR (Recipient focus)",
-                "Emphasis on PRIZE (Item focus)"
+                "Emphasis on TOUCH",
+                "Emphasis on PAINTINGS"
             ],
-            "correctAnswer": "Emphasis on PRIZE (Item focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TOUCH",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "The recipient is named first — the actual item being awarded comes right at the end.",
-            "explanation": "PRIZE is the final content word, so it carries the stress as the item awarded, ahead of PROFESSOR earlier on.",
-            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays.",
-            "emotionContext": "Item focus"
+            "hint": "The paintings are right in front of everyone. What is the guide actually asking them to avoid?",
+            "explanation": "The paintings are obvious from the scene, so PAINTINGS is given. The request is about the action, so TOUCH takes the peak and the polite 'please' stays light.",
+            "emphasisRule": "In a warning, when the object is in plain view, the verb takes the peak.",
+            "emotionContext": "Warning"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L197_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch do here? A tourist asks: \"Is the audio guide free?\" The guide answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The auditors flagged the discrepancy, and the board demanded an explanation.",
-            "textToSpeak": "The auditors flagged the discrepancy, and the board demanded an explanation.",
+            "word": "It's free with your ticket.",
+            "textToSpeak": "It's free with your ticket.",
             "options": [
-                "Two Nuclei: Emphasis on DISCREPANCY and EXPLANATION (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on EXPLANATION (Whole Sentence as One Unit)"
+                "A peak on TICKET: saying what you need to get it",
+                "A peak on FREE: stressing the price"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on DISCREPANCY and EXPLANATION (One Peak per Clause)",
+            "correctAnswer": "A peak on TICKET: saying what you need to get it",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "Two different groups each contribute separate news here — expect each clause to keep its own peak.",
-            "explanation": "The auditors and the board each report independent actions, so both DISCREPANCY and EXPLANATION carry their own stress.",
-            "emphasisRule": "When two clauses report separate news about two different parties, each clause keeps its own nuclear stress.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "'Free' was the tourist's own word. What is the guide adding?",
+            "explanation": "FREE is already in the question, so the guide doesn't stress it. TICKET is the condition for getting it free, so the peak lands on it.",
+            "emphasisRule": "A condition added to a repeated word takes the peak.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L198_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A speaker compares two greenhouse gases.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She reviewed the contract and signed it without hesitation.",
-            "textToSpeak": "She reviewed the contract and signed it without hesitation.",
+            "word": "Methane traps far more heat than carbon dioxide.",
+            "textToSpeak": "Methane traps far more heat than carbon dioxide.",
             "options": [
-                "Single Nucleus: Emphasis only on HESITATION (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on CONTRACT and HESITATION (One Peak per Clause)"
+                "Emphasis on METHANE and CARBON",
+                "Emphasis on TRAPS and HEAT"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on HESITATION (Whole Sentence as One Unit)",
+            "correctAnswer": "Emphasis on METHANE and CARBON",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
+                3,
                 1,
                 1,
                 3,
                 1
             ],
-            "hint": "The same person carries out one smooth sequence of actions here — expect just one main peak, near the end.",
-            "explanation": "Because the same person performs one natural sequence of actions, the sentence takes a single nucleus on HESITATION.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "The comparison is between two gases. Which words name them, and how are compounds treated?",
+            "explanation": "TRAPS and HEAT are the shared frame. The gases are the contrast, so METHANE takes a peak and, in 'carbon dioxide', CARBON carries the second as the first word of a technical name.",
+            "emphasisRule": "In a comparison of technical names, each term takes a peak, with compounds peaking on their first word.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L198_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Did the factory close because of the strike?\" B knows it was something else.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The regulators fined the bank, and the CEO resigned within days.",
-            "textToSpeak": "The regulators fined the bank, and the CEO resigned within days.",
+            "word": "The factory closed because of a fire in the warehouse.",
+            "textToSpeak": "The factory closed because of a fire in the warehouse.",
             "options": [
-                "Single Nucleus: Emphasis only on DAYS (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on BANK and DAYS (One Peak per Clause)"
+                "Emphasis on FIRE",
+                "Emphasis on WAREHOUSE"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on BANK and DAYS (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on FIRE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two separate parties are each making separate news here — listen for a reset in pitch after the comma.",
-            "explanation": "The regulators and the CEO each contribute independent news, so both BANK and DAYS carry their own nuclear stress.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "A suggested a cause. What replaces it in B's longer sentence?",
+            "explanation": "FACTORY and CLOSED come from A, so they stay low. FIRE replaces 'strike', which is why it carries the peak, and WAREHOUSE only says where.",
+            "emphasisRule": "A replacement cause takes the peak even when a location phrase follows.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L198_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the customer most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "He drafted the proposal and submitted it before the deadline.",
-            "textToSpeak": "He drafted the proposal and submitted it before the deadline.",
+            "word": "The delivery fee depends on the size of the parcel.",
+            "textToSpeak": "The delivery fee depends on the size of the parcel.",
             "options": [
-                "Two Nuclei: Emphasis on PROPOSAL and DEADLINE (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on DEADLINE (Whole Sentence as One Unit)"
+                "How much is the delivery fee for this parcel?",
+                "Why do some deliveries cost more than others?"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on DEADLINE (Whole Sentence as One Unit)",
+            "correctAnswer": "Why do some deliveries cost more than others?",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "This is one connected task told in two steps by the same person — expect a single peak, near the end.",
-            "explanation": "Drafting and submitting form one connected task by the same person, so only DEADLINE carries the main stress.",
-            "emphasisRule": "A tightly connected action sequence keeps one main pitch peak near the end, rather than splitting stress across each verb.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "The sentence names a factor. What would someone ask to get that answer?",
+            "explanation": "The peak on SIZE names the reason fees differ, so the customer asked why. A price question would be answered with an amount.",
+            "emphasisRule": "A peak on the determining factor answers a why-question.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L199_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Could we talk before the board meeting?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The union rejected the offer, and the strike continued into its third week.",
-            "textToSpeak": "The union rejected the offer, and the strike continued into its third week.",
+            "word": "I can meet you an hour before the board meeting.",
+            "textToSpeak": "I can meet you an hour before the board meeting.",
             "options": [
-                "Two Nuclei: Emphasis on OFFER and WEEK (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on WEEK (Whole Sentence as One Unit)"
+                "Emphasis on MEET",
+                "Emphasis on HOUR"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on OFFER and WEEK (One Peak per Clause)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on HOUR",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two separate developments are reported here, not one flowing action — expect two independent peaks.",
-            "explanation": "Rejecting the offer and the strike continuing are two separate pieces of news, so both OFFER and WEEK carry stress.",
-            "emphasisRule": "When two clauses report separate news about two different developments, each clause keeps its own nuclear stress.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "'Before the board meeting' came from A. What is B adding?",
+            "explanation": "The meeting and the word 'before' repeat A's request, so they stay low. HOUR is the new information, so it takes the peak.",
+            "emphasisRule": "A repeated time frame stays low; the new quantity of time takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L199_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Should I wear a suit or something casual?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Only the original founders retained voting shares after the buyout.",
-            "textToSpeak": "Only the original founders retained voting shares after the buyout.",
+            "word": "Smart casual is fine for the interview.",
+            "textToSpeak": "Smart casual is fine for the interview.",
             "options": [
-                "Emphasis on FOUNDERS (Only Modifies This Word)",
-                "Emphasis on SHARES (Object focus)"
+                "Emphasis on SMART",
+                "Emphasis on INTERVIEW"
             ],
-            "correctAnswer": "Emphasis on FOUNDERS (Only Modifies This Word)",
+            "correctAnswer": "Emphasis on SMART",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
+                1,
                 1,
                 1,
                 1
             ],
-            "hint": "Ask yourself: only who? The answer to that is exactly what carries the stress.",
-            "explanation": "‘Only’ restricts FOUNDERS specifically, so the nuclear stress lands there rather than on SHARES.",
-            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted.",
-            "emotionContext": "Only Modifies This Word"
+            "hint": "A offered 'suit' or 'casual'. What does B add?",
+            "explanation": "'Casual' came from A, so the new word is the modifier that changes it. SMART takes the peak at the start, and the interview is just the occasion.",
+            "emphasisRule": "A new modifier on a given word takes the peak, even at the start of the sentence.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L199_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"When does the discount end?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even the company's harshest critics praised the turnaround.",
-            "textToSpeak": "Even the company's harshest critics praised the turnaround.",
+            "word": "The offer runs through the weekend.",
+            "textToSpeak": "The offer runs through the weekend.",
             "options": [
-                "Emphasis on TURNAROUND (Object focus)",
-                "Emphasis on CRITICS (Even Modifies This Word)"
+                "Emphasis on WEEKEND",
+                "Emphasis on RUNS"
             ],
-            "correctAnswer": "Emphasis on CRITICS (Even Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WEEKEND",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                2,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "Ask yourself: even who? That's the surprising case ‘even’ is pointing to, and it takes the stress.",
-            "explanation": "‘Even’ marks CRITICS as the surprising case here, so the nuclear stress lands there rather than on TURNAROUND.",
-            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising.",
-            "emotionContext": "Even Modifies This Word"
+            "hint": "A asked 'when'. Which word completes the answer?",
+            "explanation": "OFFER and RUNS are the shared frame. 'Through' links to the time, and WEEKEND gives the end point, so it takes the peak.",
+            "emphasisRule": "An end-point time takes the peak; the linking verb and preposition stay low.",
+            "emotionContext": "Neutral information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L200_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"So you're saying we should cancel the contract?\" B clarifies carefully:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Only board-certified specialists can perform that procedure.",
-            "textToSpeak": "Only board-certified specialists can perform that procedure.",
+            "word": "I'm saying we should renegotiate it.",
+            "textToSpeak": "I'm saying we should renegotiate it.",
             "options": [
-                "Emphasis on SPECIALISTS (Only Modifies This Word)",
-                "Emphasis on PROCEDURE (Object focus)"
+                "Emphasis on SAYING",
+                "Emphasis on RENEGOTIATE"
             ],
-            "correctAnswer": "Emphasis on SPECIALISTS (Only Modifies This Word)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on RENEGOTIATE",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "Ask yourself: only who is allowed? That answer carries the stress, not the final noun.",
-            "explanation": "‘Only’ restricts SPECIALISTS specifically, so the nuclear stress lands there rather than on PROCEDURE.",
-            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted.",
-            "emotionContext": "Only Modifies This Word"
+            "hint": "A has put words in B's mouth. What is the one thing B changes?",
+            "explanation": "I'M SAYING and WE SHOULD are shared with A's version, and IT refers to the contract. RENEGOTIATE replaces 'cancel', so it takes the peak.",
+            "emphasisRule": "A clarification that swaps one verb puts the peak on the new verb and leaves the shared frame low.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L200_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did A most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even the most experienced negotiators were caught off guard.",
-            "textToSpeak": "Even the most experienced negotiators were caught off guard.",
+            "word": "I'd rather see the final version.",
+            "textToSpeak": "I'd rather see the final version.",
             "options": [
-                "Emphasis on NEGOTIATORS (Even Modifies This Word)",
-                "Emphasis on GUARD (Object focus)"
+                "Which version should I send you?",
+                "Do you want to review it at all?"
             ],
-            "correctAnswer": "Emphasis on NEGOTIATORS (Even Modifies This Word)",
+            "correctAnswer": "Which version should I send you?",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                2,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "Ask yourself: even who was caught off guard? That surprising case is exactly what carries the stress.",
-            "explanation": "‘Even’ marks NEGOTIATORS as the surprising case here, so the nuclear stress lands there rather than at the end of the idiom.",
-            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising.",
-            "emotionContext": "Even Modifies This Word"
+            "hint": "One word in B's reply picks out an option. What question would that answer?",
+            "explanation": "FINAL selects one of several versions, so A asked which one. A yes/no question about reviewing would have been answered with a form of 'yes' or 'no'.",
+            "emphasisRule": "A peak on a distinguishing adjective answers a which-question.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L200_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Could you explain why the figures changed?\" An analyst answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Only shareholders of record can attend the annual meeting.",
-            "textToSpeak": "Only shareholders of record can attend the annual meeting.",
+            "word": "The figures changed because we revised the methodology slightly.",
+            "textToSpeak": "The figures changed because we revised the methodology slightly.",
             "options": [
-                "Emphasis on SHAREHOLDERS (Only Modifies This Word)",
-                "Emphasis on MEETING (Object focus)"
+                "Emphasis on METHODOLOGY",
+                "Emphasis on REVISED"
             ],
-            "correctAnswer": "Emphasis on SHAREHOLDERS (Only Modifies This Word)",
+            "correctAnswer": "Emphasis on METHODOLOGY",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "Ask yourself: only who can attend? That restricted group carries the stress, not the event itself.",
-            "explanation": "‘Only’ restricts SHAREHOLDERS specifically, so the nuclear stress lands there rather than on MEETING.",
-            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted.",
-            "emotionContext": "Only Modifies This Word"
+            "hint": "Everyone in the conversation already agrees that the numbers moved. What does the explanation after 'because' tell them that they did not know?",
+            "explanation": "FIGURES and CHANGED come from the question. REVISED is the action, but the thing that was revised, METHODOLOGY, is the cause, so it gets the main lift. 'Slightly' trails off.",
+            "emphasisRule": "In a reason clause, the object that explains the change takes the peak, and a closing adverb stays low.",
+            "emotionContext": "Explanation"
         }
     ]
 }

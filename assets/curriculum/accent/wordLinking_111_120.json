@@ -5,542 +5,583 @@
     "quests": [
         {
             "id": "ACC_WORDLINKING_L111_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link where a written r returns before a vowel",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "make",
-                "others",
-                "feel",
-                "welcome"
+                "is",
+                "your",
+                "order",
+                "ready"
             ],
-            "textToSpeak": "make others feel welcome",
-            "correctAnswer": "make others",
-            "hint": "The final consonant /k/ of 'make' links directly onto the opening vowel of 'others' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'make' carries over to become the onset of 'others', so the phrase sounds like 'ma-kothers'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "is your order ready",
+            "correctAnswer": "your order",
+            "hint": "Look for a word spelled with 'our' before a vowel sound.",
+            "explanation": "Some accents drop the /r/ of 'your' before a consonant, but before the vowel of 'order' most accents pronounce it, so 'your order' flows as /jɔːr ˈɔːdə/. 'Order ready' does not link, because the weak vowel meets /r/.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L111_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which link carries a linking /r/?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "my",
-                "aim",
+                "where",
                 "is",
-                "improvement"
+                "everyone"
             ],
-            "textToSpeak": "my aim is improvement",
-            "correctAnswer": "my aim",
-            "hint": "'my' ends in a high front vowel /aɪ/+j+. In connected speech a subtle /j/ glide (like the start of 'yes') bridges it to 'aim'. Listen for that invisible /j/ between these two words.",
-            "explanation": "Vowel-to-vowel linking with a /j/ glide occurs between 'my' (ending in /aɪ/+j+) and 'aim' (starting with /eɪ/). Because the tongue is already in a high front position, it naturally glides through a brief /j/ sound before moving to the next vowel, making the phrase sound like 'my-jaim'. This /j/ glide always follows the vowels /iː/, /eɪ/, /aɪ/, and /ɔɪ/.",
-            "flowRule": "Vowel-to-Vowel Linking with /j/: When a word ends in a high front vowel (/iː/, /eɪ/, /aɪ/, /ɔɪ/) and the next begins with a vowel, a brief /j/ glide bridges the two sounds.",
-            "linkingType": "vowel_to_vowel"
+            "textToSpeak": "where is everyone",
+            "correctAnswer": "where is",
+            "hint": "Say the candidates slowly: an /r/ shows up at one boundary only.",
+            "explanation": "The 're' at the end of 'where' is a final /r/ sound, and it connects to the vowel of 'is'. 'Is everyone' links through /z/. A question about people is said fast, so 'where is' often becomes 'where's'.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+            "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L111_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which word-final r connects to the next vowel?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "factor",
-                "of",
-                "safety",
-                "first"
+                "I",
+                "usually",
+                "wear",
+                "it",
+                "every",
+                "day"
             ],
-            "textToSpeak": "factor of safety first",
-            "correctAnswer": "factor of",
-            "hint": "The written 'r' at the end of 'factor' is usually silent, but because 'of' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'factor' to 'of'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'factor' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'facto-rof'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
+            "textToSpeak": "I usually wear it every day",
+            "correctAnswer": "wear it",
+            "hint": "Which word's last letter is r, with a vowel right after it?",
+            "explanation": "A verb ending in r, like 'wear', before 'it' is a classic site. Rhotic speakers always say the /r/; non-rhotic speakers add it here. 'It every' is the other link, through /t/.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L112_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "tell",
-                "it",
-                "like",
-                "it"
-            ],
-            "textToSpeak": "tell it like it",
-            "correctAnswer": "tell it",
-            "hint": "The final consonant /l/ of 'tell' links directly onto the opening vowel of 'it' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /l/ of 'tell' carries over to become the onset of 'it', so the phrase sounds like 'tel-lit'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L112_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "she",
-                "aims",
-                "very",
-                "high"
-            ],
-            "textToSpeak": "she aims very high",
-            "correctAnswer": "she aims",
-            "hint": "'she' ends in a high front vowel /iː/+j+. In connected speech a subtle /j/ glide (like the start of 'yes') bridges it to 'aims'. Listen for that invisible /j/ between these two words.",
-            "explanation": "Vowel-to-vowel linking with a /j/ glide occurs between 'she' (ending in /iː/+j+) and 'aims' (starting with /eɪ/). Because the tongue is already in a high front position, it naturally glides through a brief /j/ sound before moving to the next vowel, making the phrase sound like 'she-jaims'. This /j/ glide always follows the vowels /iː/, /eɪ/, /aɪ/, and /ɔɪ/.",
-            "flowRule": "Vowel-to-Vowel Linking with /j/: When a word ends in a high front vowel (/iː/, /eɪ/, /aɪ/, /ɔɪ/) and the next begins with a vowel, a brief /j/ glide bridges the two sounds.",
-            "linkingType": "vowel_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L112_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "character",
-                "of",
-                "the",
-                "person"
-            ],
-            "textToSpeak": "character of the person",
-            "correctAnswer": "character of",
-            "hint": "The written 'r' at the end of 'character' is usually silent, but because 'of' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'character' to 'of'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'character' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'characte-rof'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L113_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "step",
-                "out",
-                "of",
-                "comfort"
-            ],
-            "textToSpeak": "step out of comfort",
-            "correctAnswer": "step out",
-            "hint": "The final consonant /p/ of 'step' links directly onto the opening vowel of 'out' in natural speech. Listen for where the two words fuse into a single smooth sound unit. This is one of the most natural-sounding links in everyday English.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /p/ of 'step' carries over to become the onset of 'out', so the phrase sounds like 'ste-pout'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel. Understanding this boundary also helps with spelling: knowing where words end and begin aids literacy.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L113_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "do",
-                "as",
-                "you",
-                "wish"
-            ],
-            "textToSpeak": "do as you wish",
-            "correctAnswer": "do as",
-            "hint": "'do' ends in a rounded or back vowel /uː/+w+. Speakers naturally insert a soft /w/ glide (like the start of 'wet') before 'as'. Listen for that invisible /w/ connecting these two words.",
-            "explanation": "Vowel-to-vowel linking with a /w/ glide occurs between 'do' (ending in /uː/+w+) and 'as' (starting with /æ/). The lips are rounded at the end of 'do', so they naturally produce a brief /w/ before opening for the next vowel, making the phrase sound like 'do-was'. This /w/ glide always follows the rounded vowels /uː/, /ʊ/, /əʊ/, and /aʊ/.",
-            "flowRule": "Vowel-to-Vowel Linking with /w/: When a word ends in a rounded back vowel (/uː/, /ʊ/, /əʊ/, /aʊ/) and the next begins with a vowel, a brief /w/ glide bridges the two sounds.",
-            "linkingType": "vowel_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L113_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "either",
-                "option",
-                "is",
-                "fine"
-            ],
-            "textToSpeak": "either option is fine",
-            "correctAnswer": "either option",
-            "hint": "The written 'r' at the end of 'either' is usually silent, but because 'option' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'either' to 'option'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'either' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'eithe-roption'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L114_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "grab",
-                "all",
-                "the",
-                "samples"
-            ],
-            "textToSpeak": "grab all the samples",
-            "correctAnswer": "grab all",
-            "hint": "The final consonant /b/ of 'grab' links directly onto the opening vowel of 'all' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /b/ of 'grab' carries over to become the onset of 'all', so the phrase sounds like 'gra-ball'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L114_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "my",
-                "overall",
-                "target",
-                "high"
-            ],
-            "textToSpeak": "my overall target high",
-            "correctAnswer": "my overall",
-            "hint": "'my' ends in a high front vowel /aɪ/+j+. In connected speech a subtle /j/ glide (like the start of 'yes') bridges it to 'overall'. Listen for that invisible /j/ between these two words.",
-            "explanation": "Vowel-to-vowel linking with a /j/ glide occurs between 'my' (ending in /aɪ/+j+) and 'overall' (starting with /əʊ/). Because the tongue is already in a high front position, it naturally glides through a brief /j/ sound before moving to the next vowel, making the phrase sound like 'my-joverall'. This /j/ glide always follows the vowels /iː/, /eɪ/, /aɪ/, and /ɔɪ/.",
-            "flowRule": "Vowel-to-Vowel Linking with /j/: When a word ends in a high front vowel (/iː/, /eɪ/, /aɪ/, /ɔɪ/) and the next begins with a vowel, a brief /j/ glide bridges the two sounds.",
-            "linkingType": "vowel_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L114_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "other",
-                "option",
-                "needs",
-                "study"
-            ],
-            "textToSpeak": "other option needs study",
-            "correctAnswer": "other option",
-            "hint": "The written 'r' at the end of 'other' is usually silent, but because 'option' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'other' to 'option'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'other' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'othe-roption'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L115_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "check",
-                "again",
-                "before",
-                "sending"
-            ],
-            "textToSpeak": "check again before sending",
-            "correctAnswer": "check again",
-            "hint": "The final consonant /k/ of 'check' links directly onto the opening vowel of 'again' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'check' carries over to become the onset of 'again', so the phrase sounds like 'che-ckagain'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L115_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "they",
-                "understand",
-                "our",
-                "concern"
-            ],
-            "textToSpeak": "they understand our concern",
-            "correctAnswer": "they understand",
-            "hint": "'they' ends in a high front vowel /eɪ/+j+. In connected speech a subtle /j/ glide (like the start of 'yes') bridges it to 'understand'. Listen for that invisible /j/ between these two words.",
-            "explanation": "Vowel-to-vowel linking with a /j/ glide occurs between 'they' (ending in /eɪ/+j+) and 'understand' (starting with /ʌ/). Because the tongue is already in a high front position, it naturally glides through a brief /j/ sound before moving to the next vowel, making the phrase sound like 'they-junderstand'. This /j/ glide always follows the vowels /iː/, /eɪ/, /aɪ/, and /ɔɪ/.",
-            "flowRule": "Vowel-to-Vowel Linking with /j/: When a word ends in a high front vowel (/iː/, /eɪ/, /aɪ/, /ɔɪ/) and the next begins with a vowel, a brief /j/ glide bridges the two sounds.",
-            "linkingType": "vowel_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L115_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "dollar",
-                "amount",
-                "is",
-                "high"
-            ],
-            "textToSpeak": "dollar amount is high",
-            "correctAnswer": "dollar amount",
-            "hint": "The written 'r' at the end of 'dollar' is usually silent, but because 'amount' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'dollar' to 'amount'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'dollar' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'dolla-ramount'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L116_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "think",
-                "about",
-                "it",
-                "more"
-            ],
-            "textToSpeak": "think about it more",
-            "correctAnswer": "think about",
-            "hint": "The final consonant /ŋk/ of 'think' links directly onto the opening vowel of 'about' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /ŋk/ of 'think' carries over to become the onset of 'about', so the phrase sounds like 'thin-kabout'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L116_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link where a written r returns before a vowel",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
                 "we",
-                "enjoy",
-                "good",
-                "music"
+                "need",
+                "more",
+                "ideas"
             ],
-            "textToSpeak": "we enjoy good music",
-            "correctAnswer": "we enjoy",
-            "hint": "'we' ends in a high front vowel /iː/+j+. In connected speech a subtle /j/ glide (like the start of 'yes') bridges it to 'enjoy'. Listen for that invisible /j/ between these two words.",
-            "explanation": "Vowel-to-vowel linking with a /j/ glide occurs between 'we' (ending in /iː/+j+) and 'enjoy' (starting with /ɪ/). Because the tongue is already in a high front position, it naturally glides through a brief /j/ sound before moving to the next vowel, making the phrase sound like 'we-jenjoy'. This /j/ glide always follows the vowels /iː/, /eɪ/, /aɪ/, and /ɔɪ/.",
-            "flowRule": "Vowel-to-Vowel Linking with /j/: When a word ends in a high front vowel (/iː/, /eɪ/, /aɪ/, /ɔɪ/) and the next begins with a vowel, a brief /j/ glide bridges the two sounds.",
-            "linkingType": "vowel_to_vowel"
+            "textToSpeak": "we need more ideas",
+            "correctAnswer": "more ideas",
+            "hint": "Some accents say the r every time and some only before a vowel. Where does a vowel follow an r-word?",
+            "explanation": "For rhotic speakers 'more' always ends in /r/; non-rhotic speakers add one before a vowel, so it links into the /aɪ/ of 'ideas'. It is a common phrase in meetings, said as one chunk.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+            "linkingType": "consonant_to_vowel"
         },
         {
-            "id": "ACC_WORDLINKING_L116_Q3",
-            "instruction": "Identify the linking",
+            "id": "ACC_WORDLINKING_L112_Q2",
+            "instruction": "Which link carries a linking /r/?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "answer",
-                "our",
-                "call",
-                "today"
+                "we'll",
+                "be",
+                "back",
+                "before",
+                "Easter"
             ],
-            "textToSpeak": "answer our call today",
-            "correctAnswer": "answer our",
-            "hint": "The written 'r' at the end of 'answer' is usually silent, but because 'our' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'answer' to 'our'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'answer' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'answe-rour'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
+            "textToSpeak": "we'll be back before Easter",
+            "correctAnswer": "before Easter",
+            "hint": "The earlier pair looks tempting, but check how each word begins. The real link has a written r just before a vowel.",
+            "explanation": "The written r of 'before' comes back before the vowel of 'Easter'. 'Back before' does not link, because /k/ meets /b/. In a rhotic accent the r is there anyway, so the pair simply flows.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L112_Q3",
+            "instruction": "Find the link where a word ending in two consonants joins a vowel",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "luckily",
+                "we",
+                "missed",
+                "it",
+                "by",
+                "an",
+                "inch"
+            ],
+            "textToSpeak": "luckily we missed it by an inch",
+            "correctAnswer": "missed it",
+            "hint": "Count the consonant sounds at the end of each word. Which has the most before a vowel?",
+            "explanation": "The cluster link carries the past tense: the /t/ of 'missed' runs into the vowel of 'it'. 'By an' is a vowel-to-vowel link, with a faint /j/, and 'an inch' links through /n/.",
+            "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L113_Q1",
+            "instruction": "Which word-final r connects to the next vowel?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "make",
+                "sure",
+                "it's",
+                "ready"
+            ],
+            "textToSpeak": "make sure it's ready",
+            "correctAnswer": "sure it's",
+            "hint": "Look at how the first word of the link ends in spelling and in sound.",
+            "explanation": "The written r of 'sure' is heard before the vowel of 'it's' in most accents, which makes this the one place the r reappears for speakers who say /ʃɔː/ before a consonant.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L113_Q2",
+            "instruction": "Which link carries the past-tense ending?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "so",
+                "she",
+                "waited",
+                "until",
+                "everyone",
+                "arrived"
+            ],
+            "textToSpeak": "so she waited until everyone arrived",
+            "correctAnswer": "waited until",
+            "hint": "Dropping one small ending would change the tense. Where?",
+            "explanation": "Keeping the /d/ of 'waited' matters for the tense, and linking helps you do it without effort: the /d/ lands on the /ʌ/ of 'until'. 'Until everyone' and 'everyone arrived' link through /l/ and /n/.",
+            "flowRule": "Past-tense endings link too: A final -ed (/t/ or /d/) joins a following vowel, which also keeps the past-tense signal audible.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L113_Q3",
+            "instruction": "Find the link where a written r returns before a vowel",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "he's",
+                "a",
+                "better",
+                "actor",
+                "than",
+                "me"
+            ],
+            "textToSpeak": "he's a better actor than me",
+            "correctAnswer": "better actor",
+            "hint": "Look for an r-ending word that meets a vowel; ignore the others.",
+            "explanation": "Non-rhotic speakers say /ˈbetə/ before a consonant and /ˈbetər/ before 'actor'; rhotic speakers pronounce the r each time. 'He's a' is a different link, through /z/.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L114_Q1",
+            "instruction": "Which link carries a linking /r/?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "she's",
+                "the",
+                "owner",
+                "of",
+                "a",
+                "small",
+                "shop"
+            ],
+            "textToSpeak": "she's the owner of a small shop",
+            "correctAnswer": "owner of",
+            "hint": "An /r/ appears at one boundary when a vowel follows. Which one?",
+            "explanation": "Before 'of', the written r of 'owner' is heard. 'The owner' is a vowel-to-vowel link with a faint /j/, and 'of a' links through /v/. Sorting the three kinds of link is the point of this question.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L114_Q2",
+            "instruction": "Which word-final r connects to the next vowel?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "I'll",
+                "go",
+                "over",
+                "it",
+                "later"
+            ],
+            "textToSpeak": "I'll go over it later",
+            "correctAnswer": "over it",
+            "hint": "Which word ends in a letter r that you would pronounce only before a vowel?",
+            "explanation": "The written r of 'over' links into the vowel of 'it'. 'Go over' is a vowel-to-vowel link with a light /w/. Telling a linking r from a glide is a skill worth practising.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L114_Q3",
+            "instruction": "Find the link that slides through a 'w' sound",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "we",
+                "have",
+                "no",
+                "other",
+                "options"
+            ],
+            "textToSpeak": "we have no other options",
+            "correctAnswer": "no other",
+            "hint": "Two vowel-to-vowel links. One is a glide, the other involves a written r. Choose the glide.",
+            "explanation": "A light /w/ glides after the rounded /əʊ/ of 'no' into 'other'. 'Other options' is the link with a written r, so it is not the answer here. The two vowel links work differently, and recognising which is which is the point.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L115_Q1",
+            "instruction": "Which link carries a consonant cluster?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "the",
+                "boss",
+                "isn't",
+                "in",
+                "until",
+                "nine"
+            ],
+            "textToSpeak": "the boss isn't in until nine",
+            "correctAnswer": "isn't in",
+            "hint": "A cluster at the end of a word can lose its middle sound in fast speech. Which word is it?",
+            "explanation": "In fast speech the /t/ of 'isn't' is very light, but the /n/ still carries across into the vowel of 'in'. 'Boss isn't' and 'in until' link through single consonants.",
+            "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L115_Q2",
+            "instruction": "Find the link that keeps a past-tense -ed audible",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "I",
+                "think",
+                "she",
+                "lived",
+                "in",
+                "Spain",
+                "once"
+            ],
+            "textToSpeak": "I think she lived in Spain once",
+            "correctAnswer": "lived in",
+            "hint": "Which boundary has a past-tense verb on the left and a vowel on the right?",
+            "explanation": "The past tense is carried by the final /d/ of 'lived', so linking helps keep it clear: it lands on the vowel of 'in'. 'Spain once' does not link, because 'once' begins with /w/.",
+            "flowRule": "Past-tense endings link too: A final -ed (/t/ or /d/) joins a following vowel, which also keeps the past-tense signal audible.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L115_Q3",
+            "instruction": "Which connection comes first in this sentence?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "that's",
+                "quite",
+                "a",
+                "lot",
+                "of",
+                "work"
+            ],
+            "textToSpeak": "that's quite a lot of work",
+            "correctAnswer": "quite a",
+            "hint": "Of all the links, take the one closest to the beginning.",
+            "explanation": "Reduced phrases like this fill ordinary conversation. The /t/ of 'quite' lands on the weak /ə/ of 'a', so the pair becomes one short beat, and 'lot of' follows.",
+            "flowRule": "Thought groups: Fluent speakers connect words across a whole phrase, so one sentence can contain several links. The instruction tells you which one to find; listen to the sounds on each side of a boundary.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L116_Q1",
+            "instruction": "Where does a faint 'w' appear between two vowels?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "could",
+                "you",
+                "explain",
+                "it",
+                "once",
+                "more"
+            ],
+            "textToSpeak": "could you explain it once more",
+            "correctAnswer": "you explain",
+            "hint": "'Could you' is not a vowel link. Find the one with vowels on both sides.",
+            "explanation": "After the rounded /uː/ of 'you', a light /w/ eases into the vowel of 'explain'. 'Explain it' is a consonant-to-vowel link. 'Could you' joins /d/ and /j/, two consonants, so it is not a vowel link.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L116_Q2",
+            "instruction": "Find the link where a written r returns before a vowel",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "I'll",
+                "be",
+                "there",
+                "around",
+                "ten"
+            ],
+            "textToSpeak": "I'll be there around ten",
+            "correctAnswer": "there around",
+            "hint": "Look for a word ending in 're' before a vowel.",
+            "explanation": "The final /r/ in 'there' links into 'around'. In non-rhotic accents the /r/ appears here but not in 'there now'; in rhotic accents it is always there.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L116_Q3",
+            "instruction": "Which pair is joined by an -ed ending?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "so",
+                "we've",
+                "updated",
+                "it",
+                "twice"
+            ],
+            "textToSpeak": "so we've updated it twice",
+            "correctAnswer": "updated it",
+            "hint": "Say each verb in the present, then in the past. Which past ending is joined to a vowel?",
+            "explanation": "The /d/ at the end of 'updated' confirms the verb is a past participle, so keeping it audible helps. It lands on the vowel of 'it'. 'We've updated' links through /v/.",
+            "flowRule": "Past-tense endings link too: A final -ed (/t/ or /d/) joins a following vowel, which also keeps the past-tense signal audible.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L117_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link carried by a 'th' sound",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "break",
+                "I'll",
+                "deal",
+                "with",
                 "it",
-                "into",
-                "parts"
+                "later"
             ],
-            "textToSpeak": "break it into parts",
-            "correctAnswer": "break it",
-            "hint": "The final consonant /k/ of 'break' links directly onto the opening vowel of 'it' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'break' carries over to become the onset of 'it', so the phrase sounds like 'brea-kit'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "I'll deal with it later",
+            "correctAnswer": "with it",
+            "hint": "The airflow of a 'th' keeps going into the next vowel. Where do you hear that?",
+            "explanation": "A casual brush-off like this is said quickly. The airflow after the 'th' of 'with' (/ð/ or /θ/ depending on the speaker) runs into the vowel of 'it'. 'It later' does not link, because /t/ meets /l/.",
+            "flowRule": "Consonant-to-Vowel Linking (/θ/ and /ð/): The 'th' sounds at the end of a word stay in the airflow and connect to a following vowel instead of stopping.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L117_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Find the link where a word ending in two consonants joins a vowel",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "he",
-                "always",
-                "showed",
-                "up"
+                "the",
+                "meeting",
+                "runs",
+                "until",
+                "about",
+                "noon"
             ],
-            "textToSpeak": "he always showed up",
-            "correctAnswer": "he always",
-            "hint": "'he' ends in a high front vowel /iː/+j+. In connected speech a subtle /j/ glide (like the start of 'yes') bridges it to 'always'. Listen for that invisible /j/ between these two words.",
-            "explanation": "Vowel-to-vowel linking with a /j/ glide occurs between 'he' (ending in /iː/+j+) and 'always' (starting with /ɔː/). Because the tongue is already in a high front position, it naturally glides through a brief /j/ sound before moving to the next vowel, making the phrase sound like 'he-jalways'. This /j/ glide always follows the vowels /iː/, /eɪ/, /aɪ/, and /ɔɪ/.",
-            "flowRule": "Vowel-to-Vowel Linking with /j/: When a word ends in a high front vowel (/iː/, /eɪ/, /aɪ/, /ɔɪ/) and the next begins with a vowel, a brief /j/ glide bridges the two sounds.",
-            "linkingType": "vowel_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L117_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "senior",
-                "employee",
-                "spoke",
-                "first"
-            ],
-            "textToSpeak": "senior employee spoke first",
-            "correctAnswer": "senior employee",
-            "hint": "The written 'r' at the end of 'senior' is usually silent, but because 'employee' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'senior' to 'employee'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'senior' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'senio-remployee'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
+            "textToSpeak": "the meeting runs until about noon",
+            "correctAnswer": "runs until",
+            "hint": "Say it slowly, then fast. Which cluster gets squeezed into the next vowel?",
+            "explanation": "Schedules are said at speed, so the cluster loses some of its force. The /nz/ of 'runs' hands its /z/ to the /ʌ/ of 'until', and 'until about' links through /l/.",
+            "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
             "linkingType": "consonant_to_vowel"
         },
         {
-            "id": "ACC_WORDLINKING_L118_Q1",
-            "instruction": "Identify the linking",
+            "id": "ACC_WORDLINKING_L117_Q3",
+            "instruction": "Spot the vowel-to-vowel link that takes a 'w' glide",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "lock",
-                "it",
-                "away",
-                "safely"
+                "he's",
+                "so",
+                "unlucky",
+                "sometimes"
             ],
-            "textToSpeak": "lock it away safely",
-            "correctAnswer": "lock it",
-            "hint": "The final consonant /k/ of 'lock' links directly onto the opening vowel of 'it' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'lock' carries over to become the onset of 'it', so the phrase sounds like 'lo-ckit'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "he's so unlucky sometimes",
+            "correctAnswer": "so unlucky",
+            "hint": "Think 'oo', 'oh' or 'ow' sliding into the next vowel with a hint of 'w'.",
+            "explanation": "A faint /w/ eases between the /əʊ/ of 'so' (lips rounded) and the /ʌ/ of 'unlucky'. The glide is subtle, and some speakers just run the vowels together.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L118_Q1",
+            "instruction": "Which link closes the sentence?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "make",
+                "an",
+                "effort",
+                "and",
+                "arrive",
+                "early"
+            ],
+            "textToSpeak": "make an effort and arrive early",
+            "correctAnswer": "arrive early",
+            "hint": "Listen to the very end of the sentence. The last link is the one the question wants.",
+            "explanation": "The sentence is a chain: 'make an', 'an effort', 'effort and', 'and arrive', and finally 'arrive early'. The last link is the /v/ of 'arrive' landing on the /ɜː/ of 'early'. Advice like this is said in one breath.",
+            "flowRule": "Thought groups: Fluent speakers connect words across a whole phrase, so one sentence can contain several links. The instruction tells you which one to find; listen to the sounds on each side of a boundary.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L118_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Only one connection here is real. Which pair?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "try",
-                "opening",
-                "the",
-                "window"
+                "I",
+                "heard",
+                "it",
+                "yesterday"
             ],
-            "textToSpeak": "try opening the window",
-            "correctAnswer": "try opening",
-            "hint": "'try' ends in a high front vowel /aɪ/+j+. In connected speech a subtle /j/ glide (like the start of 'yes') bridges it to 'opening'. Listen for that invisible /j/ between these two words.",
-            "explanation": "Vowel-to-vowel linking with a /j/ glide occurs between 'try' (ending in /aɪ/+j+) and 'opening' (starting with /əʊ/). Because the tongue is already in a high front position, it naturally glides through a brief /j/ sound before moving to the next vowel, making the phrase sound like 'try-jopening'. This /j/ glide always follows the vowels /iː/, /eɪ/, /aɪ/, and /ɔɪ/.",
-            "flowRule": "Vowel-to-Vowel Linking with /j/: When a word ends in a high front vowel (/iː/, /eɪ/, /aɪ/, /ɔɪ/) and the next begins with a vowel, a brief /j/ glide bridges the two sounds.",
-            "linkingType": "vowel_to_vowel"
+            "textToSpeak": "I heard it yesterday",
+            "correctAnswer": "heard it",
+            "hint": "A short sentence with just one join. Which two words refuse to be separated?",
+            "explanation": "Short sentences like this have just one link, so it is easy to miss. The /d/ of 'heard' lands on the /ɪ/ of 'it'. 'It yesterday' does not link, because /t/ meets /j/.",
+            "flowRule": "Thought groups: Fluent speakers connect words across a whole phrase, so one sentence can contain several links. The instruction tells you which one to find; listen to the sounds on each side of a boundary.",
+            "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L118_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which link carries a linking /r/?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "teacher",
-                "asked",
+                "she's",
                 "a",
-                "question"
+                "doctor",
+                "and",
+                "a",
+                "mother"
             ],
-            "textToSpeak": "teacher asked a question",
-            "correctAnswer": "teacher asked",
-            "hint": "The written 'r' at the end of 'teacher' is usually silent, but because 'asked' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'teacher' to 'asked'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'teacher' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'teache-rasked'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
+            "textToSpeak": "she's a doctor and a mother",
+            "correctAnswer": "doctor and",
+            "hint": "Scan for -er, -or, -ar or -re words and see which is followed by a vowel.",
+            "explanation": "Non-rhotic speakers add an /r/ after the weak vowel of 'doctor' before the vowel of 'and'; rhotic speakers say it every time. 'She's a' and 'and a' are the other links, through /z/ and /d/.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L119_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Find the final link",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "check",
-                "all",
-                "of",
-                "them"
+                "what",
+                "time",
+                "does",
+                "it",
+                "open",
+                "on",
+                "Sunday"
             ],
-            "textToSpeak": "check all of them",
-            "correctAnswer": "check all",
-            "hint": "The final consonant /k/ of 'check' links directly onto the opening vowel of 'all' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'check' carries over to become the onset of 'all', so the phrase sounds like 'che-ckall'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "what time does it open on Sunday",
+            "correctAnswer": "open on",
+            "hint": "Several boundaries link, but only one comes last. Which?",
+            "explanation": "A shop question is said quickly, so these four words behave like two beats. The /n/ of 'open' runs on into the vowel of 'on', and 'does it' and 'it open' come first.",
+            "flowRule": "Thought groups: Fluent speakers connect words across a whole phrase, so one sentence can contain several links. The instruction tells you which one to find; listen to the sounds on each side of a boundary.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L119_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair has no consonant between its two sounds?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "by",
-                "accepting",
-                "the",
-                "terms"
+                "it's",
+                "easy",
+                "enough",
+                "to",
+                "fix"
             ],
-            "textToSpeak": "by accepting the terms",
-            "correctAnswer": "by accepting",
-            "hint": "'by' ends in a high front vowel /aɪ/+j+. In connected speech a subtle /j/ glide (like the start of 'yes') bridges it to 'accepting'. Listen for that invisible /j/ between these two words.",
-            "explanation": "Vowel-to-vowel linking with a /j/ glide occurs between 'by' (ending in /aɪ/+j+) and 'accepting' (starting with /ə/). Because the tongue is already in a high front position, it naturally glides through a brief /j/ sound before moving to the next vowel, making the phrase sound like 'by-jaccepting'. This /j/ glide always follows the vowels /iː/, /eɪ/, /aɪ/, and /ɔɪ/.",
-            "flowRule": "Vowel-to-Vowel Linking with /j/: When a word ends in a high front vowel (/iː/, /eɪ/, /aɪ/, /ɔɪ/) and the next begins with a vowel, a brief /j/ glide bridges the two sounds.",
+            "textToSpeak": "it's easy enough to fix",
+            "correctAnswer": "easy enough",
+            "hint": "Which link joins two vowels?",
+            "explanation": "Casual advice is delivered smoothly. The /i/ of 'easy' leads into the /ɪ/ of 'enough' with a light /j/. Notice that 'enough to' does not link.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
             "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L119_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which word-final r connects to the next vowel?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "neighbor",
-                "of",
-                "mine",
-                "helps"
+                "may",
+                "I",
+                "borrow",
+                "your",
+                "umbrella"
             ],
-            "textToSpeak": "neighbor of mine helps",
-            "correctAnswer": "neighbor of",
-            "hint": "The written 'r' at the end of 'neighbor' is usually silent, but because 'of' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'neighbor' to 'of'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'neighbor' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'neighbo-rof'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
+            "textToSpeak": "may I borrow your umbrella",
+            "correctAnswer": "your umbrella",
+            "hint": "'May I' joins vowels. Find the other kind of link, where a written r comes before a vowel.",
+            "explanation": "A polite request is said smoothly, and the /r/ link is part of that: the written r of 'your' is heard before the /ʌ/ of 'umbrella'. 'May I' is a vowel-to-vowel link with a light /j/.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L120_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which link carries a consonant cluster?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "find",
-                "it",
-                "and",
-                "save"
+                "most",
+                "of",
+                "our",
+                "orders",
+                "arrive",
+                "on",
+                "time"
             ],
-            "textToSpeak": "find it and save",
-            "correctAnswer": "find it",
-            "hint": "The final consonant /d/ of 'find' links directly onto the opening vowel of 'it' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /d/ of 'find' carries over to become the onset of 'it', so the phrase sounds like 'fin-dit'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "most of our orders arrive on time",
+            "correctAnswer": "most of",
+            "hint": "Which word has the heaviest ending, with two consonants stacked before the vowel starts?",
+            "explanation": "Complex sentences like this are where link types mix. 'Most' ends in /st/ with a light /t/, and the /s/ carries into the weak /əv/ of 'of'. 'Our orders' and 'of our' join in other ways.",
+            "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L120_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which link has a light /w/ glide between two vowels?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "they",
-                "all",
-                "agree",
-                "here"
+                "I'll",
+                "go",
+                "and",
+                "ask",
+                "her"
             ],
-            "textToSpeak": "they all agree here",
-            "correctAnswer": "they all",
-            "hint": "'they' ends in a high front vowel /eɪ/+j+. In connected speech a subtle /j/ glide (like the start of 'yes') bridges it to 'all'. Listen for that invisible /j/ between these two words. Listening for this boundary in podcasts and films will train your ear quickly.",
-            "explanation": "Vowel-to-vowel linking with a /j/ glide occurs between 'they' (ending in /eɪ/+j+) and 'all' (starting with /ɔː/). Because the tongue is already in a high front position, it naturally glides through a brief /j/ sound before moving to the next vowel, making the phrase sound like 'they-jall'. This /j/ glide always follows the vowels /iː/, /eɪ/, /aɪ/, and /ɔɪ/. Understanding this boundary also helps with spelling: knowing where words end and begin aids literacy.",
-            "flowRule": "Vowel-to-Vowel Linking with /j/: When a word ends in a high front vowel (/iː/, /eɪ/, /aɪ/, /ɔɪ/) and the next begins with a vowel, a brief /j/ glide bridges the two sounds.",
+            "textToSpeak": "I'll go and ask her",
+            "correctAnswer": "go and",
+            "hint": "Which link has a vowel on both sides?",
+            "explanation": "The weak form of 'and' shortens the pair even more. The /əʊ/ of 'go' leads into it with a faint /w/. 'And ask' is a consonant-to-vowel link.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
             "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L120_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which is the last connection in this sentence?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "center",
-                "is",
-                "the",
-                "answer"
+                "we've",
+                "all",
+                "had",
+                "enough"
             ],
-            "textToSpeak": "center is the answer",
-            "correctAnswer": "center is",
-            "hint": "The written 'r' at the end of 'center' is usually silent, but because 'is' begins with a vowel it becomes active and smoothly links the two words. This is called linking /r/ in connected speech.",
-            "explanation": "Linking /r/ connects 'center' to 'is'. In non-rhotic accents (such as standard British English), the written 'r' at the end of 'center' is normally silent, but it is 'activated' before a vowel - making the phrase sound like 'cente-ris'. This is why 'car' sounds different in 'my car' versus 'my car is here'.",
-            "flowRule": "Linking /r/: In non-rhotic accents, a silent final 'r' becomes a pronounced /r/ whenever the next word begins with a vowel, joining the two words smoothly.",
+            "textToSpeak": "we've all had enough",
+            "correctAnswer": "had enough",
+            "hint": "Read left to right and take the final link.",
+            "explanation": "A weary, sincere sentence like this is said in one breath. The /d/ of 'had' is released into the /ɪ/ of 'enough'; 'we've all' comes first.",
+            "flowRule": "Thought groups: Fluent speakers connect words across a whole phrase, so one sentence can contain several links. The instruction tells you which one to find; listen to the sounds on each side of a boundary.",
             "linkingType": "consonant_to_vowel"
         }
     ]

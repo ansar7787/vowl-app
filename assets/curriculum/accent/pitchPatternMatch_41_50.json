@@ -5,17 +5,17 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L41_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. Your friend holds up two mugs and asks which one is yours. You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Which bus goes downtown?",
-            "textToSpeak": "Which bus goes downtown?",
+            "word": "That one's mine.",
+            "textToSpeak": "That one's mine.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on MINE",
+                "Emphasis on THAT"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on THAT",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
                 1,
@@ -23,273 +23,273 @@
                 1,
                 1
             ],
-            "hint": "This question starts with a question word asking for specific information — those usually fall in pitch, unlike yes/no questions.",
-            "explanation": "Wh-questions (asking for specific information) typically fall in pitch, just like statements, even though they end in a question mark.",
-            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements.",
-            "emotionContext": "a Wh-question"
+            "hint": "There are two mugs and only one answer. Which word does your voice use to point at the right one?",
+            "explanation": "The question is which mug, so the pointing word THAT carries the peak. MINE is the final word, but ownership was already assumed in the question.",
+            "emphasisRule": "When choosing between 'this' and 'that', the demonstrative takes the peak, even when the sentence ends with another content word.",
+            "emotionContext": "Choice question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L41_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. The clerk points at one box, but you want the one next to it. You say:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Does the store open at nine?",
-            "textToSpeak": "Does the store open at nine?",
+            "word": "No, I meant this one.",
+            "textToSpeak": "No, I meant this one.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on THIS",
+                "Emphasis on MEANT"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on THIS",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                2,
-                2,
-                3
+                1
             ],
-            "hint": "This question can be answered with a simple yes or no — that type usually rises at the end.",
-            "explanation": "Because this question can be answered with a simple yes or no, the pitch rises at the end.",
-            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes.",
-            "emotionContext": "a yes/no question"
+            "hint": "The clerk picked the wrong box. Which word in your answer fixes that?",
+            "explanation": "The correction is about which box, so THIS takes the peak. MEANT only refers to what you intended, which the clerk already understands.",
+            "emphasisRule": "A demonstrative that corrects a choice carries the peak; the verb 'meant' stays low.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L41_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A shopper compares two lamps.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Was the meeting canceled again?",
-            "textToSpeak": "Was the meeting canceled again?",
+            "word": "I like this one better than that one.",
+            "textToSpeak": "I like this one better than that one.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "Emphasis on THIS and THAT",
+                "Emphasis on LIKE and BETTER"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "Emphasis on THIS and THAT",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                3,
+                1
             ],
-            "hint": "Unlike information questions, yes/no questions like this one typically climb in pitch toward the finish.",
-            "explanation": "Yes/no questions consistently end with rising pitch, unlike Wh-questions, which fall.",
-            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch.",
-            "emotionContext": "a yes/no question"
+            "hint": "Two items are being compared. How many peaks should you hear, and where?",
+            "explanation": "Each lamp is named by a demonstrative, and the comparison depends on telling them apart, so THIS and THAT both take peaks. LIKE and BETTER carry the judgment but aren't being contrasted.",
+            "emphasisRule": "In a direct comparison, each contrasted item gets its own peak.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L42_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. Everyone thanks Maya for building the slides, but she didn't build them. She says:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Does this bus go downtown?",
-            "textToSpeak": "Does this bus go downtown?",
+            "word": "Priya built the slides.",
+            "textToSpeak": "Priya built the slides.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on SLIDES",
+                "Emphasis on PRIYA"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "Emphasis on PRIYA",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                3,
                 1,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "A simple yes or no would answer this question, so expect the pitch to lift at the end.",
-            "explanation": "This is a genuine yes/no question, so the pitch climbs upward at the finish.",
-            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes.",
-            "emotionContext": "a yes/no question"
+            "hint": "The slides themselves aren't in doubt. What is?",
+            "explanation": "Everyone agrees the slides exist; the mistake is who made them. PRIYA takes the peak, and SLIDES, already part of the conversation, drops.",
+            "emphasisRule": "When a person is being corrected, that person's name takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L42_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. Jo is asked: \"Do you have the group tickets?\" Jo says:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Did the doctor call you back?",
-            "textToSpeak": "Did the doctor call you back?",
+            "word": "Lucas has them.",
+            "textToSpeak": "Lucas has them.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "Emphasis on LUCAS",
+                "Emphasis on HAS"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "Emphasis on LUCAS",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                3,
                 1,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "This is a direct yes/no question, and those are marked by a rising finish.",
-            "explanation": "Since only yes or no would answer this question, the pitch rises rather than falls.",
-            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch.",
-            "emotionContext": "a yes/no question"
+            "hint": "Jo is passing the responsibility along. Which word does the voice use to point to the right person?",
+            "explanation": "The speaker isn't the one holding them; the key information is whose job it is. LUCAS takes the peak. A peak on HAS would answer someone doubting that he holds them.",
+            "emphasisRule": "A name that redirects the answer to someone else takes the peak.",
+            "emotionContext": "Topic management"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L42_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What assumption is the speaker correcting?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Did the wifi go down again?",
-            "textToSpeak": "Did the wifi go down again?",
+            "word": "Dr. Rao will see you now.",
+            "textToSpeak": "Dr. Rao will see you now.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "That you expected a different doctor",
+                "That you expected to wait longer"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "That you expected a different doctor",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Because the answer here is just yes or no, the pitch usually rises rather than falls.",
-            "explanation": "Because this question can be answered with a simple yes or no, the pitch rises at the end.",
-            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes.",
-            "emotionContext": "a yes/no question"
+            "hint": "A doctor's name and a time word are both available. Which one is lifted?",
+            "explanation": "The peak on RAO treats the doctor as the surprising detail, so the nurse is addressing an expectation about who. If the surprise were the timing, NOW would take the peak.",
+            "emphasisRule": "A peak on a name inside a routine announcement signals that a different person was expected.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L43_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. The assistant hands you the red folder, but you asked for another colour. You say:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Where does your cousin live now?",
-            "textToSpeak": "Where does your cousin live now?",
+            "word": "I wanted the blue one, actually.",
+            "textToSpeak": "I wanted the blue one, actually.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on WANTED",
+                "Emphasis on BLUE"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on BLUE",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 3,
-                1,
                 1,
                 1
             ],
-            "hint": "Because this can't be answered with a simple yes or no, expect the pitch to drop by the end, much like a statement.",
-            "explanation": "Because this question seeks a specific detail rather than yes or no, the pitch falls toward the end.",
-            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions.",
-            "emotionContext": "a Wh-question"
+            "hint": "The assistant has already picked something; the issue is which one. What is the new information?",
+            "explanation": "WANTED just refers to your request. The colour is where the mismatch lies, so BLUE takes the peak. ONE is a stand-in word and ACTUALLY is a soft tag.",
+            "emphasisRule": "The adjective that distinguishes one item from another carries the peak; 'one' stays light.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L43_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. You received two attachments, the contract and the price list. A colleague asks which you opened first. You say:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Why did the meeting get canceled?",
-            "textToSpeak": "Why did the meeting get canceled?",
+            "word": "I opened the price list first.",
+            "textToSpeak": "I opened the price list first.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "Emphasis on PRICE",
+                "Emphasis on FIRST"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PRICE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                2,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "Information questions like this one behave differently from yes/no questions — listen for a fall, not a rise.",
-            "explanation": "Information questions like this one pattern with statements: the pitch drops at the end, not rises.",
-            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements.",
-            "emotionContext": "a Wh-question"
+            "hint": "Which part of the compound noun separates it from the other attachment?",
+            "explanation": "Between the contract and the price list, the distinguishing word is PRICE. In a compound like 'price list' the first word carries the peak, and FIRST just answers the ordering.",
+            "emphasisRule": "In a compound noun used to pick one item among several, the first noun carries the peak.",
+            "emotionContext": "Choice question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L43_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What is the speaker contrasting?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Where did you park the car?",
-            "textToSpeak": "Where did you park the car?",
+            "word": "I need the spare key.",
+            "textToSpeak": "I need the spare key.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Needing a key with not needing one",
+                "The spare key with a different key"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "The spare key with a different key",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 3,
-                1,
                 1,
                 1
             ],
-            "hint": "This is asking for a specific detail, not a yes/no answer, so the ending pitch typically falls.",
-            "explanation": "This question word signals a request for details, and such questions typically end with falling pitch.",
-            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions.",
-            "emotionContext": "a Wh-question"
+            "hint": "Notice the modifier before the noun. What does lifting it suggest?",
+            "explanation": "SPARE takes the peak, so the speaker is separating this key from another one, presumably the main key. A peak on NEED would instead contrast needing with not needing.",
+            "emphasisRule": "A modifier with the peak implies other members of the same category.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L44_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. You thought your dentist appointment was Wednesday morning. The receptionist says:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is the flight longer than expected?",
-            "textToSpeak": "Is the flight longer than expected?",
+            "word": "It's on Thursday morning.",
+            "textToSpeak": "It's on Thursday morning.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on THURSDAY",
+                "Emphasis on MORNING"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on THURSDAY",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                2,
-                2,
-                3
+                1
             ],
-            "hint": "This question can be answered with a simple yes or no — that type usually rises at the end.",
-            "explanation": "Yes/no questions consistently end with rising pitch, unlike Wh-questions, which fall.",
-            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch.",
-            "emotionContext": "a yes/no question"
+            "hint": "You already had the time of day right. Which word changes your plan?",
+            "explanation": "The time of day matches what you believed, so MORNING stays low. THURSDAY is the correction.",
+            "emphasisRule": "When part of a time phrase is unchanged, the changed part takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L44_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. Your friend suggests meeting before work, but you start early. You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "How was your appointment today?",
-            "textToSpeak": "How was your appointment today?",
+            "word": "Let's meet after work instead.",
+            "textToSpeak": "Let's meet after work instead.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on AFTER",
+                "Emphasis on WORK"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswer": "Emphasis on AFTER",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                2,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "Even though it's a question, this type usually ends low, similar to how statements end.",
-            "explanation": "Wh-questions (asking for specific information) typically fall in pitch, just like statements, even though they end in a question mark.",
-            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements.",
-            "emotionContext": "a Wh-question"
+            "hint": "Look at what 'instead' implies. Which word carries the replacement?",
+            "explanation": "The alternative to 'before work' is 'after work', so AFTER takes the peak. WORK is repeated, so it sits lower.",
+            "emphasisRule": "In a time contrast, the word that differs from the other option takes the peak.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L44_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Where should we meet for lunch?",
-            "textToSpeak": "Where should we meet for lunch?",
+            "word": "We usually eat at six.",
+            "textToSpeak": "We usually eat at six.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "It states a fixed rule with no exceptions",
+                "It hints that tonight may be an exception to the usual routine"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswer": "It hints that tonight may be an exception to the usual routine",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -298,460 +298,460 @@
                 1,
                 1
             ],
-            "hint": "This question starts with a question word asking for specific information — those usually fall in pitch, unlike yes/no questions.",
-            "explanation": "Because this question seeks a specific detail rather than yes or no, the pitch falls toward the end.",
-            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions.",
-            "emotionContext": "a Wh-question"
+            "hint": "Notice which small word is lifted. What is the speaker leaving room for?",
+            "explanation": "USUALLY with the peak implies there are times when it differs, such as tonight. A flat rule would peak on SIX.",
+            "emphasisRule": "A peak on a frequency word (usually, sometimes) hints at exceptions.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L45_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A visitor goes to the new building. You call to say:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Why is the flight delayed?",
-            "textToSpeak": "Why is the flight delayed?",
+            "word": "We're in the old building.",
+            "textToSpeak": "We're in the old building.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on BUILDING",
+                "Emphasis on OLD"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on OLD",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                2,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "Because this can't be answered with a simple yes or no, expect the pitch to drop by the end, much like a statement.",
-            "explanation": "Information questions like this one pattern with statements: the pitch drops at the end, not rises.",
-            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements.",
-            "emotionContext": "a Wh-question"
+            "hint": "The visitor has the right company but maybe the wrong place. Which word steers them?",
+            "explanation": "BUILDING is already known, so it falls. OLD distinguishes this building from the new one.",
+            "emphasisRule": "A modifier that distinguishes between two locations takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L45_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. Someone says your flight leaves from Terminal One. You say:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Did someone borrow my charger?",
-            "textToSpeak": "Did someone borrow my charger?",
+            "word": "I'm leaving from Terminal Two.",
+            "textToSpeak": "I'm leaving from Terminal Two.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on TERMINAL",
+                "Emphasis on TWO"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "Emphasis on TWO",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 2,
-                2,
-                3
+                3,
+                1
             ],
-            "hint": "Unlike information questions, yes/no questions like this one typically climb in pitch toward the finish.",
-            "explanation": "This is a genuine yes/no question, so the pitch climbs upward at the finish.",
-            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes.",
-            "emotionContext": "a yes/no question"
+            "hint": "The word 'terminal' is already on the table. What is the new piece?",
+            "explanation": "TERMINAL has already been mentioned, so it's given. TWO is the number that differs, so it takes the peak.",
+            "emphasisRule": "When a number distinguishes between places, the number takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L45_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Does the semester start in August?",
-            "textToSpeak": "Does the semester start in August?",
+            "word": "Parking's on the other side.",
+            "textToSpeak": "Parking's on the other side.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "It contrasts with the side where the listener is currently looking",
+                "It simply says that parking exists somewhere nearby on site"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "It contrasts with the side where the listener is currently looking",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                2,
-                2,
-                3
+                1
             ],
-            "hint": "A simple yes or no would answer this question, so expect the pitch to lift at the end.",
-            "explanation": "Since only yes or no would answer this question, the pitch rises rather than falls.",
-            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch.",
-            "emotionContext": "a yes/no question"
+            "hint": "Which word suggests a second side is in mind?",
+            "explanation": "OTHER takes the peak, so the speaker is contrasting this side with the one the listener has in mind. A neutral version would peak on SIDE.",
+            "emphasisRule": "'Other' with the peak signals a contrast with the one already in view.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L46_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. The tailor measured you as a small, but you know you're a medium. You say:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is someone cooking dinner tonight?",
-            "textToSpeak": "Is someone cooking dinner tonight?",
+            "word": "I always wear a medium.",
+            "textToSpeak": "I always wear a medium.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on ALWAYS",
+                "Emphasis on MEDIUM"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "Emphasis on MEDIUM",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 2,
-                2,
-                3
+                3,
+                1
             ],
-            "hint": "This is a direct yes/no question, and those are marked by a rising finish.",
-            "explanation": "Because this question can be answered with a simple yes or no, the pitch rises at the end.",
-            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes.",
-            "emotionContext": "a yes/no question"
+            "hint": "The tailor has made a claim about your size. How do you push back?",
+            "explanation": "ALWAYS adds weight, but the disagreement is about which size. MEDIUM takes the peak.",
+            "emphasisRule": "A size word that contradicts someone's assumption takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L46_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A friend says the dress comes in green. You saw it in another colour. You say:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is the flight delayed again?",
-            "textToSpeak": "Is the flight delayed again?",
+            "word": "It came in navy at my store.",
+            "textToSpeak": "It came in navy at my store.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "Emphasis on STORE",
+                "Emphasis on NAVY"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on NAVY",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                2,
-                2,
-                3
+                1
             ],
-            "hint": "Because the answer here is just yes or no, the pitch usually rises rather than falls.",
-            "explanation": "Yes/no questions consistently end with rising pitch, unlike Wh-questions, which fall.",
-            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch.",
-            "emotionContext": "a yes/no question"
+            "hint": "Your friend named a colour. What does your voice do with yours?",
+            "explanation": "The conversation is about colour, so NAVY takes the peak. STORE adds a location, but nothing is being contrasted there.",
+            "emphasisRule": "A colour that differs from the one just mentioned takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L46_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. Which sentence would most naturally follow?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "When does the semester start?",
-            "textToSpeak": "When does the semester start?",
+            "word": "The small suitcase is for my laptop.",
+            "textToSpeak": "The small suitcase is for my laptop.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "The big one holds my clothes.",
+                "It's very heavy, so be careful."
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "The big one holds my clothes.",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
+                1,
                 1,
                 1,
                 1
             ],
-            "hint": "Information questions like this one behave differently from yes/no questions — listen for a fall, not a rise.",
-            "explanation": "This question word signals a request for details, and such questions typically end with falling pitch.",
-            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions.",
-            "emotionContext": "a Wh-question"
+            "hint": "Listen for which word stands out in the first sentence, then think what its partner might be.",
+            "explanation": "SMALL takes the peak, so the speaker is setting it against a bigger one. The natural follow-up introduces that bigger case.",
+            "emphasisRule": "A peak on a size word creates an expectation of its opposite.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L47_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. You and your roommate share one desk but use it at different times.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "What did the doctor say?",
-            "textToSpeak": "What did the doctor say?",
+            "word": "I use it in the morning and she uses it at night.",
+            "textToSpeak": "I use it in the morning and she uses it at night.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on USE and USES",
+                "Emphasis on MORNING and NIGHT"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on MORNING and NIGHT",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
                 3,
                 1,
-                1,
-                1,
+                3,
                 1
             ],
-            "hint": "This is asking for a specific detail, not a yes/no answer, so the ending pitch typically falls.",
-            "explanation": "Wh-questions (asking for specific information) typically fall in pitch, just like statements, even though they end in a question mark.",
-            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements.",
-            "emotionContext": "a Wh-question"
+            "hint": "The sentence repeats the same structure twice. Which parts differ?",
+            "explanation": "The desk and the verb are the same for both people, so only the times differ. MORNING and NIGHT take the peaks while USE and USES stay quiet.",
+            "emphasisRule": "In a parallel structure, the peaks fall on the parts that differ.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L47_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. You're explaining that two cities have opposite weather.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "What happened to the wifi?",
-            "textToSpeak": "What happened to the wifi?",
+            "word": "Mumbai is humid, but Delhi is dry.",
+            "textToSpeak": "Mumbai is humid, but Delhi is dry.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "Emphasis on MUMBAI and DELHI",
+                "Emphasis on HUMID and DRY"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswer": "Emphasis on HUMID and DRY",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
-                1,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "Even though it's a question, this type usually ends low, similar to how statements end.",
-            "explanation": "Because this question seeks a specific detail rather than yes or no, the pitch falls toward the end.",
-            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions.",
-            "emotionContext": "a Wh-question"
+            "hint": "Given the context, which pair of words carries the point?",
+            "explanation": "The instruction says the weather is what's being compared, so HUMID and DRY carry the peaks. If the point were which city, MUMBAI and DELHI would.",
+            "emphasisRule": "Parallel clauses peak on the elements that carry the contrast intended in the context.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L47_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. Which contrast is the speaker drawing?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "What time does the store open?",
-            "textToSpeak": "What time does the store open?",
+            "word": "She speaks Spanish, and he speaks French.",
+            "textToSpeak": "She speaks Spanish, and he speaks French.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Contrasting the two languages",
+                "Contrasting the two speakers, not the languages"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Contrasting the two speakers, not the languages",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
                 1,
                 1,
-                1,
+                3,
                 1
             ],
-            "hint": "This question starts with a question word asking for specific information — those usually fall in pitch, unlike yes/no questions.",
-            "explanation": "Information questions like this one pattern with statements: the pitch drops at the end, not rises.",
-            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements.",
-            "emotionContext": "a Wh-question"
+            "hint": "Count the peaks and notice where each sits in its half of the sentence.",
+            "explanation": "The peaks land on SHE and HE, so the two people are being contrasted and the languages are secondary. If the languages were the contrast, SPANISH and FRENCH would carry the peaks.",
+            "emphasisRule": "Parallel peaks on the subjects contrast people; parallel peaks on the objects contrast things.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L48_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A friend asks if you can meet this week.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Who's cooking dinner tonight?",
-            "textToSpeak": "Who's cooking dinner tonight?",
+            "word": "I can do Tuesday.",
+            "textToSpeak": "I can do Tuesday.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "Tuesday works and so does every other day",
+                "Tuesday works, but other days may not"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswer": "Tuesday works, but other days may not",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
                 3,
                 1,
-                1,
-                1
+                2
             ],
-            "hint": "Because this can't be answered with a simple yes or no, expect the pitch to drop by the end, much like a statement.",
-            "explanation": "This question word signals a request for details, and such questions typically end with falling pitch.",
-            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions.",
-            "emotionContext": "a Wh-question"
+            "hint": "The voice dips and then lifts at the very end. What does that little rise leave open?",
+            "explanation": "The fall-rise on TUESDAY marks it as the day on offer while hinting 'but not necessarily the others'. A plain fall would simply confirm Tuesday.",
+            "emphasisRule": "A fall followed by a rise can signal that something remains unsaid.",
+            "emotionContext": "Reservation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L48_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? Your friend asks if you liked the book.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "How much does this cost?",
-            "textToSpeak": "How much does this cost?",
+            "word": "The ending was good.",
+            "textToSpeak": "The ending was good.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Other parts of the book were less good",
+                "It was a plain, positive review"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswer": "Other parts of the book were less good",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
                 3,
                 1,
                 1,
-                1,
-                1
+                2
             ],
-            "hint": "Information questions like this one behave differently from yes/no questions — listen for a fall, not a rise.",
-            "explanation": "Wh-questions (asking for specific information) typically fall in pitch, just like statements, even though they end in a question mark.",
-            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements.",
-            "emotionContext": "a Wh-question"
+            "hint": "The voice lifts again at the end of the sentence. What might be missing from the praise?",
+            "explanation": "ENDING takes the peak and the voice rises afterwards, as if adding 'but...'. A straightforward positive review would fall on GOOD.",
+            "emphasisRule": "A fall-rise on the praised item suggests a limit to the praise.",
+            "emotionContext": "Reservation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L48_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A coworker asks whether you finished the report.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Does your cousin still live nearby?",
-            "textToSpeak": "Does your cousin still live nearby?",
+            "word": "I finished the first section.",
+            "textToSpeak": "I finished the first section.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "The other sections aren't finished",
+                "The first section was the hardest part"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "The other sections aren't finished",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                2,
-                2,
-                3
+                2
             ],
-            "hint": "This question can be answered with a simple yes or no — that type usually rises at the end.",
-            "explanation": "This is a genuine yes/no question, so the pitch climbs upward at the finish.",
-            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes.",
-            "emotionContext": "a yes/no question"
+            "hint": "Which word in 'the first section' carries the signal? Then think about what is left unsaid.",
+            "explanation": "FIRST takes the peak with a trailing rise, as if saying 'that's all so far'. The listener is meant to infer unfinished sections.",
+            "emphasisRule": "A peak on an ordinal with a trailing rise hints at what remains.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L49_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A friend asks how you get to work.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Should we meet at the usual place?",
-            "textToSpeak": "Should we meet at the usual place?",
+            "word": "I prefer walking to driving.",
+            "textToSpeak": "I prefer walking to driving.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "Emphasis on WALKING and DRIVING",
+                "Emphasis on PREFER and WALKING"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "Emphasis on WALKING and DRIVING",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                3,
+                1
             ],
-            "hint": "Unlike information questions, yes/no questions like this one typically climb in pitch toward the finish.",
-            "explanation": "Since only yes or no would answer this question, the pitch rises rather than falls.",
-            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch.",
-            "emotionContext": "a yes/no question"
+            "hint": "A preference always sets one option against another. Which two words are being compared?",
+            "explanation": "The preference is a comparison, so both options, WALKING and DRIVING, take peaks. PREFER only introduces it.",
+            "emphasisRule": "In 'prefer X to Y', both X and Y carry peaks.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L49_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. You're giving a visitor two route options.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Did you park near the entrance?",
-            "textToSpeak": "Did you park near the entrance?",
+            "word": "This route is faster, but that one is prettier.",
+            "textToSpeak": "This route is faster, but that one is prettier.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on FASTER and PRETTIER",
+                "Emphasis on ROUTE and ONE"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on FASTER and PRETTIER",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                3,
+                1
             ],
-            "hint": "A simple yes or no would answer this question, so expect the pitch to lift at the end.",
-            "explanation": "Because this question can be answered with a simple yes or no, the pitch rises at the end.",
-            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes.",
-            "emotionContext": "a yes/no question"
+            "hint": "The routes are already named. What quality separates them?",
+            "explanation": "The visitor knows there are two routes; the difference is the quality. FASTER and PRETTIER carry the peaks.",
+            "emphasisRule": "Contrasted qualities carry peaks; the nouns they describe stay lighter.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L49_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. Your friend suggests eating out. You'd rather stay in.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Who borrowed my charger?",
-            "textToSpeak": "Who borrowed my charger?",
+            "word": "I'd rather cook tonight.",
+            "textToSpeak": "I'd rather cook tonight.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on RATHER",
+                "Emphasis on COOK"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on COOK",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 3,
-                1,
                 1,
                 1
             ],
-            "hint": "This is asking for a specific detail, not a yes/no answer, so the ending pitch typically falls.",
-            "explanation": "Because this question seeks a specific detail rather than yes or no, the pitch falls toward the end.",
-            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions.",
-            "emotionContext": "a Wh-question"
+            "hint": "The friend suggested one thing. Which word offers the alternative?",
+            "explanation": "RATHER signals preference, but the alternative itself is the action, COOK. TONIGHT is the shared time and stays low.",
+            "emphasisRule": "In a stated preference, the chosen alternative takes the peak.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L50_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A customer holds up a yellow raincoat. The assistant brings a black one.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Did your appointment go well?",
-            "textToSpeak": "Did your appointment go well?",
+            "word": "The yellow one, please.",
+            "textToSpeak": "The yellow one, please.",
             "options": [
-                "Falling intonation (a Wh-question)",
-                "Rising intonation (a yes/no question)"
+                "Emphasis on PLEASE",
+                "Emphasis on YELLOW"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "Emphasis on YELLOW",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "This is a direct yes/no question, and those are marked by a rising finish.",
-            "explanation": "Yes/no questions consistently end with rising pitch, unlike Wh-questions, which fall.",
-            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch.",
-            "emotionContext": "a yes/no question"
+            "hint": "Politeness words don't carry the point. What does?",
+            "explanation": "PLEASE is a polite closer. YELLOW tells the assistant which colour you want.",
+            "emphasisRule": "In polite requests, the contrastive word still carries the peak, not the politeness marker.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L50_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A neighbour says there's nowhere to park.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Does this cost more than fifty?",
-            "textToSpeak": "Does this cost more than fifty?",
+            "word": "There's parking behind the building.",
+            "textToSpeak": "There's parking behind the building.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "Emphasis on BEHIND",
+                "Emphasis on PARKING"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on PARKING",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Because the answer here is just yes or no, the pitch usually rises rather than falls.",
-            "explanation": "This is a genuine yes/no question, so the pitch climbs upward at the finish.",
-            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes.",
-            "emotionContext": "a yes/no question"
+            "hint": "The neighbour has made a claim. What exactly does the claim say, and what does your reply set against it?",
+            "explanation": "The neighbour denies that parking exists, so the correction is the existence of PARKING. BEHIND would take the peak only if the dispute were about where.",
+            "emphasisRule": "When a claim of non-existence is corrected, the thing's name takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L50_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? You're deciding when to hold a team lunch.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "How long is the flight?",
-            "textToSpeak": "How long is the flight?",
+            "word": "Mondays are usually busy.",
+            "textToSpeak": "Mondays are usually busy.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a Wh-question)"
+                "Other days might be better",
+                "Every day is equally busy"
             ],
-            "correctAnswer": "Falling intonation (a Wh-question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Other days might be better",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 3,
                 1,
                 1,
                 1,
-                1
+                2
             ],
-            "hint": "Even though it's a question, this type usually ends low, similar to how statements end.",
-            "explanation": "Information questions like this one pattern with statements: the pitch drops at the end, not rises.",
-            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements.",
-            "emotionContext": "a Wh-question"
+            "hint": "The voice lifts slightly at the end. What does that leave open?",
+            "explanation": "MONDAYS takes the peak and the voice rises slightly at the end, which suggests other days might work. If all days were busy, the sentence would fall completely.",
+            "emphasisRule": "A peak on one item with a final rise hints at alternatives.",
+            "emotionContext": "Contrast"
         }
     ]
 }

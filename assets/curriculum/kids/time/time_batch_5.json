@@ -1,622 +1,622 @@
 [
-    {
+  {
+    "level": 41,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L41_Q1",
+        "gameType": "time",
         "level": 41,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L41_Q1",
-                "gameType": "time",
-                "level": 41,
-                "instruction": "It is half past seven in the morning — time to grab your backpack. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:30 AM 🕢",
-                "options": [
-                    "7:00 AM 🛏️",
-                    "7:30 AM 🕢",
-                    "8:30 AM ⏱️"
-                ],
-                "hint": "Half past seven means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕢",
-                "explanation": "Half past seven means 30 minutes after seven, so it is written 7:30 AM.",
-                "funFact": "When the minute hand points to the 6, exactly half an hour has gone by.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L41_Q2",
-                "gameType": "time",
-                "level": 41,
-                "instruction": "The lunch line starts moving at half past twelve. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:30 PM 🕧",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "1:30 PM 🕜",
-                    "12:30 PM 🕧"
-                ],
-                "hint": "Half past twelve means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕧",
-                "explanation": "Half past twelve means 30 minutes after twelve, so it is written 12:30 PM.",
-                "funFact": "12:30 PM is a common time for the lunch line to be at its busiest.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L41_Q3",
-                "gameType": "time",
-                "level": 41,
-                "instruction": "Grandma tucks you in at half past nine. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:30 PM 🕤",
-                "options": [
-                    "9:00 PM 🌙",
-                    "10:30 PM 🕥",
-                    "9:30 PM 🕤"
-                ],
-                "hint": "Half past nine means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕤",
-                "explanation": "Half past nine means 30 minutes after nine, so it is written 9:30 PM.",
-                "funFact": "9:30 PM is a peaceful time for a final goodnight kiss.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "The short hand is just past 8 and the long hand is on 2. What time is it?",
+        "question": "?",
+        "correctAnswer": "8:10",
+        "options": [
+          "8:10",
+          "8:02",
+          "2:40"
+        ],
+        "hint": "Count by fives from the 12 up to the number the long hand points to.",
+        "emoji": "🌀",
+        "explanation": "The long hand on 2 means 10 minutes (5, then 10). The short hand is just past 8, so the time is 8:10.",
+        "funFact": "Minute hands became common on clocks about 350 years ago, after the pendulum clock was invented.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L41_Q2",
+        "gameType": "time",
+        "level": 41,
+        "instruction": "The long hand points to the 7. How many minutes past the hour is it?",
+        "question": "?",
+        "correctAnswer": "35 minutes",
+        "options": [
+          "35 minutes",
+          "7 minutes",
+          "25 minutes"
+        ],
+        "hint": "Count by fives, one step for each number, until you reach the 7.",
+        "emoji": "🪜",
+        "explanation": "Counting by fives: 1 is 5, 2 is 10, 3 is 15, 4 is 20, 5 is 25, 6 is 30 and 7 is 35 minutes.",
+        "funFact": "Between two neighbouring numbers on a clock there are five minute spaces, so the whole clock has 60 spaces.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L41_Q3",
+        "gameType": "time",
+        "level": 41,
+        "instruction": "Where does the long hand point at 6:20?",
+        "question": "?",
+        "correctAnswer": "On the 4",
+        "options": [
+          "On the 6",
+          "On the 4",
+          "On the 2"
+        ],
+        "hint": "Each number is worth 5 minutes. How many fives are in 20?",
+        "emoji": "🎚️",
+        "explanation": "20 minutes is 4 steps of 5 minutes, so the long hand points to the 4. The short hand is just past the 6.",
+        "funFact": "Before railways, each town set its own clock by the sun, so nearby towns could show different times.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 42,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L42_Q1",
+        "gameType": "time",
         "level": 42,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L42_Q1",
-                "gameType": "time",
-                "level": 42,
-                "instruction": "The bus arrives at half past three to take everyone home. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:30 PM 🕞",
-                "options": [
-                    "3:00 PM 🎒",
-                    "4:30 PM ⏮️",
-                    "3:30 PM 🕞"
-                ],
-                "hint": "Half past three means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕞",
-                "explanation": "Half past three means 30 minutes after three, so it is written 3:30 PM.",
-                "funFact": "3:30 PM is a common time for school buses to head out.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L42_Q2",
-                "gameType": "time",
-                "level": 42,
-                "instruction": "The alarm buzzes softly at half past six. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:30 AM 🕡",
-                "options": [
-                    "6:00 AM 🌅",
-                    "7:30 AM ⏱️",
-                    "6:30 AM 🕡"
-                ],
-                "hint": "Half past six means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕡",
-                "explanation": "Half past six means 30 minutes after six, so it is written 6:30 AM.",
-                "funFact": "6:30 AM is a gentle time for a slow, sleepy wake-up.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L42_Q3",
-                "gameType": "time",
-                "level": 42,
-                "instruction": "Pajamas go on at half past eight, ready for bed. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:30 PM 🕣",
-                "options": [
-                    "8:30 PM 🕣",
-                    "8:00 PM 📖",
-                    "9:30 PM ⏱️"
-                ],
-                "hint": "Half past eight means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕣",
-                "explanation": "Half past eight means 30 minutes after eight, so it is written 8:30 PM.",
-                "funFact": "8:30 PM is a cozy time to pick out a bedtime book.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Ten past 4 is written as ___.",
+        "question": "?",
+        "correctAnswer": "4:10",
+        "options": [
+          "4:10",
+          "4:50",
+          "10:04"
+        ],
+        "hint": "Past means minutes after the hour. The hour is 4.",
+        "emoji": "🗣️",
+        "explanation": "Ten past 4 means 10 minutes after 4 o'clock, which is 4:10. The time 4:50 is ten to 5.",
+        "funFact": "In the United States many people say \"ten after four\" instead of \"ten past four\".",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L42_Q2",
+        "gameType": "time",
+        "level": 42,
+        "instruction": "Which is another way to say 3:40?",
+        "question": "?",
+        "correctAnswer": "Twenty to 4",
+        "options": [
+          "Forty to 3",
+          "Twenty to 4",
+          "Twenty past 3"
+        ],
+        "hint": "At 3:40, how many minutes are left until 4 o'clock?",
+        "emoji": "🧭",
+        "explanation": "From 3:40 to 4:00 is 20 minutes, so we can say twenty to 4. Twenty past 3 is 3:20, and forty to 3 would be 2:20.",
+        "funFact": "A clock time can be told in two ways: minutes past the hour, or minutes to the next hour.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L42_Q3",
+        "gameType": "time",
+        "level": 42,
+        "instruction": "The long hand points to 11 and the short hand is almost on 7. What time is it?",
+        "question": "?",
+        "correctAnswer": "6:55",
+        "options": [
+          "6:55",
+          "7:05",
+          "7:55"
+        ],
+        "hint": "Count by fives up to the 11. Then ask which hour the short hand has not reached yet.",
+        "emoji": "⏰",
+        "explanation": "The 11 means 55 minutes. The short hand has not reached 7, so the hour is 6. The time is 6:55, or five to 7.",
+        "funFact": "Arriving five minutes early gives you time to settle in before something starts.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 43,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L43_Q1",
+        "gameType": "time",
         "level": 43,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L43_Q1",
-                "gameType": "time",
-                "level": 43,
-                "instruction": "The class heads outside for recess at half past ten. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:30 AM 🕥",
-                "options": [
-                    "10:30 AM 🕥",
-                    "10:00 AM 🍎",
-                    "11:30 AM ⏱️"
-                ],
-                "hint": "Half past ten means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕥",
-                "explanation": "Half past ten means 30 minutes after ten, so it is written 10:30 AM.",
-                "funFact": "10:30 AM is a lively time for running and playing at recess.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L43_Q2",
-                "gameType": "time",
-                "level": 43,
-                "instruction": "Friends race their bikes at half past four. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:30 PM 🕟",
-                "options": [
-                    "5:30 PM ⏱️",
-                    "4:30 PM 🕟",
-                    "4:00 PM 🛝"
-                ],
-                "hint": "Half past four means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕟",
-                "explanation": "Half past four means 30 minutes after four, so it is written 4:30 PM.",
-                "funFact": "4:30 PM is a fun time for riding bikes before dinner.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L43_Q3",
-                "gameType": "time",
-                "level": 43,
-                "instruction": "The tub fills with warm water at half past seven. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:30 PM 🕢",
-                "options": [
-                    "7:00 PM 🛁",
-                    "8:30 PM 🕣",
-                    "7:30 PM 🕢"
-                ],
-                "hint": "Half past seven means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕢",
-                "explanation": "Half past seven means 30 minutes after seven, so it is written 7:30 PM.",
-                "funFact": "7:30 PM is a splashy time for a warm evening bath.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "What time is 10 minutes after 2:20?",
+        "question": "?",
+        "correctAnswer": "2:30",
+        "options": [
+          "3:30",
+          "2:10",
+          "2:30"
+        ],
+        "hint": "Count forward in fives from 2:20. You need two steps.",
+        "emoji": "➕",
+        "explanation": "2:20 plus 5 minutes is 2:25, and 5 more minutes is 2:30.",
+        "funFact": "Sailors once used sand glasses on ships to measure short periods such as half an hour.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L43_Q2",
+        "gameType": "time",
+        "level": 43,
+        "instruction": "A robot's timer beeps first at 4:05 and then every 5 minutes. When is the fourth beep?",
+        "question": "?",
+        "correctAnswer": "4:20",
+        "options": [
+          "4:20",
+          "4:25",
+          "4:15"
+        ],
+        "hint": "Count the beeps one at a time. The beep at 4:05 is the first.",
+        "emoji": "🤖",
+        "explanation": "The beeps are at 4:05, 4:10, 4:15 and 4:20. The fourth beep is at 4:20.",
+        "funFact": "Quartz watches keep time with a tiny crystal that vibrates thousands of times each second.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L43_Q3",
+        "gameType": "time",
+        "level": 43,
+        "instruction": "What time is 20 minutes after 6:50?",
+        "question": "?",
+        "correctAnswer": "7:10",
+        "options": [
+          "7:00",
+          "7:10",
+          "7:20"
+        ],
+        "hint": "First go forward to the next o'clock time. How many of the 20 minutes are left?",
+        "emoji": "🔁",
+        "explanation": "From 6:50 to 7:00 is 10 minutes. There are 10 more minutes to add, so the time is 7:10.",
+        "funFact": "When the minutes pass 59, they start again at 00 and the hour goes up by one, like numbers rolling over on an odometer.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 44,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L44_Q1",
+        "gameType": "time",
         "level": 44,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L44_Q1",
-                "gameType": "time",
-                "level": 44,
-                "instruction": "Shoes are tied and it's half past eight — off to school! What time is it?",
-                "question": "?",
-                "correctAnswer": "8:30 AM 🕣",
-                "options": [
-                    "9:30 AM 🕓",
-                    "8:30 AM 🕣",
-                    "8:00 AM 🍳"
-                ],
-                "hint": "Half past eight means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕣",
-                "explanation": "Half past eight means 30 minutes after eight, so it is written 8:30 AM.",
-                "funFact": "8:30 AM is a common time to be walking or riding to school.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L44_Q2",
-                "gameType": "time",
-                "level": 44,
-                "instruction": "The class returns from lunch at half past one. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:30 PM 🕜",
-                "options": [
-                    "1:00 PM 📚",
-                    "2:30 PM ⏱️",
-                    "1:30 PM 🕜"
-                ],
-                "hint": "Half past one means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕜",
-                "explanation": "Half past one means 30 minutes after one, so it is written 1:30 PM.",
-                "funFact": "1:30 PM is a common time to start afternoon lessons.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L44_Q3",
-                "gameType": "time",
-                "level": 44,
-                "instruction": "A short break happens right at half past nine. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:30 AM 🕤",
-                "options": [
-                    "10:30 AM 🕓",
-                    "9:00 AM 🏫",
-                    "9:30 AM 🕤"
-                ],
-                "hint": "Half past nine means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕤",
-                "explanation": "Half past nine means 30 minutes after nine, so it is written 9:30 AM.",
-                "funFact": "9:30 AM often falls right in the middle of a morning lesson.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "What time is 10 minutes before 4:30?",
+        "question": "?",
+        "correctAnswer": "4:20",
+        "options": [
+          "4:10",
+          "4:20",
+          "4:40"
+        ],
+        "hint": "Count backward in fives from 4:30. You need two steps.",
+        "emoji": "⬅️",
+        "explanation": "4:30 minus 5 minutes is 4:25, and 5 minutes before that is 4:20.",
+        "funFact": "When people plan, they often start from the event and work backwards to find when to begin.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L44_Q2",
+        "gameType": "time",
+        "level": 44,
+        "instruction": "What time is 20 minutes before 7:10?",
+        "question": "?",
+        "correctAnswer": "6:50",
+        "options": [
+          "6:50",
+          "7:30",
+          "6:30"
+        ],
+        "hint": "Go back 10 minutes to reach the o'clock time. Then go back the rest.",
+        "emoji": "✈️",
+        "explanation": "10 minutes before 7:10 is 7:00. There are 10 more minutes to go back, which takes you to 6:50.",
+        "funFact": "Airport and train staff work backwards from a departure time to plan when boarding starts.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L44_Q3",
+        "gameType": "time",
+        "level": 44,
+        "instruction": "The 2:40 bus left 25 minutes after the bus before it. When did the earlier bus leave?",
+        "question": "?",
+        "correctAnswer": "2:15",
+        "options": [
+          "2:15",
+          "3:05",
+          "2:25"
+        ],
+        "hint": "The earlier bus left before 2:40. Count backward 25 minutes.",
+        "emoji": "🚍",
+        "explanation": "Going back 25 minutes from 2:40 gives 2:15: 20 minutes back is 2:20, and 5 more is 2:15.",
+        "funFact": "Sunlight takes about 8 minutes to travel from the Sun to the Earth.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 45,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L45_Q1",
+        "gameType": "time",
         "level": 45,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L45_Q1",
-                "gameType": "time",
-                "level": 45,
-                "instruction": "Tummies start to rumble at half past eleven, right before lunch. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:30 AM 🕦",
-                "options": [
-                    "11:00 AM 🎨",
-                    "12:30 PM 🕧",
-                    "11:30 AM 🕦"
-                ],
-                "hint": "Half past eleven means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕦",
-                "explanation": "Half past eleven means 30 minutes after eleven, so it is written 11:30 AM.",
-                "funFact": "11:30 AM is a common time to start washing up before lunch.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L45_Q2",
-                "gameType": "time",
-                "level": 45,
-                "instruction": "Storybooks come out at half past two for quiet reading. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:30 PM 🕝",
-                "options": [
-                    "3:30 PM 🕓",
-                    "2:30 PM 🕝",
-                    "2:00 PM 😴"
-                ],
-                "hint": "Half past two means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕝",
-                "explanation": "Half past two means 30 minutes after two, so it is written 2:30 PM.",
-                "funFact": "2:30 PM is a calm time for getting lost in a good book.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L45_Q3",
-                "gameType": "time",
-                "level": 45,
-                "instruction": "Plates clink softly as the table is set at half past five. What time is it?",
-                "question": "?",
-                "correctAnswer": "5:30 PM 🕠",
-                "options": [
-                    "5:30 PM 🕠",
-                    "6:30 PM 🕓",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Half past five means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕠",
-                "explanation": "Half past five means 30 minutes after five, so it is written 5:30 PM.",
-                "funFact": "5:30 PM is a common time to help get dinner ready.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "It is 3:35 now. Dev's cousin will arrive in 20 minutes. What time will she arrive?",
+        "question": "?",
+        "correctAnswer": "3:55",
+        "options": [
+          "3:15",
+          "3:55",
+          "4:05"
+        ],
+        "hint": "Arrive in 20 minutes means 20 minutes later than now.",
+        "emoji": "🚪",
+        "explanation": "Adding 20 minutes to 3:35 gives 3:55: 3:35 plus 5 is 3:40, and 15 more is 3:55.",
+        "funFact": "A child's heart beats about 70 to 100 times every minute while resting.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L45_Q2",
+        "gameType": "time",
+        "level": 45,
+        "instruction": "It is 11:50 AM and the school trip bus leaves in 15 minutes. What time does it leave?",
+        "question": "?",
+        "correctAnswer": "12:05 PM",
+        "options": [
+          "1:05 PM",
+          "12:05 PM",
+          "12:05 AM"
+        ],
+        "hint": "Passing 12 changes the hour number and also changes AM to PM.",
+        "emoji": "🚌",
+        "explanation": "From 11:50 AM, 10 minutes reach 12:00 PM, which is noon. Five more minutes make 12:05 PM.",
+        "funFact": "A 12-hour clock has no zero hour, so the hour after 11 is always 12.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L45_Q3",
+        "gameType": "time",
+        "level": 45,
+        "instruction": "It is 4:10 PM. The rain started 25 minutes ago. What time did the rain start?",
+        "question": "?",
+        "correctAnswer": "3:45 PM",
+        "options": [
+          "4:35 PM",
+          "3:35 PM",
+          "3:45 PM"
+        ],
+        "hint": "Go back 10 minutes to reach 4:00. Then go back the rest.",
+        "emoji": "🌧️",
+        "explanation": "10 minutes before 4:10 is 4:00, and 15 more minutes back is 3:45. It is still the afternoon, so the time is 3:45 PM.",
+        "funFact": "You can guess how far away lightning is by counting the seconds before you hear the thunder.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 46,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L46_Q1",
+        "gameType": "time",
         "level": 46,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L46_Q1",
-                "gameType": "time",
-                "level": 46,
-                "instruction": "Forks and spoons come out for dinner at half past six. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:30 PM 🕡",
-                "options": [
-                    "6:30 PM 🕡",
-                    "6:00 PM 🍲",
-                    "7:30 PM 🕢"
-                ],
-                "hint": "Half past six means the minute hand has traveled all the way down to the 6.",
-                "emoji": "🕡",
-                "explanation": "Half past six means 30 minutes after six, so it is written 6:30 PM.",
-                "funFact": "6:30 PM is a favorite time for a warm family dinner.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L46_Q2",
-                "gameType": "time",
-                "level": 46,
-                "instruction": "Trays are stacked and lunch wraps up at half past twelve. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:30 PM 🕧",
-                "options": [
-                    "12:30 PM 🕧",
-                    "1:30 PM 🕜",
-                    "12:00 PM 🍽️"
-                ],
-                "hint": "Count thirty minutes forward from twelve o'clock.",
-                "emoji": "🕧",
-                "explanation": "When it's half past twelve, we write it as 12:30 PM — thirty minutes after the hour.",
-                "funFact": "12:30 PM often marks the end of the school lunch period.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L46_Q3",
-                "gameType": "time",
-                "level": 46,
-                "instruction": "The nightlight glows softly at half past nine, deep into the quiet. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:30 PM 🕤",
-                "options": [
-                    "9:30 PM 🕤",
-                    "10:30 PM 🕥",
-                    "9:00 PM 🌙"
-                ],
-                "hint": "Count thirty minutes forward from nine o'clock.",
-                "emoji": "🕤",
-                "explanation": "When it's half past nine, we write it as 9:30 PM — thirty minutes after the hour.",
-                "funFact": "9:30 PM is late enough for the whole house to feel calm and still.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "The long hand moves from the 2 to the 8. How many minutes have passed?",
+        "question": "?",
+        "correctAnswer": "30 minutes",
+        "options": [
+          "40 minutes",
+          "30 minutes",
+          "6 minutes"
+        ],
+        "hint": "Each step from one number to the next is 5 minutes. Count the steps from 2 to 8.",
+        "emoji": "↪️",
+        "explanation": "From 2 to 8 is 6 steps, and 6 × 5 = 30 minutes.",
+        "funFact": "A minute can feel long or short depending on what you are doing, but a clock always counts it the same way.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L46_Q2",
+        "gameType": "time",
+        "level": 46,
+        "instruction": "A cartoon starts at 5:15 and ends at 5:50. How long is the cartoon?",
+        "question": "?",
+        "correctAnswer": "35 minutes",
+        "options": [
+          "45 minutes",
+          "35 minutes",
+          "25 minutes"
+        ],
+        "hint": "Count from 5:15 to 5:30 first, then count on to 5:50.",
+        "emoji": "📺",
+        "explanation": "From 5:15 to 5:30 is 15 minutes, and from 5:30 to 5:50 is 20 more. 15 + 20 = 35 minutes.",
+        "funFact": "Cartoons and films are made from many pictures shown quickly, often 24 every second.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L46_Q3",
+        "gameType": "time",
+        "level": 46,
+        "instruction": "A craft class starts at 3:45 and ends at 4:05. How long is the class?",
+        "question": "?",
+        "correctAnswer": "20 minutes",
+        "options": [
+          "25 minutes",
+          "40 minutes",
+          "20 minutes"
+        ],
+        "hint": "Count to the next o'clock time first, then add what is left.",
+        "emoji": "✂️",
+        "explanation": "3:45 to 4:00 is 15 minutes, and 4:00 to 4:05 is 5 more minutes. So the class lasts 20 minutes.",
+        "funFact": "A good trick for finding the time between two times is to count up to the next hour first.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 47,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L47_Q1",
+        "gameType": "time",
         "level": 47,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L47_Q1",
-                "gameType": "time",
-                "level": 47,
-                "instruction": "Slippers shuffle across the floor at half past six. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:30 AM 🕡",
-                "options": [
-                    "6:00 AM 🌅",
-                    "7:30 AM ⏱️",
-                    "6:30 AM 🕡"
-                ],
-                "hint": "Count thirty minutes forward from six o'clock.",
-                "emoji": "🕡",
-                "explanation": "When it's half past six, we write it as 6:30 AM — thirty minutes after the hour.",
-                "funFact": "6:30 AM is a quiet time before the whole house wakes up.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L47_Q2",
-                "gameType": "time",
-                "level": 47,
-                "instruction": "Backpacks are unzipped for homework at half past three. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:30 PM 🕞",
-                "options": [
-                    "3:00 PM 🎒",
-                    "3:30 PM 🕞",
-                    "4:30 PM ⏮️"
-                ],
-                "hint": "Count thirty minutes forward from three o'clock.",
-                "emoji": "🕞",
-                "explanation": "When it's half past three, we write it as 3:30 PM — thirty minutes after the hour.",
-                "funFact": "3:30 PM is a common time to start homework after school.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L47_Q3",
-                "gameType": "time",
-                "level": 47,
-                "instruction": "Teeth are brushed one more time at half past eight. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:30 PM 🕣",
-                "options": [
-                    "9:30 PM ⏱️",
-                    "8:00 PM 📖",
-                    "8:30 PM 🕣"
-                ],
-                "hint": "Count thirty minutes forward from eight o'clock.",
-                "emoji": "🕣",
-                "explanation": "When it's half past eight, we write it as 8:30 PM — thirty minutes after the hour.",
-                "funFact": "8:30 PM is a common last step before climbing into bed.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A city train comes at 8:10, 8:20 and 8:30. If it keeps coming every 10 minutes, when is the next train?",
+        "question": "?",
+        "correctAnswer": "8:40",
+        "options": [
+          "8:45",
+          "9:00",
+          "8:40"
+        ],
+        "hint": "Look at how much each time goes up by.",
+        "emoji": "🚆",
+        "explanation": "Each train comes 10 minutes after the one before. 8:30 plus 10 minutes is 8:40.",
+        "funFact": "On busy lines, many city trains run every 10 minutes or even more often.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L47_Q2",
+        "gameType": "time",
+        "level": 47,
+        "instruction": "A fairground ride starts every 15 minutes, beginning at 1:00. Which time is NOT a start time?",
+        "question": "?",
+        "correctAnswer": "1:50",
+        "options": [
+          "1:50",
+          "1:45",
+          "1:30"
+        ],
+        "hint": "List the start times: begin at 1:00 and add 15 minutes each time.",
+        "emoji": "🎡",
+        "explanation": "The start times are 1:00, 1:15, 1:30, 1:45 and 2:00. The time 1:50 is not in that list.",
+        "funFact": "Rides that run on a fixed cycle let visitors plan exactly when to join the queue.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L47_Q3",
+        "gameType": "time",
+        "level": 47,
+        "instruction": "A bell rings every 20 minutes on Sports Day: 10:00, 10:20, 10:40. When does it ring next?",
+        "question": "?",
+        "correctAnswer": "11:00",
+        "options": [
+          "11:00",
+          "11:20",
+          "10:50"
+        ],
+        "hint": "Add 20 minutes to the last ring. What happens when you reach the o'clock time?",
+        "emoji": "🔔",
+        "explanation": "10:40 plus 20 minutes is 11:00. The minute hand goes all the way round and the hour changes from 10 to 11.",
+        "funFact": "For centuries, towns have used bells and chimes to share the time with everyone nearby.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 48,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L48_Q1",
+        "gameType": "time",
         "level": 48,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L48_Q1",
-                "gameType": "time",
-                "level": 48,
-                "instruction": "The cereal bowl is nearly empty by half past seven. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:30 AM 🕢",
-                "options": [
-                    "7:30 AM 🕢",
-                    "7:00 AM 🛏️",
-                    "8:30 AM ⏱️"
-                ],
-                "hint": "Count thirty minutes forward from seven o'clock.",
-                "emoji": "🕢",
-                "explanation": "When it's half past seven, we write it as 7:30 AM — thirty minutes after the hour.",
-                "funFact": "7:30 AM is a common time to finish up breakfast.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L48_Q2",
-                "gameType": "time",
-                "level": 48,
-                "instruction": "Jump ropes swing during recess at half past ten. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:30 AM 🕥",
-                "options": [
-                    "10:30 AM 🕥",
-                    "10:00 AM 🍎",
-                    "11:30 AM ⏱️"
-                ],
-                "hint": "Count thirty minutes forward from ten o'clock.",
-                "emoji": "🕥",
-                "explanation": "When it's half past ten, we write it as 10:30 AM — thirty minutes after the hour.",
-                "funFact": "10:30 AM is a favorite time for jumping rope at recess.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L48_Q3",
-                "gameType": "time",
-                "level": 48,
-                "instruction": "Pencils are sharpened for class again at half past one. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:30 PM 🕜",
-                "options": [
-                    "1:30 PM 🕜",
-                    "1:00 PM 📚",
-                    "2:30 PM ⏱️"
-                ],
-                "hint": "Count thirty minutes forward from one o'clock.",
-                "emoji": "🕜",
-                "explanation": "When it's half past one, we write it as 1:30 PM — thirty minutes after the hour.",
-                "funFact": "1:30 PM is a common time for the second class of the afternoon.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is later: 6:25 or 6:40?",
+        "question": "?",
+        "correctAnswer": "6:40",
+        "options": [
+          "They are the same time",
+          "6:25",
+          "6:40"
+        ],
+        "hint": "The hours match, so the minutes decide.",
+        "emoji": "⚖️",
+        "explanation": "Both times are in the 6 o'clock hour. 40 minutes comes after 25 minutes, so 6:40 is later.",
+        "funFact": "Atomic clocks are the most accurate clocks in the world. The best ones would lose less than a second in many millions of years.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L48_Q2",
+        "gameType": "time",
+        "level": 48,
+        "instruction": "Which time is the earliest: 8:45, 9:05 or 8:55?",
+        "question": "?",
+        "correctAnswer": "8:45",
+        "options": [
+          "9:05",
+          "8:55",
+          "8:45"
+        ],
+        "hint": "Compare the hours first. Then compare the minutes of the two that match.",
+        "emoji": "🥇",
+        "explanation": "9:05 is in the 9 o'clock hour, so it is last. Of 8:45 and 8:55, the one with fewer minutes is earlier, so 8:45 is the earliest.",
+        "funFact": "Astronauts on the International Space Station see about 16 sunrises every day.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L48_Q3",
+        "gameType": "time",
+        "level": 48,
+        "instruction": "Which time is closest to 7:00: 6:50, 7:20 or 6:35?",
+        "question": "?",
+        "correctAnswer": "6:50",
+        "options": [
+          "6:50",
+          "7:20",
+          "6:35"
+        ],
+        "hint": "Find how many minutes each time is away from 7:00.",
+        "emoji": "📌",
+        "explanation": "6:50 is 10 minutes before 7:00, 7:20 is 20 minutes after it, and 6:35 is 25 minutes before it. So 6:50 is the nearest.",
+        "funFact": "Scientists have sometimes added a leap second to keep clocks in step with the Earth's slowing spin.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 49,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L49_Q1",
+        "gameType": "time",
         "level": 49,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L49_Q1",
-                "gameType": "time",
-                "level": 49,
-                "instruction": "The park fills with laughter at half past four. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:30 PM 🕟",
-                "options": [
-                    "4:30 PM 🕟",
-                    "4:00 PM 🛝",
-                    "5:30 PM ⏱️"
-                ],
-                "hint": "Count thirty minutes forward from four o'clock.",
-                "emoji": "🕟",
-                "explanation": "When it's half past four, we write it as 4:30 PM — thirty minutes after the hour.",
-                "funFact": "4:30 PM is a lively hour for the playground.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L49_Q2",
-                "gameType": "time",
-                "level": 49,
-                "instruction": "Hands are washed clean just before half past eleven. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:30 AM 🕦",
-                "options": [
-                    "12:30 PM 🕧",
-                    "11:30 AM 🕦",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "Count thirty minutes forward from eleven o'clock.",
-                "emoji": "🕦",
-                "explanation": "When it's half past eleven, we write it as 11:30 AM — thirty minutes after the hour.",
-                "funFact": "11:30 AM is a common time to get ready for lunch.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L49_Q3",
-                "gameType": "time",
-                "level": 49,
-                "instruction": "Rubber ducks float by at half past seven, bath time in full swing. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:30 PM 🕢",
-                "options": [
-                    "8:30 PM 🕣",
-                    "7:00 PM 🛁",
-                    "7:30 PM 🕢"
-                ],
-                "hint": "Count thirty minutes forward from seven o'clock.",
-                "emoji": "🕢",
-                "explanation": "When it's half past seven, we write it as 7:30 PM — thirty minutes after the hour.",
-                "funFact": "7:30 PM is a playful time for splashing in the tub.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Anya adds 20 minutes to 4:50 and writes 4:70. Why can 4:70 not be a real time?",
+        "question": "?",
+        "correctAnswer": "Minutes stop at 59, then a new hour starts",
+        "options": [
+          "Minutes count up to 99 before a new hour starts",
+          "Clock times can only end in 0 or 5",
+          "Minutes stop at 59, then a new hour starts"
+        ],
+        "hint": "How many minutes are in one hour?",
+        "emoji": "🧱",
+        "explanation": "An hour has 60 minutes, so minutes run from 00 to 59 and then start again in the next hour. 4:50 plus 20 minutes is 5:10.",
+        "funFact": "The word hour comes from the Greek word hora, which meant a period of time.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L49_Q2",
+        "gameType": "time",
+        "level": 49,
+        "instruction": "Zoe says: \"Twenty-five to 3 is 3:25.\" What is the correct time for twenty-five to 3?",
+        "question": "?",
+        "correctAnswer": "2:35",
+        "options": [
+          "3:35",
+          "2:25",
+          "2:35"
+        ],
+        "hint": "Twenty-five to 3 means 25 minutes are still missing before 3:00.",
+        "emoji": "🕵️‍♀️",
+        "explanation": "From 2:35 to 3:00 is 25 minutes, so twenty-five to 3 is 2:35. The time 3:25 is twenty-five past 3.",
+        "funFact": "The clock faces of Big Ben in London are about 7 metres across.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L49_Q3",
+        "gameType": "time",
+        "level": 49,
+        "instruction": "Where does the long hand point at 3:05?",
+        "question": "?",
+        "correctAnswer": "On the 1",
+        "options": [
+          "On the 3",
+          "On the 1",
+          "On the 5"
+        ],
+        "hint": "Each number is worth 5 minutes. Which number is worth 5?",
+        "emoji": "1️⃣",
+        "explanation": "5 minutes is one step of five from the 12, so the long hand is on the 1. The short hand is just past the 3.",
+        "funFact": "The five times table is also a clock table: 5 × 7 = 35, so the 7 means 35 minutes.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 50,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L50_Q1",
+        "gameType": "time",
         "level": 50,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L50_Q1",
-                "gameType": "time",
-                "level": 50,
-                "instruction": "Chalk squeaks on the board right at half past nine. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:30 AM 🕤",
-                "options": [
-                    "9:00 AM 🏫",
-                    "10:30 AM 🕓",
-                    "9:30 AM 🕤"
-                ],
-                "hint": "Count thirty minutes forward from nine o'clock.",
-                "emoji": "🕤",
-                "explanation": "When it's half past nine, we write it as 9:30 AM — thirty minutes after the hour.",
-                "funFact": "9:30 AM often falls in the middle of the first lesson.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L50_Q2",
-                "gameType": "time",
-                "level": 50,
-                "instruction": "Pages turn quietly as the story continues at half past two. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:30 PM 🕝",
-                "options": [
-                    "2:00 PM 😴",
-                    "2:30 PM 🕝",
-                    "3:30 PM 🕓"
-                ],
-                "hint": "Count thirty minutes forward from two o'clock.",
-                "emoji": "🕝",
-                "explanation": "When it's half past two, we write it as 2:30 PM — thirty minutes after the hour.",
-                "funFact": "2:30 PM is a peaceful hour for finishing a chapter.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L50_Q3",
-                "gameType": "time",
-                "level": 50,
-                "instruction": "Napkins are folded and dinner is nearly ready at half past six. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:30 PM 🕡",
-                "options": [
-                    "6:30 PM 🕡",
-                    "6:00 PM 🍲",
-                    "7:30 PM 🕢"
-                ],
-                "hint": "Count thirty minutes forward from six o'clock.",
-                "emoji": "🕡",
-                "explanation": "When it's half past six, we write it as 6:30 PM — thirty minutes after the hour.",
-                "funFact": "6:30 PM is a cozy hour for gathering around the table.",
-                "subtype": "half_past",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    }
+        "instruction": "The short hand is almost on the 9 and the long hand is on 10. What time is it?",
+        "question": "?",
+        "correctAnswer": "8:50",
+        "options": [
+          "9:50",
+          "9:10",
+          "8:50"
+        ],
+        "hint": "Count by fives to find the minutes. Then ask which hour the short hand has not reached.",
+        "emoji": "🕘",
+        "explanation": "The 10 means 50 minutes. The short hand has not reached 9, so the hour is 8. The time is 8:50, or ten to 9.",
+        "funFact": "The pendulum clock, invented in 1656, was the first very accurate clock.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L50_Q2",
+        "gameType": "time",
+        "level": 50,
+        "instruction": "A swimming lesson starts at 4:20 PM and lasts 25 minutes. When does it end?",
+        "question": "?",
+        "correctAnswer": "4:45 PM",
+        "options": [
+          "5:05 PM",
+          "4:25 PM",
+          "4:45 PM"
+        ],
+        "hint": "Add the 25 minutes in two steps, such as 5 minutes and then 20 minutes.",
+        "emoji": "🏊",
+        "explanation": "4:20 plus 5 minutes is 4:25, and 20 more minutes is 4:45. The lesson ends at 4:45 PM.",
+        "funFact": "Swimming races at the Olympic Games are timed to a hundredth of a second.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L50_Q3",
+        "gameType": "time",
+        "level": 50,
+        "instruction": "What time was it 35 minutes before 6:10?",
+        "question": "?",
+        "correctAnswer": "5:35",
+        "options": [
+          "5:25",
+          "5:35",
+          "5:45"
+        ],
+        "hint": "Go back 10 minutes to reach 6:00. Then go back the rest.",
+        "emoji": "⏳",
+        "explanation": "10 minutes before 6:10 is 6:00. There are 25 more minutes to go back, which gives 5:35.",
+        "funFact": "Nepal's clocks are 15 minutes ahead of India's, a rare time zone with a 45-minute offset.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

@@ -1,622 +1,622 @@
 [
-    {
+  {
+    "level": 11,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L11_Q1",
+        "gameType": "time",
         "level": 11,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L11_Q1",
-                "gameType": "time",
-                "level": 11,
-                "instruction": "The class visits the library to pick out new books. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 AM 📗",
-                "options": [
-                    "6:00 PM 🍲",
-                    "10:00 AM 📗",
-                    "2:00 PM 😴"
-                ],
-                "hint": "This happens mid-morning, after the first lessons.",
-                "emoji": "📗",
-                "explanation": "10:00 AM is mid-morning, a great time to explore the library.",
-                "funFact": "At 10:00 AM, library shelves are full of exciting new stories.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L11_Q2",
-                "gameType": "time",
-                "level": 11,
-                "instruction": "The class works quietly on a puzzle together. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:00 PM 🧩",
-                "options": [
-                    "10:00 AM 🍎",
-                    "2:00 PM 🧩",
-                    "6:00 PM 🍲"
-                ],
-                "hint": "This calm activity happens in the afternoon.",
-                "emoji": "🧩",
-                "explanation": "2:00 PM is in the afternoon, a focused time for puzzles.",
-                "funFact": "At 2:00 PM, puzzles help children practice patience and thinking.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L11_Q3",
-                "gameType": "time",
-                "level": 11,
-                "instruction": "The kitchen smells wonderful as dinner is served. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 PM 🍛",
-                "options": [
-                    "6:00 PM 🍛",
-                    "2:00 PM 😴",
-                    "10:00 AM 🍎"
-                ],
-                "hint": "This is in the evening, when the family gathers to eat.",
-                "emoji": "🍛",
-                "explanation": "6:00 PM is in the evening, a warm and happy time for dinner.",
-                "funFact": "At 6:00 PM, families often share stories about their day at dinner.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Both the short hand and the long hand point straight up at the 12. What time is it?",
+        "question": "?",
+        "correctAnswer": "12:00",
+        "options": [
+          "12:00",
+          "12:12",
+          "1:00"
+        ],
+        "hint": "Each hand has its own job: one tells the hour and the other tells the minutes.",
+        "emoji": "🔝",
+        "explanation": "The short hand on 12 shows the hour 12. The long hand on 12 shows 0 minutes. So the time is 12:00.",
+        "funFact": "At exactly 12 o'clock, the hour hand and the minute hand lie on top of each other.",
+        "subtype": "o_clock",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L11_Q2",
+        "gameType": "time",
+        "level": 11,
+        "instruction": "The toy clock face 🕐 shows a whole hour. What time is it?",
+        "question": "?",
+        "correctAnswer": "1:00",
+        "options": [
+          "1:00",
+          "10:00",
+          "12:00"
+        ],
+        "hint": "Check which number the short hand points to. Be careful not to mix up 1 and 10.",
+        "emoji": "🕐",
+        "explanation": "The long hand is on 12 and the short hand is on 1, so the time is 1:00.",
+        "funFact": "The first mechanical clocks, built in Europe about 700 years ago, had only an hour hand.",
+        "subtype": "o_clock",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L11_Q3",
+        "gameType": "time",
+        "level": 11,
+        "instruction": "Which time is the same as eleven o'clock?",
+        "question": "?",
+        "correctAnswer": "11:00",
+        "options": [
+          "10:00",
+          "11:00",
+          "1:10"
+        ],
+        "hint": "Say the hour first, then think about how many extra minutes there are.",
+        "emoji": "🔤",
+        "explanation": "Eleven o'clock is an exact hour: 11 hours and 0 minutes, written 11:00. The time 1:10 is ten minutes after one o'clock.",
+        "funFact": "Before mechanical clocks, people used water clocks that measured time by how fast water dripped from a bowl.",
+        "subtype": "o_clock",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L12_Q1",
+        "gameType": "time",
         "level": 12,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L12_Q1",
-                "gameType": "time",
-                "level": 12,
-                "instruction": "Everyone claps and sings along during music class. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:00 AM 🎶",
-                "options": [
-                    "3:00 PM 🎒",
-                    "11:00 AM 🎶",
-                    "7:00 PM 🛁"
-                ],
-                "hint": "This happens late in the morning, before lunch.",
-                "emoji": "🎶",
-                "explanation": "11:00 AM is late morning, a joyful time for music and singing.",
-                "funFact": "At 11:00 AM, music class helps children learn new songs together.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L12_Q2",
-                "gameType": "time",
-                "level": 12,
-                "instruction": "The bus pulls up to take everyone home from school. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:00 PM 🚏",
-                "options": [
-                    "7:00 PM 🛁",
-                    "3:00 PM 🚏",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "Think about the moment the school day is finally done.",
-                "emoji": "🚏",
-                "explanation": "3:00 PM is in the afternoon, the usual time to head home.",
-                "funFact": "At 3:00 PM, school buses line up to take children safely home.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L12_Q3",
-                "gameType": "time",
-                "level": 12,
-                "instruction": "We dry off with a towel after a splashy bath. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:00 PM 🩹",
-                "options": [
-                    "11:00 AM 🎨",
-                    "7:00 PM 🩹",
-                    "3:00 PM 🎒"
-                ],
-                "hint": "This happens in the evening, after playing in the water.",
-                "emoji": "🩹",
-                "explanation": "7:00 PM is in the evening, time to dry off and get cozy.",
-                "funFact": "At 7:00 PM, warm towels help keep bath time cozy and fun.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "The art club starts at 3:00 PM and the chess club starts at 5:00 PM. Which club starts earlier?",
+        "question": "?",
+        "correctAnswer": "The art club",
+        "options": [
+          "The art club",
+          "The chess club",
+          "They start at the same time"
+        ],
+        "hint": "Both times are in the afternoon. Which hour comes first on the clock?",
+        "emoji": "🎨",
+        "explanation": "Both clubs are in the afternoon, and 3 comes before 5. So the art club starts earlier.",
+        "funFact": "In many places far from the equator, sunrise comes earlier in summer and later in winter.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L12_Q2",
+        "gameType": "time",
+        "level": 12,
+        "instruction": "Which of these times is the latest?",
+        "question": "?",
+        "correctAnswer": "11:00 AM",
+        "options": [
+          "11:00 AM",
+          "6:00 AM",
+          "9:00 AM"
+        ],
+        "hint": "All three are in the morning. Think about which one is closest to noon.",
+        "emoji": "⏩",
+        "explanation": "In the same part of the day, a bigger hour means a later time. So 11:00 AM comes after 9:00 AM and 6:00 AM.",
+        "funFact": "Bakers and farmers often start work before sunrise, so their day begins very early.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L12_Q3",
+        "gameType": "time",
+        "level": 12,
+        "instruction": "Mina's cricket practice ends at 6:00 PM. Dev's practice ends at 7:00 PM. Whose practice ends later?",
+        "question": "?",
+        "correctAnswer": "Dev's practice",
+        "options": [
+          "They end at the same time",
+          "Mina's practice",
+          "Dev's practice"
+        ],
+        "hint": "Later means further along in the day. Compare the two hours.",
+        "emoji": "🏏",
+        "explanation": "Both practices end in the evening, and 7 comes after 6. So Dev's practice ends later.",
+        "funFact": "Going to sleep and waking up at about the same times each day helps the body keep a steady rhythm.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 13,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L13_Q1",
+        "gameType": "time",
         "level": 13,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L13_Q1",
-                "gameType": "time",
-                "level": 13,
-                "instruction": "Birds begin to sing as the sky turns soft pink. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 AM 🐦",
-                "options": [
-                    "2:00 PM 😴",
-                    "6:00 AM 🐦",
-                    "10:00 PM 🐶"
-                ],
-                "hint": "This is very early, right as the sun starts to rise.",
-                "emoji": "🐦",
-                "explanation": "6:00 AM is early morning, when birds greet the rising sun.",
-                "funFact": "At 6:00 AM, birdsong is one of the first sounds of the day.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L13_Q2",
-                "gameType": "time",
-                "level": 13,
-                "instruction": "Everyone closes their eyes for quiet rest on soft mats. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:00 PM 🧘",
-                "options": [
-                    "10:00 PM 🐶",
-                    "6:00 AM 🌅",
-                    "2:00 PM 🧘"
-                ],
-                "hint": "This peaceful break happens in the afternoon.",
-                "emoji": "🧘",
-                "explanation": "2:00 PM is in the afternoon, a calm time to rest and recharge.",
-                "funFact": "At 2:00 PM, a short rest helps children focus for the rest of the day.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L13_Q3",
-                "gameType": "time",
-                "level": 13,
-                "instruction": "The whole house is dark and silent, fast asleep. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 PM 🌌",
-                "options": [
-                    "2:00 PM 😴",
-                    "6:00 AM 🌅",
-                    "10:00 PM 🌌"
-                ],
-                "hint": "This is very late at night, long after bedtime begins.",
-                "emoji": "🌌",
-                "explanation": "10:00 PM is late at night, when everyone is deeply asleep.",
-                "funFact": "At 10:00 PM, a dark, quiet room helps children sleep soundly.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Priya has a swimming lesson at 10:00 AM and a piano lesson at 2:00 PM. Which lesson comes first?",
+        "question": "?",
+        "correctAnswer": "Swimming",
+        "options": [
+          "They happen together",
+          "Piano",
+          "Swimming"
+        ],
+        "hint": "Check AM and PM before you compare the numbers.",
+        "emoji": "🏊",
+        "explanation": "10:00 AM is in the morning and 2:00 PM is in the afternoon. Morning comes first, so swimming is first.",
+        "funFact": "The word noon comes from a Latin word meaning \"ninth hour\". Long ago it meant mid-afternoon, and it slowly moved to midday.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L13_Q2",
+        "gameType": "time",
+        "level": 13,
+        "instruction": "Which time is later: 11:00 AM or 1:00 PM?",
+        "question": "?",
+        "correctAnswer": "1:00 PM",
+        "options": [
+          "1:00 PM",
+          "11:00 AM",
+          "They are the same time"
+        ],
+        "hint": "The number 11 is bigger than 1, but AM and PM matter more.",
+        "emoji": "🔍",
+        "explanation": "11:00 AM is before noon. 1:00 PM is one hour after noon. So 1:00 PM is later, even though 1 is a smaller number than 11.",
+        "funFact": "When you compare times, look at AM and PM first, and only then at the numbers.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L13_Q3",
+        "gameType": "time",
+        "level": 13,
+        "instruction": "Which time is the earliest in the day: 9:00 PM, 4:00 PM or 8:00 AM?",
+        "question": "?",
+        "correctAnswer": "8:00 AM",
+        "options": [
+          "8:00 AM",
+          "4:00 PM",
+          "9:00 PM"
+        ],
+        "hint": "Sort the three times into morning, afternoon and night first.",
+        "emoji": "🥇",
+        "explanation": "8:00 AM is in the morning. 4:00 PM is in the afternoon and 9:00 PM is at night. So 8:00 AM is the earliest.",
+        "funFact": "Pocket watches, the first clocks small enough to carry, appeared about 500 years ago.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 14,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L14_Q1",
+        "gameType": "time",
         "level": 14,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L14_Q1",
-                "gameType": "time",
-                "level": 14,
-                "instruction": "We pack our backpacks and head out the door for school. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 AM 🎒",
-                "options": [
-                    "5:00 PM 🧃",
-                    "8:00 AM 🎒",
-                    "1:00 PM 📚"
-                ],
-                "hint": "This happens right after breakfast, in the morning.",
-                "emoji": "🎒",
-                "explanation": "8:00 AM is in the morning, time to head off to school.",
-                "funFact": "At 8:00 AM, sidewalks fill with children walking to school.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L14_Q2",
-                "gameType": "time",
-                "level": 14,
-                "instruction": "The teacher reads a story while the class listens quietly. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:00 PM 📕",
-                "options": [
-                    "8:00 AM 🍳",
-                    "5:00 PM 🧃",
-                    "1:00 PM 📕"
-                ],
-                "hint": "This happens in the early afternoon, after lunch.",
-                "emoji": "📕",
-                "explanation": "1:00 PM is in the early afternoon, a lovely time for story time.",
-                "funFact": "At 1:00 PM, story time helps children imagine faraway places.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L14_Q3",
-                "gameType": "time",
-                "level": 14,
-                "instruction": "The sun sinks lower as we enjoy a light snack. What time is it?",
-                "question": "?",
-                "correctAnswer": "5:00 PM 🍊",
-                "options": [
-                    "8:00 AM 🍳",
-                    "5:00 PM 🍊",
-                    "1:00 PM 📚"
-                ],
-                "hint": "Notice how the sky looks — dinner is not far away now.",
-                "emoji": "🍊",
-                "explanation": "5:00 PM is late afternoon, a nice time for a light snack.",
-                "funFact": "At 5:00 PM, the sky often begins turning golden before sunset.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Ravi's weekend plans are: a film at 6:00 PM, planting seeds at 11:00 AM, and feeding the ducks at 7:00 AM. Which event happens last?",
+        "question": "?",
+        "correctAnswer": "The film",
+        "options": [
+          "Feeding the ducks",
+          "Planting seeds",
+          "The film"
+        ],
+        "hint": "Put the three times in order, from the morning to the night.",
+        "emoji": "🦆",
+        "explanation": "7:00 AM and 11:00 AM are both in the morning. 6:00 PM is in the evening, so the film is last.",
+        "funFact": "Historians use timelines to put events in order from earliest to latest.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L14_Q2",
+        "gameType": "time",
+        "level": 14,
+        "instruction": "Which list shows the times in order, from earliest to latest?",
+        "question": "?",
+        "correctAnswer": "7:00 AM, 12:00 PM, 5:00 PM",
+        "options": [
+          "7:00 AM, 12:00 PM, 5:00 PM",
+          "12:00 PM, 7:00 AM, 5:00 PM",
+          "7:00 AM, 5:00 PM, 12:00 PM"
+        ],
+        "hint": "Find the morning time first, then the middle of the day, then the afternoon time.",
+        "emoji": "📋",
+        "explanation": "7:00 AM is in the morning, 12:00 PM is noon, and 5:00 PM is late afternoon. That is the correct order.",
+        "funFact": "Diaries and planners help people remember what comes first and what comes next.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L14_Q3",
+        "gameType": "time",
+        "level": 14,
+        "instruction": "Ana's plans are: kite flying at 3:00 PM, painting at 9:00 AM, and bird watching at 6:00 PM. Which activity comes second?",
+        "question": "?",
+        "correctAnswer": "Kite flying",
+        "options": [
+          "Kite flying",
+          "Painting",
+          "Bird watching"
+        ],
+        "hint": "Put the three times in order first, then pick the one in the middle.",
+        "emoji": "🪁",
+        "explanation": "In time order the plans are painting at 9:00 AM, kite flying at 3:00 PM, then bird watching at 6:00 PM. So kite flying is second.",
+        "funFact": "A sundial works only when the sun is shining, which is one reason people invented other kinds of clocks.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 15,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L15_Q1",
+        "gameType": "time",
         "level": 15,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L15_Q1",
-                "gameType": "time",
-                "level": 15,
-                "instruction": "Backpacks are put away and the first lesson begins. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 AM ✏️",
-                "options": [
-                    "4:00 PM 🛝",
-                    "9:00 AM ✏️",
-                    "8:00 PM 📖"
-                ],
-                "hint": "This is the usual moment school truly starts.",
-                "emoji": "✏️",
-                "explanation": "9:00 AM is in the morning, when the first lesson of the day begins.",
-                "funFact": "At 9:00 AM, classrooms are busy with children ready to learn.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L15_Q2",
-                "gameType": "time",
-                "level": 15,
-                "instruction": "Children take turns on the swings after school. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:00 PM 🎡",
-                "options": [
-                    "9:00 AM 🏫",
-                    "4:00 PM 🎡",
-                    "8:00 PM 📖"
-                ],
-                "hint": "This fun time happens in the afternoon, after classes end.",
-                "emoji": "🎡",
-                "explanation": "4:00 PM is in the afternoon, a fun time to swing and play.",
-                "funFact": "At 4:00 PM, playgrounds buzz with laughter after school.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L15_Q3",
-                "gameType": "time",
-                "level": 15,
-                "instruction": "We pick out a bedtime book to read together. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 PM 🛋️",
-                "options": [
-                    "4:00 PM 🛝",
-                    "8:00 PM 🛋️",
-                    "9:00 AM 🏫"
-                ],
-                "hint": "This cozy moment happens in the evening, before sleep.",
-                "emoji": "🛋️",
-                "explanation": "8:00 PM is in the evening, right when we snuggle up for a story.",
-                "funFact": "At 8:00 PM, a favorite book can make bedtime feel extra special.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "It is 4:00 PM. What time will it be one hour later?",
+        "question": "?",
+        "correctAnswer": "5:00 PM",
+        "options": [
+          "5:00 AM",
+          "5:00 PM",
+          "3:00 PM"
+        ],
+        "hint": "Count one step forward on the clock face, starting from the 4.",
+        "emoji": "➕",
+        "explanation": "One hour later moves the hour hand forward by one number, from 4 to 5. It is still the afternoon, so the time is 5:00 PM.",
+        "funFact": "There are 60 minutes in an hour. Ancient Babylonians liked the number 60 because it can be divided in many ways.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L15_Q2",
+        "gameType": "time",
+        "level": 15,
+        "instruction": "Eli's bus left at 9:00 AM. What time was it one hour before the bus left?",
+        "question": "?",
+        "correctAnswer": "8:00 AM",
+        "options": [
+          "8:00 PM",
+          "8:00 AM",
+          "10:00 AM"
+        ],
+        "hint": "One hour before means one step backwards on the clock.",
+        "emoji": "🚌",
+        "explanation": "One hour before moves the hour hand back by one number, from 9 to 8. It is still the morning, so the time was 8:00 AM.",
+        "funFact": "In one hour, the Earth turns about one twenty-fourth of a full turn.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L15_Q3",
+        "gameType": "time",
+        "level": 15,
+        "instruction": "It is 11:00 AM. What time will it be 2 hours later?",
+        "question": "?",
+        "correctAnswer": "1:00 PM",
+        "options": [
+          "1:00 AM",
+          "9:00 AM",
+          "1:00 PM"
+        ],
+        "hint": "After 11 the clock goes to 12, and then starts again at 1. What happens to AM and PM?",
+        "emoji": "🌤️",
+        "explanation": "Count two hours forward: 12:00 PM, then 1:00 PM. Passing noon changes AM to PM.",
+        "funFact": "Some countries move their clocks forward by one hour in spring to get more evening daylight.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 16,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L16_Q1",
+        "gameType": "time",
         "level": 16,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L16_Q1",
-                "gameType": "time",
-                "level": 16,
-                "instruction": "The class lines up for a healthy fruit snack. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 AM 🍌",
-                "options": [
-                    "9:00 PM 🌙",
-                    "3:00 PM 🎒",
-                    "10:00 AM 🍌"
-                ],
-                "hint": "This little break happens mid-morning, before lunch.",
-                "emoji": "🍌",
-                "explanation": "10:00 AM is mid-morning, a healthy time for a fruit snack.",
-                "funFact": "At 10:00 AM, fruit snacks give children energy to keep learning.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L16_Q2",
-                "gameType": "time",
-                "level": 16,
-                "instruction": "Backpacks are zipped up as everyone heads for the door. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:00 PM 🚪",
-                "options": [
-                    "3:00 PM 🚪",
-                    "10:00 AM 🍎",
-                    "9:00 PM 🌙"
-                ],
-                "hint": "This is when the school day comes to an end.",
-                "emoji": "🚪",
-                "explanation": "3:00 PM is in the afternoon, the usual time school ends.",
-                "funFact": "At 3:00 PM, hallways fill with excited chatter as school lets out.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L16_Q3",
-                "gameType": "time",
-                "level": 16,
-                "instruction": "Every light in the house is turned off for sleep. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 PM 💡",
-                "options": [
-                    "9:00 PM 💡",
-                    "3:00 PM 🎒",
-                    "10:00 AM 🍎"
-                ],
-                "hint": "This is late at night, when it's time for lights out.",
-                "emoji": "💡",
-                "explanation": "9:00 PM is nighttime, the usual time for lights out.",
-                "funFact": "At 9:00 PM, turning off lights helps our bodies get ready for sleep.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Hana wants to visit the library, which is open during the day. Which time is sensible for her visit?",
+        "question": "?",
+        "correctAnswer": "10:00 AM",
+        "options": [
+          "3:00 AM",
+          "10:00 AM",
+          "10:00 PM"
+        ],
+        "hint": "Think about when most libraries are open and people are awake.",
+        "emoji": "📚",
+        "explanation": "At 10:00 AM it is daytime and libraries are open. At 10:00 PM and 3:00 AM it is dark and libraries are closed.",
+        "funFact": "Libraries and shops put their opening hours on the door, so checking them first saves a wasted trip.",
+        "subtype": "time_of_day",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L16_Q2",
+        "gameType": "time",
+        "level": 16,
+        "instruction": "Which of these is NOT a sensible time for children to play football in the park?",
+        "question": "?",
+        "correctAnswer": "2:00 AM",
+        "options": [
+          "4:00 PM",
+          "9:00 AM",
+          "2:00 AM"
+        ],
+        "hint": "Imagine the park at each time. Which one is the darkest and quietest?",
+        "emoji": "⚽",
+        "explanation": "At 4:00 PM and 9:00 AM it is daylight and the park is busy. At 2:00 AM it is the middle of the night.",
+        "funFact": "Nocturnal animals, such as owls and bats, are active at night and rest during the day.",
+        "subtype": "time_of_day",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L16_Q3",
+        "gameType": "time",
+        "level": 16,
+        "instruction": "Baby Noor takes a nap in the afternoon. Which time fits her nap?",
+        "question": "?",
+        "correctAnswer": "2:00 PM",
+        "options": [
+          "2:00 AM",
+          "8:00 AM",
+          "2:00 PM"
+        ],
+        "hint": "Afternoon times come after noon.",
+        "emoji": "🧸",
+        "explanation": "Afternoon times are PM times after noon, so 2:00 PM fits. 2:00 AM is the middle of the night and 8:00 AM is morning.",
+        "funFact": "Young children often rest in the afternoon, while older children usually do not need a nap.",
+        "subtype": "time_of_day",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 17,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L17_Q1",
+        "gameType": "time",
         "level": 17,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L17_Q1",
-                "gameType": "time",
-                "level": 17,
-                "instruction": "Paintbrushes come out for a colorful art project. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:00 AM 🖌️",
-                "options": [
-                    "6:00 PM 🍲",
-                    "11:00 AM 🖌️",
-                    "1:00 PM 📚"
-                ],
-                "hint": "This happens later than breakfast, but still before lunch.",
-                "emoji": "🖌️",
-                "explanation": "11:00 AM is late morning, a colorful time to create art.",
-                "funFact": "At 11:00 AM, art class lets children show off their imagination.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L17_Q2",
-                "gameType": "time",
-                "level": 17,
-                "instruction": "Little eyes get sleepy and nap time begins. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:00 PM 💤",
-                "options": [
-                    "1:00 PM 💤",
-                    "6:00 PM 🍲",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "This restful time happens in the early afternoon.",
-                "emoji": "💤",
-                "explanation": "1:00 PM is in the early afternoon, a sleepy time for a nap.",
-                "funFact": "At 1:00 PM, an afternoon nap helps children feel refreshed later.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L17_Q3",
-                "gameType": "time",
-                "level": 17,
-                "instruction": "Plates and cups are set out for family dinner. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 PM 🍴",
-                "options": [
-                    "6:00 PM 🍴",
-                    "11:00 AM 🎨",
-                    "1:00 PM 📚"
-                ],
-                "hint": "This happens in the evening, when the family gathers to eat.",
-                "emoji": "🍴",
-                "explanation": "6:00 PM is in the evening, a warm time for family dinner.",
-                "funFact": "At 6:00 PM, setting the table together makes dinner extra fun.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Which number is at the very bottom of a clock face?",
+        "question": "?",
+        "correctAnswer": "6",
+        "options": [
+          "12",
+          "6",
+          "9"
+        ],
+        "hint": "The 12 is at the top. Which number is straight across from it?",
+        "emoji": "⬇️",
+        "explanation": "The 6 is directly opposite the 12, so it sits at the bottom of the clock face.",
+        "funFact": "Many old clocks use Roman numerals, and they often write the 4 as IIII instead of IV.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L17_Q2",
+        "gameType": "time",
+        "level": 17,
+        "instruction": "At 9 o'clock, which side of the clock does the short hand point to?",
+        "question": "?",
+        "correctAnswer": "The left side",
+        "options": [
+          "The right side",
+          "The bottom",
+          "The left side"
+        ],
+        "hint": "Picture the 12 at the top and the 3 on the right. Where would the 9 be?",
+        "emoji": "⬅️",
+        "explanation": "The 3 is on the right side of the clock and the 9 is on the left side. So at 9 o'clock the short hand points left.",
+        "funFact": "Some clock faces have no numbers at all, only marks or dots, so you have to know where each number would be.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L17_Q3",
+        "gameType": "time",
+        "level": 17,
+        "instruction": "At which o'clock time do the hands make a square corner, like the corner of a book?",
+        "question": "?",
+        "correctAnswer": "3:00",
+        "options": [
+          "12:00",
+          "3:00",
+          "6:00"
+        ],
+        "hint": "Think about the two hands making an L shape.",
+        "emoji": "📖",
+        "explanation": "At 3:00 the long hand points up at 12 and the short hand points right at 3, making a square corner. At 6:00 the hands make a straight line, and at 12:00 they lie on top of each other.",
+        "funFact": "The word clock comes from an old word for a bell, because early clocks rang bells to tell the hour.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 18,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L18_Q1",
+        "gameType": "time",
         "level": 18,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L18_Q1",
-                "gameType": "time",
-                "level": 18,
-                "instruction": "We make our beds and get ready for a new day. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:00 AM 🧹",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "7:00 AM 🧹",
-                    "8:00 PM 📖"
-                ],
-                "hint": "This happens early, right after we wake up.",
-                "emoji": "🧹",
-                "explanation": "7:00 AM is early morning, a tidy way to start the day.",
-                "funFact": "At 7:00 AM, making the bed helps the whole day feel organized.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L18_Q2",
-                "gameType": "time",
-                "level": 18,
-                "instruction": "Lunch boxes open as everyone sits down to eat. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:00 PM 🥪",
-                "options": [
-                    "12:00 PM 🥪",
-                    "8:00 PM 📖",
-                    "7:00 AM 🛏️"
-                ],
-                "hint": "This is right in the middle of the day.",
-                "emoji": "🥪",
-                "explanation": "12:00 PM is noon, so lunch boxes open right in the middle of the day.",
-                "funFact": "At 12:00 PM, lunchrooms fill with hungry, happy children.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L18_Q3",
-                "gameType": "time",
-                "level": 18,
-                "instruction": "Toys are tidied away before climbing into bed. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 PM 🧸",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "7:00 AM 🛏️",
-                    "8:00 PM 🧸"
-                ],
-                "hint": "This happens in the evening, right before sleep.",
-                "emoji": "🧸",
-                "explanation": "8:00 PM is in the evening, a tidy time before bed.",
-                "funFact": "At 8:00 PM, putting toys away helps mornings start off calm.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is between 2:00 PM and 6:00 PM?",
+        "question": "?",
+        "correctAnswer": "4:00 PM",
+        "options": [
+          "8:00 PM",
+          "4:00 PM",
+          "12:00 PM"
+        ],
+        "hint": "Look for a time that is after 2:00 PM but before 6:00 PM.",
+        "emoji": "↔️",
+        "explanation": "4:00 PM comes after 2:00 PM and before 6:00 PM. 12:00 PM is before 2:00 PM and 8:00 PM is after 6:00 PM.",
+        "funFact": "Words like before, after and between appear in every timetable, so they are worth knowing well.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L18_Q2",
+        "gameType": "time",
+        "level": 18,
+        "instruction": "Leo's plans are: reading at 5:00 PM, chess at 3:00 PM, and a visit to his grandmother at 4:00 PM. Which order is correct?",
+        "question": "?",
+        "correctAnswer": "Chess, visit, reading",
+        "options": [
+          "Visit, chess, reading",
+          "Reading, visit, chess",
+          "Chess, visit, reading"
+        ],
+        "hint": "Write the times in order first: the earliest, then the next, then the latest.",
+        "emoji": "📝",
+        "explanation": "The times in order are 3:00 PM, 4:00 PM and 5:00 PM. That means chess, then the visit, then reading.",
+        "funFact": "Putting tasks in time order is the first step of making a good plan.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L18_Q3",
+        "gameType": "time",
+        "level": 18,
+        "instruction": "Mira finishes painting at 11:00 AM. Which event could have happened before she finished?",
+        "question": "?",
+        "correctAnswer": "A 9:00 AM story session",
+        "options": [
+          "A 3:00 PM football game",
+          "A 1:00 PM puppet show",
+          "A 9:00 AM story session"
+        ],
+        "hint": "Before means earlier on the clock than 11:00 AM.",
+        "emoji": "🖌️",
+        "explanation": "9:00 AM is earlier than 11:00 AM, so the story session could happen before Mira finished. 1:00 PM and 3:00 PM come after 11:00 AM.",
+        "funFact": "Artists often paint in the morning because daylight is bright and clear.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 19,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L19_Q1",
+        "gameType": "time",
         "level": 19,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L19_Q1",
-                "gameType": "time",
-                "level": 19,
-                "instruction": "Warm oatmeal is served for a cozy breakfast. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 AM 🥣",
-                "options": [
-                    "8:00 AM 🥣",
-                    "2:00 PM 😴",
-                    "9:00 PM 🌙"
-                ],
-                "hint": "This is our first meal, early in the morning.",
-                "emoji": "🥣",
-                "explanation": "8:00 AM is in the morning, a cozy time for a warm breakfast.",
-                "funFact": "At 8:00 AM, a warm breakfast helps children feel ready for the day.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L19_Q2",
-                "gameType": "time",
-                "level": 19,
-                "instruction": "Building blocks come out for quiet afternoon play. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:00 PM 🧱",
-                "options": [
-                    "8:00 AM 🍳",
-                    "2:00 PM 🧱",
-                    "9:00 PM 🌙"
-                ],
-                "hint": "This calm playtime happens in the afternoon.",
-                "emoji": "🧱",
-                "explanation": "2:00 PM is in the afternoon, a calm time for quiet play.",
-                "funFact": "At 2:00 PM, building with blocks helps children solve fun problems.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L19_Q3",
-                "gameType": "time",
-                "level": 19,
-                "instruction": "A soft nightlight glows as everyone drifts off to sleep. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 PM 🌛",
-                "options": [
-                    "9:00 PM 🌛",
-                    "8:00 AM 🍳",
-                    "2:00 PM 😴"
-                ],
-                "hint": "This is late, when the whole house grows quiet.",
-                "emoji": "🌛",
-                "explanation": "9:00 PM is nighttime, a peaceful time to drift off to sleep.",
-                "funFact": "At 9:00 PM, a soft nightlight can make bedtime feel cozy and safe.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Which way of writing 4 o'clock in the afternoon is correct?",
+        "question": "?",
+        "correctAnswer": "4:00 PM",
+        "options": [
+          "4:00 PM",
+          "4:00 AM",
+          "12:04 PM"
+        ],
+        "hint": "Afternoon times use PM.",
+        "emoji": "✍️",
+        "explanation": "Afternoon times come after noon, so they are written with PM. 4:00 AM would be in the middle of the night, and 12:04 PM is just after noon.",
+        "funFact": "Writing AM or PM after a time helps people avoid turning up 12 hours early or late.",
+        "subtype": "am_pm",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L19_Q2",
+        "gameType": "time",
+        "level": 19,
+        "instruction": "A museum is open from 9:00 AM to 5:00 PM. At which time could you visit?",
+        "question": "?",
+        "correctAnswer": "2:00 PM",
+        "options": [
+          "7:00 AM",
+          "2:00 PM",
+          "8:00 PM"
+        ],
+        "hint": "Your visit must be after the museum opens and before it closes.",
+        "emoji": "🏛️",
+        "explanation": "2:00 PM is after the 9:00 AM opening and before the 5:00 PM closing. 7:00 AM is too early and 8:00 PM is too late.",
+        "funFact": "Reading opening hours before you go helps you arrive when a place is open.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L19_Q3",
+        "gameType": "time",
+        "level": 19,
+        "instruction": "The pool sign says: Open 10:00 AM – 6:00 PM. Which time is the closing time?",
+        "question": "?",
+        "correctAnswer": "6:00 PM",
+        "options": [
+          "6:00 PM",
+          "10:00 AM",
+          "4:00 PM"
+        ],
+        "hint": "Closing is when the opening hours end.",
+        "emoji": "🏊‍♀️",
+        "explanation": "The second time on the sign is when the pool closes. Opening hours start at 10:00 AM and end at 6:00 PM.",
+        "funFact": "Many outdoor pools close earlier in winter, when the days are shorter.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 20,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L20_Q1",
+        "gameType": "time",
         "level": 20,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L20_Q1",
-                "gameType": "time",
-                "level": 20,
-                "instruction": "Everyone waves hello as morning class begins. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 AM 👋",
-                "options": [
-                    "9:00 AM 👋",
-                    "5:00 PM 🧃",
-                    "10:00 PM 🐶"
-                ],
-                "hint": "This happens right when lessons start for the day.",
-                "emoji": "👋",
-                "explanation": "9:00 AM is in the morning, when the school day gets started.",
-                "funFact": "At 9:00 AM, a friendly good-morning helps everyone feel welcome.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L20_Q2",
-                "gameType": "time",
-                "level": 20,
-                "instruction": "The playground empties as families head home for the evening. What time is it?",
-                "question": "?",
-                "correctAnswer": "5:00 PM 🏡",
-                "options": [
-                    "9:00 AM 🏫",
-                    "10:00 PM 🐶",
-                    "5:00 PM 🏡"
-                ],
-                "hint": "This happens later in the afternoon, close to dinner.",
-                "emoji": "🏡",
-                "explanation": "5:00 PM is late afternoon, when many families head home.",
-                "funFact": "At 5:00 PM, streets often fill with families walking home together.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L20_Q3",
-                "gameType": "time",
-                "level": 20,
-                "instruction": "Even the streetlights seem to glow softly outside. Everyone is deep asleep. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 PM 🌃",
-                "options": [
-                    "10:00 PM 🌃",
-                    "9:00 AM 🏫",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "This is very late, deep in the night.",
-                "emoji": "🌃",
-                "explanation": "10:00 PM is late at night, when the whole neighborhood is asleep.",
-                "funFact": "At 10:00 PM, a good night's sleep helps children grow big and strong.",
-                "subtype": "time_of_day",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    }
+        "instruction": "The short hand is on 10, the long hand is on 12, and the sky outside is dark. Which time is it?",
+        "question": "?",
+        "correctAnswer": "10:00 PM",
+        "options": [
+          "10:00 AM",
+          "12:10 AM",
+          "10:00 PM"
+        ],
+        "hint": "Read the hour from the short hand, then decide whether a dark sky points to AM or PM.",
+        "emoji": "🌌",
+        "explanation": "The short hand on 10 and the long hand on 12 show 10 o'clock. A dark sky means night, so it is 10:00 PM. 12:10 AM comes from swapping the hands.",
+        "funFact": "Digital and analog clocks show the same time in two different ways, and good time readers can switch between them.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L20_Q2",
+        "gameType": "time",
+        "level": 20,
+        "instruction": "Ms. Das's timetable says: 9:00 Art, 10:00 Music, 11:00 Science, 12:00 Reading. Which lesson starts one hour after Music starts?",
+        "question": "?",
+        "correctAnswer": "Science",
+        "options": [
+          "Reading",
+          "Science",
+          "Art"
+        ],
+        "hint": "Find Music on the timetable, then look at the next time.",
+        "emoji": "📅",
+        "explanation": "Music starts at 10:00. One hour later is 11:00, which is Science.",
+        "funFact": "Timetables list activities in time order, so you can read them from top to bottom like a story.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L20_Q3",
+        "gameType": "time",
+        "level": 20,
+        "instruction": "Zoya sets two alarms, one for 6:00 AM and one for 6:00 PM. Which alarm rings first in a day?",
+        "question": "?",
+        "correctAnswer": "The 6:00 AM alarm",
+        "options": [
+          "They ring at the same time",
+          "The 6:00 AM alarm",
+          "The 6:00 PM alarm"
+        ],
+        "hint": "Think about which comes first in a day: morning or evening.",
+        "emoji": "⏰",
+        "explanation": "A day starts at midnight, and morning comes before evening. So the 6:00 AM alarm rings first.",
+        "funFact": "Check AM or PM when you set an alarm. A wrong setting can make it ring 12 hours late.",
+        "subtype": "am_pm",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

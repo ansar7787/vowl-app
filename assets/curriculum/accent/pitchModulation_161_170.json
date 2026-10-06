@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L161_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager stops by your desk at the end of the day.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "First we checked in, then we found our seats.",
-            "textToSpeak": "First we checked in, then we found our seats.",
+            "word": "Have you got a minute? It's nothing urgent.",
+            "textToSpeak": "Have you got a minute? It's nothing urgent.",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "A routine check-in",
+                "Bad news is coming"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "A routine check-in",
             "correctAnswerIndex": 0,
-            "hint": "This sounds like the beginning of a longer account of the trip. Listen for the pitch to lift at the end, keeping the story open.",
-            "explanation": "Ending on a rise, this clause signals the story continues - there's more of the journey still to be told.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "hint": "Listen to how the second sentence settles. Does it keep any tension?",
+            "explanation": "Easy, low landings on 'urgent' tell you there is no pressure behind the request, and the quick, light first question points the same way. When bad news is on its way, speakers often slow down and hold a flat, careful tone through both sentences. Knowing the difference helps you relax and answer naturally.",
+            "modulationPattern": "Light rise on 'minute', relaxed fall on 'urgent'.",
+            "meaningShift": "A light rise and an easy fall signal routine business; a slow, flat, careful delivery would signal bad news."
         },
         {
             "id": "ACC_PITCHMODULATION_L161_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has been asked to review your document.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Finally, we made it home safely.",
-            "textToSpeak": "Finally, we made it home safely.",
+            "word": "I'll have a look when I get a chance.",
+            "textToSpeak": "I'll have a look when I get a chance.",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "A real commitment to a date",
+                "Low priority, no firm date"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
-            "correctAnswerIndex": 0,
-            "hint": "'Finally' signals the end of a journey. Listen for the pitch to fall and settle, closing the story.",
-            "explanation": "'Finally' paired with a falling pitch closes the narrative, telling the listener the account has reached its conclusion.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "correctAnswer": "Low priority, no firm date",
+            "correctAnswerIndex": 1,
+            "hint": "Is there any stress on a time word?",
+            "explanation": "No time word gets a peak, and the fall on 'chance' is loose, so nothing is being promised. A real commitment would add weight to a specific moment such as 'today' or 'tomorrow'. In practice, a vague, even delivery is your cue to follow up politely.",
+            "modulationPattern": "Even contour with a loose fall on 'chance'; no stressed time word.",
+            "meaningShift": "A loose, even delivery promises nothing; a stressed time word would be a firm commitment."
         },
         {
             "id": "ACC_PITCHMODULATION_L161_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks you for a file.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "After the show, we grabbed a quick bite.",
-            "textToSpeak": "After the show, we grabbed a quick bite.",
+            "word": "Could you send that over by end of day?",
+            "textToSpeak": "Could you send that over by end of day?",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "A request with a deadline",
+                "A casual hope, no real limit"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
-            "correctAnswerIndex": 1,
-            "hint": "This sounds like one event in a longer evening, not the final word. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the evening's story isn't finished yet - there's more still to come.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "correctAnswer": "A request with a deadline",
+            "correctAnswerIndex": 0,
+            "hint": "Which words does the speaker lean on?",
+            "explanation": "Weight on 'end of day' turns an apparently polite question into a request with a limit. A casual hope would be more even and finish with a soft lift. Hearing this difference tells you whether you can wait until tomorrow or must act today.",
+            "modulationPattern": "Rise at the end, with extra weight on 'end of day'.",
+            "meaningShift": "Weight on 'end of day' sets a deadline; an even, softly lifted request would only express a hope."
         },
         {
             "id": "ACC_PITCHMODULATION_L162_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A chair is keeping a meeting on schedule.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We packed the car, and then we hit the road.",
-            "textToSpeak": "We packed the car, and then we hit the road.",
+            "word": "Let's park that for now and come back to it.",
+            "textToSpeak": "Let's park that for now and come back to it.",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Closing the topic for the moment",
+                "Inviting more debate on it"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "Closing the topic for the moment",
             "correctAnswerIndex": 0,
-            "hint": "This sounds like the start of a road trip story. Listen for the pitch to lift at the end, keeping the account open.",
-            "explanation": "Ending on a rise, this clause signals the trip story is just getting started - there's clearly more to tell.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "hint": "Check whether the voice holds open, or settles.",
+            "explanation": "Falling at the end and moving briskly through 'come back to it' tells the room that the topic is shelved. If the chair wanted more discussion, 'now' or 'that' would carry a lift, and the sentence would stay open. If you want to add something, you now know to speak before the chair says it.",
+            "modulationPattern": "Brisk tempo, firm fall on 'it'.",
+            "meaningShift": "A brisk, falling finish shelves the topic; a lifted, open delivery would invite debate."
         },
         {
             "id": "ACC_PITCHMODULATION_L162_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A chair is about to take a decision.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "In the end, everything worked out fine.",
-            "textToSpeak": "In the end, everything worked out fine.",
+            "word": "Does anyone have any objections?",
+            "textToSpeak": "Does anyone have any objections?",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Genuinely open to objections",
+                "Expecting no objections at all"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
-            "correctAnswerIndex": 1,
-            "hint": "'In the end' signals a conclusion. Listen for the pitch to fall and settle, closing the account.",
-            "explanation": "'In the end' paired with a falling pitch closes the story, telling the listener the situation has been fully resolved.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "correctAnswer": "Genuinely open to objections",
+            "correctAnswerIndex": 0,
+            "hint": "How much time does the speaker seem to leave?",
+            "explanation": "Genuine invitations are slower, with a lift on 'objections' and a pause that lets people respond. A rushed delivery with a fall at the end is how many chairs signal that the decision has already been made. Picking up on this tells you how safe it is to disagree.",
+            "modulationPattern": "Slow rise on 'objections' with a pause.",
+            "meaningShift": "A slow rise with space invites objections; a rushed, falling one expects none."
         },
         {
             "id": "ACC_PITCHMODULATION_L162_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague wants to make sure the decision is clear.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Next, we toured the old castle.",
-            "textToSpeak": "Next, we toured the old castle.",
+            "word": "Sorry, just to be clear, are we saying Friday?",
+            "textToSpeak": "Sorry, just to be clear, are we saying Friday?",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Challenging the decision",
+                "Checking, not challenging"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
-            "correctAnswerIndex": 0,
-            "hint": "'Next' signals another event is coming in the account. Listen for the pitch to lift at the end.",
-            "explanation": "'Next' paired with a rising pitch signals the travel story continues, with more sights still to describe.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "correctAnswer": "Checking, not challenging",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'Friday' rise gently, or is it pressed?",
+            "explanation": "Light stress on 'clear' and an open rise on 'Friday' make this a clarification, and the speaker sounds cooperative. Challenging would press 'saying' or 'Friday' and finish with a harder edge. In meetings, this tone lets you query a point without making people defensive.",
+            "modulationPattern": "Light 'sorry', open rise on 'Friday'.",
+            "meaningShift": "An open rise checks the plan; a pressed 'saying' with a hard edge would challenge it."
         },
         {
             "id": "ACC_PITCHMODULATION_L163_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A call centre agent is finishing a call.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She opened the gift, and then she smiled.",
-            "textToSpeak": "She opened the gift, and then she smiled.",
+            "word": "Is there anything else I can help you with today?",
+            "textToSpeak": "Is there anything else I can help you with today?",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Offering you further help",
+                "Closing the call politely"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "Closing the call politely",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like one moment within a longer scene. Listen for the pitch to lift at the end, keeping the account open.",
-            "explanation": "Ending on a rise, this clause signals the scene isn't finished - there's more of the moment still to describe.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "How fast is it, and does it wait for an answer?",
+            "explanation": "Speed plus a flat or falling finish usually means the question is a ritual before hanging up. If the agent really wanted to help more, the pace would slow and the pitch would lift on 'today'. This helps you decide whether to raise another issue or let the call end.",
+            "modulationPattern": "Quick tempo, flat or falling end on 'today'.",
+            "meaningShift": "A quick, falling question is a ritual close; a slower, lifted one genuinely offers more help."
         },
         {
             "id": "ACC_PITCHMODULATION_L163_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer is asking for a refund and the agent cannot give one.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "And that's how we became friends.",
-            "textToSpeak": "And that's how we became friends.",
+            "word": "I'm afraid that's not something we can do.",
+            "textToSpeak": "I'm afraid that's not something we can do.",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Open to negotiating it further",
+                "Firm but sympathetic refusal"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
+            "correctAnswer": "Firm but sympathetic refusal",
             "correctAnswerIndex": 1,
-            "hint": "This phrase usually closes off a story about how something began. Listen for the pitch to fall and settle at the end.",
-            "explanation": "'And that's how we became friends' falls to close the story, signalling the account has reached its natural ending.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "hint": "Where does the last word end up?",
+            "explanation": "Landing smoothly on 'do' shows the answer is final, while 'I'm afraid' keeps the tone sympathetic. If the agent were open to negotiating, 'can' would rise and leave a gap for you to push. When you hear the firm fall, it's better to ask about alternatives than to repeat the request.",
+            "modulationPattern": "Smooth fall on 'do' after a softened opener.",
+            "meaningShift": "A firm fall closes the matter kindly; a lift on 'can' would leave room to negotiate."
         },
         {
             "id": "ACC_PITCHMODULATION_L163_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer is standing at a returns counter.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "After dinner, we played some board games.",
-            "textToSpeak": "After dinner, we played some board games.",
+            "word": "I'd like a refund, please.",
+            "textToSpeak": "I'd like a refund, please.",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Polite but firm",
+                "Hesitant request"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
-            "correctAnswerIndex": 1,
-            "hint": "This sounds like one part of a longer evening. Listen for the pitch to lift at the end, keeping the account open.",
-            "explanation": "Ending on a rise, this clause signals the evening's story continues, with more events still to come.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "correctAnswer": "Polite but firm",
+            "correctAnswerIndex": 0,
+            "hint": "Judge whether the voice climbs at the end.",
+            "explanation": "Peaking on 'refund' and falling through 'please' presents the request as reasonable and settled. A hesitant version would rise at the end and sound as if it were asking permission. As a speaker, the falling version is a good model for polite firmness.",
+            "modulationPattern": "Peak on 'refund', fall through 'please'.",
+            "meaningShift": "A peak and fall sound polite but firm; a rise at the end would sound unsure."
         },
         {
             "id": "ACC_PITCHMODULATION_L164_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer is looking at a price tag.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We landed, grabbed our bags, and then called a taxi.",
-            "textToSpeak": "We landed, grabbed our bags, and then called a taxi.",
+            "word": "That's a bit more than I wanted to spend.",
+            "textToSpeak": "That's a bit more than I wanted to spend.",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Ending the conversation",
+                "Hinting at a discount"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "Hinting at a discount",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like the start of an account of arriving somewhere. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the arrival story continues, with more of the journey still to be told.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "Is the end of the sentence closed or left open?",
+            "explanation": "Dipping and lifting on 'spend' leaves the sentence open, which invites the seller to respond with an offer. If the customer wanted to end the conversation, the voice would fall flatly and stop. Hearing the open ending is the cue to start negotiating, or to offer a lower price if you are selling.",
+            "modulationPattern": "Fall-rise on 'spend'.",
+            "meaningShift": "A dip and lift leaves room for a discount; a flat fall would close the matter."
         },
         {
             "id": "ACC_PITCHMODULATION_L164_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A shopper is bargaining at a market stall.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "At last, the rain finally stopped.",
-            "textToSpeak": "At last, the rain finally stopped.",
+            "word": "Is that the best price you can do?",
+            "textToSpeak": "Is that the best price you can do?",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Negotiating",
+                "Complaining"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
+            "correctAnswer": "Negotiating",
             "correctAnswerIndex": 0,
-            "hint": "'At last' signals relief and closure. Listen for the pitch to fall and settle, closing the account.",
-            "explanation": "'At last' paired with a falling pitch closes the account, signalling the long wait has finally come to an end.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "Which word is pushed, and how does the question finish?",
+            "explanation": "Weight on 'best' and an open rise on 'do' invite a counter-offer, so the shopper sounds like a negotiator. Complaining would be flatter and sound exasperated, with the fall landing on 'price'. The first one is the better model if you want a discount.",
+            "modulationPattern": "Weight on 'best', open rise on 'do'.",
+            "meaningShift": "Weight on 'best' with an open rise negotiates; a flat, falling delivery would complain."
         },
         {
             "id": "ACC_PITCHMODULATION_L164_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A sales assistant approaches you in a shop.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Then we walked along the beach for hours.",
-            "textToSpeak": "Then we walked along the beach for hours.",
+            "word": "Just looking, thanks.",
+            "textToSpeak": "Just looking, thanks.",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Politely declining help",
+                "Inviting a chat with staff"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "Politely declining help",
             "correctAnswerIndex": 0,
-            "hint": "'Then' signals another event is coming in the story. Listen for the pitch to lift at the end.",
-            "explanation": "'Then' paired with a rising pitch signals the day's story continues, with more of the outing still to describe.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "hint": "Does 'thanks' lift, or finish low?",
+            "explanation": "Saying 'just looking' quickly and letting 'thanks' fall lightly closes the exchange without offence. If you wanted to talk, you would slow down and lift at the end. This is the easiest way to say no without feeling rude.",
+            "modulationPattern": "Quick 'just looking', light fall on 'thanks'.",
+            "meaningShift": "A quick, falling reply declines kindly; a slower, lifted one would invite more conversation."
         },
         {
             "id": "ACC_PITCHMODULATION_L165_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A station worker is asked which platform the train leaves from.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I finished my coffee, and then I left for work.",
-            "textToSpeak": "I finished my coffee, and then I left for work.",
+            "word": "The train to Bristol? Platform nine, I think.",
+            "textToSpeak": "The train to Bristol? Platform nine, I think.",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Confident, so go straight there",
+                "Unsure, so check the board"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "Unsure, so check the board",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like the start of an account of the morning. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the morning's story continues, with more of the routine still to come.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "What happens on 'think'?",
+            "explanation": "Lifting on 'think', after the first rising echo, tells you the worker is giving the best guess available. A confident answer would fall on 'nine' and have no lift at the end. In a station, this is a cue to confirm on the departure board before you walk.",
+            "modulationPattern": "Rise on echoed 'Bristol', lift on 'think'.",
+            "meaningShift": "A rise on 'think' signals a guess you should verify; a firm fall on 'nine' would be reliable."
         },
         {
             "id": "ACC_PITCHMODULATION_L165_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A security officer at an airport gate.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "And that was the end of a long day.",
-            "textToSpeak": "And that was the end of a long day.",
+            "word": "Can I see your boarding pass, please?",
+            "textToSpeak": "Can I see your boarding pass, please?",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Quiet suspicion of you",
+                "A routine request"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
-            "correctAnswerIndex": 0,
-            "hint": "'The end of a long day' clearly signals closure. Listen for the pitch to fall and settle at the end.",
-            "explanation": "'And that was the end of a long day' falls to close the account, signalling the story has reached its conclusion.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "correctAnswer": "A routine request",
+            "correctAnswerIndex": 1,
+            "hint": "Notice whether the voice is friendly, or heavy on 'see'.",
+            "explanation": "Rising smoothly on 'please' with even weight across the words shows the question is routine. Suspicion would press on 'see' and use a flatter pitch. Recognising the routine tone helps you stay relaxed at checkpoints.",
+            "modulationPattern": "Smooth rise on 'please', even weight.",
+            "meaningShift": "A smooth, even rise is routine; a pressed 'see' with a flat finish would show suspicion."
         },
         {
             "id": "ACC_PITCHMODULATION_L165_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You have a seat reservation and someone is sitting in your seat.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "After the meeting, we grabbed lunch together.",
-            "textToSpeak": "After the meeting, we grabbed lunch together.",
+            "word": "Sorry, I think you're in my seat.",
+            "textToSpeak": "Sorry, I think you're in my seat.",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Polite but certain",
+                "Genuinely unsure"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "Polite but certain",
             "correctAnswerIndex": 0,
-            "hint": "This sounds like one part of a longer workday account. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the workday story continues, with more of the day still to describe.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "hint": "Does 'think' lift, or stay low?",
+            "explanation": "'Think' is a softener here, so it stays light, and the fall on 'seat' shows the speaker knows the answer. An unsure speaker would rise on 'seat' and slow down. This is a useful model for correcting someone without a confrontation.",
+            "modulationPattern": "Low 'think', fall on 'seat'.",
+            "meaningShift": "A light 'think' with a fall is courteous but certain; a lift on 'seat' would show real doubt."
         },
         {
             "id": "ACC_PITCHMODULATION_L166_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A teacher is asking for volunteers.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He studied all night, and then took the exam.",
-            "textToSpeak": "He studied all night, and then took the exam.",
+            "word": "Does anyone want to have a go?",
+            "textToSpeak": "Does anyone want to have a go?",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Encouraging, no pressure",
+                "About to choose someone"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "Encouraging, no pressure",
             "correctAnswerIndex": 0,
-            "hint": "This sounds like the start of an account leading up to a result. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the exam story continues, with the result still to be revealed.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "hint": "Is there warmth in the rise?",
+            "explanation": "Warmth in the lift on 'go' makes the offer sound easy and optional. If the teacher were about to choose someone, the tone would be flatter, with weight on 'anyone'. Students who hear the lift can relax and volunteer when ready.",
+            "modulationPattern": "Warm lift on 'go', light weight on 'anyone'.",
+            "meaningShift": "A warm lift invites volunteers; a flat, weighted 'anyone' would signal someone is about to be picked."
         },
         {
             "id": "ACC_PITCHMODULATION_L166_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A teacher responds to a student's answer.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "In the end, he passed with flying colors.",
-            "textToSpeak": "In the end, he passed with flying colors.",
+            "word": "Hm, not quite. Try again.",
+            "textToSpeak": "Hm, not quite. Try again.",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Encouraging",
+                "Disappointed"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
+            "correctAnswer": "Encouraging",
             "correctAnswerIndex": 0,
-            "hint": "'In the end' introduces the final outcome of the exam story. Listen for the pitch to fall and settle, closing the account.",
-            "explanation": "'In the end, he passed with flying colors' falls to close the story, revealing the final, settled outcome.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "How does 'try again' sound compared with 'not quite'?",
+            "explanation": "Hearing a light, rising 'hm' and a soft 'not quite' keeps the mood positive, and 'try again' lifts a little on 'again'. Disappointment would drop lower and flatter, with 'again' pressed. Recognising encouragement helps students keep going.",
+            "modulationPattern": "Rising 'hm', soft 'not quite', lifted 'again'.",
+            "meaningShift": "A light, lifted contour encourages another attempt; a low, flat one would signal disappointment."
         },
         {
             "id": "ACC_PITCHMODULATION_L166_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A student is confused in a lecture.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Next, the teacher explained the homework.",
-            "textToSpeak": "Next, the teacher explained the homework.",
+            "word": "Sorry, could you explain that last bit?",
+            "textToSpeak": "Sorry, could you explain that last bit?",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Challenging the teacher",
+                "Genuinely lost"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
-            "correctAnswerIndex": 0,
-            "hint": "'Next' signals another event is coming in the class account. Listen for the pitch to lift at the end.",
-            "explanation": "'Next' paired with a rising pitch signals the classroom story continues, with more of the lesson still to come.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "correctAnswer": "Genuinely lost",
+            "correctAnswerIndex": 1,
+            "hint": "Pay attention to whether the speaker sounds curious, or pressed.",
+            "explanation": "Opening with a soft 'sorry' and rising openly on 'bit' sounds like a real request for help. A challenge would press 'explain' and fall at the end. This is a good model for asking for clarification without seeming confrontational.",
+            "modulationPattern": "Soft 'sorry', open rise on 'bit'.",
+            "meaningShift": "An open rise requests help; a pressed 'explain' with a fall would challenge."
         },
         {
             "id": "ACC_PITCHMODULATION_L167_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "An interviewer is nearing the end of the interview.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We checked into the hotel, and then explored downtown.",
-            "textToSpeak": "We checked into the hotel, and then explored downtown.",
+            "word": "So, what questions do you have for us?",
+            "textToSpeak": "So, what questions do you have for us?",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "A signal to wrap up",
+                "A genuine invitation"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "A genuine invitation",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like the start of a longer travel account. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the travel story continues, with more of the trip still to come.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "Decide whether the speaker leaves a gap after the question.",
+            "explanation": "Slowing down and lifting on 'us' signals that the interviewer wants to hear from you. If the aim were to wrap up, the question would be quick and fall at the end. Hearing the invitation is a cue to ask something prepared and thoughtful.",
+            "modulationPattern": "Slower pace, lift on 'us'.",
+            "meaningShift": "A slow, lifted question invites you to speak; a quick, falling one would close the interview."
         },
         {
             "id": "ACC_PITCHMODULATION_L167_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A candidate is asked about a skill they lack.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Eventually, we found the perfect souvenir.",
-            "textToSpeak": "Eventually, we found the perfect souvenir.",
+            "word": "I haven't done that exact thing, but I'm a quick learner.",
+            "textToSpeak": "I haven't done that exact thing, but I'm a quick learner.",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Honest, then positive",
+                "Apologetic and defeated"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
-            "correctAnswerIndex": 1,
-            "hint": "'Eventually' signals the search has reached its goal. Listen for the pitch to fall and settle, closing the account.",
-            "explanation": "'Eventually, we found the perfect souvenir' falls to close the story, showing the search has reached a satisfying conclusion.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "correctAnswer": "Honest, then positive",
+            "correctAnswerIndex": 0,
+            "hint": "Where does the peak land?",
+            "explanation": "Lifting on 'exact' acknowledges the gap, and a strong peak on 'quick' with a firm fall on 'learner' shifts the focus to a strength. An apologetic reply would stay low throughout and trail off. This is a model for being honest without sounding weak.",
+            "modulationPattern": "Lift on 'exact', peak on 'quick', firm fall on 'learner'.",
+            "meaningShift": "A lifted admission followed by a peak on 'quick' sounds honest and positive; a low trailing one sounds apologetic."
         },
         {
             "id": "ACC_PITCHMODULATION_L167_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "An interviewer is walking you to the door.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "After that, we tried the local street food.",
-            "textToSpeak": "After that, we tried the local street food.",
+            "word": "We'll be in touch.",
+            "textToSpeak": "We'll be in touch.",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "A positive sign of interest",
+                "A polite close, no promise"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "A polite close, no promise",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like one stop in a longer day of exploring. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the travel story continues, with more of the day's adventures still to come.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "Is there any extra warmth or weight?",
+            "explanation": "Staying level with a gentle fall on 'touch' is a standard courteous close. A positive sign would normally add warmth, perhaps a specific date or a lift on 'we'll'. Without it, a candidate should avoid reading too much into the phrase.",
+            "modulationPattern": "Level contour, gentle fall on 'touch'.",
+            "meaningShift": "A level, gentle fall is a standard close; a warmer, specific delivery would signal real interest."
         },
         {
             "id": "ACC_PITCHMODULATION_L168_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A presenter is partway through a talk.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The doctor examined her, and then ran some tests.",
-            "textToSpeak": "The doctor examined her, and then ran some tests.",
+            "word": "So, what does this mean for us?",
+            "textToSpeak": "So, what does this mean for us?",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Rhetorical: the answer is coming",
+                "A real question to the audience"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
-            "correctAnswerIndex": 1,
-            "hint": "This sounds like the start of an account leading up to results. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the medical story continues, with the results still to come.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "correctAnswer": "Rhetorical: the answer is coming",
+            "correctAnswerIndex": 0,
+            "hint": "Notice what happens straight after the question: a pause, or a continuation?",
+            "explanation": "Falling at the end and continuing quickly suggests that the question is a device for introducing the answer. A real question would lift on 'us' and wait. Recognising the difference lets you avoid interrupting.",
+            "modulationPattern": "Fall on 'us', no pause.",
+            "meaningShift": "A falling, quick question leads into the answer; a lifted one with a pause would ask the audience."
         },
         {
             "id": "ACC_PITCHMODULATION_L168_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A presenter is signalling the key part of the talk.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "In the end, she made a full recovery.",
-            "textToSpeak": "In the end, she made a full recovery.",
+            "word": "And that brings me to the main point.",
+            "textToSpeak": "And that brings me to the main point.",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Signposting a key part",
+                "Wrapping up the talk"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
-            "correctAnswerIndex": 1,
-            "hint": "'In the end' introduces the final, reassuring outcome of her treatment. Listen for the pitch to fall and settle.",
-            "explanation": "'In the end, she made a full recovery' falls to close the story, revealing the final, reassuring outcome.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "correctAnswer": "Signposting a key part",
+            "correctAnswerIndex": 0,
+            "hint": "Find the word that stands out.",
+            "explanation": "Peaking on 'main' marks the next stretch as the important one, so the audience should listen closely. If the speaker were wrapping up, the pitch would fall gradually on 'point' and the tempo would slow. Hearing this lets you decide when to take notes.",
+            "modulationPattern": "Peak on 'main', fall on 'point'.",
+            "meaningShift": "A peak on 'main' signals that the key part is coming; a gradual fall would signal an ending."
         },
         {
             "id": "ACC_PITCHMODULATION_L168_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A presenter is introducing the part they enjoy most.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Then the nurse explained the results.",
-            "textToSpeak": "Then the nurse explained the results.",
+            "word": "Now, this is the part I'm most excited about.",
+            "textToSpeak": "Now, this is the part I'm most excited about.",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Practised show",
+                "Genuine enthusiasm"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "Genuine enthusiasm",
             "correctAnswerIndex": 1,
-            "hint": "'Then' signals another step is coming in the account. Listen for the pitch to lift at the end.",
-            "explanation": "'Then' paired with a rising pitch signals the medical story continues, with more details still to be shared.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "Is the energy uneven, as if it comes from the speaker?",
+            "explanation": "Genuine enthusiasm tends to vary, speeding up and rising on 'most' and 'excited', with a natural fall at the end. A practised show would use the same energy throughout. Learning to hear this helps you judge how much to trust a salesy pitch.",
+            "modulationPattern": "Variable range, peak on 'most' and 'excited'.",
+            "meaningShift": "Variable energy sounds genuine; evenly repeated energy sounds practised."
         },
         {
             "id": "ACC_PITCHMODULATION_L169_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A caller dials a number and someone answers.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We downloaded the app, and then created an account.",
-            "textToSpeak": "We downloaded the app, and then created an account.",
+            "word": "Hello, is that Mr Patel?",
+            "textToSpeak": "Hello, is that Mr Patel?",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "Greeting a friend",
+                "Checking identity"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "Checking identity",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like the start of a setup process. Listen for the pitch to lift at the end, keeping the account open.",
-            "explanation": "Ending on a rise, this clause signals the setup story continues, with more steps still to be described.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "How formal is the opening, and what happens on 'Patel'?",
+            "explanation": "Opening with a slightly formal 'hello' and rising on 'Patel' indicates the caller isn't sure who is on the line. A friend would be greeted with a warm fall and a relaxed pace. This tells you whether to give your name immediately or wait.",
+            "modulationPattern": "Rise on 'Patel' after a formal 'hello'.",
+            "meaningShift": "A rise on the name checks identity; a warm fall would be a friendly greeting."
         },
         {
             "id": "ACC_PITCHMODULATION_L169_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A call drops and the other person calls back.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Finally, the update fixed the bug.",
-            "textToSpeak": "Finally, the update fixed the bug.",
+            "word": "Sorry, I think we got cut off.",
+            "textToSpeak": "Sorry, I think we got cut off.",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Subtly blaming you",
+                "Resuming politely"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
+            "correctAnswer": "Resuming politely",
             "correctAnswerIndex": 1,
-            "hint": "'Finally' signals a problem has been resolved. Listen for the pitch to fall and settle, closing the account.",
-            "explanation": "'Finally, the update fixed the bug' falls to close the story, showing the technical problem has now been resolved.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "hint": "Notice whether the speaker is pressing on any word.",
+            "explanation": "Saying 'sorry' softly and keeping weight light on 'we' shares the responsibility, so the speaker sounds friendly. Blame would press 'you' or 'cut'. A neutral phrase like this is a useful model for getting a call back on track.",
+            "modulationPattern": "Soft 'sorry', light fall on 'off'.",
+            "meaningShift": "A soft, even tone resumes the call kindly; pressing a word would sound like blame."
         },
         {
             "id": "ACC_PITCHMODULATION_L169_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A receptionist needs to transfer you.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Next, we tried logging in again.",
-            "textToSpeak": "Next, we tried logging in again.",
+            "word": "Can I put you on hold for a moment?",
+            "textToSpeak": "Can I put you on hold for a moment?",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "A genuine request",
+                "An announcement"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
-            "correctAnswerIndex": 1,
-            "hint": "'Next' signals another attempt is coming in the account. Listen for the pitch to lift at the end.",
-            "explanation": "'Next' paired with a rising pitch signals the troubleshooting story continues, with more steps still to come.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "correctAnswer": "A genuine request",
+            "correctAnswerIndex": 0,
+            "hint": "Judge whether the voice leaves space for an answer.",
+            "explanation": "Rising on 'moment' at a polite pace means the speaker would accept a 'no', even if the answer is almost always yes. A fall would turn it into a statement of what is about to happen. This helps you decide whether you can ask them to call back instead.",
+            "modulationPattern": "Rise on 'moment'.",
+            "meaningShift": "A rise asks permission; a fall would announce the hold."
         },
         {
             "id": "ACC_PITCHMODULATION_L170_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are leaving a voicemail after sending an unanswered email.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We rehearsed the song, and then performed it live.",
-            "textToSpeak": "We rehearsed the song, and then performed it live.",
+            "word": "I'm sorry to chase, but have you had a chance to look at it?",
+            "textToSpeak": "I'm sorry to chase, but have you had a chance to look at it?",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "A polite nudge",
+                "A real apology"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "A polite nudge",
             "correctAnswerIndex": 0,
-            "hint": "This sounds like the start of a longer account leading to a performance. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the performance story continues, with the result still to be revealed.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "hint": "Check whether the speaker is really sorry, or setting up a request.",
+            "explanation": "The opening apology is quick and light, and the lift on 'it' prepares the real question. A true apology would slow down and fall lower on 'chase'. Knowing this lets you respond to the request, not to the apology.",
+            "modulationPattern": "Quick, light 'sorry', lift on 'it'.",
+            "meaningShift": "A quick apology with a lifted question nudges; a slow, low apology would be real regret."
         },
         {
             "id": "ACC_PITCHMODULATION_L170_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A client is told the delivery will be delayed by a week.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "And that's how the band became famous.",
-            "textToSpeak": "And that's how the band became famous.",
+            "word": "Great, thanks for letting me know.",
+            "textToSpeak": "Great, thanks for letting me know.",
             "options": [
-                "Rising (Mid-Story - More to Come)",
-                "Falling (Story Complete - This Is the End)"
+                "Genuinely glad of the news",
+                "Hiding disappointment"
             ],
-            "correctAnswer": "Falling (Story Complete - This Is the End)",
+            "correctAnswer": "Hiding disappointment",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like the satisfying conclusion to the band's story. Listen for the pitch to fall and settle at the end.",
-            "explanation": "'And that's how the band became famous' falls to close the story, signalling the account has reached its conclusion.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a mid-story - more to come and a story complete - this is the end."
+            "hint": "Does 'great' have any brightness?",
+            "explanation": "Keeping 'great' level and 'thanks' thin and quick suggests the speaker is controlling their reaction. Being glad would put a bright peak on 'great'. If you're the supplier, it's a signal to expect questions later.",
+            "modulationPattern": "Level 'great', quick thin 'thanks'.",
+            "meaningShift": "A level, quick reply hides disappointment; a bright peak on 'great' would be real pleasure."
         },
         {
             "id": "ACC_PITCHMODULATION_L170_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague catches you after a tense meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "After the encore, the crowd cheered loudly.",
-            "textToSpeak": "After the encore, the crowd cheered loudly.",
+            "word": "Do you want to grab a coffee and talk it through?",
+            "textToSpeak": "Do you want to grab a coffee and talk it through?",
             "options": [
-                "Falling (Story Complete - This Is the End)",
-                "Rising (Mid-Story - More to Come)"
+                "A polite, empty formality",
+                "A genuine offer of support"
             ],
-            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswer": "A genuine offer of support",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like one moment within a longer account of the concert. Listen for the pitch to lift at the end.",
-            "explanation": "Ending on a rise, this clause signals the concert story continues, with more of the night still to describe.",
-            "modulationPattern": "Ending a clause on a rising pitch signals that a story or sequence of events is still continuing; ending on a falling pitch signals that the account is complete.",
-            "meaningShift": "The meaning shifts between a story complete - this is the end and a mid-story - more to come."
+            "hint": "How warm is the rise, and does the voice slow?",
+            "explanation": "Slowing down and lifting warmly on 'through' makes the offer sound intended. A formality would be quick and flat, as though the speaker expected a refusal. Recognising the difference helps you decide whether to accept.",
+            "modulationPattern": "Slower tempo, warm lift on 'through'.",
+            "meaningShift": "A slow, warm lift offers real support; a quick, flat one would be a formality."
         }
     ]
 }

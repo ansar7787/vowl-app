@@ -1,307 +1,607 @@
 {
-  "gameType": "accentShadowing",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "ELT_ACCENTSHADOWING_L1_Q1",
-      "interactionType": "speaking",
-      "hint": "Stress the first syllable of 'helpful': HELP-ful.",
-      "explanation": "In 'helpful', the -ful ending is weak, so the stress falls on HELP. Keeping the ending light makes the word sound natural.",
-      "textToSpeak": "Thanks, that's really helpful.",
-      "instruction": "Shadow the speaker and match the strong syllables.",
-      "shadowingFocus": "Focus: Word & Phrase Stress",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L1_Q2",
-      "interactionType": "speaking",
-      "hint": "Give 'table' and 'window' a strong first syllable.",
-      "explanation": "Many common two-syllable nouns, such as 'table' and 'window', are stressed on the first syllable while the second stays light.",
-      "textToSpeak": "The table by the window is free.",
-      "instruction": "Listen once, then repeat with the same stressed syllables.",
-      "shadowingFocus": "Focus: Word & Phrase Stress",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L1_Q3",
-      "interactionType": "speaking",
-      "hint": "Lift 'cuse' in 'excuse', then land on STA in 'station'.",
-      "explanation": "'Excuse' is stressed on its second syllable and 'station' on its first, so the two words have opposite patterns. Getting them right makes your request easy to understand.",
-      "textToSpeak": "Excuse me, where's the station?",
-      "instruction": "Play it once, then shadow the stressed syllables.",
-      "shadowingFocus": "Focus: Word & Phrase Stress",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L2_Q1",
-      "interactionType": "speaking",
-      "hint": "Beat on TICK and LEEDS; keep 'to' short and quiet.",
-      "explanation": "Important words carry the beat, while a small word like 'to' is quick and light. That keeps a simple request clear and natural.",
-      "textToSpeak": "One ticket to Leeds, please.",
-      "instruction": "Listen once, then repeat with the same stressed syllables.",
-      "shadowingFocus": "Focus: Word & Phrase Stress",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L2_Q2",
-      "interactionType": "speaking",
-      "hint": "Finish the 'g' in 'bag' and the 'k' in 'desk'.",
-      "explanation": "Clear final consonants help listeners tell words apart. Without its /g/, 'bag' can sound like 'back' or 'bat'.",
-      "textToSpeak": "Just leave your bag at the front desk.",
-      "instruction": "Listen once, then repeat with crisp, complete sounds.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L2_Q3",
-      "interactionType": "speaking",
-      "hint": "Link 'left' into 'at': lef-tat.",
-      "explanation": "When one word ends in a consonant and the next begins with a vowel, the consonant often slides across, so 'left at' sounds like 'lef-tat'.",
-      "textToSpeak": "Turn left at the corner.",
-      "instruction": "Shadow the speaker without pausing between the linked words.",
-      "shadowingFocus": "Focus: Connected Speech",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L3_Q1",
-      "interactionType": "speaking",
-      "hint": "Let your pitch climb through 'taken' and end high.",
-      "explanation": "Yes/no questions like this commonly end with rising pitch, which invites a yes or no answer.",
-      "textToSpeak": "Is this seat taken?",
-      "instruction": "Listen once, then repeat with the same melody.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L3_Q2",
-      "interactionType": "speaking",
-      "hint": "Let your pitch fall on 'floor' and stop.",
-      "explanation": "A finished statement commonly ends with falling pitch, which tells the listener you are done.",
-      "textToSpeak": "It's on the second floor.",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L3_Q3",
-      "interactionType": "speaking",
-      "hint": "Start with energy on 'where' and let the pitch glide down.",
-      "explanation": "Wh-questions often fall, because they ask for specific information rather than a yes or no. Stress the first syllable of PHAR-ma-cy.",
-      "textToSpeak": "Where's the nearest pharmacy?",
-      "instruction": "Shadow the speaker and match the rise and fall of the voice.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L4_Q1",
-      "interactionType": "speaking",
-      "hint": "Short /ɪ/ in 'live', long /iː/ in 'leave'.",
-      "explanation": "'Live' and 'leave' are told apart mostly by the vowel: short and relaxed versus long and tense.",
-      "textToSpeak": "Did you leave, or do you still live here?",
-      "instruction": "Copy the articulation exactly as you hear it.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L4_Q2",
-      "interactionType": "speaking",
-      "hint": "Long /uː/ in 'pool', shorter /ʊ/ in 'full'.",
-      "explanation": "'Pool' has a long, rounded vowel and 'full' a shorter, more relaxed one. Mixing them can make 'pool' sound like 'pull'.",
-      "textToSpeak": "The pool was full, so we left.",
-      "instruction": "Listen once, then repeat with crisp, complete sounds.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L4_Q3",
-      "interactionType": "speaking",
-      "hint": "Put your tongue tip lightly between your teeth for 'th'.",
-      "explanation": "The /θ/ sound is made with air flowing between tongue and teeth. Replacing it with /s/ or /t/ can turn 'thank' into 'sank' or 'tank'.",
-      "textToSpeak": "Thanks, I'll see you Thursday.",
-      "instruction": "Shadow the speaker and keep every sound as clear as theirs.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L5_Q1",
-      "interactionType": "speaking",
-      "hint": "Say 'switch it off' as one chunk: swi-chi-toff.",
-      "explanation": "Consonants at the end of a word often slide onto the vowel that follows, so three words can flow like one.",
-      "textToSpeak": "Switch it off before you leave.",
-      "instruction": "Match the speaker's connections between words.",
-      "shadowingFocus": "Focus: Connected Speech",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L5_Q2",
-      "interactionType": "speaking",
-      "hint": "Beats on CALL, GET and HOME; glide through the small words.",
-      "explanation": "English rhythm follows the stressed words. The small words in between are squeezed to fit, which keeps the phrase moving.",
-      "textToSpeak": "Call me when you get home.",
-      "instruction": "Listen once, then reproduce the rhythm of the phrase.",
-      "shadowingFocus": "Focus: Speech Rhythm",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L5_Q3",
-      "interactionType": "speaking",
-      "hint": "Lift the second syllable: to-NIGHT.",
-      "explanation": "'Tonight' is stressed on its second syllable, unlike many two-syllable nouns. Learn it as to-NIGHT and it will sound right whenever you talk about plans.",
-      "textToSpeak": "Have you booked anything for tonight?",
-      "instruction": "Shadow the speaker and match the strong syllables.",
-      "shadowingFocus": "Focus: Word & Phrase Stress",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L6_Q1",
-      "interactionType": "speaking",
-      "hint": "Give 'buses' a full extra syllable: BUS-iz.",
-      "explanation": "After sounds like /s/, the plural adds a whole syllable, /ɪz/, so 'bus' becomes 'BUS-iz'.",
-      "textToSpeak": "Two buses leave from platform four.",
-      "instruction": "Listen once, then repeat with crisp, complete sounds.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L6_Q2",
-      "interactionType": "speaking",
-      "hint": "Light /s/ on 'cats'; buzzing /z/ on 'dogs' and 'rooms'.",
-      "explanation": "A plural -s sounds like /s/ after voiceless sounds such as /t/, and like /z/ after voiced sounds such as /g/ and /m/.",
-      "textToSpeak": "Cats and dogs aren't allowed in the rooms.",
-      "instruction": "Shadow the speaker and keep every sound as clear as theirs.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L6_Q3",
-      "interactionType": "speaking",
-      "hint": "End 'missed' and 'walked' with a quick /t/, no extra vowel.",
-      "explanation": "After voiceless sounds the -ed ending is just /t/, so 'missed' and 'walked' each stay one syllable.",
-      "textToSpeak": "We missed the bus, so we walked.",
-      "instruction": "Listen closely to the endings and sounds, then repeat.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L7_Q1",
-      "interactionType": "speaking",
-      "hint": "Beat on SEE and MEN-u; keep 'could I' and 'the' light.",
-      "explanation": "In natural rhythm the content words get the beats, and small function words are squeezed between them.",
-      "textToSpeak": "Could I see the menu?",
-      "instruction": "Shadow the speaker and match the beat.",
-      "shadowingFocus": "Focus: Speech Rhythm",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L7_Q2",
-      "interactionType": "speaking",
-      "hint": "Beats on SOR-, RUN- and LATE; tuck 'a bit' in between.",
-      "explanation": "Between beats, small words like 'a bit' are squeezed short. That is what gives English its bouncing rhythm.",
-      "textToSpeak": "Sorry, I'm running a bit late.",
-      "instruction": "Listen once, then reproduce the rhythm of the phrase.",
-      "shadowingFocus": "Focus: Speech Rhythm",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L7_Q3",
-      "interactionType": "speaking",
-      "hint": "Keep it flowing; don't stop after 'check'.",
-      "explanation": "People say this as one phrase, with the main beat on BACK. Word-by-word delivery would sound stiff.",
-      "textToSpeak": "Let me check and get back to you.",
-      "instruction": "Listen once, then repeat without stopping in the middle.",
-      "shadowingFocus": "Focus: Shadowing Fluency",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L8_Q1",
-      "interactionType": "speaking",
-      "hint": "Teeth on lip for /v/ in 'very'; round lips for /w/.",
-      "explanation": "English keeps /v/ and /w/ separate: /v/ uses teeth and lip, /w/ uses rounded lips. Mixing them can change 'vest' and 'west'.",
-      "textToSpeak": "We're having very warm weather.",
-      "instruction": "Shadow the speaker and keep every sound as clear as theirs.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L8_Q2",
-      "interactionType": "speaking",
-      "hint": "Tongue tip up for /l/ in 'lights'; curl back for /r/ in 'right'.",
-      "explanation": "'Light' and 'right' differ only in that first sound. For /r/ the tongue does not touch the roof of the mouth.",
-      "textToSpeak": "The lights are on the right.",
-      "instruction": "Listen closely to the endings and sounds, then repeat.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L8_Q3",
-      "interactionType": "speaking",
-      "hint": "Breathe out gently for /h/ in 'how', 'hotel' and 'here'.",
-      "explanation": "Dropping /h/ can change words, for example 'hear' becomes 'ear'. A light puff of air keeps each word clear.",
-      "textToSpeak": "How far is the hotel from here?",
-      "instruction": "Listen carefully, then reproduce the sounds cleanly.",
-      "shadowingFocus": "Focus: Articulation Clarity",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L9_Q1",
-      "interactionType": "speaking",
-      "hint": "Small rise after 'eggs' and 'rice', fall after 'onions'.",
-      "explanation": "In lists, speakers commonly rise slightly on items that are not last to signal 'more is coming', then fall on the final item.",
-      "textToSpeak": "We need eggs, rice, and some onions.",
-      "instruction": "Listen for the final pitch movement, then repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L9_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise on 'tea', fall on 'juice'.",
-      "explanation": "Two-option choice questions commonly rise on the first option and fall on the last, showing the choice is complete.",
-      "textToSpeak": "Would you like tea or juice?",
-      "instruction": "Repeat, matching where the voice rises and where it falls.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L9_Q3",
-      "interactionType": "speaking",
-      "hint": "Let your voice rise gently on 'again'.",
-      "explanation": "Polite requests to repeat often end with a gentle rise, which sounds friendly rather than demanding.",
-      "textToSpeak": "Sorry, could you say that again?",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L10_Q1",
-      "interactionType": "speaking",
-      "hint": "Stress BUS and AIR-port; rise at the end.",
-      "explanation": "You now combine word stress in 'AIR-port', light small words, and the rising pitch of a yes/no question.",
-      "textToSpeak": "Excuse me, does this bus go to the airport?",
-      "instruction": "Repeat as naturally as the model, keeping the same shape.",
-      "shadowingFocus": "Focus: Prosody",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L10_Q2",
-      "interactionType": "speaking",
-      "hint": "Link 'leaves in': lee-vzin.",
-      "explanation": "The /z/ at the end of 'leaves' slides onto 'in', so the two words flow together.",
-      "textToSpeak": "It leaves in ten minutes, from stop B.",
-      "instruction": "Shadow the speaker without pausing between the linked words.",
-      "shadowingFocus": "Focus: Connected Speech",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L10_Q3",
-      "interactionType": "speaking",
-      "hint": "Link 'wait over' and keep the whole line flowing.",
-      "explanation": "The /t/ at the end of 'wait' joins the vowel of 'over', so the phrase sounds like 'wai-tover'.",
-      "textToSpeak": "Great, thanks. I'll wait over there.",
-      "instruction": "Repeat immediately, matching speed and flow.",
-      "shadowingFocus": "Focus: Shadowing Fluency",
-      "targetAccent": "Received Pronunciation (RP)"
-    }
-  ]
+    "gameType": "shadowingChallenge",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L1_Q1",
+            "instruction": "Listen, then shadow the whole phrase in one breath. Which word is strongest?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "See you tomorrow.",
+            "textToSpeak": "See you tomorrow.",
+            "options": [
+                "'tomorrow' — its middle syllable is the loudest point",
+                "'see' — the opening word leads the beat",
+                "'you' — the person you're talking to gets the stress"
+            ],
+            "correctAnswer": "'tomorrow' — its middle syllable is the loudest point",
+            "correctAnswerIndex": 0,
+            "ipa": "/siː jə təˈmɒrəʊ/",
+            "hint": "Notice where the pitch peaks before it drops away.",
+            "explanation": "In a neutral goodbye the last content word carries the peak, while 'you' shrinks to a quick /jə/.",
+            "flowRule": "Phrase Shadowing: follow the speaker's pitch peak instead of giving every word equal strength.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L1_Q2",
+            "instruction": "Shadow the request smoothly. Which version matches what you heard?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Could I have some water?",
+            "textToSpeak": "Could I have some water?",
+            "options": [
+                "Every word gets equal time, so 'water' has no special beat",
+                "'have' is the loudest word because it is the verb",
+                "'Could I' and 'have some' squeeze small, with 'water' as the peak"
+            ],
+            "correctAnswer": "'Could I' and 'have some' squeeze small, with 'water' as the peak",
+            "correctAnswerIndex": 2,
+            "ipa": "/kʊd aɪ hæv səm ˈwɔːtə/",
+            "hint": "Listen for the words that almost vanish.",
+            "explanation": "'Could I' and 'have some' are quick function-word groups; the listener's attention lands on 'water'.",
+            "flowRule": "Natural Flow: small grammar words shrink so the meaningful word stands out.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L1_Q3",
+            "instruction": "Shadow the greeting and follow the ending. What does the voice do?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Nice to meet you.",
+            "textToSpeak": "Nice to meet you.",
+            "options": [
+                "The voice jumps up on 'you', like a yes/no question",
+                "Peaks on 'meet', then glides downward through 'you'",
+                "Peaks on 'nice', then stays flat until the end"
+            ],
+            "correctAnswer": "Peaks on 'meet', then glides downward through 'you'",
+            "correctAnswerIndex": 1,
+            "ipa": "/naɪs tə ˈmiːt juː/",
+            "hint": "Hum the tune first, without words.",
+            "explanation": "A friendly statement peaks on 'meet' and falls, so it sounds finished and warm.",
+            "flowRule": "Falling Finish: statements usually end with the voice gliding down from the last peak.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L2_Q1",
+            "instruction": "Shadow the message. Which word takes the final push?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'm running late.",
+            "textToSpeak": "I'm running late.",
+            "options": [
+                "'late' — it's the news, so it gets the last peak",
+                "'I'm' — the speaker always starts strong",
+                "'running' — the verb beats everything else"
+            ],
+            "correctAnswer": "'late' — it's the news, so it gets the last peak",
+            "correctAnswerIndex": 0,
+            "ipa": "/aɪm ˈrʌnɪŋ ˈleɪt/",
+            "hint": "Ask yourself which word is new information.",
+            "explanation": "'Late' tells the listener the problem, so the main pitch movement lands there.",
+            "flowRule": "Information Focus: the newest, most important word receives the final peak.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L2_Q2",
+            "instruction": "Shadow the question, paying attention to the very end. What happens to the pitch?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Do you want some help?",
+            "textToSpeak": "Do you want some help?",
+            "options": [
+                "It rises on 'help' because it's a yes/no question",
+                "It falls on 'help', as it would in a plain statement",
+                "It stays level on 'help' with no pitch movement"
+            ],
+            "correctAnswer": "It rises on 'help' because it's a yes/no question",
+            "correctAnswerIndex": 0,
+            "ipa": "/dʒə wɒnt səm ˈhelp/",
+            "hint": "Compare it to 'I want some help.'",
+            "explanation": "Yes/no questions typically lift at the end to invite an answer; 'do you' blends into /dʒə/.",
+            "flowRule": "Question Rise: yes/no questions usually end with rising pitch.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L2_Q3",
+            "instruction": "Shadow the instruction. Which words blend into one chain?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Put it on the table.",
+            "textToSpeak": "Put it on the table.",
+            "options": [
+                "'on the' — the two words fuse into a single sound",
+                "'the table' — the vowel of 'the' joins the /t/ of 'table'",
+                "'Put it on' — the /t/ slides straight into the vowels"
+            ],
+            "correctAnswer": "'Put it on' — the /t/ slides straight into the vowels",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈpʊt‿ɪt‿ɒn ðə ˈteɪbl/",
+            "hint": "Say 'put it on' slowly, then speed up until it sounds like one word.",
+            "explanation": "Both 'put' and 'it' end in /t/ before a vowel, so the consonants move onto the next word: pu-ti-ton.",
+            "flowRule": "Consonant-to-Vowel Linking: a final consonant attaches to a following vowel sound.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L3_Q1",
+            "instruction": "Listen, then shadow the promise. Which part is the main beat?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'll call you back.",
+            "textToSpeak": "I'll call you back.",
+            "options": [
+                "Only 'I'll' is strong, because it names who is acting",
+                "'call' and 'back' both carry beats, while 'I'll' and 'you' fade",
+                "All four words are equally strong and evenly timed"
+            ],
+            "correctAnswer": "'call' and 'back' both carry beats, while 'I'll' and 'you' fade",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪl ˈkɔːl jə ˈbæk/",
+            "hint": "Tap a finger on each strong beat as you say it.",
+            "explanation": "'Call' and 'back' are the meaningful words, so they get the beats; 'I'll' and 'you' are weak.",
+            "flowRule": "Beat Awareness: content words carry the beats; pronouns and contractions stay light.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L3_Q2",
+            "instruction": "Shadow the question. How does the tune move?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Where's the bathroom?",
+            "textToSpeak": "Where's the bathroom?",
+            "options": [
+                "It rises sharply at the very end, like a yes/no question",
+                "It falls on 'bath-' and keeps falling, since it's a WH-question",
+                "It stays flat until the last syllable"
+            ],
+            "correctAnswer": "It falls on 'bath-' and keeps falling, since it's a WH-question",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈweəz ðə ˈbɑːθruːm/",
+            "hint": "Think about whether the question can be answered with yes or no.",
+            "explanation": "Questions beginning with a question word usually fall; 'where's the' is tucked into a quick weak opening.",
+            "flowRule": "WH-Falling: question-word questions normally end with a falling tune.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L3_Q3",
+            "instruction": "Shadow the suggestion. Which best describes the ending?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Let's go home.",
+            "textToSpeak": "Let's go home.",
+            "options": [
+                "'home' is the lowest, longest note of the phrase",
+                "'home' is cut short and sharp, going up",
+                "'go' is stretched while 'home' is whispered"
+            ],
+            "correctAnswer": "'home' is the lowest, longest note of the phrase",
+            "correctAnswerIndex": 0,
+            "ipa": "/lets ˈɡəʊ ˈhəʊm/",
+            "hint": "Feel where your voice is lowest.",
+            "explanation": "Statements of a decision settle on a long, low final word; 'let's' is only a light lead-in.",
+            "flowRule": "Falling Finish: the last stressed word of a statement is longest and lowest.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L4_Q1",
+            "instruction": "Shadow the thanks. Where is the emotion placed?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Thank you so much.",
+            "textToSpeak": "Thank you so much.",
+            "options": [
+                "On 'thank' only, with the rest almost mumbled away",
+                "On 'you', which is the loudest and highest word",
+                "On 'so' and 'much', which are stretched and stressed"
+            ],
+            "correctAnswer": "On 'so' and 'much', which are stretched and stressed",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈθæŋk jʊ səʊ ˈmʌtʃ/",
+            "hint": "Listen for the word that feels longer.",
+            "explanation": "Warm thanks stretches 'so much' to add feeling, while 'thank you' links smoothly into one unit.",
+            "flowRule": "Emphasis for Feeling: intensifiers like 'so' and 'much' carry expressive length.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L4_Q2",
+            "instruction": "Listen and shadow. Which words contain the two main beats?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I love this song.",
+            "textToSpeak": "I love this song.",
+            "options": [
+                "'I' and 'this'",
+                "'love' and 'song'",
+                "'love' and 'this'"
+            ],
+            "correctAnswer": "'love' and 'song'",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪ ˈlʌv ðɪs ˈsɒŋ/",
+            "hint": "Which words carry the meaning?",
+            "explanation": "'Love' and 'song' are the content words, so they get the beats; 'I' and 'this' stay light.",
+            "flowRule": "Content Word Beats: nouns and main verbs take the beats in short sentences.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L4_Q3",
+            "instruction": "Shadow the update. Which word is the strongest?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "We're almost there.",
+            "textToSpeak": "We're almost there.",
+            "options": [
+                "'there' — the goal of the sentence",
+                "'we're' — it names the speaker",
+                "'almost' — it's the longest word"
+            ],
+            "correctAnswer": "'there' — the goal of the sentence",
+            "correctAnswerIndex": 0,
+            "ipa": "/wɪər ˈɔːlməʊst ˈðeə/",
+            "hint": "Ask what news the speaker is sharing.",
+            "explanation": "The message is about arriving, so 'there' takes the main peak; 'we're' shrinks to one syllable.",
+            "flowRule": "Information Focus: the word that completes the message receives the peak.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L5_Q1",
+            "instruction": "Shadow the invitation. How many beats do you hear?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Take a seat.",
+            "textToSpeak": "Take a seat.",
+            "options": [
+                "Three: one tap for each word, including the 'a'",
+                "One: only 'seat' gets a beat, and nothing else does",
+                "Two: 'take' and 'seat', with 'a' reduced to /ə/"
+            ],
+            "correctAnswer": "Two: 'take' and 'seat', with 'a' reduced to /ə/",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈteɪk ə ˈsiːt/",
+            "hint": "Count the taps you make with your hand.",
+            "explanation": "'A' is a weak article spoken as /ə/ and links 'take a' together; two beats are left.",
+            "flowRule": "Weak Articles: 'a' is reduced to /ə/ and attached to its neighbor.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L5_Q2",
+            "instruction": "Shadow the question. Where does the pitch rise?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Is it cold outside?",
+            "textToSpeak": "Is it cold outside?",
+            "options": [
+                "On the last word 'outside'",
+                "On 'is', the first word",
+                "On 'cold', and then it drops at the end"
+            ],
+            "correctAnswer": "On the last word 'outside'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ɪz ɪt ˈkəʊld ˈaʊtsaɪd/",
+            "hint": "Follow the question tune to the last syllable.",
+            "explanation": "Yes/no questions rise toward the end; the final stress falls on 'side' and the pitch lifts there.",
+            "flowRule": "Question Rise: yes/no questions climb toward the final stressed syllable.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L5_Q3",
+            "instruction": "Shadow the request. Which words are quick and light?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Wait for me here.",
+            "textToSpeak": "Wait for me here.",
+            "options": [
+                "'for' and 'me' — squeezed in the middle",
+                "'wait' and 'here' — they must be mumbled",
+                "All words are light, except 'for'"
+            ],
+            "correctAnswer": "'for' and 'me' — squeezed in the middle",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈweɪt fə mi ˈhɪə/",
+            "hint": "Listen to the middle of the phrase.",
+            "explanation": "'For' becomes /fə/ and 'me' is short, letting 'wait' and 'here' carry the beats.",
+            "flowRule": "Weak Function Words: 'for' and object pronouns are reduced between beats.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L6_Q1",
+            "instruction": "Shadow the sentence. Which word gets the final high note?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "He called me yesterday.",
+            "textToSpeak": "He called me yesterday.",
+            "options": [
+                "'called' — the verb is always the highest",
+                "'me' — the person receiving the call",
+                "'yesterday' — the time detail ends the statement"
+            ],
+            "correctAnswer": "'yesterday' — the time detail ends the statement",
+            "correctAnswerIndex": 2,
+            "ipa": "/hiː ˈkɔːld mi ˈjestədeɪ/",
+            "hint": "Notice that 'called me' sounds joined.",
+            "explanation": "'Yesterday' is the last content word, so the pitch peaks on its first syllable and falls through the rest.",
+            "flowRule": "Word Stress Peak: a long word peaks on its stressed syllable, then falls.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L6_Q2",
+            "instruction": "Shadow the announcement. Which two words are spoken weakly?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "The bus is here.",
+            "textToSpeak": "The bus is here.",
+            "options": [
+                "'bus' and 'here'",
+                "'the' and 'is'",
+                "'the' and 'here'"
+            ],
+            "correctAnswer": "'the' and 'is'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ðə ˈbʌs ɪz ˈhɪə/",
+            "hint": "Say it again and tap only the strong words.",
+            "explanation": "'The' (/ðə/) and 'is' (/ɪz/) are grammar words and stay light beside 'bus' and 'here'.",
+            "flowRule": "Weak Function Words: articles and 'is' are reduced beside nouns and adverbs.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L6_Q3",
+            "instruction": "Shadow the request. What happens to 'can' at the start?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Can you open the window?",
+            "textToSpeak": "Can you open the window?",
+            "options": [
+                "It shrinks to /kən/ and is barely heard",
+                "It is fully stressed as /kæn/ and heard clearly",
+                "It is dropped completely"
+            ],
+            "correctAnswer": "It shrinks to /kən/ and is barely heard",
+            "correctAnswerIndex": 0,
+            "ipa": "/kən jʊ ˈəʊpən ðə ˈwɪndəʊ/",
+            "hint": "Listen to the first word very carefully.",
+            "explanation": "In a polite request 'can' is a weak form /kən/, leaving 'open' and 'window' as the beats.",
+            "flowRule": "Weak Form of 'can': in questions 'can' is usually /kən/.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L7_Q1",
+            "instruction": "Shadow the order. Where do you hear a small break?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'd like a coffee, please.",
+            "textToSpeak": "I'd like a coffee, please.",
+            "options": [
+                "After 'I'd', before 'like'",
+                "After 'coffee', before 'please'",
+                "After 'like', before 'a'"
+            ],
+            "correctAnswer": "After 'coffee', before 'please'",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪd ˈlaɪk ə ˈkɒfi pliːz/",
+            "hint": "Listen for the comma in the sentence.",
+            "explanation": "The comma marks a short break after 'coffee', so 'please' becomes a separate polite chunk.",
+            "flowRule": "Phrase Boundary: a comma usually signals a small pause between meaningful chunks.",
+            "speedLevel": 0.85
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L7_Q2",
+            "instruction": "Shadow the comment. Which chunk is the heart of the message?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "It's a long way.",
+            "textToSpeak": "It's a long way.",
+            "options": [
+                "'It's a' — the opening sets the message",
+                "'long way' — two strong beats together",
+                "'way' alone — one word only"
+            ],
+            "correctAnswer": "'long way' — two strong beats together",
+            "correctAnswerIndex": 1,
+            "ipa": "/ɪts ə ˈlɒŋ ˈweɪ/",
+            "hint": "Listen for the two slowest words.",
+            "explanation": "'It's a' is a quick lead-in; 'long' and 'way' share the stress and finish the phrase.",
+            "flowRule": "Stress Groups: a quick lead-in leads to the stressed words that carry the message.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L7_Q3",
+            "instruction": "Shadow the apology. Which describes the delivery?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Sorry I'm late.",
+            "textToSpeak": "Sorry I'm late.",
+            "options": [
+                "Two beats: 'sorry' and 'late', with 'I'm' squeezed between",
+                "One flat beat, with all three words at the same strength",
+                "Three equal beats: sorry, I'm and late all share the stress"
+            ],
+            "correctAnswer": "Two beats: 'sorry' and 'late', with 'I'm' squeezed between",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈsɒri aɪm ˈleɪt/",
+            "hint": "Clap twice while you say it.",
+            "explanation": "'Sorry' and 'late' carry beats; 'I'm' is squeezed tight between them.",
+            "flowRule": "Beat Awareness: a short function word can slide between two beats without adding one.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L8_Q1",
+            "instruction": "Shadow the hesitant answer. Which word carries the feeling of doubt?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'm not sure yet.",
+            "textToSpeak": "I'm not sure yet.",
+            "options": [
+                "'yet' — it always takes the last stress",
+                "'not' — it's stressed and stretched",
+                "'I'm' — it shows who is speaking"
+            ],
+            "correctAnswer": "'not' — it's stressed and stretched",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪm ˈnɒt ˈʃɔː ˈjet/",
+            "hint": "Think about why the speaker says it this way.",
+            "explanation": "Stressing 'not' and 'sure' signals doubt, while the soft 'yet' closes the phrase.",
+            "flowRule": "Emphasis for Attitude: stress on negatives signals hesitation.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L8_Q2",
+            "instruction": "Shadow the directions. Which word is reduced?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Turn left at the lights.",
+            "textToSpeak": "Turn left at the lights.",
+            "options": [
+                "'left' → /lɪft/",
+                "'at' → /ət/",
+                "'turn' → /tən/"
+            ],
+            "correctAnswer": "'at' → /ət/",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈtɜːn ˈleft ət ðə ˈlaɪts/",
+            "hint": "Listen to the little word in the middle.",
+            "explanation": "'At' is a preposition between two beats, so it shrinks to /ət/.",
+            "flowRule": "Weak Prepositions: short prepositions use the schwa between stressed words.",
+            "speedLevel": 0.85
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L8_Q3",
+            "instruction": "Shadow the reaction. How is 'great' spoken?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "That sounds great!",
+            "textToSpeak": "That sounds great!",
+            "options": [
+                "Quiet and short, to sound polite and reserved",
+                "At exactly the same pitch as 'that', with no movement",
+                "Higher and stretched, to show enthusiasm"
+            ],
+            "correctAnswer": "Higher and stretched, to show enthusiasm",
+            "correctAnswerIndex": 2,
+            "ipa": "/ðæt ˈsaʊndz ˈɡreɪt/",
+            "hint": "Try saying it as if you really mean it.",
+            "explanation": "A positive reaction stretches and lifts the final word, which shows genuine interest.",
+            "flowRule": "Expressive Emphasis: enthusiasm shows in a wider pitch range on the key word.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L9_Q1",
+            "instruction": "Shadow the whole sentence in two breaths. Which phrasing matches the speaker?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I left my keys on the kitchen counter.",
+            "textToSpeak": "I left my keys on the kitchen counter.",
+            "options": [
+                "I left / my keys on the / kitchen counter",
+                "I left my keys / on the kitchen counter",
+                "I / left my keys on / the kitchen counter"
+            ],
+            "correctAnswer": "I left my keys / on the kitchen counter",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪ ˈleft maɪ ˈkiːz ɒn ðə ˈkɪtʃɪn ˈkaʊntə/",
+            "hint": "Try to hear where the speaker takes a tiny breath.",
+            "explanation": "The sentence has two meaningful chunks: what happened, then where; splitting inside a chunk sounds broken.",
+            "flowRule": "Phrase Chunking: group words into meaningful chunks instead of speaking word by word.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L9_Q2",
+            "instruction": "Shadow the question. Which link makes 'a bit earlier' smooth?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Do you think we could meet a bit earlier?",
+            "textToSpeak": "Do you think we could meet a bit earlier?",
+            "options": [
+                "'a' and 'bit' fuse into one syllable, sounding like /æbɪt/",
+                "The /t/ of 'bit' moves onto 'earlier', so it sounds like 'bi-tear-lier'",
+                "A small pause after 'bit' keeps its /t/ crisp and separate"
+            ],
+            "correctAnswer": "The /t/ of 'bit' moves onto 'earlier', so it sounds like 'bi-tear-lier'",
+            "correctAnswerIndex": 1,
+            "ipa": "/də jə ˈθɪŋk wi kəd ˈmiːt ə bɪ‿ˈtɜːliə/",
+            "hint": "Say 'bit earlier' quickly five times.",
+            "explanation": "'Bit' ends in a consonant and 'earlier' begins with a vowel, so the /t/ rolls forward into the next word.",
+            "flowRule": "Consonant-to-Vowel Linking: a final consonant slides onto the next vowel inside a longer question.",
+            "speedLevel": 0.75
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L9_Q3",
+            "instruction": "Shadow the travel update. Which detail is the main peak?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "My sister's flight lands at half past six.",
+            "textToSpeak": "My sister's flight lands at half past six.",
+            "options": [
+                "'six' — the time is the news the listener needs",
+                "'sister's' — the person comes first",
+                "'flight' — it's the subject of the sentence"
+            ],
+            "correctAnswer": "'six' — the time is the news the listener needs",
+            "correctAnswerIndex": 0,
+            "ipa": "/maɪ ˈsɪstəz ˈflaɪt ˈlændz ət ˈhɑːf pɑːst ˈsɪks/",
+            "hint": "Ask which piece of information the listener will write down.",
+            "explanation": "The time is the key detail, so the pitch peaks on 'six'; 'at' is weakened to /ət/ and 'past' is light.",
+            "flowRule": "Information Focus: the final key detail in a travel update takes the main peak.",
+            "speedLevel": 0.85
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L10_Q1",
+            "instruction": "Shadow the answer. Where does the natural small pause come?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Honestly, I'd rather stay in tonight.",
+            "textToSpeak": "Honestly, I'd rather stay in tonight.",
+            "options": [
+                "After 'Honestly', and then the rest flows",
+                "After 'I'd', so 'rather stay in tonight' is one piece",
+                "After 'stay', because the verb must stand on its own"
+            ],
+            "correctAnswer": "After 'Honestly', and then the rest flows",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈɒnɪstli aɪd ˈrɑːðə ˈsteɪ‿ɪn təˈnaɪt/",
+            "hint": "Listen for the comma after the opening word.",
+            "explanation": "A discourse opener like 'honestly' sits in its own chunk; 'stay in' links and 'tonight' closes the thought.",
+            "flowRule": "Phrase Boundary: openers like 'honestly' are separated from the main clause by a short break.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L10_Q2",
+            "instruction": "Shadow the sentence. Where is the biggest break?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "She said the train would be delayed, but it arrived on time.",
+            "textToSpeak": "She said the train would be delayed, but it arrived on time.",
+            "options": [
+                "After 'said', before 'the train'",
+                "After 'delayed', before 'but'",
+                "After 'arrived', before 'on time'"
+            ],
+            "correctAnswer": "After 'delayed', before 'but'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ʃi ˈsed ðə ˈtreɪn wəd bi dɪˈleɪd | bət ɪt əˈraɪvd ɒn ˈtaɪm/",
+            "hint": "Find the word that changes the direction of the story.",
+            "explanation": "The two clauses are separated by a break at 'but', where the contrast turns; each clause flows on its own.",
+            "flowRule": "Clause Boundaries: pause at the point where two ideas meet, not inside them.",
+            "speedLevel": 0.8
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L10_Q3",
+            "instruction": "Shadow the polite request. What happens at 'would you'?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Would you mind turning the volume down a little?",
+            "textToSpeak": "Would you mind turning the volume down a little?",
+            "options": [
+                "The /d/ vanishes and 'you' keeps its full vowel /juː/",
+                "Both words are said separately, each with full stress",
+                "The /d/ and /j/ merge into /dʒ/, so it sounds like 'wouldja'"
+            ],
+            "correctAnswer": "The /d/ and /j/ merge into /dʒ/, so it sounds like 'wouldja'",
+            "correctAnswerIndex": 2,
+            "ipa": "/wʊdʒə ˈmaɪnd ˈtɜːnɪŋ ðə ˈvɒljuːm ˈdaʊn ə ˈlɪtl/",
+            "hint": "Say 'would you' fast and listen to the middle sound.",
+            "explanation": "When /d/ meets /j/, the two sounds blend into /dʒ/ in relaxed speech.",
+            "flowRule": "Sound Blending: /d/ + /j/ often merges into /dʒ/ across word boundaries.",
+            "speedLevel": 0.75
+        }
+    ]
 }

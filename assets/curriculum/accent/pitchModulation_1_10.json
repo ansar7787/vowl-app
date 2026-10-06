@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L1_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Listen to this short reply, then decide where the pitch finishes.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Good morning!",
-            "textToSpeak": "Good morning!",
+            "word": "Thank you.",
+            "textToSpeak": "Thank you.",
             "options": [
-                "Falling-Rising (Sleepy, Half-Awake Greeting)",
-                "Rising-Falling (Bright, Energetic Greeting)"
+                "Finishes higher than it started",
+                "Finishes lower than it started"
             ],
-            "correctAnswer": "Rising-Falling (Bright, Energetic Greeting)",
+            "correctAnswer": "Finishes lower than it started",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the pitch on '-morning': does it shoot up and then drop with energy, or stay low and drag?",
-            "explanation": "A cheerful 'Good morning!' is said with a Rising-Falling contour: the pitch jumps up on 'good' and falls brightly, signalling fresh energy.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a sleepy, half-awake greeting and a bright, energetic greeting."
+            "hint": "Compare the very first syllable with the very last one. Which of the two sits higher?",
+            "explanation": "In a plain thank-you the pitch peaks on 'thank' and then settles down through 'you'. That drop gives the reply a finished, closed feel. If the voice ended up high instead, it would sound open, as though the speaker expected something more.",
+            "modulationPattern": "Falling: pitch peaks early on 'thank' and settles low by the end of 'you'.",
+            "meaningShift": "A dropping finish sounds complete and settled; a lifted finish would leave the phrase feeling unfinished or questioning."
         },
         {
             "id": "ACC_PITCHMODULATION_L1_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Listen once, then pick the description that matches the end of this question.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Welcome home!",
-            "textToSpeak": "Welcome home!",
+            "word": "Are you coming?",
+            "textToSpeak": "Are you coming?",
             "options": [
-                "Rising-Falling (Warm, Joyful Welcome)",
-                "Falling-Rising (Cool, Formal Welcome)"
+                "The voice lifts on the last word",
+                "The voice sinks on the last word"
             ],
-            "correctAnswer": "Rising-Falling (Warm, Joyful Welcome)",
+            "correctAnswer": "The voice lifts on the last word",
             "correctAnswerIndex": 0,
-            "hint": "A loving welcome usually has more pitch movement than a polite, distant one. Listen for warmth in the rise and fall.",
-            "explanation": "'Welcome home!' said with real affection uses a wide Rising-Falling sweep, while a flatter, narrower pitch would sound stiff or formal.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a warm, joyful welcome and a cool, formal welcome."
+            "hint": "Forget the beginning. Follow 'coming' from its first sound to its last.",
+            "explanation": "Yes/no questions like this one commonly climb through the last stressed syllable, 'com-', and stay up. That upward finish is what tells the ear an answer is wanted. Sinking through the same word would make it sound like a remark the speaker already knows the answer to.",
+            "modulationPattern": "Rising: pitch climbs through the last stressed syllable and stays high.",
+            "meaningShift": "A lifted ending asks and waits for a reply; a sinking ending would sound like a statement of something already known."
         },
         {
             "id": "ACC_PITCHMODULATION_L1_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Does the voice travel anywhere, or does it mostly stay put? Listen, then choose.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm starving!",
-            "textToSpeak": "I'm starving!",
+            "word": "Nothing much.",
+            "textToSpeak": "Nothing much.",
             "options": [
-                "Rising-Falling (Strong, Urgent Hunger)",
-                "Falling-Rising (Mild, Polite Complaint)"
+                "Travels through clear ups and downs",
+                "Stays near one level, barely moving"
             ],
-            "correctAnswer": "Rising-Falling (Strong, Urgent Hunger)",
-            "correctAnswerIndex": 0,
-            "hint": "Strong physical feelings, like real hunger, are usually announced loudly with a big pitch swing, not a soft dip.",
-            "explanation": "'I'm starving!' spoken with urgency rises sharply on 'starv-' and falls, a Rising-Falling pattern that conveys intense, immediate hunger.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a strong, urgent hunger and a mild, polite complaint."
+            "correctAnswer": "Stays near one level, barely moving",
+            "correctAnswerIndex": 1,
+            "hint": "Picture a line on a screen. Is it bumpy, or almost ruler-straight?",
+            "explanation": "Replying 'nothing much' in a nearly level voice is very common when the speaker has little to add. Because there is so little movement, the phrase carries no extra excitement or concern. Noticing an absence of movement is a real listening skill, not just a warm-up.",
+            "modulationPattern": "Level delivery: very narrow pitch range, little rise or fall.",
+            "meaningShift": "A near-flat voice sounds low-key and uninvolved; a lively, moving voice would sound engaged and interested."
         },
         {
             "id": "ACC_PITCHMODULATION_L2_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A quick question. Listen to how the pitch behaves at the very end.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Is that right?",
-            "textToSpeak": "Is that right?",
+            "word": "Is it far?",
+            "textToSpeak": "Is it far?",
             "options": [
-                "Rising-Falling (Angry Accusation)",
-                "Falling-Rising (Surprised Disbelief)"
+                "It finishes on a rising note",
+                "It finishes on a falling note"
             ],
-            "correctAnswer": "Falling-Rising (Surprised Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "This isn't anger - it's mild surprise. Listen for a dip in pitch that climbs back up at the end, like a raised eyebrow.",
-            "explanation": "Said with surprise, 'Is that right?' dips down and lifts back up at the end - a Falling-Rising tone that signals gentle disbelief, not anger.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a angry accusation and a surprised disbelief."
+            "correctAnswer": "It finishes on a rising note",
+            "correctAnswerIndex": 0,
+            "hint": "Ignore the start. Follow the sound of 'far' as it fades out.",
+            "explanation": "Short yes/no questions usually climb through the last stressed word, and that final lift is the main signal that an answer is expected. With a falling finish the same three words would sound more like a remark than a question.",
+            "modulationPattern": "Rising: pitch climbs through the final stressed word 'far'.",
+            "meaningShift": "A climbing finish requests an answer; a falling finish would sound like a comment made without waiting for one."
         },
         {
             "id": "ACC_PITCHMODULATION_L2_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "This one is a plain piece of information. Where does the tone end up?",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I passed!",
-            "textToSpeak": "I passed!",
+            "word": "It's about ten minutes.",
+            "textToSpeak": "It's about ten minutes.",
             "options": [
-                "Rising-Falling (Triumphant Joy)",
-                "Falling-Rising (Nervous Relief)"
+                "The tone comes to rest low",
+                "The tone stays lifted and open"
             ],
-            "correctAnswer": "Rising-Falling (Triumphant Joy)",
+            "correctAnswer": "The tone comes to rest low",
             "correctAnswerIndex": 0,
-            "hint": "A loud announcement of success usually has one big, confident pitch movement rather than a wavering dip.",
-            "explanation": "A triumphant 'I passed!' bursts upward and then falls firmly - Rising-Falling - expressing pure joy rather than nervous relief.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a triumphant joy and a nervous relief."
+            "hint": "Listen to 'minutes'. Does the sound feel finished, or does it hang in the air?",
+            "explanation": "Information offered as a plain fact typically glides down on the last stressed syllable and rests at a low point. That resting quality tells the listener the speaker is done. A lifted ending would make them wait for more or wonder if the time is being checked.",
+            "modulationPattern": "Falling: pitch drops through 'minutes' and settles at a low resting point.",
+            "meaningShift": "A low, resting finish presents the time as settled; a lifted finish would leave it open, as if the speaker were unsure or still going."
         },
         {
             "id": "ACC_PITCHMODULATION_L2_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two choices, two different endings. Listen to how each drink is said.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Maybe later.",
-            "textToSpeak": "Maybe later.",
+            "word": "Tea or coffee?",
+            "textToSpeak": "Tea or coffee?",
             "options": [
-                "Rising-Falling (Firm Refusal)",
-                "Falling-Rising (Gentle Postponement)"
+                "Up on 'tea', down on 'coffee'",
+                "Down on 'tea', up on 'coffee'"
             ],
-            "correctAnswer": "Falling-Rising (Gentle Postponement)",
-            "correctAnswerIndex": 1,
-            "hint": "This is a soft 'no, not now', not a hard 'no'. Listen for the pitch lifting slightly at the very end instead of dropping flat.",
-            "explanation": "'Maybe later' with a small lift at the end is Falling-Rising, softening the postponement so it doesn't sound like a flat refusal.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a firm refusal and a gentle postponement."
+            "correctAnswer": "Up on 'tea', down on 'coffee'",
+            "correctAnswerIndex": 0,
+            "hint": "The two drinks do not end the same way. Which one sounds as if the list isn't over yet?",
+            "explanation": "In a real either-or offer, the first choice lifts because the speaker has not finished, and the last one drops because the choice closes there. The reversed pattern would make 'coffee' sound like the start of a longer list.",
+            "modulationPattern": "Rise on the first option, fall on the last: the usual shape of a two-item choice.",
+            "meaningShift": "Rise then fall gives a closed either-or choice; fall then rise would sound like a longer list still being built."
         },
         {
             "id": "ACC_PITCHMODULATION_L3_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your friend is about to tell a story. Listen, then judge how much the voice moves.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's mine!",
-            "textToSpeak": "That's mine!",
+            "word": "You won't believe what happened!",
+            "textToSpeak": "You won't believe what happened!",
             "options": [
-                "Falling-Rising (Hesitant Claim)",
-                "Rising-Falling (Assertive Claim)"
+                "Nearly flat, with almost no movement",
+                "Lively, with obvious ups and downs"
             ],
-            "correctAnswer": "Rising-Falling (Assertive Claim)",
+            "correctAnswer": "Lively, with obvious ups and downs",
             "correctAnswerIndex": 1,
-            "hint": "Someone confidently claiming ownership will commit fully to the pitch movement, without any uncertain lift at the end.",
-            "explanation": "A confident 'That's mine!' rises and falls decisively - Rising-Falling - leaving no doubt about the claim.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a hesitant claim and a assertive claim."
+            "hint": "Count the peaks you can hear. A story teaser rarely has none.",
+            "explanation": "When speakers are about to share something worth hearing, the pitch tends to travel widely, especially across 'believe' and 'happened'. That movement keeps the listener curious. A flat version would leave the sentence sounding like a routine remark.",
+            "modulationPattern": "Wide pitch range: several clear peaks and valleys across the sentence.",
+            "meaningShift": "A moving voice invites the listener into the story; a flat voice would make the same words sound routine or disengaged."
         },
         {
             "id": "ACC_PITCHMODULATION_L3_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone is asked about a quiet afternoon. Listen for how much the pitch changes.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Sounds great!",
-            "textToSpeak": "Sounds great!",
+            "word": "Not a lot, really.",
+            "textToSpeak": "Not a lot, really.",
             "options": [
-                "Falling-Rising (Half-Hearted Agreement)",
-                "Rising-Falling (Enthusiastic Agreement)"
+                "Small, restrained movement",
+                "Big, sweeping movement"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 1,
-            "hint": "Real enthusiasm pushes the pitch up high before it falls. A weaker, half-hearted 'great' would stay closer to a dip.",
-            "explanation": "Genuine enthusiasm in 'Sounds great!' is carried by a high Rising-Falling contour, distinguishing it from a flatter, less convinced response.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a half-hearted agreement and a enthusiastic agreement."
+            "correctAnswer": "Small, restrained movement",
+            "correctAnswerIndex": 0,
+            "hint": "Would you describe the voice as dramatic, or as calm and contained?",
+            "explanation": "Small messages call for small pitch ranges. Here the modest movement matches the meaning of 'not a lot' and would make the speaker sound relaxed. Big sweeping movement would create a mismatch, as if something were being made into a bigger deal than it is.",
+            "modulationPattern": "Narrow pitch range: small rises and falls that stay close together.",
+            "meaningShift": "Restrained movement sounds relaxed and matter-of-fact; sweeping movement would sound animated and would fight the low-key wording."
         },
         {
             "id": "ACC_PITCHMODULATION_L3_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "I'm not sure.",
-            "textToSpeak": "I'm not sure.",
-            "options": [
-                "Falling-Rising (Genuine Uncertainty)",
-                "Rising-Falling (Confident Denial)"
-            ],
-            "correctAnswer": "Falling-Rising (Genuine Uncertainty)",
-            "correctAnswerIndex": 0,
-            "hint": "True uncertainty trails off and then lifts slightly, as if the speaker is still thinking. It doesn't land firmly.",
-            "explanation": "'I'm not sure' spoken with real doubt falls and then rises gently at the end - Falling-Rising - the classic sound of uncertainty in English.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a genuine uncertainty and a confident denial."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L4_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "Happy birthday!",
-            "textToSpeak": "Happy birthday!",
-            "options": [
-                "Rising-Falling (Joyful Celebration)",
-                "Falling-Rising (Routine Politeness)"
-            ],
-            "correctAnswer": "Rising-Falling (Joyful Celebration)",
-            "correctAnswerIndex": 0,
-            "hint": "A heartfelt celebration has a big, generous pitch swing. A duty-bound greeting would sound smaller and flatter.",
-            "explanation": "A joyful 'Happy birthday!' uses a wide Rising-Falling sweep across the phrase, showing real celebration rather than polite routine.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a joyful celebration and a routine politeness."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L4_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "Watch out!",
-            "textToSpeak": "Watch out!",
-            "options": [
-                "Rising-Falling (Urgent Warning)",
-                "Falling-Rising (Casual Reminder)"
-            ],
-            "correctAnswer": "Rising-Falling (Urgent Warning)",
-            "correctAnswerIndex": 0,
-            "hint": "An urgent warning needs to grab attention instantly - listen for a sharp, high pitch rather than a relaxed dip.",
-            "explanation": "'Watch out!' as an urgent warning jumps high and falls sharply - Rising-Falling - so it cuts through noise and gets immediate attention.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a urgent warning and a casual reminder."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L4_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "Good job!",
-            "textToSpeak": "Good job!",
-            "options": [
-                "Falling-Rising (Unimpressed Comment)",
-                "Rising-Falling (Proud Praise)"
-            ],
-            "correctAnswer": "Rising-Falling (Proud Praise)",
-            "correctAnswerIndex": 1,
-            "hint": "Genuine praise sounds bright and full. A lukewarm comment would feel smaller, with less pitch movement.",
-            "explanation": "Proud praise like 'Good job!' rises confidently and falls with warmth - Rising-Falling - making the compliment feel sincere.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a unimpressed comment and a proud praise."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L5_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "I'm so tired.",
-            "textToSpeak": "I'm so tired.",
-            "options": [
-                "Rising-Falling (Energetic Statement)",
-                "Falling-Rising (Soft Complaint)"
-            ],
-            "correctAnswer": "Falling-Rising (Soft Complaint)",
-            "correctAnswerIndex": 1,
-            "hint": "Tiredness rarely sounds energetic. Listen for a low, drawn-out pitch that lifts only slightly at the very end.",
-            "explanation": "A tired complaint like 'I'm so tired' droops down and rises weakly at the end - Falling-Rising - matching low energy, not excitement.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a energetic statement and a soft complaint."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L5_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "That's amazing!",
-            "textToSpeak": "That's amazing!",
-            "options": [
-                "Rising-Falling (Genuine Awe)",
-                "Falling-Rising (Polite, Unconvinced Praise)"
-            ],
-            "correctAnswer": "Rising-Falling (Genuine Awe)",
-            "correctAnswerIndex": 0,
-            "hint": "True awe makes the pitch leap. A polite but unconvinced comment stays much flatter and smaller.",
-            "explanation": "Genuine awe in 'That's amazing!' produces a high Rising-Falling contour, while a half-hearted compliment would barely move in pitch.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a genuine awe and a polite, unconvinced praise."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L5_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "I forgot my homework.",
-            "textToSpeak": "I forgot my homework.",
-            "options": [
-                "Rising-Falling (Proud Announcement)",
-                "Falling-Rising (Apologetic Admission)"
-            ],
-            "correctAnswer": "Falling-Rising (Apologetic Admission)",
-            "correctAnswerIndex": 1,
-            "hint": "This is an embarrassed confession, not good news. Expect a dip with a small worried lift at the end.",
-            "explanation": "An apologetic admission like 'I forgot my homework' falls and lifts slightly - Falling-Rising - signalling embarrassment rather than pride.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a proud announcement and a apologetic admission."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L6_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "Nice to meet you.",
-            "textToSpeak": "Nice to meet you.",
-            "options": [
-                "Rising-Falling (Warm Sincerity)",
-                "Falling-Rising (Polite but Distant)"
-            ],
-            "correctAnswer": "Rising-Falling (Warm Sincerity)",
-            "correctAnswerIndex": 0,
-            "hint": "A truly warm greeting commits to the pitch fall at the end. A distant, formal one might leave it slightly open.",
-            "explanation": "Said warmly, 'Nice to meet you' falls fully and confidently - Rising-Falling - compared to a more guarded, formal tone.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a warm sincerity and a polite but distant."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L6_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "I can't believe it!",
-            "textToSpeak": "I can't believe it!",
-            "options": [
-                "Falling-Rising (Quiet Disappointment)",
-                "Rising-Falling (Shocked Excitement)"
-            ],
-            "correctAnswer": "Rising-Falling (Shocked Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Shock and excitement push the pitch high before it drops. Quiet disappointment would stay low throughout.",
-            "explanation": "Shocked excitement in 'I can't believe it!' is shown through a high Rising-Falling sweep, not the low tone of disappointment.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a quiet disappointment and a shocked excitement."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L6_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "Take care!",
-            "textToSpeak": "Take care!",
-            "options": [
-                "Rising-Falling (Heartfelt Farewell)",
-                "Falling-Rising (Quick, Casual Goodbye)"
-            ],
-            "correctAnswer": "Rising-Falling (Heartfelt Farewell)",
-            "correctAnswerIndex": 0,
-            "hint": "A heartfelt goodbye lingers on the fall. A quick, casual one is shorter and less committed in pitch.",
-            "explanation": "A heartfelt 'Take care!' uses a full Rising-Falling contour, giving the farewell more warmth than a quick, casual version would.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a heartfelt farewell and a quick, casual goodbye."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L7_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "I love this song!",
-            "textToSpeak": "I love this song!",
-            "options": [
-                "Rising-Falling (Excited Enjoyment)",
-                "Falling-Rising (Mild Indifference)"
-            ],
-            "correctAnswer": "Rising-Falling (Excited Enjoyment)",
-            "correctAnswerIndex": 0,
-            "hint": "Real excitement about music pushes the pitch up sharply on 'love'. Indifference would barely move at all.",
-            "explanation": "Excited enjoyment in 'I love this song!' is carried by a sharp Rising-Falling peak on 'love', the opposite of an indifferent, flat tone.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a excited enjoyment and a mild indifference."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L7_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "We're out of milk.",
-            "textToSpeak": "We're out of milk.",
-            "options": [
-                "Falling-Rising (Mild Concern)",
-                "Rising-Falling (Cheerful Announcement)"
-            ],
-            "correctAnswer": "Falling-Rising (Mild Concern)",
-            "correctAnswerIndex": 0,
-            "hint": "Running out of something is a small everyday worry, not happy news. Expect a gentle dip-and-lift, not a bright peak.",
-            "explanation": "'We're out of milk' said with mild concern dips and lifts slightly - Falling-Rising - rather than the bright peak of cheerful news.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a mild concern and a cheerful announcement."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L7_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "I got the job!",
-            "textToSpeak": "I got the job!",
-            "options": [
-                "Falling-Rising (Cautious Relief)",
-                "Rising-Falling (Overjoyed Excitement)"
-            ],
-            "correctAnswer": "Rising-Falling (Overjoyed Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "This is celebratory news. Listen for a big, confident pitch leap rather than a careful, restrained dip.",
-            "explanation": "Overjoyed excitement in 'I got the job!' produces a strong Rising-Falling contour, far bigger than the restrained pitch of cautious relief.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a cautious relief and a overjoyed excitement."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L8_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
-            "subtype": "pitchModulation",
-            "interactionType": "speaking",
-            "word": "It's freezing outside.",
-            "textToSpeak": "It's freezing outside.",
-            "options": [
-                "Rising-Falling (Cheerful Observation)",
-                "Falling-Rising (Mild Complaint)"
-            ],
-            "correctAnswer": "Falling-Rising (Mild Complaint)",
-            "correctAnswerIndex": 1,
-            "hint": "Complaining about cold weather usually sounds like a small grumble - a dip with a slight lift, not a happy peak.",
-            "explanation": "A mild complaint like 'It's freezing outside' falls and rises gently - Falling-Rising - fitting the grumble rather than a cheerful remark.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a cheerful observation and a mild complaint."
-        },
-        {
-            "id": "ACC_PITCHMODULATION_L8_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Listen to this remark, then choose which word carries the main pitch movement.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
             "word": "I missed the bus.",
             "textToSpeak": "I missed the bus.",
             "options": [
-                "Rising-Falling (Calm Announcement)",
-                "Falling-Rising (Frustrated Admission)"
+                "Movement lands on 'missed'",
+                "Movement lands on 'bus'"
             ],
-            "correctAnswer": "Falling-Rising (Frustrated Admission)",
+            "correctAnswer": "Movement lands on 'bus'",
             "correctAnswerIndex": 1,
-            "hint": "This is frustrating news for the speaker. Expect a dip in pitch that lifts slightly, showing irritation, not calm news.",
-            "explanation": "'I missed the bus' said with frustration dips down and lifts at the end - Falling-Rising - reflecting irritation rather than calm reporting.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a calm announcement and a frustrated admission."
+            "hint": "Wait for the last word. Is that where the voice does its main work?",
+            "explanation": "In an ordinary statement the last important word usually takes the main pitch movement, so 'bus' carries the peak and the drop. Putting the movement on 'missed' would be possible, but it would suggest the speaker is stressing the missing itself, for instance against some other outcome.",
+            "modulationPattern": "Main pitch movement on the last content word 'bus'.",
+            "meaningShift": "Movement on 'bus' reports the event neutrally; movement on 'missed' would point to what happened to the bus as the key point."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L4_Q1",
+            "instruction": "The speaker needs directions. Listen to how the question ends.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Where's the station?",
+            "textToSpeak": "Where's the station?",
+            "options": [
+                "It lifts upward at the end",
+                "It settles downward at the end"
+            ],
+            "correctAnswer": "It settles downward at the end",
+            "correctAnswerIndex": 1,
+            "hint": "Think about what the speaker is missing. Would the voice climb, or come down to land?",
+            "explanation": "Questions that begin with a question word like 'where' often fall at the end, because the speaker is requesting specific information, not a yes or no. Lifting on 'station' would make the question sound gentler or more uncertain.",
+            "modulationPattern": "Falling: pitch drops on 'station' in a question-word question.",
+            "meaningShift": "A falling finish sounds direct and information-seeking; a lifted finish would soften it and sound more tentative."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L4_Q2",
+            "instruction": "A colleague looks up from their laptop. Listen for the ending.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "You've finished?",
+            "textToSpeak": "You've finished?",
+            "options": [
+                "The pitch ends lower than it began",
+                "The pitch ends higher than it began"
+            ],
+            "correctAnswer": "The pitch ends higher than it began",
+            "correctAnswerIndex": 1,
+            "hint": "The sentence is only two words. Follow 'finished' and see whether it climbs or sinks.",
+            "explanation": "With no question word and no reversed word order, only the rising finish makes this a question. The pitch climbs on 'fin-' and continues up, so the listener hears surprise or a request to confirm. A fall would turn it into a plain observation.",
+            "modulationPattern": "Rising: pitch climbs on 'finished' and stays lifted.",
+            "meaningShift": "The lifted ending turns a statement into a check; a dropped ending would make it a flat observation."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L4_Q3",
+            "instruction": "A person didn't catch what was said. Listen to this single word.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Sorry?",
+            "textToSpeak": "Sorry?",
+            "options": [
+                "Lifting: asking for a repeat",
+                "Dropping: admitting a mistake"
+            ],
+            "correctAnswer": "Lifting: asking for a repeat",
+            "correctAnswerIndex": 0,
+            "hint": "Think about what the speaker wants the other person to do next.",
+            "explanation": "Lifted, 'sorry' works as a request: the pitch climbs and hands the turn back to the other person. A falling 'sorry' is what you say after bumping into someone, where the pitch settles and the apology is complete.",
+            "modulationPattern": "Rising on a single word used as a repair request.",
+            "meaningShift": "Rising 'sorry' means 'please say that again'; falling 'sorry' means 'I apologise'. Same word, different job."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L5_Q1",
+            "instruction": "This word has three beats. Listen for the tallest one.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Wonderful.",
+            "textToSpeak": "Wonderful.",
+            "options": [
+                "The peak is on the first beat",
+                "The peak is on the last beat"
+            ],
+            "correctAnswer": "The peak is on the first beat",
+            "correctAnswerIndex": 0,
+            "hint": "Tap out the three beats and pick the one that sounds the tallest.",
+            "explanation": "In English the pitch peak of a word normally sits on its stressed syllable, and here that is 'won-'. The rest of the word trails down after it. A peak on '-ful' would make the word sound oddly foreign.",
+            "modulationPattern": "Pitch peak on the stressed syllable 'won-', followed by a fall.",
+            "meaningShift": "Peak on the first beat is the natural shape of the word; a peak on the last beat would sound misplaced and could confuse the listener."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L5_Q2",
+            "instruction": "Another three-beat word. Find the beat where the pitch stands out.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Banana.",
+            "textToSpeak": "Banana.",
+            "options": [
+                "The peak is on the first beat",
+                "The peak is on the middle beat"
+            ],
+            "correctAnswer": "The peak is on the middle beat",
+            "correctAnswerIndex": 1,
+            "hint": "Say 'ba-NA-na' slowly. Which beat gets pushed?",
+            "explanation": "In 'banana' the stress falls on the middle syllable, so that is where the pitch climbs, with the last syllable falling away. Beginners often stress the first syllable because so many English words do, but here the movement belongs in the middle.",
+            "modulationPattern": "Pitch peak on the stressed middle syllable '-nan-'.",
+            "meaningShift": "A middle peak matches the word's stress pattern; a first-beat peak would sound like a different, mis-stressed word."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L5_Q3",
+            "instruction": "You are on the phone, describing where you are. Where does the pitch peak?",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'm on my way.",
+            "textToSpeak": "I'm on my way.",
+            "options": [
+                "Highest on 'I'm'",
+                "Highest on 'way'"
+            ],
+            "correctAnswer": "Highest on 'way'",
+            "correctAnswerIndex": 1,
+            "hint": "Find the syllable where the voice starts to fall away.",
+            "explanation": "In a neutral statement the pitch peaks on the last important word and falls from there, so 'way' carries the height. If the peak were on 'I'm', the sentence would feel like an answer to a question about who is coming.",
+            "modulationPattern": "Peak on the final content word 'way', then a fall.",
+            "meaningShift": "A peak on 'way' gives a neutral update; a peak on 'I'm' would contrast the speaker with someone else."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L6_Q1",
+            "instruction": "Someone is shown a surprise. Listen, then judge the size of the movement.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "That's amazing!",
+            "textToSpeak": "That's amazing!",
+            "options": [
+                "Small, restrained movement",
+                "Wide, obvious movement"
+            ],
+            "correctAnswer": "Wide, obvious movement",
+            "correctAnswerIndex": 1,
+            "hint": "Picture the pitch line. Is it a steep mountain or a gentle slope?",
+            "explanation": "Reactions to genuine surprise tend to use a wide pitch range, which is why 'amazing' shoots up before it falls. A small range would make the same word sound polite but unmoved.",
+            "modulationPattern": "Wide pitch range with a large rise and fall on 'amazing'.",
+            "meaningShift": "Wide movement sounds genuinely impressed; narrow movement would sound polite but unmoved."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L6_Q2",
+            "instruction": "A team member is closing a meeting. Listen to the size of the movement.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Right, I'll send it over.",
+            "textToSpeak": "Right, I'll send it over.",
+            "options": [
+                "Narrow, controlled movement",
+                "Wide, dramatic movement"
+            ],
+            "correctAnswer": "Narrow, controlled movement",
+            "correctAnswerIndex": 0,
+            "hint": "Does the voice draw attention to itself, or stay businesslike?",
+            "explanation": "Routine workplace statements are often delivered with a narrow, even range. The information is ordinary, so the pitch does not need to travel far. Wide movement would give a simple promise the energy of an announcement.",
+            "modulationPattern": "Narrow pitch range with a small fall at the end.",
+            "meaningShift": "Narrow movement makes it sound routine and dependable; wide movement would make it sound like big news."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L6_Q3",
+            "instruction": "It's cold in the room. Listen to how far the last word drops.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "It's a bit cold in here.",
+            "textToSpeak": "It's a bit cold in here.",
+            "options": [
+                "The final drop is small and soft",
+                "The final drop is steep and dramatic"
+            ],
+            "correctAnswer": "The final drop is small and soft",
+            "correctAnswerIndex": 0,
+            "hint": "Focus on 'here'. Does the voice plunge, or just ease down?",
+            "explanation": "Mild observations get mild falls, so 'here' eases down without much drama. A steep fall would suggest the speaker is really bothered and possibly making a point.",
+            "modulationPattern": "Falling with a small pitch drop on the final word.",
+            "meaningShift": "A gentle drop sounds like a casual comment; a steep drop would sound more pointed, like a complaint."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L7_Q1",
+            "instruction": "Listen to this word and picture the shape of the pitch.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Perfect!",
+            "textToSpeak": "Perfect!",
+            "options": [
+                "Dips, then climbs back up",
+                "Climbs, peaks, then comes down"
+            ],
+            "correctAnswer": "Climbs, peaks, then comes down",
+            "correctAnswerIndex": 1,
+            "hint": "Draw the shape in the air as you listen. Hill or valley?",
+            "explanation": "Said confidently, 'perfect' goes up into the stressed syllable and then falls away, a hill shape. The valley shape would leave the word sounding tentative, as though the speaker weren't fully convinced.",
+            "modulationPattern": "Rising-falling: pitch climbs on 'per-' and falls through '-fect'.",
+            "meaningShift": "A hill shape sounds sure and complete; a valley shape would sound hesitant or reserved."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L7_Q2",
+            "instruction": "Someone is invited to dinner. Listen to how the reply moves.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'd love to.",
+            "textToSpeak": "I'd love to.",
+            "options": [
+                "Up on 'love', then down",
+                "Down on 'love', then up"
+            ],
+            "correctAnswer": "Up on 'love', then down",
+            "correctAnswerIndex": 0,
+            "hint": "Everything happens around 'love'. Which way does the voice go first?",
+            "explanation": "Enthusiastic acceptance often lifts sharply on 'love' and then falls, so the reply sounds committed. Dipping and rising on the same word gives a more cautious tone, the kind of 'I'd love to, but...' that comes before a refusal.",
+            "modulationPattern": "Rising-falling: pitch lifts on 'love' then falls to the end.",
+            "meaningShift": "Rise then fall conveys a firm yes; fall then rise would sound like a polite reservation."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L7_Q3",
+            "instruction": "Two ways to say the same word. Which one is this?",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Brilliant!",
+            "textToSpeak": "Brilliant!",
+            "options": [
+                "Falls straight down from the start",
+                "Lifts first, then falls"
+            ],
+            "correctAnswer": "Lifts first, then falls",
+            "correctAnswerIndex": 1,
+            "hint": "Notice whether the voice climbs before it comes down, or drops right away.",
+            "explanation": "In an appreciative 'brilliant!' the pitch often rises on the first syllable before falling. Dropping immediately would produce a flatter, more matter-of-fact word, closer to a plain evaluation.",
+            "modulationPattern": "Rising-falling: initial lift on 'bril-' before the fall.",
+            "meaningShift": "A lift before the fall sounds warm and appreciative; a fall from the start sounds neutral and more measured."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L8_Q1",
+            "instruction": "A friend asks if you'll be free. Listen to the shape of your reply.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Maybe.",
+            "textToSpeak": "Maybe.",
+            "options": [
+                "Dips down, then climbs back up",
+                "Climbs up, then drops down"
+            ],
+            "correctAnswer": "Dips down, then climbs back up",
+            "correctAnswerIndex": 0,
+            "hint": "Draw it in the air. Valley or hill?",
+            "explanation": "That dip and rise leaves the answer open: the speaker has said something, but not everything. That is why 'maybe' with a valley shape sounds truly undecided. A hill-shaped 'maybe' is possible, but it sounds more settled and final.",
+            "modulationPattern": "Falling-rising: pitch dips on 'may-' and lifts again on '-be'.",
+            "meaningShift": "A valley shape leaves the possibility open; a hill shape would sound more definite, even if the word is still 'maybe'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L8_Q2",
+            "instruction": "Someone is asked whether they enjoyed the film. Listen to the movement.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Not really.",
+            "textToSpeak": "Not really.",
+            "options": [
+                "Falls, then rises again at the close",
+                "Rises, then falls at the close"
+            ],
+            "correctAnswer": "Falls, then rises again at the close",
+            "correctAnswerIndex": 0,
+            "hint": "Compare 'not' and 'really'. Which one ends lower?",
+            "explanation": "Falling on 'not' and then lifting on 'really' gives it a softened, careful quality. The speaker says no, but doesn't quite close the door on politeness. A rise-fall version would sound flatter and more decisive.",
+            "modulationPattern": "Falling-rising: dip on 'not', gentle rise through 'really'.",
+            "meaningShift": "A dip then lift sounds a little softened; a rise then fall would sound blunt and final."
         },
         {
             "id": "ACC_PITCHMODULATION_L8_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks if the report is okay. Listen to the ending.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This phone is new.",
-            "textToSpeak": "This phone is new.",
+            "word": "It's fine.",
+            "textToSpeak": "It's fine.",
             "options": [
-                "Rising-Falling (Proud Announcement)",
-                "Falling-Rising (Casual Mention)"
+                "The end curls back up, staying open",
+                "The end lands firmly down"
             ],
-            "correctAnswer": "Rising-Falling (Proud Announcement)",
+            "correctAnswer": "The end curls back up, staying open",
             "correctAnswerIndex": 0,
-            "hint": "Showing off a new gadget proudly tends to have a fuller pitch movement than just mentioning a fact in passing.",
-            "explanation": "A proud announcement like 'This phone is new' uses a confident Rising-Falling contour, larger than the pitch of a casual, offhand mention.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a proud announcement and a casual mention."
+            "hint": "Ask yourself whether the voice finishes at the bottom or bounces back.",
+            "explanation": "When 'fine' lifts slightly at the end, there may be more to say, so the listener senses a caveat. A firm landing closes the topic and sounds like real approval.",
+            "modulationPattern": "Falling-rising: pitch dips on 'fine' and lifts slightly at the end.",
+            "meaningShift": "A curl upward hints at reservations; a firm fall signals the matter is settled and satisfactory."
         },
         {
             "id": "ACC_PITCHMODULATION_L9_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Listen to the question and choose the main direction of the pitch.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "My phone died.",
-            "textToSpeak": "My phone died.",
+            "word": "Would you like some water?",
+            "textToSpeak": "Would you like some water?",
             "options": [
-                "Falling-Rising (Mild Annoyance)",
-                "Rising-Falling (Excited Announcement)"
+                "Mostly downward, ending low",
+                "Mostly upward, ending high"
             ],
-            "correctAnswer": "Falling-Rising (Mild Annoyance)",
-            "correctAnswerIndex": 0,
-            "hint": "A dead battery is annoying, not exciting. Listen for a small dip-and-lift rather than a bright, happy peak.",
-            "explanation": "'My phone died' with mild annoyance falls and lifts gently - Falling-Rising - since this is a small daily frustration, not happy news.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a mild annoyance and a excited announcement."
+            "correctAnswer": "Mostly upward, ending high",
+            "correctAnswerIndex": 1,
+            "hint": "You are being offered something. Would the voice sound open or closed?",
+            "explanation": "Offers usually end with a lift, which sounds friendly and keeps the door open for either answer. A falling ending would sound more like a fixed offer and can come across as more formal or a little impatient.",
+            "modulationPattern": "Rising: pitch climbs on 'water' at the end of a yes/no offer.",
+            "meaningShift": "A lifted finish sounds inviting and open; a falling finish would sound more businesslike or pressing."
         },
         {
             "id": "ACC_PITCHMODULATION_L9_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A shop assistant is closing your order. Listen to the direction.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I feel sick.",
-            "textToSpeak": "I feel sick.",
+            "word": "Not today, thanks.",
+            "textToSpeak": "Not today, thanks.",
             "options": [
-                "Falling-Rising (Quiet Discomfort)",
-                "Rising-Falling (Loud Complaint)"
+                "Comes down and ends low",
+                "Climbs and ends high"
             ],
-            "correctAnswer": "Falling-Rising (Quiet Discomfort)",
+            "correctAnswer": "Comes down and ends low",
             "correctAnswerIndex": 0,
-            "hint": "Quiet discomfort is understated - listen for a low, gentle dip rather than a loud, dramatic swing.",
-            "explanation": "'I feel sick' said quietly uses a soft Falling-Rising movement, much smaller than the dramatic swing of a loud complaint.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a quiet discomfort and a loud complaint."
+            "hint": "Check whether the sentence sounds like an answer or a question.",
+            "explanation": "Polite refusals usually fall at the end because they're decisions. Ending high would make it sound like a question, as though the speaker wanted permission to say no.",
+            "modulationPattern": "Falling: pitch falls through 'thanks' to close a refusal.",
+            "meaningShift": "A falling finish sounds decided and courteous; a rising finish would sound unsure, inviting the other person to push."
         },
         {
             "id": "ACC_PITCHMODULATION_L9_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Listen to how the reply is shaped from beginning to end.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We won the match!",
-            "textToSpeak": "We won the match!",
+            "word": "Perhaps later.",
+            "textToSpeak": "Perhaps later.",
             "options": [
-                "Rising-Falling (Triumphant Celebration)",
-                "Falling-Rising (Reluctant Report)"
+                "Falls steadily throughout",
+                "Dips, then rises"
             ],
-            "correctAnswer": "Rising-Falling (Triumphant Celebration)",
-            "correctAnswerIndex": 0,
-            "hint": "Winning is celebrated loudly. Expect the pitch to soar up and crash down with excitement, not hesitate.",
-            "explanation": "A triumphant 'We won the match!' rises high and falls with energy - Rising-Falling - capturing the thrill of victory.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a triumphant celebration and a reluctant report."
+            "correctAnswer": "Dips, then rises",
+            "correctAnswerIndex": 1,
+            "hint": "Is there any lift near the end, even a small one?",
+            "explanation": "Because 'later' rises slightly at the end, the answer stays open, so the invitation isn't refused. A steady fall would sound closed, like a firm 'later, not now'.",
+            "modulationPattern": "Falling-rising: dip on 'per-', slight rise through 'later'.",
+            "meaningShift": "A dip and lift leaves room for another try; a steady fall closes the conversation."
         },
         {
             "id": "ACC_PITCHMODULATION_L10_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your friend picks up their bag and heads for the door. You check.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I think so.",
-            "textToSpeak": "I think so.",
+            "word": "You're leaving?",
+            "textToSpeak": "You're leaving?",
             "options": [
-                "Falling-Rising (Tentative Agreement)",
-                "Rising-Falling (Definite Agreement)"
+                "Falling: stating a fact",
+                "Rising: checking it's true"
             ],
-            "correctAnswer": "Falling-Rising (Tentative Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "'I think' already signals some doubt. Listen for the pitch lifting gently at the end instead of dropping firmly.",
-            "explanation": "A tentative 'I think so' falls and rises softly at the end - Falling-Rising - reflecting the built-in uncertainty of 'I think'.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a tentative agreement and a definite agreement."
+            "correctAnswer": "Rising: checking it's true",
+            "correctAnswerIndex": 1,
+            "hint": "The words could be a statement. Only the ending decides it.",
+            "explanation": "Written down, 'you're leaving' looks like a statement, but a rise on 'leaving' turns it into a check that says the speaker is surprised or wants confirmation. A fall would just report what the speaker is already observing.",
+            "modulationPattern": "Rising on 'leaving' converts a declarative into a check question.",
+            "meaningShift": "Rising makes it a surprised check; falling makes it a simple observation."
         },
         {
             "id": "ACC_PITCHMODULATION_L10_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two parts, two directions. Listen to where each part ends.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This soup is delicious!",
-            "textToSpeak": "This soup is delicious!",
+            "word": "If it rains, we'll stay home.",
+            "textToSpeak": "If it rains, we'll stay home.",
             "options": [
-                "Falling-Rising (Polite, Lukewarm Comment)",
-                "Rising-Falling (Delighted Praise)"
+                "Up after 'rains', down on 'home'",
+                "Down after 'rains', up on 'home'"
             ],
-            "correctAnswer": "Rising-Falling (Delighted Praise)",
-            "correctAnswerIndex": 1,
-            "hint": "Real delight about food makes the pitch jump on 'delicious'. A lukewarm comment would stay much flatter.",
-            "explanation": "Delighted praise in 'This soup is delicious!' rises and falls strongly on 'delicious' - Rising-Falling - unlike a polite, lukewarm remark.",
-            "modulationPattern": "Rising-Falling modulation indicates high energy, confidence, excitement, or warmth.",
-            "meaningShift": "The meaning shifts between a polite, lukewarm comment and a delighted praise."
+            "correctAnswer": "Up after 'rains', down on 'home'",
+            "correctAnswerIndex": 0,
+            "hint": "The comma is audible. What happens to the voice there?",
+            "explanation": "In a two-part sentence, the first part usually lifts at the comma to signal there is more to come, and the last part falls to close. This is how speakers mark where one thought ends and another begins.",
+            "modulationPattern": "Rise at the phrase boundary after 'rains', fall at the sentence end.",
+            "meaningShift": "A lift after the first clause says 'wait, I'm not done'; a fall on the final word closes the whole thought."
         },
         {
             "id": "ACC_PITCHMODULATION_L10_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You pick up a call from a number you don't recognise.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'll try my best.",
-            "textToSpeak": "I'll try my best.",
+            "word": "Hello?",
+            "textToSpeak": "Hello?",
             "options": [
-                "Rising-Falling (Confident Boast)",
-                "Falling-Rising (Modest Promise)"
+                "Falling: greeting someone you know",
+                "Rising: checking who is there"
             ],
-            "correctAnswer": "Falling-Rising (Modest Promise)",
+            "correctAnswer": "Rising: checking who is there",
             "correctAnswerIndex": 1,
-            "hint": "A modest promise holds back a little. Listen for a small lift at the end rather than a bold, falling finish.",
-            "explanation": "'I'll try my best' as a modest promise dips and lifts gently - Falling-Rising - keeping it humble rather than boastful.",
-            "modulationPattern": "Falling-Rising modulation signals hesitation, politeness, mild concern, or gentle doubt.",
-            "meaningShift": "The meaning shifts between a confident boast and a modest promise."
+            "hint": "Think about whether you know who is on the line.",
+            "explanation": "Answering an unknown caller, people often lift 'hello', because they are asking who's there. A fall would suit a familiar caller, where the greeting is simply a welcome.",
+            "modulationPattern": "Rising on a one-word greeting used as an identity check.",
+            "meaningShift": "A rise asks 'who is this?'; a fall says 'hi, it's you'."
         }
     ]
 }

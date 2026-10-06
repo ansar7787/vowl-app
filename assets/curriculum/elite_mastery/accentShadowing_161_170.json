@@ -1,307 +1,607 @@
 {
-  "gameType": "accentShadowing",
-  "batchIndex": 17,
-  "levels": "161-170",
-  "quests": [
-    {
-      "id": "ELT_ACCENTSHADOWING_L161_Q1",
-      "interactionType": "speaking",
-      "hint": "Soft start on 'actually'; peaks on FOUR-teenth and FIF-teenth.",
-      "explanation": "A polite correction opens gently and puts the stress on the two dates being compared, so the correction is clear without sounding blunt.",
-      "textToSpeak": "Actually, I think it was the fourteenth, not the fifteenth.",
-      "instruction": "Repeat, matching where the voice rises and where it falls.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L161_Q2",
-      "interactionType": "speaking",
-      "hint": "Keep 'sorry to interrupt' quick; peak on THURS-day.",
-      "explanation": "Quickly saying the apology and then landing on the corrected word keeps the tone respectful.",
-      "textToSpeak": "Sorry to interrupt, but I believe the deadline is Thursday.",
-      "instruction": "Repeat, matching the peaks of stress exactly.",
-      "shadowingFocus": "Focus: Contrastive Stress",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L161_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise on 'correctly'; fall on 'budget'.",
-      "explanation": "Hedging with a rise shows you are not accusing anyone; the fall on the fact makes it firm.",
-      "textToSpeak": "If I remember correctly, we agreed on the smaller budget.",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L162_Q1",
-      "interactionType": "speaking",
-      "hint": "Fall-rise on 'appeal'; peak on CAU-tious and EAR-ly.",
-      "explanation": "Acknowledging first and then raising a concern keeps professional disagreement respectful.",
-      "textToSpeak": "I understand the appeal, but I'd be cautious about committing so early.",
-      "instruction": "Repeat, matching where the voice rises and where it falls.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L162_Q2",
-      "interactionType": "speaking",
-      "hint": "Slow down on 'with respect'; peak on DATA and con-CLU-sion.",
-      "explanation": "A slower opener signals that a disagreement follows, and stress lands on the evidence.",
-      "textToSpeak": "With respect, I don't think the data supports that conclusion.",
-      "instruction": "Listen once, then repeat with the same melody.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L162_Q3",
-      "interactionType": "speaking",
-      "hint": "Peaks on GEN-er-al and THIS CASE.",
-      "explanation": "Contrast marks the two situations: the general rule and the specific exception.",
-      "textToSpeak": "That may be true in general, but in this case the numbers are different.",
-      "instruction": "Listen once, then reproduce the contrast in the speaker's voice.",
-      "shadowingFocus": "Focus: Contrastive Stress",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L163_Q1",
-      "interactionType": "speaking",
-      "hint": "Strong peak on IN-voice and OR-der.",
-      "explanation": "When two similar words are confused, the correction only works if both are stressed. IN-voice and OR-der are the pair, so the listener hears exactly what changed.",
-      "textToSpeak": "No, I said the invoice was overdue, not the order.",
-      "instruction": "Repeat, matching the peaks of stress exactly.",
-      "shadowingFocus": "Focus: Contrastive Stress",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L163_Q2",
-      "interactionType": "speaking",
-      "hint": "Strong peak on LAST.",
-      "explanation": "Only one word changes, so only LAST gets the strong peak. If every word were stressed, the listener could not tell which detail was corrected.",
-      "textToSpeak": "It wasn't Monday; it was last Monday.",
-      "instruction": "Shadow the speaker and copy which words stand out.",
-      "shadowingFocus": "Focus: Contrastive Stress",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L163_Q3",
-      "interactionType": "speaking",
-      "hint": "Peak on TWEN-ty and TWELVE, stressing the syllables that differ.",
-      "explanation": "In numbers that sound alike, exaggerate the part that differs: TWEN- versus TWELVE, so the listener catches the correction.",
-      "textToSpeak": "I asked for twenty, not twelve.",
-      "instruction": "Listen for the emphasised words, then repeat with the same emphasis.",
-      "shadowingFocus": "Focus: Contrastive Stress",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L164_Q1",
-      "interactionType": "speaking",
-      "hint": "Rise on 'work'; fall on 'reservations'.",
-      "explanation": "'It could work' sounds positive, so the rise keeps it open. The fall on 'reservations' then shows that the concern is real and not just politeness.",
-      "textToSpeak": "It could work, though I do have a few reservations.",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L164_Q2",
-      "interactionType": "speaking",
-      "hint": "Level on 'against it'; fall on 'first'.",
-      "explanation": "The level pitch before 'but' softens the opening, so the concern does not sound like an attack. The fall on 'first' shows that seeing the numbers is a condition, not an option.",
-      "textToSpeak": "I'm not against it, but I'd want to see the numbers first.",
-      "instruction": "Listen once, then repeat with the same melody.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L164_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise on 'yes'; fall-rise on 'not so sure'.",
-      "explanation": "'In principle' and 'in practice' are a pair, so the pitch moves differently for each. The fall-rise at the end leaves the door open for more discussion.",
-      "textToSpeak": "In principle, yes; in practice, I'm not so sure.",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L165_Q1",
-      "interactionType": "speaking",
-      "hint": "Wide rise-fall on 'interesting'; rise on 'about it'.",
-      "explanation": "A wide pitch range on 'interesting' shows real interest, while a rise invites more.",
-      "textToSpeak": "That sounds really interesting; could you tell me more about it?",
-      "instruction": "Listen once, then repeat with the same melody.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L165_Q2",
-      "interactionType": "speaking",
-      "hint": "Fall-rise on 'way'; fall on 'point'.",
-      "explanation": "Openly changing your view sounds sincere with a soft fall-rise and a warm fall.",
-      "textToSpeak": "Oh, I hadn't thought of it that way; that's a great point.",
-      "instruction": "Shadow the speaker and match the rise and fall of the voice.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L165_Q3",
-      "interactionType": "speaking",
-      "hint": "Fall on 'on'; peak on LOVE and OUT.",
-      "explanation": "Encouragement uses low, warm falls and a peak on the words that show curiosity.",
-      "textToSpeak": "Go on, I'd love to hear how that worked out.",
-      "instruction": "Listen for the final pitch movement, then repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L166_Q1",
-      "interactionType": "speaking",
-      "hint": "Fall-rise on 'sides'; fall on 'everyone'.",
-      "explanation": "Diplomacy is signalled by a softer first clause and a firm, inclusive ending.",
-      "textToSpeak": "I can see both sides, so let's find something that works for everyone.",
-      "instruction": "Shadow the speaker and match the rise and fall of the voice.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L166_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise on 'Perhaps', fall on 'angle'.",
-      "explanation": "'Perhaps' with a light rise makes a suggestion sound open rather than a command.",
-      "textToSpeak": "Perhaps we could look at this from a slightly different angle.",
-      "instruction": "Repeat, matching where the voice rises and where it falls.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L166_Q3",
-      "interactionType": "speaking",
-      "hint": "Fall on 'fault'; peak on com-mu-ni-CA-tion.",
-      "explanation": "The steady fall signals calm, and the stressed final noun refocuses the problem.",
-      "textToSpeak": "I don't think anyone is at fault here; it's a communication issue.",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L167_Q1",
-      "interactionType": "speaking",
-      "hint": "Rise on 'two'; peak on POS-si-ble.",
-      "explanation": "Softening a request uses a rising end and an indirect frame: 'Would it be possible' makes it easy to say no.",
-      "textToSpeak": "Would it be possible to move the deadline back by a day or two?",
-      "instruction": "Repeat, matching where the voice rises and where it falls.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L167_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise on 'this'; keep 'I was wondering' soft.",
-      "explanation": "The longer the lead-in, the softer the request. The final rise makes it feel optional.",
-      "textToSpeak": "I was wondering whether you might have time to review this.",
-      "instruction": "Listen once, then repeat with the same melody.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L167_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise on 'trouble'; fall on 'again'.",
-      "explanation": "'If it's not too much trouble' gives the listener an easy way to refuse. The rise on 'trouble' keeps the tone light, and the fall on 'again' finishes the request politely.",
-      "textToSpeak": "If it's not too much trouble, could you send that again?",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L168_Q1",
-      "interactionType": "speaking",
-      "hint": "Peaks on CRIT-i-cal and BACKED UP.",
-      "explanation": "Announcing something critical needs a clear peak, so the listener knows it is different from routine instructions. BACKED UP then names the action they must not forget.",
-      "textToSpeak": "This is critical: the system must be backed up before we begin.",
-      "instruction": "Copy the emphasis so the meaning stays the same.",
-      "shadowingFocus": "Focus: Contrastive Stress",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L168_Q2",
-      "interactionType": "speaking",
-      "hint": "Peaks on READ and EV-ery-one.",
-      "explanation": "Instructions that affect other people sound serious when the action and the impact are stressed. READ and EV-ery-one tell the listener what to do and why it matters.",
-      "textToSpeak": "Please make sure you read this part; it affects everyone.",
-      "instruction": "Listen once, then reproduce the contrast in the speaker's voice.",
-      "shadowingFocus": "Focus: Contrastive Stress",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L168_Q3",
-      "interactionType": "speaking",
-      "hint": "Peaks on STRESS, NOTH-ing and ap-PRO-val.",
-      "explanation": "'The one thing I'd stress' is a spoken headline, so the sentence needs to land firmly on the key ideas. NOTH-ing and ap-PRO-val are the rule they must remember.",
-      "textToSpeak": "The one thing I'd stress is that nothing goes live without approval.",
-      "instruction": "Repeat, matching the peaks of stress exactly.",
-      "shadowingFocus": "Focus: Contrastive Stress",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L169_Q1",
-      "interactionType": "speaking",
-      "hint": "Slow on 'misunderstanding'; soft fall.",
-      "explanation": "'Slight misunderstanding' avoids blaming either side, and slowing down on the long word gives it a calm tone. The soft fall shows that you want to fix the problem, not win.",
-      "textToSpeak": "I think there may have been a slight misunderstanding.",
-      "instruction": "Listen once, then repeat with the same melody.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L169_Q2",
-      "interactionType": "speaking",
-      "hint": "Peaks on RE-view and ap-PROVE.",
-      "explanation": "You are correcting your own meaning, so the two verbs must be clear. RE-view and ap-PROVE are easy to confuse, so the stress is what prevents a bigger misunderstanding.",
-      "textToSpeak": "What I meant was that we'd review it, not approve it.",
-      "instruction": "Listen once, then reproduce the contrast in the speaker's voice.",
-      "shadowingFocus": "Focus: Contrastive Stress",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L169_Q3",
-      "interactionType": "speaking",
-      "hint": "Fall on 'badly'; rise on 'again'.",
-      "explanation": "A low fall on 'badly' takes responsibility, and a rise on 'again' invites the listener to try. Together they sound humble and cooperative rather than defensive.",
-      "textToSpeak": "Sorry, I may have explained that badly; let me try again.",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L170_Q1",
-      "interactionType": "speaking",
-      "hint": "Fall-rise on 'saying'; peaks on SIT-ting and TIGHT.",
-      "explanation": "A diplomatic disagreement combines a soft acknowledgement, a shift in focus and a firm fall.",
-      "textToSpeak": "I hear what you're saying, but from where I'm sitting, the timeline's still tight.",
-      "instruction": "Listen carefully, then reproduce the phrase with the same feeling.",
-      "shadowingFocus": "Focus: Prosody",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L170_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise on 'correctly'; peaks on DRAFT and FI-nal.",
-      "explanation": "A clarification question combines politeness, checking and contrast: DRAFT versus FI-nal.",
-      "textToSpeak": "Could I just check I've understood correctly: you'd like the draft by Friday, not the final version?",
-      "instruction": "Match the speaker's pacing, stress and pitch as you repeat.",
-      "shadowingFocus": "Focus: Prosody",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L170_Q3",
-      "interactionType": "speaking",
-      "hint": "Slow on 'respect'; peak on HOLD OFF and RE-sults.",
-      "explanation": "'With all due respect' warns that disagreement is coming, so it is said slowly. The peaks on HOLD OFF and RE-sults then give the reason for waiting.",
-      "textToSpeak": "With all due respect, I think we should hold off until we've seen the results.",
-      "instruction": "Shadow the speaker and copy the full delivery, not just the words.",
-      "shadowingFocus": "Focus: Prosody",
-      "targetAccent": "Received Pronunciation (RP)"
-    }
-  ]
+    "gameType": "shadowingChallenge",
+    "batchIndex": 17,
+    "levels": "161-170",
+    "quests": [
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L161_Q1",
+            "instruction": "Shadow the excited reply. Which feature carries the joy?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Oh, that's brilliant news, I'm so happy for you!",
+            "textToSpeak": "Oh, that's brilliant news, I'm so happy for you!",
+            "options": [
+                "A high start on 'brilliant' and a stretched 'so'",
+                "A low start and a clipped 'so', with little energy",
+                "A flat tone with a rising 'you' at the end"
+            ],
+            "correctAnswer": "A high start on 'brilliant' and a stretched 'so'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈəʊ | ðæts ˈbrɪljənt ˈnjuːz | aɪm ˈsəʊ ˈhæpi fə ˈjuː/",
+            "hint": "Let your pitch jump at the first stressed word.",
+            "explanation": "Excitement is heard in a higher starting pitch and in lengthening of intensifiers like 'so'.",
+            "flowRule": "Enthusiasm: a high start and stretched intensifiers sound excited.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L161_Q2",
+            "instruction": "Shadow the sympathetic reply. How does the voice sound caring?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'm really sorry to hear that, that must have been awful.",
+            "textToSpeak": "I'm really sorry to hear that, that must have been awful.",
+            "options": [
+                "Higher, faster, with a rise on 'awful'",
+                "Lower, slower, with a soft fall on 'awful'",
+                "Loud, with a sharp stress on 'must'"
+            ],
+            "correctAnswer": "Lower, slower, with a soft fall on 'awful'",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪm ˈrɪəli ˈsɒri tə ˈhɪə ðæt | ðæt ˈmʌst əv bɪn ˈɔːfl/",
+            "hint": "Imagine speaking to someone who is upset.",
+            "explanation": "Lower pitch and slower speed make sympathy believable, and the soft fall on 'awful' closes gently.",
+            "flowRule": "Sympathy: lower, slower and softer.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L161_Q3",
+            "instruction": "Shadow the reassurance. What makes it sound calming?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Don't worry about it, honestly, it's all under control.",
+            "textToSpeak": "Don't worry about it, honestly, it's all under control.",
+            "options": [
+                "A wide, high pitch and a rise on 'control'",
+                "Even, low pitch and a gentle fall on 'control'",
+                "A fast pace and a sharp stress on 'all'"
+            ],
+            "correctAnswer": "Even, low pitch and a gentle fall on 'control'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈdəʊnt ˈwʌri əˈbaʊt ɪt | ˈɒnɪstli | ɪts ˈɔːl ˌʌndə kənˈtrəʊl/",
+            "hint": "Reassurance sounds steady, not excited.",
+            "explanation": "A narrow, low pitch with slow falls sounds settled, which calms the listener.",
+            "flowRule": "Reassurance: steady, low and unhurried.",
+            "speedLevel": 1.2
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L162_Q1",
+            "instruction": "Shadow the frustrated reaction. Where does the anger peak?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Are you serious? You've got to be kidding me!",
+            "textToSpeak": "Are you serious? You've got to be kidding me!",
+            "options": [
+                "On 'serious' with a flat tone",
+                "On 'got' with a whisper",
+                "On 'me', with a sharp, wide fall"
+            ],
+            "correctAnswer": "On 'me', with a sharp, wide fall",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈɑː jə ˈsɪəriəs | jʊv ˈɡɒt tə bi ˈkɪdɪŋ ˈmiː/",
+            "hint": "Let the anger build through the second sentence.",
+            "explanation": "The speaker's pitch climbs through 'kidding' and breaks on 'me', which shows exasperation.",
+            "flowRule": "Frustration: wide, steep falls on the final word.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L162_Q2",
+            "instruction": "Shadow the kind invitation. What shapes the kindness?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Take your time, there's no rush at all.",
+            "textToSpeak": "Take your time, there's no rush at all.",
+            "options": [
+                "Fast pace and short vowels, to sound brisk",
+                "A rising tone throughout, to sound unsure",
+                "Slow pace and long vowels in 'time' and 'rush'"
+            ],
+            "correctAnswer": "Slow pace and long vowels in 'time' and 'rush'",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈteɪk jə ˈtaɪm | ðəz ˈnəʊ ˈrʌʃ ət ˈɔːl/",
+            "hint": "Imagine lowering your tempo for someone anxious.",
+            "explanation": "A slower tempo, with lengthened key words and gentle falls, tells the listener there's no pressure.",
+            "flowRule": "Kindness: slow tempo and lengthened vowels.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L162_Q3",
+            "instruction": "Shadow the admission. Which word holds the admission?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'd be lying if I said I wasn't a little nervous.",
+            "textToSpeak": "I'd be lying if I said I wasn't a little nervous.",
+            "options": [
+                "'lying'",
+                "'nervous'",
+                "'little'"
+            ],
+            "correctAnswer": "'nervous'",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪd bi ˈlaɪɪŋ ɪf aɪ ˈsed aɪ ˈwɒznt ə ˈlɪtl ˈnɜːvəs/",
+            "hint": "The confession lands at the end.",
+            "explanation": "The admission is the last content word, so the pitch peaks on 'ner-' and fades, which sounds honest.",
+            "flowRule": "Candour: let the pitch fall softly on the admission.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L163_Q1",
+            "instruction": "Shadow the gracious refusal. How is the refusal softened?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "That's very kind of you, but I really couldn't accept it.",
+            "textToSpeak": "That's very kind of you, but I really couldn't accept it.",
+            "options": [
+                "Warm, falling thanks, then a gentle, slower 'couldn't'",
+                "A loud thanks and a rising 'couldn't', to sound firm",
+                "A flat thanks and a sharp 'accept', to sound cold"
+            ],
+            "correctAnswer": "Warm, falling thanks, then a gentle, slower 'couldn't'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ðæts ˈveri ˈkaɪnd əv jʊ | bət aɪ ˈrɪəli ˈkʊdnt əkˈsept ɪt/",
+            "hint": "Start warm before you decline.",
+            "explanation": "The warm opening gives goodwill, and a slower 'couldn't' makes the refusal feel regretful, not cold.",
+            "flowRule": "Gracious Refusal: warm opening, soft refusal.",
+            "speedLevel": 1.2
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L163_Q2",
+            "instruction": "Shadow the polite imposition. How does the question end?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I know you're busy, but would you possibly have a minute?",
+            "textToSpeak": "I know you're busy, but would you possibly have a minute?",
+            "options": [
+                "With a gentle rise on 'minute'",
+                "With a firm fall on 'minute'",
+                "With a flat tone on 'minute'"
+            ],
+            "correctAnswer": "With a gentle rise on 'minute'",
+            "correctAnswerIndex": 0,
+            "ipa": "/aɪ ˈnəʊ jɔː ˈbɪzi | bət wʊdʒə ˈpɒsəbli həv ə ˈmɪnɪt/",
+            "hint": "Asking a favour sounds open.",
+            "explanation": "A mild rise leaves the listener free to say no.",
+            "flowRule": "Polite Rise: favours rise gently.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L163_Q3",
+            "instruction": "Shadow the praise. Which word carries the surprise?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Honestly, I'm quite impressed, I didn't think you'd get it done so quickly.",
+            "textToSpeak": "Honestly, I'm quite impressed, I didn't think you'd get it done so quickly.",
+            "options": [
+                "'impressed'",
+                "'quickly'",
+                "'think'"
+            ],
+            "correctAnswer": "'quickly'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈɒnɪstli | aɪm ˈkwaɪt ɪmˈprest | aɪ ˈdɪdnt ˈθɪŋk jʊd ˈɡet ɪt ˈdʌn ˈsəʊ ˈkwɪkli/",
+            "hint": "What surprised the speaker?",
+            "explanation": "'Quickly' names the surprising aspect, so it takes the final peak.",
+            "flowRule": "Surprise Focus: the surprising detail takes the peak.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L164_Q1",
+            "instruction": "Shadow the reply. Which delivery sounds like it is NOT fine?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "It's fine, really, don't worry about it.",
+            "textToSpeak": "It's fine, really, don't worry about it.",
+            "options": [
+                "A warm, falling 'fine' with a smile",
+                "A rising 'fine' with a laugh",
+                "A flat, clipped 'fine' with a sharp fall"
+            ],
+            "correctAnswer": "A flat, clipped 'fine' with a sharp fall",
+            "correctAnswerIndex": 2,
+            "ipa": "/ɪts ˈfaɪn | ˈrɪəli | ˈdəʊnt ˈwʌri əˈbaʊt ɪt/",
+            "hint": "Sincerity affects pitch and speed.",
+            "explanation": "A clipped, flat 'fine' suggests suppressed annoyance.",
+            "flowRule": "Hidden Annoyance: flat, clipped delivery contradicts the words.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L164_Q2",
+            "instruction": "Shadow the relieved remark. How is the relief shown?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Phew, that was close, I thought we'd missed it completely.",
+            "textToSpeak": "Phew, that was close, I thought we'd missed it completely.",
+            "options": [
+                "A breathy 'phew' and a falling, slowing 'completely'",
+                "A sharp 'phew' and a rising 'completely', to sound alarmed",
+                "A silent 'phew' and a flat 'completely', to sound bored"
+            ],
+            "correctAnswer": "A breathy 'phew' and a falling, slowing 'completely'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈfjuː | ðæt wəz ˈkləʊs | aɪ ˈθɔːt wiːd ˈmɪst ɪt kəmˈpliːtli/",
+            "hint": "Let some air out in the first word.",
+            "explanation": "Relief sounds like released tension: a breathy opening and a long relaxing fall at the end.",
+            "flowRule": "Relief: breathy start and a long relaxed fall.",
+            "speedLevel": 1.2
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L164_Q3",
+            "instruction": "Shadow the diplomatic disagreement. Which part softens it?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'm afraid I'm going to have to disagree with you on that one.",
+            "textToSpeak": "I'm afraid I'm going to have to disagree with you on that one.",
+            "options": [
+                "'disagree', spoken very loudly, with a firm fall",
+                "'on that one', spoken with a rise like a question",
+                "'I'm afraid I'm going to have to', spoken quickly and low"
+            ],
+            "correctAnswer": "'I'm afraid I'm going to have to', spoken quickly and low",
+            "correctAnswerIndex": 2,
+            "ipa": "/aɪm əˈfreɪd aɪm ˈɡəʊɪŋ tə həv tə ˌdɪsəˈɡriː wɪð jʊ ɒn ðæt ˈwʌn/",
+            "hint": "The disagreement itself must still be heard.",
+            "explanation": "The frame is quick and low, and 'disagree' remains clear, which sounds firm but courteous.",
+            "flowRule": "Diplomatic Delivery: soften with a quick frame, keep the key word clear.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L165_Q1",
+            "instruction": "Shadow the soft request. Which phrase carries the real ask?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "No pressure at all, but if you do have time, it would really help me out.",
+            "textToSpeak": "No pressure at all, but if you do have time, it would really help me out.",
+            "options": [
+                "'no pressure at all', the opening cushion",
+                "'if you do have time', the middle condition",
+                "'it would really help me out'"
+            ],
+            "correctAnswer": "'it would really help me out'",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈnəʊ ˈpreʃər ət ˈɔːl | bət ɪf jə ˈdʊ həv ˈtaɪm | ɪt wʊd ˈrɪəli ˈhelp mi ˈaʊt/",
+            "hint": "Courtesy comes first; the ask comes last.",
+            "explanation": "The preceding phrases cushion, and the final clause carries the peak and the fall.",
+            "flowRule": "Soft Requests: cushion first, ask last.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L165_Q2",
+            "instruction": "Shadow the genuine surprise. Which word is stretched?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Wow, I had absolutely no idea, that's amazing!",
+            "textToSpeak": "Wow, I had absolutely no idea, that's amazing!",
+            "options": [
+                "'idea'",
+                "'absolutely'",
+                "'wow'"
+            ],
+            "correctAnswer": "'absolutely'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈwaʊ | aɪ həd ˈæbsəluːtli ˈnəʊ aɪˈdɪə | ðæts əˈmeɪzɪŋ/",
+            "hint": "Surprise stretches intensifiers.",
+            "explanation": "'Absolutely' is lengthened and stressed, adding to the surprise.",
+            "flowRule": "Surprise: intensifiers lengthen.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L165_Q3",
+            "instruction": "Shadow the repair. Which word carries the corrected emotion?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Sorry, that came out wrong, what I meant was that I'm worried about you.",
+            "textToSpeak": "Sorry, that came out wrong, what I meant was that I'm worried about you.",
+            "options": [
+                "'worried'",
+                "'wrong'",
+                "'meant'"
+            ],
+            "correctAnswer": "'worried'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈsɒri | ðæt ˈkeɪm ˈaʊt ˈrɒŋ | ˈwɒt aɪ ˈment wəz ðət aɪm ˈwʌrid əˈbaʊt jʊ/",
+            "hint": "Which word replaces the offence?",
+            "explanation": "The corrected meaning peaks on 'worried', with 'you' falling softly.",
+            "flowRule": "Repair Focus: stress the intended emotion.",
+            "speedLevel": 1.2
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L166_Q1",
+            "instruction": "Shadow the confident remark. How does confidence sound?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'm absolutely certain we can do this, as long as we stay focused.",
+            "textToSpeak": "I'm absolutely certain we can do this, as long as we stay focused.",
+            "options": [
+                "Rising tones and a hesitant 'certain', to sound careful",
+                "Steady pace, firm falls, and a strong 'certain'",
+                "Fast pace and a flat 'certain', to sound rushed"
+            ],
+            "correctAnswer": "Steady pace, firm falls, and a strong 'certain'",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪm ˈæbsəluːtli ˈsɜːtn wi kən ˈduː ðɪs | əz ˈlɒŋ əz wi ˈsteɪ ˈfəʊkəst/",
+            "hint": "Say it as a leader reassuring a nervous team, calm and in control.",
+            "explanation": "A steady tempo, firm falls and a stressed 'certain' project confidence, while 'as long as we stay focused' is lighter.",
+            "flowRule": "Confidence: steady tempo and firm falls make a claim sound secure.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L166_Q2",
+            "instruction": "Shadow the doubtful reply. How is the doubt shown?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Well, I suppose it could work, but I'm not entirely convinced.",
+            "textToSpeak": "Well, I suppose it could work, but I'm not entirely convinced.",
+            "options": [
+                "A crisp 'well' and a firm 'work', to sound decisive",
+                "A drawn-out 'well', a lift on 'work', a slow 'convinced'",
+                "A fast 'convinced' and a rising 'entirely', to sound eager"
+            ],
+            "correctAnswer": "A drawn-out 'well', a lift on 'work', a slow 'convinced'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈwel | aɪ səˈpəʊz ɪt kəd ˈwɜːk | bət aɪm ˈnɒt ɪnˈtaɪəli kənˈvɪnst/",
+            "hint": "Doubt leaves the tune open.",
+            "explanation": "The lift on 'work' signals that something contradictory follows.",
+            "flowRule": "Doubt: hesitation and lifted pitch.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L166_Q3",
+            "instruction": "Shadow the congratulation. Why is the final 'have' strong?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Congratulations, you've earned it, you really have.",
+            "textToSpeak": "Congratulations, you've earned it, you really have.",
+            "options": [
+                "It is always strong, whatever the sentence is",
+                "It is a noun here, so it takes the stress",
+                "It ends an elliptical clause, so it keeps its full vowel and takes the peak"
+            ],
+            "correctAnswer": "It ends an elliptical clause, so it keeps its full vowel and takes the peak",
+            "correctAnswerIndex": 2,
+            "ipa": "/kənˌɡrætʃʊˈleɪʃnz | jʊv ˈɜːnd ɪt | jə ˈrɪəli ˈhæv/",
+            "hint": "Look at what follows 'have'.",
+            "explanation": "With nothing after it, 'have' keeps its full form /hæv/ and receives the emphasis.",
+            "flowRule": "Strong Forms: an ellipsis ending keeps the full vowel.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L167_Q1",
+            "instruction": "Shadow the regret. How does 'earlier' sound?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I wish you'd told me earlier, I could have helped.",
+            "textToSpeak": "I wish you'd told me earlier, I could have helped.",
+            "options": [
+                "Quick and rising, like a casual question",
+                "Whispered and flat, like an aside to oneself",
+                "Stretched and falling, with a tinge of reproach"
+            ],
+            "correctAnswer": "Stretched and falling, with a tinge of reproach",
+            "correctAnswerIndex": 2,
+            "ipa": "/aɪ ˈwɪʃ jʊd ˈtəʊld mi ˈɜːliə | aɪ kʊd əv ˈhelpt/",
+            "hint": "Regret leans on a key word.",
+            "explanation": "The stretched fall on 'earlier' shows reproach.",
+            "flowRule": "Regret: stretch the key word.",
+            "speedLevel": 1.2
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L167_Q2",
+            "instruction": "Shadow the encouragement. Which word is the peak of the last phrase?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Come on, you can do this, I believe in you.",
+            "textToSpeak": "Come on, you can do this, I believe in you.",
+            "options": [
+                "'you'",
+                "'believe'",
+                "'in'"
+            ],
+            "correctAnswer": "'you'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈkʌm ˈɒn | jə kən ˈduː ðɪs | aɪ bɪˈliːv ɪn ˈjuː/",
+            "hint": "Who is the encouragement for?",
+            "explanation": "'You' is the target of the belief, so it takes the peak and the fall.",
+            "flowRule": "Encouragement: stress the listener.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L167_Q3",
+            "instruction": "Shadow the mild reproach. Which word carries the grievance?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Honestly, I'd have been happier if you'd just asked me first.",
+            "textToSpeak": "Honestly, I'd have been happier if you'd just asked me first.",
+            "options": [
+                "'asked'",
+                "'happier'",
+                "'first'"
+            ],
+            "correctAnswer": "'asked'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈɒnɪstli | aɪd əv bɪn ˈhæpiə ɪf jʊd dʒəst ˈɑːskt mi ˈfɜːst/",
+            "hint": "What did the listener not do?",
+            "explanation": "The grievance is the missing action, so 'asked' takes the peak, with 'first' trailing.",
+            "flowRule": "Reproach Focus: stress the omitted action.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L168_Q1",
+            "instruction": "Shadow the thinking-time reply. How is 'actually' used?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "That's actually a really good question, give me a second to think.",
+            "textToSpeak": "That's actually a really good question, give me a second to think.",
+            "options": [
+                "Stressed, as a contradiction",
+                "Light and quick, as a softener",
+                "Rising, as a question"
+            ],
+            "correctAnswer": "Light and quick, as a softener",
+            "correctAnswerIndex": 1,
+            "ipa": "/ðæts ˈæktʃuəli ə ˈrɪəli ˈɡʊd ˈkwestʃən | ˈɡɪv mi ə ˈsekənd tə ˈθɪŋk/",
+            "hint": "Not every 'actually' is a contrast.",
+            "explanation": "'Actually' here is a conversational softener, so it stays light while 'really good' takes the beats.",
+            "flowRule": "Discourse Softeners: 'actually' can be light.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L168_Q2",
+            "instruction": "Shadow the heartfelt thanks. Which word is the peak?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I can't tell you how much this means to me.",
+            "textToSpeak": "I can't tell you how much this means to me.",
+            "options": [
+                "'tell'",
+                "'much'",
+                "'means'"
+            ],
+            "correctAnswer": "'means'",
+            "correctAnswerIndex": 2,
+            "ipa": "/aɪ ˈkɑːnt ˈtel jʊ ˈhaʊ ˈmʌtʃ ðɪs ˈmiːnz tə ˈmiː/",
+            "hint": "Slow the verb of meaning and let it carry most of the pitch movement.",
+            "explanation": "'Means' carries the emotion, so it is stretched and peaks, then 'to me' falls softly to close a sincere thank-you.",
+            "flowRule": "Sincere Emphasis: the emotional verb takes a stretched peak.",
+            "speedLevel": 1.2
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L168_Q3",
+            "instruction": "Shadow the angry exit. How does the anger sound?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Right, that's it, I've had enough, I'm going home.",
+            "textToSpeak": "Right, that's it, I've had enough, I'm going home.",
+            "options": [
+                "Long, rising phrases, which sound hesitant and polite",
+                "A single flat phrase, which sounds calm and bored",
+                "Short, clipped phrases with sharp falls"
+            ],
+            "correctAnswer": "Short, clipped phrases with sharp falls",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈraɪt | ˈðæts ˈɪt | aɪv həd ɪˈnʌf | aɪm ˈɡəʊɪŋ ˈhəʊm/",
+            "hint": "Imagine someone grabbing their coat while saying this.",
+            "explanation": "Short, clipped groups with sharp falls feel final, which signals that the speaker has reached the limit.",
+            "flowRule": "Anger: clipped groups with sharp falls convey finality.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L169_Q1",
+            "instruction": "Shadow the kind reply. Which word is the peak?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Oh, don't be silly, of course you're not a bother.",
+            "textToSpeak": "Oh, don't be silly, of course you're not a bother.",
+            "options": [
+                "'not'",
+                "'silly'",
+                "'bother'"
+            ],
+            "correctAnswer": "'not'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈəʊ | ˈdəʊnt bi ˈsɪli | əv ˈkɔːs jɔː ˈnɒt ə ˈbɒðə/",
+            "hint": "The negative cancels worry.",
+            "explanation": "'Not' directly denies the worry, so it takes the peak.",
+            "flowRule": "Reassurance: stress the negative.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L169_Q2",
+            "instruction": "Shadow the comfort. How is 'we always do' delivered?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "We'll figure it out, I promise, we always do.",
+            "textToSpeak": "We'll figure it out, I promise, we always do.",
+            "options": [
+                "Slowly, with 'do' stressed and falling",
+                "Quickly, with 'we' stressed and rising",
+                "Whispered"
+            ],
+            "correctAnswer": "Slowly, with 'do' stressed and falling",
+            "correctAnswerIndex": 0,
+            "ipa": "/wiːl ˈfɪɡər ɪt ˈaʊt | aɪ ˈprɒmɪs | wi ˈɔːlweɪz ˈduː/",
+            "hint": "Evidence for reassurance.",
+            "explanation": "The strong 'do' is the full form since the verb is elided.",
+            "flowRule": "Strong Forms: elided verbs keep full forms.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L169_Q3",
+            "instruction": "Shadow the hesitant reply. How does the final question end?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Hmm, not sure about that, can I get back to you?",
+            "textToSpeak": "Hmm, not sure about that, can I get back to you?",
+            "options": [
+                "Falling, to demand",
+                "Flat",
+                "Rising, to ask for time"
+            ],
+            "correctAnswer": "Rising, to ask for time",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈhmm | ˈnɒt ˈʃɔː əˈbaʊt ðæt | kən aɪ ˈɡet ˈbæk tə ˈjuː/",
+            "hint": "Imagine you are asking for permission to delay, not demanding it.",
+            "explanation": "A rise on 'you' turns the closing question into a polite request for time, which keeps the hesitation gentle.",
+            "flowRule": "Polite Rise: a rising question softens a request to delay.",
+            "speedLevel": 1.2
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L170_Q1",
+            "instruction": "Shadow the proud remark. Which words are stretched?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'm so proud of you, honestly, you've come so far.",
+            "textToSpeak": "I'm so proud of you, honestly, you've come so far.",
+            "options": [
+                "'honestly', because it opens the sentence",
+                "'of', because it connects the two phrases",
+                "The two 'so' words"
+            ],
+            "correctAnswer": "The two 'so' words",
+            "correctAnswerIndex": 2,
+            "ipa": "/aɪm ˈsəʊ ˈpraʊd əv ˈjuː | ˈɒnɪstli | jʊv ˈkʌm ˈsəʊ ˈfɑː/",
+            "hint": "Notice which two words get extra length when the speaker is moved.",
+            "explanation": "The two 'so' words are stretched to carry the emotion, while 'proud', 'honestly' and 'far' carry the content.",
+            "flowRule": "Expressive Length: intensifiers are stretched to show feeling.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L170_Q2",
+            "instruction": "Shadow the apologetic firmness. Which word is the peak?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Look, I get it, but it's really not up to me.",
+            "textToSpeak": "Look, I get it, but it's really not up to me.",
+            "options": [
+                "'me'",
+                "'not'",
+                "'up'"
+            ],
+            "correctAnswer": "'me'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈlʊk | aɪ ˈɡet ɪt | bət ɪts ˈrɪəli ˈnɒt ˈʌp tə ˈmiː/",
+            "hint": "Think about what the speaker wants to say about who decides.",
+            "explanation": "'Me' is stressed to place the decision with someone else, softening the refusal by pointing away from the speaker's choice.",
+            "flowRule": "Deflection Focus: a pronoun takes the peak to shift responsibility.",
+            "speedLevel": 1.15
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L170_Q3",
+            "instruction": "Shadow the exasperated reply. How is 'you know it' delivered?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "That's not what I meant, and you know it.",
+            "textToSpeak": "That's not what I meant, and you know it.",
+            "options": [
+                "Low, slow, with a falling 'it'",
+                "High and quick, with a rising 'it' at the end",
+                "Rising and loud, with a stressed 'know'"
+            ],
+            "correctAnswer": "Low, slow, with a falling 'it'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ðæts ˈnɒt wɒt aɪ ˈment | ən jʊ ˈnəʊ ɪt/",
+            "hint": "Say the last three words as if you are tired of repeating yourself.",
+            "explanation": "A low, slow delivery with a falling 'it' sounds exasperated, and 'you know it' closes with certainty rather than a question.",
+            "flowRule": "Exasperation: a low, slow fall closes the reply firmly.",
+            "speedLevel": 1.1
+        }
+    ]
 }

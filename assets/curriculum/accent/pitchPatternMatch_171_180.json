@@ -5,753 +5,753 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L171_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Jonas handled the budget and Maya handled the schedule, right?\" B corrects only the second half.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The complaint wasn't about the food - it was about the service.",
-            "textToSpeak": "The complaint wasn't about the food - it was about the service.",
+            "word": "Maya did the hiring instead.",
+            "textToSpeak": "Maya did the hiring instead.",
             "options": [
-                "Emphasis on SERVICE (New/Corrected Information)",
-                "Emphasis on FOOD (Given/Rejected Information)"
+                "Emphasis on INSTEAD",
+                "Emphasis on HIRING"
             ],
-            "correctAnswer": "Emphasis on SERVICE (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on HIRING",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
-            "explanation": "FOOD is explicitly ruled out here, so the stress falls on SERVICE, the information actually being confirmed.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "Half of A's claim is accepted. Which word replaces the part that was wrong?",
+            "explanation": "MAYA and DID are already part of A's claim, so they stay low. HIRING replaces 'schedule', so it takes the peak. INSTEAD only signals the swap.",
+            "emphasisRule": "In a partial correction across turns, the replaced item takes the peak and the accepted parts fall.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L171_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"The Delhi office closes in March and the Pune office closes in May.\" B gives different dates.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The malfunction wasn't in the software - it was in the hardware.",
-            "textToSpeak": "The malfunction wasn't in the software - it was in the hardware.",
+            "word": "The Delhi office closes in May, and the Pune office closes in June.",
+            "textToSpeak": "The Delhi office closes in May, and the Pune office closes in June.",
             "options": [
-                "Emphasis on SOFTWARE (Given/Rejected Information)",
-                "Emphasis on HARDWARE (New/Corrected Information)"
+                "Emphasis on MAY and JUNE",
+                "Emphasis on DELHI and PUNE"
             ],
-            "correctAnswer": "Emphasis on HARDWARE (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MAY and JUNE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
-            "explanation": "Because this sentence firmly denies SOFTWARE, the pitch accent shifts to HARDWARE, the real explanation.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "The offices are the same in both sentences. What differs?",
+            "explanation": "DELHI, PUNE and the closing are all given, so they fall away even though they open each clause. The dates are the new information, so MAY and JUNE take the peaks.",
+            "emphasisRule": "When a structure is repeated with new values, the new values take the peaks.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L171_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"You said you'd send the contract to legal on Monday.\" B corrects who.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The apology wasn't for the delay - it was for the miscommunication.",
-            "textToSpeak": "The apology wasn't for the delay - it was for the miscommunication.",
+            "word": "I said finance would send it on Monday.",
+            "textToSpeak": "I said finance would send it on Monday.",
             "options": [
-                "Emphasis on MISCOMMUNICATION (New/Corrected Information)",
-                "Emphasis on DELAY (Given/Rejected Information)"
+                "Emphasis on MONDAY",
+                "Emphasis on FINANCE"
             ],
-            "correctAnswer": "Emphasis on MISCOMMUNICATION (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on FINANCE",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
-            "explanation": "MISCOMMUNICATION answers what's actually true, while DELAY is only mentioned to be dismissed — so MISCOMMUNICATION carries the stress.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "Almost everything in A's sentence is accepted. What is the one correction?",
+            "explanation": "MONDAY and SEND are both accepted from A's sentence. FINANCE replaces the person, so it gets the main lift, even though it sits near the start.",
+            "emphasisRule": "In a correction across turns, the single replaced element takes the peak.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L172_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. Two colleagues are choosing who goes to the conference. A: \"Dana speaks fluent Spanish, and the client is in Madrid.\" B concludes:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The recall wasn't about the engine - it was about the airbags.",
-            "textToSpeak": "The recall wasn't about the engine - it was about the airbags.",
+            "word": "Then Dana should go.",
+            "textToSpeak": "Then Dana should go.",
             "options": [
-                "Emphasis on ENGINE (Given/Rejected Information)",
-                "Emphasis on AIRBAGS (New/Corrected Information)"
+                "Emphasis on DANA",
+                "Emphasis on GO"
             ],
-            "correctAnswer": "Emphasis on AIRBAGS (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DANA",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
-            "explanation": "The correction here confirms AIRBAGS over ENGINE, and that confirmed information is exactly where the emphasis lands.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A's evidence points to one person. Which word names the conclusion?",
+            "explanation": "The unspoken question is 'who should go?'. A gave a reason for Dana, so DANA takes the peak and GO stays low.",
+            "emphasisRule": "The word that answers the implied question takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L172_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. Two colleagues are choosing a date. A: \"Priya is away until Thursday, and the client is only free on Friday.\" B concludes:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The tension wasn't between the players - it was between the coaches.",
-            "textToSpeak": "The tension wasn't between the players - it was between the coaches.",
+            "word": "Then it has to be Friday.",
+            "textToSpeak": "Then it has to be Friday.",
             "options": [
-                "Emphasis on COACHES (New/Corrected Information)",
-                "Emphasis on PLAYERS (Given/Rejected Information)"
+                "Emphasis on HAS",
+                "Emphasis on FRIDAY"
             ],
-            "correctAnswer": "Emphasis on COACHES (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on FRIDAY",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
-            "explanation": "PLAYERS is explicitly ruled out here, so the stress falls on COACHES, the information actually being confirmed.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A gave the facts. What does B's conclusion name?",
+            "explanation": "The implied question is 'which day?'. FRIDAY answers it, and 'has to be' is only the frame.",
+            "emphasisRule": "In a conclusion, the word that fills the open slot takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L172_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Our rivals have just raised their prices.\" B thinks about what that allows.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The renovation isn't about the kitchen - it's about the bathroom this time.",
-            "textToSpeak": "The renovation isn't about the kitchen - it's about the bathroom this time.",
+            "word": "That gives us room to raise ours.",
+            "textToSpeak": "That gives us room to raise ours.",
             "options": [
-                "Emphasis on KITCHEN (Given/Rejected Information)",
-                "Emphasis on BATHROOM (New/Corrected Information)"
+                "Emphasis on ROOM",
+                "Emphasis on RAISE"
             ],
-            "correctAnswer": "Emphasis on BATHROOM (New/Corrected Information)",
+            "correctAnswer": "Emphasis on RAISE",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
-            "explanation": "Because this sentence firmly denies KITCHEN, the pitch accent shifts to BATHROOM, the real explanation.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "The company has to decide what to do. Which word names the action?",
+            "explanation": "The implied question is 'so what do we do?'. RAISE is the action, which is why it carries the peak. ROOM is the justification, and the final pronoun is weak.",
+            "emphasisRule": "A conclusion that names an action puts the peak on the verb, with a weak pronoun after it.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L173_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"The flooding was in the basement, wasn't it?\" B corrects.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The concern wasn't about allergies - it was about the dosage.",
-            "textToSpeak": "The concern wasn't about allergies - it was about the dosage.",
+            "word": "It's the second floor that's flooded.",
+            "textToSpeak": "It's the second floor that's flooded.",
             "options": [
-                "Emphasis on DOSAGE (New/Corrected Information)",
-                "Emphasis on ALLERGIES (Given/Rejected Information)"
+                "Emphasis on FLOODED",
+                "Emphasis on SECOND"
             ],
-            "correctAnswer": "Emphasis on DOSAGE (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SECOND",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
-            "explanation": "DOSAGE answers what's actually true, while ALLERGIES is only mentioned to be dismissed — so DOSAGE carries the stress.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A had the problem right but the place wrong. Which word marks the right place?",
+            "explanation": "The cleft 'it's the ... that's flooded' puts the new information between 'is' and 'that'. FLOODED is old, and SECOND is the correction.",
+            "emphasisRule": "In a cleft sentence, the focused element sits between 'it is' and 'that' and takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L173_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"I assume Tom took the call.\" B knows Tom was away.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The scholarship isn't based on financial need - it's based on merit.",
-            "textToSpeak": "The scholarship isn't based on financial need - it's based on merit.",
+            "word": "It was Priya who took the call.",
+            "textToSpeak": "It was Priya who took the call.",
             "options": [
-                "Emphasis on NEED (Given/Rejected Information)",
-                "Emphasis on MERIT (New/Corrected Information)"
+                "Emphasis on PRIYA",
+                "Emphasis on CALL"
             ],
-            "correctAnswer": "Emphasis on MERIT (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PRIYA",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
-            "explanation": "The correction here confirms MERIT over NEED, and that confirmed information is exactly where the emphasis lands.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "Tom is the wrong person. Which word replaces him?",
+            "explanation": "TOOK and CALL come from A's assumption, so they are spoken lightly. PRIYA is the correction, and the cleft structure puts the peak on her.",
+            "emphasisRule": "In a cleft correction, the new person takes the peak and the repeated action falls.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L173_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Did Nina break the vase?\" B knows she only moved it.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The delay in the results wasn't the lab's fault - it was a courier problem.",
-            "textToSpeak": "The delay in the results wasn't the lab's fault - it was a courier problem.",
+            "word": "What Nina did was move it.",
+            "textToSpeak": "What Nina did was move it.",
             "options": [
-                "Emphasis on COURIER (New/Corrected Information)",
-                "Emphasis on LAB (Given/Rejected Information)"
+                "Emphasis on MOVE",
+                "Emphasis on NINA"
             ],
-            "correctAnswer": "Emphasis on COURIER (New/Corrected Information)",
+            "correctAnswer": "Emphasis on MOVE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
-            "explanation": "LAB is explicitly ruled out here, so the stress falls on COURIER, the information actually being confirmed.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A asked about breaking. What does B say Nina did?",
+            "explanation": "'What Nina did' repeats A's topic, so it stays low. MOVE is the new information after 'was', so it takes the peak.",
+            "emphasisRule": "In a pseudo-cleft, the part after 'was' takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L174_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"The manager is Raj and he works Mondays.\" B corrects both details.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The rejection letter didn't mention grades - it mentioned the personal essay.",
-            "textToSpeak": "The rejection letter didn't mention grades - it mentioned the personal essay.",
+            "word": "The manager is Dev, and he works Tuesdays.",
+            "textToSpeak": "The manager is Dev, and he works Tuesdays.",
             "options": [
-                "Emphasis on GRADES (Given/Rejected Information)",
-                "Emphasis on ESSAY (New/Corrected Information)"
+                "Emphasis on MANAGER and WORKS",
+                "Emphasis on DEV and TUESDAYS"
             ],
-            "correctAnswer": "Emphasis on ESSAY (New/Corrected Information)",
+            "correctAnswer": "Emphasis on DEV and TUESDAYS",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
-            "explanation": "Because this sentence firmly denies GRADES, the pitch accent shifts to ESSAY, the real explanation.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A made two mistakes. How many corrections should you hear?",
+            "explanation": "MANAGER and WORKS are given and stay low. DEV and TUESDAYS are the two corrections, so each takes a peak.",
+            "emphasisRule": "When two details are corrected, each correction takes its own peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L174_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"You booked the early flight to Delhi.\" B booked a different time and city.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The lawsuit isn't about the contract - it's about the trademark.",
-            "textToSpeak": "The lawsuit isn't about the contract - it's about the trademark.",
+            "word": "I booked the evening flight to Mumbai.",
+            "textToSpeak": "I booked the evening flight to Mumbai.",
             "options": [
-                "Emphasis on TRADEMARK (New/Corrected Information)",
-                "Emphasis on CONTRACT (Given/Rejected Information)"
+                "Emphasis on EVENING and MUMBAI",
+                "Emphasis on BOOKED and FLIGHT"
             ],
-            "correctAnswer": "Emphasis on TRADEMARK (New/Corrected Information)",
+            "correctAnswer": "Emphasis on EVENING and MUMBAI",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
-            "explanation": "TRADEMARK answers what's actually true, while CONTRACT is only mentioned to be dismissed — so TRADEMARK carries the stress.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "Both the time and the place are wrong in A's version. Which words replace them?",
+            "explanation": "BOOKED and FLIGHT are accepted from A. EVENING replaces 'early' and MUMBAI replaces 'Delhi', so each takes a peak.",
+            "emphasisRule": "A correction of two details marks each replacement with a peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L174_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. How does the pitch work here? A: \"You said the meeting was cancelled and Priya was angry.\" B corrects only the second part.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The dispute wasn't over the deadline - it was over the budget.",
-            "textToSpeak": "The dispute wasn't over the deadline - it was over the budget.",
+            "word": "The meeting was cancelled, but Priya was relieved.",
+            "textToSpeak": "The meeting was cancelled, but Priya was relieved.",
             "options": [
-                "Emphasis on DEADLINE (Given/Rejected Information)",
-                "Emphasis on BUDGET (New/Corrected Information)"
+                "A peak on RELIEVED only: just the second claim is corrected",
+                "Peaks on CANCELLED and RELIEVED: both claims are corrected"
             ],
-            "correctAnswer": "Emphasis on BUDGET (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "A peak on RELIEVED only: just the second claim is corrected",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
-            "explanation": "The correction here confirms BUDGET over DEADLINE, and that confirmed information is exactly where the emphasis lands.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "One half of A's claim is accepted. How many peaks should you hear?",
+            "explanation": "CANCELLED is accepted, so it stays low. RELIEVED replaces 'angry', so it carries the single peak.",
+            "emphasisRule": "A partial correction has one peak; the accepted part stays low.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L175_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Is the new phone much faster?\" B answers.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The complaint wasn't filed by a customer - it was filed by a competitor.",
-            "textToSpeak": "The complaint wasn't filed by a customer - it was filed by a competitor.",
+            "word": "It's twice as fast.",
+            "textToSpeak": "It's twice as fast.",
             "options": [
-                "Emphasis on COMPETITOR (New/Corrected Information)",
-                "Emphasis on CUSTOMER (Given/Rejected Information)"
+                "Emphasis on FAST",
+                "Emphasis on TWICE"
             ],
-            "correctAnswer": "Emphasis on COMPETITOR (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on TWICE",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
-            "explanation": "CUSTOMER is explicitly ruled out here, so the stress falls on COMPETITOR, the information actually being confirmed.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A asked about speed. What does B add about it?",
+            "explanation": "FAST is repeated from A's question, so it stays low. TWICE is the measurement, which is why it carries the peak.",
+            "emphasisRule": "A degree or measure word takes the peak when the quality is given.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L175_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Is the second hotel better?\" B gives a limited yes.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The damage wasn't from the flood - it was from the earlier fire.",
-            "textToSpeak": "The damage wasn't from the flood - it was from the earlier fire.",
+            "word": "It's marginally better.",
+            "textToSpeak": "It's marginally better.",
             "options": [
-                "Emphasis on FLOOD (Given/Rejected Information)",
-                "Emphasis on FIRE (New/Corrected Information)"
+                "Emphasis on MARGINALLY",
+                "Emphasis on BETTER"
             ],
-            "correctAnswer": "Emphasis on FIRE (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MARGINALLY",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
-            "explanation": "Because this sentence firmly denies FLOOD, the pitch accent shifts to FIRE, the real explanation.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "'Better' came from A. What does B change about it?",
+            "explanation": "BETTER is repeated, so it stays low. MARGINALLY limits the yes, which is why it carries the peak.",
+            "emphasisRule": "A limiting adverb takes the peak when the adjective is given.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L175_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. How does the pitch work here? A: \"So the new plan is better.\" B is more enthusiastic than A.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The inspection wasn't about the roof - it was about the foundation.",
-            "textToSpeak": "The inspection wasn't about the roof - it was about the foundation.",
+            "word": "Better? It's transformative.",
+            "textToSpeak": "Better? It's transformative.",
             "options": [
-                "Emphasis on FOUNDATION (New/Corrected Information)",
-                "Emphasis on ROOF (Given/Rejected Information)"
+                "Both words fall equally, as two separate statements",
+                "A rising echo of BETTER, then TRANSFORMATIVE takes the main peak"
             ],
-            "correctAnswer": "Emphasis on FOUNDATION (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "A rising echo of BETTER, then TRANSFORMATIVE takes the main peak",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
+                3,
                 1,
                 1,
                 3,
                 1
             ],
-            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
-            "explanation": "FOUNDATION answers what's actually true, while ROOF is only mentioned to be dismissed — so FOUNDATION carries the stress.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "B repeats A's word and then goes further. How does the pitch show that?",
+            "explanation": "The echo of BETTER rises briefly, as if testing the word, and then TRANSFORMATIVE delivers the stronger claim with the main peak.",
+            "emphasisRule": "An echo with a rise, followed by a stronger word, upgrades a claim.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L176_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"The client rejected the first proposal.\" B: \"And the second?\" A answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The warranty doesn't include accidental drops - it includes manufacturing defects.",
-            "textToSpeak": "The warranty doesn't include accidental drops - it includes manufacturing defects.",
+            "word": "They loved the second one.",
+            "textToSpeak": "They loved the second one.",
             "options": [
-                "Emphasis on DROPS (Given/Rejected Information)",
-                "Emphasis on DEFECTS (New/Corrected Information)"
+                "Emphasis on SECOND",
+                "Emphasis on LOVED"
             ],
-            "correctAnswer": "Emphasis on DEFECTS (New/Corrected Information)",
+            "correctAnswer": "Emphasis on LOVED",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
-            "explanation": "The correction here confirms DEFECTS over DROPS, and that confirmed information is exactly where the emphasis lands.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "B asked about the second proposal. What is A's news about it?",
+            "explanation": "SECOND is the topic B asked about, so it stays low even though it comes near the end. LOVED is the news, so the peak lands on it.",
+            "emphasisRule": "A topic named by the other speaker is given; the news about it takes the peak.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L176_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Dev says the network caused the failure.\" B disagrees.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The promotion wasn't about seniority - it was about performance.",
-            "textToSpeak": "The promotion wasn't about seniority - it was about performance.",
+            "word": "I think the database caused it.",
+            "textToSpeak": "I think the database caused it.",
             "options": [
-                "Emphasis on PERFORMANCE (New/Corrected Information)",
-                "Emphasis on SENIORITY (Given/Rejected Information)"
+                "Emphasis on DATABASE",
+                "Emphasis on THINK"
             ],
-            "correctAnswer": "Emphasis on PERFORMANCE (New/Corrected Information)",
+            "correctAnswer": "Emphasis on DATABASE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
-            "explanation": "SENIORITY is explicitly ruled out here, so the stress falls on PERFORMANCE, the information actually being confirmed.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "'Caused' came from A. What is B proposing instead?",
+            "explanation": "'I think' is a hedge and CAUSED is repeated, so both stay low. DATABASE replaces 'network', so it gets the main lift.",
+            "emphasisRule": "In a polite disagreement, the replacement noun takes the peak and the hedge stays low.",
+            "emotionContext": "Disagreement"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L176_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Priya thinks we should hire two people.\" B offers a different number.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The insurance didn't cover water damage - it covered fire damage only.",
-            "textToSpeak": "The insurance didn't cover water damage - it covered fire damage only.",
+            "word": "I think we should hire three people.",
+            "textToSpeak": "I think we should hire three people.",
             "options": [
-                "Emphasis on WATER (Given/Rejected Information)",
-                "Emphasis on FIRE (New/Corrected Information)"
+                "Emphasis on THREE",
+                "Emphasis on THINK"
             ],
-            "correctAnswer": "Emphasis on FIRE (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on THREE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
-            "explanation": "Because this sentence firmly denies WATER, the pitch accent shifts to FIRE, the real explanation.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A's number is on the table. What is B's contribution?",
+            "explanation": "HIRE is given and 'people' is understood, so they stay low. THREE is the different number, so the peak lands on it.",
+            "emphasisRule": "A counter-number takes the peak and the hedge stays low.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L177_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A teacher asks: \"Which gas do plants take in?\" A student answers.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The investigation isn't about the accident - it's about the cover-up.",
-            "textToSpeak": "The investigation isn't about the accident - it's about the cover-up.",
+            "word": "Plants take in carbon dioxide.",
+            "textToSpeak": "Plants take in carbon dioxide.",
             "options": [
-                "Emphasis on COVER-UP (New/Corrected Information)",
-                "Emphasis on ACCIDENT (Given/Rejected Information)"
+                "Emphasis on DIOXIDE",
+                "Emphasis on CARBON"
             ],
-            "correctAnswer": "Emphasis on COVER-UP (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on CARBON",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
-            "explanation": "COVER-UP answers what's actually true, while ACCIDENT is only mentioned to be dismissed — so COVER-UP carries the stress.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "The reply is a two-word name. Which word carries the label?",
+            "explanation": "The whole answer is new, but 'carbon dioxide' behaves like a compound name. The first word carries the peak and DIOXIDE follows lower.",
+            "emphasisRule": "In a two-word technical name, the first word usually takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L177_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A nurse asks: \"How often should I take these tablets?\" The pharmacist answers.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The backlash wasn't about the pricing - it was about the false advertising.",
-            "textToSpeak": "The backlash wasn't about the pricing - it was about the false advertising.",
+            "word": "Take one tablet twice a day.",
+            "textToSpeak": "Take one tablet twice a day.",
             "options": [
-                "Emphasis on PRICING (Given/Rejected Information)",
-                "Emphasis on ADVERTISING (New/Corrected Information)"
+                "Emphasis on DAY",
+                "Emphasis on TWICE"
             ],
-            "correctAnswer": "Emphasis on ADVERTISING (New/Corrected Information)",
+            "correctAnswer": "Emphasis on TWICE",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
-            "explanation": "The correction here confirms ADVERTISING over PRICING, and that confirmed information is exactly where the emphasis lands.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "The nurse asked about frequency. Which word answers that?",
+            "explanation": "'One tablet' is the usual dose and 'a day' is just the unit. TWICE is the frequency the nurse asked for, so the peak lands on it.",
+            "emphasisRule": "A frequency answer takes the peak on the frequency word, not on the unit.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L177_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A mechanic asks: \"Which wheel is the noise coming from?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The praise wasn't for the design - it was for the execution.",
-            "textToSpeak": "The praise wasn't for the design - it was for the execution.",
+            "word": "It's coming from the front left.",
+            "textToSpeak": "It's coming from the front left.",
             "options": [
-                "Emphasis on EXECUTION (New/Corrected Information)",
-                "Emphasis on DESIGN (Given/Rejected Information)"
+                "Emphasis on FRONT and LEFT",
+                "Emphasis on COMING and LEFT"
             ],
-            "correctAnswer": "Emphasis on EXECUTION (New/Corrected Information)",
+            "correctAnswer": "Emphasis on FRONT and LEFT",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                3,
                 3,
                 1
             ],
-            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
-            "explanation": "DESIGN is explicitly ruled out here, so the stress falls on EXECUTION, the information actually being confirmed.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "The mechanic needs both the end of the car and the side. Which words give them?",
+            "explanation": "COMING is repeated from the question, so it falls away. FRONT and LEFT together identify the wheel, so each takes a peak.",
+            "emphasisRule": "When a location has two parts, both parts take peaks and the repeated verb falls.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L178_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A pharmacist asks: \"Do you have any allergies?\" The patient answers.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The audit wasn't triggered by an error - it was triggered by a routine check.",
-            "textToSpeak": "The audit wasn't triggered by an error - it was triggered by a routine check.",
+            "word": "I'm allergic to penicillin.",
+            "textToSpeak": "I'm allergic to penicillin.",
             "options": [
-                "Emphasis on ERROR (Given/Rejected Information)",
-                "Emphasis on ROUTINE (New/Corrected Information)"
+                "Emphasis on PENICILLIN",
+                "Emphasis on ALLERGIC"
             ],
-            "correctAnswer": "Emphasis on ROUTINE (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PENICILLIN",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
-            "explanation": "Because this sentence firmly denies ERROR, the pitch accent shifts to ROUTINE, the real explanation.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "'Allergies' was in the question. What does the pharmacist need to know?",
+            "explanation": "ALLERGIC repeats the word from the question, so it stays low. PENICILLIN is the key detail, which is why it carries the peak.",
+            "emphasisRule": "In a safety answer, the specific substance takes the peak and the repeated 'allergic' falls.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L178_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A receptionist says: \"Your appointment is at half past three.\" You think it is later.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The strike wasn't about wages - it was about safety conditions.",
-            "textToSpeak": "The strike wasn't about wages - it was about safety conditions.",
+            "word": "I thought it was at half past four.",
+            "textToSpeak": "I thought it was at half past four.",
             "options": [
-                "Emphasis on SAFETY (New/Corrected Information)",
-                "Emphasis on WAGES (Given/Rejected Information)"
+                "Emphasis on FOUR",
+                "Emphasis on THOUGHT"
             ],
-            "correctAnswer": "Emphasis on SAFETY (New/Corrected Information)",
+            "correctAnswer": "Emphasis on FOUR",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
-            "explanation": "SAFETY answers what's actually true, while WAGES is only mentioned to be dismissed — so SAFETY carries the stress.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "Most of the time is correct. Which part is different?",
+            "explanation": "HALF PAST is accepted from the receptionist, so it stays low. FOUR is the differing hour, so it gets the main lift.",
+            "emphasisRule": "In a corrected clock time, the hour that differs carries the peak while the accepted part stays low.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L178_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"The warranty covers the screen.\" B knows it doesn't cover everything.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The delay wasn't due to weather - it was due to a mechanical issue.",
-            "textToSpeak": "The delay wasn't due to weather - it was due to a mechanical issue.",
+            "word": "It doesn't cover the battery.",
+            "textToSpeak": "It doesn't cover the battery.",
             "options": [
-                "Emphasis on WEATHER (Given/Rejected Information)",
-                "Emphasis on MECHANICAL (New/Corrected Information)"
+                "Emphasis on COVER",
+                "Emphasis on BATTERY"
             ],
-            "correctAnswer": "Emphasis on MECHANICAL (New/Corrected Information)",
+            "correctAnswer": "Emphasis on BATTERY",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
-            "explanation": "The correction here confirms MECHANICAL over WEATHER, and that confirmed information is exactly where the emphasis lands.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A made a claim about what is covered. What does B point out?",
+            "explanation": "B reuses A's verb, so the sentence is really about what is left out. BATTERY names the exception and takes the peak, while COVER stays in the background.",
+            "emphasisRule": "An exception to a repeated claim takes the peak.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L179_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did A most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The infection wasn't bacterial - it turned out to be viral.",
-            "textToSpeak": "The infection wasn't bacterial - it turned out to be viral.",
+            "word": "She commutes by bicycle.",
+            "textToSpeak": "She commutes by bicycle.",
             "options": [
-                "Emphasis on VIRAL (New/Corrected Information)",
-                "Emphasis on BACTERIAL (Given/Rejected Information)"
+                "Who commutes by bicycle?",
+                "How does she get to work?"
             ],
-            "correctAnswer": "Emphasis on VIRAL (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "How does she get to work?",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
-            "explanation": "BACTERIAL is explicitly ruled out here, so the stress falls on VIRAL, the information actually being confirmed.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "Look at which word holds the peak. What was the missing information?",
+            "explanation": "The peak on BICYCLE shows the means of travel was the unknown piece, so A asked how. A who-question would have put the peak on SHE.",
+            "emphasisRule": "A peak on a means of transport answers a how-question.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L179_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"What's the situation with the contract?\" B gives the key point.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The shortage isn't about staff - it's about equipment.",
-            "textToSpeak": "The shortage isn't about staff - it's about equipment.",
+            "word": "We're waiting on legal.",
+            "textToSpeak": "We're waiting on legal.",
             "options": [
-                "Emphasis on STAFF (Given/Rejected Information)",
-                "Emphasis on EQUIPMENT (New/Corrected Information)"
+                "Emphasis on WAITING",
+                "Emphasis on LEGAL"
             ],
-            "correctAnswer": "Emphasis on EQUIPMENT (New/Corrected Information)",
+            "correctAnswer": "Emphasis on LEGAL",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
-            "explanation": "Because this sentence firmly denies STAFF, the pitch accent shifts to EQUIPMENT, the real explanation.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A wants a status. What is B's key point?",
+            "explanation": "WAITING is the status frame, so it stays low. LEGAL is the new information about who is holding things up, so the peak lands on it.",
+            "emphasisRule": "In a status reply, the blocking party takes the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L179_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Has the client seen the draft?\" B answers.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The delay wasn't caused by customs - it was caused by the shipping company.",
-            "textToSpeak": "The delay wasn't caused by customs - it was caused by the shipping company.",
+            "word": "I sent it to them this morning.",
+            "textToSpeak": "I sent it to them this morning.",
             "options": [
-                "Emphasis on SHIPPING (New/Corrected Information)",
-                "Emphasis on CUSTOMS (Given/Rejected Information)"
+                "Emphasis on SENT",
+                "Emphasis on MORNING"
             ],
-            "correctAnswer": "Emphasis on SHIPPING (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on MORNING",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
-            "explanation": "SHIPPING answers what's actually true, while CUSTOMS is only mentioned to be dismissed — so SHIPPING carries the stress.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A is asking about the draft and the client. What new detail does B give?",
+            "explanation": "SENT, IT and THEM are all understood from A's question, so they stay low. MORNING is the new detail, which is why it carries the peak.",
+            "emphasisRule": "When the action and objects are given, the new time takes the peak.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L180_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. How does the pitch work here? You pass a colleague's desk, and the bin next to it is overflowing.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The award wasn't for best actor - it was for best director.",
-            "textToSpeak": "The award wasn't for best actor - it was for best director.",
+            "word": "That bin's getting full.",
+            "textToSpeak": "That bin's getting full.",
             "options": [
-                "Emphasis on ACTOR (Given/Rejected Information)",
-                "Emphasis on DIRECTOR (New/Corrected Information)"
+                "A plain remark about the bin",
+                "A hint asking the colleague to empty it"
             ],
-            "correctAnswer": "Emphasis on DIRECTOR (New/Corrected Information)",
+            "correctAnswer": "A hint asking the colleague to empty it",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                2
             ],
-            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
-            "explanation": "The correction here confirms DIRECTOR over ACTOR, and that confirmed information is exactly where the emphasis lands.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "Think about who is listening and what the speaker hopes will happen next.",
+            "explanation": "Nobody needs a report about a bin; the remark is only worth making if it prompts someone to act. Said to the person sitting beside it, the trailing lift turns the observation into a polite nudge.",
+            "emphasisRule": "Said to the person who could act, a plain fact can work as a hint.",
+            "emotionContext": "Hint"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L180_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. How does the pitch work here? Your train is cancelled again and the platform is packed.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The budget cut wasn't aimed at research - it was aimed at marketing.",
-            "textToSpeak": "The budget cut wasn't aimed at research - it was aimed at marketing.",
+            "word": "Wonderful news.",
+            "textToSpeak": "Wonderful news.",
             "options": [
-                "Emphasis on MARKETING (New/Corrected Information)",
-                "Emphasis on RESEARCH (Given/Rejected Information)"
+                "Sarcastic: it is the opposite of wonderful",
+                "Sincere: she is genuinely pleased with the news"
             ],
-            "correctAnswer": "Emphasis on MARKETING (New/Corrected Information)",
+            "correctAnswer": "Sarcastic: it is the opposite of wonderful",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                2,
                 3,
-                1
+                2,
+                2
             ],
-            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
-            "explanation": "RESEARCH is explicitly ruled out here, so the stress falls on MARKETING, the information actually being confirmed.",
-            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "The words say good news. What does the situation say?",
+            "explanation": "A cancelled train is not good news, so the praise cannot be sincere, and the flat, narrow contour matches sarcasm.",
+            "emphasisRule": "Positive words in a bad situation, with a flat contour, are sarcastic.",
+            "emotionContext": "Sarcasm"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L180_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Is that your tea mug?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The outage wasn't caused by the storm - it was caused by a failed generator.",
-            "textToSpeak": "The outage wasn't caused by the storm - it was caused by a failed generator.",
+            "word": "That's my coffee mug.",
+            "textToSpeak": "That's my coffee mug.",
             "options": [
-                "Emphasis on STORM (Given/Rejected Information)",
-                "Emphasis on GENERATOR (New/Corrected Information)"
+                "Emphasis on COFFEE",
+                "Emphasis on MUG"
             ],
-            "correctAnswer": "Emphasis on GENERATOR (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on COFFEE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
-            "explanation": "Because this sentence firmly denies STORM, the pitch accent shifts to GENERATOR, the real explanation.",
-            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial.",
-            "emotionContext": "New/Corrected Information"
+            "hint": "A has named the container. What is the speaker correcting?",
+            "explanation": "MUG is repeated from A, so it falls away. COFFEE is the correction, and in a compound the first noun carries the peak.",
+            "emphasisRule": "In a compound correction, the changed first noun takes the peak.",
+            "emotionContext": "Correction"
         }
     ]
 }

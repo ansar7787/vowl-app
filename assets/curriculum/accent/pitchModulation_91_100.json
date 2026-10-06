@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L91_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A candidate answers an interview question about handling deadlines.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you close the door?",
-            "textToSpeak": "Could you close the door?",
+            "word": "I'd break it into stages and start with the hardest.",
+            "textToSpeak": "I'd break it into stages and start with the hardest.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Assured",
+                "Tentative"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
-            "correctAnswerIndex": 1,
-            "hint": "Adding 'could you' softens this into a request. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you close the door?' is a polite request, so the pitch rises gently at the end, softening the ask.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "correctAnswer": "Assured",
+            "correctAnswerIndex": 0,
+            "hint": "Do the pitch drops arrive firmly, or does the voice leave things open?",
+            "explanation": "Firm falls at the end of each phrase and a steady pace can make a plan sound well thought out. If the pitch lifted at the end of 'stages' and 'hardest', the same plan would sound like an idea the speaker wanted the interviewer to approve.",
+            "modulationPattern": "Firm falls at phrase ends with a steady tempo.",
+            "meaningShift": "Firm falls sound assured; rises at phrase ends would sound tentative."
         },
         {
             "id": "ACC_PITCHMODULATION_L91_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A founder is pitching to investors.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Close the door.",
-            "textToSpeak": "Close the door.",
+            "word": "We will double revenue next year.",
+            "textToSpeak": "We will double revenue next year.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Hoping to be believed",
+                "Convinced by the claim"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
+            "correctAnswer": "Convinced by the claim",
             "correctAnswerIndex": 1,
-            "hint": "Without softening words like 'could you', this is a direct instruction. Listen for the pitch to fall firmly.",
-            "explanation": "'Close the door' is a direct command, so the pitch falls firmly at the end, sounding like a clear instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "hint": "Listen to how decisively 'double' and 'year' settle.",
+            "explanation": "The clear peak on 'double' and decisive fall on 'year' can sound as if the speaker has no doubt. A speaker hoping to be believed often adds a lift or a lengthened vowel, seeking the listener's approval.",
+            "modulationPattern": "Peak on 'double', decisive fall on 'year'.",
+            "meaningShift": "A decisive fall sounds convinced; a lift would sound as if it needed approval."
         },
         {
             "id": "ACC_PITCHMODULATION_L91_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A technical lead is asked a question she cannot answer.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Would you mind waiting a moment?",
-            "textToSpeak": "Would you mind waiting a moment?",
+            "word": "I don't know, but I'll find out and get back to you.",
+            "textToSpeak": "I don't know, but I'll find out and get back to you.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Embarrassed deflection",
+                "Confident honesty"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
+            "correctAnswer": "Confident honesty",
             "correctAnswerIndex": 1,
-            "hint": "'Would you mind' is a softening phrase that turns this into a courteous request. Listen for a gentle rise.",
-            "explanation": "'Would you mind waiting a moment?' is a polite request, so the pitch rises gently, sounding courteous rather than forceful.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "hint": "Compare how firmly 'don't know' lands with how the second half ends.",
+            "explanation": "Landing 'don't know' with a clean, low fall treats the gap as an ordinary fact, and the steady promise that follows shows the speaker is secure. Embarrassment would lift on 'know', rush through 'but' and fade on 'you', which makes the promise sound like an exit. Teams trust leaders who can admit a gap without sounding shaken.",
+            "modulationPattern": "Clean fall on 'know', steady fall on 'you'.",
+            "meaningShift": "A clean fall and a steady promise sound secure; a lift on 'know' and a fading end would sound embarrassed."
         },
         {
             "id": "ACC_PITCHMODULATION_L92_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks you to cover the weekend shift.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Pass the salt.",
-            "textToSpeak": "Pass the salt.",
+            "word": "I suppose I could.",
+            "textToSpeak": "I suppose I could.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Reluctant",
+                "Open to it"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
-            "correctAnswerIndex": 1,
-            "hint": "This short, plain instruction has no softening words. Listen for the pitch to fall firmly.",
-            "explanation": "'Pass the salt' is a direct command, so the pitch falls firmly, sounding like a quick instruction at the table.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "correctAnswer": "Reluctant",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'could' sound like it has been pulled out of the speaker?",
+            "explanation": "Using a low, slow fall-rise on 'could' can suggest that the speaker is agreeing under pressure. Willingness would usually sound lighter and more forward, with a clearer fall on 'could' and no trailing lift.",
+            "modulationPattern": "Low, slow falling-rising on 'could'.",
+            "meaningShift": "A low, trailing contour sounds reluctant; a lighter, forward one sounds willing."
         },
         {
             "id": "ACC_PITCHMODULATION_L92_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks whether you want to go to a party you would rather skip.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you pass the salt, please?",
-            "textToSpeak": "Could you pass the salt, please?",
+            "word": "Yeah, okay.",
+            "textToSpeak": "Yeah, okay.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Pleased to agree",
+                "Giving in"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
+            "correctAnswer": "Giving in",
             "correctAnswerIndex": 1,
-            "hint": "At the dinner table, 'could you' and 'please' turn this into a courteous ask. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you pass the salt, please?' is a polite request, so the pitch rises gently, sounding courteous.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "hint": "How much energy goes into 'okay'?",
+            "explanation": "Saying a short, low 'yeah' and then a flat 'okay' suggests that the answer was extracted from the speaker. Pleasure would show a brighter 'yeah' and a lift on 'okay'.",
+            "modulationPattern": "Low onset with a flat, short 'okay'.",
+            "meaningShift": "A flat, low delivery sounds like giving in; a bright lift sounds pleased."
         },
         {
             "id": "ACC_PITCHMODULATION_L92_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are asked to present at short notice.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Sit down.",
-            "textToSpeak": "Sit down.",
+            "word": "If I have to.",
+            "textToSpeak": "If I have to.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Playful teasing",
+                "Grudging acceptance"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
+            "correctAnswer": "Grudging acceptance",
             "correctAnswerIndex": 1,
-            "hint": "This is a brief, no-frills instruction. Listen for the pitch to drop firmly right at the end.",
-            "explanation": "'Sit down' is a direct command, so the pitch falls firmly, sounding like a clear, simple instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "hint": "Does 'have' sound heavy or light?",
+            "explanation": "Making 'have' heavy and low, with a flat finish, can sound grudging. In a playful exchange, the same words would bounce up on 'have' and sound as if the speaker were enjoying the act of complaining.",
+            "modulationPattern": "Low, heavy 'have' with a flat finish.",
+            "meaningShift": "A heavy, low contour sounds grudging; a bouncy one sounds playful."
         },
         {
             "id": "ACC_PITCHMODULATION_L93_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A coach watches a nervous runner at the starting line.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Would you turn down the music?",
-            "textToSpeak": "Would you turn down the music?",
+            "word": "You've got this.",
+            "textToSpeak": "You've got this.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Energising",
+                "Calming"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
+            "correctAnswer": "Energising",
             "correctAnswerIndex": 0,
-            "hint": "'Would you' softens this into a courteous ask rather than an order. Listen for a gentle lift at the end.",
-            "explanation": "'Would you turn down the music?' is a polite request, so the pitch rises gently, sounding considerate rather than bossy.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "hint": "Judge whether the voice lifts the runner up, or settles them down.",
+            "explanation": "The lifted onset on 'got' and firm fall on 'this' can add energy right before a race. A calming version would be slower and lower, aimed at relaxing the runner.",
+            "modulationPattern": "Lifted onset on 'got', firm fall on 'this'.",
+            "meaningShift": "A lifted, firm contour energises; a low, slow one calms."
         },
         {
             "id": "ACC_PITCHMODULATION_L93_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A teammate stumbles over words in a presentation.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Turn down the music.",
-            "textToSpeak": "Turn down the music.",
+            "word": "Keep going, you're doing well.",
+            "textToSpeak": "Keep going, you're doing well.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Supportive",
+                "Patronising"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
-            "correctAnswerIndex": 1,
-            "hint": "There's no 'could you' or 'would you' here - just a plain instruction. Listen for the pitch to fall firmly.",
-            "explanation": "'Turn down the music' is a direct command, so the pitch falls firmly, sounding like a clear instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "correctAnswer": "Supportive",
+            "correctAnswerIndex": 0,
+            "hint": "Is the sing-song exaggerated, or natural?",
+            "explanation": "Keeping a natural, steady range lets the speaker show real support without drawing attention to the stumble. A very wide, sing-song contour can sound as though the speaker were talking down to a child.",
+            "modulationPattern": "Moderate range with a steady fall on 'well'.",
+            "meaningShift": "A natural contour supports; an exaggerated sing-song can sound patronising."
         },
         {
             "id": "ACC_PITCHMODULATION_L93_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is about to ask for a raise.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you help me with this bag?",
-            "textToSpeak": "Could you help me with this bag?",
+            "word": "Just ask. What's the worst that could happen?",
+            "textToSpeak": "Just ask. What's the worst that could happen?",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Light and persuasive",
+                "Serious and warning"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
+            "correctAnswer": "Light and persuasive",
             "correctAnswerIndex": 0,
-            "hint": "'Could you' turns this into a courteous request for help. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you help me with this bag?' is a polite request, so the pitch rises gently, sounding like a genuine ask for help.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "hint": "How relaxed is the second sentence?",
+            "explanation": "Using a casual contour on the second sentence, with a falling shape on 'happen', can make the risk feel small. A serious, warning delivery would be lower and slower and might hint that something bad could really happen.",
+            "modulationPattern": "Light, falling contour on the rhetorical question.",
+            "meaningShift": "A light delivery makes the risk sound small; a serious one would warn."
         },
         {
             "id": "ACC_PITCHMODULATION_L94_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager thanks a colleague who stayed late to finish a report.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Hand me the remote.",
-            "textToSpeak": "Hand me the remote.",
+            "word": "I really appreciate it.",
+            "textToSpeak": "I really appreciate it.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Formulaic",
+                "Sincere"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
-            "correctAnswerIndex": 0,
-            "hint": "There's no 'please' or 'could you' here - just a quick request. Listen for the pitch to fall firmly.",
-            "explanation": "'Hand me the remote' is a direct command, so the pitch falls firmly, sounding like a quick, casual instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "correctAnswer": "Sincere",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'really' get any extra pitch movement?",
+            "explanation": "The peak on 'really' and the slower fall across 'appreciate' can make the thanks sound personal. A formulaic version would use an even contour and be quick, with the words carrying all the meaning.",
+            "modulationPattern": "Peak on 'really', slower fall on 'appreciate'.",
+            "meaningShift": "Extra movement sounds sincere; an even contour sounds formulaic."
         },
         {
             "id": "ACC_PITCHMODULATION_L94_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend helped you move house all weekend.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you hand me the remote, please?",
-            "textToSpeak": "Could you hand me the remote, please?",
+            "word": "I couldn't have done it without you.",
+            "textToSpeak": "I couldn't have done it without you.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Warm gratitude",
+                "Casual thanks"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
-            "correctAnswerIndex": 1,
-            "hint": "Adding 'please' on top of 'could you' makes this extra polite. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you hand me the remote, please?' is a polite request, so the pitch rises gently, sounding courteous.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "correctAnswer": "Warm gratitude",
+            "correctAnswerIndex": 0,
+            "hint": "Which word carries the most weight, and how long does it last?",
+            "explanation": "Lengthening and raising 'couldn't' and lingering on the fall on 'you' can show that the speaker means every word. Casual thanks would be quicker and flatter, tossing the sentence off.",
+            "modulationPattern": "Lengthened peak on 'couldn't', lingering fall on 'you'.",
+            "meaningShift": "A weighted, lingering contour sounds deeply grateful; a quick one sounds casual."
         },
         {
             "id": "ACC_PITCHMODULATION_L94_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague praises your presentation.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Stop the car.",
-            "textToSpeak": "Stop the car.",
+            "word": "Oh, thanks, that means a lot.",
+            "textToSpeak": "Oh, thanks, that means a lot.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Genuinely touched",
+                "Modest deflection"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
-            "correctAnswerIndex": 1,
-            "hint": "This urgent, plain instruction has no softening words. Listen for the pitch to fall sharply at the end.",
-            "explanation": "'Stop the car' is a direct command, so the pitch falls firmly, matching the urgency of the instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "correctAnswer": "Genuinely touched",
+            "correctAnswerIndex": 0,
+            "hint": "Pay attention to whether the voice keeps going up, or play it down.",
+            "explanation": "Holding a lift on 'lot' before falling can show the compliment has landed. Deflecting modesty normally drops quickly and sounds smaller, as though the speaker wants to change the subject.",
+            "modulationPattern": "Lift on 'lot' with a slow fall.",
+            "meaningShift": "A held lift sounds touched; a quick drop sounds modest."
         },
         {
             "id": "ACC_PITCHMODULATION_L95_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A teammate announces the project has been extended by two weeks.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Would you mind repeating that?",
-            "textToSpeak": "Would you mind repeating that?",
+            "word": "Oh, that's good news.",
+            "textToSpeak": "Oh, that's good news.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Mildly pleased",
+                "Relieved"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
-            "correctAnswerIndex": 0,
-            "hint": "'Would you mind' softens this into a courteous ask for repetition. Listen for the pitch to lift gently.",
-            "explanation": "'Would you mind repeating that?' is a polite request, so the pitch rises gently, sounding considerate.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "correctAnswer": "Relieved",
+            "correctAnswerIndex": 1,
+            "hint": "Is there a long, easing fall on 'news'?",
+            "explanation": "The long fall on 'news' can sound like an exhale, which fits someone relieved of pressure. A mild reaction would use a shorter, lighter fall.",
+            "modulationPattern": "Long, easing fall on 'news'.",
+            "meaningShift": "A long fall sounds relieved; a short, light one sounds mildly pleased."
         },
         {
             "id": "ACC_PITCHMODULATION_L95_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend says she is moving abroad.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Repeat that.",
-            "textToSpeak": "Repeat that.",
+            "word": "That's a big step.",
+            "textToSpeak": "That's a big step.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Admiring",
+                "Concerned"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
+            "correctAnswer": "Concerned",
             "correctAnswerIndex": 1,
-            "hint": "This short instruction has no softening words. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'Repeat that' is a direct command, so the pitch falls firmly, sounding like a brisk instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "hint": "Does 'big' lift in awe, or weigh down?",
+            "explanation": "Saying 'big' low and weighty, then falling gently, can sound as though the speaker is thinking about the risks. An admiring delivery would lift on 'big' and sound brighter.",
+            "modulationPattern": "Weighted 'big' with a gentle fall on 'step'.",
+            "meaningShift": "A weighty contour sounds concerned; a bright lift sounds admiring."
         },
         {
             "id": "ACC_PITCHMODULATION_L95_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager says the office will switch to hot-desking next month.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you send me the file?",
-            "textToSpeak": "Could you send me the file?",
+            "word": "That should be fun.",
+            "textToSpeak": "That should be fun.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Looking forward to it",
+                "Sarcastic, dreading it"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
-            "correctAnswerIndex": 0,
-            "hint": "'Could you' turns this into a courteous workplace request. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you send me the file?' is a polite request, so the pitch rises gently, sounding professional and courteous.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "correctAnswer": "Sarcastic, dreading it",
+            "correctAnswerIndex": 1,
+            "hint": "How much brightness is in 'fun'?",
+            "explanation": "Flattening and lengthening 'fun' with a low landing can signal sarcasm, particularly when the news is unlikely to be popular. A genuine reaction would have a brighter peak on 'fun'.",
+            "modulationPattern": "Flat, drawn-out 'fun' with a low fall.",
+            "meaningShift": "A flat, drawn-out word sounds sarcastic; a bright peak sounds genuine."
         },
         {
             "id": "ACC_PITCHMODULATION_L96_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A waiter recommends a dish.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Send me the file.",
-            "textToSpeak": "Send me the file.",
+            "word": "I'd definitely recommend the fish.",
+            "textToSpeak": "I'd definitely recommend the fish.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Personally convinced",
+                "Routine recommendation"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
+            "correctAnswer": "Personally convinced",
             "correctAnswerIndex": 0,
-            "hint": "This workplace instruction skips any polite softening. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'Send me the file' is a direct command, so the pitch falls firmly, sounding like a brisk workplace instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "hint": "Does 'definitely' carry real weight?",
+            "explanation": "The clear peak on 'definitely' and purposeful fall on 'fish' can sound like a personal opinion. If the recommendation is routine, the contour is flatter and 'definitely' loses its lift.",
+            "modulationPattern": "Peak on 'definitely', purposeful fall on 'fish'.",
+            "meaningShift": "A weighted peak sounds personal; a flat one sounds routine."
         },
         {
             "id": "ACC_PITCHMODULATION_L96_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is giving diplomatic feedback.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you lower your voice?",
-            "textToSpeak": "Could you lower your voice?",
+            "word": "I'm not saying it's wrong, just that it's risky.",
+            "textToSpeak": "I'm not saying it's wrong, just that it's risky.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Careful and diplomatic",
+                "Evasive and non-committal"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
+            "correctAnswer": "Careful and diplomatic",
             "correctAnswerIndex": 0,
-            "hint": "'Could you' softens this potentially awkward ask. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you lower your voice?' is a polite request, so the pitch rises gently, keeping the tone considerate.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "hint": "Do the two halves sound balanced, or does the voice slide away?",
+            "explanation": "The lift after 'wrong' and clear fall on 'risky' can make the speaker sound as if they've chosen their words with care. Evasiveness would show a trailing, weak ending that avoids landing on 'risky'.",
+            "modulationPattern": "Rise after 'wrong', clear fall on 'risky'.",
+            "meaningShift": "A balanced contour sounds diplomatic; a trailing end sounds evasive."
         },
         {
             "id": "ACC_PITCHMODULATION_L96_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says they are available to help.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Lower your voice.",
-            "textToSpeak": "Lower your voice.",
+            "word": "I'm happy to help if you need me.",
+            "textToSpeak": "I'm happy to help if you need me.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Genuinely open to it",
+                "Hoping not to be asked"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
+            "correctAnswer": "Genuinely open to it",
             "correctAnswerIndex": 0,
-            "hint": "This sounds more like a correction than a favor. Listen for the pitch to fall firmly, without any gentle lift.",
-            "explanation": "'Lower your voice' is a direct command, so the pitch falls firmly, sounding stern rather than polite.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "hint": "How much lift is on 'happy'?",
+            "explanation": "The peak on 'happy' and gentle lift on 'me' can leave the door open and make the offer sound real. A hopeful avoidance would be flat and quick, a courtesy with no intention of being used.",
+            "modulationPattern": "Peak on 'happy', gentle lift on 'me'.",
+            "meaningShift": "A lifted contour sounds like a real offer; a flat, quick one sounds like a formality."
         },
         {
             "id": "ACC_PITCHMODULATION_L97_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has just argued for a different approach.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you water the plants while I'm away?",
-            "textToSpeak": "Could you water the plants while I'm away?",
+            "word": "I see it differently.",
+            "textToSpeak": "I see it differently.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Rising irritation",
+                "Calm disagreement"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
+            "correctAnswer": "Calm disagreement",
             "correctAnswerIndex": 1,
-            "hint": "'Could you' turns this into a courteous favor being asked. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you water the plants while I'm away?' is a polite request, so the pitch rises gently, sounding like a genuine favor.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "hint": "Is the final fall controlled, or tightening?",
+            "explanation": "Keeping a steady range and falling in a controlled way on 'differently' keeps the disagreement civil. Irritation would tighten the contour, with a sharper rise and a harder landing.",
+            "modulationPattern": "Steady range with a controlled fall on 'differently'.",
+            "meaningShift": "A controlled fall sounds calm; a tightening contour sounds irritated."
         },
         {
             "id": "ACC_PITCHMODULATION_L97_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague quotes a figure from last year's report.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Water the plants.",
-            "textToSpeak": "Water the plants.",
+            "word": "With respect, that's not what the data shows.",
+            "textToSpeak": "With respect, that's not what the data shows.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Dismissive",
+                "Firm but civil"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
-            "correctAnswerIndex": 0,
-            "hint": "This household instruction is given plainly, without any softening. Listen for a firm, falling pitch.",
-            "explanation": "'Water the plants' is a direct command, so the pitch falls firmly, sounding like a quick household instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "correctAnswer": "Firm but civil",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'with respect' sound real?",
+            "explanation": "Slowing the opener and peaking firmly on 'data' can sound respectful while being clear. A dismissive reply would speed through the opener and fall sharply on 'shows'.",
+            "modulationPattern": "Slow opener, peak on 'data', firm fall on 'shows'.",
+            "meaningShift": "A measured contour sounds civil; a sharp, quick one sounds dismissive."
         },
         {
             "id": "ACC_PITCHMODULATION_L97_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend has complained about your plan.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Would you check my homework?",
-            "textToSpeak": "Would you check my homework?",
+            "word": "I hear you, but I disagree.",
+            "textToSpeak": "I hear you, but I disagree.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Empathetic opposition",
+                "Brushing the point off"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
-            "correctAnswerIndex": 1,
-            "hint": "'Would you' softens this into a courteous ask for a favor. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Would you check my homework?' is a polite request, so the pitch rises gently, sounding like a genuine favor.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "correctAnswer": "Empathetic opposition",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the first half is given a gentle lift, or hurried.",
+            "explanation": "The soft lift on 'hear you' shows the speaker has registered the point before disagreeing. Brushing off would hurry through the first clause and fall hard on 'disagree'.",
+            "modulationPattern": "Lift on 'hear you', fall on 'disagree'.",
+            "meaningShift": "A softly lifted first clause shows empathy; a hurried one sounds like a dismissal."
         },
         {
             "id": "ACC_PITCHMODULATION_L98_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A mentor is correcting a junior colleague.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Check my homework.",
-            "textToSpeak": "Check my homework.",
+            "word": "That's not quite right.",
+            "textToSpeak": "That's not quite right.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Sharp rebuke",
+                "Gentle correction"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
-            "correctAnswerIndex": 0,
-            "hint": "Without 'could you' or 'would you', this sounds more like an order. Listen for a firm, falling pitch.",
-            "explanation": "'Check my homework' is a direct command, so the pitch falls firmly, sounding more like an order than a favor.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "correctAnswer": "Gentle correction",
+            "correctAnswerIndex": 1,
+            "hint": "How big and how fast is the fall on 'right'?",
+            "explanation": "The small, slow fall on 'right' after a lifted 'quite' keeps the correction gentle. A sharp rebuke would use a deeper, faster fall and drop 'quite' to a low pitch.",
+            "modulationPattern": "Slight lift on 'quite', small slow fall on 'right'.",
+            "meaningShift": "A small fall corrects gently; a deep, fast fall rebukes."
         },
         {
             "id": "ACC_PITCHMODULATION_L98_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A project manager is looking at a schedule.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you bring some water?",
-            "textToSpeak": "Could you bring some water?",
+            "word": "I'm a bit worried about the timeline.",
+            "textToSpeak": "I'm a bit worried about the timeline.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Alarm",
+                "Mild concern"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
+            "correctAnswer": "Mild concern",
             "correctAnswerIndex": 1,
-            "hint": "'Could you' softens this into a courteous ask. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you bring some water?' is a polite request, so the pitch rises gently, sounding like a considerate ask.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "hint": "How much extra range does 'worried' get?",
+            "explanation": "Giving 'worried' a modest peak in a narrow range lets the listener hear a manageable concern. Alarm would be wider and faster, perhaps with a higher onset.",
+            "modulationPattern": "Narrow range with a modest peak on 'worried'.",
+            "meaningShift": "A modest peak sounds mild; a wide, fast contour would sound alarmed."
         },
         {
             "id": "ACC_PITCHMODULATION_L98_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager comments on a team's results.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Bring some water.",
-            "textToSpeak": "Bring some water.",
+            "word": "That was a little disappointing.",
+            "textToSpeak": "That was a little disappointing.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Controlled disappointment",
+                "Anger breaking through"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
+            "correctAnswer": "Controlled disappointment",
             "correctAnswerIndex": 0,
-            "hint": "This short, plain instruction has no softening words. Listen for the pitch to fall firmly at the end.",
-            "explanation": "'Bring some water' is a direct command, so the pitch falls firmly, sounding like a brisk instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "hint": "Does the fall on 'disappointing' stay low and level, or snap?",
+            "explanation": "The low, even fall on 'disappointing' keeps the feeling in check, as though the speaker is choosing not to say more. Anger would add sharpness and more weight on 'little'.",
+            "modulationPattern": "Low, even fall on 'disappointing'.",
+            "meaningShift": "A low, even fall suggests held-back disappointment; a sharp, wide one suggests anger."
         },
         {
             "id": "ACC_PITCHMODULATION_L99_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague accuses you of criticising a plan.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Would you mind moving your bag?",
-            "textToSpeak": "Would you mind moving your bag?",
+            "word": "I didn't say it was a bad idea.",
+            "textToSpeak": "I didn't say it was a bad idea.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Conceding that it was a bad idea",
+                "Defending, correcting an assumption"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
-            "correctAnswerIndex": 0,
-            "hint": "'Would you mind' softens this potentially awkward ask on public transport. Listen for the pitch to lift gently.",
-            "explanation": "'Would you mind moving your bag?' is a polite request, so the pitch rises gently, keeping the tone courteous.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "correctAnswer": "Defending, correcting an assumption",
+            "correctAnswerIndex": 1,
+            "hint": "Find the word that carries the biggest push.",
+            "explanation": "The peak on 'say' points back to what was actually said and defends the speaker against a reading that went beyond it. Admitting would not need this prominence.",
+            "modulationPattern": "Prominence on 'say' in a defensive denial.",
+            "meaningShift": "A peak on 'say' protects the speaker; the other reading would be an admission."
         },
         {
             "id": "ACC_PITCHMODULATION_L99_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague breaks a rule and says it was an accident.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Move your bag.",
-            "textToSpeak": "Move your bag.",
+            "word": "I'm sure it was an accident.",
+            "textToSpeak": "I'm sure it was an accident.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Sincere",
+                "Sceptical"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
+            "correctAnswer": "Sceptical",
             "correctAnswerIndex": 1,
-            "hint": "This is a direct, no-nonsense instruction with no polite wrapping. Listen for the pitch to fall firmly.",
-            "explanation": "'Move your bag' is a direct command, so the pitch falls firmly, sounding more abrupt than a polite request.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "hint": "What happens to the pitch on 'sure'?",
+            "explanation": "The dip and lift on 'sure', with a drawn-out 'accident', can imply the speaker does not accept the explanation. Sincerity would have a simple fall on 'accident'.",
+            "modulationPattern": "Falling-rising on 'sure', drawn-out 'accident'.",
+            "meaningShift": "A dip and lift hints at doubt; a simple fall would sound sincere."
         },
         {
             "id": "ACC_PITCHMODULATION_L99_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has just offered an unusual idea.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you switch off the lights?",
-            "textToSpeak": "Could you switch off the lights?",
+            "word": "That's one way of looking at it.",
+            "textToSpeak": "That's one way of looking at it.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Polite disagreement",
+                "Open agreement"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
-            "correctAnswerIndex": 1,
-            "hint": "'Could you' turns this into a courteous household ask. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you switch off the lights?' is a polite request, so the pitch rises gently, sounding like a courteous ask.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "correctAnswer": "Polite disagreement",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'one' stand out?",
+            "explanation": "The peak on 'one' implies that there are other ways to look at it, which is a courteous way of disagreeing. Open agreement would not need to point to other ways.",
+            "modulationPattern": "Prominence on 'one' with a fall on 'it'.",
+            "meaningShift": "A peak on 'one' suggests alternatives; without it the phrase would sound like agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L100_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague unexpectedly offers to take over your task.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Switch off the lights.",
-            "textToSpeak": "Switch off the lights.",
+            "word": "Oh, you don't have to do that.",
+            "textToSpeak": "Oh, you don't have to do that.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Firmly refusing, no discussion",
+                "Grateful, wanting to be polite"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
+            "correctAnswer": "Grateful, wanting to be polite",
             "correctAnswerIndex": 1,
-            "hint": "This is a brief, direct instruction with no courteous wrapping. Listen for the pitch to drop firmly.",
-            "explanation": "'Switch off the lights' is a direct command, so the pitch falls firmly, sounding like a quick household instruction.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "hint": "Check whether the voice sounds ready to say yes after a little persuasion.",
+            "explanation": "The lift on 'oh' and soft fall on 'that' leave room for the colleague to insist, which is part of the polite ritual. A firm refusal would be lower and fall with finality.",
+            "modulationPattern": "Lifted 'oh', soft fall on 'that'.",
+            "meaningShift": "A soft, open contour sounds polite and willing; a firm fall would refuse."
         },
         {
             "id": "ACC_PITCHMODULATION_L100_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager asks whether you are ready to lead the new project. You want it but are nervous.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could you proofread my email before I send it?",
-            "textToSpeak": "Could you proofread my email before I send it?",
+            "word": "Yes, I think I'm ready.",
+            "textToSpeak": "Yes, I think I'm ready.",
             "options": [
-                "Firm Falling Tone (Direct Command)",
-                "Gentle Rising Tone (Polite Request)"
+                "Hopeful, slightly unsure",
+                "Fully assured and ready"
             ],
-            "correctAnswer": "Gentle Rising Tone (Polite Request)",
-            "correctAnswerIndex": 1,
-            "hint": "'Could you' turns this into a courteous workplace favor. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Could you proofread my email before I send it?' is a polite request, so the pitch rises gently, sounding professional.",
-            "modulationPattern": "A gentle rising tone softens an instruction into a polite request; a firm, falling tone delivers it as a direct command.",
-            "meaningShift": "The meaning shifts between a direct command and a polite request."
+            "correctAnswer": "Hopeful, slightly unsure",
+            "correctAnswerIndex": 0,
+            "hint": "Where does the peak sit, and does 'ready' fall firmly?",
+            "explanation": "The peak on 'think' and slightly lifted 'ready' mark the answer as sincere but careful. A fully assured answer would drop on 'ready' without hesitation, and 'think' would be quiet.",
+            "modulationPattern": "Peak on 'think', slight lift on 'ready'.",
+            "meaningShift": "A peak on 'think' admits some doubt; a firm fall would sound sure."
         },
         {
             "id": "ACC_PITCHMODULATION_L100_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer has just finished a long complaint at the help desk.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Proofread my email.",
-            "textToSpeak": "Proofread my email.",
+            "word": "I understand how frustrating that must be.",
+            "textToSpeak": "I understand how frustrating that must be.",
             "options": [
-                "Gentle Rising Tone (Polite Request)",
-                "Firm Falling Tone (Direct Command)"
+                "Genuine empathy",
+                "Scripted sympathy"
             ],
-            "correctAnswer": "Firm Falling Tone (Direct Command)",
-            "correctAnswerIndex": 1,
-            "hint": "This sounds like a quick demand rather than a favor being asked. Listen for the pitch to fall firmly.",
-            "explanation": "'Proofread my email' is a direct command, so the pitch falls firmly, sounding more like an order than a favor.",
-            "modulationPattern": "Politeness in spoken English often relies on pitch as much as wording: a soft rise invites cooperation, while a firm fall asserts authority.",
-            "meaningShift": "The meaning shifts between a polite request and a direct command."
+            "correctAnswer": "Genuine empathy",
+            "correctAnswerIndex": 0,
+            "hint": "Judge whether the voice sounds new, or rehearsed.",
+            "explanation": "Lowering the pitch, slowing down and giving 'frustrating' a peak that is not identical to every other help-desk line can sound genuine. Scripted sympathy uses an even pitch and an unvarying rhythm.",
+            "modulationPattern": "Slower tempo, individual peak on 'frustrating'.",
+            "meaningShift": "An individual, slower contour sounds empathetic; an even, rehearsed one sounds scripted."
         }
     ]
 }

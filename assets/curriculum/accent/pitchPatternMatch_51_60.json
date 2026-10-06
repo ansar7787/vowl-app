@@ -5,753 +5,753 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L51_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. Your teacher says: \"Water boils at ninety degrees.\" You politely correct her:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I might be misremembering, but the concert starts at eight, doesn't it?",
-            "textToSpeak": "I might be misremembering, but the concert starts at eight, doesn't it?",
+            "word": "Water boils at a hundred degrees.",
+            "textToSpeak": "Water boils at a hundred degrees.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Emphasis on DEGREES",
+                "Emphasis on HUNDRED"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on HUNDRED",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 2,
-                3
+                3,
+                1
             ],
-            "hint": "Notice the speaker openly admits they're not sure — a genuine question like this usually rises on the tag.",
-            "explanation": "Because the speaker signals genuine uncertainty, the tag question rises in pitch, like a real yes/no question.",
-            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "The unit is already in the teacher's sentence. Which word is the one she got wrong?",
+            "explanation": "DEGREES was already in her statement, so it is shared ground. HUNDRED replaces her number and takes the peak, even though the sentence keeps going.",
+            "emphasisRule": "In a correction, the replaced word takes the peak and the repeated unit falls.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L51_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A friend says: \"Isn't Sydney the capital of Australia?\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "That movie was fantastic, wasn't it?",
-            "textToSpeak": "That movie was fantastic, wasn't it?",
+            "word": "Canberra's the capital.",
+            "textToSpeak": "Canberra's the capital.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Emphasis on CANBERRA'S",
+                "Emphasis on CAPITAL"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CANBERRA'S",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
                 3,
+                1,
+                1,
                 1,
                 1
             ],
-            "hint": "Words like 'obviously' or 'clearly' show the speaker is already confident — that tag usually falls.",
-            "explanation": "Because the speaker is already confident, the tag simply invites agreement and falls in pitch.",
-            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "Your friend has the idea right but the city wrong. Where does your voice go?",
+            "explanation": "The topic, 'capital', came from your friend, so it is old. CANBERRA'S supplies the fix and takes the peak at the very start.",
+            "emphasisRule": "When you correct a name, the new name carries the peak even if it opens the sentence.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L51_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. A says: \"Rohan wrote the quarterly report.\" B replies. What is B correcting?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I could be mistaken, but this seat is taken, isn't it?",
-            "textToSpeak": "I could be mistaken, but this seat is taken, isn't it?",
+            "word": "Rohan reviewed the quarterly report.",
+            "textToSpeak": "Rohan reviewed the quarterly report.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Which report it was",
+                "What Rohan did with the report"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "What Rohan did with the report",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
                 3,
-                2,
-                3
+                1,
+                1,
+                1
             ],
-            "hint": "Phrases like 'I could be wrong' signal real uncertainty, which usually means the tag lifts in pitch.",
-            "explanation": "When a speaker isn't sure and is truly asking, the tag at the end typically rises.",
-            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "Compare B's sentence with A's. Only one word has changed. Which?",
+            "explanation": "Between the two sentences only the verb differs, and B's peak lands on REVIEWED. So the correction is about Rohan's role, not about the report or its name.",
+            "emphasisRule": "The peak falls on whichever word differs from the sentence being corrected.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L52_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A post office clerk asks: \"Is the parcel for Mr. Dube?\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Correct me if I'm mistaken, but the store closes at six, doesn't it?",
-            "textToSpeak": "Correct me if I'm mistaken, but the store closes at six, doesn't it?",
+            "word": "It's for Mr. Dube's wife.",
+            "textToSpeak": "It's for Mr. Dube's wife.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on WIFE",
+                "Emphasis on DUBE'S"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WIFE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 2,
-                3
+                3,
+                1
             ],
-            "hint": "This speaker is genuinely checking, not just confirming — expect the tag to rise.",
-            "explanation": "This tag functions as a real question here, so it takes rising intonation, not falling.",
-            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "The clerk had the family name right. What did he get wrong?",
+            "explanation": "The family name is shared, so DUBE'S is only a pointer. WIFE is the new information, and it takes the peak at the end of the possessive phrase.",
+            "emphasisRule": "Within a repeated name phrase, only the changed part takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L52_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A parent says: \"Ms. Iyer teaches the eighth grade, right?\" The receptionist answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "This traffic is unbelievable, isn't it?",
-            "textToSpeak": "This traffic is unbelievable, isn't it?",
+            "word": "Mr. Khan teaches the eighth grade.",
+            "textToSpeak": "Mr. Khan teaches the eighth grade.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on KHAN",
+                "Emphasis on TEACHES"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswer": "Emphasis on KHAN",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
                 3,
+                1,
                 1,
                 1
             ],
-            "hint": "This speaker isn't really asking; they're inviting agreement, so the tag typically drops in pitch.",
-            "explanation": "When a speaker is sure and just wants confirmation, the tag question falls rather than rises.",
-            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "The parent has the class right but the person wrong. Which word replaces the person?",
+            "explanation": "Everything after the name matches the parent's own words, so it all drops. KHAN is the only new piece and gets the peak early.",
+            "emphasisRule": "When the rest of a sentence is accepted, the corrected person takes the peak and the remainder stays low.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L52_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What did the first speaker most likely say?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Correct me if I'm wrong, but her flight lands tonight, doesn't it?",
-            "textToSpeak": "Correct me if I'm wrong, but her flight lands tonight, doesn't it?",
+            "word": "Neha wrote the speech.",
+            "textToSpeak": "Neha wrote the speech.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "I think Joel wrote the speech.",
+                "I think Neha read the speech."
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "I think Joel wrote the speech.",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
                 3,
-                2,
-                3
+                1,
+                1,
+                1,
+                1
             ],
-            "hint": "When someone admits they might be mistaken, the tag question that follows usually rises.",
-            "explanation": "The speaker's hedging shows real doubt, which is why the tag rises instead of falling.",
-            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "Work backwards from the peak. Which idea would NEHA be replacing?",
+            "explanation": "The early peak on NEHA says the person was the problem, so the first speaker must have named someone else. If the verb had been wrong, WROTE would carry the peak.",
+            "emphasisRule": "An early peak on a name suggests the earlier statement named someone different.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L53_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. The pharmacist hands you cough syrup, but you wanted something else.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The lecture ran long again, didn't it?",
-            "textToSpeak": "The lecture ran long again, didn't it?",
+            "word": "I asked for the cough tablets.",
+            "textToSpeak": "I asked for the cough tablets.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on TABLETS",
+                "Emphasis on COUGH"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswer": "Emphasis on TABLETS",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
+                2,
                 3,
-                1,
                 1
             ],
-            "hint": "Since the speaker already seems sure, expect the tag to fall rather than rise.",
-            "explanation": "This tag isn't a real question; it's inviting agreement, so it takes falling intonation.",
-            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "'Cough' is not what the pharmacist mixed up. Which word is?",
+            "explanation": "COUGH is the shared condition, so it stays low. TABLETS contrasts with syrup and takes the peak.",
+            "emphasisRule": "In a modified noun, the part that distinguishes it from the other option takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L53_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A neighbour says: \"I heard the delivery brought your groceries.\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You obviously forgot your umbrella, didn't you?",
-            "textToSpeak": "You obviously forgot your umbrella, didn't you?",
+            "word": "The delivery brought a sofa this morning.",
+            "textToSpeak": "The delivery brought a sofa this morning.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Emphasis on MORNING",
+                "Emphasis on SOFA"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswer": "Emphasis on SOFA",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
+                2,
                 3,
                 1,
                 1
             ],
-            "hint": "This sounds like the speaker expects you to simply agree — that kind of tag usually falls.",
-            "explanation": "Since there's no genuine doubt here, the tag falls instead of rising.",
-            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "The neighbour is wrong about what arrived. Where does your voice go for the right item?",
+            "explanation": "The time phrase adds colour but doesn't answer the neighbour's guess. SOFA replaces 'groceries' and carries the peak.",
+            "emphasisRule": "A time phrase after the object stays low when the object is the correction.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L53_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What did the first speaker most likely say?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Feel free to correct me, but this size runs small, doesn't it?",
-            "textToSpeak": "Feel free to correct me, but this size runs small, doesn't it?",
+            "word": "She plays the violin.",
+            "textToSpeak": "She plays the violin.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Does she play the piano these days?",
+                "Does she play every day?"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswer": "Does she play the piano these days?",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 2,
-                3
+                3,
+                1
             ],
-            "hint": "The hedge at the start shows real doubt, so listen for an upward pitch on the tag itself.",
-            "explanation": "Because the speaker signals genuine uncertainty, the tag question rises in pitch, like a real yes/no question.",
-            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "The peak sits on the last word. What kind of detail would the earlier question have asked about?",
+            "explanation": "VIOLIN is the key piece of new information, which suggests the question was about which instrument. A question about frequency would have produced a peak on a time word.",
+            "emphasisRule": "A peak on a noun answers a question that guessed a different noun.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L54_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. The receptionist says: \"Your vaccination is due next week.\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Please correct me, but this medication needs food, doesn't it?",
-            "textToSpeak": "Please correct me, but this medication needs food, doesn't it?",
+            "word": "It was due last week.",
+            "textToSpeak": "It was due last week.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on WEEK",
+                "Emphasis on LAST"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswer": "Emphasis on LAST",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                3,
                 2,
-                3
+                3,
+                1,
+                1
             ],
-            "hint": "Notice the speaker openly admits they're not sure — a genuine question like this usually rises on the tag.",
-            "explanation": "When a speaker isn't sure and is truly asking, the tag at the end typically rises.",
-            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "The receptionist and you agree on the unit of time. What is different?",
+            "explanation": "WEEK is the shared unit, so it is old. LAST changes the direction of time, so the peak lands on it.",
+            "emphasisRule": "A time word that flips earlier and later takes the peak when the unit is shared.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L54_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A friend says: \"The show starts at six, doesn't it?\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You've been here before, haven't you?",
-            "textToSpeak": "You've been here before, haven't you?",
+            "word": "It starts at six thirty.",
+            "textToSpeak": "It starts at six thirty.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on STARTS",
+                "Emphasis on THIRTY"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on THIRTY",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
+                2,
                 3,
-                1,
                 1
             ],
-            "hint": "There's no real doubt here, just an invitation to agree, so the tag pitch typically drops.",
-            "explanation": "Because the speaker is already confident, the tag simply invites agreement and falls in pitch.",
-            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "Part of your friend's time was right. Which part isn't?",
+            "explanation": "SIX matches your friend's version, so it stays down. THIRTY is the added piece that corrects it and takes the peak.",
+            "emphasisRule": "When a time is partly right, the new part takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L54_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. A says: \"The exam is on Tuesday.\" B replies. What is B pointing out?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Forgive me if I'm wrong, but we've met somewhere before, haven't we?",
-            "textToSpeak": "Forgive me if I'm wrong, but we've met somewhere before, haven't we?",
+            "word": "The exam was on Monday.",
+            "textToSpeak": "The exam was on Monday.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "The exam is on a different day",
+                "The exam has already happened; it is over"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswer": "The exam has already happened; it is over",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                3,
                 2,
-                3
+                3,
+                1,
+                1
             ],
-            "hint": "Phrases like 'I could be wrong' signal real uncertainty, which usually means the tag lifts in pitch.",
-            "explanation": "This tag functions as a real question here, so it takes rising intonation, not falling.",
-            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "B uses a different verb form from A. Which word carries the pitch?",
+            "explanation": "WAS takes the peak, so B is correcting the timing of the whole event: it's in the past. If the day alone were the problem, MONDAY would carry the peak.",
+            "emphasisRule": "A peak on a tense word corrects when something happens, not just which day.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L55_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A visitor says: \"The pharmacy is next to the bank, right?\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Obviously, this coffee shop is amazing, isn't it?",
-            "textToSpeak": "Obviously, this coffee shop is amazing, isn't it?",
+            "word": "It's next to the post office.",
+            "textToSpeak": "It's next to the post office.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on POST",
+                "Emphasis on NEXT"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswer": "Emphasis on POST",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
+                2,
                 3,
-                1,
                 1
             ],
-            "hint": "Words like 'obviously' or 'clearly' show the speaker is already confident — that tag usually falls.",
-            "explanation": "When a speaker is sure and just wants confirmation, the tag question falls rather than rises.",
-            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "The visitor has the relationship right. Which part of the location is off?",
+            "explanation": "NEXT TO matches what the visitor said, so it stays low. POST OFFICE replaces 'bank', and in this compound the first word carries the peak.",
+            "emphasisRule": "In a replaced compound place name, the first element takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L55_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A guest asks: \"Is the wedding in the temple?\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I might have the date wrong, but the exam is tomorrow, isn't it?",
-            "textToSpeak": "I might have the date wrong, but the exam is tomorrow, isn't it?",
+            "word": "It's in the garden behind the temple.",
+            "textToSpeak": "It's in the garden behind the temple.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on GARDEN",
+                "Emphasis on TEMPLE"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on GARDEN",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                3,
                 2,
-                3
+                3,
+                1,
+                1
             ],
-            "hint": "This speaker is genuinely checking, not just confirming — expect the tag to rise.",
-            "explanation": "The speaker's hedging shows real doubt, which is why the tag rises instead of falling.",
-            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "'Temple' is already in the guest's question. What is new?",
+            "explanation": "TEMPLE is a landmark both people know, so it sits low. GARDEN is the actual venue and carries the peak.",
+            "emphasisRule": "A repeated landmark falls after the new place word.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L55_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A coworker asks: \"Is the meeting upstairs?\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The view from here is stunning, isn't it?",
-            "textToSpeak": "The view from here is stunning, isn't it?",
+            "word": "It's downstairs now.",
+            "textToSpeak": "It's downstairs now.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on NOW",
+                "Emphasis on DOWNSTAIRS"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DOWNSTAIRS",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
+                2,
                 3,
                 1,
                 1
             ],
-            "hint": "This speaker isn't really asking; they're inviting agreement, so the tag typically drops in pitch.",
-            "explanation": "This tag isn't a real question; it's inviting agreement, so it takes falling intonation.",
-            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "The meeting has moved, but the coworker only needs one piece of information. Which one?",
+            "explanation": "NOW explains that it has moved, but the correction is the place. DOWNSTAIRS replaces 'upstairs' and takes the peak.",
+            "emphasisRule": "Location words that reverse each other (up/down, in/out) take the peak when corrected.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L56_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A friend says: \"The ticket's five dollars, right?\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You two have met before, haven't you?",
-            "textToSpeak": "You two have met before, haven't you?",
+            "word": "It's ten dollars.",
+            "textToSpeak": "It's ten dollars.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Emphasis on DOLLARS",
+                "Emphasis on TEN"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswer": "Emphasis on TEN",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
+                2,
                 3,
                 1,
                 1
             ],
-            "hint": "Since the speaker already seems sure, expect the tag to fall rather than rise.",
-            "explanation": "Since there's no genuine doubt here, the tag falls instead of rising.",
-            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "Currency is not the problem. What is?",
+            "explanation": "DOLLARS is the shared unit. TEN replaces the wrong amount and carries the peak.",
+            "emphasisRule": "A corrected amount takes the peak; the unit that follows stays low.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L56_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A friend says: \"Add a teaspoon of salt.\" You check the recipe and answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I'm not positive, but you canceled the order, didn't you?",
-            "textToSpeak": "I'm not positive, but you canceled the order, didn't you?",
+            "word": "The recipe says a tablespoon.",
+            "textToSpeak": "The recipe says a tablespoon.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Emphasis on RECIPE",
+                "Emphasis on TABLESPOON"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on TABLESPOON",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 2,
-                3
+                3,
+                1
             ],
-            "hint": "When someone admits they might be mistaken, the tag question that follows usually rises.",
-            "explanation": "Because the speaker signals genuine uncertainty, the tag question rises in pitch, like a real yes/no question.",
-            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "You are not disputing the recipe; you are disputing the measurement. Which word is it?",
+            "explanation": "RECIPE is only your evidence. TABLESPOON replaces 'teaspoon' and holds the peak.",
+            "emphasisRule": "A unit of measure that corrects another unit takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L56_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A manager says: \"Everyone passed the safety test.\" One of the staff answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I'm not totally sure, but this is the right platform, isn't it?",
-            "textToSpeak": "I'm not totally sure, but this is the right platform, isn't it?",
+            "word": "Most of us passed.",
+            "textToSpeak": "Most of us passed.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on PASSED",
+                "Emphasis on MOST"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswer": "Emphasis on MOST",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
                 3,
-                2,
-                3
+                1,
+                1,
+                1,
+                1
             ],
-            "hint": "The hedge at the start shows real doubt, so listen for an upward pitch on the tag itself.",
-            "explanation": "When a speaker isn't sure and is truly asking, the tag at the end typically rises.",
-            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "The manager's claim used 'everyone'. What does the staff member change?",
+            "explanation": "PASSED is the repeated action, so it relaxes. MOST narrows 'everyone', so it carries the peak at the start of the sentence.",
+            "emphasisRule": "A quantifier that scales back a larger claim takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L57_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A friend says: \"So you drove to Chennai on Friday?\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I'm genuinely unsure, but the deadline moved, didn't it?",
-            "textToSpeak": "I'm genuinely unsure, but the deadline moved, didn't it?",
+            "word": "I drove to Madurai on Friday.",
+            "textToSpeak": "I drove to Madurai on Friday.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Emphasis on FRIDAY",
+                "Emphasis on MADURAI"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on MADURAI",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                3,
                 2,
-                3
+                3,
+                1,
+                1
             ],
-            "hint": "Notice the speaker openly admits they're not sure — a genuine question like this usually rises on the tag.",
-            "explanation": "This tag functions as a real question here, so it takes rising intonation, not falling.",
-            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "Most of your friend's sentence is right. Which single detail is wrong?",
+            "explanation": "Everything else in the sentence matches the friend's version, so DROVE and FRIDAY stay low. MADURAI is the lone correction and takes the peak.",
+            "emphasisRule": "In a partial correction, only the wrong detail takes the peak; every accepted word falls.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L57_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A manager says: \"The marketing team presented the plan in April.\" A colleague answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I'm honestly not certain, but you two work together, don't you?",
-            "textToSpeak": "I'm honestly not certain, but you two work together, don't you?",
+            "word": "The sales team presented it in April.",
+            "textToSpeak": "The sales team presented it in April.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on SALES",
+                "Emphasis on APRIL"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SALES",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
                 3,
-                2,
-                3
+                1,
+                1,
+                1,
+                1
             ],
-            "hint": "Phrases like 'I could be wrong' signal real uncertainty, which usually means the tag lifts in pitch.",
-            "explanation": "The speaker's hedging shows real doubt, which is why the tag rises instead of falling.",
-            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "The month is mentioned twice. Is it in dispute?",
+            "explanation": "APRIL is accepted, so it carries no peak even though it ends the sentence. SALES replaces 'marketing' and takes the peak.",
+            "emphasisRule": "Accepted details at the end of a sentence stay low in a partial correction.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L57_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. A says: \"The workshop on Monday is cancelled.\" B replies. How much is B correcting?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "That was clearly the best presentation, wasn't it?",
-            "textToSpeak": "That was clearly the best presentation, wasn't it?",
+            "word": "The workshop on Monday is postponed.",
+            "textToSpeak": "The workshop on Monday is postponed.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Only the status is being corrected, not the day",
+                "The day and the status both changed"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswer": "Only the status is being corrected, not the day",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
+                2,
                 3,
-                1,
                 1
             ],
-            "hint": "This sounds like the speaker expects you to simply agree — that kind of tag usually falls.",
-            "explanation": "Because the speaker is already confident, the tag simply invites agreement and falls in pitch.",
-            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "Count how many words in B's sentence receive a peak.",
+            "explanation": "There is a single peak, on POSTPONED. MONDAY stays low, so the day is accepted. Two peaks, one on MONDAY and one on the status, would mean both were wrong.",
+            "emphasisRule": "One peak means one correction; accepted details stay low.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L58_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A says: \"Thanks for coming on Tuesday.\" B politely corrects her:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "This restaurant gets busy every weekend, doesn't it?",
-            "textToSpeak": "This restaurant gets busy every weekend, doesn't it?",
+            "word": "I think it was Wednesday, actually.",
+            "textToSpeak": "I think it was Wednesday, actually.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Emphasis on WEDNESDAY",
+                "Emphasis on THINK"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WEDNESDAY",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
+                2,
                 3,
-                1,
-                1
+                2
             ],
-            "hint": "There's no real doubt here, just an invitation to agree, so the tag pitch typically drops.",
-            "explanation": "When a speaker is sure and just wants confirmation, the tag question falls rather than rises.",
-            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "The speaker softens the correction at the end. What does the voice still highlight?",
+            "explanation": "THINK and ACTUALLY soften the correction, but they aren't the point. WEDNESDAY still takes the peak, and a slight rise afterward keeps the tone gentle.",
+            "emphasisRule": "A polite correction keeps the peak on the corrected word and softens the ending.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L58_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. Someone says: \"You're from Delhi, aren't you?\" You answer:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "That new phone is expensive, isn't it?",
-            "textToSpeak": "That new phone is expensive, isn't it?",
+            "word": "Actually, I'm from Jaipur.",
+            "textToSpeak": "Actually, I'm from Jaipur.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "Emphasis on ACTUALLY",
+                "Emphasis on JAIPUR"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on JAIPUR",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
+                2,
                 3,
-                1,
                 1
             ],
-            "hint": "Words like 'obviously' or 'clearly' show the speaker is already confident — that tag usually falls.",
-            "explanation": "This tag isn't a real question; it's inviting agreement, so it takes falling intonation.",
-            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "An opener can signal a correction without taking the peak. Where does the peak go?",
+            "explanation": "ACTUALLY warns the listener that a correction is coming but stays light. JAIPUR carries the information and the peak.",
+            "emphasisRule": "Openers like 'actually' mark a correction; the corrected word still holds the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L58_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A colleague just gave the wrong meeting time.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I'm not fully sure, but the gate changed, didn't it?",
-            "textToSpeak": "I'm not fully sure, but the gate changed, didn't it?",
+            "word": "I thought it started at four?",
+            "textToSpeak": "I thought it started at four?",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "A gentle correction posed as a question",
+                "A firm statement of the right time"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "A gentle correction posed as a question",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                3,
+                2,
                 2,
                 3
             ],
-            "hint": "This speaker is genuinely checking, not just confirming — expect the tag to rise.",
-            "explanation": "Because the speaker signals genuine uncertainty, the tag question rises in pitch, like a real yes/no question.",
-            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "A fall would sound final. What does the speaker's rise do instead?",
+            "explanation": "The rise at the end turns the correction into something the colleague can agree with, rather than an announcement. It lets the listener save face.",
+            "emphasisRule": "A rising ending on a correction softens it and invites agreement.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L59_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. Someone hurries through a scheduling message and catches her own slip.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I could be wrong about this, but the wifi password changed, didn't it?",
-            "textToSpeak": "I could be wrong about this, but the wifi password changed, didn't it?",
+            "word": "We meet on Tuesday, sorry, Thursday.",
+            "textToSpeak": "We meet on Tuesday, sorry, Thursday.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Emphasis on THURSDAY",
+                "Emphasis on TUESDAY"
             ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswer": "Emphasis on THURSDAY",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 2,
-                3
+                3,
+                1
             ],
-            "hint": "When someone admits they might be mistaken, the tag question that follows usually rises.",
-            "explanation": "When a speaker isn't sure and is truly asking, the tag at the end typically rises.",
-            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "The speaker has said two days. Which one should the listener write down?",
+            "explanation": "TUESDAY was the slip, so it gets no strong peak. THURSDAY replaces it and takes the peak.",
+            "emphasisRule": "In a self-correction, the replacement word takes the peak and the abandoned word is passed over.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L59_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. A speaker changes her mind mid-sentence.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You obviously trained for this race, didn't you?",
-            "textToSpeak": "You obviously trained for this race, didn't you?",
+            "word": "I'll email you, or rather, call you.",
+            "textToSpeak": "I'll email you, or rather, call you.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "Emphasis on EMAIL",
+                "Emphasis on CALL"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswer": "Emphasis on CALL",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
+                2,
                 3,
-                1,
                 1
             ],
-            "hint": "This speaker isn't really asking; they're inviting agreement, so the tag typically drops in pitch.",
-            "explanation": "Since there's no genuine doubt here, the tag falls instead of rising.",
-            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "She is changing a plan. Which verb is the plan now?",
+            "explanation": "EMAIL is the abandoned option, so it stays light. 'Or rather' signals the switch, and CALL takes the peak.",
+            "emphasisRule": "After a phrase like 'or rather' or 'I mean', the new word takes the peak.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L59_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch tell you about the names?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You clearly finished first, didn't you?",
-            "textToSpeak": "You clearly finished first, didn't you?",
+            "word": "Send it to Alex, sorry, Alia.",
+            "textToSpeak": "Send it to Alex, sorry, Alia.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "The first name is stronger, so the second is an afterthought",
+                "The second name is stronger, so it replaces the first"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "The second name is stronger, so it replaces the first",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
                 3,
-                1,
                 1
             ],
-            "hint": "Since the speaker already seems sure, expect the tag to fall rather than rise.",
-            "explanation": "Because the speaker is already confident, the tag simply invites agreement and falls in pitch.",
-            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "Compare how strongly each name is spoken. Which name is the speaker committing to?",
+            "explanation": "ALIA is spoken more strongly than ALEX, so it is the one that counts. ALEX was a slip, and 'sorry' flags it.",
+            "emphasisRule": "In a self-correction, the repaired word is stronger than the slip.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L60_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. A says: \"The post office opens at nine.\" B replies. What kind of reply is this?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You two are twins, aren't you?",
-            "textToSpeak": "You two are twins, aren't you?",
+            "word": "The bank opens at nine.",
+            "textToSpeak": "The bank opens at nine.",
             "options": [
-                "Rising tag (a real question — the speaker isn't sure)",
-                "Falling tag (seeking agreement — the speaker is fairly sure)"
+                "A plain statement of the time",
+                "A correction of which place is meant"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswer": "A correction of which place is meant",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
                 3,
+                1,
                 1,
                 1
             ],
-            "hint": "This sounds like the speaker expects you to simply agree — that kind of tag usually falls.",
-            "explanation": "When a speaker is sure and just wants confirmation, the tag question falls rather than rises.",
-            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
+            "hint": "Compare B's sentence with A's. What was kept and what was changed?",
+            "explanation": "Only the place changed and the time was kept, so the peak sits on BANK. A plain statement would peak on NINE.",
+            "emphasisRule": "A peak early in a sentence that repeats the other speaker's details signals a correction.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L60_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A friend asks: \"Where does your aunt live now?\" You answer, and the pitch peaks on the last word.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "You already know the answer, don't you?",
-            "textToSpeak": "You already know the answer, don't you?",
+            "word": "She lives in Mysore.",
+            "textToSpeak": "She lives in Mysore.",
             "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
+                "A correction of a city someone mentioned",
+                "A plain answer; nothing is being corrected"
             ],
-            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                3,
-                1,
-                1
-            ],
-            "hint": "There's no real doubt here, just an invitation to agree, so the tag pitch typically drops.",
-            "explanation": "This tag isn't a real question; it's inviting agreement, so it takes falling intonation.",
-            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch.",
-            "emotionContext": "seeking agreement — the speaker is fairly sure"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L60_Q3",
-            "instruction": "Identify the intonation pattern",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "I could be wrong, but you're new here, aren't you?",
-            "textToSpeak": "I could be wrong, but you're new here, aren't you?",
-            "options": [
-                "Falling tag (seeking agreement — the speaker is fairly sure)",
-                "Rising tag (a real question — the speaker isn't sure)"
-            ],
-            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswer": "A plain answer; nothing is being corrected",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 2,
-                3
+                3,
+                1
             ],
-            "hint": "The hedge at the start shows real doubt, so listen for an upward pitch on the tag itself.",
-            "explanation": "This tag functions as a real question here, so it takes rising intonation, not falling.",
-            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question.",
-            "emotionContext": "a real question — the speaker isn't sure"
+            "hint": "Look at what the friend asked. Is there anything to correct?",
+            "explanation": "The friend asked for new information, so MYSORE is simply the answer and takes a normal peak. There is no earlier wrong claim being fixed.",
+            "emphasisRule": "A final peak in an answer to a wh-question is a plain answer, not a correction.",
+            "emotionContext": "Correction"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L60_Q3",
+            "instruction": "Identify the emphasis. A receptionist says: \"Your appointment is with Dr. Mehta, right?\" You answer:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'm seeing Dr. Mehra, I think.",
+            "textToSpeak": "I'm seeing Dr. Mehra, I think.",
+            "options": [
+                "Emphasis on MEHRA",
+                "Emphasis on THINK"
+            ],
+            "correctAnswer": "Emphasis on MEHRA",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The two names sound almost the same. Which one needs the clearest peak?",
+            "explanation": "The names are similar, so the listener needs the difference to be obvious. MEHRA takes the peak, and 'I think' is just a hedge afterwards.",
+            "emphasisRule": "When two similar names are being separated, the corrected one takes the peak and any hedge afterwards stays low.",
+            "emotionContext": "Correction"
         }
     ]
 }

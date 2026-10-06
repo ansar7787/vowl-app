@@ -6,440 +6,441 @@
         {
             "id": "SPK_SPEAKSYNONYM_L111_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"going up and down repeatedly.\"",
-            "explanation": "In this sentence, \"fluctuates\" means going up and down repeatedly, so \"varies\" slots in naturally. \"shifts\" is a close second choice.",
-            "textToSpeak": "My blood sugar *fluctuates* significantly throughout the day.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Someone owns a shop and makes the day-to-day decisions.",
+            "explanation": "In this sentence \"run\" means to be in charge of a business. \"Manages\" and \"operates\" are the closest, \"oversees\" suggests supervising, and \"looks after\" is a friendlier phrase. It has nothing to do with moving on foot, and it's different from a road that \"runs\" along a coast.",
+            "textToSpeak": "She *runs* a small bakery downtown.",
             "acceptedSynonyms": [
-                "varies",
-                "changes",
-                "shifts",
-                "swings"
+                "operates",
+                "manages",
+                "looks after",
+                "oversees"
             ],
-            "correctAnswer": "varies"
+            "correctAnswer": "manages"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L111_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"going up and down repeatedly\" -- what word comes to mind?",
-            "explanation": "\"changes\" is a reliable synonym for \"fluctuates\", which means going up and down repeatedly here. \"swings\" and \"varies\" are also accepted.",
-            "textToSpeak": "Her energy level *fluctuates* significantly throughout the day.",
+            "instruction": "Say a word with the same meaning in this context.",
+            "hint": "Imagine a company is planning a yearly gathering and someone asks where it will take place.",
+            "explanation": "\"Hold\" here means to organize an event, not to grip something in your hand. \"Host\" and \"conduct\" are formal, \"have\" is the simple everyday word, and \"stage\" suggests a bigger, more organized event. Compare \"the hall can hold 500 people\", where a different verb is needed.",
+            "textToSpeak": "The company will *hold* its annual meeting in June.",
             "acceptedSynonyms": [
-                "varies",
-                "changes",
-                "shifts",
-                "swings"
+                "conduct",
+                "have",
+                "host",
+                "stage"
             ],
-            "correctAnswer": "changes"
+            "correctAnswer": "host"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L111_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"going up and down repeatedly.\"",
-            "explanation": "\"shifts\" works well here because \"fluctuates\" also means going up and down repeatedly. \"varies\" and \"changes\" would work too.",
-            "textToSpeak": "The patient's heart rate *fluctuates* significantly throughout the day.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "A bank is telling a customer when the replacement will arrive.",
+            "explanation": "Think about \"issue\": it is a formal verb meaning to officially give or send out. \"Provide\", \"give\", \"send\" and \"supply\" all work in different contexts, and \"send\" is very natural for cards. \"Issue\" can also mean a problem or an edition of a magazine, but not here.",
+            "textToSpeak": "The bank will *issue* a new card next week.",
             "acceptedSynonyms": [
-                "varies",
-                "changes",
-                "shifts",
-                "swings"
+                "send",
+                "provide",
+                "supply",
+                "give"
             ],
-            "correctAnswer": "shifts"
+            "correctAnswer": "send"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L112_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"treating something as more important than other things.\"",
-            "explanation": "\"prioritizes\" means treating something as more important than other things, and \"emphasizes\" captures that same idea naturally in this sentence. \"puts first\" is another solid option.",
-            "textToSpeak": "Our management team always *prioritizes* customer satisfaction.",
+            "instruction": "Say a word that matches the tone of the sentence.",
+            "hint": "Think of it this way: a teacher lets students avoid work and doesn't follow up.",
+            "explanation": "Notice that \"soft\" describes a person who is too lenient here, not something that feels smooth. \"Lenient\" is the direct synonym, \"permissive\" and \"indulgent\" suggest allowing too much, and \"easygoing\" is friendlier and less critical.",
+            "textToSpeak": "The teacher is too *soft*, so the students never do homework.",
             "acceptedSynonyms": [
-                "emphasizes",
-                "favors",
-                "puts first",
-                "values most"
+                "easygoing",
+                "lenient",
+                "indulgent",
+                "permissive"
             ],
-            "correctAnswer": "emphasizes"
+            "correctAnswer": "lenient"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L112_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"treating something as more important than other things\"?",
-            "explanation": "Good choice: \"favors\" is a strong match for \"prioritizes\", which means treating something as more important than other things. You could also say \"values most\" or \"emphasizes\".",
-            "textToSpeak": "Her small business always *prioritizes* customer satisfaction.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "After a long flight, someone is completely worn out and sleeping through everything.",
+            "explanation": "\"Deep\" as a description of sleep means heavy and undisturbed. \"Sound\" is the very common partner word, \"heavy\" suggests it's hard to wake him, and \"profound\" is formal. It's not the same \"deep\" as in \"a deep voice\" or \"deep water\".",
+            "textToSpeak": "After the long flight, he fell into a *deep* sleep.",
             "acceptedSynonyms": [
-                "emphasizes",
-                "favors",
-                "puts first",
-                "values most"
+                "profound",
+                "sound",
+                "heavy"
             ],
-            "correctAnswer": "favors"
+            "correctAnswer": "sound"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L112_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"treating something as more important than other things.\"",
-            "explanation": "\"puts first\" fits because \"prioritizes\" means treating something as more important than other things here. Other natural alternatives include \"emphasizes\" and \"favors\".",
-            "textToSpeak": "The hotel chain always *prioritizes* customer satisfaction.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Two runners crossed the line at almost exactly the same time.",
+            "explanation": "\"Close\" in a race means the difference is tiny. \"Tight\" and \"even\" are the natural choices, and \"narrow\" is often used for a small gap. It isn't a synonym for \"near\" or for a close friend.",
+            "textToSpeak": "The race was so *close* that nobody knew who won.",
             "acceptedSynonyms": [
-                "emphasizes",
-                "favors",
-                "puts first",
-                "values most"
+                "narrow",
+                "even",
+                "tight"
             ],
-            "correctAnswer": "puts first"
+            "correctAnswer": "tight"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L113_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"giving a good reason for something.\" What's a good match?",
-            "explanation": "In this sentence, \"justifies\" means giving a good reason for something, so \"warrants\" slots in naturally. \"validates\" is a close second choice.",
-            "textToSpeak": "This minor upgrade hardly *justifies* the extra cost.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Two friends have been arguing about a small problem, and one asks why they are bothering.",
+            "explanation": "\"Point\" here means the reason for doing something. \"Purpose\" is the direct match, \"use\" is common in spoken English, \"sense\" is slightly old-fashioned, and \"value\" points to the benefit. \"Point\" can also mean a moment or the sharp tip of a pencil.",
+            "textToSpeak": "What's the *point* of arguing about this?",
             "acceptedSynonyms": [
-                "warrants",
-                "validates",
-                "supports"
+                "use",
+                "value",
+                "sense",
+                "purpose"
             ],
-            "correctAnswer": "warrants"
+            "correctAnswer": "purpose"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L113_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"giving a good reason for something.\"",
-            "explanation": "\"validates\" is a reliable synonym for \"justifies\", which means giving a good reason for something here. \"supports\" and \"warrants\" are also accepted.",
-            "textToSpeak": "Her proposed timeline hardly *justifies* the extra cost.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Imagine a group of friends is taking turns choosing entertainment for the evening.",
+            "explanation": "In this sentence, \"turn\" is a noun here and means the opportunity that belongs to someone. \"Go\" is common and casual (especially British), while \"chance\" and \"opportunity\" also work, and \"opportunity\" is the most formal. The verb \"turn\" means to change direction or become.",
+            "textToSpeak": "It's your *turn* to choose the movie.",
             "acceptedSynonyms": [
-                "warrants",
-                "validates",
-                "supports"
+                "chance",
+                "go",
+                "opportunity"
             ],
-            "correctAnswer": "validates"
+            "correctAnswer": "go"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L113_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"giving a good reason for something\" -- what word comes to mind?",
-            "explanation": "\"supports\" works well here because \"justifies\" also means giving a good reason for something. \"warrants\" and \"validates\" would work too.",
-            "textToSpeak": "The added feature hardly *justifies* the extra cost.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Suppose a waiter is describing a really special drink on the wine list.",
+            "explanation": "\"Fine\" here means excellent quality. \"Excellent\" is the common synonym, \"superior\" is formal, \"premium\" suggests it is high-end, and \"high-quality\" is direct. This isn't the \"fine\" of \"I'm fine\", or a fine you pay for breaking a rule.",
+            "textToSpeak": "This restaurant serves *fine* wine.",
             "acceptedSynonyms": [
-                "warrants",
-                "validates",
-                "supports"
+                "excellent",
+                "superior",
+                "high-quality",
+                "premium"
             ],
-            "correctAnswer": "supports"
+            "correctAnswer": "excellent"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L114_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"saying the opposite of something.\"",
-            "explanation": "\"contradicts\" means saying the opposite of something, and \"conflicts with\" captures that same idea naturally in this sentence. \"disputes\" is another solid option.",
-            "textToSpeak": "This new lab result directly *contradicts* the earlier findings.",
+            "instruction": "Say a word with the same meaning in this context.",
+            "hint": "Picture this: you're telling a friend you can't meet because your calendar is crammed with tasks.",
+            "explanation": "Look at \"heavy\" first: it describes a schedule with too much on it, not something that weighs a lot. \"Packed\" is the natural everyday choice, \"full\" is simple, \"demanding\" suggests the work is hard, and \"busy\" is a plain and common option.",
+            "textToSpeak": "I have a *heavy* schedule this week.",
             "acceptedSynonyms": [
-                "conflicts with",
-                "opposes",
-                "disputes"
+                "full",
+                "demanding",
+                "packed",
+                "busy"
             ],
-            "correctAnswer": "conflicts with"
+            "correctAnswer": "packed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L114_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"saying the opposite of something.\"",
-            "explanation": "Good choice: \"opposes\" is a strong match for \"contradicts\", which means saying the opposite of something. You could also say \"conflicts with\" or \"disputes\".",
-            "textToSpeak": "Her follow-up study directly *contradicts* the earlier findings.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You slept badly because your bed pushes back rather than giving under your weight.",
+            "explanation": "\"Hard\" here describes a surface that doesn't give way. \"Firm\" is the polite, positive word for mattresses, \"stiff\" and \"rigid\" are more negative, and \"unyielding\" is a formal way to say the same. It is not \"difficult\", and it isn't \"a hard worker\".",
+            "textToSpeak": "I don't like this bed. The mattress is too *hard*.",
             "acceptedSynonyms": [
-                "conflicts with",
-                "opposes",
-                "disputes"
+                "unyielding",
+                "stiff",
+                "rigid",
+                "firm"
             ],
-            "correctAnswer": "opposes"
+            "correctAnswer": "firm"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L114_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"saying the opposite of something\"?",
-            "explanation": "\"disputes\" fits because \"contradicts\" means saying the opposite of something here. Other natural alternatives include \"opposes\" and \"conflicts with\".",
-            "textToSpeak": "The revised research paper directly *contradicts* the earlier findings.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "You're stuck at an airport with a long wait and no work to do.",
+            "explanation": "\"Pass\" here means to use time. \"Spend\" is the simplest, \"fill\" shows the time would be empty otherwise, \"kill\" is informal and very common, and \"while away\" is a longer phrase for using free time in a relaxed way. It's not the \"pass\" of \"I'll pass\", meaning decline.",
+            "textToSpeak": "We played cards to *pass* the time.",
             "acceptedSynonyms": [
-                "conflicts with",
-                "opposes",
-                "disputes"
+                "kill",
+                "spend",
+                "fill",
+                "while away"
             ],
-            "correctAnswer": "disputes"
+            "correctAnswer": "kill"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L115_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"making up for a loss or effort.\"",
-            "explanation": "In this sentence, \"compensates\" means making up for a loss or effort, so \"pays for\" slots in naturally. \"rewards\" is a close second choice.",
-            "textToSpeak": "Our new employer generously *compensates* overtime work.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Hundreds of people work in a large building where products are made.",
+            "explanation": "\"Plant\" here is a place where goods are produced. \"Factory\" is the most common word, \"facility\" is more formal and general, and \"mill\" is used for particular products. It isn't a garden plant or the action of putting seeds in the ground.",
+            "textToSpeak": "The *plant* employs about five hundred workers.",
             "acceptedSynonyms": [
-                "pays for",
-                "rewards",
-                "reimburses"
+                "mill",
+                "facility",
+                "factory"
             ],
-            "correctAnswer": "pays for"
+            "correctAnswer": "factory"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L115_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"making up for a loss or effort.\" What's a good match?",
-            "explanation": "\"rewards\" is a reliable synonym for \"compensates\", which means making up for a loss or effort here. \"reimburses\" and \"pays for\" are also accepted.",
-            "textToSpeak": "Her current company generously *compensates* overtime work.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Think about the land beside flowing water, not a place for money.",
+            "explanation": "\"Bank\" here means the land alongside a river. \"Shore\" is the everyday choice, \"edge\" is simple and general, and \"embankment\" is more technical and often describes a raised slope. The \"bank\" where people keep money is a different meaning.",
+            "textToSpeak": "We had a picnic on the river *bank*.",
             "acceptedSynonyms": [
-                "pays for",
-                "rewards",
-                "reimburses"
+                "shore",
+                "embankment",
+                "edge"
             ],
-            "correctAnswer": "rewards"
+            "correctAnswer": "shore"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L115_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"making up for a loss or effort.\"",
-            "explanation": "\"reimburses\" works well here because \"compensates\" also means making up for a loss or effort. \"pays for\" and \"rewards\" would work too.",
-            "textToSpeak": "The construction firm generously *compensates* overtime work.",
+            "hint": "A pet moves suddenly and with energy from the ground to a higher surface.",
+            "explanation": "The key word is \"sprang\", which means to jump or move quickly and suddenly. \"Jumped\" is simple, \"leapt\" is a strong, graceful jump, \"bounded\" suggests springy steps, and \"vaulted\" suggests jumping over or onto something. It is not the season or a metal coil.",
+            "textToSpeak": "The cat *sprang* onto the counter.",
             "acceptedSynonyms": [
-                "pays for",
-                "rewards",
-                "reimburses"
+                "vaulted",
+                "jumped",
+                "bounded",
+                "leapt"
             ],
-            "correctAnswer": "reimburses"
+            "correctAnswer": "jumped"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L116_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"working jointly with others\" -- what word comes to mind?",
-            "explanation": "\"collaborates\" means working jointly with others, and \"cooperates\" captures that same idea naturally in this sentence. \"partners\" is another solid option.",
-            "textToSpeak": "Our product manager closely *collaborates* with the design team.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "A road keeps beside the edge of the sea for a long distance.",
+            "explanation": "Here, \"runs\" describes the direction or length of a road. \"Stretches\" and \"extends\" both show a long distance, \"goes\" is casual, and \"follows\" suggests the road matches the shape of the coast. This is not \"run a business\" or \"run a race\".",
+            "textToSpeak": "The road *runs* along the coast for fifty miles.",
             "acceptedSynonyms": [
-                "cooperates",
-                "works together",
-                "partners",
-                "coordinates"
+                "extends",
+                "follows",
+                "stretches",
+                "goes"
             ],
-            "correctAnswer": "cooperates"
+            "correctAnswer": "stretches"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L116_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"working jointly with others.\"",
-            "explanation": "Good choice: \"works together\" is a strong match for \"collaborates\", which means working jointly with others. You could also say \"coordinates\" or \"cooperates\".",
-            "textToSpeak": "Her engineering lead closely *collaborates* with the design team.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Think of it this way: an event organizer checks the size of a venue before booking it.",
+            "explanation": "\"Hold\" here means to have space for. \"Seat\" means to provide seats, \"accommodate\" is formal and general, \"fit\" is casual, and \"take\" is a simple, everyday choice. It's not the \"hold\" of \"hold a meeting\".",
+            "textToSpeak": "This hall can *hold* five hundred people.",
             "acceptedSynonyms": [
-                "cooperates",
-                "works together",
-                "partners",
-                "coordinates"
+                "take",
+                "fit",
+                "seat",
+                "accommodate"
             ],
-            "correctAnswer": "works together"
+            "correctAnswer": "accommodate"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L116_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"working jointly with others.\"",
-            "explanation": "\"partners\" fits because \"collaborates\" means working jointly with others here. Other natural alternatives include \"cooperates\" and \"works together\".",
-            "textToSpeak": "The marketing department closely *collaborates* with the design team.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You're at a newsstand and you're talking about the newest version of a magazine.",
+            "explanation": "\"Issue\" here means a version published at a set time. \"Edition\" is the most formal choice, \"copy\" refers to the physical item, and \"number\" is used in British English for a particular issue. It's not \"a problem\" or \"to issue\" something formally.",
+            "textToSpeak": "I read the latest *issue* of the magazine.",
             "acceptedSynonyms": [
-                "cooperates",
-                "works together",
-                "partners",
-                "coordinates"
+                "copy",
+                "number",
+                "edition"
             ],
-            "correctAnswer": "partners"
+            "correctAnswer": "edition"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L117_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"looking at something very closely\"?",
-            "explanation": "In this sentence, \"scrutinizes\" means looking at something very closely, so \"examines closely\" slots in naturally. \"reviews carefully\" is a close second choice.",
-            "textToSpeak": "My frugal aunt *scrutinizes* every receipt closely.",
+            "instruction": "Say a word that matches the tone of the sentence.",
+            "hint": "You need to speak in a way that doesn't wake a sleeping baby.",
+            "explanation": "Start with \"soft\": it describes a voice that isn't loud or harsh. \"Quiet\" and \"low\" fit most simply, \"gentle\" adds kindness, and \"muted\" suggests the sound has been reduced. It's not the \"soft\" of \"too soft on students\", which means lenient.",
+            "textToSpeak": "She spoke in a *soft* voice so she wouldn't wake the baby.",
             "acceptedSynonyms": [
-                "examines closely",
-                "inspects",
-                "reviews carefully",
-                "analyzes"
+                "low",
+                "muted",
+                "quiet",
+                "gentle"
             ],
-            "correctAnswer": "examines closely"
+            "correctAnswer": "quiet"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L117_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"looking at something very closely.\"",
-            "explanation": "\"inspects\" is a reliable synonym for \"scrutinizes\", which means looking at something very closely here. \"analyzes\" and \"examines closely\" are also accepted.",
-            "textToSpeak": "Her cautious mother *scrutinizes* every receipt closely.",
+            "hint": "Think of it this way: you're describing a radio host whose voice sits at the bottom of the pitch range.",
+            "explanation": "To choose well, note that \"deep\" describes a low pitch here. \"Low\" is the everyday word, \"bass\" is a musical term, \"rich\" describes fullness, and \"resonant\" suggests a voice that carries sound well. It isn't \"deep sleep\", which means heavy sleep.",
+            "textToSpeak": "He has a *deep* voice, like a radio host.",
             "acceptedSynonyms": [
-                "examines closely",
-                "inspects",
-                "reviews carefully",
-                "analyzes"
+                "low",
+                "resonant",
+                "rich",
+                "bass"
             ],
-            "correctAnswer": "inspects"
+            "correctAnswer": "low"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L117_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"looking at something very closely.\" What's a good match?",
-            "explanation": "\"reviews carefully\" works well here because \"scrutinizes\" also means looking at something very closely. \"examines closely\" and \"inspects\" would work too.",
-            "textToSpeak": "The savvy shopper *scrutinizes* every receipt closely.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You've entered a room where the air feels heavy and nothing has moved for hours.",
+            "explanation": "\"Close\" as a description of air means without enough fresh air. \"Stuffy\" is the everyday word, \"airless\" is more direct, and \"muggy\" suggests warm, damp air. It isn't the meaning of \"near\" or \"a close race\".",
+            "textToSpeak": "The room was *close* and smelled of old coffee.",
             "acceptedSynonyms": [
-                "examines closely",
-                "inspects",
-                "reviews carefully",
-                "analyzes"
+                "airless",
+                "muggy",
+                "stuffy"
             ],
-            "correctAnswer": "reviews carefully"
+            "correctAnswer": "stuffy"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L118_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"thinking about a decision again.\"",
-            "explanation": "\"reconsiders\" means thinking about a decision again, and \"rethinks\" captures that same idea naturally in this sentence. \"reassesses\" is another solid option.",
-            "textToSpeak": "My stubborn father rarely *reconsiders* a final decision.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Here's the scene: you're telling a story about the instant you noticed that something had gone wrong.",
+            "explanation": "\"Point\" here means a particular time in a process. \"Moment\" is the everyday word, \"stage\" suggests part of a longer sequence, \"time\" is simple, and \"juncture\" is formal. It isn't the purpose of doing something.",
+            "textToSpeak": "At that *point*, I realized I had made a mistake.",
             "acceptedSynonyms": [
-                "rethinks",
-                "reevaluates",
-                "reassesses"
+                "stage",
+                "juncture",
+                "time",
+                "moment"
             ],
-            "correctAnswer": "rethinks"
+            "correctAnswer": "moment"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L118_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"thinking about a decision again\" -- what word comes to mind?",
-            "explanation": "Good choice: \"reevaluates\" is a strong match for \"reconsiders\", which means thinking about a decision again. You could also say \"rethinks\" or \"reassesses\".",
-            "textToSpeak": "Her strict grandmother rarely *reconsiders* a final decision.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Overnight, the weather changed and temperatures fell sharply.",
+            "explanation": "\"Turn\" as a verb here means to become. \"Became\" is neutral, \"grew\" is literary, \"got\" is casual, and \"went\" is common with weather and colors. It's not the noun \"turn\", meaning someone's chance to do something.",
+            "textToSpeak": "The weather *turned* cold overnight.",
             "acceptedSynonyms": [
-                "rethinks",
-                "reevaluates",
-                "reassesses"
+                "got",
+                "grew",
+                "became",
+                "went"
             ],
-            "correctAnswer": "reevaluates"
+            "correctAnswer": "became"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L118_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"thinking about a decision again.\"",
-            "explanation": "\"reassesses\" fits because \"reconsiders\" means thinking about a decision again here. Other natural alternatives include \"reevaluates\" and \"rethinks\".",
-            "textToSpeak": "The strict landlord rarely *reconsiders* a final decision.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You parked in a place where you weren't allowed, and you're telling a friend about it.",
+            "explanation": "\"Fine\" here is a noun: money you pay as punishment. \"Penalty\" is the general word, \"ticket\" is very common for parking, \"citation\" is more formal and American, and \"charge\" is a broader term. It isn't the adjective \"fine\", meaning okay or excellent.",
+            "textToSpeak": "I got a *fine* for parking in the wrong place.",
             "acceptedSynonyms": [
-                "rethinks",
-                "reevaluates",
-                "reassesses"
+                "charge",
+                "citation",
+                "ticket",
+                "penalty"
             ],
-            "correctAnswer": "reassesses"
+            "correctAnswer": "ticket"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L119_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"holding up under difficult conditions.\"",
-            "explanation": "In this sentence, \"withstands\" means holding up under difficult conditions, so \"endures\" slots in naturally. \"tolerates\" is a close second choice.",
-            "textToSpeak": "This industrial casing easily *withstands* extreme temperatures.",
+            "instruction": "Say a word with the same meaning in this context.",
+            "hint": "You canceled your plans because of very strong rain.",
+            "explanation": "\"Heavy\" describes rain that falls strongly. \"Torrential\" is much stronger, \"intense\" is neutral, and \"hard\" is very common in spoken English. It's not a heavy schedule or a heavy bag.",
+            "textToSpeak": "We couldn't go out because of the *heavy* rain.",
             "acceptedSynonyms": [
-                "endures",
-                "resists",
-                "tolerates",
-                "survives"
+                "torrential",
+                "hard",
+                "intense"
             ],
-            "correctAnswer": "endures"
+            "correctAnswer": "hard"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L119_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"holding up under difficult conditions\"?",
-            "explanation": "\"resists\" is a reliable synonym for \"withstands\", which means holding up under difficult conditions here. \"survives\" and \"endures\" are also accepted.",
-            "textToSpeak": "Her new phone case easily *withstands* extreme temperatures.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You're describing a colleague who works with great effort and never misses a target.",
+            "explanation": "\"Hard\" in \"hard worker\" describes effort, not difficulty or firmness. \"Diligent\", \"industrious\" and \"dedicated\" are all common, and \"tireless\" suggests an amazing level of energy. It has nothing to do with the mattress sense of \"hard\".",
+            "textToSpeak": "He's a *hard* worker and never misses a deadline.",
             "acceptedSynonyms": [
-                "endures",
-                "resists",
-                "tolerates",
-                "survives"
+                "diligent",
+                "dedicated",
+                "tireless",
+                "industrious"
             ],
-            "correctAnswer": "resists"
+            "correctAnswer": "diligent"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L119_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"holding up under difficult conditions.\"",
-            "explanation": "\"tolerates\" works well here because \"withstands\" also means holding up under difficult conditions. \"endures\" and \"resists\" would work too.",
-            "textToSpeak": "The military-grade laptop easily *withstands* extreme temperatures.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "You're telling a friend that you succeeded in an official test on the first attempt.",
+            "explanation": "\"Pass\" here means to succeed in a test. \"Cleared\" is common in Indian English and elsewhere, \"got through\" is casual, and \"made it through\" suggests some effort or difficulty. It isn't \"pass the time\" or \"I'll pass\".",
+            "textToSpeak": "She *passed* her driving test on the first try.",
             "acceptedSynonyms": [
-                "endures",
-                "resists",
-                "tolerates",
-                "survives"
+                "made it through",
+                "cleared",
+                "got through"
             ],
-            "correctAnswer": "tolerates"
+            "correctAnswer": "cleared"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L120_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"never having happened before.\" What's a good match?",
-            "explanation": "\"unprecedented\" means never having happened before, and \"unparalleled\" captures that same idea naturally in this sentence. \"extraordinary\" is another solid option.",
-            "textToSpeak": "The local economy saw *unprecedented* growth this quarter.",
+            "hint": "Imagine a family started a small vegetable garden in spring.",
+            "explanation": "\"Plant\" here is a verb meaning to put seeds or young plants in the ground. \"Sowed\" is the standard word for seeds, \"put in\" is casual, and \"set out\" is often used for young plants. It is not the factory sense of \"plant\".",
+            "textToSpeak": "We *planted* tomatoes in April.",
             "acceptedSynonyms": [
-                "unparalleled",
-                "record-breaking",
-                "extraordinary",
-                "unmatched"
+                "put in",
+                "sowed",
+                "set out"
             ],
-            "correctAnswer": "unparalleled"
+            "correctAnswer": "sowed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L120_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"never having happened before.\"",
-            "explanation": "Good choice: \"record-breaking\" is a strong match for \"unprecedented\", which means never having happened before. You could also say \"unmatched\" or \"unparalleled\".",
-            "textToSpeak": "Her hometown's tourism industry saw *unprecedented* growth this quarter.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "Two people had a loud disagreement at home, and you're describing it to a friend.",
+            "explanation": "\"Row\" rhymes with \"cow\" here and is British. \"Argument\" is the general word, \"quarrel\" suggests a personal disagreement, \"dispute\" is more formal, and \"spat\" is a small or short one. It's not a line of seats or the act of moving a boat.",
+            "textToSpeak": "They had a *row* about money last night.",
             "acceptedSynonyms": [
-                "unparalleled",
-                "record-breaking",
-                "extraordinary",
-                "unmatched"
+                "argument",
+                "quarrel",
+                "spat",
+                "dispute"
             ],
-            "correctAnswer": "record-breaking"
+            "correctAnswer": "argument"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L120_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"never having happened before\" -- what word comes to mind?",
-            "explanation": "\"extraordinary\" fits because \"unprecedented\" means never having happened before here. Other natural alternatives include \"unparalleled\" and \"record-breaking\".",
-            "textToSpeak": "The region's tech sector saw *unprecedented* growth this quarter.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "You're describing a band that was expected at a festival but didn't come.",
+            "explanation": "\"Appear\" here means to arrive or be present. \"Show up\" and \"turn up\" are natural spoken phrases, and \"arrive\" is more general and formal. \"Appear\" can also mean \"seem\", as in \"she appears tired\", but that isn't the meaning here.",
+            "textToSpeak": "The band didn't *appear* at the festival.",
             "acceptedSynonyms": [
-                "unparalleled",
-                "record-breaking",
-                "extraordinary",
-                "unmatched"
+                "turn up",
+                "arrive",
+                "show up"
             ],
-            "correctAnswer": "extraordinary"
+            "correctAnswer": "show up"
         }
     ]
 }

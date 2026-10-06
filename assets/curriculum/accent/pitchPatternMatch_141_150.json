@@ -5,753 +5,753 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L141_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. How is the sentence organised by pitch? The planner lists two separate jobs she must tick off.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "He tuned the guitar and started the soundcheck.",
-            "textToSpeak": "He tuned the guitar and started the soundcheck.",
+            "word": "We'll book the venue and send the invitations.",
+            "textToSpeak": "We'll book the venue and send the invitations.",
             "options": [
-                "Single Nucleus: Emphasis only on SOUNDCHECK (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on GUITAR and SOUNDCHECK (One Peak per Clause)"
+                "Two peaks, VENUE and INVITATIONS: one for each job",
+                "One peak on INVITATIONS: the whole plan as one unit"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on SOUNDCHECK (Whole Sentence as One Unit)",
+            "correctAnswer": "Two peaks, VENUE and INVITATIONS: one for each job",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "This is really one single action told in two steps by the same person — it's usually said as one unit with just one peak.",
-            "explanation": "Because the same person performs both actions as one natural sequence, the whole sentence takes a single nucleus on SOUNDCHECK, not a separate peak on GUITAR.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "Are the two actions presented as one plan or as two separate items?",
+            "explanation": "The context treats each job as its own item to complete, so each clause gets its own peak. A single peak would present the sequence as a routine.",
+            "emphasisRule": "Separate tasks in a sequence each take a peak; a routine takes only one.",
+            "emotionContext": "Narrative"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L141_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. How is the sentence organised by pitch? A speaker describes his usual morning.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "He grabbed an umbrella and stepped outside.",
-            "textToSpeak": "He grabbed an umbrella and stepped outside.",
+            "word": "He makes the coffee and checks the news every morning.",
+            "textToSpeak": "He makes the coffee and checks the news every morning.",
             "options": [
-                "Two Nuclei: Emphasis on UMBRELLA and OUTSIDE (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on OUTSIDE (Whole Sentence as One Unit)"
+                "One peak on NEWS: a single routine described as a whole",
+                "Two peaks, COFFEE and NEWS: two separate announcements"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on OUTSIDE (Whole Sentence as One Unit)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "One peak on NEWS: a single routine described as a whole",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Notice it's the same subject doing both things in a natural sequence — that tends to keep just one main peak, near the end.",
-            "explanation": "This reads as one connected action rather than two separate pieces of news, so only OUTSIDE carries the main stress.",
-            "emphasisRule": "A tightly connected action sequence keeps one main pitch peak near the end, rather than splitting stress across each verb.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "A habit is described rather than two events. How many peaks suit that?",
+            "explanation": "A routine is treated as one unit, so there is one main peak near the end. Two peaks would present COFFEE and NEWS as separate pieces of news.",
+            "emphasisRule": "A habitual sequence has one main peak near its end; separate events have one each.",
+            "emotionContext": "Neutral information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L141_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"Did you finish the report and send it?\" B finished it but hasn't sent it.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She grabbed her coat and rushed out the door.",
-            "textToSpeak": "She grabbed her coat and rushed out the door.",
+            "word": "I finished the report, but I haven't sent it.",
+            "textToSpeak": "I finished the report, but I haven't sent it.",
             "options": [
-                "Single Nucleus: Emphasis only on DOOR (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on COAT and DOOR (One Peak per Clause)"
+                "Emphasis on FINISHED and SENT",
+                "Emphasis on REPORT and IT"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on DOOR (Whole Sentence as One Unit)",
+            "correctAnswer": "Emphasis on FINISHED and SENT",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "These two verbs describe one flowing routine, not two separate newsworthy events — expect a single peak at the end.",
-            "explanation": "COAT is just a step on the way to DOOR, the real point of the sentence — so only DOOR gets the nuclear stress.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "The report is given. What does B say about each of the two actions?",
+            "explanation": "REPORT and IT are the same given object, so they are spoken lightly. FINISHED and SENT are the two actions with different outcomes, so they take the peaks.",
+            "emphasisRule": "When one object is shared by two clauses, the contrasting verbs take the peaks.",
+            "emotionContext": "Narrative"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L142_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. Everyone already knows the launch was delayed. The speaker explains why.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The doctor reviewed the scans, and the nurse updated the file.",
-            "textToSpeak": "The doctor reviewed the scans, and the nurse updated the file.",
+            "word": "We delayed the launch because the supplier went bankrupt.",
+            "textToSpeak": "We delayed the launch because the supplier went bankrupt.",
             "options": [
-                "Single Nucleus: Emphasis only on FILE (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on SCANS and FILE (One Peak per Clause)"
+                "Emphasis on DELAYED",
+                "Emphasis on BANKRUPT"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on SCANS and FILE (One Peak per Clause)",
+            "correctAnswer": "Emphasis on BANKRUPT",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "Because both halves report separate news about different people, each half keeps its own stress.",
-            "explanation": "Since neither clause is backgrounded, both SCANS and FILE stand out with their own nuclear stress.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit, with their own pitch peak.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "The delay is shared knowledge. What new information does the because-clause carry?",
+            "explanation": "DELAYED and LAUNCH are old, so they stay low even though they open the sentence. The reason, BANKRUPT, is the news, which is why it carries the peak.",
+            "emphasisRule": "In an explanation, the because-clause carries the peak when the result is already known.",
+            "emotionContext": "Explanation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L142_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"Is she still angry?\" B explains she is calmer but not happy.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The mechanic replaced the brakes, and the technician calibrated the sensors.",
-            "textToSpeak": "The mechanic replaced the brakes, and the technician calibrated the sensors.",
+            "word": "Although she's calmer, she's still unhappy.",
+            "textToSpeak": "Although she's calmer, she's still unhappy.",
             "options": [
-                "Two Nuclei: Emphasis on BRAKES and SENSORS (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on SENSORS (Whole Sentence as One Unit)"
+                "Emphasis on SHE'S and STILL",
+                "Emphasis on CALMER and UNHAPPY"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on BRAKES and SENSORS (One Peak per Clause)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on CALMER and UNHAPPY",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "Two different subjects, two different actions — that usually means two nuclei, not one shared peak.",
-            "explanation": "Because two different people each contribute separate news, the sentence takes two nuclei — one on BRAKES, another on SENSORS.",
-            "emphasisRule": "When two clauses report separate news about two different people or things, each clause keeps its own nuclear stress.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "The sentence gives a concession and then a main point. Which words carry them?",
+            "explanation": "CALMER is the concession and UNHAPPY the main point, so each takes a peak. SHE'S and STILL are connecting words.",
+            "emphasisRule": "In a concession sentence, the concession and the main point each take a peak.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L142_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. How is the sentence organised by pitch? A speaker concedes a point before disagreeing.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The plumber fixed the pipes, and the electrician rewired the panel.",
-            "textToSpeak": "The plumber fixed the pipes, and the electrician rewired the panel.",
+            "word": "Although the design is attractive, it isn't practical.",
+            "textToSpeak": "Although the design is attractive, it isn't practical.",
             "options": [
-                "Single Nucleus: Emphasis only on PANEL (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on PIPES and PANEL (One Peak per Clause)"
+                "A rise after ATTRACTIVE sets up the contrast; PRACTICAL takes the final fall",
+                "A fall after ATTRACTIVE closes the thought, and PRACTICAL is an afterthought"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on PIPES and PANEL (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "A rise after ATTRACTIVE sets up the contrast; PRACTICAL takes the final fall",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Two different people are each doing their own separate thing here — each clause usually gets its own peak.",
-            "explanation": "PIPES and PANEL are two independent pieces of news about two different people, so each gets its own pitch peak.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit, with their own pitch peak.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "The first clause cannot stand alone. What does the voice do at its end?",
+            "explanation": "The lift after ATTRACTIVE tells the listener the sentence isn't finished and that a contrast is coming. PRACTICAL then delivers the real message and falls.",
+            "emphasisRule": "A concession clause ends with a rise; the main clause ends with a fall.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L143_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. How is the sentence organised by pitch? A manager sets a condition for a decision.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "They packed their bags and headed to the airport.",
-            "textToSpeak": "They packed their bags and headed to the airport.",
+            "word": "If the numbers hold up, we'll approve it.",
+            "textToSpeak": "If the numbers hold up, we'll approve it.",
             "options": [
-                "Single Nucleus: Emphasis only on AIRPORT (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on BAGS and AIRPORT (One Peak per Clause)"
+                "The if-clause ends on a rise, so the main clause follows; APPROVE carries the final peak",
+                "The if-clause ends on a fall, so the sentence is already finished and APPROVE is an afterthought"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on AIRPORT (Whole Sentence as One Unit)",
+            "correctAnswer": "The if-clause ends on a rise, so the main clause follows; APPROVE carries the final peak",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "Notice it's the same subject doing both things in a natural sequence — that tends to keep just one main peak, near the end.",
-            "explanation": "BAGS is just a step on the way to AIRPORT, the real point of the sentence — so only AIRPORT gets the nuclear stress.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "The condition is said first. Does it sound complete on its own?",
+            "explanation": "A rise after the condition signals that the sentence continues, and the main clause then carries the decision. A fall would finish the sentence before the result arrived.",
+            "emphasisRule": "An if-clause at the start ends with a rise; the main clause then peaks and falls.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L143_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"What's the plan for Saturday?\" B has a rain plan.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The chef prepped the vegetables, and the sous chef seasoned the sauce.",
-            "textToSpeak": "The chef prepped the vegetables, and the sous chef seasoned the sauce.",
+            "word": "If it rains, we'll move indoors.",
+            "textToSpeak": "If it rains, we'll move indoors.",
             "options": [
-                "Single Nucleus: Emphasis only on SAUCE (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on VEGETABLES and SAUCE (One Peak per Clause)"
+                "Emphasis on RAINS and MOVE",
+                "Emphasis on RAINS and INDOORS"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on VEGETABLES and SAUCE (One Peak per Clause)",
+            "correctAnswer": "Emphasis on RAINS and INDOORS",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "Listen for a small reset in pitch right after the comma — that signals a second, independent peak is coming.",
-            "explanation": "Since neither clause is backgrounded, both VEGETABLES and SAUCE stand out with their own nuclear stress.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit, with their own pitch peak.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "Both the condition and the result are new to A. Which words name them?",
+            "explanation": "The condition, RAINS, and the result, INDOORS, are the new information. MOVE is only the action that links them, so it falls away.",
+            "emphasisRule": "In a conditional, the condition word and the result word each take a peak.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L143_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. How is the sentence organised by pitch? A speaker starts a hypothetical and trails off.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The librarian shelved the returns, and the volunteer organized the archive.",
-            "textToSpeak": "The librarian shelved the returns, and the volunteer organized the archive.",
+            "word": "If I won the lottery...",
+            "textToSpeak": "If I won the lottery...",
             "options": [
-                "Two Nuclei: Emphasis on RETURNS and ARCHIVE (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on ARCHIVE (Whole Sentence as One Unit)"
+                "Rises at the end: the sentence is unfinished",
+                "Falls at the end: the thought is complete and finished"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on RETURNS and ARCHIVE (One Peak per Clause)",
+            "correctAnswer": "Rises at the end: the sentence is unfinished",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                3,
                 1,
-                1,
+                2,
+                2,
                 3
             ],
-            "hint": "Because both halves report separate news about different people, each half keeps its own stress.",
-            "explanation": "Because two different people each contribute separate news, the sentence takes two nuclei — one on RETURNS, another on ARCHIVE.",
-            "emphasisRule": "When two clauses report separate news about two different people or things, each clause keeps its own nuclear stress.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "Is the speaker finished? What does the voice do on the last word?",
+            "explanation": "The rise on LOTTERY signals that more is coming, such as what the speaker would do. A fall would sound like a complete statement.",
+            "emphasisRule": "A rising end on a clause signals an unfinished thought.",
+            "emotionContext": "Narrative"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L144_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. Two people called Sam work in the office. You specify.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The landlord repaired the boiler, and the tenant replaced the carpet.",
-            "textToSpeak": "The landlord repaired the boiler, and the tenant replaced the carpet.",
+            "word": "The Sam who works in finance called.",
+            "textToSpeak": "The Sam who works in finance called.",
             "options": [
-                "Single Nucleus: Emphasis only on CARPET (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on BOILER and CARPET (One Peak per Clause)"
+                "Emphasis on SAM",
+                "Emphasis on FINANCE"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on BOILER and CARPET (One Peak per Clause)",
+            "correctAnswer": "Emphasis on FINANCE",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "Two different subjects, two different actions — that usually means two nuclei, not one shared peak.",
-            "explanation": "BOILER and CARPET are two independent pieces of news about two different people, so each gets its own pitch peak.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit, with their own pitch peak.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "The listener knows two Sams. Which word tells them apart?",
+            "explanation": "SAM is shared by both candidates, so it stays low. FINANCE is the identifying detail in the relative clause, so the peak lands on it.",
+            "emphasisRule": "In a restrictive relative clause, the identifying detail takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L144_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. Several folders are on the desk; you need the one with the invoices.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "He locked the office and walked to his car.",
-            "textToSpeak": "He locked the office and walked to his car.",
+            "word": "I need the folder that has the invoices.",
+            "textToSpeak": "I need the folder that has the invoices.",
             "options": [
-                "Single Nucleus: Emphasis only on CAR (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on OFFICE and CAR (One Peak per Clause)"
+                "Emphasis on FOLDER",
+                "Emphasis on INVOICES"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on CAR (Whole Sentence as One Unit)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on INVOICES",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "This is really one single action told in two steps by the same person — it's usually said as one unit with just one peak.",
-            "explanation": "OFFICE is just a step on the way to CAR, the real point of the sentence — so only CAR gets the nuclear stress.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "'Folder' is common to every candidate. What picks one out?",
+            "explanation": "FOLDER is shared, so it stays low. INVOICES is what distinguishes the one you need, so it gets the main lift.",
+            "emphasisRule": "A relative clause identifies by its content word, not by the shared noun.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L144_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. Several customers called yesterday. The speaker identifies which one wants a refund.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The teacher graded the quizzes, and the aide organized the supplies.",
-            "textToSpeak": "The teacher graded the quizzes, and the aide organized the supplies.",
+            "word": "The man who called yesterday wants a refund.",
+            "textToSpeak": "The man who called yesterday wants a refund.",
             "options": [
-                "Single Nucleus: Emphasis only on SUPPLIES (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on QUIZZES and SUPPLIES (One Peak per Clause)"
+                "Emphasis on YESTERDAY and REFUND",
+                "Emphasis on MAN and CALLED"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on QUIZZES and SUPPLIES (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on YESTERDAY and REFUND",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "This isn't one combined action; it's two independent updates joined by ‘and’ — expect two separate peaks, not one.",
-            "explanation": "Since neither clause is backgrounded, both QUIZZES and SUPPLIES stand out with their own nuclear stress.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit, with their own pitch peak.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "Two things matter: which man, and what he wants. Which words carry them?",
+            "explanation": "YESTERDAY identifies which man, and REFUND is the request. MAN and CALLED are the common frame.",
+            "emphasisRule": "In a sentence with an identifying clause and a main message, each part takes a peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L145_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"How do the salary and the benefits compare?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The waiter cleared the table and reset it quickly.",
-            "textToSpeak": "The waiter cleared the table and reset it quickly.",
+            "word": "The salary is higher, while the benefits are weaker.",
+            "textToSpeak": "The salary is higher, while the benefits are weaker.",
             "options": [
-                "Single Nucleus: Emphasis only on QUICKLY (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on TABLE and QUICKLY (One Peak per Clause)"
+                "Emphasis on HIGHER and WEAKER",
+                "Emphasis on SALARY and BENEFITS"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on QUICKLY (Whole Sentence as One Unit)",
+            "correctAnswer": "Emphasis on HIGHER and WEAKER",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "These two verbs describe one flowing routine, not two separate newsworthy events — expect a single peak at the end.",
-            "explanation": "Because the same person performs both actions as one natural sequence, the whole sentence takes a single nucleus on QUICKLY, not a separate peak on TABLE.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "Both topics came from A. What does B say about each?",
+            "explanation": "SALARY and BENEFITS are given, so they sit low. HIGHER and WEAKER are the new assessments that contrast with each other.",
+            "emphasisRule": "In a contrast between given items, the contrasting assessments take the peaks.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L145_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"Is it risky or safe?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The coach adjusted the lineup, and the captain rallied the team.",
-            "textToSpeak": "The coach adjusted the lineup, and the captain rallied the team.",
+            "word": "It's risky for beginners, but safe for experts.",
+            "textToSpeak": "It's risky for beginners, but safe for experts.",
             "options": [
-                "Single Nucleus: Emphasis only on TEAM (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on LINEUP and TEAM (One Peak per Clause)"
+                "Emphasis on BEGINNERS and EXPERTS",
+                "Emphasis on RISKY and SAFE"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on LINEUP and TEAM (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BEGINNERS and EXPERTS",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "Because both halves report separate news about different people, each half keeps its own stress.",
-            "explanation": "LINEUP and TEAM are two independent pieces of news about two different people, so each gets its own pitch peak.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit, with their own pitch peak.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "'Risky' and 'safe' came from A. What is the new contrast in B's answer?",
+            "explanation": "RISKY and SAFE are given, so they sit low. The new contrast is between BEGINNERS and EXPERTS.",
+            "emphasisRule": "When both qualities are given, the groups they apply to take the peaks.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L145_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. Which continuation would most naturally follow?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The barista restocked the syrups, and the manager counted the register.",
-            "textToSpeak": "The barista restocked the syrups, and the manager counted the register.",
+            "word": "The first option is cheaper...",
+            "textToSpeak": "The first option is cheaper...",
             "options": [
-                "Two Nuclei: Emphasis on SYRUPS and REGISTER (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on REGISTER (Whole Sentence as One Unit)"
+                "...so that's the one we should choose.",
+                "...but the second is more reliable."
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on SYRUPS and REGISTER (One Peak per Clause)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "...but the second is more reliable.",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 3,
                 1,
-                1,
-                3
+                2
             ],
-            "hint": "Two different subjects, two different actions — that usually means two nuclei, not one shared peak.",
-            "explanation": "This sentence coordinates two separate events, not one continuous action, so both SYRUPS and REGISTER carry stress.",
-            "emphasisRule": "When two clauses report separate news about two different people or things, each clause keeps its own nuclear stress.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "The sentence trails upwards. What kind of continuation does that predict?",
+            "explanation": "The lift after CHEAPER signals a contrast to come, so the next clause adds an advantage for the other option. A fall would have supported a conclusion.",
+            "emphasisRule": "A fall-rise at the end of a clause predicts a contrasting continuation.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L146_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"How long did the doctor say to rest?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The pilot checked the instruments, and the co-pilot confirmed the route.",
-            "textToSpeak": "The pilot checked the instruments, and the co-pilot confirmed the route.",
+            "word": "She said a week would be enough.",
+            "textToSpeak": "She said a week would be enough.",
             "options": [
-                "Single Nucleus: Emphasis only on ROUTE (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on INSTRUMENTS and ROUTE (One Peak per Clause)"
+                "Emphasis on ENOUGH",
+                "Emphasis on WEEK"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on INSTRUMENTS and ROUTE (One Peak per Clause)",
+            "correctAnswer": "Emphasis on WEEK",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two different people are each doing their own separate thing here — each clause usually gets its own peak.",
-            "explanation": "Since neither clause is backgrounded, both INSTRUMENTS and ROUTE stand out with their own nuclear stress.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit, with their own pitch peak.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "A already knows the doctor gave advice about resting. What is the missing detail?",
+            "explanation": "ENOUGH repeats the idea of 'long enough', and SHE SAID is the reporting frame. WEEK is the actual duration, which is why it carries the peak.",
+            "emphasisRule": "In reported speech, the reported detail takes the peak and the reporting frame stays low.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L146_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"Who told you the meeting moved?\" B answers with a reported statement.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The airline refunded the fare, and the hotel waived the fee.",
-            "textToSpeak": "The airline refunded the fare, and the hotel waived the fee.",
+            "word": "Priya told me it had moved to Friday.",
+            "textToSpeak": "Priya told me it had moved to Friday.",
             "options": [
-                "Two Nuclei: Emphasis on FARE and FEE (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on FEE (Whole Sentence as One Unit)"
+                "Emphasis on FRIDAY",
+                "Emphasis on PRIYA"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on FARE and FEE (One Peak per Clause)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on PRIYA",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
                 3,
                 1,
                 1,
-                3
+                1,
+                1
             ],
-            "hint": "This isn't one combined action; it's two independent updates joined by ‘and’ — expect two separate peaks, not one.",
-            "explanation": "Because two different people each contribute separate news, the sentence takes two nuclei — one on FARE, another on FEE.",
-            "emphasisRule": "When two clauses report separate news about two different people or things, each clause keeps its own nuclear stress.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "A asked for a person. Which part of B's long sentence supplies that?",
+            "explanation": "The question was only about who, so the rest of the sentence repeats what A already knows. PRIYA takes the peak and the report that follows stays low.",
+            "emphasisRule": "When a reply is about who said something, the speaker's name takes the peak, even before a long report.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L146_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"Did they say who would be there?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She kicked off her shoes and collapsed on the couch.",
-            "textToSpeak": "She kicked off her shoes and collapsed on the couch.",
+            "word": "They said the directors would be there.",
+            "textToSpeak": "They said the directors would be there.",
             "options": [
-                "Two Nuclei: Emphasis on SHOES and COUCH (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on COUCH (Whole Sentence as One Unit)"
+                "Emphasis on DIRECTORS",
+                "Emphasis on THERE"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on COUCH (Whole Sentence as One Unit)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DIRECTORS",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "These two verbs describe one flowing routine, not two separate newsworthy events — expect a single peak at the end.",
-            "explanation": "This reads as one connected action rather than two separate pieces of news, so only COUCH carries the main stress.",
-            "emphasisRule": "A tightly connected action sequence keeps one main pitch peak near the end, rather than splitting stress across each verb.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "'Be there' has no new content. What does A want to know?",
+            "explanation": "THERE is a weak word at the end. DIRECTORS answers A's question, so it gets the main lift in the middle of the sentence.",
+            "emphasisRule": "In reported speech, the answering noun takes the peak, even if a weak adverb follows.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L147_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. How is the sentence organised by pitch? A speaker lists three things she did before work.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The farmer harvested the wheat, and the miller ground the flour.",
-            "textToSpeak": "The farmer harvested the wheat, and the miller ground the flour.",
+            "word": "I ran, showered, and made breakfast.",
+            "textToSpeak": "I ran, showered, and made breakfast.",
             "options": [
-                "Two Nuclei: Emphasis on WHEAT and FLOUR (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on FLOUR (Whole Sentence as One Unit)"
+                "Rises on RAN and SHOWERED, falls on BREAKFAST: a complete list",
+                "Falls on every clause, including RAN and SHOWERED: three separate announcements"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on WHEAT and FLOUR (One Peak per Clause)",
+            "correctAnswer": "Rises on RAN and SHOWERED, falls on BREAKFAST: a complete list",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
+                2,
                 3,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Because both halves report separate news about different people, each half keeps its own stress.",
-            "explanation": "This sentence coordinates two separate events, not one continuous action, so both WHEAT and FLOUR carry stress.",
-            "emphasisRule": "When two clauses report separate news about two different people or things, each clause keeps its own nuclear stress.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "Listen for what happens at each comma. Is the speaker finished?",
+            "explanation": "A rise at each comma tells the listener there is more, and the fall on BREAKFAST closes the list. Falling at every comma would turn it into three separate statements.",
+            "emphasisRule": "In a list of clauses, every clause but the last rises and the last one falls.",
+            "emotionContext": "Narrative"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L147_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. How is the sentence organised by pitch? A speaker lists reasons for not buying a house; the last is the most important.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The tailor hemmed the trousers, and the cobbler resoled the boots.",
-            "textToSpeak": "The tailor hemmed the trousers, and the cobbler resoled the boots.",
+            "word": "It's too expensive, too far, and, honestly, too noisy.",
+            "textToSpeak": "It's too expensive, too far, and, honestly, too noisy.",
             "options": [
-                "Single Nucleus: Emphasis only on BOOTS (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on TROUSERS and BOOTS (One Peak per Clause)"
+                "The last item has the strongest peak: the most important reason",
+                "All three items peak equally, so no reason is treated as more important"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on TROUSERS and BOOTS (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "The last item has the strongest peak: the most important reason",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                3,
+                2,
                 1,
-                1,
+                2,
                 3
             ],
-            "hint": "Two different subjects, two different actions — that usually means two nuclei, not one shared peak.",
-            "explanation": "Since neither clause is backgrounded, both TROUSERS and BOOTS stand out with their own nuclear stress.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit, with their own pitch peak.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "The speaker saves something for last. How does that show in the voice?",
+            "explanation": "The final reason, NOISY, gets the highest peak, which tells the listener it matters most. Equal peaks would treat all three as equal.",
+            "emphasisRule": "In a build-up list, the strongest peak goes on the item that matters most.",
+            "emotionContext": "List"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L147_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"What did you do over the weekend?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She closed her notebook and stretched her arms.",
-            "textToSpeak": "She closed her notebook and stretched her arms.",
+            "word": "We hiked, picnicked, and watched the sunset.",
+            "textToSpeak": "We hiked, picnicked, and watched the sunset.",
             "options": [
-                "Single Nucleus: Emphasis only on ARMS (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on NOTEBOOK and ARMS (One Peak per Clause)"
+                "Emphasis on HIKED, WATCHED, and SUNSET",
+                "Emphasis on HIKED, PICNICKED, and SUNSET"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on ARMS (Whole Sentence as One Unit)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on HIKED, PICNICKED, and SUNSET",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "This is really one single action told in two steps by the same person — it's usually said as one unit with just one peak.",
-            "explanation": "Because the same person performs both actions as one natural sequence, the whole sentence takes a single nucleus on ARMS, not a separate peak on NOTEBOOK.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "Two of the clauses have objects and one does not. Where does each clause peak?",
+            "explanation": "'Hiked' and 'picnicked' have no objects, so HIKED and PICNICKED take the peak on the verb. 'Watched the sunset' has an object, so the peak goes on SUNSET instead of WATCHED.",
+            "emphasisRule": "A clause with an object peaks on the object; a clause with only a verb peaks on the verb.",
+            "emotionContext": "Narrative"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L148_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A speaker uses 'of course' in the middle to show something is obvious.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "He opened his laptop and started typing.",
-            "textToSpeak": "He opened his laptop and started typing.",
+            "word": "The meeting, of course, is mandatory.",
+            "textToSpeak": "The meeting, of course, is mandatory.",
             "options": [
-                "Two Nuclei: Emphasis on LAPTOP and TYPING (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on TYPING (Whole Sentence as One Unit)"
+                "Emphasis on COURSE and MANDATORY",
+                "Emphasis on MEETING and MANDATORY"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on TYPING (Whole Sentence as One Unit)",
+            "correctAnswer": "Emphasis on MEETING and MANDATORY",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Notice it's the same subject doing both things in a natural sequence — that tends to keep just one main peak, near the end.",
-            "explanation": "This reads as one connected action rather than two separate pieces of news, so only TYPING carries the main stress.",
-            "emphasisRule": "A tightly connected action sequence keeps one main pitch peak near the end, rather than splitting stress across each verb.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "'Of course' is a comment on the sentence. Does it carry the peak?",
+            "explanation": "The comment is spoken quickly and low, so it can't take the peak. The two content words, MEETING and MANDATORY, carry the real information.",
+            "emphasisRule": "A parenthetical comment stays low; the surrounding content words keep their peaks.",
+            "emotionContext": "Aside"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L148_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. The speaker builds from a good rating to the best rating.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The nurse checked his pulse and recorded the result.",
-            "textToSpeak": "The nurse checked his pulse and recorded the result.",
+            "word": "It's good, in fact, it's the best I've seen.",
+            "textToSpeak": "It's good, in fact, it's the best I've seen.",
             "options": [
-                "Single Nucleus: Emphasis only on RESULT (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on PULSE and RESULT (One Peak per Clause)"
+                "Emphasis on GOOD and BEST",
+                "Emphasis on FACT and SEEN"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on RESULT (Whole Sentence as One Unit)",
+            "correctAnswer": "Emphasis on GOOD and BEST",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "These two verbs describe one flowing routine, not two separate newsworthy events — expect a single peak at the end.",
-            "explanation": "PULSE is just a step on the way to RESULT, the real point of the sentence — so only RESULT gets the nuclear stress.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "'In fact' introduces a stronger version of the same claim. Which two words are being compared?",
+            "explanation": "'In fact' is a link, so it stays low. GOOD and BEST are the two levels of praise, so each takes a peak. SEEN is a weak ending.",
+            "emphasisRule": "In an upgrade of a claim, the two levels each take a peak and the link stays low.",
+            "emotionContext": "Aside"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L148_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"When is the shop open?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "He finished his meal and headed to the terminal.",
-            "textToSpeak": "He finished his meal and headed to the terminal.",
+            "word": "It's open on Sundays, as far as I know.",
+            "textToSpeak": "It's open on Sundays, as far as I know.",
             "options": [
-                "Two Nuclei: Emphasis on MEAL and TERMINAL (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on TERMINAL (Whole Sentence as One Unit)"
+                "Emphasis on KNOW",
+                "Emphasis on SUNDAYS"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on TERMINAL (Whole Sentence as One Unit)",
+            "correctAnswer": "Emphasis on SUNDAYS",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Because this reads like one continuous action, the pitch doesn't reset after ‘and’ — it builds to just one peak.",
-            "explanation": "Since both verbs describe one flowing routine, the sentence keeps a single peak at TERMINAL instead of stressing MEAL too.",
-            "emphasisRule": "A tightly connected action sequence keeps one main pitch peak near the end, rather than splitting stress across each verb.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "The speaker hedges at the end. Which part is the actual information?",
+            "explanation": "'As far as I know' is a hedge, so it sits low even at the end. SUNDAYS answers the question and takes the peak.",
+            "emphasisRule": "A closing hedge stays low; the information before it takes the peak.",
+            "emotionContext": "Uncertainty"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L149_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"Which team hasn't approved the numbers?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The designer sketched the layout, and the developer built the prototype.",
-            "textToSpeak": "The designer sketched the layout, and the developer built the prototype.",
+            "word": "The finance team hasn't signed off on the numbers yet.",
+            "textToSpeak": "The finance team hasn't signed off on the numbers yet.",
             "options": [
-                "Two Nuclei: Emphasis on LAYOUT and PROTOTYPE (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on PROTOTYPE (Whole Sentence as One Unit)"
+                "Emphasis on FINANCE",
+                "Emphasis on SIGNED"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on LAYOUT and PROTOTYPE (One Peak per Clause)",
+            "correctAnswer": "Emphasis on FINANCE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
                 1,
                 1,
-                3
+                1,
+                1
             ],
-            "hint": "Two different subjects, two different actions — that usually means two nuclei, not one shared peak.",
-            "explanation": "Because two different people each contribute separate news, the sentence takes two nuclei — one on LAYOUT, another on PROTOTYPE.",
-            "emphasisRule": "When two clauses report separate news about two different people or things, each clause keeps its own nuclear stress.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "A has already asked about approval and the numbers. What is new?",
+            "explanation": "Almost everything after the team name repeats A's question, so only FINANCE is new. It takes the peak, even though it is at the start of a long sentence.",
+            "emphasisRule": "In a long reply to a which-question, the answering word takes the peak and the repeated clause drops.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L149_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"Where were you when you found out the flight was cancelled?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The photographer edited the album, and the printer bound the copies.",
-            "textToSpeak": "The photographer edited the album, and the printer bound the copies.",
+            "word": "I found out when I got to the gate and checked the screen.",
+            "textToSpeak": "I found out when I got to the gate and checked the screen.",
             "options": [
-                "Single Nucleus: Emphasis only on COPIES (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on ALBUM and COPIES (One Peak per Clause)"
+                "Emphasis on GATE",
+                "Emphasis on SCREEN"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on ALBUM and COPIES (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on GATE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two different people are each doing their own separate thing here — each clause usually gets its own peak.",
-            "explanation": "ALBUM and COPIES are two independent pieces of news about two different people, so each gets its own pitch peak.",
-            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit, with their own pitch peak.",
-            "emotionContext": "One Peak per Clause"
+            "hint": "A wants a place. The sentence ends with another noun. Which one answers?",
+            "explanation": "SCREEN is how the speaker found out, which A did not ask about. GATE is the location, so the peak lands on it and the rest falls.",
+            "emphasisRule": "In a long sentence, the word that answers the question takes the peak, wherever it sits.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L149_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. How is the sentence organised by pitch? A long sentence has several clauses but only one piece of news.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She poured the coffee and sat by the window.",
-            "textToSpeak": "She poured the coffee and sat by the window.",
+            "word": "After the meeting finished and everyone had gone home, the manager quietly resigned.",
+            "textToSpeak": "After the meeting finished and everyone had gone home, the manager quietly resigned.",
             "options": [
-                "Single Nucleus: Emphasis only on WINDOW (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on COFFEE and WINDOW (One Peak per Clause)"
+                "Equal peaks on FINISHED, HOME, and RESIGNED: every clause treated as news",
+                "One strong peak on RESIGNED; the earlier clauses are background"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on WINDOW (Whole Sentence as One Unit)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "One strong peak on RESIGNED; the earlier clauses are background",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Notice it's the same subject doing both things in a natural sequence — that tends to keep just one main peak, near the end.",
-            "explanation": "COFFEE is just a step on the way to WINDOW, the real point of the sentence — so only WINDOW gets the nuclear stress.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "How much of this sentence is the news? What do the earlier clauses do?",
+            "explanation": "The first clause sets the scene, and only the resignation is the news. So the main peak lands on RESIGNED, with the background clauses kept light.",
+            "emphasisRule": "In a long sentence with background clauses, the main clause carries the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L150_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"Why did the match end early?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She signed the form and slid it across the desk.",
-            "textToSpeak": "She signed the form and slid it across the desk.",
+            "word": "It ended early because a storm rolled in.",
+            "textToSpeak": "It ended early because a storm rolled in.",
             "options": [
-                "Two Nuclei: Emphasis on FORM and DESK (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on DESK (Whole Sentence as One Unit)"
+                "Emphasis on ROLLED",
+                "Emphasis on STORM"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on DESK (Whole Sentence as One Unit)",
+            "correctAnswer": "Emphasis on STORM",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "These two verbs describe one flowing routine, not two separate newsworthy events — expect a single peak at the end.",
-            "explanation": "Since both verbs describe one flowing routine, the sentence keeps a single peak at DESK instead of stressing FORM too.",
-            "emphasisRule": "A tightly connected action sequence keeps one main pitch peak near the end, rather than splitting stress across each verb.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "'Ended early' came from A. Which noun gives the reason?",
+            "explanation": "ENDED and EARLY are repeated from A's question, so they fall away. STORM is the reason and takes the peak.",
+            "emphasisRule": "In a because-clause answering why, the cause noun takes the peak.",
+            "emotionContext": "Explanation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L150_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What did A most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The toddler dropped his spoon and giggled loudly.",
-            "textToSpeak": "The toddler dropped his spoon and giggled loudly.",
+            "word": "She said she'd call after the meeting.",
+            "textToSpeak": "She said she'd call after the meeting.",
             "options": [
-                "Single Nucleus: Emphasis only on LOUDLY (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on SPOON and LOUDLY (One Peak per Clause)"
+                "Who did she say would call?",
+                "When did she say she'd call?"
             ],
-            "correctAnswer": "Single Nucleus: Emphasis only on LOUDLY (Whole Sentence as One Unit)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "Because this reads like one continuous action, the pitch doesn't reset after ‘and’ — it builds to just one peak.",
-            "explanation": "Because the same person performs both actions as one natural sequence, the whole sentence takes a single nucleus on LOUDLY, not a separate peak on SPOON.",
-            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress.",
-            "emotionContext": "Whole Sentence as One Unit"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L150_Q3",
-            "instruction": "Identify the pitch pattern",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "The dog chased the ball and ran to the gate.",
-            "textToSpeak": "The dog chased the ball and ran to the gate.",
-            "options": [
-                "Two Nuclei: Emphasis on BALL and GATE (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on GATE (Whole Sentence as One Unit)"
-            ],
-            "correctAnswer": "Single Nucleus: Emphasis only on GATE (Whole Sentence as One Unit)",
+            "correctAnswer": "When did she say she'd call?",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
+                2,
+                3,
+                1
+            ],
+            "hint": "Look at which word in the reported sentence has the peak. What was missing?",
+            "explanation": "The peak on MEETING shows that the time was the new information, so A asked when. A who-question would have put the peak on SHE.",
+            "emphasisRule": "A peak on a time phrase in reported speech answers a when-question.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L150_Q3",
+            "instruction": "Identify the emphasis. A: \"Is the new office closer or further?\"",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It's closer to the station, though further from the shops.",
+            "textToSpeak": "It's closer to the station, though further from the shops.",
+            "options": [
+                "Emphasis on STATION and SHOPS",
+                "Emphasis on CLOSER and FURTHER"
+            ],
+            "correctAnswer": "Emphasis on STATION and SHOPS",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "The first part here is really just the lead-up to the second — together they form one idea with a single peak.",
-            "explanation": "This reads as one connected action rather than two separate pieces of news, so only GATE carries the main stress.",
-            "emphasisRule": "A tightly connected action sequence keeps one main pitch peak near the end, rather than splitting stress across each verb.",
-            "emotionContext": "Whole Sentence as One Unit"
+            "hint": "'Closer' and 'further' came from A. What are they being compared to?",
+            "explanation": "CLOSER and FURTHER are given, so they fall away. The new information is the places, STATION and SHOPS, so each takes a peak.",
+            "emphasisRule": "When the comparison words are given, the compared places take the peaks.",
+            "emotionContext": "Contrast"
         }
     ]
 }

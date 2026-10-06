@@ -7,481 +7,428 @@
             "id": "SPK_SPEAKSYNONYM_L1_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"having a large size.\" What's a good match?",
-            "explanation": "In this sentence, \"big\" means having a large size, so \"large\" slots in naturally. \"huge\" is a close second choice.",
-            "textToSpeak": "My new apartment is surprisingly *big*.",
+            "hint": "Here's the scene: you're complimenting a friend's place. Which word says it has plenty of room?",
+            "explanation": "Keep in mind that \"large\" is the everyday swap for \"big\" when you talk about the size of a place or object. \"Spacious\" and \"roomy\" go one step further and say there's plenty of space inside, which is why they suit an apartment so well.",
+            "textToSpeak": "Wow, your new apartment is *big*!",
             "acceptedSynonyms": [
-                "large",
-                "huge",
-                "enormous",
                 "roomy",
-                "sizable"
+                "huge",
+                "spacious",
+                "large"
             ],
             "correctAnswer": "large"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L1_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"having a large size.\"",
-            "explanation": "\"huge\" is a reliable synonym for \"big\", which means having a large size here. \"enormous\" and \"roomy\" are also accepted.",
-            "textToSpeak": "Their family car is surprisingly *big*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Nobody is panicking. The problem just isn't worth stressing about.",
+            "explanation": "Here \"small\" has nothing to do with physical size. It describes how serious the problem is, so \"minor\" is the best fit. \"Slight\" and \"little\" work too, and \"little\" sounds the friendliest.",
+            "textToSpeak": "Don't worry, it's only a *small* problem.",
             "acceptedSynonyms": [
-                "large",
-                "huge",
-                "enormous",
-                "roomy",
-                "sizable"
+                "little",
+                "slight",
+                "minor"
             ],
-            "correctAnswer": "huge"
+            "correctAnswer": "minor"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L1_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"having a large size\" -- what word comes to mind?",
-            "explanation": "\"enormous\" works well here because \"big\" also means having a large size. \"roomy\" and \"sizable\" would work too.",
-            "textToSpeak": "This backpack is surprisingly *big*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "This is even bigger than big. What word would you use for a mountain of laundry?",
+            "explanation": "Quick reminder: \"enormous\" is a step above \"big\", so pick a word with the same power. \"Huge\" and \"massive\" match it well. Plain \"big\" or \"large\" would make the pile sound much less dramatic.",
+            "textToSpeak": "I have an *enormous* pile of laundry to wash.",
             "acceptedSynonyms": [
-                "large",
                 "huge",
-                "enormous",
-                "roomy",
-                "sizable"
+                "gigantic",
+                "giant",
+                "massive"
             ],
-            "correctAnswer": "enormous"
+            "correctAnswer": "huge"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L2_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"not taking up much space.\"",
-            "explanation": "\"small\" means not taking up much space, and \"little\" captures that same idea naturally in this sentence. \"modest\" is another solid option.",
-            "textToSpeak": "My studio apartment is quite *small*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're welcoming a guest at the door. What warm word could you use?",
+            "explanation": "Start with \"glad\": it is the most common everyday replacement when you're happy about something specific, like a person arriving. \"Delighted\" and \"thrilled\" turn the volume up, and \"pleased\" sounds a little more polite.",
+            "textToSpeak": "I'm so *happy* you could come tonight!",
             "acceptedSynonyms": [
-                "little",
-                "tiny",
-                "compact",
-                "cramped",
-                "modest"
+                "pleased",
+                "delighted",
+                "thrilled",
+                "glad"
             ],
-            "correctAnswer": "little"
+            "correctAnswer": "glad"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L2_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"not taking up much space.\"",
-            "explanation": "Good choice: \"tiny\" is a strong match for \"small\", which means not taking up much space. You could also say \"little\" or \"compact\".",
-            "textToSpeak": "Her new office is quite *small*.",
+            "hint": "Picture her face right after some bad news. How else could you describe it?",
+            "explanation": "It helps to know that \"unhappy\" is the plain, neutral word. \"Down\" is more casual and means low in mood. \"Upset\" fits best when something specific has hurt or bothered her.",
+            "textToSpeak": "She looked *sad* after the phone call.",
             "acceptedSynonyms": [
-                "little",
-                "tiny",
-                "compact",
-                "cramped",
-                "modest"
+                "down",
+                "unhappy",
+                "upset"
             ],
-            "correctAnswer": "tiny"
+            "correctAnswer": "unhappy"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L2_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"not taking up much space\"?",
-            "explanation": "\"compact\" fits because \"small\" means not taking up much space here. Other natural alternatives include \"tiny\" and \"cramped\".",
-            "textToSpeak": "The hotel bathroom is quite *small*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Think about a short, casual word a teenager might use about their parent's mood.",
+            "explanation": "Notice that \"mad\" is what most people say in casual speech, especially in American English. \"Cross\" sounds gentler and more British, and \"upset\" leans toward hurt feelings rather than real anger.",
+            "textToSpeak": "Dad gets *angry* when I forget to call.",
             "acceptedSynonyms": [
-                "little",
-                "tiny",
-                "compact",
-                "cramped",
-                "modest"
+                "mad",
+                "upset",
+                "cross"
             ],
-            "correctAnswer": "compact"
+            "correctAnswer": "mad"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L3_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"feeling good about something.\"",
-            "explanation": "In this sentence, \"happy\" means feeling good about something, so \"glad\" slots in naturally. \"pleased\" is a close second choice.",
-            "textToSpeak": "My little sister looked really *happy*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Someone is waiting and time is short. What kind of reply do they need?",
+            "explanation": "\"Quick\" is the natural partner for \"reply\". \"Prompt\" sounds more professional, as in a prompt response at work, and \"speedy\" is friendly but a bit playful.",
+            "textToSpeak": "Can you send me a *fast* reply? I'm about to board.",
             "acceptedSynonyms": [
-                "glad",
-                "cheerful",
-                "joyful",
-                "pleased",
-                "delighted"
+                "speedy",
+                "prompt",
+                "quick"
             ],
-            "correctAnswer": "glad"
+            "correctAnswer": "quick"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L3_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"feeling good about something.\" What's a good match?",
-            "explanation": "\"cheerful\" is a reliable synonym for \"happy\", which means feeling good about something here. \"delighted\" and \"glad\" are also accepted.",
-            "textToSpeak": "Our new neighbor looked really *happy*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You're calming a nervous beginner. Which word tells them it isn't complicated?",
+            "explanation": "Think about \"simple\": it is the go-to word for something that doesn't take much skill. \"Straightforward\" suggests clear steps you just follow, and \"uncomplicated\" sounds a little more careful.",
+            "textToSpeak": "Don't worry, cooking rice is *easy*.",
             "acceptedSynonyms": [
-                "glad",
-                "cheerful",
-                "joyful",
-                "pleased",
-                "delighted"
+                "simple",
+                "uncomplicated",
+                "straightforward"
             ],
-            "correctAnswer": "cheerful"
+            "correctAnswer": "simple"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L3_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"feeling good about something.\"",
-            "explanation": "\"joyful\" works well here because \"happy\" also means feeling good about something. \"glad\" and \"cheerful\" would work too.",
-            "textToSpeak": "The birthday boy looked really *happy*.",
+            "hint": "This is urgent. Which adverb tells the person not to wait even a minute?",
+            "explanation": "\"Straightaway\" is common in British English, while Americans often say \"right away\". \"At once\" sounds firm and a little formal, and \"promptly\" is the businesslike choice.",
+            "textToSpeak": "Call me *immediately* if anything changes.",
             "acceptedSynonyms": [
-                "glad",
-                "cheerful",
-                "joyful",
-                "pleased",
-                "delighted"
+                "promptly",
+                "at once",
+                "straightaway",
+                "right away"
             ],
-            "correctAnswer": "joyful"
+            "correctAnswer": "straightaway"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L4_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"feeling down about something\" -- what word comes to mind?",
-            "explanation": "\"sad\" means feeling down about something, and \"unhappy\" captures that same idea naturally in this sentence. \"down\" is another solid option.",
-            "textToSpeak": "My best friend seemed pretty *sad*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "You're thanking the host, so pick a word with a bit more energy than 'good'.",
+            "explanation": "As a replacement, \"great\" is the everyday upgrade from \"good\", friendly and natural after an event. \"Lovely\" is warmer and more British, and \"wonderful\" and \"fantastic\" sound more excited.",
+            "textToSpeak": "We had a *good* time at your party.",
             "acceptedSynonyms": [
-                "unhappy",
-                "upset",
-                "down",
-                "gloomy",
-                "blue"
+                "great",
+                "fantastic",
+                "wonderful",
+                "lovely"
             ],
-            "correctAnswer": "unhappy"
+            "correctAnswer": "great"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L4_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"feeling down about something.\"",
-            "explanation": "Good choice: \"upset\" is a strong match for \"sad\", which means feeling down about something. You could also say \"gloomy\" or \"blue\".",
-            "textToSpeak": "Her older brother seemed pretty *sad*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You're writing a review and want to sound clear but fair.",
+            "explanation": "Notice that \"poor\" is a measured way to say bad, exactly the kind of word you read in reviews. \"Terrible\" and \"awful\" show stronger disappointment.",
+            "textToSpeak": "The service at that restaurant was *bad*.",
             "acceptedSynonyms": [
-                "unhappy",
-                "upset",
-                "down",
-                "gloomy",
-                "blue"
+                "awful",
+                "poor",
+                "terrible"
             ],
-            "correctAnswer": "upset"
+            "correctAnswer": "poor"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L4_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"feeling down about something.\"",
-            "explanation": "\"down\" fits because \"sad\" means feeling down about something here. Other natural alternatives include \"blue\" and \"unhappy\".",
-            "textToSpeak": "The little boy seemed pretty *sad*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Someone made a friendly gesture. Which word describes the person's caring behavior?",
+            "explanation": "\"Nice\" describes a person's behavior here, not something pleasant. \"Kind\" is the closest match, \"thoughtful\" stresses that they remembered you, and \"sweet\" is warmer and more casual.",
+            "textToSpeak": "It was really *nice* of you to call.",
             "acceptedSynonyms": [
-                "unhappy",
-                "upset",
-                "down",
-                "gloomy",
-                "blue"
+                "kind",
+                "sweet",
+                "thoughtful"
             ],
-            "correctAnswer": "down"
+            "correctAnswer": "kind"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L5_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"moving with great speed\"?",
-            "explanation": "In this sentence, \"fast\" means moving with great speed, so \"quick\" slots in naturally. \"speedy\" is a close second choice.",
-            "textToSpeak": "The night train was incredibly *fast*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Someone needs fresh air. Which dramatic word do people use in a stuffy room?",
+            "explanation": "People love exaggeration when they talk about temperature. \"Boiling\" is the casual, dramatic choice, \"sweltering\" describes heavy, uncomfortable heat, and \"stifling\" adds the feeling that there's no fresh air.",
+            "textToSpeak": "It's so *hot* in here! Can we open a window?",
             "acceptedSynonyms": [
-                "quick",
-                "speedy",
-                "rapid",
-                "swift",
-                "brisk"
+                "boiling",
+                "sweltering",
+                "stifling"
             ],
-            "correctAnswer": "quick"
+            "correctAnswer": "boiling"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L5_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"moving with great speed.\"",
-            "explanation": "\"speedy\" is a reliable synonym for \"fast\", which means moving with great speed here. \"rapid\" and \"swift\" are also accepted.",
-            "textToSpeak": "That delivery driver was incredibly *fast*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Your energy is completely gone after a long week. Which stronger word would a friend understand?",
+            "explanation": "Notice that \"exhausted\" means more than a little tired, so it suits a whole week of late nights. \"Drained\" focuses on having no energy left, \"weary\" sounds more literary, and \"beat\" is a casual spoken option.",
+            "textToSpeak": "I'm *tired*. I worked late all week.",
             "acceptedSynonyms": [
-                "quick",
-                "speedy",
-                "rapid",
-                "swift",
-                "brisk"
+                "weary",
+                "exhausted",
+                "beat",
+                "drained"
             ],
-            "correctAnswer": "speedy"
+            "correctAnswer": "exhausted"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L5_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"moving with great speed.\" What's a good match?",
-            "explanation": "\"rapid\" works well here because \"fast\" also means moving with great speed. \"swift\" and \"brisk\" would work too.",
-            "textToSpeak": "Our taxi ride was incredibly *fast*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "You're reading a hotel review. Which word would a happy guest use for a room with no dirt at all?",
+            "explanation": "The plain \"clean\" just means there's no dirt. Reviewers usually reach for stronger words: \"spotless\" means not a mark anywhere, \"immaculate\" sounds impressive, and \"pristine\" suggests it looks brand new.",
+            "textToSpeak": "The hotel room was *clean* and the staff were so friendly.",
             "acceptedSynonyms": [
-                "quick",
-                "speedy",
-                "rapid",
-                "swift",
-                "brisk"
+                "immaculate",
+                "pristine",
+                "spotless"
             ],
-            "correctAnswer": "rapid"
+            "correctAnswer": "spotless"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L6_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"not requiring much effort.\"",
-            "explanation": "\"easy\" means not requiring much effort, and \"simple\" captures that same idea naturally in this sentence. \"basic\" is another solid option.",
-            "textToSpeak": "The final exam turned out to be *easy*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Think of the more formal verb you'd see on a receipt or in a shop's terms.",
+            "explanation": "Look at \"purchased\" first: it is the formal version of \"bought\", while \"got\" is very common in everyday talk. \"Ordered\" fits because it happened online, though it focuses on placing the order rather than paying.",
+            "textToSpeak": "I *bought* these shoes online last week.",
             "acceptedSynonyms": [
-                "simple",
-                "straightforward",
-                "effortless",
-                "manageable",
-                "basic"
+                "got",
+                "purchased",
+                "ordered"
             ],
-            "correctAnswer": "simple"
+            "correctAnswer": "purchased"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L6_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"not requiring much effort\" -- what word comes to mind?",
-            "explanation": "Good choice: \"straightforward\" is a strong match for \"easy\", which means not requiring much effort. You could also say \"simple\" or \"effortless\".",
-            "textToSpeak": "Her new assignment turned out to be *easy*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You just saw a great show. What other verb says you were pleased by it?",
+            "explanation": "To choose well, note that \"liked\" is the direct match, and \"appreciated\" sounds a little more thoughtful. \"Loved\" is stronger, which works here because of \"really\".",
+            "textToSpeak": "We really *enjoyed* the concert.",
             "acceptedSynonyms": [
-                "simple",
-                "straightforward",
-                "effortless",
-                "manageable",
-                "basic"
+                "appreciated",
+                "loved",
+                "liked"
             ],
-            "correctAnswer": "straightforward"
+            "correctAnswer": "liked"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L6_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"not requiring much effort.\"",
-            "explanation": "\"effortless\" fits because \"easy\" means not requiring much effort here. Other natural alternatives include \"straightforward\" and \"manageable\".",
-            "textToSpeak": "The cooking class turned out to be *easy*.",
+            "hint": "Think about what a volunteer does at an orientation day.",
+            "explanation": "As a replacement, \"assist\" is the neutral, slightly formal choice. \"Support\" suggests being there for someone over time, and \"guide\" adds the idea of showing them the way.",
+            "textToSpeak": "Volunteers *help* new students during orientation week.",
             "acceptedSynonyms": [
-                "simple",
-                "straightforward",
-                "effortless",
-                "manageable",
-                "basic"
+                "support",
+                "assist",
+                "guide"
             ],
-            "correctAnswer": "effortless"
+            "correctAnswer": "assist"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L7_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"requiring a lot of effort.\"",
-            "explanation": "In this sentence, \"difficult\" means requiring a lot of effort, so \"hard\" slots in naturally. \"demanding\" is a close second choice.",
-            "textToSpeak": "The math homework was more *difficult* than expected.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You're telling a story about a loud moment across a parking lot.",
+            "explanation": "Remember that \"yelled\" is the everyday word for shouting. \"Hollered\" is informal and very American, and \"bellowed\" suggests a deep, powerful voice.",
+            "textToSpeak": "She *shouted* my name across the parking lot.",
             "acceptedSynonyms": [
-                "hard",
-                "challenging",
-                "tough",
-                "demanding",
-                "tricky"
+                "bellowed",
+                "yelled",
+                "hollered"
             ],
-            "correctAnswer": "hard"
+            "correctAnswer": "yelled"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L7_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"requiring a lot of effort\"?",
-            "explanation": "\"challenging\" is a reliable synonym for \"difficult\", which means requiring a lot of effort here. \"tricky\" and \"hard\" are also accepted.",
-            "textToSpeak": "His driving test was more *difficult* than expected.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Think of it this way: you're passing on someone's message. Which verb sounds a bit lighter than 'said'?",
+            "explanation": "\"Mentioned\" is the closest here because it suggests he casually dropped the information. \"Stated\" is more formal, and \"noted\" sounds like he pointed it out on purpose.",
+            "textToSpeak": "He *said* he'd be a little late.",
             "acceptedSynonyms": [
-                "hard",
-                "challenging",
-                "tough",
-                "demanding",
-                "tricky"
+                "mentioned",
+                "stated",
+                "noted"
             ],
-            "correctAnswer": "challenging"
+            "correctAnswer": "mentioned"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L7_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"requiring a lot of effort.\"",
-            "explanation": "\"tough\" works well here because \"difficult\" also means requiring a lot of effort. \"hard\" and \"challenging\" would work too.",
-            "textToSpeak": "The job interview was more *difficult* than expected.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Someone doesn't understand the app yet. What verb would you use to ask them to make it clear?",
+            "explanation": "\"Describe\" asks for a picture of how it works. \"Clarify\" asks them to make something confusing clearer, and \"outline\" asks for the main steps only. All three keep the question's meaning.",
+            "textToSpeak": "Can you *explain* how this app works?",
             "acceptedSynonyms": [
-                "hard",
-                "challenging",
-                "tough",
-                "demanding",
-                "tricky"
+                "describe",
+                "clarify",
+                "outline"
             ],
-            "correctAnswer": "tough"
+            "correctAnswer": "describe"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L8_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"of high quality.\" What's a good match?",
-            "explanation": "\"good\" means of high quality, and \"great\" captures that same idea naturally in this sentence. \"tasty\" is another solid option.",
-            "textToSpeak": "The homemade soup tasted really *good*.",
+            "hint": "You're checking a friend's plans for the evening. What verb tells them when it will get going?",
+            "explanation": "\"Begins\" is the simple, neutral match. \"Commences\" is formal, the kind of word on an official program, and \"kicks off\" sounds lively, perfect for a concert or a party.",
+            "textToSpeak": "The concert *starts* at eight.",
             "acceptedSynonyms": [
-                "great",
-                "delicious",
-                "tasty",
-                "wonderful",
-                "excellent"
+                "kicks off",
+                "begins",
+                "commences"
             ],
-            "correctAnswer": "great"
+            "correctAnswer": "begins"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L8_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"of high quality.\"",
-            "explanation": "Good choice: \"delicious\" is a strong match for \"good\", which means of high quality. You could also say \"wonderful\" or \"excellent\".",
-            "textToSpeak": "That new bakery's bread tasted really *good*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "A friend stops mid-story and you want them to keep going.",
+            "explanation": "\"Carry on\" and \"go on\" are the friendly, spoken options. \"Proceed\" sounds more official and would feel stiff between friends, but it is still the same meaning.",
+            "textToSpeak": "Please *continue*. I'm listening.",
             "acceptedSynonyms": [
-                "great",
-                "delicious",
-                "tasty",
-                "wonderful",
-                "excellent"
+                "go on",
+                "proceed",
+                "carry on"
             ],
-            "correctAnswer": "delicious"
+            "correctAnswer": "carry on"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L8_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"of high quality\" -- what word comes to mind?",
-            "explanation": "\"tasty\" fits because \"good\" means of high quality here. Other natural alternatives include \"excellent\" and \"great\".",
-            "textToSpeak": "Grandma's apple pie tasted really *good*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "The meeting is over and you're telling a colleague about it. What other verb says it was done by noon?",
+            "explanation": "In practice, \"finished\" is the everyday word. \"Concluded\" is more formal and often used for meetings and speeches. \"Wrapped up\" is casual and suggests it ended neatly.",
+            "textToSpeak": "The meeting *ended* at noon.",
             "acceptedSynonyms": [
-                "great",
-                "delicious",
-                "tasty",
-                "wonderful",
-                "excellent"
+                "wrapped up",
+                "concluded",
+                "finished"
             ],
-            "correctAnswer": "tasty"
+            "correctAnswer": "finished"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L9_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"of poor quality.\"",
-            "explanation": "In this sentence, \"bad\" means of poor quality, so \"awful\" slots in naturally. \"terrible\" is a close second choice.",
-            "textToSpeak": "The old milk smelled pretty *bad*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Imagine you're praising your teacher. Which adjective shows how well she thinks?",
+            "explanation": "\"Intelligent\" is the standard word for a person who thinks well. \"Clever\" stresses quick thinking, and \"bright\" is friendly and often used about students or young people.",
+            "textToSpeak": "My English teacher is really *smart*.",
             "acceptedSynonyms": [
-                "awful",
-                "terrible",
-                "foul",
-                "unpleasant",
-                "nasty"
+                "intelligent",
+                "bright",
+                "clever"
             ],
-            "correctAnswer": "awful"
+            "correctAnswer": "intelligent"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L9_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"of poor quality.\"",
-            "explanation": "\"terrible\" is a reliable synonym for \"bad\", which means of poor quality here. \"foul\" and \"unpleasant\" are also accepted.",
-            "textToSpeak": "That leftover fish smelled pretty *bad*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Dogs make your little brother tremble. How would you describe how he feels about them?",
+            "explanation": "It helps to know that \"scared\" is the most common spoken word. \"Frightened\" is a bit more careful, and \"terrified\" is much stronger, so it suggests real panic.",
+            "textToSpeak": "My little brother is *afraid* of dogs.",
             "acceptedSynonyms": [
-                "awful",
-                "terrible",
-                "foul",
-                "unpleasant",
-                "nasty"
+                "terrified",
+                "frightened",
+                "scared"
             ],
-            "correctAnswer": "terrible"
+            "correctAnswer": "scared"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L9_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"of poor quality\"?",
-            "explanation": "\"foul\" works well here because \"bad\" also means of poor quality. \"unpleasant\" and \"nasty\" would work too.",
-            "textToSpeak": "The garbage bin smelled pretty *bad*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You laughed a lot last night. What stronger word would you use for that dad?",
+            "explanation": "Keep in mind that \"hilarious\" is a stronger, very natural word for someone who makes you laugh out loud. \"Amusing\" is milder, and \"entertaining\" suggests that he keeps people interested and having fun.",
+            "textToSpeak": "Your dad is so *funny*!",
             "acceptedSynonyms": [
-                "awful",
-                "terrible",
-                "foul",
-                "unpleasant",
-                "nasty"
+                "amusing",
+                "hilarious",
+                "entertaining"
             ],
-            "correctAnswer": "foul"
+            "correctAnswer": "hilarious"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L10_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"nice to look at.\"",
-            "explanation": "\"pretty\" means nice to look at, and \"lovely\" captures that same idea naturally in this sentence. \"charming\" is another solid option.",
-            "textToSpeak": "Her new dress looked really *pretty*.",
+            "hint": "Compliment a friend's outfit. Which word makes it sound warm and gentle rather than just OK?",
+            "explanation": "In practice, \"lovely\" is warm and gentle for clothes. \"Beautiful\" is broader, and \"gorgeous\" and \"stunning\" are stronger, so they sound more excited about the dress.",
+            "textToSpeak": "That's a *pretty* dress. Where did you get it?",
             "acceptedSynonyms": [
+                "stunning",
                 "lovely",
-                "beautiful",
-                "attractive",
                 "gorgeous",
-                "charming"
+                "beautiful"
             ],
             "correctAnswer": "lovely"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L10_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"nice to look at.\" What's a good match?",
-            "explanation": "Good choice: \"beautiful\" is a strong match for \"pretty\", which means nice to look at. You could also say \"lovely\" or \"attractive\".",
-            "textToSpeak": "The flower arrangement looked really *pretty*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Picture this: you're giving honest feedback about a film. Which word says it failed to keep you interested?",
+            "explanation": "As a replacement, \"dull\" is short and casual. \"Tedious\" says it was slow and tiring to sit through, and \"uninteresting\" is neutral and factual.",
+            "textToSpeak": "Sorry, but the movie was really *boring*.",
             "acceptedSynonyms": [
-                "lovely",
-                "beautiful",
-                "attractive",
-                "gorgeous",
-                "charming"
+                "dull",
+                "tedious",
+                "uninteresting"
             ],
-            "correctAnswer": "beautiful"
+            "correctAnswer": "dull"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L10_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"nice to look at.\"",
-            "explanation": "\"attractive\" fits because \"pretty\" means nice to look at here. Other natural alternatives include \"beautiful\" and \"gorgeous\".",
-            "textToSpeak": "That necklace looked really *pretty*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "It's advice before exam day. Which word shows that arriving late would be a real problem?",
+            "explanation": "Remember that \"essential\" means you can't skip it. \"Vital\" and \"crucial\" are even more urgent, and all three make the advice stronger than the plain word \"important\".",
+            "textToSpeak": "It's *important* to arrive early on exam day.",
             "acceptedSynonyms": [
-                "lovely",
-                "beautiful",
-                "attractive",
-                "gorgeous",
-                "charming"
+                "vital",
+                "essential",
+                "crucial"
             ],
-            "correctAnswer": "attractive"
+            "correctAnswer": "essential"
         }
     ]
 }

@@ -5,542 +5,587 @@
     "quests": [
         {
             "id": "ACC_WORDLINKING_L151_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which link may get an extra /r/ in some accents, even though no r is written?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "going",
-                "to",
-                "the",
-                "market"
+                "it",
+                "was",
+                "my",
+                "idea",
+                "of",
+                "fun"
             ],
-            "textToSpeak": "going to the market",
-            "correctAnswer": "going to",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'going' simplifies: gonna is dropped before the consonant that starts 'to'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'going' and 'to': the gonna is dropped in fast, connected speech, making the phrase sound like 'gonna'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "it was my idea of fun",
+            "correctAnswer": "idea of",
+            "hint": "A word ending in a weak vowel meets a vowel. Which pair?",
+            "explanation": "In some non-rhotic accents speakers put a small /r/ between 'idea' and 'of', saying 'idear of', even though no r is written. In rhotic accents that is not heard. It is worth recognising but not something you need to produce.",
+            "flowRule": "Intrusive /r/ (accent-dependent): In some non-rhotic accents speakers add an /r/ between a word ending in /ə/, /ɑː/ or /ɔː/ and a following vowel even when no r is written (idea of sounds like 'idear of'). It is common in those accents and absent in others, so it is useful to recognise but not something you need to produce.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L151_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Where might some speakers add an /r/ that is not in the spelling?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "want",
-                "to",
-                "leave",
-                "now"
+                "I",
+                "saw",
+                "it",
+                "on",
+                "the",
+                "news"
             ],
-            "textToSpeak": "want to leave now",
-            "correctAnswer": "want to",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'want' simplifies: wanna is dropped before the consonant that starts 'to'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'want' and 'to': the wanna is dropped in fast, connected speech, making the phrase sound like 'wanna'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "I saw it on the news",
+            "correctAnswer": "saw it",
+            "hint": "A word ending in a long open vowel meets another vowel.",
+            "explanation": "Speakers of some non-rhotic accents say 'sawr it', adding an /r/ after /ɔː/. Many people find it natural; others avoid it. Hearing it helps you understand speakers who use it.",
+            "flowRule": "Intrusive /r/ (accent-dependent): In some non-rhotic accents speakers add an /r/ between a word ending in /ə/, /ɑː/ or /ɔː/ and a following vowel even when no r is written (idea of sounds like 'idear of'). It is common in those accents and absent in others, so it is useful to recognise but not something you need to produce.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L151_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which link may get an extra /r/ in some accents, even though no r is written?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "got",
-                "to",
-                "be",
-                "there"
+                "we",
+                "have",
+                "extra",
+                "ink",
+                "in",
+                "stock"
             ],
-            "textToSpeak": "got to be there",
-            "correctAnswer": "got to",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'got' simplifies: gotta is dropped before the consonant that starts 'to'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'got' and 'to': the gotta is dropped in fast, connected speech, making the phrase sound like 'gotta'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "we have extra ink in stock",
+            "correctAnswer": "extra ink",
+            "hint": "A word ending in a weak vowel meets a vowel.",
+            "explanation": "The weak /ə/ at the end of 'extra' meets the vowel of 'ink', and some speakers add /r/, saying 'extrar ink'. Others use a tiny catch or just run the vowels together. It is accent-dependent.",
+            "flowRule": "Intrusive /r/ (accent-dependent): In some non-rhotic accents speakers add an /r/ between a word ending in /ə/, /ɑː/ or /ɔː/ and a following vowel even when no r is written (idea of sounds like 'idear of'). It is common in those accents and absent in others, so it is useful to recognise but not something you need to produce.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L152_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Where might some speakers add an /r/ that is not in the spelling?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "trying",
-                "to",
-                "catch",
-                "up"
+                "the",
+                "new",
+                "law",
+                "is",
+                "clear"
             ],
-            "textToSpeak": "trying to catch up",
-            "correctAnswer": "trying to",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'trying' simplifies: tryna is dropped before the consonant that starts 'to'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'trying' and 'to': the tryna is dropped in fast, connected speech, making the phrase sound like 'tryna'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "the new law is clear",
+            "correctAnswer": "law is",
+            "hint": "Look for a word with no r in its spelling that ends in a long open vowel.",
+            "explanation": "After /ɔː/, some non-rhotic speakers add /r/ before a vowel: 'lawr is'. The word has no r in its spelling, which makes the /r/ intrusive rather than linking. Treat it as something to recognise.",
+            "flowRule": "Intrusive /r/ (accent-dependent): In some non-rhotic accents speakers add an /r/ between a word ending in /ə/, /ɑː/ or /ɔː/ and a following vowel even when no r is written (idea of sounds like 'idear of'). It is common in those accents and absent in others, so it is useful to recognise but not something you need to produce.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L152_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which link carries a linking /r/?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "used",
-                "to",
-                "live",
-                "here"
+                "I",
+                "saw",
+                "her",
+                "over",
+                "there"
             ],
-            "textToSpeak": "used to live here",
-            "correctAnswer": "used to",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'used' simplifies: useta is dropped before the consonant that starts 'to'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'used' and 'to': the useta is dropped in fast, connected speech, making the phrase sound like 'useta'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
+            "textToSpeak": "I saw her over there",
+            "correctAnswer": "her over",
+            "hint": "Two words in the sentence could invite an /r/. Only one has an r in the spelling.",
+            "explanation": "'Her' ends in a written r, so the /r/ is genuinely there before 'over' in most accents. 'Saw her' offers no vowel at all, because 'her' begins with /h/. A written r is the clue that separates a linking /r/ from an intrusive one.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L152_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which word-final r connects to the next vowel?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "ought",
-                "to",
-                "try",
-                "harder"
+                "the",
+                "drawer",
+                "and",
+                "the",
+                "sofa",
+                "arrived",
+                "today"
             ],
-            "textToSpeak": "ought to try harder",
-            "correctAnswer": "ought to",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'ought' simplifies: oughta is dropped before the consonant that starts 'to'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'ought' and 'to': the oughta is dropped in fast, connected speech, making the phrase sound like 'oughta'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
+            "textToSpeak": "the drawer and the sofa arrived today",
+            "correctAnswer": "drawer and",
+            "hint": "Which boundary could carry an /r/ across, because of the spelling?",
+            "explanation": "'Drawer' ends in a written r, so 'drawer and' has a linking /r/ in most accents. 'Sofa arrived' has no r in its spelling, so any /r/ there would be intrusive. The spelling is the guide.",
+            "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L153_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which link is a glide between two vowels, not a consonant link?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "could",
-                "have",
-                "been",
-                "there"
+                "I'll",
+                "try",
+                "it",
+                "on",
+                "later"
             ],
-            "textToSpeak": "could have been there",
-            "correctAnswer": "could have",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'could' simplifies: could've is dropped before the consonant that starts 'have'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'could' and 'have': the could've is dropped in fast, connected speech, making the phrase sound like 'could've'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "I'll try it on later",
+            "correctAnswer": "try it",
+            "hint": "Skip the consonant links. Where does one vowel run straight into another?",
+            "explanation": "'Try' ends in /aɪ/ and 'it' begins with /ɪ/, so a light /j/ glides across; no consonant is released. 'It on' is the consonant link in this sentence, carried by /t/.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L153_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Find the connection between two vowel sounds",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "should",
-                "have",
-                "told",
-                "them"
+                "who",
+                "are",
+                "you",
+                "calling"
             ],
-            "textToSpeak": "should have told them",
-            "correctAnswer": "should have",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'should' simplifies: should've is dropped before the consonant that starts 'have'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'should' and 'have': the should've is dropped in fast, connected speech, making the phrase sound like 'should've'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "who are you calling",
+            "correctAnswer": "who are",
+            "hint": "A question about identity. Which pair has a vowel on both sides?",
+            "explanation": "'Who' ends in /uː/ and 'are' begins with a vowel, so a faint /w/ eases between them. 'Are you' does not link, because /r/ meets /j/. The glide is the point of the question.",
+            "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L153_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Spot the place where two vowel sounds touch",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "would",
-                "have",
-                "worked",
-                "well"
+                "the",
+                "sea",
+                "is",
+                "calm",
+                "today"
             ],
-            "textToSpeak": "would have worked well",
-            "correctAnswer": "would have",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'would' simplifies: would've is dropped before the consonant that starts 'have'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'would' and 'have': the would've is dropped in fast, connected speech, making the phrase sound like 'would've'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "the sea is calm today",
+            "correctAnswer": "sea is",
+            "hint": "Which link has no consonant between its two sounds?",
+            "explanation": "'Sea' ends in /iː/ and 'is' begins with /ɪ/, so a light /j/ slips between them. Because there is no released consonant, this link sounds quite different from the ones with /t/, /s/ or /n/.",
+            "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L154_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Where do two sounds blend into one in fast, informal speech?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "sixth",
-                "floor",
-                "please",
-                "press"
+                "I've",
+                "got",
+                "you",
+                "covered"
             ],
-            "textToSpeak": "sixth floor please press",
-            "correctAnswer": "sixth floor",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'sixth' simplifies: /k/ elides is dropped before the consonant that starts 'floor'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'sixth' and 'floor': the /k/ elides is dropped in fast, connected speech, making the phrase sound like 'six' floor'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
+            "textToSpeak": "I've got you covered",
+            "correctAnswer": "got you",
+            "hint": "Which pair merges into a new sound?",
+            "explanation": "'Got you' sounds like 'gotcha' as /t/ and /j/ merge into /tʃ/. 'Covered' has no link. In this question, the sound at the boundary itself changes.",
+            "flowRule": "Yod-coalescence (informal speech): When a word ending in /t/, /d/, /s/ or /z/ is followed by 'you' or 'your', the two sounds often merge into one: /t/+/j/ becomes /tʃ/ ('got you' sounds like 'gotcha'), /d/+/j/ becomes /dʒ/ ('did you' like 'didja'), /s/+/j/ becomes /ʃ/ and /z/+/j/ becomes /ʒ/. This is a normal informal reduction, not a mistake, and careful speakers may keep the sounds apart.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L154_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Where does a final /t/, /d/ or /n/ shift to match the next sound?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "twelfth",
-                "night",
-                "was",
-                "memorable"
+                "just",
+                "one",
+                "more",
+                "try"
             ],
-            "textToSpeak": "twelfth night was memorable",
-            "correctAnswer": "twelfth night",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'twelfth' simplifies: /θ/ elides is dropped before the consonant that starts 'night'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'twelfth' and 'night': the /θ/ elides is dropped in fast, connected speech, making the phrase sound like 'twelf' night'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
+            "textToSpeak": "just one more try",
+            "correctAnswer": "one more",
+            "hint": "Which pair's first word changes its last sound?",
+            "explanation": "Before /m/ the /n/ of 'one' often moves towards /m/, giving 'wum more'. 'Just one' does not link, because 'one' begins with /w/. A small change like this passes unnoticed in fast speech.",
+            "flowRule": "Place assimilation (informal speech): At the end of a word, /t/, /d/ and /n/ often take on the place of the next sound. Before /p b m/ they shift towards lip sounds (ten people sounds like 'tem people'; bad back like 'bab back'), and before /k g/ towards back-of-the-mouth sounds (in case like 'ing case'). It is common in fast speech and listeners barely notice it.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L154_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Where does a /t/ or /d/ drop out between two consonants?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "strengths",
-                "of",
-                "the",
-                "team"
+                "we",
+                "got",
+                "home",
+                "last",
+                "night"
             ],
-            "textToSpeak": "strengths of the team",
-            "correctAnswer": "strengths of",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'strengths' simplifies: cluster simpfication is dropped before the consonant that starts 'of'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'strengths' and 'of': the cluster simpfication is dropped in fast, connected speech, making the phrase sound like 'stren'ths of'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
+            "textToSpeak": "we got home last night",
+            "correctAnswer": "last night",
+            "hint": "Which pair loses a consonant in fast speech?",
+            "explanation": "The /t/ of 'last' is often dropped before /n/, so you hear 'las night'. 'Got home' does not link at all, because /t/ meets /h/.",
+            "flowRule": "Elision (informal speech): A /t/ or /d/ between two other consonants is often left out in fast speech, so 'next day' sounds like 'nex day' and 'old man' like 'ol man'. The words still connect smoothly; the consonant cluster simply gets lighter.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L155_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair changes into a 'ch', 'j' or 'sh' sound when said quickly?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "must",
-                "have",
-                "been",
-                "wrong"
+                "sorry",
+                "I",
+                "think",
+                "I",
+                "lost",
+                "you"
             ],
-            "textToSpeak": "must have been wrong",
-            "correctAnswer": "must have",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'must' simplifies: musthave→mustəv is dropped before the consonant that starts 'have'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'must' and 'have': the musthave→mustəv is dropped in fast, connected speech, making the phrase sound like 'musta'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
+            "textToSpeak": "sorry I think I lost you",
+            "correctAnswer": "lost you",
+            "hint": "A final /t/ or /d/ can melt into a following 'y' sound. Where?",
+            "explanation": "'Lost you' becomes 'lostchu' because /t/ and /j/ blend into /tʃ/. On a bad line, this is also a good example of how a merged sound can be heard as a new word.",
+            "flowRule": "Yod-coalescence (informal speech): When a word ending in /t/, /d/, /s/ or /z/ is followed by 'you' or 'your', the two sounds often merge into one: /t/+/j/ becomes /tʃ/ ('got you' sounds like 'gotcha'), /d/+/j/ becomes /dʒ/ ('did you' like 'didja'), /s/+/j/ becomes /ʃ/ and /z/+/j/ becomes /ʒ/. This is a normal informal reduction, not a mistake, and careful speakers may keep the sounds apart.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L155_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair's first word changes its last sound to match the next sound?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "might",
-                "have",
-                "known",
-                "it"
+                "I've",
+                "been",
+                "a",
+                "bit",
+                "busy"
             ],
-            "textToSpeak": "might have known it",
-            "correctAnswer": "might have",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'might' simplifies: mighthave→mightəv is dropped before the consonant that starts 'have'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'might' and 'have': the mighthave→mightəv is dropped in fast, connected speech, making the phrase sound like 'mighta'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
+            "textToSpeak": "I've been a bit busy",
+            "correctAnswer": "bit busy",
+            "hint": "A /t/ meets a lip sound. What happens to it?",
+            "explanation": "Before /b/ the /t/ of 'bit' can shift towards /p/, so you hear 'bip busy'. 'Been a' is a normal link through /n/.",
+            "flowRule": "Place assimilation (informal speech): At the end of a word, /t/, /d/ and /n/ often take on the place of the next sound. Before /p b m/ they shift towards lip sounds (ten people sounds like 'tem people'; bad back like 'bab back'), and before /k g/ towards back-of-the-mouth sounds (in case like 'ing case'). It is common in fast speech and listeners barely notice it.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L155_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair seems to join two vowels in spelling but does not in sound?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "need",
-                "not",
-                "worry",
-                "now"
+                "she",
+                "works",
+                "for",
+                "a",
+                "university",
+                "abroad"
             ],
-            "textToSpeak": "need not worry now",
-            "correctAnswer": "need not",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'need' simplifies: needn't is dropped before the consonant that starts 'not'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'need' and 'not': the needn't is dropped in fast, connected speech, making the phrase sound like 'needn't'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
+            "textToSpeak": "she works for a university abroad",
+            "correctAnswer": "a university",
+            "hint": "Think about which article you would use before the second word. That tells you how it begins.",
+            "explanation": "'University' begins with /j/, which is why we say 'a', not 'an', and why nothing joins. 'For a' and 'university abroad' are the real links in this sentence.",
+            "flowRule": "Sound, not spelling (glides): Spelling can suggest a vowel-to-vowel link where there is none. 'One' begins with /w/ and 'unique' with /j/, so they are consonant sounds. Check the first sound of a word, not its first letter.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L156_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair would sound broken with a pause between the words?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "could",
+                "you",
+                "hold",
+                "the",
+                "door",
+                "open"
+            ],
+            "textToSpeak": "could you hold the door open",
+            "correctAnswer": "door open",
+            "hint": "A request at a door. One pair has an r-sound before a vowel.",
+            "explanation": "'Door' ends in an /r/ for rhotic speakers, and non-rhotic speakers add it before the vowel of 'open'. Either way the pair runs together, and a pause would make a polite request sound stiff.",
+            "flowRule": "Smooth versus separated speech: Fluent speakers keep a phrase in one flow and pause only between thought groups. A gap inside a linked pair sounds choppy even when every word is clear, so train your ear to hear the join rather than the separate words.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L156_Q2",
+            "instruction": "Spot the spelling trap: which pair has no real vowel link?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "I",
+                "have",
+                "to",
+                "wear",
+                "a",
+                "uniform",
+                "for",
+                "work"
+            ],
+            "textToSpeak": "I have to wear a uniform for work",
+            "correctAnswer": "a uniform",
+            "hint": "Letters can lie: find the word that starts like 'you' or 'won' despite starting with a vowel letter.",
+            "explanation": "'Uniform' begins with /j/, so 'a uniform' has no link. 'Wear a' is a real link, through a written r that rhotic speakers always pronounce.",
+            "flowRule": "Sound, not spelling (glides): Spelling can suggest a vowel-to-vowel link where there is none. 'One' begins with /w/ and 'unique' with /j/, so they are consonant sounds. Check the first sound of a word, not its first letter.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L156_Q3",
+            "instruction": "Which pair loses a consonant in fast, casual speech?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "the",
+                "post",
+                "office",
+                "is",
+                "just",
+                "near",
+                "the",
+                "bank"
+            ],
+            "textToSpeak": "the post office is just near the bank",
+            "correctAnswer": "just near",
+            "hint": "Find the word that ends in /st/ before a consonant.",
+            "explanation": "The /t/ of 'just' often drops before /n/, giving 'jus near'. 'Post office' and 'office is' are links, but they are not the elision.",
+            "flowRule": "Elision (informal speech): A /t/ or /d/ between two other consonants is often left out in fast speech, so 'next day' sounds like 'nex day' and 'old man' like 'ol man'. The words still connect smoothly; the consonant cluster simply gets lighter.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L157_Q1",
+            "instruction": "Which pair could be misheard as different words because the link hides the gap?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "she",
+                "lives",
+                "near",
+                "an",
+                "ocean"
+            ],
+            "textToSpeak": "she lives near an ocean",
+            "correctAnswer": "an ocean",
+            "hint": "Which pair could be misheard as 'a notion'?",
+            "explanation": "'An ocean' (/ən oʊʃn/) and 'a notion' (/ə noʊʃn/) sound almost identical because the /n/ links forward. Context makes 'near an ocean' the obvious reading.",
+            "flowRule": "Misleading segmentation: The same stream of sounds can be split into different words (an aim / a name, at all / a tall). Linking removes the clear gaps that spelling shows, so context, grammar and stress decide which words were meant.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L157_Q2",
+            "instruction": "Which pair looks like a link on paper but is not one?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "we",
+                "joined",
+                "a",
+                "union",
+                "last",
+                "year"
+            ],
+            "textToSpeak": "we joined a union last year",
+            "correctAnswer": "a union",
+            "hint": "Which pair has a vowel letter after the boundary but a consonant sound?",
+            "explanation": "'Union' begins with /j/, so 'a union' is a vowel followed by a consonant sound and no link forms. 'Joined a' is the real link, carried by /d/.",
+            "flowRule": "Sound, not spelling (glides): Spelling can suggest a vowel-to-vowel link where there is none. 'One' begins with /w/ and 'unique' with /j/, so they are consonant sounds. Check the first sound of a word, not its first letter.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L157_Q3",
+            "instruction": "Which link may get an extra /r/ in some accents, even though no r is written?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "the",
+                "pizza",
+                "oven",
+                "is",
+                "already",
+                "hot"
+            ],
+            "textToSpeak": "the pizza oven is already hot",
+            "correctAnswer": "pizza oven",
+            "hint": "A word ending in a weak vowel meets a vowel. Which pair?",
+            "explanation": "Some non-rhotic speakers say 'pizzar oven', adding an /r/ although none is written. Others join the vowels with a tiny catch or glide. It is accent-dependent, and worth recognising.",
+            "flowRule": "Intrusive /r/ (accent-dependent): In some non-rhotic accents speakers add an /r/ between a word ending in /ə/, /ɑː/ or /ɔː/ and a following vowel even when no r is written (idea of sounds like 'idear of'). It is common in those accents and absent in others, so it is useful to recognise but not something you need to produce.",
+            "linkingType": "vowel_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L158_Q1",
+            "instruction": "Where does a /t/ or /d/ drop out between two consonants?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "I'd",
+                "like",
+                "cold",
+                "milk",
+                "please"
+            ],
+            "textToSpeak": "I'd like cold milk please",
+            "correctAnswer": "cold milk",
+            "hint": "Find the pair where a /d/ may drop out.",
+            "explanation": "The /d/ of 'cold' is often lost before /m/, giving 'col milk'. The phrase still flows smoothly.",
+            "flowRule": "Elision (informal speech): A /t/ or /d/ between two other consonants is often left out in fast speech, so 'next day' sounds like 'nex day' and 'old man' like 'ol man'. The words still connect smoothly; the consonant cluster simply gets lighter.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L158_Q2",
+            "instruction": "Where does a final /t/, /d/ or /n/ shift to match the next sound?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "I've",
+                "got",
+                "a",
+                "bad",
+                "cold"
+            ],
+            "textToSpeak": "I've got a bad cold",
+            "correctAnswer": "bad cold",
+            "hint": "A /d/ meets a back-of-the-mouth sound. What does it do?",
+            "explanation": "Like 'bad back', 'bad cold' shows a /d/ taking on the place of the next sound, but at the back of the mouth: the /d/ shifts to /g/, giving 'bag cold'. 'Got a' links normally through /t/.",
+            "flowRule": "Place assimilation (informal speech): At the end of a word, /t/, /d/ and /n/ often take on the place of the next sound. Before /p b m/ they shift towards lip sounds (ten people sounds like 'tem people'; bad back like 'bab back'), and before /k g/ towards back-of-the-mouth sounds (in case like 'ing case'). It is common in fast speech and listeners barely notice it.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L158_Q3",
+            "instruction": "Which two words belong together in natural speech?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "she's",
+                "allergic",
+                "to",
+                "peanuts"
+            ],
+            "textToSpeak": "she's allergic to peanuts",
+            "correctAnswer": "she's allergic",
+            "hint": "Say it quickly. Which boundary would you never stop at?",
+            "explanation": "'She's' ends in /z/ and 'allergic' begins with the weak /ə/, so the buzz runs straight on. A pause there makes a medical warning sound laboured, which can matter.",
+            "flowRule": "Smooth versus separated speech: Fluent speakers keep a phrase in one flow and pause only between thought groups. A gap inside a linked pair sounds choppy even when every word is clear, so train your ear to hear the join rather than the separate words.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L159_Q1",
+            "instruction": "Which pair merges into a new sound in casual speech?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "what",
+                "should",
+                "you",
+                "do",
+                "next"
+            ],
+            "textToSpeak": "what should you do next",
+            "correctAnswer": "should you",
+            "hint": "A common question. Which pair merges?",
+            "explanation": "'Should you' sounds like 'shouldja', with /d/ and /j/ merging into /dʒ/. It appears in advice and instructions all the time.",
+            "flowRule": "Yod-coalescence (informal speech): When a word ending in /t/, /d/, /s/ or /z/ is followed by 'you' or 'your', the two sounds often merge into one: /t/+/j/ becomes /tʃ/ ('got you' sounds like 'gotcha'), /d/+/j/ becomes /dʒ/ ('did you' like 'didja'), /s/+/j/ becomes /ʃ/ and /z/+/j/ becomes /ʒ/. This is a normal informal reduction, not a mistake, and careful speakers may keep the sounds apart.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L159_Q2",
+            "instruction": "Where might some speakers add an /r/ that is not in the spelling?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "the",
+                "china",
+                "is",
+                "in",
+                "the",
+                "cupboard"
+            ],
+            "textToSpeak": "the china is in the cupboard",
+            "correctAnswer": "china is",
+            "hint": "A word ending in a weak vowel meets a short verb. Which pair?",
+            "explanation": "Some non-rhotic speakers add /r/ after the weak vowel of 'china', saying 'chinar is'. There is no r in the spelling, so it is intrusive. It is common in some accents and absent in others.",
+            "flowRule": "Intrusive /r/ (accent-dependent): In some non-rhotic accents speakers add an /r/ between a word ending in /ə/, /ɑː/ or /ɔː/ and a following vowel even when no r is written (idea of sounds like 'idear of'). It is common in those accents and absent in others, so it is useful to recognise but not something you need to produce.",
+            "linkingType": "vowel_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L159_Q3",
+            "instruction": "Which pair loses a consonant in fast, casual speech?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "he",
+                "sent",
+                "a",
+                "text",
+                "message"
+            ],
+            "textToSpeak": "he sent a text message",
+            "correctAnswer": "text message",
+            "hint": "Which pair loses a consonant in fast speech?",
+            "explanation": "The /t/ of 'text' often disappears before /m/, so you hear 'tex message'. 'Sent a' is a normal link through /t/.",
+            "flowRule": "Elision (informal speech): A /t/ or /d/ between two other consonants is often left out in fast speech, so 'next day' sounds like 'nex day' and 'old man' like 'ol man'. The words still connect smoothly; the consonant cluster simply gets lighter.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L160_Q1",
+            "instruction": "Which link may get an extra /r/ in some accents, even though no r is written?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
                 "the",
                 "idea",
-                "of",
-                "it"
-            ],
-            "textToSpeak": "the idea of it",
-            "correctAnswer": "idea of",
-            "hint": "No written 'r' appears between 'idea' and 'of', yet speakers insert a soft /r/ sound here to avoid a harsh vowel collision. This is called intrusive /r/ - a common feature of connected speech.",
-            "explanation": "Intrusive /r/ appears between 'idea' and 'of' even though no 'r' is written. In non-rhotic accents, speakers automatically insert a /r/ after certain vowels (/ɑː/, /ɔː/, /ə/) when the next word starts with a vowel. The phrase sounds like 'idea-rof'. This is similar to linking /r/ but occurs without any written 'r'.",
-            "flowRule": "Intrusive /r/: In non-rhotic accents, speakers insert an /r/ sound between a word ending in certain vowels (/ɑː/, /ɔː/, /ə/) and a following word that begins with a vowel, even though no 'r' is written.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L156_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "law",
-                "and",
-                "order",
-                "here"
-            ],
-            "textToSpeak": "law and order here",
-            "correctAnswer": "law and",
-            "hint": "No written 'r' appears between 'law' and 'and', yet speakers insert a soft /r/ sound here to avoid a harsh vowel collision. This is called intrusive /r/ - a common feature of connected speech.",
-            "explanation": "Intrusive /r/ appears between 'law' and 'and' even though no 'r' is written. In non-rhotic accents, speakers automatically insert a /r/ after certain vowels (/ɑː/, /ɔː/, /ə/) when the next word starts with a vowel. The phrase sounds like 'law-rand'. This is similar to linking /r/ but occurs without any written 'r'.",
-            "flowRule": "Intrusive /r/: In non-rhotic accents, speakers insert an /r/ sound between a word ending in certain vowels (/ɑː/, /ɔː/, /ə/) and a following word that begins with a vowel, even though no 'r' is written.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L156_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "China",
-                "and",
-                "Japan",
-                "trade"
-            ],
-            "textToSpeak": "China and Japan trade",
-            "correctAnswer": "China and",
-            "hint": "No written 'r' appears between 'China' and 'and', yet speakers insert a soft /r/ sound here to avoid a harsh vowel collision. This is called intrusive /r/ - a common feature of connected speech.",
-            "explanation": "Intrusive /r/ appears between 'China' and 'and' even though no 'r' is written. In non-rhotic accents, speakers automatically insert a /r/ after certain vowels (/ɑː/, /ɔː/, /ə/) when the next word starts with a vowel. The phrase sounds like 'China-rand'. This is similar to linking /r/ but occurs without any written 'r'.",
-            "flowRule": "Intrusive /r/: In non-rhotic accents, speakers insert an /r/ sound between a word ending in certain vowels (/ɑː/, /ɔː/, /ə/) and a following word that begins with a vowel, even though no 'r' is written.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L157_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "the",
-                "area",
-                "of",
-                "study"
-            ],
-            "textToSpeak": "the area of study",
-            "correctAnswer": "area of",
-            "hint": "No written 'r' appears between 'area' and 'of', yet speakers insert a soft /r/ sound here to avoid a harsh vowel collision. This is called intrusive /r/ - a common feature of connected speech.",
-            "explanation": "Intrusive /r/ appears between 'area' and 'of' even though no 'r' is written. In non-rhotic accents, speakers automatically insert a /r/ after certain vowels (/ɑː/, /ɔː/, /ə/) when the next word starts with a vowel. The phrase sounds like 'area-rof'. This is similar to linking /r/ but occurs without any written 'r'.",
-            "flowRule": "Intrusive /r/: In non-rhotic accents, speakers insert an /r/ sound between a word ending in certain vowels (/ɑː/, /ɔː/, /ə/) and a following word that begins with a vowel, even though no 'r' is written.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L157_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "sofa",
-                "or",
-                "armchair",
-                "first"
-            ],
-            "textToSpeak": "sofa or armchair first",
-            "correctAnswer": "sofa or",
-            "hint": "No written 'r' appears between 'sofa' and 'or', yet speakers insert a soft /r/ sound here to avoid a harsh vowel collision. This is called intrusive /r/ - a common feature of connected speech.",
-            "explanation": "Intrusive /r/ appears between 'sofa' and 'or' even though no 'r' is written. In non-rhotic accents, speakers automatically insert a /r/ after certain vowels (/ɑː/, /ɔː/, /ə/) when the next word starts with a vowel. The phrase sounds like 'sofa-ror'. This is similar to linking /r/ but occurs without any written 'r'.",
-            "flowRule": "Intrusive /r/: In non-rhotic accents, speakers insert an /r/ sound between a word ending in certain vowels (/ɑː/, /ɔː/, /ə/) and a following word that begins with a vowel, even though no 'r' is written.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L157_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "umbrella",
-                "in",
-                "the",
-                "corner"
-            ],
-            "textToSpeak": "umbrella in the corner",
-            "correctAnswer": "umbrella in",
-            "hint": "No written 'r' appears between 'umbrella' and 'in', yet speakers insert a soft /r/ sound here to avoid a harsh vowel collision. This is called intrusive /r/ - a common feature of connected speech.",
-            "explanation": "Intrusive /r/ appears between 'umbrella' and 'in' even though no 'r' is written. In non-rhotic accents, speakers automatically insert a /r/ after certain vowels (/ɑː/, /ɔː/, /ə/) when the next word starts with a vowel. The phrase sounds like 'umbrella-rin'. This is similar to linking /r/ but occurs without any written 'r'.",
-            "flowRule": "Intrusive /r/: In non-rhotic accents, speakers insert an /r/ sound between a word ending in certain vowels (/ɑː/, /ɔː/, /ə/) and a following word that begins with a vowel, even though no 'r' is written.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L158_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "formula",
-                "of",
-                "success",
-                "here"
-            ],
-            "textToSpeak": "formula of success here",
-            "correctAnswer": "formula of",
-            "hint": "No written 'r' appears between 'formula' and 'of', yet speakers insert a soft /r/ sound here to avoid a harsh vowel collision. This is called intrusive /r/ - a common feature of connected speech.",
-            "explanation": "Intrusive /r/ appears between 'formula' and 'of' even though no 'r' is written. In non-rhotic accents, speakers automatically insert a /r/ after certain vowels (/ɑː/, /ɔː/, /ə/) when the next word starts with a vowel. The phrase sounds like 'formula-rof'. This is similar to linking /r/ but occurs without any written 'r'.",
-            "flowRule": "Intrusive /r/: In non-rhotic accents, speakers insert an /r/ sound between a word ending in certain vowels (/ɑː/, /ɔː/, /ə/) and a following word that begins with a vowel, even though no 'r' is written.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L158_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "pizza",
-                "and",
-                "pasta",
-                "night"
-            ],
-            "textToSpeak": "pizza and pasta night",
-            "correctAnswer": "pizza and",
-            "hint": "No written 'r' appears between 'pizza' and 'and', yet speakers insert a soft /r/ sound here to avoid a harsh vowel collision. This is called intrusive /r/ - a common feature of connected speech.",
-            "explanation": "Intrusive /r/ appears between 'pizza' and 'and' even though no 'r' is written. In non-rhotic accents, speakers automatically insert a /r/ after certain vowels (/ɑː/, /ɔː/, /ə/) when the next word starts with a vowel. The phrase sounds like 'pizza-rand'. This is similar to linking /r/ but occurs without any written 'r'.",
-            "flowRule": "Intrusive /r/: In non-rhotic accents, speakers insert an /r/ sound between a word ending in certain vowels (/ɑː/, /ɔː/, /ə/) and a following word that begins with a vowel, even though no 'r' is written.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L158_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "extra",
-                "effort",
                 "is",
-                "needed"
+                "to",
+                "arrange",
+                "another",
+                "time"
             ],
-            "textToSpeak": "extra effort is needed",
-            "correctAnswer": "extra effort",
-            "hint": "No written 'r' appears between 'extra' and 'effort', yet speakers insert a soft /r/ sound here to avoid a harsh vowel collision. This is called intrusive /r/ - a common feature of connected speech.",
-            "explanation": "Intrusive /r/ appears between 'extra' and 'effort' even though no 'r' is written. In non-rhotic accents, speakers automatically insert a /r/ after certain vowels (/ɑː/, /ɔː/, /ə/) when the next word starts with a vowel. The phrase sounds like 'extra-reffort'. This is similar to linking /r/ but occurs without any written 'r'.",
-            "flowRule": "Intrusive /r/: In non-rhotic accents, speakers insert an /r/ sound between a word ending in certain vowels (/ɑː/, /ɔː/, /ə/) and a following word that begins with a vowel, even though no 'r' is written.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L159_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "did",
-                "you",
-                "want",
-                "this"
-            ],
-            "textToSpeak": "did you want this",
-            "correctAnswer": "did you",
-            "hint": "The final consonant of 'did' and the initial /j/ of 'you' fuse together in natural speech - a process called yod-coalescence. Listen for the merged sound →/dʒ/ at this boundary. Being aware of this link is a key step toward sounding more natural in English.",
-            "explanation": "Yod-coalescence occurs between 'did' and 'you': the final consonant /d/+/j/ of 'did' fuses with the initial /j/ of 'you' to produce →/dʒ/. The phrase sounds like 'dijyou'. This is extremely common in everyday English: 'did you' → /dɪdʒuː/, 'last year' → /lɑːstʃɪə/, 'miss you' → /mɪʃuː/. Recognising this pattern across many phrases will dramatically improve your listening comprehension.",
-            "flowRule": "Yod-Coalescence: When a word ending in /t/, /d/, /s/, or /z/ meets a word beginning with /j/ ('you', 'your', 'year'), the two sounds fuse into a single new consonant such as /tʃ/, /dʒ/, or /ʃ/.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L159_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "best",
-                "plan",
-                "got",
-                "rejected"
-            ],
-            "textToSpeak": "best plan got rejected",
-            "correctAnswer": "best plan",
-            "hint": "The final consonant of 'best' changes its place of articulation to match the following consonant in 'plan'. Listen for /t/→/p/: it shifts to a bilabial sound before the lip consonant that opens 'plan'.",
-            "explanation": "Place assimilation (labial) occurs at the boundary between 'best' and 'plan'. The final /t/→/p/ of 'best' shifts to a bilabial articulation to match the upcoming lip consonant, so the phrase sounds like 'besp plan'. This unconscious adjustment makes connected speech smoother and faster.",
-            "flowRule": "Place Assimilation (Labial): When a word ends in /n/, /d/, or /t/ and the next word begins with a bilabial consonant (/p/, /b/, /m/), the final sound shifts toward the lips to match it.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L159_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "last",
-                "night",
-                "stayed",
-                "late"
-            ],
-            "textToSpeak": "last night stayed late",
-            "correctAnswer": "last night",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'last' simplifies: /t/ elides is dropped before the consonant that starts 'night'. This makes the phrase flow more smoothly. The link here is automatic - fluent speakers don't think about it consciously.",
-            "explanation": "Elision occurs at the boundary of 'last' and 'night': the /t/ elides is dropped in fast, connected speech, making the phrase sound like 'las' night'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech. This is one of the core features of connected speech that makes natural English sound 'fast'.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L160_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "could",
-                "you",
-                "confirm",
-                "it"
-            ],
-            "textToSpeak": "could you confirm it",
-            "correctAnswer": "could you",
-            "hint": "The final consonant of 'could' and the initial /j/ of 'you' fuse together in natural speech - a process called yod-coalescence. Listen for the merged sound →/dʒ/ at this boundary. Listening for this boundary in podcasts and films will train your ear quickly.",
-            "explanation": "Yod-coalescence occurs between 'could' and 'you': the final consonant /d/+/j/ of 'could' fuses with the initial /j/ of 'you' to produce →/dʒ/. The phrase sounds like 'cudjyou'. This is extremely common in everyday English: 'did you' → /dɪdʒuː/, 'last year' → /lɑːstʃɪə/, 'miss you' → /mɪʃuː/. Comparing transcripts with audio recordings is an excellent way to spot and practise this link.",
-            "flowRule": "Yod-Coalescence: When a word ending in /t/, /d/, /s/, or /z/ meets a word beginning with /j/ ('you', 'your', 'year'), the two sounds fuse into a single new consonant such as /tʃ/, /dʒ/, or /ʃ/.",
-            "linkingType": "consonant_to_vowel"
+            "textToSpeak": "the idea is to arrange another time",
+            "correctAnswer": "idea is",
+            "hint": "Look for a word with no r in its spelling that ends in a weak vowel.",
+            "explanation": "'Idea is' is a classic site for an intrusive /r/ in some non-rhotic accents ('idear is'). Learners can recognise it without producing it. 'Arrange another' is an ordinary link through /dʒ/.",
+            "flowRule": "Intrusive /r/ (accent-dependent): In some non-rhotic accents speakers add an /r/ between a word ending in /ə/, /ɑː/ or /ɔː/ and a following vowel even when no r is written (idea of sounds like 'idear of'). It is common in those accents and absent in others, so it is useful to recognise but not something you need to produce.",
+            "linkingType": "vowel_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L160_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Where do two sounds blend into one in fast, informal speech?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "that",
-                "keeps",
-                "things",
-                "going"
+                "I",
+                "thought",
+                "you",
+                "said",
+                "six"
             ],
-            "textToSpeak": "that keeps things going",
-            "correctAnswer": "that keeps",
-            "hint": "The final consonant of 'that' moves to a velar (back-of-tongue) position to anticipate the velar consonant that starts 'keeps'. This automatic adjustment is called place assimilation.",
-            "explanation": "Place assimilation (velar) occurs at the boundary between 'that' and 'keeps'. The final consonant /t/→/k/ of 'that' moves to a velar (back-of-tongue) position in anticipation of the velar consonant that starts 'keeps', so the phrase sounds like 'thak keeps'. This happens so fast that most speakers do it unconsciously.",
-            "flowRule": "Place Assimilation (Velar): When a word ends in /n/, /d/, or /t/ and the next word begins with a velar consonant (/k/, /g/), the final sound shifts to the back of the tongue to match it.",
+            "textToSpeak": "I thought you said six",
+            "correctAnswer": "thought you",
+            "hint": "A request to clarify. Which pair merges?",
+            "explanation": "'Thought you' sounds like 'thoughtcha' as /t/ and /j/ fuse into /tʃ/. It is typical of casual, quick speech.",
+            "flowRule": "Yod-coalescence (informal speech): When a word ending in /t/, /d/, /s/ or /z/ is followed by 'you' or 'your', the two sounds often merge into one: /t/+/j/ becomes /tʃ/ ('got you' sounds like 'gotcha'), /d/+/j/ becomes /dʒ/ ('did you' like 'didja'), /s/+/j/ becomes /ʃ/ and /z/+/j/ becomes /ʒ/. This is a normal informal reduction, not a mistake, and careful speakers may keep the sounds apart.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L160_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair seems to join two vowels in spelling but does not in sound?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "next",
-                "phase",
-                "begins",
-                "now"
+                "we",
+                "want",
+                "a",
+                "usable",
+                "plan"
             ],
-            "textToSpeak": "next phase begins now",
-            "correctAnswer": "next phase",
-            "hint": "In fast, natural speech the consonant cluster at the end of 'next' simplifies: /t/ elides is dropped before the consonant that starts 'phase'. This makes the phrase flow more smoothly.",
-            "explanation": "Elision occurs at the boundary of 'next' and 'phase': the /t/ elides is dropped in fast, connected speech, making the phrase sound like 'nex' phase'. Elision is very common in English when consonant clusters appear before other consonants - it reduces effort and speeds up the flow of speech.",
-            "flowRule": "Elision: When a consonant cluster at the end of a word is followed by another consonant, the middle sound (often /t/ or /d/) is dropped so the phrase flows more smoothly.",
+            "textToSpeak": "we want a usable plan",
+            "correctAnswer": "a usable",
+            "hint": "Ignore spelling and listen: where is there no vowel sound after the boundary?",
+            "explanation": "'Usable' begins with /j/, so 'a usable' has no vowel link. The real link is 'want a', carried by /t/.",
+            "flowRule": "Sound, not spelling (glides): Spelling can suggest a vowel-to-vowel link where there is none. 'One' begins with /w/ and 'unique' with /j/, so they are consonant sounds. Check the first sound of a word, not its first letter.",
             "linkingType": "consonant_to_vowel"
         }
     ]

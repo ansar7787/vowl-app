@@ -5,753 +5,753 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L151_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"We finally adopted a dog.\" B: \"What's she like?\" A answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "In his free time, he plays the guitar, the piano, and the drums.",
-            "textToSpeak": "In his free time, he plays the guitar, the piano, and the drums.",
+            "word": "She's very energetic.",
+            "textToSpeak": "She's very energetic.",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Emphasis on VERY",
+                "Emphasis on ENERGETIC"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on ENERGETIC",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                2,
-                3,
+                1,
+                1,
                 2,
                 3,
                 1
             ],
-            "hint": "This sentence names several items in a row — each one before the last typically lifts in pitch, and only the final item falls.",
-            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
-            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list.",
-            "emotionContext": "a list"
+            "hint": "B has asked for a description. Which word carries the actual description?",
+            "explanation": "VERY only intensifies the word that follows. ENERGETIC is the description B asked for, which is why it carries the peak.",
+            "emphasisRule": "In a reply to 'what is she like?', the description word takes the peak.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L151_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"The new manager starts Monday.\" B: \"Do you know anything about her?\" A answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "For breakfast this morning, I had eggs, toast, and coffee.",
-            "textToSpeak": "For breakfast this morning, I had eggs, toast, and coffee.",
+            "word": "She used to run the Mumbai office.",
+            "textToSpeak": "She used to run the Mumbai office.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on RUN",
+                "Emphasis on MUMBAI"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswer": "Emphasis on MUMBAI",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                2,
-                3,
+                1,
+                1,
                 2,
                 3,
                 1
             ],
-            "hint": "Try reading each item separately — notice how your voice rises on the earlier ones and drops only at the very end.",
-            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "'Her' has already been introduced. What is the new information in A's reply?",
+            "explanation": "The manager is the topic, so the pronoun stays low. The new fact is where she worked, so MUMBAI takes the peak, with 'office' attached to it.",
+            "emphasisRule": "In a reply that adds a fact to a known topic, the new detail takes the peak.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L151_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"My brother's getting married.\" B: \"Do you like his fiancée?\" A answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The downtown clinic treats children, adults, and seniors.",
-            "textToSpeak": "The downtown clinic treats children, adults, and seniors.",
+            "word": "I haven't met her yet.",
+            "textToSpeak": "I haven't met her yet.",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Emphasis on MET",
+                "Emphasis on YET"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswer": "Emphasis on MET",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
                 2,
                 3,
-                2,
-                3,
+                1,
                 1
             ],
-            "hint": "Lists in English usually bounce up on each item except the last, which settles down to close the list.",
-            "explanation": "A series of items like this is read with small rises on every item but the final one, which falls.",
-            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list.",
-            "emotionContext": "a list"
+            "hint": "B assumed A knew her. What does A's answer change?",
+            "explanation": "HER is a pronoun and YET is a closing tag, so both stay low. MET is what A hasn't done, and it takes the peak.",
+            "emphasisRule": "In a reply that corrects an assumption, the action word takes the peak and a final 'yet' stays low.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L152_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. The conversation has been about work, and A suddenly brings up the weekend.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Over the summer, the hotel renovated the entire lobby.",
-            "textToSpeak": "Over the summer, the hotel renovated the entire lobby.",
+            "word": "Speaking of work, are you coming to the party?",
+            "textToSpeak": "Speaking of work, are you coming to the party?",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Emphasis on PARTY",
+                "Emphasis on WORK"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PARTY",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "Nothing here is being counted off one by one, so the pitch should move smoothly downward, not bounce between items.",
-            "explanation": "This is a plain statement, not a series, so the intonation moves smoothly downward rather than lifting between separate items.",
-            "emphasisRule": "Only genuine enumerated lists use the rising-then-falling pattern; ordinary statements simply fall once, at the end.",
-            "emotionContext": "not a list"
+            "hint": "The opener links to the old topic. Which word carries the new one?",
+            "explanation": "WORK is repeated from the previous topic, so it stays low. PARTY is the new topic, so the peak lands on it, and the rise makes it a question.",
+            "emphasisRule": "When shifting topic, the link phrase stays low and the new topic takes the peak.",
+            "emotionContext": "Topic management"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L152_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"...and that's the plan.\" B goes back to an earlier subject.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The bag includes a passport, tickets, and a boarding pass.",
-            "textToSpeak": "The bag includes a passport, tickets, and a boarding pass.",
+            "word": "Going back to the venue, is it accessible?",
+            "textToSpeak": "Going back to the venue, is it accessible?",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Emphasis on VENUE",
+                "Emphasis on ACCESSIBLE"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on ACCESSIBLE",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                1,
                 2,
-                3,
                 2,
-                3,
-                1
+                3
             ],
-            "hint": "This isn't one single idea; it's a series of items, and series are read with a rise-rise-fall pattern.",
-            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
-            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list.",
-            "emotionContext": "a list"
+            "hint": "The venue was discussed earlier. What does B want to know about it now?",
+            "explanation": "VENUE is returning from earlier, so it counts as given and stays low. ACCESSIBLE is the new question about it, which is why it carries the peak.",
+            "emphasisRule": "A topic that is brought back counts as given; the new question about it takes the peak.",
+            "emotionContext": "Topic management"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L152_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? A speaker introduces something she's been wanting to raise.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "This year, the garden grows tomatoes, peppers, and basil.",
-            "textToSpeak": "This year, the garden grows tomatoes, peppers, and basil.",
+            "word": "Listen, there's something I wanted to ask you.",
+            "textToSpeak": "Listen, there's something I wanted to ask you.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "LISTEN gets a light lift to signal a shift; ASK carries the peak",
+                "SOMETHING carries the peak, since it is the new topic"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "LISTEN gets a light lift to signal a shift; ASK carries the peak",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                2,
-                3,
+                1,
+                1,
                 2,
                 3,
                 1
             ],
-            "hint": "This sentence names several items in a row — each one before the last typically lifts in pitch, and only the final item falls.",
-            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "'Something' is vague. What is the actual new information?",
+            "explanation": "SOMETHING doesn't say anything yet, so it can't carry the peak. LISTEN gets attention, and ASK is the point of the sentence.",
+            "emphasisRule": "In a topic-opener, a vague noun stays low and the action of raising the topic takes the peak.",
+            "emotionContext": "Topic management"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L153_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? A is explaining a complicated process and pauses.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After the shelter closed, my cousin adopted a senior cat.",
-            "textToSpeak": "After the shelter closed, my cousin adopted a senior cat.",
+            "word": "Right...",
+            "textToSpeak": "Right...",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "A falling 'right': I've understood, nothing more needed",
+                "A rising 'right': go on, I'm following"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "A rising 'right': go on, I'm following",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "There's no list here, just one connected idea, so expect a single smooth drop in pitch, not repeated little rises.",
-            "explanation": "There's only one point being made here, so the sentence takes one steady fall, unlike a list, which would rise between items.",
-            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern.",
-            "emotionContext": "not a list"
+            "hint": "A has paused but not finished. What does B's voice invite?",
+            "explanation": "A rising 'right' is a continuer: it tells A to carry on. A falling 'right' would suggest the explanation could stop.",
+            "emphasisRule": "A rising backchannel invites the speaker to continue.",
+            "emotionContext": "Turn-taking"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L153_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? A has just finished explaining a rule.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The repair kit includes a hammer, a wrench, and pliers.",
-            "textToSpeak": "The repair kit includes a hammer, a wrench, and pliers.",
+            "word": "Right, got it.",
+            "textToSpeak": "Right, got it.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Falling: I've understood, and nothing more is needed",
+                "Rising: I haven't understood yet and need more"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling: I've understood, and nothing more is needed",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
                 2,
                 3,
-                2,
-                3,
+                1,
                 1
             ],
-            "hint": "Lists in English usually bounce up on each item except the last, which settles down to close the list.",
-            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "A has finished explaining. What would B's voice show if the explanation had worked?",
+            "explanation": "A fall on GOT signals that B has understood and nothing else is needed. A rise would suggest B still wanted something.",
+            "emphasisRule": "A falling 'got it' closes the explanation.",
+            "emotionContext": "Turn-taking"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L153_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"We hiked all day in the rain.\" B reacts with surprise.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "For the party, we need milk, eggs, and butter from the store.",
-            "textToSpeak": "For the party, we need milk, eggs, and butter from the store.",
+            "word": "In the rain?",
+            "textToSpeak": "In the rain?",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Emphasis on RAIN",
+                "Emphasis on IN"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswer": "Emphasis on RAIN",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 2,
-                3,
                 2,
-                3,
-                1
+                3
             ],
-            "hint": "Count how many things are being listed here — all but the final one usually rise slightly before the pitch finally falls.",
-            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
-            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list.",
-            "emotionContext": "a list"
+            "hint": "B repeats part of A's sentence. Which word is B reacting to?",
+            "explanation": "IN is just a link. RAIN is the detail that surprises B, so it takes the peak and the rise.",
+            "emphasisRule": "A reaction echo peaks on the surprising detail.",
+            "emotionContext": "Turn-taking"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L154_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"The service was terrible.\" B strongly agrees.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Our itinerary this spring covers Rome, Florence, and Venice.",
-            "textToSpeak": "Our itinerary this spring covers Rome, Florence, and Venice.",
+            "word": "Absolutely terrible.",
+            "textToSpeak": "Absolutely terrible.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on ABSOLUTELY",
+                "Emphasis on TERRIBLE"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ABSOLUTELY",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                2,
+                1,
                 3,
-                2,
-                3,
+                1,
+                1,
                 1
             ],
-            "hint": "This isn't one single idea; it's a series of items, and series are read with a rise-rise-fall pattern.",
-            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "A already said 'terrible'. What does B add?",
+            "explanation": "TERRIBLE is repeated from A, so it stays low. ABSOLUTELY is the new element showing how strongly B agrees, so the peak lands on it.",
+            "emphasisRule": "In a strong agreement that repeats a word, the intensifier takes the peak.",
+            "emotionContext": "Agreement"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L154_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"We should leave early to avoid traffic.\" B agrees and adds a reason.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After a long delay, the band recorded their new single.",
-            "textToSpeak": "After a long delay, the band recorded their new single.",
+            "word": "Definitely, the roads get packed after four.",
+            "textToSpeak": "Definitely, the roads get packed after four.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on ROADS and FOUR",
+                "Emphasis on DEFINITELY and PACKED"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DEFINITELY and PACKED",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
+                3,
                 1,
                 1,
                 3,
                 1
             ],
-            "hint": "Look closely — this sentence isn't actually listing separate items, so it should flow as one smooth fall, not a rise-rise-fall.",
-            "explanation": "There's only one point being made here, so the sentence takes one steady fall, unlike a list, which would rise between items.",
-            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern.",
-            "emotionContext": "not a list"
+            "hint": "B agrees first and then adds something new. Which two words carry that?",
+            "explanation": "DEFINITELY marks the agreement and PACKED is the reason. ROADS and FOUR are only details attached to the reason.",
+            "emphasisRule": "A reply with an agreement and a reason puts a peak on each.",
+            "emotionContext": "Agreement"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L154_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? A: \"I think we should hire two more people.\" B agrees only partly.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After several complaints, my brother finally fixed the leaky faucet.",
-            "textToSpeak": "After several complaints, my brother finally fixed the leaky faucet.",
+            "word": "Yes, in principle.",
+            "textToSpeak": "Yes, in principle.",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Fall-rise on PRINCIPLE: agreement with reservations",
+                "Fall on PRINCIPLE: full agreement with no conditions"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Fall-rise on PRINCIPLE: agreement with reservations",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                1,
+                2
             ],
-            "hint": "There's no list here, just one connected idea, so expect a single smooth drop in pitch, not repeated little rises.",
-            "explanation": "This is a plain statement, not a series, so the intonation moves smoothly downward rather than lifting between separate items.",
-            "emphasisRule": "Only genuine enumerated lists use the rising-then-falling pattern; ordinary statements simply fall once, at the end.",
-            "emotionContext": "not a list"
+            "hint": "B says yes, but adds two words. What does the voice do after the key word?",
+            "explanation": "The lift after PRINCIPLE leaves room for a 'but', so the agreement is limited. A flat fall would sound like a complete yes.",
+            "emphasisRule": "A fall-rise on 'in principle' signals reservations.",
+            "emotionContext": "Agreement"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L155_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. The group is discussing two ideas. B asks about the second one.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Because of renovations, our teacher rescheduled the final exam.",
-            "textToSpeak": "Because of renovations, our teacher rescheduled the final exam.",
+            "word": "What do you think about the second idea?",
+            "textToSpeak": "What do you think about the second idea?",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on THINK",
+                "Emphasis on SECOND"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SECOND",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Don't mistake this for an enumerated list — it's a plain statement with one steady fall at the end.",
-            "explanation": "This sentence describes one single idea, not a list of separate items, so it takes a single smooth falling contour instead of rise-rise-fall.",
-            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern.",
-            "emotionContext": "not a list"
+            "hint": "B is asking for an opinion, which is a routine question. What is B specifying?",
+            "explanation": "'What do you think' is a standard frame, so it stays low. SECOND tells the listener which idea, so it gets the main lift.",
+            "emphasisRule": "In a request for an opinion, the item being asked about takes the peak.",
+            "emotionContext": "Information question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L155_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? A: \"I'm leaning towards the cheaper plan.\" B invites A to explain.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "For winter, the hallway closet has coats, scarves, and gloves.",
-            "textToSpeak": "For winter, the hallway closet has coats, scarves, and gloves.",
+            "word": "Why that one?",
+            "textToSpeak": "Why that one?",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Falling on ONE: a genuine request for reasons",
+                "Rising on ONE: surprise or doubt about the choice"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling on ONE: a genuine request for reasons",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                2,
-                3,
+                1,
+                1,
                 2,
                 3,
                 1
             ],
-            "hint": "Count how many things are being listed here — all but the final one usually rise slightly before the pitch finally falls.",
-            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "B is curious, not doubtful. What does the ending do?",
+            "explanation": "A fall on ONE shows that B wants A's reasons. A rise would add surprise or doubt, which would feel more challenging.",
+            "emphasisRule": "A falling wh-question asks for information without doubt.",
+            "emotionContext": "Information question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L155_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"That plan will never work.\" B asks for evidence.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Last month, the team recruited a designer, a developer, and a tester.",
-            "textToSpeak": "Last month, the team recruited a designer, a developer, and a tester.",
+            "word": "What makes you say that?",
+            "textToSpeak": "What makes you say that?",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Emphasis on MAKES",
+                "Emphasis on SAY"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SAY",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
                 2,
                 3,
-                2,
-                3,
+                1,
                 1
             ],
-            "hint": "This isn't one single idea; it's a series of items, and series are read with a rise-rise-fall pattern.",
-            "explanation": "A series of items like this is read with small rises on every item but the final one, which falls.",
-            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list.",
-            "emotionContext": "a list"
+            "hint": "B is not agreeing or disagreeing yet. What is B asking A to do?",
+            "explanation": "MAKES belongs to a fixed phrase, so it stays low. SAY is the action B wants A to account for, so it gets the main lift.",
+            "emphasisRule": "In 'what makes you say that', the word 'say' takes the peak.",
+            "emotionContext": "Information question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L156_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A has not spoken yet. B hands her the floor.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The intake form asks for your name, address, and phone number.",
-            "textToSpeak": "The intake form asks for your name, address, and phone number.",
+            "word": "Priya, what's your take?",
+            "textToSpeak": "Priya, what's your take?",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on PRIYA and TAKE",
+                "Emphasis on WHAT'S and YOUR"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PRIYA and TAKE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                2,
                 3,
-                2,
+                1,
+                1,
                 3,
                 1
             ],
-            "hint": "This sentence names several items in a row — each one before the last typically lifts in pitch, and only the final item falls.",
-            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "B is inviting one person to speak. Which words do that?",
+            "explanation": "PRIYA names the person being invited and TAKE is the opinion being requested. WHAT'S and YOUR are only frame words.",
+            "emphasisRule": "When handing over the floor, the name and the request each take a peak.",
+            "emotionContext": "Turn-taking"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L156_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? B wants to add something without interrupting.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "At this zoo, you can see lions, giraffes, and penguins.",
-            "textToSpeak": "At this zoo, you can see lions, giraffes, and penguins.",
+            "word": "Could I add something here?",
+            "textToSpeak": "Could I add something here?",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Falling: announcing that she will speak",
+                "Rising: asking permission to speak"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising: asking permission to speak",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                1,
                 2,
-                3,
                 2,
-                3,
-                1
+                3
             ],
-            "hint": "Try reading each item separately — notice how your voice rises on the earlier ones and drops only at the very end.",
-            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
-            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list.",
-            "emotionContext": "a list"
+            "hint": "B has not started yet. What does the voice do to ask permission?",
+            "explanation": "The rise on HERE turns it into a request the group can accept. A fall would sound like an announcement.",
+            "emphasisRule": "A rising request for the floor sounds polite and leaves the decision to others.",
+            "emotionContext": "Turn-taking"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L156_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. Someone has interrupted a speaker twice.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The new gym offers yoga, spinning, and pilates classes.",
-            "textToSpeak": "The new gym offers yoga, spinning, and pilates classes.",
+            "word": "Let me finish this thought.",
+            "textToSpeak": "Let me finish this thought.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on FINISH",
+                "Emphasis on THOUGHT"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on FINISH",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
                 2,
                 3,
-                2,
-                3,
+                1,
                 1
             ],
-            "hint": "Lists in English usually bounce up on each item except the last, which settles down to close the list.",
-            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "The speaker has been cut off. What is she asking to do?",
+            "explanation": "THOUGHT is the object that was being said, so it stays low. FINISH is what she is asking for, so it takes the peak.",
+            "emphasisRule": "When claiming back the floor, the verb of completing takes the peak.",
+            "emotionContext": "Turn-taking"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L157_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? A phone call is coming to an end.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Due to the storm, the airline canceled the connecting flight.",
-            "textToSpeak": "Due to the storm, the airline canceled the connecting flight.",
+            "word": "Okay, well, I'll let you go.",
+            "textToSpeak": "Okay, well, I'll let you go.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Falling on GO: closing the call",
+                "Rising on GO: asking whether the other person wants to continue"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
+            "correctAnswer": "Falling on GO: closing the call",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Nothing here is being counted off one by one, so the pitch should move smoothly downward, not bounce between items.",
-            "explanation": "There's only one point being made here, so the sentence takes one steady fall, unlike a list, which would rise between items.",
-            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern.",
-            "emotionContext": "not a list"
+            "hint": "Both speakers know the call is finishing. What does B's voice do on the last word?",
+            "explanation": "A fall on GO closes the call politely. A rise would offer the other person a chance to keep talking.",
+            "emphasisRule": "A falling pre-closing phrase ends the conversation.",
+            "emotionContext": "Social formula"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L157_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. B summarises the next step at the end of a meeting.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "This weekend's workshop covers budgeting, saving, and investing.",
-            "textToSpeak": "This weekend's workshop covers budgeting, saving, and investing.",
+            "word": "So, to wrap up, Dana sends the notes tomorrow.",
+            "textToSpeak": "So, to wrap up, Dana sends the notes tomorrow.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on WRAP and NOTES",
+                "Emphasis on DANA and TOMORROW"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswer": "Emphasis on DANA and TOMORROW",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                2,
+                1,
+                1,
                 3,
-                2,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "This isn't one single idea; it's a series of items, and series are read with a rise-rise-fall pattern.",
-            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "A wrap-up should say who and when. Which words carry that?",
+            "explanation": "WRAP is only the closing marker. DANA is who is responsible and TOMORROW is when, so those take the peaks. NOTES is the shared deliverable.",
+            "emphasisRule": "In a closing summary, the responsible person and the time each take a peak.",
+            "emotionContext": "Social formula"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L157_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A host asks: \"Do you have to go already?\" The guest answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After months of searching, the clinic hired a new pediatrician.",
-            "textToSpeak": "After months of searching, the clinic hired a new pediatrician.",
+            "word": "Yes, early start tomorrow.",
+            "textToSpeak": "Yes, early start tomorrow.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on TOMORROW",
+                "Emphasis on EARLY"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on EARLY",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Look closely — this sentence isn't actually listing separate items, so it should flow as one smooth fall, not a rise-rise-fall.",
-            "explanation": "This sentence describes one single idea, not a list of separate items, so it takes a single smooth falling contour instead of rise-rise-fall.",
-            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern.",
-            "emotionContext": "not a list"
+            "hint": "The guest gives a reason. Which word explains why leaving is necessary?",
+            "explanation": "TOMORROW only gives the time frame. EARLY explains why the guest must leave, so it takes the peak.",
+            "emphasisRule": "In a reason for leaving, the explaining word takes the peak.",
+            "emotionContext": "Social formula"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L158_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"We can offer a discount on the first order.\" B pushes for more.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "This semester, the course covers grammar, vocabulary, and pronunciation.",
-            "textToSpeak": "This semester, the course covers grammar, vocabulary, and pronunciation.",
+            "word": "Would you consider including delivery?",
+            "textToSpeak": "Would you consider including delivery?",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on DELIVERY",
+                "Emphasis on CONSIDER"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DELIVERY",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 2,
-                3,
                 2,
-                3,
-                1
+                3
             ],
-            "hint": "Try reading each item separately — notice how your voice rises on the earlier ones and drops only at the very end.",
-            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "'Would you consider' is a polite frame. What is B actually asking to add?",
+            "explanation": "CONSIDER softens the request, so it stays low. DELIVERY is the new item being requested, so it gets the main lift.",
+            "emphasisRule": "In a polite negotiating request, the thing being asked for takes the peak.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L158_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"That's our best price.\" B makes a counter-offer.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Earlier this month, the store extended its holiday hours.",
-            "textToSpeak": "Earlier this month, the store extended its holiday hours.",
+            "word": "If you throw in the installation, we have a deal.",
+            "textToSpeak": "If you throw in the installation, we have a deal.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on THROW and HAVE",
+                "Emphasis on INSTALLATION and DEAL"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on INSTALLATION and DEAL",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "Don't mistake this for an enumerated list — it's a plain statement with one steady fall at the end.",
-            "explanation": "There's only one point being made here, so the sentence takes one steady fall, unlike a list, which would rise between items.",
-            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern.",
-            "emotionContext": "not a list"
+            "hint": "B is offering a condition and a result. Which two words carry them?",
+            "explanation": "INSTALLATION is the condition B is asking for and DEAL is the result. THROW and HAVE are the verbs that join them.",
+            "emphasisRule": "In a conditional counter-offer, the condition and the result each take a peak.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L158_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? A: \"We can't go any lower.\" B signals flexibility.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Today's lunch menu offers soup, salad, or a sandwich.",
-            "textToSpeak": "Today's lunch menu offers soup, salad, or a sandwich.",
+            "word": "Could we meet somewhere in the middle?",
+            "textToSpeak": "Could we meet somewhere in the middle?",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Rising on MIDDLE: a tentative proposal",
+                "Falling on MIDDLE: a fixed demand"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising on MIDDLE: a tentative proposal",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 2,
-                3,
                 2,
-                3,
-                1
+                3
             ],
-            "hint": "Count how many things are being listed here — all but the final one usually rise slightly before the pitch finally falls.",
-            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "A has already said no. How does B soften the next suggestion?",
+            "explanation": "The rise on MIDDLE makes it a proposal A can accept or reject. A fall would sound like B was dictating the compromise.",
+            "emphasisRule": "A rising proposal keeps a negotiation open.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L159_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? A storyteller builds up to a surprise.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "For the fall season, the chef introduced a seasonal menu.",
-            "textToSpeak": "For the fall season, the chef introduced a seasonal menu.",
+            "word": "I opened the box, and inside was a tiny silver key.",
+            "textToSpeak": "I opened the box, and inside was a tiny silver key.",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "A fall after BOX, as if the sentence were complete",
+                "A rise after BOX, then the surprise KEY takes the final peak"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "A rise after BOX, then the surprise KEY takes the final peak",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                2,
+                1,
+                3
             ],
-            "hint": "This sentence describes a single action, not a series — so it takes one smooth falling contour, start to finish.",
-            "explanation": "This sentence describes one single idea, not a list of separate items, so it takes a single smooth falling contour instead of rise-rise-fall.",
-            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern.",
-            "emotionContext": "not a list"
+            "hint": "The reveal is at the end. What does the voice do to hold back the surprise?",
+            "explanation": "The lift after BOX tells the listener there is more to come, and KEY delivers the surprise. A fall after BOX would give the listener no reason to wait.",
+            "emphasisRule": "In a story, a rise before a reveal builds suspense.",
+            "emotionContext": "Narrative"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L159_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? A storyteller pauses for effect before the punchline.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "For the trip, we packed sunscreen, towels, and snacks for the beach.",
-            "textToSpeak": "For the trip, we packed sunscreen, towels, and snacks for the beach.",
+            "word": "And guess who walked in?",
+            "textToSpeak": "And guess who walked in?",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Rising on IN: holding back the answer",
+                "Falling on IN: ending the story there"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising on IN: holding back the answer",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 2,
-                3,
                 2,
-                3,
-                1
+                3
             ],
-            "hint": "This sentence names several items in a row — each one before the last typically lifts in pitch, and only the final item falls.",
-            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "The storyteller is about to give the answer. How does she keep the audience waiting?",
+            "explanation": "The rise on IN turns the line into a question that she answers in the next sentence. A fall would suggest nothing more was coming.",
+            "emphasisRule": "A rising question in a story creates suspense before the answer.",
+            "emotionContext": "Narrative"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L159_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"What happened next?\" B continues the story.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The updated app now supports English, Spanish, and French.",
-            "textToSpeak": "The updated app now supports English, Spanish, and French.",
+            "word": "The door opened, and there stood my old teacher.",
+            "textToSpeak": "The door opened, and there stood my old teacher.",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Emphasis on DOOR and STOOD",
+                "Emphasis on OPENED and TEACHER"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on OPENED and TEACHER",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                2,
+                1,
                 3,
-                2,
+                1,
                 3,
                 1
             ],
-            "hint": "Try reading each item separately — notice how your voice rises on the earlier ones and drops only at the very end.",
-            "explanation": "A series of items like this is read with small rises on every item but the final one, which falls.",
-            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list.",
-            "emotionContext": "a list"
+            "hint": "The story has an event and a surprise. Which two words carry them?",
+            "explanation": "OPENED is the event and TEACHER is the surprise, so each takes a peak. DOOR and STOOD are supporting words.",
+            "emphasisRule": "In a story, the event and the reveal each take a peak.",
+            "emotionContext": "Narrative"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L160_Q1",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A has shown two logos on screen. B asks about the one with the blue background.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "This month, the shared playlist has jazz, blues, and soul.",
-            "textToSpeak": "This month, the shared playlist has jazz, blues, and soul.",
+            "word": "How do you feel about the blue one?",
+            "textToSpeak": "How do you feel about the blue one?",
             "options": [
-                "One smooth fall across the whole sentence (not a list)",
-                "Rising on each item, falling on the last (a list)"
+                "Emphasis on BLUE",
+                "Emphasis on FEEL"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BLUE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                2,
-                3,
+                1,
+                1,
                 2,
                 3,
                 1
             ],
-            "hint": "Lists in English usually bounce up on each item except the last, which settles down to close the list.",
-            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
-            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion.",
-            "emotionContext": "a list"
+            "hint": "There are two logos in view. Which word tells A which one B means?",
+            "explanation": "'How do you feel about' is a routine opinion frame, so it stays low. BLUE picks out the logo, so it takes the peak, and 'one' is a weak stand-in.",
+            "emphasisRule": "In an opinion question about one of two items, the distinguishing word takes the peak.",
+            "emotionContext": "Information question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L160_Q2",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the pitch pattern. What does the pitch do in this conversation? B accepts a deal but adds a condition.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "This term, she is studying biology, chemistry, and physics.",
-            "textToSpeak": "This term, she is studying biology, chemistry, and physics.",
+            "word": "Fine, as long as it's in writing.",
+            "textToSpeak": "Fine, as long as it's in writing.",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "One peak on FINE: unconditional agreement with the deal",
+                "Peaks on FINE and WRITING: agreeing, then adding the condition"
             ],
-            "correctAnswer": "Rising on each item, falling on the last (a list)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Peaks on FINE and WRITING: agreeing, then adding the condition",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                2,
                 3,
-                2,
+                1,
+                1,
                 3,
                 1
             ],
-            "hint": "Count how many things are being listed here — all but the final one usually rise slightly before the pitch finally falls.",
-            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
-            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list.",
-            "emotionContext": "a list"
+            "hint": "B says yes but with a limit. How many peaks would show that?",
+            "explanation": "FINE carries the agreement and WRITING carries the condition, so there are two peaks. A single peak would suggest B had no conditions.",
+            "emphasisRule": "An agreement with a condition has a peak for each part.",
+            "emotionContext": "Agreement"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L160_Q3",
-            "instruction": "Identify the pitch pattern",
+            "instruction": "Identify the emphasis. A: \"Shall we continue this tomorrow?\" B agrees.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After two years of development, the company launched its mobile app.",
-            "textToSpeak": "After two years of development, the company launched its mobile app.",
+            "word": "Tomorrow works for me.",
+            "textToSpeak": "Tomorrow works for me.",
             "options": [
-                "Rising on each item, falling on the last (a list)",
-                "One smooth fall across the whole sentence (not a list)"
+                "Emphasis on TOMORROW",
+                "Emphasis on WORKS"
             ],
-            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
+            "correctAnswer": "Emphasis on WORKS",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "This sentence describes a single action, not a series — so it takes one smooth falling contour, start to finish.",
-            "explanation": "Since nothing here is being enumerated, the pitch falls smoothly across the whole sentence rather than bouncing between items.",
-            "emphasisRule": "Only genuine enumerated lists use the rising-then-falling pattern; ordinary statements simply fall once, at the end.",
-            "emotionContext": "not a list"
+            "hint": "A has already named the day. What is B contributing?",
+            "explanation": "TOMORROW comes from A's question, so it stays low even at the start. WORKS is B's response, which is why it carries the peak.",
+            "emphasisRule": "A repeated day stays low in an agreement; the word of agreement takes the peak.",
+            "emotionContext": "Social formula"
         }
     ]
 }

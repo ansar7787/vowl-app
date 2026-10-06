@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L31_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone reads out a shopping list.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Did you enjoy the trip?",
-            "textToSpeak": "Did you enjoy the trip?",
+            "word": "Milk, eggs, and a loaf of bread.",
+            "textToSpeak": "Milk, eggs, and a loaf of bread.",
             "options": [
-                "Falling (Statement Describing an Experience)",
-                "Rising (Yes/No Question Checking an Experience)"
+                "Lifts on each item, falls on the last",
+                "Falls on every item, one by one"
             ],
-            "correctAnswer": "Rising (Yes/No Question Checking an Experience)",
-            "correctAnswerIndex": 1,
-            "hint": "Asking whether someone enjoyed something, answerable yes or no, rises at the end.",
-            "explanation": "'Did you enjoy the trip?' is a Yes/No question checking an experience, so the pitch rises at the end.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a statement describing an experience and a yes/no question checking an experience."
+            "correctAnswer": "Lifts on each item, falls on the last",
+            "correctAnswerIndex": 0,
+            "hint": "Listen to what happens after 'milk' and after 'eggs'. Does the voice sound finished?",
+            "explanation": "Items in a list normally lift slightly at each comma to say the list isn't done, and the last item falls to close it. Falling on every item would make each one sound like a separate, finished sentence.",
+            "modulationPattern": "Rising at list-internal boundaries, falling on the final item.",
+            "meaningShift": "Lifts join the items into one list; falls on each would split them into unrelated statements."
         },
         {
             "id": "ACC_PITCHMODULATION_L31_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are dictating a phone number so someone can write it down.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Where should we eat tonight?",
-            "textToSpeak": "Where should we eat tonight?",
+            "word": "It's five five five, oh one four seven.",
+            "textToSpeak": "It's five five five, oh one four seven.",
             "options": [
-                "Falling (Wh-Question Asking for a Suggestion)",
-                "Rising (Yes/No Question Checking a Fact)"
+                "The same fall after every group",
+                "Small lifts after each group, a fall at the end"
             ],
-            "correctAnswer": "Falling (Wh-Question Asking for a Suggestion)",
-            "correctAnswerIndex": 0,
-            "hint": "'Where should we' asks for a suggestion, not a yes/no answer, so the pitch usually falls at the end.",
-            "explanation": "'Where should we eat tonight?' is a Wh-question asking for a suggestion, so it falls rather than rises.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a wh-question asking for a suggestion and a yes/no question checking a fact."
+            "correctAnswer": "Small lifts after each group, a fall at the end",
+            "correctAnswerIndex": 1,
+            "hint": "The listener has to keep writing. Which groups sound as if more is coming?",
+            "explanation": "When you dictate numbers in groups, a slight rise after each group tells the writer to hold on because there are more digits. The fall on the last group signals the end. Falling on every group would make the listener think the number had finished.",
+            "modulationPattern": "Rising at group boundaries with a final fall.",
+            "meaningShift": "Small lifts show the number is still going; repeated falls would signal an early ending."
         },
         {
             "id": "ACC_PITCHMODULATION_L31_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A countdown at a starting line.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We should eat at the new cafe.",
-            "textToSpeak": "We should eat at the new cafe.",
+            "word": "Ready, steady, go!",
+            "textToSpeak": "Ready, steady, go!",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Statement Making a Suggestion)"
+                "Builds on the first two, 'go' peaks and falls",
+                "Falls on the first two, 'go' rises"
             ],
-            "correctAnswer": "Falling (Statement Making a Suggestion)",
-            "correctAnswerIndex": 1,
-            "hint": "This offers a suggestion as a statement, not a question, so expect the pitch to fall at the end.",
-            "explanation": "'We should eat at the new cafe' is a statement making a suggestion, so the pitch falls to close it.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a statement making a suggestion."
+            "correctAnswer": "Builds on the first two, 'go' peaks and falls",
+            "correctAnswerIndex": 0,
+            "hint": "Where does the strongest energy land: at the start or on the last word?",
+            "explanation": "Tension builds as the first two words carry the pitch upward, and 'go' is the release: a high start that drops. Falling on the first two would make them sound like they're winding down before the signal.",
+            "modulationPattern": "Rising across the first two words, then a peak and fall on 'go'.",
+            "meaningShift": "A build-up followed by a peak on 'go' creates a signal; a fall then rise would sound anticlimactic."
         },
         {
             "id": "ACC_PITCHMODULATION_L32_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone across the street has dropped their wallet.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Is the package here yet?",
-            "textToSpeak": "Is the package here yet?",
+            "word": "Excuse me!",
+            "textToSpeak": "Excuse me!",
             "options": [
-                "Falling (Statement Reporting Arrival)",
-                "Rising (Yes/No Question Checking Arrival)"
+                "High start, projected: getting attention",
+                "Low, close start: a quiet interruption"
             ],
-            "correctAnswer": "Rising (Yes/No Question Checking Arrival)",
-            "correctAnswerIndex": 1,
-            "hint": "Checking if a delivery has arrived, answerable yes or no, rises at the end.",
-            "explanation": "'Is the package here yet?' is a Yes/No question checking arrival, so the pitch rises at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a statement reporting arrival and a yes/no question checking arrival."
+            "correctAnswer": "High start, projected: getting attention",
+            "correctAnswerIndex": 0,
+            "hint": "How far does the voice seem to travel?",
+            "explanation": "To reach someone at a distance, speakers raise the starting pitch and make it carry, so the voice begins near the top. A low, close start is for someone standing next to you and wouldn't get across the street.",
+            "modulationPattern": "High pitch onset with a wide, projected contour on 'excuse'.",
+            "meaningShift": "A high start reaches across distance; a low start works for someone nearby."
         },
         {
             "id": "ACC_PITCHMODULATION_L32_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You lean over to ask a stranger on a quiet train.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Who's picking up the kids?",
-            "textToSpeak": "Who's picking up the kids?",
+            "word": "Sorry to bother you.",
+            "textToSpeak": "Sorry to bother you.",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Wh-Question Seeking a Volunteer)"
+                "A high, sharp start: attention-grabbing",
+                "A lower, gentler start: discreet"
             ],
-            "correctAnswer": "Falling (Wh-Question Seeking a Volunteer)",
+            "correctAnswer": "A lower, gentler start: discreet",
             "correctAnswerIndex": 1,
-            "hint": "'Who's' asks which person will do something, so the pitch generally falls at the end.",
-            "explanation": "'Who's picking up the kids?' is a Wh-question seeking a volunteer, so it falls rather than rises at the end.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a wh-question seeking a volunteer."
+            "hint": "Consider what the speaker is trying to avoid doing to the other passengers.",
+            "explanation": "In a quiet carriage a lower and softer start keeps the interruption private and polite. A high, sharp start would draw glances from everyone and could sound alarming instead of considerate.",
+            "modulationPattern": "Lower pitch onset with a narrow range across the phrase.",
+            "meaningShift": "A gentle start keeps the apology private; a sharp start would call attention to it."
         },
         {
             "id": "ACC_PITCHMODULATION_L32_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You see a cyclist about to hit a pothole.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm picking up the kids today.",
-            "textToSpeak": "I'm picking up the kids today.",
+            "word": "Look out!",
+            "textToSpeak": "Look out!",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Statement Confirming a Task)"
+                "Jumps high at once",
+                "Builds up gradually"
             ],
-            "correctAnswer": "Falling (Statement Confirming a Task)",
-            "correctAnswerIndex": 1,
-            "hint": "This confirms who will do the task, so the pitch should fall at the end like a normal statement.",
-            "explanation": "'I'm picking up the kids today' is a statement confirming a task, so the pitch falls at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a statement confirming a task."
+            "correctAnswer": "Jumps high at once",
+            "correctAnswerIndex": 0,
+            "hint": "How long does the voice take to reach its top?",
+            "explanation": "Warnings need to register instantly, so pitch leaps to its high point on the first word. A gradual build would waste the moment the listener needs to react.",
+            "modulationPattern": "Abrupt high onset with immediate peak on 'look'.",
+            "meaningShift": "An immediate leap signals urgency; a slow build would sound calm and too late."
         },
         {
             "id": "ACC_PITCHMODULATION_L33_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A stranger holds the door open.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Have you met my sister?",
-            "textToSpeak": "Have you met my sister?",
+            "word": "Thanks, that's very kind.",
+            "textToSpeak": "Thanks, that's very kind.",
             "options": [
-                "Rising (Yes/No Question Checking an Introduction)",
-                "Falling (Statement Making an Introduction)"
+                "Small, tidy movement: polite routine",
+                "Big, warm movement: heartfelt gratitude"
             ],
-            "correctAnswer": "Rising (Yes/No Question Checking an Introduction)",
+            "correctAnswer": "Small, tidy movement: polite routine",
             "correctAnswerIndex": 0,
-            "hint": "Asking whether two people already know each other, answerable yes or no, rises at the end.",
-            "explanation": "'Have you met my sister?' is a Yes/No question checking an introduction, so the pitch rises at the end.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question checking an introduction and a statement making an introduction."
+            "hint": "Judge whether the voice puts any extra effort into 'kind'.",
+            "explanation": "Everyday politeness typically uses a modest, controlled range, where the words carry the meaning and the tune stays tidy. Wide movement would suggest the gesture had touched the speaker more than a held door normally does.",
+            "modulationPattern": "Narrow range with a small fall on 'kind'.",
+            "meaningShift": "Small movement sounds courteous and routine; big movement sounds deeply grateful."
         },
         {
             "id": "ACC_PITCHMODULATION_L33_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend has covered your shift for a week.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What's wrong with the printer?",
-            "textToSpeak": "What's wrong with the printer?",
+            "word": "You're the best!",
+            "textToSpeak": "You're the best!",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Wh-Question Asking About a Problem)"
+                "A slight fall: casual thanks",
+                "A big hill: real gratitude"
             ],
-            "correctAnswer": "Falling (Wh-Question Asking About a Problem)",
+            "correctAnswer": "A big hill: real gratitude",
             "correctAnswerIndex": 1,
-            "hint": "'What's wrong' asks for the cause of a problem, so the pitch generally falls at the end.",
-            "explanation": "'What's wrong with the printer?' is a Wh-question asking about a problem, so it falls rather than rises.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a wh-question asking about a problem."
+            "hint": "How much of the voice's range does this use?",
+            "explanation": "Big appreciation tends to use big movement, so the pitch rises high on 'best' and drops back. A slight fall could be a friendly throwaway line, but it would undersell what the friend has done.",
+            "modulationPattern": "Wide rising-falling on 'best'.",
+            "meaningShift": "A big hill matches heartfelt thanks; a slight fall would sound offhand."
         },
         {
             "id": "ACC_PITCHMODULATION_L33_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are leaving a colleague you will see tomorrow.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The printer is out of ink.",
-            "textToSpeak": "The printer is out of ink.",
+            "word": "See you tomorrow.",
+            "textToSpeak": "See you tomorrow.",
             "options": [
-                "Falling (Statement Explaining a Problem)",
-                "Rising (Yes/No Question Checking a Fact)"
+                "Narrow, falling: ordinary goodbye",
+                "Wide, lifted: looking forward to it"
             ],
-            "correctAnswer": "Falling (Statement Explaining a Problem)",
+            "correctAnswer": "Narrow, falling: ordinary goodbye",
             "correctAnswerIndex": 0,
-            "hint": "This explains the cause of a problem, so listen for the pitch falling at the end.",
-            "explanation": "'The printer is out of ink' is a statement explaining a problem, so the pitch falls to close the explanation.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a statement explaining a problem and a yes/no question checking a fact."
+            "hint": "Would the speaker sound any different if they said this every day?",
+            "explanation": "An everyday goodbye needs very little pitch movement. The narrow fall on 'tomorrow' treats the meeting as a given. A wide, lifted version would suggest something special is planned.",
+            "modulationPattern": "Narrow fall on 'tomorrow'.",
+            "meaningShift": "A narrow fall sounds routine; a wide lift would suggest anticipation."
         },
         {
             "id": "ACC_PITCHMODULATION_L34_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are checking your calendar out loud.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Should I bring an umbrella?",
-            "textToSpeak": "Should I bring an umbrella?",
+            "word": "Let me see.",
+            "textToSpeak": "Let me see.",
             "options": [
-                "Rising (Yes/No Question Seeking Advice)",
-                "Falling (Statement Giving Advice)"
+                "Fully dropped: finished speaking",
+                "Held steady: keeping the floor"
             ],
-            "correctAnswer": "Rising (Yes/No Question Seeking Advice)",
-            "correctAnswerIndex": 0,
-            "hint": "Asking for advice that can be answered yes or no usually rises at the end.",
-            "explanation": "'Should I bring an umbrella?' is a Yes/No question seeking advice, so the pitch rises at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a yes/no question seeking advice and a statement giving advice."
+            "correctAnswer": "Held steady: keeping the floor",
+            "correctAnswerIndex": 1,
+            "hint": "Decide whether the voice sounds like it has finished, or like it is still busy.",
+            "explanation": "When speakers are thinking aloud, the pitch tends to stay level or lightly rise, which tells others not to jump in. A full drop would signal a complete thought and invite a response.",
+            "modulationPattern": "Level or slightly rising contour holding the turn.",
+            "meaningShift": "A held pitch says 'I'm still working'; a full fall says 'that's all'."
         },
         {
             "id": "ACC_PITCHMODULATION_L34_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A presenter begins a list of steps.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Why is the wifi so slow?",
-            "textToSpeak": "Why is the wifi so slow?",
+            "word": "Okay, so first, we log in.",
+            "textToSpeak": "Okay, so first, we log in.",
             "options": [
-                "Falling (Wh-Question Asking for a Cause)",
-                "Rising (Yes/No Question Checking a Fact)"
+                "Falls on 'first': item finished",
+                "Lifts on 'first': more to come"
             ],
-            "correctAnswer": "Falling (Wh-Question Asking for a Cause)",
-            "correctAnswerIndex": 0,
-            "hint": "'Why' asks for a cause, not a yes/no answer, so the pitch typically falls at the end, even if the speaker is annoyed.",
-            "explanation": "'Why is the wifi so slow?' is a Wh-question asking for a cause, so it falls rather than rises.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a wh-question asking for a cause and a yes/no question checking a fact."
+            "correctAnswer": "Lifts on 'first': more to come",
+            "correctAnswerIndex": 1,
+            "hint": "Listen at the comma after 'first'.",
+            "explanation": "The lift on 'first' works like a promise that a sequence has started, and it holds the listener's attention. Dropping there would make 'first' sound like a complete statement, leaving 'we log in' oddly detached.",
+            "modulationPattern": "Rise at the boundary after 'first', final fall on 'in'.",
+            "meaningShift": "A lift sets up a sequence; a fall would cut the ordinal off from its step."
         },
         {
             "id": "ACC_PITCHMODULATION_L34_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A cashier hands over your change.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The wifi has been slow all day.",
-            "textToSpeak": "The wifi has been slow all day.",
+            "word": "Right, that's everything.",
+            "textToSpeak": "Right, that's everything.",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Statement Describing a Problem)"
+                "Held level: still working it out",
+                "Deep fall: handing the turn back"
             ],
-            "correctAnswer": "Falling (Statement Describing a Problem)",
+            "correctAnswer": "Deep fall: handing the turn back",
             "correctAnswerIndex": 1,
-            "hint": "This describes an ongoing problem as a fact, so the pitch should fall at the end.",
-            "explanation": "'The wifi has been slow all day' is a statement describing a problem, so the pitch falls at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a statement describing a problem."
+            "hint": "Where does the voice rest by the end?",
+            "explanation": "That deep fall on 'everything' says the transaction is complete and it's the customer's turn to move on. A held level would hang, leaving the customer waiting for the next piece of information.",
+            "modulationPattern": "Falling to a low finish on 'everything'.",
+            "meaningShift": "A deep fall closes the exchange; a held pitch leaves it unfinished."
         },
         {
             "id": "ACC_PITCHMODULATION_L35_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone finally explains why the train is delayed.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Do you have any allergies?",
-            "textToSpeak": "Do you have any allergies?",
+            "word": "Oh, I see.",
+            "textToSpeak": "Oh, I see.",
             "options": [
-                "Rising (Yes/No Question Checking Health Information)",
-                "Falling (Statement Sharing Health Information)"
+                "Falls: understanding lands",
+                "Rises: still not clear"
             ],
-            "correctAnswer": "Rising (Yes/No Question Checking Health Information)",
+            "correctAnswer": "Falls: understanding lands",
             "correctAnswerIndex": 0,
-            "hint": "A health check-up question answerable yes or no usually rises gently at the end.",
-            "explanation": "'Do you have any allergies?' is a Yes/No question checking health information, so the pitch rises at the end.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question checking health information and a statement sharing health information."
+            "hint": "Notice whether the speaker sounds like the mystery is now solved.",
+            "explanation": "On 'see', the fall shows that the information has been received and makes sense. A rise would suggest the speaker is still working it out or hoping for more detail.",
+            "modulationPattern": "Falling on 'see' in a reactive phrase.",
+            "meaningShift": "A fall shows the penny has dropped; a rise suggests it hasn't."
         },
         {
             "id": "ACC_PITCHMODULATION_L35_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says, 'I've got some news.'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "How long does the flight take?",
-            "textToSpeak": "How long does the flight take?",
+            "word": "Oh?",
+            "textToSpeak": "Oh?",
             "options": [
-                "Falling (Wh-Question Asking for a Duration)",
-                "Rising (Yes/No Question Checking a Fact)"
+                "Falling: closing it off",
+                "Rising: inviting more"
             ],
-            "correctAnswer": "Falling (Wh-Question Asking for a Duration)",
-            "correctAnswerIndex": 0,
-            "hint": "'How long' asks for a length of time, not a yes/no answer, so the pitch generally falls at the end.",
-            "explanation": "'How long does the flight take?' is a Wh-question asking for a duration, so it falls rather than rises.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a wh-question asking for a duration and a yes/no question checking a fact."
+            "correctAnswer": "Rising: inviting more",
+            "correctAnswerIndex": 1,
+            "hint": "Would the speaker like to hear the rest?",
+            "explanation": "Said with a lift, 'oh' invites the colleague to go on, and shows curiosity. A falling 'oh' can sound like a shrug, as though the news was of little interest.",
+            "modulationPattern": "Rising on a one-word interjection used as a prompt.",
+            "meaningShift": "A rise shows curiosity; a fall would sound uninterested."
         },
         {
             "id": "ACC_PITCHMODULATION_L35_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend tells you her flight has been cancelled.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The flight takes about six hours.",
-            "textToSpeak": "The flight takes about six hours.",
+            "word": "Oh no!",
+            "textToSpeak": "Oh no!",
             "options": [
-                "Falling (Statement Giving a Duration)",
-                "Rising (Yes/No Question Checking a Fact)"
+                "Slow slide: resigned sigh",
+                "Quick hill: real dismay"
             ],
-            "correctAnswer": "Falling (Statement Giving a Duration)",
-            "correctAnswerIndex": 0,
-            "hint": "This gives the length of time as information, so expect the pitch to fall at the end.",
-            "explanation": "'The flight takes about six hours' is a statement giving a duration, so the pitch falls to complete it.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a statement giving a duration and a yes/no question checking a fact."
+            "correctAnswer": "Quick hill: real dismay",
+            "correctAnswerIndex": 1,
+            "hint": "Listen to how fast the pitch changes at the start.",
+            "explanation": "Quick movement up and down suits an immediate emotional reaction, since sympathy comes out in a burst. A slow slide suggests the speaker has been expecting bad news and has accepted it.",
+            "modulationPattern": "Rapid rising-falling on 'no'.",
+            "meaningShift": "A quick hill sounds like an instant reaction; a slow slide sounds worn down."
         },
         {
             "id": "ACC_PITCHMODULATION_L36_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You lent someone a pen and they thank you.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Are these tomatoes fresh?",
-            "textToSpeak": "Are these tomatoes fresh?",
+            "word": "No problem.",
+            "textToSpeak": "No problem.",
             "options": [
-                "Rising (Yes/No Question Checking Quality)",
-                "Falling (Statement Confirming Quality)"
+                "Light fall: easy, unbothered",
+                "Dip and lift: a bit begrudging"
             ],
-            "correctAnswer": "Rising (Yes/No Question Checking Quality)",
+            "correctAnswer": "Light fall: easy, unbothered",
             "correctAnswerIndex": 0,
-            "hint": "Checking the freshness of food, answerable yes or no, usually rises at the end.",
-            "explanation": "'Are these tomatoes fresh?' is a Yes/No question checking quality, so the pitch rises at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a yes/no question checking quality and a statement confirming quality."
+            "hint": "Does the reply feel completely finished?",
+            "explanation": "Light falls close the exchange with no fuss, so the speaker seems relaxed. A dip and lift can leave a shadow of doubt, as if there had been a problem after all.",
+            "modulationPattern": "Falling on 'problem' with a narrow range.",
+            "meaningShift": "A light fall sounds easygoing; a dip and lift can hint at reluctance."
         },
         {
             "id": "ACC_PITCHMODULATION_L36_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A delivery driver hands you a parcel.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What's the password for the wifi?",
-            "textToSpeak": "What's the password for the wifi?",
+            "word": "Thanks a lot.",
+            "textToSpeak": "Thanks a lot.",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Wh-Question Requesting Information)"
+                "Wide hill: warm thanks",
+                "Brisk fall: routine thanks"
             ],
-            "correctAnswer": "Falling (Wh-Question Requesting Information)",
+            "correctAnswer": "Brisk fall: routine thanks",
             "correctAnswerIndex": 1,
-            "hint": "'What's the password' asks for a specific piece of information, so the pitch usually falls at the end.",
-            "explanation": "'What's the password for the wifi?' is a Wh-question requesting information, so it falls rather than rises.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a wh-question requesting information."
+            "hint": "Would you expect the driver to remember this reply?",
+            "explanation": "Everyday transactions call for a quick, tidy fall, since the thanks is a courtesy and not an expression of deep feeling. A wide hill would be more suited to a favour, something that cost the other person effort.",
+            "modulationPattern": "Narrow falling contour across the phrase.",
+            "meaningShift": "A brisk fall suits a routine courtesy; a wide hill would sound more personal."
         },
         {
             "id": "ACC_PITCHMODULATION_L36_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend thanks you for a lift to the airport at 5 a.m.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The password is on the receipt.",
-            "textToSpeak": "The password is on the receipt.",
+            "word": "Any time.",
+            "textToSpeak": "Any time.",
             "options": [
-                "Falling (Statement Giving a Location)",
-                "Rising (Yes/No Question Checking a Fact)"
+                "Warm hill: sincerely means it",
+                "Brisk fall: closing the exchange"
             ],
-            "correctAnswer": "Falling (Statement Giving a Location)",
+            "correctAnswer": "Warm hill: sincerely means it",
             "correctAnswerIndex": 0,
-            "hint": "This gives the location of information, so listen for the pitch falling at the end.",
-            "explanation": "'The password is on the receipt' is a statement giving a location, so the pitch falls at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a statement giving a location and a yes/no question checking a fact."
+            "hint": "Check whether the pitch puts a little extra into 'any'.",
+            "explanation": "Extra movement on 'any' suggests the offer is meant, and the listener hears 'call me again'. A brisk fall would be accurate but perfunctory and could sound like a reflex reply.",
+            "modulationPattern": "Rising-falling with a peak on 'any'.",
+            "meaningShift": "A warm hill sounds like a real offer; a brisk fall sounds like a habit."
         },
         {
             "id": "ACC_PITCHMODULATION_L37_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Listen to where the main peak of this everyday remark falls.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Will the concert get cancelled?",
-            "textToSpeak": "Will the concert get cancelled?",
+            "word": "I need a coffee.",
+            "textToSpeak": "I need a coffee.",
             "options": [
-                "Rising (Yes/No Question Checking a Possibility)",
-                "Falling (Statement Predicting an Outcome)"
+                "Highest on 'coffee'",
+                "Highest on 'need'"
             ],
-            "correctAnswer": "Rising (Yes/No Question Checking a Possibility)",
+            "correctAnswer": "Highest on 'coffee'",
             "correctAnswerIndex": 0,
-            "hint": "Asking whether something might happen, answerable yes or no, rises at the end.",
-            "explanation": "'Will the concert get cancelled?' is a Yes/No question checking a possibility, so the pitch rises at the end.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a possibility and a statement predicting an outcome."
+            "hint": "Ask which word tells the listener what is needed.",
+            "explanation": "In a neutral statement the pitch peak sits on the last content word, which carries the new information. A peak on 'need' would sound like a reply to someone who said 'you don't need one'.",
+            "modulationPattern": "Main pitch peak on the final content word 'coffee'.",
+            "meaningShift": "A peak on 'coffee' gives the new information; a peak on 'need' would stress the need itself."
         },
         {
             "id": "ACC_PITCHMODULATION_L37_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone hears their team has won.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Who wrote this song?",
-            "textToSpeak": "Who wrote this song?",
+            "word": "We won!",
+            "textToSpeak": "We won!",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Wh-Question Seeking Credit)"
+                "A steady, narrow hum",
+                "A quick, wide peak then a drop"
             ],
-            "correctAnswer": "Falling (Wh-Question Seeking Credit)",
+            "correctAnswer": "A quick, wide peak then a drop",
             "correctAnswerIndex": 1,
-            "hint": "'Who' asks for the name of a person, so the pitch generally falls at the end.",
-            "explanation": "'Who wrote this song?' is a Wh-question seeking credit, so the pitch falls rather than rises.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a wh-question seeking credit."
+            "hint": "Is there any sense of a jump in this word?",
+            "explanation": "Excited news pushes the pitch high and fast, and then it falls away. A narrow, steady delivery would suit calm reporting, not a celebration.",
+            "modulationPattern": "Wide rising-falling on a single stressed syllable.",
+            "meaningShift": "A wide peak conveys excitement; a narrow hum would sound like an update."
         },
         {
             "id": "ACC_PITCHMODULATION_L37_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone sees you talking to a stranger and asks who it is.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "A local band wrote this song.",
-            "textToSpeak": "A local band wrote this song.",
+            "word": "He's my brother.",
+            "textToSpeak": "He's my brother.",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Statement Giving Credit)"
+                "Highest on 'brother'",
+                "Highest on 'my'"
             ],
-            "correctAnswer": "Falling (Statement Giving Credit)",
-            "correctAnswerIndex": 1,
-            "hint": "This gives credit to someone as a fact, so the pitch should fall at the end.",
-            "explanation": "'A local band wrote this song' is a statement giving credit, so the pitch falls to close the sentence.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a statement giving credit."
+            "correctAnswer": "Highest on 'brother'",
+            "correctAnswerIndex": 0,
+            "hint": "Which word gives the answer to the question that was asked?",
+            "explanation": "Because the question asks who he is, and the answer is 'brother', that is where the pitch peaks. A peak on 'my' would emphasise ownership, as if someone had suggested he belonged to someone else.",
+            "modulationPattern": "Peak on 'brother' as the new information.",
+            "meaningShift": "A peak on 'brother' answers the question; a peak on 'my' would correct a claim about who he belongs to."
         },
         {
             "id": "ACC_PITCHMODULATION_L38_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You have been waiting at the station and see your friend step off the train.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Did the doctor call back?",
-            "textToSpeak": "Did the doctor call back?",
+            "word": "She's here!",
+            "textToSpeak": "She's here!",
             "options": [
-                "Rising (Yes/No Question Checking a Response)",
-                "Falling (Statement Reporting a Response)"
+                "Level fall: routine report",
+                "Rise-fall: pleased discovery"
             ],
-            "correctAnswer": "Rising (Yes/No Question Checking a Response)",
-            "correctAnswerIndex": 0,
-            "hint": "Checking whether someone returned a call, answerable yes or no, rises at the end.",
-            "explanation": "'Did the doctor call back?' is a Yes/No question checking a response, so the pitch rises at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a response and a statement reporting a response."
+            "correctAnswer": "Rise-fall: pleased discovery",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the sentence sounds like news to the speaker.",
+            "explanation": "That peak on 'here', then a fall, gives the sentence the lift of a pleased discovery. A level, low fall would suit a flat report, like ticking someone off a list.",
+            "modulationPattern": "Rising-falling with a peak on 'here'.",
+            "meaningShift": "Rise-fall sounds like relief and delight; a level fall sounds like a check-list."
         },
         {
             "id": "ACC_PITCHMODULATION_L38_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You were told Tom had already left, then see him at his desk.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What medicine should I take?",
-            "textToSpeak": "What medicine should I take?",
+            "word": "He's still here?",
+            "textToSpeak": "He's still here?",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Wh-Question Seeking Medical Advice)"
+                "Falling: matter-of-fact remark",
+                "Rising: surprised, checking"
             ],
-            "correctAnswer": "Falling (Wh-Question Seeking Medical Advice)",
+            "correctAnswer": "Rising: surprised, checking",
             "correctAnswerIndex": 1,
-            "hint": "'What medicine' asks for specific advice, so the pitch generally falls at the end.",
-            "explanation": "'What medicine should I take?' is a Wh-question seeking medical advice, so it falls rather than rises.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a wh-question seeking medical advice."
+            "hint": "Would the speaker be startled by a 'yes'?",
+            "explanation": "The lift on 'here' turns the phrase into a check that shows surprise, because it contradicts what the speaker was told. A fall would treat his presence as unremarkable.",
+            "modulationPattern": "Rising on 'here' in a declarative-form question.",
+            "meaningShift": "A rise questions a surprising fact; a fall just states it."
         },
         {
             "id": "ACC_PITCHMODULATION_L38_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You glance at the clock in an empty meeting room.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You should take this twice a day.",
-            "textToSpeak": "You should take this twice a day.",
+            "word": "They're late.",
+            "textToSpeak": "They're late.",
             "options": [
-                "Falling (Statement Giving Instructions)",
-                "Rising (Yes/No Question Checking a Fact)"
+                "A firm fall on 'late': mild annoyance",
+                "A light fall on 'late': neutral remark"
             ],
-            "correctAnswer": "Falling (Statement Giving Instructions)",
+            "correctAnswer": "A firm fall on 'late': mild annoyance",
             "correctAnswerIndex": 0,
-            "hint": "This gives instructions rather than asking for them, so listen for the pitch falling at the end.",
-            "explanation": "'You should take this twice a day' is a statement giving instructions, so the pitch falls at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a statement giving instructions and a yes/no question checking a fact."
+            "hint": "How weighty does 'late' sound?",
+            "explanation": "Deeper, firmer falls on 'late' give weight to the observation and can suggest the speaker is a little bothered. A light fall makes the same words sound like a passing note.",
+            "modulationPattern": "Falling on 'late' with a deep drop.",
+            "meaningShift": "A firm fall implies irritation; a light fall stays neutral."
         },
         {
             "id": "ACC_PITCHMODULATION_L39_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague passes you at the lift.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Can we reschedule the meeting?",
-            "textToSpeak": "Can we reschedule the meeting?",
+            "word": "How are you doing?",
+            "textToSpeak": "How are you doing?",
             "options": [
-                "Rising (Yes/No Question Making a Request)",
-                "Falling (Statement Proposing a Change)"
+                "Quick, light fall: a greeting formula",
+                "Slow rise: a real enquiry"
             ],
-            "correctAnswer": "Rising (Yes/No Question Making a Request)",
+            "correctAnswer": "Quick, light fall: a greeting formula",
             "correctAnswerIndex": 0,
-            "hint": "A polite request that can be answered yes or no usually rises at the end.",
-            "explanation": "'Can we reschedule the meeting?' is a Yes/No question making a request, so the pitch rises at the end.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question making a request and a statement proposing a change."
+            "hint": "Would the speaker stop walking to hear the answer?",
+            "explanation": "Passing greetings are usually quick, with a light fall, because they work as a social gesture. A slower, lifted delivery would invite an answer and give the listener time to give one.",
+            "modulationPattern": "Fast, falling contour with minimal range.",
+            "meaningShift": "A quick fall works as a hello; a slow rise asks for an actual answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L39_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You know your friend's father was in hospital last week.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Where did you put the keys?",
-            "textToSpeak": "Where did you put the keys?",
+            "word": "How's your dad doing?",
+            "textToSpeak": "How's your dad doing?",
             "options": [
-                "Falling (Wh-Question Asking for a Location)",
-                "Rising (Yes/No Question Checking a Fact)"
+                "Quick, falling: routine chat",
+                "Softer, rising: real concern"
             ],
-            "correctAnswer": "Falling (Wh-Question Asking for a Location)",
-            "correctAnswerIndex": 0,
-            "hint": "'Where did you put' asks for a specific location, so the pitch usually falls at the end.",
-            "explanation": "'Where did you put the keys?' is a Wh-question asking for a location, so it falls rather than rises.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a wh-question asking for a location and a yes/no question checking a fact."
+            "correctAnswer": "Softer, rising: real concern",
+            "correctAnswerIndex": 1,
+            "hint": "Would the speaker be listening carefully to the answer?",
+            "explanation": "With the context making the question meaningful, a softer lift on 'doing' leaves space for a real answer. A quick fall would sound like a formula and might feel dismissive when the father has been ill.",
+            "modulationPattern": "Rising on 'doing' with slower pace.",
+            "meaningShift": "A soft rise signals care and time to answer; a quick fall would feel casual."
         },
         {
             "id": "ACC_PITCHMODULATION_L39_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are leaving the office on a Friday.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I put the keys on the table.",
-            "textToSpeak": "I put the keys on the table.",
+            "word": "Have a good one.",
+            "textToSpeak": "Have a good one.",
             "options": [
-                "Falling (Statement Giving a Location)",
-                "Rising (Yes/No Question Checking a Fact)"
+                "Unhurried fall: warm and settled",
+                "Sharp lift: bright and rushed"
             ],
-            "correctAnswer": "Falling (Statement Giving a Location)",
+            "correctAnswer": "Unhurried fall: warm and settled",
             "correctAnswerIndex": 0,
-            "hint": "This gives the location as information, so expect the pitch to fall at the end.",
-            "explanation": "'I put the keys on the table' is a statement giving a location, so the pitch falls to complete it.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a statement giving a location and a yes/no question checking a fact."
+            "hint": "Notice whether the voice sounds like it is hurrying out of the door.",
+            "explanation": "Slow, unhurried falls give the wish a relaxed, friendly finish. A sharp lift would sound eager to leave and slightly hurried, which could make the good wishes sound automatic.",
+            "modulationPattern": "Slow falling contour ending on 'one'.",
+            "meaningShift": "An unhurried fall sounds warm; a sharp lift sounds hurried."
         },
         {
             "id": "ACC_PITCHMODULATION_L40_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Politely asking permission in a shared room.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Is the test difficult?",
-            "textToSpeak": "Is the test difficult?",
+            "word": "Would you mind if I opened the window?",
+            "textToSpeak": "Would you mind if I opened the window?",
             "options": [
-                "Rising (Yes/No Question Checking Difficulty)",
-                "Falling (Statement Describing Difficulty)"
+                "Falls at the end: decision already made",
+                "Lifts near the end: leaves you free to say no"
             ],
-            "correctAnswer": "Rising (Yes/No Question Checking Difficulty)",
-            "correctAnswerIndex": 0,
-            "hint": "Checking how hard something is, answerable yes or no, usually rises at the end.",
-            "explanation": "'Is the test difficult?' is a Yes/No question checking difficulty, so the pitch rises at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a yes/no question checking difficulty and a statement describing difficulty."
+            "correctAnswer": "Lifts near the end: leaves you free to say no",
+            "correctAnswerIndex": 1,
+            "hint": "Consider how much room the listener is given to refuse.",
+            "explanation": "Near the end, a lift makes the question feel open, so the other person is free to say no. A fall would sound as if the speaker were informing, not asking.",
+            "modulationPattern": "Rising at the end of a polite yes/no request.",
+            "meaningShift": "A lift leaves room to decline; a fall sounds like an announcement."
         },
         {
             "id": "ACC_PITCHMODULATION_L40_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A hotel receptionist declines a booking.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What grade did you get?",
-            "textToSpeak": "What grade did you get?",
+            "word": "I'm afraid we're fully booked.",
+            "textToSpeak": "I'm afraid we're fully booked.",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Wh-Question Asking for a Result)"
+                "Lifts: leaving the door open",
+                "Falls: regretful but final"
             ],
-            "correctAnswer": "Falling (Wh-Question Asking for a Result)",
+            "correctAnswer": "Falls: regretful but final",
             "correctAnswerIndex": 1,
-            "hint": "'What grade' asks for a specific result, so the pitch generally falls at the end.",
-            "explanation": "'What grade did you get?' is a Wh-question asking for a result, so it falls rather than rises.",
-            "modulationPattern": "In English, Yes/No questions typically rise at the end, while Wh-questions and statements typically fall.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a wh-question asking for a result."
+            "hint": "Hear whether the speaker sounds as if a different answer is possible.",
+            "explanation": "'I'm afraid' already carries regret, so a fall on 'booked' finishes the sentence firmly. A lifted ending would keep the topic open and could imply that rooms might appear.",
+            "modulationPattern": "Falling on 'booked' after a softening opener.",
+            "meaningShift": "A fall gives a polite but final no; a lift would suggest room to negotiate."
         },
         {
             "id": "ACC_PITCHMODULATION_L40_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend describes a terrible journey home.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I got a really good grade.",
-            "textToSpeak": "I got a really good grade.",
+            "word": "It could have been worse.",
+            "textToSpeak": "It could have been worse.",
             "options": [
-                "Rising (Yes/No Question Checking a Fact)",
-                "Falling (Statement Sharing a Result)"
+                "Dip and lift: consoling, yet it still wasn't good",
+                "Peak and fall: relieved, it was fine"
             ],
-            "correctAnswer": "Falling (Statement Sharing a Result)",
-            "correctAnswerIndex": 1,
-            "hint": "This shares a result as information, so listen for the pitch falling at the end.",
-            "explanation": "'I got a really good grade' is a statement sharing a result, so the pitch falls at the end.",
-            "modulationPattern": "A rising ending marks a question answerable with yes or no; a falling ending marks a Wh-question or a statement.",
-            "meaningShift": "The meaning shifts between a yes/no question checking a fact and a statement sharing a result."
+            "correctAnswer": "Dip and lift: consoling, yet it still wasn't good",
+            "correctAnswerIndex": 0,
+            "hint": "Judge whether the speaker is really saying everything was fine.",
+            "explanation": "On 'worse', the dip and lift hint at reservations, so the listener hears sympathy without dismissal. A peak and fall would sound relieved and satisfied that things went well.",
+            "modulationPattern": "Falling-rising on 'worse'.",
+            "meaningShift": "A dip and lift offers comfort but acknowledges the difficulty; a peak and fall reads as relief."
         }
     ]
 }

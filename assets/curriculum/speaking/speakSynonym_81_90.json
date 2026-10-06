@@ -6,446 +6,423 @@
         {
             "id": "SPK_SPEAKSYNONYM_L81_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"accepting something as true without proof\" -- what word comes to mind?",
-            "explanation": "In this sentence, \"assumes\" means accepting something as true without proof, so \"presumes\" slots in naturally. \"takes for granted\" is a close second choice.",
-            "textToSpeak": "My new manager wrongly *assumes* everyone agrees.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "It only took a second. Which everyday noun could describe that kind of quick eye movement?",
+            "explanation": "A \"glance\" is very short, so the best substitutes are just as brief. \"Look\" is the simple one, \"peek\" suggests looking quickly or secretly, and \"glimpse\" is a very short sight of something. \"Stare\" would change the meaning completely.",
+            "textToSpeak": "She took a quick *glance* at the menu.",
             "acceptedSynonyms": [
-                "presumes",
-                "takes for granted",
-                "supposes"
+                "peek",
+                "look",
+                "glimpse"
             ],
-            "correctAnswer": "presumes"
+            "correctAnswer": "look"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L81_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"accepting something as true without proof.\"",
-            "explanation": "\"takes for granted\" is a reliable synonym for \"assumes\", which means accepting something as true without proof here. \"supposes\" and \"presumes\" are also accepted.",
-            "textToSpeak": "Her business partner wrongly *assumes* everyone agrees.",
+            "instruction": "Say a word that matches the tone of the sentence.",
+            "hint": "People kept their eyes on a stranger for far too long, and it felt rude.",
+            "explanation": "\"Stare\" is a long look, often rude or surprised. \"Gawk\" and \"gape\" are more critical, since they suggest someone looking in a silly or shocked way. \"Goggle\" is British and informal, with wide eyes.",
+            "textToSpeak": "Everyone *stared* at the stranger's bright orange suit.",
             "acceptedSynonyms": [
-                "presumes",
-                "takes for granted",
-                "supposes"
+                "gawked",
+                "goggled",
+                "gaped"
             ],
-            "correctAnswer": "takes for granted"
+            "correctAnswer": "gawked"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L81_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"accepting something as true without proof.\"",
-            "explanation": "\"supposes\" works well here because \"assumes\" also means accepting something as true without proof. \"presumes\" and \"takes for granted\" would work too.",
-            "textToSpeak": "The committee chair wrongly *assumes* everyone agrees.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Imagine a nurse is watching a patient closely to notice any changes.",
+            "explanation": "It helps to know that \"observe\" means watching with a purpose. \"Monitor\" is very medical, since it suggests checking over time, and \"study\" suggests looking carefully to understand something. \"Look at\" would lose the sense of purpose.",
+            "textToSpeak": "The nurse *observed* the patient for an hour.",
             "acceptedSynonyms": [
-                "presumes",
-                "takes for granted",
-                "supposes"
+                "watched",
+                "monitored",
+                "studied"
             ],
-            "correctAnswer": "supposes"
+            "correctAnswer": "monitored"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L82_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"giving extra importance to something\"?",
-            "explanation": "\"emphasizes\" means giving extra importance to something, and \"stresses\" captures that same idea naturally in this sentence. \"underscores\" is another solid option.",
-            "textToSpeak": "My piano teacher constantly *emphasizes* the importance of practice.",
+            "hint": "You need some private time and want to ask someone for a serious conversation.",
+            "explanation": "Quick reminder: \"speak\" is slightly more serious than \"talk\". \"Chat\" is casual and light, which is different from advice-seeking, and \"confer\" is formal and used for consulting someone. Notice that each word changes the tone.",
+            "textToSpeak": "Can we *talk* for a minute? I need your advice.",
             "acceptedSynonyms": [
-                "stresses",
-                "highlights",
-                "underscores",
-                "spotlights"
+                "confer",
+                "chat",
+                "speak"
             ],
-            "correctAnswer": "stresses"
+            "correctAnswer": "speak"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L82_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"giving extra importance to something.\"",
-            "explanation": "Good choice: \"highlights\" is a strong match for \"emphasizes\", which means giving extra importance to something. You could also say \"spotlights\" or \"stresses\".",
-            "textToSpeak": "Her thesis advisor constantly *emphasizes* the importance of practice.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You were in a quiet library and didn't want anyone else to hear.",
+            "explanation": "To choose well, note that \"murmured\" is soft, low speech. \"Muttered\" is low and can sound unhappy or unclear, and \"breathed\" is quieter and more poetic. The choice depends on the mood you want to express.",
+            "textToSpeak": "She *whispered* the answer to me.",
             "acceptedSynonyms": [
-                "stresses",
-                "highlights",
-                "underscores",
-                "spotlights"
+                "murmured",
+                "breathed",
+                "muttered"
             ],
-            "correctAnswer": "highlights"
+            "correctAnswer": "murmured"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L82_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"giving extra importance to something.\" What's a good match?",
-            "explanation": "\"underscores\" fits because \"emphasizes\" means giving extra importance to something here. Other natural alternatives include \"stresses\" and \"highlights\".",
-            "textToSpeak": "The head coach constantly *emphasizes* the importance of practice.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You're at the airport and a message is coming through the speakers for everyone to hear.",
+            "explanation": "Think about \"announced\": it is for information given openly to a group. \"Declared\" is stronger and more official, and \"revealed\" suggests the news was new or surprising.",
+            "textToSpeak": "The airline *announced* the delay at gate twelve.",
             "acceptedSynonyms": [
-                "stresses",
-                "highlights",
-                "underscores",
-                "spotlights"
+                "revealed",
+                "stated",
+                "declared"
             ],
-            "correctAnswer": "underscores"
+            "correctAnswer": "stated"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L83_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"waiting a moment because of doubt.\"",
-            "explanation": "In this sentence, \"hesitates\" means waiting a moment because of doubt, so \"pauses\" slots in naturally. \"falters\" is a close second choice.",
-            "textToSpeak": "My mentor rarely *hesitates* before deciding.",
+            "instruction": "Say a synonym with the same level of intensity.",
+            "hint": "The customers weren't asking politely. They insisted that the company pay them back.",
+            "explanation": "\"Demand\" is the strongest kind of request. \"Insist on\" shows someone won't accept a no, and \"call for\" is formal. \"Claim\" suggests they say they have a right to it.",
+            "textToSpeak": "The customers *demanded* a refund.",
             "acceptedSynonyms": [
-                "pauses",
-                "wavers",
-                "falters",
-                "dithers"
+                "claimed",
+                "insisted on",
+                "called for"
             ],
-            "correctAnswer": "pauses"
+            "correctAnswer": "insisted on"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L83_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"waiting a moment because of doubt\" -- what word comes to mind?",
-            "explanation": "\"wavers\" is a reliable synonym for \"hesitates\", which means waiting a moment because of doubt here. \"dithers\" and \"pauses\" are also accepted.",
-            "textToSpeak": "Her business partner rarely *hesitates* before deciding.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "A teacher wants students to study, but the pressure is moderate.",
+            "explanation": "In practice, \"urge\" is stronger than \"advise\" but weaker than \"order\". \"Encourage\" is softer and friendlier, \"press\" suggests more pressure, and \"advise\" is calm and professional.",
+            "textToSpeak": "The teacher *urged* us to revise before the exam.",
             "acceptedSynonyms": [
-                "pauses",
-                "wavers",
-                "falters",
-                "dithers"
+                "pressed",
+                "advised",
+                "encouraged"
             ],
-            "correctAnswer": "wavers"
+            "correctAnswer": "encouraged"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L83_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"waiting a moment because of doubt.\"",
-            "explanation": "\"falters\" works well here because \"hesitates\" also means waiting a moment because of doubt. \"pauses\" and \"wavers\" would work too.",
-            "textToSpeak": "The experienced surgeon rarely *hesitates* before deciding.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You really needed a day off and you were nearly desperate when you spoke to your manager.",
+            "explanation": "Notice that \"begged\" shows strong emotion. \"Pleaded with\" and \"implored\" both suggest serious, heartfelt asking, and \"appealed to\" is more formal. A polite \"asked\" wouldn't be strong enough.",
+            "textToSpeak": "I *begged* my boss for a day off.",
             "acceptedSynonyms": [
-                "pauses",
-                "wavers",
-                "falters",
-                "dithers"
+                "pleaded with",
+                "implored",
+                "appealed to"
             ],
-            "correctAnswer": "falters"
+            "correctAnswer": "pleaded with"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L84_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"absolutely necessary.\"",
-            "explanation": "\"essential\" means absolutely necessary, and \"crucial\" captures that same idea naturally in this sentence. \"indispensable\" is another solid option.",
-            "textToSpeak": "Proper hydration is absolutely *essential* for recovery.",
+            "instruction": "Say a synonym with the same level of intensity.",
+            "hint": "Think of it this way: a manager found out about a mistake and he has completely lost his temper.",
+            "explanation": "Keep in mind that \"furious\" is much stronger than \"angry\", so pick a word at the same level. \"Livid\" and \"enraged\" are extreme, and \"fuming\" is a casual, vivid word for boiling anger. \"Irritated\" would be too weak.",
+            "textToSpeak": "My boss was *furious* about the delay.",
             "acceptedSynonyms": [
-                "crucial",
-                "vital",
-                "indispensable",
-                "critical"
+                "enraged",
+                "fuming",
+                "livid"
             ],
-            "correctAnswer": "crucial"
+            "correctAnswer": "livid"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L84_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"absolutely necessary\"?",
-            "explanation": "Good choice: \"vital\" is a strong match for \"essential\", which means absolutely necessary. You could also say \"critical\" or \"crucial\".",
-            "textToSpeak": "Her physical therapy is absolutely *essential* for recovery.",
+            "hint": "He forgot to call. It's a small irritation, not rage.",
+            "explanation": "Here, \"annoyed\" is mild. \"Irked\" is a slightly formal word for a small irritation, \"bothered\" is casual, and \"irritated\" suggests the feeling lasts. All of them stay well below \"furious\".",
+            "textToSpeak": "I was a little *annoyed* that he didn't call.",
             "acceptedSynonyms": [
-                "crucial",
-                "vital",
-                "indispensable",
-                "critical"
+                "irritated",
+                "irked",
+                "bothered"
             ],
-            "correctAnswer": "vital"
+            "correctAnswer": "irked"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L84_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"absolutely necessary.\"",
-            "explanation": "\"indispensable\" fits because \"essential\" means absolutely necessary here. Other natural alternatives include \"crucial\" and \"vital\".",
-            "textToSpeak": "Adequate sleep is absolutely *essential* for recovery.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "She heard bad news and it clearly affected her deeply.",
+            "explanation": "Quick reminder: \"upset\" means emotional pain here, not anger. \"Distressed\" is stronger and formal, \"troubled\" is thoughtful and worried, and \"shaken\" suggests she was shocked and unsettled.",
+            "textToSpeak": "She was deeply *upset* by the news.",
             "acceptedSynonyms": [
-                "crucial",
-                "vital",
-                "indispensable",
-                "critical"
+                "troubled",
+                "shaken",
+                "distressed"
             ],
-            "correctAnswer": "indispensable"
+            "correctAnswer": "distressed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L85_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"large enough to matter.\" What's a good match?",
-            "explanation": "In this sentence, \"significant\" means large enough to matter, so \"substantial\" slots in naturally. \"notable\" is a close second choice.",
-            "textToSpeak": "Her quarterly sales showed *significant* improvement.",
+            "instruction": "Say a synonym with the same level of intensity.",
+            "hint": "You achieved something great, and \"pleased\" doesn't feel like enough.",
+            "explanation": "In this sentence, \"delighted\" is stronger than \"pleased\" and less extreme than \"ecstatic\". \"Thrilled\" is a natural match, \"overjoyed\" suggests great emotion, and \"ecstatic\" is even more intense.",
+            "textToSpeak": "We were *delighted* with the results.",
             "acceptedSynonyms": [
-                "substantial",
-                "considerable",
-                "notable",
-                "marked"
+                "thrilled",
+                "ecstatic",
+                "overjoyed"
             ],
-            "correctAnswer": "substantial"
+            "correctAnswer": "thrilled"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L85_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"large enough to matter.\"",
-            "explanation": "\"considerable\" is a reliable synonym for \"significant\", which means large enough to matter here. \"marked\" and \"substantial\" are also accepted.",
-            "textToSpeak": "The patient's condition showed *significant* improvement.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Imagine a manager is giving calm, positive feedback to a new team member.",
+            "explanation": "The word \"pleased\" is polite and measured. \"Satisfied\" says that expectations were met, \"content\" is quiet and peaceful, and \"happy\" is simple and warm. None of them show extreme excitement.",
+            "textToSpeak": "I'm *pleased* with your progress.",
             "acceptedSynonyms": [
-                "substantial",
-                "considerable",
-                "notable",
-                "marked"
+                "happy",
+                "content",
+                "satisfied"
             ],
-            "correctAnswer": "considerable"
+            "correctAnswer": "satisfied"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L85_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"large enough to matter\" -- what word comes to mind?",
-            "explanation": "\"notable\" works well here because \"significant\" also means large enough to matter. \"substantial\" and \"considerable\" would work too.",
-            "textToSpeak": "Our website traffic showed *significant* improvement.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "Picture this: you're describing a colleague who greets everyone with a smile, even at 8 a.m.",
+            "explanation": "Start with \"upbeat\": it is a natural modern word for someone positive and full of energy. \"Jolly\" is old-fashioned and warm, and \"sunny\" describes a bright, friendly personality.",
+            "textToSpeak": "He's always *cheerful* in the morning.",
             "acceptedSynonyms": [
-                "substantial",
-                "considerable",
-                "notable",
-                "marked"
+                "upbeat",
+                "jolly",
+                "sunny"
             ],
-            "correctAnswer": "notable"
+            "correctAnswer": "upbeat"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L86_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"not willing to do something.\"",
-            "explanation": "\"reluctant\" means not willing to do something, and \"unwilling\" captures that same idea naturally in this sentence. \"reticent\" is another solid option.",
-            "textToSpeak": "My younger cousin seemed genuinely *reluctant* to leave.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Suppose you're reviewing an exam that took a lot of effort but was fair.",
+            "explanation": "Notice that \"challenging\" is positive, since it suggests something hard but rewarding. \"Demanding\" says it needed a lot of effort, \"tough\" is casual, and \"testing\" suggests it really tried your ability.",
+            "textToSpeak": "The exam was *challenging*, but fair.",
             "acceptedSynonyms": [
-                "unwilling",
-                "hesitant",
-                "reticent",
-                "disinclined"
+                "demanding",
+                "tough",
+                "testing"
             ],
-            "correctAnswer": "unwilling"
+            "correctAnswer": "demanding"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L86_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"not willing to do something.\"",
-            "explanation": "Good choice: \"hesitant\" is a strong match for \"reluctant\", which means not willing to do something. You could also say \"disinclined\" or \"unwilling\".",
-            "textToSpeak": "Her elderly father seemed genuinely *reluctant* to leave.",
+            "instruction": "Say a word that matches the tone of the sentence.",
+            "hint": "One wrong word could hurt someone's feelings or damage a deal.",
+            "explanation": "\"Tricky\" here means requiring care. \"Delicate\" and \"sensitive\" both show that the topic needs careful treatment, and \"awkward\" suggests an uncomfortable situation.",
+            "textToSpeak": "It's a *tricky* situation, so we have to be careful.",
             "acceptedSynonyms": [
-                "unwilling",
-                "hesitant",
-                "reticent",
-                "disinclined"
+                "awkward",
+                "sensitive",
+                "delicate"
             ],
-            "correctAnswer": "hesitant"
+            "correctAnswer": "delicate"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L86_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"not willing to do something\"?",
-            "explanation": "\"reticent\" fits because \"reluctant\" means not willing to do something here. Other natural alternatives include \"unwilling\" and \"hesitant\".",
-            "textToSpeak": "The departing guest seemed genuinely *reluctant* to leave.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You're facing a huge pile of forms and you don't know where to begin.",
+            "explanation": "Remember that \"intimidating\" describes something that makes you feel small or nervous before you even start. \"Daunting\" is the closest, \"formidable\" is stronger and formal, \"forbidding\" suggests something stern and unwelcoming, and \"overwhelming\" suggests there is simply too much to handle.",
+            "textToSpeak": "The mountain of paperwork felt *intimidating*.",
             "acceptedSynonyms": [
-                "unwilling",
-                "hesitant",
-                "reticent",
-                "disinclined"
+                "daunting",
+                "forbidding",
+                "overwhelming",
+                "formidable"
             ],
-            "correctAnswer": "reticent"
+            "correctAnswer": "daunting"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L87_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"as much as is needed for a purpose.\"",
-            "explanation": "In this sentence, \"sufficient\" means as much as is needed for a purpose, so \"adequate\" slots in naturally. \"enough\" is a close second choice.",
-            "textToSpeak": "The investigation team provided *sufficient* evidence.",
+            "hint": "After a big lunch, the children could barely keep their eyes open.",
+            "explanation": "To choose well, note that \"sleepy\" is the everyday word. \"Drowsy\" suggests a heavy, half-asleep feeling, \"dozy\" is informal and British, and \"groggy\" usually describes just waking up or feeling slow.",
+            "textToSpeak": "The kids were *sleepy* after lunch.",
             "acceptedSynonyms": [
-                "adequate",
-                "enough",
-                "ample"
+                "dozy",
+                "groggy",
+                "drowsy"
             ],
-            "correctAnswer": "adequate"
+            "correctAnswer": "drowsy"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L87_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"as much as is needed for a purpose.\" What's a good match?",
-            "explanation": "\"enough\" is a reliable synonym for \"sufficient\", which means as much as is needed for a purpose here. \"ample\" and \"adequate\" are also accepted.",
-            "textToSpeak": "Her research paper provided *sufficient* evidence.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "You're describing a puppy who wants to play at sunrise.",
+            "explanation": "Remember that \"lively\" fits someone full of movement. \"Active\" is more general, and \"spirited\" adds personality and enthusiasm. All of them describe having lots of energy.",
+            "textToSpeak": "Our puppy is so *energetic* in the morning.",
             "acceptedSynonyms": [
-                "adequate",
-                "enough",
-                "ample"
+                "active",
+                "spirited",
+                "lively"
             ],
-            "correctAnswer": "enough"
+            "correctAnswer": "lively"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L87_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"as much as is needed for a purpose.\"",
-            "explanation": "\"ample\" works well here because \"sufficient\" also means as much as is needed for a purpose. \"adequate\" and \"enough\" would work too.",
-            "textToSpeak": "The audit report provided *sufficient* evidence.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You had too much coffee and your body wouldn't stay calm.",
+            "explanation": "The key word is \"restless\", which shows an inability to relax. \"Fidgety\" describes small movements, \"agitated\" suggests deeper unease, and \"edgy\" implies nervous tension.",
+            "textToSpeak": "He felt *restless* and couldn't sit still.",
             "acceptedSynonyms": [
-                "adequate",
-                "enough",
-                "ample"
+                "agitated",
+                "fidgety",
+                "edgy"
             ],
-            "correctAnswer": "ample"
+            "correctAnswer": "fidgety"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L88_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"free from errors\" -- what word comes to mind?",
-            "explanation": "\"accurate\" means free from errors, and \"precise\" captures that same idea naturally in this sentence. \"correct\" is another solid option.",
-            "textToSpeak": "The weather forecast proved remarkably *accurate*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You're leaving a review for a restaurant that wasn't terrible, but wasn't memorable.",
+            "explanation": "Look at \"mediocre\" first: it is a polite but negative word for something that's just OK. \"Average\" is more neutral, \"ordinary\" says nothing stands out, and \"unremarkable\" is more formal.",
+            "textToSpeak": "The food was *mediocre*, so we won't come back.",
             "acceptedSynonyms": [
-                "precise",
-                "exact",
-                "correct",
-                "reliable"
+                "average",
+                "unremarkable",
+                "ordinary"
             ],
-            "correctAnswer": "precise"
+            "correctAnswer": "average"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L88_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"free from errors.\"",
-            "explanation": "Good choice: \"exact\" is a strong match for \"accurate\", which means free from errors. You could also say \"reliable\" or \"precise\".",
-            "textToSpeak": "Her GPS estimate proved remarkably *accurate*.",
+            "instruction": "Say a synonym with the same level of intensity.",
+            "hint": "Picture this: a colleague gave a presentation that was far better than anyone expected.",
+            "explanation": "\"Outstanding\" is a very high compliment. \"Exceptional\" is the closest, \"remarkable\" suggests it deserves notice, and \"superb\" is excellent and slightly formal.",
+            "textToSpeak": "Her performance was *outstanding*.",
             "acceptedSynonyms": [
-                "precise",
-                "exact",
-                "correct",
-                "reliable"
+                "remarkable",
+                "exceptional",
+                "superb"
             ],
-            "correctAnswer": "exact"
+            "correctAnswer": "exceptional"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L88_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"free from errors.\"",
-            "explanation": "\"correct\" fits because \"accurate\" means free from errors here. Other natural alternatives include \"precise\" and \"exact\".",
-            "textToSpeak": "The lab results proved remarkably *accurate*.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You're telling a friend why you're grumpy after a bad night.",
+            "explanation": "It helps to know that \"lousy\" is casual and expressive. \"Rotten\" is a similar spoken word, \"crummy\" is common in American English, and \"dreadful\" is stronger and slightly more formal.",
+            "textToSpeak": "I had a *lousy* night's sleep.",
             "acceptedSynonyms": [
-                "precise",
-                "exact",
-                "correct",
-                "reliable"
+                "crummy",
+                "rotten",
+                "dreadful"
             ],
-            "correctAnswer": "correct"
+            "correctAnswer": "rotten"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L89_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"easy to see or understand\"?",
-            "explanation": "In this sentence, \"obvious\" means easy to see or understand, so \"clear\" slots in naturally. \"apparent\" is a close second choice.",
-            "textToSpeak": "The solution was completely *obvious*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You're comparing two prices and the difference isn't big.",
+            "explanation": "In practice, \"slightly\" shows a small difference. \"A little\" is casual, \"somewhat\" is a bit formal, and \"marginally\" suggests a tiny difference and is common in business.",
+            "textToSpeak": "The flight is *slightly* cheaper on Tuesdays.",
             "acceptedSynonyms": [
-                "clear",
-                "evident",
-                "apparent",
-                "plain"
+                "a little",
+                "marginally",
+                "somewhat"
             ],
-            "correctAnswer": "clear"
+            "correctAnswer": "a little"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L89_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"easy to see or understand.\"",
-            "explanation": "\"evident\" is a reliable synonym for \"obvious\", which means easy to see or understand here. \"plain\" and \"clear\" are also accepted.",
-            "textToSpeak": "Her disappointment was completely *obvious*.",
+            "hint": "The soup was so salty that you couldn't finish it.",
+            "explanation": "Think about \"extremely\": it is a very strong intensifier. \"Incredibly\" and \"unbelievably\" are casual and emphatic, while \"exceptionally\" is more formal and suggests something out of the ordinary.",
+            "textToSpeak": "The soup was *extremely* salty.",
             "acceptedSynonyms": [
-                "clear",
-                "evident",
-                "apparent",
-                "plain"
+                "unbelievably",
+                "incredibly",
+                "exceptionally"
             ],
-            "correctAnswer": "evident"
+            "correctAnswer": "incredibly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L89_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"easy to see or understand.\" What's a good match?",
-            "explanation": "\"apparent\" works well here because \"obvious\" also means easy to see or understand. \"clear\" and \"evident\" would work too.",
-            "textToSpeak": "The answer to his question was completely *obvious*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "The music was so loud that hearing her voice was a struggle.",
+            "explanation": "Here, \"barely\" means only just able to. \"Hardly\" is the most common alternative, \"scarcely\" is more formal, and \"only just\" is a natural spoken phrase.",
+            "textToSpeak": "I could *barely* hear her over the music.",
             "acceptedSynonyms": [
-                "clear",
-                "evident",
-                "apparent",
-                "plain"
+                "scarcely",
+                "only just",
+                "hardly"
             ],
-            "correctAnswer": "apparent"
+            "correctAnswer": "hardly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L90_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"having the ability to do something.\"",
-            "explanation": "\"capable\" means having the ability to do something, and \"able\" captures that same idea naturally in this sentence. \"competent\" is another solid option.",
-            "textToSpeak": "My colleague is more than *capable* of leading this team.",
+            "instruction": "Say a word that matches the tone of the sentence.",
+            "hint": "Suppose a baby is sleeping and you don't want to make a sound.",
+            "explanation": "Quick reminder: \"tiptoed\" is very specific, since it means walking on your toes. \"Crept\" and \"sneaked\" both suggest moving quietly and carefully, and \"stole\" is a more literary way to say the same.",
+            "textToSpeak": "She *tiptoed* past the sleeping baby.",
             "acceptedSynonyms": [
-                "able",
-                "qualified",
-                "competent",
-                "skilled"
+                "sneaked",
+                "crept",
+                "stole"
             ],
-            "correctAnswer": "able"
+            "correctAnswer": "crept"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L90_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"having the ability to do something\" -- what word comes to mind?",
-            "explanation": "Good choice: \"qualified\" is a strong match for \"capable\", which means having the ability to do something. You could also say \"skilled\" or \"able\".",
-            "textToSpeak": "Her assistant manager is more than *capable* of leading this team.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "Think of it this way: you're telling a friend about a rush to the station.",
+            "explanation": "Look at \"sprinted\" first: it means running at top speed. \"Dashed\" is a quick, short run, \"raced\" adds urgency, and \"bolted\" suggests a sudden start, as if you were escaping.",
+            "textToSpeak": "He *sprinted* to catch the last bus.",
             "acceptedSynonyms": [
-                "able",
-                "qualified",
-                "competent",
-                "skilled"
+                "bolted",
+                "dashed",
+                "raced"
             ],
-            "correctAnswer": "qualified"
+            "correctAnswer": "dashed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L90_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"having the ability to do something.\"",
-            "explanation": "\"competent\" fits because \"capable\" means having the ability to do something here. Other natural alternatives include \"able\" and \"qualified\".",
-            "textToSpeak": "The junior engineer is more than *capable* of leading this team.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Imagine you're describing a tourist attraction with a view from the top.",
+            "explanation": "Think about \"climbed\": it means going up with effort. \"Scaled\" suggests a difficult, steep climb, \"ascended\" is formal and often used for stairs or hills, and \"went up\" is the simplest spoken phrase.",
+            "textToSpeak": "We *climbed* the tower for the view.",
             "acceptedSynonyms": [
-                "able",
-                "qualified",
-                "competent",
-                "skilled"
+                "scaled",
+                "ascended",
+                "went up"
             ],
-            "correctAnswer": "competent"
+            "correctAnswer": "went up"
         }
     ]
 }

@@ -6,434 +6,422 @@
         {
             "id": "SPK_SPEAKSYNONYM_L71_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"thinking carefully about something.\" What's a good match?",
-            "explanation": "In this sentence, \"considers\" means thinking carefully about something, so \"weighs\" slots in naturally. \"ponders\" is a close second choice.",
-            "textToSpeak": "The hiring manager carefully *considers* every option.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Your coworker didn't say it directly, but everyone understood what she meant.",
+            "explanation": "Notice that \"implied\" is the most exact word for something communicated without being said directly. \"Suggested\" is softer and more common, and \"indicated\" sounds a little more formal or businesslike.",
+            "textToSpeak": "She *hinted* that she might quit.",
             "acceptedSynonyms": [
-                "weighs",
-                "evaluates",
-                "ponders",
-                "contemplates"
+                "suggested",
+                "implied",
+                "indicated"
             ],
-            "correctAnswer": "weighs"
+            "correctAnswer": "implied"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L71_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"thinking carefully about something.\"",
-            "explanation": "\"evaluates\" is a reliable synonym for \"considers\", which means thinking carefully about something here. \"contemplates\" and \"weighs\" are also accepted.",
-            "textToSpeak": "Her financial advisor carefully *considers* every option.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Your neighbor kept talking about the noise, and you want to describe it with a bit of humor.",
+            "explanation": "To choose well, note that \"grumbled\" describes low, unhappy talking. \"Moaned\" is more informal and suggests continuous unhappiness, and \"griped\" is casual and describes a small complaint that keeps repeating.",
+            "textToSpeak": "He *complained* about the noise all night.",
             "acceptedSynonyms": [
-                "weighs",
-                "evaluates",
-                "ponders",
-                "contemplates"
+                "griped",
+                "grumbled",
+                "moaned"
             ],
-            "correctAnswer": "evaluates"
+            "correctAnswer": "grumbled"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L71_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"thinking carefully about something\" -- what word comes to mind?",
-            "explanation": "\"ponders\" works well here because \"considers\" also means thinking carefully about something. \"weighs\" and \"evaluates\" would work too.",
-            "textToSpeak": "The review committee carefully *considers* every option.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Picture this: you're summarizing a talk you attended, and one point was repeated the most.",
+            "explanation": "Notice that \"stressed\" is the everyday word for giving special importance to a point. \"Highlighted\" suggests drawing attention to it, and \"underlined\" is more visual and forceful, like drawing a line under a sentence.",
+            "textToSpeak": "The speaker *emphasized* the importance of sleep.",
             "acceptedSynonyms": [
-                "weighs",
-                "evaluates",
-                "ponders",
-                "contemplates"
+                "stressed",
+                "underlined",
+                "highlighted"
             ],
-            "correctAnswer": "ponders"
+            "correctAnswer": "stressed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L72_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"suddenly understanding something clearly.\"",
-            "explanation": "\"realizes\" means suddenly understanding something clearly, and \"recognizes\" captures that same idea naturally in this sentence. \"notices\" is another solid option.",
-            "textToSpeak": "My father suddenly *realizes* the mistake.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You want to describe working on your accent and making it clearer.",
+            "explanation": "As a replacement, \"enhance\" suggests making it even better. \"Refine\" means fixing small details, and \"better\" is the simple, spoken choice, though it can sound a little unusual as a verb.",
+            "textToSpeak": "I'm trying to *improve* my pronunciation.",
             "acceptedSynonyms": [
-                "recognizes",
-                "understands",
-                "notices"
+                "refine",
+                "better",
+                "enhance"
             ],
-            "correctAnswer": "recognizes"
+            "correctAnswer": "enhance"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L72_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"suddenly understanding something clearly.\"",
-            "explanation": "Good choice: \"understands\" is a strong match for \"realizes\", which means suddenly understanding something clearly. You could also say \"recognizes\" or \"notices\".",
-            "textToSpeak": "Her younger brother suddenly *realizes* the mistake.",
+            "hint": "You and a friend are studying for a quiz, and you want to read the words once more.",
+            "explanation": "Look at \"go through\" first: it is natural in speech and suggests checking each item. \"Revise\" is the British school word for studying again, and \"look over\" is lighter and less thorough.",
+            "textToSpeak": "Let's *review* the vocabulary before the test.",
             "acceptedSynonyms": [
-                "recognizes",
-                "understands",
-                "notices"
+                "go through",
+                "revise",
+                "look over"
             ],
-            "correctAnswer": "understands"
+            "correctAnswer": "go through"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L72_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"suddenly understanding something clearly\"?",
-            "explanation": "\"notices\" fits because \"realizes\" means suddenly understanding something clearly here. Other natural alternatives include \"understands\" and \"recognizes\".",
-            "textToSpeak": "The new driver suddenly *realizes* the mistake.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "Imagine you're describing a colleague who can work in three languages with ease.",
+            "explanation": "Remember that \"proficient\" is a professional word often used in job descriptions. \"Skilled\" is broader, and \"adept\" suggests natural ability and quick, confident use.",
+            "textToSpeak": "He's *fluent* in three languages.",
             "acceptedSynonyms": [
-                "recognizes",
-                "understands",
-                "notices"
+                "skilled",
+                "proficient",
+                "adept"
             ],
-            "correctAnswer": "notices"
+            "correctAnswer": "proficient"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L73_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"becoming aware of something.\"",
-            "explanation": "In this sentence, \"notices\" means becoming aware of something, so \"spots\" slots in naturally. \"detects\" is a close second choice.",
-            "textToSpeak": "My roommate immediately *notices* small details.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "There are too many jobs and too little time, so you're deciding which comes first.",
+            "explanation": "To choose well, note that \"focus on\" is the natural spoken phrase. \"Rank\" suggests putting tasks in order, and \"put first\" is a more direct way of saying which job matters most.",
+            "textToSpeak": "We need to *prioritize* the most urgent tasks.",
             "acceptedSynonyms": [
-                "spots",
-                "observes",
-                "detects",
-                "perceives"
+                "focus on",
+                "rank",
+                "put first"
             ],
-            "correctAnswer": "spots"
+            "correctAnswer": "focus on"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L73_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"becoming aware of something.\" What's a good match?",
-            "explanation": "\"observes\" is a reliable synonym for \"notices\", which means becoming aware of something here. \"perceives\" and \"spots\" are also accepted.",
-            "textToSpeak": "Her art teacher immediately *notices* small details.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Your manager is setting expectations for the next three months.",
+            "explanation": "Notice that \"objective\" is the standard word in business plans. \"Target\" suggests a specific number to reach, and \"aim\" is more general and less formal.",
+            "textToSpeak": "Our *goal* this quarter is to double sales.",
             "acceptedSynonyms": [
-                "spots",
-                "observes",
-                "detects",
-                "perceives"
+                "target",
+                "aim",
+                "objective"
             ],
-            "correctAnswer": "observes"
+            "correctAnswer": "objective"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L73_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"becoming aware of something.\"",
-            "explanation": "\"detects\" works well here because \"notices\" also means becoming aware of something. \"spots\" and \"observes\" would work too.",
-            "textToSpeak": "The building inspector immediately *notices* small details.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Suppose you're describing a colleague whose desk, files and schedule are always in order.",
+            "explanation": "It helps to know that \"methodical\" suggests doing things step by step. \"Systematic\" implies a clear system, and \"orderly\" focuses on neatness and structure.",
+            "textToSpeak": "She's very *organized*, so her files are always in order.",
             "acceptedSynonyms": [
-                "spots",
-                "observes",
-                "detects",
-                "perceives"
+                "methodical",
+                "orderly",
+                "systematic"
             ],
-            "correctAnswer": "detects"
+            "correctAnswer": "methodical"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L74_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"keeping something in mind\" -- what word comes to mind?",
-            "explanation": "\"remembers\" means keeping something in mind, and \"recalls\" captures that same idea naturally in this sentence. \"keeps track of\" is another solid option.",
-            "textToSpeak": "My grandmother always *remembers* every birthday.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Imagine you're calling a restaurant and you have one specific wish for the booking.",
+            "explanation": "Start with \"ask for\": it is the everyday phrase, and it sounds polite in this sentence. \"Book\" and \"reserve\" also work because they mean securing the table.",
+            "textToSpeak": "I'd like to *request* a table by the window.",
             "acceptedSynonyms": [
-                "recalls",
-                "recollects",
-                "keeps track of"
+                "book",
+                "ask for",
+                "reserve"
             ],
-            "correctAnswer": "recalls"
+            "correctAnswer": "ask for"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L74_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"keeping something in mind.\"",
-            "explanation": "Good choice: \"recollects\" is a strong match for \"remembers\", which means keeping something in mind. You could also say \"recalls\" or \"keeps track of\".",
-            "textToSpeak": "Her thoughtful cousin always *remembers* every birthday.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Suppose a company is trying to reassure customers about how fast it will deliver.",
+            "explanation": "\"Promise\" is the simple, common word. \"Ensure\" suggests they'll make it happen, and \"pledge\" is a serious, formal commitment.",
+            "textToSpeak": "We *guarantee* delivery within two days.",
             "acceptedSynonyms": [
-                "recalls",
-                "recollects",
-                "keeps track of"
+                "pledge",
+                "promise",
+                "ensure"
             ],
-            "correctAnswer": "recollects"
+            "correctAnswer": "promise"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L74_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"keeping something in mind.\"",
-            "explanation": "\"keeps track of\" fits because \"remembers\" means keeping something in mind here. Other natural alternatives include \"recollects\" and \"recalls\".",
-            "textToSpeak": "The office assistant always *remembers* every birthday.",
+            "hint": "You're leaving a review about the person who dealt with your case.",
+            "explanation": "Think about \"agent\": it is the standard term in call centers and travel companies. \"Advisor\" suggests someone who gives you guidance, and \"assistant\" suggests someone who helps with a task.",
+            "textToSpeak": "The *representative* was very patient with me.",
             "acceptedSynonyms": [
-                "recalls",
-                "recollects",
-                "keeps track of"
+                "agent",
+                "assistant",
+                "advisor"
             ],
-            "correctAnswer": "keeps track of"
+            "correctAnswer": "agent"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L75_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"failing to keep something in mind\"?",
-            "explanation": "In this sentence, \"forgets\" means failing to keep something in mind, so \"overlooks\" slots in naturally. \"loses track of\" is a close second choice.",
-            "textToSpeak": "My father often *forgets* small appointments.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "A friend asks whether they can trust what a colleague says.",
+            "explanation": "Keep in mind that \"truthful\" focuses on always telling the truth. \"Sincere\" suggests he means what he says, and \"straightforward\" describes a person who is direct and clear.",
+            "textToSpeak": "He's a very *honest* person.",
             "acceptedSynonyms": [
-                "overlooks",
-                "loses track of",
-                "misses"
+                "sincere",
+                "truthful",
+                "straightforward"
             ],
-            "correctAnswer": "overlooks"
+            "correctAnswer": "truthful"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L75_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"failing to keep something in mind.\"",
-            "explanation": "\"loses track of\" is a reliable synonym for \"forgets\", which means failing to keep something in mind here. \"misses\" and \"overlooks\" are also accepted.",
-            "textToSpeak": "Her elderly neighbor often *forgets* small appointments.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "You're describing someone who won't change her mind, even when everyone gives good reasons.",
+            "explanation": "As a replacement, \"obstinate\" is a formal word for being stubborn. \"Headstrong\" suggests someone who wants their own way, and \"pigheaded\" is informal and more insulting.",
+            "textToSpeak": "She's *stubborn* and never changes her mind.",
             "acceptedSynonyms": [
-                "overlooks",
-                "loses track of",
-                "misses"
+                "obstinate",
+                "pigheaded",
+                "headstrong"
             ],
-            "correctAnswer": "loses track of"
+            "correctAnswer": "obstinate"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L75_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"failing to keep something in mind.\" What's a good match?",
-            "explanation": "\"misses\" works well here because \"forgets\" also means failing to keep something in mind. \"overlooks\" and \"loses track of\" would work too.",
-            "textToSpeak": "The busy manager often *forgets* small appointments.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Picture this: you're sharing a small complaint about your brother's weekends.",
+            "explanation": "\"Idle\" describes someone who isn't doing anything. \"Unmotivated\" suggests he lacks energy or interest, and \"inactive\" is neutral and factual rather than critical.",
+            "textToSpeak": "My brother is *lazy* on weekends.",
             "acceptedSynonyms": [
-                "overlooks",
-                "loses track of",
-                "misses"
+                "inactive",
+                "idle",
+                "unmotivated"
             ],
-            "correctAnswer": "misses"
+            "correctAnswer": "idle"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L76_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"forming a picture in the mind.\"",
-            "explanation": "\"imagines\" means forming a picture in the mind, and \"envisions\" captures that same idea naturally in this sentence. \"visualizes\" is another solid option.",
-            "textToSpeak": "My little niece vividly *imagines* the whole story.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Here's the scene: you're recommending a hotel that is close to the station and easy to reach from the airport.",
+            "explanation": "\"Accessible\" says it's easy to get to. \"Handy\" is informal and stresses that it's useful, and \"practical\" suggests it's sensible for what you need.",
+            "textToSpeak": "The hotel is in a *convenient* location.",
             "acceptedSynonyms": [
-                "envisions",
-                "pictures",
-                "visualizes",
-                "dreams up"
+                "handy",
+                "practical",
+                "accessible"
             ],
-            "correctAnswer": "envisions"
+            "correctAnswer": "accessible"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L76_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"forming a picture in the mind\" -- what word comes to mind?",
-            "explanation": "Good choice: \"pictures\" is a strong match for \"imagines\", which means forming a picture in the mind. You could also say \"dreams up\" or \"envisions\".",
-            "textToSpeak": "Her creative writing student vividly *imagines* the whole story.",
+            "hint": "You're telling a friend about a small town with old stone houses and quiet lanes.",
+            "explanation": "\"Picturesque\" is often used for places that look like a painting. \"Quaint\" suggests old-fashioned and appealing, and \"delightful\" is a more general, warm compliment.",
+            "textToSpeak": "The old town is really *charming*.",
             "acceptedSynonyms": [
-                "envisions",
-                "pictures",
-                "visualizes",
-                "dreams up"
+                "picturesque",
+                "quaint",
+                "delightful"
             ],
-            "correctAnswer": "pictures"
+            "correctAnswer": "picturesque"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L76_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"forming a picture in the mind.\"",
-            "explanation": "\"visualizes\" fits because \"imagines\" means forming a picture in the mind here. Other natural alternatives include \"envisions\" and \"pictures\".",
-            "textToSpeak": "The screenwriter vividly *imagines* the whole story.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You finished a long uphill climb and you can barely stand.",
+            "explanation": "Notice that \"grueling\" is used for something that is long and difficult. \"Punishing\" is even more intense, as if it hurt to do, and \"draining\" says it took away all your energy.",
+            "textToSpeak": "The hike was *exhausting*.",
             "acceptedSynonyms": [
-                "envisions",
-                "pictures",
-                "visualizes",
-                "dreams up"
+                "grueling",
+                "punishing",
+                "draining"
             ],
-            "correctAnswer": "visualizes"
+            "correctAnswer": "grueling"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L77_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"having earned the right to something.\"",
-            "explanation": "In this sentence, \"deserves\" means having earned the right to something, so \"merits\" slots in naturally. \"earns\" is a close second choice.",
-            "textToSpeak": "My hardworking colleague truly *deserves* this recognition.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You're waiting for something to be ready and you want to fill the time with another task.",
+            "explanation": "In practice, \"in the meantime\" is the most natural phrase. \"For now\" suggests a temporary situation, and \"at the same time\" places two actions together.",
+            "textToSpeak": "*Meanwhile*, I'll book the tickets.",
             "acceptedSynonyms": [
-                "merits",
-                "earns",
-                "warrants"
+                "in the meantime",
+                "at the same time",
+                "for now"
             ],
-            "correctAnswer": "merits"
+            "correctAnswer": "in the meantime"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L77_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"having earned the right to something\"?",
-            "explanation": "\"earns\" is a reliable synonym for \"deserves\", which means having earned the right to something here. \"warrants\" and \"merits\" are also accepted.",
-            "textToSpeak": "Her dedicated volunteer truly *deserves* this recognition.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Picture this: you're telling someone about your career history in an interview.",
+            "explanation": "\"Formerly\" is the professional choice and sounds neat in CVs. \"Earlier\" is neutral and simple, and \"before\" is more casual and conversational.",
+            "textToSpeak": "*Previously*, I worked in sales.",
             "acceptedSynonyms": [
-                "merits",
-                "earns",
-                "warrants"
+                "before",
+                "earlier",
+                "formerly"
             ],
-            "correctAnswer": "earns"
+            "correctAnswer": "formerly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L77_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"having earned the right to something.\"",
-            "explanation": "\"warrants\" works well here because \"deserves\" also means having earned the right to something. \"merits\" and \"earns\" would work too.",
-            "textToSpeak": "The award-winning teacher truly *deserves* this recognition.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Someone asks what you're doing these days.",
+            "explanation": "Quick reminder: \"at the moment\" is the everyday phrase for the present. \"Right now\" is more casual and emphasizes the exact time, and \"presently\" is more formal and common in writing.",
+            "textToSpeak": "I'm *currently* studying French.",
             "acceptedSynonyms": [
-                "merits",
-                "earns",
-                "warrants"
+                "presently",
+                "right now",
+                "at the moment"
             ],
-            "correctAnswer": "warrants"
+            "correctAnswer": "at the moment"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L78_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"keeping away from something.\" What's a good match?",
-            "explanation": "\"avoids\" means keeping away from something, and \"steers clear of\" captures that same idea naturally in this sentence. \"stays away from\" is another solid option.",
-            "textToSpeak": "My diabetic uncle carefully *avoids* processed sugar.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Picture this: a friend asks how you stay in shape, and you want a natural gym phrase.",
+            "explanation": "As a replacement, \"work out\" is the most natural choice for exercise at a gym or at home. \"Train\" suggests a more serious plan, and \"hit the gym\" is casual and specific.",
+            "textToSpeak": "I try to *exercise* three times a week.",
             "acceptedSynonyms": [
-                "steers clear of",
-                "shuns",
-                "stays away from"
+                "hit the gym",
+                "work out",
+                "train"
             ],
-            "correctAnswer": "steers clear of"
+            "correctAnswer": "work out"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L78_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"keeping away from something.\"",
-            "explanation": "Good choice: \"shuns\" is a strong match for \"avoids\", which means keeping away from something. You could also say \"steers clear of\" or \"stays away from\".",
-            "textToSpeak": "Her personal trainer carefully *avoids* processed sugar.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Think of it this way: you're telling your doctor how you've been feeling because of pressure at work.",
+            "explanation": "Notice that \"tense\" describes physical or mental strain. \"Overwhelmed\" suggests too much to handle, and \"under pressure\" says the cause is expectation or demands, not just feeling bad.",
+            "textToSpeak": "I've been feeling *stressed* lately.",
             "acceptedSynonyms": [
-                "steers clear of",
-                "shuns",
-                "stays away from"
+                "overwhelmed",
+                "under pressure",
+                "tense"
             ],
-            "correctAnswer": "shuns"
+            "correctAnswer": "tense"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L78_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"keeping away from something\" -- what word comes to mind?",
-            "explanation": "\"stays away from\" fits because \"avoids\" means keeping away from something here. Other natural alternatives include \"shuns\" and \"steers clear of\".",
-            "textToSpeak": "The competitive athlete carefully *avoids* processed sugar.",
+            "hint": "Picture this: you're recommending something simple that helps you sleep better each evening.",
+            "explanation": "\"Routine\" suggests something you do regularly at a set time. \"Practice\" sounds intentional, and \"ritual\" adds a special, almost meaningful quality.",
+            "textToSpeak": "Reading before bed is a healthy *habit*.",
             "acceptedSynonyms": [
-                "steers clear of",
-                "shuns",
-                "stays away from"
+                "routine",
+                "ritual",
+                "practice"
             ],
-            "correctAnswer": "stays away from"
+            "correctAnswer": "routine"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L79_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"openly agreeing something is true, often reluctantly.\"",
-            "explanation": "In this sentence, \"admits\" means openly agreeing something is true, often reluctantly, so \"acknowledges\" slots in naturally. \"confesses\" is a close second choice.",
-            "textToSpeak": "My honest manager openly *admits* every mistake.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "The doctor's expression changed as soon as the test result came in.",
+            "explanation": "As a replacement, \"solemn\" describes a quiet, serious mood, often at important moments. \"Grave\" suggests the news is very serious, and \"somber\" adds a sad, dark tone.",
+            "textToSpeak": "He looked *serious* when he read the results.",
             "acceptedSynonyms": [
-                "acknowledges",
-                "confesses",
-                "concedes"
+                "solemn",
+                "somber",
+                "grave"
             ],
-            "correctAnswer": "acknowledges"
+            "correctAnswer": "solemn"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L79_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"openly agreeing something is true, often reluctantly.\"",
-            "explanation": "\"confesses\" is a reliable synonym for \"admits\", which means openly agreeing something is true, often reluctantly here. \"concedes\" and \"acknowledges\" are also accepted.",
-            "textToSpeak": "Her team leader openly *admits* every mistake.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Here's the scene: you're describing someone whose smile makes everyone feel comfortable.",
+            "explanation": "Notice that \"friendly\" is the natural everyday word. \"Welcoming\" suggests the person makes you feel invited, and \"kind\" says the smile shows a caring personality.",
+            "textToSpeak": "She has a *warm* smile.",
             "acceptedSynonyms": [
-                "acknowledges",
-                "confesses",
-                "concedes"
+                "welcoming",
+                "friendly",
+                "kind"
             ],
-            "correctAnswer": "confesses"
+            "correctAnswer": "friendly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L79_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"openly agreeing something is true, often reluctantly\"?",
-            "explanation": "\"concedes\" works well here because \"admits\" also means openly agreeing something is true, often reluctantly. \"acknowledges\" and \"confesses\" would work too.",
-            "textToSpeak": "The company spokesperson openly *admits* every mistake.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Suppose you're describing a guest at a wedding who looked polished and stylish.",
+            "explanation": "Start with \"sophisticated\": it suggests a refined, cultured style. \"Refined\" is more subtle and suggests good taste, and \"classy\" is informal and popular in everyday conversation.",
+            "textToSpeak": "She wore an *elegant* dress to the wedding.",
             "acceptedSynonyms": [
-                "acknowledges",
-                "confesses",
-                "concedes"
+                "classy",
+                "refined",
+                "sophisticated"
             ],
-            "correctAnswer": "concedes"
+            "correctAnswer": "sophisticated"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L80_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"considering something important.\"",
-            "explanation": "\"values\" means considering something important, and \"cherishes\" captures that same idea naturally in this sentence. \"prizes\" is another solid option.",
-            "textToSpeak": "My mother deeply *values* honest communication.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Someone solved a tricky problem in a way nobody thought of.",
+            "explanation": "\"Ingenious\" suggests cleverness and creativity. \"Excellent\" is a general compliment, and \"inspired\" suggests a sudden, brilliant thought.",
+            "textToSpeak": "That was a *brilliant* idea.",
             "acceptedSynonyms": [
-                "cherishes",
-                "appreciates",
-                "prizes",
-                "treasures"
+                "inspired",
+                "excellent",
+                "ingenious"
             ],
-            "correctAnswer": "cherishes"
+            "correctAnswer": "ingenious"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L80_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"considering something important.\" What's a good match?",
-            "explanation": "Good choice: \"appreciates\" is a strong match for \"values\", which means considering something important. You could also say \"treasures\" or \"cherishes\".",
-            "textToSpeak": "Her marriage counselor deeply *values* honest communication.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You're sharing sad news about a relative and want a more formal word.",
+            "explanation": "Look at \"deteriorating\" first: it is a formal, serious word for a condition getting worse over time. \"Declining\" is softer, and \"getting worse\" is the plain spoken form.",
+            "textToSpeak": "His health has been *worsening* since winter.",
             "acceptedSynonyms": [
-                "cherishes",
-                "appreciates",
-                "prizes",
-                "treasures"
+                "deteriorating",
+                "declining",
+                "getting worse"
             ],
-            "correctAnswer": "appreciates"
+            "correctAnswer": "deteriorating"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L80_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"considering something important.\"",
-            "explanation": "\"prizes\" fits because \"values\" means considering something important here. Other natural alternatives include \"cherishes\" and \"appreciates\".",
-            "textToSpeak": "The team leader deeply *values* honest communication.",
+            "hint": "A judge announces the winner and it's unexpected.",
+            "explanation": "Remember that \"outcome\" is the neutral word for what happens in the end. \"Verdict\" suggests an official decision, as in competitions or courts, and \"conclusion\" is more formal and can suggest reasoning.",
+            "textToSpeak": "The final *result* surprised everyone.",
             "acceptedSynonyms": [
-                "cherishes",
-                "appreciates",
-                "prizes",
-                "treasures"
+                "conclusion",
+                "outcome",
+                "verdict"
             ],
-            "correctAnswer": "prizes"
+            "correctAnswer": "outcome"
         }
     ]
 }

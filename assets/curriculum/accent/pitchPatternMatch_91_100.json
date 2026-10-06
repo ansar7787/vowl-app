@@ -5,753 +5,753 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L91_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A host expects you to pick one drink.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She returned the sweater, not the scarf.",
-            "textToSpeak": "She returned the sweater, not the scarf.",
+            "word": "Would you like tea or coffee?",
+            "textToSpeak": "Would you like tea or coffee?",
             "options": [
-                "Emphasis on SWEATER (New Information)",
-                "Emphasis on SCARF (Given/Old Information)"
+                "Rises on both: asking whether you want any drink",
+                "Rises on tea, falls on coffee: choose one of the two"
             ],
-            "correctAnswer": "Emphasis on SWEATER (New Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rises on tea, falls on coffee: choose one of the two",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
+                3,
                 1
             ],
-            "hint": "One of these two words is old news already on the table — the other is the actual correction. Stress goes on the correction.",
-            "explanation": "SWEATER answers what actually happened, so it gets the nuclear stress — SCARF is just the idea being dismissed.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "Listen to what happens on each option, and especially on the last one.",
+            "explanation": "The rise on TEA says 'there is another option coming', and the fall on COFFEE closes the choice. Rising on both would turn it into a yes/no offer.",
+            "emphasisRule": "In an alternative question, every option but the last rises and the last one falls.",
+            "emotionContext": "Choice question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L91_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A traveller must choose how to reach the city.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I packed the charger, not the headphones.",
-            "textToSpeak": "I packed the charger, not the headphones.",
+            "word": "Are you taking the bus or the train?",
+            "textToSpeak": "Are you taking the bus or the train?",
             "options": [
-                "Emphasis on HEADPHONES (Given/Old Information)",
-                "Emphasis on CHARGER (New Information)"
+                "Emphasis on BUS and TRAIN",
+                "Emphasis on TAKING and BUS"
             ],
-            "correctAnswer": "Emphasis on CHARGER (New Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BUS and TRAIN",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
                 3,
-                1,
+                3,
                 1
             ],
-            "hint": "Whichever word is being ruled out stays low in pitch, even if it comes last. Listen for where the real news is.",
-            "explanation": "The contrast here rejects HEADPHONES in favor of CHARGER, and that correction is exactly where the stress lands.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "The verb is the same for both choices. Which words differ?",
+            "explanation": "TAKING is shared by both options, so it stays low. BUS and TRAIN are the alternatives, so each gets a peak, with the voice falling on the last one.",
+            "emphasisRule": "In an alternative question, the contrasting options carry the peaks and the shared verb stays low.",
+            "emotionContext": "Choice question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L91_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A host asks whether you want a drink; tea and coffee are just examples.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I finished the algebra homework, not the essay.",
-            "textToSpeak": "I finished the algebra homework, not the essay.",
+            "word": "Can I get you tea or coffee or something?",
+            "textToSpeak": "Can I get you tea or coffee or something?",
             "options": [
-                "Emphasis on ALGEBRA (New Information)",
-                "Emphasis on ESSAY (Given/Old Information)"
+                "Falls at the end: asking you to pick one of tea or coffee, nothing else",
+                "Rises at the end: offering a drink, with tea and coffee as examples"
             ],
-            "correctAnswer": "Emphasis on ALGEBRA (New Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rises at the end: offering a drink, with tea and coffee as examples",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
-                1
+                2,
+                3
             ],
-            "hint": "This sentence rejects one idea and confirms another — the confirmed word gets the stronger pitch, wherever it sits.",
-            "explanation": "ALGEBRA is the genuine correction here, so it carries the nuclear stress, while ESSAY — the rejected idea — stays unstressed.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
+            "hint": "'Or something' changes the shape of the offer. What does it do to the choice?",
+            "explanation": "The final rise on 'something' leaves the offer open, so tea and coffee are only suggestions. A fall at the end would turn it back into a pick-one question.",
+            "emphasisRule": "A rise that continues past the last option makes a choice open-ended.",
+            "emotionContext": "Offer"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L92_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A café worker asks for your size.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Not the appetizer - the dessert impressed the guests.",
-            "textToSpeak": "Not the appetizer - the dessert impressed the guests.",
+            "word": "Small, medium, or large?",
+            "textToSpeak": "Small, medium, or large?",
             "options": [
-                "Emphasis on APPETIZER (Given/Old Information)",
-                "Emphasis on DESSERT (New Information)"
+                "Rises on small and medium, falls on large: pick one of three",
+                "Rises on all three: asking if you want any size"
             ],
-            "correctAnswer": "Emphasis on DESSERT (New Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rises on small and medium, falls on large: pick one of three",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
-                1,
-                3
+                2,
+                3,
+                2,
+                3,
+                1
             ],
-            "hint": "Don't assume the last word automatically wins the stress here — focus on which word is actually new information.",
-            "explanation": "Even though position might suggest otherwise, APPETIZER is old, rejected information, so the real stress falls on DESSERT.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "Think about what each rise leaves open, and how the last item closes things.",
+            "explanation": "SMALL and MEDIUM each lift because more options follow, and LARGE falls because the choice is complete. A rise on LARGE would ask whether any size is wanted.",
+            "emphasisRule": "In a closed choice of three or more, every option rises except the last.",
+            "emotionContext": "Choice question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L92_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. You and a friend have ruled out taking a taxi to the airport.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Not the elevator - we took the stairs.",
-            "textToSpeak": "Not the elevator - we took the stairs.",
+            "word": "So, are we taking the bus, the metro, or driving?",
+            "textToSpeak": "So, are we taking the bus, the metro, or driving?",
             "options": [
-                "Emphasis on STAIRS (New Information)",
-                "Emphasis on ELEVATOR (Given/Old Information)"
+                "Emphasis on BUS, METRO, and DRIVING",
+                "Emphasis on TAKING, METRO, and DRIVING"
             ],
-            "correctAnswer": "Emphasis on STAIRS (New Information)",
+            "correctAnswer": "Emphasis on BUS, METRO, and DRIVING",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "One word here is just the mistaken guess being corrected — it stays unstressed no matter where it falls.",
-            "explanation": "The speaker is correcting away from ELEVATOR and toward STAIRS, so STAIRS takes the pitch accent.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "The taxi is already out. How many peaks should you hear in the choice itself?",
+            "explanation": "TAKING is the shared verb for the first two options and stays low. Each remaining option gets a peak, BUS first and METRO next, with the last one, DRIVING, falling to close the choice.",
+            "emphasisRule": "Each option in a list of choices carries its own peak; the shared frame stays low.",
+            "emotionContext": "Choice question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L92_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A waiter mentions a few desserts, but there are more.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "It wasn't stage fright - it was genuine excitement.",
-            "textToSpeak": "It wasn't stage fright - it was genuine excitement.",
+            "word": "We have cake, pie, ice cream...",
+            "textToSpeak": "We have cake, pie, ice cream...",
             "options": [
-                "Emphasis on FRIGHT (Given/Old Information)",
-                "Emphasis on EXCITEMENT (New Information)"
+                "Rises on every item, including the last: the list continues",
+                "Falls on the last item: the list is complete and nothing else follows"
             ],
-            "correctAnswer": "Emphasis on EXCITEMENT (New Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rises on every item, including the last: the list continues",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
+                3,
                 3
             ],
-            "hint": "Listen for which word answers 'what actually happened' — that's the one carrying the pitch peak.",
-            "explanation": "FRIGHT is being ruled out, not confirmed, so it stays flat while EXCITEMENT — the actual answer — gets the peak.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
+            "hint": "The waiter hasn't finished. What does the voice do on the last item?",
+            "explanation": "The rise on ICE CREAM keeps the list open, which is how a waiter signals 'and more'. A fall would close the menu.",
+            "emphasisRule": "A rise on the last item of a list leaves it open.",
+            "emotionContext": "List"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L93_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? You're sure the deadline is tomorrow and want agreement.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "We hired the second candidate, not the first.",
-            "textToSpeak": "We hired the second candidate, not the first.",
+            "word": "Tomorrow's the deadline, isn't it?",
+            "textToSpeak": "Tomorrow's the deadline, isn't it?",
             "options": [
-                "Emphasis on SECOND (New Information)",
-                "Emphasis on FIRST (Given/Old Information)"
+                "Falling tag: you already know and expect agreement",
+                "Rising tag: you really aren't sure and need to be told"
             ],
-            "correctAnswer": "Emphasis on SECOND (New Information)",
+            "correctAnswer": "Falling tag: you already know and expect agreement",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                2,
                 3,
                 1,
                 1
             ],
-            "hint": "The rejected idea can appear anywhere in the sentence and still stay flat in pitch — the correction is what peaks.",
-            "explanation": "New, corrected information always attracts the stress. Here that's SECOND, not the rejected FIRST.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "How confident is the speaker? Listen to what the tag does.",
+            "explanation": "A falling 'isn't it' says 'I know this, please agree'. A rising tag would reveal real doubt.",
+            "emphasisRule": "A falling tag seeks agreement; a rising tag seeks information.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L93_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? You can't remember whether the shop closes at six.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Not the guitarist - the drummer wrote that song.",
-            "textToSpeak": "Not the guitarist - the drummer wrote that song.",
+            "word": "The shop closes at six, doesn't it?",
+            "textToSpeak": "The shop closes at six, doesn't it?",
             "options": [
-                "Emphasis on GUITARIST (Given/Old Information)",
-                "Emphasis on DRUMMER (New Information)"
+                "Rising tag: a real question",
+                "Falling tag: expecting agreement"
             ],
-            "correctAnswer": "Emphasis on DRUMMER (New Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising tag: a real question",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
-                1
+                2,
+                3
             ],
-            "hint": "Position doesn't decide the stress here; meaning does. Find the word that corrects the assumption.",
-            "explanation": "Because GUITARIST is the mistaken assumption being corrected, it's deaccented, and DRUMMER carries the emphasis instead.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "This time the speaker genuinely doesn't know. How does the tag end?",
+            "explanation": "The rise on 'doesn't it' asks for information because the speaker is unsure. A falling tag would sound as if the speaker already knew.",
+            "emphasisRule": "A rising tag signals real uncertainty.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L93_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? Two tourists admire the view from a hill.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The bakery ran out of croissants, not muffins.",
-            "textToSpeak": "The bakery ran out of croissants, not muffins.",
+            "word": "It's a great place, isn't it?",
+            "textToSpeak": "It's a great place, isn't it?",
             "options": [
-                "Emphasis on CROISSANTS (New Information)",
-                "Emphasis on MUFFINS (Given/Old Information)"
+                "Falling tag: sharing an opinion and inviting agreement",
+                "Rising tag: asking for information about the place"
             ],
-            "correctAnswer": "Emphasis on CROISSANTS (New Information)",
+            "correctAnswer": "Falling tag: sharing an opinion and inviting agreement",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 3,
-                1,
                 1,
                 1
             ],
-            "hint": "This is a classic correction pattern — the old, rejected idea stays quiet, and the true answer gets the emphasis.",
-            "explanation": "CROISSANTS answers what actually happened, so it gets the nuclear stress — MUFFINS is just the idea being dismissed.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
+            "hint": "No facts are being asked for. What is the speaker doing?",
+            "explanation": "An opinion isn't something the listener can look up, so the falling tag just invites them to share the feeling.",
+            "emphasisRule": "A falling tag on an opinion invites shared feeling, not information.",
+            "emotionContext": "Opinion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L94_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A caller says her appointment is \"Tuesday at three.\" You repeat it to confirm.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "We watched the documentary, not the drama.",
-            "textToSpeak": "We watched the documentary, not the drama.",
+            "word": "Tuesday at three?",
+            "textToSpeak": "Tuesday at three?",
             "options": [
-                "Emphasis on DRAMA (Given/Old Information)",
-                "Emphasis on DOCUMENTARY (New Information)"
+                "Falling: telling the caller what the time is",
+                "Rising: checking the detail you heard, not stating it"
             ],
-            "correctAnswer": "Emphasis on DOCUMENTARY (New Information)",
+            "correctAnswer": "Rising: checking the detail you heard, not stating it",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                3,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "Notice which word the speaker is actively correcting away from — that one loses the stress, wherever it sits.",
-            "explanation": "The contrast here rejects DRAMA in favor of DOCUMENTARY, and that correction is exactly where the stress lands.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "You are not giving new information. What is the repeated phrase for?",
+            "explanation": "Repeating a detail with a rise checks that you heard it correctly. A fall would sound as though you were stating it yourself.",
+            "emphasisRule": "A repeated detail with a rising ending asks the speaker to confirm.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L94_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A coach says practice has moved to a field. You're sure about 'field' but not which one.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Not the highlights - we watched the full match.",
-            "textToSpeak": "Not the highlights - we watched the full match.",
+            "word": "The north field?",
+            "textToSpeak": "The north field?",
             "options": [
-                "Emphasis on MATCH (New Information)",
-                "Emphasis on HIGHLIGHTS (Given/Old Information)"
+                "Emphasis on FIELD",
+                "Emphasis on NORTH"
             ],
-            "correctAnswer": "Emphasis on MATCH (New Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on NORTH",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 1,
                 3
             ],
-            "hint": "One of these two words is old news already on the table — the other is the actual correction. Stress goes on the correction.",
-            "explanation": "MATCH is the genuine correction here, so it carries the nuclear stress, while HIGHLIGHTS — the rejected idea — stays unstressed.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "You only doubt one word. Which word is it?",
+            "explanation": "FIELD is understood, so it carries only the rise. NORTH is the part you're checking, so it takes the early peak.",
+            "emphasisRule": "When confirming by repeating, the doubtful word takes the peak.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L94_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A hotel clerk is confirming your booking details.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The update fixed the login bug, not the crash.",
-            "textToSpeak": "The update fixed the login bug, not the crash.",
+            "word": "So that's two nights, starting Friday?",
+            "textToSpeak": "So that's two nights, starting Friday?",
             "options": [
-                "Emphasis on CRASH (Given/Old Information)",
-                "Emphasis on LOGIN (New Information)"
+                "Falling: announcing it as settled",
+                "Rising: checking the whole summary"
             ],
-            "correctAnswer": "Emphasis on LOGIN (New Information)",
+            "correctAnswer": "Rising: checking the whole summary",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
+                1,
                 3,
-                1,
-                1,
-                1
+                3
             ],
-            "hint": "Whichever word is being ruled out stays low in pitch, even if it comes last. Listen for where the real news is.",
-            "explanation": "Even though position might suggest otherwise, CRASH is old, rejected information, so the real stress falls on LOGIN.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
+            "hint": "The clerk wants you to agree before continuing. What does the ending do?",
+            "explanation": "The rise on FRIDAY invites you to confirm the whole summary. A fall would close the topic before you had a chance to correct anything.",
+            "emphasisRule": "A summary with a rising ending asks for confirmation.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L95_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. Your friend mumbles that she lost something on the train, and you didn't catch what.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She swept the porch, not the driveway.",
-            "textToSpeak": "She swept the porch, not the driveway.",
+            "word": "You lost what?",
+            "textToSpeak": "You lost what?",
             "options": [
-                "Emphasis on PORCH (New Information)",
-                "Emphasis on DRIVEWAY (Given/Old Information)"
+                "Emphasis on LOST",
+                "Emphasis on WHAT"
             ],
-            "correctAnswer": "Emphasis on PORCH (New Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on WHAT",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                3,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "This sentence rejects one idea and confirms another — the confirmed word gets the stronger pitch, wherever it sits.",
-            "explanation": "The speaker is correcting away from DRIVEWAY and toward PORCH, so PORCH takes the pitch accent.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "You caught part of the sentence. Which piece did you fail to hear?",
+            "explanation": "LOST is understood, so it falls away. WHAT replaces the part you missed and takes the peak with the rise.",
+            "emphasisRule": "In an echo question, the question word replaces the missing part and takes the peak.",
+            "emotionContext": "Echo question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L95_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"We paid fifty thousand for the kitchen.\" B reacts:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "We compared the tablets, not the phones.",
-            "textToSpeak": "We compared the tablets, not the phones.",
+            "word": "You paid how much for it?",
+            "textToSpeak": "You paid how much for it?",
             "options": [
-                "Emphasis on PHONES (Given/Old Information)",
-                "Emphasis on TABLETS (New Information)"
+                "Emphasis on MUCH",
+                "Emphasis on PAID"
             ],
-            "correctAnswer": "Emphasis on TABLETS (New Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MUCH",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 3,
                 1,
-                1,
-                1
+                3
             ],
-            "hint": "Don't assume the last word automatically wins the stress here — focus on which word is actually new information.",
-            "explanation": "PHONES is being ruled out, not confirmed, so it stays flat while TABLETS — the actual answer — gets the peak.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "B heard the amount but can't believe it. What is B questioning?",
+            "explanation": "PAID is repeated, so it stays low. MUCH is the part B is reacting to, so the peak lands on it. IT is a weak pronoun at the end.",
+            "emphasisRule": "In an echo question, the questioned word takes the peak and a final pronoun stays weak.",
+            "emotionContext": "Surprise"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L95_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A says: \"I quit my job on Monday.\" B reacts:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Not the intern - the manager signed the contract.",
-            "textToSpeak": "Not the intern - the manager signed the contract.",
+            "word": "You quit?",
+            "textToSpeak": "You quit?",
             "options": [
-                "Emphasis on MANAGER (New Information)",
-                "Emphasis on INTERN (Given/Old Information)"
+                "Echoing the verb to express surprise",
+                "Asking a new question about the job"
             ],
-            "correctAnswer": "Emphasis on MANAGER (New Information)",
+            "correctAnswer": "Echoing the verb to express surprise",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "One word here is just the mistaken guess being corrected — it stays unstressed no matter where it falls.",
-            "explanation": "New, corrected information always attracts the stress. Here that's MANAGER, not the rejected INTERN.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
+            "hint": "A has just given news. Is B asking for new information, or reacting to what was said?",
+            "explanation": "B repeats QUIT, the surprising word from A's news. This is an echo of surprise, not a request for new details.",
+            "emphasisRule": "An echo of the key word with a rise expresses surprise.",
+            "emotionContext": "Surprise"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L96_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A says: \"Send the invoice to Ms. Vasquez.\" B didn't catch the name.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The leak was in the ceiling, not the wall.",
-            "textToSpeak": "The leak was in the ceiling, not the wall.",
+            "word": "Ms. who?",
+            "textToSpeak": "Ms. who?",
             "options": [
-                "Emphasis on WALL (Given/Old Information)",
-                "Emphasis on CEILING (New Information)"
+                "Echoing the part you didn't catch",
+                "Asking a yes/no question about the invoice"
             ],
-            "correctAnswer": "Emphasis on CEILING (New Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Echoing the part you didn't catch",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                3,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "Listen for which word answers 'what actually happened' — that's the one carrying the pitch peak.",
-            "explanation": "Because WALL is the mistaken assumption being corrected, it's deaccented, and CEILING carries the emphasis instead.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "B isn't asking about the invoice. Which part of A's sentence is B responding to?",
+            "explanation": "B repeats the title and replaces the missing name with WHO, rising to show it needs repeating. It is a clarification, not a new question.",
+            "emphasisRule": "A partial echo with a question word asks the speaker to repeat the missing part.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L96_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A speaker mumbles a number and B can't tell which one.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "It wasn't the monitor - it was the keyboard that broke.",
-            "textToSpeak": "It wasn't the monitor - it was the keyboard that broke.",
+            "word": "Did you say twelve or twenty?",
+            "textToSpeak": "Did you say twelve or twenty?",
             "options": [
-                "Emphasis on KEYBOARD (New Information)",
-                "Emphasis on MONITOR (Given/Old Information)"
+                "Rises on twelve, falls on twenty: choosing between two",
+                "Falls on both: stating two separate numbers"
             ],
-            "correctAnswer": "Emphasis on KEYBOARD (New Information)",
+            "correctAnswer": "Rises on twelve, falls on twenty: choosing between two",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                3,
+                3,
+                1
             ],
-            "hint": "The rejected idea can appear anywhere in the sentence and still stay flat in pitch — the correction is what peaks.",
-            "explanation": "KEYBOARD answers what actually happened, so it gets the nuclear stress — MONITOR is just the idea being dismissed.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "The two numbers sound alike. How does the voice present them?",
+            "explanation": "The rise on TWELVE and the fall on TWENTY give the pattern of an alternative question, so B is asking A to pick one of the two.",
+            "emphasisRule": "A clarifying choice uses the alternative-question pattern: rise, then fall.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L96_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"The new policy starts in the third quarter.\" B wants to narrow it down.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Not the highway - we drove along the coast.",
-            "textToSpeak": "Not the highway - we drove along the coast.",
+            "word": "The third quarter of this year?",
+            "textToSpeak": "The third quarter of this year?",
             "options": [
-                "Emphasis on HIGHWAY (Given/Old Information)",
-                "Emphasis on COAST (New Information)"
+                "Emphasis on QUARTER",
+                "Emphasis on THIS"
             ],
-            "correctAnswer": "Emphasis on COAST (New Information)",
+            "correctAnswer": "Emphasis on THIS",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
-                1
+                3
             ],
-            "hint": "Position doesn't decide the stress here; meaning does. Find the word that corrects the assumption.",
-            "explanation": "The contrast here rejects HIGHWAY in favor of COAST, and that correction is exactly where the stress lands.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
+            "hint": "B understood the quarter. What is the remaining doubt?",
+            "explanation": "QUARTER and THIRD are already settled, so they stay low. THIS is the part B isn't sure about, so it takes the peak.",
+            "emphasisRule": "In a clarifying echo, the part being clarified takes the peak.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L97_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Are you taking the bus or the train?\" B answers:",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The critic praised the acting, not the script.",
-            "textToSpeak": "The critic praised the acting, not the script.",
+            "word": "Neither, I'm driving.",
+            "textToSpeak": "Neither, I'm driving.",
             "options": [
-                "Emphasis on ACTING (New Information)",
-                "Emphasis on SCRIPT (Given/Old Information)"
+                "Emphasis on I'M and DRIVING",
+                "Emphasis on NEITHER and DRIVING"
             ],
-            "correctAnswer": "Emphasis on ACTING (New Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on NEITHER and DRIVING",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
                 3,
                 1,
                 1,
+                3,
                 1
             ],
-            "hint": "This is a classic correction pattern — the old, rejected idea stays quiet, and the true answer gets the emphasis.",
-            "explanation": "ACTING is the genuine correction here, so it carries the nuclear stress, while SCRIPT — the rejected idea — stays unstressed.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "B rejects both options. Which words show that?",
+            "explanation": "NEITHER rejects both of A's options, so it gets a peak at the start. DRIVING is the new option and takes the second peak. I'M is just a link.",
+            "emphasisRule": "A reply that rejects both choices peaks on 'neither' and on the new option.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L97_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A asks: \"Do you want the red or the blue?\" B wants both.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "It wasn't food poisoning - it was motion sickness.",
-            "textToSpeak": "It wasn't food poisoning - it was motion sickness.",
+            "word": "I'll take both of them.",
+            "textToSpeak": "I'll take both of them.",
             "options": [
-                "Emphasis on POISONING (Given/Old Information)",
-                "Emphasis on SICKNESS (New Information)"
+                "Emphasis on BOTH",
+                "Emphasis on TAKE"
             ],
-            "correctAnswer": "Emphasis on SICKNESS (New Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BOTH",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "Notice which word the speaker is actively correcting away from — that one loses the stress, wherever it sits.",
-            "explanation": "Even though position might suggest otherwise, POISONING is old, rejected information, so the real stress falls on SICKNESS.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "'Of them' is a quick pronoun phrase. What does B emphasise instead?",
+            "explanation": "THEM is a weak pronoun, so the peak moves earlier to BOTH, the word that answers A's either-or question.",
+            "emphasisRule": "The word answering the choice takes the peak; a final pronoun phrase stays low.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L97_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A asks: \"Tea or coffee?\" B hesitates.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The band changed the setlist, not the lineup.",
-            "textToSpeak": "The band changed the setlist, not the lineup.",
+            "word": "Um, tea, I think.",
+            "textToSpeak": "Um, tea, I think.",
             "options": [
-                "Emphasis on SETLIST (New Information)",
-                "Emphasis on LINEUP (Given/Old Information)"
+                "Falling on tea: a firm choice",
+                "Rising on tea: not fully sure of the choice"
             ],
-            "correctAnswer": "Emphasis on SETLIST (New Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising on tea: not fully sure of the choice",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
                 1,
                 3,
                 1,
-                1
+                1,
+                2
             ],
-            "hint": "One of these two words is old news already on the table — the other is the actual correction. Stress goes on the correction.",
-            "explanation": "The speaker is correcting away from LINEUP and toward SETLIST, so SETLIST takes the pitch accent.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
+            "hint": "The speaker adds 'I think'. What does that do to the sound of 'tea'?",
+            "explanation": "The voice lifts on TEA instead of settling, which matches the hedge 'I think'. A firm choice would fall.",
+            "emphasisRule": "A rise or fall-rise on the chosen item signals that the choice is tentative.",
+            "emotionContext": "Uncertainty"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L98_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. Your neighbour is carrying a box and a lamp. She can manage the box.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "It wasn't jealousy - it was genuine concern.",
-            "textToSpeak": "It wasn't jealousy - it was genuine concern.",
+            "word": "Shall I take the lamp?",
+            "textToSpeak": "Shall I take the lamp?",
             "options": [
-                "Emphasis on JEALOUSY (Given/Old Information)",
-                "Emphasis on CONCERN (New Information)"
+                "Emphasis on TAKE",
+                "Emphasis on LAMP"
             ],
-            "correctAnswer": "Emphasis on CONCERN (New Information)",
+            "correctAnswer": "Emphasis on LAMP",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "Whichever word is being ruled out stays low in pitch, even if it comes last. Listen for where the real news is.",
-            "explanation": "JEALOUSY is being ruled out, not confirmed, so it stays flat while CONCERN — the actual answer — gets the peak.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "The offer is about one of two things. Which one?",
+            "explanation": "She can manage the box, so the offer is only for the lamp. LAMP takes the peak, and the rise makes it an offer.",
+            "emphasisRule": "In an offer between two objects, the object being offered takes the peak.",
+            "emotionContext": "Offer"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L98_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"I'm making tea. Anyone else?\" B accepts warmly.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "It wasn't a virus - it was a corrupted file.",
-            "textToSpeak": "It wasn't a virus - it was a corrupted file.",
+            "word": "I'd love some.",
+            "textToSpeak": "I'd love some.",
             "options": [
-                "Emphasis on FILE (New Information)",
-                "Emphasis on VIRUS (Given/Old Information)"
+                "Emphasis on LOVE",
+                "Emphasis on SOME"
             ],
-            "correctAnswer": "Emphasis on FILE (New Information)",
+            "correctAnswer": "Emphasis on LOVE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "This sentence rejects one idea and confirms another — the confirmed word gets the stronger pitch, wherever it sits.",
-            "explanation": "New, corrected information always attracts the stress. Here that's FILE, not the rejected VIRUS.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "'Some' is a weak word. Which word carries the warmth?",
+            "explanation": "SOME is a quick pronoun, so it can't hold the peak. LOVE carries the enthusiasm of the acceptance.",
+            "emphasisRule": "In an enthusiastic reply, the feeling word takes the peak and a final pronoun stays weak.",
+            "emotionContext": "Accepting"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L98_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A host offers a second helping of dessert. You politely decline.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "It wasn't the babysitter - grandma picked up the kids.",
-            "textToSpeak": "It wasn't the babysitter - grandma picked up the kids.",
+            "word": "I couldn't possibly.",
+            "textToSpeak": "I couldn't possibly.",
             "options": [
-                "Emphasis on BABYSITTER (Given/Old Information)",
-                "Emphasis on GRANDMA (New Information)"
+                "Emphasis on POSSIBLY",
+                "Emphasis on COULDN'T"
             ],
-            "correctAnswer": "Emphasis on GRANDMA (New Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on POSSIBLY",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Don't assume the last word automatically wins the stress here — focus on which word is actually new information.",
-            "explanation": "Because BABYSITTER is the mistaken assumption being corrected, it's deaccented, and GRANDMA carries the emphasis instead.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
+            "hint": "The refusal is softened by an adverb. Which word carries the polite 'no'?",
+            "explanation": "POSSIBLY is what makes the refusal sound polite and final, so it gets the main lift. COULDN'T is only the frame.",
+            "emphasisRule": "In polite refusals, the softening adverb carries the peak.",
+            "emotionContext": "Declining politely"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L99_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A hotel clerk reads back your phone number to confirm it.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "We rescheduled the checkup, not the surgery.",
-            "textToSpeak": "We rescheduled the checkup, not the surgery.",
+            "word": "That's seven, two, nine, four?",
+            "textToSpeak": "That's seven, two, nine, four?",
             "options": [
-                "Emphasis on CHECKUP (New Information)",
-                "Emphasis on SURGERY (Given/Old Information)"
+                "Rises on each group, then falls: closing the number as confirmed",
+                "Rises on each group, with a final rise: asking for confirmation"
             ],
-            "correctAnswer": "Emphasis on CHECKUP (New Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rises on each group, with a final rise: asking for confirmation",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
+                2,
                 3,
-                1,
-                1,
-                1
+                2,
+                3,
+                3
             ],
-            "hint": "One word here is just the mistaken guess being corrected — it stays unstressed no matter where it falls.",
-            "explanation": "CHECKUP answers what actually happened, so it gets the nuclear stress — SURGERY is just the idea being dismissed.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
+            "hint": "Each group of digits promises more. What does the last group do?",
+            "explanation": "A rise on the last group asks you to confirm the whole number. A fall would announce it as settled and leave no room to correct it.",
+            "emphasisRule": "A final rise on the last digit group asks the listener to confirm.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L99_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A courier checks the house number but is sure about the street.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "We tried the new cafe, not the usual one.",
-            "textToSpeak": "We tried the new cafe, not the usual one.",
+            "word": "Twelve Mill Road?",
+            "textToSpeak": "Twelve Mill Road?",
             "options": [
-                "Emphasis on USUAL (Given/Old Information)",
-                "Emphasis on CAFE (New Information)"
+                "Emphasis on TWELVE",
+                "Emphasis on MILL"
             ],
-            "correctAnswer": "Emphasis on CAFE (New Information)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                3,
-                1,
-                1
-            ],
-            "hint": "Listen for which word answers 'what actually happened' — that's the one carrying the pitch peak.",
-            "explanation": "The contrast here rejects USUAL in favor of CAFE, and that correction is exactly where the stress lands.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L99_Q3",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "I ordered the grilled salmon, not the steak.",
-            "textToSpeak": "I ordered the grilled salmon, not the steak.",
-            "options": [
-                "Emphasis on SALMON (New Information)",
-                "Emphasis on STEAK (Given/Old Information)"
-            ],
-            "correctAnswer": "Emphasis on SALMON (New Information)",
+            "correctAnswer": "Emphasis on TWELVE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
-                1,
-                1,
-                1
-            ],
-            "hint": "The rejected idea can appear anywhere in the sentence and still stay flat in pitch — the correction is what peaks.",
-            "explanation": "SALMON is the genuine correction here, so it carries the nuclear stress, while STEAK — the rejected idea — stays unstressed.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L100_Q1",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "I emailed the client, not the vendor.",
-            "textToSpeak": "I emailed the client, not the vendor.",
-            "options": [
-                "Emphasis on VENDOR (Given/Old Information)",
-                "Emphasis on CLIENT (New Information)"
-            ],
-            "correctAnswer": "Emphasis on CLIENT (New Information)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                3,
-                1,
-                1
-            ],
-            "hint": "Position doesn't decide the stress here; meaning does. Find the word that corrects the assumption.",
-            "explanation": "Even though position might suggest otherwise, VENDOR is old, rejected information, so the real stress falls on CLIENT.",
-            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence.",
-            "emotionContext": "New Information"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L100_Q2",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "I recycled the bottles, not the cans.",
-            "textToSpeak": "I recycled the bottles, not the cans.",
-            "options": [
-                "Emphasis on BOTTLES (New Information)",
-                "Emphasis on CANS (Given/Old Information)"
-            ],
-            "correctAnswer": "Emphasis on BOTTLES (New Information)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                3,
-                1,
-                1,
-                1
-            ],
-            "hint": "This is a classic correction pattern — the old, rejected idea stays quiet, and the true answer gets the emphasis.",
-            "explanation": "The speaker is correcting away from CANS and toward BOTTLES, so BOTTLES takes the pitch accent.",
-            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence.",
-            "emotionContext": "New Information"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L100_Q3",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "Not the freezer - the fridge stopped working.",
-            "textToSpeak": "Not the freezer - the fridge stopped working.",
-            "options": [
-                "Emphasis on FREEZER (Given/Old Information)",
-                "Emphasis on FRIDGE (New Information)"
-            ],
-            "correctAnswer": "Emphasis on FRIDGE (New Information)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
                 1,
                 1,
                 3
             ],
-            "hint": "Notice which word the speaker is actively correcting away from — that one loses the stress, wherever it sits.",
-            "explanation": "FREEZER is being ruled out, not confirmed, so it stays flat while FRIDGE — the actual answer — gets the peak.",
-            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent.",
-            "emotionContext": "New Information"
+            "hint": "He is certain of one part. Which part is he checking?",
+            "explanation": "He knows the street, so MILL stays low. TWELVE is the number he wants confirmed, and it carries the peak.",
+            "emphasisRule": "When checking part of an address, the unsure part takes the peak.",
+            "emotionContext": "Confirmation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L99_Q3",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? A customer service agent finishes checking your details.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "And that's the same email address as before?",
+            "textToSpeak": "And that's the same email address as before?",
+            "options": [
+                "Rising: asking whether it's still correct",
+                "Falling: telling you that it is still correct"
+            ],
+            "correctAnswer": "Rising: asking whether it's still correct",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "The agent can't know without you. What does her voice do?",
+            "explanation": "The rise at the end hands the question to you, because only you know if the address has changed.",
+            "emphasisRule": "A final rise on a confirmation question asks the other person to verify.",
+            "emotionContext": "Confirmation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L100_Q1",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? You can't remember who called.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It was Jamal who called, wasn't it?",
+            "textToSpeak": "It was Jamal who called, wasn't it?",
+            "options": [
+                "Rising: you honestly can't remember",
+                "Falling: you're confident and expect agreement"
+            ],
+            "correctAnswer": "Rising: you honestly can't remember",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                2,
+                3
+            ],
+            "hint": "The context tells you the speaker is unsure. What does the tag do?",
+            "explanation": "A rising tag matches the speaker's doubt: it genuinely asks for confirmation. A falling tag would sound as if the speaker already knew.",
+            "emphasisRule": "A rising tag signals real doubt.",
+            "emotionContext": "Confirmation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L100_Q2",
+            "instruction": "Identify the emphasis. A says: \"Dad's putting the house on the market.\" B reacts:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "He's selling it?",
+            "textToSpeak": "He's selling it?",
+            "options": [
+                "Emphasis on HE'S",
+                "Emphasis on SELLING"
+            ],
+            "correctAnswer": "Emphasis on SELLING",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "hint": "B is repeating what A implied. Which part is B reacting to?",
+            "explanation": "HE'S is given, and IT is a weak pronoun. SELLING is what B is shocked about, so it takes the peak.",
+            "emphasisRule": "An echo of an implied action takes the peak on the verb; the pronouns stay weak.",
+            "emotionContext": "Surprise"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L100_Q3",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? You phone to confirm a hair appointment and read back the day.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "That's Saturday the third, right?",
+            "textToSpeak": "That's Saturday the third, right?",
+            "options": [
+                "Falling on 'right': closing the call",
+                "Rising on 'right': asking for a final confirmation"
+            ],
+            "correctAnswer": "Rising on 'right': asking for a final confirmation",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "The speaker needs the salon to agree before hanging up. What does the final word do?",
+            "explanation": "The rise on RIGHT turns the summary into a request for confirmation. A fall would end the exchange without waiting for a reply.",
+            "emphasisRule": "A short tag with a rise asks for the final check.",
+            "emotionContext": "Confirmation"
         }
     ]
 }

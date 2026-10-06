@@ -6,443 +6,443 @@
         {
             "id": "SPK_SPEAKSYNONYM_L101_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"extremely careful about every detail.\"",
-            "explanation": "In this sentence, \"meticulous\" means extremely careful about every detail, so \"thorough\" slots in naturally. \"painstaking\" is a close second choice.",
-            "textToSpeak": "My surgeon is known for being extremely *meticulous*.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "This isn't about something falling out of someone's hand. It's about numbers going down.",
+            "explanation": "In this sentence \"drop\" means to go down in value. \"Fall\", \"plunge\", \"dip\" and \"tumble\" all describe a decrease, with \"plunge\" and \"tumble\" suggesting a bigger, faster change. Compare \"drop a plate\", where the meaning is to let something fall, and a different word such as \"let go of\" would be needed.",
+            "textToSpeak": "The temperature is going to *drop* sharply tonight.",
             "acceptedSynonyms": [
-                "thorough",
-                "precise",
-                "painstaking",
-                "fastidious"
+                "dip",
+                "plunge",
+                "fall",
+                "tumble"
             ],
-            "correctAnswer": "thorough"
+            "correctAnswer": "fall"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L101_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"extremely careful about every detail.\" What's a good match?",
-            "explanation": "\"precise\" is a reliable synonym for \"meticulous\", which means extremely careful about every detail here. \"fastidious\" and \"thorough\" are also accepted.",
-            "textToSpeak": "Her physical therapist is known for being extremely *meticulous*.",
+            "instruction": "Say a word with the same meaning in this context.",
+            "hint": "Think about a parent looking after children from babyhood into adulthood.",
+            "explanation": "\"Raise\" here means to care for children until they grow up, not to lift something. \"Brought up\" and \"reared\" are the natural choices, and \"reared\" is more formal. Compare \"raise a flag\", where the answer would be \"lift\".",
+            "textToSpeak": "She *raised* three children on her own.",
             "acceptedSynonyms": [
-                "thorough",
-                "precise",
-                "painstaking",
-                "fastidious"
+                "brought up",
+                "nurtured",
+                "reared",
+                "parented"
             ],
-            "correctAnswer": "precise"
+            "correctAnswer": "brought up"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L101_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"extremely careful about every detail.\"",
-            "explanation": "\"painstaking\" works well here because \"meticulous\" also means extremely careful about every detail. \"thorough\" and \"precise\" would work too.",
-            "textToSpeak": "The lab technician is known for being extremely *meticulous*.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You're at a restaurant, the meal is over, and you're talking about the money.",
+            "explanation": "\"Settle\" has a money sense: to pay what you owe. \"Pay\" is the simple choice, \"clear\" is a slightly formal verb for paying off a debt or bill, and \"cover\" is casual. The sense is different from \"settle down\", meaning to become calm.",
+            "textToSpeak": "Let's *settle* the bill before we leave.",
             "acceptedSynonyms": [
-                "thorough",
-                "precise",
-                "painstaking",
-                "fastidious"
+                "clear",
+                "cover",
+                "pay"
             ],
-            "correctAnswer": "painstaking"
+            "correctAnswer": "pay"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L102_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"having more than one possible meaning\" -- what word comes to mind?",
-            "explanation": "\"ambiguous\" means having more than one possible meaning, and \"unclear\" captures that same idea naturally in this sentence. \"confusing\" is another solid option.",
-            "textToSpeak": "The confusing text message left the plans frustratingly *ambiguous*.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "This isn't a word about type. It describes what someone is like.",
+            "explanation": "For a person, \"kind\" means caring about others. \"Considerate\" fits because it suggests thinking of others' needs, and \"generous\" and \"thoughtful\" also fit the story of someone helping while you're away. The noun \"kind\", meaning type, works completely differently.",
+            "textToSpeak": "My neighbor is really *kind*. She waters my plants when I travel.",
             "acceptedSynonyms": [
-                "unclear",
-                "vague",
-                "confusing"
+                "thoughtful",
+                "caring",
+                "generous",
+                "considerate"
             ],
-            "correctAnswer": "unclear"
+            "correctAnswer": "considerate"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L102_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"having more than one possible meaning.\"",
-            "explanation": "Good choice: \"vague\" is a strong match for \"ambiguous\", which means having more than one possible meaning. You could also say \"unclear\" or \"confusing\".",
-            "textToSpeak": "Her landlord's notice left the plans frustratingly *ambiguous*.",
+            "instruction": "Say a synonym with the same level of intensity.",
+            "hint": "A brother or sister has been treated unfairly and you're telling the other child to stop.",
+            "explanation": "\"Mean\" here describes unkind behavior toward people. \"Unkind\" is the simple, safe choice, \"cruel\" is much stronger, \"nasty\" is informal, and \"hurtful\" focuses on the effect. It has nothing to do with the meaning \"average\" or \"signify\".",
+            "textToSpeak": "Don't be *mean* to your little sister.",
             "acceptedSynonyms": [
-                "unclear",
-                "vague",
-                "confusing"
+                "nasty",
+                "unkind",
+                "cruel",
+                "hurtful"
             ],
-            "correctAnswer": "vague"
+            "correctAnswer": "unkind"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L102_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"having more than one possible meaning.\"",
-            "explanation": "\"confusing\" fits because \"ambiguous\" means having more than one possible meaning here. Other natural alternatives include \"vague\" and \"unclear\".",
-            "textToSpeak": "The handwritten note left the plans frustratingly *ambiguous*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Someone in your team spots small details and errors in no time.",
+            "explanation": "In this sentence, \"sharp\" describes a person whose mind works quickly and clearly. \"Keen\" and \"astute\" are both good choices, \"quick\" is casual, and \"incisive\" is formal and analytical. A \"sharp knife\" would need a different word, such as \"keen-edged\".",
+            "textToSpeak": "She has a *sharp* mind and spots mistakes quickly.",
             "acceptedSynonyms": [
-                "unclear",
-                "vague",
-                "confusing"
+                "astute",
+                "incisive",
+                "quick",
+                "keen"
             ],
-            "correctAnswer": "confusing"
+            "correctAnswer": "keen"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L103_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"honest and direct, even if blunt\"?",
-            "explanation": "In this sentence, \"candid\" means honest and direct, even if blunt, so \"honest\" slots in naturally. \"forthright\" is a close second choice.",
-            "textToSpeak": "My grandmother was refreshingly *candid* about the diagnosis.",
+            "instruction": "Say a word with the same meaning in this context.",
+            "hint": "Picture this: you're arranging to see a team play, not a light for lighting a candle.",
+            "explanation": "\"Match\" here is a sport event. \"Game\" is the most common everyday word, \"fixture\" is British and refers to a scheduled event, and \"contest\" is more general. The verb \"match\", meaning go together, is a different sense entirely.",
+            "textToSpeak": "The *match* starts at seven, so let's meet at six.",
             "acceptedSynonyms": [
-                "honest",
-                "frank",
-                "forthright",
-                "straightforward"
+                "fixture",
+                "contest",
+                "game"
             ],
-            "correctAnswer": "honest"
+            "correctAnswer": "game"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L103_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"honest and direct, even if blunt.\"",
-            "explanation": "\"frank\" is a reliable synonym for \"candid\", which means honest and direct, even if blunt here. \"straightforward\" and \"honest\" are also accepted.",
-            "textToSpeak": "Her family doctor was refreshingly *candid* about the diagnosis.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Both teams scored the same number of points, so nobody won.",
+            "explanation": "\"Tie\" as a noun means an equal result. \"Draw\" is the natural word, \"stalemate\" suggests neither side can move forward, and \"deadlock\" is used for a situation without a solution. The other meaning is \"fasten\", as in tying shoes.",
+            "textToSpeak": "The game ended in a *tie*.",
             "acceptedSynonyms": [
-                "honest",
-                "frank",
-                "forthright",
-                "straightforward"
+                "stalemate",
+                "deadlock",
+                "draw"
             ],
-            "correctAnswer": "frank"
+            "correctAnswer": "draw"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L103_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"honest and direct, even if blunt.\" What's a good match?",
-            "explanation": "\"forthright\" works well here because \"candid\" also means honest and direct, even if blunt. \"honest\" and \"frank\" would work too.",
-            "textToSpeak": "The hospice nurse was refreshingly *candid* about the diagnosis.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "You're looking at a report and doubting a figure that seems suspiciously high.",
+            "explanation": "\"Figure\" is a number here, especially in business or statistics. \"Number\" is the simplest, \"statistic\" is more technical, and \"total\" and \"amount\" fit when you're talking about sums of money. It doesn't mean a person's outline here.",
+            "textToSpeak": "That sales *figure* looks too high.",
             "acceptedSynonyms": [
-                "honest",
-                "frank",
-                "forthright",
-                "straightforward"
+                "number",
+                "total",
+                "amount",
+                "statistic"
             ],
-            "correctAnswer": "forthright"
+            "correctAnswer": "number"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L104_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"reasonable enough to be true.\"",
-            "explanation": "\"plausible\" means reasonable enough to be true, and \"believable\" captures that same idea naturally in this sentence. \"reasonable\" is another solid option.",
-            "textToSpeak": "Her explanation sounded entirely *plausible*.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Imagine you're checking that this is the place you're looking for before you knock on the door.",
+            "explanation": "\"Right\" means correct in this sentence, not a direction. \"Correct\" is the natural swap, \"proper\" and \"accurate\" are also acceptable but they sound more formal. Compare \"turn right\", which has nothing to do with correctness.",
+            "textToSpeak": "Is this the *right* address?",
             "acceptedSynonyms": [
-                "believable",
-                "credible",
-                "reasonable",
-                "convincing"
+                "accurate",
+                "correct",
+                "proper"
             ],
-            "correctAnswer": "believable"
+            "correctAnswer": "correct"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L104_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"reasonable enough to be true\" -- what word comes to mind?",
-            "explanation": "Good choice: \"credible\" is a strong match for \"plausible\", which means reasonable enough to be true. You could also say \"convincing\" or \"believable\".",
-            "textToSpeak": "The witness's account sounded entirely *plausible*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You moved into a home and had to describe how it looked when you arrived.",
+            "explanation": "\"State\" here is a noun meaning condition. \"Condition\" is the direct synonym, \"shape\" is informal, and \"mess\" works in this case because the kitchen was in a bad state. The verb \"state\", meaning say formally, is a separate meaning.",
+            "textToSpeak": "The kitchen was in a terrible *state* when we moved in.",
             "acceptedSynonyms": [
-                "believable",
-                "credible",
-                "reasonable",
-                "convincing"
+                "condition",
+                "shape",
+                "mess"
             ],
-            "correctAnswer": "credible"
+            "correctAnswer": "condition"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L104_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"reasonable enough to be true.\"",
-            "explanation": "\"reasonable\" fits because \"plausible\" means reasonable enough to be true here. Other natural alternatives include \"believable\" and \"credible\".",
-            "textToSpeak": "The proposed timeline sounded entirely *plausible*.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You and a friend are checking how many chairs you still need for an event.",
+            "explanation": "\"Count\" in this sentence means finding a total. \"Tally\" is more formal and suggests keeping a running total, while \"calculate\" and \"work out\" suggest finding the number by thinking or maths. It does not mean \"rely\", as in \"count on me\".",
+            "textToSpeak": "Please *count* how many chairs we still need.",
             "acceptedSynonyms": [
-                "believable",
-                "credible",
-                "reasonable",
-                "convincing"
+                "tally",
+                "work out",
+                "calculate"
             ],
-            "correctAnswer": "reasonable"
+            "correctAnswer": "work out"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L105_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"able to be done in practice.\"",
-            "explanation": "In this sentence, \"feasible\" means able to be done in practice, so \"achievable\" slots in naturally. \"practical\" is a close second choice.",
-            "textToSpeak": "The renovation plan still seems *feasible* within budget.",
+            "instruction": "Say a word with the same meaning in this context.",
+            "hint": "You're asking about someone's music taste.",
+            "explanation": "\"Kind\" is a noun meaning type. \"Type\" and \"sort\" are the everyday choices, \"style\" is natural for music, and \"variety\" is used for lists. Do not confuse it with the adjective \"kind\", which describes a caring person.",
+            "textToSpeak": "What *kind* of music do you listen to?",
             "acceptedSynonyms": [
-                "achievable",
-                "viable",
-                "practical",
-                "workable"
+                "style",
+                "sort",
+                "variety",
+                "type"
             ],
-            "correctAnswer": "achievable"
+            "correctAnswer": "type"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L105_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"able to be done in practice\"?",
-            "explanation": "\"viable\" is a reliable synonym for \"feasible\", which means able to be done in practice here. \"workable\" and \"achievable\" are also accepted.",
-            "textToSpeak": "Her marketing strategy still seems *feasible* within budget.",
+            "instruction": "Say a word that matches the tone of the sentence.",
+            "hint": "There's hardly any wind, just a tiny movement of air.",
+            "explanation": "\"Light\" here means weak in force. \"Gentle\" and \"soft\" are the softest words, \"mild\" suggests something that isn't extreme, and \"slight\" emphasizes how little it is. \"Light\" can also mean bright or not heavy, but these words would not fit those senses.",
+            "textToSpeak": "There was only a *light* breeze on the beach.",
             "acceptedSynonyms": [
-                "achievable",
-                "viable",
-                "practical",
-                "workable"
+                "gentle",
+                "mild",
+                "slight",
+                "soft"
             ],
-            "correctAnswer": "viable"
+            "correctAnswer": "gentle"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L105_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"able to be done in practice.\"",
-            "explanation": "\"practical\" works well here because \"feasible\" also means able to be done in practice. \"achievable\" and \"viable\" would work too.",
-            "textToSpeak": "The proposed merger still seems *feasible* within budget.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "A charity event succeeded and the organizers were delighted with the total.",
+            "explanation": "\"Raise\" here means to collect money for a cause. \"Collected\" and \"gathered\" are direct, \"generated\" suggests creating funds through events, and \"brought in\" is casual. It is not \"raise a child\" or \"raise a hand\".",
+            "textToSpeak": "They *raised* over five thousand dollars for the hospital.",
             "acceptedSynonyms": [
-                "achievable",
-                "viable",
-                "practical",
-                "workable"
+                "gathered",
+                "generated",
+                "brought in",
+                "collected"
             ],
-            "correctAnswer": "practical"
+            "correctAnswer": "collected"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L106_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"while feeling unsure about doing it.\" What's a good match?",
-            "explanation": "\"reluctantly\" means while feeling unsure about doing it, and \"unwillingly\" captures that same idea naturally in this sentence. \"grudgingly\" is another solid option.",
-            "textToSpeak": "My stubborn uncle *reluctantly* agreed to the compromise.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Someone gave a friend practical recommendations, and the listener agrees.",
+            "explanation": "\"Sound\" as an adjective means reliable and sensible. \"Solid\" is a very natural spoken word for good advice, while \"wise\", \"sensible\" and \"reasonable\" also fit. The noun \"sound\" means a noise and is unrelated.",
+            "textToSpeak": "That's *sound* advice. I'll follow it.",
             "acceptedSynonyms": [
-                "unwillingly",
-                "hesitantly",
-                "grudgingly"
+                "sensible",
+                "wise",
+                "reasonable",
+                "solid"
             ],
-            "correctAnswer": "unwillingly"
+            "correctAnswer": "solid"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L106_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"while feeling unsure about doing it.\"",
-            "explanation": "Good choice: \"hesitantly\" is a strong match for \"reluctantly\", which means while feeling unsure about doing it. You could also say \"unwillingly\" or \"grudgingly\".",
-            "textToSpeak": "Her business partner *reluctantly* agreed to the compromise.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "You can't cope with the constant sound of phones and chatting where you work.",
+            "explanation": "\"Bear\" is a verb meaning to tolerate something unpleasant. \"Tolerate\" and \"endure\" are the closest, \"stand\" is casual, and \"put up with\" is the everyday phrase for accepting something annoying. It's unrelated to the animal or to \"bear fruit\".",
+            "textToSpeak": "I can't *bear* the noise in this office.",
             "acceptedSynonyms": [
-                "unwillingly",
-                "hesitantly",
-                "grudgingly"
+                "stand",
+                "tolerate",
+                "endure",
+                "put up with"
             ],
-            "correctAnswer": "hesitantly"
+            "correctAnswer": "tolerate"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L106_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"while feeling unsure about doing it\" -- what word comes to mind?",
-            "explanation": "\"grudgingly\" fits because \"reluctantly\" means while feeling unsure about doing it here. Other natural alternatives include \"hesitantly\" and \"unwillingly\".",
-            "textToSpeak": "The union representative *reluctantly* agreed to the compromise.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "A recipe calls for a tiny amount of lemon juice, not a full spoonful.",
+            "explanation": "\"Drop\" here means a very small amount of liquid. \"Splash\" is a little larger, \"dash\" is a small quantity poured quickly, \"touch\" is very small, and \"hint\" suggests just enough to taste. This is unrelated to \"drop\" as in going down.",
+            "textToSpeak": "Just add a *drop* of lemon juice.",
             "acceptedSynonyms": [
-                "unwillingly",
-                "hesitantly",
-                "grudgingly"
+                "splash",
+                "hint",
+                "dash",
+                "touch"
             ],
-            "correctAnswer": "grudgingly"
+            "correctAnswer": "dash"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L107_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"seeing something coming before it arrives.\"",
-            "explanation": "In this sentence, \"anticipates\" means seeing something coming before it arrives, so \"expects\" slots in naturally. \"foresees\" is a close second choice.",
-            "textToSpeak": "Our travel agent already *anticipates* several challenges.",
+            "instruction": "Say a synonym with the same level of intensity.",
+            "hint": "You have a sudden, strong physical feeling that stops you in your tracks.",
+            "explanation": "It helps to know that \"sharp\" describes pain that is sudden and strong. \"Stabbing\" and \"piercing\" both suggest a needle-like feeling, \"acute\" is a medical word for a sudden, intense pain, and \"intense\" is general. It's not the same as \"a sharp mind\".",
+            "textToSpeak": "I felt a *sharp* pain in my side.",
             "acceptedSynonyms": [
-                "expects",
-                "foresees",
-                "predicts"
+                "piercing",
+                "intense",
+                "stabbing",
+                "acute"
             ],
-            "correctAnswer": "expects"
+            "correctAnswer": "stabbing"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L107_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"seeing something coming before it arrives.\"",
-            "explanation": "\"foresees\" is a reliable synonym for \"anticipates\", which means seeing something coming before it arrives here. \"predicts\" and \"expects\" are also accepted.",
-            "textToSpeak": "Her tour operator already *anticipates* several challenges.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're telling a friend they can always trust you to be there.",
+            "explanation": "\"Count on\" means to rely on. \"Rely\" is the closest, \"depend\" is neutral and common, \"bank\" is informal, and \"lean\" is warm and emotional. It is not the same as \"count\" for numbers.",
+            "textToSpeak": "You can *count* on me.",
             "acceptedSynonyms": [
-                "expects",
-                "foresees",
-                "predicts"
+                "lean",
+                "rely",
+                "depend",
+                "bank"
             ],
-            "correctAnswer": "foresees"
+            "correctAnswer": "rely"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L107_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"seeing something coming before it arrives\"?",
-            "explanation": "\"predicts\" works well here because \"anticipates\" also means seeing something coming before it arrives. \"expects\" and \"foresees\" would work too.",
-            "textToSpeak": "The expedition leader already *anticipates* several challenges.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Picture this: a group of decision-makers at a company meets and votes on money.",
+            "explanation": "\"Board\" as a noun can mean a group that manages an organization. \"Committee\" is the common synonym, \"council\" is used for a group in charge, and \"directors\" is a formal, businesslike word. It's not a flat piece of wood, as in \"a wooden board\".",
+            "textToSpeak": "The *board* approved the new budget yesterday.",
             "acceptedSynonyms": [
-                "expects",
-                "foresees",
-                "predicts"
+                "committee",
+                "directors",
+                "council"
             ],
-            "correctAnswer": "predicts"
+            "correctAnswer": "committee"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L108_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"openly recognizing that something is true.\"",
-            "explanation": "\"acknowledges\" means openly recognizing that something is true, and \"admits\" captures that same idea naturally in this sentence. \"concedes\" is another solid option.",
-            "textToSpeak": "My department head readily *acknowledges* the setback.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Someone doesn't know a word and asks about its definition.",
+            "explanation": "Keep in mind that \"mean\" is a verb meaning to stand for an idea. \"Signify\" and \"denote\" are formal, \"stand for\" is common for abbreviations, and \"indicate\" is a neutral choice. It's completely different from \"mean\" as in \"cruel\".",
+            "textToSpeak": "What does this word *mean*?",
             "acceptedSynonyms": [
-                "admits",
-                "recognizes",
-                "concedes",
-                "accepts"
+                "signify",
+                "indicate",
+                "stand for",
+                "denote"
             ],
-            "correctAnswer": "admits"
+            "correctAnswer": "signify"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L108_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"openly recognizing that something is true.\" What's a good match?",
-            "explanation": "Good choice: \"recognizes\" is a strong match for \"acknowledges\", which means openly recognizing that something is true. You could also say \"accepts\" or \"admits\".",
-            "textToSpeak": "Her research supervisor readily *acknowledges* the setback.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Think of it this way: you're trying to leave, but the laces on your trainers are undone.",
+            "explanation": "\"Tie\" as a verb means to fasten with a knot. \"Lace\" and \"knot\" are specific, \"do up\" is casual and very common in British English, and \"fasten\" is more general. It isn't the noun \"tie\", meaning a draw.",
+            "textToSpeak": "Can you help me *tie* my shoes?",
             "acceptedSynonyms": [
-                "admits",
-                "recognizes",
-                "concedes",
-                "accepts"
+                "lace",
+                "do up",
+                "knot",
+                "fasten"
             ],
-            "correctAnswer": "recognizes"
+            "correctAnswer": "fasten"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L108_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"openly recognizing that something is true.\"",
-            "explanation": "\"concedes\" fits because \"acknowledges\" means openly recognizing that something is true here. Other natural alternatives include \"admits\" and \"recognizes\".",
-            "textToSpeak": "The company spokesperson readily *acknowledges* the setback.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "It's dark, and at the door you can see only the general look of a person, not the details.",
+            "explanation": "\"Figure\" here describes the outline of a person. \"Shape\" and \"outline\" both describe the visible form, \"silhouette\" is the shape against a light background, and \"form\" is slightly literary. It isn't the number sense used for statistics.",
+            "textToSpeak": "A tall *figure* stood in the doorway.",
             "acceptedSynonyms": [
-                "admits",
-                "recognizes",
-                "concedes",
-                "accepts"
+                "outline",
+                "shape",
+                "silhouette",
+                "form"
             ],
-            "correctAnswer": "concedes"
+            "correctAnswer": "shape"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L109_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"making something stronger\" -- what word comes to mind?",
-            "explanation": "In this sentence, \"reinforces\" means making something stronger, so \"strengthens\" slots in naturally. \"supports\" is a close second choice.",
-            "textToSpeak": "My homeroom teacher constantly *reinforces* good study habits.",
+            "instruction": "Say a word with the same meaning in this context.",
+            "hint": "You're choosing furniture and asking if two colors look good together.",
+            "explanation": "\"Match\" as a verb means to go well together. \"Go with\" is the everyday phrase, \"suit\" is polite, and \"complement\" suggests that the two items improve each other. It's not the sports event sense.",
+            "textToSpeak": "Do these curtains *match* the sofa?",
             "acceptedSynonyms": [
-                "strengthens",
-                "reaffirms",
-                "supports",
-                "bolsters"
+                "coordinate with",
+                "suit",
+                "complement",
+                "go with"
             ],
-            "correctAnswer": "strengthens"
+            "correctAnswer": "go with"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L109_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"making something stronger.\"",
-            "explanation": "\"reaffirms\" is a reliable synonym for \"reinforces\", which means making something stronger here. \"bolsters\" and \"strengthens\" are also accepted.",
-            "textToSpeak": "Her academic advisor constantly *reinforces* good study habits.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Two people have argued about the same thing for weeks and need it finished.",
+            "explanation": "\"Settle\" in this sentence means to resolve. \"Resolve\" is the strongest and most formal, \"end\" is simple, \"solve\" suggests finding an answer, and \"sort out\" is casual. It's not the money sense, as in settling a bill.",
+            "textToSpeak": "We need to *settle* this argument once and for all.",
             "acceptedSynonyms": [
-                "strengthens",
-                "reaffirms",
-                "supports",
-                "bolsters"
+                "resolve",
+                "end",
+                "sort out",
+                "solve"
             ],
-            "correctAnswer": "reaffirms"
+            "correctAnswer": "resolve"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L109_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"making something stronger.\"",
-            "explanation": "\"supports\" works well here because \"reinforces\" also means making something stronger. \"strengthens\" and \"reaffirms\" would work too.",
-            "textToSpeak": "The tutoring center constantly *reinforces* good study habits.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Picture this: a receptionist asks for your details to complete a form.",
+            "explanation": "\"State\" here is a verb meaning to say clearly. \"Give\" is the everyday choice, \"provide\" is professional, \"say\" is simple, and \"declare\" is formal. Compare the noun \"state\", meaning condition or country.",
+            "textToSpeak": "Please *state* your name and address.",
             "acceptedSynonyms": [
-                "strengthens",
-                "reaffirms",
-                "supports",
-                "bolsters"
+                "say",
+                "declare",
+                "provide",
+                "give"
             ],
-            "correctAnswer": "supports"
+            "correctAnswer": "give"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L110_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"slowly damaging someone's confidence or position\"?",
-            "explanation": "\"undermines\" means slowly damaging someone's confidence or position, and \"weakens\" captures that same idea naturally in this sentence. \"damages\" is another solid option.",
-            "textToSpeak": "Chronic stress unintentionally *undermines* the immune system.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Someone is accusing another person without knowing all the facts.",
+            "explanation": "\"Right\" here means morally acceptable. \"Fair\" and \"just\" are the direct synonyms, \"appropriate\" is more formal and general, and \"reasonable\" suggests it isn't logical to blame him. It is not a synonym for \"correct\" or a direction.",
+            "textToSpeak": "It isn't *right* to blame him for this.",
             "acceptedSynonyms": [
-                "weakens",
-                "erodes",
-                "damages",
-                "hinders"
+                "appropriate",
+                "fair",
+                "just",
+                "reasonable"
             ],
-            "correctAnswer": "weakens"
+            "correctAnswer": "fair"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L110_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"slowly damaging someone's confidence or position.\"",
-            "explanation": "Good choice: \"erodes\" is a strong match for \"undermines\", which means slowly damaging someone's confidence or position. You could also say \"hinders\" or \"weakens\".",
-            "textToSpeak": "Her irregular sleep schedule unintentionally *undermines* the immune system.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Imagine you're at a café and you don't want a heavy meal.",
+            "explanation": "\"Light\" here refers to food that isn't heavy. \"Small\" and \"simple\" are the natural words, and \"basic\" also works. It has nothing to do with weight or brightness.",
+            "textToSpeak": "I'd like something *light* for lunch.",
             "acceptedSynonyms": [
-                "weakens",
-                "erodes",
-                "damages",
-                "hinders"
+                "small",
+                "basic",
+                "simple"
             ],
-            "correctAnswer": "erodes"
+            "correctAnswer": "small"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L110_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"slowly damaging someone's confidence or position.\" What's a good match?",
-            "explanation": "\"damages\" fits because \"undermines\" means slowly damaging someone's confidence or position here. Other natural alternatives include \"weakens\" and \"erodes\".",
-            "textToSpeak": "Skipping meals regularly unintentionally *undermines* the immune system.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "Think of it this way: a friend suggests an idea and you're reacting to the impression it gives.",
+            "explanation": "\"Sound\" as a verb here means to give an impression. \"Seems\" and \"looks\" both work, and \"feels\" is a friendly conversational option. It's not the noun sound, meaning noise.",
+            "textToSpeak": "That *sounds* like a great plan.",
             "acceptedSynonyms": [
-                "weakens",
-                "erodes",
-                "damages",
-                "hinders"
+                "seems",
+                "feels",
+                "looks"
             ],
-            "correctAnswer": "damages"
+            "correctAnswer": "seems"
         }
     ]
 }

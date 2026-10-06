@@ -1,622 +1,622 @@
 [
-    {
+  {
+    "level": 71,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L71_Q1",
+        "gameType": "time",
         "level": 71,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L71_Q1",
-                "gameType": "time",
-                "level": 71,
-                "instruction": "Coats are hung up at quarter to twelve, lunchtime almost here. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:45 AM ⏰",
-                "options": [
-                    "11:45 AM ⏰",
-                    "12:45 PM 🌗",
-                    "12:15 PM ⏱️"
-                ],
-                "hint": "Quarter to twelve hasn't reached twelve yet — it's still eleven o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to twelve means 15 minutes before twelve, so the clock reads 11:45 AM.",
-                "funFact": "11:45 AM is a hungry moment right before lunch begins.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L71_Q2",
-                "gameType": "time",
-                "level": 71,
-                "instruction": "The second shoe finally gets tied at quarter past seven. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:15 AM 🕰️",
-                "options": [
-                    "7:15 AM 🕰️",
-                    "7:00 AM 🛏️",
-                    "7:45 AM ⏳"
-                ],
-                "hint": "Count fifteen minutes forward from seven o'clock.",
-                "emoji": "🕰️",
-                "explanation": "When it's quarter past seven, we write it as 7:15 AM — fifteen minutes after the hour.",
-                "funFact": "7:15 AM is a busy time for getting ready for school.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L71_Q3",
-                "gameType": "time",
-                "level": 71,
-                "instruction": "Trays are stacked at quarter to one, lunch period nearly over. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:45 PM ⏰",
-                "options": [
-                    "1:15 PM 📅",
-                    "1:45 PM ⏱️",
-                    "12:45 PM ⏰"
-                ],
-                "hint": "Quarter to one hasn't reached one yet — it's still twelve o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to one means 15 minutes before one, so the clock reads 12:45 PM.",
-                "funFact": "12:45 PM is a common time for the lunchroom to begin clearing out.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Timetable: Maths 9:00 to 9:45, Art 9:50 to 10:35, PE 10:40 to 11:25. Which lesson is on at 10:20 AM?",
+        "question": "?",
+        "correctAnswer": "Art",
+        "options": [
+          "Maths",
+          "PE",
+          "Art"
+        ],
+        "hint": "Find the lesson whose start and end times surround 10:20.",
+        "emoji": "🔖",
+        "explanation": "Art runs from 9:50 to 10:35, and 10:20 falls between those times. Maths has finished and PE has not begun.",
+        "funFact": "China uses a single time zone for the whole country, although it is wide enough to fit about five.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L71_Q2",
+        "gameType": "time",
+        "level": 71,
+        "instruction": "Library programme: Story time 3:00 to 3:30 PM, Crafts 3:30 to 4:15 PM, Free play 4:30 to 5:00 PM. What is happening at 4:20 PM?",
+        "question": "?",
+        "correctAnswer": "Nothing: it is a break",
+        "options": [
+          "Nothing: it is a break",
+          "Crafts is still on",
+          "Free play has started"
+        ],
+        "hint": "Check each end time and each start time carefully before you decide.",
+        "emoji": "🪑",
+        "explanation": "Crafts ended at 4:15 PM and Free play does not begin until 4:30 PM, so 4:20 PM is in the gap between them.",
+        "funFact": "Many libraries run story time on a weekly schedule so that families can plan ahead.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L71_Q3",
+        "gameType": "time",
+        "level": 71,
+        "instruction": "Science ends at 1:15 PM and Music starts at 1:40 PM. How long is the break between them?",
+        "question": "?",
+        "correctAnswer": "25 minutes",
+        "options": [
+          "35 minutes",
+          "15 minutes",
+          "25 minutes"
+        ],
+        "hint": "Count from 1:15 to 1:40 in steps.",
+        "emoji": "🧃",
+        "explanation": "1:15 to 1:30 is 15 minutes, and 1:30 to 1:40 is 10 more. 15 + 10 = 25 minutes.",
+        "funFact": "The Earth is divided into 24 time zones, and each is about 15 degrees wide.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 72,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L72_Q1",
+        "gameType": "time",
         "level": 72,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L72_Q1",
-                "gameType": "time",
-                "level": 72,
-                "instruction": "Notebooks close at quarter to two, one subject almost finished. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:45 PM ⏰",
-                "options": [
-                    "2:45 PM ⏱️",
-                    "2:15 PM 🕰️",
-                    "1:45 PM ⏰"
-                ],
-                "hint": "Quarter to two hasn't reached two yet — it's still one o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to two means 15 minutes before two, so the clock reads 1:45 PM.",
-                "funFact": "1:45 PM is a common time to wrap up one lesson before the next begins.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L72_Q2",
-                "gameType": "time",
-                "level": 72,
-                "instruction": "A ball bounces across the yard at quarter past ten, recess in full swing. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:15 AM 🕰️",
-                "options": [
-                    "10:15 AM 🕰️",
-                    "10:45 AM ⏱️",
-                    "10:00 AM 🍎"
-                ],
-                "hint": "Count fifteen minutes forward from ten o'clock.",
-                "emoji": "🕰️",
-                "explanation": "When it's quarter past ten, we write it as 10:15 AM — fifteen minutes after the hour.",
-                "funFact": "10:15 AM is a lively time to be out at recess.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L72_Q3",
-                "gameType": "time",
-                "level": 72,
-                "instruction": "A page is dog-eared at quarter past eight, story time continuing. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:15 PM 🕰️",
-                "options": [
-                    "8:00 PM 📖",
-                    "8:45 PM ⏮️",
-                    "8:15 PM 🕰️"
-                ],
-                "hint": "Count fifteen minutes forward from eight o'clock.",
-                "emoji": "🕰️",
-                "explanation": "When it's quarter past eight, we write it as 8:15 PM — fifteen minutes after the hour.",
-                "funFact": "8:15 PM is a snug time for a bedtime story.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A clinic gives each patient 20 minutes. The first appointment is at 9:00 AM. What time is the fifth appointment?",
+        "question": "?",
+        "correctAnswer": "10:20 AM",
+        "options": [
+          "10:20 AM",
+          "10:00 AM",
+          "10:40 AM"
+        ],
+        "hint": "List the start times one by one, adding 20 minutes each time.",
+        "emoji": "🩹",
+        "explanation": "The start times are 9:00, 9:20, 9:40, 10:00 and 10:20. The fifth appointment is at 10:20 AM.",
+        "funFact": "Your eyes blink about 15 times every minute.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L72_Q2",
+        "gameType": "time",
+        "level": 72,
+        "instruction": "Dr. Rao sees each patient for 25 minutes and then takes a 5-minute break. The first patient arrives at 9:00 AM. When does the third patient's appointment begin?",
+        "question": "?",
+        "correctAnswer": "10:00 AM",
+        "options": [
+          "9:50 AM",
+          "10:05 AM",
+          "10:00 AM"
+        ],
+        "hint": "Each patient plus the break takes the same total time. Add it up.",
+        "emoji": "⏲️",
+        "explanation": "Each patient takes 25 + 5 = 30 minutes. The appointments begin at 9:00, 9:30 and 10:00, so the third begins at 10:00 AM.",
+        "funFact": "The shortest war in history, in 1896, lasted only about 40 minutes.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L72_Q3",
+        "gameType": "time",
+        "level": 72,
+        "instruction": "A dentist has four 30-minute appointments in a row, starting at 1:15 PM. When does the last appointment end?",
+        "question": "?",
+        "correctAnswer": "3:15 PM",
+        "options": [
+          "3:45 PM",
+          "2:45 PM",
+          "3:15 PM"
+        ],
+        "hint": "How many hours do four appointments of 30 minutes make altogether?",
+        "emoji": "🪥",
+        "explanation": "4 × 30 minutes = 120 minutes, which is 2 hours. 2 hours after 1:15 PM is 3:15 PM.",
+        "funFact": "A cheetah can sprint at about 100 kilometres per hour, but only for about 30 seconds.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 73,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L73_Q1",
+        "gameType": "time",
         "level": 73,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L73_Q1",
-                "gameType": "time",
-                "level": 73,
-                "instruction": "Pencils are packed away at quarter to three, class wrapping up. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:45 PM ⏰",
-                "options": [
-                    "3:45 PM ⏰",
-                    "2:45 PM ⏰",
-                    "3:15 PM ⏱️"
-                ],
-                "hint": "Quarter to three hasn't reached three yet — it's still two o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to three means 15 minutes before three, so the clock reads 2:45 PM.",
-                "funFact": "2:45 PM is a common time for a classroom to start tidying up.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L73_Q2",
-                "gameType": "time",
-                "level": 73,
-                "instruction": "Soapy bubbles rinse off small hands at quarter past eleven. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:15 AM 🕰️",
-                "options": [
-                    "11:15 AM 🕰️",
-                    "11:45 AM 🔁",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "Count fifteen minutes forward from eleven o'clock.",
-                "emoji": "🕰️",
-                "explanation": "When it's quarter past eleven, we write it as 11:15 AM — fifteen minutes after the hour.",
-                "funFact": "11:15 AM is a common time to wash up before lunch.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L73_Q3",
-                "gameType": "time",
-                "level": 73,
-                "instruction": "Backpacks are zipped at quarter to four, almost time to head home. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:45 PM ⏰",
-                "options": [
-                    "4:15 PM ⏱️",
-                    "4:45 PM ⏱️",
-                    "3:45 PM ⏰"
-                ],
-                "hint": "Quarter to four hasn't reached four yet — it's still three o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to four means 15 minutes before four, so the clock reads 3:45 PM.",
-                "funFact": "3:45 PM is a common time to zip up backpacks for the walk home.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Aman has free time from 4:15 PM. He plays outside for 45 minutes and then reads. When does he start reading?",
+        "question": "?",
+        "correctAnswer": "5:00 PM",
+        "options": [
+          "5:00 PM",
+          "4:45 PM",
+          "5:15 PM"
+        ],
+        "hint": "Add 45 minutes to the starting time.",
+        "emoji": "🪀",
+        "explanation": "4:15 plus 45 minutes is 5:00: 4:15 to 4:30 is 15 minutes, and 4:30 to 5:00 is 30 more.",
+        "funFact": "Health experts recommend that children get at least an hour of active play every day.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L73_Q2",
+        "gameType": "time",
+        "level": 73,
+        "instruction": "Nina's play date runs from 3:30 PM to 5:00 PM. How long does it last?",
+        "question": "?",
+        "correctAnswer": "1 hour 30 minutes",
+        "options": [
+          "1 hour",
+          "1 hour 30 minutes",
+          "2 hours 30 minutes"
+        ],
+        "hint": "Count to 4:00 first, then on to 5:00.",
+        "emoji": "🎲",
+        "explanation": "3:30 to 4:00 is 30 minutes, and 4:00 to 5:00 is 1 hour. Altogether the play date lasts 1 hour 30 minutes.",
+        "funFact": "A hummingbird beats its wings about 50 times every second.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L73_Q3",
+        "gameType": "time",
+        "level": 73,
+        "instruction": "A board game has 4 rounds of 15 minutes each. The first round starts at 2:20 PM. When does the last round end?",
+        "question": "?",
+        "correctAnswer": "3:20 PM",
+        "options": [
+          "3:35 PM",
+          "3:20 PM",
+          "3:05 PM"
+        ],
+        "hint": "How many minutes do 4 rounds take altogether?",
+        "emoji": "🎯",
+        "explanation": "4 × 15 = 60 minutes, which is 1 hour. 1 hour after 2:20 PM is 3:20 PM.",
+        "funFact": "People spend about a third of their lives asleep.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 74,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L74_Q1",
+        "gameType": "time",
         "level": 74,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L74_Q1",
-                "gameType": "time",
-                "level": 74,
-                "instruction": "The playground starts to empty at quarter to five, dinner not far off. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:45 PM ⏰",
-                "options": [
-                    "4:45 PM ⏰",
-                    "5:15 PM ⏳",
-                    "5:45 PM 🔁"
-                ],
-                "hint": "Quarter to five hasn't reached five yet — it's still four o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to five means 15 minutes before five, so the clock reads 4:45 PM.",
-                "funFact": "4:45 PM is a common time for playgrounds to start emptying out.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L74_Q2",
-                "gameType": "time",
-                "level": 74,
-                "instruction": "A pencil sharpener whirs at quarter past one, new lesson underway. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:15 PM 🕰️",
-                "options": [
-                    "1:00 PM 📚",
-                    "1:45 PM ⏱️",
-                    "1:15 PM 🕰️"
-                ],
-                "hint": "Count fifteen minutes forward from one o'clock.",
-                "emoji": "🕰️",
-                "explanation": "When it's quarter past one, we write it as 1:15 PM — fifteen minutes after the hour.",
-                "funFact": "1:15 PM often falls early in an afternoon lesson.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L74_Q3",
-                "gameType": "time",
-                "level": 74,
-                "instruction": "Plates are set on the table at quarter to six, dinner almost ready. What time is it?",
-                "question": "?",
-                "correctAnswer": "5:45 PM ⏰",
-                "options": [
-                    "6:45 PM ⏱️",
-                    "6:15 PM 🕰️",
-                    "5:45 PM ⏰"
-                ],
-                "hint": "Quarter to six hasn't reached six yet — it's still five o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to six means 15 minutes before six, so the clock reads 5:45 PM.",
-                "funFact": "5:45 PM is a common time for a kitchen to smell like almost-ready dinner.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Which activity is most likely to take about 1 hour?",
+        "question": "?",
+        "correctAnswer": "A swimming lesson",
+        "options": [
+          "Waving hello",
+          "Brushing your teeth",
+          "A swimming lesson"
+        ],
+        "hint": "Think about which one takes a long time, but not a whole day.",
+        "emoji": "🥽",
+        "explanation": "A swimming lesson often lasts around an hour. Brushing teeth takes a couple of minutes and waving takes about a second.",
+        "funFact": "Your fingernails grow about 3 millimetres each month.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L74_Q2",
+        "gameType": "time",
+        "level": 74,
+        "instruction": "Which list is in order from shortest to longest time?",
+        "question": "?",
+        "correctAnswer": "A blink, a bus ride to school, a school day",
+        "options": [
+          "A bus ride to school, a blink, a school day",
+          "A blink, a bus ride to school, a school day",
+          "A school day, a bus ride to school, a blink"
+        ],
+        "hint": "Think of each one as seconds, minutes or hours.",
+        "emoji": "📶",
+        "explanation": "A blink takes less than a second, a bus ride takes minutes, and a school day takes hours. That order goes from shortest to longest.",
+        "funFact": "A single blink lasts only about a third of a second.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L74_Q3",
+        "gameType": "time",
+        "level": 74,
+        "instruction": "Ravi says his walk to the library, which is 500 metres away, will take 2 hours. Is that reasonable?",
+        "question": "?",
+        "correctAnswer": "No, it would take about 5 to 10 minutes",
+        "options": [
+          "Yes, 2 hours is normal for a walk like that",
+          "No, it would take about 5 to 10 minutes",
+          "No, it would take less than 1 minute"
+        ],
+        "hint": "500 metres is half a kilometre. Think about how long 1 kilometre takes to walk.",
+        "emoji": "🧮",
+        "explanation": "A walk of one kilometre takes about 12 minutes, so half a kilometre takes about 6 minutes. Two hours is far too long, and under 1 minute is too fast.",
+        "funFact": "Light from the Moon takes about 1.3 seconds to reach the Earth.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 75,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L75_Q1",
+        "gameType": "time",
         "level": 75,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L75_Q1",
-                "gameType": "time",
-                "level": 75,
-                "instruction": "The last bite of dinner is finished at quarter to seven. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:45 PM ⏰",
-                "options": [
-                    "6:45 PM ⏰",
-                    "7:15 PM ⏳",
-                    "7:45 PM ⏰"
-                ],
-                "hint": "Quarter to seven hasn't reached seven yet — it's still six o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to seven means 15 minutes before seven, so the clock reads 6:45 PM.",
-                "funFact": "6:45 PM is a common time for a family dinner to be wrapping up.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L75_Q2",
-                "gameType": "time",
-                "level": 75,
-                "instruction": "A rubber duck bobs in the water at quarter past seven, bath in full swing. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:15 PM 🕰️",
-                "options": [
-                    "7:15 PM 🕰️",
-                    "7:00 PM 🛁",
-                    "7:45 PM ⏰"
-                ],
-                "hint": "Count fifteen minutes forward from seven o'clock.",
-                "emoji": "🕰️",
-                "explanation": "When it's quarter past seven, we write it as 7:15 PM — fifteen minutes after the hour.",
-                "funFact": "7:15 PM is a splashy time for bath time.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L75_Q3",
-                "gameType": "time",
-                "level": 75,
-                "instruction": "A towel wraps around wet hair at quarter to eight, bath wrapping up. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:45 PM ⏰",
-                "options": [
-                    "7:45 PM ⏰",
-                    "8:45 PM ⏮️",
-                    "8:15 PM ⏮️"
-                ],
-                "hint": "Quarter to eight hasn't reached eight yet — it's still seven o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to eight means 15 minutes before eight, so the clock reads 7:45 PM.",
-                "funFact": "7:45 PM is a common time to be drying off after a warm bath.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A hike begins at 10:30 AM and ends at 1:30 PM. How long is the hike?",
+        "question": "?",
+        "correctAnswer": "3 hours",
+        "options": [
+          "2 hours",
+          "4 hours",
+          "3 hours"
+        ],
+        "hint": "Count the hours forward from 10:30, one hour at a time.",
+        "emoji": "🥾",
+        "explanation": "10:30 AM to 11:30 AM is 1 hour, to 12:30 PM is 2 hours, and to 1:30 PM is 3 hours.",
+        "funFact": "In places north of the Arctic Circle, the Sun can stay up all day and all night in midsummer.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L75_Q2",
+        "gameType": "time",
+        "level": 75,
+        "instruction": "A badminton match starts at 11:40 AM and ends at 12:20 PM. How long is the match?",
+        "question": "?",
+        "correctAnswer": "40 minutes",
+        "options": [
+          "40 minutes",
+          "1 hour",
+          "20 minutes"
+        ],
+        "hint": "Count up to noon first, then on to 12:20.",
+        "emoji": "🏸",
+        "explanation": "11:40 AM to 12:00 PM is 20 minutes, and 12:00 to 12:20 PM is 20 more. 20 + 20 = 40 minutes.",
+        "funFact": "A day on Jupiter lasts only about 10 hours.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L75_Q3",
+        "gameType": "time",
+        "level": 75,
+        "instruction": "A drama workshop starts at 9:15 AM and finishes at noon. How long is the workshop?",
+        "question": "?",
+        "correctAnswer": "2 hours 45 minutes",
+        "options": [
+          "2 hours 45 minutes",
+          "3 hours 15 minutes",
+          "2 hours 15 minutes"
+        ],
+        "hint": "Count from 9:15 to 10:00, then hour by hour up to 12:00.",
+        "emoji": "🎙️",
+        "explanation": "9:15 to 10:00 is 45 minutes, and 10:00 to 12:00 is 2 hours. 2 hours + 45 minutes = 2 hours 45 minutes.",
+        "funFact": "A day on Venus is longer than its year.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 76,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L76_Q1",
+        "gameType": "time",
         "level": 76,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L76_Q1",
-                "gameType": "time",
-                "level": 76,
-                "instruction": "The bedside lamp dims low at quarter to nine, bedtime nearly here. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:45 PM ⏰",
-                "options": [
-                    "8:45 PM ⏰",
-                    "9:15 PM 🕰️",
-                    "9:45 PM ⏳"
-                ],
-                "hint": "Quarter to nine hasn't reached nine yet — it's still eight o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to nine means 15 minutes before nine, so the clock reads 8:45 PM.",
-                "funFact": "8:45 PM is a common time for a bedroom to grow soft and dim.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L76_Q2",
-                "gameType": "time",
-                "level": 76,
-                "instruction": "A globe spins slowly at quarter past nine, geography lesson underway. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:15 AM 🕰️",
-                "options": [
-                    "9:00 AM 🏫",
-                    "9:45 AM 📅",
-                    "9:15 AM 🕰️"
-                ],
-                "hint": "Quarter past nine is fifteen minutes past nine o'clock — not thirty.",
-                "emoji": "🕰️",
-                "explanation": "9:15 AM is how we write quarter past nine, fifteen minutes past the hour.",
-                "funFact": "9:15 AM often falls early in a morning lesson.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L76_Q3",
-                "gameType": "time",
-                "level": 76,
-                "instruction": "Eyes grow heavy at quarter to ten, deep into a quiet night. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:45 PM ⏰",
-                "options": [
-                    "9:45 PM ⏰",
-                    "10:45 PM ⏮️",
-                    "10:15 PM 🔁"
-                ],
-                "hint": "Quarter to ten hasn't reached ten yet — it's still nine o'clock time.",
-                "emoji": "⏰",
-                "explanation": "Quarter to ten means 15 minutes before ten, so the clock reads 9:45 PM.",
-                "funFact": "9:45 PM is a common time for sleepy eyes to finally close.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A family walks for 20 minutes, spends 1 hour at a museum, and then rides a bus for 25 minutes. They start at 10:00 AM. When do they finish the bus ride?",
+        "question": "?",
+        "correctAnswer": "11:45 AM",
+        "options": [
+          "12:05 PM",
+          "11:45 AM",
+          "11:20 AM"
+        ],
+        "hint": "Add the three parts one after another, or find the total time first.",
+        "emoji": "🧳",
+        "explanation": "20 + 60 + 25 = 105 minutes, which is 1 hour 45 minutes. 1 hour 45 minutes after 10:00 AM is 11:45 AM.",
+        "funFact": "Mercury travels once around the Sun in only 88 Earth days.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L76_Q2",
+        "gameType": "time",
+        "level": 76,
+        "instruction": "A concert has two parts of 30 minutes each with a 15-minute interval between them. It starts at 7:00 PM. When does it end?",
+        "question": "?",
+        "correctAnswer": "8:15 PM",
+        "options": [
+          "8:15 PM",
+          "8:00 PM",
+          "8:30 PM"
+        ],
+        "hint": "Add the first part, the interval and the second part in order.",
+        "emoji": "🎻",
+        "explanation": "7:00 plus 30 minutes is 7:30. Then 15 minutes of interval makes 7:45, and 30 more minutes makes 8:15 PM.",
+        "funFact": "The Earth takes about 365 days and 6 hours to travel around the Sun, which is why we need a leap year every four years.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L76_Q3",
+        "gameType": "time",
+        "level": 76,
+        "instruction": "Ali must be at the library by 4:00 PM. The walk takes 15 minutes and he needs 10 minutes to pack his bag first. When should he start packing?",
+        "question": "?",
+        "correctAnswer": "3:35 PM",
+        "options": [
+          "3:35 PM",
+          "3:25 PM",
+          "3:45 PM"
+        ],
+        "hint": "Work backward: first the walk, and then the packing.",
+        "emoji": "📥",
+        "explanation": "He must leave at 3:45 PM to walk for 15 minutes. Packing takes 10 minutes, so he should start at 3:35 PM.",
+        "funFact": "Packing your bag the evening before saves time in the morning.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 77,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L77_Q1",
+        "gameType": "time",
         "level": 77,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L77_Q1",
-                "gameType": "time",
-                "level": 77,
-                "instruction": "A tray slides down the lunch line at quarter past twelve. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:15 PM 🕰️",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "12:15 PM 🕰️",
-                    "12:45 PM 🌗"
-                ],
-                "hint": "Quarter past twelve is fifteen minutes past twelve o'clock — not thirty.",
-                "emoji": "🕰️",
-                "explanation": "12:15 PM is how we write quarter past twelve, fifteen minutes past the hour.",
-                "funFact": "12:15 PM is a common time for lunch to be underway.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L77_Q2",
-                "gameType": "time",
-                "level": 77,
-                "instruction": "The last child returns from recess at quarter to eleven. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:45 AM ⏰",
-                "options": [
-                    "11:15 AM ⏱️",
-                    "10:45 AM ⏰",
-                    "11:45 AM 🔁"
-                ],
-                "hint": "Count fifteen minutes backward from eleven o'clock.",
-                "emoji": "⏰",
-                "explanation": "When it's quarter to eleven, we write it as 10:45 AM — fifteen minutes before eleven arrives.",
-                "funFact": "10:45 AM is a common time for a classroom to settle back into quiet work.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L77_Q3",
-                "gameType": "time",
-                "level": 77,
-                "instruction": "A kite string unwinds at quarter past four, afternoon play continuing. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:15 PM 🕰️",
-                "options": [
-                    "4:00 PM 🛝",
-                    "4:15 PM 🕰️",
-                    "4:45 PM ⏱️"
-                ],
-                "hint": "Quarter past four is fifteen minutes past four o'clock — not thirty.",
-                "emoji": "🕰️",
-                "explanation": "4:15 PM is how we write quarter past four, fifteen minutes past the hour.",
-                "funFact": "4:15 PM is a lively hour for outdoor play.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Bus A leaves at 9:10 AM and arrives at 9:50 AM. Bus B leaves at 9:20 AM and arrives at 9:55 AM. Which bus arrives first?",
+        "question": "?",
+        "correctAnswer": "Bus A",
+        "options": [
+          "They arrive at the same time",
+          "Bus B",
+          "Bus A"
+        ],
+        "hint": "Compare the two arrival times.",
+        "emoji": "🚍",
+        "explanation": "Bus A arrives at 9:50 AM, which is 5 minutes earlier than Bus B at 9:55 AM.",
+        "funFact": "Express buses make fewer stops, so they can arrive earlier even if they leave later.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L77_Q2",
+        "gameType": "time",
+        "level": 77,
+        "instruction": "Train X leaves at 2:05 PM and arrives at 2:50 PM. Train Y leaves at 2:15 PM and arrives at 2:55 PM. Which journey takes less time?",
+        "question": "?",
+        "correctAnswer": "Train Y",
+        "options": [
+          "They take the same time",
+          "Train Y",
+          "Train X"
+        ],
+        "hint": "Find the length of each journey, not the arrival time.",
+        "emoji": "🚄",
+        "explanation": "Train X takes 45 minutes and Train Y takes 40 minutes. So Train Y's journey is shorter.",
+        "funFact": "The fastest passenger trains in the world travel at more than 300 kilometres per hour.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L77_Q3",
+        "gameType": "time",
+        "level": 77,
+        "instruction": "Route 1 runs from 4:00 PM to 4:50 PM. Route 2 runs from 4:10 PM to 5:00 PM. Which statement is true?",
+        "question": "?",
+        "correctAnswer": "They take equally long",
+        "options": [
+          "Route 1 is quicker",
+          "Route 2 is quicker",
+          "They take equally long"
+        ],
+        "hint": "Work out how long each route takes.",
+        "emoji": "🛤️",
+        "explanation": "Route 1 takes 50 minutes and Route 2 also takes 50 minutes. Route 2 starts and ends 10 minutes later, but its length is the same.",
+        "funFact": "The length of a journey is the time from the moment you leave to the moment you arrive.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 78,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L78_Q1",
+        "gameType": "time",
         "level": 78,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L78_Q1",
-                "gameType": "time",
-                "level": 78,
-                "instruction": "Hands are dried on a towel at quarter to twelve, lunch bell about to ring. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:45 AM ⏰",
-                "options": [
-                    "11:45 AM ⏰",
-                    "12:45 PM 🌗",
-                    "12:15 PM ⏱️"
-                ],
-                "hint": "Count fifteen minutes backward from twelve o'clock.",
-                "emoji": "⏰",
-                "explanation": "When it's quarter to twelve, we write it as 11:45 AM — fifteen minutes before twelve arrives.",
-                "funFact": "11:45 AM is a common time for lunchroom trays to start coming out.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L78_Q2",
-                "gameType": "time",
-                "level": 78,
-                "instruction": "A chapter wraps up at quarter past two, reading time continuing. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:15 PM 🕰️",
-                "options": [
-                    "2:15 PM 🕰️",
-                    "2:00 PM 😴",
-                    "2:45 PM ⏱️"
-                ],
-                "hint": "Quarter past two is fifteen minutes past two o'clock — not thirty.",
-                "emoji": "🕰️",
-                "explanation": "2:15 PM is how we write quarter past two, fifteen minutes past the hour.",
-                "funFact": "2:15 PM is a calm hour for reading.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L78_Q3",
-                "gameType": "time",
-                "level": 78,
-                "instruction": "A textbook closes at quarter to two, one lesson almost done. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:45 PM ⏰",
-                "options": [
-                    "1:45 PM ⏰",
-                    "2:45 PM ⏱️",
-                    "2:15 PM 🕰️"
-                ],
-                "hint": "Count fifteen minutes backward from two o'clock.",
-                "emoji": "⏰",
-                "explanation": "When it's quarter to two, we write it as 1:45 PM — fifteen minutes before two arrives.",
-                "funFact": "1:45 PM is a common time for one subject to end and another to begin.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Camp day: Breakfast is 7:30 to 8:10 AM and the hike starts at 8:30 AM. How long is the break between breakfast and the hike?",
+        "question": "?",
+        "correctAnswer": "20 minutes",
+        "options": [
+          "20 minutes",
+          "15 minutes",
+          "40 minutes"
+        ],
+        "hint": "Count from the end of breakfast to the start of the hike.",
+        "emoji": "⛺",
+        "explanation": "Breakfast ends at 8:10 and the hike starts at 8:30. The break is 20 minutes.",
+        "funFact": "Camps usually follow a similar timetable every day, so children know what comes next.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L78_Q2",
+        "gameType": "time",
+        "level": 78,
+        "instruction": "Camp day: the hike ends at 11:45 AM, lunch runs from 12:30 to 1:15 PM, and swimming starts at 1:45 PM. Which wait is longer: from the hike to lunch, or from lunch to swimming?",
+        "question": "?",
+        "correctAnswer": "From the hike to lunch",
+        "options": [
+          "They are the same",
+          "From the hike to lunch",
+          "From lunch to swimming"
+        ],
+        "hint": "Find both gaps in minutes before you compare them.",
+        "emoji": "🔥",
+        "explanation": "From the hike to lunch is 45 minutes (11:45 to 12:30). From lunch to swimming is 30 minutes (1:15 to 1:45). So 45 minutes is longer.",
+        "funFact": "Ancient Egyptians used water clocks at night, when sundials could not work.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L78_Q3",
+        "gameType": "time",
+        "level": 78,
+        "instruction": "On day two, the camp hike runs from 9:20 AM to 12:50 PM. How long is the hike?",
+        "question": "?",
+        "correctAnswer": "3 hours 30 minutes",
+        "options": [
+          "3 hours 30 minutes",
+          "4 hours 30 minutes",
+          "3 hours 10 minutes"
+        ],
+        "hint": "Count whole hours from 9:20 to 12:20, then add the extra minutes.",
+        "emoji": "🏕️",
+        "explanation": "9:20 to 12:20 is 3 hours, and 12:20 to 12:50 is 30 more minutes. So the hike lasts 3 hours 30 minutes.",
+        "funFact": "On flat ground, hikers usually walk about 4 to 5 kilometres in one hour.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 79,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L79_Q1",
+        "gameType": "time",
         "level": 79,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L79_Q1",
-                "gameType": "time",
-                "level": 79,
-                "instruction": "A serving spoon dips into the pot at quarter past six, dinner nearly done. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:15 PM 🕰️",
-                "options": [
-                    "6:15 PM 🕰️",
-                    "6:00 PM 🍲",
-                    "6:45 PM ⏱️"
-                ],
-                "hint": "Quarter past six is fifteen minutes past six o'clock — not thirty.",
-                "emoji": "🕰️",
-                "explanation": "6:15 PM is how we write quarter past six, fifteen minutes past the hour.",
-                "funFact": "6:15 PM is a common time for a serving spoon to dip into dinner.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L79_Q2",
-                "gameType": "time",
-                "level": 79,
-                "instruction": "Toys are gathered up at quarter to six, almost time for dinner. What time is it?",
-                "question": "?",
-                "correctAnswer": "5:45 PM ⏰",
-                "options": [
-                    "6:45 PM ⏱️",
-                    "5:45 PM ⏰",
-                    "6:15 PM 🕰️"
-                ],
-                "hint": "Count fifteen minutes backward from six o'clock.",
-                "emoji": "⏰",
-                "explanation": "When it's quarter to six, we write it as 5:45 PM — fifteen minutes before six arrives.",
-                "funFact": "5:45 PM is a common time for toys to be tidied before dinner.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L79_Q3",
-                "gameType": "time",
-                "level": 79,
-                "instruction": "A bedtime book is chosen at quarter past eight, story about to begin. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:15 PM 🕰️",
-                "options": [
-                    "8:00 PM 📖",
-                    "8:15 PM 🕰️",
-                    "8:45 PM ⏮️"
-                ],
-                "hint": "Quarter past eight is fifteen minutes past eight o'clock — not thirty.",
-                "emoji": "🕰️",
-                "explanation": "8:15 PM is how we write quarter past eight, fifteen minutes past the hour.",
-                "funFact": "8:15 PM is a snug time for choosing a bedtime story.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Lila says a bus that left at 11:50 AM and arrived at 12:20 PM took 1 hour 30 minutes. How long did it really take?",
+        "question": "?",
+        "correctAnswer": "30 minutes",
+        "options": [
+          "40 minutes",
+          "30 minutes",
+          "20 minutes"
+        ],
+        "hint": "Split the trip at noon: how long before 12:00, and how long after it?",
+        "emoji": "🧾",
+        "explanation": "11:50 AM to 12:00 PM is 10 minutes, and 12:00 to 12:20 is 20 more. 10 + 20 = 30 minutes.",
+        "funFact": "Hospitals and armies often use 24-hour time because it avoids AM and PM mix-ups.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L79_Q2",
+        "gameType": "time",
+        "level": 79,
+        "instruction": "School starts at 8:45 AM. Dev says he arrived 5 minutes late at 8:55 AM. How late was he really?",
+        "question": "?",
+        "correctAnswer": "10 minutes",
+        "options": [
+          "15 minutes",
+          "10 minutes",
+          "55 minutes"
+        ],
+        "hint": "Count the minutes from 8:45 to 8:55.",
+        "emoji": "🏃‍♂️",
+        "explanation": "From 8:45 to 8:55 is 10 minutes, so Dev was 10 minutes late, not 5.",
+        "funFact": "In football, referees add extra minutes at the end to make up for time lost during play.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L79_Q3",
+        "gameType": "time",
+        "level": 79,
+        "instruction": "A poster says a film runs from 7:30 PM to 9:00 AM, but the film is only about 90 minutes long. What is the most likely mistake?",
+        "question": "?",
+        "correctAnswer": "The end should say 9:00 PM",
+        "options": [
+          "The end should say 9:00 PM",
+          "The film should be 9 hours long",
+          "The start should say 7:30 AM"
+        ],
+        "hint": "A 90-minute film ends soon after it starts. Check AM and PM.",
+        "emoji": "🎟️",
+        "explanation": "7:30 PM plus 90 minutes is 9:00 PM, so the end time should say PM, not AM.",
+        "funFact": "Checking that an answer makes sense is one of the best habits in maths.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 80,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L80_Q1",
+        "gameType": "time",
         "level": 80,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L80_Q1",
-                "gameType": "time",
-                "level": 80,
-                "instruction": "Pajama buttons are done up at quarter to nine, bedtime just about here. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:45 PM ⏰",
-                "options": [
-                    "8:45 PM ⏰",
-                    "9:45 PM ⏳",
-                    "9:15 PM 🕰️"
-                ],
-                "hint": "Count fifteen minutes backward from nine o'clock.",
-                "emoji": "⏰",
-                "explanation": "When it's quarter to nine, we write it as 8:45 PM — fifteen minutes before nine arrives.",
-                "funFact": "8:45 PM is a common time for pajama buttons to be done up just before bed.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L80_Q2",
-                "gameType": "time",
-                "level": 80,
-                "instruction": "A shoelace is double-knotted at quarter past seven, backpack ready by the door. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:15 AM 🕰️",
-                "options": [
-                    "7:45 AM ⏳",
-                    "7:00 AM 🛏️",
-                    "7:15 AM 🕰️"
-                ],
-                "hint": "Quarter past seven is fifteen minutes past seven o'clock — not thirty.",
-                "emoji": "🕰️",
-                "explanation": "7:15 AM is how we write quarter past seven, fifteen minutes past the hour.",
-                "funFact": "7:15 AM is a busy, hopeful start to a school morning.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L80_Q3",
-                "gameType": "time",
-                "level": 80,
-                "instruction": "The last light in the house switches off at quarter to ten. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:45 PM ⏰",
-                "options": [
-                    "10:15 PM 🔁",
-                    "10:45 PM ⏮️",
-                    "9:45 PM ⏰"
-                ],
-                "hint": "Count fifteen minutes backward from ten o'clock.",
-                "emoji": "⏰",
-                "explanation": "When it's quarter to ten, we write it as 9:45 PM — fifteen minutes before ten arrives.",
-                "funFact": "9:45 PM is a common time for the very last light in the house to switch off.",
-                "subtype": "quarter_hour",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    }
+        "instruction": "Art runs from 1:20 to 2:05 PM. Music runs from 2:15 to 3:00 PM. Which lesson lasts longer?",
+        "question": "?",
+        "correctAnswer": "They last the same time",
+        "options": [
+          "Music",
+          "Art",
+          "They last the same time"
+        ],
+        "hint": "Work out the length of each lesson before you compare.",
+        "emoji": "🎼",
+        "explanation": "Art lasts 45 minutes and Music lasts 45 minutes. The lessons start at different times, but they are equally long.",
+        "funFact": "In many parts of Europe, the longest day of the year has more than 15 hours of daylight.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L80_Q2",
+        "gameType": "time",
+        "level": 80,
+        "instruction": "A film starts at 5:30 PM. Hari wants to arrive 10 minutes early, and the journey takes 20 minutes. When should he leave?",
+        "question": "?",
+        "correctAnswer": "5:00 PM",
+        "options": [
+          "5:20 PM",
+          "4:50 PM",
+          "5:00 PM"
+        ],
+        "hint": "First find when he wants to arrive, then count back the journey.",
+        "emoji": "🍿",
+        "explanation": "He wants to arrive at 5:20 PM. Going back 20 minutes for the journey gives 5:00 PM.",
+        "funFact": "Airports usually suggest that passengers arrive about 2 hours before an international flight.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L80_Q3",
+        "gameType": "time",
+        "level": 80,
+        "instruction": "Which is the most reasonable time for a bus ride across a town?",
+        "question": "?",
+        "correctAnswer": "25 minutes",
+        "options": [
+          "25 seconds",
+          "25 minutes",
+          "25 hours"
+        ],
+        "hint": "Is a ride across town more like seconds, minutes or hours?",
+        "emoji": "🏙️",
+        "explanation": "A bus ride across a town usually takes a few tens of minutes. 25 seconds is too short, and 25 hours is longer than a whole day.",
+        "funFact": "The word estimate comes from a Latin word meaning to value or to judge.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

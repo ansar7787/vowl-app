@@ -6,479 +6,424 @@
         {
             "id": "SPK_SPEAKSYNONYM_L11_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"having existed for a long time\" -- what word comes to mind?",
-            "explanation": "In this sentence, \"old\" means having existed for a long time, so \"ancient\" slots in naturally. \"vintage\" is a close second choice.",
-            "textToSpeak": "The wooden bookshelf was quite *old*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Someone is about to leave the house, and you want them to dress warmly.",
+            "explanation": "Notice that \"chilly\" is the everyday word for cold weather that isn't extreme. \"Nippy\" is casual and mostly British, and \"freezing\" is a stronger, exaggerated version people use in real life even when it isn't actually below zero.",
+            "textToSpeak": "Take a jacket. It's *cold* out tonight.",
             "acceptedSynonyms": [
-                "ancient",
-                "aged",
-                "antique",
-                "vintage",
-                "timeworn"
+                "freezing",
+                "nippy",
+                "chilly"
             ],
-            "correctAnswer": "ancient"
+            "correctAnswer": "chilly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L11_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"having existed for a long time.\"",
-            "explanation": "\"aged\" is a reliable synonym for \"old\", which means having existed for a long time here. \"timeworn\" and \"ancient\" are also accepted.",
-            "textToSpeak": "Her grandfather's watch was quite *old*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Here's the scene: you're describing a language that takes lots of practice. What other adjective fits?",
+            "explanation": "Quick reminder: \"hard\" is the simplest swap and \"tough\" sounds a bit more informal. \"Challenging\" is more positive, as if the difficulty is something you can overcome.",
+            "textToSpeak": "Chinese pronunciation is *difficult* for me.",
             "acceptedSynonyms": [
-                "ancient",
-                "aged",
-                "antique",
-                "vintage",
-                "timeworn"
+                "tough",
+                "hard",
+                "challenging"
             ],
-            "correctAnswer": "aged"
+            "correctAnswer": "hard"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L11_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"having existed for a long time.\"",
-            "explanation": "\"antique\" works well here because \"old\" also means having existed for a long time. \"ancient\" and \"aged\" would work too.",
-            "textToSpeak": "That neighborhood church was quite *old*.",
+            "hint": "You're looking at ticket prices and the amount is more than you want to pay.",
+            "explanation": "Think about \"pricey\": it is a casual word people use in conversation. \"Costly\" sounds more serious and is often used when something costs a lot over time. \"Dear\" is British and a little old-fashioned but still heard.",
+            "textToSpeak": "Those concert tickets are way too *expensive*.",
             "acceptedSynonyms": [
-                "ancient",
-                "aged",
-                "antique",
-                "vintage",
-                "timeworn"
+                "pricey",
+                "costly",
+                "dear"
             ],
-            "correctAnswer": "antique"
+            "correctAnswer": "pricey"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L12_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"having lived for only a short time\"?",
-            "explanation": "\"young\" means having lived for only a short time, and \"youthful\" captures that same idea naturally in this sentence. \"green\" is another solid option.",
-            "textToSpeak": "The new intern was still quite *young*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Suppose you're talking about a dream trip. Which phrase makes the desire sound polite and clear?",
+            "explanation": "Start with \"would like\": it is the natural spoken way to say what you want. \"Hope\" adds a shade of uncertainty, and \"wish\" sounds more formal and a bit dreamy. All three keep \"to visit\" working.",
+            "textToSpeak": "I *want* to visit Japan someday.",
             "acceptedSynonyms": [
-                "youthful",
-                "junior",
-                "green",
-                "fresh-faced",
-                "novice"
+                "wish",
+                "hope",
+                "would like"
             ],
-            "correctAnswer": "youthful"
+            "correctAnswer": "would like"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L12_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"having lived for only a short time.\"",
-            "explanation": "Good choice: \"junior\" is a strong match for \"young\", which means having lived for only a short time. You could also say \"fresh-faced\" or \"novice\".",
-            "textToSpeak": "My youngest coworker was still quite *young*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "The job ad lists what you must have. Which verb expresses that?",
+            "explanation": "Notice that \"requires\" is the neutral, professional choice. \"Demands\" sounds much stricter, and \"calls for\" is friendlier and is very common in spoken English.",
+            "textToSpeak": "This job *needs* good English.",
             "acceptedSynonyms": [
-                "youthful",
-                "junior",
-                "green",
-                "fresh-faced",
-                "novice"
+                "requires",
+                "calls for",
+                "demands"
             ],
-            "correctAnswer": "junior"
+            "correctAnswer": "requires"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L12_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"having lived for only a short time.\" What's a good match?",
-            "explanation": "\"green\" fits because \"young\" means having lived for only a short time here. Other natural alternatives include \"novice\" and \"youthful\".",
-            "textToSpeak": "Her assistant was still quite *young*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Think of it this way: you're complaining about queues, and you feel really strongly about it.",
+            "explanation": "To choose well, note that \"can't stand\" is the most natural spoken option. \"Loathe\" and \"detest\" are stronger, and they sound more dramatic than the plain \"hate\".",
+            "textToSpeak": "I *hate* waiting in line.",
             "acceptedSynonyms": [
-                "youthful",
-                "junior",
-                "green",
-                "fresh-faced",
-                "novice"
+                "can't stand",
+                "loathe",
+                "detest"
             ],
-            "correctAnswer": "green"
+            "correctAnswer": "can't stand"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L13_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"having a high temperature.\"",
-            "explanation": "In this sentence, \"hot\" means having a high temperature, so \"warm\" slots in naturally. \"steaming\" is a close second choice.",
-            "textToSpeak": "The fresh coffee was still *hot*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're asking whether someone was paying attention to a small detail.",
+            "explanation": "As a replacement, \"spot\" suggests catching sight of something quickly. \"See\" is the plain everyday choice, and \"observe\" sounds more formal or scientific.",
+            "textToSpeak": "Did you *notice* the new sign on the door?",
             "acceptedSynonyms": [
-                "warm",
-                "steaming",
-                "scalding",
-                "piping-hot",
-                "boiling"
+                "spot",
+                "observe",
+                "see"
             ],
-            "correctAnswer": "warm"
+            "correctAnswer": "see"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L13_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"having a high temperature\" -- what word comes to mind?",
-            "explanation": "\"steaming\" is a reliable synonym for \"hot\", which means having a high temperature here. \"scalding\" and \"piping-hot\" are also accepted.",
-            "textToSpeak": "Her cup of tea was still *hot*.",
+            "hint": "You need to leave the room for a moment. What would you ask a friend to do with the children?",
+            "explanation": "Look at \"look after\" first: it is the natural spoken phrase and \"mind\" is the British version. \"Supervise\" sounds official, like what a teacher or lifeguard would do.",
+            "textToSpeak": "Please *watch* the kids while I cook.",
             "acceptedSynonyms": [
-                "warm",
-                "steaming",
-                "scalding",
-                "piping-hot",
-                "boiling"
+                "look after",
+                "mind",
+                "supervise"
             ],
-            "correctAnswer": "steaming"
+            "correctAnswer": "look after"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L13_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"having a high temperature.\"",
-            "explanation": "\"scalding\" works well here because \"hot\" also means having a high temperature. \"piping-hot\" and \"boiling\" would work too.",
-            "textToSpeak": "The bowl of soup was still *hot*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Your friend wants a memory of the day. What could they take instead?",
+            "explanation": "Notice that \"picture\" is the everyday word. \"Snapshot\" suggests a quick, informal photo, and \"shot\" is short and casual, common among people who take a lot of photos.",
+            "textToSpeak": "Can you take a *photo* of us?",
             "acceptedSynonyms": [
-                "warm",
-                "steaming",
-                "scalding",
-                "piping-hot",
-                "boiling"
+                "shot",
+                "picture",
+                "snapshot"
             ],
-            "correctAnswer": "scalding"
+            "correctAnswer": "picture"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L14_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"having a low temperature.\"",
-            "explanation": "\"cold\" means having a low temperature, and \"freezing\" captures that same idea naturally in this sentence. \"bitter\" is another solid option.",
-            "textToSpeak": "The mountain air felt incredibly *cold*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You're checking the time and the bus leaves soon. What verb captures the urgency?",
+            "explanation": "\"Rush\" is the general word for moving faster because you have to. \"Speed up\" focuses on the pace, and \"hustle\" is an informal American verb for moving quickly.",
+            "textToSpeak": "We have to *hurry*. The bus leaves soon.",
             "acceptedSynonyms": [
-                "freezing",
-                "chilly",
-                "icy",
-                "frigid",
-                "bitter"
+                "speed up",
+                "rush",
+                "hustle"
             ],
-            "correctAnswer": "freezing"
+            "correctAnswer": "rush"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L14_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"having a low temperature\"?",
-            "explanation": "Good choice: \"chilly\" is a strong match for \"cold\", which means having a low temperature. You could also say \"freezing\" or \"icy\".",
-            "textToSpeak": "The ocean water felt incredibly *cold*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Someone is relaxing by the sea with no plans. Which verb shows how slowly and peacefully she moved?",
+            "explanation": "To choose well, note that \"strolled\" is a relaxed, pleasant walk. \"Ambled\" is slow and easy, and \"wandered\" suggests she had no fixed direction. All three are more specific than \"walked\".",
+            "textToSpeak": "She *walked* along the beach at sunrise.",
             "acceptedSynonyms": [
-                "freezing",
-                "chilly",
-                "icy",
-                "frigid",
-                "bitter"
+                "ambled",
+                "wandered",
+                "strolled"
             ],
-            "correctAnswer": "chilly"
+            "correctAnswer": "strolled"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L14_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"having a low temperature.\"",
-            "explanation": "\"icy\" fits because \"cold\" means having a low temperature here. Other natural alternatives include \"chilly\" and \"frigid\".",
-            "textToSpeak": "That winter morning felt incredibly *cold*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're stepping out for a moment and want to tell someone when you'll reappear. Which simple phrase could you say?",
+            "explanation": "Quick reminder: \"return\" is a bit formal in casual speech, so people usually say \"come back\" or \"be back\". \"Get back\" is more informal and often includes the idea of arriving.",
+            "textToSpeak": "Wait here. I'll *return* in five minutes.",
             "acceptedSynonyms": [
-                "freezing",
-                "chilly",
-                "icy",
-                "frigid",
-                "bitter"
+                "be back",
+                "come back",
+                "get back"
             ],
-            "correctAnswer": "icy"
+            "correctAnswer": "come back"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L15_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"in need of rest.\" What's a good match?",
-            "explanation": "In this sentence, \"tired\" means in need of rest, so \"exhausted\" slots in naturally. \"sleepy\" is a close second choice.",
-            "textToSpeak": "My coworker looked completely *tired*.",
+            "hint": "Suppose you're asking a child to take a note to someone. Which action verb would you use?",
+            "explanation": "\"Hand\" and \"pass\" both mean putting the note in someone's hand. \"Deliver\" suggests carrying it to a specific person, so it fits well because the note is going to the mom.",
+            "textToSpeak": "Please *give* this note to your mom.",
             "acceptedSynonyms": [
-                "exhausted",
-                "worn out",
-                "weary",
-                "sleepy",
-                "drained"
+                "deliver",
+                "hand",
+                "pass"
             ],
-            "correctAnswer": "exhausted"
+            "correctAnswer": "hand"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L15_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"in need of rest.\"",
-            "explanation": "\"worn out\" is a reliable synonym for \"tired\", which means in need of rest here. \"drained\" and \"exhausted\" are also accepted.",
-            "textToSpeak": "The night-shift nurse looked completely *tired*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Someone has good news at work, a step up in her career. Which verb tells us it came to her?",
+            "explanation": "As a replacement, \"received\" is neutral and factual. \"Earned\" adds the idea that she deserved it, and \"landed\" is informal and often used for jobs and opportunities.",
+            "textToSpeak": "She *got* a promotion last month.",
             "acceptedSynonyms": [
-                "exhausted",
-                "worn out",
-                "weary",
-                "sleepy",
-                "drained"
+                "landed",
+                "earned",
+                "received"
             ],
-            "correctAnswer": "worn out"
+            "correctAnswer": "received"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L15_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"in need of rest\" -- what word comes to mind?",
-            "explanation": "\"weary\" works well here because \"tired\" also means in need of rest. \"exhausted\" and \"worn out\" would work too.",
-            "textToSpeak": "Our tour guide looked completely *tired*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "The store might ask you to bring proof of purchase later. What should you do with it?",
+            "explanation": "Notice that \"save\" is the most common spoken word here, and \"hold on to\" sounds friendly. \"Retain\" is formal, and you would usually find it in official instructions.",
+            "textToSpeak": "*Keep* the receipt in case you need to return it.",
             "acceptedSynonyms": [
-                "exhausted",
-                "worn out",
-                "weary",
-                "sleepy",
-                "drained"
+                "hold on to",
+                "save",
+                "retain"
             ],
-            "correctAnswer": "weary"
+            "correctAnswer": "save"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L16_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"wanting food.\"",
-            "explanation": "\"hungry\" means wanting food, and \"starving\" captures that same idea naturally in this sentence. \"ravenous\" is another solid option.",
-            "textToSpeak": "My little brother was extremely *hungry*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Think of it this way: you're telling a friend about a weekend away that wasn't very long. What noun fits?",
+            "explanation": "It helps to know that \"getaway\" suggests a break from normal life, so it sounds relaxed and fun. \"Outing\" is a short trip for pleasure, and \"excursion\" sounds organized and a little more formal.",
+            "textToSpeak": "We went on a short *trip* to the mountains.",
             "acceptedSynonyms": [
-                "starving",
-                "famished",
-                "ravenous",
-                "empty"
+                "excursion",
+                "getaway",
+                "outing"
             ],
-            "correctAnswer": "starving"
+            "correctAnswer": "getaway"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L16_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"wanting food.\"",
-            "explanation": "Good choice: \"famished\" is a strong match for \"hungry\", which means wanting food. You could also say \"empty\" or \"starving\".",
-            "textToSpeak": "The stray cat was extremely *hungry*.",
+            "hint": "Suppose a colleague has just proposed something at the meeting and you're cheering them on.",
+            "explanation": "Notice that \"suggestion\" is the closest, since it comes from someone proposing something. \"Plan\" is common in casual replies, and \"thought\" is a light, conversational alternative.",
+            "textToSpeak": "That's a great *idea*!",
             "acceptedSynonyms": [
-                "starving",
-                "famished",
-                "ravenous",
-                "empty"
+                "suggestion",
+                "thought",
+                "plan"
             ],
-            "correctAnswer": "famished"
+            "correctAnswer": "suggestion"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L16_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"wanting food\"?",
-            "explanation": "\"ravenous\" fits because \"hungry\" means wanting food here. Other natural alternatives include \"starving\" and \"famished\".",
-            "textToSpeak": "Our hiking group was extremely *hungry*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're talking about a career change. Which noun describes the work you want to do?",
+            "explanation": "Look at \"position\" first: it sounds professional and is typical in interviews. \"Role\" focuses on what you'd actually do, and \"gig\" is casual, often used for short or creative work.",
+            "textToSpeak": "I need a new *job*.",
             "acceptedSynonyms": [
-                "starving",
-                "famished",
-                "ravenous",
-                "empty"
+                "role",
+                "position",
+                "gig"
             ],
-            "correctAnswer": "ravenous"
+            "correctAnswer": "position"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L17_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"free of dirt.\"",
-            "explanation": "In this sentence, \"clean\" means free of dirt, so \"spotless\" slots in naturally. \"tidy\" is a close second choice.",
-            "textToSpeak": "The hotel room was spotlessly *clean*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You're describing your morning routine. Which adverb says it's the normal pattern?",
+            "explanation": "Keep in mind that \"normally\" is the most conversational match. \"Typically\" and \"generally\" sound slightly more formal and are common in interviews or descriptions.",
+            "textToSpeak": "I *usually* wake up at six.",
             "acceptedSynonyms": [
-                "spotless",
-                "tidy",
-                "immaculate",
-                "pristine",
-                "sparkling"
+                "normally",
+                "generally",
+                "typically"
             ],
-            "correctAnswer": "spotless"
+            "correctAnswer": "normally"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L17_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"free of dirt.\" What's a good match?",
-            "explanation": "\"tidy\" is a reliable synonym for \"clean\", which means free of dirt here. \"immaculate\" and \"pristine\" are also accepted.",
-            "textToSpeak": "Her kitchen counter was spotlessly *clean*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You want to praise a film with more energy than the plainest intensifier.",
+            "explanation": "\"Very\" is the standard swap. \"Truly\" and \"genuinely\" add sincerity, and \"incredibly\" is stronger and more excited. All of them keep the sentence natural in speech.",
+            "textToSpeak": "That was a *really* good movie.",
             "acceptedSynonyms": [
-                "spotless",
-                "tidy",
-                "immaculate",
-                "pristine",
-                "sparkling"
+                "genuinely",
+                "very",
+                "incredibly",
+                "truly"
             ],
-            "correctAnswer": "tidy"
+            "correctAnswer": "very"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L17_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"free of dirt.\"",
-            "explanation": "\"immaculate\" works well here because \"clean\" also means free of dirt. \"pristine\" and \"sparkling\" would work too.",
-            "textToSpeak": "The hospital floor was spotlessly *clean*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You're explaining that you don't always drive to work.",
+            "explanation": "In practice, \"occasionally\" is neutral and clear. \"At times\" and \"now and then\" are friendly spoken alternatives, and \"now and then\" feels the most casual.",
+            "textToSpeak": "*Sometimes* I take the bus instead.",
             "acceptedSynonyms": [
-                "spotless",
-                "tidy",
-                "immaculate",
-                "pristine",
-                "sparkling"
+                "now and then",
+                "at times",
+                "occasionally"
             ],
-            "correctAnswer": "immaculate"
+            "correctAnswer": "occasionally"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L18_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"making very little noise\" -- what word comes to mind?",
-            "explanation": "\"quiet\" means making very little noise, and \"silent\" captures that same idea naturally in this sentence. \"still\" is another solid option.",
-            "textToSpeak": "The library reading room was unusually *quiet*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Suppose you're on the phone and can't talk right now. What could you say to explain?",
+            "explanation": "\"Tied up\" is the spoken favorite for being unavailable. \"Occupied\" sounds more formal, and \"swamped\" suggests you have too much to do and are overwhelmed.",
+            "textToSpeak": "Sorry, I'm *busy* right now. Can I call you later?",
             "acceptedSynonyms": [
-                "silent",
-                "peaceful",
-                "calm",
-                "hushed",
-                "still"
+                "tied up",
+                "swamped",
+                "occupied"
             ],
-            "correctAnswer": "silent"
+            "correctAnswer": "tied up"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L18_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"making very little noise.\"",
-            "explanation": "Good choice: \"peaceful\" is a strong match for \"quiet\", which means making very little noise. You could also say \"silent\" or \"calm\".",
-            "textToSpeak": "Our street was unusually *quiet*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "You want proof that someone remembers clearly. Which word could replace 'sure' in the question?",
+            "explanation": "As a replacement, \"certain\" is the direct match. \"Positive\" is chatty and very American, and \"confident\" suggests a feeling of trust in your own memory.",
+            "textToSpeak": "Are you *sure* you locked the door?",
             "acceptedSynonyms": [
-                "silent",
-                "peaceful",
-                "calm",
-                "hushed",
-                "still"
+                "positive",
+                "confident",
+                "certain"
             ],
-            "correctAnswer": "peaceful"
+            "correctAnswer": "certain"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L18_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"making very little noise.\"",
-            "explanation": "\"calm\" fits because \"quiet\" means making very little noise here. Other natural alternatives include \"peaceful\" and \"hushed\".",
-            "textToSpeak": "The office on Friday was unusually *quiet*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "It's lunchtime and your stomach is empty. Which stronger word would you use?",
+            "explanation": "\"Hungry\" is the neutral word, and people usually exaggerate when they talk about food. \"Starving\" is casual and common, \"famished\" is a bit dramatic, and \"ravenous\" suggests an intense, almost wild hunger.",
+            "textToSpeak": "I'm *hungry*. Let's grab lunch.",
             "acceptedSynonyms": [
-                "silent",
-                "peaceful",
-                "calm",
-                "hushed",
-                "still"
+                "starving",
+                "famished",
+                "ravenous"
             ],
-            "correctAnswer": "calm"
+            "correctAnswer": "starving"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L19_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"causing laughter\"?",
-            "explanation": "In this sentence, \"funny\" means causing laughter, so \"hilarious\" slots in naturally. \"comical\" is a close second choice.",
-            "textToSpeak": "The new comedy show was absolutely *funny*.",
+            "hint": "Your bicycle has a flat tire. Which verb would you use to ask someone to put it right?",
+            "explanation": "\"Repair\" is the standard word for fixing something broken. \"Mend\" is more British and often used for small repairs, and \"sort out\" is casual and covers a wider range of problems.",
+            "textToSpeak": "Can you *fix* my bike?",
             "acceptedSynonyms": [
-                "hilarious",
-                "amusing",
-                "humorous",
-                "comical",
-                "witty"
+                "sort out",
+                "mend",
+                "repair"
             ],
-            "correctAnswer": "hilarious"
+            "correctAnswer": "repair"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L19_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"causing laughter.\"",
-            "explanation": "\"amusing\" is a reliable synonym for \"funny\", which means causing laughter here. \"witty\" and \"hilarious\" are also accepted.",
-            "textToSpeak": "His birthday speech was absolutely *funny*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Here's the scene: you're deciding who will be in the kitchen tonight. What other verb tells us you'll be doing the work?",
+            "explanation": "Think about \"make\": it is the everyday word, and \"prepare\" sounds a bit more careful or formal. \"Fix\" is common in American speech, as in fixing dinner.",
+            "textToSpeak": "I'll *cook* dinner tonight.",
             "acceptedSynonyms": [
-                "hilarious",
-                "amusing",
-                "humorous",
-                "comical",
-                "witty"
+                "prepare",
+                "make",
+                "fix"
             ],
-            "correctAnswer": "amusing"
+            "correctAnswer": "make"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L19_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"causing laughter.\" What's a good match?",
-            "explanation": "\"humorous\" works well here because \"funny\" also means causing laughter. \"hilarious\" and \"amusing\" would work too.",
-            "textToSpeak": "That viral video was absolutely *funny*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Your room is messy and guests are coming. Which phrase describes what you need to do?",
+            "explanation": "\"Clean up\" is what most people would say. \"Straighten up\" means putting things back in place, and \"organize\" suggests giving your room a more lasting order.",
+            "textToSpeak": "I need to *tidy* my room.",
             "acceptedSynonyms": [
-                "hilarious",
-                "amusing",
-                "humorous",
-                "comical",
-                "witty"
+                "straighten up",
+                "organize",
+                "clean up"
             ],
-            "correctAnswer": "humorous"
+            "correctAnswer": "clean up"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L20_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"pleasant to be around.\"",
-            "explanation": "\"nice\" means pleasant to be around, and \"kind\" captures that same idea naturally in this sentence. \"pleasant\" is another solid option.",
-            "textToSpeak": "Our new neighbor was really *nice*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You heard something unexpected in a quiet house. Which adjective sounds natural?",
+            "explanation": "Remember that \"odd\" is short and conversational. \"Weird\" is more casual, \"unusual\" sounds calmer and more factual, and \"peculiar\" is slightly old-fashioned but still understood.",
+            "textToSpeak": "That's a *strange* noise. Did you hear it?",
             "acceptedSynonyms": [
-                "kind",
-                "friendly",
-                "pleasant",
-                "warm",
-                "lovely"
+                "odd",
+                "weird",
+                "peculiar",
+                "unusual"
             ],
-            "correctAnswer": "kind"
+            "correctAnswer": "odd"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L20_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"pleasant to be around\" -- what word comes to mind?",
-            "explanation": "Good choice: \"friendly\" is a strong match for \"nice\", which means pleasant to be around. You could also say \"warm\" or \"lovely\".",
-            "textToSpeak": "The hotel staff was really *nice*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "The boss just walked in and the chatting stopped. Which word describes the room?",
+            "explanation": "Start with \"silent\": it means no sound at all. \"Hushed\" suggests people lowered their voices, and \"subdued\" says the mood became quieter and less lively.",
+            "textToSpeak": "Everyone was *quiet* when the boss walked in.",
             "acceptedSynonyms": [
-                "kind",
-                "friendly",
-                "pleasant",
-                "warm",
-                "lovely"
+                "silent",
+                "hushed",
+                "subdued"
             ],
-            "correctAnswer": "friendly"
+            "correctAnswer": "silent"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L20_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"pleasant to be around.\"",
-            "explanation": "\"pleasant\" fits because \"nice\" means pleasant to be around here. Other natural alternatives include \"lovely\" and \"kind\".",
-            "textToSpeak": "Her grandmother was really *nice*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Think of it this way: you're giving a friend a safety warning about a late-night drive.",
+            "explanation": "Notice that \"unsafe\" is the plain, direct warning. \"Risky\" means something bad could happen, and \"hazardous\" is more formal and often appears in official warnings.",
+            "textToSpeak": "It's a *dangerous* road at night.",
             "acceptedSynonyms": [
-                "kind",
-                "friendly",
-                "pleasant",
-                "warm",
-                "lovely"
+                "hazardous",
+                "risky",
+                "unsafe"
             ],
-            "correctAnswer": "pleasant"
+            "correctAnswer": "unsafe"
         }
     ]
 }

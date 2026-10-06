@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L71_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two turns of a chat. Listen to how the answer treats what the question already said.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I said THIRTY dollars.",
-            "textToSpeak": "I said THIRTY dollars.",
+            "word": "Did Lena bring the cake? Lena brought two cakes.",
+            "textToSpeak": "Did Lena bring the cake? Lena brought two cakes.",
             "options": [
-                "Heavy Stress on 'THIRTY' (Correcting a Misunderstanding)",
-                "Even, Neutral Stress (Plain Statement)"
+                "'Two' stands out; the rest stays low",
+                "'Lena' stands out as the subject again"
             ],
-            "correctAnswer": "Heavy Stress on 'THIRTY' (Correcting a Misunderstanding)",
+            "correctAnswer": "'Two' stands out; the rest stays low",
             "correctAnswerIndex": 0,
-            "hint": "The listener seems to have misheard the number. Listen for one word to be pushed louder and higher than the rest.",
-            "explanation": "The heavy stress on 'THIRTY' corrects a misheard number, making that one word stand out clearly above the rest of the sentence.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a correcting a misunderstanding and a plain statement."
+            "hint": "Which part of the answer is something the asker did not know?",
+            "explanation": "Since the question already supplied Lena and the cake, the only new fact is the quantity, and 'two' takes the pitch peak. Pushing 'Lena' again would imply that someone else had been expected to bring one.",
+            "modulationPattern": "Prominence on 'two'; 'Lena' and 'cakes' are deaccented as given.",
+            "meaningShift": "A peak on 'two' adds the quantity; a peak on 'Lena' would contrast her with someone else."
         },
         {
             "id": "ACC_PITCHMODULATION_L71_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks whether the printer is fixed.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I bought a new laptop yesterday.",
-            "textToSpeak": "I bought a new laptop yesterday.",
+            "word": "It works, but it's very slow.",
+            "textToSpeak": "It works, but it's very slow.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on a Single Word (Correcting a Mistake)"
+                "Lift on 'works', peak on 'slow'",
+                "Peak on 'works', lift on 'slow'"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
+            "correctAnswer": "Lift on 'works', peak on 'slow'",
             "correctAnswerIndex": 0,
-            "hint": "Nothing here is being corrected - it's just news. Listen for the pitch and stress to stay fairly even across the sentence.",
-            "explanation": "'I bought a new laptop yesterday' is a plain statement, so stress spreads evenly across the sentence with no single word standing out.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a mistake."
+            "hint": "Spot which half of the sentence sounds like it is still waiting for more.",
+            "explanation": "In a concession plus problem sentence, the first half stays open with a lift because the real message comes after 'but'. The peak and fall on 'slow' closes the sentence. Reversed, the concession would sound like the conclusion.",
+            "modulationPattern": "Rising or fall-rise on 'works', then a peak and fall on 'slow'.",
+            "meaningShift": "A lift on 'works' sets up the complaint; a peak on it would make 'works' the main message."
         },
         {
             "id": "ACC_PITCHMODULATION_L71_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks, 'Did you book the hotel?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She's my SISTER, not my girlfriend.",
-            "textToSpeak": "She's my SISTER, not my girlfriend.",
+            "word": "I booked the flights, not the hotel.",
+            "textToSpeak": "I booked the flights, not the hotel.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on 'SISTER' (Correcting an Assumption)"
+                "'Flights' stands out; 'hotel' is given",
+                "'Hotel' stands out; 'flights' is given"
             ],
-            "correctAnswer": "Heavy Stress on 'SISTER' (Correcting an Assumption)",
-            "correctAnswerIndex": 1,
-            "hint": "Someone clearly guessed wrong about the relationship. Listen for one word to jump out sharply to fix the mistake.",
-            "explanation": "The heavy stress on 'SISTER' corrects a wrong assumption, with the contrasting 'not my girlfriend' confirming the correction.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting an assumption."
+            "correctAnswer": "'Flights' stands out; 'hotel' is given",
+            "correctAnswerIndex": 0,
+            "hint": "The friend asked about one thing. What did the speaker do instead?",
+            "explanation": "Because the hotel is the item that was asked about, it is background here. 'Flights' is the thing the speaker did book, and it takes the stronger peak. The reverse would answer a question about flights.",
+            "modulationPattern": "Contrastive prominence on 'flights' with 'hotel' given.",
+            "meaningShift": "A peak on 'flights' supplies what was booked; a peak on 'hotel' would answer a different question."
         },
         {
             "id": "ACC_PITCHMODULATION_L72_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend argues the flat is worth the price. You partly agree.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I wanted the BLUE one, not the red one.",
-            "textToSpeak": "I wanted the BLUE one, not the red one.",
+            "word": "That's true, but it's a long way out.",
+            "textToSpeak": "That's true, but it's a long way out.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on 'BLUE' (Correcting a Mix-Up)"
+                "Fall on 'true', lift on 'out'",
+                "Lift on 'true', fall on 'out'"
             ],
-            "correctAnswer": "Heavy Stress on 'BLUE' (Correcting a Mix-Up)",
+            "correctAnswer": "Lift on 'true', fall on 'out'",
             "correctAnswerIndex": 1,
-            "hint": "The wrong color was given by mistake. Listen for one color word to be emphasized strongly over the rest.",
-            "explanation": "The heavy stress on 'BLUE' corrects a color mix-up, contrasted directly against 'the red one'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a mix-up."
+            "hint": "Hear which half sounds as if the speaker has not finished yet.",
+            "explanation": "On 'true', the lift acknowledges the point but signals there is more to say, and the fall on 'out' delivers the objection. A fall on 'true' would make the agreement sound complete, and a lift at the end would leave the objection hanging.",
+            "modulationPattern": "Rise on 'true' at the concession, fall on 'out' at the objection.",
+            "meaningShift": "Lift then fall concedes and objects; fall then lift would close the agreement and leave the objection open."
         },
         {
             "id": "ACC_PITCHMODULATION_L72_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are reviewing a report and will criticise the content next.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We watched a documentary last night.",
-            "textToSpeak": "We watched a documentary last night.",
+            "word": "It's well written.",
+            "textToSpeak": "It's well written.",
             "options": [
-                "Heavy Stress on a Single Word (Correcting a Mistake)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Peak and fall on 'written': praise for everything",
+                "Dip and lift on 'written': praise for form only"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
+            "correctAnswer": "Dip and lift on 'written': praise for form only",
             "correctAnswerIndex": 1,
-            "hint": "This is just a simple update, nothing is being corrected. Stress should spread fairly evenly across the sentence.",
-            "explanation": "'We watched a documentary last night' is a plain update, so no single word needs extra emphasis to fix a mistake.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a correcting a mistake and a plain statement."
+            "hint": "Does the compliment sound complete?",
+            "explanation": "That dip and lift limits the praise to the writing and lets the listener sense that a criticism follows. A peak and fall would close the compliment and sound like total approval.",
+            "modulationPattern": "Falling-rising on 'written'.",
+            "meaningShift": "A dip and lift confines the praise to style; a peak and fall gives a rounded compliment."
         },
         {
             "id": "ACC_PITCHMODULATION_L72_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has proposed a plan you only half agree with.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's the MANAGER, not the assistant.",
-            "textToSpeak": "He's the MANAGER, not the assistant.",
+            "word": "I see what you mean.",
+            "textToSpeak": "I see what you mean.",
             "options": [
-                "Heavy Stress on 'MANAGER' (Correcting a Misunderstanding)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Fall on 'mean': full agreement",
+                "Lift on 'mean': agreement is partial"
             ],
-            "correctAnswer": "Heavy Stress on 'MANAGER' (Correcting a Misunderstanding)",
-            "correctAnswerIndex": 0,
-            "hint": "Someone got his job title wrong. Listen for the correct title to be emphasized strongly to fix the error.",
-            "explanation": "The heavy stress on 'MANAGER' corrects a misunderstanding about his job title, set against 'not the assistant'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a correcting a misunderstanding and a plain statement."
+            "correctAnswer": "Lift on 'mean': agreement is partial",
+            "correctAnswerIndex": 1,
+            "hint": "Check whether the speaker is finished, or is something still coming.",
+            "explanation": "The rise on 'mean' leaves the statement open, so the listener expects a 'but' to follow. A fall would be used by someone who had reached full agreement.",
+            "modulationPattern": "Rising or fall-rise at the end of a hedged agreement.",
+            "meaningShift": "A lift shows understanding without commitment; a fall signals agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L73_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A meeting chair brings the group back after a tangent.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I asked for ICED coffee, not hot.",
-            "textToSpeak": "I asked for ICED coffee, not hot.",
+            "word": "Anyway, let's get back to the agenda.",
+            "textToSpeak": "Anyway, let's get back to the agenda.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on 'ICED' (Correcting an Order)"
+                "'Anyway' falls, closing the tangent",
+                "'Anyway' rises, inviting more tangent"
             ],
-            "correctAnswer": "Heavy Stress on 'ICED' (Correcting an Order)",
-            "correctAnswerIndex": 1,
-            "hint": "The wrong drink was served by mistake. Listen for one word to be pushed up sharply to correct the order.",
-            "explanation": "The heavy stress on 'ICED' corrects a mix-up with the drink order, clarified further by 'not hot'.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting an order."
+            "correctAnswer": "'Anyway' falls, closing the tangent",
+            "correctAnswerIndex": 0,
+            "hint": "Does the opening word sound finished?",
+            "explanation": "On 'anyway', the fall acts as a hinge that closes the previous topic, and the rest of the sentence begins the new one. A rise would leave the tangent open, which is the opposite of what a chair wants.",
+            "modulationPattern": "Falling on the discourse marker 'anyway'.",
+            "meaningShift": "A fall on 'anyway' shuts the tangent; a rise would keep it going."
         },
         {
             "id": "ACC_PITCHMODULATION_L73_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A project lead has finished the first item.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The train arrives every fifteen minutes.",
-            "textToSpeak": "The train arrives every fifteen minutes.",
+            "word": "So, what's next?",
+            "textToSpeak": "So, what's next?",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on a Single Word (Correcting a Mistake)"
+                "'So' falls, 'next' lifts: still undecided",
+                "'So' lifts, 'next' falls: moving on"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
-            "correctAnswerIndex": 0,
-            "hint": "This is just useful information, not a correction. Expect the stress to stay fairly even throughout.",
-            "explanation": "'The train arrives every fifteen minutes' is a neutral fact, so stress spreads evenly with no word being singled out.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a mistake."
+            "correctAnswer": "'So' lifts, 'next' falls: moving on",
+            "correctAnswerIndex": 1,
+            "hint": "Notice which word is higher.",
+            "explanation": "The lift on 'so' signals that a new question is beginning, and the fall on 'next' asks for specific information. The reverse contour would sound tentative, as if the speaker were unsure what was being asked.",
+            "modulationPattern": "Rise on the discourse marker 'so', fall at the end of a wh-question.",
+            "meaningShift": "A lift on 'so' starts a new step; a fall on 'so' would make it sound like a conclusion."
         },
         {
             "id": "ACC_PITCHMODULATION_L73_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A teacher is about to begin a lesson.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I meant NEXT Friday, not this one.",
-            "textToSpeak": "I meant NEXT Friday, not this one.",
+            "word": "Right, shall we start?",
+            "textToSpeak": "Right, shall we start?",
             "options": [
-                "Heavy Stress on 'NEXT' (Correcting a Date)",
-                "Even, Neutral Stress (Plain Statement)"
+                "'Right' rises: asks for agreement",
+                "'Right' falls: marks a beginning"
             ],
-            "correctAnswer": "Heavy Stress on 'NEXT' (Correcting a Date)",
-            "correctAnswerIndex": 0,
-            "hint": "The wrong date was assumed. Listen for one word to be emphasized clearly to fix the timing.",
-            "explanation": "The heavy stress on 'NEXT' corrects a misunderstanding about the date, contrasted with 'not this one'.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a correcting a date and a plain statement."
+            "correctAnswer": "'Right' falls: marks a beginning",
+            "correctAnswerIndex": 1,
+            "hint": "Is 'right' a question, or a signal?",
+            "explanation": "Falling, 'right' acts as a marker that one phase is ending and another beginning, so the class hears the transition. A rising 'right' would ask whether the class agrees, which does not fit a teacher's role at this moment.",
+            "modulationPattern": "Falling on the discourse marker 'right' before a suggestion.",
+            "meaningShift": "A fall marks a beginning; a rise would seek agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L74_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone parks across two spaces and you mutter to a friend.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I take the BLUE pill, not the white one.",
-            "textToSpeak": "I take the BLUE pill, not the white one.",
+            "word": "Who does that?",
+            "textToSpeak": "Who does that?",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on 'BLUE' (Correcting a Mix-Up)"
+                "Falls on 'that': rhetorical, no answer expected",
+                "Rises on 'that': asking for a name"
             ],
-            "correctAnswer": "Heavy Stress on 'BLUE' (Correcting a Mix-Up)",
-            "correctAnswerIndex": 1,
-            "hint": "This matters for safety - the wrong pill was almost given. Listen for one word to stand out sharply.",
-            "explanation": "The heavy stress on 'BLUE' corrects a potentially important mix-up between medications, set against 'not the white one'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a mix-up."
+            "correctAnswer": "Falls on 'that': rhetorical, no answer expected",
+            "correctAnswerIndex": 0,
+            "hint": "Would the speaker wait for a reply?",
+            "explanation": "Rhetorical questions express an opinion, so they usually fall, often with a touch of exasperation. A rise would turn it into a request for information, and a listener might try to name someone.",
+            "modulationPattern": "Falling on 'that' in a rhetorical wh-question.",
+            "meaningShift": "A fall expresses an opinion; a rise asks for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L74_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You want to learn how an office system works.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Our flight leaves from terminal two.",
-            "textToSpeak": "Our flight leaves from terminal two.",
+            "word": "How does it work?",
+            "textToSpeak": "How does it work?",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on a Single Word (Correcting a Mistake)"
+                "Falls on 'work': a genuine request",
+                "Rises on 'work': a hint of doubt"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
+            "correctAnswer": "Falls on 'work': a genuine request",
             "correctAnswerIndex": 0,
-            "hint": "This is simply useful travel information. Expect stress to stay even across the sentence.",
-            "explanation": "'Our flight leaves from terminal two' is a neutral statement, so no single word is emphasized to correct anything.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a mistake."
+            "hint": "Judge whether the speaker sounds like they really want an explanation.",
+            "explanation": "In a wh-question, a fall on 'work' is the neutral way of asking for information, and the listener will answer. A rise can sound more doubtful, as if the speaker were implying that it doesn't.",
+            "modulationPattern": "Falling at the end of a wh-question for information.",
+            "meaningShift": "A fall is a straightforward request; a rise can imply doubt."
         },
         {
             "id": "ACC_PITCHMODULATION_L74_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A parent is waiting up for a teenager.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I said the FOURTH floor, not the fourteenth.",
-            "textToSpeak": "I said the FOURTH floor, not the fourteenth.",
+            "word": "Do you know what time it is?",
+            "textToSpeak": "Do you know what time it is?",
             "options": [
-                "Heavy Stress on 'FOURTH' (Correcting a Misheard Number)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Rises on 'is': a real request for the time",
+                "Falls on 'is': a rhetorical rebuke"
             ],
-            "correctAnswer": "Heavy Stress on 'FOURTH' (Correcting a Misheard Number)",
-            "correctAnswerIndex": 0,
-            "hint": "These two numbers sound alike and were confused. Listen for one number to be emphasized clearly.",
-            "explanation": "The heavy stress on 'FOURTH' corrects a misheard number, distinguishing it sharply from the similar-sounding 'fourteenth'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a correcting a misheard number and a plain statement."
+            "correctAnswer": "Falls on 'is': a rhetorical rebuke",
+            "correctAnswerIndex": 1,
+            "hint": "Does the parent want to learn what time it is?",
+            "explanation": "Knowing the time and wanting the teenager to recognise the lateness, the parent lets the question fall and works as a rebuke. A rise would be the ordinary way of asking a stranger for the time.",
+            "modulationPattern": "Falling on 'is' in a yes/no question used as a rebuke.",
+            "meaningShift": "A fall turns the question into a rebuke; a rise would ask for information."
         },
         {
             "id": "ACC_PITCHMODULATION_L75_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend says she quit her job on Monday.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's MY turn, not yours.",
-            "textToSpeak": "It's MY turn, not yours.",
+            "word": "You did what?",
+            "textToSpeak": "You did what?",
             "options": [
-                "Heavy Stress on 'MY' (Correcting Whose Turn It Is)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Rise-fall on 'what': astonished",
+                "Rise on 'what': asking for a repeat"
             ],
-            "correctAnswer": "Heavy Stress on 'MY' (Correcting Whose Turn It Is)",
+            "correctAnswer": "Rise-fall on 'what': astonished",
             "correctAnswerIndex": 0,
-            "hint": "Someone took a turn that wasn't theirs. Listen for one small word to be pushed up sharply to make the point.",
-            "explanation": "The heavy stress on 'MY' corrects who is supposed to go next, contrasted directly with 'not yours'.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a correcting whose turn it is and a plain statement."
+            "hint": "Did the speaker hear the information or just miss it?",
+            "explanation": "Having heard perfectly and now reacting, the speaker lets the pitch rise and fall on 'what', which gives a sense of astonishment. A plain rise would be the way to ask the friend to say it again.",
+            "modulationPattern": "Rising-falling on 'what' in an echo question.",
+            "meaningShift": "A rise-fall reacts to what was heard; a simple rise asks for repetition."
         },
         {
             "id": "ACC_PITCHMODULATION_L75_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend says, 'I've invited all of them.'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The library closes at eight tonight.",
-            "textToSpeak": "The library closes at eight tonight.",
+            "word": "All of them?",
+            "textToSpeak": "All of them?",
             "options": [
-                "Heavy Stress on a Single Word (Correcting a Mistake)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Falling, 'them' stands out: naming the guests",
+                "Rising, 'all' stands out: checking the scope"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
+            "correctAnswer": "Rising, 'all' stands out: checking the scope",
             "correctAnswerIndex": 1,
-            "hint": "This is just routine information, nothing is being corrected. Stress should stay fairly even throughout.",
-            "explanation": "'The library closes at eight tonight' is a neutral fact, so stress spreads evenly with no word standing out.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a correcting a mistake and a plain statement."
+            "hint": "Which word does the speaker find hard to believe?",
+            "explanation": "Because the surprise concerns the extent of the invitation, 'all' carries the peak and the pitch rises at the end. A fall on 'them' would identify who was invited, and would suggest the speaker already knew.",
+            "modulationPattern": "Rising with prominence on 'all'.",
+            "meaningShift": "A rise with a peak on 'all' questions how many; a fall on 'them' would point to the guests."
         },
         {
             "id": "ACC_PITCHMODULATION_L75_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague comes back from a client meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I ordered a SMALL pizza, not a large.",
-            "textToSpeak": "I ordered a SMALL pizza, not a large.",
+            "word": "They said yes!",
+            "textToSpeak": "They said yes!",
             "options": [
-                "Heavy Stress on 'SMALL' (Correcting an Order)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Peak on 'yes': a delighted report",
+                "Rise on 'yes': asking whether they agreed"
             ],
-            "correctAnswer": "Heavy Stress on 'SMALL' (Correcting an Order)",
+            "correctAnswer": "Peak on 'yes': a delighted report",
             "correctAnswerIndex": 0,
-            "hint": "The wrong size arrived by mistake. Listen for one word to jump out sharply to fix the order.",
-            "explanation": "The heavy stress on 'SMALL' corrects a mistaken order size, set against the contrasting 'not a large'.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a correcting an order and a plain statement."
+            "hint": "Notice whether the speaker is telling you something, or asking.",
+            "explanation": "Knowing the outcome already, the speaker lets the pitch peak on 'yes' and falls away, sharing the good news. A rise would be a question from someone who hadn't heard the result and was hoping for confirmation.",
+            "modulationPattern": "Rising-falling with a peak on 'yes' in a declarative report.",
+            "meaningShift": "A peak and fall on 'yes' reports the outcome; a rise would ask what the outcome was."
         },
         {
             "id": "ACC_PITCHMODULATION_L76_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are interrupting a busy colleague.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's MY brother, not my cousin.",
-            "textToSpeak": "He's MY brother, not my cousin.",
+            "word": "Could I just check something?",
+            "textToSpeak": "Could I just check something?",
             "options": [
-                "Heavy Stress on 'MY' (Correcting a Relationship)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Lift at the end, 'just' light: a soft request",
+                "Fall at the end, 'just' heavy: a blunt request"
             ],
-            "correctAnswer": "Heavy Stress on 'MY' (Correcting a Relationship)",
+            "correctAnswer": "Lift at the end, 'just' light: a soft request",
             "correctAnswerIndex": 0,
-            "hint": "Someone guessed the family relationship incorrectly. Listen for one small word to be emphasized to fix it.",
-            "explanation": "The heavy stress on 'MY' corrects a wrong guess about the family relationship, clarified by 'not my cousin'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a correcting a relationship and a plain statement."
+            "hint": "Pay attention to whether the speaker sounds as if they are imposing.",
+            "explanation": "Keeping 'just' light and lifting at the end makes the request small and easy to grant, so the colleague feels free to refuse. A heavy 'just' with a fall would sound defensive, as if the speaker expected to be told no.",
+            "modulationPattern": "Rising at the end with 'just' unstressed.",
+            "meaningShift": "A lift with a light 'just' minimises the imposition; a fall with a heavy 'just' sounds brusque."
         },
         {
             "id": "ACC_PITCHMODULATION_L76_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You want a moment with a manager.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The conference starts next Tuesday.",
-            "textToSpeak": "The conference starts next Tuesday.",
+            "word": "I was wondering if you had a minute.",
+            "textToSpeak": "I was wondering if you had a minute.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on a Single Word (Correcting a Mistake)"
+                "Lifts at the end: an indirect request",
+                "Falls at the end: a statement of fact"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
+            "correctAnswer": "Lifts at the end: an indirect request",
             "correctAnswerIndex": 0,
-            "hint": "This is simply an announcement, with nothing being corrected. Expect even stress throughout.",
-            "explanation": "'The conference starts next Tuesday' is a neutral announcement, so no word needs extra emphasis to correct an error.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a mistake."
+            "hint": "Check whether the speaker is informing, or asking.",
+            "explanation": "Indirect requests often lift at the end, since the real question is left unsaid and the listener understands it. A fall would make it sound as though the speaker were simply reporting a thought.",
+            "modulationPattern": "Rising at the end of an indirect request.",
+            "meaningShift": "A lift turns the sentence into a request; a fall would leave it as a report."
         },
         {
             "id": "ACC_PITCHMODULATION_L76_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are declining a second helping.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I need it by FRIDAY, not Monday.",
-            "textToSpeak": "I need it by FRIDAY, not Monday.",
+            "word": "No, I'm fine, thank you.",
+            "textToSpeak": "No, I'm fine, thank you.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on 'FRIDAY' (Correcting a Deadline)"
+                "Rises: inviting persuasion",
+                "Falls: a polite, closed refusal"
             ],
-            "correctAnswer": "Heavy Stress on 'FRIDAY' (Correcting a Deadline)",
+            "correctAnswer": "Falls: a polite, closed refusal",
             "correctAnswerIndex": 1,
-            "hint": "The wrong deadline was assumed. Listen for one word to be pushed up sharply to fix the date.",
-            "explanation": "The heavy stress on 'FRIDAY' corrects a misunderstood deadline, contrasted clearly with 'not Monday'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a deadline."
+            "hint": "Notice whether the speaker sounds as if they may change their mind.",
+            "explanation": "On 'thank you', the fall closes the refusal in a friendly way, so the host will not press. A rise would leave the door open, and a host might insist.",
+            "modulationPattern": "Falling at the end of a polite refusal.",
+            "meaningShift": "A fall ends the offer; a rise leaves it open for persuasion."
         },
         {
             "id": "ACC_PITCHMODULATION_L77_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is relaying advice.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I said TWO tickets, not twenty.",
-            "textToSpeak": "I said TWO tickets, not twenty.",
+            "word": "My neighbour, who's a dentist, says it's fine.",
+            "textToSpeak": "My neighbour, who's a dentist, says it's fine.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on 'TWO' (Correcting a Misheard Number)"
+                "'Who's a dentist' is the peak: the main point",
+                "'Who's a dentist' is lower and quicker: an aside"
             ],
-            "correctAnswer": "Heavy Stress on 'TWO' (Correcting a Misheard Number)",
+            "correctAnswer": "'Who's a dentist' is lower and quicker: an aside",
             "correctAnswerIndex": 1,
-            "hint": "These numbers sound similar and were confused. Listen for one number to be emphasized clearly.",
-            "explanation": "The heavy stress on 'TWO' corrects a misheard quantity, distinguishing it sharply from the similar-sounding 'twenty'.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a misheard number."
+            "hint": "Pinpoint which part of the sentence is background.",
+            "explanation": "Spoken at a lower pitch and quicker than the main clause, a parenthetical comment doesn't compete with it. If the aside took the peak, the listener would expect the main point to be that the neighbour is a dentist.",
+            "modulationPattern": "Reduced pitch and faster tempo on the parenthetical.",
+            "meaningShift": "A low, quick aside adds background; a peaked aside would become the main message."
         },
         {
             "id": "ACC_PITCHMODULATION_L77_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is giving an arrival time.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She studies biology at the university.",
-            "textToSpeak": "She studies biology at the university.",
+            "word": "I'll be there at six, traffic permitting.",
+            "textToSpeak": "I'll be there at six, traffic permitting.",
             "options": [
-                "Heavy Stress on a Single Word (Correcting a Mistake)",
-                "Even, Neutral Stress (Plain Statement)"
+                "'Traffic permitting' is high and loud: the main message",
+                "'Traffic permitting' is quick and low: a caveat"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
+            "correctAnswer": "'Traffic permitting' is quick and low: a caveat",
             "correctAnswerIndex": 1,
-            "hint": "This is just background information, nothing is being corrected. Expect stress to stay fairly even.",
-            "explanation": "'She studies biology at the university' is a neutral statement, so stress spreads evenly across the sentence.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a correcting a mistake and a plain statement."
+            "hint": "Which part is the promise, and which part is the small print?",
+            "explanation": "Since the promise is 'six', the pitch peak stays there, and the conditional phrase is delivered in a lower, quieter voice. If the caveat were louder, it would seem more important than the commitment.",
+            "modulationPattern": "Peak on 'six'; low, compressed tail on 'traffic permitting'.",
+            "meaningShift": "A quiet tail keeps the focus on the time; a loud tail would focus on the risk."
         },
         {
             "id": "ACC_PITCHMODULATION_L77_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague lowers their voice in an open-plan office.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We're flying to TOKYO, not Seoul.",
-            "textToSpeak": "We're flying to TOKYO, not Seoul.",
+            "word": "Between you and me, I think it's a mistake.",
+            "textToSpeak": "Between you and me, I think it's a mistake.",
             "options": [
-                "Heavy Stress on 'TOKYO' (Correcting a Destination)",
-                "Even, Neutral Stress (Plain Statement)"
+                "'Between you and me' is low and quiet: confidential",
+                "'Between you and me' is high and bright: public"
             ],
-            "correctAnswer": "Heavy Stress on 'TOKYO' (Correcting a Destination)",
+            "correctAnswer": "'Between you and me' is low and quiet: confidential",
             "correctAnswerIndex": 0,
-            "hint": "The wrong destination was assumed. Listen for one city name to be emphasized sharply to fix the mistake.",
-            "explanation": "The heavy stress on 'TOKYO' corrects a wrong assumption about the destination, set against 'not Seoul'.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a correcting a destination and a plain statement."
+            "hint": "How loud do you think the speaker wants the first phrase to be?",
+            "explanation": "Dropping the register and quieting the voice signals a secret, and help the speaker avoid being overheard. A high, bright delivery would make the phrase sound public and would undermine the idea of confidence.",
+            "modulationPattern": "Lower pitch register on an opening tag.",
+            "meaningShift": "A low register signals confidence; a high register would sound open and inappropriate."
         },
         {
             "id": "ACC_PITCHMODULATION_L78_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A teacher reports exam results.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I meant the SECOND chapter, not the third.",
-            "textToSpeak": "I meant the SECOND chapter, not the third.",
+            "word": "Some of the students passed.",
+            "textToSpeak": "Some of the students passed.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on 'SECOND' (Correcting a Reference)"
+                "'Some' stands out: implying not all",
+                "'Passed' stands out: stressing success"
             ],
-            "correctAnswer": "Heavy Stress on 'SECOND' (Correcting a Reference)",
-            "correctAnswerIndex": 1,
-            "hint": "The wrong chapter was mentioned by mistake. Listen for one number word to stand out sharply.",
-            "explanation": "The heavy stress on 'SECOND' corrects a wrong reference, distinguishing it clearly from 'not the third'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a reference."
+            "correctAnswer": "'Some' stands out: implying not all",
+            "correctAnswerIndex": 0,
+            "hint": "What does the speaker want you to infer?",
+            "explanation": "The peak on 'some' contrasts it with 'all', so the listener hears that not everyone passed. A peak on 'passed' would emphasise the outcome, which would be welcome news.",
+            "modulationPattern": "Prominence on the quantifier 'some'.",
+            "meaningShift": "A peak on 'some' implies a limit; a peak on 'passed' would celebrate the result."
         },
         {
             "id": "ACC_PITCHMODULATION_L78_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend describes a new colleague.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The doctor recommended more rest.",
-            "textToSpeak": "The doctor recommended more rest.",
+            "word": "She's good for a beginner.",
+            "textToSpeak": "She's good for a beginner.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on a Single Word (Correcting a Mistake)"
+                "'Good' stands out: high praise",
+                "'Beginner' stands out: praise limited by experience"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
-            "correctAnswerIndex": 0,
-            "hint": "This is simply advice being reported, nothing is being corrected. Expect stress to stay even.",
-            "explanation": "'The doctor recommended more rest' is a neutral statement, so no single word needs special emphasis.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a mistake."
+            "correctAnswer": "'Beginner' stands out: praise limited by experience",
+            "correctAnswerIndex": 1,
+            "hint": "Which word limits the compliment?",
+            "explanation": "The peak on 'beginner' reminds the listener that the praise is relative, so she is not yet good in absolute terms. A peak on 'good' would make the compliment stronger and less qualified.",
+            "modulationPattern": "Prominence on 'beginner' qualifying an evaluation.",
+            "meaningShift": "A peak on 'beginner' limits the praise; a peak on 'good' would extend it."
         },
         {
             "id": "ACC_PITCHMODULATION_L78_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend has just tried a hotel.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I asked for a WINDOW seat, not an aisle.",
-            "textToSpeak": "I asked for a WINDOW seat, not an aisle.",
+            "word": "It's fine for the price.",
+            "textToSpeak": "It's fine for the price.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on 'WINDOW' (Correcting a Seat Assignment)"
+                "'Fine' stands out: fully satisfied",
+                "'Price' stands out: praise limited by cost"
             ],
-            "correctAnswer": "Heavy Stress on 'WINDOW' (Correcting a Seat Assignment)",
+            "correctAnswer": "'Price' stands out: praise limited by cost",
             "correctAnswerIndex": 1,
-            "hint": "The wrong seat type was booked by mistake. Listen for one word to jump out sharply to fix it.",
-            "explanation": "The heavy stress on 'WINDOW' corrects a seating mistake, contrasted clearly with 'not an aisle'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a seat assignment."
+            "hint": "Check whether the speaker sounds entirely happy.",
+            "explanation": "Here the peak on 'price' frames the approval as a judgment made with the cost in mind, so the listener hears a small reservation. A peak on 'fine' would sound more contented.",
+            "modulationPattern": "Prominence on 'price' in a qualified evaluation.",
+            "meaningShift": "A peak on 'price' qualifies the verdict; a peak on 'fine' would state satisfaction."
         },
         {
             "id": "ACC_PITCHMODULATION_L79_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is suggesting a meeting time.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's the RED suitcase, not the black one.",
-            "textToSpeak": "It's the RED suitcase, not the black one.",
+            "word": "Why don't we meet at six?",
+            "textToSpeak": "Why don't we meet at six?",
             "options": [
-                "Heavy Stress on 'RED' (Correcting a Mix-Up)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Falls on 'six': a decision",
+                "Lifts on 'six': a suggestion"
             ],
-            "correctAnswer": "Heavy Stress on 'RED' (Correcting a Mix-Up)",
-            "correctAnswerIndex": 0,
-            "hint": "Someone almost picked up the wrong bag. Listen for one color word to be emphasized strongly.",
-            "explanation": "The heavy stress on 'RED' corrects a luggage mix-up, set clearly against 'not the black one'.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a correcting a mix-up and a plain statement."
+            "correctAnswer": "Lifts on 'six': a suggestion",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the speaker leaves room for the listener to choose.",
+            "explanation": "The lift on 'six' turns 'why don't we' into a genuine suggestion and leaves room for another time. A fall would make it sound settled and close to an instruction.",
+            "modulationPattern": "Rising at the end of a suggestion.",
+            "meaningShift": "A lift invites agreement; a fall would announce a plan."
         },
         {
             "id": "ACC_PITCHMODULATION_L79_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is setting the time for the group.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He fixed the printer this morning.",
-            "textToSpeak": "He fixed the printer this morning.",
+            "word": "Let's meet at six.",
+            "textToSpeak": "Let's meet at six.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on a Single Word (Correcting a Mistake)"
+                "Falls: a proposal presented as the plan",
+                "Lifts: asking permission"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
+            "correctAnswer": "Falls: a proposal presented as the plan",
             "correctAnswerIndex": 0,
-            "hint": "This is just a routine update, nothing is being corrected. Expect stress to stay fairly even.",
-            "explanation": "'He fixed the printer this morning' is a neutral update, so stress spreads evenly with no word standing out.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a mistake."
+            "hint": "How much negotiating do you expect to follow?",
+            "explanation": "'Let's' already offers the suggestion, so the fall on 'six' presents it with confidence. A lift would turn it into a request for approval, which is not what 'let's' usually does.",
+            "modulationPattern": "Falling at the end of a 'let's' proposal.",
+            "meaningShift": "A fall sounds confident; a lift would ask for approval."
         },
         {
             "id": "ACC_PITCHMODULATION_L79_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has been asked whether six works.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I meant TEN minutes, not ten hours.",
-            "textToSpeak": "I meant TEN minutes, not ten hours.",
+            "word": "Six works for me.",
+            "textToSpeak": "Six works for me.",
             "options": [
-                "Heavy Stress on 'TEN' (Correcting a Misunderstanding)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Dips and lifts: accepting with reservations",
+                "Falls on 'me': accepting"
             ],
-            "correctAnswer": "Heavy Stress on 'TEN' (Correcting a Misunderstanding)",
-            "correctAnswerIndex": 0,
-            "hint": "The unit of time was badly misunderstood. Listen for one word to be pushed up sharply to fix the mix-up.",
-            "explanation": "The heavy stress on 'TEN' (paired with 'minutes') corrects a misunderstanding, contrasted against 'ten hours'.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a correcting a misunderstanding and a plain statement."
+            "correctAnswer": "Falls on 'me': accepting",
+            "correctAnswerIndex": 1,
+            "hint": "Hear whether the speaker sounds finished.",
+            "explanation": "The fall on 'me' gives a clean acceptance and the conversation can move on. A dip and lift would leave something unsaid, as though the time were acceptable but not ideal.",
+            "modulationPattern": "Falling on 'me' at the end of an acceptance.",
+            "meaningShift": "A fall signals easy acceptance; a dip and lift would hint at a problem."
         },
         {
             "id": "ACC_PITCHMODULATION_L80_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A caller asks, 'Is the shop open on Sundays?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I said the GREEN folder, not the blue one.",
-            "textToSpeak": "I said the GREEN folder, not the blue one.",
+            "word": "It's open on Sundays, but only until two.",
+            "textToSpeak": "It's open on Sundays, but only until two.",
             "options": [
-                "Even, Neutral Stress (Plain Statement)",
-                "Heavy Stress on 'GREEN' (Correcting a Mix-Up)"
+                "'Open' and 'Sundays' stand out",
+                "'Only' and 'two' stand out"
             ],
-            "correctAnswer": "Heavy Stress on 'GREEN' (Correcting a Mix-Up)",
+            "correctAnswer": "'Only' and 'two' stand out",
             "correctAnswerIndex": 1,
-            "hint": "The wrong folder was handed over by mistake. Listen for one color word to stand out sharply.",
-            "explanation": "The heavy stress on 'GREEN' corrects a mix-up over which folder was meant, set against 'not the blue one'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a plain statement and a correcting a mix-up."
+            "hint": "What is the new information in the answer?",
+            "explanation": "Since the shop being open on Sundays is given by the question, those words are reduced, and the useful information is the limit: 'only until two'. The caller would be expecting 'yes' and is told about the restriction.",
+            "modulationPattern": "Prominence on 'only' and 'two' with the given information reduced.",
+            "meaningShift": "Peaks on 'only' and 'two' tell the caller the limit; peaks on 'open' and 'Sundays' would repeat the question."
         },
         {
             "id": "ACC_PITCHMODULATION_L80_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are confirming a restaurant booking.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We adopted a cat from the shelter.",
-            "textToSpeak": "We adopted a cat from the shelter.",
+            "word": "That's a table for four at half past seven?",
+            "textToSpeak": "That's a table for four at half past seven?",
             "options": [
-                "Heavy Stress on a Single Word (Correcting a Mistake)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Rises at the end: checking the booking",
+                "Falls at the end: noting the booking"
             ],
-            "correctAnswer": "Even, Neutral Stress (Plain Statement)",
-            "correctAnswerIndex": 1,
-            "hint": "This is simply happy news, with nothing being corrected. Expect stress to stay fairly even throughout.",
-            "explanation": "'We adopted a cat from the shelter' is a neutral statement, so no single word needs extra stress to fix an error.",
-            "modulationPattern": "Heavy stress on a single word signals a correction or contrast with what was said or assumed; even, neutral stress signals a plain statement with no correction intended.",
-            "meaningShift": "The meaning shifts between a correcting a mistake and a plain statement."
+            "correctAnswer": "Rises at the end: checking the booking",
+            "correctAnswerIndex": 0,
+            "hint": "Would the speaker be happy to be corrected?",
+            "explanation": "The rise on 'seven' turns a summary into a check, so the caller can correct a wrong detail. A fall would present the details as final and sound more like a note to self.",
+            "modulationPattern": "Rising at the end of a long summarising check.",
+            "meaningShift": "A rise opens the details to correction; a fall would sound as if it were already recorded."
         },
         {
             "id": "ACC_PITCHMODULATION_L80_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager closes a discussion.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I wanted SOUP, not a salad.",
-            "textToSpeak": "I wanted SOUP, not a salad.",
+            "word": "Right, I think we're done here.",
+            "textToSpeak": "Right, I think we're done here.",
             "options": [
-                "Heavy Stress on 'SOUP' (Correcting an Order)",
-                "Even, Neutral Stress (Plain Statement)"
+                "Falls on 'here': closing the meeting",
+                "Rises on 'here': asking if everyone agrees"
             ],
-            "correctAnswer": "Heavy Stress on 'SOUP' (Correcting an Order)",
+            "correctAnswer": "Falls on 'here': closing the meeting",
             "correctAnswerIndex": 0,
-            "hint": "The wrong dish was brought to the table. Listen for one word to jump out sharply to correct it.",
-            "explanation": "The heavy stress on 'SOUP' corrects a mistaken food order, contrasted clearly with 'not a salad'.",
-            "modulationPattern": "Placing strong emphasis on one word highlights it as a deliberate contrast; spreading the stress evenly means no particular word is being singled out.",
-            "meaningShift": "The meaning shifts between a correcting an order and a plain statement."
+            "hint": "Pay attention to whether the speaker wants more input.",
+            "explanation": "The fall marks the end of the conversation and signals that nothing more needs to be said. A rise would invite the group to add something, which would keep the meeting going.",
+            "modulationPattern": "Falling on 'here' after a closing marker.",
+            "meaningShift": "A fall ends the discussion; a rise would invite further comment."
         }
     ]
 }

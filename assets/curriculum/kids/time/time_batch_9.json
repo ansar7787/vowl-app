@@ -1,622 +1,622 @@
 [
-    {
+  {
+    "level": 81,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L81_Q1",
+        "gameType": "time",
         "level": 81,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L81_Q1",
-                "gameType": "time",
-                "level": 81,
-                "instruction": "Mia pours cereal and orange juice at seven o'clock, right before the school bus comes. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:00 AM 🥣",
-                "options": [
-                    "8:00 AM 🍳",
-                    "7:00 PM 🛁",
-                    "7:00 AM 🥣"
-                ],
-                "hint": "Think about what usually happens right before school starts.",
-                "emoji": "🥣",
-                "explanation": "Since the school bus is coming soon, seven o'clock must be in the morning: 7:00 AM.",
-                "funFact": "Most school buses pick children up in the early morning hours.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L81_Q2",
-                "gameType": "time",
-                "level": 81,
-                "instruction": "The whole class lines up for lunch at twelve o'clock. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:00 PM 🍱",
-                "options": [
-                    "12:00 AM",
-                    "12:00 PM 🍱",
-                    "1:00 PM 📚"
-                ],
-                "hint": "This hour has a special daytime nickname.",
-                "emoji": "🍱",
-                "explanation": "Twelve o'clock in the daytime is noon, written as 12:00 PM.",
-                "funFact": "12:00 PM and 12:00 AM are the only hours that don't repeat like the others.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L81_Q3",
-                "gameType": "time",
-                "level": 81,
-                "instruction": "Grandpa turns off the porch light at nine o'clock before bed. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 PM 🏠",
-                "options": [
-                    "9:00 PM 🏠",
-                    "9:00 AM 🏫",
-                    "8:00 PM 📖"
-                ],
-                "hint": "Porch lights usually get turned off once it's dark outside.",
-                "emoji": "🏠",
-                "explanation": "Since it's bedtime and dark outside, nine o'clock here is at night: 9:00 PM.",
-                "funFact": "Turning off outdoor lights at night helps everyone sleep better.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "How many minutes are in 2 hours?",
+        "question": "?",
+        "correctAnswer": "120 minutes",
+        "options": [
+          "200 minutes",
+          "120 minutes",
+          "62 minutes"
+        ],
+        "hint": "Each hour has 60 minutes. How many hours are there?",
+        "emoji": "🧊",
+        "explanation": "Each hour has 60 minutes, so 2 hours is 60 + 60 = 120 minutes.",
+        "funFact": "A normal year has 8,760 hours, because 365 days × 24 hours = 8,760.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L81_Q2",
+        "gameType": "time",
+        "level": 81,
+        "instruction": "Which is longer: 90 minutes or 1 hour 15 minutes?",
+        "question": "?",
+        "correctAnswer": "90 minutes",
+        "options": [
+          "90 minutes",
+          "They are the same length",
+          "1 hour 15 minutes"
+        ],
+        "hint": "Change both lengths of time into minutes.",
+        "emoji": "🐨",
+        "explanation": "1 hour 15 minutes is 60 + 15 = 75 minutes. So 90 minutes is longer than 75 minutes.",
+        "funFact": "Koalas can sleep for up to 20 hours a day.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L81_Q3",
+        "gameType": "time",
+        "level": 81,
+        "instruction": "A story lasts 150 minutes. How can this be written in hours and minutes?",
+        "question": "?",
+        "correctAnswer": "2 hours 30 minutes",
+        "options": [
+          "1 hour 50 minutes",
+          "1 hour 30 minutes",
+          "2 hours 30 minutes"
+        ],
+        "hint": "Take away 60 minutes for every whole hour you can.",
+        "emoji": "📜",
+        "explanation": "150 − 60 − 60 = 30. Two whole hours fit into 150 minutes with 30 minutes left over, so it is 2 hours 30 minutes.",
+        "funFact": "An animated film is often about 90 minutes long.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 82,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L82_Q1",
+        "gameType": "time",
         "level": 82,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L82_Q1",
-                "gameType": "time",
-                "level": 82,
-                "instruction": "A rooster crows loudly at six o'clock, waking the whole farm. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 AM 🐓",
-                "options": [
-                    "6:00 AM 🐓",
-                    "6:00 PM 🍲",
-                    "7:00 AM 🛏️"
-                ],
-                "hint": "Roosters are famous for greeting one particular part of the day.",
-                "emoji": "🐓",
-                "explanation": "Roosters crow to greet the sunrise, so six o'clock here is 6:00 AM.",
-                "funFact": "Roosters are known for crowing right as the sun comes up.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L82_Q2",
-                "gameType": "time",
-                "level": 82,
-                "instruction": "Backpacks come off the hooks at three o'clock as the final bell rings. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:00 PM 🔔",
-                "options": [
-                    "4:00 PM 🛝",
-                    "3:00 AM",
-                    "3:00 PM 🔔"
-                ],
-                "hint": "Think about when the school day usually comes to a close.",
-                "emoji": "🔔",
-                "explanation": "Since the final school bell is ringing, three o'clock here is in the afternoon: 3:00 PM.",
-                "funFact": "Final school bells usually ring in the middle of the afternoon.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L82_Q3",
-                "gameType": "time",
-                "level": 82,
-                "instruction": "The whole neighborhood is dark and silent by ten o'clock. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 PM 🌌",
-                "options": [
-                    "10:00 AM 🍎",
-                    "10:00 PM 🌌",
-                    "9:00 PM 🌙"
-                ],
-                "hint": "A dark, quiet neighborhood is a clue about which part of the day.",
-                "emoji": "🌌",
-                "explanation": "A dark, quiet neighborhood means ten o'clock here is late at night: 10:00 PM.",
-                "funFact": "By 10:00 PM, most neighborhoods have gone quiet for the night.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "At the start of a rehearsal, the short hand is almost on the 4 and the long hand is on 10. At the end, the long hand is on 5 and the short hand is just past 4. How long is the rehearsal?",
+        "question": "?",
+        "correctAnswer": "35 minutes",
+        "options": [
+          "45 minutes",
+          "35 minutes",
+          "25 minutes"
+        ],
+        "hint": "Read both clocks as digital times first, then count on.",
+        "emoji": "🎷",
+        "explanation": "The start is 3:50 and the end is 4:25. 3:50 to 4:00 is 10 minutes and 4:00 to 4:25 is 25 more, so 35 minutes.",
+        "funFact": "The astronomical clock in Prague has been working since 1410.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L82_Q2",
+        "gameType": "time",
+        "level": 82,
+        "instruction": "A bus journey begins at 7:45 AM and ends at 9:00 AM. How long is the journey?",
+        "question": "?",
+        "correctAnswer": "1 hour 15 minutes",
+        "options": [
+          "1 hour 45 minutes",
+          "2 hours 15 minutes",
+          "1 hour 15 minutes"
+        ],
+        "hint": "Count up to 8:00 first, and then on to 9:00.",
+        "emoji": "🛣️",
+        "explanation": "7:45 to 8:00 is 15 minutes, and 8:00 to 9:00 is 1 hour. Altogether the journey lasts 1 hour 15 minutes.",
+        "funFact": "The first digital wristwatch went on sale in 1972.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L82_Q3",
+        "gameType": "time",
+        "level": 82,
+        "instruction": "A painting class starts at twenty past ten and ends at five past eleven. How long is the class?",
+        "question": "?",
+        "correctAnswer": "45 minutes",
+        "options": [
+          "35 minutes",
+          "45 minutes",
+          "1 hour 15 minutes"
+        ],
+        "hint": "Write both times in digits first.",
+        "emoji": "🪣",
+        "explanation": "Twenty past ten is 10:20 and five past eleven is 11:05. 10:20 to 11:00 is 40 minutes, and 5 more minutes makes 45 minutes.",
+        "funFact": "Ancient Egyptians used sundials about 3,500 years ago.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 83,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L83_Q1",
+        "gameType": "time",
         "level": 83,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L83_Q1",
-                "gameType": "time",
-                "level": 83,
-                "instruction": "Liam brushes his teeth right after breakfast at eight o'clock. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 AM 🪥",
-                "options": [
-                    "9:00 AM 🏫",
-                    "8:00 AM 🪥",
-                    "8:00 PM 📖"
-                ],
-                "hint": "Breakfast is the meal that starts the day.",
-                "emoji": "🪥",
-                "explanation": "Since this happens right after breakfast, eight o'clock here is in the morning: 8:00 AM.",
-                "funFact": "Brushing teeth after breakfast helps keep smiles healthy all day.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L83_Q2",
-                "gameType": "time",
-                "level": 83,
-                "instruction": "The class settles down for quiet reading at one o'clock, right after lunch trays are cleared. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:00 PM 📖",
-                "options": [
-                    "1:00 AM 🌗",
-                    "1:00 PM 📖",
-                    "2:00 PM 😴"
-                ],
-                "hint": "This happens soon after the midday meal.",
-                "emoji": "📖",
-                "explanation": "Since lunch trays were just cleared, one o'clock here is in the afternoon: 1:00 PM.",
-                "funFact": "Quiet reading time often follows lunch in many classrooms.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L83_Q3",
-                "gameType": "time",
-                "level": 83,
-                "instruction": "Pajamas go on at eight o'clock while the stars begin to twinkle outside. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 PM ⭐",
-                "options": [
-                    "7:00 PM 🛁",
-                    "8:00 PM ⭐",
-                    "8:00 AM 🍳"
-                ],
-                "hint": "Stars only twinkle during one part of the day.",
-                "emoji": "⭐",
-                "explanation": "Since stars are twinkling outside, eight o'clock here is at night: 8:00 PM.",
-                "funFact": "Stars become visible once the sky grows dark in the evening.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A choir practice starts at 1:50 PM and lasts 1 hour 25 minutes. When does it end?",
+        "question": "?",
+        "correctAnswer": "3:15 PM",
+        "options": [
+          "3:25 PM",
+          "2:15 PM",
+          "3:15 PM"
+        ],
+        "hint": "Add the hour first. Then count on to the next o'clock time and add the rest.",
+        "emoji": "🎶",
+        "explanation": "1:50 PM plus 1 hour is 2:50 PM. Then 10 minutes reaches 3:00 PM, and 15 more minutes makes 3:15 PM.",
+        "funFact": "Elephants sleep for only about 3 to 4 hours a day.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L83_Q2",
+        "gameType": "time",
+        "level": 83,
+        "instruction": "A coach leaves at 9:40 AM and travels for 2 hours 30 minutes. When does it arrive?",
+        "question": "?",
+        "correctAnswer": "12:10 PM",
+        "options": [
+          "12:10 PM",
+          "11:10 AM",
+          "12:10 AM"
+        ],
+        "hint": "Add the 2 hours first, then the 30 minutes. Watch what happens at noon.",
+        "emoji": "🚐",
+        "explanation": "9:40 AM plus 2 hours is 11:40 AM. Another 30 minutes passes noon, because 20 minutes reaches 12:00 PM and 10 more makes 12:10 PM.",
+        "funFact": "A bee beats its wings about 200 times every second.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L83_Q3",
+        "gameType": "time",
+        "level": 83,
+        "instruction": "A concert begins at 11:30 AM and lasts 45 minutes. When does it end?",
+        "question": "?",
+        "correctAnswer": "12:15 PM",
+        "options": [
+          "12:45 PM",
+          "12:15 PM",
+          "12:15 AM"
+        ],
+        "hint": "How many of the 45 minutes are needed to reach noon?",
+        "emoji": "🎺",
+        "explanation": "11:30 AM to 12:00 PM is 30 minutes. The other 15 minutes make 12:15 PM.",
+        "funFact": "In a total solar eclipse, the Sun stays completely hidden for at most about 7 minutes.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 84,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L84_Q1",
+        "gameType": "time",
         "level": 84,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L84_Q1",
-                "gameType": "time",
-                "level": 84,
-                "instruction": "The morning announcements play over the speaker at nine o'clock. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 AM 📢",
-                "options": [
-                    "10:00 AM 🍎",
-                    "9:00 PM 🌙",
-                    "9:00 AM 📢"
-                ],
-                "hint": "This word right in the sentence is a strong clue.",
-                "emoji": "📢",
-                "explanation": "The sentence says \"morning announcements,\" so nine o'clock here is 9:00 AM.",
-                "funFact": "Many schools share morning announcements right as the day begins.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L84_Q2",
-                "gameType": "time",
-                "level": 84,
-                "instruction": "Swings creak back and forth at the park at four o'clock, right after school lets out. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:00 PM 🛝",
-                "options": [
-                    "4:00 PM 🛝",
-                    "4:00 AM",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Think about when children usually head to the park after class.",
-                "emoji": "🛝",
-                "explanation": "Since school just let out, four o'clock here is in the afternoon: 4:00 PM.",
-                "funFact": "Parks often fill up with children in the afternoon after school.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L84_Q3",
-                "gameType": "time",
-                "level": 84,
-                "instruction": "Even the grown-ups are yawning and heading to bed at eleven o'clock. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:00 PM 🛌",
-                "options": [
-                    "10:00 PM 🐶",
-                    "11:00 AM 🎨",
-                    "11:00 PM 🛌"
-                ],
-                "hint": "Grown-ups don't usually go to bed during the daytime.",
-                "emoji": "🛌",
-                "explanation": "Since even the grown-ups are going to bed, eleven o'clock here is at night: 11:00 PM.",
-                "funFact": "11:00 PM is late enough that most households have settled down.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A rehearsal ended at 4:10 PM after lasting 1 hour 35 minutes. When did it begin?",
+        "question": "?",
+        "correctAnswer": "2:35 PM",
+        "options": [
+          "5:45 PM",
+          "2:35 PM",
+          "2:45 PM"
+        ],
+        "hint": "Go back 1 hour first, then go back the extra minutes.",
+        "emoji": "🔙",
+        "explanation": "1 hour before 4:10 PM is 3:10 PM. Going back 35 more minutes: 10 minutes reaches 3:00 and 25 more makes 2:35 PM.",
+        "funFact": "The first quartz clock was built in 1927.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L84_Q2",
+        "gameType": "time",
+        "level": 84,
+        "instruction": "A tour ended at 12:20 PM and lasted 50 minutes. When did it begin?",
+        "question": "?",
+        "correctAnswer": "11:30 AM",
+        "options": [
+          "11:30 AM",
+          "1:10 PM",
+          "11:30 PM"
+        ],
+        "hint": "Go back 20 minutes to reach noon, then go back the rest.",
+        "emoji": "🎫",
+        "explanation": "12:20 PM minus 20 minutes is 12:00 PM, and 30 more minutes back is 11:30. Before noon the time uses AM.",
+        "funFact": "The world record for the 100 metres sprint is under 10 seconds.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L84_Q3",
+        "gameType": "time",
+        "level": 84,
+        "instruction": "A sports camp finished at 2:05 PM after 2 hours 15 minutes. When did it begin?",
+        "question": "?",
+        "correctAnswer": "11:50 AM",
+        "options": [
+          "11:50 AM",
+          "12:10 PM",
+          "11:50 PM"
+        ],
+        "hint": "Go back the 2 hours first. Then go back the extra minutes.",
+        "emoji": "🏐",
+        "explanation": "2 hours before 2:05 PM is 12:05 PM. Going back 15 more minutes gives 11:50 AM.",
+        "funFact": "One million seconds is about 11 and a half days.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 85,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L85_Q1",
+        "gameType": "time",
         "level": 85,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L85_Q1",
-                "gameType": "time",
-                "level": 85,
-                "instruction": "The family gathers around a warm dinner at seven o'clock. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:00 PM 🍽️",
-                "options": [
-                    "7:00 PM 🍽️",
-                    "6:00 PM 🍲",
-                    "7:00 AM 🛏️"
-                ],
-                "hint": "Think about when dinner usually happens, not breakfast.",
-                "emoji": "🍽️",
-                "explanation": "Since this is dinner, not breakfast, seven o'clock here is in the evening: 7:00 PM.",
-                "funFact": "Many families share dinner together in the early evening.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L85_Q2",
-                "gameType": "time",
-                "level": 85,
-                "instruction": "A healthy snack is handed out at ten o'clock, right in between two lessons. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 AM 🍎",
-                "options": [
-                    "10:00 PM 🐶",
-                    "10:00 AM 🍎",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "This happens while school is still going on for the day.",
-                "emoji": "🍎",
-                "explanation": "Since two lessons are still happening, ten o'clock here is in the morning: 10:00 AM.",
-                "funFact": "Mid-morning snacks help children stay focused in class.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L85_Q3",
-                "gameType": "time",
-                "level": 85,
-                "instruction": "Rest mats are rolled out at two o'clock, not long after the lunch bell. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:00 PM 😴",
-                "options": [
-                    "2:00 PM 😴",
-                    "2:00 AM 🌗",
-                    "3:00 PM 🎒"
-                ],
-                "hint": "This happens after the midday meal, not before it.",
-                "emoji": "😴",
-                "explanation": "Since the lunch bell already rang, two o'clock here is in the afternoon: 2:00 PM.",
-                "funFact": "Quiet rest time often happens in the early afternoon at school.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "How many seconds are in 2 minutes?",
+        "question": "?",
+        "correctAnswer": "120 seconds",
+        "options": [
+          "100 seconds",
+          "120 seconds",
+          "60 seconds"
+        ],
+        "hint": "One minute has 60 seconds.",
+        "emoji": "💯",
+        "explanation": "Each minute has 60 seconds, so 2 minutes is 60 + 60 = 120 seconds.",
+        "funFact": "One billion seconds is about 32 years.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L85_Q2",
+        "gameType": "time",
+        "level": 85,
+        "instruction": "Zoe holds a plank for 90 seconds. How long is that in minutes and seconds?",
+        "question": "?",
+        "correctAnswer": "1 minute 30 seconds",
+        "options": [
+          "1 minute 9 seconds",
+          "1 minute 30 seconds",
+          "2 minutes 30 seconds"
+        ],
+        "hint": "Take away 60 seconds for one whole minute.",
+        "emoji": "🤸",
+        "explanation": "60 seconds make 1 minute, and 90 − 60 = 30 seconds left over. So 90 seconds is 1 minute 30 seconds.",
+        "funFact": "Today a second is defined using atoms, which vibrate more than nine billion times in one second.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L85_Q3",
+        "gameType": "time",
+        "level": 85,
+        "instruction": "Which is the longest: 100 seconds, 1 minute 30 seconds or 2 minutes?",
+        "question": "?",
+        "correctAnswer": "2 minutes",
+        "options": [
+          "100 seconds",
+          "1 minute 30 seconds",
+          "2 minutes"
+        ],
+        "hint": "Change each length of time into seconds.",
+        "emoji": "⚡",
+        "explanation": "The lengths are 100 seconds, 90 seconds and 120 seconds. The longest is 120 seconds, which is 2 minutes.",
+        "funFact": "A bolt of lightning lasts only a fraction of a second, even though it may seem to flicker.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 86,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L86_Q1",
+        "gameType": "time",
         "level": 86,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L86_Q1",
-                "gameType": "time",
-                "level": 86,
-                "instruction": "The sky glows orange and pink at six o'clock as the sun begins to set. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 PM 🌇",
-                "options": [
-                    "6:00 PM 🌇",
-                    "6:00 AM 🌅",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Sunsets happen at one particular part of the day.",
-                "emoji": "🌇",
-                "explanation": "Since the sun is setting, six o'clock here is in the evening: 6:00 PM.",
-                "funFact": "Sunsets often paint the sky orange and pink in the evening.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L86_Q2",
-                "gameType": "time",
-                "level": 86,
-                "instruction": "Paintbrushes come out for art class at eleven o'clock, just before lunch. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:00 AM 🎨",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "11:00 AM 🎨",
-                    "11:00 PM 💡"
-                ],
-                "hint": "This happens shortly before the midday meal.",
-                "emoji": "🎨",
-                "explanation": "Since lunch is coming up soon, eleven o'clock here is in the morning: 11:00 AM.",
-                "funFact": "Art class often happens in the late morning, right before lunch.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L86_Q3",
-                "gameType": "time",
-                "level": 86,
-                "instruction": "Homework gets packed away at five o'clock as dinner smells fill the kitchen. What time is it?",
-                "question": "?",
-                "correctAnswer": "5:00 PM 📓",
-                "options": [
-                    "5:00 PM 📓",
-                    "6:00 PM 🍲",
-                    "5:00 AM ⏪"
-                ],
-                "hint": "Dinner smells usually mean the afternoon is turning into evening.",
-                "emoji": "📓",
-                "explanation": "Since dinner is cooking, five o'clock here is in the late afternoon: 5:00 PM.",
-                "funFact": "5:00 PM is a common time for homework to wrap up before dinner.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "The short hand moves from the 4 to the 7. How much time has passed?",
+        "question": "?",
+        "correctAnswer": "3 hours",
+        "options": [
+          "3 hours",
+          "7 hours",
+          "30 minutes"
+        ],
+        "hint": "The short hand moves forward one number every hour.",
+        "emoji": "👈",
+        "explanation": "From 4 to 7 is 3 steps, and each step of the hour hand is 1 hour. So 3 hours have passed.",
+        "funFact": "The hour hand turns 30 degrees every hour, because 360 degrees ÷ 12 = 30.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L86_Q2",
+        "gameType": "time",
+        "level": 86,
+        "instruction": "The long hand starts on the 4 and moves round to the 11. How many minutes have passed?",
+        "question": "?",
+        "correctAnswer": "35 minutes",
+        "options": [
+          "55 minutes",
+          "7 minutes",
+          "35 minutes"
+        ],
+        "hint": "Count the steps from 4 to 11. Each step is 5 minutes.",
+        "emoji": "🔃",
+        "explanation": "From 4 to 11 is 7 steps, and 7 × 5 = 35 minutes.",
+        "funFact": "Early clocks could gain or lose several minutes a day, so people reset them often using a sundial.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L86_Q3",
+        "gameType": "time",
+        "level": 86,
+        "instruction": "One clock shows 2:15. Later the same clock shows 3:00. How much time has passed?",
+        "question": "?",
+        "correctAnswer": "45 minutes",
+        "options": [
+          "45 minutes",
+          "1 hour 15 minutes",
+          "15 minutes"
+        ],
+        "hint": "Count from 2:15 on to the next o'clock time.",
+        "emoji": "🕰️",
+        "explanation": "2:15 to 3:00 is 45 minutes. The long hand goes from the 3 all the way round to the 12.",
+        "funFact": "Railway station clocks must all agree, or passengers could miss their trains.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 87,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L87_Q1",
+        "gameType": "time",
         "level": 87,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L87_Q1",
-                "gameType": "time",
-                "level": 87,
-                "instruction": "Shoes are laced up at seven o'clock while the sun is still low in the sky. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:00 AM 👟",
-                "options": [
-                    "7:00 AM 👟",
-                    "7:00 PM 🛁",
-                    "6:00 AM 🌅"
-                ],
-                "hint": "A low sun in the sky can mean sunrise, not sunset.",
-                "emoji": "👟",
-                "explanation": "Since the sun is still low from rising, seven o'clock here is in the morning: 7:00 AM.",
-                "funFact": "The sun sits low in the sky both at sunrise and sunset, so context matters!",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L87_Q2",
-                "gameType": "time",
-                "level": 87,
-                "instruction": "Shadows shrink to their shortest at twelve o'clock on a sunny day. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:00 PM ☀️",
-                "options": [
-                    "1:00 PM 📚",
-                    "12:00 PM ☀️",
-                    "12:00 AM"
-                ],
-                "hint": "Short shadows happen when the sun is at its very highest.",
-                "emoji": "☀️",
-                "explanation": "Shadows are shortest when the sun is highest, at noon: 12:00 PM.",
-                "funFact": "At solar noon, your shadow becomes the shortest it will be all day.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L87_Q3",
-                "gameType": "time",
-                "level": 87,
-                "instruction": "A soft lullaby plays at nine o'clock as the room grows dark. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 PM 🎶",
-                "options": [
-                    "9:00 PM 🎶",
-                    "10:00 PM 🐶",
-                    "9:00 AM 🏫"
-                ],
-                "hint": "Lullabies are usually sung to help someone fall asleep.",
-                "emoji": "🎶",
-                "explanation": "Since the room is dark and a lullaby is playing, nine o'clock here is at night: 9:00 PM.",
-                "funFact": "Soft music at night can help children drift off to sleep.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Film A lasts 1 hour 40 minutes and Film B lasts 1 hour 25 minutes. How much shorter is Film B?",
+        "question": "?",
+        "correctAnswer": "15 minutes",
+        "options": [
+          "15 minutes",
+          "1 hour 15 minutes",
+          "25 minutes"
+        ],
+        "hint": "Both films are 1 hour plus some minutes. Compare the extra minutes.",
+        "emoji": "🎥",
+        "explanation": "Both films have 1 hour. The extra minutes are 40 and 25, and 40 − 25 = 15. So Film B is 15 minutes shorter.",
+        "funFact": "The famous university boat race between Oxford and Cambridge takes about 17 to 20 minutes.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L87_Q2",
+        "gameType": "time",
+        "level": 87,
+        "instruction": "On Monday Jade's journey took 1 hour 10 minutes. On Tuesday it took 50 minutes. How much longer was Monday's journey?",
+        "question": "?",
+        "correctAnswer": "20 minutes",
+        "options": [
+          "10 minutes",
+          "40 minutes",
+          "20 minutes"
+        ],
+        "hint": "Change 1 hour 10 minutes into minutes first.",
+        "emoji": "🚦",
+        "explanation": "1 hour 10 minutes is 70 minutes. 70 − 50 = 20 minutes, so Monday's journey was 20 minutes longer.",
+        "funFact": "The same journey can take a different time each day because of traffic.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L87_Q3",
+        "gameType": "time",
+        "level": 87,
+        "instruction": "One song lasts 3 minutes 20 seconds and another lasts 2 minutes 50 seconds. What is the difference in length?",
+        "question": "?",
+        "correctAnswer": "30 seconds",
+        "options": [
+          "30 seconds",
+          "1 minute 30 seconds",
+          "10 seconds"
+        ],
+        "hint": "Change both songs into seconds first.",
+        "emoji": "🎵",
+        "explanation": "3 minutes 20 seconds is 200 seconds, and 2 minutes 50 seconds is 170 seconds. 200 − 170 = 30 seconds.",
+        "funFact": "Most pop songs are between 3 and 4 minutes long.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 88,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L88_Q1",
+        "gameType": "time",
         "level": 88,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L88_Q1",
-                "gameType": "time",
-                "level": 88,
-                "instruction": "The crossing guard waves at eight o'clock as children walk into school. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 AM 🚸",
-                "options": [
-                    "8:00 AM 🚸",
-                    "8:00 PM 📖",
-                    "7:00 AM 🛏️"
-                ],
-                "hint": "Think about when children usually arrive at school.",
-                "emoji": "🚸",
-                "explanation": "Since children are arriving at school, eight o'clock here is in the morning: 8:00 AM.",
-                "funFact": "Crossing guards often help children cross safely in the morning.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L88_Q2",
-                "gameType": "time",
-                "level": 88,
-                "instruction": "A juice box is opened at three o'clock, right when the afternoon snack cart rolls by. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:00 PM 🧃",
-                "options": [
-                    "3:00 PM 🧃",
-                    "2:00 PM 😴",
-                    "3:00 AM"
-                ],
-                "hint": "This snack comes well after lunch, not before it.",
-                "emoji": "🧃",
-                "explanation": "Since this is an afternoon snack after lunch, three o'clock here is 3:00 PM.",
-                "funFact": "Afternoon snacks are a common treat between lunch and dinner.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L88_Q3",
-                "gameType": "time",
-                "level": 88,
-                "instruction": "A nightlight glows softly at ten o'clock in an otherwise dark room. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 PM 🌛",
-                "options": [
-                    "9:00 PM 🌙",
-                    "10:00 AM 🍎",
-                    "10:00 PM 🌛"
-                ],
-                "hint": "Nightlights are used once it's dark for sleeping.",
-                "emoji": "🌛",
-                "explanation": "Since the room is dark for sleep, ten o'clock here is at night: 10:00 PM.",
-                "funFact": "Nightlights help some children feel cozy and safe while sleeping.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A football practice has 35 minutes of drills, a 10-minute rest and a 45-minute match. How long is the practice altogether?",
+        "question": "?",
+        "correctAnswer": "1 hour 30 minutes",
+        "options": [
+          "1 hour 40 minutes",
+          "1 hour 20 minutes",
+          "1 hour 30 minutes"
+        ],
+        "hint": "Add the three parts, then change the minutes into hours.",
+        "emoji": "🥅",
+        "explanation": "35 + 10 + 45 = 90 minutes, which is 1 hour 30 minutes.",
+        "funFact": "Marathon runners take anywhere from about 2 hours to 6 hours to finish the race.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L88_Q2",
+        "gameType": "time",
+        "level": 88,
+        "instruction": "Three videos last 12, 18 and 25 minutes. How long do all three take to watch?",
+        "question": "?",
+        "correctAnswer": "55 minutes",
+        "options": [
+          "45 minutes",
+          "1 hour 5 minutes",
+          "55 minutes"
+        ],
+        "hint": "Add the minutes in steps, such as 12 + 18 first.",
+        "emoji": "📹",
+        "explanation": "12 + 18 = 30, and 30 + 25 = 55 minutes.",
+        "funFact": "Adding times in small chunks is how many timetables are built.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L88_Q3",
+        "gameType": "time",
+        "level": 88,
+        "instruction": "A school day has two lessons of 40 minutes each and a 15-minute break between them. How long is it from the start of the first lesson to the end of the second?",
+        "question": "?",
+        "correctAnswer": "1 hour 35 minutes",
+        "options": [
+          "1 hour 20 minutes",
+          "1 hour 35 minutes",
+          "1 hour 55 minutes"
+        ],
+        "hint": "Add both lessons and the break.",
+        "emoji": "🏫",
+        "explanation": "40 + 15 + 40 = 95 minutes, which is 1 hour 35 minutes.",
+        "funFact": "Some schools use block lessons of 90 minutes instead of shorter periods.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 89,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L89_Q1",
+        "gameType": "time",
         "level": 89,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L89_Q1",
-                "gameType": "time",
-                "level": 89,
-                "instruction": "Backpacks are hung up at nine o'clock as the first lesson begins. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 AM 🎒",
-                "options": [
-                    "9:00 PM 🌙",
-                    "9:00 AM 🎒",
-                    "8:00 AM 🍳"
-                ],
-                "hint": "This is the very start of the school day.",
-                "emoji": "🎒",
-                "explanation": "Since the first lesson is just beginning, nine o'clock here is in the morning: 9:00 AM.",
-                "funFact": "Many schools begin their first lesson around nine in the morning.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L89_Q2",
-                "gameType": "time",
-                "level": 89,
-                "instruction": "Forks click against plates at six o'clock as the family shares dinner. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 PM 🍴",
-                "options": [
-                    "6:00 AM 🌅",
-                    "6:00 PM 🍴",
-                    "7:00 PM 🛁"
-                ],
-                "hint": "Think about which meal usually happens at this hour.",
-                "emoji": "🍴",
-                "explanation": "Since the family is sharing dinner, six o'clock here is in the evening: 6:00 PM.",
-                "funFact": "6:00 PM is a popular hour for families to eat dinner together.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L89_Q3",
-                "gameType": "time",
-                "level": 89,
-                "instruction": "A recess whistle blows at one o'clock, right after the lunch line clears. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:00 PM 🔔",
-                "options": [
-                    "1:00 AM 🌗",
-                    "1:00 PM 🔔",
-                    "2:00 PM 😴"
-                ],
-                "hint": "This happens once lunch has already finished.",
-                "emoji": "🔔",
-                "explanation": "Since lunch has already finished, one o'clock here is in the afternoon: 1:00 PM.",
-                "funFact": "Some schools schedule a short recess right after lunch.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "An exam lasts 1 hour. 25 minutes have passed. How much time is left?",
+        "question": "?",
+        "correctAnswer": "35 minutes",
+        "options": [
+          "45 minutes",
+          "35 minutes",
+          "25 minutes"
+        ],
+        "hint": "A whole hour is 60 minutes.",
+        "emoji": "📝",
+        "explanation": "60 − 25 = 35 minutes left.",
+        "funFact": "Clocks and countdown timers in exam rooms help students pace themselves.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L89_Q2",
+        "gameType": "time",
+        "level": 89,
+        "instruction": "A cycling event lasts 2 hours 30 minutes. A rider has been cycling for 1 hour 45 minutes. How much time is left?",
+        "question": "?",
+        "correctAnswer": "45 minutes",
+        "options": [
+          "45 minutes",
+          "15 minutes",
+          "1 hour 15 minutes"
+        ],
+        "hint": "Change both times into minutes.",
+        "emoji": "🚴",
+        "explanation": "2 hours 30 minutes is 150 minutes and 1 hour 45 minutes is 105 minutes. 150 − 105 = 45 minutes.",
+        "funFact": "A triathlon combines swimming, cycling and running in one race, and it can last several hours.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L89_Q3",
+        "gameType": "time",
+        "level": 89,
+        "instruction": "A film is 1 hour 50 minutes long. It started at 7:00 PM. How much of the film is left at 8:20 PM?",
+        "question": "?",
+        "correctAnswer": "30 minutes",
+        "options": [
+          "1 hour 20 minutes",
+          "1 hour 30 minutes",
+          "30 minutes"
+        ],
+        "hint": "First find how long the film has been playing at 8:20.",
+        "emoji": "📽️",
+        "explanation": "From 7:00 to 8:20 is 1 hour 20 minutes. 1 hour 50 minutes − 1 hour 20 minutes = 30 minutes.",
+        "funFact": "Cinemas often show advertisements for 10 to 20 minutes before the film begins.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 90,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L90_Q1",
+        "gameType": "time",
         "level": 90,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L90_Q1",
-                "gameType": "time",
-                "level": 90,
-                "instruction": "Bubbles fill the tub at seven o'clock as bath time begins. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:00 PM 🛁",
-                "options": [
-                    "7:00 PM 🛁",
-                    "8:00 PM 📖",
-                    "7:00 AM 🛏️"
-                ],
-                "hint": "Baths before bed usually happen in the evening.",
-                "emoji": "🛁",
-                "explanation": "Since this bath is happening before bed, seven o'clock here is in the evening: 7:00 PM.",
-                "funFact": "Warm evening baths can help children feel calm before sleep.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L90_Q2",
-                "gameType": "time",
-                "level": 90,
-                "instruction": "Library books are checked out at ten o'clock during a morning class visit. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 AM 📚",
-                "options": [
-                    "10:00 AM 📚",
-                    "10:00 PM 🐶",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "This visit happens while morning classes are still going.",
-                "emoji": "📚",
-                "explanation": "Since morning classes are still happening, ten o'clock here is 10:00 AM.",
-                "funFact": "Many schools schedule library visits during morning class time.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L90_Q3",
-                "gameType": "time",
-                "level": 90,
-                "instruction": "A kite dips and soars at four o'clock, right after the school bell rings. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:00 PM 🪁",
-                "options": [
-                    "5:00 PM 🧃",
-                    "4:00 AM",
-                    "4:00 PM 🪁"
-                ],
-                "hint": "This happens once the school day has already ended.",
-                "emoji": "🪁",
-                "explanation": "Since the school bell already rang for the day, four o'clock here is 4:00 PM.",
-                "funFact": "Afternoons after school are a popular time for flying kites.",
-                "subtype": "am_pm",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    }
+        "instruction": "A bus tour lasts 180 minutes. How many hours is that?",
+        "question": "?",
+        "correctAnswer": "3 hours",
+        "options": [
+          "3 hours",
+          "18 hours",
+          "2 hours"
+        ],
+        "hint": "Each hour has 60 minutes. How many 60s fit into 180?",
+        "emoji": "🛺",
+        "explanation": "60 + 60 + 60 = 180, so 180 minutes is 3 hours.",
+        "funFact": "The Earth is slowing down very slightly, making each day longer by about 2 thousandths of a second every hundred years.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L90_Q2",
+        "gameType": "time",
+        "level": 90,
+        "instruction": "A lesson ended at 3:10 PM after lasting 1 hour 40 minutes. When did it begin?",
+        "question": "?",
+        "correctAnswer": "1:30 PM",
+        "options": [
+          "1:50 PM",
+          "1:30 PM",
+          "4:50 PM"
+        ],
+        "hint": "Go back 1 hour, then go back 40 more minutes.",
+        "emoji": "🧶",
+        "explanation": "3:10 PM minus 1 hour is 2:10 PM. Going back 10 minutes reaches 2:00, and 30 more minutes reaches 1:30 PM.",
+        "funFact": "The seven-day week is thought to have come from ancient Babylon.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L90_Q3",
+        "gameType": "time",
+        "level": 90,
+        "instruction": "Two films last 1 hour 10 minutes and 55 minutes. A theatre show lasts 2 hours. Which is longer?",
+        "question": "?",
+        "correctAnswer": "The two films together, by 5 minutes",
+        "options": [
+          "The theatre show, by 5 minutes",
+          "They are the same length",
+          "The two films together, by 5 minutes"
+        ],
+        "hint": "Add the two films together first.",
+        "emoji": "🎦",
+        "explanation": "1 hour 10 minutes + 55 minutes = 2 hours 5 minutes, which is 5 minutes more than 2 hours.",
+        "funFact": "Many computers keep time by counting the seconds since 1 January 1970.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

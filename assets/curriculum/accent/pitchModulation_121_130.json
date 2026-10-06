@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L121_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend says she has booked a solo trip to Patagonia. Both readings fit the situation; let the pitch decide.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The food was nice.",
-            "textToSpeak": "The food was nice.",
+            "word": "You're going alone?",
+            "textToSpeak": "You're going alone?",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Impressed, wanting to hear more",
+                "Worried, questioning the plan"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-            "correctAnswerIndex": 1,
-            "hint": "'Nice' is a fairly mild word for food. Listen for the pitch to dip and lift again, hinting at something unsaid.",
-            "explanation": "A fall-rise on 'nice' hints at an unspoken 'but' - the food was okay, though something about the meal wasn't fully satisfying.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "correctAnswer": "Impressed, wanting to hear more",
+            "correctAnswerIndex": 0,
+            "hint": "Check how bright the rise is, and whether 'alone' is stressed or 'going'.",
+            "explanation": "Context cannot settle this one, since admiration and worry are both natural. Brightness is the clue: a wide, lifted rise on 'going' sounds keen to hear more. Worry would lean on 'alone' and keep the range tight.",
+            "modulationPattern": "Wide, bright rise with emphasis on 'going'.",
+            "meaningShift": "A bright rise on 'going' shows admiration; weight on 'alone' with a tight rise would show worry."
         },
         {
             "id": "ACC_PITCHMODULATION_L121_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague says he has finally asked for a transfer.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The food was amazing.",
-            "textToSpeak": "The food was amazing.",
+            "word": "You asked for it?",
+            "textToSpeak": "You asked for it?",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Pleased for him, encouraging",
+                "Worried he was pushed out"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
-            "correctAnswerIndex": 0,
-            "hint": "'Amazing' is a strong, enthusiastic word. Listen for the pitch to fall fully, with nothing held back.",
-            "explanation": "'The food was amazing' falls completely, showing genuine, wholehearted praise with no hidden reservation.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "correctAnswer": "Worried he was pushed out",
+            "correctAnswerIndex": 1,
+            "hint": "Which word does the voice lean on, and how low does it start?",
+            "explanation": "Starting low and pressing on 'asked' turns the question into a worried check about whether he was pushed. If the speaker were pleased, the sentence would start higher and the peak would fall on 'it' with a lilt.",
+            "modulationPattern": "Low onset, weight on 'asked', narrow rise.",
+            "meaningShift": "A low, weighted start is concern; a high, lilting one would be pleasure."
         },
         {
             "id": "ACC_PITCHMODULATION_L121_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A neighbour says she is taking in three rescue dogs.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's a good teacher.",
-            "textToSpeak": "He's a good teacher.",
+            "word": "Three of them?",
+            "textToSpeak": "Three of them?",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Amused disbelief",
+                "Practical checking"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
+            "correctAnswer": "Amused disbelief",
             "correctAnswerIndex": 0,
-            "hint": "'Good' here sounds a little held back. Listen for the pitch to dip and lift, hinting at an unspoken concern.",
-            "explanation": "A fall-rise on 'good' hints that there's more to say - perhaps he's good but also strict, boring, or difficult in some way.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "hint": "Judge whether the rise is playful, or brisk.",
+            "explanation": "Drawing out 'three' with a wide rise signals that the speaker finds the number funny and a bit much. A practical check about space or cost would be clipped, with a short rise on 'them'.",
+            "modulationPattern": "Drawn-out wide rise on 'three'.",
+            "meaningShift": "A drawn-out, wide rise sounds amused; a clipped, short one sounds practical."
         },
         {
             "id": "ACC_PITCHMODULATION_L122_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are serving a dish you cooked for the first time.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's a brilliant teacher.",
-            "textToSpeak": "He's a brilliant teacher.",
+            "word": "It's good, isn't it?",
+            "textToSpeak": "It's good, isn't it?",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Fishing for reassurance",
+                "Confident of its quality"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
-            "correctAnswerIndex": 1,
-            "hint": "'Brilliant' is a strong, wholehearted compliment. Listen for the pitch to fall fully at the end.",
-            "explanation": "'He's a brilliant teacher' falls completely, showing full, unreserved admiration with nothing held back.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "correctAnswer": "Fishing for reassurance",
+            "correctAnswerIndex": 0,
+            "hint": "Does the final tag fall as if sure, or rise as if hoping?",
+            "explanation": "Hoping for approval, the speaker lets the tag climb on 'isn't it', which gives the guest an opening to praise it. Someone confident would let it fall, expecting simple agreement.",
+            "modulationPattern": "Rising tag on 'isn't it'.",
+            "meaningShift": "A rising tag invites reassurance; a falling tag would assume agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L122_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager looks at a slide full of errors.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The hotel was comfortable.",
-            "textToSpeak": "The hotel was comfortable.",
+            "word": "That's very neat, isn't it?",
+            "textToSpeak": "That's very neat, isn't it?",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Sincere",
+                "Sarcastic"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-            "correctAnswerIndex": 0,
-            "hint": "'Comfortable' is a fairly modest word for a hotel review. Listen for the pitch to dip and lift again.",
-            "explanation": "A fall-rise on 'comfortable' hints at an unspoken 'but' - perhaps the room was fine, though something else about the stay wasn't ideal.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "correctAnswer": "Sarcastic",
+            "correctAnswerIndex": 1,
+            "hint": "What happens to 'very'?",
+            "explanation": "'Very' stretched and flattened, followed by a low tag, is the usual signature of sarcasm when the evidence contradicts the words. A sincere remark would lift on 'neat' and fall warmly.",
+            "modulationPattern": "Stretched flat 'very', low falling tag.",
+            "meaningShift": "A flat, stretched 'very' mocks; a lifted 'neat' with a warm fall would compliment."
         },
         {
             "id": "ACC_PITCHMODULATION_L122_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A tour guide stops at a viewpoint.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The hotel was perfect.",
-            "textToSpeak": "The hotel was perfect.",
+            "word": "Stunning view, isn't it?",
+            "textToSpeak": "Stunning view, isn't it?",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Asking for information",
+                "Inviting shared admiration"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
+            "correctAnswer": "Inviting shared admiration",
             "correctAnswerIndex": 1,
-            "hint": "'Perfect' leaves no room for complaint. Listen for the pitch to fall fully at the end.",
-            "explanation": "'The hotel was perfect' falls completely, expressing full satisfaction with no hidden reservation.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "hint": "Check whether the speaker wants a fact or a feeling.",
+            "explanation": "Tags like this one fall with a smile in the voice because the guide expects the group to agree and enjoy the moment. Asking for information would need an open rise and a pause for an answer.",
+            "modulationPattern": "Bright fall on the tag after a lifted 'stunning'.",
+            "meaningShift": "A bright, falling tag shares the moment; an open rise would ask for facts."
         },
         {
             "id": "ACC_PITCHMODULATION_L123_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks to take your parking spot for the day.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She's talented.",
-            "textToSpeak": "She's talented.",
+            "word": "Alright, then.",
+            "textToSpeak": "Alright, then.",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Cheerful permission",
+                "Reluctant permission"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
+            "correctAnswer": "Reluctant permission",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like a careful compliment. Listen for the pitch to dip and lift, hinting at something else unsaid.",
-            "explanation": "A fall-rise on 'talented' hints there's more to the story - perhaps she's skilled but difficult to work with in some way.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "hint": "Does 'then' lift or settle?",
+            "explanation": "Settling low and slowly on 'then' is how many speakers say yes while making clear it's a favour. Cheerful permission would be brisk, with a lift on 'alright'.",
+            "modulationPattern": "Low, drawn-out fall on 'then'.",
+            "meaningShift": "A low, drawn-out finish signals a favour granted reluctantly; a brisk lift would grant it happily."
         },
         {
             "id": "ACC_PITCHMODULATION_L123_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks if you can swap shifts with her next week.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She's incredibly talented.",
-            "textToSpeak": "She's incredibly talented.",
+            "word": "Sure thing.",
+            "textToSpeak": "Sure thing.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Easy and friendly",
+                "Falsely cheerful"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
-            "correctAnswerIndex": 1,
-            "hint": "'Incredibly' boosts the praise to full strength. Listen for the pitch to fall completely at the end.",
-            "explanation": "'She's incredibly talented' falls completely, showing genuine, unreserved admiration.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "correctAnswer": "Easy and friendly",
+            "correctAnswerIndex": 0,
+            "hint": "Is the brightness natural or pasted on?",
+            "explanation": "Natural friendliness has an unforced rise-fall that varies slightly. If the cheerfulness were false, the pitch would be high but even, repeating the same level on both words.",
+            "modulationPattern": "Light rise-fall with natural variation.",
+            "meaningShift": "A varied, light contour sounds easy; an even, high one sounds put on."
         },
         {
             "id": "ACC_PITCHMODULATION_L123_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your manager says, 'We're going with option B.' You preferred option A.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The movie was okay.",
-            "textToSpeak": "The movie was okay.",
+            "word": "Fine, option B it is.",
+            "textToSpeak": "Fine, option B it is.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Settling happily on the best choice",
+                "Accepting a decision you disagree with"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-            "correctAnswerIndex": 0,
-            "hint": "'Okay' is a lukewarm word for a movie review. Listen for the pitch to dip and lift, hinting at disappointment.",
-            "explanation": "A fall-rise on 'okay' hints at mild disappointment - the movie was watchable but didn't fully live up to expectations.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "correctAnswer": "Accepting a decision you disagree with",
+            "correctAnswerIndex": 1,
+            "hint": "Find the word that carries the weight: 'fine' or 'B'.",
+            "explanation": "Putting weight on 'fine' and flattening 'B' tells the manager the speaker will comply but hasn't changed their mind. With real agreement, 'B' would have a clear peak and the sentence would end firmly.",
+            "modulationPattern": "Weight on 'fine', flat landing on 'B'.",
+            "meaningShift": "A heavy 'fine' with a flat finish shows grudging compliance; a peak on 'B' would show agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L124_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend arrives at your party after saying she couldn't come.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The movie was fantastic.",
-            "textToSpeak": "The movie was fantastic.",
+            "word": "I thought you weren't coming.",
+            "textToSpeak": "I thought you weren't coming.",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Pleasantly surprised",
+                "Accusing, a little cross"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
+            "correctAnswer": "Pleasantly surprised",
             "correctAnswerIndex": 0,
-            "hint": "'Fantastic' is a strong, enthusiastic word. Listen for the pitch to fall completely at the end.",
-            "explanation": "'The movie was fantastic' falls completely, expressing genuine enjoyment with nothing held back.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "hint": "Does the voice smile, or tighten?",
+            "explanation": "Warmth is audible when 'weren't' sits high and the sentence falls softly, as the speaker is glad to be wrong. Accusation would press on 'thought' and finish flat, as if the friend had misled them.",
+            "modulationPattern": "High 'weren't', soft fall on 'coming'.",
+            "meaningShift": "A high, soft contour is glad surprise; a pressed, flat one is accusing."
         },
         {
             "id": "ACC_PITCHMODULATION_L124_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague presents a number you remember differently.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The new phone works.",
-            "textToSpeak": "The new phone works.",
+            "word": "I thought it was forty percent.",
+            "textToSpeak": "I thought it was forty percent.",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "A polite correction",
+                "Genuine confusion"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
+            "correctAnswer": "Genuine confusion",
             "correctAnswerIndex": 1,
-            "hint": "Simply saying it 'works' is a low bar for a new phone. Listen for the pitch to dip and lift, hinting at issues.",
-            "explanation": "A fall-rise on 'works' hints at hidden problems - the phone is functional, but perhaps not living up to expectations.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "hint": "Notice whether the rise is searching, or settled.",
+            "explanation": "Real confusion leaves the sentence hanging on 'percent' with a small lift, as if asking the room. A polite correction would put weight on 'forty' and fall clearly, because the speaker is sure.",
+            "modulationPattern": "Small lift on 'percent', no stress on 'forty'.",
+            "meaningShift": "A hanging lift shows uncertainty; a weighted 'forty' with a fall would correct."
         },
         {
             "id": "ACC_PITCHMODULATION_L124_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your partner reveals they never liked the sofa you chose together.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The new phone is excellent.",
-            "textToSpeak": "The new phone is excellent.",
+            "word": "I thought you loved it.",
+            "textToSpeak": "I thought you loved it.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Casual surprise",
+                "Hurt surprise"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
+            "correctAnswer": "Hurt surprise",
             "correctAnswerIndex": 1,
-            "hint": "'Excellent' is a strong, confident word. Listen for the pitch to fall completely at the end.",
-            "explanation": "'The new phone is excellent' falls completely, expressing genuine, unreserved satisfaction.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "hint": "How much weight does 'loved' have, and how slowly does the sentence end?",
+            "explanation": "Hurt slows the sentence and lets 'loved' fall heavily, almost as if to ask what else might not have been true. Casual surprise would be quick and light, and go straight on to the next topic.",
+            "modulationPattern": "Slow tempo, heavy fall on 'loved'.",
+            "meaningShift": "A slow, heavy fall sounds hurt; a quick, light one sounds casually surprised."
         },
         {
             "id": "ACC_PITCHMODULATION_L125_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You bump into your sister in a foreign city.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The soup tasted fine.",
-            "textToSpeak": "The soup tasted fine.",
+            "word": "What are you doing here?",
+            "textToSpeak": "What are you doing here?",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Delighted surprise",
+                "Suspicious challenge"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
+            "correctAnswer": "Delighted surprise",
             "correctAnswerIndex": 0,
-            "hint": "'Fine' is a fairly neutral word for food. Listen for the pitch to dip and lift, hinting at mild disappointment.",
-            "explanation": "A fall-rise on 'fine' hints at mild disappointment - the soup was acceptable but didn't really impress.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "hint": "Pay attention to whether the voice starts high and bright.",
+            "explanation": "Starting high and falling widely on 'here' sounds like delight, as the speaker is pleased by the coincidence. Suspicion would start lower, press on 'you', and keep the range narrow.",
+            "modulationPattern": "High onset, wide fall on 'here'.",
+            "meaningShift": "A high, wide contour is delighted; a low, pressed one would be suspicious."
         },
         {
             "id": "ACC_PITCHMODULATION_L125_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your flatmate has cleaned the whole kitchen.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The soup tasted incredible.",
-            "textToSpeak": "The soup tasted incredible.",
+            "word": "What have you done to the kitchen?",
+            "textToSpeak": "What have you done to the kitchen?",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Alarmed",
+                "Impressed"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
-            "correctAnswerIndex": 0,
-            "hint": "'Incredible' is a strong, enthusiastic word. Listen for the pitch to fall completely at the end.",
-            "explanation": "'The soup tasted incredible' falls completely, expressing genuine delight with nothing held back.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "correctAnswer": "Impressed",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'kitchen' fall warmly, or sharply?",
+            "explanation": "Warmth and length in the fall on 'kitchen' suggest impressed disbelief at the change. Alarm would be sharper and faster, with a higher onset on 'what'.",
+            "modulationPattern": "Warm, long fall on 'kitchen'.",
+            "meaningShift": "A warm, long fall expresses admiration; a sharp one with a high 'what' expresses alarm."
         },
         {
             "id": "ACC_PITCHMODULATION_L125_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Your child has been unusually quiet for ten minutes.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's reliable.",
-            "textToSpeak": "He's reliable.",
+            "word": "What are you up to?",
+            "textToSpeak": "What are you up to?",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Playful suspicion",
+                "Real, growing worry"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-            "correctAnswerIndex": 1,
-            "hint": "This sounds like a careful, limited compliment. Listen for the pitch to dip and lift, hinting at something else.",
-            "explanation": "A fall-rise on 'reliable' hints there's more unsaid - perhaps he's dependable but lacking in some other quality.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "correctAnswer": "Playful suspicion",
+            "correctAnswerIndex": 0,
+            "hint": "How light is the final word?",
+            "explanation": "Bounce on 'up' and a light fall on 'to' signal that the speaker is half-teasing. Real worry would be lower and slower, perhaps with a flatter ending.",
+            "modulationPattern": "Bouncy 'up', light fall on 'to'.",
+            "meaningShift": "A bouncy contour teases; a low, slow one worries."
         },
         {
             "id": "ACC_PITCHMODULATION_L126_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague points out a mistake in your slides just before the meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's extremely reliable.",
-            "textToSpeak": "He's extremely reliable.",
+            "word": "Thanks for that.",
+            "textToSpeak": "Thanks for that.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Genuinely grateful",
+                "Pointed sarcasm"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
-            "correctAnswerIndex": 1,
-            "hint": "'Extremely' strengthens the praise to full confidence. Listen for the pitch to fall completely at the end.",
-            "explanation": "'He's extremely reliable' falls completely, showing full, unreserved confidence in him.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "correctAnswer": "Genuinely grateful",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the fall is on 'that' soft or flat.",
+            "explanation": "After a colleague has pointed out an error at the last minute, either reading is plausible, so the pitch has to decide. Real gratitude gives 'thanks' a lift and lets 'that' fall softly, which tells the colleague the help was welcome. Sarcasm would flatten both words and hit 'that' hard, so the same phrase sounds like blame for causing extra work.",
+            "modulationPattern": "Lift on 'thanks', soft fall on 'that'.",
+            "meaningShift": "A lifted, soft contour is grateful; a flat, hard one is sarcastic."
         },
         {
             "id": "ACC_PITCHMODULATION_L126_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend has just spent the whole evening helping you move.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The flight was smooth.",
-            "textToSpeak": "The flight was smooth.",
+            "word": "Thank you so much.",
+            "textToSpeak": "Thank you so much.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Heartfelt",
+                "Worn out"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
+            "correctAnswer": "Heartfelt",
             "correctAnswerIndex": 0,
-            "hint": "'Smooth' only describes part of the trip. Listen for the pitch to dip and lift, hinting at another issue.",
-            "explanation": "A fall-rise on 'smooth' hints at an unspoken 'but' - the flight itself was fine, though something else about the trip wasn't.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "hint": "Is the energy in 'so much', or in the sigh before it?",
+            "explanation": "After an evening of help with a move, both warmth and exhaustion fit the scene. Heartfelt thanks pushes up on 'so' and stays warm through 'much', which shows the speaker still has energy to appreciate the effort. A tired reading would be slower and lower, with 'much' dropping away, and would sound like relief that the day is over.",
+            "modulationPattern": "Peak on 'so', warm fall on 'much'.",
+            "meaningShift": "A peak on 'so' is heartfelt; a slow, dropping 'much' is weary."
         },
         {
             "id": "ACC_PITCHMODULATION_L126_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A waiter brings a dish you didn't order.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The flight was wonderful.",
-            "textToSpeak": "The flight was wonderful.",
+            "word": "Oh, thanks.",
+            "textToSpeak": "Oh, thanks.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Delighted by the gift",
+                "Puzzled but polite"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
+            "correctAnswer": "Puzzled but polite",
             "correctAnswerIndex": 1,
-            "hint": "'Wonderful' is an enthusiastic, complete compliment. Listen for the pitch to fall fully at the end.",
-            "explanation": "'The flight was wonderful' falls completely, expressing genuine satisfaction with the whole trip.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "hint": "Is there warmth in 'oh', or hesitation?",
+            "explanation": "Saying 'oh' short and low, then 'thanks' flat, implies the speaker is waiting for an explanation. Delight would lift 'oh' and give 'thanks' a bright fall.",
+            "modulationPattern": "Short low 'oh', flat 'thanks'.",
+            "meaningShift": "A flat contour suggests confusion; a bright, lifted one would be delight."
         },
         {
             "id": "ACC_PITCHMODULATION_L127_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend cancelled plans at the last minute.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The class was useful.",
-            "textToSpeak": "The class was useful.",
+            "word": "I'm not upset.",
+            "textToSpeak": "I'm not upset.",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Hiding hurt",
+                "Truly fine"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
+            "correctAnswer": "Truly fine",
             "correctAnswerIndex": 1,
-            "hint": "'Useful' is a practical but not very exciting word. Listen for the pitch to dip and lift, hinting at boredom.",
-            "explanation": "A fall-rise on 'useful' hints at an unspoken 'but' - the class taught something, although it may have felt a bit dull.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "hint": "Does 'not' stand out? Does the voice relax?",
+            "explanation": "A cancelled plan leaves room for either a true shrug or a covered-up disappointment. Extra weight on 'not' and a tight, narrow fall on 'upset' suggest the speaker is protesting too much, which is why the listener doubts the words. If the speaker really were fine, the sentence would be relaxed, with an easy fall and no push on 'not'.",
+            "modulationPattern": "Weight on 'not', tight narrow fall.",
+            "meaningShift": "Weight on 'not' protests too much; an easy fall on 'upset' sounds genuinely fine."
         },
         {
             "id": "ACC_PITCHMODULATION_L127_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A student is waiting for exam results.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The class was fascinating.",
-            "textToSpeak": "The class was fascinating.",
+            "word": "I'm not worried.",
+            "textToSpeak": "I'm not worried.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Convincing herself",
+                "Genuinely calm"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
-            "correctAnswerIndex": 1,
-            "hint": "'Fascinating' is an enthusiastic, complete compliment. Listen for the pitch to fall fully at the end.",
-            "explanation": "'The class was fascinating' falls completely, expressing genuine, captivated interest.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "correctAnswer": "Convincing herself",
+            "correctAnswerIndex": 0,
+            "hint": "Is 'worried' fully settled?",
+            "explanation": "Self-persuasion stresses 'not' and lets 'worried' end with a small lift, as if the speaker is checking whether it worked. Calm sounds unforced and settles at the bottom.",
+            "modulationPattern": "Stressed 'not', small lift on 'worried'.",
+            "meaningShift": "A stressed 'not' with a slight lift is self-persuasion; an unforced fall is calm."
         },
         {
             "id": "ACC_PITCHMODULATION_L127_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has just taken credit for your idea.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "My back feels better.",
-            "textToSpeak": "My back feels better.",
+            "word": "It doesn't bother me.",
+            "textToSpeak": "It doesn't bother me.",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Truly unbothered",
+                "Visibly bothered"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
+            "correctAnswer": "Visibly bothered",
             "correctAnswerIndex": 1,
-            "hint": "'Better' suggests progress but not full recovery. Listen for the pitch to dip and lift, hinting it isn't fully healed.",
-            "explanation": "A fall-rise on 'better' hints at an unspoken 'but' - there's improvement, though the back still isn't completely fine.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "hint": "How clipped is the pace?",
+            "explanation": "Someone has just taken credit for the speaker's idea, so calm and annoyance are both believable. Controlled irritation squeezes the pace and drops 'bother' hard, which lets the listener hear the effort of staying composed. Real indifference would be loose and unhurried, with an easy fall and no extra weight on any word.",
+            "modulationPattern": "Clipped tempo, hard fall on 'bother'.",
+            "meaningShift": "A clipped, hard fall betrays annoyance; a loose, easy one sounds unbothered."
         },
         {
             "id": "ACC_PITCHMODULATION_L128_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A stranger thanks you for returning their wallet.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "My back feels great now.",
-            "textToSpeak": "My back feels great now.",
+            "word": "Of course.",
+            "textToSpeak": "Of course.",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Dismissive, ending the chat",
+                "Warm: no need for thanks"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
-            "correctAnswerIndex": 0,
-            "hint": "'Great' suggests a full recovery. Listen for the pitch to fall completely at the end.",
-            "explanation": "'My back feels great now' falls completely, expressing genuine relief with no remaining concern.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "correctAnswer": "Warm: no need for thanks",
+            "correctAnswerIndex": 1,
+            "hint": "Notice whether the speaker sounds as if it cost them anything.",
+            "explanation": "'Of course' said warmly lifts on 'course' and then falls, which says the act was nothing. A dismissive one is short and flat, and ends the exchange.",
+            "modulationPattern": "Lift on 'course', gentle fall.",
+            "meaningShift": "A lift and gentle fall are warm; a short flat one is dismissive."
         },
         {
             "id": "ACC_PITCHMODULATION_L128_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A salesperson asks whether you are happy with the terms.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The app is helpful.",
-            "textToSpeak": "The app is helpful.",
+            "word": "Absolutely.",
+            "textToSpeak": "Absolutely.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Fully committed",
+                "Rushed to close"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
+            "correctAnswer": "Fully committed",
             "correctAnswerIndex": 0,
-            "hint": "'Helpful' is a modest, practical word. Listen for the pitch to dip and lift, hinting at a flaw.",
-            "explanation": "A fall-rise on 'helpful' hints at an unspoken 'but' - the app does its job, though it may have annoying glitches too.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "hint": "Where does the stress sit?",
+            "explanation": "A salesperson asking about terms can get a firm yes or a hurried one. A clear peak on '-lute-' and a firm fall show the speaker has thought it through and is committing. A rushed version would be quick and even, with no peak, which suggests the speaker wants the conversation to end.",
+            "modulationPattern": "Peak on '-lute-', firm fall.",
+            "meaningShift": "A clear peak is committed; a quick, even one is hurried."
         },
         {
             "id": "ACC_PITCHMODULATION_L128_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "After a big meal, a friend suggests ordering dessert.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The app is amazing.",
-            "textToSpeak": "The app is amazing.",
+            "word": "Sure, why not.",
+            "textToSpeak": "Sure, why not.",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Open and playful",
+                "Resigned, going along"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
+            "correctAnswer": "Open and playful",
             "correctAnswerIndex": 0,
-            "hint": "'Amazing' is a strong word of praise for the app. Listen for the pitch to fall completely, with real enthusiasm.",
-            "explanation": "'The app is amazing' falls completely, expressing genuine, unreserved enthusiasm.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "hint": "Does 'not' lift, or sink?",
+            "explanation": "After a big meal, an offer of dessert can be met with a willing yes or a tired one. Lifting 'why' and bouncing on 'not' gives the reply a light, playful feel, as if the speaker is happy to be tempted. Resignation would sink on 'not' and lose the bounce, sounding like someone being talked into it.",
+            "modulationPattern": "Lift on 'why', bouncing 'not'.",
+            "meaningShift": "A bouncing 'not' sounds playful; a sinking one sounds resigned."
         },
         {
             "id": "ACC_PITCHMODULATION_L129_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You greet an old friend you haven't seen in years.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The party was fun.",
-            "textToSpeak": "The party was fun.",
+            "word": "How lovely to see you.",
+            "textToSpeak": "How lovely to see you.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Formal",
+                "Warm"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-            "correctAnswerIndex": 0,
-            "hint": "'Fun' is a fairly ordinary word for an event review. Listen for the pitch to dip and lift, hinting at something off.",
-            "explanation": "A fall-rise on 'fun' hints at an unspoken 'but' - there was enjoyment, though something else may have gone wrong.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "correctAnswer": "Warm",
+            "correctAnswerIndex": 1,
+            "hint": "How much range does 'lovely' get?",
+            "explanation": "With an old friend, warmth and formality are both possible greetings. Wide range on 'lovely' and a long fall on 'you' make the line personal, as though the speaker is genuinely pleased to see this one person. Formal courtesy would be more even and quicker, and would work equally well for any visitor.",
+            "modulationPattern": "Wide range on 'lovely', long fall on 'you'.",
+            "meaningShift": "A wide, long contour is warm; an even, quick one is formal."
         },
         {
             "id": "ACC_PITCHMODULATION_L129_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague arrives forty minutes late.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The party was unforgettable.",
-            "textToSpeak": "The party was unforgettable.",
+            "word": "How nice of you to join us.",
+            "textToSpeak": "How nice of you to join us.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Genuine welcome",
+                "Cutting sarcasm"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
+            "correctAnswer": "Cutting sarcasm",
             "correctAnswerIndex": 1,
-            "hint": "'Unforgettable' is a strong, complete compliment. Listen for the pitch to fall fully at the end.",
-            "explanation": "'The party was unforgettable' falls completely, expressing genuine, wholehearted enjoyment.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "hint": "Where does the stress land, and how dry is the voice?",
+            "explanation": "Dry delivery and stress on 'nice' with a low landing on 'us' is a classic way to make a welcome sound like a complaint. A real welcome would be bright, and rise on 'join'.",
+            "modulationPattern": "Dry stress on 'nice', low landing on 'us'.",
+            "meaningShift": "Dry weight on 'nice' is sarcastic; a bright rise on 'join' would be genuine."
         },
         {
             "id": "ACC_PITCHMODULATION_L129_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend says she has finally stood up to her landlord.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's a nice guy.",
-            "textToSpeak": "He's a nice guy.",
+            "word": "I'm glad you did.",
+            "textToSpeak": "I'm glad you did.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Genuinely supportive",
+                "Mildly patronising"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
+            "correctAnswer": "Genuinely supportive",
             "correctAnswerIndex": 0,
-            "hint": "'Nice' is a fairly mild, careful compliment. Listen for the pitch to dip and lift, hinting at a reservation.",
-            "explanation": "A fall-rise on 'nice' hints there's more unsaid - perhaps he's pleasant but lacking in some other important quality.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "hint": "Check whether the speaker sounds warm, or like a teacher.",
+            "explanation": "A friend who stood up to a landlord might hear support or a pat on the head. A lifted 'glad' with an easy fall on 'did' sounds like a peer sharing the pleasure. A patronising tone would exaggerate 'glad' with a wide, sing-song swing, as though praising a child for good behaviour.",
+            "modulationPattern": "Lift on 'glad', easy fall on 'did'.",
+            "meaningShift": "A natural lift is supportive; a sing-song swing is condescending."
         },
         {
             "id": "ACC_PITCHMODULATION_L130_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague claims they invented the process.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He's a wonderful guy.",
-            "textToSpeak": "He's a wonderful guy.",
+            "word": "Is that so?",
+            "textToSpeak": "Is that so?",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Genuinely interested",
+                "Politely sceptical"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
-            "correctAnswerIndex": 0,
-            "hint": "'Wonderful' is a strong, complete compliment. Listen for the pitch to fall fully at the end.",
-            "explanation": "'He's a wonderful guy' falls completely, expressing genuine, unreserved admiration.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "correctAnswer": "Politely sceptical",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the rise is open, or narrow.",
+            "explanation": "A colleague who claims to have invented the process may get interest or politely held-back doubt. Narrow rising on a slow 'so' leaves the claim untested, which reads as quiet scepticism. Real interest would use a wider rise and a quicker pace, and would usually sound ready for a follow-up question.",
+            "modulationPattern": "Narrow, slow rise on 'so'.",
+            "meaningShift": "A narrow, slow rise sounds doubtful; a wider, quicker one sounds interested."
         },
         {
             "id": "ACC_PITCHMODULATION_L130_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A teenager promises to tidy their room 'later'.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The coffee here is decent.",
-            "textToSpeak": "The coffee here is decent.",
+            "word": "Do you now?",
+            "textToSpeak": "Do you now?",
             "options": [
-                "Falling Tone (Complete, Genuine Praise)",
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)"
+                "Wry challenge",
+                "Curious question"
             ],
-            "correctAnswer": "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-            "correctAnswerIndex": 1,
-            "hint": "'Decent' is a modest, lukewarm word. Listen for the pitch to dip and lift, hinting at mild disappointment.",
-            "explanation": "A fall-rise on 'decent' hints at mild disappointment - the coffee is drinkable, but not something to get excited about.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a complete, genuine praise and a implies a 'but' - mixed feelings."
+            "correctAnswer": "Wry challenge",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the voice is smiling, or asking.",
+            "explanation": "Rising dry and low is a wry way of showing the speaker has heard this before. A curious question would be brighter and wait for an answer.",
+            "modulationPattern": "Dry, low rise on 'now'.",
+            "meaningShift": "A dry, low rise challenges; a bright one would ask."
         },
         {
             "id": "ACC_PITCHMODULATION_L130_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A child promises to feed the dog every day.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The coffee here is amazing.",
-            "textToSpeak": "The coffee here is amazing.",
+            "word": "Well, we'll see.",
+            "textToSpeak": "Well, we'll see.",
             "options": [
-                "Fall-Rise Tone (Implies a 'But' - Mixed Feelings)",
-                "Falling Tone (Complete, Genuine Praise)"
+                "Fond doubt",
+                "Firm refusal"
             ],
-            "correctAnswer": "Falling Tone (Complete, Genuine Praise)",
-            "correctAnswerIndex": 1,
-            "hint": "'Amazing' leaves no room for a lukewarm opinion about the coffee. Listen for the pitch to fall completely.",
-            "explanation": "'The coffee here is amazing' falls completely, expressing genuine, wholehearted enjoyment.",
-            "modulationPattern": "A fall-rise on a key word leaves the sentence sounding incomplete, hinting at an unspoken reservation or a polite 'but'; a full falling tone completes the thought and signals genuine, wholehearted praise.",
-            "meaningShift": "The meaning shifts between a implies a 'but' - mixed feelings and a complete, genuine praise."
+            "correctAnswer": "Fond doubt",
+            "correctAnswerIndex": 0,
+            "hint": "Pay attention to whether the voice sounds warm or shut.",
+            "explanation": "A child promising to feed the dog every day can be answered with affectionate doubt or a flat no. Fond doubt keeps a gentle fall-rise on 'see' and lingers, as if smiling, so the child hears that the parent is giving a chance. A firm refusal would drop sharply on 'see' and stop, closing the matter.",
+            "modulationPattern": "Gentle fall-rise on 'see'.",
+            "meaningShift": "A lingering fall-rise is fond doubt; a sharp drop would refuse."
         }
     ]
 }

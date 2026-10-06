@@ -5,191 +5,191 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L131_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A guest says: \"I booked a room for two nights.\" The clerk checks the system.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Despite the delay, the package did arrive today.",
-            "textToSpeak": "Despite the delay, the package did arrive today.",
+            "word": "I have you down for a double room.",
+            "textToSpeak": "I have you down for a double room.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on TODAY (Time focus)"
+                "Emphasis on DOUBLE",
+                "Emphasis on ROOM"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on DOUBLE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "The word ‘did’ isn't just a helper verb here — it's confirming something that was doubted, so it gets extra emphasis.",
-            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The guest already said 'room'. What is the new information in the clerk's reply?",
+            "explanation": "ROOM is given, so it stays low even at the end. DOUBLE tells the guest which type of room is booked, so it takes the peak.",
+            "emphasisRule": "A given noun at the end drops; the new modifier before it takes the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L131_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A guest asks the front desk for a wake-up call.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even though it rained, the parade did continue downtown.",
-            "textToSpeak": "Even though it rained, the parade did continue downtown.",
+            "word": "Of course, what time would you like it?",
+            "textToSpeak": "Of course, what time would you like it?",
             "options": [
-                "Emphasis on DOWNTOWN (Place focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on LIKE",
+                "Emphasis on TIME"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on TIME",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "This sentence pushes back against an assumption of failure — that pushback lands directly on the auxiliary verb.",
-            "explanation": "The auxiliary ‘did’ carries the nuclear stress here because it's asserting the truth of the action against doubt.",
-            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The clerk is happy to help. What does the clerk still need to find out?",
+            "explanation": "The request is accepted, so the only missing piece is the time. TIME takes the peak, and the final pronoun IT is weak.",
+            "emphasisRule": "In a service question, the missing detail takes the peak and a final pronoun stays weak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L131_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A guest asks whether breakfast is included.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Despite the traffic, we did arrive on time.",
-            "textToSpeak": "Despite the traffic, we did arrive on time.",
+            "word": "Breakfast is included on weekdays.",
+            "textToSpeak": "Breakfast is included on weekdays.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on TIME (Time focus)"
+                "Emphasis on WEEKDAYS",
+                "Emphasis on INCLUDED"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on WEEKDAYS",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "Despite the obstacle mentioned first, the sentence insists something still happened — that insistence is stressed on ‘did’.",
-            "explanation": "This sentence emphasizes that the action really did occur, despite the obstacle — so the stress lands on ‘did’, not on TIME.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The guest's question already contained 'included'. What is the new detail?",
+            "explanation": "INCLUDED answers the question, but the useful new information is the limit on when. WEEKDAYS takes the peak.",
+            "emphasisRule": "A limiting phrase such as 'on weekdays' takes the peak in an answer.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L132_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Is there a direct train to Pune?\" The clerk says yes, but not every hour.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The pilot didn't just delay the flight - he rerouted it.",
-            "textToSpeak": "The pilot didn't just delay the flight - he rerouted it.",
+            "word": "There is one every two hours.",
+            "textToSpeak": "There is one every two hours.",
             "options": [
-                "Emphasis on FLIGHT (Object focus)",
-                "Emphasis on REROUTED (Verb/Action focus)"
+                "Emphasis on EVERY",
+                "Emphasis on TWO"
             ],
-            "correctAnswer": "Emphasis on REROUTED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on TWO",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
+                2,
                 3,
-                1,
                 1
             ],
-            "hint": "The object stays the same throughout; what changes is what was actually done to it — that's where the peak goes.",
-            "explanation": "Since “didn't just” rules out a lesser action, the real action, REROUTED, receives the pitch accent.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "A wants to know how often. Which word gives the frequency?",
+            "explanation": "EVERY signals a regular pattern, but the information A needs is the interval. TWO takes the peak.",
+            "emphasisRule": "In a frequency answer, the number carries the peak, not 'every'.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L132_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the traveller most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The barista didn't just make the coffee - she personalized it.",
-            "textToSpeak": "The barista didn't just make the coffee - she personalized it.",
+            "word": "The ferry stops running in winter.",
+            "textToSpeak": "The ferry stops running in winter.",
             "options": [
-                "Emphasis on PERSONALIZED (Verb/Action focus)",
-                "Emphasis on COFFEE (Object focus)"
+                "Which ferry stops running in winter?",
+                "Does the ferry run all year?"
             ],
-            "correctAnswer": "Emphasis on PERSONALIZED (Verb/Action focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Does the ferry run all year?",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "Listen for the corrected action — it's being emphasized precisely because a lesser action was just ruled out.",
-            "explanation": "Because the contrast is between two possible actions on the same object, the stress falls on PERSONALIZED, the true action, not on the object.",
-            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "Compare where the peak sits. What was missing from the traveller's question?",
+            "explanation": "The peak on WINTER shows the season is the answer, so the traveller asked about the ferry's schedule. A peak on FERRY would suggest the question was which ferry.",
+            "emphasisRule": "A peak on a season or time phrase answers a question about when.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L132_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A driver explains a change of route to a passenger.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The teacher didn't just grade the essay - she annotated it.",
-            "textToSpeak": "The teacher didn't just grade the essay - she annotated it.",
+            "word": "The main road's closed, so we're taking the bypass.",
+            "textToSpeak": "The main road's closed, so we're taking the bypass.",
             "options": [
-                "Emphasis on ESSAY (Object focus)",
-                "Emphasis on ANNOTATED (Verb/Action focus)"
+                "Emphasis on CLOSED and BYPASS",
+                "Emphasis on ROAD'S and TAKING"
             ],
-            "correctAnswer": "Emphasis on ANNOTATED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CLOSED and BYPASS",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 1,
                 3,
                 1,
+                3,
                 1
             ],
-            "hint": "The sentence explicitly denies one action and confirms a stronger one — the confirmed action itself gets the emphasis, not the object.",
-            "explanation": "ANNOTATED is the corrected, stronger action here, so it takes the nuclear stress instead of the shared object.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "The cause and the result are both news. Which words carry them?",
+            "explanation": "CLOSED explains the problem and BYPASS the solution. ROAD'S and TAKING connect them.",
+            "emphasisRule": "In a cause-and-result announcement, the cause and the result each take a peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L133_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A diner has a nut allergy and is ordering.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Despite the criticism, the film did win an award.",
-            "textToSpeak": "Despite the criticism, the film did win an award.",
+            "word": "I can't eat anything with nuts in it.",
+            "textToSpeak": "I can't eat anything with nuts in it.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on AWARD (Object focus)"
+                "Emphasis on EAT",
+                "Emphasis on NUTS"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on NUTS",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                2,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "This sentence pushes back against an assumption of failure — that pushback lands directly on the auxiliary verb.",
-            "explanation": "This sentence emphasizes that the action really did occur, despite the obstacle — so the stress lands on ‘did’, not on AWARD.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The waiter needs one specific piece of information. Which word is it?",
+            "explanation": "EAT is what the waiter already expects, and IT is a weak pronoun. NUTS is the allergy, so it takes the peak.",
+            "emphasisRule": "In a safety statement, the key ingredient takes the peak and a final pronoun stays weak.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L133_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A waiter asks how everything is and the diner is pleased.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The coach didn't just watch the game - he recorded it.",
-            "textToSpeak": "The coach didn't just watch the game - he recorded it.",
+            "word": "Everything's delicious, thank you.",
+            "textToSpeak": "Everything's delicious, thank you.",
             "options": [
-                "Emphasis on GAME (Object focus)",
-                "Emphasis on RECORDED (Verb/Action focus)"
+                "Emphasis on EVERYTHING'S",
+                "Emphasis on DELICIOUS"
             ],
-            "correctAnswer": "Emphasis on RECORDED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on DELICIOUS",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -198,248 +198,248 @@
                 1,
                 1
             ],
-            "hint": "This isn't about which object was involved — both actions share the same object. The contrast is in the action itself.",
-            "explanation": "Since “didn't just” rules out a lesser action, the real action, RECORDED, receives the pitch accent.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "A thank-you follows the comment. Where does the actual opinion sit?",
+            "explanation": "THANK YOU is a courtesy and stays low, and EVERYTHING'S repeats the waiter's question. DELICIOUS is the opinion, so the peak lands on it.",
+            "emphasisRule": "In a reply to 'how is everything', the opinion word takes the peak.",
+            "emotionContext": "Opinion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L133_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show? The group has already agreed to divide the bill. One person raises how.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The mechanic didn't just check the brakes - he replaced them.",
-            "textToSpeak": "The mechanic didn't just check the brakes - he replaced them.",
+            "word": "Shall we just split it evenly?",
+            "textToSpeak": "Shall we just split it evenly?",
             "options": [
-                "Emphasis on REPLACED (Verb/Action focus)",
-                "Emphasis on BRAKES (Object focus)"
+                "Falling on EVENLY: announcing the decision",
+                "Rising on EVENLY: a suggestion for the group to accept"
             ],
-            "correctAnswer": "Emphasis on REPLACED (Verb/Action focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising on EVENLY: a suggestion for the group to accept",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                3,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The object stays the same throughout; what changes is what was actually done to it — that's where the peak goes.",
-            "explanation": "Because the contrast is between two possible actions on the same object, the stress falls on REPLACED, the true action, not on the object.",
-            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "Is the speaker deciding for the group or inviting them to agree?",
+            "explanation": "Everyone has accepted that the bill will be divided, so only the method is open. The rise on EVENLY turns it into a suggestion; a fall would announce a decision.",
+            "emphasisRule": "A rising proposal invites the group to agree; a falling one announces a decision.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L134_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show? A tourist asks for the museum. The gallery next door has a grey roof.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The technician didn't just inspect the elevator - she repaired it.",
-            "textToSpeak": "The technician didn't just inspect the elevator - she repaired it.",
+            "word": "The museum's the one with the green roof.",
+            "textToSpeak": "The museum's the one with the green roof.",
             "options": [
-                "Emphasis on ELEVATOR (Object focus)",
-                "Emphasis on REPAIRED (Verb/Action focus)"
+                "The roof is the main attraction of the museum",
+                "The museum is being told apart from the gallery"
             ],
-            "correctAnswer": "Emphasis on REPAIRED (Verb/Action focus)",
+            "correctAnswer": "The museum is being told apart from the gallery",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "Listen for the corrected action — it's being emphasized precisely because a lesser action was just ruled out.",
-            "explanation": "REPAIRED is the corrected, stronger action here, so it takes the nuclear stress instead of the shared object.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "The tourist can confuse two buildings. What is the pitch helping to do?",
+            "explanation": "The peak on GREEN picks out the feature that distinguishes the museum from the gallery. ROOF is a shared feature and stays low.",
+            "emphasisRule": "When identifying one of two similar things, the distinguishing detail takes the peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L134_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A local explains the route to a driver.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The editor didn't just review the article - she rewrote it.",
-            "textToSpeak": "The editor didn't just review the article - she rewrote it.",
+            "word": "Carry on past the petrol station and it's on your left.",
+            "textToSpeak": "Carry on past the petrol station and it's on your left.",
             "options": [
-                "Emphasis on REWROTE (Verb/Action focus)",
-                "Emphasis on ARTICLE (Object focus)"
+                "Emphasis on CARRY and STATION",
+                "Emphasis on PETROL and LEFT"
             ],
-            "correctAnswer": "Emphasis on REWROTE (Verb/Action focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on PETROL and LEFT",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
                 1,
                 3,
                 1,
+                3,
                 1
             ],
-            "hint": "The sentence explicitly denies one action and confirms a stronger one — the confirmed action itself gets the emphasis, not the object.",
-            "explanation": "The object doesn't change between the two clauses, so the emphasis falls on REWROTE — the action that actually happened.",
-            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "Directions use landmarks and turns. Which two words must the driver catch?",
+            "explanation": "PETROL names the landmark and LEFT the side. In 'petrol station' the first word identifies it.",
+            "emphasisRule": "In directions, the landmark and the turn each take a peak.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L134_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the tourist most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The manager didn't just approve the request - she expedited it.",
-            "textToSpeak": "The manager didn't just approve the request - she expedited it.",
+            "word": "It's quicker by bus.",
+            "textToSpeak": "It's quicker by bus.",
             "options": [
-                "Emphasis on REQUEST (Object focus)",
-                "Emphasis on EXPEDITED (Verb/Action focus)"
+                "Should I walk, or is there a bus?",
+                "How long does the bus take?"
             ],
-            "correctAnswer": "Emphasis on EXPEDITED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Should I walk, or is there a bus?",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "Notice the structure “didn't just X - Y.” That Y is the real point, so the verb carries the stress, not the noun after it.",
-            "explanation": "Since “didn't just” rules out a lesser action, the real action, EXPEDITED, receives the pitch accent.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "Think about what the peak on the means of travel says about the question.",
+            "explanation": "The peak on BUS shows the mode of transport is the answer, so the tourist was choosing between options. If the tourist had asked how long, the peak would be on a time word.",
+            "emphasisRule": "A peak on a means of travel answers a which-way question.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L135_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. The receptionist offers Tuesday morning or Wednesday afternoon. You prefer the earlier slot.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Despite the small crowd, the band did perform enthusiastically.",
-            "textToSpeak": "Despite the small crowd, the band did perform enthusiastically.",
+            "word": "Tuesday morning would suit me better.",
+            "textToSpeak": "Tuesday morning would suit me better.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on ENTHUSIASTICALLY (Manner focus)"
+                "Emphasis on TUESDAY",
+                "Emphasis on BETTER"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on TUESDAY",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
+                1,
                 1,
                 1,
                 1
             ],
-            "hint": "Despite the obstacle mentioned first, the sentence insists something still happened — that insistence is stressed on ‘did’.",
-            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "Two slots are on the table. Which one are you choosing?",
+            "explanation": "BETTER is the comparison word, but the choice is between days. TUESDAY takes the peak at the start.",
+            "emphasisRule": "When choosing between two offered options, the chosen one takes the peak.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L135_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A patient phones the clinic, and the doctor is fully booked this week.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The tutor didn't just explain the problem - she simplified it.",
-            "textToSpeak": "The tutor didn't just explain the problem - she simplified it.",
+            "word": "Could I see someone the following week?",
+            "textToSpeak": "Could I see someone the following week?",
             "options": [
-                "Emphasis on PROBLEM (Object focus)",
-                "Emphasis on SIMPLIFIED (Verb/Action focus)"
+                "Emphasis on SOMEONE",
+                "Emphasis on FOLLOWING"
             ],
-            "correctAnswer": "Emphasis on SIMPLIFIED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on FOLLOWING",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 3,
                 1,
-                1
+                3
             ],
-            "hint": "The object stays the same throughout; what changes is what was actually done to it — that's where the peak goes.",
-            "explanation": "SIMPLIFIED is the corrected, stronger action here, so it takes the nuclear stress instead of the shared object.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "This week has been ruled out. What are you proposing instead?",
+            "explanation": "'See someone' is the usual request, so it stays low. FOLLOWING is the new proposal, narrowing it to the next possible week, so it takes the peak, and the rise keeps it polite.",
+            "emphasisRule": "In a polite alternative, the new time takes the peak.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L135_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. The clinic already has your booking.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Despite the language barrier, they did reach an agreement.",
-            "textToSpeak": "Despite the language barrier, they did reach an agreement.",
+            "word": "I'd like to move my appointment, please.",
+            "textToSpeak": "I'd like to move my appointment, please.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on AGREEMENT (Object focus)"
+                "Emphasis on APPOINTMENT",
+                "Emphasis on MOVE"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on MOVE",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                2,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "Ignore the final word for a moment — the emphasis is on confirming the action happened at all.",
-            "explanation": "This sentence emphasizes that the action really did occur, despite the obstacle — so the stress lands on ‘did’, not on AGREEMENT.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The booking is already on record. What are you asking to change?",
+            "explanation": "APPOINTMENT is understood from the booking, so it stays low. MOVE is the request, so it gets the main lift.",
+            "emphasisRule": "When the object is known to both sides, the verb of the request takes the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L136_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. At the bank counter, you need to send money abroad, not within the country.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even with the budget cuts, the school did renovate the gym.",
-            "textToSpeak": "Even with the budget cuts, the school did renovate the gym.",
+            "word": "I'd like to make an international transfer.",
+            "textToSpeak": "I'd like to make an international transfer.",
             "options": [
-                "Emphasis on GYM (Object focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on TRANSFER",
+                "Emphasis on INTERNATIONAL"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on INTERNATIONAL",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                2,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "The word ‘did’ isn't just a helper verb here — it's confirming something that was doubted, so it gets extra emphasis.",
-            "explanation": "‘Did’ is doing real work here, confirming the action happened despite the setback mentioned — that's why it's stressed, not GYM.",
-            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The clerk knows you want a transfer. What kind of transfer?",
+            "explanation": "TRANSFER is the general service, so it stays low. INTERNATIONAL tells the clerk the type, which is why it carries the peak.",
+            "emphasisRule": "A modifier that specifies the type of service takes the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L136_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the clerk most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even with low funding, the clinic did treat every patient.",
-            "textToSpeak": "Even with low funding, the clinic did treat every patient.",
+            "word": "No, standard post is fine.",
+            "textToSpeak": "No, standard post is fine.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on PATIENT (Object focus)"
+                "Do you want it tracked?",
+                "Is that standard post or express?"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Do you want it tracked?",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "This sentence pushes back against an assumption of failure — that pushback lands directly on the auxiliary verb.",
-            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The reply starts with 'No'. Which question could that answer, and what does STANDARD replace?",
+            "explanation": "The peak on STANDARD sets it against another type, and the opening 'no' rejects an offer. That fits a question about an upgrade such as tracking, not a choice between standard and express.",
+            "emphasisRule": "A reply that rejects with 'no' and peaks on an alternative answers an offer.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L136_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A plumber asks: \"Which tap is it?\"",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even with the delay, the surgeon did complete the operation.",
-            "textToSpeak": "Even with the delay, the surgeon did complete the operation.",
+            "word": "It's the kitchen tap that's leaking.",
+            "textToSpeak": "It's the kitchen tap that's leaking.",
             "options": [
-                "Emphasis on OPERATION (Object focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on LEAKING",
+                "Emphasis on KITCHEN"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on KITCHEN",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -448,223 +448,223 @@
                 1,
                 1
             ],
-            "hint": "Despite the obstacle mentioned first, the sentence insists something still happened — that insistence is stressed on ‘did’.",
-            "explanation": "The auxiliary ‘did’ carries the nuclear stress here because it's asserting the truth of the action against doubt.",
-            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The plumber already knows there's a leak. What is he trying to find out?",
+            "explanation": "LEAKING is the known problem, so it stays low. KITCHEN answers 'which', which is why it carries the peak, and in 'kitchen tap' the first word identifies the tap.",
+            "emphasisRule": "The word that answers 'which?' takes the peak and the known problem stays low.",
+            "emotionContext": "Answering a question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L137_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. You like the shirt in the shop but not its colour.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even with the injury, the athlete did break the record.",
-            "textToSpeak": "Even with the injury, the athlete did break the record.",
+            "word": "Do you have this in blue?",
+            "textToSpeak": "Do you have this in blue?",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on RECORD (Object focus)"
+                "Emphasis on BLUE",
+                "Emphasis on THIS"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on BLUE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The auxiliary carries the real news here: yes, it truly happened, against expectations.",
-            "explanation": "This sentence emphasizes that the action really did occur, despite the obstacle — so the stress lands on ‘did’, not on RECORD.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The shirt is in your hand. What do you want to change?",
+            "explanation": "THIS is the shirt already being discussed, so it stays low. BLUE is the new requirement, so it takes the peak, and the rise makes it a question.",
+            "emphasisRule": "In a request for a variation, the changed feature takes the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L137_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A customer asks about payment at the till.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The photographer didn't just capture the moment - she edited it.",
-            "textToSpeak": "The photographer didn't just capture the moment - she edited it.",
+            "word": "Can I pay by card, or is it cash only?",
+            "textToSpeak": "Can I pay by card, or is it cash only?",
             "options": [
-                "Emphasis on MOMENT (Object focus)",
-                "Emphasis on EDITED (Verb/Action focus)"
+                "Emphasis on CARD and CASH",
+                "Emphasis on PAY and ONLY"
             ],
-            "correctAnswer": "Emphasis on EDITED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CARD and CASH",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
+                3,
                 1
             ],
-            "hint": "Listen for the corrected action — it's being emphasized precisely because a lesser action was just ruled out.",
-            "explanation": "Since “didn't just” rules out a lesser action, the real action, EDITED, receives the pitch accent.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "The customer offers two options. Which words name them?",
+            "explanation": "CARD and CASH are the two alternatives, so each takes a peak. PAY and ONLY frame them but don't contrast.",
+            "emphasisRule": "In an 'or' question, the two options carry the peaks.",
+            "emotionContext": "Suggestion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L137_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. The assistant explains the store credit policy.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even with heavy rain, the concert did continue outdoors.",
-            "textToSpeak": "Even with heavy rain, the concert did continue outdoors.",
+            "word": "You'll get a voucher instead of a refund.",
+            "textToSpeak": "You'll get a voucher instead of a refund.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on OUTDOORS (Place focus)"
+                "Emphasis on VOUCHER and REFUND",
+                "Emphasis on GET and INSTEAD"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on VOUCHER and REFUND",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
+                3,
                 1
             ],
-            "hint": "The word ‘did’ isn't just a helper verb here — it's confirming something that was doubted, so it gets extra emphasis.",
-            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The sentence compares what you get with what you don't. Which nouns carry that?",
+            "explanation": "VOUCHER and REFUND are the two things being compared, so each takes a peak. INSTEAD only connects them.",
+            "emphasisRule": "In a replacement statement, both the substitute and the replaced item take peaks.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L138_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. You phone a company and are put through to the wrong department.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Despite his doubts, the plan did work perfectly.",
-            "textToSpeak": "Despite his doubts, the plan did work perfectly.",
+            "word": "I think I've been put through to the wrong department.",
+            "textToSpeak": "I think I've been put through to the wrong department.",
             "options": [
-                "Emphasis on PERFECTLY (Manner focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on THINK",
+                "Emphasis on WRONG"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on WRONG",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                1,
+                2,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "This sentence pushes back against an assumption of failure — that pushback lands directly on the auxiliary verb.",
-            "explanation": "The auxiliary ‘did’ carries the nuclear stress here because it's asserting the truth of the action against doubt.",
-            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The speaker softens the complaint with a hedge. Which word carries the problem?",
+            "explanation": "THINK hedges politely but isn't the information. WRONG describes the problem, so it takes the peak.",
+            "emphasisRule": "A hedge stays low; the problem word takes the peak.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L138_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What did the caller most likely ask?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The driver didn't just deliver the package - he confirmed it.",
-            "textToSpeak": "The driver didn't just deliver the package - he confirmed it.",
+            "word": "He's with a client at the moment.",
+            "textToSpeak": "He's with a client at the moment.",
             "options": [
-                "Emphasis on CONFIRMED (Verb/Action focus)",
-                "Emphasis on PACKAGE (Object focus)"
+                "Could I speak to Mr. Okafor?",
+                "Is Mr. Okafor with a client?"
             ],
-            "correctAnswer": "Emphasis on CONFIRMED (Verb/Action focus)",
+            "correctAnswer": "Could I speak to Mr. Okafor?",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                2,
                 3,
                 1,
                 1
             ],
-            "hint": "This isn't about which object was involved — both actions share the same object. The contrast is in the action itself.",
-            "explanation": "The object doesn't change between the two clauses, so the emphasis falls on CONFIRMED — the action that actually happened.",
-            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "Think about which question the receptionist could be answering with a reason.",
+            "explanation": "The peak on CLIENT gives the reason he can't come to the phone, which answers a request to speak to him. If the caller had asked whether he was with a client, the answer would be a simple yes or no.",
+            "emphasisRule": "A peak on a reason word answers a request that could not be met.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L138_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. You leave a voicemail for a company.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The librarian didn't just catalog the book - she restored it.",
-            "textToSpeak": "The librarian didn't just catalog the book - she restored it.",
+            "word": "Hi, this is Anita calling about my order.",
+            "textToSpeak": "Hi, this is Anita calling about my order.",
             "options": [
-                "Emphasis on BOOK (Object focus)",
-                "Emphasis on RESTORED (Verb/Action focus)"
+                "Emphasis on CALLING and MY",
+                "Emphasis on ANITA and ORDER"
             ],
-            "correctAnswer": "Emphasis on RESTORED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on ANITA and ORDER",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
-                1,
+                3,
                 1
             ],
-            "hint": "The object stays the same throughout; what changes is what was actually done to it — that's where the peak goes.",
-            "explanation": "Since “didn't just” rules out a lesser action, the real action, RESTORED, receives the pitch accent.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "A voicemail must say who and why. Which two words carry that?",
+            "explanation": "ANITA identifies the caller and ORDER identifies the reason. CALLING and MY are connecting words.",
+            "emphasisRule": "A voicemail opening peaks on the caller's name and the reason for the call.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L139_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A customer complains to the manager about cold food.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Despite her nerves, she did pass the audition.",
-            "textToSpeak": "Despite her nerves, she did pass the audition.",
+            "word": "The soup was cold when it arrived.",
+            "textToSpeak": "The soup was cold when it arrived.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on AUDITION (Object focus)"
+                "Emphasis on COLD",
+                "Emphasis on ARRIVED"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on COLD",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 3,
-                1,
                 1,
                 1
             ],
-            "hint": "Ignore the final word for a moment — the emphasis is on confirming the action happened at all.",
-            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The clause 'when it arrived' sets the scene. What is the actual complaint?",
+            "explanation": "ARRIVED just locates the problem in time, so it falls away. COLD is the complaint, and it takes the peak.",
+            "emphasisRule": "In a complaint, the problem word takes the peak and the time clause stays low.",
+            "emotionContext": "Complaint"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L139_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show? The agent says the repair will be done 'soon'. The customer wants more.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The chef didn't just plate the dish - he redesigned it.",
-            "textToSpeak": "The chef didn't just plate the dish - he redesigned it.",
+            "word": "I'd like a specific date.",
+            "textToSpeak": "I'd like a specific date.",
             "options": [
-                "Emphasis on DISH (Object focus)",
-                "Emphasis on REDESIGNED (Verb/Action focus)"
+                "Peak on SPECIFIC: contrasting with the vague 'soon'",
+                "Peak on DATE: asking for any date at all"
             ],
-            "correctAnswer": "Emphasis on REDESIGNED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Peak on SPECIFIC: contrasting with the vague 'soon'",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                2,
                 3,
                 1,
                 1
             ],
-            "hint": "The sentence explicitly denies one action and confirms a stronger one — the confirmed action itself gets the emphasis, not the object.",
-            "explanation": "REDESIGNED is the corrected, stronger action here, so it takes the nuclear stress instead of the shared object.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "The agent has already said something vague. What does the customer's stress push against?",
+            "explanation": "SPECIFIC sets the request against 'soon', so it takes the peak. DATE is already expected and stays low.",
+            "emphasisRule": "A modifier that contrasts with a vague term takes the peak.",
+            "emotionContext": "Complaint"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L139_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A customer notices two charges on a bill.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The nurse didn't just monitor the patient - she comforted him.",
-            "textToSpeak": "The nurse didn't just monitor the patient - she comforted him.",
+            "word": "You charged me twice for the same order.",
+            "textToSpeak": "You charged me twice for the same order.",
             "options": [
-                "Emphasis on COMFORTED (Verb/Action focus)",
-                "Emphasis on PATIENT (Object focus)"
+                "Emphasis on TWICE",
+                "Emphasis on CHARGED"
             ],
-            "correctAnswer": "Emphasis on COMFORTED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on TWICE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -673,85 +673,85 @@
                 1,
                 1
             ],
-            "hint": "Notice the structure “didn't just X - Y.” That Y is the real point, so the verb carries the stress, not the noun after it.",
-            "explanation": "The object doesn't change between the two clauses, so the emphasis falls on COMFORTED — the action that actually happened.",
-            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "The charge is the shared topic. What is the error?",
+            "explanation": "CHARGED is the familiar action, so it stays low. TWICE identifies the mistake, so it takes the peak.",
+            "emphasisRule": "In a billing complaint, the count word that identifies the error takes the peak.",
+            "emotionContext": "Complaint"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L140_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Where can I buy a ticket?\" The guard points to the machine.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The lawyer didn't just read the contract - she challenged it.",
-            "textToSpeak": "The lawyer didn't just read the contract - she challenged it.",
+            "word": "You can buy one from the machine.",
+            "textToSpeak": "You can buy one from the machine.",
             "options": [
-                "Emphasis on CONTRACT (Object focus)",
-                "Emphasis on CHALLENGED (Verb/Action focus)"
+                "Emphasis on MACHINE",
+                "Emphasis on BUY"
             ],
-            "correctAnswer": "Emphasis on CHALLENGED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MACHINE",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
+                2,
                 3,
-                1,
                 1
             ],
-            "hint": "This isn't about which object was involved — both actions share the same object. The contrast is in the action itself.",
-            "explanation": "Since “didn't just” rules out a lesser action, the real action, CHALLENGED, receives the pitch accent.",
-            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions.",
-            "emotionContext": "Verb/Action focus"
+            "hint": "'Buy' and 'ticket' came from A. What does the guard add?",
+            "explanation": "BUY and ONE come from A's question, so they stay low. MACHINE is the answer to 'where', so it takes the peak.",
+            "emphasisRule": "In a service answer, the location takes the peak and the given verb stays low.",
+            "emotionContext": "Given information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L140_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A taxi driver asks which route you prefer.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Even without power, the team did finish the presentation.",
-            "textToSpeak": "Even without power, the team did finish the presentation.",
+            "word": "Do you want the motorway or the coast road?",
+            "textToSpeak": "Do you want the motorway or the coast road?",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on PRESENTATION (Object focus)"
+                "Emphasis on WANT and ROAD",
+                "Emphasis on MOTORWAY and COAST"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                3,
-                1,
-                1,
-                1,
-                1
-            ],
-            "hint": "The auxiliary carries the real news here: yes, it truly happened, against expectations.",
-            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
-            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress.",
-            "emotionContext": "Auxiliary/Polarity focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L140_Q3",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "Despite the short notice, the caterer did finish the order.",
-            "textToSpeak": "Despite the short notice, the caterer did finish the order.",
-            "options": [
-                "Emphasis on ORDER (Object focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
-            ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on MOTORWAY and COAST",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
+                3,
+                1
+            ],
+            "hint": "The driver has offered two roads. Which words tell them apart?",
+            "explanation": "ROAD is shared, so it stays low. MOTORWAY and COAST are the contrasting options, and in 'coast road' the first word carries the label.",
+            "emphasisRule": "In a choice question between compounds, the first word of each option takes the peak.",
+            "emotionContext": "Choice question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L140_Q3",
+            "instruction": "Identify the emphasis. The restaurant booked a table for four. Your party is smaller.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "There are three of us tonight.",
+            "textToSpeak": "There are three of us tonight.",
+            "options": [
+                "Emphasis on THREE",
+                "Emphasis on TONIGHT"
+            ],
+            "correctAnswer": "Emphasis on THREE",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
                 1,
                 1
             ],
-            "hint": "Ignore the final word for a moment — the emphasis is on confirming the action happened at all.",
-            "explanation": "The auxiliary ‘did’ carries the nuclear stress here because it's asserting the truth of the action against doubt.",
-            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations.",
-            "emotionContext": "Auxiliary/Polarity focus"
+            "hint": "The booking is for four. What does the reply change?",
+            "explanation": "TONIGHT is the shared occasion, so it stays low. THREE corrects the booking, so it gets the main lift.",
+            "emphasisRule": "A number that corrects a booking takes the peak, and the time word falls.",
+            "emotionContext": "Correction"
         }
     ]
 }

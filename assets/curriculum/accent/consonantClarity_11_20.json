@@ -1,577 +1,577 @@
 {
-    "gameType": "consonantClarity",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
-        {
-            "id": "ACC_CONSONANTCLARITY_L11_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "kick",
-            "textToSpeak": "kick",
-            "options": [
-                "/g/",
-                "/k/"
-            ],
-            "correctAnswer": "/k/",
-            "correctAnswerIndex": 1,
-            "hint": "Break \"kick\" down sound by sound. The consonant you want is either a voiceless velar plosive or a voiced velar plosive — remember that /k/ means you raise the back of your tongue to the soft palate with no voice.",
-            "explanation": "The word \"kick\" contains /k/, a voiceless velar plosive, made by raising the back of your tongue to the soft palate with no voice. It's easy to confuse with /g/, a voiced velar plosive, but the two are produced quite differently.",
-            "mouthPosition": "Raise the back of your tongue to the soft palate with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L11_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "cot",
-            "textToSpeak": "cot",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/k/",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"cot\" at normal speed, then again in slow motion. Isolating the consonant this way makes it much easier to tell /k/ from /g/.",
-            "explanation": "\"cot\" is a good example of /k/: you raise the back of your tongue to the soft palate with no voice. Compare that with /g/, where you'd instead raise the back of your tongue to the soft palate with your voice on — the two shouldn't be mixed up once you feel the difference.",
-            "mouthPosition": "To produce this sound, raise the back of your tongue to the soft palate with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L11_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "dug",
-            "textToSpeak": "dug",
-            "options": [
-                "/t/",
-                "/d/"
-            ],
-            "correctAnswer": "/d/",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to \"dug\". For /d/, you tap your tongue tip on the ridge behind your top teeth with your voice on — like the start of \"day\". Does that match what you hear?",
-            "explanation": "The consonant in \"dug\" is /d/, not /t/. To produce /d/, you tap your tongue tip on the ridge behind your top teeth with your voice on; /t/ is made differently, by tapping your tongue tip on the ridge behind your top teeth with no voice.",
-            "mouthPosition": "Feel it in the mouth: tap your tongue tip on the ridge behind your top teeth with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L12_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "cup",
-            "textToSpeak": "cup",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/k/",
-            "correctAnswerIndex": 0,
-            "hint": "\"cup\" contains one of these two sounds. /k/ is a voiceless velar plosive, made when you raise the back of your tongue to the soft palate with no voice. /g/ is a voiced velar plosive instead.",
-            "explanation": "Here, /k/ is correct because \"cup\" is made by raising the back of your tongue to the soft palate with no voice. If it were /g/ instead, you'd be doing this: raising the back of your tongue to the soft palate with your voice on — a noticeably different articulation.",
-            "mouthPosition": "Raise the back of your tongue to the soft palate with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L12_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "dab",
-            "textToSpeak": "dab",
-            "options": [
-                "/d/",
-                "/t/"
-            ],
-            "correctAnswer": "/d/",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"dab\" slowly and isolate just the target consonant. To make /d/, you tap your tongue tip on the ridge behind your top teeth with your voice on. To make /t/, you tap your tongue tip on the ridge behind your top teeth with no voice. Which one are you actually doing?",
-            "explanation": "\"dab\" uses /d/, a voiced alveolar plosive. This contrasts with the voiceless alveolar plosive /t/, heard in words like \"tea\", which is produced by tapping your tongue tip on the ridge behind your top teeth with no voice instead.",
-            "mouthPosition": "To produce this sound, tap your tongue tip on the ridge behind your top teeth with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L12_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "try",
-            "textToSpeak": "try",
-            "options": [
-                "/d/",
-                "/t/"
-            ],
-            "correctAnswer": "/t/",
-            "correctAnswerIndex": 1,
-            "hint": "In \"try\", focus on the target sound. /t/ comes from tapping your tongue tip on the ridge behind your top teeth with no voice, while /d/ comes from tapping your tongue tip on the ridge behind your top teeth with your voice on — which one is really happening?",
-            "explanation": "The reason /t/ is correct for \"try\" is simple: you tap your tongue tip on the ridge behind your top teeth with no voice. That's a completely different action from /d/, which needs you to tap your tongue tip on the ridge behind your top teeth with your voice on.",
-            "mouthPosition": "Feel it in the mouth: tap your tongue tip on the ridge behind your top teeth with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L13_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "gold",
-            "textToSpeak": "gold",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/g/",
-            "correctAnswerIndex": 1,
-            "hint": "Think about what your mouth is doing during the target sound in \"gold\". Does it raise the back of your tongue to the soft palate with your voice on? Or does it raise the back of your tongue to the soft palate with no voice?",
-            "explanation": "\"gold\" targets /g/. Made by raising the back of your tongue to the soft palate with your voice on, it's a voiced velar plosive — distinct from the voiceless velar plosive /k/, which instead calls for raising the back of your tongue to the soft palate with no voice.",
-            "mouthPosition": "Raise the back of your tongue to the soft palate with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L13_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "gig",
-            "textToSpeak": "gig",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/g/",
-            "correctAnswerIndex": 1,
-            "hint": "\"gig\" holds either /g/ or /k/. One is a voiced velar plosive; the other, a voiceless velar plosive. Isolate the sound and compare it to both.",
-            "explanation": "What makes \"gig\" contain /g/ rather than /k/ comes down to articulation: /g/ means you raise the back of your tongue to the soft palate with your voice on, while /k/ would instead mean raising the back of your tongue to the soft palate with no voice.",
-            "mouthPosition": "To produce this sound, raise the back of your tongue to the soft palate with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L13_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "park",
-            "textToSpeak": "park",
-            "options": [
-                "/p/",
-                "/b/"
-            ],
-            "correctAnswer": "/p/",
-            "correctAnswerIndex": 0,
-            "hint": "Try producing \"park\" yourself. To make /p/, you press both lips together and release with no voice — quite different from /b/, which needs you to press both lips together and release with your voice on.",
-            "explanation": "Once you isolate the consonant in \"park\", it's clearly /p/ — produced by pressing both lips together and releasing with no voice. Words with /b/ instead, like \"boy\", require pressing both lips together and releasing with your voice on.",
-            "mouthPosition": "Feel it in the mouth: press both lips together and release with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L14_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "pet",
-            "textToSpeak": "pet",
-            "options": [
-                "/p/",
-                "/b/"
-            ],
-            "correctAnswer": "/p/",
-            "correctAnswerIndex": 0,
-            "hint": "Here's the key contrast in \"pet\": /p/ is made by pressing both lips together and releasing with no voice, and /b/ is made by pressing both lips together and releasing with your voice on. Which description fits what you hear?",
-            "explanation": "/p/ is the sound in \"pet\", formed by pressing both lips together and releasing with no voice. Learners often mix this up with /b/, a voiced bilabial plosive made by pressing both lips together and releasing with your voice on, but the mouth is doing something different each time.",
-            "mouthPosition": "Press both lips together and release with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L14_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "toe",
-            "textToSpeak": "toe",
-            "options": [
-                "/t/",
-                "/d/"
-            ],
-            "correctAnswer": "/t/",
-            "correctAnswerIndex": 0,
-            "hint": "Don't let the spelling of \"toe\" guide you — isolate the exact consonant sound and test it against both options.",
-            "explanation": "This is /t/, not /d/: in \"toe\", you tap your tongue tip on the ridge behind your top teeth with no voice. The distractor would instead need tapping your tongue tip on the ridge behind your top teeth with your voice on, which changes the sound completely.",
-            "mouthPosition": "To produce this sound, tap your tongue tip on the ridge behind your top teeth with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L14_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "tap",
-            "textToSpeak": "tap",
-            "options": [
-                "/d/",
-                "/t/"
-            ],
-            "correctAnswer": "/t/",
-            "correctAnswerIndex": 1,
-            "hint": "For /t/, the trick is to tap your tongue tip on the ridge behind your top teeth with no voice — like the start of \"tea\". Check whether \"tap\" really does that.",
-            "explanation": "\"tap\" is built on /t/ — tapping your tongue tip on the ridge behind your top teeth with no voice is how it's made. That's a voiceless alveolar plosive, easy to tell apart from the voiced alveolar plosive /d/ once you know both feel different in the mouth.",
-            "mouthPosition": "Feel it in the mouth: tap your tongue tip on the ridge behind your top teeth with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L15_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "tin",
-            "textToSpeak": "tin",
-            "options": [
-                "/t/",
-                "/d/"
-            ],
-            "correctAnswer": "/t/",
-            "correctAnswerIndex": 0,
-            "hint": "\"tin\" needs careful listening. A voiceless alveolar plosive like /t/ can sound close to a voiced alveolar plosive like /d/ if you're not paying attention to exactly what your mouth is doing.",
-            "explanation": "\"tin\" features /t/ rather than /d/. /t/ comes from tapping your tongue tip on the ridge behind your top teeth with no voice, which is why it sounds distinct from the voiced alveolar plosive /d/ used in words like \"day\".",
-            "mouthPosition": "Tap your tongue tip on the ridge behind your top teeth with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L15_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "bay",
-            "textToSpeak": "bay",
-            "options": [
-                "/p/",
-                "/b/"
-            ],
-            "correctAnswer": "/b/",
-            "correctAnswerIndex": 1,
-            "hint": "Whisper \"bay\" to yourself and freeze on the target consonant. Is your mouth doing this — pressing both lips together and releasing with your voice on — or this — pressing both lips together and releasing with no voice?",
-            "explanation": "In \"bay\", the target sound is /b/, made by pressing both lips together and releasing with your voice on. The distractor /p/ would instead require you to press both lips together and release with no voice — a clearly different sound once you isolate it.",
-            "mouthPosition": "To produce this sound, press both lips together and release with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L15_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "tip",
-            "textToSpeak": "tip",
-            "options": [
-                "/t/",
-                "/d/"
-            ],
-            "correctAnswer": "/t/",
-            "correctAnswerIndex": 0,
-            "hint": "The two candidates for \"tip\" feel different in the mouth: /t/ means you tap your tongue tip on the ridge behind your top teeth with no voice, and /d/ means you tap your tongue tip on the ridge behind your top teeth with your voice on. Which matches?",
-            "explanation": "The word \"tip\" contains /t/, a voiceless alveolar plosive, made by tapping your tongue tip on the ridge behind your top teeth with no voice. It's easy to confuse with /d/, a voiced alveolar plosive, but the two are produced quite differently.",
-            "mouthPosition": "Feel it in the mouth: tap your tongue tip on the ridge behind your top teeth with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L16_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "pan",
-            "textToSpeak": "pan",
-            "options": [
-                "/p/",
-                "/b/"
-            ],
-            "correctAnswer": "/p/",
-            "correctAnswerIndex": 0,
-            "hint": "Isolate the target sound in \"pan\" and hold it for a second. /p/ should feel like you press both lips together and release with no voice — does it?",
-            "explanation": "\"pan\" is a good example of /p/: you press both lips together and release with no voice. Compare that with /b/, where you'd instead press both lips together and release with your voice on — the two shouldn't be mixed up once you feel the difference.",
-            "mouthPosition": "Press both lips together and release with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L16_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "gas",
-            "textToSpeak": "gas",
-            "options": [
-                "/g/",
-                "/k/"
-            ],
-            "correctAnswer": "/g/",
-            "correctAnswerIndex": 0,
-            "hint": "Break \"gas\" down sound by sound. The consonant you want is either a voiced velar plosive or a voiceless velar plosive — remember that /g/ means you raise the back of your tongue to the soft palate with your voice on.",
-            "explanation": "The consonant in \"gas\" is /g/, not /k/. To produce /g/, you raise the back of your tongue to the soft palate with your voice on; /k/ is made differently, by raising the back of your tongue to the soft palate with no voice.",
-            "mouthPosition": "To produce this sound, raise the back of your tongue to the soft palate with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L16_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "peak",
-            "textToSpeak": "peak",
-            "options": [
-                "/b/",
-                "/p/"
-            ],
-            "correctAnswer": "/p/",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"peak\" at normal speed, then again in slow motion. Isolating the consonant this way makes it much easier to tell /p/ from /b/.",
-            "explanation": "Here, /p/ is correct because \"peak\" is made by pressing both lips together and releasing with no voice. If it were /b/ instead, you'd be doing this: pressing both lips together and releasing with your voice on — a noticeably different articulation.",
-            "mouthPosition": "Feel it in the mouth: press both lips together and release with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L17_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "two",
-            "textToSpeak": "two",
-            "options": [
-                "/d/",
-                "/t/"
-            ],
-            "correctAnswer": "/t/",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to \"two\". For /t/, you tap your tongue tip on the ridge behind your top teeth with no voice — like the start of \"tea\". Does that match what you hear?",
-            "explanation": "\"two\" uses /t/, a voiceless alveolar plosive. This contrasts with the voiced alveolar plosive /d/, heard in words like \"day\", which is produced by tapping your tongue tip on the ridge behind your top teeth with your voice on instead.",
-            "mouthPosition": "Tap your tongue tip on the ridge behind your top teeth with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L17_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "cab",
-            "textToSpeak": "cab",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/k/",
-            "correctAnswerIndex": 0,
-            "hint": "\"cab\" contains one of these two sounds. /k/ is a voiceless velar plosive, made when you raise the back of your tongue to the soft palate with no voice. /g/ is a voiced velar plosive instead.",
-            "explanation": "The reason /k/ is correct for \"cab\" is simple: you raise the back of your tongue to the soft palate with no voice. That's a completely different action from /g/, which needs you to raise the back of your tongue to the soft palate with your voice on.",
-            "mouthPosition": "To produce this sound, raise the back of your tongue to the soft palate with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L17_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "pull",
-            "textToSpeak": "pull",
-            "options": [
-                "/b/",
-                "/p/"
-            ],
-            "correctAnswer": "/p/",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"pull\" slowly and isolate just the target consonant. To make /p/, you press both lips together and release with no voice. To make /b/, you press both lips together and release with your voice on. Which one are you actually doing?",
-            "explanation": "\"pull\" targets /p/. Made by pressing both lips together and releasing with no voice, it's a voiceless bilabial plosive — distinct from the voiced bilabial plosive /b/, which instead calls for pressing both lips together and releasing with your voice on.",
-            "mouthPosition": "Feel it in the mouth: press both lips together and release with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L18_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "pat",
-            "textToSpeak": "pat",
-            "options": [
-                "/b/",
-                "/p/"
-            ],
-            "correctAnswer": "/p/",
-            "correctAnswerIndex": 1,
-            "hint": "In \"pat\", focus on the target sound. /p/ comes from pressing both lips together and releasing with no voice, while /b/ comes from pressing both lips together and releasing with your voice on — which one is really happening?",
-            "explanation": "What makes \"pat\" contain /p/ rather than /b/ comes down to articulation: /p/ means you press both lips together and release with no voice, while /b/ would instead mean pressing both lips together and releasing with your voice on.",
-            "mouthPosition": "Press both lips together and release with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L18_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "gum",
-            "textToSpeak": "gum",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/g/",
-            "correctAnswerIndex": 1,
-            "hint": "Think about what your mouth is doing during the target sound in \"gum\". Does it raise the back of your tongue to the soft palate with your voice on? Or does it raise the back of your tongue to the soft palate with no voice?",
-            "explanation": "Once you isolate the consonant in \"gum\", it's clearly /g/ — produced by raising the back of your tongue to the soft palate with your voice on. Words with /k/ instead, like \"key\", require raising the back of your tongue to the soft palate with no voice.",
-            "mouthPosition": "To produce this sound, raise the back of your tongue to the soft palate with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L18_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "got",
-            "textToSpeak": "got",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/g/",
-            "correctAnswerIndex": 1,
-            "hint": "\"got\" holds either /g/ or /k/. One is a voiced velar plosive; the other, a voiceless velar plosive. Isolate the sound and compare it to both.",
-            "explanation": "/g/ is the sound in \"got\", formed by raising the back of your tongue to the soft palate with your voice on. Learners often mix this up with /k/, a voiceless velar plosive made by raising the back of your tongue to the soft palate with no voice, but the mouth is doing something different each time.",
-            "mouthPosition": "Feel it in the mouth: raise the back of your tongue to the soft palate with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L19_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "comb",
-            "textToSpeak": "comb",
-            "options": [
-                "/g/",
-                "/k/"
-            ],
-            "correctAnswer": "/k/",
-            "correctAnswerIndex": 1,
-            "hint": "Try producing \"comb\" yourself. To make /k/, you raise the back of your tongue to the soft palate with no voice — quite different from /g/, which needs you to raise the back of your tongue to the soft palate with your voice on.",
-            "explanation": "This is /k/, not /g/: in \"comb\", you raise the back of your tongue to the soft palate with no voice. The distractor would instead need raising the back of your tongue to the soft palate with your voice on, which changes the sound completely.",
-            "mouthPosition": "Raise the back of your tongue to the soft palate with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L19_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "came",
-            "textToSpeak": "came",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/k/",
-            "correctAnswerIndex": 0,
-            "hint": "Here's the key contrast in \"came\": /k/ is made by raising the back of your tongue to the soft palate with no voice, and /g/ is made by raising the back of your tongue to the soft palate with your voice on. Which description fits what you hear?",
-            "explanation": "\"came\" is built on /k/ — raising the back of your tongue to the soft palate with no voice is how it's made. That's a voiceless velar plosive, easy to tell apart from the voiced velar plosive /g/ once you know both feel different in the mouth.",
-            "mouthPosition": "To produce this sound, raise the back of your tongue to the soft palate with no voice.",
-            "voicing": "voiceless",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L19_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "den",
-            "textToSpeak": "den",
-            "options": [
-                "/t/",
-                "/d/"
-            ],
-            "correctAnswer": "/d/",
-            "correctAnswerIndex": 1,
-            "hint": "Don't let the spelling of \"den\" guide you — isolate the exact consonant sound and test it against both options.",
-            "explanation": "\"den\" features /d/ rather than /t/. /d/ comes from tapping your tongue tip on the ridge behind your top teeth with your voice on, which is why it sounds distinct from the voiceless alveolar plosive /t/ used in words like \"tea\".",
-            "mouthPosition": "Feel it in the mouth: tap your tongue tip on the ridge behind your top teeth with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L20_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "bat",
-            "textToSpeak": "bat",
-            "options": [
-                "/p/",
-                "/b/"
-            ],
-            "correctAnswer": "/b/",
-            "correctAnswerIndex": 1,
-            "hint": "For /b/, the trick is to press both lips together and release with your voice on — like the start of \"boy\". Check whether \"bat\" really does that.",
-            "explanation": "In \"bat\", the target sound is /b/, made by pressing both lips together and releasing with your voice on. The distractor /p/ would instead require you to press both lips together and release with no voice — a clearly different sound once you isolate it.",
-            "mouthPosition": "Press both lips together and release with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L20_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "bad",
-            "textToSpeak": "bad",
-            "options": [
-                "/p/",
-                "/b/"
-            ],
-            "correctAnswer": "/b/",
-            "correctAnswerIndex": 1,
-            "hint": "\"bad\" needs careful listening. A voiced bilabial plosive like /b/ can sound close to a voiceless bilabial plosive like /p/ if you're not paying attention to exactly what your mouth is doing.",
-            "explanation": "The word \"bad\" contains /b/, a voiced bilabial plosive, made by pressing both lips together and releasing with your voice on. It's easy to confuse with /p/, a voiceless bilabial plosive, but the two are produced quite differently.",
-            "mouthPosition": "To produce this sound, press both lips together and release with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L20_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "gap",
-            "textToSpeak": "gap",
-            "options": [
-                "/k/",
-                "/g/"
-            ],
-            "correctAnswer": "/g/",
-            "correctAnswerIndex": 1,
-            "hint": "Whisper \"gap\" to yourself and freeze on the target consonant. Is your mouth doing this — raising the back of your tongue to the soft palate with your voice on — or this — raising the back of your tongue to the soft palate with no voice?",
-            "explanation": "\"gap\" is a good example of /g/: you raise the back of your tongue to the soft palate with your voice on. Compare that with /k/, where you'd instead raise the back of your tongue to the soft palate with no voice — the two shouldn't be mixed up once you feel the difference.",
-            "mouthPosition": "Feel it in the mouth: raise the back of your tongue to the soft palate with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        }
-    ]
+  "gameType": "consonantClarity",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "ACC_CONSONANTCLARITY_L11_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "fish",
+      "textToSpeak": "fish",
+      "options": [
+        "/f/",
+        "/v/"
+      ],
+      "correctAnswer": "/f/",
+      "correctAnswerIndex": 0,
+      "hint": "Tuck your bottom lip under your top teeth and stretch the first sound. With a fingertip resting on your lip, do you feel a tingle, or just smooth airflow?",
+      "explanation": "'Fish' starts with /f/: the lower lip touches the upper teeth and air slides through the gap with your voice off, giving a quiet, smooth hiss. /v/ uses the identical lip-and-teeth position but adds a buzz, which you'd feel as a tickle on the lip.",
+      "mouthPosition": "Rest your upper teeth on your lower lip and breathe out steadily with your throat silent. Nothing should vibrate against your lip.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L11_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "van",
+      "textToSpeak": "van",
+      "options": [
+        "/f/",
+        "/v/"
+      ],
+      "correctAnswer": "/v/",
+      "correctAnswerIndex": 1,
+      "hint": "Lightly touch your bottom lip with a finger while you hold the first sound for three seconds. A tingle under your finger means the voice is on.",
+      "explanation": "'Van' begins with /v/. The mouth shape is the same as for /f/, but the vocal cords vibrate and that vibration travels into the lip. Without it 'van' turns into 'fan', a common slip because the two sounds look identical from the outside.",
+      "mouthPosition": "Set your top teeth on your bottom lip, switch your voice on, and let the air buzz through the gap. Hold it a moment before moving to 'an'.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L11_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "phone",
+      "textToSpeak": "phone",
+      "options": [
+        "/f/",
+        "/v/"
+      ],
+      "correctAnswer": "/f/",
+      "correctAnswerIndex": 0,
+      "hint": "Ignore the spelling, which starts with PH. In the first half-second, what are your lip and teeth doing, and is your voice on or off?",
+      "explanation": "'Phone' begins with /f/ even though it's spelled PH; that spelling always signals /f/ in words like this. The lip touches the teeth, air hisses through, and the throat stays quiet. Since /v/ has the same mouth shape, the buzz is your only check.",
+      "mouthPosition": "Tuck your bottom lip under your top teeth and blow a smooth voiceless stream of air. Then round your lips for the 'oh'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L12_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "soap",
+      "textToSpeak": "soap",
+      "options": [
+        "/z/",
+        "/s/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 1,
+      "hint": "Stretch the first sound for two seconds. Is it a clean hiss like air escaping a tyre, or a hiss with a hum running underneath?",
+      "explanation": "'Soap' begins with /s/: tongue tip near the ridge, a narrow channel of air, and no voice at all. /z/ keeps the same tongue position and adds vibration, so 'soap' would become 'zoap'.",
+      "mouthPosition": "Bring your tongue tip close to the ridge behind your top teeth, spread your lips slightly, and blow a thin stream of air. Throat silent.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L12_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "zoo",
+      "textToSpeak": "zoo",
+      "options": [
+        "/s/",
+        "/z/"
+      ],
+      "correctAnswer": "/z/",
+      "correctAnswerIndex": 1,
+      "hint": "Block your ears with your fingers and stretch the first sound. One version will roar inside your head; the other stays thin.",
+      "explanation": "'Zoo' starts with /z/. The tongue sits exactly where it does for /s/, but the vocal cords vibrate, which is why you hear it boom in your head with your ears covered. Many learners say 'soo' because word-initial /z/ is missing in some languages.",
+      "mouthPosition": "Set your tongue near the ridge as if for a hiss, then switch your voice on so the air buzzes across the tongue tip. Keep the buzz going before the 'oo'.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L12_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "city",
+      "textToSpeak": "city",
+      "options": [
+        "/s/",
+        "/z/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 0,
+      "hint": "The first letter is C, so don't lean on it. Stretch the first sound and feel whether your throat joins in.",
+      "explanation": "'City' starts with /s/, because C stands for /s/ before I, E and Y. Hearing that voiceless hiss matters: if it drifts to /z/ the word becomes 'zitty'. Spelling suggests a sound, but your throat gives the verdict.",
+      "mouthPosition": "Hover your tongue tip near the ridge behind your upper teeth and push air through a thin channel with your throat quiet. Then relax into the short 'ity'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L13_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "rice",
+      "textToSpeak": "rice",
+      "options": [
+        "/s/",
+        "/z/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to how long the vowel lasts before the last sound. Is it held out, or cut short and hissed away?",
+      "explanation": "'Rice' ends in /s/. Vowels shorten before voiceless consonants, so the 'i' is brief and the word finishes on a clean hiss. 'Rise' ends in /z/, gets a longer vowel, and buzzes to the end. Learners often hold the voice too long and turn 'rice' into 'rise'.",
+      "mouthPosition": "End with your tongue tip near the ridge, pushing a thin voiceless stream of air. Stop the air cleanly instead of trailing off.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L13_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "please",
+      "textToSpeak": "please",
+      "options": [
+        "/z/",
+        "/s/"
+      ],
+      "correctAnswer": "/z/",
+      "correctAnswerIndex": 0,
+      "hint": "The spelling ends in S and E, but what is your throat doing as the word finishes? Stretch the ending and listen for a buzz.",
+      "explanation": "'Please' ends in /z/ despite the S. The vowel is long and the buzz carries right into the last consonant. End on a hiss and you'll say 'peace', a different word. Voicing at the end keeps the request sounding polite and clear.",
+      "mouthPosition": "Hold your tongue tip near the ridge as for /s/, but keep the voice on until the very end. Let the buzz fade instead of chopping it off.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L13_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "size",
+      "textToSpeak": "size",
+      "options": [
+        "/s/",
+        "/z/"
+      ],
+      "correctAnswer": "/z/",
+      "correctAnswerIndex": 1,
+      "hint": "The word starts with one of these sounds too, so focus only on the last sound. Stretch it: hiss alone, or hiss plus buzz?",
+      "explanation": "'Size' begins with /s/ but ends with /z/, so both sounds are in the word and it's the ending that counts. The vowel stretches and the voice runs to the end. A hiss-only finish sounds clipped, and listeners may hear a different word or ask you to repeat.",
+      "mouthPosition": "Finish with the tongue tip near the ridge and your voice still on, letting a soft buzz carry to the end of the word.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L14_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "seat",
+      "textToSpeak": "seat",
+      "options": [
+        "/t/",
+        "/d/"
+      ],
+      "correctAnswer": "/t/",
+      "correctAnswerIndex": 0,
+      "hint": "Say the word and stop dead at the end. Which finish is quiet and clipped, with no voice left over?",
+      "explanation": "'Seat' ends in /t/: the tongue tip closes on the ridge, the vowel stays fairly short, and the sound stops with no voice. With /d/ ('seed') the vowel stretches and a faint buzz continues. Listeners rely mostly on that vowel length.",
+      "mouthPosition": "Close the tongue tip on the ridge behind your upper teeth to stop the air; a tiny puff is optional, and no voice.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L14_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "leg",
+      "textToSpeak": "leg",
+      "options": [
+        "/k/",
+        "/g/"
+      ],
+      "correctAnswer": "/g/",
+      "correctAnswerIndex": 1,
+      "hint": "Freeze your tongue at the very end of the word. Is there still a hum in your throat while the back of your tongue is up?",
+      "explanation": "'Leg' ends in /g/. The back of the tongue rises to the soft palate while the voice is still on and the vowel lingers a little. Drop the voice and you'd get 'lek', which isn't a word, so listeners have to guess from context. Keep the buzz.",
+      "mouthPosition": "Raise the back of your tongue to the soft palate at the end while your voice keeps going. Skip any strong puff.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L14_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "job",
+      "textToSpeak": "job",
+      "options": [
+        "/p/",
+        "/b/"
+      ],
+      "correctAnswer": "/b/",
+      "correctAnswerIndex": 1,
+      "hint": "Watch your lips as the word ends. Do they shut on a stretched, buzzy vowel or a short clipped one?",
+      "explanation": "'Job' ends in /b/. The vowel is held a little longer and the voice continues into the closed lips, giving a soft finish. A voiceless /p/ ending would sound like 'jop' and leave the word less clear. Match the longer vowel with the buzz.",
+      "mouthPosition": "Close your lips at the end with the voice still running and let the sound fade without a pop.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L15_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "paper",
+      "textToSpeak": "paper",
+      "options": [
+        "/p/",
+        "/b/"
+      ],
+      "correctAnswer": "/p/",
+      "correctAnswerIndex": 0,
+      "hint": "The lips close in the middle of this word, between two vowels. As they open, do you feel a puff, or a soft voiced release?",
+      "explanation": "'Paper' has /p/ at the start and again in the middle. In the middle, the lips close after the stressed syllable and open with a light puff before the second vowel. If the voice sneaks in, you get 'baper', a slip that's common when a sound falls between vowels.",
+      "mouthPosition": "After 'pay-', close both lips firmly, keep the throat quiet for a moment, then open into the short second vowel with a light puff.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L15_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "number",
+      "textToSpeak": "number",
+      "options": [
+        "/b/",
+        "/p/"
+      ],
+      "correctAnswer": "/b/",
+      "correctAnswerIndex": 0,
+      "hint": "Notice what happens right after the 'm' hum: the lips stay together. Is your voice on or off when they finally open?",
+      "explanation": "In 'number' the /b/ follows /m/. The lips are already closed for /m/, so you keep them shut, block the nose airflow, and release with the voice on. It's /b/ rather than /p/ because the voice never switches off between the two sounds.",
+      "mouthPosition": "Keep your lips closed after the 'm', block the air from your nose, then open them with your voice still running into the 'er'.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L15_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "tiger",
+      "textToSpeak": "tiger",
+      "options": [
+        "/g/",
+        "/k/"
+      ],
+      "correctAnswer": "/g/",
+      "correctAnswerIndex": 0,
+      "hint": "The middle consonant is made with the back of your tongue. Is your throat buzzing as it lifts, tying the two syllables together?",
+      "explanation": "'Tiger' has /g/ in the middle: the back of the tongue lifts to the soft palate while the voice stays on, then drops into the final 'er'. Swap in /k/ and you'd say 'ticker'. That buzz between vowels is the giveaway.",
+      "mouthPosition": "Lift the back of your tongue against the soft palate after 'tie-' with your voice on, then release into the short 'er' syllable.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L16_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "five",
+      "textToSpeak": "five",
+      "options": [
+        "/f/",
+        "/v/"
+      ],
+      "correctAnswer": "/v/",
+      "correctAnswerIndex": 1,
+      "hint": "Both sounds you're choosing between are in this word. Focus on the last one: does it keep a buzz right to the end?",
+      "explanation": "'Five' begins with /f/ and ends with /v/. At the end the lip and teeth touch again, but the voice stays on and the vowel is fairly long. Speakers often soften the buzz there, but it should still be audible. Finish with /f/ and you've said 'fife'.",
+      "mouthPosition": "Bring your top teeth to your bottom lip at the very end and let a voiced buzz run through the gap before you stop.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L16_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "after",
+      "textToSpeak": "after",
+      "options": [
+        "/v/",
+        "/f/"
+      ],
+      "correctAnswer": "/f/",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the consonant right after the first stressed vowel. Put a finger on your lower lip: tickling or smooth?",
+      "explanation": "'After' has /f/ in the middle, immediately followed by /t/. The lip-teeth hiss runs straight into a tongue-tip stop. Adding voice would give something like 'avter', which blurs the /f/ into the /t/. Keep the /f/ voiceless.",
+      "mouthPosition": "Once the 'a' is said, touch your top teeth to your bottom lip and let a voiceless stream out, then move your tongue tip up for the 't'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L16_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "seven",
+      "textToSpeak": "seven",
+      "options": [
+        "/v/",
+        "/f/"
+      ],
+      "correctAnswer": "/v/",
+      "correctAnswerIndex": 0,
+      "hint": "In the middle of the word, your lip and teeth connect once. Does your voice stay on through that contact?",
+      "explanation": "'Seven' has /v/ in the middle. The lip-teeth contact is voiced and links the two syllables. A voiceless version would sound like 'sefen'. The second syllable is short and weak, but the /v/ before it still needs its buzz.",
+      "mouthPosition": "After 'se-', bring your top teeth to your bottom lip with your voice on, then move quickly into the short 'n' ending.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L17_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "vote",
+      "textToSpeak": "vote",
+      "options": [
+        "/b/",
+        "/v/"
+      ],
+      "correctAnswer": "/v/",
+      "correctAnswerIndex": 1,
+      "hint": "Check whether your upper and lower lips meet at the start, or whether your bottom lip lands on your upper teeth.",
+      "explanation": "'Vote' begins with /v/: the lower lip rests on the top teeth and a voiced stream of air runs through a small gap. /b/ closes both lips fully and releases with a pop. Mixing them turns 'vote' into 'boat', a serious change of meaning.",
+      "mouthPosition": "Put your top teeth on your bottom lip, switch your voice on, and let the air buzz through the gap: no lip closure, no pop.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L17_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "habit",
+      "textToSpeak": "habit",
+      "options": [
+        "/v/",
+        "/b/"
+      ],
+      "correctAnswer": "/b/",
+      "correctAnswerIndex": 1,
+      "hint": "In the middle of the word, do both lips seal completely for a moment, or does air keep leaking through a gap?",
+      "explanation": "'Habit' has /b/ in the middle: both lips seal fully and open in a quick voiced release. /v/ would leave a gap with air buzzing continuously and turn 'habit' into 'havit'. A complete closure is the feature to check.",
+      "mouthPosition": "After 'ha-', close both lips fully with your voice on and release lightly into 'it'.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L17_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "believe",
+      "textToSpeak": "believe",
+      "options": [
+        "/b/",
+        "/v/"
+      ],
+      "correctAnswer": "/b/",
+      "correctAnswerIndex": 0,
+      "hint": "Both sounds are in this word. Focus only on the very first consonant: do your lips seal, or does a gap form?",
+      "explanation": "'Believe' starts with /b/ and ends with /v/, so it trains you to keep the two apart by position. The opening is a full lip closure with a soft pop; the ending is a lip-teeth buzz. Swap them and the word becomes hard to recognise.",
+      "mouthPosition": "Begin with both lips sealed and release with a soft voiced pop, saving the lip-on-teeth buzz for the end of the word.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L18_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "cousin",
+      "textToSpeak": "cousin",
+      "options": [
+        "/s/",
+        "/z/"
+      ],
+      "correctAnswer": "/z/",
+      "correctAnswerIndex": 1,
+      "hint": "The middle of this word is spelled with an S. Say it slowly: does your throat buzz there, or is it a crisp hiss?",
+      "explanation": "'Cousin' has /z/ in the middle even though it's written with S. Voicing tends to carry on between vowel-like sounds, so the buzz is natural here. A hiss would make the word sound stiff and slightly foreign.",
+      "mouthPosition": "After 'cou-', put your tongue tip near the ridge and let a voiced buzz run through it before the short 'in'.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L18_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "muffin",
+      "textToSpeak": "muffin",
+      "options": [
+        "/v/",
+        "/f/"
+      ],
+      "correctAnswer": "/f/",
+      "correctAnswerIndex": 1,
+      "hint": "Focus on the sound in the middle. With a finger on your lower lip, is there tickling or just smooth air?",
+      "explanation": "'Muffin' has /f/ in the middle: two Fs in the spelling, but a single voiceless hiss in the sound. Add voice and you get 'muvvin', which loses the crisp lip-teeth hiss. Keep your throat quiet between the vowels.",
+      "mouthPosition": "Following the first syllable, rest your top teeth on your bottom lip and blow voiceless air, then move on to 'in' quickly.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L18_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "face",
+      "textToSpeak": "face",
+      "options": [
+        "/z/",
+        "/s/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 1,
+      "hint": "Stretch the last sound in the word. If your throat joins in, that's your clue.",
+      "explanation": "'Face' ends in /s/, a voiceless hiss after a fairly short vowel. Voice it and you get 'phase', a real word that means something different. The two words differ only in that ending.",
+      "mouthPosition": "End with a clean hiss over the tongue tip with your voice off, and stop the air instead of fading into a buzz.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L19_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "town",
+      "textToSpeak": "town",
+      "options": [
+        "/t/",
+        "/d/"
+      ],
+      "correctAnswer": "/t/",
+      "correctAnswerIndex": 0,
+      "hint": "The tongue tip touches the ridge before the vowel. How much air escapes when it lets go: a clear puff, or almost none?",
+      "explanation": "'Town' begins with /t/, a voiceless stop: a crisp tongue-tip tap followed by a burst of air. Voice it and you get 'down', an everyday mix-up when giving directions. Keep that opening burst firm.",
+      "mouthPosition": "Tap the tongue tip firmly on the ridge behind your top teeth and release with a small puff. Throat quiet until 'ow'.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L19_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "move",
+      "textToSpeak": "move",
+      "options": [
+        "/f/",
+        "/v/"
+      ],
+      "correctAnswer": "/v/",
+      "correctAnswerIndex": 1,
+      "hint": "The word closes with your lip and teeth. Is your voice still buzzing at the moment they touch?",
+      "explanation": "'Move' ends in /v/ even though the spelling stops at E. The voice runs through the long vowel into a lip-teeth buzz. Turn it into /f/ and it becomes 'moof', which no English word uses, so the word sounds clipped.",
+      "mouthPosition": "Round your lips for the 'oo', then bring your top teeth to your bottom lip at the end with your voice on.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L19_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "person",
+      "textToSpeak": "person",
+      "options": [
+        "/s/",
+        "/z/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 0,
+      "hint": "Between the two syllables, the tongue tip forms a narrow channel. Is your voice quiet or on during it?",
+      "explanation": "'Person' has a voiceless /s/ in the middle, right after the stressed vowel and /r/. Some learners voice it into /z/ before the weak ending, but it stays a hiss. The final syllable is short and blurred; the /s/ in front of it is what needs clarity.",
+      "mouthPosition": "After 'per-', bring your tongue tip near the ridge and blow a voiceless hiss before the short 'n'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L20_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "garden",
+      "textToSpeak": "garden",
+      "options": [
+        "/d/",
+        "/t/"
+      ],
+      "correctAnswer": "/d/",
+      "correctAnswerIndex": 0,
+      "hint": "After the stressed syllable, the tongue tip taps the ridge and the word closes with a nasal. Was your voice on when the tongue tapped?",
+      "explanation": "'Garden' has /d/ in the middle: the tongue tip presses the ridge with the voice on, and the release goes straight into a nasal 'n' with no vowel between. A voiceless /t/ would sound like 'garten'. The buzz keeps it clear.",
+      "mouthPosition": "After 'gar-', tap your tongue tip on the ridge with your voice on, then leave the tongue there and let air pass through your nose.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L20_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "safe",
+      "textToSpeak": "safe",
+      "options": [
+        "/s/",
+        "/z/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 0,
+      "hint": "Say only the first sound for two seconds with a hand on your throat. Is there any vibration?",
+      "explanation": "'Safe' starts with /s/: a voiceless hiss over the tongue tip. The ending is /f/, another voiceless hiss, so the word is a chain of two quiet sounds. A voiced start would give 'zafe'.",
+      "mouthPosition": "Hold your tongue tip close to the ridge and blow a thin voiceless stream, lips slightly spread for the 'ay'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L20_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "carpet",
+      "textToSpeak": "carpet",
+      "options": [
+        "/b/",
+        "/p/"
+      ],
+      "correctAnswer": "/p/",
+      "correctAnswerIndex": 1,
+      "hint": "The middle consonant follows a strong 'r' sound. Does it come with a puff of air as the lips open, or without one?",
+      "explanation": "'Carpet' has /p/ right after /r/: the lips close and open with a small puff and no voice. Because the voice is already running through the 'r', learners often let it continue into /b/ and say 'carbet'. Switch the throat off for the closure.",
+      "mouthPosition": "After 'car-', close your lips with your voice off and release with a light puff into the short 'it'.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    }
+  ]
 }

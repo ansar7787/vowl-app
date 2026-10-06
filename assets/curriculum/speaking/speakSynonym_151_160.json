@@ -6,446 +6,444 @@
         {
             "id": "SPK_SPEAKSYNONYM_L151_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"likely to change suddenly and unpredictably\" -- what word comes to mind?",
-            "explanation": "In this sentence, \"volatile\" means likely to change suddenly and unpredictably, so \"unpredictable\" slots in naturally. \"unstable\" is a close second choice.",
-            "textToSpeak": "Mountain weather conditions remain highly *volatile* this season.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "A health notice wants to describe people of advanced age politely and respectfully.",
+            "explanation": "Think about \"elderly\": it is a polite, formal word for older people. \"Older\" is the most natural modern alternative, \"senior\" is common in official and commercial language, and \"aged\" is more formal and can sound clinical. \"Old\" on its own would feel blunt in this notice.",
+            "textToSpeak": "The clinic offers free health checks for *elderly* residents.",
             "acceptedSynonyms": [
-                "unpredictable",
-                "unstable",
-                "erratic"
+                "senior",
+                "older",
+                "aged"
             ],
-            "correctAnswer": "unpredictable"
+            "correctAnswer": "older"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L151_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"likely to change suddenly and unpredictably.\"",
-            "explanation": "\"unstable\" is a reliable synonym for \"volatile\", which means likely to change suddenly and unpredictably here. \"erratic\" and \"unpredictable\" are also accepted.",
-            "textToSpeak": "Her connecting flight times remain highly *volatile* this season.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Think of it this way: a manager is giving fair feedback and wants to sound balanced, not harsh.",
+            "explanation": "Look at \"flaws\" first: it is neutral and suggests problems that can be fixed. \"Weaknesses\" and \"shortcomings\" are professional, \"drawbacks\" focuses on disadvantages, and \"faults\" is a little more critical. Stronger words like \"disasters\" would change the tone completely.",
+            "textToSpeak": "The plan has a few *flaws*, but it's a good start.",
             "acceptedSynonyms": [
-                "unpredictable",
-                "unstable",
-                "erratic"
+                "drawbacks",
+                "faults",
+                "shortcomings",
+                "weaknesses"
             ],
-            "correctAnswer": "unstable"
+            "correctAnswer": "weaknesses"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L151_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"likely to change suddenly and unpredictably.\"",
-            "explanation": "\"erratic\" works well here because \"volatile\" also means likely to change suddenly and unpredictably. \"unpredictable\" and \"unstable\" would work too.",
-            "textToSpeak": "The region's road conditions remain highly *volatile* this season.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Picture this: a boss wants to show she isn't happy, but she keeps her voice calm and professional.",
+            "explanation": "It helps to know that \"displeased\" is a mild, formal way to show unhappiness. \"Dissatisfied\" is the closest, \"unhappy\" is plain, and \"unimpressed\" suggests the results weren't good enough. \"Furious\" would be much too strong.",
+            "textToSpeak": "The manager was *displeased* with the sales figures.",
             "acceptedSynonyms": [
-                "unpredictable",
-                "unstable",
-                "erratic"
+                "unimpressed",
+                "unhappy",
+                "dissatisfied"
             ],
-            "correctAnswer": "erratic"
+            "correctAnswer": "dissatisfied"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L152_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"not developing or progressing\"?",
-            "explanation": "\"stagnant\" means not developing or progressing, and \"motionless\" captures that same idea naturally in this sentence. \"stalled\" is another solid option.",
-            "textToSpeak": "Her weight-loss progress has remained *stagnant* for months.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Suppose you're reading a statistic and you don't fully trust it, but you're not accusing anyone.",
+            "explanation": "In this sentence, \"skeptical\" is neutral and shows doubt. \"Doubtful\" and \"dubious\" are close, \"unconvinced\" suggests you haven't been persuaded, and \"wary\" suggests caution. \"Certain\" is the opposite.",
+            "textToSpeak": "I'm *skeptical* about the results of the survey.",
             "acceptedSynonyms": [
-                "motionless",
-                "inactive",
-                "stalled",
-                "unchanging"
+                "unconvinced",
+                "wary",
+                "doubtful",
+                "dubious"
             ],
-            "correctAnswer": "motionless"
+            "correctAnswer": "doubtful"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L152_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"not developing or progressing.\"",
-            "explanation": "Good choice: \"inactive\" is a strong match for \"stagnant\", which means not developing or progressing. You could also say \"unchanging\" or \"motionless\".",
-            "textToSpeak": "My recovery after surgery has remained *stagnant* for months.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "A loud bang makes someone jump, but there's no real danger.",
+            "explanation": "Quick reminder: \"alarmed\" is moderate and suggests being suddenly worried. \"Startled\" fits a sudden surprise, \"frightened\" and \"shocked\" are stronger, and \"shaken\" suggests she was disturbed afterward. \"Terrified\" would be too extreme.",
+            "textToSpeak": "She was *alarmed* by the sudden noise.",
             "acceptedSynonyms": [
-                "motionless",
-                "inactive",
-                "stalled",
-                "unchanging"
+                "shaken",
+                "startled",
+                "frightened",
+                "shocked"
             ],
-            "correctAnswer": "inactive"
+            "correctAnswer": "startled"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L152_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"not developing or progressing.\" What's a good match?",
-            "explanation": "\"stalled\" fits because \"stagnant\" means not developing or progressing here. Other natural alternatives include \"motionless\" and \"inactive\".",
-            "textToSpeak": "The patient's mobility has remained *stagnant* for months.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Imagine you're describing how you reacted to cruelty and you want the strongest tone.",
+            "explanation": "Start with \"disgusted\": it is a strong, negative reaction. \"Appalled\", \"horrified\" and \"revolted\" are all very strong, and \"sickened\" suggests you felt almost physically ill. \"Disappointed\" is much milder.",
+            "textToSpeak": "I was *disgusted* by the way they treated the staff.",
             "acceptedSynonyms": [
-                "motionless",
-                "inactive",
-                "stalled",
-                "unchanging"
+                "horrified",
+                "revolted",
+                "sickened",
+                "appalled"
             ],
-            "correctAnswer": "stalled"
+            "correctAnswer": "appalled"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L153_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"able to continue over the long term.\"",
-            "explanation": "In this sentence, \"sustainable\" means able to continue over the long term, so \"long-term\" slots in naturally. \"enduring\" is a close second choice.",
-            "textToSpeak": "Our small farm needs a more *sustainable* business model.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Someone told the whole truth, and nothing was hidden.",
+            "explanation": "Here, \"frank\" means honest and open, often in a way that is brave. \"Candid\" is the closest, \"honest\" is plain, and \"direct\" focuses on saying things clearly.",
+            "textToSpeak": "She gave a *frank* answer and didn't hide anything.",
             "acceptedSynonyms": [
-                "long-term",
-                "self-sufficient",
-                "enduring",
-                "viable"
+                "candid",
+                "honest",
+                "direct"
             ],
-            "correctAnswer": "long-term"
+            "correctAnswer": "candid"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L153_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"able to continue over the long term\" -- what word comes to mind?",
-            "explanation": "\"self-sufficient\" is a reliable synonym for \"sustainable\", which means able to continue over the long term here. \"viable\" and \"long-term\" are also accepted.",
-            "textToSpeak": "Her fashion brand needs a more *sustainable* business model.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Someone's feedback is honest but harsh, and it hurts.",
+            "explanation": "In practice, \"blunt\" means very direct without thinking about feelings. \"Brusque\" and \"curt\" suggest he's short and sharp, \"outspoken\" is more positive, and \"direct\" is the neutral version. The tone is not quite a compliment.",
+            "textToSpeak": "He's very *blunt* when he gives feedback. It can hurt.",
             "acceptedSynonyms": [
-                "long-term",
-                "self-sufficient",
-                "enduring",
-                "viable"
+                "outspoken",
+                "curt",
+                "brusque",
+                "direct"
             ],
-            "correctAnswer": "self-sufficient"
+            "correctAnswer": "brusque"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L153_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"able to continue over the long term.\"",
-            "explanation": "\"enduring\" works well here because \"sustainable\" also means able to continue over the long term. \"long-term\" and \"self-sufficient\" would work too.",
-            "textToSpeak": "The local co-op needs a more *sustainable* business model.",
+            "instruction": "Replace the highlighted word with one that still sounds natural here.",
+            "hint": "A colleague told someone a difficult truth, and she did it kindly.",
+            "explanation": "Remember that \"tactful\" means careful not to hurt anyone's feelings. \"Diplomatic\" is the closest, \"sensitive\" and \"considerate\" focus on kindness, and \"discreet\" suggests care about what you say. \"Blunt\" would be the opposite.",
+            "textToSpeak": "She was *tactful* when she told him the truth about his work.",
             "acceptedSynonyms": [
-                "long-term",
-                "self-sufficient",
-                "enduring",
-                "viable"
+                "diplomatic",
+                "discreet",
+                "considerate",
+                "sensitive"
             ],
-            "correctAnswer": "enduring"
+            "correctAnswer": "diplomatic"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L154_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"showing good judgment about quality.\"",
-            "explanation": "\"discerning\" means showing good judgment about quality, and \"refined\" captures that same idea naturally in this sentence. \"perceptive\" is another solid option.",
-            "textToSpeak": "My art-collector aunt has remarkably *discerning* taste.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "You're praising a grandmother who is full of life and moves like someone much younger.",
+            "explanation": "Keep in mind that \"youthful\" is a compliment about energy and freshness. \"Vibrant\" and \"lively\" are positive and energetic, \"fresh\" is lighter, and \"spirited\" suggests courage and character. \"Childish\" would be an insult.",
+            "textToSpeak": "My grandmother has a *youthful* energy that surprises everyone.",
             "acceptedSynonyms": [
-                "refined",
-                "selective",
-                "perceptive",
-                "cultivated"
+                "fresh",
+                "vibrant",
+                "lively",
+                "spirited"
             ],
-            "correctAnswer": "refined"
+            "correctAnswer": "vibrant"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L154_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"showing good judgment about quality\"?",
-            "explanation": "Good choice: \"selective\" is a strong match for \"discerning\", which means showing good judgment about quality. You could also say \"cultivated\" or \"refined\".",
-            "textToSpeak": "Her interior designer has remarkably *discerning* taste.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "You're annoyed that someone is acting like a small child.",
+            "explanation": "\"Childish\" is negative and criticizes the behavior. \"Immature\", \"juvenile\", \"puerile\" and \"babyish\" all keep the disapproval, with \"puerile\" being the most formal. \"Youthful\" would be a compliment.",
+            "textToSpeak": "It's so *childish* to ignore someone because you're upset.",
             "acceptedSynonyms": [
-                "refined",
-                "selective",
-                "perceptive",
-                "cultivated"
+                "puerile",
+                "babyish",
+                "juvenile",
+                "immature"
             ],
-            "correctAnswer": "selective"
+            "correctAnswer": "immature"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L154_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"showing good judgment about quality.\"",
-            "explanation": "\"perceptive\" fits because \"discerning\" means showing good judgment about quality here. Other natural alternatives include \"refined\" and \"selective\".",
-            "textToSpeak": "The wine connoisseur has remarkably *discerning* taste.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Someone's jokes aren't ordinary, and people react in different ways.",
+            "explanation": "The word \"quirky\" is mildly positive and means pleasantly unusual. \"Offbeat\", \"eccentric\" and \"unconventional\" are close, and \"whimsical\" suggests playful and imaginative. \"Strange\" would be more negative.",
+            "textToSpeak": "She has a *quirky* sense of humor that people either love or don't get.",
             "acceptedSynonyms": [
-                "refined",
-                "selective",
-                "perceptive",
-                "cultivated"
+                "unconventional",
+                "offbeat",
+                "eccentric",
+                "whimsical"
             ],
-            "correctAnswer": "perceptive"
+            "correctAnswer": "offbeat"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L155_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"quick to notice things others miss.\" What's a good match?",
-            "explanation": "In this sentence, \"perceptive\" means quick to notice things others miss, so \"insightful\" slots in naturally. \"observant\" is a close second choice.",
-            "textToSpeak": "My favorite critic offered a genuinely *perceptive* critique.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Picture this: a salesperson wouldn't take no for an answer, and you left the store.",
+            "explanation": "To choose well, note that \"pushy\" is critical and describes someone who forces ideas on others. \"Insistent\", \"aggressive\" and \"forceful\" keep that negative tone, and \"overbearing\" suggests controlling. \"Helpful\" would be the opposite.",
+            "textToSpeak": "The salesman was so *pushy* that I left the shop.",
             "acceptedSynonyms": [
-                "insightful",
-                "sharp",
-                "observant",
-                "astute"
+                "forceful",
+                "overbearing",
+                "aggressive",
+                "insistent"
             ],
-            "correctAnswer": "insightful"
+            "correctAnswer": "insistent"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L155_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"quick to notice things others miss.\"",
-            "explanation": "\"sharp\" is a reliable synonym for \"perceptive\", which means quick to notice things others miss here. \"astute\" and \"insightful\" are also accepted.",
-            "textToSpeak": "Her film blog offered a genuinely *perceptive* critique.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Suppose you're making a polite, professional suggestion at a meeting.",
+            "explanation": "Notice that \"propose\" is formal and suggests presenting an idea for discussion. \"Suggest\" is the plain version, \"recommend\" suggests you think it's the best option, \"put forward\" is a business phrase, and \"offer\" is softer.",
+            "textToSpeak": "I'd like to *propose* a different schedule for the project.",
             "acceptedSynonyms": [
-                "insightful",
-                "sharp",
-                "observant",
-                "astute"
+                "offer",
+                "suggest",
+                "recommend",
+                "put forward"
             ],
-            "correctAnswer": "sharp"
+            "correctAnswer": "suggest"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L155_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"quick to notice things others miss\" -- what word comes to mind?",
-            "explanation": "\"observant\" works well here because \"perceptive\" also means quick to notice things others miss. \"insightful\" and \"sharp\" would work too.",
-            "textToSpeak": "The festival reviewer offered a genuinely *perceptive* critique.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Someone solves problems without waiting to be told.",
+            "explanation": "Here, \"proactive\" is a positive business word for taking action early. \"Enterprising\" suggests initiative and bold ideas, \"self-motivated\" suggests she needs no pushing, and \"forward-thinking\" suggests planning ahead.",
+            "textToSpeak": "She's very *proactive* and fixes problems before anyone asks.",
             "acceptedSynonyms": [
-                "insightful",
-                "sharp",
-                "observant",
-                "astute"
+                "enterprising",
+                "self-motivated",
+                "forward-thinking"
             ],
-            "correctAnswer": "observant"
+            "correctAnswer": "forward-thinking"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L156_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"impossible to do without.\"",
-            "explanation": "\"indispensable\" means impossible to do without, and \"essential\" captures that same idea naturally in this sentence. \"irreplaceable\" is another solid option.",
-            "textToSpeak": "My deputy manager has become truly *indispensable* to the team.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Suppose a team leader is using business language about benefiting from past work.",
+            "explanation": "The key word is \"leverage\", which is corporate jargon. \"Use\" is plain, \"draw on\" suggests taking from experience, \"build on\" suggests developing it further, and \"capitalize on\" suggests taking advantage of an opportunity.",
+            "textToSpeak": "We can *leverage* our experience to win new clients.",
             "acceptedSynonyms": [
-                "essential",
-                "invaluable",
-                "irreplaceable",
-                "vital"
+                "capitalize on",
+                "build on",
+                "use",
+                "draw on"
             ],
-            "correctAnswer": "essential"
+            "correctAnswer": "build on"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L156_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"impossible to do without.\"",
-            "explanation": "Good choice: \"invaluable\" is a strong match for \"indispensable\", which means impossible to do without. You could also say \"vital\" or \"essential\".",
-            "textToSpeak": "Her lead engineer has become truly *indispensable* to the team.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "A notice on a door uses very formal language to ask people to enter a certain way.",
+            "explanation": "\"Utilize\" is a formal, wordy version of \"use\". \"Use\" is the plain choice, \"employ\" is formal, and \"make use of\" is neutral. In everyday speech, \"use\" is almost always better.",
+            "textToSpeak": "Please *utilize* the side entrance after six p.m.",
             "acceptedSynonyms": [
-                "essential",
-                "invaluable",
-                "irreplaceable",
-                "vital"
+                "use",
+                "make use of",
+                "employ"
             ],
-            "correctAnswer": "invaluable"
+            "correctAnswer": "use"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L156_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"impossible to do without\"?",
-            "explanation": "\"irreplaceable\" fits because \"indispensable\" means impossible to do without here. Other natural alternatives include \"essential\" and \"invaluable\".",
-            "textToSpeak": "The office coordinator has become truly *indispensable* to the team.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Imagine an event organizer describes the role of the person who guides a group activity.",
+            "explanation": "Remember that \"facilitate\" means to guide a group through a process. \"Lead\" and \"run\" are the most natural alternatives, \"moderate\" suggests keeping a discussion under control, and \"guide\" is simple and friendly.",
+            "textToSpeak": "A trained guide will *facilitate* the workshop.",
             "acceptedSynonyms": [
-                "essential",
-                "invaluable",
-                "irreplaceable",
-                "vital"
+                "lead",
+                "moderate",
+                "run",
+                "guide"
             ],
-            "correctAnswer": "irreplaceable"
+            "correctAnswer": "lead"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L157_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"very strict and leaving nothing to chance.\"",
-            "explanation": "In this sentence, \"rigorous\" means very strict and leaving nothing to chance, so \"demanding\" slots in naturally. \"thorough\" is a close second choice.",
-            "textToSpeak": "This medical program follows an unusually *rigorous* curriculum.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "An official is explaining that the facts must be checked before anyone responds.",
+            "explanation": "The word \"ascertain\" is a formal word meaning to find out for certain. \"Determine\" and \"establish\" are formal and exact, \"find out\" is plain, and \"confirm\" suggests checking something already suspected.",
+            "textToSpeak": "We need to *ascertain* the facts before we respond.",
             "acceptedSynonyms": [
-                "demanding",
-                "strict",
-                "thorough",
-                "exacting"
+                "establish",
+                "find out",
+                "confirm",
+                "determine"
             ],
-            "correctAnswer": "demanding"
+            "correctAnswer": "determine"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L157_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"very strict and leaving nothing to chance.\" What's a good match?",
-            "explanation": "\"strict\" is a reliable synonym for \"rigorous\", which means very strict and leaving nothing to chance here. \"exacting\" and \"demanding\" are also accepted.",
-            "textToSpeak": "Her doctoral course follows an unusually *rigorous* curriculum.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "A geography textbook describes a region where drinking water is easy to find.",
+            "explanation": "In this sentence, \"abundant\" is formal and means more than enough. \"Plentiful\" is the closest, \"ample\" suggests enough with room to spare, and \"copious\" is more formal and used for large amounts of liquid or detail.",
+            "textToSpeak": "Fresh water is *abundant* in this region.",
             "acceptedSynonyms": [
-                "demanding",
-                "strict",
-                "thorough",
-                "exacting"
+                "plentiful",
+                "ample",
+                "copious"
             ],
-            "correctAnswer": "strict"
+            "correctAnswer": "plentiful"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L157_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"very strict and leaving nothing to chance.\"",
-            "explanation": "\"thorough\" works well here because \"rigorous\" also means very strict and leaving nothing to chance. \"demanding\" and \"strict\" would work too.",
-            "textToSpeak": "The military academy follows an unusually *rigorous* curriculum.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "A news article is describing how hard it was to find work after a factory closed.",
+            "explanation": "To choose well, note that \"scarce\" means hard to find because there isn't enough. \"Limited\" and \"scant\" are formal, \"sparse\" suggests few and spread out, and \"few\" is the simplest. \"Plentiful\" is the opposite.",
+            "textToSpeak": "Jobs were *scarce* after the factory closed.",
             "acceptedSynonyms": [
-                "demanding",
-                "strict",
-                "thorough",
-                "exacting"
+                "scant",
+                "few",
+                "limited",
+                "sparse"
             ],
-            "correctAnswer": "thorough"
+            "correctAnswer": "limited"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L158_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"worth taking seriously as the truth\" -- what word comes to mind?",
-            "explanation": "\"credible\" means worth taking seriously as the truth, and \"reliable\" captures that same idea naturally in this sentence. \"believable\" is another solid option.",
-            "textToSpeak": "The leaked report came from a highly *credible* source.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Two friends are relaxing over coffee and having a long, easy exchange.",
+            "explanation": "Start with \"chat\": it is casual and friendly. \"Talk\" and \"conversation\" are everyday, \"discussion\" suggests more serious subjects, and \"natter\" is British and informal for a long, relaxed talk.",
+            "textToSpeak": "We had a long *chat* about our plans over coffee.",
             "acceptedSynonyms": [
-                "reliable",
-                "trustworthy",
-                "believable",
-                "authoritative"
+                "discussion",
+                "natter",
+                "conversation",
+                "talk"
             ],
-            "correctAnswer": "reliable"
+            "correctAnswer": "talk"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L158_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"worth taking seriously as the truth.\"",
-            "explanation": "Good choice: \"trustworthy\" is a strong match for \"credible\", which means worth taking seriously as the truth. You could also say \"authoritative\" or \"reliable\".",
-            "textToSpeak": "Her exclusive interview came from a highly *credible* source.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You're warning a coworker about someone who's in a bad mood before his first cup of coffee.",
+            "explanation": "\"Grumpy\" is casual and mild. \"Cranky\" and \"grouchy\" are informal and friendly, \"irritable\" is more formal, and \"bad-tempered\" is a little stronger and more critical.",
+            "textToSpeak": "He's *grumpy* in the mornings, so don't talk to him before coffee.",
             "acceptedSynonyms": [
-                "reliable",
-                "trustworthy",
-                "believable",
-                "authoritative"
+                "cranky",
+                "bad-tempered",
+                "grouchy",
+                "irritable"
             ],
-            "correctAnswer": "trustworthy"
+            "correctAnswer": "cranky"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L158_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"worth taking seriously as the truth.\"",
-            "explanation": "\"believable\" fits because \"credible\" means worth taking seriously as the truth here. Other natural alternatives include \"reliable\" and \"trustworthy\".",
-            "textToSpeak": "The whistleblower's testimony came from a highly *credible* source.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "You walk into a kitchen that looks like a tornado has passed through.",
+            "explanation": "Look at \"mess\" first: it is a casual word for a place that is out of order. \"Disaster\" shows strong frustration, \"muddle\" is a gentler word for confusion, and \"shambles\" is British and informal and suggests complete disorganization.",
+            "textToSpeak": "What a *mess*! Who left the kitchen like this?",
             "acceptedSynonyms": [
-                "reliable",
-                "trustworthy",
-                "believable",
-                "authoritative"
+                "muddle",
+                "shambles",
+                "disaster"
             ],
-            "correctAnswer": "believable"
+            "correctAnswer": "disaster"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L159_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"careful not to waste money\"?",
-            "explanation": "In this sentence, \"frugal\" means careful not to waste money, so \"thrifty\" slots in naturally. \"economical\" is a close second choice.",
-            "textToSpeak": "My grandmother has always been remarkably *frugal*.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Think of it this way: a hotel review is describing a stay that was fine but not good.",
+            "explanation": "In practice, \"adequate\" is a polite, restrained word for \"just good enough\". \"Satisfactory\", \"acceptable\" and \"passable\" are close, and \"decent\" is more positive. \"Excellent\" would be too strong.",
+            "textToSpeak": "The hotel was *adequate*, but nothing special.",
             "acceptedSynonyms": [
-                "thrifty",
-                "economical",
-                "sparing"
+                "decent",
+                "satisfactory",
+                "acceptable",
+                "passable"
             ],
-            "correctAnswer": "thrifty"
+            "correctAnswer": "satisfactory"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L159_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"careful not to waste money.\"",
-            "explanation": "\"economical\" is a reliable synonym for \"frugal\", which means careful not to waste money here. \"sparing\" and \"thrifty\" are also accepted.",
-            "textToSpeak": "Her retired father has always been remarkably *frugal*.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Imagine a manager gives top praise to an employee who has done extremely well.",
+            "explanation": "Keep in mind that \"exemplary\" means so good that others should copy it. \"Outstanding\" and \"exceptional\" are strong praise, \"flawless\" and \"impeccable\" suggest there are no faults. \"Adequate\" would be far too weak.",
+            "textToSpeak": "Her work on the project has been *exemplary*.",
             "acceptedSynonyms": [
-                "thrifty",
-                "economical",
-                "sparing"
+                "exceptional",
+                "flawless",
+                "outstanding",
+                "impeccable"
             ],
-            "correctAnswer": "economical"
+            "correctAnswer": "outstanding"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L159_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"careful not to waste money.\" What's a good match?",
-            "explanation": "\"sparing\" works well here because \"frugal\" also means careful not to waste money. \"thrifty\" and \"economical\" would work too.",
-            "textToSpeak": "The budget-conscious student has always been remarkably *frugal*.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Picture this: a customer writes a formal complaint about a long delay without an explanation.",
+            "explanation": "\"Unacceptable\" is strong but formal. \"Inexcusable\" is the closest, \"intolerable\" and \"outrageous\" are even stronger, and \"unreasonable\" is more measured. A weak word like \"unfortunate\" would sound too polite.",
+            "textToSpeak": "A three-hour delay without any explanation is *unacceptable*.",
             "acceptedSynonyms": [
-                "thrifty",
-                "economical",
-                "sparing"
+                "inexcusable",
+                "unreasonable",
+                "outrageous",
+                "intolerable"
             ],
-            "correctAnswer": "sparing"
+            "correctAnswer": "inexcusable"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L160_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"good at finding quick, clever solutions.\"",
-            "explanation": "\"resourceful\" means good at finding quick, clever solutions, and \"inventive\" captures that same idea naturally in this sentence. \"adaptable\" is another solid option.",
-            "textToSpeak": "Our expedition guide is famously *resourceful* in a crisis.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Think of it this way: a formal committee approves a person's request after review.",
+            "explanation": "Quick reminder: \"granted\" is formal and used for requests and permissions. \"Approved\" is the closest, \"allowed\" is simple, \"accepted\" is neutral, and \"authorized\" is official. \"Gave in to\" would suggest the committee didn't want to agree.",
+            "textToSpeak": "The committee *granted* his request for extra time.",
             "acceptedSynonyms": [
-                "inventive",
-                "ingenious",
-                "adaptable",
-                "enterprising"
+                "authorized",
+                "allowed",
+                "approved",
+                "accepted"
             ],
-            "correctAnswer": "inventive"
+            "correctAnswer": "approved"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L160_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"good at finding quick, clever solutions\" -- what word comes to mind?",
-            "explanation": "Good choice: \"ingenious\" is a strong match for \"resourceful\", which means good at finding quick, clever solutions. You could also say \"enterprising\" or \"inventive\".",
-            "textToSpeak": "Her survival instructor is famously *resourceful* in a crisis.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Suppose a news report uses informal language for a police arrest, and you want the neutral version.",
+            "explanation": "It helps to know that \"nabbed\" is informal slang. \"Caught\" is the plain version, \"arrested\" is the official legal action, \"apprehended\" is formal, and \"captured\" suggests a more dramatic catch.",
+            "textToSpeak": "The police *nabbed* the thief outside the station.",
             "acceptedSynonyms": [
-                "inventive",
-                "ingenious",
-                "adaptable",
-                "enterprising"
+                "apprehended",
+                "arrested",
+                "captured",
+                "caught"
             ],
-            "correctAnswer": "ingenious"
+            "correctAnswer": "caught"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L160_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"good at finding quick, clever solutions.\"",
-            "explanation": "\"adaptable\" fits because \"resourceful\" means good at finding quick, clever solutions here. Other natural alternatives include \"inventive\" and \"ingenious\".",
-            "textToSpeak": "The backcountry ranger is famously *resourceful* in a crisis.",
+            "instruction": "Replace the highlighted word with one that still sounds natural here.",
+            "hint": "A story describes an animal that finds sneaky ways to get what it wants.",
+            "explanation": "Think about \"cunning\": it suggests cleverness used in a sly or deceitful way. \"Sly\", \"crafty\" and \"wily\" keep that slightly negative feeling. \"Wise\" or \"brilliant\" would be too positive.",
+            "textToSpeak": "The fox is *cunning* and always finds a way into the chicken coop.",
             "acceptedSynonyms": [
-                "inventive",
-                "ingenious",
-                "adaptable",
-                "enterprising"
+                "wily",
+                "sly",
+                "crafty"
             ],
-            "correctAnswer": "adaptable"
+            "correctAnswer": "sly"
         }
     ]
 }

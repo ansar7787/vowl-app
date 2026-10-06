@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L171_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend has just had bad news at work.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'd love to, but I'm busy that day.",
-            "textToSpeak": "I'd love to, but I'm busy that day.",
+            "word": "I'm fine, honestly. Don't worry about me.",
+            "textToSpeak": "I'm fine, honestly. Don't worry about me.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)"
+                "Not fine, hoping you'll ask again",
+                "Genuinely fine, wanting space"
             ],
-            "correctAnswer": "Fall-Rise (Polite Refusal - Hedging Before Saying No)",
-            "correctAnswerIndex": 1,
-            "hint": "The warm opening 'I'd love to' is followed by a 'but' - a classic softened refusal. Listen for the pitch to dip and lift before falling on the excuse.",
-            "explanation": "The fall-rise on 'love to', followed by 'but', makes this a polite refusal - the speaker is declining gently rather than truly accepting.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a polite refusal - hedging before saying no."
+            "correctAnswer": "Not fine, hoping you'll ask again",
+            "correctAnswerIndex": 0,
+            "hint": "Pay attention to whether the voice sounds light, or controlled.",
+            "explanation": "Tight, level delivery with weight on 'honestly' suggests the speaker is holding something back, and the quick fall on 'me' closes the topic without resolving it. When someone really is fine, the pitch moves freely and the words sound unforced. Hearing the difference helps you decide whether to give the friend space or ask once more.",
+            "modulationPattern": "Level, tight contour with weight on 'honestly'.",
+            "meaningShift": "A tight, level delivery hides distress; a free, unforced one would mean the friend is fine."
         },
         {
             "id": "ACC_PITCHMODULATION_L171_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend mentions a party you weren't invited to.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'd love to! Count me in.",
-            "textToSpeak": "I'd love to! Count me in.",
+            "word": "Oh, I didn't realise you were doing that.",
+            "textToSpeak": "Oh, I didn't realise you were doing that.",
             "options": [
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "Neutral, passing surprise",
+                "Hurt, kept under control"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
+            "correctAnswer": "Hurt, kept under control",
             "correctAnswerIndex": 1,
-            "hint": "There's no 'but' here - just full enthusiasm. Listen for the pitch to fall fully and energetically on both phrases.",
-            "explanation": "'I'd love to! Count me in' falls with full energy, showing genuine, decisive acceptance with nothing held back.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a polite refusal - hedging before saying no and a genuine, enthusiastic acceptance."
+            "hint": "Which word does the speaker lean on, and how does the sentence end?",
+            "explanation": "Leaning on 'you' and letting 'that' fall flatly gives the sentence a restrained, wounded edge. Neutral surprise would keep 'oh' bright and move on quickly. Recognising hurt gives you the chance to reply kindly instead of treating it as small talk.",
+            "modulationPattern": "Weight on 'you', flat fall on 'that'.",
+            "meaningShift": "Weight on 'you' with a flat fall hides hurt; a bright, quick delivery would be plain surprise."
         },
         {
             "id": "ACC_PITCHMODULATION_L171_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You have thanked a friend for helping you move house.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That sounds great, but I have other plans.",
-            "textToSpeak": "That sounds great, but I have other plans.",
+            "word": "You'd do the same for me.",
+            "textToSpeak": "You'd do the same for me.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)"
+                "Reminding you of a debt",
+                "Reassuring warmth"
             ],
-            "correctAnswer": "Fall-Rise (Polite Refusal - Hedging Before Saying No)",
+            "correctAnswer": "Reassuring warmth",
             "correctAnswerIndex": 1,
-            "hint": "The positive opening is followed by a 'but' - a softened way of declining. Listen for the pitch to dip and lift before the excuse.",
-            "explanation": "The fall-rise on 'great', followed by 'but', makes this a polite refusal - appreciation expressed before declining the invitation.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a polite refusal - hedging before saying no."
+            "hint": "Is 'would' pressed, or is the whole line soft?",
+            "explanation": "Letting 'me' fall gently and leaving 'would' unstressed makes the line a way of saying 'don't worry about it'. Pressing 'would' would make it a reminder that you now owe something. In friendships, this is how favours are kept light.",
+            "modulationPattern": "Soft contour, no weight on 'would', gentle fall on 'me'.",
+            "meaningShift": "A soft, even line reassures; a pressed 'would' would turn it into a reminder."
         },
         {
             "id": "ACC_PITCHMODULATION_L172_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A parent greets an adult child who has just arrived home.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That sounds great! Let's do it.",
-            "textToSpeak": "That sounds great! Let's do it.",
+            "word": "Have you eaten?",
+            "textToSpeak": "Have you eaten?",
             "options": [
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "A request for information",
+                "Care, not a real enquiry"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
+            "correctAnswer": "Care, not a real enquiry",
             "correctAnswerIndex": 1,
-            "hint": "There's no 'but' here - just a confident yes. Listen for the pitch to fall fully and enthusiastically.",
-            "explanation": "'That sounds great! Let's do it' falls with full enthusiasm, showing genuine, decisive acceptance.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a polite refusal - hedging before saying no and a genuine, enthusiastic acceptance."
+            "hint": "Decide whether the voice waits for facts, or sounds warm.",
+            "explanation": "Warmth and a softly lifted rise on 'eaten' show that the question is a way of saying 'I'm glad you're here and I care'. A real enquiry would be crisper and quicker, with attention to the answer. Knowing this makes it easier to respond to the feeling, not just the words.",
+            "modulationPattern": "Soft, warm rise on 'eaten'.",
+            "meaningShift": "A warm, soft rise expresses care; a crisp, quick one would seek information."
         },
         {
             "id": "ACC_PITCHMODULATION_L172_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A parent speaks to a teenager who broke a promise.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'll try, but I can't promise anything.",
-            "textToSpeak": "I'll try, but I can't promise anything.",
+            "word": "I'm not angry, I'm just disappointed.",
+            "textToSpeak": "I'm not angry, I'm just disappointed.",
             "options": [
-                "Fall-Rise (Hedge - Softening a Likely 'No')",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "Heavy guilt trip",
+                "Calm acceptance"
             ],
-            "correctAnswer": "Fall-Rise (Hedge - Softening a Likely 'No')",
+            "correctAnswer": "Heavy guilt trip",
             "correctAnswerIndex": 0,
-            "hint": "'I'll try' sounds willing, but 'can't promise' hedges heavily. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "The fall-rise here softens a likely refusal - 'I'll try' sounds willing, but the hedge suggests the outcome probably won't happen.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a hedge - softening a likely 'no' and a genuine, enthusiastic acceptance."
+            "hint": "How slowly does the last word arrive?",
+            "explanation": "Slowing down and putting weight on 'disappointed', with a long fall, lets the teenager feel the weight of the words. Calm acceptance would be level and quicker, with no extra weight. Recognising this helps you hear what the parent really wants.",
+            "modulationPattern": "Slow tempo, weight and long fall on 'disappointed'.",
+            "meaningShift": "A slow, weighted fall adds guilt; a level, quick delivery would be calm."
         },
         {
             "id": "ACC_PITCHMODULATION_L172_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A child is in bed, hoping for more.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Absolutely, I'll be there.",
-            "textToSpeak": "Absolutely, I'll be there.",
+            "word": "Go on, one more story.",
+            "textToSpeak": "Go on, one more story.",
             "options": [
-                "Fall-Rise (Hedge - Softening a Likely 'No')",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "Demanding",
+                "Coaxing"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
+            "correctAnswer": "Coaxing",
             "correctAnswerIndex": 1,
-            "hint": "'Absolutely' signals full commitment. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Absolutely, I'll be there' falls with full confidence, showing a genuine, firm commitment.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a hedge - softening a likely 'no' and a genuine, enthusiastic acceptance."
+            "hint": "Judge whether the voice is playful, or sharp.",
+            "explanation": "Bouncing up on 'go on' and falling softly, sing-song style, on 'story' suggests coaxing and relies on charm. A demand would be flat and pushed, with weight on 'one' and a hard landing. Learning to hear the difference helps parents and teachers respond appropriately.",
+            "modulationPattern": "Bouncy lift on 'go on', soft fall on 'story'.",
+            "meaningShift": "A bouncy, soft contour coaxes; a flat, pushed one would demand."
         },
         {
             "id": "ACC_PITCHMODULATION_L173_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is retelling an argument and gets the details wrong.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I wish I could, but I already have plans.",
-            "textToSpeak": "I wish I could, but I already have plans.",
+            "word": "That's not how I remember it.",
+            "textToSpeak": "That's not how I remember it.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)"
+                "Polite challenge",
+                "Accepting her version"
             ],
-            "correctAnswer": "Fall-Rise (Polite Refusal - Hedging Before Saying No)",
-            "correctAnswerIndex": 1,
-            "hint": "'I wish I could' sounds wistful, then 'but' reveals the real answer. Listen for the pitch to dip and lift before the excuse.",
-            "explanation": "The fall-rise on 'could', followed by 'but', makes this a polite refusal - expressing regret while ultimately declining.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a polite refusal - hedging before saying no."
+            "correctAnswer": "Polite challenge",
+            "correctAnswerIndex": 0,
+            "hint": "Find the word that carries weight.",
+            "explanation": "Emphasis on 'I' or 'remember' with a firm fall on 'it' presents the speaker's version as a counter-claim while keeping the tone civil. Accepting would be flatter, with no stress and a gentle trail. In arguments, this phrase lets you disagree without accusing the other person of lying.",
+            "modulationPattern": "Weight on 'remember', firm fall on 'it'.",
+            "meaningShift": "A weighted 'remember' with a firm fall challenges politely; a flat, trailing one would concede."
         },
         {
             "id": "ACC_PITCHMODULATION_L173_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A debate is getting heated.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Of course, I wouldn't miss it.",
-            "textToSpeak": "Of course, I wouldn't miss it.",
+            "word": "You've made your point.",
+            "textToSpeak": "You've made your point.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)"
+                "Asking for it to stop",
+                "Acknowledging warmly"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
+            "correctAnswer": "Asking for it to stop",
             "correctAnswerIndex": 0,
-            "hint": "There's no hedge here - just firm commitment. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Of course, I wouldn't miss it' falls with full confidence, showing genuine, wholehearted commitment.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a polite refusal - hedging before saying no."
+            "hint": "How cold is the fall on 'point'?",
+            "explanation": "Cooling the tone and putting weight on 'made' signals that the speaker has heard enough. Warm acknowledgement would lift on 'point' and sound appreciative. If you hear the cooler version, it's wise to wrap up.",
+            "modulationPattern": "Cool fall on 'point' with weight on 'made'.",
+            "meaningShift": "A cool, falling delivery asks for an end; a warm lift would acknowledge generously."
         },
         {
             "id": "ACC_PITCHMODULATION_L173_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "An argument breaks out at a family dinner.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Maybe another time, things are hectic right now.",
-            "textToSpeak": "Maybe another time, things are hectic right now.",
+            "word": "Let's not make this personal.",
+            "textToSpeak": "Let's not make this personal.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)"
+                "Calming, with an edge",
+                "Pleading with them to stop"
             ],
-            "correctAnswer": "Fall-Rise (Polite Refusal - Hedging Before Saying No)",
-            "correctAnswerIndex": 1,
-            "hint": "'Maybe another time' is a classic way of softening a 'no'. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "The fall-rise on 'maybe another time' softens what is really a polite refusal disguised as a postponement.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a polite refusal - hedging before saying no."
+            "correctAnswer": "Calming, with an edge",
+            "correctAnswerIndex": 0,
+            "hint": "Decide whether the voice is firm or begging.",
+            "explanation": "Falling steadily on 'personal' at a measured pace shows that the speaker is in control and expects it to stop. A pleading tone would lift and speed up, hoping for agreement. Understanding the edge helps you know when to back off.",
+            "modulationPattern": "Steady pace, firm fall on 'personal'.",
+            "meaningShift": "A firm, measured fall calms with authority; a rising, hurried one would plead."
         },
         {
             "id": "ACC_PITCHMODULATION_L174_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague wants to change a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Sure thing, I'll see you there.",
-            "textToSpeak": "Sure thing, I'll see you there.",
+            "word": "Would it be possible to move the meeting to Thursday?",
+            "textToSpeak": "Would it be possible to move the meeting to Thursday?",
             "options": [
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "A polite order you must obey",
+                "A real request: you can say no"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
+            "correctAnswer": "A real request: you can say no",
             "correctAnswerIndex": 1,
-            "hint": "There's no hedge here - just casual confirmation. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Sure thing, I'll see you there' falls with full confidence, showing genuine, casual acceptance.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a polite refusal - hedging before saying no and a genuine, enthusiastic acceptance."
+            "hint": "Hear whether the voice leaves space at the end.",
+            "explanation": "Lifting on 'Thursday' and slowing slightly give the listener room to decline. A polite order would fall on 'Thursday' and expect a yes. This difference tells you how much freedom you actually have.",
+            "modulationPattern": "Rise on 'Thursday' with slowing tempo.",
+            "meaningShift": "A rise leaves room to refuse; a falling finish would expect agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L174_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager has a deadline.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'd like to, but it's not really my thing.",
-            "textToSpeak": "I'd like to, but it's not really my thing.",
+            "word": "I need this by five.",
+            "textToSpeak": "I need this by five.",
             "options": [
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "A friendly request",
+                "A firm instruction"
             ],
-            "correctAnswer": "Fall-Rise (Polite Refusal - Hedging Before Saying No)",
-            "correctAnswerIndex": 0,
-            "hint": "'I'd like to' sounds open, but 'not really my thing' reveals the truth. Listen for the pitch to dip and lift before the excuse.",
-            "explanation": "The fall-rise on 'like to', followed by 'but', makes this a polite refusal - softened interest before the real decline.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a polite refusal - hedging before saying no and a genuine, enthusiastic acceptance."
+            "correctAnswer": "A firm instruction",
+            "correctAnswerIndex": 1,
+            "hint": "Find the word that takes the weight.",
+            "explanation": "Weight on 'need' and a firm fall on 'five' remove any room for negotiating. A friendly request would be softer, with a lift on 'five' and perhaps a 'could you'. Recognising the firm version tells you to prioritise it.",
+            "modulationPattern": "Weight on 'need', firm fall on 'five'.",
+            "meaningShift": "Weight on 'need' with a firm fall instructs; a soft lift would request."
         },
         {
             "id": "ACC_PITCHMODULATION_L174_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend wants a favour on Friday.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Definitely, looking forward to it.",
-            "textToSpeak": "Definitely, looking forward to it.",
+            "word": "Any chance you could cover for me on Friday?",
+            "textToSpeak": "Any chance you could cover for me on Friday?",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Polite Refusal - Hedging Before Saying No)"
+                "Hopeful and sheepish",
+                "Confident and expecting yes"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
+            "correctAnswer": "Hopeful and sheepish",
             "correctAnswerIndex": 0,
-            "hint": "'Definitely' signals full commitment. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Definitely, looking forward to it' falls with full confidence, showing genuine, enthusiastic acceptance.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a polite refusal - hedging before saying no."
+            "hint": "How high does the voice start, and how does it end?",
+            "explanation": "Lifting 'any chance' and rising hesitantly on 'Friday' sounds hopeful and slightly embarrassed. Confidence would be flatter and fall on 'Friday', expecting agreement. Hearing the sheepishness makes it easier to say yes or no kindly.",
+            "modulationPattern": "Lifted 'any chance', hesitant rise on 'Friday'.",
+            "meaningShift": "A lifted, hesitant contour sounds sheepish; a flat, falling one would be confident."
         },
         {
             "id": "ACC_PITCHMODULATION_L175_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend arrives two hours late.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Let me check, but it might not work out.",
-            "textToSpeak": "Let me check, but it might not work out.",
+            "word": "I'm so sorry, I should have called.",
+            "textToSpeak": "I'm so sorry, I should have called.",
             "options": [
-                "Fall-Rise (Hedge - Softening a Likely 'No')",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "Moving past it quickly",
+                "Taking responsibility"
             ],
-            "correctAnswer": "Fall-Rise (Hedge - Softening a Likely 'No')",
-            "correctAnswerIndex": 0,
-            "hint": "'Let me check' sounds open, but 'might not work out' lowers expectations early. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "The fall-rise here softens a likely refusal - the speaker leaves the door open while quietly preparing the listener for a 'no'.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a hedge - softening a likely 'no' and a genuine, enthusiastic acceptance."
+            "correctAnswer": "Taking responsibility",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'should' get weight?",
+            "explanation": "Weight on 'should' and a slow fall on 'called' show that the speaker accepts the fault. Moving on would be brisk and light, with a quick 'sorry'. The first is the model for a genuine apology.",
+            "modulationPattern": "Weight on 'should', slow fall on 'called'.",
+            "meaningShift": "A weighted 'should' with a slow fall accepts blame; a brisk, light delivery would brush it off."
         },
         {
             "id": "ACC_PITCHMODULATION_L175_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A shop assistant bumps into you.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Yes, I'm completely free that day.",
-            "textToSpeak": "Yes, I'm completely free that day.",
+            "word": "Sorry about that.",
+            "textToSpeak": "Sorry about that.",
             "options": [
-                "Fall-Rise (Hedge - Softening a Likely 'No')",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "Deeply apologetic",
+                "Casual, trivial"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
+            "correctAnswer": "Casual, trivial",
             "correctAnswerIndex": 1,
-            "hint": "'Completely free' leaves no room for doubt. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Yes, I'm completely free that day' falls with full confidence, showing a genuine, clear commitment.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a hedge - softening a likely 'no' and a genuine, enthusiastic acceptance."
+            "hint": "How long does the word 'sorry' last?",
+            "explanation": "Saying 'sorry' quickly and falling lightly on 'that' shows the speaker thinks it was minor. A deep apology would slow down and lower on 'sorry'. The size of the delivery tells you how seriously to take it.",
+            "modulationPattern": "Quick 'sorry', light fall.",
+            "meaningShift": "A quick, light 'sorry' is casual; a slow, low one is a real apology."
         },
         {
             "id": "ACC_PITCHMODULATION_L175_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has been told they upset someone.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I appreciate the offer, but I'll pass this time.",
-            "textToSpeak": "I appreciate the offer, but I'll pass this time.",
+            "word": "I'm sorry if you felt that way.",
+            "textToSpeak": "I'm sorry if you felt that way.",
             "options": [
-                "Fall-Rise (Polite Refusal - Softened Decline)",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "A genuine apology",
+                "A non-apology, defensive"
             ],
-            "correctAnswer": "Fall-Rise (Polite Refusal - Softened Decline)",
-            "correctAnswerIndex": 0,
-            "hint": "Thanking someone first often comes right before a polite decline. Listen for the pitch to dip and lift before 'pass'.",
-            "explanation": "The fall-rise on 'appreciate', followed by 'but', makes this a polite refusal - gratitude expressed before declining the offer.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a polite refusal - softened decline and a genuine, enthusiastic acceptance."
+            "correctAnswer": "A non-apology, defensive",
+            "correctAnswerIndex": 1,
+            "hint": "Pinpoint which word is pushed.",
+            "explanation": "Weight on 'if' and a flat finish on 'way' suggest the speaker doubts they did anything wrong. A genuine apology would put weight on 'sorry' and drop the 'if'. Hearing the defensiveness helps you judge whether the matter is resolved.",
+            "modulationPattern": "Weight on 'if', flat fall on 'way'.",
+            "meaningShift": "A weighted 'if' with a flat finish deflects; weight on 'sorry' would apologise."
         },
         {
             "id": "ACC_PITCHMODULATION_L176_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A group is stuck on a problem.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm flattered, but I'll have to say no.",
-            "textToSpeak": "I'm flattered, but I'll have to say no.",
+            "word": "We could always ask Ben.",
+            "textToSpeak": "We could always ask Ben.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Polite Refusal - Softened Decline)"
+                "A tentative, open idea",
+                "A preferred, settled plan"
             ],
-            "correctAnswer": "Fall-Rise (Polite Refusal - Softened Decline)",
-            "correctAnswerIndex": 1,
-            "hint": "'I'm flattered' softens what comes next - a clear 'no'. Listen for the pitch to dip and lift before the decline.",
-            "explanation": "The fall-rise on 'flattered', followed by 'but', makes this a polite refusal - appreciation expressed before a firm decline.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a polite refusal - softened decline."
+            "correctAnswer": "A tentative, open idea",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'always' sound relaxed or pressed?",
+            "explanation": "Keeping 'always' light and lifting slightly on 'Ben' presents the idea as one among several. A preferred plan would land firmly on 'Ben'. This tells you whether the speaker wants discussion or agreement.",
+            "modulationPattern": "Light 'always', small lift on 'Ben'.",
+            "meaningShift": "A light, lifted suggestion stays open; a firm fall on 'Ben' would be a plan."
         },
         {
             "id": "ACC_PITCHMODULATION_L176_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "An advisor is giving a recommendation.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm thrilled, count me in for sure.",
-            "textToSpeak": "I'm thrilled, count me in for sure.",
+            "word": "I'd suggest we wait until Monday.",
+            "textToSpeak": "I'd suggest we wait until Monday.",
             "options": [
-                "Fall-Rise (Polite Refusal - Softened Decline)",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "A confident recommendation",
+                "A hesitant, tentative idea"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
-            "correctAnswerIndex": 1,
-            "hint": "'Thrilled' and 'for sure' both show full enthusiasm. Listen for the pitch to fall fully and energetically.",
-            "explanation": "'I'm thrilled, count me in for sure' falls with full energy, showing genuine, decisive acceptance.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a polite refusal - softened decline and a genuine, enthusiastic acceptance."
+            "correctAnswer": "A confident recommendation",
+            "correctAnswerIndex": 0,
+            "hint": "How does the sentence finish?",
+            "explanation": "Peaking clearly on 'wait' and falling firmly on 'Monday' shows that the speaker has thought it through. A hesitant idea would lift on 'Monday' and trail off. This helps you decide whether it is advice you should follow.",
+            "modulationPattern": "Peak on 'wait', firm fall on 'Monday'.",
+            "meaningShift": "A peak and firm fall recommend with authority; a lift would be a tentative idea."
         },
         {
             "id": "ACC_PITCHMODULATION_L176_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A team is stuck, and a colleague tries to move things on.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's tempting, but I really shouldn't.",
-            "textToSpeak": "It's tempting, but I really shouldn't.",
+            "word": "How about we start with the easy part?",
+            "textToSpeak": "How about we start with the easy part?",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Polite Refusal - Softened Decline)"
+                "Practical encouragement",
+                "Doubting the whole plan"
             ],
-            "correctAnswer": "Fall-Rise (Polite Refusal - Softened Decline)",
-            "correctAnswerIndex": 1,
-            "hint": "'Tempting' sounds positive, but 'shouldn't' reveals the real answer. Listen for the pitch to dip and lift before the decline.",
-            "explanation": "The fall-rise on 'tempting', followed by 'but', makes this a polite refusal - interest expressed before a careful decline.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a polite refusal - softened decline."
+            "correctAnswer": "Practical encouragement",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the rise is bright, or flat.",
+            "explanation": "Lifting brightly on 'easy' and rising at the end invites the team to join in a small step. Doubt would be flat, with a sinking finish. In a stuck meeting, the encouraging version helps the group get going.",
+            "modulationPattern": "Bright lift on 'easy', rise at the end.",
+            "meaningShift": "A bright lift encourages a small step; a flat, sinking finish would doubt."
         },
         {
             "id": "ACC_PITCHMODULATION_L177_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Colleagues are heading to lunch.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'd be happy to, anytime works for me.",
-            "textToSpeak": "I'd be happy to, anytime works for me.",
+            "word": "Do you fancy joining us for lunch?",
+            "textToSpeak": "Do you fancy joining us for lunch?",
             "options": [
-                "Fall-Rise (Hedge - Softening a Likely 'No')",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "An obligatory, polite offer",
+                "A genuine, relaxed invitation"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
+            "correctAnswer": "A genuine, relaxed invitation",
             "correctAnswerIndex": 1,
-            "hint": "'Anytime works for me' leaves no room for hesitation. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'I'd be happy to, anytime works for me' falls warmly, showing genuine, flexible, wholehearted acceptance.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a hedge - softening a likely 'no' and a genuine, enthusiastic acceptance."
+            "hint": "Is there warmth in the lift?",
+            "explanation": "Lifting warmly on 'lunch' at an easy pace suggests the speaker would like the company. An obligatory offer would be flatter and quicker. Recognising genuine invitations lets you accept with confidence.",
+            "modulationPattern": "Warm lift on 'lunch', easy pace.",
+            "meaningShift": "A warm, easy lift invites; a flat, quick one is an obligation."
         },
         {
             "id": "ACC_PITCHMODULATION_L177_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "An acquaintance says goodbye at the end of an event.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I might be able to, but no guarantees.",
-            "textToSpeak": "I might be able to, but no guarantees.",
+            "word": "Maybe we'll see you there.",
+            "textToSpeak": "Maybe we'll see you there.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Hedge - Softening a Likely 'No')"
+                "Casual, no commitment",
+                "A firm hope of meeting"
             ],
-            "correctAnswer": "Fall-Rise (Hedge - Softening a Likely 'No')",
-            "correctAnswerIndex": 1,
-            "hint": "'Might' and 'no guarantees' both lower expectations carefully. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "The fall-rise here softens a likely refusal - the speaker avoids a direct 'no' while signalling it probably won't happen.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a hedge - softening a likely 'no'."
+            "correctAnswer": "Casual, no commitment",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'maybe' carry weight?",
+            "explanation": "Keeping 'maybe' light and letting 'there' fall loosely shows that the speaker is not making a plan. A firm hope would stress 'see' or 'you'. Hearing the casual version means you do not need to confirm anything.",
+            "modulationPattern": "Light 'maybe', loose fall on 'there'.",
+            "meaningShift": "A light, loose delivery makes no commitment; a stressed 'see you' would hope for it."
         },
         {
             "id": "ACC_PITCHMODULATION_L177_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A host sees you hesitating at the door.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Yes, absolutely, I'll bring everything.",
-            "textToSpeak": "Yes, absolutely, I'll bring everything.",
+            "word": "You're very welcome to join us, if you'd like.",
+            "textToSpeak": "You're very welcome to join us, if you'd like.",
             "options": [
-                "Fall-Rise (Hedge - Softening a Likely 'No')",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "A hint that you decline",
+                "Genuine and low pressure"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
+            "correctAnswer": "Genuine and low pressure",
             "correctAnswerIndex": 1,
-            "hint": "'Yes, absolutely' leaves no room for doubt. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Yes, absolutely, I'll bring everything' falls with full confidence, showing genuine, decisive commitment.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a hedge - softening a likely 'no' and a genuine, enthusiastic acceptance."
+            "hint": "Notice whether the voice sounds welcoming, or distant.",
+            "explanation": "Warmth on 'welcome' and an open rise on 'like' show the offer is real, and the pace remains relaxed. A hint to decline would be cooler and drop at the end. This tells you it's safe to accept.",
+            "modulationPattern": "Warm 'welcome', open rise on 'like'.",
+            "meaningShift": "A warm, open delivery invites; a cool, dropping one would hint at declining."
         },
         {
             "id": "ACC_PITCHMODULATION_L178_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A technician is explaining a machine.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'll see what I can do, but it's unlikely.",
-            "textToSpeak": "I'll see what I can do, but it's unlikely.",
+            "word": "Whatever you do, don't touch the red switch.",
+            "textToSpeak": "Whatever you do, don't touch the red switch.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Hedge - Softening a Likely 'No')"
+                "Casual advice",
+                "An urgent warning"
             ],
-            "correctAnswer": "Fall-Rise (Hedge - Softening a Likely 'No')",
+            "correctAnswer": "An urgent warning",
             "correctAnswerIndex": 1,
-            "hint": "'I'll see what I can do' sounds helpful, but 'unlikely' lowers expectations. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "The fall-rise here softens a likely refusal - the speaker sounds cooperative while quietly admitting success is improbable.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a hedge - softening a likely 'no'."
+            "hint": "How much weight does 'don't' have?",
+            "explanation": "Heavy stress on 'don't' and a firm fall on 'switch' show that the warning is serious. Casual advice would be even and quick. Hearing the urgency tells you to follow the instruction exactly.",
+            "modulationPattern": "Heavy stress on 'don't', firm fall on 'switch'.",
+            "meaningShift": "Heavy stress with a firm fall warns; an even, quick delivery would be casual advice."
         },
         {
             "id": "ACC_PITCHMODULATION_L178_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone is giving cooking instructions.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Without question, I'll be there early.",
-            "textToSpeak": "Without question, I'll be there early.",
+            "word": "Just give it a quick stir and you're done.",
+            "textToSpeak": "Just give it a quick stir and you're done.",
             "options": [
-                "Fall-Rise (Hedge - Softening a Likely 'No')",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "Reassuring simplicity",
+                "Urgent instruction"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
-            "correctAnswerIndex": 1,
-            "hint": "'Without question' leaves no room for doubt. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Without question, I'll be there early' falls with full confidence, showing a genuine, firm commitment.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a hedge - softening a likely 'no' and a genuine, enthusiastic acceptance."
+            "correctAnswer": "Reassuring simplicity",
+            "correctAnswerIndex": 0,
+            "hint": "Is the pace hurried, or relaxed?",
+            "explanation": "Keeping 'just' light and falling easily on 'done' promises that this step is simple. An urgent instruction would be faster and press 'stir'. Hearing the relaxed version lets you cook calmly.",
+            "modulationPattern": "Light 'just', easy fall on 'done'.",
+            "meaningShift": "A light, easy delivery reassures; a pressed, fast one would be urgent."
         },
         {
             "id": "ACC_PITCHMODULATION_L178_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A trainer begins a session.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's kind of you, but I can't this time.",
-            "textToSpeak": "That's kind of you, but I can't this time.",
+            "word": "Right, so, first of all, we need to talk about safety.",
+            "textToSpeak": "Right, so, first of all, we need to talk about safety.",
             "options": [
-                "Fall-Rise (Polite Refusal - Softened Decline)",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "Setting a serious tone",
+                "Casual chat about it"
             ],
-            "correctAnswer": "Fall-Rise (Polite Refusal - Softened Decline)",
+            "correctAnswer": "Setting a serious tone",
             "correctAnswerIndex": 0,
-            "hint": "A kind opening like this often softens the refusal that follows. Listen for the pitch to dip and lift before 'can't'.",
-            "explanation": "The fall-rise on 'kind of you', followed by 'but', makes this a polite refusal - gratitude expressed before declining.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a polite refusal - softened decline and a genuine, enthusiastic acceptance."
+            "hint": "Does the voice slow down at 'safety'?",
+            "explanation": "Slowing down and putting weight on 'safety' signal the topic is not optional. A casual chat would stay level and quick. This tells you to pay full attention to what follows.",
+            "modulationPattern": "Slowing tempo, peak on 'safety'.",
+            "meaningShift": "A slow peak sets a serious tone; a level, quick delivery would be casual."
         },
         {
             "id": "ACC_PITCHMODULATION_L179_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A host offers you an expensive gift.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Gladly, just tell me when.",
-            "textToSpeak": "Gladly, just tell me when.",
+            "word": "That's very kind, but I couldn't possibly.",
+            "textToSpeak": "That's very kind, but I couldn't possibly.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Hedge - Softening a Likely 'No')"
+                "A firm, final refusal of it",
+                "Polite refusal, open to insistence"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
-            "correctAnswerIndex": 0,
-            "hint": "'Gladly' shows full willingness. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'Gladly, just tell me when' falls warmly, showing genuine, wholehearted willingness to help.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a hedge - softening a likely 'no'."
+            "correctAnswer": "Polite refusal, open to insistence",
+            "correctAnswerIndex": 1,
+            "hint": "Check whether the voice closes the door, or leaves it ajar.",
+            "explanation": "Lifting on 'possibly' leaves the matter open, which is how people let others insist. A firm refusal would fall on 'possibly' and stop. Recognising the open version helps you know whether to press.",
+            "modulationPattern": "Lift on 'possibly'.",
+            "meaningShift": "A lifted ending leaves room for persuasion; a firm fall would close it."
         },
         {
             "id": "ACC_PITCHMODULATION_L179_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is thinking about texting an ex.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'd consider it, but I'm not totally convinced.",
-            "textToSpeak": "I'd consider it, but I'm not totally convinced.",
+            "word": "I'm not sure that's a good idea.",
+            "textToSpeak": "I'm not sure that's a good idea.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Hedge - Softening a Likely 'No')"
+                "A gentle warning",
+                "Real uncertainty"
             ],
-            "correctAnswer": "Fall-Rise (Hedge - Softening a Likely 'No')",
-            "correctAnswerIndex": 1,
-            "hint": "'I'd consider it' sounds open, but 'not totally convinced' hedges heavily. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "The fall-rise here softens a likely refusal - the speaker stays polite while signalling real doubt about agreeing.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a hedge - softening a likely 'no'."
+            "correctAnswer": "A gentle warning",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'sure' sound searching or settled?",
+            "explanation": "Weight on 'good' and a soft fall on 'idea' show that the speaker already has a view and is softening it. Real uncertainty would lift on 'idea' and invite discussion. This tells you the speaker is advising against it.",
+            "modulationPattern": "Weight on 'good', soft fall on 'idea'.",
+            "meaningShift": "A weighted 'good' with a soft fall warns gently; a lift on 'idea' would be real doubt."
         },
         {
             "id": "ACC_PITCHMODULATION_L179_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is asked about a possible future problem.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Of course, I'll make time for it.",
-            "textToSpeak": "Of course, I'll make time for it.",
+            "word": "We'll cross that bridge when we come to it.",
+            "textToSpeak": "We'll cross that bridge when we come to it.",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Hedge - Softening a Likely 'No')"
+                "An actual detailed plan",
+                "Putting it off kindly"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
-            "correctAnswerIndex": 0,
-            "hint": "'I'll make time for it' shows firm commitment. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'Of course, I'll make time for it' falls warmly, showing genuine, wholehearted commitment.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a hedge - softening a likely 'no'."
+            "correctAnswer": "Putting it off kindly",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the speaker gives any detail.",
+            "explanation": "Falling in a relaxed way on 'it', with no detail, shows that the speaker does not want to discuss it now. A real plan would stress a particular step. This tells you not to expect specifics.",
+            "modulationPattern": "Relaxed fall on 'it', no stressed detail.",
+            "meaningShift": "A relaxed fall defers the problem; a stressed step would show a plan."
         },
         {
             "id": "ACC_PITCHMODULATION_L180_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager phones you on a Sunday.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Perhaps, if things calm down a bit.",
-            "textToSpeak": "Perhaps, if things calm down a bit.",
+            "word": "Sorry to bother you on a weekend, but have you got a second?",
+            "textToSpeak": "Sorry to bother you on a weekend, but have you got a second?",
             "options": [
-                "Falling (Genuine, Enthusiastic Acceptance)",
-                "Fall-Rise (Hedge - Softening a Likely 'No')"
+                "A casual catch-up chat",
+                "An apology, but it matters"
             ],
-            "correctAnswer": "Fall-Rise (Hedge - Softening a Likely 'No')",
+            "correctAnswer": "An apology, but it matters",
             "correctAnswerIndex": 1,
-            "hint": "'Perhaps' and the conditional 'if' both hedge carefully. Listen for the pitch to dip and lift cautiously.",
-            "explanation": "The fall-rise here softens a likely refusal - the conditional 'if' makes the agreement sound far from certain.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a genuine, enthusiastic acceptance and a hedge - softening a likely 'no'."
+            "hint": "Hear whether the second half sounds light, or serious.",
+            "explanation": "Apologising briefly and softly, then slowing into a more serious lift on 'second', shows the matter is important. A casual chat would be light throughout. This tells you to take it seriously, not as small talk.",
+            "modulationPattern": "Soft 'sorry', slower rise on 'second'.",
+            "meaningShift": "A soft apology with a slower rise signals importance; a light delivery would be a casual chat."
         },
         {
             "id": "ACC_PITCHMODULATION_L180_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague gives you feedback in a one-to-one.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Yes, without a doubt, I'm in.",
-            "textToSpeak": "Yes, without a doubt, I'm in.",
+            "word": "That went really well. There's just one thing I'd change.",
+            "textToSpeak": "That went really well. There's just one thing I'd change.",
             "options": [
-                "Fall-Rise (Hedge - Softening a Likely 'No')",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "Praise, then the real point",
+                "Equal praise and criticism"
             ],
-            "correctAnswer": "Falling (Genuine, Enthusiastic Acceptance)",
-            "correctAnswerIndex": 1,
-            "hint": "'Without a doubt' leaves no room for hesitation. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Yes, without a doubt, I'm in' falls with full confidence, showing genuine, decisive acceptance.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a hedge - softening a likely 'no' and a genuine, enthusiastic acceptance."
+            "correctAnswer": "Praise, then the real point",
+            "correctAnswerIndex": 0,
+            "hint": "Find the word that gets the biggest peak.",
+            "explanation": "The peak on 'one' sets up the actual message, which comes after the praise. If both parts were equal, the contour would be balanced. Hearing this tells you where to look for the change you need to make.",
+            "modulationPattern": "Warm opener, peak on 'one'.",
+            "meaningShift": "A peak on 'one' puts the real point after the praise; a balanced contour would weigh them equally."
         },
         {
             "id": "ACC_PITCHMODULATION_L180_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A teacher is talking to a parent at parents' evening.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm not sure I can, but I'll let you know.",
-            "textToSpeak": "I'm not sure I can, but I'll let you know.",
+            "word": "He's a lovely boy. He just needs to focus a bit more.",
+            "textToSpeak": "He's a lovely boy. He just needs to focus a bit more.",
             "options": [
-                "Fall-Rise (Hedge - Softening a Likely 'No')",
-                "Falling (Genuine, Enthusiastic Acceptance)"
+                "Gentle but serious concern",
+                "A light, passing remark"
             ],
-            "correctAnswer": "Fall-Rise (Hedge - Softening a Likely 'No')",
+            "correctAnswer": "Gentle but serious concern",
             "correctAnswerIndex": 0,
-            "hint": "'Not sure I can' already signals doubt, softened further by 'I'll let you know'. Listen for the pitch to dip and lift.",
-            "explanation": "The fall-rise here softens a likely refusal - open doubt is wrapped in the polite promise of a future answer.",
-            "modulationPattern": "A fall-rise before a 'but' softens an answer into a polite refusal or hedge; a full falling tone signals genuine, wholehearted acceptance.",
-            "meaningShift": "The meaning shifts between a hedge - softening a likely 'no' and a genuine, enthusiastic acceptance."
+            "hint": "How does the second sentence sound compared with the first?",
+            "explanation": "Starting warmly, then slowing and weighting the second sentence with a fall on 'more', shows that the concern is real. A light remark would be quick and bright throughout. This tells you to take the second sentence seriously.",
+            "modulationPattern": "Warm first sentence, slower second with a fall on 'more'.",
+            "meaningShift": "A warm start with a slow, weighted second sentence is serious concern; a quick, bright one would be light."
         }
     ]
 }

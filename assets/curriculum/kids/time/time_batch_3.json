@@ -1,622 +1,622 @@
 [
-    {
+  {
+    "level": 21,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L21_Q1",
+        "gameType": "time",
         "level": 21,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L21_Q1",
-                "gameType": "time",
-                "level": 21,
-                "instruction": "Leo looks at the clock. It shows six o'clock in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 AM 🕕",
-                "options": [
-                    "6:00 PM 🍲",
-                    "7:00 AM 🛏️",
-                    "6:00 AM 🕕"
-                ],
-                "hint": "Say the hour number first, then add the letters for morning.",
-                "emoji": "🕕",
-                "explanation": "Six o'clock in the morning is written as 6:00 AM.",
-                "funFact": "On a clock, when the long minute hand points straight up to 12, the hour is exact.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L21_Q2",
-                "gameType": "time",
-                "level": 21,
-                "instruction": "On Ava's clock, the short hand rests on 3 while the long hand stands tall on 12, in the afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:00 PM 🕒",
-                "options": [
-                    "4:00 PM 🛝",
-                    "3:00 AM",
-                    "3:00 PM 🕒"
-                ],
-                "hint": "The short hand tells you the hour — check where it is pointing.",
-                "emoji": "🕒",
-                "explanation": "When the short hand sits on 3 and the long hand sits on 12, that's exactly 3:00 — afternoon makes it 3:00 PM.",
-                "funFact": "The short hand on a clock always shows the hour, while the long hand shows the minutes.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L21_Q3",
-                "gameType": "time",
-                "level": 21,
-                "instruction": "Ava's clock shows nine o'clock at night. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 PM 🕘",
-                "options": [
-                    "9:00 AM 🏫",
-                    "8:00 PM 📖",
-                    "9:00 PM 🕘"
-                ],
-                "hint": "Say the hour first, then think about whether it's day or night.",
-                "emoji": "🕘",
-                "explanation": "Nine o'clock at night is written as 9:00 PM.",
-                "funFact": "The letters PM stand for the hours after noon, all the way until midnight.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "There are 60 minutes in 1 hour. How many minutes are in half an hour?",
+        "question": "?",
+        "correctAnswer": "30 minutes",
+        "options": [
+          "40 minutes",
+          "30 minutes",
+          "15 minutes"
+        ],
+        "hint": "Half means two equal parts. Split 60 minutes into two equal parts.",
+        "emoji": "➗",
+        "explanation": "Half of 60 is 30, so half an hour is 30 minutes.",
+        "funFact": "The word minute comes from a Latin phrase meaning \"small part\" of an hour.",
+        "subtype": "half_past",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L21_Q2",
+        "gameType": "time",
+        "level": 21,
+        "instruction": "The long minute hand starts at 12 and travels halfway around the clock. Which number is it on?",
+        "question": "?",
+        "correctAnswer": "6",
+        "options": [
+          "6",
+          "9",
+          "3"
+        ],
+        "hint": "Halfway around a circle brings you to the side opposite where you started.",
+        "emoji": "🧭",
+        "explanation": "The 6 is opposite the 12, so the long hand is halfway round when it points to 6. That means 30 minutes have passed.",
+        "funFact": "A clock face split from the 12 down to the 6 makes two equal halves.",
+        "subtype": "half_past",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L21_Q3",
+        "gameType": "time",
+        "level": 21,
+        "instruction": "Two half hours together make how much time?",
+        "question": "?",
+        "correctAnswer": "1 hour",
+        "options": [
+          "30 minutes",
+          "2 hours",
+          "1 hour"
+        ],
+        "hint": "Put two equal halves back together.",
+        "emoji": "🧩",
+        "explanation": "A half hour is 30 minutes, and 30 + 30 = 60 minutes, which is 1 hour.",
+        "funFact": "Half an hour is the usual length of many television shows.",
+        "subtype": "half_past",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 22,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L22_Q1",
+        "gameType": "time",
         "level": 22,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L22_Q1",
-                "gameType": "time",
-                "level": 22,
-                "instruction": "Sam wakes up and checks the clock. It shows seven o'clock in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:00 AM 🕖",
-                "options": [
-                    "7:00 AM 🕖",
-                    "7:00 PM 🛁",
-                    "8:00 AM 🍳"
-                ],
-                "hint": "Morning times always use the letters AM.",
-                "emoji": "🕖",
-                "explanation": "Seven o'clock in the morning is written as 7:00 AM.",
-                "funFact": "The letters AM stand for the hours after midnight, all the way until noon.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L22_Q2",
-                "gameType": "time",
-                "level": 22,
-                "instruction": "Zoe's minute hand stands on 12 and her hour hand rests on 2. It is afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:00 PM 🕑",
-                "options": [
-                    "2:00 PM 🕑",
-                    "1:00 PM 📚",
-                    "2:00 AM 🌗"
-                ],
-                "hint": "Whichever number the shorter hand touches is your hour.",
-                "emoji": "🕑",
-                "explanation": "A short hand on 2 and a long hand on 12 means the clock reads 2:00 — in the afternoon, that's 2:00 PM.",
-                "funFact": "A clock face has 12 numbers, and the hour hand moves slowly around all of them in a day.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L22_Q3",
-                "gameType": "time",
-                "level": 22,
-                "instruction": "Zoe's clock shows eight o'clock in the evening. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 PM 🕗",
-                "options": [
-                    "7:00 PM 🛁",
-                    "8:00 AM 🍳",
-                    "8:00 PM 🕗"
-                ],
-                "hint": "Evening times always use the letters PM.",
-                "emoji": "🕗",
-                "explanation": "Eight o'clock in the evening is written as 8:00 PM.",
-                "funFact": "Evening is the part of the day between afternoon and nighttime.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "The long hand points to 6 and the short hand is just past 4. What time is it?",
+        "question": "?",
+        "correctAnswer": "4:30",
+        "options": [
+          "4:30",
+          "6:04",
+          "5:30"
+        ],
+        "hint": "Use the short hand for the hour. It has passed 4 but has not reached 5.",
+        "emoji": "🔎",
+        "explanation": "The long hand on 6 means 30 minutes past the hour. The short hand has passed 4 but not reached 5, so it is half past 4, or 4:30.",
+        "funFact": "The hour hand moves slowly all the time, which is why it sits between two numbers at half past.",
+        "subtype": "half_past",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L22_Q2",
+        "gameType": "time",
+        "level": 22,
+        "instruction": "The toy clock face 🕞 shows a half hour. What time is it?",
+        "question": "?",
+        "correctAnswer": "3:30",
+        "options": [
+          "3:06",
+          "4:30",
+          "3:30"
+        ],
+        "hint": "Find the short hand to get the hour, then think about what the long hand pointing down means.",
+        "emoji": "🕞",
+        "explanation": "The long hand points to 6, which means 30 minutes. The short hand is between 3 and 4, so the time is 3:30. The time 3:06 comes from reading the 6 as 6 minutes.",
+        "funFact": "Each emoji clock face shows either a whole hour or a half hour.",
+        "subtype": "half_past",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L22_Q3",
+        "gameType": "time",
+        "level": 22,
+        "instruction": "Which clock shows half past 7?",
+        "question": "?",
+        "correctAnswer": "Long hand on 6, short hand between 7 and 8",
+        "options": [
+          "Long hand on 7, short hand on 6",
+          "Long hand on 6, short hand between 6 and 7",
+          "Long hand on 6, short hand between 7 and 8"
+        ],
+        "hint": "At half past, the long hand always points to the same number.",
+        "emoji": "🕰️",
+        "explanation": "Half past 7 has the long hand on 6 and the short hand halfway between 7 and 8. The other clocks swap the hands or show the wrong hour.",
+        "funFact": "If you swap the two hands on a clock, you get a completely different time.",
+        "subtype": "half_past",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 23,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L23_Q1",
+        "gameType": "time",
         "level": 23,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L23_Q1",
-                "gameType": "time",
-                "level": 23,
-                "instruction": "Ben's classroom clock shows nine o'clock in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 AM 🕘",
-                "options": [
-                    "9:00 AM 🕘",
-                    "10:00 AM 🍎",
-                    "9:00 PM 🌙"
-                ],
-                "hint": "This hour comes just one step after eight.",
-                "emoji": "🕘",
-                "explanation": "Nine o'clock in the morning is written as 9:00 AM.",
-                "funFact": "On a digital clock, the numbers before the colon always show the hour.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L23_Q2",
-                "gameType": "time",
-                "level": 23,
-                "instruction": "Look closely: the long hand points to 12 and the short hand points to 1, and it is afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:00 PM 🕐",
-                "options": [
-                    "2:00 PM 😴",
-                    "1:00 PM 🕐",
-                    "1:00 AM 🌗"
-                ],
-                "hint": "Find the smaller hand — it names the hour.",
-                "emoji": "🕐",
-                "explanation": "A long hand on 12 with a short hand on 1 means it's 1:00 — since it's afternoon, write it as 1:00 PM.",
-                "funFact": "1:00 PM is the very first hour of the afternoon, right after noon.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L23_Q3",
-                "gameType": "time",
-                "level": 23,
-                "instruction": "Ella's clock shows ten o'clock at night. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 PM 🕙",
-                "options": [
-                    "9:00 PM 🌙",
-                    "10:00 AM 🍎",
-                    "10:00 PM 🕙"
-                ],
-                "hint": "Nighttime hours are always written with PM.",
-                "emoji": "🕙",
-                "explanation": "Ten o'clock at night is written as 10:00 PM.",
-                "funFact": "By 10:00 PM, most children have already been asleep for a little while.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A digital clock shows 9:30. How else can we say this time?",
+        "question": "?",
+        "correctAnswer": "Half past 9",
+        "options": [
+          "Half past 9",
+          "Half past 10",
+          "Half past 6"
+        ],
+        "hint": "The 30 means half an hour has passed since 9 o'clock.",
+        "emoji": "💬",
+        "explanation": "9:30 is 30 minutes after 9 o'clock, so we say half past 9. We do not say half past 10 until 10 o'clock has passed.",
+        "funFact": "In German, 9:30 is called \"halb zehn\", which means \"half ten\" because it counts toward the next hour.",
+        "subtype": "half_past",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L23_Q2",
+        "gameType": "time",
+        "level": 23,
+        "instruction": "Which digital time shows half past 2?",
+        "question": "?",
+        "correctAnswer": "2:30",
+        "options": [
+          "2:30",
+          "2:06",
+          "3:30"
+        ],
+        "hint": "Write the hour first, then the minutes after the hour.",
+        "emoji": "🔢",
+        "explanation": "Half past 2 is 2 hours and 30 minutes, written 2:30. The time 2:06 reads the 6 as minutes, and 3:30 is half past 3.",
+        "funFact": "Digital clocks show minutes with two digits, so 6 minutes is written as 06.",
+        "subtype": "half_past",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L23_Q3",
+        "gameType": "time",
+        "level": 23,
+        "instruction": "What is the time half an hour after 12:00 noon?",
+        "question": "?",
+        "correctAnswer": "12:30 PM",
+        "options": [
+          "1:30 PM",
+          "12:30 PM",
+          "12:30 AM"
+        ],
+        "hint": "Add 30 minutes to noon, then ask whether it is still before or after midday.",
+        "emoji": "🌞",
+        "explanation": "30 minutes after 12:00 PM is 12:30 PM. The hour is still 12, and it is still after noon, so it is PM.",
+        "funFact": "On a 12-hour clock, the first hour after noon is shown as 12:xx PM, not 1:xx PM.",
+        "subtype": "half_past",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 24,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L24_Q1",
+        "gameType": "time",
         "level": 24,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L24_Q1",
-                "gameType": "time",
-                "level": 24,
-                "instruction": "Omar checks the clock. It shows ten o'clock in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 AM 🕙",
-                "options": [
-                    "11:00 AM 🎨",
-                    "10:00 AM 🕙",
-                    "10:00 PM 🐶"
-                ],
-                "hint": "Count one hour past nine to find this one.",
-                "emoji": "🕙",
-                "explanation": "Ten o'clock in the morning is written as 10:00 AM.",
-                "funFact": "10:00 AM is a common time for a short snack break at school.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L24_Q2",
-                "gameType": "time",
-                "level": 24,
-                "instruction": "On the wall, a clock's short hand touches 4 and its long hand touches 12. It is afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "4:00 PM 🕓",
-                "options": [
-                    "5:00 PM 🧃",
-                    "4:00 PM 🕓",
-                    "4:00 AM"
-                ],
-                "hint": "The little hand is the one that names the hour.",
-                "emoji": "🕓",
-                "explanation": "A short hand on 4 and a long hand on 12 make it exactly 4:00 — afternoon means it's 4:00 PM.",
-                "funFact": "When both clock hands point straight up and down like this, it is always an exact hour.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L24_Q3",
-                "gameType": "time",
-                "level": 24,
-                "instruction": "Lily's clock shows seven o'clock in the evening. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:00 PM 🕖",
-                "options": [
-                    "7:00 AM 🛏️",
-                    "7:00 PM 🕖",
-                    "6:00 PM 🍲"
-                ],
-                "hint": "Say the hour, then remember evening ends in PM.",
-                "emoji": "🕖",
-                "explanation": "Seven o'clock in the evening is written as 7:00 PM.",
-                "funFact": "7:00 PM is a common time for families to relax together after dinner.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A puppet show begins at 4:00 PM and the first act lasts 30 minutes. When does the first act end?",
+        "question": "?",
+        "correctAnswer": "4:30 PM",
+        "options": [
+          "4:30 PM",
+          "5:00 PM",
+          "3:30 PM"
+        ],
+        "hint": "Count forward half an hour from 4:00.",
+        "emoji": "🎭",
+        "explanation": "30 minutes is half an hour. Half an hour after 4:00 PM is 4:30 PM.",
+        "funFact": "Shadow puppets are among the oldest kinds of puppet shows.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L24_Q2",
+        "gameType": "time",
+        "level": 24,
+        "instruction": "Now it is 6:30 AM. What time was it 30 minutes ago?",
+        "question": "?",
+        "correctAnswer": "6:00 AM",
+        "options": [
+          "6:00 AM",
+          "5:30 AM",
+          "7:00 AM"
+        ],
+        "hint": "Going back 30 minutes from a half-past time lands on a very special kind of time.",
+        "emoji": "⏪",
+        "explanation": "Going back 30 minutes from 6:30 AM takes the minute hand from 6 back to 12. That gives 6:00 AM.",
+        "funFact": "Going back in time means moving the hands anticlockwise, the opposite way to normal.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L24_Q3",
+        "gameType": "time",
+        "level": 24,
+        "instruction": "A ferry leaves at 7:30 PM, and the next ferry leaves 30 minutes later. When does the next ferry leave?",
+        "question": "?",
+        "correctAnswer": "8:00 PM",
+        "options": [
+          "7:00 PM",
+          "8:30 PM",
+          "8:00 PM"
+        ],
+        "hint": "Half an hour after a half-past time reaches the next hour.",
+        "emoji": "⛴️",
+        "explanation": "30 minutes after 7:30 is 8:00. The minute hand goes from 6 round to 12, and the hour changes from 7 to 8.",
+        "funFact": "Many ferries and buses run on a repeating pattern, such as every 30 minutes, so the timetable is easy to remember.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 25,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L25_Q1",
+        "gameType": "time",
         "level": 25,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L25_Q1",
-                "gameType": "time",
-                "level": 25,
-                "instruction": "Noah's clock shows eleven o'clock in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:00 AM 🕚",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "11:00 AM 🕚",
-                    "11:00 PM 💡"
-                ],
-                "hint": "This hour arrives just before noon.",
-                "emoji": "🕚",
-                "explanation": "Eleven o'clock in the morning is written as 11:00 AM.",
-                "funFact": "11:00 AM is the last hour of the morning before noon arrives.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L25_Q2",
-                "gameType": "time",
-                "level": 25,
-                "instruction": "Picture a clock where the short hand leans on 5 and the long hand stands on 12, in the afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "5:00 PM 🕔",
-                "options": [
-                    "6:00 PM 🍲",
-                    "5:00 AM ⏪",
-                    "5:00 PM 🕔"
-                ],
-                "hint": "The hour hand is shorter — see which number it leans on.",
-                "emoji": "🕔",
-                "explanation": "With the short hand on 5 and the long hand on 12, the clock says 5:00 — afternoon makes it 5:00 PM.",
-                "funFact": "5:00 PM is often called \"late afternoon,\" just before evening begins.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L25_Q3",
-                "gameType": "time",
-                "level": 25,
-                "instruction": "Ivy's clock shows six o'clock in the evening. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 PM 🕕",
-                "options": [
-                    "5:00 PM 🧃",
-                    "6:00 AM 🌅",
-                    "6:00 PM 🕕"
-                ],
-                "hint": "Once you say the hour, add the letters for evening.",
-                "emoji": "🕕",
-                "explanation": "Six o'clock in the evening is written as 6:00 PM.",
-                "funFact": "6:00 PM is a popular time for families to enjoy dinner together.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is earlier: 5:30 PM or 6:00 PM?",
+        "question": "?",
+        "correctAnswer": "5:30 PM",
+        "options": [
+          "5:30 PM",
+          "They are the same time",
+          "6:00 PM"
+        ],
+        "hint": "Compare the hours first. Which hour comes first on the clock?",
+        "emoji": "⚖️",
+        "explanation": "5:30 is half an hour after 5 o'clock, so it comes before 6:00. The bigger number 30 does not make it later, because the hour 5 is smaller than 6.",
+        "funFact": "Minutes go up to 60, not 100, so after 59 minutes a new hour begins.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L25_Q2",
+        "gameType": "time",
+        "level": 25,
+        "instruction": "Put the times 9:30, 8:30 and 9:00 in order from earliest to latest. Which time is in the middle?",
+        "question": "?",
+        "correctAnswer": "9:00",
+        "options": [
+          "8:30",
+          "9:00",
+          "9:30"
+        ],
+        "hint": "Compare the hours first. If the hours match, compare the minutes.",
+        "emoji": "📊",
+        "explanation": "In order the times are 8:30, 9:00 and 9:30. 8:30 has the smallest hour, and 9:00 has fewer minutes than 9:30. So 9:00 is in the middle.",
+        "funFact": "Runners in races are timed to fractions of a second so that the order of finishing is clear.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L25_Q3",
+        "gameType": "time",
+        "level": 25,
+        "instruction": "Which time is between 3:00 and 4:00 on a clock?",
+        "question": "?",
+        "correctAnswer": "3:30",
+        "options": [
+          "2:30",
+          "3:30",
+          "4:30"
+        ],
+        "hint": "Between means after 3:00 but before 4:00.",
+        "emoji": "↔️",
+        "explanation": "3:30 is after 3:00 and before 4:00. The time 2:30 is earlier than 3:00, and 4:30 is later than 4:00.",
+        "funFact": "Between one o'clock hour and the next there are 60 different minutes.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 26,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L26_Q1",
+        "gameType": "time",
         "level": 26,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L26_Q1",
-                "gameType": "time",
-                "level": 26,
-                "instruction": "Max looks up at the clock. It shows twelve o'clock, right in the middle of the day. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:00 PM 🕛",
-                "options": [
-                    "11:00 AM 🎨",
-                    "12:00 PM 🕛",
-                    "1:00 PM 📚"
-                ],
-                "hint": "This special hour has its very own nickname: noon.",
-                "emoji": "🕛",
-                "explanation": "Twelve o'clock in the middle of the day is written as 12:00 PM, or noon.",
-                "funFact": "12:00 PM is called noon, and 12:00 AM is called midnight.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L26_Q2",
-                "gameType": "time",
-                "level": 26,
-                "instruction": "A sunrise clock shows its short hand on 6 and its long hand on 12. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 AM 🕕",
-                "options": [
-                    "7:00 AM 🛏️",
-                    "6:00 PM 🍲",
-                    "6:00 AM 🕕"
-                ],
-                "hint": "Whichever number the little hand touches names your hour.",
-                "emoji": "🕕",
-                "explanation": "A short hand on 6 with a long hand on 12 gives an exact 6:00, and this early clock reads 6:00 AM.",
-                "funFact": "6:00 AM is often when the sun begins to rise in the morning sky.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L26_Q3",
-                "gameType": "time",
-                "level": 26,
-                "instruction": "Rosa's clock shows eleven o'clock at night. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:00 PM 🕚",
-                "options": [
-                    "11:00 AM 🎨",
-                    "11:00 PM 🕚",
-                    "10:00 PM 🐶"
-                ],
-                "hint": "Late-night hours are always written with PM.",
-                "emoji": "🕚",
-                "explanation": "Eleven o'clock at night is written as 11:00 PM.",
-                "funFact": "By 11:00 PM, even grown-ups are usually getting ready for sleep.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A quarter of an hour is how many minutes?",
+        "question": "?",
+        "correctAnswer": "15 minutes",
+        "options": [
+          "30 minutes",
+          "25 minutes",
+          "15 minutes"
+        ],
+        "hint": "A quarter is one of four equal parts. Split 60 minutes into four equal parts.",
+        "emoji": "🍰",
+        "explanation": "60 minutes split into 4 equal parts gives 15 minutes in each part. So a quarter of an hour is 15 minutes.",
+        "funFact": "Four quarter hours fit into one hour, just like four quarter-dollar coins make one dollar.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L26_Q2",
+        "gameType": "time",
+        "level": 26,
+        "instruction": "The long hand has moved from 12 to 3. What part of the circle has it travelled?",
+        "question": "?",
+        "correctAnswer": "A quarter",
+        "options": [
+          "A half",
+          "A quarter",
+          "Three quarters"
+        ],
+        "hint": "A full turn goes from 12 all the way back to 12. Picture it cut into four equal sections.",
+        "emoji": "🔄",
+        "explanation": "From 12 to 3 is one of four equal sections of the clock face. That is a quarter of the way round, which is 15 minutes.",
+        "funFact": "A quarter turn is also called a right angle, like the corner of a book.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L26_Q3",
+        "gameType": "time",
+        "level": 26,
+        "instruction": "The long hand points to 9. How many minutes past the hour is it?",
+        "question": "?",
+        "correctAnswer": "45 minutes",
+        "options": [
+          "9 minutes",
+          "15 minutes",
+          "45 minutes"
+        ],
+        "hint": "From 12 to 3 is 15 minutes, and each further quarter turn adds 15 more.",
+        "emoji": "9️⃣",
+        "explanation": "12 to 3 is 15 minutes, 3 to 6 is 30 minutes, and 6 to 9 is 45 minutes. So the long hand on 9 means 45 minutes past the hour.",
+        "funFact": "Many clock faces have 60 tiny marks around the edge, one for each minute.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 27,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L27_Q1",
+        "gameType": "time",
         "level": 27,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L27_Q1",
-                "gameType": "time",
-                "level": 27,
-                "instruction": "Theo's clock shows eight o'clock in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 AM 🕗",
-                "options": [
-                    "8:00 PM 📖",
-                    "9:00 AM 🏫",
-                    "8:00 AM 🕗"
-                ],
-                "hint": "This hour comes just one step after seven.",
-                "emoji": "🕗",
-                "explanation": "Eight o'clock in the morning is written as 8:00 AM.",
-                "funFact": "8:00 AM is a common time for the school day to begin.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L27_Q2",
-                "gameType": "time",
-                "level": 27,
-                "instruction": "Nina's clock shows three o'clock in the afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "3:00 PM 🕒",
-                "options": [
-                    "4:00 PM 🛝",
-                    "3:00 AM",
-                    "3:00 PM 🕒"
-                ],
-                "hint": "Say the hour, then remember afternoon ends in PM.",
-                "emoji": "🕒",
-                "explanation": "Three o'clock in the afternoon is written as 3:00 PM.",
-                "funFact": "3:00 PM is a common time for the school day to end.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L27_Q3",
-                "gameType": "time",
-                "level": 27,
-                "instruction": "The lunchroom clock shows twelve o'clock, right in the middle of the day. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:00 PM 🕛",
-                "options": [
-                    "12:00 PM 🕛",
-                    "11:00 AM 🎨",
-                    "1:00 PM 📚"
-                ],
-                "hint": "The sun is at its very highest at this special hour.",
-                "emoji": "🕛",
-                "explanation": "Twelve o'clock in the middle of the day is written as 12:00 PM — that's noon.",
-                "funFact": "At 12:00 PM, your shadow becomes very short if the sun is out.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "The long hand points to 3 and the short hand is just past 2. What time is it?",
+        "question": "?",
+        "correctAnswer": "2:15",
+        "options": [
+          "3:15",
+          "2:15",
+          "2:03"
+        ],
+        "hint": "The short hand has passed the 2 but has not reached the 3.",
+        "emoji": "🕑",
+        "explanation": "The long hand on 3 means 15 minutes past the hour. The short hand has passed 2, so it is quarter past 2, or 2:15.",
+        "funFact": "At quarter past, the hour hand has only just moved beyond its number.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L27_Q2",
+        "gameType": "time",
+        "level": 27,
+        "instruction": "Which digital time is quarter past 6?",
+        "question": "?",
+        "correctAnswer": "6:15",
+        "options": [
+          "6:45",
+          "6:15",
+          "6:03"
+        ],
+        "hint": "Quarter past means 15 minutes after the hour.",
+        "emoji": "📟",
+        "explanation": "A quarter of an hour is 15 minutes, so quarter past 6 is 6:15. The time 6:45 is quarter to 7, and 6:03 reads the 3 as 3 minutes.",
+        "funFact": "Many people say \"six fifteen\" instead of \"quarter past six\". Both mean exactly the same time.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L27_Q3",
+        "gameType": "time",
+        "level": 27,
+        "instruction": "Which clock shows quarter past 9?",
+        "question": "?",
+        "correctAnswer": "Long hand on 3, short hand just past 9",
+        "options": [
+          "Long hand on 3, short hand just past 9",
+          "Long hand on 9, short hand just before 10",
+          "Long hand on 9, short hand on 3"
+        ],
+        "hint": "At quarter past, the long hand has moved a quarter of the way round from 12.",
+        "emoji": "🧐",
+        "explanation": "Quarter past 9 means 9 o'clock plus 15 minutes, so the long hand is on 3 and the short hand is just past 9. The other clocks swap the hands or show quarter to 10.",
+        "funFact": "When you read a clock, find the long hand first so you do not swap the hour and the minutes.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 28,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L28_Q1",
+        "gameType": "time",
         "level": 28,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L28_Q1",
-                "gameType": "time",
-                "level": 28,
-                "instruction": "Eli's alarm rings at seven o'clock in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "7:00 AM 🕖",
-                "options": [
-                    "7:00 AM 🕖",
-                    "7:00 PM 🛁",
-                    "8:00 AM 🍳"
-                ],
-                "hint": "This hour comes right after six in the morning.",
-                "emoji": "🕖",
-                "explanation": "When it's seven o'clock in the morning, we write it as 7:00 AM.",
-                "funFact": "7:00 AM is a popular time for families to start getting ready together.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L28_Q2",
-                "gameType": "time",
-                "level": 28,
-                "instruction": "A kitchen clock's short hand sits on 1 and its long hand sits on 12, after lunch. What time is it?",
-                "question": "?",
-                "correctAnswer": "1:00 PM 🕐",
-                "options": [
-                    "1:00 PM 🕐",
-                    "2:00 PM 😴",
-                    "1:00 AM 🌗"
-                ],
-                "hint": "The hour hand is the short one — read its number.",
-                "emoji": "🕐",
-                "explanation": "Short hand on 1, long hand on 12 means it's 1:00 — since it's after lunch, that's 1:00 PM.",
-                "funFact": "1:00 PM comes right after 12:00 PM, the very start of the afternoon.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L28_Q3",
-                "gameType": "time",
-                "level": 28,
-                "instruction": "Kai's clock shows ten o'clock at night. What time is it?",
-                "question": "?",
-                "correctAnswer": "10:00 PM 🕙",
-                "options": [
-                    "10:00 PM 🕙",
-                    "10:00 AM 🍎",
-                    "9:00 PM 🌙"
-                ],
-                "hint": "Once you say the hour, add the letters for night.",
-                "emoji": "🕙",
-                "explanation": "When it's ten o'clock at night, we write it as 10:00 PM.",
-                "funFact": "10:00 PM is late enough that most streets outside grow quiet.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "The long hand points to 9 and the short hand is close to the 5 but has not reached it. What time is it?",
+        "question": "?",
+        "correctAnswer": "4:45",
+        "options": [
+          "5:09",
+          "4:45",
+          "5:45"
+        ],
+        "hint": "The short hand has not reached 5 yet, so the hour is still the one before.",
+        "emoji": "🕓",
+        "explanation": "The long hand on 9 means 45 minutes past the hour. The short hand has not reached 5, so the hour is 4. The time is 4:45, which is quarter to 5.",
+        "funFact": "Quarter to 5 means there are still 15 minutes to go before 5 o'clock.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L28_Q2",
+        "gameType": "time",
+        "level": 28,
+        "instruction": "Which digital time is quarter to 8?",
+        "question": "?",
+        "correctAnswer": "7:45",
+        "options": [
+          "8:15",
+          "7:45",
+          "8:45"
+        ],
+        "hint": "How many minutes are still missing before 8 o'clock?",
+        "emoji": "📲",
+        "explanation": "Quarter to 8 is 15 minutes before 8:00, which is 7:45. The time 8:45 is quarter to 9, and 8:15 is quarter past 8.",
+        "funFact": "In Dutch, 7:45 is \"kwart voor acht\", which means \"quarter before eight\".",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L28_Q3",
+        "gameType": "time",
+        "level": 28,
+        "instruction": "It is quarter to 3. How many minutes until 3:00?",
+        "question": "?",
+        "correctAnswer": "15 minutes",
+        "options": [
+          "15 minutes",
+          "30 minutes",
+          "45 minutes"
+        ],
+        "hint": "The word \"to\" tells you how much time is left before the hour.",
+        "emoji": "⏳",
+        "explanation": "Quarter to 3 is 2:45. From 2:45 to 3:00 is 15 minutes.",
+        "funFact": "Waiting times are easier to guess when you think in quarters of an hour.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 29,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L29_Q1",
+        "gameType": "time",
         "level": 29,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L29_Q1",
-                "gameType": "time",
-                "level": 29,
-                "instruction": "June's clock shows nine o'clock in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "9:00 AM 🕘",
-                "options": [
-                    "9:00 PM 🌙",
-                    "10:00 AM 🍎",
-                    "9:00 AM 🕘"
-                ],
-                "hint": "Count one hour past eight to find this one.",
-                "emoji": "🕘",
-                "explanation": "Nine o'clock in the morning is written as 9:00 AM.",
-                "funFact": "9:00 AM is a common time for the first lesson of the school day.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L29_Q2",
-                "gameType": "time",
-                "level": 29,
-                "instruction": "A round clock shows its long hand on 12 and its short hand on 2, in the afternoon. What time is it?",
-                "question": "?",
-                "correctAnswer": "2:00 PM 🕑",
-                "options": [
-                    "3:00 PM 🎒",
-                    "2:00 PM 🕑",
-                    "2:00 AM 🌗"
-                ],
-                "hint": "The number the little hand touches tells you the hour.",
-                "emoji": "🕑",
-                "explanation": "Long hand on 12 and short hand on 2 means the time is 2:00 — afternoon makes it 2:00 PM.",
-                "funFact": "2:00 PM is right in the middle of a typical school afternoon.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L29_Q3",
-                "gameType": "time",
-                "level": 29,
-                "instruction": "Milo's clock shows eight o'clock in the evening. What time is it?",
-                "question": "?",
-                "correctAnswer": "8:00 PM 🕗",
-                "options": [
-                    "7:00 PM 🛁",
-                    "8:00 PM 🕗",
-                    "8:00 AM 🍳"
-                ],
-                "hint": "Say the hour, then remember evening ends in PM.",
-                "emoji": "🕗",
-                "explanation": "Eight o'clock in the evening is written as 8:00 PM.",
-                "funFact": "8:00 PM is a cozy time for pajamas and a bedtime story.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "The short hand is between 8 and 9, and the long hand is on 6. What time is it?",
+        "question": "?",
+        "correctAnswer": "8:30",
+        "options": [
+          "8:06",
+          "9:30",
+          "8:30"
+        ],
+        "hint": "The short hand has not reached 9 yet. Which hour has it passed?",
+        "emoji": "🔍",
+        "explanation": "The long hand on 6 means 30 minutes past. The short hand is between 8 and 9, so the hour is 8. The time is half past 8, or 8:30.",
+        "funFact": "The hour hand moves a tiny bit every minute, so it is only exactly on a number at o'clock times.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L29_Q2",
+        "gameType": "time",
+        "level": 29,
+        "instruction": "At half past 5, where is the short hand?",
+        "question": "?",
+        "correctAnswer": "Halfway between 5 and 6",
+        "options": [
+          "Exactly on the 6",
+          "Exactly on the 5",
+          "Halfway between 5 and 6"
+        ],
+        "hint": "Think about how far the hour hand has travelled after 30 minutes of the hour.",
+        "emoji": "⌛",
+        "explanation": "After half an hour, the hour hand has moved half of the way from the 5 to the 6. So it sits halfway between the two numbers.",
+        "funFact": "In one hour, the hour hand moves from one number to the next.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L29_Q3",
+        "gameType": "time",
+        "level": 29,
+        "instruction": "At quarter to 6, the short hand is ___.",
+        "question": "?",
+        "correctAnswer": "almost at the 6, but not there yet",
+        "options": [
+          "exactly on the 6",
+          "almost at the 6, but not there yet",
+          "just past the 5"
+        ],
+        "hint": "Quarter to 6 is 15 minutes before 6 o'clock.",
+        "emoji": "🎯",
+        "explanation": "At 5:45 the hour hand has travelled most of the way from the 5 to the 6. It will not reach the 6 until 6:00.",
+        "funFact": "Clockmakers build clocks so that the hour hand and the minute hand always stay in step.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 30,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L30_Q1",
+        "gameType": "time",
         "level": 30,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L30_Q1",
-                "gameType": "time",
-                "level": 30,
-                "instruction": "Ana's clock shows eleven o'clock in the morning. What time is it?",
-                "question": "?",
-                "correctAnswer": "11:00 AM 🕚",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "11:00 AM 🕚",
-                    "11:00 PM 💡"
-                ],
-                "hint": "Count one hour before noon to find this one.",
-                "emoji": "🕚",
-                "explanation": "Eleven o'clock in the morning is written as 11:00 AM.",
-                "funFact": "11:00 AM is a great time for art or music class at school.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L30_Q2",
-                "gameType": "time",
-                "level": 30,
-                "instruction": "Leo's clock shows twelve o'clock, right in the middle of the day, for the second time today. What time is it?",
-                "question": "?",
-                "correctAnswer": "12:00 PM 🕛",
-                "options": [
-                    "12:00 PM 🕛",
-                    "1:00 PM 📚",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "Both hands point straight up at this special hour.",
-                "emoji": "🕛",
-                "explanation": "Twelve o'clock in the middle of the day is written as 12:00 PM, or noon.",
-                "funFact": "At 12:00 PM, the sun sits at its very highest point in the sky.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L30_Q3",
-                "gameType": "time",
-                "level": 30,
-                "instruction": "Sam's clock shows six o'clock in the evening. What time is it?",
-                "question": "?",
-                "correctAnswer": "6:00 PM 🕕",
-                "options": [
-                    "6:00 PM 🕕",
-                    "6:00 AM 🌅",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Once you say the hour, add the letters for evening.",
-                "emoji": "🕕",
-                "explanation": "Six o'clock in the evening is written as 6:00 PM.",
-                "funFact": "6:00 PM is a favorite time for families to sit down to dinner.",
-                "subtype": "o_clock",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    }
+        "instruction": "A bus leaves at quarter past 8 in the morning. Which time is that?",
+        "question": "?",
+        "correctAnswer": "8:15 AM",
+        "options": [
+          "7:15 AM",
+          "8:45 AM",
+          "8:15 AM"
+        ],
+        "hint": "Write 15 minutes after 8 o'clock as a digital time, then add the part of the day.",
+        "emoji": "🚏",
+        "explanation": "Quarter past 8 is 8 o'clock plus 15 minutes, which is 8:15. Morning times use AM, so the time is 8:15 AM.",
+        "funFact": "Many buses and trains leave at the same minutes past each hour, such as :15 and :45, so you can learn the pattern.",
+        "subtype": "quarter_hour",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L30_Q2",
+        "gameType": "time",
+        "level": 30,
+        "instruction": "Which time is the earliest: 3:45 PM, 3:15 PM or 3:30 PM?",
+        "question": "?",
+        "correctAnswer": "3:15 PM",
+        "options": [
+          "3:45 PM",
+          "3:30 PM",
+          "3:15 PM"
+        ],
+        "hint": "The hours are the same, so compare the minutes.",
+        "emoji": "🥇",
+        "explanation": "All three times are in the 3 o'clock hour, so the one with the fewest minutes comes first. 15 minutes is fewer than 30 or 45, so 3:15 PM is earliest.",
+        "funFact": "Stopwatches can measure very short times, down to a fraction of a second.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L30_Q3",
+        "gameType": "time",
+        "level": 30,
+        "instruction": "A film started at 2:00 PM. The clock now shows 2:30 PM. How long ago did the film start?",
+        "question": "?",
+        "correctAnswer": "30 minutes",
+        "options": [
+          "30 minutes",
+          "1 hour",
+          "2 hours and 30 minutes"
+        ],
+        "hint": "Count how far the long hand has moved from the 12.",
+        "emoji": "🎞️",
+        "explanation": "The long hand moved from 12 to 6, which is half of the clock face. That is 30 minutes. The hour hand only moved half a step, so it is not 2 hours.",
+        "funFact": "Most films last between 90 and 120 minutes.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

@@ -1,622 +1,622 @@
 [
-    {
+  {
+    "level": 191,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L191_Q1",
+        "gameType": "time",
         "level": 191,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L191_Q1",
-                "gameType": "time",
-                "level": 191,
-                "instruction": "Ben's cooking show films at 11:40 AM for 1 hour and 25 minutes. What time does filming end?",
-                "question": "?",
-                "correctAnswer": "1:05 PM 🌗",
-                "options": [
-                    "12:40 PM ⏱️",
-                    "12:05 PM ⏱️",
-                    "1:05 PM 🌗"
-                ],
-                "hint": "Starting at 11:40 AM, count 1 hour and 25 minutes forward one part at a time.",
-                "emoji": "🌗",
-                "explanation": "Adding 1 hour and 25 minutes to 11:40 AM carries the clock all the way around to 1:05 PM.",
-                "funFact": "An hour and a half of filming can capture a whole recipe from start to finish.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L191_Q2",
-                "gameType": "time",
-                "level": 191,
-                "instruction": "Which time is the same as quarter past four in the afternoon?",
-                "question": "?",
-                "correctAnswer": "4:15 PM 🔁",
-                "options": [
-                    "4:15 PM 🔁",
-                    "4:45 PM ⏱️",
-                    "3:45 PM ⏰"
-                ],
-                "hint": "For \"quarter past four\": quarter to means minutes before the hour, quarter past means minutes after it.",
-                "emoji": "🔁",
-                "explanation": "4:15 PM is the digital match for that spoken time.",
-                "funFact": "Quarter past four means fifteen minutes have passed since four o'clock.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L191_Q3",
-                "gameType": "time",
-                "level": 191,
-                "instruction": "Breakfast is finished by 8:00 AM after 1 hour and 15 minutes of cooking and eating. What time did cooking start?",
-                "question": "?",
-                "correctAnswer": "6:45 AM ⏮️",
-                "options": [
-                    "6:45 AM ⏮️",
-                    "7:00 AM 🛏️",
-                    "7:45 AM ⏳"
-                ],
-                "hint": "Starting at 8:00 AM, count 1 hour and 15 minutes backward one part at a time.",
-                "emoji": "⏮️",
-                "explanation": "Subtracting 1 hour and 15 minutes from 8:00 AM lands exactly on 6:45 AM.",
-                "funFact": "A big family breakfast can take over an hour from stove to table.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A concert starts at 7:30 PM. The doors open 45 minutes before the start, and there is a 25-minute queue before the doors open. The journey to the venue takes 35 minutes. What is the latest time to leave home to be in the queue on time?",
+        "question": "?",
+        "correctAnswer": "5:45 PM",
+        "options": [
+          "6:20 PM",
+          "5:20 PM",
+          "5:45 PM"
+        ],
+        "hint": "Work backward: first the doors, then the queue, then the journey.",
+        "emoji": "🎤",
+        "explanation": "The doors open at 6:45 PM. The queue must start at 6:20 PM. Going back 35 minutes for the journey gives 5:45 PM.",
+        "funFact": "Many venues open their doors an hour or more before a concert begins, so that a large audience can find their seats.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L191_Q2",
+        "gameType": "time",
+        "level": 191,
+        "instruction": "A relay team has four runners. Each runner takes 4 minutes 30 seconds, and each of the 3 baton changes takes 15 seconds. How long does the relay take in all?",
+        "question": "?",
+        "correctAnswer": "18 minutes 45 seconds",
+        "options": [
+          "19 minutes",
+          "18 minutes 45 seconds",
+          "18 minutes 15 seconds"
+        ],
+        "hint": "Add all the running time first, then the baton changes.",
+        "emoji": "🥷",
+        "explanation": "4 × 4 minutes 30 seconds = 18 minutes. Three changes of 15 seconds add 45 seconds. The total is 18 minutes 45 seconds.",
+        "funFact": "In a relay race, the baton must be passed inside a marked zone that is 20 metres long.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L191_Q3",
+        "gameType": "time",
+        "level": 191,
+        "instruction": "A pool is open from 6:30 AM to 9:00 PM but closes for cleaning for 1 hour 15 minutes. For how long is it open to swimmers?",
+        "question": "?",
+        "correctAnswer": "13 hours 15 minutes",
+        "options": [
+          "14 hours 30 minutes",
+          "13 hours 15 minutes",
+          "12 hours 45 minutes"
+        ],
+        "hint": "Find the whole opening time, then take away the cleaning time.",
+        "emoji": "🧴",
+        "explanation": "6:30 AM to 9:00 PM is 14 hours 30 minutes. Taking away 1 hour 15 minutes leaves 13 hours 15 minutes.",
+        "funFact": "The water in a swimming pool is pumped through filters many times every day.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 192,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L192_Q1",
+        "gameType": "time",
         "level": 192,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L192_Q1",
-                "gameType": "time",
-                "level": 192,
-                "instruction": "Which time is earliest: 11:20 PM, 12:00 AM, or 11:45 PM?",
-                "question": "?",
-                "correctAnswer": "11:20 PM 🌙",
-                "options": [
-                    "11:45 PM",
-                    "12:00 AM",
-                    "11:20 PM 🌙"
-                ],
-                "hint": "Look closely at 11:20 PM, 12:00 AM, 11:45 PM — remember that midnight flips PM into AM.",
-                "emoji": "🌙",
-                "explanation": "11:20 PM is the earliest, coming before both 12:00 AM and 11:45 PM.",
-                "funFact": "11:20 PM is the earliest here, since midnight and 11:45 PM both come after it.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L192_Q2",
-                "gameType": "time",
-                "level": 192,
-                "instruction": "It is 12:55 PM. What time will it be in 3 hours and 45 minutes?",
-                "question": "?",
-                "correctAnswer": "4:40 PM ⏳",
-                "options": [
-                    "4:40 PM ⏳",
-                    "3:55 PM",
-                    "1:40 PM ⏱️"
-                ],
-                "hint": "Break 3 hours and 45 minutes into two steps: add the hours, then the minutes, from 12:55 PM.",
-                "emoji": "⏳",
-                "explanation": "3 hours and 45 minutes after 12:55 PM is 4:40 PM.",
-                "funFact": "Adding almost four hours to just after noon lands well into the afternoon.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L192_Q3",
-                "gameType": "time",
-                "level": 192,
-                "instruction": "Ella's museum tour begins at 8:50 AM and lasts 2 hours and 20 minutes. What time does it end?",
-                "question": "?",
-                "correctAnswer": "11:10 AM ⏳",
-                "options": [
-                    "11:10 AM ⏳",
-                    "10:50 AM ⏱️",
-                    "9:10 AM ⏱️"
-                ],
-                "hint": "Starting at 8:50 AM, count 2 hours and 20 minutes forward one part at a time.",
-                "emoji": "⏳",
-                "explanation": "Adding 2 hours and 20 minutes to 8:50 AM lands exactly on 11:10 AM for Ella.",
-                "funFact": "A long museum tour can cover many different exhibits.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Rina must get to a match that starts at 4:00 PM. Option A leaves at 3:05 PM and takes 55 minutes in all. Option B leaves at 3:20 PM and takes 45 minutes in all. Option C leaves at 3:10 PM and takes 45 minutes in all. Which option arrives earliest?",
+        "question": "?",
+        "correctAnswer": "Option C",
+        "options": [
+          "Option B",
+          "Option A",
+          "Option C"
+        ],
+        "hint": "Add the journey time to the leaving time for each option.",
+        "emoji": "🏑",
+        "explanation": "Option A arrives at 4:00 PM, Option B arrives at 4:05 PM and Option C arrives at 3:55 PM. So Option C arrives earliest.",
+        "funFact": "Airlines use computers to compare millions of possible schedules and find the best one.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L192_Q2",
+        "gameType": "time",
+        "level": 192,
+        "instruction": "Zara has 55 minutes. Plan P: maths 25, reading 20 and tidy-up 15 minutes. Plan Q: maths 25, reading 15 and tidy-up 10 minutes. Plan R: maths 20, reading 20 and tidy-up 20 minutes. Which plan fits into 55 minutes?",
+        "question": "?",
+        "correctAnswer": "Plan Q",
+        "options": [
+          "Plan P",
+          "Plan Q",
+          "Plan R"
+        ],
+        "hint": "Add up the three parts of each plan.",
+        "emoji": "📐",
+        "explanation": "Plan P and Plan R both take 60 minutes. Plan Q takes 50 minutes, so only Plan Q fits.",
+        "funFact": "Planners often start with the task that has the earliest deadline.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L192_Q3",
+        "gameType": "time",
+        "level": 192,
+        "instruction": "School ends at 3:20 PM. Bus 1 leaves at 3:30 and takes 40 minutes. Bus 2 leaves at 3:40 and takes 25 minutes. Bus 3 leaves at 3:45 and takes 30 minutes. Which bus gets a pupil home first?",
+        "question": "?",
+        "correctAnswer": "Bus 2",
+        "options": [
+          "Bus 1",
+          "Bus 2",
+          "Bus 3"
+        ],
+        "hint": "The bus that leaves first may not arrive first. Find each arrival time.",
+        "emoji": "🚸",
+        "explanation": "Bus 1 arrives at 4:10 PM, Bus 2 arrives at 4:05 PM and Bus 3 arrives at 4:15 PM. So Bus 2 gets the pupil home first.",
+        "funFact": "Some buses wait at special stops to keep to the timetable. These stops are called timing points.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 193,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L193_Q1",
+        "gameType": "time",
         "level": 193,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L193_Q1",
-                "gameType": "time",
-                "level": 193,
-                "instruction": "Which time is the same as quarter to eight in the morning?",
-                "question": "?",
-                "correctAnswer": "7:45 AM 🔁",
-                "options": [
-                    "7:45 AM 🔁",
-                    "8:15 AM 🔁",
-                    "7:15 AM 🕰️"
-                ],
-                "hint": "Break \"quarter to eight\" into the hour word and the quarter word separately.",
-                "emoji": "🔁",
-                "explanation": "Written as a digital time, that phrase becomes 7:45 AM.",
-                "funFact": "Quarter to eight means fifteen minutes remain before eight o'clock arrives.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L193_Q2",
-                "gameType": "time",
-                "level": 193,
-                "instruction": "The class art mural is finished at 3:25 PM after 3 hours and 5 minutes of painting. What time did painting begin?",
-                "question": "?",
-                "correctAnswer": "12:20 PM ⏮️",
-                "options": [
-                    "3:20 PM",
-                    "12:25 PM",
-                    "12:20 PM ⏮️"
-                ],
-                "hint": "Break 3 hours and 5 minutes into two steps: subtract the hours, then the minutes, from 3:25 PM.",
-                "emoji": "⏮️",
-                "explanation": "3 hours and 5 minutes before 3:25 PM is 12:20 PM.",
-                "funFact": "A big classroom mural can take several hours of careful painting.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L193_Q3",
-                "gameType": "time",
-                "level": 193,
-                "instruction": "Which time is latest: 12:30 AM, 12:15 AM, or 11:50 PM?",
-                "question": "?",
-                "correctAnswer": "12:30 AM 🌙",
-                "options": [
-                    "12:30 AM 🌙",
-                    "12:15 AM 🌙",
-                    "11:50 PM 🌙"
-                ],
-                "hint": "Line up 12:30 AM, 12:15 AM, 11:50 PM in the order a clock would tick through them.",
-                "emoji": "🌙",
-                "explanation": "Since 12:30 AM happens last on the clock, it is later than 12:15 AM and 11:50 PM.",
-                "funFact": "Both AM times here happen after midnight, and 12:30 AM is the later of the two.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A party runs from 2:00 to 5:30 PM. Games take 1 hour 15 minutes, cake takes 25 minutes, and there are two 10-minute breaks. The rest of the time is for a film. How long is the film?",
+        "question": "?",
+        "correctAnswer": "1 hour 30 minutes",
+        "options": [
+          "1 hour 30 minutes",
+          "2 hours 15 minutes",
+          "1 hour 50 minutes"
+        ],
+        "hint": "Find the whole party first, then take away everything else.",
+        "emoji": "🎂",
+        "explanation": "2:00 to 5:30 is 210 minutes. Games, cake and breaks take 75 + 25 + 20 = 120 minutes. 210 − 120 = 90 minutes, which is 1 hour 30 minutes.",
+        "funFact": "A play in a theatre usually lasts between two and three hours, including the interval.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L193_Q2",
+        "gameType": "time",
+        "level": 193,
+        "instruction": "24 pupils each give a 3-minute talk. There is a 1-minute change between talks. How long do the talks take altogether?",
+        "question": "?",
+        "correctAnswer": "1 hour 35 minutes",
+        "options": [
+          "1 hour 36 minutes",
+          "1 hour 12 minutes",
+          "1 hour 35 minutes"
+        ],
+        "hint": "How many changes are there between 24 talks?",
+        "emoji": "📢",
+        "explanation": "24 talks take 24 × 3 = 72 minutes. There are 23 changes between 24 talks, which add 23 minutes. 72 + 23 = 95 minutes, which is 1 hour 35 minutes.",
+        "funFact": "A fence with 10 sections needs 11 posts. Counting the gaps and the ends can give different answers, so this is called the fence-post problem.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L193_Q3",
+        "gameType": "time",
+        "level": 193,
+        "instruction": "Trains run every 12 minutes. The first leaves at 6:00 AM and the last leaves at 7:00 AM. How many trains leave in that time, counting both the first and the last?",
+        "question": "?",
+        "correctAnswer": "6",
+        "options": [
+          "6",
+          "7",
+          "5"
+        ],
+        "hint": "List the departure times one by one.",
+        "emoji": "🚦",
+        "explanation": "The trains leave at 6:00, 6:12, 6:24, 6:36, 6:48 and 7:00. That is 6 trains.",
+        "funFact": "Timetables usually show the first and last services of the day, so passengers know when travel starts and stops.",
+        "subtype": "timetable",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 194,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L194_Q1",
+        "gameType": "time",
         "level": 194,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L194_Q1",
-                "gameType": "time",
-                "level": 194,
-                "instruction": "It is 10:05 PM. What time will it be in 2 hours and 50 minutes?",
-                "question": "?",
-                "correctAnswer": "12:55 AM 🌗",
-                "options": [
-                    "10:55 PM",
-                    "12:55 AM 🌗",
-                    "12:05 AM 🌙"
-                ],
-                "hint": "Watch closely — adding 2 hours and 50 minutes to 10:05 PM rolls over into a new half of the day.",
-                "emoji": "🌗",
-                "explanation": "Adding 2 hours and 50 minutes to 10:05 PM carries the clock all the way around to 12:55 AM.",
-                "funFact": "Adding just under three hours to a late night time often crosses midnight.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L194_Q2",
-                "gameType": "time",
-                "level": 194,
-                "instruction": "Omar's late movie starts at 11:30 PM and runs 1 hour and 45 minutes. What time does it end?",
-                "question": "?",
-                "correctAnswer": "1:15 AM 🌗",
-                "options": [
-                    "1:15 AM 🌗",
-                    "12:30 AM 🌗",
-                    "12:15 AM 🌙"
-                ],
-                "hint": "Add the hours in 1 hour and 45 minutes first, then add the minutes, starting from 11:30 PM.",
-                "emoji": "🌗",
-                "explanation": "1 hour and 45 minutes after 11:30 PM is 1:15 AM, after rolling over into a new half of the day for Omar.",
-                "funFact": "A late movie night can stretch on past midnight.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L194_Q3",
-                "gameType": "time",
-                "level": 194,
-                "instruction": "Which time is the same as quarter to two in the afternoon?",
-                "question": "?",
-                "correctAnswer": "1:45 PM 🔁",
-                "options": [
-                    "1:45 PM 🔁",
-                    "2:15 PM 🕰️",
-                    "1:15 PM 📅"
-                ],
-                "hint": "Turn \"quarter to two\" into a digital time one small piece at a time.",
-                "emoji": "🔁",
-                "explanation": "That wording matches 1:45 PM on a digital clock.",
-                "funFact": "Quarter to two means fifteen minutes remain before two o'clock arrives.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "City B is 4 hours 30 minutes behind City A. At 8:15 PM in City A, Dev calls his aunt in City B. What time is it for his aunt?",
+        "question": "?",
+        "correctAnswer": "3:45 PM",
+        "options": [
+          "12:45 AM",
+          "3:45 PM",
+          "4:45 PM"
+        ],
+        "hint": "Behind means earlier. Take away 4 hours first, then 30 minutes.",
+        "emoji": "☎️",
+        "explanation": "8:15 PM minus 4 hours is 4:15 PM. Another 30 minutes back is 3:45 PM.",
+        "funFact": "There are about 38 different time zone offsets around the world, because some places are half an hour or 45 minutes away from their neighbours.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L194_Q2",
+        "gameType": "time",
+        "level": 194,
+        "instruction": "A flight leaves City A at 11:40 PM and lasts 6 hours 20 minutes. City B is 4 hours 30 minutes behind City A. What is the local time in City B when the plane lands?",
+        "question": "?",
+        "correctAnswer": "1:30 AM",
+        "options": [
+          "1:30 AM",
+          "6:00 AM",
+          "10:30 AM"
+        ],
+        "hint": "Find the landing time on City A's clock first.",
+        "emoji": "🛩️",
+        "explanation": "11:40 PM plus 6 hours 20 minutes is 6:00 AM on City A's clock. City B is 4 hours 30 minutes behind, so it is 1:30 AM there.",
+        "funFact": "Astronauts on the International Space Station keep to UTC, one shared time, whichever country they come from.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L194_Q3",
+        "gameType": "time",
+        "level": 194,
+        "instruction": "A meeting is at 9:00 AM in City B, which is 4 hours 30 minutes behind City A. What time is the meeting in City A?",
+        "question": "?",
+        "correctAnswer": "1:30 PM",
+        "options": [
+          "4:30 AM",
+          "1:30 PM",
+          "1:30 AM"
+        ],
+        "hint": "City A is ahead, so its time is later.",
+        "emoji": "🔄",
+        "explanation": "9:00 AM plus 4 hours 30 minutes is 1:30 PM.",
+        "funFact": "Time zone borders are not straight lines. They bend around countries and regions so that places close together share the same time.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 195,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L195_Q1",
+        "gameType": "time",
         "level": 195,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L195_Q1",
-                "gameType": "time",
-                "level": 195,
-                "instruction": "The family road trip ends at 10:00 PM after 5 hours and 30 minutes of driving. What time did they leave?",
-                "question": "?",
-                "correctAnswer": "4:30 PM ⏮️",
-                "options": [
-                    "4:30 PM ⏮️",
-                    "9:30 PM ⏱️",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Subtract the hours in 5 hours and 30 minutes first, then subtract the minutes, from 10:00 PM.",
-                "emoji": "⏮️",
-                "explanation": "Going back 5 hours and 30 minutes from 10:00 PM gives 4:30 PM.",
-                "funFact": "A long road trip can cover a lot of ground in five and a half hours.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L195_Q2",
-                "gameType": "time",
-                "level": 195,
-                "instruction": "Which time is earliest: 11:15 AM, 12:00 PM, or 1:00 PM?",
-                "question": "?",
-                "correctAnswer": "11:15 AM 🌙",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "1:00 PM 📚",
-                    "11:15 AM 🌙"
-                ],
-                "hint": "Among 11:15 AM, 12:00 PM, 1:00 PM, watch for which times are just before or just after midnight.",
-                "emoji": "🌙",
-                "explanation": "11:15 AM is the earliest, coming before both 12:00 PM and 1:00 PM.",
-                "funFact": "11:15 AM is still morning, making it earlier than both afternoon times.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L195_Q3",
-                "gameType": "time",
-                "level": 195,
-                "instruction": "It is 8:30 AM. What time will it be in 4 hours and 45 minutes?",
-                "question": "?",
-                "correctAnswer": "1:15 PM 🌗",
-                "options": [
-                    "1:15 PM 🌗",
-                    "9:15 AM ⏱️",
-                    "12:30 PM 🕧"
-                ],
-                "hint": "Add the hours in 4 hours and 45 minutes first, then add the minutes, starting from 8:30 AM.",
-                "emoji": "🌗",
-                "explanation": "Adding 4 hours and 45 minutes to 8:30 AM rolls past the halfway point of the day, landing on 1:15 PM.",
-                "funFact": "Nearly five hours after a morning start usually lands in the early afternoon.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "In a year that is not a leap year, a library book is due 28 days after 15 January. What is the due date?",
+        "question": "?",
+        "correctAnswer": "12 February",
+        "options": [
+          "12 February",
+          "11 February",
+          "13 February"
+        ],
+        "hint": "January has 31 days. Count to the end of January first.",
+        "emoji": "📘",
+        "explanation": "15 January to 31 January is 16 days. The 12 days that are left reach 12 February.",
+        "funFact": "Before printing was invented, scribes copied books by hand, and a single book could take months.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L195_Q2",
+        "gameType": "time",
+        "level": 195,
+        "instruction": "A course meets 5 days a week for 3 hours a day, and it runs for 4 weeks. How many hours is that altogether?",
+        "question": "?",
+        "correctAnswer": "60 hours",
+        "options": [
+          "60 hours",
+          "15 hours",
+          "80 hours"
+        ],
+        "hint": "Find the hours in one week first.",
+        "emoji": "🔠",
+        "explanation": "5 × 3 = 15 hours a week. 4 weeks is 4 × 15 = 60 hours.",
+        "funFact": "A school year in many countries adds up to roughly 900 to 1,000 hours of lessons.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L195_Q3",
+        "gameType": "time",
+        "level": 195,
+        "instruction": "A plant is 5 cm tall and grows 2 cm every 3 days. How tall is it after 15 days?",
+        "question": "?",
+        "correctAnswer": "15 cm",
+        "options": [
+          "20 cm",
+          "10 cm",
+          "15 cm"
+        ],
+        "hint": "How many 3-day periods are in 15 days?",
+        "emoji": "🌻",
+        "explanation": "15 days is 5 periods of 3 days. The plant grows 5 × 2 = 10 cm, so it is 5 + 10 = 15 cm tall.",
+        "funFact": "Most plants grow fastest in warm and sunny weather.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 196,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L196_Q1",
+        "gameType": "time",
         "level": 196,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L196_Q1",
-                "gameType": "time",
-                "level": 196,
-                "instruction": "Lily's baking marathon starts at 10:20 AM and takes 3 hours and 50 minutes. What time is she finished?",
-                "question": "?",
-                "correctAnswer": "2:10 PM 🌗",
-                "options": [
-                    "11:10 AM ⏱️",
-                    "2:10 PM 🌗",
-                    "1:20 PM ⏱️"
-                ],
-                "hint": "Break 3 hours and 50 minutes into two steps: add the hours, then the minutes, from 10:20 AM.",
-                "emoji": "🌗",
-                "explanation": "Adding 3 hours and 50 minutes to 10:20 AM carries the clock all the way around to 2:10 PM.",
-                "funFact": "A baking marathon can fill the whole kitchen with wonderful smells.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L196_Q2",
-                "gameType": "time",
-                "level": 196,
-                "instruction": "Which time is the same as quarter past ten at night?",
-                "question": "?",
-                "correctAnswer": "10:15 PM 🔁",
-                "options": [
-                    "10:45 PM ⏮️",
-                    "10:15 PM 🔁",
-                    "9:45 PM ⏳"
-                ],
-                "hint": "For \"quarter past ten\": quarter to means minutes before the hour, quarter past means minutes after it.",
-                "emoji": "🔁",
-                "explanation": "10:15 PM is the digital match for that spoken time.",
-                "funFact": "Quarter past ten means fifteen minutes have passed since ten o'clock.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L196_Q3",
-                "gameType": "time",
-                "level": 196,
-                "instruction": "Morning chores are finished by 7:40 AM after 2 hours and 10 minutes of work. What time did chores begin?",
-                "question": "?",
-                "correctAnswer": "5:30 AM ⏮️",
-                "options": [
-                    "5:30 AM ⏮️",
-                    "7:30 AM ⏱️",
-                    "5:40 AM"
-                ],
-                "hint": "Starting at 7:40 AM, count 2 hours and 10 minutes backward one part at a time.",
-                "emoji": "⏮️",
-                "explanation": "Subtracting 2 hours and 10 minutes from 7:40 AM lands exactly on 5:30 AM.",
-                "funFact": "Farm chores often take a couple of hours before the rest of the day begins.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A classroom clock is 12 minutes fast and shows 8:07. What is the real time?",
+        "question": "?",
+        "correctAnswer": "7:55",
+        "options": [
+          "7:55",
+          "7:45",
+          "8:19"
+        ],
+        "hint": "A fast clock is ahead. Take the extra minutes away.",
+        "emoji": "🔩",
+        "explanation": "The clock is 12 minutes ahead, so the real time is 12 minutes earlier. 8:07 minus 12 minutes is 7:55.",
+        "funFact": "On a pendulum clock, the clock can be made to run faster or slower by changing the length of the pendulum.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L196_Q2",
+        "gameType": "time",
+        "level": 196,
+        "instruction": "A watch loses 3 minutes every hour. It is set correctly at 11:00 AM. What does it show when the real time is 3:00 PM?",
+        "question": "?",
+        "correctAnswer": "2:48 PM",
+        "options": [
+          "3:12 PM",
+          "2:57 PM",
+          "2:48 PM"
+        ],
+        "hint": "How many hours pass between 11:00 AM and 3:00 PM?",
+        "emoji": "🔋",
+        "explanation": "4 hours pass, and the watch loses 4 × 3 = 12 minutes. 3:00 PM minus 12 minutes is 2:48 PM.",
+        "funFact": "Early mechanical watches could lose around 15 minutes in a single day.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L196_Q3",
+        "gameType": "time",
+        "level": 196,
+        "instruction": "A timer is set for 45 minutes at 3:20 PM, but it is paused for 6 minutes. When does it ring?",
+        "question": "?",
+        "correctAnswer": "4:11 PM",
+        "options": [
+          "4:17 PM",
+          "4:05 PM",
+          "4:11 PM"
+        ],
+        "hint": "Find the normal ring time first, then add the pause.",
+        "emoji": "⏯️",
+        "explanation": "Without the pause it would ring at 4:05 PM. The 6-minute pause pushes it back to 4:11 PM.",
+        "funFact": "In many sports, a timeout stops the game clock so that no playing time is lost.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 197,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L197_Q1",
+        "gameType": "time",
         "level": 197,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L197_Q1",
-                "gameType": "time",
-                "level": 197,
-                "instruction": "Which time is latest: 12:45 PM, 12:20 PM, or 11:50 AM?",
-                "question": "?",
-                "correctAnswer": "12:45 PM 🌙",
-                "options": [
-                    "12:20 PM 🕐",
-                    "12:45 PM 🌙",
-                    "11:50 AM"
-                ],
-                "hint": "Look closely at 12:45 PM, 12:20 PM, 11:50 AM — remember that midnight flips PM into AM.",
-                "emoji": "🌙",
-                "explanation": "Since 12:45 PM happens last on the clock, it is later than 12:20 PM and 11:50 AM.",
-                "funFact": "12:45 PM is the latest, since it comes after both 12:20 PM and 11:50 AM.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L197_Q2",
-                "gameType": "time",
-                "level": 197,
-                "instruction": "It is 1:20 PM. What time will it be in 5 hours and 15 minutes?",
-                "question": "?",
-                "correctAnswer": "6:35 PM ⏳",
-                "options": [
-                    "6:20 PM",
-                    "1:35 PM",
-                    "6:35 PM ⏳"
-                ],
-                "hint": "Break 5 hours and 15 minutes into two steps: add the hours, then the minutes, from 1:20 PM.",
-                "emoji": "⏳",
-                "explanation": "5 hours and 15 minutes after 1:20 PM is 6:35 PM.",
-                "funFact": "A little over five hours after lunchtime often lands in the evening.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L197_Q3",
-                "gameType": "time",
-                "level": 197,
-                "instruction": "Noah's overnight bus ride begins at 11:15 PM and lasts 2 hours and 30 minutes. What time does it arrive?",
-                "question": "?",
-                "correctAnswer": "1:45 AM 🌗",
-                "options": [
-                    "1:45 AM 🌗",
-                    "11:45 PM",
-                    "1:15 AM 🌗"
-                ],
-                "hint": "Starting at 11:15 PM, count 2 hours and 30 minutes forward one part at a time.",
-                "emoji": "🌗",
-                "explanation": "Adding 2 hours and 30 minutes to 11:15 PM rolls past the halfway point of the day, landing on 1:45 AM for Noah.",
-                "funFact": "Overnight bus rides often arrive while most passengers are still asleep.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Dan arrives at 4:20 PM. Cleo arrives 5 minutes after Dan. Ben arrives 10 minutes before Cleo. Ana arrives 5 minutes before Ben. Who arrives first?",
+        "question": "?",
+        "correctAnswer": "Ana",
+        "options": [
+          "Dan",
+          "Ana",
+          "Ben"
+        ],
+        "hint": "Work out when each person arrives, starting with Dan.",
+        "emoji": "🧑‍⚖️",
+        "explanation": "Cleo arrives at 4:25 PM, Ben at 4:15 PM and Ana at 4:10 PM. So Ana arrives first.",
+        "funFact": "Detectives use timelines to check where each person was at every moment.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L197_Q2",
+        "gameType": "time",
+        "level": 197,
+        "instruction": "Train 2 leaves at 9:10 AM. Train 1 left 20 minutes before Train 2. Train 3 leaves 35 minutes after Train 1. When does Train 3 leave?",
+        "question": "?",
+        "correctAnswer": "9:25 AM",
+        "options": [
+          "9:05 AM",
+          "9:45 AM",
+          "9:25 AM"
+        ],
+        "hint": "Find the time of Train 1 first.",
+        "emoji": "🚂",
+        "explanation": "Train 1 left at 8:50 AM. Train 3 leaves 35 minutes after that, at 9:25 AM.",
+        "funFact": "Railway signal boxes once kept written logbooks of the exact time that each train passed.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L197_Q3",
+        "gameType": "time",
+        "level": 197,
+        "instruction": "In a race, Tia took 12 minutes 30 seconds. Sam finished 45 seconds before Tia. Ravi finished 2 minutes 15 seconds after Sam. How long did Ravi take?",
+        "question": "?",
+        "correctAnswer": "14 minutes",
+        "options": [
+          "13 minutes 30 seconds",
+          "14 minutes",
+          "15 minutes 30 seconds"
+        ],
+        "hint": "Find Sam's time first, then Ravi's.",
+        "emoji": "⛹️",
+        "explanation": "Sam took 12 minutes 30 seconds minus 45 seconds, which is 11 minutes 45 seconds. Ravi took 2 minutes 15 seconds longer than that, which is 14 minutes.",
+        "funFact": "Race results are recorded as the time that has passed since the starting signal.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 198,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L198_Q1",
+        "gameType": "time",
         "level": 198,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L198_Q1",
-                "gameType": "time",
-                "level": 198,
-                "instruction": "Which time is the same as quarter to four in the early morning?",
-                "question": "?",
-                "correctAnswer": "3:45 AM 🔁",
-                "options": [
-                    "3:15 AM",
-                    "4:15 AM",
-                    "3:45 AM 🔁"
-                ],
-                "hint": "Break \"quarter to four\" into the hour word and the quarter word separately.",
-                "emoji": "🔁",
-                "explanation": "Written as a digital time, that phrase becomes 3:45 AM.",
-                "funFact": "Quarter to four means fifteen minutes remain before four o'clock arrives.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L198_Q2",
-                "gameType": "time",
-                "level": 198,
-                "instruction": "The overnight bake-off judging ends at 1:00 AM after 4 hours and 45 minutes of baking and tasting. What time did it begin?",
-                "question": "?",
-                "correctAnswer": "8:15 PM ⏮️",
-                "options": [
-                    "12:15 AM 🌙",
-                    "9:00 PM 🌙",
-                    "8:15 PM ⏮️"
-                ],
-                "hint": "Break 4 hours and 45 minutes into two steps: subtract the hours, then the minutes, from 1:00 AM.",
-                "emoji": "⏮️",
-                "explanation": "4 hours and 45 minutes before 1:00 AM is 8:15 PM.",
-                "funFact": "A long bake-off can stretch from evening well into the night.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L198_Q3",
-                "gameType": "time",
-                "level": 198,
-                "instruction": "Which time is earliest: 11:59 AM, 12:01 PM, or 12:30 PM?",
-                "question": "?",
-                "correctAnswer": "11:59 AM 🌙",
-                "options": [
-                    "12:30 PM 🕧",
-                    "12:01 PM",
-                    "11:59 AM 🌙"
-                ],
-                "hint": "Line up 11:59 AM, 12:01 PM, 12:30 PM in the order a clock would tick through them.",
-                "emoji": "🌙",
-                "explanation": "11:59 AM is the earliest, coming before both 12:01 PM and 12:30 PM.",
-                "funFact": "11:59 AM is just one minute before noon, making it the earliest of the three.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "School ends at 3:15 PM. Leo has a 45-minute club, 25 minutes of travel each way and 1 hour 20 minutes of homework. Everything must be done by 6:30 PM. How many spare minutes does he have?",
+        "question": "?",
+        "correctAnswer": "20 minutes",
+        "options": [
+          "5 minutes",
+          "35 minutes",
+          "20 minutes"
+        ],
+        "hint": "Add all the activities, then compare with the time available.",
+        "emoji": "🗃️",
+        "explanation": "3:15 to 6:30 is 195 minutes. The activities take 45 + 25 + 25 + 80 = 175 minutes. 195 − 175 = 20 minutes.",
+        "funFact": "A good plan leaves some spare minutes, because tasks often take longer than expected.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L198_Q2",
+        "gameType": "time",
+        "level": 198,
+        "instruction": "Maya wakes at 6:40 AM. Her morning routine takes 55 minutes and the walk to school takes 15 minutes. School starts at 8:00 AM. How many spare minutes does she have?",
+        "question": "?",
+        "correctAnswer": "10 minutes",
+        "options": [
+          "10 minutes",
+          "5 minutes",
+          "25 minutes"
+        ],
+        "hint": "Find the time she arrives, then compare it with 8:00.",
+        "emoji": "🥣",
+        "explanation": "6:40 plus 55 minutes is 7:35, and 15 more minutes is 7:50. School starts at 8:00, so she has 10 spare minutes.",
+        "funFact": "A routine is easier to follow when you wake up at about the same time each day.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L198_Q3",
+        "gameType": "time",
+        "level": 198,
+        "instruction": "From 4:20 PM, Nia must do three tasks. Task A takes 25 minutes and is due at 5:00. Task B takes 40 minutes and is due at 6:00. Task C takes 30 minutes and is due at 5:30. Which order meets every deadline?",
+        "question": "?",
+        "correctAnswer": "A, then C, then B",
+        "options": [
+          "C, then B, then A",
+          "B, then A, then C",
+          "A, then C, then B"
+        ],
+        "hint": "Do the task with the earliest deadline first.",
+        "emoji": "📌",
+        "explanation": "A runs 4:20 to 4:45, which is before 5:00. C runs 4:45 to 5:15, which is before 5:30. B runs 5:15 to 5:55, which is before 6:00. The other orders make a task late.",
+        "funFact": "Doing the task with the earliest deadline first is a rule that planners and computer programs both use.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 199,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L199_Q1",
+        "gameType": "time",
         "level": 199,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L199_Q1",
-                "gameType": "time",
-                "level": 199,
-                "instruction": "It is 11:10 PM. What time will it be in 1 hour and 55 minutes?",
-                "question": "?",
-                "correctAnswer": "1:05 AM 🌗",
-                "options": [
-                    "12:05 AM 🌙",
-                    "12:10 AM",
-                    "1:05 AM 🌗"
-                ],
-                "hint": "Starting at 11:10 PM, count 1 hour and 55 minutes forward one part at a time.",
-                "emoji": "🌗",
-                "explanation": "Adding 1 hour and 55 minutes to 11:10 PM carries the clock all the way around to 1:05 AM.",
-                "funFact": "Almost two hours after a late night time usually crosses into a new day.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L199_Q2",
-                "gameType": "time",
-                "level": 199,
-                "instruction": "Ivy's hiking trip starts at 9:35 AM and lasts 4 hours and 10 minutes. What time does she return?",
-                "question": "?",
-                "correctAnswer": "1:45 PM 🌗",
-                "options": [
-                    "9:45 AM 📅",
-                    "1:35 PM",
-                    "1:45 PM 🌗"
-                ],
-                "hint": "Watch closely — adding 4 hours and 10 minutes to 9:35 AM rolls over into a new half of the day.",
-                "emoji": "🌗",
-                "explanation": "4 hours and 10 minutes after 9:35 AM is 1:45 PM, after rolling over into a new half of the day for Ivy.",
-                "funFact": "A long hike can take most of the day when the trail is beautiful.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L199_Q3",
-                "gameType": "time",
-                "level": 199,
-                "instruction": "Which time is the same as quarter to one in the afternoon?",
-                "question": "?",
-                "correctAnswer": "12:45 PM 🔁",
-                "options": [
-                    "12:45 PM 🔁",
-                    "1:15 PM 📅",
-                    "12:15 PM ⏱️"
-                ],
-                "hint": "Turn \"quarter to one\" into a digital time one small piece at a time.",
-                "emoji": "🔁",
-                "explanation": "That wording matches 12:45 PM on a digital clock.",
-                "funFact": "Quarter to one means fifteen minutes remain before one o'clock arrives.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A project needs 36 hours of work. A team works 4 hours a day, Monday to Friday only. If they start on a Monday, on which day do they finish?",
+        "question": "?",
+        "correctAnswer": "Thursday of the next week",
+        "options": [
+          "Thursday of the next week",
+          "Friday of the next week",
+          "Wednesday of the next week"
+        ],
+        "hint": "How many working days are needed?",
+        "emoji": "🛠️",
+        "explanation": "36 ÷ 4 = 9 working days. The first week gives 5 days, and 4 more days in the next week reach Thursday.",
+        "funFact": "Companies often measure work in person-hours, which means the number of hours that one person would take.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L199_Q2",
+        "gameType": "time",
+        "level": 199,
+        "instruction": "A bus runs every 18 minutes starting at 6:00 AM. Which of these is a bus time?",
+        "question": "?",
+        "correctAnswer": "7:12 AM",
+        "options": [
+          "7:12 AM",
+          "7:20 AM",
+          "7:40 AM"
+        ],
+        "hint": "List the bus times: 6:00, then add 18 minutes each time.",
+        "emoji": "🧮",
+        "explanation": "The bus times are 6:00, 6:18, 6:36, 6:54 and 7:12. So 7:12 is a bus time, but 7:20 and 7:40 are not.",
+        "funFact": "Many bus timetables show only the first and last times, plus a gap such as every 18 minutes.",
+        "subtype": "timetable",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L199_Q3",
+        "gameType": "time",
+        "level": 199,
+        "instruction": "How many days are there from 1 October to 31 December, counting both the first day and the last day?",
+        "question": "?",
+        "correctAnswer": "92 days",
+        "options": [
+          "91 days",
+          "92 days",
+          "90 days"
+        ],
+        "hint": "Add the days in October, November and December.",
+        "emoji": "📅",
+        "explanation": "October has 31 days, November has 30 and December has 31. 31 + 30 + 31 = 92 days.",
+        "funFact": "The last three months of the year are often called the fourth quarter.",
+        "subtype": "calendar",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 200,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L200_Q1",
+        "gameType": "time",
         "level": 200,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L200_Q1",
-                "gameType": "time",
-                "level": 200,
-                "instruction": "The class ends its garden project at 11:15 AM after 1 hour and 35 minutes of planting. What time did they start?",
-                "question": "?",
-                "correctAnswer": "9:40 AM ⏮️",
-                "options": [
-                    "9:40 AM ⏮️",
-                    "10:40 AM ⏱️",
-                    "10:15 AM ⏮️"
-                ],
-                "hint": "Subtract the hours in 1 hour and 35 minutes first, then subtract the minutes, from 11:15 AM.",
-                "emoji": "⏮️",
-                "explanation": "Going back 1 hour and 35 minutes from 11:15 AM gives 9:40 AM.",
-                "funFact": "Planting a whole garden bed can take well over an hour of digging and watering.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L200_Q2",
-                "gameType": "time",
-                "level": 200,
-                "instruction": "Which time is latest: 12:15 AM, 11:45 PM, or 11:30 PM?",
-                "question": "?",
-                "correctAnswer": "12:15 AM 🌙",
-                "options": [
-                    "12:15 AM 🌙",
-                    "11:30 PM",
-                    "11:45 PM"
-                ],
-                "hint": "Among 12:15 AM, 11:45 PM, 11:30 PM, watch for which times are just before or just after midnight.",
-                "emoji": "🌙",
-                "explanation": "Since 12:15 AM happens last on the clock, it is later than 11:45 PM and 11:30 PM.",
-                "funFact": "12:15 AM happens after midnight, making it later than both PM times before it.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L200_Q3",
-                "gameType": "time",
-                "level": 200,
-                "instruction": "It is 9:40 AM. What time will it be in 3 hours and 35 minutes?",
-                "question": "?",
-                "correctAnswer": "1:15 PM 🌗",
-                "options": [
-                    "12:40 PM ⏱️",
-                    "1:15 PM 🌗",
-                    "10:15 AM ⏮️"
-                ],
-                "hint": "Watch closely — adding 3 hours and 35 minutes to 9:40 AM rolls over into a new half of the day.",
-                "emoji": "🌗",
-                "explanation": "Adding 3 hours and 35 minutes to 9:40 AM rolls past the halfway point of the day, landing on 1:15 PM.",
-                "funFact": "A little over three and a half hours after a morning start lands in the afternoon.",
-                "subtype": "advanced_time_concepts",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    }
+        "instruction": "The short hand is almost on the 4 and the long hand is on 10. A film that lasts 1 hour 40 minutes started at 2:25. How much of the film is left?",
+        "question": "?",
+        "correctAnswer": "15 minutes",
+        "options": [
+          "15 minutes",
+          "25 minutes",
+          "1 hour 25 minutes"
+        ],
+        "hint": "Read the clock first. Then find the end time of the film.",
+        "emoji": "🏆",
+        "explanation": "The long hand on 10 means 50 minutes, and the short hand has not reached 4, so the time is 3:50. The film started at 2:25 and ends at 4:05. From 3:50 to 4:05 is 15 minutes.",
+        "funFact": "Nearly every country measures time in hours, minutes and seconds, and that shared system is what lets us plan together.",
+        "subtype": "clock_reading",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L200_Q2",
+        "gameType": "time",
+        "level": 200,
+        "instruction": "A flight leaves City A on Friday at 10:30 PM and lasts 9 hours 15 minutes. City B is 5 hours ahead of City A. What is the local day and time in City B when it lands?",
+        "question": "?",
+        "correctAnswer": "Saturday at 12:45 PM",
+        "options": [
+          "Friday at 12:45 PM",
+          "Saturday at 7:45 AM",
+          "Saturday at 12:45 PM"
+        ],
+        "hint": "Find the landing time on City A's clock first, then add the time difference.",
+        "emoji": "🌏",
+        "explanation": "10:30 PM plus 9 hours 15 minutes is 7:45 AM on Saturday in City A. City B is 5 hours ahead, so it is 12:45 PM on Saturday there.",
+        "funFact": "A flight that crosses several time zones can land on a different date from the one it left on.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L200_Q3",
+        "gameType": "time",
+        "level": 200,
+        "instruction": "A school play starts at 6:30 PM. The actors must be fully ready 10 minutes before the start. Putting on costumes takes 25 minutes, then make-up takes 20 minutes. What is the latest time they can begin costumes?",
+        "question": "?",
+        "correctAnswer": "5:35 PM",
+        "options": [
+          "5:15 PM",
+          "5:35 PM",
+          "5:55 PM"
+        ],
+        "hint": "Work backward from the time they must be ready.",
+        "emoji": "🌟",
+        "explanation": "They must be ready at 6:20 PM. Costumes and make-up take 25 + 20 = 45 minutes together. 45 minutes before 6:20 PM is 5:35 PM.",
+        "funFact": "Backstage, a five-minute call warns the performers that the show begins in five minutes.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

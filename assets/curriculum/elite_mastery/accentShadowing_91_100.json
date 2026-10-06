@@ -1,307 +1,607 @@
 {
-  "gameType": "accentShadowing",
-  "batchIndex": 10,
-  "levels": "91-100",
-  "quests": [
-    {
-      "id": "ELT_ACCENTSHADOWING_L91_Q1",
-      "interactionType": "speaking",
-      "hint": "Let the pitch fall on 'tomorrow'.",
-      "explanation": "A finished statement commonly ends on a fall, which tells the listener that you have nothing more to add.",
-      "textToSpeak": "We're all set for tomorrow.",
-      "instruction": "Shadow the speaker and match the rise and fall of the voice.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L91_Q2",
-      "interactionType": "speaking",
-      "hint": "Let the pitch rise through 'tomorrow'.",
-      "explanation": "Yes/no questions often end on a rise. Compare it with the falling statement in the previous quest.",
-      "textToSpeak": "Is everything ready for tomorrow?",
-      "instruction": "Listen for the final pitch movement, then repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L91_Q3",
-      "interactionType": "speaking",
-      "hint": "Peak on BET-ter, then fall through 'you'.",
-      "explanation": "Wh-questions commonly fall because they ask for specific information. In friendly speech a slight rise is also possible.",
-      "textToSpeak": "Which day works better for you?",
-      "instruction": "Repeat, matching where the voice rises and where it falls.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L92_Q1",
-      "interactionType": "speaking",
-      "hint": "Rise on 'morning', fall on 'session'.",
-      "explanation": "In a choice question, the first option often rises and the last falls, showing the list is complete.",
-      "textToSpeak": "Would you prefer the morning or the afternoon session?",
-      "instruction": "Listen for the final pitch movement, then repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L92_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise on 'delivered', fall on 'collect'.",
-      "explanation": "The rise after 'delivered' says the list is not finished, so the listener waits for the alternative. The fall on 'collect' shows that the choice is now complete and it is their turn to answer.",
-      "textToSpeak": "Do you want it delivered, or would you rather collect it?",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L92_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise on 'walk', fall on 'taxi'.",
-      "explanation": "A rise on WALK signals the first option and a fall on TAX-i finishes it. A simple yes/no question, 'Shall we walk?', would rise instead.",
-      "textToSpeak": "Shall we walk, or take a taxi?",
-      "instruction": "Listen once, then repeat with the same melody.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L93_Q1",
-      "interactionType": "speaking",
-      "hint": "Rise slightly on 'projector' and 'microphone'; fall on 'laptop'.",
-      "explanation": "In lists, items that are not last often rise slightly to show more is coming, and the last item falls. This helps listeners keep track.",
-      "textToSpeak": "We'll need a projector, a microphone, and a laptop.",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L93_Q2",
-      "interactionType": "speaking",
-      "hint": "Small rises on each step, fall at the end.",
-      "explanation": "Each step ends with a slight rise because the sequence continues, and the last step falls to show you are done.",
-      "textToSpeak": "First, save the file; second, close the app; then restart.",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L93_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise, rise, fall.",
-      "explanation": "A three-item list lifts twice to say more is coming, then falls once to close. Listeners use that fall to know when to answer or write the last item down.",
-      "textToSpeak": "You can pay by card, by cash, or through the app.",
-      "instruction": "Shadow the speaker and match the rise and fall of the voice.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L94_Q1",
-      "interactionType": "speaking",
-      "hint": "Try a gentle rise on 'trip' to sound interested.",
-      "explanation": "In friendly small talk a wh-question can end on a gentle rise, which sounds warmer than a flat fall. A fall is also possible and neutral.",
-      "textToSpeak": "How was your trip?",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L94_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise gently on 'again'.",
-      "explanation": "A rise at the end softens the request and shows you are simply checking, rather than demanding.",
-      "textToSpeak": "What's your name again?",
-      "instruction": "Listen for the final pitch movement, then repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L94_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise gently on 'go' to invite a story.",
-      "explanation": "'So' opens the topic, and a rising finish invites the other person to tell the story. In many contexts a fall is also natural.",
-      "textToSpeak": "So, how did it go?",
-      "instruction": "Repeat, matching where the voice rises and where it falls.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L95_Q1",
-      "interactionType": "speaking",
-      "hint": "Fall on 'isn't it' when you expect agreement.",
-      "explanation": "The speaker already believes it is cold and wants a shared comment, not information. A falling tag signals 'agree with me', whereas a rising tag would sound like a genuine doubt.",
-      "textToSpeak": "It's cold today, isn't it?",
-      "instruction": "Listen for the final pitch movement, then repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L95_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise on 'haven't you' when you really want to check.",
-      "explanation": "When you really do not know, the tag rises, because it is a genuine question.",
-      "textToSpeak": "You've got the tickets, haven't you?",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L95_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise on 'are you'.",
-      "explanation": "A negative statement with a positive tag often rises to express surprise or hope that the answer is no.",
-      "textToSpeak": "You're not leaving already, are you?",
-      "instruction": "Listen once, then repeat with the same melody.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L96_Q1",
-      "interactionType": "speaking",
-      "hint": "Keep 'could you possibly' soft; rise gently on 'report'.",
-      "explanation": "Extra polite words plus a gentle rise make the request sound optional and softer.",
-      "textToSpeak": "Could you possibly send me the report?",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L96_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise on 'moment'.",
-      "explanation": "'Would you mind' already sounds polite, but a flat or falling end can sound like an order. The rise leaves the decision with the listener, which is why it feels like a favour.",
-      "textToSpeak": "Would you mind waiting a moment?",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L96_Q3",
-      "interactionType": "speaking",
-      "hint": "Fall gently on 'hand'.",
-      "explanation": "An indirect statement often ends with a gentle fall, which sounds sincere and unhurried. A rise would sound less sure.",
-      "textToSpeak": "I was hoping you might give me a hand.",
-      "instruction": "Shadow the speaker and match the rise and fall of the voice.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L97_Q1",
-      "interactionType": "speaking",
-      "hint": "Rise on 'event'.",
-      "explanation": "The words alone are a statement, so the rise is what makes it a question of disbelief. Pitch alone carries the meaning here, which is why it must be clearly audible.",
-      "textToSpeak": "You're kidding! They cancelled the whole event?",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L97_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise on both.",
-      "explanation": "Two short rises show disbelief and invite confirmation.",
-      "textToSpeak": "Really? Fifty people applied?",
-      "instruction": "Listen for the final pitch movement, then repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L97_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise on 'fifteenth'.",
-      "explanation": "'Sorry?' rises to ask for repetition, and 'the fifteenth' rises to check the date. Both signal that you want to confirm.",
-      "textToSpeak": "Sorry? You said the fifteenth?",
-      "instruction": "Repeat, matching where the voice rises and where it falls.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L98_Q1",
-      "interactionType": "speaking",
-      "hint": "Rise-fall on 'interesting'.",
-      "explanation": "A narrow, flat pitch on 'interesting' can sound bored or sarcastic, even with the same words. A wider up-and-down movement makes the same word sound genuinely curious.",
-      "textToSpeak": "Oh, that sounds interesting!",
-      "instruction": "Listen for the final pitch movement, then repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L98_Q2",
-      "interactionType": "speaking",
-      "hint": "Start high on 'wow', peak on GREAT, fall on 'idea'.",
-      "explanation": "Enthusiasm is mostly pitch range, not loudness. Starting high on 'wow' and putting the peak on GREAT gives the compliment a clear shape before it settles.",
-      "textToSpeak": "Wow, that's a great idea.",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L98_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise on 'mm-hm', fall on 'happened'.",
-      "explanation": "A short rising 'mm-hm' shows you are listening, and the question then falls to ask for the next part of the story.",
-      "textToSpeak": "Mm-hm, and then what happened?",
-      "instruction": "Listen once, then repeat with the same melody.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L99_Q1",
-      "interactionType": "speaking",
-      "hint": "Level pitch on 'suppose'.",
-      "explanation": "'Well' and 'suppose' both signal that the speaker is not fully convinced. Flatter, lower pitch and a slower start make the reluctance audible, so no extra words are needed.",
-      "textToSpeak": "Well, I suppose it could work.",
-      "instruction": "Follow the speaker's pitch up and down as you repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L99_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise on 'Thursday'.",
-      "explanation": "Ending on a rise treats 'Thursday' as a guess that the listener can correct. A fall would make it sound like a fact, which would clash with 'I'm not sure'.",
-      "textToSpeak": "It might be Thursday; I'm not sure.",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L99_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise on 'so'.",
-      "explanation": "A rise on 'so' leaves the answer open, which matches the promise to double-check. A falling 'so' would sound settled and make the second half seem contradictory.",
-      "textToSpeak": "I think so, but let me double-check.",
-      "instruction": "Shadow the speaker and match the rise and fall of the voice.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "Received Pronunciation (RP)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L100_Q1",
-      "interactionType": "speaking",
-      "hint": "Rise on 'before'.",
-      "explanation": "A yes/no question typically rises on the last stressed word. Notice how the rise begins on BE-fore.",
-      "textToSpeak": "Have you been to this conference before?",
-      "instruction": "Copy the pitch pattern as closely as you can.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L100_Q2",
-      "interactionType": "speaking",
-      "hint": "Rise after 'twice', fall on 'year'.",
-      "explanation": "The rise after 'twice' says the sentence is not finished, so the listener waits for the extra detail. The fall on 'year' tells them the story is done.",
-      "textToSpeak": "Yes, twice, and the talks get better every year.",
-      "instruction": "Listen for the final pitch movement, then repeat.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    },
-    {
-      "id": "ELT_ACCENTSHADOWING_L100_Q3",
-      "interactionType": "speaking",
-      "hint": "Rise on 'Really', fall on 'to'.",
-      "explanation": "'Really?' rises to show interest, and the wh-question then falls, as many wh-questions do.",
-      "textToSpeak": "Really? Which session are you most looking forward to?",
-      "instruction": "Repeat, matching where the voice rises and where it falls.",
-      "shadowingFocus": "Focus: Pitch & Intonation",
-      "targetAccent": "General American (GA)"
-    }
-  ]
+    "gameType": "shadowingChallenge",
+    "batchIndex": 10,
+    "levels": "91-100",
+    "quests": [
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L91_Q1",
+            "instruction": "Shadow the host's line. Where do the natural breaks fall?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Right, so, if you'd like to follow me, I'll show you to your table.",
+            "textToSpeak": "Right, so, if you'd like to follow me, I'll show you to your table.",
+            "options": [
+                "After every four words, regardless of the meaning",
+                "After 'Right' and 'so' as small markers, after 'follow me', then one flowing clause",
+                "Only after 'me', with 'Right' and 'so' run into the next clause"
+            ],
+            "correctAnswer": "After 'Right' and 'so' as small markers, after 'follow me', then one flowing clause",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈraɪt | ˈsəʊ | ɪf jʊd ˈlaɪk tə ˈfɒləʊ ˈmiː | aɪl ˈʃəʊ jə tə jə ˈteɪbl/",
+            "hint": "Listen for the discourse words at the very start.",
+            "explanation": "Markers 'right, so' are light, 'if you'd like to follow me' is the condition, and the main clause runs on.",
+            "flowRule": "Thought Groups: markers, conditions and main clauses each form their own group.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L91_Q2",
+            "instruction": "Shadow the complaint. How is the relative clause delivered?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "The report, which was due on Friday, still hasn't been submitted.",
+            "textToSpeak": "The report, which was due on Friday, still hasn't been submitted.",
+            "options": [
+                "Louder than the main clause, with a pause after each word",
+                "Without any break, in a flat tone",
+                "Lower and quicker, bracketed by short breaks"
+            ],
+            "correctAnswer": "Lower and quicker, bracketed by short breaks",
+            "correctAnswerIndex": 2,
+            "ipa": "/ðə rɪˈpɔːt | wɪtʃ wəz ˈdjuː ɒn ˈfraɪdeɪ | ˈstɪl ˈhæznt bɪn səbˈmɪtɪd/",
+            "hint": "Treat it as extra information whispered in brackets.",
+            "explanation": "Non-defining clauses are side information, so they sit lower in pitch between short breaks.",
+            "flowRule": "Parenthetical Thought Groups: side information is spoken faster and lower than the main message.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L91_Q3",
+            "instruction": "Shadow the hesitant question. Where is the pause that sounds natural?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Where did you say you'd put the, um, the spare key?",
+            "textToSpeak": "Where did you say you'd put the, um, the spare key?",
+            "options": [
+                "After the first 'the', where the speaker searches for the word",
+                "After 'where', before 'did', where the question begins",
+                "After 'spare', before 'key', where the noun phrase splits"
+            ],
+            "correctAnswer": "After the first 'the', where the speaker searches for the word",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈweə dɪdʒə ˈseɪ jʊd ˈpʊt ðə | ʌm | ðə ˈspeə ˈkiː/",
+            "hint": "The hesitation comes where the speaker is searching.",
+            "explanation": "A filled pause before the noun is natural when the speaker is searching; pausing elsewhere splits a verb phrase.",
+            "flowRule": "Hesitation Pauses: natural hesitation happens before content words, not inside a verb phrase.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L92_Q1",
+            "instruction": "Shadow the shopping story. How many thought groups?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I grabbed some milk, a couple of apples, and a loaf of bread from the corner shop.",
+            "textToSpeak": "I grabbed some milk, a couple of apples, and a loaf of bread from the corner shop.",
+            "options": [
+                "Two: before and after 'bread', splitting the list in half",
+                "Four: the verb with milk, the apples, the bread, and the source",
+                "Eight: a separate group for each noun in the sentence"
+            ],
+            "correctAnswer": "Four: the verb with milk, the apples, the bread, and the source",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪ ˈɡræbd səm ˈmɪlk | ə ˈkʌpl əv ˈæplz | ən ə ˈləʊf əv ˈbred frəm ðə ˈkɔːnə ˈʃɒp/",
+            "hint": "Count the commas and the final phrase.",
+            "explanation": "Each list item is a group, and 'from the corner shop' closes the thought.",
+            "flowRule": "List Phrasing: each item forms a group, and the final location is separate.",
+            "speedLevel": 1.0
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L92_Q2",
+            "instruction": "Shadow the aside. Where does the main break fall?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I was going to say something, but I thought better of it.",
+            "textToSpeak": "I was going to say something, but I thought better of it.",
+            "options": [
+                "After 'going'",
+                "After 'thought'",
+                "After 'something'"
+            ],
+            "correctAnswer": "After 'something'",
+            "correctAnswerIndex": 2,
+            "ipa": "/aɪ wəz ˈɡəʊɪŋ tə ˈseɪ ˈsʌmθɪŋ | bət aɪ ˈθɔːt ˈbetər əv ɪt/",
+            "hint": "Find the point where the story changes direction.",
+            "explanation": "The break lands at 'but', the turning point, and 'thought better of it' flows without breaks.",
+            "flowRule": "Clause Phrasing: split between clauses, never inside the idiom 'thought better of it'.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L92_Q3",
+            "instruction": "Shadow the apology. How is the pause managed?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Thanks for waiting, I really appreciate your patience.",
+            "textToSpeak": "Thanks for waiting, I really appreciate your patience.",
+            "options": [
+                "No pause at all, so the two ideas run together",
+                "One short pause between two warm chunks",
+                "A long pause after 'I', before the main verb"
+            ],
+            "correctAnswer": "One short pause between two warm chunks",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈθæŋks fə ˈweɪtɪŋ | aɪ ˈrɪəli əˈpriːʃɪət jə ˈpeɪʃns/",
+            "hint": "Think about two separate thoughts.",
+            "explanation": "'Thanks for waiting' and 'I really appreciate your patience' are two separate ideas, separated by a small pause.",
+            "flowRule": "Thought Groups: two ideas get two groups.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L93_Q1",
+            "instruction": "Shadow the confidential remark. Which part is spoken as a quiet aside?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Between you and me, I don't think the project will finish on time.",
+            "textToSpeak": "Between you and me, I don't think the project will finish on time.",
+            "options": [
+                "'Between you and me'",
+                "'finish on time'",
+                "'I don't think'"
+            ],
+            "correctAnswer": "'Between you and me'",
+            "correctAnswerIndex": 0,
+            "ipa": "/bɪˈtwiːn jʊ ən ˈmiː | aɪ ˈdəʊnt ˈθɪŋk ðə ˈprɒdʒekt wɪl ˈfɪnɪʃ ɒn ˈtaɪm/",
+            "hint": "Notice where the voice lowers.",
+            "explanation": "'Between you and me' is a conspiratorial aside that is lower and quicker.",
+            "flowRule": "Asides: framing phrases are delivered as quick asides.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L93_Q2",
+            "instruction": "Shadow the phone call. How is the middle part treated?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Hi, this is Maria from the front desk, your room is ready now.",
+            "textToSpeak": "Hi, this is Maria from the front desk, your room is ready now.",
+            "options": [
+                "With each word emphasised equally, as in a spelled name",
+                "As a label spoken quickly, with the name carrying the beat",
+                "With a long pause after 'this', before the name"
+            ],
+            "correctAnswer": "As a label spoken quickly, with the name carrying the beat",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈhaɪ | ðɪs ɪz məˈriːə frəm ðə ˈfrʌnt ˈdesk | jə ˈruːm ɪz ˈredi ˈnaʊ/",
+            "hint": "Think about what the listener already knows.",
+            "explanation": "'This is Maria from the front desk' is a label, so it flows in one group with the beat on the name.",
+            "flowRule": "Identification Chunks: self-introductions are one quick group.",
+            "speedLevel": 1.0
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L93_Q3",
+            "instruction": "Shadow the explanation. Where does the break fall?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "It's not that I don't want to help, it's that I simply can't make it.",
+            "textToSpeak": "It's not that I don't want to help, it's that I simply can't make it.",
+            "options": [
+                "After 'not'",
+                "After 'simply'",
+                "After 'help'"
+            ],
+            "correctAnswer": "After 'help'",
+            "correctAnswerIndex": 2,
+            "ipa": "/ɪts ˈnɒt ðət aɪ ˈdəʊnt ˈwɒnt tə ˈhelp | ɪts ðət aɪ ˈsɪmpli ˈkɑːnt ˈmeɪk ɪt/",
+            "hint": "Locate the point where the speaker swaps the false reason for the true one.",
+            "explanation": "The first clause denies a reason, the second gives the real one; the boundary after 'help' lets the listener register the correction.",
+            "flowRule": "Contrast Phrasing: the break falls between the denied reason and the true one.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L94_Q1",
+            "instruction": "Shadow the recommendation. What type of phrase is 'the one near the station'?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "We tried the new Italian place yesterday, the one near the station.",
+            "textToSpeak": "We tried the new Italian place yesterday, the one near the station.",
+            "options": [
+                "An afterthought that clarifies, in its own group",
+                "The main clause, spoken with the strongest stress",
+                "A question, spoken with a rise at the end"
+            ],
+            "correctAnswer": "An afterthought that clarifies, in its own group",
+            "correctAnswerIndex": 0,
+            "ipa": "/wi ˈtraɪd ðə ˈnjuː ɪˈtæljən ˈpleɪs ˈjestədeɪ | ðə ˈwʌn ˈnɪə ðə ˈsteɪʃn/",
+            "hint": "Think about why the speaker adds it.",
+            "explanation": "It adds identifying detail after the main clause, so it gets its own lowered group.",
+            "flowRule": "Afterthought Phrases: clarifying additions follow in a separate group.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L94_Q2",
+            "instruction": "Shadow the complaint. How many groups?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "When I called them last week, they told me it would be fixed by Monday, but nobody has been in touch.",
+            "textToSpeak": "When I called them last week, they told me it would be fixed by Monday, but nobody has been in touch.",
+            "options": [
+                "Two: before and after 'Monday', with the rest in one",
+                "Six: a separate group after each verb in the sentence",
+                "Three: when I called, what they told me, what happened since"
+            ],
+            "correctAnswer": "Three: when I called, what they told me, what happened since",
+            "correctAnswerIndex": 2,
+            "ipa": "/wen aɪ ˈkɔːld ðəm ˈlɑːst ˈwiːk | ðeɪ ˈtəʊld mi ɪt wʊd bi ˈfɪkst baɪ ˈmʌndeɪ | bət ˈnəʊbədi əz bɪn ɪn ˈtʌtʃ/",
+            "hint": "Think of the three stages: what the speaker did, what they were told, what happened.",
+            "explanation": "The complaint has three stages: the call, the promise and the lack of follow-up, so each becomes its own thought group.",
+            "flowRule": "Narrative Phrasing: each stage of a complaint story forms a thought group.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L94_Q3",
+            "instruction": "Shadow the polite refusal. Why is there a pause after 'no'?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Honestly, no, I'd rather not discuss it over the phone.",
+            "textToSpeak": "Honestly, no, I'd rather not discuss it over the phone.",
+            "options": [
+                "It splits the verb from its object, as 'no' is a verb",
+                "It signals a question, so the pitch rises after it",
+                "It marks a complete mini-answer before the explanation"
+            ],
+            "correctAnswer": "It marks a complete mini-answer before the explanation",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈɒnɪstli | ˈnəʊ | aɪd ˈrɑːðə ˈnɒt dɪˈskʌs ɪt ˌəʊvə ðə ˈfəʊn/",
+            "hint": "Imagine 'no' as a full reply.",
+            "explanation": "'No' answers the question; the following clause explains it, so a short break separates them.",
+            "flowRule": "Answer Chunks: a short answer word is separated from the explanation.",
+            "speedLevel": 1.0
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L95_Q1",
+            "instruction": "Shadow the cautious opener. How is 'the thing is' delivered?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "The thing is, we've never done it this way before.",
+            "textToSpeak": "The thing is, we've never done it this way before.",
+            "options": [
+                "Quickly, as a run-up to the real point",
+                "Slowly, as the main message of the whole sentence",
+                "With a rising tone on 'is', as in a question"
+            ],
+            "correctAnswer": "Quickly, as a run-up to the real point",
+            "correctAnswerIndex": 0,
+            "ipa": "/ðə ˈθɪŋ ˈɪz | wiv ˈnevə ˈdʌn ɪt ˈðɪs ˈweɪ bɪˈfɔː/",
+            "hint": "It's a lead-in, not the message.",
+            "explanation": "'The thing is' is a lead-in that points to the following clause.",
+            "flowRule": "Lead-In Phrases: a short framing phrase precedes the key message.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L95_Q2",
+            "instruction": "Shadow the aside. How does 'in fact' behave?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "She's the one who organised the whole event, in fact.",
+            "textToSpeak": "She's the one who organised the whole event, in fact.",
+            "options": [
+                "It starts the sentence strongly, as the new topic",
+                "It trails off lightly at the end after a small break",
+                "It is stressed more than 'event', as the key noun"
+            ],
+            "correctAnswer": "It trails off lightly at the end after a small break",
+            "correctAnswerIndex": 1,
+            "ipa": "/ʃiz ðə ˈwʌn hu ˈɔːɡənaɪzd ðə ˈhəʊl ɪˈvent | ɪn ˈfækt/",
+            "hint": "Say the closing phrase more quietly than the main clause.",
+            "explanation": "'In fact' adds emphasis but no new information, so it sits low and quiet after a short break.",
+            "flowRule": "Tag Phrases: a closing tag is delivered low and quickly after a short break.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L95_Q3",
+            "instruction": "Shadow the thinking aloud. Which pause is longest and most deliberate?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "OK, let me think. Yes, I could do Thursday morning.",
+            "textToSpeak": "OK, let me think. Yes, I could do Thursday morning.",
+            "options": [
+                "After 'OK'",
+                "After 'let me think'",
+                "After 'could'"
+            ],
+            "correctAnswer": "After 'let me think'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˌəʊˈkeɪ | ˈlet mi ˈθɪŋk | ˈjes | aɪ kʊd ˈduː ˈθɜːzdeɪ ˈmɔːnɪŋ/",
+            "hint": "Notice where the speaker really considers.",
+            "explanation": "The pause after 'let me think' stands for actual thinking.",
+            "flowRule": "Thinking Pauses: longest pause follows 'let me think'.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L96_Q1",
+            "instruction": "Shadow the instructions. Where do the groups divide?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Next, you'll need to enter your password, then click on the green button.",
+            "textToSpeak": "Next, you'll need to enter your password, then click on the green button.",
+            "options": [
+                "After every verb, so each action stands alone",
+                "Only at the end, with one long group before it",
+                "After 'Next', after 'password', then the final step"
+            ],
+            "correctAnswer": "After 'Next', after 'password', then the final step",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈnekst | jʊl ˈniːd tʊ ˈentə jə ˈpɑːswɜːd | ˈðen ˈklɪk ɒn ðə ˈɡriːn ˈbʌtn/",
+            "hint": "Follow the steps as if you were clicking along with the speaker.",
+            "explanation": "'Next', the password step and the button step are separate actions, so each gets its own group, with the pitch lifting between steps.",
+            "flowRule": "Instruction Phrasing: each step in a sequence is its own group.",
+            "speedLevel": 1.0
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L96_Q2",
+            "instruction": "Shadow the apology. How does the first clause end?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I can see why you're upset, but it wasn't meant to hurt anyone.",
+            "textToSpeak": "I can see why you're upset, but it wasn't meant to hurt anyone.",
+            "options": [
+                "With a deep fall, as the sentence is now complete",
+                "With a small continuing lift before 'but'",
+                "With a pause after 'see', splitting the verb phrase"
+            ],
+            "correctAnswer": "With a small continuing lift before 'but'",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪ kən ˈsiː waɪ jɔːr ʌpˈset | bət ɪt ˈwɒznt ˈment tə ˈhɜːt ˈeniwʌn/",
+            "hint": "Check whether the speaker has finished the thought before 'but'.",
+            "explanation": "The first clause is not the end of the idea, so the pitch lifts slightly after 'upset' to show a contrast is coming.",
+            "flowRule": "Continuation Phrasing: a slight lift marks an unfinished thought before 'but'.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L96_Q3",
+            "instruction": "Shadow the explanation. Where is the break?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "The flight was delayed, which meant we missed our connection.",
+            "textToSpeak": "The flight was delayed, which meant we missed our connection.",
+            "options": [
+                "After 'which'",
+                "After 'delayed'",
+                "After 'missed'"
+            ],
+            "correctAnswer": "After 'delayed'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ðə ˈflaɪt wəz dɪˈleɪd | wɪtʃ ˈment wi ˈmɪst aʊə kəˈnekʃn/",
+            "hint": "Look for the word that links cause to consequence.",
+            "explanation": "The comma before 'which' marks a boundary between the cause and its consequence, so a brief pause separates them.",
+            "flowRule": "Clause Phrasing: cause and consequence sit in separate groups.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L97_Q1",
+            "instruction": "Shadow the plea. Which part is the real request?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Look, I know it's late, but could we just go over it once more?",
+            "textToSpeak": "Look, I know it's late, but could we just go over it once more?",
+            "options": [
+                "'Look, I know it's late', the opening lead-in",
+                "'I know it's late', the reason for the call",
+                "'could we just go over it once more'"
+            ],
+            "correctAnswer": "'could we just go over it once more'",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈlʊk | aɪ ˈnəʊ ɪts ˈleɪt | bət kəd wi dʒəst ˈɡəʊ‿ˈəʊvə ɪt ˈwʌns ˈmɔː/",
+            "hint": "Find the phrase that actually asks for something.",
+            "explanation": "'Look, I know it's late' prepares the listener, and the final group is the request itself, delivered with a polite lift on 'more'.",
+            "flowRule": "Request Phrasing: softeners come first, and the request is the final group.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L97_Q2",
+            "instruction": "Shadow the introduction. How are the nested descriptions grouped?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "My brother, Daniel, the one with the beard, is picking us up.",
+            "textToSpeak": "My brother, Daniel, the one with the beard, is picking us up.",
+            "options": [
+                "Each description in its own group, with the main clause at the end",
+                "All as one group, with no breaks at all",
+                "Every word separately, with a pause after each"
+            ],
+            "correctAnswer": "Each description in its own group, with the main clause at the end",
+            "correctAnswerIndex": 0,
+            "ipa": "/maɪ ˈbrʌðə | ˈdænjəl | ðə ˈwʌn wɪð ðə ˈbɪəd | ɪz ˈpɪkɪŋ əs ˈʌp/",
+            "hint": "Read the commas as places where the speaker adds one more piece of description.",
+            "explanation": "The sentence layers the brother, his name and a detail, so each addition is a short group before the main clause 'is picking us up'.",
+            "flowRule": "Nested Phrasing: descriptions added to a noun are short, separate groups.",
+            "speedLevel": 1.0
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L97_Q3",
+            "instruction": "Shadow the request. How is 'around four' delivered?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Is it OK if I leave a little early today, around four?",
+            "textToSpeak": "Is it OK if I leave a little early today, around four?",
+            "options": [
+                "As a new sentence, with a full fall after 'today'",
+                "As the loudest part, with the strongest stress of all",
+                "As a short clarifying tag after a tiny pause"
+            ],
+            "correctAnswer": "As a short clarifying tag after a tiny pause",
+            "correctAnswerIndex": 2,
+            "ipa": "/ɪz ɪt ˌəʊˈkeɪ ɪf aɪ ˈliːv ə ˈlɪtl ˈɜːli təˈdeɪ | əˈraʊnd ˈfɔː/",
+            "hint": "Think about why the speaker adds 'around four' after the main question.",
+            "explanation": "It is an afterthought that clarifies the time, so it sits in a short group after the question and falls gently.",
+            "flowRule": "Afterthought Phrases: clarifications follow the main idea in a separate group.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L98_Q1",
+            "instruction": "Shadow the hesitant request. Which pause is most natural?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Could you, um, possibly send me the file again?",
+            "textToSpeak": "Could you, um, possibly send me the file again?",
+            "options": [
+                "Between 'send' and 'me', where the object begins",
+                "After 'Could you', where the speaker hesitates before the verb",
+                "Between 'the' and 'file', splitting the noun phrase"
+            ],
+            "correctAnswer": "After 'Could you', where the speaker hesitates before the verb",
+            "correctAnswerIndex": 1,
+            "ipa": "/kəd jʊ | ʌm | ˈpɒsəbli ˈsend mi ðə ˈfaɪl əˈɡen/",
+            "hint": "Hesitations happen where the next word needs planning.",
+            "explanation": "The speaker stalls after the polite opening, and 'possibly send me the file again' flows afterwards.",
+            "flowRule": "Hesitation Pauses: fillers fall at planning points, not inside noun phrases.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L98_Q2",
+            "instruction": "Shadow the comparison. How are the groups arranged?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "If we leave now, we'll avoid the traffic, and if we don't, we'll be stuck for an hour.",
+            "textToSpeak": "If we leave now, we'll avoid the traffic, and if we don't, we'll be stuck for an hour.",
+            "options": [
+                "Four groups, with a matching rise-fall shape in each if-clause and result",
+                "Two groups, one for each if-clause, with results merged",
+                "One group, spoken without breaks from start to finish"
+            ],
+            "correctAnswer": "Four groups, with a matching rise-fall shape in each if-clause and result",
+            "correctAnswerIndex": 0,
+            "ipa": "/ɪf wi ˈliːv ˈnaʊ | wiːl əˈvɔɪd ðə ˈtræfɪk | ən ɪf wi ˈdəʊnt | wiːl bi ˈstʌk fər ən ˈaʊə/",
+            "hint": "Compare the two halves.",
+            "explanation": "Two conditions and two results give four balanced groups.",
+            "flowRule": "Parallel Phrasing: paired conditions create matching groups.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L98_Q3",
+            "instruction": "Shadow the announcement. Where does the break fall?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "After the presentation, you'll have a chance to ask questions.",
+            "textToSpeak": "After the presentation, you'll have a chance to ask questions.",
+            "options": [
+                "After 'chance'",
+                "After 'you'll'",
+                "After 'presentation'"
+            ],
+            "correctAnswer": "After 'presentation'",
+            "correctAnswerIndex": 2,
+            "ipa": "/ˈɑːftə ðə ˌprezənˈteɪʃn | jʊl əv ə ˈtʃɑːns tʊ ˈɑːsk ˈkwestʃənz/",
+            "hint": "Say the opening phrase on its own and decide whether you would stop there.",
+            "explanation": "'After the presentation' sets the time frame, so it gets its own group with a slight lift before the main clause.",
+            "flowRule": "Fronted Phrases: an opening time frame is its own group.",
+            "speedLevel": 1.0
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L99_Q1",
+            "instruction": "Shadow the health update. How are the pitch and pause arranged?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "The doctor said it's nothing serious, but I should rest for a few days.",
+            "textToSpeak": "The doctor said it's nothing serious, but I should rest for a few days.",
+            "options": [
+                "A rise after 'said', which asks the listener a question",
+                "No pause at all, so the sentence flows without a break",
+                "A mild fall after 'serious' then a pause before 'but'"
+            ],
+            "correctAnswer": "A mild fall after 'serious' then a pause before 'but'",
+            "correctAnswerIndex": 2,
+            "ipa": "/ðə ˈdɒktə ˈsed ɪts ˈnʌθɪŋ ˈsɪəriəs | bət aɪ ʃəd ˈrest fər ə ˈfjuː ˈdeɪz/",
+            "hint": "Reassurance, then advice.",
+            "explanation": "The first clause settles and the second adds advice.",
+            "flowRule": "Clause Phrasing: each message gets a group.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L99_Q2",
+            "instruction": "Shadow the clarification question. How is the lead-in treated?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "So what you're saying is, you'd prefer to wait until the budget is confirmed?",
+            "textToSpeak": "So what you're saying is, you'd prefer to wait until the budget is confirmed?",
+            "options": [
+                "As the main stress of the question, loud and slow",
+                "As a quick separate group before the real question",
+                "With a falling tone, as if the question were over"
+            ],
+            "correctAnswer": "As a quick separate group before the real question",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈsəʊ | ˈwɒt jɔː ˈseɪɪŋ ɪz | jʊd prɪˈfɜː tə ˈweɪt ənˈtɪl ðə ˈbʌdʒɪt ɪz kənˈfɜːmd/",
+            "hint": "Which part is a frame?",
+            "explanation": "'So what you're saying is' frames the paraphrase.",
+            "flowRule": "Lead-In Phrases: framing phrases are quick.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L99_Q3",
+            "instruction": "Shadow the candid remark. How many groups?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'll be honest with you, it's not what I expected, and I'm a little worried.",
+            "textToSpeak": "I'll be honest with you, it's not what I expected, and I'm a little worried.",
+            "options": [
+                "Two: before and after the comma in the middle",
+                "Three: the framing, the surprise, and the worry",
+                "Five: a separate group for every clause and phrase"
+            ],
+            "correctAnswer": "Three: the framing, the surprise, and the worry",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪl bi ˈɒnɪst wɪð ˈjuː | ɪts ˈnɒt wɒt aɪ ɪkˈspektɪd | ən aɪm ə ˈlɪtl ˈwʌrid/",
+            "hint": "Count the ideas, not the commas: the speaker frames, admits, then confesses.",
+            "explanation": "The framing, the surprise and the worry are three separate thoughts, so each forms its own group.",
+            "flowRule": "Thought Groups: each distinct idea in a candid remark is a group.",
+            "speedLevel": 1.05
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L100_Q1",
+            "instruction": "Shadow the polite question. How is the final phrase handled?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Excuse me, could you tell me if this train stops at Reading?",
+            "textToSpeak": "Excuse me, could you tell me if this train stops at Reading?",
+            "options": [
+                "It splits after 'tell me', before the embedded question",
+                "It splits after 'if', before 'this train stops'",
+                "The embedded question flows as one unit to 'Reading'"
+            ],
+            "correctAnswer": "The embedded question flows as one unit to 'Reading'",
+            "correctAnswerIndex": 2,
+            "ipa": "/ɪkˈskjuːz ˈmiː | kəd jə ˈtel mi ɪf ðɪs ˈtreɪn ˈstɒps ət ˈredɪŋ/",
+            "hint": "Notice that the polite frame and the question are joined.",
+            "explanation": "After 'Excuse me', the embedded question 'if this train stops at Reading' runs as a single unit, ending on 'Reading'.",
+            "flowRule": "Embedded Questions: an indirect question flows without breaks.",
+            "speedLevel": 1.0
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L100_Q2",
+            "instruction": "Shadow the irony. Where is the break?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "It was supposed to be a quick call, but it turned into a two-hour meeting.",
+            "textToSpeak": "It was supposed to be a quick call, but it turned into a two-hour meeting.",
+            "options": [
+                "After 'call'",
+                "After 'turned'",
+                "After 'two'"
+            ],
+            "correctAnswer": "After 'call'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ɪt wəz səˈpəʊs tə bi ə ˈkwɪk ˈkɔːl | bət ɪt ˈtɜːnd ˈɪntʊ ə ˈtuː ˈaʊə ˈmiːtɪŋ/",
+            "hint": "Locate the point where the plan collapses.",
+            "explanation": "The break falls at 'but', separating the plan from the surprise outcome.",
+            "flowRule": "Contrast Phrasing: a pause marks the turn in a contrast.",
+            "speedLevel": 1.1
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_L100_Q3",
+            "instruction": "Shadow the musing. How are the interrupting words handled?",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Well, it depends, doesn't it, on what you're willing to pay.",
+            "textToSpeak": "Well, it depends, doesn't it, on what you're willing to pay.",
+            "options": [
+                "It takes the main stress, as the most important phrase",
+                "'doesn't it' sits as a quiet aside inside the sentence",
+                "It ends the sentence, with a firm fall after it"
+            ],
+            "correctAnswer": "'doesn't it' sits as a quiet aside inside the sentence",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈwel | ɪt dɪˈpendz | ˈdʌznt ɪt | ɒn wɒt jɔː ˈwɪlɪŋ tə ˈpeɪ/",
+            "hint": "Listen for the part of the sentence that is spoken more quietly.",
+            "explanation": "'Doesn't it' interrupts the main clause, so it is spoken lower and quicker, and the main thought resumes after it.",
+            "flowRule": "Interrupting Tags: tags inside a sentence are low and quick.",
+            "speedLevel": 1.05
+        }
+    ]
 }

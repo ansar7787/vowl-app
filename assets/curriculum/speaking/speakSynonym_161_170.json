@@ -6,446 +6,447 @@
         {
             "id": "SPK_SPEAKSYNONYM_L161_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"speaking about something in a negative way.\"",
-            "explanation": "In this sentence, \"disparages\" means speaking about something in a negative way, so \"belittles\" slots in naturally. \"demeans\" is a close second choice.",
-            "textToSpeak": "Our marketing director never *disparages* a competitor publicly.",
+            "instruction": "Say a synonym that captures the same attitude.",
+            "hint": "A company knows about a serious problem but wants the public to think it's small.",
+            "explanation": "Quick reminder: \"downplay\" means to make something seem less serious than it is. \"Minimize\" and \"understate\" describe the same attitude, and \"underplay\" is the British-flavored equivalent. \"Ignore\" would be different, because the company is talking about the problem, not pretending it doesn't exist.",
+            "textToSpeak": "The company tried to *downplay* the seriousness of the leak.",
             "acceptedSynonyms": [
-                "belittles",
-                "criticizes",
-                "demeans",
-                "puts down"
+                "underplay",
+                "understate",
+                "minimize"
             ],
-            "correctAnswer": "belittles"
+            "correctAnswer": "minimize"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L161_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"speaking about something in a negative way\"?",
-            "explanation": "\"criticizes\" is a reliable synonym for \"disparages\", which means speaking about something in a negative way here. \"puts down\" and \"belittles\" are also accepted.",
-            "textToSpeak": "Her company's CEO never *disparages* a competitor publicly.",
+            "instruction": "Say a word that keeps the exact shade of meaning.",
+            "hint": "Someone made himself sound more important than he really was.",
+            "explanation": "Look at \"exaggerate\" first: it means to make something seem bigger or better. \"Overstated\" is the closest, \"inflated\" suggests he made it sound larger, \"embellished\" suggests adding extra details, and \"overplayed\" suggests going too far. \"Lied\" is stronger because it suggests no truth at all.",
+            "textToSpeak": "He *exaggerated* his role in the project to impress the boss.",
             "acceptedSynonyms": [
-                "belittles",
-                "criticizes",
-                "demeans",
-                "puts down"
+                "overstated",
+                "embellished",
+                "inflated",
+                "overplayed"
             ],
-            "correctAnswer": "criticizes"
+            "correctAnswer": "overstated"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L161_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"speaking about something in a negative way.\"",
-            "explanation": "\"demeans\" works well here because \"disparages\" also means speaking about something in a negative way. \"belittles\" and \"criticizes\" would work too.",
-            "textToSpeak": "The professional association never *disparages* a competitor publicly.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "She refused to give up on her view, even though there was evidence against it.",
+            "explanation": "\"Insisted\" shows a firm, determined belief. \"Maintained\" and \"asserted\" keep that sense of holding her position, and \"argued\" suggests she gave reasons. \"Claimed\" would make her statement sound doubtful.",
+            "textToSpeak": "She *insisted* the plan would work, even after the first test failed.",
             "acceptedSynonyms": [
-                "belittles",
-                "criticizes",
-                "demeans",
-                "puts down"
+                "asserted",
+                "argued",
+                "maintained"
             ],
-            "correctAnswer": "demeans"
+            "correctAnswer": "maintained"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L162_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"shown to have been right all along.\" What's a good match?",
-            "explanation": "\"vindicated\" means shown to have been right all along, and \"justified\" captures that same idea naturally in this sentence. \"proven right\" is another solid option.",
-            "textToSpeak": "My research team felt completely *vindicated* by the results.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Experts are offering an idea about the economy but have no proof yet.",
+            "explanation": "Start with \"speculate\": it means to form an idea without full evidence. \"Guess\" is the plain choice, \"theorize\" suggests building a loose explanation, \"surmise\" is formal and suggests reasoning from some clues, and \"conjecture\" is similar but more formal.",
+            "textToSpeak": "Analysts *speculate* that interest rates will drop next year.",
             "acceptedSynonyms": [
-                "justified",
-                "validated",
-                "proven right"
+                "surmise",
+                "conjecture",
+                "theorize",
+                "guess"
             ],
-            "correctAnswer": "justified"
+            "correctAnswer": "guess"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L162_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"shown to have been right all along.\"",
-            "explanation": "Good choice: \"validated\" is a strong match for \"vindicated\", which means shown to have been right all along. You could also say \"justified\" or \"proven right\".",
-            "textToSpeak": "Her legal defense felt completely *vindicated* by the results.",
+            "instruction": "Say a word that keeps the exact shade of meaning.",
+            "hint": "You're warning someone against taking something for granted.",
+            "explanation": "Remember that \"assume\" means to accept something as true without checking. \"Presume\" is slightly more formal and suggests you believe it is likely, \"suppose\" is softer, \"expect\" suggests you think it will happen, and \"imagine\" suggests picturing it. Each has a different shade.",
+            "textToSpeak": "Don't *assume* that everyone shares your opinion.",
             "acceptedSynonyms": [
-                "justified",
-                "validated",
-                "proven right"
+                "suppose",
+                "expect",
+                "imagine",
+                "presume"
             ],
-            "correctAnswer": "validated"
+            "correctAnswer": "presume"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L162_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"shown to have been right all along\" -- what word comes to mind?",
-            "explanation": "\"proven right\" fits because \"vindicated\" means shown to have been right all along here. Other natural alternatives include \"validated\" and \"justified\".",
-            "textToSpeak": "The whistleblower felt completely *vindicated* by the results.",
+            "instruction": "Say a synonym that captures the same attitude.",
+            "hint": "Someone says something that sounds like an accusation without making it directly.",
+            "explanation": "The word \"implying\" means suggesting something indirectly. \"Suggesting\" is neutral, \"hinting\" is lighter, and \"insinuating\" suggests an unpleasant idea behind it. Choosing between them changes how rude the sentence sounds.",
+            "textToSpeak": "Are you *implying* that I made a mistake?",
             "acceptedSynonyms": [
-                "justified",
-                "validated",
-                "proven right"
+                "suggesting",
+                "insinuating",
+                "hinting"
             ],
-            "correctAnswer": "proven right"
+            "correctAnswer": "suggesting"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L163_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"deliberately flashy to impress other people.\"",
-            "explanation": "In this sentence, \"ostentatious\" means deliberately flashy to impress other people, so \"showy\" slots in naturally. \"extravagant\" is a close second choice.",
-            "textToSpeak": "Her diamond necklace seemed almost *ostentatious* for the occasion.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Imagine a report presents numbers that everyone accepts without objection.",
+            "explanation": "To choose well, note that \"dispute\" means to argue that something isn't true. \"Questions\" and \"challenges\" are the closest, \"contests\" is formal and often legal, and \"denies\" is stronger because it says something is false.",
+            "textToSpeak": "Nobody *disputes* the figures.",
             "acceptedSynonyms": [
-                "showy",
-                "flashy",
-                "extravagant",
-                "flamboyant"
+                "challenges",
+                "denies",
+                "contests",
+                "questions"
             ],
-            "correctAnswer": "showy"
+            "correctAnswer": "questions"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L163_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"deliberately flashy to impress other people.\"",
-            "explanation": "\"flashy\" is a reliable synonym for \"ostentatious\", which means deliberately flashy to impress other people here. \"flamboyant\" and \"showy\" are also accepted.",
-            "textToSpeak": "The wedding decorations seemed almost *ostentatious* for the occasion.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "You're giving someone one chance and telling them not to repeat the problem.",
+            "explanation": "\"Overlook\" here means choosing not to treat something as a problem. \"Excuse\" and \"forgive\" suggest pardoning the person, while \"ignore\" and \"disregard\" suggest treating the mistake as if it isn't there. \"Miss\" would suggest you didn't notice it.",
+            "textToSpeak": "I'll *overlook* it this time, but please don't do it again.",
             "acceptedSynonyms": [
-                "showy",
-                "flashy",
-                "extravagant",
-                "flamboyant"
+                "disregard",
+                "excuse",
+                "ignore",
+                "forgive"
             ],
-            "correctAnswer": "flashy"
+            "correctAnswer": "excuse"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L163_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"deliberately flashy to impress other people\"?",
-            "explanation": "\"extravagant\" works well here because \"ostentatious\" also means deliberately flashy to impress other people. \"showy\" and \"flashy\" would work too.",
-            "textToSpeak": "His new sports car seemed almost *ostentatious* for the occasion.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "A public figure shows strong support for a project in front of reporters.",
+            "explanation": "Here, \"endorse\" means to publicly support something. \"Backed\" is simple, \"supported\" is neutral, \"approved\" suggests official agreement, and \"championed\" suggests actively promoting it. A weaker word like \"accepted\" would miss the public aspect.",
+            "textToSpeak": "The mayor *endorsed* the plan at a press conference.",
             "acceptedSynonyms": [
-                "showy",
-                "flashy",
-                "extravagant",
-                "flamboyant"
+                "approved",
+                "supported",
+                "backed",
+                "championed"
             ],
-            "correctAnswer": "extravagant"
+            "correctAnswer": "backed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L164_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"kind and forgiving, especially after winning.\"",
-            "explanation": "\"magnanimous\" means kind and forgiving, especially after winning, and \"generous\" captures that same idea naturally in this sentence. \"noble\" is another solid option.",
-            "textToSpeak": "The winning team was unexpectedly *magnanimous* in victory.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Someone stays apart and doesn't show warmth toward others.",
+            "explanation": "The key word is \"aloof\", which suggests a person who seems emotionally distant. \"Distant\" is the closest, \"detached\" suggests not getting involved, \"standoffish\" is informal and critical, and \"remote\" suggests he's hard to reach emotionally.",
+            "textToSpeak": "He seems *aloof* at parties and rarely joins conversations.",
             "acceptedSynonyms": [
-                "generous",
-                "gracious",
-                "noble",
-                "big-hearted"
+                "standoffish",
+                "detached",
+                "remote",
+                "distant"
             ],
-            "correctAnswer": "generous"
+            "correctAnswer": "distant"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L164_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"kind and forgiving, especially after winning.\" What's a good match?",
-            "explanation": "Good choice: \"gracious\" is a strong match for \"magnanimous\", which means kind and forgiving, especially after winning. You could also say \"big-hearted\" or \"generous\".",
-            "textToSpeak": "Her opposing tennis rival was unexpectedly *magnanimous* in victory.",
+            "instruction": "Say a word that keeps the exact shade of meaning.",
+            "hint": "Think of it this way: a colleague checks every small detail and almost never makes a mistake.",
+            "explanation": "Think about \"meticulous\": it is positive and means very careful about details. \"Painstaking\" suggests great effort, \"precise\" suggests accuracy, \"scrupulous\" suggests careful honesty and attention, and \"exacting\" suggests very high standards. \"Obsessive\" would be negative.",
+            "textToSpeak": "She's *meticulous* about details, so her reports are almost perfect.",
             "acceptedSynonyms": [
-                "generous",
-                "gracious",
-                "noble",
-                "big-hearted"
+                "exacting",
+                "precise",
+                "painstaking",
+                "scrupulous"
             ],
-            "correctAnswer": "gracious"
+            "correctAnswer": "painstaking"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L164_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"kind and forgiving, especially after winning.\"",
-            "explanation": "\"noble\" fits because \"magnanimous\" means kind and forgiving, especially after winning here. Other natural alternatives include \"generous\" and \"gracious\".",
-            "textToSpeak": "The tournament champion was unexpectedly *magnanimous* in victory.",
+            "instruction": "Say a synonym that captures the same attitude.",
+            "hint": "Suppose a negotiator wants to win and shows no sympathy for the other side.",
+            "explanation": "In this sentence, \"ruthless\" means hard and showing no mercy. \"Cutthroat\" is more informal and common in business, \"merciless\" and \"uncompromising\" are close, and \"hard-nosed\" suggests tough but not necessarily cruel.",
+            "textToSpeak": "He's a *ruthless* negotiator who never gives anything away.",
             "acceptedSynonyms": [
-                "generous",
-                "gracious",
-                "noble",
-                "big-hearted"
+                "hard-nosed",
+                "merciless",
+                "cutthroat",
+                "uncompromising"
             ],
-            "correctAnswer": "noble"
+            "correctAnswer": "cutthroat"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L165_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"deliberately unclear or open to two meanings\" -- what word comes to mind?",
-            "explanation": "In this sentence, \"equivocal\" means deliberately unclear or open to two meanings, so \"ambiguous\" slots in naturally. \"noncommittal\" is a close second choice.",
-            "textToSpeak": "The company spokesperson gave a frustratingly *equivocal* answer.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Two words seem almost the same, but there's a small difference that's easy to miss.",
+            "explanation": "It helps to know that \"subtle\" means delicate and hard to notice. \"Slight\" is the plain choice, \"fine\" is common with \"line\" or \"distinction\", \"delicate\" suggests it's easy to miss, and \"nuanced\" suggests there are layers of meaning.",
+            "textToSpeak": "There's a *subtle* difference between the two words.",
             "acceptedSynonyms": [
-                "ambiguous",
-                "evasive",
-                "noncommittal",
-                "vague"
+                "nuanced",
+                "slight",
+                "fine",
+                "delicate"
             ],
-            "correctAnswer": "ambiguous"
+            "correctAnswer": "slight"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L165_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"deliberately unclear or open to two meanings.\"",
-            "explanation": "\"evasive\" is a reliable synonym for \"equivocal\", which means deliberately unclear or open to two meanings here. \"vague\" and \"ambiguous\" are also accepted.",
-            "textToSpeak": "Her supervisor gave a frustratingly *equivocal* answer.",
+            "instruction": "Say a word that keeps the exact shade of meaning.",
+            "hint": "Think of it this way: a manager answers a question without giving real details.",
+            "explanation": "Keep in mind that \"vague\" means not clear or exact. \"Imprecise\" is the closest, \"hazy\" suggests unclear memory or thought, \"woolly\" is British and suggests unclear thinking, and \"nebulous\" is formal and suggests lack of clear shape. \"Evasive\" would suggest he's deliberately avoiding the question.",
+            "textToSpeak": "His answer was *vague*, so nobody knew what he planned to do.",
             "acceptedSynonyms": [
-                "ambiguous",
-                "evasive",
-                "noncommittal",
-                "vague"
+                "hazy",
+                "nebulous",
+                "imprecise",
+                "woolly"
             ],
-            "correctAnswer": "evasive"
+            "correctAnswer": "imprecise"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L165_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"deliberately unclear or open to two meanings.\"",
-            "explanation": "\"noncommittal\" works well here because \"equivocal\" also means deliberately unclear or open to two meanings. \"ambiguous\" and \"evasive\" would work too.",
-            "textToSpeak": "The government official gave a frustratingly *equivocal* answer.",
+            "instruction": "Say a synonym that captures the same attitude.",
+            "hint": "Picture this: a person told an obvious lie and didn't even try to hide it.",
+            "explanation": "Notice that \"blatant\" suggests something very obvious and often shameless. \"Outright\" emphasizes completeness, \"flagrant\" suggests breaking a rule openly, \"brazen\" suggests bold and unashamed behavior, and \"shameless\" focuses on lack of embarrassment.",
+            "textToSpeak": "It was a *blatant* lie, and everyone knew it.",
             "acceptedSynonyms": [
-                "ambiguous",
-                "evasive",
-                "noncommittal",
-                "vague"
+                "brazen",
+                "outright",
+                "flagrant",
+                "shameless"
             ],
-            "correctAnswer": "noncommittal"
+            "correctAnswer": "outright"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L166_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"done fast, skipping over the details\"?",
-            "explanation": "\"cursory\" means done fast, skipping over the details, and \"quick\" captures that same idea naturally in this sentence. \"superficial\" is another solid option.",
-            "textToSpeak": "My rushed tour guide gave the map only a *cursory* glance.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "A decision was made on purpose, and nobody can claim it was by chance.",
+            "explanation": "In practice, \"deliberate\" means done on purpose. \"Intentional\" is the plain match, \"conscious\" suggests awareness, \"calculated\" suggests careful planning (and sometimes coldness), and \"planned\" is simple. \"Accidental\" is the opposite.",
+            "textToSpeak": "It was a *deliberate* choice, not an accident.",
             "acceptedSynonyms": [
-                "quick",
-                "hasty",
-                "superficial",
-                "brief"
+                "intentional",
+                "planned",
+                "calculated",
+                "conscious"
             ],
-            "correctAnswer": "quick"
+            "correctAnswer": "intentional"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L166_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"done fast, skipping over the details.\"",
-            "explanation": "Good choice: \"hasty\" is a strong match for \"cursory\", which means done fast, skipping over the details. You could also say \"brief\" or \"quick\".",
-            "textToSpeak": "Her distracted co-pilot gave the map only a *cursory* glance.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "A driver took a danger that most people would have avoided.",
+            "explanation": "Notice that \"reckless\" suggests acting without thinking about danger. \"Irresponsible\" focuses on the lack of care for others, \"rash\" suggests acting too quickly, \"careless\" is milder, and \"foolhardy\" suggests foolish courage.",
+            "textToSpeak": "Driving that fast in the rain was a *reckless* thing to do.",
             "acceptedSynonyms": [
-                "quick",
-                "hasty",
-                "superficial",
-                "brief"
+                "foolhardy",
+                "rash",
+                "irresponsible",
+                "careless"
             ],
-            "correctAnswer": "hasty"
+            "correctAnswer": "irresponsible"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L166_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"done fast, skipping over the details.\" What's a good match?",
-            "explanation": "\"superficial\" fits because \"cursory\" means done fast, skipping over the details here. Other natural alternatives include \"quick\" and \"hasty\".",
-            "textToSpeak": "The hurried tourist gave the map only a *cursory* glance.",
+            "instruction": "Say a word that keeps the exact shade of meaning.",
+            "hint": "Imagine a rule has no clear reason, so people feel it's unfair.",
+            "explanation": "Here, \"arbitrary\" means based on chance or personal choice, not on reason. \"Random\" is the plain match, \"capricious\" and \"whimsical\" suggest changeable choices, and \"illogical\" focuses on the lack of logic.",
+            "textToSpeak": "The rule seems *arbitrary*, and nobody can explain it.",
             "acceptedSynonyms": [
-                "quick",
-                "hasty",
-                "superficial",
-                "brief"
+                "illogical",
+                "capricious",
+                "whimsical",
+                "random"
             ],
-            "correctAnswer": "superficial"
+            "correctAnswer": "random"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L167_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"quick to notice what really matters.\"",
-            "explanation": "In this sentence, \"astute\" means quick to notice what really matters, so \"shrewd\" slots in naturally. \"sharp\" is a close second choice.",
-            "textToSpeak": "My grandfather made a remarkably *astute* observation.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You're explaining to a team that something cannot be stopped.",
+            "explanation": "Start with \"inevitable\": it means certain to happen and impossible to prevent. \"Unavoidable\" is the closest, \"inescapable\" suggests no way out, and \"certain\" simply says it will happen without the sense of impossibility to prevent it.",
+            "textToSpeak": "Change is *inevitable*, so we need to prepare.",
             "acceptedSynonyms": [
-                "shrewd",
-                "perceptive",
-                "sharp",
-                "insightful"
+                "inescapable",
+                "unavoidable",
+                "certain"
             ],
-            "correctAnswer": "shrewd"
+            "correctAnswer": "unavoidable"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L167_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"quick to notice what really matters\" -- what word comes to mind?",
-            "explanation": "\"perceptive\" is a reliable synonym for \"astute\", which means quick to notice what really matters here. \"insightful\" and \"shrewd\" are also accepted.",
-            "textToSpeak": "Her wise aunt made a remarkably *astute* observation.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Think of it this way: an editor tells a writer that something repeats a point that was already made.",
+            "explanation": "To choose well, note that \"redundant\" means not needed because it repeats something. \"Unnecessary\" is the closest, \"superfluous\" is formal, \"repetitive\" focuses on repeating, and \"needless\" is simple. Don't confuse this with \"made redundant\", which refers to job loss.",
+            "textToSpeak": "That last paragraph is *redundant*. You already said it earlier.",
             "acceptedSynonyms": [
-                "shrewd",
-                "perceptive",
-                "sharp",
-                "insightful"
+                "repetitive",
+                "unnecessary",
+                "superfluous",
+                "needless"
             ],
-            "correctAnswer": "perceptive"
+            "correctAnswer": "unnecessary"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L167_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"quick to notice what really matters.\"",
-            "explanation": "\"sharp\" works well here because \"astute\" also means quick to notice what really matters. \"shrewd\" and \"perceptive\" would work too.",
-            "textToSpeak": "The retired judge made a remarkably *astute* observation.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "You're describing a day at work that was dull and repetitive.",
+            "explanation": "The key word is \"mundane\", which means ordinary and not exciting. \"Routine\" is neutral, \"ordinary\" is plain, \"humdrum\" is informal and suggests dullness, and \"everyday\" is neutral. \"Boring\" is more direct and critical.",
+            "textToSpeak": "I spent the whole day doing *mundane* tasks like filing and photocopying.",
             "acceptedSynonyms": [
-                "shrewd",
-                "perceptive",
-                "sharp",
-                "insightful"
+                "humdrum",
+                "ordinary",
+                "routine",
+                "everyday"
             ],
-            "correctAnswer": "sharp"
+            "correctAnswer": "routine"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L168_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"without any embarrassment or shame.\"",
-            "explanation": "\"unabashedly\" means without any embarrassment or shame, and \"openly\" captures that same idea naturally in this sentence. \"boldly\" is another solid option.",
-            "textToSpeak": "The former CEO spoke *unabashedly* about the failure.",
+            "instruction": "Say a word that keeps the exact shade of meaning.",
+            "hint": "A project manager is talking about making dangers less likely or less serious.",
+            "explanation": "Look at \"mitigate\" first: it means to make something less severe. \"Reduce\" and \"lessen\" are simple, \"limit\" suggests setting boundaries, and \"minimize\" suggests making it as small as possible. It's usually used for risks and harm, not for pain.",
+            "textToSpeak": "We have to *mitigate* the risks before we launch.",
             "acceptedSynonyms": [
-                "openly",
-                "unashamedly",
-                "boldly"
+                "minimize",
+                "reduce",
+                "limit",
+                "lessen"
             ],
-            "correctAnswer": "openly"
+            "correctAnswer": "lessen"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L168_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"without any embarrassment or shame\"?",
-            "explanation": "Good choice: \"unashamedly\" is a strong match for \"unabashedly\", which means without any embarrassment or shame. You could also say \"openly\" or \"boldly\".",
-            "textToSpeak": "Her favorite author spoke *unabashedly* about the failure.",
+            "instruction": "Say a word that keeps the exact shade of meaning.",
+            "hint": "Picture this: a pharmacist describes how a medicine makes discomfort feel better.",
+            "explanation": "Remember that \"alleviate\" is a formal word for making pain or suffering less. \"Relieve\" is the closest, \"ease\" is gentle, \"soothe\" suggests comfort, and \"dull\" suggests the pain is less sharp. It is typically used for pain and discomfort, not for risk.",
+            "textToSpeak": "This cream should *alleviate* the pain within minutes.",
             "acceptedSynonyms": [
-                "openly",
-                "unashamedly",
-                "boldly"
+                "relieve",
+                "dull",
+                "soothe",
+                "ease"
             ],
-            "correctAnswer": "unashamedly"
+            "correctAnswer": "relieve"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L168_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"without any embarrassment or shame.\"",
-            "explanation": "\"boldly\" fits because \"unabashedly\" means without any embarrassment or shame here. Other natural alternatives include \"unashamedly\" and \"openly\".",
-            "textToSpeak": "The retired athlete spoke *unabashedly* about the failure.",
+            "instruction": "Say a synonym that captures the same attitude.",
+            "hint": "Imagine a doctor explains how pressure and lack of sleep can make an existing condition worse.",
+            "explanation": "The word \"exacerbate\" means to make something bad even worse. \"Worsen\" is the plain choice, \"aggravate\" is common with medical problems, \"intensify\" suggests increasing strength, and \"compound\" suggests adding more difficulty to what is already there.",
+            "textToSpeak": "Stress can *exacerbate* existing health problems.",
             "acceptedSynonyms": [
-                "openly",
-                "unashamedly",
-                "boldly"
+                "aggravate",
+                "worsen",
+                "compound",
+                "intensify"
             ],
-            "correctAnswer": "boldly"
+            "correctAnswer": "worsen"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L169_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"giving up the fight and accepting defeat.\" What's a good match?",
-            "explanation": "In this sentence, \"capitulated\" means giving up the fight and accepting defeat, so \"surrendered\" slots in naturally. \"yielded\" is a close second choice.",
-            "textToSpeak": "The company board finally *capitulated* to the workers' demands.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Think of it this way: a teacher explains how repeated negative comments slowly wear someone down.",
+            "explanation": "\"Undermine\" suggests weakening something gradually. \"Erode\" is the closest because it suggests slow wearing away, \"weaken\" is general, \"damage\" is stronger, and \"chip away at\" is a common spoken phrase.",
+            "textToSpeak": "Constant criticism can *undermine* a person's confidence.",
             "acceptedSynonyms": [
-                "surrendered",
-                "gave in",
-                "yielded",
-                "conceded"
+                "chip away at",
+                "erode",
+                "damage",
+                "weaken"
             ],
-            "correctAnswer": "surrendered"
+            "correctAnswer": "erode"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L169_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"giving up the fight and accepting defeat.\"",
-            "explanation": "\"gave in\" is a reliable synonym for \"capitulated\", which means giving up the fight and accepting defeat here. \"conceded\" and \"surrendered\" are also accepted.",
-            "textToSpeak": "Her opposing counsel finally *capitulated* to the workers' demands.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "A classroom is distracting students and making it harder for them to concentrate.",
+            "explanation": "\"Hinder\" means to make progress more difficult. \"Hamper\" and \"impede\" are the closest, \"obstruct\" suggests blocking, and \"hold back\" suggests preventing someone from progressing as fast as they could.",
+            "textToSpeak": "Loud noise can *hinder* learning in a classroom.",
             "acceptedSynonyms": [
-                "surrendered",
-                "gave in",
-                "yielded",
-                "conceded"
+                "hamper",
+                "impede",
+                "hold back",
+                "obstruct"
             ],
-            "correctAnswer": "gave in"
+            "correctAnswer": "hamper"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L169_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"giving up the fight and accepting defeat\" -- what word comes to mind?",
-            "explanation": "\"yielded\" works well here because \"capitulated\" also means giving up the fight and accepting defeat. \"surrendered\" and \"gave in\" would work too.",
-            "textToSpeak": "The city council finally *capitulated* to the workers' demands.",
+            "instruction": "Replace the highlighted word with one that still sounds natural here.",
+            "hint": "Suppose a manager wants an answer that works in real life, not a perfect idea.",
+            "explanation": "Quick reminder: \"pragmatic\" means focused on what works. \"Practical\" is the plain choice, \"realistic\" suggests dealing with facts, \"sensible\" suggests good judgment, and \"down-to-earth\" is informal and suggests a no-nonsense approach.",
+            "textToSpeak": "We need a *pragmatic* solution, not a perfect one.",
             "acceptedSynonyms": [
-                "surrendered",
-                "gave in",
-                "yielded",
-                "conceded"
+                "realistic",
+                "practical",
+                "down-to-earth",
+                "sensible"
             ],
-            "correctAnswer": "yielded"
+            "correctAnswer": "practical"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L170_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"cutting straight to the most important point.\"",
-            "explanation": "\"incisive\" means cutting straight to the most important point, and \"sharp\" captures that same idea naturally in this sentence. \"perceptive\" is another solid option.",
-            "textToSpeak": "My thesis committee asked several *incisive* questions.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Someone's pet has died and a friend is trying to help her feel less sad.",
+            "explanation": "\"Console\" means to comfort someone who is sad. \"Comfort\" is the closest, \"soothe\" suggests calming, \"reassure\" suggests easing worry, and \"support\" is broader. For grief, \"comfort\" is the most natural.",
+            "textToSpeak": "He tried to *console* her after the loss of her pet.",
             "acceptedSynonyms": [
-                "sharp",
-                "penetrating",
-                "perceptive",
-                "probing"
+                "reassure",
+                "comfort",
+                "soothe",
+                "support"
             ],
-            "correctAnswer": "sharp"
+            "correctAnswer": "comfort"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L170_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"cutting straight to the most important point.\"",
-            "explanation": "Good choice: \"penetrating\" is a strong match for \"incisive\", which means cutting straight to the most important point. You could also say \"probing\" or \"sharp\".",
-            "textToSpeak": "Her doctoral advisor asked several *incisive* questions.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Two relatives had not spoken for years and finally ended the quarrel.",
+            "explanation": "In practice, \"reconcile\" means to become friends again after a conflict. \"Made up\" is the casual spoken phrase, \"made peace\" is warmer and more serious, \"patched things up\" suggests repairing damage, and \"buried the hatchet\" is an idiom for ending a quarrel.",
+            "textToSpeak": "After years of silence, the brothers finally *reconciled*.",
             "acceptedSynonyms": [
-                "sharp",
-                "penetrating",
-                "perceptive",
-                "probing"
+                "made peace",
+                "patched things up",
+                "made up",
+                "buried the hatchet"
             ],
-            "correctAnswer": "penetrating"
+            "correctAnswer": "made up"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L170_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"cutting straight to the most important point\"?",
-            "explanation": "\"perceptive\" fits because \"incisive\" means cutting straight to the most important point here. Other natural alternatives include \"sharp\" and \"penetrating\".",
-            "textToSpeak": "The visiting professor asked several *incisive* questions.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Someone replied in a sharp, angry way when asked a simple question.",
+            "explanation": "\"Snapped\" describes a sudden, sharp reaction. \"Barked\" suggests a harsh, loud tone, \"growled\" suggests anger with a low voice, and \"lashed out\" suggests a stronger, more emotional attack with words.",
+            "textToSpeak": "He *snapped* at me when I asked about the report.",
             "acceptedSynonyms": [
-                "sharp",
-                "penetrating",
-                "perceptive",
-                "probing"
+                "barked",
+                "lashed out",
+                "growled"
             ],
-            "correctAnswer": "perceptive"
+            "correctAnswer": "barked"
         }
     ]
 }

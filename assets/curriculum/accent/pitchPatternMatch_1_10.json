@@ -8,750 +8,750 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My roommate waters the plants.",
-            "textToSpeak": "My roommate waters the plants.",
+            "word": "The bus was late.",
+            "textToSpeak": "The bus was late.",
             "options": [
-                "Emphasis on PLANTS (Object focus)",
-                "Emphasis on ROOMMATE (Subject focus)"
+                "Emphasis on LATE",
+                "Emphasis on BUS"
             ],
-            "correctAnswer": "Emphasis on PLANTS (Object focus)",
+            "correctAnswer": "Emphasis on LATE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Listen for where the pitch climbs highest — near the start of the sentence, or closer to the end?",
-            "explanation": "With nothing marking ROOMMATE as special, the pitch peak naturally lands on PLANTS, the final content word.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
+            "hint": "Don't grab the first word you hear clearly. Follow the voice as it moves and notice where it reaches its highest point before dropping.",
+            "explanation": "The news here is how the bus turned out, so the voice climbs on LATE and then steps down. BUS is only the thing being talked about, so it falls awayer.",
+            "emphasisRule": "In a plain statement, the highest pitch usually lands near the end, on the word that carries the main news.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L1_Q2",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The cat knocked over the vase.",
-            "textToSpeak": "The cat knocked over the vase.",
+            "word": "I need some water.",
+            "textToSpeak": "I need some water.",
             "options": [
-                "Emphasis on CAT (Subject focus)",
-                "Emphasis on VASE (Object focus)"
+                "Emphasis on NEED",
+                "Emphasis on WATER"
             ],
-            "correctAnswer": "Emphasis on VASE (Object focus)",
+            "correctAnswer": "Emphasis on WATER",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "In a plain, everyday sentence like this, the strongest beat usually falls late, not on the very first word.",
-            "explanation": "In neutral, everyday speech, the nuclear stress falls on VASE because it's the last important word in the sentence.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
+            "hint": "Both the action and the thing wanted are meaningful. Listen for which one the voice lifts on before it settles.",
+            "explanation": "What the speaker wants is the point of the message, so the peak sits on WATER. NEED is still clear, but the voice stays at a lower level there.",
+            "emphasisRule": "Pitch rises on the word that completes the message, not on every meaningful word.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L1_Q3",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The babysitter locked the front door.",
-            "textToSpeak": "The babysitter locked the front door.",
+            "word": "Dinner's ready.",
+            "textToSpeak": "Dinner's ready.",
             "options": [
-                "Emphasis on DOOR (Object focus)",
-                "Emphasis on BABYSITTER (Subject focus)"
+                "Emphasis on READY",
+                "Emphasis on DINNER'S"
             ],
-            "correctAnswer": "Emphasis on DOOR (Object focus)",
+            "correctAnswer": "Emphasis on READY",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Try saying the sentence naturally — does your voice peak early, or does it build toward the end?",
-            "explanation": "There's nothing special about BABYSITTER here, so the strongest pitch peak lands later, on DOOR.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "It's a very short sentence, so the peak has only two places to go. Which word tells the listener something they didn't know yet?",
+            "explanation": "Everyone already knows dinner is coming; the update is that it is READY. The voice peaks there and steps down.",
+            "emphasisRule": "In short announcements, the pitch peak goes on the word that gives the update.",
+            "emotionContext": "New information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L2_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My neighbor mows the lawn.",
-            "textToSpeak": "My neighbor mows the lawn.",
+            "word": "Your table is over there.",
+            "textToSpeak": "Your table is over there.",
             "options": [
-                "Emphasis on NEIGHBOR (Subject focus)",
-                "Emphasis on LAWN (Object focus)"
+                "Ends high, sounding unfinished",
+                "Ends low, sounding finished"
             ],
-            "correctAnswer": "Emphasis on LAWN (Object focus)",
+            "correctAnswer": "Ends low, sounding finished",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
-            ],
-            "hint": "Nothing here makes the opening word special, so listen for the peak further along.",
-            "explanation": "Without any contrast or correction, English defaults to stressing the final content word — here, LAWN.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L2_Q2",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "The kids folded their laundry.",
-            "textToSpeak": "The kids folded their laundry.",
-            "options": [
-                "Emphasis on LAUNDRY (Object focus)",
-                "Emphasis on KIDS (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on LAUNDRY (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "The first word simply sets the scene — the real peak comes later in the sentence.",
-            "explanation": "The sentence has no special emphasis on KIDS, so the natural peak falls on LAUNDRY instead.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
+            "hint": "Compare how this sentence finishes with how a question would finish. Which feeling fits a host pointing the way?",
+            "explanation": "The host is simply telling you something. The voice peaks on THERE and drops to a low ending, which sounds complete.",
+            "emphasisRule": "Statements normally end low, and a low ending sounds finished.",
+            "emotionContext": "Neutral information"
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L2_Q3",
-            "instruction": "Identify the emphasis",
+            "id": "ACC_PITCHPATTERNMATCH_L2_Q2",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Our landlord painted the hallway.",
-            "textToSpeak": "Our landlord painted the hallway.",
+            "word": "Is the store open?",
+            "textToSpeak": "Is the store open?",
             "options": [
-                "Emphasis on LANDLORD (Subject focus)",
-                "Emphasis on HALLWAY (Object focus)"
+                "Falls at the end",
+                "Rises at the end"
             ],
-            "correctAnswer": "Emphasis on HALLWAY (Object focus)",
+            "correctAnswer": "Rises at the end",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
+                2,
+                2,
                 3
             ],
-            "hint": "Compare the pitch on the first word with the pitch near the end — one stays flat, one stands out.",
-            "explanation": "Since nothing highlights LANDLORD, the pitch accent settles on HALLWAY, the word that ends the sentence.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "Can this be answered with just yes or no? Listen to how the voice leaves the last word.",
+            "explanation": "The speaker needs only a yes or no, and the voice lifts on OPEN as though leaving the question unfinished. That upward finish invites an answer.",
+            "emphasisRule": "Questions that can be answered yes or no typically rise at the end.",
+            "emotionContext": "Yes/no question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L2_Q3",
+            "instruction": "Identify the intonation pattern",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Where did you park?",
+            "textToSpeak": "Where did you park?",
+            "options": [
+                "Lifts at the end",
+                "Drops at the end"
+            ],
+            "correctAnswer": "Drops at the end",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "A question mark doesn't always mean the voice goes up. Think about what kind of answer the speaker expects.",
+            "explanation": "This question asks for a place, not a yes or no. Information questions like this peak on the key word and then fall.",
+            "emphasisRule": "Questions that begin with a question word (where, what, who) normally fall at the end.",
+            "emotionContext": "Information question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L3_Q1",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My grandmother baked a pie.",
-            "textToSpeak": "My grandmother baked a pie.",
+            "word": "Grab a chair.",
+            "textToSpeak": "Grab a chair.",
             "options": [
-                "Emphasis on PIE (Object focus)",
-                "Emphasis on GRANDMOTHER (Subject focus)"
+                "Emphasis on CHAIR",
+                "Emphasis on GRAB"
             ],
-            "correctAnswer": "Emphasis on PIE (Object focus)",
+            "correctAnswer": "Emphasis on CHAIR",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "With no special context, English usually saves its strongest beat for last.",
-            "explanation": "This is a plain statement, so the stress falls where it usually does — on PIE, not GRANDMOTHER.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
+            "hint": "In a short command, one word carries the message. Notice where the voice reaches its top.",
+            "explanation": "The speaker is inviting someone to sit, so CHAIR is the useful part. The voice peaks on CHAIR while GRAB stays quick and low.",
+            "emphasisRule": "In a short command, the pitch peak usually goes to the thing being asked for.",
+            "emotionContext": "Instruction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L3_Q2",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Our uncle fixed the fence.",
-            "textToSpeak": "Our uncle fixed the fence.",
+            "word": "Happy birthday.",
+            "textToSpeak": "Happy birthday.",
             "options": [
-                "Emphasis on UNCLE (Subject focus)",
-                "Emphasis on FENCE (Object focus)"
+                "Emphasis on BIRTHDAY",
+                "Emphasis on HAPPY"
             ],
-            "correctAnswer": "Emphasis on FENCE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BIRTHDAY",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Hum the rhythm of the sentence — where does it feel like the peak lands?",
-            "explanation": "FENCE carries the nuclear stress here simply because it's the last content word in a neutral sentence.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
+            "hint": "Two-word greetings can feel like one unit. Say it to a friend and notice which part your voice stretches and lifts.",
+            "explanation": "In this set phrase the second word, BIRTHDAY, takes the peak; HAPPY is just a warm run-up to it.",
+            "emphasisRule": "In two-word greeting phrases, the second word normally carries the peak.",
+            "emotionContext": "Social formula"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L3_Q3",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My little sister lost her mitten.",
-            "textToSpeak": "My little sister lost her mitten.",
+            "word": "Call me tonight.",
+            "textToSpeak": "Call me tonight.",
             "options": [
-                "Emphasis on MITTEN (Object focus)",
-                "Emphasis on SISTER (Subject focus)"
+                "Emphasis on TONIGHT",
+                "Emphasis on CALL"
             ],
-            "correctAnswer": "Emphasis on MITTEN (Object focus)",
+            "correctAnswer": "Emphasis on TONIGHT",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "The opening word just introduces who's involved; listen for where the energy actually builds.",
-            "explanation": "With nothing marking SISTER as special, the pitch peak naturally lands on MITTEN, the final content word.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "The speaker has already decided the action. What detail is the listener being asked to remember?",
+            "explanation": "When the request is called out, the detail worth remembering is the time. TONIGHT gets the high point, and CALL is lighter.",
+            "emphasisRule": "In a request, the pitch peak often goes to the detail the listener must remember.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L4_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Dad repaired the old swing.",
-            "textToSpeak": "Dad repaired the old swing.",
+            "word": "The doctor will see you soon.",
+            "textToSpeak": "The doctor will see you soon.",
             "options": [
-                "Emphasis on DAD (Subject focus)",
-                "Emphasis on SWING (Object focus)"
+                "Peaks on the first word, then flattens",
+                "Climbs to a peak near the end, then drops"
             ],
-            "correctAnswer": "Emphasis on SWING (Object focus)",
+            "correctAnswer": "Climbs to a peak near the end, then drops",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
-            ],
-            "hint": "In neutral speech like this, the ending of the sentence carries more weight than the opening.",
-            "explanation": "In neutral, everyday speech, the nuclear stress falls on SWING because it's the last important word in the sentence.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L4_Q2",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "My cousin adopted a puppy.",
-            "textToSpeak": "My cousin adopted a puppy.",
-            "options": [
-                "Emphasis on PUPPY (Object focus)",
-                "Emphasis on COUSIN (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on PUPPY (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Listen for where the pitch climbs highest — near the start of the sentence, or closer to the end?",
-            "explanation": "There's nothing special about COUSIN here, so the strongest pitch peak lands later, on PUPPY.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
+            "hint": "Picture the line the voice draws: where is its highest point, and what happens right after it?",
+            "explanation": "The key information, SOON, comes last, so the line builds gradually and peaks near the end before dropping. The first word isn't special here.",
+            "emphasisRule": "A plain statement builds toward its key word and then falls.",
+            "emotionContext": "Reassurance"
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L4_Q3",
-            "instruction": "Identify the emphasis",
+            "id": "ACC_PITCHPATTERNMATCH_L4_Q2",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Mom planted new tomatoes.",
-            "textToSpeak": "Mom planted new tomatoes.",
+            "word": "Do you take cards?",
+            "textToSpeak": "Do you take cards?",
             "options": [
-                "Emphasis on MOM (Subject focus)",
-                "Emphasis on TOMATOES (Object focus)"
+                "Rises early, then slides down to a low finish",
+                "Starts low and climbs to a high finish"
             ],
-            "correctAnswer": "Emphasis on TOMATOES (Object focus)",
+            "correctAnswer": "Starts low and climbs to a high finish",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
+                2,
+                2,
                 3
             ],
-            "hint": "In a plain, everyday sentence like this, the strongest beat usually falls late, not on the very first word.",
-            "explanation": "Without any contrast or correction, English defaults to stressing the final content word — here, TOMATOES.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "Yes/no questions leave the listener a space to answer. Which shape leaves that space?",
+            "explanation": "The voice lifts on CARDS, leaving the question open for a yes or no. A slide down would sound like a statement or a demand.",
+            "emphasisRule": "Yes/no questions usually finish with an upward movement.",
+            "emotionContext": "Yes/no question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L4_Q3",
+            "instruction": "Identify the intonation pattern",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I forgot my keys again.",
+            "textToSpeak": "I forgot my keys again.",
+            "options": [
+                "Climbs steadily to a high finish",
+                "Peaks in the middle, then falls away"
+            ],
+            "correctAnswer": "Peaks in the middle, then falls away",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The last word isn't always where the voice lands hardest. Listen for what comes after the peak.",
+            "explanation": "The peak is on KEYS. 'Again' is just a quick tag added afterwards, so the voice has already dropped by the end of the sentence.",
+            "emphasisRule": "Words after the main peak stay low and quick, even at the end of a sentence.",
+            "emotionContext": "Complaint"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L5_Q1",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The student finished her homework.",
-            "textToSpeak": "The student finished her homework.",
+            "word": "My brother repairs bicycles at a shop near the station.",
+            "textToSpeak": "My brother repairs bicycles at a shop near the station.",
             "options": [
-                "Emphasis on HOMEWORK (Object focus)",
-                "Emphasis on STUDENT (Subject focus)"
+                "Emphasis on STATION",
+                "Emphasis on BICYCLES"
             ],
-            "correctAnswer": "Emphasis on HOMEWORK (Object focus)",
+            "correctAnswer": "Emphasis on STATION",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Try saying the sentence naturally — does your voice peak early, or does it build toward the end?",
-            "explanation": "The sentence has no special emphasis on STUDENT, so the natural peak falls on HOMEWORK instead.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
+            "hint": "Even in a long sentence, the voice usually builds toward one main peak. Where does it finally arrive?",
+            "explanation": "The longer sentence doesn't change the pattern: the main peak comes on STATION, the last piece of new detail. BICYCLES is stressed a little, but not as strongly.",
+            "emphasisRule": "In a longer plain statement, the highest peak still lands near the end, with earlier content words lighter.",
+            "emotionContext": "Neutral information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L5_Q2",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My classmate borrowed a pencil.",
-            "textToSpeak": "My classmate borrowed a pencil.",
+            "word": "The coffee at the corner café is surprisingly cheap.",
+            "textToSpeak": "The coffee at the corner café is surprisingly cheap.",
             "options": [
-                "Emphasis on CLASSMATE (Subject focus)",
-                "Emphasis on PENCIL (Object focus)"
+                "Emphasis on CHEAP",
+                "Emphasis on COFFEE"
             ],
-            "correctAnswer": "Emphasis on PENCIL (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CHEAP",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Nothing here makes the opening word special, so listen for the peak further along.",
-            "explanation": "Since nothing highlights CLASSMATE, the pitch accent settles on PENCIL, the word that ends the sentence.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
+            "hint": "After a long topic phrase, where does the speaker's voice rise to deliver the comment?",
+            "explanation": "The topic is the coffee; the comment is that it is CHEAP. The pitch peak marks that comment, not the topic.",
+            "emphasisRule": "When a sentence describes something, the peak goes on the description, not on the thing described.",
+            "emotionContext": "Opinion"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L5_Q3",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The teacher graded the essays.",
-            "textToSpeak": "The teacher graded the essays.",
+            "word": "Everyone gathered around the fire after dinner.",
+            "textToSpeak": "Everyone gathered around the fire after dinner.",
             "options": [
-                "Emphasis on ESSAYS (Object focus)",
-                "Emphasis on TEACHER (Subject focus)"
+                "Emphasis on GATHERED",
+                "Emphasis on DINNER"
             ],
-            "correctAnswer": "Emphasis on ESSAYS (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DINNER",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "The first word simply sets the scene — the real peak comes later in the sentence.",
-            "explanation": "This is a plain statement, so the stress falls where it usually does — on ESSAYS, not TEACHER.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "Time expressions can be tricky. Listen for whether the voice lifts or drops on the final phrase.",
+            "explanation": "Here 'after dinner' completes the picture, and DINNER takes the peak. GATHERED and FIRE sound clear but are not the high point.",
+            "emphasisRule": "A final time phrase can hold the main peak in a neutral sentence.",
+            "emotionContext": "Neutral information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L6_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Our librarian organized the shelves.",
-            "textToSpeak": "Our librarian organized the shelves.",
+            "word": "We need eggs, flour, and butter.",
+            "textToSpeak": "We need eggs, flour, and butter.",
             "options": [
-                "Emphasis on LIBRARIAN (Subject focus)",
-                "Emphasis on SHELVES (Object focus)"
+                "Falls on every item, as if each were a separate statement",
+                "Rises on eggs and flour, falls on butter"
             ],
-            "correctAnswer": "Emphasis on SHELVES (Object focus)",
+            "correctAnswer": "Rises on eggs and flour, falls on butter",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
-                1,
-                3
-            ],
-            "hint": "Compare the pitch on the first word with the pitch near the end — one stays flat, one stands out.",
-            "explanation": "SHELVES carries the nuclear stress here simply because it's the last content word in a neutral sentence.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L6_Q2",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "The new student joined the choir.",
-            "textToSpeak": "The new student joined the choir.",
-            "options": [
-                "Emphasis on CHOIR (Object focus)",
-                "Emphasis on STUDENT (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on CHOIR (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "With no special context, English usually saves its strongest beat for last.",
-            "explanation": "With nothing marking STUDENT as special, the pitch peak naturally lands on CHOIR, the final content word.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
+            "hint": "Each item in a list says 'more is coming' until the speaker reaches the end. What does the voice do on the items before the last?",
+            "explanation": "Rising on EGGS and FLOUR tells the listener the list isn't over. The fall on BUTTER signals it is.",
+            "emphasisRule": "In a list, every item except the last rises slightly; the last one falls.",
+            "emotionContext": "List"
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L6_Q3",
-            "instruction": "Identify the emphasis",
+            "id": "ACC_PITCHPATTERNMATCH_L6_Q2",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My tutor explained the formula.",
-            "textToSpeak": "My tutor explained the formula.",
+            "word": "I bought bread and milk.",
+            "textToSpeak": "I bought bread and milk.",
             "options": [
-                "Emphasis on TUTOR (Subject focus)",
-                "Emphasis on FORMULA (Object focus)"
+                "Both items fall, since each is a complete statement",
+                "The first item rises a little, the last falls"
             ],
-            "correctAnswer": "Emphasis on FORMULA (Object focus)",
+            "correctAnswer": "The first item rises a little, the last falls",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                1,
-                1,
-                3
+                2,
+                1
             ],
-            "hint": "Hum the rhythm of the sentence — where does it feel like the peak lands?",
-            "explanation": "In neutral, everyday speech, the nuclear stress falls on FORMULA because it's the last important word in the sentence.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "Even a list of two has a small signal that separates the first item from the second.",
+            "explanation": "BREAD lifts a little to show the speaker is continuing; MILK falls to close the sentence.",
+            "emphasisRule": "With two joined items, the first item lifts slightly and the second one falls.",
+            "emotionContext": "List"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L6_Q3",
+            "instruction": "Identify the intonation pattern. The speaker has finished the list.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "The bag has a charger, a notebook, and a raincoat.",
+            "textToSpeak": "The bag has a charger, a notebook, and a raincoat.",
+            "options": [
+                "Falls on the last item, closing the list",
+                "Rises on the last item, leaving the list open"
+            ],
+            "correctAnswer": "Falls on the last item, closing the list",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                2,
+                3,
+                2,
+                3,
+                1
+            ],
+            "hint": "The instruction tells you the list is complete. What does the voice do to show that?",
+            "explanation": "RAINCOAT falls because the speaker is done. A rise there would suggest 'and there's more', which the context tells us isn't true.",
+            "emphasisRule": "A falling last item closes a list; a rising last item leaves it open.",
+            "emotionContext": "List"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L7_Q1",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The manager approved the budget.",
-            "textToSpeak": "The manager approved the budget.",
+            "word": "I asked for tea, not coffee.",
+            "textToSpeak": "I asked for tea, not coffee.",
             "options": [
-                "Emphasis on BUDGET (Object focus)",
-                "Emphasis on MANAGER (Subject focus)"
+                "Emphasis on TEA",
+                "Emphasis on COFFEE"
             ],
-            "correctAnswer": "Emphasis on BUDGET (Object focus)",
+            "correctAnswer": "Emphasis on TEA",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "The opening word just introduces who's involved; listen for where the energy actually builds.",
-            "explanation": "There's nothing special about MANAGER here, so the strongest pitch peak lands later, on BUDGET.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
+            "hint": "One of these drinks is being rejected. Listen to which one gets the stronger lift; the other sounds like an afterthought.",
+            "explanation": "The speaker is correcting an order, so the drink they wanted, TEA, takes the peak. COFFEE is mentioned only to push it away, so it sits low even though it comes last.",
+            "emphasisRule": "In 'X, not Y', the word being confirmed carries the peak and the rejected word stays low.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L7_Q2",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My colleague sent the invoice.",
-            "textToSpeak": "My colleague sent the invoice.",
+            "word": "Not the front door, the side door.",
+            "textToSpeak": "Not the front door, the side door.",
             "options": [
-                "Emphasis on COLLEAGUE (Subject focus)",
-                "Emphasis on INVOICE (Object focus)"
+                "Emphasis on FRONT",
+                "Emphasis on SIDE"
             ],
-            "correctAnswer": "Emphasis on INVOICE (Object focus)",
+            "correctAnswer": "Emphasis on SIDE",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "In neutral speech like this, the ending of the sentence carries more weight than the opening.",
-            "explanation": "Without any contrast or correction, English defaults to stressing the final content word — here, INVOICE.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
+            "hint": "This time the rejected word comes first. See whether the speaker's voice waits for the correction.",
+            "explanation": "FRONT is being ruled out, so the voice doesn't spend its peak there. It arrives later, on SIDE, the word that names the right door.",
+            "emphasisRule": "The corrected word gets the peak, whether it comes before or after the rejected word.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L7_Q3",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The intern organized the files.",
-            "textToSpeak": "The intern organized the files.",
+            "word": "Turn left at the light, not right.",
+            "textToSpeak": "Turn left at the light, not right.",
             "options": [
-                "Emphasis on FILES (Object focus)",
-                "Emphasis on INTERN (Subject focus)"
+                "Emphasis on LEFT",
+                "Emphasis on RIGHT"
             ],
-            "correctAnswer": "Emphasis on FILES (Object focus)",
+            "correctAnswer": "Emphasis on LEFT",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen for where the pitch climbs highest — near the start of the sentence, or closer to the end?",
-            "explanation": "The sentence has no special emphasis on INTERN, so the natural peak falls on FILES instead.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "The speaker wants to prevent one specific mistake. Pay attention to which direction the voice highlights early on.",
+            "explanation": "Because RIGHT is the mistake being avoided, LEFT gets the peak early in the sentence. Everything after it drops, including 'right' at the end.",
+            "emphasisRule": "The confirmed word can come early; what follows it, including the rejected word, stays low.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L8_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Our boss scheduled the meeting.",
-            "textToSpeak": "Our boss scheduled the meeting.",
+            "word": "Thanks for your help.",
+            "textToSpeak": "Thanks for your help.",
             "options": [
-                "Emphasis on BOSS (Subject focus)",
-                "Emphasis on MEETING (Object focus)"
+                "Falls at the end: a warm, finished thank-you",
+                "Rises at the end: still waiting for a reply"
             ],
-            "correctAnswer": "Emphasis on MEETING (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falls at the end: a warm, finished thank-you",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "In a plain, everyday sentence like this, the strongest beat usually falls late, not on the very first word.",
-            "explanation": "Since nothing highlights BOSS, the pitch accent settles on MEETING, the word that ends the sentence.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
+            "hint": "Ask yourself whether the speaker wants anything more from you or is simply closing the moment.",
+            "explanation": "This isn't a question. The voice peaks on HELP and slides down, which sounds sincere and complete. A rise would sound like the speaker was checking something.",
+            "emphasisRule": "Polite closing phrases usually fall, signalling that the speaker has finished.",
+            "emotionContext": "Thanks"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L8_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The assistant printed the report.",
-            "textToSpeak": "The assistant printed the report.",
+            "word": "See you on Monday.",
+            "textToSpeak": "See you on Monday.",
             "options": [
-                "Emphasis on REPORT (Object focus)",
-                "Emphasis on ASSISTANT (Subject focus)"
+                "Rises at the end: checking whether Monday works",
+                "Falls at the end: a friendly goodbye"
             ],
-            "correctAnswer": "Emphasis on REPORT (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falls at the end: a friendly goodbye",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Try saying the sentence naturally — does your voice peak early, or does it build toward the end?",
-            "explanation": "This is a plain statement, so the stress falls where it usually does — on REPORT, not ASSISTANT.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
+            "hint": "Goodbyes often sound the same on paper. What does the speaker's voice do if the plan is already settled?",
+            "explanation": "The plan is agreed, so MONDAY peaks and falls like any finished statement. A rising ending would ask whether Monday is acceptable.",
+            "emphasisRule": "A settled plan ends with a fall; an unsettled plan ends with a rise.",
+            "emotionContext": "Social formula"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L8_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My supervisor reviewed the proposal.",
-            "textToSpeak": "My supervisor reviewed the proposal.",
+            "word": "Come at six, okay?",
+            "textToSpeak": "Come at six, okay?",
             "options": [
-                "Emphasis on SUPERVISOR (Subject focus)",
-                "Emphasis on PROPOSAL (Object focus)"
+                "Falls on 'okay': announcing the plan",
+                "Rises on 'okay': checking the plan works"
             ],
-            "correctAnswer": "Emphasis on PROPOSAL (Object focus)",
+            "correctAnswer": "Rises on 'okay': checking the plan works",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                1,
-                1,
+                2,
                 3
             ],
-            "hint": "Nothing here makes the opening word special, so listen for the peak further along.",
-            "explanation": "PROPOSAL carries the nuclear stress here simply because it's the last content word in a neutral sentence.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "There are two pieces here: a plan and a small check. Where does the voice go on the small word at the end?",
+            "explanation": "SIX carries the plan, and 'okay' lifts as a real check. If 'okay' fell, it would sound like a firm instruction rather than an invitation to agree.",
+            "emphasisRule": "A short tag like 'okay?' rises when the speaker really wants the listener's agreement.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L9_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern. Ana grabs her coat and heads for the door.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The tourist photographed the castle.",
-            "textToSpeak": "The tourist photographed the castle.",
+            "word": "You're leaving.",
+            "textToSpeak": "You're leaving.",
             "options": [
-                "Emphasis on CASTLE (Object focus)",
-                "Emphasis on TOURIST (Subject focus)"
+                "Falls: the speaker is stating what they see",
+                "Rises: the speaker is asking to confirm"
             ],
-            "correctAnswer": "Emphasis on CASTLE (Object focus)",
+            "correctAnswer": "Falls: the speaker is stating what they see",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "The first word simply sets the scene — the real peak comes later in the sentence.",
-            "explanation": "With nothing marking TOURIST as special, the pitch peak naturally lands on CASTLE, the final content word.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
+            "hint": "Use the picture in the instruction. Does the speaker need to ask, or can they already see it?",
+            "explanation": "With Ana clearly heading out, nobody needs an answer; the speaker comments. So LEAVING peaks and falls. The same words with a rising ending would mean the speaker wasn't sure.",
+            "emphasisRule": "The same words can be a statement (falling) or a question (rising); context and the ending decide which.",
+            "emotionContext": "Neutral information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L9_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern. Your friend says he cooked the whole dinner himself.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "We booked the morning flight.",
-            "textToSpeak": "We booked the morning flight.",
+            "word": "You made this?",
+            "textToSpeak": "You made this?",
             "options": [
-                "Emphasis on WE (Subject focus)",
-                "Emphasis on FLIGHT (Object focus)"
+                "Rises: checking, a little surprised",
+                "Falls: a plain statement of fact"
             ],
-            "correctAnswer": "Emphasis on FLIGHT (Object focus)",
+            "correctAnswer": "Rises: checking, a little surprised",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "There's no question word here. What else could turn these words into a question?",
+            "explanation": "The word order is the same as a statement, but the voice lifts on THIS, turning it into a request for confirmation. The upward finish carries the question.",
+            "emphasisRule": "In casual speech, a rising ending alone can turn a statement into a question.",
+            "emotionContext": "Confirmation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L9_Q3",
+            "instruction": "Identify the intonation pattern. Your friend cancelled the last three plans. You want to be sure about tomorrow.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "So you're coming tomorrow?",
+            "textToSpeak": "So you're coming tomorrow?",
+            "options": [
+                "Falls: telling him what he's doing",
+                "Rises: still checking"
+            ],
+            "correctAnswer": "Rises: still checking",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
+                2,
+                2,
                 3
             ],
-            "hint": "Compare the pitch on the first word with the pitch near the end — one stays flat, one stands out.",
-            "explanation": "In neutral, everyday speech, the nuclear stress falls on FLIGHT because it's the last important word in the sentence.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L9_Q3",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "My friend packed her suitcase.",
-            "textToSpeak": "My friend packed her suitcase.",
-            "options": [
-                "Emphasis on SUITCASE (Object focus)",
-                "Emphasis on FRIEND (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on SUITCASE (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "With no special context, English usually saves its strongest beat for last.",
-            "explanation": "There's nothing special about FRIEND here, so the strongest pitch peak lands later, on SUITCASE.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "Think about the history in the instruction. Is the speaker certain?",
+            "explanation": "After several cancellations the speaker isn't sure, so the voice rises on TOMORROW to ask for confirmation. A fall would sound like an order.",
+            "emphasisRule": "A rising finish invites the listener to confirm; a falling finish assumes the answer.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L10_Q1",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The driver checked the map.",
-            "textToSpeak": "The driver checked the map.",
+            "word": "The children painted a mural on the school wall.",
+            "textToSpeak": "The children painted a mural on the school wall.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on MAP (Object focus)"
+                "Emphasis on WALL",
+                "Emphasis on MURAL"
             ],
-            "correctAnswer": "Emphasis on MAP (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WALL",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Hum the rhythm of the sentence — where does it feel like the peak lands?",
-            "explanation": "Without any contrast or correction, English defaults to stressing the final content word — here, MAP.",
-            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word.",
-            "emotionContext": "Object focus"
+            "hint": "Two nouns compete here. Listen for which one the speaker's voice climbs to last.",
+            "explanation": "MURAL introduces the object, but the sentence is finished by WALL, where the peak lands. The earlier noun is stressed less.",
+            "emphasisRule": "In a longer plain statement, the last important word carries the strongest peak.",
+            "emotionContext": "Neutral information"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L10_Q2",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Our guide found the trail.",
-            "textToSpeak": "Our guide found the trail.",
+            "word": "Take the second exit, not the first.",
+            "textToSpeak": "Take the second exit, not the first.",
             "options": [
-                "Emphasis on TRAIL (Object focus)",
-                "Emphasis on GUIDE (Subject focus)"
+                "Emphasis on FIRST",
+                "Emphasis on SECOND"
             ],
-            "correctAnswer": "Emphasis on TRAIL (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SECOND",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "The opening word just introduces who's involved; listen for where the energy actually builds.",
-            "explanation": "The sentence has no special emphasis on GUIDE, so the natural peak falls on TRAIL instead.",
-            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence.",
-            "emotionContext": "Object focus"
+            "hint": "The speaker is steering you away from one choice. Notice which number the voice highlights.",
+            "explanation": "The driver is being warned off the first exit, so SECOND takes the peak early. 'First' stays low despite coming at the end.",
+            "emphasisRule": "In 'X, not Y', the chosen item carries the peak and the rejected item stays low.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L10_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The pilot announced the delay.",
-            "textToSpeak": "The pilot announced the delay.",
+            "word": "Which tram goes past the museum?",
+            "textToSpeak": "Which tram goes past the museum?",
             "options": [
-                "Emphasis on PILOT (Subject focus)",
-                "Emphasis on DELAY (Object focus)"
+                "Voice lifts after the key word",
+                "Voice drops after the key word"
             ],
-            "correctAnswer": "Emphasis on DELAY (Object focus)",
+            "correctAnswer": "Voice drops after the key word",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "In neutral speech like this, the ending of the sentence carries more weight than the opening.",
-            "explanation": "Since nothing highlights PILOT, the pitch accent settles on DELAY, the word that ends the sentence.",
-            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere.",
-            "emotionContext": "Object focus"
+            "hint": "This question can't be answered with yes or no. What does that suggest about the ending?",
+            "explanation": "Because the speaker wants one particular tram, the question falls after the key word. A lift would suggest a yes/no question about whether any tram goes there.",
+            "emphasisRule": "Questions that ask for specific information fall after the key word.",
+            "emotionContext": "Information question"
         }
     ]
 }

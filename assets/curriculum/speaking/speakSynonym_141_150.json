@@ -6,446 +6,445 @@
         {
             "id": "SPK_SPEAKSYNONYM_L141_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"willing to take great risks.\" What's a good match?",
-            "explanation": "In this sentence, \"audacious\" means willing to take great risks, so \"bold\" slots in naturally. \"brazen\" is a close second choice.",
-            "textToSpeak": "The young CEO made an *audacious* business move.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "This is printed on an invitation to an official event, so the wording should stay polished.",
+            "explanation": "\"Commence\" is a formal word for \"begin\" and is common on programs and invitations. \"Begin\", \"start\", \"open\" and \"get under way\" all fit a formal announcement. \"Kick off\" would sound too casual for this setting, even though its meaning is similar.",
+            "textToSpeak": "The ceremony will *commence* at noon.",
             "acceptedSynonyms": [
-                "bold",
-                "daring",
-                "brazen",
-                "fearless"
+                "begin",
+                "get under way",
+                "start",
+                "open"
             ],
-            "correctAnswer": "bold"
+            "correctAnswer": "begin"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L141_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"willing to take great risks.\"",
-            "explanation": "\"daring\" is a reliable synonym for \"audacious\", which means willing to take great risks here. \"fearless\" and \"bold\" are also accepted.",
-            "textToSpeak": "Her startup made an *audacious* business move.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Picture this: a legal document is describing when an agreement stops.",
+            "explanation": "\"Terminate\" is a legal and formal word for ending. \"End\" is the plain equivalent, \"expire\" suits a contract that reaches the end of its time, and \"lapse\" is used for rights or policies that stop. \"Wrap up\" would be too casual here.",
+            "textToSpeak": "The agreement will *terminate* on December 31.",
             "acceptedSynonyms": [
-                "bold",
-                "daring",
-                "brazen",
-                "fearless"
+                "end",
+                "expire",
+                "finish",
+                "lapse"
             ],
-            "correctAnswer": "daring"
+            "correctAnswer": "end"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L141_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"willing to take great risks\" -- what word comes to mind?",
-            "explanation": "\"brazen\" works well here because \"audacious\" also means willing to take great risks. \"bold\" and \"daring\" would work too.",
-            "textToSpeak": "The ambitious investor made an *audacious* business move.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "A sign in a hotel lobby tells guests how to ask for help.",
+            "explanation": "Think about \"inform\": it is formal. \"Notify\" and \"advise\" keep the official tone, while \"tell\" is the plain everyday option. \"Let know\" is too casual for a printed notice.",
+            "textToSpeak": "Please *inform* reception if you require assistance.",
             "acceptedSynonyms": [
-                "bold",
-                "daring",
-                "brazen",
-                "fearless"
+                "alert",
+                "advise",
+                "tell",
+                "notify"
             ],
-            "correctAnswer": "brazen"
+            "correctAnswer": "notify"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L142_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"showing care about future consequences.\"",
-            "explanation": "\"prudent\" means showing care about future consequences, and \"cautious\" captures that same idea naturally in this sentence. \"wise\" is another solid option.",
-            "textToSpeak": "My grandmother took a *prudent* financial approach.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Imagine you're writing a polite first email to a company you haven't contacted before.",
+            "explanation": "\"Inquire\" is formal and polite for asking for information. \"Ask\" is plainer, \"find out\" is natural and neutral, and \"learn\" suggests wanting to be informed. A casual phrase like \"get the scoop on\" would feel out of place.",
+            "textToSpeak": "I am writing to *inquire* about your availability in March.",
             "acceptedSynonyms": [
-                "cautious",
-                "sensible",
-                "wise",
-                "judicious"
+                "learn",
+                "find out",
+                "ask"
             ],
-            "correctAnswer": "cautious"
+            "correctAnswer": "ask"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L142_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"showing care about future consequences.\"",
-            "explanation": "Good choice: \"sensible\" is a strong match for \"prudent\", which means showing care about future consequences. You could also say \"judicious\" or \"cautious\".",
-            "textToSpeak": "Her financially savvy uncle took a *prudent* financial approach.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "A business reply starts by referring to the customer's earlier message.",
+            "explanation": "\"Regarding\" is professional and common at the start of emails. \"Concerning\" is slightly more formal, \"about\" is the plain version, and \"in relation to\" suits official letters. \"Re\" appears in subject lines but not as a spoken word.",
+            "textToSpeak": "*Regarding* your request, we will respond by Friday.",
             "acceptedSynonyms": [
-                "cautious",
-                "sensible",
-                "wise",
-                "judicious"
+                "about",
+                "in relation to",
+                "concerning"
             ],
-            "correctAnswer": "sensible"
+            "correctAnswer": "concerning"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L142_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"showing care about future consequences\"?",
-            "explanation": "\"wise\" fits because \"prudent\" means showing care about future consequences here. Other natural alternatives include \"cautious\" and \"sensible\".",
-            "textToSpeak": "Our retired neighbor took a *prudent* financial approach.",
+            "instruction": "Say a synonym that fits the meaning in this sentence.",
+            "hint": "Suppose an information sheet explains where someone can go for a form.",
+            "explanation": "\"Obtain\" is formal. \"Get\" is the everyday version, \"collect\" and \"pick up\" suggest going to a place for it, and \"acquire\" suggests getting something with some effort. \"Grab\" would be too informal for an official document.",
+            "textToSpeak": "Applicants can *obtain* the form from the town hall.",
             "acceptedSynonyms": [
-                "cautious",
-                "sensible",
-                "wise",
-                "judicious"
+                "get",
+                "acquire",
+                "collect",
+                "pick up"
             ],
-            "correctAnswer": "wise"
+            "correctAnswer": "collect"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L143_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"holding firmly on despite difficulty.\"",
-            "explanation": "In this sentence, \"tenacious\" means holding firmly on despite difficulty, so \"persistent\" slots in naturally. \"unyielding\" is a close second choice.",
-            "textToSpeak": "The negotiating team remained *tenacious* despite repeated setbacks.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "A company website promises to answer emails promptly, in a formal tone.",
+            "explanation": "\"Endeavor\" is formal and means to try seriously. \"Strive\" and \"seek\" have the same polished tone, while \"try\" and \"aim\" are plainer. \"Give it a shot\" would be much too casual.",
+            "textToSpeak": "We *endeavor* to reply within twenty-four hours.",
             "acceptedSynonyms": [
-                "persistent",
-                "determined",
-                "unyielding",
-                "relentless"
+                "seek",
+                "try",
+                "aim",
+                "strive"
             ],
-            "correctAnswer": "persistent"
+            "correctAnswer": "strive"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L143_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"holding firmly on despite difficulty.\" What's a good match?",
-            "explanation": "\"determined\" is a reliable synonym for \"tenacious\", which means holding firmly on despite difficulty here. \"relentless\" and \"persistent\" are also accepted.",
-            "textToSpeak": "Her legal counsel remained *tenacious* despite repeated setbacks.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "A science article is reporting the outcome of a research project.",
+            "explanation": "Remember that \"demonstrates\" is typical of academic writing. \"Shows\" is the plain choice, \"indicates\" suggests the data points that way, \"reveals\" suggests something previously hidden, and \"confirms\" suggests the finding supports an earlier idea.",
+            "textToSpeak": "The study *demonstrates* that regular sleep improves memory.",
             "acceptedSynonyms": [
-                "persistent",
-                "determined",
-                "unyielding",
-                "relentless"
+                "confirms",
+                "shows",
+                "reveals",
+                "indicates"
             ],
-            "correctAnswer": "determined"
+            "correctAnswer": "shows"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L143_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"holding firmly on despite difficulty.\"",
-            "explanation": "\"unyielding\" works well here because \"tenacious\" also means holding firmly on despite difficulty. \"persistent\" and \"determined\" would work too.",
-            "textToSpeak": "The startup founder remained *tenacious* despite repeated setbacks.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Imagine a formal history report describes events in order.",
+            "explanation": "Start with \"subsequently\": it is a formal sequencing word. \"Afterwards\", \"later\" and \"after that\" are natural alternatives, with \"later\" being the plainest. \"Then\" also works but is more conversational and often less precise in formal writing.",
+            "textToSpeak": "*Subsequently*, the company moved its headquarters to Berlin.",
             "acceptedSynonyms": [
-                "persistent",
-                "determined",
-                "unyielding",
-                "relentless"
+                "afterwards",
+                "then",
+                "after that",
+                "later"
             ],
-            "correctAnswer": "unyielding"
+            "correctAnswer": "afterwards"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L144_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"having mixed, uncertain feelings\" -- what word comes to mind?",
-            "explanation": "\"ambivalent\" means having mixed, uncertain feelings, and \"uncertain\" captures that same idea naturally in this sentence. \"undecided\" is another solid option.",
-            "textToSpeak": "My roommate felt strangely *ambivalent* about graduating.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "You're texting a friend after a concert and you want to match your excited, casual tone.",
+            "explanation": "Quick reminder: \"awesome\" is very informal and energetic. \"Amazing\", \"fantastic\", \"incredible\" and \"brilliant\" keep the enthusiasm and informal tone. \"Magnificent\" would sound too formal and almost old-fashioned in a quick text.",
+            "textToSpeak": "That concert was *awesome*! You should've come.",
             "acceptedSynonyms": [
-                "uncertain",
-                "conflicted",
-                "undecided",
-                "torn"
+                "fantastic",
+                "amazing",
+                "brilliant",
+                "incredible"
             ],
-            "correctAnswer": "uncertain"
+            "correctAnswer": "amazing"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L144_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"having mixed, uncertain feelings.\"",
-            "explanation": "Good choice: \"conflicted\" is a strong match for \"ambivalent\", which means having mixed, uncertain feelings. You could also say \"torn\" or \"uncertain\".",
-            "textToSpeak": "Her closest friend felt strangely *ambivalent* about graduating.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Here's the scene: you're telling a roommate to take everything with them when they leave.",
+            "explanation": "\"Stuff\" is casual. \"Things\" is the everyday equivalent, \"gear\" suggests equipment or equipment-like items, and \"belongings\" is more formal and personal. They all keep the meaning of objects that belong to someone.",
+            "textToSpeak": "Don't forget your *stuff* when you leave.",
             "acceptedSynonyms": [
-                "uncertain",
-                "conflicted",
-                "undecided",
-                "torn"
+                "things",
+                "belongings",
+                "gear"
             ],
-            "correctAnswer": "conflicted"
+            "correctAnswer": "things"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L144_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"having mixed, uncertain feelings.\"",
-            "explanation": "\"undecided\" fits because \"ambivalent\" means having mixed, uncertain feelings here. Other natural alternatives include \"uncertain\" and \"conflicted\".",
-            "textToSpeak": "The graduating senior felt strangely *ambivalent* about graduating.",
+            "instruction": "Replace the highlighted word with one that still sounds natural here.",
+            "hint": "You're telling a friend that you finally threw something away.",
+            "explanation": "The word \"ditched\" is casual and slightly dramatic. \"Dumped\" and \"binned\" (British) are informal, \"scrapped\" suggests you abandoned it completely, and \"got rid of\" is the neutral choice. \"Discarded\" would sound too formal in a chat.",
+            "textToSpeak": "I *ditched* my old phone and bought a new one.",
             "acceptedSynonyms": [
-                "uncertain",
-                "conflicted",
-                "undecided",
-                "torn"
+                "scrapped",
+                "dumped",
+                "got rid of",
+                "binned"
             ],
-            "correctAnswer": "undecided"
+            "correctAnswer": "dumped"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L145_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"expressed in few words\"?",
-            "explanation": "In this sentence, \"succinct\" means expressed in few words, so \"concise\" slots in naturally. \"to the point\" is a close second choice.",
-            "textToSpeak": "My professor kept the lecture admirably *succinct*.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "You're telling a friend about waiting for important news, and your patience is gone.",
+            "explanation": "\"Nuts\" in \"going nuts\" is informal and means very frustrated. \"Crazy\", \"mad\" and \"insane\" have the same casual intensity, and \"bananas\" is playful. A formal word like \"distressed\" wouldn't fit this tone.",
+            "textToSpeak": "I'm going *nuts* waiting for this call.",
             "acceptedSynonyms": [
-                "concise",
-                "brief",
-                "to the point",
-                "compact"
+                "insane",
+                "crazy",
+                "bananas",
+                "mad"
             ],
-            "correctAnswer": "concise"
+            "correctAnswer": "crazy"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L145_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"expressed in few words.\"",
-            "explanation": "\"brief\" is a reliable synonym for \"succinct\", which means expressed in few words here. \"compact\" and \"concise\" are also accepted.",
-            "textToSpeak": "Her thesis advisor kept the lecture admirably *succinct*.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "A news report is describing a company letting people go, using a more neutral tone.",
+            "explanation": "Here, \"sacked\" is informal and mostly British. \"Fired\" is direct and common, \"dismissed\" is formal, and \"let go\" is polite and softer. \"Laid off\" means something different, since it usually means jobs lost because of cost cuts, not for misconduct.",
+            "textToSpeak": "The company *sacked* twenty workers without warning.",
             "acceptedSynonyms": [
-                "concise",
-                "brief",
-                "to the point",
-                "compact"
+                "fired",
+                "let go",
+                "dismissed"
             ],
-            "correctAnswer": "brief"
+            "correctAnswer": "fired"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L145_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"expressed in few words.\" What's a good match?",
-            "explanation": "\"to the point\" works well here because \"succinct\" also means expressed in few words. \"concise\" and \"brief\" would work too.",
-            "textToSpeak": "The guest lecturer kept the lecture admirably *succinct*.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Friends are hungry before the movie starts, and they keep the conversation casual.",
+            "explanation": "Look at \"grub\" first: it is slang for food. \"Food\" is the plain word, \"eats\" and \"chow\" are informal, and \"nosh\" is British and playful. A formal word like \"cuisine\" would sound out of place.",
+            "textToSpeak": "Let's get some *grub* before the movie.",
             "acceptedSynonyms": [
-                "concise",
-                "brief",
-                "to the point",
-                "compact"
+                "chow",
+                "food",
+                "nosh",
+                "eats"
             ],
-            "correctAnswer": "to the point"
+            "correctAnswer": "food"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L146_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"not favoring one side over another.\"",
-            "explanation": "\"impartial\" means not favoring one side over another, and \"unbiased\" captures that same idea naturally in this sentence. \"objective\" is another solid option.",
-            "textToSpeak": "The mediator remained strictly *impartial* during the dispute.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Picture this: you're praising someone's good habits with money, not criticizing them.",
+            "explanation": "Remember that \"thrifty\" is a positive word for someone who saves wisely. \"Frugal\" and \"economical\" keep the praise, \"prudent\" is formal, and \"careful\" is simple. \"Stingy\" and \"cheap\" would turn it into an insult.",
+            "textToSpeak": "He's very *thrifty* with money, so he always has savings.",
             "acceptedSynonyms": [
-                "unbiased",
-                "neutral",
-                "objective",
-                "fair"
+                "frugal",
+                "careful",
+                "prudent",
+                "economical"
             ],
-            "correctAnswer": "unbiased"
+            "correctAnswer": "frugal"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L146_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"not favoring one side over another\" -- what word comes to mind?",
-            "explanation": "Good choice: \"neutral\" is a strong match for \"impartial\", which means not favoring one side over another. You could also say \"fair\" or \"unbiased\".",
-            "textToSpeak": "Her supervisor remained strictly *impartial* during the dispute.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "You're complaining about a boss who refuses to share extra money.",
+            "explanation": "In practice, \"stingy\" is negative and critical. \"Miserly\" and \"tight-fisted\" keep that disapproval, while \"mean\" (British) and \"cheap\" are informal. Positive words like \"frugal\" or \"thrifty\" would change the tone completely.",
+            "textToSpeak": "Our boss is so *stingy* about bonuses.",
             "acceptedSynonyms": [
-                "unbiased",
-                "neutral",
-                "objective",
-                "fair"
+                "mean",
+                "tight-fisted",
+                "miserly",
+                "cheap"
             ],
-            "correctAnswer": "neutral"
+            "correctAnswer": "miserly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L146_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"not favoring one side over another.\"",
-            "explanation": "\"objective\" fits because \"impartial\" means not favoring one side over another here. Other natural alternatives include \"unbiased\" and \"neutral\".",
-            "textToSpeak": "The panel of judges remained strictly *impartial* during the dispute.",
+            "instruction": "Replace the highlighted word with one that still sounds natural here.",
+            "hint": "Think of it this way: you're describing someone who speaks up when needed, but in a polite and respectful way.",
+            "explanation": "Start with \"assertive\": it is a positive word for confident, clear behavior. \"Confident\", \"firm\", \"direct\" and \"self-assured\" fit the sentence. \"Pushy\" and \"aggressive\" are not synonyms because they suggest rude behavior.",
+            "textToSpeak": "She's *assertive* without ever being rude.",
             "acceptedSynonyms": [
-                "unbiased",
-                "neutral",
-                "objective",
-                "fair"
+                "direct",
+                "self-assured",
+                "confident",
+                "firm"
             ],
-            "correctAnswer": "objective"
+            "correctAnswer": "firm"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L147_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"willing to share information freely.\"",
-            "explanation": "In this sentence, \"forthcoming\" means willing to share information freely, so \"open\" slots in naturally. \"candid\" is a close second choice.",
-            "textToSpeak": "The eyewitness was surprisingly *forthcoming* with details.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Picture this: you're complaining about a neighbor who watches people and asks too many questions.",
+            "explanation": "Notice that \"nosy\" is negative and means interested in other people's private business. \"Prying\", \"snoopy\" and \"intrusive\" keep the criticism, and \"meddlesome\" suggests interfering. A positive word like \"curious\" would soften it too much.",
+            "textToSpeak": "My neighbor is so *nosy*. She watches everyone's door.",
             "acceptedSynonyms": [
-                "open",
-                "candid",
-                "cooperative"
+                "prying",
+                "snoopy",
+                "intrusive",
+                "meddlesome"
             ],
-            "correctAnswer": "open"
+            "correctAnswer": "prying"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L147_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"willing to share information freely\"?",
-            "explanation": "\"candid\" is a reliable synonym for \"forthcoming\", which means willing to share information freely here. \"cooperative\" and \"open\" are also accepted.",
-            "textToSpeak": "Her attorney was surprisingly *forthcoming* with details.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Think of it this way: you're criticizing someone who thinks he's better than everyone else.",
+            "explanation": "Think about \"arrogant\": it is a strong negative word. \"Conceited\" and \"haughty\" are close, \"cocky\" and \"big-headed\" are more informal. \"Confident\" is not a synonym because it's positive.",
+            "textToSpeak": "He's so *arrogant* that he never listens to advice.",
             "acceptedSynonyms": [
-                "open",
-                "candid",
-                "cooperative"
+                "haughty",
+                "conceited",
+                "big-headed",
+                "cocky"
             ],
-            "correctAnswer": "candid"
+            "correctAnswer": "conceited"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L147_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"willing to share information freely.\"",
-            "explanation": "\"cooperative\" works well here because \"forthcoming\" also means willing to share information freely. \"open\" and \"candid\" would work too.",
-            "textToSpeak": "The whistleblower was surprisingly *forthcoming* with details.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Suppose you're gently teasing a relative about what they will and won't eat.",
+            "explanation": "\"Fussy\" is a mild criticism in casual speech. \"Picky\" is the most common alternative, \"choosy\" is slightly gentler, \"finicky\" is informal, and \"particular\" is more neutral and polite.",
+            "textToSpeak": "My cousin is *fussy* about food and only eats five things.",
             "acceptedSynonyms": [
-                "open",
-                "candid",
-                "cooperative"
+                "finicky",
+                "picky",
+                "choosy",
+                "particular"
             ],
-            "correctAnswer": "cooperative"
+            "correctAnswer": "picky"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L148_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"making something more likely to happen.\" What's a good match?",
-            "explanation": "\"conducive\" means making something more likely to happen, and \"favorable\" captures that same idea naturally in this sentence. \"helpful\" is another solid option.",
-            "textToSpeak": "This quiet reading nook is highly *conducive* to creative thinking.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Think of it this way: a news headline uses a strong word to show harsh public criticism.",
+            "explanation": "\"Slammed\" is informal and strong. \"Blasted\", \"lambasted\" and \"savaged\" keep the intensity, and \"condemned\" is formal and moral. \"Criticized\" or \"questioned\" would be much weaker.",
+            "textToSpeak": "The newspaper *slammed* the minister's decision.",
             "acceptedSynonyms": [
-                "favorable",
-                "beneficial",
-                "helpful",
-                "supportive"
+                "condemned",
+                "savaged",
+                "lambasted",
+                "blasted"
             ],
-            "correctAnswer": "favorable"
+            "correctAnswer": "blasted"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L148_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"making something more likely to happen.\"",
-            "explanation": "Good choice: \"beneficial\" is a strong match for \"conducive\", which means making something more likely to happen. You could also say \"supportive\" or \"favorable\".",
-            "textToSpeak": "Her cozy home studio is highly *conducive* to creative thinking.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Picture this: a child said something a little disrespectful, but everyone found it amusing.",
+            "explanation": "The key word is \"cheeky\", which is a playful, light word for slightly disrespectful behavior. \"Sassy\" and \"saucy\" keep the playful tone, \"playful\" is gentler, and \"impudent\" is more formal and more critical.",
+            "textToSpeak": "The little girl gave a *cheeky* answer and everyone laughed.",
             "acceptedSynonyms": [
-                "favorable",
-                "beneficial",
-                "helpful",
-                "supportive"
+                "saucy",
+                "playful",
+                "sassy",
+                "impudent"
             ],
-            "correctAnswer": "beneficial"
+            "correctAnswer": "sassy"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L148_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"making something more likely to happen\" -- what word comes to mind?",
-            "explanation": "\"helpful\" fits because \"conducive\" means making something more likely to happen here. Other natural alternatives include \"favorable\" and \"beneficial\".",
-            "textToSpeak": "The sunlit cafe corner is highly *conducive* to creative thinking.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Classmates made fun of someone in a cruel way, and he was hurt.",
+            "explanation": "It helps to know that \"mocked\" is strong and negative. \"Ridiculed\", \"taunted\" and \"derided\" keep that cruelty, while \"teased\" is much lighter and can be friendly. The tone of the sentence tells you which word fits.",
+            "textToSpeak": "The students *mocked* his accent, and he left the room.",
             "acceptedSynonyms": [
-                "favorable",
-                "beneficial",
-                "helpful",
-                "supportive"
+                "derided",
+                "ridiculed",
+                "taunted"
             ],
-            "correctAnswer": "helpful"
+            "correctAnswer": "ridiculed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L149_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"closely connected to the topic at hand.\"",
-            "explanation": "In this sentence, \"pertinent\" means closely connected to the topic at hand, so \"relevant\" slots in naturally. \"applicable\" is a close second choice.",
-            "textToSpeak": "The safety review raised several *pertinent* concerns.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "At work, you want to raise a polite objection without sounding negative.",
+            "explanation": "In this sentence, \"concern\" is the standard professional word, and \"reservation\" is a polite way to express hesitation. \"Worry\" and \"doubt\" are simpler and more personal, and \"misgiving\" is a slightly formal word for a feeling that something may go wrong.",
+            "textToSpeak": "I have one *concern* about the timeline.",
             "acceptedSynonyms": [
-                "relevant",
-                "applicable",
-                "significant"
+                "worry",
+                "doubt",
+                "misgiving",
+                "reservation"
             ],
-            "correctAnswer": "relevant"
+            "correctAnswer": "reservation"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L149_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"closely connected to the topic at hand.\"",
-            "explanation": "\"applicable\" is a reliable synonym for \"pertinent\", which means closely connected to the topic at hand here. \"significant\" and \"relevant\" are also accepted.",
-            "textToSpeak": "Her legal team raised several *pertinent* concerns.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "A busy colleague is turning down extra work using workplace language.",
+            "explanation": "Quick reminder: \"bandwidth\" is workplace slang for the time and energy to take on more. \"Capacity\" is the closest professional word, and \"time\" and \"room\" are plainer.",
+            "textToSpeak": "I don't have the *bandwidth* for another project right now.",
             "acceptedSynonyms": [
-                "relevant",
-                "applicable",
-                "significant"
+                "room",
+                "capacity",
+                "time"
             ],
-            "correctAnswer": "applicable"
+            "correctAnswer": "capacity"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L149_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"closely connected to the topic at hand\"?",
-            "explanation": "\"significant\" works well here because \"pertinent\" also means closely connected to the topic at hand. \"relevant\" and \"applicable\" would work too.",
-            "textToSpeak": "The client's questionnaire raised several *pertinent* concerns.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "Human resources is describing how new staff will learn about the company.",
+            "explanation": "To choose well, note that \"onboard\" is workplace language for helping new staff settle in. \"Induct\" is formal and common in British workplaces, \"orient\" suggests helping them find their way, and \"train\" and \"introduce\" describe parts of the process.",
+            "textToSpeak": "HR will *onboard* the new staff next week.",
             "acceptedSynonyms": [
-                "relevant",
-                "applicable",
-                "significant"
+                "induct",
+                "introduce",
+                "train",
+                "orient"
             ],
-            "correctAnswer": "significant"
+            "correctAnswer": "induct"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L150_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"extremely careful to do what is right.\"",
-            "explanation": "\"scrupulous\" means extremely careful to do what is right, and \"rigorous\" captures that same idea naturally in this sentence. \"meticulous\" is another solid option.",
-            "textToSpeak": "Our family doctor follows *scrupulous* ethical standards.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "Someone is telling a manager that he's ready and looking forward to beginning.",
+            "explanation": "Keep in mind that \"keen\" is a positive word for being enthusiastic and is common in British English. \"Eager\" is the closest, \"excited\" is warmer, and \"raring\" is informal and energetic.",
+            "textToSpeak": "I'm *keen* to start the new project on Monday.",
             "acceptedSynonyms": [
-                "rigorous",
-                "strict",
-                "meticulous",
-                "conscientious"
+                "eager",
+                "excited",
+                "raring"
             ],
-            "correctAnswer": "rigorous"
+            "correctAnswer": "eager"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L150_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"extremely careful to do what is right.\" What's a good match?",
-            "explanation": "Good choice: \"strict\" is a strong match for \"scrupulous\", which means extremely careful to do what is right. You could also say \"conscientious\" or \"rigorous\".",
-            "textToSpeak": "Her veterinary clinic follows *scrupulous* ethical standards.",
+            "instruction": "Say a synonym that matches the formality of the situation.",
+            "hint": "An economic report is describing a year with very little growth.",
+            "explanation": "The key word is \"sluggish\", which is a common word in news about the economy. \"Stagnant\" suggests no movement at all, \"flat\" is neutral and used for numbers, \"slow\" is plain, and \"weak\" suggests poor performance.",
+            "textToSpeak": "The economy remained *sluggish* throughout the year.",
             "acceptedSynonyms": [
-                "rigorous",
-                "strict",
-                "meticulous",
-                "conscientious"
+                "weak",
+                "slow",
+                "stagnant",
+                "flat"
             ],
-            "correctAnswer": "strict"
+            "correctAnswer": "stagnant"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L150_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"extremely careful to do what is right.\"",
-            "explanation": "\"meticulous\" fits because \"scrupulous\" means extremely careful to do what is right here. Other natural alternatives include \"rigorous\" and \"strict\".",
-            "textToSpeak": "The research hospital follows *scrupulous* ethical standards.",
+            "instruction": "Say a synonym with the same tone.",
+            "hint": "A company brochure wants to highlight the newest and most impressive equipment.",
+            "explanation": "Notice that \"cutting-edge\" is a business phrase for the newest and most advanced. \"State-of-the-art\" is the closest, \"advanced\" is plain, and \"innovative\" and \"pioneering\" show new ideas. \"Old-fashioned\" is the opposite.",
+            "textToSpeak": "The lab uses *cutting-edge* technology.",
             "acceptedSynonyms": [
-                "rigorous",
-                "strict",
-                "meticulous",
-                "conscientious"
+                "pioneering",
+                "innovative",
+                "advanced",
+                "state-of-the-art"
             ],
-            "correctAnswer": "meticulous"
+            "correctAnswer": "state-of-the-art"
         }
     ]
 }

@@ -6,446 +6,423 @@
         {
             "id": "SPK_SPEAKSYNONYM_L51_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"making something work again.\"",
-            "explanation": "In this sentence, \"fixes\" means making something work again, so \"repairs\" slots in naturally. \"corrects\" is a close second choice.",
-            "textToSpeak": "Our IT guy always *fixes* the printer quickly.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You're calling tech support and the screen stops responding every time you open one app.",
+            "explanation": "It helps to know that \"crashing\" is the most familiar tech word, and it suggests the app closes suddenly. \"Hanging\" means the screen is stuck, and \"locking up\" is a casual spoken phrase people use with phones and computers.",
+            "textToSpeak": "My phone keeps *freezing* whenever I open the camera.",
             "acceptedSynonyms": [
-                "repairs",
-                "mends",
-                "corrects",
-                "sorts out"
+                "crashing",
+                "locking up",
+                "hanging"
             ],
-            "correctAnswer": "repairs"
+            "correctAnswer": "crashing"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L51_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"making something work again.\"",
-            "explanation": "\"mends\" is a reliable synonym for \"fixes\", which means making something work again here. \"sorts out\" and \"repairs\" are also accepted.",
-            "textToSpeak": "Her tech-savvy roommate always *fixes* the printer quickly.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You're complaining about a form with too many steps.",
+            "explanation": "The key word is \"complex\", which is neutral and describes something with many parts. \"Convoluted\" suggests the steps are twisty and hard to follow, and \"involved\" says it takes a lot of effort to complete.",
+            "textToSpeak": "The instructions are way too *complicated*.",
             "acceptedSynonyms": [
-                "repairs",
-                "mends",
-                "corrects",
-                "sorts out"
+                "convoluted",
+                "complex",
+                "involved"
             ],
-            "correctAnswer": "mends"
+            "correctAnswer": "complex"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L51_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"making something work again\"?",
-            "explanation": "\"corrects\" works well here because \"fixes\" also means making something work again. \"repairs\" and \"mends\" would work too.",
-            "textToSpeak": "The maintenance team always *fixes* the printer quickly.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're recommending a new tool to a friend who isn't a tech person.",
+            "explanation": "\"Intuitive\" means you can work it out without instructions. \"Easy to use\" is the common spoken version, and \"simple\" focuses on the lack of complexity.",
+            "textToSpeak": "The new app is really *user-friendly*.",
             "acceptedSynonyms": [
-                "repairs",
-                "mends",
-                "corrects",
-                "sorts out"
+                "easy to use",
+                "intuitive",
+                "simple"
             ],
-            "correctAnswer": "corrects"
+            "correctAnswer": "intuitive"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L52_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"reaching a destination.\"",
-            "explanation": "\"arrives\" means reaching a destination, and \"shows up\" captures that same idea naturally in this sentence. \"comes\" is another solid option.",
-            "textToSpeak": "The morning train usually *arrives* right on time.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You and a friend are shopping for a group gift and neither wants to pay the full price.",
+            "explanation": "Start with \"share\": it is the neutral spoken choice. \"Divide\" is a little more mathematical, and \"go halves on\" is a British expression for splitting a cost equally between two people.",
+            "textToSpeak": "We could *split* the cost of the gift.",
             "acceptedSynonyms": [
-                "shows up",
-                "gets in",
-                "comes",
-                "turns up"
+                "share",
+                "go halves on",
+                "divide"
             ],
-            "correctAnswer": "shows up"
+            "correctAnswer": "share"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L52_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"reaching a destination.\" What's a good match?",
-            "explanation": "Good choice: \"gets in\" is a strong match for \"arrives\", which means reaching a destination. You could also say \"turns up\" or \"shows up\".",
-            "textToSpeak": "Her flight from Tokyo usually *arrives* right on time.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Think of it this way: you're offering a colleague another possibility without telling them what to do.",
+            "explanation": "As a replacement, \"think about\" is the everyday phrase. \"Contemplate\" is more thoughtful and sounds more serious, and \"look at\" is a casual way to say you should examine the option.",
+            "textToSpeak": "You might also *consider* moving the meeting to Friday.",
             "acceptedSynonyms": [
-                "shows up",
-                "gets in",
-                "comes",
-                "turns up"
+                "contemplate",
+                "think about",
+                "look at"
             ],
-            "correctAnswer": "gets in"
+            "correctAnswer": "think about"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L52_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"reaching a destination.\"",
-            "explanation": "\"comes\" fits because \"arrives\" means reaching a destination here. Other natural alternatives include \"shows up\" and \"gets in\".",
-            "textToSpeak": "Our delivery driver usually *arrives* right on time.",
+            "hint": "You're advising a friend to avoid a traffic jam by starting the journey sooner.",
+            "explanation": "It helps to know that \"sensible\" is the everyday word for a good decision. \"Prudent\" suggests careful planning ahead, and \"advisable\" is more formal, as if it were an official recommendation.",
+            "textToSpeak": "It might be *wise* to leave earlier because of the traffic.",
             "acceptedSynonyms": [
-                "shows up",
-                "gets in",
-                "comes",
-                "turns up"
+                "advisable",
+                "prudent",
+                "sensible"
             ],
-            "correctAnswer": "comes"
+            "correctAnswer": "sensible"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L53_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"making up one's mind\" -- what word comes to mind?",
-            "explanation": "In this sentence, \"decides\" means making up one's mind, so \"chooses\" slots in naturally. \"resolves\" is a close second choice.",
-            "textToSpeak": "My manager always *decides* quickly.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You're explaining a change of route to a passenger in your car.",
+            "explanation": "Quick reminder: \"so\" is the natural, spoken connector. \"As a result\" and \"consequently\" show cause and effect in a more formal tone, and \"consequently\" is common in writing and presentations.",
+            "textToSpeak": "The road was closed, *therefore* we took another route.",
             "acceptedSynonyms": [
-                "chooses",
-                "determines",
-                "resolves",
-                "settles"
+                "consequently",
+                "so",
+                "as a result"
             ],
-            "correctAnswer": "chooses"
+            "correctAnswer": "so"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L53_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"making up one's mind.\"",
-            "explanation": "\"determines\" is a reliable synonym for \"decides\", which means making up one's mind here. \"settles\" and \"chooses\" are also accepted.",
-            "textToSpeak": "Her business partner always *decides* quickly.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You're explaining why you'll be late after a public transport problem.",
+            "explanation": "\"Because\" is the direct, clear choice. \"As\" is shorter and often used at the start of a sentence, and \"given that\" is more formal and sounds like a reasoned explanation.",
+            "textToSpeak": "I'm running behind *since* the train was canceled.",
             "acceptedSynonyms": [
-                "chooses",
-                "determines",
-                "resolves",
-                "settles"
+                "because",
+                "as",
+                "given that"
             ],
-            "correctAnswer": "determines"
+            "correctAnswer": "because"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L53_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"making up one's mind.\"",
-            "explanation": "\"resolves\" works well here because \"decides\" also means making up one's mind. \"chooses\" and \"determines\" would work too.",
-            "textToSpeak": "The committee chair always *decides* quickly.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're describing a walk in bad weather and want to show you did it anyway.",
+            "explanation": "\"Though\" and \"even though\" both show a contrast, and \"even though\" is a little stronger. \"While\" also works when you want to contrast two situations.",
+            "textToSpeak": "*Although* it was raining, we went for a walk.",
             "acceptedSynonyms": [
-                "chooses",
-                "determines",
-                "resolves",
-                "settles"
+                "even though",
+                "while",
+                "though"
             ],
-            "correctAnswer": "resolves"
+            "correctAnswer": "though"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L54_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"putting forward an idea\"?",
-            "explanation": "\"suggests\" means putting forward an idea, and \"recommends\" captures that same idea naturally in this sentence. \"advises\" is another solid option.",
-            "textToSpeak": "My doctor always *suggests* healthy options.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "A friend asks for a big favor and you need to say it isn't realistic.",
+            "explanation": "\"Feasible\" is a professional word for something that can actually be done. \"Doable\" is the casual version, and \"workable\" means it could function in practice.",
+            "textToSpeak": "I'm afraid that won't be *possible* this week.",
             "acceptedSynonyms": [
-                "recommends",
-                "proposes",
-                "advises"
+                "feasible",
+                "workable",
+                "doable"
             ],
-            "correctAnswer": "recommends"
+            "correctAnswer": "feasible"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L54_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"putting forward an idea.\"",
-            "explanation": "Good choice: \"proposes\" is a strong match for \"suggests\", which means putting forward an idea. You could also say \"recommends\" or \"advises\".",
-            "textToSpeak": "Her nutritionist always *suggests* healthy options.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You're turning down an invitation politely, but you don't want to give a long reason.",
+            "explanation": "\"Decline\" is formal and polite. \"Skip\" is casual and easy, and \"opt out\" suggests you've decided not to take part in something planned.",
+            "textToSpeak": "Thanks for asking, but I'll *pass*.",
             "acceptedSynonyms": [
-                "recommends",
-                "proposes",
-                "advises"
+                "opt out",
+                "decline",
+                "skip"
             ],
-            "correctAnswer": "proposes"
+            "correctAnswer": "skip"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L54_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"putting forward an idea.\" What's a good match?",
-            "explanation": "\"advises\" fits because \"suggests\" means putting forward an idea here. Other natural alternatives include \"proposes\" and \"recommends\".",
-            "textToSpeak": "The hospital dietitian always *suggests* healthy options.",
+            "hint": "You're telling a client why they can't reach the person they need right now.",
+            "explanation": "Remember that \"away\" is the simple word for someone who isn't in the office. \"Out\" is more casual, and \"unreachable\" suggests you can't contact the person at all.",
+            "textToSpeak": "The manager is *unavailable* until Monday.",
             "acceptedSynonyms": [
-                "recommends",
-                "proposes",
-                "advises"
+                "away",
+                "unreachable",
+                "out"
             ],
-            "correctAnswer": "advises"
+            "correctAnswer": "away"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L55_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"making steady progress toward being better.\"",
-            "explanation": "In this sentence, \"improves\" means making steady progress toward being better, so \"progresses\" slots in naturally. \"advances\" is a close second choice.",
-            "textToSpeak": "Her pronunciation steadily *improves* with practice.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Before an important exam, a friend gives you a tip for keeping your head clear.",
+            "explanation": "Look at \"composed\" first: it suggests you're in control of yourself. \"Relaxed\" focuses on the calm body, \"cool\" is casual, and \"collected\" suggests a balanced, thoughtful state.",
+            "textToSpeak": "Try to stay *calm* during the exam.",
             "acceptedSynonyms": [
-                "progresses",
-                "develops",
-                "advances",
-                "gets better"
+                "cool",
+                "composed",
+                "relaxed",
+                "collected"
             ],
-            "correctAnswer": "progresses"
+            "correctAnswer": "composed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L55_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"making steady progress toward being better\" -- what word comes to mind?",
-            "explanation": "\"develops\" is a reliable synonym for \"improves\", which means making steady progress toward being better here. \"gets better\" and \"progresses\" are also accepted.",
-            "textToSpeak": "My tennis serve steadily *improves* with practice.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Someone is worried about a first day at work, and you want to reassure them.",
+            "explanation": "Notice that \"anxious\" is the closest formal word. \"Jittery\" is informal and suggests trembling energy, and \"on edge\" describes being tense and easily bothered.",
+            "textToSpeak": "Don't be *nervous*. You'll do great.",
             "acceptedSynonyms": [
-                "progresses",
-                "develops",
-                "advances",
-                "gets better"
+                "on edge",
+                "jittery",
+                "anxious"
             ],
-            "correctAnswer": "develops"
+            "correctAnswer": "anxious"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L55_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"making steady progress toward being better.\"",
-            "explanation": "\"advances\" works well here because \"improves\" also means making steady progress toward being better. \"progresses\" and \"develops\" would work too.",
-            "textToSpeak": "The patient's mobility steadily *improves* with practice.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "A friend has helped you through a very difficult month.",
+            "explanation": "Start with \"thankful\": it is the direct spoken choice. \"Appreciative\" is more formal and shows you recognize their effort, and \"obliged\" sounds polite and slightly old-fashioned.",
+            "textToSpeak": "I'm so *grateful* for your support.",
             "acceptedSynonyms": [
-                "progresses",
-                "develops",
-                "advances",
-                "gets better"
+                "thankful",
+                "appreciative",
+                "obliged"
             ],
-            "correctAnswer": "advances"
+            "correctAnswer": "thankful"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L56_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"in a short amount of time.\"",
-            "explanation": "\"quickly\" means in a short amount of time, and \"promptly\" captures that same idea naturally in this sentence. \"rapidly\" is another solid option.",
-            "textToSpeak": "My manager always responds *quickly*.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "Picture this: a tourist stops you and asks how to find the church, so you give a simple instruction.",
+            "explanation": "As a replacement, \"take\" is short and natural in directions. \"Stay on\" tells the person not to turn, and \"go along\" is a bit more descriptive and typical of British English.",
+            "textToSpeak": "*Follow* this road until you see the church.",
             "acceptedSynonyms": [
-                "promptly",
-                "swiftly",
-                "rapidly",
-                "speedily"
+                "go along",
+                "take",
+                "stay on"
             ],
-            "correctAnswer": "promptly"
+            "correctAnswer": "take"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L56_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"in a short amount of time\"?",
-            "explanation": "Good choice: \"swiftly\" is a strong match for \"quickly\", which means in a short amount of time. You could also say \"speedily\" or \"promptly\".",
-            "textToSpeak": "Her customer service team always responds *quickly*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Think of it this way: a visitor asks whether they need a taxi to reach the station.",
+            "explanation": "\"Quick\" reassures the person that it isn't far. \"Brief\" is more formal, and \"little\" is friendly and informal, often used to make the walk sound easy.",
+            "textToSpeak": "The station is a *short* walk from here.",
             "acceptedSynonyms": [
-                "promptly",
-                "swiftly",
-                "rapidly",
-                "speedily"
+                "brief",
+                "little",
+                "quick"
             ],
-            "correctAnswer": "swiftly"
+            "correctAnswer": "quick"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L56_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"in a short amount of time.\"",
-            "explanation": "\"rapidly\" fits because \"quickly\" means in a short amount of time here. Other natural alternatives include \"promptly\" and \"swiftly\".",
-            "textToSpeak": "The technical support line always responds *quickly*.",
+            "hint": "You don't know the exact distance, so you're giving a reasonable estimate.",
+            "explanation": "To choose well, note that \"roughly\" is a natural spoken choice. \"Around\" is short and friendly, and \"approximately\" is more formal and appears in instructions or reports.",
+            "textToSpeak": "It's *about* ten minutes away.",
             "acceptedSynonyms": [
-                "promptly",
-                "swiftly",
-                "rapidly",
-                "speedily"
+                "approximately",
+                "roughly",
+                "around"
             ],
-            "correctAnswer": "rapidly"
+            "correctAnswer": "roughly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L57_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"without getting hurt.\" What's a good match?",
-            "explanation": "In this sentence, \"safely\" means without getting hurt, so \"unharmed\" slots in naturally. \"intact\" is a close second choice.",
-            "textToSpeak": "The small aircraft landed *safely* despite the storm.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Picture this: you're leaving a review for a busy restaurant and you were treated well.",
+            "explanation": "Notice that \"courteous\" is the more formal word for good manners. \"Respectful\" adds the idea of treating customers with proper regard, and \"gracious\" suggests calm, elegant kindness.",
+            "textToSpeak": "The waiter was *polite* even when the restaurant was full.",
             "acceptedSynonyms": [
-                "unharmed",
-                "intact",
-                "without incident"
+                "courteous",
+                "gracious",
+                "respectful"
             ],
-            "correctAnswer": "unharmed"
+            "correctAnswer": "courteous"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L57_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"without getting hurt.\"",
-            "explanation": "\"intact\" is a reliable synonym for \"safely\", which means without getting hurt here. \"without incident\" and \"unharmed\" are also accepted.",
-            "textToSpeak": "Her connecting flight landed *safely* despite the storm.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You waited hours at the clinic and you're explaining to a friend why you're annoyed.",
+            "explanation": "\"Lengthy\" is the formal word for something that takes a lot of time. \"Drawn-out\" suggests it went on longer than it should have, and \"endless\" is dramatic and emotional.",
+            "textToSpeak": "The wait at the clinic was really *long*.",
             "acceptedSynonyms": [
-                "unharmed",
-                "intact",
-                "without incident"
+                "lengthy",
+                "endless",
+                "drawn-out"
             ],
-            "correctAnswer": "intact"
+            "correctAnswer": "lengthy"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L57_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"without getting hurt\" -- what word comes to mind?",
-            "explanation": "\"without incident\" works well here because \"safely\" also means without getting hurt. \"unharmed\" and \"intact\" would work too.",
-            "textToSpeak": "Our charter boat landed *safely* despite the storm.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You're sharing your opinion of a product with a friend.",
+            "explanation": "Keep in mind that \"amazed\" shows strong surprise and admiration. \"Wowed\" is informal and lively, and \"blown away\" is a very natural spoken expression for being deeply impressed.",
+            "textToSpeak": "I was *impressed* by the quality.",
             "acceptedSynonyms": [
-                "unharmed",
-                "intact",
-                "without incident"
+                "amazed",
+                "blown away",
+                "wowed"
             ],
-            "correctAnswer": "without incident"
+            "correctAnswer": "amazed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L58_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"with close attention to avoid mistakes.\"",
-            "explanation": "\"carefully\" means with close attention to avoid mistakes, and \"cautiously\" captures that same idea naturally in this sentence. \"meticulously\" is another solid option.",
-            "textToSpeak": "My colleague always works *carefully*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You looked forward to a game for weeks, and then it didn't happen.",
+            "explanation": "\"Let down\" sounds natural and personal. \"Discouraged\" suggests you've lost hope or motivation, and \"deflated\" is vivid, as if all your excitement has gone out of you.",
+            "textToSpeak": "I was so *disappointed* when the match got canceled.",
             "acceptedSynonyms": [
-                "cautiously",
-                "attentively",
-                "meticulously",
-                "thoroughly"
+                "discouraged",
+                "let down",
+                "deflated"
             ],
-            "correctAnswer": "cautiously"
+            "correctAnswer": "let down"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L58_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"with close attention to avoid mistakes.\"",
-            "explanation": "Good choice: \"attentively\" is a strong match for \"carefully\", which means with close attention to avoid mistakes. You could also say \"thoroughly\" or \"cautiously\".",
-            "textToSpeak": "Her lab partner always works *carefully*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You've been waiting for medical news, and the news is good.",
+            "explanation": "\"Reassured\" says your worry has been eased by the news. \"Thankful\" focuses on gratitude, and \"glad\" is a warm, simple word for feeling happy about an outcome.",
+            "textToSpeak": "I was *relieved* when the results came back clear.",
             "acceptedSynonyms": [
-                "cautiously",
-                "attentively",
-                "meticulously",
-                "thoroughly"
+                "reassured",
+                "thankful",
+                "glad"
             ],
-            "correctAnswer": "attentively"
+            "correctAnswer": "reassured"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L58_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"with close attention to avoid mistakes\"?",
-            "explanation": "\"meticulously\" fits because \"carefully\" means with close attention to avoid mistakes here. Other natural alternatives include \"cautiously\" and \"attentively\".",
-            "textToSpeak": "The surgeon always works *carefully*.",
+            "hint": "You met someone you already knew and couldn't remember their name.",
+            "explanation": "In practice, \"mortified\" is much stronger than \"embarrassed\" and suggests you wanted to disappear. \"Sheepish\" is milder and shows you felt a little silly, and \"humiliated\" suggests real shame.",
+            "textToSpeak": "I felt *embarrassed* when I forgot her name.",
             "acceptedSynonyms": [
-                "cautiously",
-                "attentively",
-                "meticulously",
-                "thoroughly"
+                "mortified",
+                "sheepish",
+                "humiliated"
             ],
-            "correctAnswer": "meticulously"
+            "correctAnswer": "mortified"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L59_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"completely out of energy.\"",
-            "explanation": "In this sentence, \"exhausted\" means completely out of energy, so \"drained\" slots in naturally. \"depleted\" is a close second choice.",
-            "textToSpeak": "My roommate felt completely *exhausted*.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "You're telling a friend that someone never answered your text.",
+            "explanation": "Notice that \"disregarded\" is a more serious, formal way to say someone paid no attention. \"Brushed off\" suggests a dismissive reaction, and \"blew off\" is casual American slang for not bothering to respond.",
+            "textToSpeak": "He *ignored* my message for three days.",
             "acceptedSynonyms": [
-                "drained",
-                "worn out",
-                "depleted",
-                "spent"
+                "brushed off",
+                "blew off",
+                "disregarded"
             ],
-            "correctAnswer": "drained"
+            "correctAnswer": "disregarded"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L59_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"completely out of energy.\" What's a good match?",
-            "explanation": "\"worn out\" is a reliable synonym for \"exhausted\", which means completely out of energy here. \"spent\" and \"drained\" are also accepted.",
-            "textToSpeak": "Her night-shift coworker felt completely *exhausted*.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "Think of it this way: a coworker finally told the truth about a missed date.",
+            "explanation": "Think about \"acknowledged\": it is a professional word for accepting that something is true. \"Conceded\" suggests the person gave in, and \"confessed\" is more personal and dramatic.",
+            "textToSpeak": "She *admitted* she had forgotten the deadline.",
             "acceptedSynonyms": [
-                "drained",
-                "worn out",
-                "depleted",
-                "spent"
+                "acknowledged",
+                "confessed",
+                "conceded"
             ],
-            "correctAnswer": "worn out"
+            "correctAnswer": "acknowledged"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L59_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"completely out of energy.\"",
-            "explanation": "\"depleted\" works well here because \"exhausted\" also means completely out of energy. \"drained\" and \"worn out\" would work too.",
-            "textToSpeak": "The marathon runner felt completely *exhausted*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Picture this: you're describing a supportive leader who publicly recognized everyone's effort.",
+            "explanation": "\"Commended\" sounds professional and is common in performance reviews. \"Complimented\" is lighter and more personal, and \"applauded\" suggests strong public approval.",
+            "textToSpeak": "My manager *praised* our team in the meeting.",
             "acceptedSynonyms": [
-                "drained",
-                "worn out",
-                "depleted",
-                "spent"
+                "commended",
+                "complimented",
+                "applauded"
             ],
-            "correctAnswer": "depleted"
+            "correctAnswer": "commended"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L60_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"able to be trusted to work correctly\" -- what word comes to mind?",
-            "explanation": "\"reliable\" means able to be trusted to work correctly, and \"dependable\" captures that same idea naturally in this sentence. \"sturdy\" is another solid option.",
-            "textToSpeak": "This laptop has proven to be very *reliable*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're warning a friend about a slippery place before they walk down.",
+            "explanation": "As a replacement, \"cautious\" is the most natural adjective for taking care. \"Watchful\" suggests paying attention to what's around you, and \"alert\" means being ready to react quickly.",
+            "textToSpeak": "Be *careful* on the stairs. They're wet.",
             "acceptedSynonyms": [
-                "dependable",
-                "trustworthy",
-                "sturdy",
-                "consistent"
+                "watchful",
+                "cautious",
+                "alert"
             ],
-            "correctAnswer": "dependable"
+            "correctAnswer": "cautious"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L60_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"able to be trusted to work correctly.\"",
-            "explanation": "Good choice: \"trustworthy\" is a strong match for \"reliable\", which means able to be trusted to work correctly. You could also say \"consistent\" or \"dependable\".",
-            "textToSpeak": "Her new car has proven to be very *reliable*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Someone asks if you enjoyed a movie and you're being straightforward.",
+            "explanation": "\"Frankly\" and \"candidly\" both show you're speaking directly, and \"frankly\" often introduces an opinion that might be unwelcome. \"Truthfully\" is a bit more serious.",
+            "textToSpeak": "*Honestly*, I didn't like the ending.",
             "acceptedSynonyms": [
-                "dependable",
-                "trustworthy",
-                "sturdy",
-                "consistent"
+                "frankly",
+                "truthfully",
+                "candidly"
             ],
-            "correctAnswer": "trustworthy"
+            "correctAnswer": "frankly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L60_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"able to be trusted to work correctly.\"",
-            "explanation": "\"sturdy\" fits because \"reliable\" means able to be trusted to work correctly here. Other natural alternatives include \"dependable\" and \"trustworthy\".",
-            "textToSpeak": "The backup generator has proven to be very *reliable*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Imagine you're commenting on something anyone in the room could tell just by looking.",
+            "explanation": "Think about \"evident\": it is the neutral, slightly formal word for something easy to see. \"Apparent\" suggests it's clear from the evidence, and \"plain\" is short and direct.",
+            "textToSpeak": "It's *obvious* that he's tired.",
             "acceptedSynonyms": [
-                "dependable",
-                "trustworthy",
-                "sturdy",
-                "consistent"
+                "apparent",
+                "evident",
+                "plain"
             ],
-            "correctAnswer": "sturdy"
+            "correctAnswer": "evident"
         }
     ]
 }

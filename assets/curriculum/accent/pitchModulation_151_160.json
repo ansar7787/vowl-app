@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L151_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks, 'Why didn't the shipment arrive?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "When I got home, I made dinner.",
-            "textToSpeak": "When I got home, I made dinner.",
+            "word": "The courier said they couldn't find the address.",
+            "textToSpeak": "The courier said they couldn't find the address.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset After 'home')",
-                "One Continuous Unit (No Pause, Rushed Delivery)"
+                "'Couldn't find' carries the peak: the reason",
+                "'Courier' carries the peak: who reported it"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'home')",
+            "correctAnswer": "'Couldn't find' carries the peak: the reason",
             "correctAnswerIndex": 0,
-            "hint": "The clause 'when I got home' sets the scene before the main action. Listen for a small pause and pitch reset after 'home'.",
-            "explanation": "This sentence naturally splits into two tone units, with a brief pause and pitch reset after 'home' marking the clause boundary.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset after 'home' and a no pause, rushed delivery."
+            "hint": "The question asks why. Which part of the sentence answers it?",
+            "explanation": "Whatever the question asks for gets the strongest pitch, and here that is a reason, so 'couldn't find' takes the peak. The courier is already part of the story, which makes the name background. Moving the peak onto 'courier' would answer 'Who told you that?' instead.",
+            "modulationPattern": "Prominence on 'couldn't find' as the answer to a why-question.",
+            "meaningShift": "A peak on 'couldn't find' supplies the reason; a peak on 'courier' would identify the source."
         },
         {
             "id": "ACC_PITCHMODULATION_L151_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend asks, 'Who told you about the strike?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I bought a new pair of running shoes yesterday.",
-            "textToSpeak": "I bought a new pair of running shoes yesterday.",
+            "word": "My cousin heard it from someone at the depot.",
+            "textToSpeak": "My cousin heard it from someone at the depot.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)",
-                "One Continuous Unit (Smooth, Unbroken Delivery)"
+                "'Depot' carries the main peak: the origin",
+                "'Cousin' carries the main peak: the answer"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
+            "correctAnswer": "'Cousin' carries the main peak: the answer",
             "correctAnswerIndex": 1,
-            "hint": "There's no clause break here - it's just one simple action. Listen for the whole sentence to flow smoothly in one breath.",
-            "explanation": "'I bought a new pair of running shoes yesterday' is a single clause, so it's delivered as one smooth, unbroken tone unit with no internal pause.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset midway and a smooth, unbroken delivery."
+            "hint": "Match the question word to the part of the answer that supplies it.",
+            "explanation": "Because the friend asked who, the first person named gives the answer and takes the strongest peak. 'Depot' adds detail about where the news began and earns only a smaller peak. The reverse would answer a different question, such as 'Where did the rumour start?'.",
+            "modulationPattern": "Primary peak on 'cousin', secondary peak on 'depot'.",
+            "meaningShift": "A main peak on 'cousin' answers who; a main peak on 'depot' would answer where it began."
         },
         {
             "id": "ACC_PITCHMODULATION_L151_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager asks, 'When can you start?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "If it rains tomorrow, we'll cancel the picnic.",
-            "textToSpeak": "If it rains tomorrow, we'll cancel the picnic.",
+            "word": "I can start as soon as the contract's signed.",
+            "textToSpeak": "I can start as soon as the contract's signed.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset After 'tomorrow')",
-                "One Continuous Unit (No Pause, Rushed Delivery)"
+                "'Start' stands out: the action itself",
+                "'Signed' stands out: it sets the date"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'tomorrow')",
-            "correctAnswerIndex": 0,
-            "hint": "The 'if' clause sets up a condition before the main result. Listen for a small pause and pitch reset after 'tomorrow'.",
-            "explanation": "This conditional sentence naturally splits into two tone units, with a pause after 'tomorrow' marking the boundary between condition and result.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset after 'tomorrow' and a no pause, rushed delivery."
+            "correctAnswer": "'Signed' stands out: it sets the date",
+            "correctAnswerIndex": 1,
+            "hint": "Which word was already in the question?",
+            "explanation": "'Start' came from the manager's own question, so it is spoken lightly, while 'signed' is the new condition that determines when the answer applies. Pushing 'start' would suggest somebody had questioned whether the speaker would begin at all.",
+            "modulationPattern": "Prominence on 'signed'; 'start' is deaccented as given.",
+            "meaningShift": "A peak on 'signed' names the condition for the date; a peak on 'start' would insist that the speaker will begin."
         },
         {
             "id": "ACC_PITCHMODULATION_L152_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone asks, 'Was the timing good for everything?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We watched an interesting documentary about space.",
-            "textToSpeak": "We watched an interesting documentary about space.",
+            "word": "We booked the flights early, but we left the hotel until the last minute.",
+            "textToSpeak": "We booked the flights early, but we left the hotel until the last minute.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "'Flights' and 'hotel' stand out",
+                "'Early' and 'last minute' stand out"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
-            "correctAnswerIndex": 0,
-            "hint": "This sentence describes a single activity with no subordinate clause. Listen for it to glide along without any internal break.",
-            "explanation": "As a single clause, 'We watched an interesting documentary about space' flows as one continuous tone unit, with no pause needed partway through.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "correctAnswer": "'Early' and 'last minute' stand out",
+            "correctAnswerIndex": 1,
+            "hint": "The question is about timing. Which words describe timing?",
+            "explanation": "Since the topic is timing, the two time expressions carry the peaks and set the clauses against each other. The nouns, flights and hotel, are the things being timed and take a lower profile. With a question like 'Which parts did you sort out?', the nouns would lead instead.",
+            "modulationPattern": "Contrastive peaks on 'early' and 'last minute'.",
+            "meaningShift": "Peaks on the time words answer a question about timing; peaks on the nouns would answer one about which items were booked."
         },
         {
             "id": "ACC_PITCHMODULATION_L152_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone asks, 'Where does he cause trouble?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Although she was tired, she finished the race.",
-            "textToSpeak": "Although she was tired, she finished the race.",
+            "word": "He's polite in the meetings, but rude in the emails.",
+            "textToSpeak": "He's polite in the meetings, but rude in the emails.",
             "options": [
-                "One Continuous Unit (No Pause, Rushed Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset After 'tired')"
+                "'Meetings' and 'emails' stand out: the places",
+                "'Polite' and 'rude' stand out: the manner"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'tired')",
-            "correctAnswerIndex": 1,
-            "hint": "The 'although' clause contrasts with the main action. Listen for a small pause and pitch reset after 'tired'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'tired' marking the contrast before the main clause.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a no pause, rushed delivery and a natural pause and pitch reset after 'tired'."
+            "correctAnswer": "'Meetings' and 'emails' stand out: the places",
+            "correctAnswerIndex": 0,
+            "hint": "What does the question want to know?",
+            "explanation": "Asking 'where' points the listener at locations, so 'meetings' and 'emails' carry the contrast. Manner words would take the peaks if the question had been 'What is he like?'.",
+            "modulationPattern": "Contrastive peaks on 'meetings' and 'emails'.",
+            "meaningShift": "Peaks on the settings answer where; peaks on the manner words would describe what he's like."
         },
         {
             "id": "ACC_PITCHMODULATION_L152_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone asks, 'Is the new office better?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He ordered a large pepperoni pizza for the party.",
-            "textToSpeak": "He ordered a large pepperoni pizza for the party.",
+            "word": "It's bigger, but it's noisier.",
+            "textToSpeak": "It's bigger, but it's noisier.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "'Bigger' lifted, 'noisier' takes the final peak",
+                "'Bigger' takes the final peak, 'noisier' lifted"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
+            "correctAnswer": "'Bigger' lifted, 'noisier' takes the final peak",
             "correctAnswerIndex": 0,
-            "hint": "There's nothing here to split into two parts - it's one straightforward action. Listen for smooth, unbroken delivery.",
-            "explanation": "'He ordered a large pepperoni pizza for the party' has no clause boundary, so it's said as one continuous tone unit from start to finish.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "hint": "Spot which half sounds as if the speaker still has something to add.",
+            "explanation": "Partial yeses come in two parts: a concession that lifts because the answer isn't complete, then the drawback with the final peak and fall. Reversing the contour would make the good news the conclusion and the drawback sound like an afterthought.",
+            "modulationPattern": "Lifted concession on 'bigger', peak and fall on 'noisier'.",
+            "meaningShift": "A lifted concession then a peak on the drawback gives a mixed verdict; the reverse would sound mostly positive."
         },
         {
             "id": "ACC_PITCHMODULATION_L153_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is reading a restaurant booking confirmation.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Since the trains were delayed, we took a taxi instead.",
-            "textToSpeak": "Since the trains were delayed, we took a taxi instead.",
+            "word": "Eight? I thought we said seven.",
+            "textToSpeak": "Eight? I thought we said seven.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset After 'delayed')",
-                "One Continuous Unit (No Pause, Rushed Delivery)"
+                "Falls on 'eight', peak on 'thought'",
+                "Rises on 'eight', peak on 'seven'"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'delayed')",
-            "correctAnswerIndex": 0,
-            "hint": "The 'since' clause explains the reason before the main action. Listen for a small pause and pitch reset after 'delayed'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'delayed' marking the boundary between reason and result.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset after 'delayed' and a no pause, rushed delivery."
+            "correctAnswer": "Rises on 'eight', peak on 'seven'",
+            "correctAnswerIndex": 1,
+            "hint": "Which number is queried, and which is remembered?",
+            "explanation": "Echoing the number as a surprised check, the first word rises. The second sentence then gives the number the speaker expected, and 'seven' takes the peak. A fall on 'eight' would present it as a settled fact, which does not fit the doubt.",
+            "modulationPattern": "Rise on echoed 'eight', peak on 'seven'.",
+            "meaningShift": "A rise on 'eight' queries the booking; a fall would accept it, and a peak on 'thought' would shift the focus to memory."
         },
         {
             "id": "ACC_PITCHMODULATION_L153_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer is speaking to a waiter.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She wrote a detailed report about the new project.",
-            "textToSpeak": "She wrote a detailed report about the new project.",
+            "word": "That's not what I ordered. I ordered the vegetarian one.",
+            "textToSpeak": "That's not what I ordered. I ordered the vegetarian one.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)",
-                "One Continuous Unit (Smooth, Unbroken Delivery)"
+                "'Ordered' and 'ordered' stand out",
+                "'Not' and 'vegetarian' stand out"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
+            "correctAnswer": "'Not' and 'vegetarian' stand out",
             "correctAnswerIndex": 1,
-            "hint": "This is a single action described in one breath, with nothing to pause for in the middle. Listen for smooth delivery.",
-            "explanation": "Without an internal clause boundary, 'She wrote a detailed report about the new project' is naturally delivered as one unbroken tone unit.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset midway and a smooth, unbroken delivery."
+            "hint": "What differs between the dish received and the dish asked for?",
+            "explanation": "Since the complaint is about what arrived, 'not' marks the mismatch, and the correction 'vegetarian' names what was wanted. 'Ordered' appears twice, so it becomes given and is spoken lightly. Pushing both would turn the exchange into an argument about the act of ordering.",
+            "modulationPattern": "Peaks on 'not' and 'vegetarian'; repeated 'ordered' is deaccented.",
+            "meaningShift": "Peaks on 'not' and 'vegetarian' identify the mistake; peaks on 'ordered' would quarrel about the order itself."
         },
         {
             "id": "ACC_PITCHMODULATION_L153_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A ticket seller summarises a booking.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Before you leave, please turn off the lights.",
-            "textToSpeak": "Before you leave, please turn off the lights.",
+            "word": "Okay, so that's two adults and one child. Is that right?",
+            "textToSpeak": "Okay, so that's two adults and one child. Is that right?",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset After 'leave')",
-                "One Continuous Unit (No Pause, Rushed Delivery)"
+                "'Right' lifts: inviting a correction",
+                "'Right' falls: closing the check"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'leave')",
+            "correctAnswer": "'Right' lifts: inviting a correction",
             "correctAnswerIndex": 0,
-            "hint": "The 'before' clause sets a condition for the main instruction. Listen for a small pause and pitch reset after 'leave'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'leave' marking the clause boundary.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset after 'leave' and a no pause, rushed delivery."
+            "hint": "Notice whether the speaker wants to hear 'no'.",
+            "explanation": "Lifting on 'right' hands the turn back and invites a correction if the summary is wrong. A fall would present the details as final and make it sound like a statement the customer just has to accept.",
+            "modulationPattern": "Rising on 'right' at the end of a check.",
+            "meaningShift": "A lift invites correction; a fall would close the question."
         },
         {
             "id": "ACC_PITCHMODULATION_L154_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague declines your request.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I cleaned the entire apartment this morning.",
-            "textToSpeak": "I cleaned the entire apartment this morning.",
+            "word": "I'd help, but I'm tied up until five.",
+            "textToSpeak": "I'd help, but I'm tied up until five.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "Lift on 'help', fall on 'five': a warm refusal",
+                "Fall on 'help', lift on 'five': leaving it open"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
+            "correctAnswer": "Lift on 'help', fall on 'five': a warm refusal",
             "correctAnswerIndex": 0,
-            "hint": "Nothing here introduces a separate clause. Listen for the sentence to run smoothly without an internal pause.",
-            "explanation": "'I cleaned the entire apartment this morning' is one simple clause, so it's said as a single continuous tone unit with no pause in the middle.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "hint": "Hear which half sounds finished.",
+            "explanation": "Lifting on 'help' keeps the sentence open and shows goodwill before the 'but', and the fall on 'five' closes the explanation. Falling on 'help' would make the goodwill sound complete and detached, and a lift on 'five' would turn the limit into a question.",
+            "modulationPattern": "Rise on 'help', fall on 'five'.",
+            "meaningShift": "A lift then a fall softens the refusal; the reverse would sound blunt, then uncertain."
         },
         {
             "id": "ACC_PITCHMODULATION_L154_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A team lead is explaining a delay.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "After the lecture ended, the students asked questions.",
-            "textToSpeak": "After the lecture ended, the students asked questions.",
+            "word": "I'm afraid the report won't be ready until Monday, because the data came in late.",
+            "textToSpeak": "I'm afraid the report won't be ready until Monday, because the data came in late.",
             "options": [
-                "One Continuous Unit (No Pause, Rushed Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset After 'ended')"
+                "'Late' carries the main peak; Monday is background",
+                "'Monday' carries the main peak; the reason is lower"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'ended')",
+            "correctAnswer": "'Monday' carries the main peak; the reason is lower",
             "correctAnswerIndex": 1,
-            "hint": "The 'after' clause sets the timing before the main action. Listen for a small pause and pitch reset after 'ended'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'ended' marking the boundary between the clauses.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a no pause, rushed delivery and a natural pause and pitch reset after 'ended'."
+            "hint": "What does the listener need first?",
+            "explanation": "When the report will arrive is the listener's main concern, so 'Monday' takes the biggest peak. The reason follows in a quieter voice, as support. Reversing the order would make the lateness of the data the headline.",
+            "modulationPattern": "Main peak on 'Monday', reduced peak on 'late'.",
+            "meaningShift": "A main peak on 'Monday' gives the key fact; a main peak on 'late' would headline the cause."
         },
         {
             "id": "ACC_PITCHMODULATION_L154_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend invites you to a party you'd rather skip.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We booked a cozy cabin near the lake.",
-            "textToSpeak": "We booked a cozy cabin near the lake.",
+            "word": "Thanks for asking, but I think I'll pass this time.",
+            "textToSpeak": "Thanks for asking, but I think I'll pass this time.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "Warm 'thanks', firm fall on 'pass'",
+                "Cool 'thanks', hesitant lift on 'pass'"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
+            "correctAnswer": "Warm 'thanks', firm fall on 'pass'",
             "correctAnswerIndex": 0,
-            "hint": "This describes one simple action with no subordinate clause attached. Listen for it to flow as a single unit.",
-            "explanation": "As a single clause, 'We booked a cozy cabin near the lake' is delivered smoothly as one tone unit, without any internal pitch reset.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "hint": "How does the voice treat the invitation, and then the refusal?",
+            "explanation": "Warmth in 'thanks' keeps the friendship in focus, and a firm fall on 'pass' makes the refusal clear. A cool 'thanks' with a rise would sound distant and indecisive, leaving the friend unsure whether to insist.",
+            "modulationPattern": "Warm lift on 'thanks', firm fall on 'pass'.",
+            "meaningShift": "A warm thanks with a firm fall refuses kindly; a cool thanks with a lift would leave it open."
         },
         {
             "id": "ACC_PITCHMODULATION_L155_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are describing your new flat.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Because the flight was cancelled, we missed the connection.",
-            "textToSpeak": "Because the flight was cancelled, we missed the connection.",
+            "word": "It's smaller than I expected, but it's much nicer.",
+            "textToSpeak": "It's smaller than I expected, but it's much nicer.",
             "options": [
-                "One Continuous Unit (No Pause, Rushed Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset After 'cancelled')"
+                "'Smaller' lifted, 'nicer' takes the peak: net positive",
+                "'Smaller' takes the peak, 'nicer' lifted: net negative"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'cancelled')",
-            "correctAnswerIndex": 1,
-            "hint": "The 'because' clause explains the cause before the result. Listen for a small pause and pitch reset after 'cancelled'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'cancelled' marking the boundary between cause and result.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a no pause, rushed delivery and a natural pause and pitch reset after 'cancelled'."
+            "correctAnswer": "'Smaller' lifted, 'nicer' takes the peak: net positive",
+            "correctAnswerIndex": 0,
+            "hint": "Work out which half of the sentence gets the final fall.",
+            "explanation": "Whatever comes last with the strongest fall tends to be heard as the speaker's main point. Here 'nicer' lands that way, so the verdict is positive. If 'smaller' took the peak and 'nicer' lifted, the listener would hear regret.",
+            "modulationPattern": "Lift on 'smaller', peak and fall on 'nicer'.",
+            "meaningShift": "A final peak on 'nicer' makes the verdict positive; the reverse would make it a disappointment."
         },
         {
             "id": "ACC_PITCHMODULATION_L155_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are advising a friend on a phone.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He plays tennis every Saturday morning.",
-            "textToSpeak": "He plays tennis every Saturday morning.",
+            "word": "It's cheaper than the other one, but the battery won't last.",
+            "textToSpeak": "It's cheaper than the other one, but the battery won't last.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "'Cheaper' peaks, 'last' lifted: a recommendation",
+                "'Cheaper' lifted, 'last' falls: a warning"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a routine described in a single clause, with nothing to split it in two. Listen for smooth, even delivery.",
-            "explanation": "'He plays tennis every Saturday morning' has no clause boundary, so the whole sentence flows as one continuous tone unit.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "correctAnswer": "'Cheaper' lifted, 'last' falls: a warning",
+            "correctAnswerIndex": 1,
+            "hint": "Pinpoint which clause carries the speaker's real message.",
+            "explanation": "By conceding the price advantage with a lift and landing the drawback with a fall on 'last', the speaker makes the friend hear a warning. If the weight were on 'cheaper', the drawback would sound like a footnote.",
+            "modulationPattern": "Lift on 'cheaper', peak and fall on 'last'.",
+            "meaningShift": "A lifted concession and a falling drawback warn the friend; the reverse would favour buying."
         },
         {
             "id": "ACC_PITCHMODULATION_L155_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Asked which of two candidates you prefer.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "While I was cooking, the phone rang twice.",
-            "textToSpeak": "While I was cooking, the phone rang twice.",
+            "word": "Both are good, but the second is the one I'd choose.",
+            "textToSpeak": "Both are good, but the second is the one I'd choose.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset After 'cooking')",
-                "One Continuous Unit (No Pause, Rushed Delivery)"
+                "'Good' and 'choose' stand out: praise, then hedge",
+                "'Both' and 'second' stand out: fair, then decisive"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'cooking')",
-            "correctAnswerIndex": 0,
-            "hint": "The 'while' clause sets the background before the main event. Listen for a small pause and pitch reset after 'cooking'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'cooking' marking the clause boundary.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset after 'cooking' and a no pause, rushed delivery."
+            "correctAnswer": "'Both' and 'second' stand out: fair, then decisive",
+            "correctAnswerIndex": 1,
+            "hint": "Which words separate the pair from the preference?",
+            "explanation": "'Both' acknowledges the pair, and 'second' picks one, so these carry the contrast. Peaks on 'good' and 'choose' would suggest the speaker was grading quality and the act of choosing, not selecting an option.",
+            "modulationPattern": "Peaks on 'both' and 'second'.",
+            "meaningShift": "Peaks on 'both' and 'second' show fairness then a decision; the other pair would focus on quality and choice."
         },
         {
             "id": "ACC_PITCHMODULATION_L156_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager is checking on arrival time.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She bought a beautiful dress for the wedding.",
-            "textToSpeak": "She bought a beautiful dress for the wedding.",
+            "word": "If you can get here by nine, we'll be fine.",
+            "textToSpeak": "If you can get here by nine, we'll be fine.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)",
-                "One Continuous Unit (Smooth, Unbroken Delivery)"
+                "Open rise on 'nine', fall on 'fine'",
+                "Flat fall on 'nine', rise on 'fine'"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
-            "correctAnswerIndex": 1,
-            "hint": "There's no subordinate clause here to create a natural break. Listen for the sentence to flow in one smooth unit.",
-            "explanation": "Without an internal clause boundary, 'She bought a beautiful dress for the wedding' is naturally said as a single, unbroken tone unit.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset midway and a smooth, unbroken delivery."
+            "correctAnswer": "Open rise on 'nine', fall on 'fine'",
+            "correctAnswerIndex": 0,
+            "hint": "Which part is the condition, and which part is the result?",
+            "explanation": "Conditions typically lift at their boundary, as they set up a result, and the result falls to complete the thought. Falling on 'nine' would end the sentence prematurely, and rising on 'fine' would make the reassurance sound unsure.",
+            "modulationPattern": "Rise at the end of the if-clause, fall on 'fine'.",
+            "meaningShift": "A lift on the condition and a fall on the result sound complete; the reverse would sound unsure of the outcome."
         },
         {
             "id": "ACC_PITCHMODULATION_L156_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A project lead is confirming a plan.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Even though it was expensive, we bought the laptop.",
-            "textToSpeak": "Even though it was expensive, we bought the laptop.",
+            "word": "Unless something changes, we're sticking with Friday.",
+            "textToSpeak": "Unless something changes, we're sticking with Friday.",
             "options": [
-                "One Continuous Unit (No Pause, Rushed Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset After 'expensive')"
+                "Peak on 'changes', fall on 'Friday'",
+                "Lift after 'changes', peak on 'Friday'"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'expensive')",
+            "correctAnswer": "Lift after 'changes', peak on 'Friday'",
             "correctAnswerIndex": 1,
-            "hint": "The 'even though' clause contrasts with the main decision. Listen for a small pause and pitch reset after 'expensive'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'expensive' marking the contrast before the main clause.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a no pause, rushed delivery and a natural pause and pitch reset after 'expensive'."
+            "hint": "Which word do you want the team to take away?",
+            "explanation": "Lifting at the end of the conditional opening, the speaker saves the strongest peak for the plan itself, 'Friday'. Putting the peak on 'changes' would make the possible change the headline, and 'Friday' would sound like a footnote.",
+            "modulationPattern": "Lift on 'changes', main peak on 'Friday'.",
+            "meaningShift": "A peak on 'Friday' states the plan; a peak on 'changes' would highlight the risk."
         },
         {
             "id": "ACC_PITCHMODULATION_L156_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has been asked to approve a request.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "The doctor prescribed some new medication for the cough.",
-            "textToSpeak": "The doctor prescribed some new medication for the cough.",
+            "word": "If it were up to me, I'd say yes.",
+            "textToSpeak": "If it were up to me, I'd say yes.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "'Me' stands out: it isn't up to them",
+                "'Yes' stands out: they're enthusiastic"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
+            "correctAnswer": "'Me' stands out: it isn't up to them",
             "correctAnswerIndex": 0,
-            "hint": "This is one straightforward statement with nothing to pause for partway through. Listen for smooth, continuous delivery.",
-            "explanation": "'The doctor prescribed some new medication for the cough' is one simple clause, so it's delivered as a single continuous tone unit.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "hint": "Whose decision is it, according to the sentence?",
+            "explanation": "Peaking on 'me' sets the speaker against whoever does decide, which hints that the answer will actually be no. A peak on 'yes' would make the sentence a plain, positive statement of preference.",
+            "modulationPattern": "Prominence on 'me' in the conditional clause.",
+            "meaningShift": "A peak on 'me' suggests someone else decides; a peak on 'yes' would suggest agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L157_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend complains about a contractor.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Once the rain stopped, we continued the hike.",
-            "textToSpeak": "Once the rain stopped, we continued the hike.",
+            "word": "He said he'd call back, but he never did.",
+            "textToSpeak": "He said he'd call back, but he never did.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset After 'stopped')",
-                "One Continuous Unit (No Pause, Rushed Delivery)"
+                "'Said' and 'did' stand out: promise against action",
+                "'Call' and 'back' stand out: the promised details"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'stopped')",
+            "correctAnswer": "'Said' and 'did' stand out: promise against action",
             "correctAnswerIndex": 0,
-            "hint": "The 'once' clause marks the timing before the main action. Listen for a small pause and pitch reset after 'stopped'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'stopped' marking the boundary between the clauses.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset after 'stopped' and a no pause, rushed delivery."
+            "hint": "Notice which two words set a statement apart from what actually happened.",
+            "explanation": "Because the complaint rests on a gap between words and deeds, 'said' and 'did' carry the peaks. The details of what was promised are background and stay low.",
+            "modulationPattern": "Contrastive peaks on 'said' and 'did'.",
+            "meaningShift": "Peaks on 'said' and 'did' show the gap; peaks on 'call back' would just describe the promise."
         },
         {
             "id": "ACC_PITCHMODULATION_L157_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague defends herself.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I finally fixed the leaking kitchen faucet.",
-            "textToSpeak": "I finally fixed the leaking kitchen faucet.",
+            "word": "She told me it was fine, so I assumed it was.",
+            "textToSpeak": "She told me it was fine, so I assumed it was.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "'Fine' stands out: judging the work's quality",
+                "'Told' stands out: pointing to what was said"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
-            "correctAnswerIndex": 0,
-            "hint": "This describes one completed action with no clause break. Listen for the whole sentence to flow smoothly together.",
-            "explanation": "As a single clause, 'I finally fixed the leaking kitchen faucet' is naturally said as one unbroken tone unit, with no pause in the middle.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "correctAnswer": "'Told' stands out: pointing to what was said",
+            "correctAnswerIndex": 1,
+            "hint": "What is the speaker using as justification?",
+            "explanation": "Relying on having been told, the defence puts the peak on 'told', which points the listener to the source of the assumption. A peak on 'fine' would argue about whether the thing was good.",
+            "modulationPattern": "Prominence on 'told' in a justifying clause.",
+            "meaningShift": "A peak on 'told' cites the source; a peak on 'fine' would debate the quality."
         },
         {
             "id": "ACC_PITCHMODULATION_L157_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are sharing your opinion of a restaurant.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Whenever he travels, he forgets his charger.",
-            "textToSpeak": "Whenever he travels, he forgets his charger.",
+            "word": "They say it's the best restaurant in town, but I wasn't impressed.",
+            "textToSpeak": "They say it's the best restaurant in town, but I wasn't impressed.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset After 'travels')",
-                "One Continuous Unit (No Pause, Rushed Delivery)"
+                "'Say' and 'I' stand out: their view against mine",
+                "'Best' and 'town' stand out: the claim itself"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'travels')",
+            "correctAnswer": "'Say' and 'I' stand out: their view against mine",
             "correctAnswerIndex": 0,
-            "hint": "The 'whenever' clause sets up the recurring situation. Listen for a small pause and pitch reset after 'travels'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'travels' marking the clause boundary.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset after 'travels' and a no pause, rushed delivery."
+            "hint": "Hear whose opinions are being compared.",
+            "explanation": "Contrasting what 'they' say with what 'I' felt, the speaker puts the peaks on those two words. The claim itself is background, since the listener has probably heard it before.",
+            "modulationPattern": "Peaks on 'say' and 'I'.",
+            "meaningShift": "Peaks on 'say' and 'I' compare opinions; peaks on 'best' and 'town' would focus on the claim."
         },
         {
             "id": "ACC_PITCHMODULATION_L158_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer at a service desk.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We ordered a delicious chocolate cake for dessert.",
-            "textToSpeak": "We ordered a delicious chocolate cake for dessert.",
+            "word": "I've been waiting for forty minutes, and nobody has even said sorry.",
+            "textToSpeak": "I've been waiting for forty minutes, and nobody has even said sorry.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "'Waiting' and 'said' stand out: the bare actions described",
+                "'Forty' and 'even' stand out: the length and the missing apology"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
-            "correctAnswerIndex": 0,
-            "hint": "There's nothing here to split into two separate parts. Listen for the sentence to glide along in one breath.",
-            "explanation": "'We ordered a delicious chocolate cake for dessert' has no internal clause boundary, so it flows as a single continuous tone unit.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "correctAnswer": "'Forty' and 'even' stand out: the length and the missing apology",
+            "correctAnswerIndex": 1,
+            "hint": "Which words add the sting?",
+            "explanation": "Complaints usually peak on the words that measure the grievance. 'Forty' gives the scale, and 'even' signals that the lack of an apology is the last straw. The actions themselves are known and stay lower.",
+            "modulationPattern": "Peaks on 'forty' and 'even'.",
+            "meaningShift": "Peaks on 'forty' and 'even' sharpen the complaint; peaks on the verbs would only describe it."
         },
         {
             "id": "ACC_PITCHMODULATION_L158_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer is chasing a reply.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Because she studied hard, she passed the exam easily.",
-            "textToSpeak": "Because she studied hard, she passed the exam easily.",
+            "word": "I understand you're busy, but this is the third time I've asked.",
+            "textToSpeak": "I understand you're busy, but this is the third time I've asked.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset After 'hard')",
-                "One Continuous Unit (No Pause, Rushed Delivery)"
+                "Harder first clause, 'busy' carries the peak",
+                "Softer first clause, 'third' carries the peak"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'hard')",
-            "correctAnswerIndex": 0,
-            "hint": "The 'because' clause explains the cause before the result. Listen for a small pause and pitch reset after 'hard'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'hard' marking the boundary between cause and result.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset after 'hard' and a no pause, rushed delivery."
+            "correctAnswer": "Softer first clause, 'third' carries the peak",
+            "correctAnswerIndex": 1,
+            "hint": "Hear which clause carries the pressure.",
+            "explanation": "Softening the concession keeps the exchange civil, and the strong peak on 'third' makes the real complaint clear. Pressing on 'busy' would sound sarcastic and shift the focus to the excuse.",
+            "modulationPattern": "Softened first clause, main peak on 'third'.",
+            "meaningShift": "A soft concession with a peak on 'third' keeps it civil; a hard 'busy' would sound sarcastic."
         },
         {
             "id": "ACC_PITCHMODULATION_L158_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague gives feedback after an event.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "He recorded a short video for his class.",
-            "textToSpeak": "He recorded a short video for his class.",
+            "word": "I'm not complaining, I'm just saying it could have been handled better.",
+            "textToSpeak": "I'm not complaining, I'm just saying it could have been handled better.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "'Saying' and 'handled' stand out: describing the process",
+                "'Not' and 'better' stand out: framing it as feedback"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a single, simple action with no subordinate clause. Listen for even, unbroken delivery across the whole sentence.",
-            "explanation": "Without a clause boundary, 'He recorded a short video for his class' is naturally delivered as one smooth, continuous tone unit.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "correctAnswer": "'Not' and 'better' stand out: framing it as feedback",
+            "correctAnswerIndex": 1,
+            "hint": "How does the speaker want the comment to be heard?",
+            "explanation": "'Not' rejects the label 'complaint', and 'better' delivers the suggestion. Together they frame the comment as constructive. Pushing 'saying' and 'handled' would instead put the focus on who did what.",
+            "modulationPattern": "Peaks on 'not' and 'better'.",
+            "meaningShift": "Peaks on 'not' and 'better' present feedback; peaks on 'saying' and 'handled' would focus on the process."
         },
         {
             "id": "ACC_PITCHMODULATION_L159_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A travel agent is giving an itinerary.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "If you need help, just give me a call.",
-            "textToSpeak": "If you need help, just give me a call.",
+            "word": "The flight leaves at six forty-five, lands at nine ten, and the transfer is at nine thirty.",
+            "textToSpeak": "The flight leaves at six forty-five, lands at nine ten, and the transfer is at nine thirty.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset After 'help')",
-                "One Continuous Unit (No Pause, Rushed Delivery)"
+                "Lifts after the first two times, falls on the last",
+                "Falls after each of the times, including the last one"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'help')",
+            "correctAnswer": "Lifts after the first two times, falls on the last",
             "correctAnswerIndex": 0,
-            "hint": "The 'if' clause sets up a condition before the main offer. Listen for a small pause and pitch reset after 'help'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'help' marking the boundary between condition and offer.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset after 'help' and a no pause, rushed delivery."
+            "hint": "Imagine the speaker pausing after the first time. Would you expect more to follow?",
+            "explanation": "Sequences of items rise on every item except the last, which signals that more is coming. The final fall marks the end of the itinerary, so the traveller can stop writing.",
+            "modulationPattern": "Rises at 'forty-five' and 'ten', fall on 'thirty'.",
+            "meaningShift": "Lifts keep the list moving; a fall on each would make every time sound like a separate statement."
         },
         {
             "id": "ACC_PITCHMODULATION_L159_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A shop assistant explains the opening hours.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "She adopted a friendly golden retriever last month.",
-            "textToSpeak": "She adopted a friendly golden retriever last month.",
+            "word": "We open at nine, except on Sundays, when we open at ten.",
+            "textToSpeak": "We open at nine, except on Sundays, when we open at ten.",
             "options": [
-                "One Continuous Unit (Smooth, Unbroken Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)"
+                "Peaks on 'Sundays' and 'ten': the exception",
+                "Peaks on 'nine' and 'open': the rule"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
+            "correctAnswer": "Peaks on 'Sundays' and 'ten': the exception",
             "correctAnswerIndex": 0,
-            "hint": "Nothing here introduces a second clause. Listen for the whole sentence to flow together without an internal pause.",
-            "explanation": "'She adopted a friendly golden retriever last month' is one simple clause, so the whole sentence is said as a single tone unit.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a smooth, unbroken delivery and a natural pause and pitch reset midway."
+            "hint": "Which words matter to someone planning to visit on a Sunday?",
+            "explanation": "With the rule stated first, the exception is where the listener must pay attention, so 'Sundays' and 'ten' take the peaks. Peaks on 'nine' and 'open' would promote the rule over the exception.",
+            "modulationPattern": "Peaks on 'Sundays' and 'ten'.",
+            "meaningShift": "Peaks on the exception help a Sunday visitor; peaks on the rule would highlight the usual hour."
         },
         {
             "id": "ACC_PITCHMODULATION_L159_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A presenter finishes a briefing.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "As soon as the bell rang, the students left.",
-            "textToSpeak": "As soon as the bell rang, the students left.",
+            "word": "That's pretty much everything, unless anyone has questions.",
+            "textToSpeak": "That's pretty much everything, unless anyone has questions.",
             "options": [
-                "One Continuous Unit (No Pause, Rushed Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset After 'rang')"
+                "Lifts on 'everything', falls on 'questions'",
+                "Falls on 'everything', lifts on 'questions'"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'rang')",
+            "correctAnswer": "Falls on 'everything', lifts on 'questions'",
             "correctAnswerIndex": 1,
-            "hint": "The 'as soon as' clause marks the timing before the main action. Listen for a small pause and pitch reset after 'rang'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'rang' marking the boundary between the clauses.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a no pause, rushed delivery and a natural pause and pitch reset after 'rang'."
+            "hint": "Which part wraps up, and which part invites?",
+            "explanation": "Summing up, the first clause falls and gives a sense of closure. The 'unless' clause invites questions, so it lifts and leaves the door open. Reversing the pattern would make the invitation sound like a conclusion.",
+            "modulationPattern": "Fall on 'everything', rise on 'questions'.",
+            "meaningShift": "A fall then a lift closes and invites; the reverse would invite and then close."
         },
         {
             "id": "ACC_PITCHMODULATION_L160_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A team lead explains a late change to the group.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "We explored a few small shops downtown.",
-            "textToSpeak": "We explored a few small shops downtown.",
+            "word": "I know this is short notice, and I'm sorry, but the client moved the deadline to Thursday.",
+            "textToSpeak": "I know this is short notice, and I'm sorry, but the client moved the deadline to Thursday.",
             "options": [
-                "Two Tone Units (Natural Pause and Pitch Reset Midway)",
-                "One Continuous Unit (Smooth, Unbroken Delivery)"
+                "Soft, lifted opening; 'Thursday' carries the strongest peak",
+                "Forceful opening; 'client' carries the strongest peak"
             ],
-            "correctAnswer": "One Continuous Unit (Smooth, Unbroken Delivery)",
-            "correctAnswerIndex": 1,
-            "hint": "This describes one simple activity with no clause break. Listen for the sentence to flow smoothly from start to finish.",
-            "explanation": "As a single clause, 'We explored a few small shops downtown' is naturally delivered as one continuous, unbroken tone unit.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a natural pause and pitch reset midway and a smooth, unbroken delivery."
+            "correctAnswer": "Soft, lifted opening; 'Thursday' carries the strongest peak",
+            "correctAnswerIndex": 0,
+            "hint": "Which part of the message must the team remember?",
+            "explanation": "Gentle lifts carry the apology clauses, and the delivered information, 'Thursday', takes the strongest peak. A forceful opening with the peak on 'client' would make it sound like the speaker was assigning blame.",
+            "modulationPattern": "Lifted apologies, main peak on 'Thursday'.",
+            "meaningShift": "A soft opening with a peak on 'Thursday' delivers the news kindly; a strong opening and a peak on 'client' would blame."
         },
         {
             "id": "ACC_PITCHMODULATION_L160_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is deciding whether to go to a wedding abroad.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "After we landed, we collected our luggage.",
-            "textToSpeak": "After we landed, we collected our luggage.",
+            "word": "Honestly, if it were me, I'd go, because you'll regret it if you don't.",
+            "textToSpeak": "Honestly, if it were me, I'd go, because you'll regret it if you don't.",
             "options": [
-                "One Continuous Unit (No Pause, Rushed Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset After 'landed')"
+                "Peaks on 'me' and 'regret': advice, then reason",
+                "Peaks on 'honestly' and 'if': hedging the advice"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'landed')",
-            "correctAnswerIndex": 1,
-            "hint": "The 'after' clause sets the timing before the main action. Listen for a small pause and pitch reset after 'landed'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'landed' marking the boundary between the clauses.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a no pause, rushed delivery and a natural pause and pitch reset after 'landed'."
+            "correctAnswer": "Peaks on 'me' and 'regret': advice, then reason",
+            "correctAnswerIndex": 0,
+            "hint": "Split the sentence into the advice and the reason, then hear where each lands.",
+            "explanation": "'Me' frames the advice as a personal view, and 'regret' carries the reason that should persuade the friend. Peaks on 'honestly' and 'if' would stay with the hedges and hide what the speaker thinks.",
+            "modulationPattern": "Peaks on 'me' and 'regret'.",
+            "meaningShift": "Peaks on 'me' and 'regret' give clear, personal advice; peaks on the hedges would soften it."
         },
         {
             "id": "ACC_PITCHMODULATION_L160_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer calmly escalates a complaint.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Whenever it snows, the kids build a snowman.",
-            "textToSpeak": "Whenever it snows, the kids build a snowman.",
+            "word": "I've explained this twice already, so I'd like to speak to someone who can actually fix it.",
+            "textToSpeak": "I've explained this twice already, so I'd like to speak to someone who can actually fix it.",
             "options": [
-                "One Continuous Unit (No Pause, Rushed Delivery)",
-                "Two Tone Units (Natural Pause and Pitch Reset After 'snows')"
+                "'Explained' and 'fix' stand out: describing the situation",
+                "'Twice' and 'actually' stand out: patience wearing thin"
             ],
-            "correctAnswer": "Two Tone Units (Natural Pause and Pitch Reset After 'snows')",
+            "correctAnswer": "'Twice' and 'actually' stand out: patience wearing thin",
             "correctAnswerIndex": 1,
-            "hint": "The 'whenever' clause sets up the recurring situation. Listen for a small pause and pitch reset after 'snows'.",
-            "explanation": "This sentence naturally splits into two tone units, with a pause after 'snows' marking the boundary between the clauses.",
-            "modulationPattern": "A sentence with two clauses is usually spoken as two tone units, with a brief pause and a pitch reset at the clause boundary; a single-clause sentence flows as one continuous unit.",
-            "meaningShift": "The meaning shifts between a no pause, rushed delivery and a natural pause and pitch reset after 'snows'."
+            "hint": "Notice which words measure how long the problem has lasted.",
+            "explanation": "'Twice' counts the earlier attempts, and 'actually' hints that the previous person could not help. Together they signal that the customer's patience is running out, but still politely. Peaks on 'explained' and 'fix' would just recount the facts.",
+            "modulationPattern": "Peaks on 'twice' and 'actually'.",
+            "meaningShift": "Peaks on 'twice' and 'actually' show tiring patience; peaks on 'explained' and 'fix' would only state the problem."
         }
     ]
 }

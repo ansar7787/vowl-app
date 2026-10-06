@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L81_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is asked whether they would like to join a weekend hike.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Oh, great. Another meeting.",
-            "textToSpeak": "Oh, great. Another meeting.",
+            "word": "Oh, that sounds fun.",
+            "textToSpeak": "Oh, that sounds fun.",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "Politely interested",
+                "Genuinely keen"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Genuinely keen",
             "correctAnswerIndex": 1,
-            "hint": "Nobody is usually thrilled about an extra meeting. Listen for 'great' to sound flat and dragged out, not bright.",
-            "explanation": "Said flatly, 'great' here is sarcastic - the speaker actually means the opposite, that the meeting is unwelcome.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "hint": "Compare how high the voice goes on 'fun' with how it starts.",
+            "explanation": "Using a wide pitch range and a clear peak on 'fun' can suggest the speaker is really drawn to the idea. A narrow, even contour tends to sound courteous without committing. The words are the same either way, so the range is the main clue.",
+            "modulationPattern": "Wide pitch range with a high peak on 'fun'.",
+            "meaningShift": "A wide peak on 'fun' reads as real enthusiasm; a narrow contour reads as courteous interest."
         },
         {
             "id": "ACC_PITCHMODULATION_L81_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend shows you holiday photos on her phone.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This is wonderful news!",
-            "textToSpeak": "This is wonderful news!",
+            "word": "These are great.",
+            "textToSpeak": "These are great.",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "Calmly appreciative",
+                "Overflowing with excitement"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
+            "correctAnswer": "Calmly appreciative",
             "correctAnswerIndex": 0,
-            "hint": "There's no hidden complaint here. Listen for the pitch to rise and fall warmly, showing real happiness.",
-            "explanation": "'This is wonderful news!' said with a bright Rising-Falling tone is sincere - the speaker truly means it.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "hint": "Decide whether the voice stretches upward, or stays measured.",
+            "explanation": "Combining a moderate range with a steady fall on 'great' can express quiet appreciation, as if the speaker were taking the photos in. Excitement would normally send the pitch higher, with faster movement and more peaks.",
+            "modulationPattern": "Moderate range with a smooth fall on 'great'.",
+            "meaningShift": "A measured fall sounds appreciative and relaxed; a high, wide contour would sound thrilled."
         },
         {
             "id": "ACC_PITCHMODULATION_L81_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two flatmates are planning a party.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Wow, what a surprise.",
-            "textToSpeak": "Wow, what a surprise.",
+            "word": "Yes, let's do that.",
+            "textToSpeak": "Yes, let's do that.",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "Resigned, sinking on 'that'",
+                "Eager, with 'let's' lifted"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Eager, with 'let's' lifted",
             "correctAnswerIndex": 1,
-            "hint": "This sounds like something completely predictable happened again. Listen for a flat, unimpressed 'surprise'.",
-            "explanation": "Said flatly, 'what a surprise' is sarcastic, meaning the outcome was actually expected and unwelcome, not surprising at all.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "hint": "Where does the energy sit: at the start, or draining away at the end?",
+            "explanation": "The lift on 'let's' gives the sentence momentum, and a fall on 'that' finishes it firmly, which fits someone keen to start. Sinking pitch through 'that' with little lift at the start can suggest the speaker is going along reluctantly.",
+            "modulationPattern": "Rise on 'let's', firm fall on 'that'.",
+            "meaningShift": "Early lift and firm landing sound eager; a flat start and sinking end can sound resigned."
         },
         {
             "id": "ACC_PITCHMODULATION_L82_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend has been talking about her new fitness plan.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Thanks a lot for that.",
-            "textToSpeak": "Thanks a lot for that.",
+            "word": "Since when do you run?",
+            "textToSpeak": "Since when do you run?",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Grateful)"
+                "Challenging and impatient",
+                "Surprised and amused"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 0,
-            "hint": "This sounds like the speaker is annoyed, not grateful. Listen for a flat 'thanks' rather than a warm one.",
-            "explanation": "Said flatly, 'thanks a lot' is sarcastic - the speaker is actually annoyed, not genuinely thankful.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely grateful."
+            "correctAnswer": "Surprised and amused",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the voice is bright and wide, or tight and clipped.",
+            "explanation": "Using a bright, wide contour on 'since when' tends to sound playful, because the speaker is registering a surprising change with a smile in the voice. A tight, clipped version could carry a challenge, as though the claim were being doubted.",
+            "modulationPattern": "Wide range, lifted onset on 'since when', fall on 'run'.",
+            "meaningShift": "A bright contour sounds amused; a tight one can sound confrontational."
         },
         {
             "id": "ACC_PITCHMODULATION_L82_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A meeting has been cancelled for the third time this month.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I really appreciate your help.",
-            "textToSpeak": "I really appreciate your help.",
+            "word": "It's been cancelled again?",
+            "textToSpeak": "It's been cancelled again?",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Grateful)"
+                "Weary disbelief",
+                "Fresh surprise"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Grateful)",
-            "correctAnswerIndex": 1,
-            "hint": "There's no hidden complaint here, just genuine thanks. Listen for warmth in the rise and fall of the pitch.",
-            "explanation": "'I really appreciate your help' with a warm Rising-Falling tone is sincere, expressing real gratitude.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely grateful."
+            "correctAnswer": "Weary disbelief",
+            "correctAnswerIndex": 0,
+            "hint": "How high does the voice start, and how quickly does it move?",
+            "explanation": "With 'again' the information isn't new, so the pitch tends to stay lower and the delivery slows, giving a sense of tiredness. Fresh surprise would use a higher start and a quicker, steeper rise.",
+            "modulationPattern": "Lower onset with a slow, modest rise on 'again'.",
+            "meaningShift": "A lower, slower rise sounds tired; a higher, faster rise would sound shocked."
         },
         {
             "id": "ACC_PITCHMODULATION_L82_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague announces she has been promoted.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Oh, fantastic. The printer's broken again.",
-            "textToSpeak": "Oh, fantastic. The printer's broken again.",
+            "word": "No way!",
+            "textToSpeak": "No way!",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Delighted astonishment",
+                "Doubtful astonishment"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Delighted astonishment",
             "correctAnswerIndex": 0,
-            "hint": "A broken printer isn't fantastic news. Listen for 'fantastic' to sound flat and unimpressed.",
-            "explanation": "Said flatly, 'fantastic' here is sarcastic, expressing frustration about the printer rather than real delight.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "hint": "Check whether the voice stays bright through the end, or pull back.",
+            "explanation": "Sustaining a high, bright peak on 'way' suggests the speaker is happy for her. In a context of good news, pulling back with a dip could sound guarded, as though the speaker were not sure it was true.",
+            "modulationPattern": "Rising-falling on 'way' with a high peak.",
+            "meaningShift": "A high, open peak sounds delighted; a guarded dip would sound sceptical."
         },
         {
             "id": "ACC_PITCHMODULATION_L83_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A new colleague is worried about a mistake in a report.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Just what I needed today.",
-            "textToSpeak": "Just what I needed today.",
+            "word": "Don't worry, it's an easy fix.",
+            "textToSpeak": "Don't worry, it's an easy fix.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Relieved)"
+                "Genuinely calming",
+                "Hurrying past the worry"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Genuinely calming",
             "correctAnswerIndex": 0,
-            "hint": "This sounds like one more problem piled onto a bad day. Listen for a flat, weary tone, not real relief.",
-            "explanation": "Said flatly, 'just what I needed today' is sarcastic, meaning this is actually the last thing the speaker wanted.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely relieved."
+            "hint": "Listen to speed and the final fall. Is there time for the colleague to relax?",
+            "explanation": "Slowing the pace and falling smoothly and low on 'fix' gives the listener time to take the comfort in. A quick, flat delivery would suggest the speaker wanted to move on, which could leave the worry unanswered.",
+            "modulationPattern": "Slow tempo with a smooth low fall on 'fix'.",
+            "meaningShift": "A slow, low fall settles the worry; a rushed one would brush it aside."
         },
         {
             "id": "ACC_PITCHMODULATION_L83_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is nervous before a driving test.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This soup is absolutely delicious.",
-            "textToSpeak": "This soup is absolutely delicious.",
+            "word": "You'll be fine.",
+            "textToSpeak": "You'll be fine.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Casual, offhand comment",
+                "Steady, confident comfort"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
+            "correctAnswer": "Steady, confident comfort",
             "correctAnswerIndex": 1,
-            "hint": "There's no hidden complaint about the food here. Listen for genuine warmth rising and falling on 'delicious'.",
-            "explanation": "'This soup is absolutely delicious' with a warm Rising-Falling tone on 'delicious' is sincere praise.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "hint": "Does 'fine' sound weighed, or tossed away?",
+            "explanation": "After a clear peak on 'be', a firm fall on 'fine' gives the friend something to believe. A light, flat version can sound like small talk, and may not reach someone who is worried.",
+            "modulationPattern": "Peak on 'be', firm fall on 'fine'.",
+            "meaningShift": "A firm fall gives dependable reassurance; a light one can sound like a throwaway remark."
         },
         {
             "id": "ACC_PITCHMODULATION_L83_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A parent speaks to a child who is afraid of the dark.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Lovely. It's raining again.",
-            "textToSpeak": "Lovely. It's raining again.",
+            "word": "It's all right, I'm here.",
+            "textToSpeak": "It's all right, I'm here.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Soft and slow: soothing",
+                "Brisk and bright: cheering up"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Soft and slow: soothing",
             "correctAnswerIndex": 0,
-            "hint": "More rain usually isn't 'lovely' news. Listen for a flat, unenthusiastic tone on 'lovely'.",
-            "explanation": "Said flatly, 'lovely' here is sarcastic, expressing annoyance about the rain rather than genuine delight.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "hint": "How fast is it, and how high does it sit?",
+            "explanation": "Soothing speech tends to be lower, slower and quieter, with gentle falls. A brisk, bright version could be a good way to distract a child, but it works by lifting the mood, not by calming.",
+            "modulationPattern": "Low register, slow tempo, gentle falls.",
+            "meaningShift": "A soft, slow fall calms; a brisk, bright one cheers up."
         },
         {
             "id": "ACC_PITCHMODULATION_L84_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Asked whether the restaurant takes cards; you are not sure.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Perfect. My flight got delayed.",
-            "textToSpeak": "Perfect. My flight got delayed.",
+            "word": "I think so.",
+            "textToSpeak": "I think so.",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "Politely hedging",
+                "Genuinely unsure"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Genuinely unsure",
             "correctAnswerIndex": 1,
-            "hint": "A flight delay is usually frustrating, not perfect. Listen for a flat, unimpressed 'perfect'.",
-            "explanation": "Said flatly, 'perfect' here is sarcastic, meaning the delay is actually frustrating, not ideal at all.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "hint": "Judge whether the speaker sounds as if they would check.",
+            "explanation": "When 'so' rises at the end, it can leave the answer open, suggesting the speaker is really not certain. Politeness hedges usually fall, since the speaker does know and is only being tactful.",
+            "modulationPattern": "Rising on 'so' after a hedge.",
+            "meaningShift": "A final rise sounds truly uncertain; a final fall would sound like a tactful softener."
         },
         {
             "id": "ACC_PITCHMODULATION_L84_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager gives feedback on a draft she knows needs revising.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I had a really relaxing weekend.",
-            "textToSpeak": "I had a really relaxing weekend.",
+            "word": "It might need a little more work.",
+            "textToSpeak": "It might need a little more work.",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "Softened criticism",
+                "Real doubt about the draft"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
+            "correctAnswer": "Softened criticism",
             "correctAnswerIndex": 0,
-            "hint": "There's no hidden complaint here, just a genuinely calm weekend. Listen for warmth in the pitch.",
-            "explanation": "'I had a really relaxing weekend' with a warm Rising-Falling tone is sincere, describing real enjoyment.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "hint": "Does the manager seem to know the answer?",
+            "explanation": "Keeping a soft, gentle contour on 'might' and 'little' lets the speaker deliver a judgment while sparing the writer's feelings. If the doubt were real, the pitch would be higher and open, with a rise on 'work'.",
+            "modulationPattern": "Gentle, narrow range with a soft fall at the end.",
+            "meaningShift": "A soft, settled fall is tactful criticism; a lifted ending would sound unsure."
         },
         {
             "id": "ACC_PITCHMODULATION_L84_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A trainee is asked a question they cannot answer.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Great, the wifi's down again.",
-            "textToSpeak": "Great, the wifi's down again.",
+            "word": "Is it Wednesday?",
+            "textToSpeak": "Is it Wednesday?",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "A guess, offered tentatively",
+                "A quick fact-check"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 1,
-            "hint": "A dead wifi connection isn't actually great news. Listen for 'great' to sound flat, not bright.",
-            "explanation": "Said flatly, 'great' here is sarcastic, expressing irritation about the wifi rather than real enthusiasm.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "correctAnswer": "A guess, offered tentatively",
+            "correctAnswerIndex": 0,
+            "hint": "Hear whether there is hesitation or lengthening before the rise.",
+            "explanation": "Drawing out the lift on 'Wednesday' slightly can show the speaker is guessing and hoping to be corrected gently. A quick fact-check sounds crisper, with a shorter rise and little hesitation.",
+            "modulationPattern": "Slow, drawn-out rise on 'Wednesday'.",
+            "meaningShift": "A slow rise sounds like a guess; a quick rise sounds like a verification."
         },
         {
             "id": "ACC_PITCHMODULATION_L85_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A receptionist greets a visitor.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Nice. Now I have to redo it all.",
-            "textToSpeak": "Nice. Now I have to redo it all.",
+            "word": "Good morning, how can I help?",
+            "textToSpeak": "Good morning, how can I help?",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Personal warmth",
+                "Practised courtesy"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 0,
-            "hint": "Redoing a whole task isn't pleasant. Listen for 'nice' to sound flat and resigned, not warm.",
-            "explanation": "Said flatly, 'nice' here is sarcastic, expressing frustration about extra, unwanted work.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Practised courtesy",
+            "correctAnswerIndex": 1,
+            "hint": "Hear whether the voice lingers on anything, or flow smoothly.",
+            "explanation": "Polite service language is often delivered in a smooth, even, slightly quick pattern because the speaker uses it many times a day. Personal warmth would be more variable, with extra movement on 'help' and a touch of individuality.",
+            "modulationPattern": "Narrow, smooth contour with a light rise on 'help'.",
+            "meaningShift": "A smooth, even contour sounds routine; an expressive one sounds personal."
         },
         {
             "id": "ACC_PITCHMODULATION_L85_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You are leaving a dinner party you really enjoyed.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You did such a great job!",
-            "textToSpeak": "You did such a great job!",
+            "word": "Thanks for having me.",
+            "textToSpeak": "Thanks for having me.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Routinely polite",
+                "Genuinely grateful"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
+            "correctAnswer": "Genuinely grateful",
             "correctAnswerIndex": 1,
-            "hint": "There's no hidden criticism here. Listen for the praise to rise and fall warmly.",
-            "explanation": "'You did such a great job!' with a warm Rising-Falling tone is sincere praise, genuinely meant.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "hint": "Pay attention to whether the voice puts effort into 'having'.",
+            "explanation": "The lift on 'having' and the clear fall on 'me' can show the thanks is meant. Routine politeness usually stays narrow and quick, with the words doing the work and the pitch staying out of the way.",
+            "modulationPattern": "Lift on 'having', clear fall on 'me'.",
+            "meaningShift": "Extra movement signals real gratitude; an even delivery signals courtesy."
         },
         {
             "id": "ACC_PITCHMODULATION_L85_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A customer has been given the wrong change.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Brilliant. We missed the bus.",
-            "textToSpeak": "Brilliant. We missed the bus.",
+            "word": "Excuse me, I think there's a mistake.",
+            "textToSpeak": "Excuse me, I think there's a mistake.",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "Firm but courteous",
+                "Apologetic and unsure"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 1,
-            "hint": "Missing the bus is usually annoying. Listen for 'brilliant' to sound flat and unimpressed.",
-            "explanation": "Said flatly, 'brilliant' here is sarcastic, expressing annoyance about missing the bus rather than real delight.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "correctAnswer": "Firm but courteous",
+            "correctAnswerIndex": 0,
+            "hint": "Decide whether the voice sounds ready to back down.",
+            "explanation": "Holding the pitch steady and falling clearly on 'mistake' states the problem without losing politeness. An apologetic version would lift on 'mistake', handing the cashier the chance to dismiss it.",
+            "modulationPattern": "Steady range with a fall on 'mistake'.",
+            "meaningShift": "A steady fall presents the point confidently; a lift would sound uncertain."
         },
         {
             "id": "ACC_PITCHMODULATION_L86_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has been quiet all through lunch.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "How nice of him to show up late.",
-            "textToSpeak": "How nice of him to show up late.",
+            "word": "Are you okay?",
+            "textToSpeak": "Are you okay?",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Casually curious",
+                "Concerned"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 0,
-            "hint": "Showing up late usually isn't considered 'nice'. Listen for a flat, irritated tone on 'nice'.",
-            "explanation": "Said flatly, 'how nice of him' is sarcastic, criticizing his lateness rather than genuinely praising him.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Concerned",
+            "correctAnswerIndex": 1,
+            "hint": "Check the speed and how soft the voice sounds.",
+            "explanation": "Slowing the pace and softening the lift suggest the speaker is truly checking in and willing to listen. Casual curiosity tends to be quicker and lighter, a question asked in passing.",
+            "modulationPattern": "Slow, soft rise on 'okay'.",
+            "meaningShift": "A slow, soft rise sounds caring; a quick light one sounds passing."
         },
         {
             "id": "ACC_PITCHMODULATION_L86_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend mentions she has been up since four.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm so proud of you.",
-            "textToSpeak": "I'm so proud of you.",
+            "word": "That's early.",
+            "textToSpeak": "That's early.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Sympathetic",
+                "Impressed"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-            "correctAnswerIndex": 1,
-            "hint": "There's no hidden criticism here, just heartfelt pride. Listen for warmth in the rise and fall.",
-            "explanation": "'I'm so proud of you' with a warm Rising-Falling tone is sincere, expressing genuine pride.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Sympathetic",
+            "correctAnswerIndex": 0,
+            "hint": "Notice whether the voice rises in admiration or settles with care.",
+            "explanation": "That gentle fall on 'early' fits sympathy, because the speaker acknowledges how hard it must have been. An impressed response would lift more on 'early' and sound brighter.",
+            "modulationPattern": "Low, gentle fall on 'early'.",
+            "meaningShift": "A soft fall sounds sympathetic; a brighter lift would sound admiring."
         },
         {
             "id": "ACC_PITCHMODULATION_L86_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager sees a deadline slipping.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Wonderful. The meeting got moved earlier.",
-            "textToSpeak": "Wonderful. The meeting got moved earlier.",
+            "word": "How's the report coming along?",
+            "textToSpeak": "How's the report coming along?",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Quietly worried",
+                "Simply interested"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Quietly worried",
             "correctAnswerIndex": 0,
-            "hint": "An earlier meeting often means less preparation time. Listen for 'wonderful' to sound flat, not bright.",
-            "explanation": "Said flatly, 'wonderful' here is sarcastic, expressing inconvenience rather than real enthusiasm.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "hint": "How much weight does 'coming' carry?",
+            "explanation": "In this situation, extra weight on 'coming' and a slightly tight contour can hint that the manager is concerned about progress. A simply interested speaker would use a lighter, more open lift.",
+            "modulationPattern": "Slight weight on 'coming' with a restrained rise.",
+            "meaningShift": "A weighty, tight contour suggests worry; a light, open one suggests interest."
         },
         {
             "id": "ACC_PITCHMODULATION_L87_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You have just learned the trip is cancelled.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Oh good, more homework.",
-            "textToSpeak": "Oh good, more homework.",
+            "word": "Oh, that's a shame.",
+            "textToSpeak": "Oh, that's a shame.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Genuinely disappointed",
+                "Mildly sympathetic"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Genuinely disappointed",
             "correctAnswerIndex": 0,
-            "hint": "Extra homework is rarely exciting for a student. Listen for 'good' to sound flat and unenthused.",
-            "explanation": "Said flatly, 'oh good' here is sarcastic, expressing dread about more homework rather than real enthusiasm.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "hint": "Check whether the voice drops and linger, or lifts quickly.",
+            "explanation": "Lowering the pitch and lengthening the fall on 'shame' tend to show the speaker feels the loss too. A more mildly sympathetic reply would be lighter and quicker, as a comment about someone else's situation.",
+            "modulationPattern": "Low pitch with a long fall on 'shame'.",
+            "meaningShift": "A deeper, longer fall sounds personally disappointed; a lighter one sounds sympathetic."
         },
         {
             "id": "ACC_PITCHMODULATION_L87_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend didn't get the job.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This vacation was amazing.",
-            "textToSpeak": "This vacation was amazing.",
+            "word": "I really thought you'd get it.",
+            "textToSpeak": "I really thought you'd get it.",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "Blaming her",
+                "Sharing the let-down"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-            "correctAnswerIndex": 0,
-            "hint": "There's no hidden complaint about the trip here. Listen for genuine warmth on 'amazing'.",
-            "explanation": "'This vacation was amazing' with a warm Rising-Falling tone on 'amazing' is sincere, genuinely meant.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "correctAnswer": "Sharing the let-down",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the voice sounds sharp or soft.",
+            "explanation": "Soft falls on 'get it' and a lengthened 'thought' can sound like shared disappointment. Blame would normally use a sharper fall and more weight on 'you'd'.",
+            "modulationPattern": "Soft fall, some lengthening on 'thought'.",
+            "meaningShift": "A soft fall shares the disappointment; a sharp fall can sound accusatory."
         },
         {
             "id": "ACC_PITCHMODULATION_L87_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague reads out results below target.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Terrific. The elevator's broken.",
-            "textToSpeak": "Terrific. The elevator's broken.",
+            "word": "Well, that's not great.",
+            "textToSpeak": "Well, that's not great.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Calm acceptance",
+                "Understated disappointment"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 0,
-            "hint": "A broken elevator usually means an inconvenient walk up the stairs. Listen for a flat 'terrific'.",
-            "explanation": "Said flatly, 'terrific' here is sarcastic, expressing annoyance about the broken elevator.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Understated disappointment",
+            "correctAnswerIndex": 1,
+            "hint": "Notice how low the final word sits.",
+            "explanation": "Opening with 'well' and falling low on 'great' can signal disappointment kept under control. A calm acceptance would end higher and flatter, without the downward weight.",
+            "modulationPattern": "Low fall on 'great' after a hedging 'well'.",
+            "meaningShift": "A low, weighty fall suggests held-back disappointment; a flatter finish would sound accepting."
         },
         {
             "id": "ACC_PITCHMODULATION_L88_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You have been waiting twenty minutes for your order.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Just lovely. I lost the file again.",
-            "textToSpeak": "Just lovely. I lost the file again.",
+            "word": "Is it ready yet?",
+            "textToSpeak": "Is it ready yet?",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Impatient",
+                "Hopeful"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Impatient",
             "correctAnswerIndex": 0,
-            "hint": "Losing an important file isn't lovely at all. Listen for a flat, frustrated tone on 'lovely'.",
-            "explanation": "Said flatly, 'just lovely' here is sarcastic, expressing frustration about losing the file again.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "hint": "Check whether the rise is sharp and short, or opens and warm.",
+            "explanation": "Clipping the rise on 'yet' and adding weight to 'ready' can sound impatient, particularly after a long wait. A hopeful tone would be warmer and more open, with a softer lift.",
+            "modulationPattern": "Clipped rise on 'yet' with weight on 'ready'.",
+            "meaningShift": "A tight, clipped rise sounds impatient; a soft rise sounds hopeful."
         },
         {
             "id": "ACC_PITCHMODULATION_L88_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague explains something you already understand.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I really enjoyed the concert.",
-            "textToSpeak": "I really enjoyed the concert.",
+            "word": "Yes, I get it.",
+            "textToSpeak": "Yes, I get it.",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "Wanting them to move on",
+                "Showing keenness to learn"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
+            "correctAnswer": "Wanting them to move on",
             "correctAnswerIndex": 0,
-            "hint": "There's no hidden complaint about the show here. Listen for real warmth in the pitch.",
-            "explanation": "'I really enjoyed the concert' with a warm Rising-Falling tone is sincere, expressing genuine enjoyment.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "hint": "Decide whether the voice is slow and engaged, or short and flat.",
+            "explanation": "Delivering it short and flat, with a fall on 'get', signals the speaker has what they need. An eager learner would sound warmer and give 'get' more lift.",
+            "modulationPattern": "Short, flat contour with a fall on 'get'.",
+            "meaningShift": "A clipped fall asks them to move on; a warm lift would invite more."
         },
         {
             "id": "ACC_PITCHMODULATION_L88_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is taking a long time to choose a menu item.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Great, it's a public holiday and the bank's closed.",
-            "textToSpeak": "Great, it's a public holiday and the bank's closed.",
+            "word": "Any time now.",
+            "textToSpeak": "Any time now.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Annoyed",
+                "Teasing"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 0,
-            "hint": "A closed bank is usually inconvenient, not great news. Listen for a flat, unimpressed 'great'.",
-            "explanation": "Said flatly, 'great' here is sarcastic, expressing inconvenience about the closed bank rather than real delight.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Teasing",
+            "correctAnswerIndex": 1,
+            "hint": "Is there a smile in the voice, or a clip?",
+            "explanation": "Using a wide, bouncy contour with a lengthened 'now' can make this sound playful between friends. Annoyance would use narrower, clipped movement with a harder fall.",
+            "modulationPattern": "Bouncy contour with a drawn-out 'now'.",
+            "meaningShift": "A bouncy delivery sounds teasing; a clipped one sounds annoyed."
         },
         {
             "id": "ACC_PITCHMODULATION_L89_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A shop assistant greets a regular customer.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Fabulous. My phone just died.",
-            "textToSpeak": "Fabulous. My phone just died.",
+            "word": "Hello again!",
+            "textToSpeak": "Hello again!",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Standard greeting",
+                "Warm recognition"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 0,
-            "hint": "A dead phone is usually frustrating, not fabulous. Listen for a flat tone on 'fabulous'.",
-            "explanation": "Said flatly, 'fabulous' here is sarcastic, expressing frustration about the dead phone.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Warm recognition",
+            "correctAnswerIndex": 1,
+            "hint": "Decide whether the voice treats this person as someone known.",
+            "explanation": "Starting high and falling widely across 'again' tells the customer they've been noticed. A standard greeting stays lower and narrower, working like a script.",
+            "modulationPattern": "High onset, wide fall across 'again'.",
+            "meaningShift": "A wide, high contour sounds warmly recognising; a narrow one sounds automatic."
         },
         {
             "id": "ACC_PITCHMODULATION_L89_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A new neighbour introduces themselves at your door.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That was such a thoughtful gift.",
-            "textToSpeak": "That was such a thoughtful gift.",
+            "word": "Hi, I'm Tom from next door.",
+            "textToSpeak": "Hi, I'm Tom from next door.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Open and friendly",
+                "Formal and reserved"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-            "correctAnswerIndex": 1,
-            "hint": "There's no hidden criticism here, just real appreciation. Listen for genuine warmth in the pitch.",
-            "explanation": "'That was such a thoughtful gift' with a warm Rising-Falling tone is sincere, expressing real appreciation.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Open and friendly",
+            "correctAnswerIndex": 0,
+            "hint": "How much does the pitch move on 'Tom'?",
+            "explanation": "The lifted 'hi' and the clear peak on 'Tom' give the introduction a welcoming feel. A more reserved delivery would stay level, treating the information as a plain statement.",
+            "modulationPattern": "Lifted 'hi', peak on 'Tom', gentle fall.",
+            "meaningShift": "A lifted, peaked contour sounds welcoming; a level one sounds distant."
         },
         {
             "id": "ACC_PITCHMODULATION_L89_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You answer a call from an unknown salesperson.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "How wonderful, the train's delayed again.",
-            "textToSpeak": "How wonderful, the train's delayed again.",
+            "word": "Hi there, do you have a minute?",
+            "textToSpeak": "Hi there, do you have a minute?",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Natural friendliness",
+                "Scripted brightness"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 0,
-            "hint": "Another train delay is usually irritating, not wonderful. Listen for a flat 'wonderful'.",
-            "explanation": "Said flatly, 'how wonderful' here is sarcastic, expressing irritation about the repeated delay.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Scripted brightness",
+            "correctAnswerIndex": 1,
+            "hint": "Notice whether the voice sounds as though it has said this many times.",
+            "explanation": "Keeping the pitch uniformly bright, with identical peaks, can sound rehearsed, because natural friendliness varies from word to word. Genuine warmth would have an uneven shape that reflects what the speaker is thinking.",
+            "modulationPattern": "Evenly repeated high peaks across the whole phrase.",
+            "meaningShift": "Repetitive brightness sounds scripted; natural movement sounds personal."
         },
         {
             "id": "ACC_PITCHMODULATION_L90_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague claims the software will never crash.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Oh joy, another cold.",
-            "textToSpeak": "Oh joy, another cold.",
+            "word": "Never?",
+            "textToSpeak": "Never?",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Impressed",
+                "Doubtful"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-            "correctAnswerIndex": 0,
-            "hint": "Catching another cold isn't actually joyful. Listen for a flat, weary tone on 'joy'.",
-            "explanation": "Said flatly, 'oh joy' here is sarcastic, expressing dismay about getting sick again, not real happiness.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Doubtful",
+            "correctAnswerIndex": 1,
+            "hint": "Check whether the rise sounds open and bright, or narrow and tight.",
+            "explanation": "Starting low and drawing out a narrow rise on 'never' tends to signal doubt, because the speaker is testing the claim. An impressed reaction would begin higher and rise more brightly.",
+            "modulationPattern": "Low onset, narrow slow rise on 'never'.",
+            "meaningShift": "A low, narrow rise sounds doubtful; a bright, wide one sounds impressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L90_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend says he will go to the gym every day from now on.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm really grateful for your support.",
-            "textToSpeak": "I'm really grateful for your support.",
+            "word": "If you say so.",
+            "textToSpeak": "If you say so.",
             "options": [
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)"
+                "Unconvinced",
+                "Agreeing"
             ],
-            "correctAnswer": "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-            "correctAnswerIndex": 1,
-            "hint": "There's no hidden complaint here, just real gratitude. Listen for warmth in the rise and fall.",
-            "explanation": "'I'm really grateful for your support' with a warm Rising-Falling tone is sincere, expressing genuine thanks.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sarcastic - means the opposite and a sincere - genuinely pleased."
+            "correctAnswer": "Unconvinced",
+            "correctAnswerIndex": 0,
+            "hint": "Where does the pitch go on 'say'?",
+            "explanation": "Dipping and lifting on 'say' can signal that the speaker is not accepting the claim. Real agreement would drop firmly at the end and sound settled.",
+            "modulationPattern": "Falling-rising on 'say'.",
+            "meaningShift": "A dip and lift sounds unconvinced; a firm fall would sound accepting."
         },
         {
             "id": "ACC_PITCHMODULATION_L90_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A salesperson says the phone has a two-week battery.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Marvelous. The shop's out of stock.",
-            "textToSpeak": "Marvelous. The shop's out of stock.",
+            "word": "Two whole weeks.",
+            "textToSpeak": "Two whole weeks.",
             "options": [
-                "Warm Rising-Falling Tone (Sincere - Genuinely Pleased)",
-                "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)"
+                "Delighted surprise",
+                "Doubtful emphasis"
             ],
-            "correctAnswer": "Flat, Drawn-Out Tone (Sarcastic - Means the Opposite)",
+            "correctAnswer": "Doubtful emphasis",
             "correctAnswerIndex": 1,
-            "hint": "An empty shelf is usually disappointing, not marvelous. Listen for a flat, unimpressed tone.",
-            "explanation": "Said flatly, 'marvelous' here is sarcastic, expressing disappointment about the shop being out of stock.",
-            "modulationPattern": "A flat, drawn-out, exaggerated tone often signals sarcasm, meaning close to the opposite of the words used; a warm, natural Rising-Falling tone signals sincerity.",
-            "meaningShift": "The meaning shifts between a sincere - genuinely pleased and a sarcastic - means the opposite."
+            "hint": "Notice how 'whole' sits compared with the words around it.",
+            "explanation": "Saying 'whole' flat and level, then dropping slightly, can sound like the speaker is placing the claim on trial. Delight would use a higher, brighter peak on 'whole'.",
+            "modulationPattern": "Level 'whole' with a small drop on 'weeks'.",
+            "meaningShift": "A flat, weighted word sounds doubtful; a high, bright peak sounds delighted."
         }
     ]
 }

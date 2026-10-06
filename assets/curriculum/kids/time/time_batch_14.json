@@ -1,622 +1,622 @@
 [
-    {
+  {
+    "level": 131,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L131_Q1",
+        "gameType": "time",
         "level": 131,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L131_Q1",
-                "gameType": "time",
-                "level": 131,
-                "instruction": "Lunch begins at 12:00 PM and afternoon class begins 1 hour later. What time does afternoon class begin?",
-                "question": "?",
-                "correctAnswer": "1:00 PM ⏩",
-                "options": [
-                    "1:00 PM ⏩",
-                    "2:00 PM 😴",
-                    "12:30 PM 🕧"
-                ],
-                "hint": "Start at 12:00 PM and count forward 1 hour on your fingers.",
-                "emoji": "⏩",
-                "explanation": "Counting 1 hour forward from 12:00 PM lands exactly on 1:00 PM.",
-                "funFact": "An hour-long lunch gives time to eat and relax before class.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L131_Q2",
-                "gameType": "time",
-                "level": 131,
-                "instruction": "The family wakes up at 7:00 AM. The rooster crowed 1 hour before that. What time did the rooster crow?",
-                "question": "?",
-                "correctAnswer": "6:00 AM ⏪",
-                "options": [
-                    "5:00 AM ⏪",
-                    "8:00 AM 🍳",
-                    "6:00 AM ⏪"
-                ],
-                "hint": "Subtract 1 hour from 7:00 AM to find the answer.",
-                "emoji": "⏪",
-                "explanation": "Starting at 7:00 AM and going back 1 hour gives 6:00 AM.",
-                "funFact": "Roosters are famous for crowing before the rest of the farm wakes up.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L131_Q3",
-                "gameType": "time",
-                "level": 131,
-                "instruction": "Dinner starts at 6:00 PM and dessert is served 45 minutes later. What time is dessert served?",
-                "question": "?",
-                "correctAnswer": "6:45 PM ⏱️",
-                "options": [
-                    "7:00 PM 🛁",
-                    "6:45 PM ⏱️",
-                    "6:30 PM 🕓"
-                ],
-                "hint": "Counting 45 minutes past 6:00 PM lands you at the answer.",
-                "emoji": "⏱️",
-                "explanation": "45 minutes after 6:00 PM is 6:45 PM.",
-                "funFact": "Forty-five minutes is plenty of time to enjoy a full dinner first.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "At the zoo, penguin feeding runs from 10:30 to 10:50 and elephant feeding starts at 11:15. The walk between them takes 10 minutes. How long does Ria wait at the elephants before the feeding starts?",
+        "question": "?",
+        "correctAnswer": "15 minutes",
+        "options": [
+          "10 minutes",
+          "25 minutes",
+          "15 minutes"
+        ],
+        "hint": "Find when Ria arrives at the elephants, then count on to 11:15.",
+        "emoji": "🐧",
+        "explanation": "Penguin feeding ends at 10:50. After a 10-minute walk Ria arrives at 11:00. The elephant feeding starts at 11:15, so she waits 15 minutes.",
+        "funFact": "Emperor penguins can stay underwater for more than 20 minutes on a single breath.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L131_Q2",
+        "gameType": "time",
+        "level": 131,
+        "instruction": "Elephant feeding runs from 11:15 to 11:40. The seal show starts at 12:00, and the walk there takes 10 minutes. How many spare minutes does Ria have?",
+        "question": "?",
+        "correctAnswer": "10 minutes",
+        "options": [
+          "20 minutes",
+          "30 minutes",
+          "10 minutes"
+        ],
+        "hint": "Find the time she arrives at the seal show.",
+        "emoji": "🐘",
+        "explanation": "She leaves at 11:40 and arrives at 11:50. The show starts at 12:00, so she has 10 spare minutes.",
+        "funFact": "An elephant can spend up to 16 hours a day eating.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L131_Q3",
+        "gameType": "time",
+        "level": 131,
+        "instruction": "The zoo is open from 9:30 AM to 4:45 PM. Max arrives at 10:50 AM and stays until closing. How long does he stay?",
+        "question": "?",
+        "correctAnswer": "5 hours 55 minutes",
+        "options": [
+          "5 hours 55 minutes",
+          "6 hours 5 minutes",
+          "5 hours 15 minutes"
+        ],
+        "hint": "Count from 10:50 to 3:50 first, then on to 4:45.",
+        "emoji": "🦁",
+        "explanation": "10:50 AM to 3:50 PM is 5 hours, and 3:50 to 4:45 is 55 more minutes. So he stays 5 hours 55 minutes.",
+        "funFact": "Many zoo animals are most active in the early morning and the evening, when the weather is cooler.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 132,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L132_Q1",
+        "gameType": "time",
         "level": 132,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L132_Q1",
-                "gameType": "time",
-                "level": 132,
-                "instruction": "Lunch begins at 12:00 PM and quiet reading time begins 2 hours later. What time does quiet reading begin?",
-                "question": "?",
-                "correctAnswer": "2:00 PM ⏩",
-                "options": [
-                    "3:00 PM 🎒",
-                    "2:00 PM ⏩",
-                    "1:00 PM 📚"
-                ],
-                "hint": "Start at 12:00 PM and count forward 2 hours on your fingers.",
-                "emoji": "⏩",
-                "explanation": "Counting 2 hours forward from 12:00 PM lands exactly on 2:00 PM.",
-                "funFact": "Two hours after lunch is a common time for calm classroom activities.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L132_Q2",
-                "gameType": "time",
-                "level": 132,
-                "instruction": "The family wakes up at 7:00 AM. The farmer began morning chores 2 hours before that. What time did chores begin?",
-                "question": "?",
-                "correctAnswer": "5:00 AM ⏪",
-                "options": [
-                    "9:00 AM 🏫",
-                    "5:00 AM ⏪",
-                    "4:00 AM"
-                ],
-                "hint": "Subtract 2 hours from 7:00 AM to find the answer.",
-                "emoji": "⏪",
-                "explanation": "Starting at 7:00 AM and going back 2 hours gives 5:00 AM.",
-                "funFact": "Farm chores often begin very early, before the rest of the house wakes up.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L132_Q3",
-                "gameType": "time",
-                "level": 132,
-                "instruction": "Lights dim for bed at 9:00 PM and the room is fully dark 30 minutes later. What time is the room fully dark?",
-                "question": "?",
-                "correctAnswer": "9:30 PM ⏱️",
-                "options": [
-                    "9:30 PM ⏱️",
-                    "9:15 PM 🕰️",
-                    "10:00 PM 🐶"
-                ],
-                "hint": "Counting 30 minutes past 9:00 PM lands you at the answer.",
-                "emoji": "⏱️",
-                "explanation": "30 minutes after 9:00 PM is 9:30 PM.",
-                "funFact": "Thirty minutes of quiet dimming helps the body get ready for sleep.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A show starts at 7:15 PM, and the doors open 1 hour 20 minutes before it starts. When do the doors open?",
+        "question": "?",
+        "correctAnswer": "5:55 PM",
+        "options": [
+          "8:35 PM",
+          "5:55 PM",
+          "6:05 PM"
+        ],
+        "hint": "Go back 1 hour first, then go back 20 more minutes.",
+        "emoji": "🔓",
+        "explanation": "1 hour before 7:15 PM is 6:15 PM. Going back 20 more minutes gives 5:55 PM.",
+        "funFact": "The Sydney Opera House took 14 years to build.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L132_Q2",
+        "gameType": "time",
+        "level": 132,
+        "instruction": "In a theatre show, the first half lasts 55 minutes, the interval lasts 20 minutes and the second half lasts 50 minutes. The show starts at 7:15 PM. When does it end?",
+        "question": "?",
+        "correctAnswer": "9:20 PM",
+        "options": [
+          "9:20 PM",
+          "9:35 PM",
+          "9:00 PM"
+        ],
+        "hint": "Add the first half, the interval and the second half in order.",
+        "emoji": "🪗",
+        "explanation": "7:15 plus 55 minutes is 8:10. The 20-minute interval ends at 8:30. The second half of 50 minutes ends at 9:20 PM.",
+        "funFact": "A symphony piece usually lasts between 30 and 45 minutes.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L132_Q3",
+        "gameType": "time",
+        "level": 132,
+        "instruction": "The show ends at 9:20 PM. The last bus leaves at 9:35 PM and the walk to the bus stop takes 12 minutes. How many spare minutes do they have?",
+        "question": "?",
+        "correctAnswer": "3 minutes",
+        "options": [
+          "15 minutes",
+          "12 minutes",
+          "3 minutes"
+        ],
+        "hint": "Find the time they reach the bus stop.",
+        "emoji": "🌉",
+        "explanation": "They reach the stop at 9:32 PM. The bus leaves at 9:35 PM, so they have 3 spare minutes.",
+        "funFact": "Many cities run night buses for people who finish work or events late.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 133,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L133_Q1",
+        "gameType": "time",
         "level": 133,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L133_Q1",
-                "gameType": "time",
-                "level": 133,
-                "instruction": "The class starts a garden project at 9:00 AM and checks on it again 3 hours later. What time do they check again?",
-                "question": "?",
-                "correctAnswer": "12:00 PM ⏩",
-                "options": [
-                    "12:00 PM ⏩",
-                    "1:00 PM 📚",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "Start at 9:00 AM and count forward 3 hours on your fingers.",
-                "emoji": "⏩",
-                "explanation": "Counting 3 hours forward from 9:00 AM lands exactly on 12:00 PM.",
-                "funFact": "Three hours gives young plants a little time to soak up the sun.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L133_Q2",
-                "gameType": "time",
-                "level": 133,
-                "instruction": "The park trip ends at 4:00 PM. It began 3 hours before that. What time did the park trip begin?",
-                "question": "?",
-                "correctAnswer": "1:00 PM ⏪",
-                "options": [
-                    "3:00 PM 🎒",
-                    "5:00 PM 🧃",
-                    "1:00 PM ⏪"
-                ],
-                "hint": "Subtract 3 hours from 4:00 PM to find the answer.",
-                "emoji": "⏪",
-                "explanation": "Starting at 4:00 PM and going back 3 hours gives 1:00 PM.",
-                "funFact": "Three hours at the park allows time for swings, slides, and a picnic.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L133_Q3",
-                "gameType": "time",
-                "level": 133,
-                "instruction": "A group project begins at 2:00 PM and presentations start 45 minutes later. What time do presentations start?",
-                "question": "?",
-                "correctAnswer": "2:45 PM ⏱️",
-                "options": [
-                    "2:45 PM ⏱️",
-                    "3:00 PM 🎒",
-                    "2:30 PM ⏱️"
-                ],
-                "hint": "Counting 45 minutes past 2:00 PM lands you at the answer.",
-                "emoji": "⏱️",
-                "explanation": "45 minutes after 2:00 PM is 2:45 PM.",
-                "funFact": "Forty-five minutes gives every group time to finish their project.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Check-in for a 10:30 AM flight closes 45 minutes before takeoff. Dev arrives at 9:55 AM. How many minutes late is he?",
+        "question": "?",
+        "correctAnswer": "10 minutes",
+        "options": [
+          "10 minutes",
+          "5 minutes",
+          "20 minutes"
+        ],
+        "hint": "Find the time when check-in closes first.",
+        "emoji": "🛄",
+        "explanation": "Check-in closes at 9:45 AM. Dev arrives at 9:55 AM, which is 10 minutes too late.",
+        "funFact": "The world's shortest scheduled flight, in Scotland, lasts only about a minute or two.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L133_Q2",
+        "gameType": "time",
+        "level": 133,
+        "instruction": "Boarding for an 11:40 AM flight starts 35 minutes before departure, and the gate closes 10 minutes before departure. For how long is the gate open for boarding?",
+        "question": "?",
+        "correctAnswer": "25 minutes",
+        "options": [
+          "25 minutes",
+          "35 minutes",
+          "45 minutes"
+        ],
+        "hint": "Find the opening time and the closing time of the gate.",
+        "emoji": "🛂",
+        "explanation": "Boarding starts at 11:05 AM and the gate closes at 11:30 AM. That is 25 minutes.",
+        "funFact": "Airlines often board passengers in groups to save time.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L133_Q3",
+        "gameType": "time",
+        "level": 133,
+        "instruction": "A flight leaves at 3:15 PM. Passengers should be at the airport 2 hours before, and the taxi ride takes 35 minutes. When should the taxi leave?",
+        "question": "?",
+        "correctAnswer": "12:40 PM",
+        "options": [
+          "1:40 PM",
+          "12:40 PM",
+          "12:15 PM"
+        ],
+        "hint": "Find the time to be at the airport first, then count back the taxi ride.",
+        "emoji": "🚕",
+        "explanation": "Passengers must be at the airport by 1:15 PM. Going back 35 minutes for the taxi gives 12:40 PM.",
+        "funFact": "Airport check-in desks usually close between 40 and 60 minutes before a flight.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 134,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L134_Q1",
+        "gameType": "time",
         "level": 134,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L134_Q1",
-                "gameType": "time",
-                "level": 134,
-                "instruction": "Wake-up time is 7:00 AM and the walk to school begins 30 minutes later. What time does the walk begin?",
-                "question": "?",
-                "correctAnswer": "7:30 AM ⏱️",
-                "options": [
-                    "7:30 AM ⏱️",
-                    "7:15 AM 🕰️",
-                    "8:00 AM 🍳"
-                ],
-                "hint": "Start at 7:00 AM and count forward 30 minutes in your head.",
-                "emoji": "⏱️",
-                "explanation": "Counting 30 minutes forward from 7:00 AM lands exactly on 7:30 AM.",
-                "funFact": "Thirty minutes gives plenty of time to eat and get dressed.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L134_Q2",
-                "gameType": "time",
-                "level": 134,
-                "instruction": "The movie starts at 8:00 PM and ends 2 hours later. What time does it end?",
-                "question": "?",
-                "correctAnswer": "10:00 PM ⏩",
-                "options": [
-                    "11:00 PM 💡",
-                    "10:00 PM ⏩",
-                    "9:00 PM 🌙"
-                ],
-                "hint": "Add 2 hours to 8:00 PM to find the new time.",
-                "emoji": "⏩",
-                "explanation": "Starting at 8:00 PM and adding 2 hours gives 10:00 PM.",
-                "funFact": "Many family movies last close to two hours.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L134_Q3",
-                "gameType": "time",
-                "level": 134,
-                "instruction": "Lunch begins at 1:00 PM. The class began a big project 2 hours before that. What time did the project begin?",
-                "question": "?",
-                "correctAnswer": "11:00 AM ⏪",
-                "options": [
-                    "12:00 PM 🍽️",
-                    "11:00 AM ⏪",
-                    "2:00 PM 😴"
-                ],
-                "hint": "Counting 2 hours before 1:00 PM lands you at the answer.",
-                "emoji": "⏪",
-                "explanation": "2 hours before 1:00 PM is 11:00 AM.",
-                "funFact": "Two hours gives a class plenty of time to dig into a big project.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "The oven needs 15 minutes to heat up, and the cookie dough takes 10 minutes to make. Baking should start at 4:30 PM. What is the latest time to switch on the oven?",
+        "question": "?",
+        "correctAnswer": "4:15 PM",
+        "options": [
+          "4:05 PM",
+          "4:15 PM",
+          "4:20 PM"
+        ],
+        "hint": "The oven heats while the dough is made. Which job needs more time?",
+        "emoji": "🍪",
+        "explanation": "The two jobs can happen at the same time. The oven needs the longer time, 15 minutes, so it must go on at 4:15 PM.",
+        "funFact": "An oven usually takes 10 to 15 minutes to reach about 180 degrees Celsius.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L134_Q2",
+        "gameType": "time",
+        "level": 134,
+        "instruction": "Baking starts at 4:30 PM and takes 25 minutes. The cookies then cool for 15 minutes. When are they ready to eat?",
+        "question": "?",
+        "correctAnswer": "5:10 PM",
+        "options": [
+          "5:25 PM",
+          "4:55 PM",
+          "5:10 PM"
+        ],
+        "hint": "Add the baking time, then the cooling time.",
+        "emoji": "🧁",
+        "explanation": "4:30 PM plus 25 minutes is 4:55 PM. Then 15 more minutes of cooling makes 5:10 PM.",
+        "funFact": "Baked goods keep cooking a little after they leave the oven, because they are still hot inside.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L134_Q3",
+        "gameType": "time",
+        "level": 134,
+        "instruction": "A baker puts three trays into the oven one after another. Each tray bakes for 18 minutes, and the first goes in at 3:50 PM. When does the last tray come out?",
+        "question": "?",
+        "correctAnswer": "4:44 PM",
+        "options": [
+          "4:08 PM",
+          "4:44 PM",
+          "4:26 PM"
+        ],
+        "hint": "How many minutes do three trays take altogether?",
+        "emoji": "🥖",
+        "explanation": "3 × 18 = 54 minutes. 54 minutes after 3:50 PM is 4:44 PM.",
+        "funFact": "Bakers bake in batches so that every tray comes out at its best.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 135,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L135_Q1",
+        "gameType": "time",
         "level": 135,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L135_Q1",
-                "gameType": "time",
-                "level": 135,
-                "instruction": "The playground opens at 4:00 PM and the swings fill up 15 minutes later. What time do the swings fill up?",
-                "question": "?",
-                "correctAnswer": "4:15 PM ⏱️",
-                "options": [
-                    "4:15 PM ⏱️",
-                    "4:30 PM ⏮️",
-                    "4:05 PM"
-                ],
-                "hint": "Start at 4:00 PM and count forward 15 minutes in your head.",
-                "emoji": "⏱️",
-                "explanation": "Counting 15 minutes forward from 4:00 PM lands exactly on 4:15 PM.",
-                "funFact": "Swings are often the very first thing children run to at the park.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L135_Q2",
-                "gameType": "time",
-                "level": 135,
-                "instruction": "The family finishes dinner at 6:00 PM and bedtime begins 3 hours later. What time does bedtime begin?",
-                "question": "?",
-                "correctAnswer": "9:00 PM ⏩",
-                "options": [
-                    "8:00 PM 📖",
-                    "9:00 PM ⏩",
-                    "10:00 PM 🐶"
-                ],
-                "hint": "Add 3 hours to 6:00 PM to find the new time.",
-                "emoji": "⏩",
-                "explanation": "Starting at 6:00 PM and adding 3 hours gives 9:00 PM.",
-                "funFact": "Three hours gives plenty of time for baths, play, and stories before bed.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L135_Q3",
-                "gameType": "time",
-                "level": 135,
-                "instruction": "Bedtime is at 8:00 PM. Dinner was served 2 hours before that. What time was dinner served?",
-                "question": "?",
-                "correctAnswer": "6:00 PM ⏪",
-                "options": [
-                    "6:00 PM ⏪",
-                    "9:00 PM 🌙",
-                    "7:00 PM 🛁"
-                ],
-                "hint": "Counting 2 hours before 8:00 PM lands you at the answer.",
-                "emoji": "⏪",
-                "explanation": "2 hours before 8:00 PM is 6:00 PM.",
-                "funFact": "Two hours between dinner and bedtime allows time to fully wind down.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A school coach leaves at 8:45 AM and arrives at the science museum at 10:20 AM. How long is the journey?",
+        "question": "?",
+        "correctAnswer": "1 hour 35 minutes",
+        "options": [
+          "1 hour 25 minutes",
+          "1 hour 35 minutes",
+          "2 hours 5 minutes"
+        ],
+        "hint": "Count from 8:45 to 9:45 first, then on to 10:20.",
+        "emoji": "🚌",
+        "explanation": "8:45 to 9:45 is 1 hour, and 9:45 to 10:20 is 35 more minutes. So the journey takes 1 hour 35 minutes.",
+        "funFact": "In many countries, rules make coach drivers take regular breaks on long journeys.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L135_Q2",
+        "gameType": "time",
+        "level": 135,
+        "instruction": "At the museum there are three sessions of 50 minutes, with a 10-minute gap between sessions. The first starts at 10:30 AM. When does the third session end?",
+        "question": "?",
+        "correctAnswer": "1:20 PM",
+        "options": [
+          "1:10 PM",
+          "1:30 PM",
+          "1:20 PM"
+        ],
+        "hint": "Add session, gap, session, gap and session in order.",
+        "emoji": "🧑‍🔬",
+        "explanation": "Session 1 ends at 11:20. After 10 minutes, session 2 runs 11:30 to 12:20. After another 10 minutes, session 3 runs 12:30 to 1:20 PM.",
+        "funFact": "Museums often use time slots to stop too many visitors arriving at once.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L135_Q3",
+        "gameType": "time",
+        "level": 135,
+        "instruction": "The coach leaves at 3:10 PM. The group needs 12 minutes to walk to the coach park and 5 minutes to line up. What is the latest time to leave the gift shop?",
+        "question": "?",
+        "correctAnswer": "2:53 PM",
+        "options": [
+          "3:05 PM",
+          "2:58 PM",
+          "2:53 PM"
+        ],
+        "hint": "Count back from 3:10: first the line-up, then the walk.",
+        "emoji": "🎁",
+        "explanation": "Lining up starts at 3:05 PM. Going back 12 minutes for the walk gives 2:53 PM.",
+        "funFact": "Counting everyone at the start and the end of a trip is a standard safety habit.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 136,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L136_Q1",
+        "gameType": "time",
         "level": 136,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L136_Q1",
-                "gameType": "time",
-                "level": 136,
-                "instruction": "Breakfast is at 8:00 AM and the walk to school begins 45 minutes later. What time does the walk begin?",
-                "question": "?",
-                "correctAnswer": "8:45 AM ⏱️",
-                "options": [
-                    "8:30 AM ⏱️",
-                    "9:00 AM 🏫",
-                    "8:45 AM ⏱️"
-                ],
-                "hint": "Start at 8:00 AM and count forward 45 minutes in your head.",
-                "emoji": "⏱️",
-                "explanation": "Counting 45 minutes forward from 8:00 AM lands exactly on 8:45 AM.",
-                "funFact": "Forty-five minutes gives time to eat, brush teeth, and pack a bag.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L136_Q2",
-                "gameType": "time",
-                "level": 136,
-                "instruction": "The class begins a nature walk at 1:00 PM and returns 3 hours later. What time do they return?",
-                "question": "?",
-                "correctAnswer": "4:00 PM ⏩",
-                "options": [
-                    "3:00 PM 🎒",
-                    "4:00 PM ⏩",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Add 3 hours to 1:00 PM to find the new time.",
-                "emoji": "⏩",
-                "explanation": "Starting at 1:00 PM and adding 3 hours gives 4:00 PM.",
-                "funFact": "A three-hour nature walk gives time to spot lots of plants and animals.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L136_Q3",
-                "gameType": "time",
-                "level": 136,
-                "instruction": "Lunch begins at 12:00 PM. The field trip bus left the school 2 hours before that. What time did the bus leave?",
-                "question": "?",
-                "correctAnswer": "10:00 AM ⏪",
-                "options": [
-                    "1:00 PM 📚",
-                    "10:00 AM ⏪",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "Counting 2 hours before 12:00 PM lands you at the answer.",
-                "emoji": "⏪",
-                "explanation": "2 hours before 12:00 PM is 10:00 AM.",
-                "funFact": "Two hours gives a bus plenty of time to reach a fun destination.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Priya and Jo plan to meet at 4:00 PM. Priya arrives 12 minutes early and Jo arrives 8 minutes late. How long does Priya wait for Jo?",
+        "question": "?",
+        "correctAnswer": "20 minutes",
+        "options": [
+          "20 minutes",
+          "12 minutes",
+          "4 minutes"
+        ],
+        "hint": "Find the real arrival time of each person.",
+        "emoji": "🤝",
+        "explanation": "Priya arrives at 3:48 PM and Jo arrives at 4:08 PM. The wait is 20 minutes.",
+        "funFact": "In some cultures a start time is a firm promise, and in others it is only a rough guide.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L136_Q2",
+        "gameType": "time",
+        "level": 136,
+        "instruction": "A bus due at 8:05 arrived at 8:19. The next bus, due at 8:35, arrived on time. How long was it between the two buses actually arriving?",
+        "question": "?",
+        "correctAnswer": "16 minutes",
+        "options": [
+          "16 minutes",
+          "30 minutes",
+          "14 minutes"
+        ],
+        "hint": "Use the real arrival times, not the timetable times.",
+        "emoji": "🚍",
+        "explanation": "The buses actually arrived at 8:19 and 8:35. The gap between them was 16 minutes, not the 30 minutes shown in the timetable.",
+        "funFact": "When one bus is delayed and the next catches up, bus drivers call it bunching.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L136_Q3",
+        "gameType": "time",
+        "level": 136,
+        "instruction": "A watch loses 2 minutes every day. It is set correctly at 8:00 AM on Monday. What does it show at 8:00 AM on Friday that week?",
+        "question": "?",
+        "correctAnswer": "7:52 AM",
+        "options": [
+          "7:56 AM",
+          "8:08 AM",
+          "7:52 AM"
+        ],
+        "hint": "Count the days from Monday to Friday, then work out the total minutes lost.",
+        "emoji": "⌚",
+        "explanation": "From Monday to Friday is 4 days, so the watch loses 4 × 2 = 8 minutes. It shows 7:52 AM.",
+        "funFact": "A good quartz watch usually gains or loses only a few seconds in a month.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 137,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L137_Q1",
+        "gameType": "time",
         "level": 137,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L137_Q1",
-                "gameType": "time",
-                "level": 137,
-                "instruction": "Music class starts at 11:00 AM and the closing song begins 15 minutes later. What time does the closing song begin?",
-                "question": "?",
-                "correctAnswer": "11:15 AM ⏱️",
-                "options": [
-                    "11:30 AM ⏱️",
-                    "11:05 AM",
-                    "11:15 AM ⏱️"
-                ],
-                "hint": "Start at 11:00 AM and count forward 15 minutes in your head.",
-                "emoji": "⏱️",
-                "explanation": "Counting 15 minutes forward from 11:00 AM lands exactly on 11:15 AM.",
-                "funFact": "A closing song is a fun way to end a music lesson.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L137_Q2",
-                "gameType": "time",
-                "level": 137,
-                "instruction": "The family arrives at the restaurant at 5:00 PM and heads home 2 hours later. What time do they head home?",
-                "question": "?",
-                "correctAnswer": "7:00 PM ⏩",
-                "options": [
-                    "6:00 PM 🍲",
-                    "8:00 PM 📖",
-                    "7:00 PM ⏩"
-                ],
-                "hint": "Add 2 hours to 5:00 PM to find the new time.",
-                "emoji": "⏩",
-                "explanation": "Starting at 5:00 PM and adding 2 hours gives 7:00 PM.",
-                "funFact": "Two hours is a common length for a relaxed family dinner out.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L137_Q3",
-                "gameType": "time",
-                "level": 137,
-                "instruction": "Dinner is at 6:00 PM. The family went grocery shopping 3 hours before that. What time did they go shopping?",
-                "question": "?",
-                "correctAnswer": "3:00 PM ⏪",
-                "options": [
-                    "3:00 PM ⏪",
-                    "7:00 PM 🛁",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Counting 3 hours before 6:00 PM lands you at the answer.",
-                "emoji": "⏪",
-                "explanation": "3 hours before 6:00 PM is 3:00 PM.",
-                "funFact": "Three hours gives plenty of time to shop and prepare a meal.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "Aisha wants to reach a party. Walking takes 35 minutes. Cycling takes 12 minutes plus 8 minutes to park and lock the bike. The bus needs 10 minutes of waiting, a 15-minute ride and a 5-minute walk. Which way is quickest?",
+        "question": "?",
+        "correctAnswer": "Cycling",
+        "options": [
+          "Walking",
+          "Cycling",
+          "The bus"
+        ],
+        "hint": "Add up all the parts of each journey.",
+        "emoji": "🛴",
+        "explanation": "Walking takes 35 minutes, cycling takes 12 + 8 = 20 minutes, and the bus takes 10 + 15 + 5 = 30 minutes. Cycling is quickest.",
+        "funFact": "The full time from your door to your destination, including waiting and walking, is called door-to-door time.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L137_Q2",
+        "gameType": "time",
+        "level": 137,
+        "instruction": "Kofi must arrive at 6:00 PM. His bus journey takes 45 minutes and a taxi takes 25 minutes. How much later can he leave if he takes the taxi?",
+        "question": "?",
+        "correctAnswer": "20 minutes",
+        "options": [
+          "25 minutes",
+          "20 minutes",
+          "10 minutes"
+        ],
+        "hint": "Find the leaving time for each choice, or find the difference in journey length.",
+        "emoji": "🚖",
+        "explanation": "By bus he must leave at 5:15 PM. By taxi he must leave at 5:35 PM. That is 20 minutes later.",
+        "funFact": "Choosing between saving time and saving money is called a trade-off.",
+        "subtype": "time_planning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L137_Q3",
+        "gameType": "time",
+        "level": 137,
+        "instruction": "Plan 1: wait 5 minutes for a train, ride for 30 minutes, then walk for 10 minutes. Plan 2: walk for 15 minutes and then ride a bus for 40 minutes with no waiting. Which plan is quicker, and by how much?",
+        "question": "?",
+        "correctAnswer": "Plan 1, by 10 minutes",
+        "options": [
+          "Plan 1, by 10 minutes",
+          "Plan 1, by 5 minutes",
+          "Plan 2, by 10 minutes"
+        ],
+        "hint": "Add up all the parts of each plan before you compare.",
+        "emoji": "🛤️",
+        "explanation": "Plan 1 takes 5 + 30 + 10 = 45 minutes. Plan 2 takes 15 + 40 = 55 minutes. Plan 1 is quicker by 10 minutes.",
+        "funFact": "Over short distances in busy cities, cycling is often as quick as driving.",
+        "subtype": "compare_times",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 138,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L138_Q1",
+        "gameType": "time",
         "level": 138,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L138_Q1",
-                "gameType": "time",
-                "level": 138,
-                "instruction": "Recess ends at 1:00 PM and the next lesson begins 20 minutes later. What time does the next lesson begin?",
-                "question": "?",
-                "correctAnswer": "1:20 PM ⏱️",
-                "options": [
-                    "1:20 PM ⏱️",
-                    "1:30 PM 🕜",
-                    "1:05 PM 🌗"
-                ],
-                "hint": "Start at 1:00 PM and count forward 20 minutes in your head.",
-                "emoji": "⏱️",
-                "explanation": "Counting 20 minutes forward from 1:00 PM lands exactly on 1:20 PM.",
-                "funFact": "Twenty minutes gives time to settle back into the classroom after recess.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L138_Q2",
-                "gameType": "time",
-                "level": 138,
-                "instruction": "Swim practice starts at 3:00 PM and dinner is ready 3 hours later. What time is dinner ready?",
-                "question": "?",
-                "correctAnswer": "6:00 PM ⏩",
-                "options": [
-                    "6:00 PM ⏩",
-                    "7:00 PM 🛁",
-                    "5:00 PM 🧃"
-                ],
-                "hint": "Add 3 hours to 3:00 PM to find the new time.",
-                "emoji": "⏩",
-                "explanation": "Starting at 3:00 PM and adding 3 hours gives 6:00 PM.",
-                "funFact": "Swim practice can work up a big appetite by dinner time.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L138_Q3",
-                "gameType": "time",
-                "level": 138,
-                "instruction": "The first lesson ends at 9:00 AM. The school day began 2 hours before that. What time did the school day begin?",
-                "question": "?",
-                "correctAnswer": "7:00 AM ⏪",
-                "options": [
-                    "8:00 AM 🍳",
-                    "7:00 AM ⏪",
-                    "10:00 AM 🍎"
-                ],
-                "hint": "Counting 2 hours before 9:00 AM lands you at the answer.",
-                "emoji": "⏪",
-                "explanation": "2 hours before 9:00 AM is 7:00 AM.",
-                "funFact": "Some school days begin quite early, before most of the town wakes up.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A new race starts every 20 minutes, beginning at 1:10 PM. When does Race 5 start?",
+        "question": "?",
+        "correctAnswer": "2:30 PM",
+        "options": [
+          "2:30 PM",
+          "2:50 PM",
+          "2:10 PM"
+        ],
+        "hint": "Race 1 starts at 1:10. Add 20 minutes for each next race.",
+        "emoji": "🥎",
+        "explanation": "Race 2 starts at 1:30, Race 3 at 1:50, Race 4 at 2:10 and Race 5 at 2:30 PM.",
+        "funFact": "In many tournaments every match has the same length, so the whole day can be planned in advance.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L138_Q2",
+        "gameType": "time",
+        "level": 138,
+        "instruction": "At a tournament, a new match starts every 35 minutes from 9:00 AM, and each match lasts 25 minutes. When does Match 6 end?",
+        "question": "?",
+        "correctAnswer": "12:20 PM",
+        "options": [
+          "11:55 AM",
+          "12:30 PM",
+          "12:20 PM"
+        ],
+        "hint": "Find the start of Match 6, then add the length of a match.",
+        "emoji": "🏓",
+        "explanation": "Match 6 starts 5 × 35 = 175 minutes after 9:00, which is 11:55 AM. Adding 25 minutes gives 12:20 PM.",
+        "funFact": "The Wimbledon tennis championships last for two weeks.",
+        "subtype": "sequencing",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L138_Q3",
+        "gameType": "time",
+        "level": 138,
+        "instruction": "At the same tournament, a team plays Match 2 and Match 5. How long does it rest between the end of Match 2 and the start of Match 5?",
+        "question": "?",
+        "correctAnswer": "1 hour 20 minutes",
+        "options": [
+          "1 hour 20 minutes",
+          "1 hour 45 minutes",
+          "55 minutes"
+        ],
+        "hint": "Find when Match 2 ends and when Match 5 starts. Matches start every 35 minutes from 9:00 and last 25 minutes.",
+        "emoji": "🛌",
+        "explanation": "Match 2 starts at 9:35 and ends at 10:00. Match 5 starts at 11:20. From 10:00 to 11:20 is 1 hour 20 minutes.",
+        "funFact": "Athletes need time to rest between events so that their muscles can recover.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 139,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L139_Q1",
+        "gameType": "time",
         "level": 139,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L139_Q1",
-                "gameType": "time",
-                "level": 139,
-                "instruction": "Snack time begins at 10:00 AM and cleanup starts 20 minutes later. What time does cleanup start?",
-                "question": "?",
-                "correctAnswer": "10:20 AM ⏱️",
-                "options": [
-                    "10:20 AM ⏱️",
-                    "10:30 AM 🕓",
-                    "10:05 AM"
-                ],
-                "hint": "Start at 10:00 AM and count forward 20 minutes in your head.",
-                "emoji": "⏱️",
-                "explanation": "Counting 20 minutes forward from 10:00 AM lands exactly on 10:20 AM.",
-                "funFact": "Twenty minutes is enough time to enjoy a snack and chat with friends.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L139_Q2",
-                "gameType": "time",
-                "level": 139,
-                "instruction": "The class begins baking cookies at 1:00 PM and pulls them from the oven 2 hours later. What time do the cookies come out?",
-                "question": "?",
-                "correctAnswer": "3:00 PM ⏩",
-                "options": [
-                    "4:00 PM 🛝",
-                    "2:00 PM 😴",
-                    "3:00 PM ⏩"
-                ],
-                "hint": "Add 2 hours to 1:00 PM to find the new time.",
-                "emoji": "⏩",
-                "explanation": "Starting at 1:00 PM and adding 2 hours gives 3:00 PM.",
-                "funFact": "Baking projects often take a couple of hours from start to finish.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L139_Q3",
-                "gameType": "time",
-                "level": 139,
-                "instruction": "Bedtime routines begin at 7:00 PM. The family got home 3 hours before that. What time did they get home?",
-                "question": "?",
-                "correctAnswer": "4:00 PM ⏪",
-                "options": [
-                    "4:00 PM ⏪",
-                    "6:00 PM 🍲",
-                    "8:00 PM 📖"
-                ],
-                "hint": "Counting 3 hours before 7:00 PM lands you at the answer.",
-                "emoji": "⏪",
-                "explanation": "3 hours before 7:00 PM is 4:00 PM.",
-                "funFact": "Three hours gives plenty of time for dinner, play, and getting ready for bed.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    },
-    {
+        "instruction": "A day camp lasts 6 hours. Art takes 1 hour 30 minutes, sport takes 2 hours and lunch takes 45 minutes. How much time is left for free play?",
+        "question": "?",
+        "correctAnswer": "1 hour 45 minutes",
+        "options": [
+          "1 hour 15 minutes",
+          "1 hour 45 minutes",
+          "2 hours 15 minutes"
+        ],
+        "hint": "Add the three activities, then take the total away from 6 hours.",
+        "emoji": "🛶",
+        "explanation": "1 hour 30 minutes + 2 hours + 45 minutes = 4 hours 15 minutes. 6 hours − 4 hours 15 minutes = 1 hour 45 minutes.",
+        "funFact": "Day camps often move children between activities in blocks of 45 to 90 minutes.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L139_Q2",
+        "gameType": "time",
+        "level": 139,
+        "instruction": "Four activities last the same length of time. Together they take 3 hours 20 minutes. How long is each one?",
+        "question": "?",
+        "correctAnswer": "50 minutes",
+        "options": [
+          "45 minutes",
+          "50 minutes",
+          "55 minutes"
+        ],
+        "hint": "Change 3 hours 20 minutes into minutes, then share it equally.",
+        "emoji": "🔆",
+        "explanation": "3 hours 20 minutes is 200 minutes. 200 ÷ 4 = 50 minutes.",
+        "funFact": "A school year is often split into terms or semesters so that the learning time is shared out evenly.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L139_Q3",
+        "gameType": "time",
+        "level": 139,
+        "instruction": "A 60-minute lesson is a quarter reading, half writing and the rest drawing. How many minutes are spent drawing?",
+        "question": "?",
+        "correctAnswer": "15 minutes",
+        "options": [
+          "15 minutes",
+          "30 minutes",
+          "20 minutes"
+        ],
+        "hint": "Work out the minutes for the quarter and for the half first.",
+        "emoji": "🪶",
+        "explanation": "A quarter of 60 is 15 and half of 60 is 30. 60 − 15 − 30 = 15 minutes of drawing.",
+        "funFact": "In music, notes such as the half note and the quarter note are named after fractions of a beat.",
+        "subtype": "duration",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 140,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L140_Q1",
+        "gameType": "time",
         "level": 140,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L140_Q1",
-                "gameType": "time",
-                "level": 140,
-                "instruction": "Cooking begins at 5:00 PM and the family sits down 50 minutes later. What time does the family sit down?",
-                "question": "?",
-                "correctAnswer": "5:50 PM ⏱️",
-                "options": [
-                    "5:50 PM ⏱️",
-                    "6:00 PM 🍲",
-                    "5:30 PM ⏱️"
-                ],
-                "hint": "Start at 5:00 PM and count forward 50 minutes in your head.",
-                "emoji": "⏱️",
-                "explanation": "Counting 50 minutes forward from 5:00 PM lands exactly on 5:50 PM.",
-                "funFact": "Fifty minutes is just shy of a full hour of cooking time.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L140_Q2",
-                "gameType": "time",
-                "level": 140,
-                "instruction": "The class starts a big art mural at 9:00 AM and admires the finished work 3 hours later. What time do they finish?",
-                "question": "?",
-                "correctAnswer": "12:00 PM ⏩",
-                "options": [
-                    "12:00 PM ⏩",
-                    "1:00 PM 📚",
-                    "11:00 AM 🎨"
-                ],
-                "hint": "Add 3 hours to 9:00 AM to find the new time.",
-                "emoji": "⏩",
-                "explanation": "Starting at 9:00 AM and adding 3 hours gives 12:00 PM.",
-                "funFact": "A big mural can take a whole morning of careful painting.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            },
-            {
-                "id": "KIDS_TIME_L140_Q3",
-                "gameType": "time",
-                "level": 140,
-                "instruction": "Lunch begins at 12:00 PM. The class started their science project 3 hours before that. What time did they start?",
-                "question": "?",
-                "correctAnswer": "9:00 AM ⏪",
-                "options": [
-                    "11:00 AM 🎨",
-                    "1:00 PM 📚",
-                    "9:00 AM ⏪"
-                ],
-                "hint": "Counting 3 hours before 12:00 PM lands you at the answer.",
-                "emoji": "⏪",
-                "explanation": "3 hours before 12:00 PM is 9:00 AM.",
-                "funFact": "Three hours gives a science project plenty of time to come together.",
-                "subtype": "elapsed_time",
-                "interactionType": "multiple_choice"
-            }
-        ]
-    }
+        "instruction": "School ends at 3:20 PM. Leo takes 25 minutes to travel to the shop, spends 15 minutes there, and then walks home for 10 minutes. When does he get home?",
+        "question": "?",
+        "correctAnswer": "4:10 PM",
+        "options": [
+          "4:20 PM",
+          "3:55 PM",
+          "4:10 PM"
+        ],
+        "hint": "Add the three parts one after another.",
+        "emoji": "🛒",
+        "explanation": "3:20 plus 25 minutes is 3:45. Then 15 minutes in the shop makes 4:00, and the 10-minute walk ends at 4:10 PM.",
+        "funFact": "In many countries the average journey to work or school takes around 30 minutes.",
+        "subtype": "time_word_problems",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L140_Q2",
+        "gameType": "time",
+        "level": 140,
+        "instruction": "Buses leave at 15, 35 and 55 minutes past every hour. Leo reaches the stop at 7:41 AM, and the ride takes 18 minutes. When does he arrive?",
+        "question": "?",
+        "correctAnswer": "8:13 AM",
+        "options": [
+          "7:59 AM",
+          "8:13 AM",
+          "8:33 AM"
+        ],
+        "hint": "Find the next bus first, then add the ride.",
+        "emoji": "📡",
+        "explanation": "The buses leave at 7:15, 7:35 and 7:55. The 7:35 bus has gone, so Leo takes the 7:55. Then 18 minutes later is 8:13 AM.",
+        "funFact": "Bus times on phones are updated using GPS, which tracks where each bus is.",
+        "subtype": "timetable",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L140_Q3",
+        "gameType": "time",
+        "level": 140,
+        "instruction": "A clock is 6 minutes slow and shows 3:49. A film starts at 4:00 by the real time. How many real minutes are left until it starts?",
+        "question": "?",
+        "correctAnswer": "5 minutes",
+        "options": [
+          "6 minutes",
+          "11 minutes",
+          "5 minutes"
+        ],
+        "hint": "A slow clock shows a time that is behind the real time.",
+        "emoji": "🐢",
+        "explanation": "The clock is 6 minutes behind, so the real time is 3:55. From 3:55 to 4:00 is 5 minutes.",
+        "funFact": "Radio-controlled clocks set themselves automatically using a time signal from a radio tower.",
+        "subtype": "elapsed_time",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

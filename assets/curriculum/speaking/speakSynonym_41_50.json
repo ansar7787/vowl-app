@@ -6,458 +6,423 @@
         {
             "id": "SPK_SPEAKSYNONYM_L41_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"very pleasing to look at.\"",
-            "explanation": "In this sentence, \"beautiful\" means very pleasing to look at, so \"gorgeous\" slots in naturally. \"stunning\" is a close second choice.",
-            "textToSpeak": "The mountain view was absolutely *beautiful*.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You're ending an email to a client and inviting them to reach out.",
+            "explanation": "As a replacement, \"queries\" is a common, slightly formal choice in business emails. \"Concerns\" suggests something the person is worried about, and \"doubts\" points to being unsure. All three keep the polite invitation clear.",
+            "textToSpeak": "Please let me know if you have any *questions*.",
             "acceptedSynonyms": [
-                "gorgeous",
-                "stunning",
-                "breathtaking",
-                "lovely",
-                "magnificent"
+                "queries",
+                "concerns",
+                "doubts"
             ],
-            "correctAnswer": "gorgeous"
+            "correctAnswer": "queries"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L41_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"very pleasing to look at\" -- what word comes to mind?",
-            "explanation": "\"stunning\" is a reliable synonym for \"beautiful\", which means very pleasing to look at here. \"breathtaking\" and \"lovely\" are also accepted.",
-            "textToSpeak": "Her wedding dress was absolutely *beautiful*.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "You need an answer quickly and want the other person to understand it can't wait.",
+            "explanation": "Notice that \"pressing\" is common in professional speech for something that needs attention now. \"Critical\" is stronger and suggests serious consequences, and \"time-sensitive\" tells the other person it depends on the clock.",
+            "textToSpeak": "It's *urgent*, so could you call me back today?",
             "acceptedSynonyms": [
-                "gorgeous",
-                "stunning",
-                "breathtaking",
-                "lovely",
-                "magnificent"
+                "time-sensitive",
+                "critical",
+                "pressing"
             ],
-            "correctAnswer": "stunning"
+            "correctAnswer": "time-sensitive"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L41_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"very pleasing to look at.\"",
-            "explanation": "\"breathtaking\" works well here because \"beautiful\" also means very pleasing to look at. \"lovely\" and \"magnificent\" would work too.",
-            "textToSpeak": "The sunset over the bay was absolutely *beautiful*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You have an appointment tomorrow and need a coworker to do your hours.",
+            "explanation": "Quick reminder: \"take\" is the simplest, natural choice: take my shift. \"Take over\" says someone will replace you for that time, and \"work\" is casual and common in the workplace.",
+            "textToSpeak": "Could you *cover* my shift tomorrow? I have a doctor's appointment.",
             "acceptedSynonyms": [
-                "gorgeous",
-                "stunning",
-                "breathtaking",
-                "lovely",
-                "magnificent"
+                "take over",
+                "work",
+                "take"
             ],
-            "correctAnswer": "breathtaking"
+            "correctAnswer": "take"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L42_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"likely to cause harm.\"",
-            "explanation": "\"dangerous\" means likely to cause harm, and \"risky\" captures that same idea naturally in this sentence. \"perilous\" is another solid option.",
-            "textToSpeak": "That mountain trail can be quite *dangerous*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Your colleague raised a point and you want to acknowledge that it makes sense.",
+            "explanation": "Keep in mind that \"valid\" says the argument is logical. \"Reasonable\" adds that it seems sensible, and \"good\" is a friendly, everyday choice that can sound more casual than the other two.",
+            "textToSpeak": "That's a *fair* point.",
             "acceptedSynonyms": [
-                "risky",
-                "hazardous",
-                "perilous",
-                "unsafe"
+                "valid",
+                "good",
+                "reasonable"
             ],
-            "correctAnswer": "risky"
+            "correctAnswer": "valid"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L42_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"likely to cause harm\"?",
-            "explanation": "Good choice: \"hazardous\" is a strong match for \"dangerous\", which means likely to cause harm. You could also say \"unsafe\" or \"risky\".",
-            "textToSpeak": "The night traffic downtown can be quite *dangerous*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "A friend just made a point and you couldn't agree more.",
+            "explanation": "\"Completely\" and \"totally\" are the most common ways to strengthen agreement, with \"totally\" being more casual. \"Entirely\" sounds a bit more formal and careful.",
+            "textToSpeak": "You're *absolutely* right.",
             "acceptedSynonyms": [
-                "risky",
-                "hazardous",
-                "perilous",
-                "unsafe"
+                "totally",
+                "entirely",
+                "completely"
             ],
-            "correctAnswer": "hazardous"
+            "correctAnswer": "completely"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L42_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"likely to cause harm.\"",
-            "explanation": "\"perilous\" fits because \"dangerous\" means likely to cause harm here. Other natural alternatives include \"risky\" and \"hazardous\".",
-            "textToSpeak": "Swimming in that current can be quite *dangerous*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Imagine you're giving in during a disagreement, but not with a lot of joy.",
+            "explanation": "Think about \"fine\": it can sound reluctant, which is the point of the sentence. \"Okay\" and \"alright\" are less grumpy, and \"very well\" sounds more formal and a little old-fashioned.",
+            "textToSpeak": "*Fine*, we can do it your way.",
             "acceptedSynonyms": [
-                "risky",
-                "hazardous",
-                "perilous",
-                "unsafe"
+                "okay",
+                "alright",
+                "very well"
             ],
-            "correctAnswer": "perilous"
+            "correctAnswer": "okay"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L43_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"having great value or effect.\" What's a good match?",
-            "explanation": "In this sentence, \"important\" means having great value or effect, so \"crucial\" slots in naturally. \"significant\" is a close second choice.",
-            "textToSpeak": "This client meeting is extremely *important*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Think of it this way: you're in a meeting and you doubt the team's idea, but you want to stay polite.",
+            "explanation": "To choose well, note that \"sure\" is the natural spoken replacement. \"Certain\" sounds a bit stronger, and \"persuaded\" fits when someone has tried to change your mind but hasn't succeeded.",
+            "textToSpeak": "I'm not *convinced* this will work.",
             "acceptedSynonyms": [
-                "crucial",
-                "essential",
-                "vital",
-                "significant",
-                "critical"
+                "certain",
+                "sure",
+                "persuaded"
             ],
-            "correctAnswer": "crucial"
+            "correctAnswer": "sure"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L43_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"having great value or effect.\"",
-            "explanation": "\"essential\" is a reliable synonym for \"important\", which means having great value or effect here. \"critical\" and \"crucial\" are also accepted.",
-            "textToSpeak": "Her final presentation is extremely *important*.",
+            "hint": "Picture this: you're respectfully rejecting a plan that would take more time or money than you have.",
+            "explanation": "\"Impractical\" says it wouldn't work in real life. \"Far-fetched\" suggests it's hard to believe, and \"unworkable\" is more direct and says it can't function at all.",
+            "textToSpeak": "I see your point, but that seems a bit *unrealistic*.",
             "acceptedSynonyms": [
-                "crucial",
-                "essential",
-                "vital",
-                "significant",
-                "critical"
+                "far-fetched",
+                "unworkable",
+                "impractical"
             ],
-            "correctAnswer": "essential"
+            "correctAnswer": "impractical"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L43_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"having great value or effect\" -- what word comes to mind?",
-            "explanation": "\"vital\" works well here because \"important\" also means having great value or effect. \"crucial\" and \"essential\" would work too.",
-            "textToSpeak": "The safety inspection is extremely *important*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "A colleague has the date mixed up and you need to correct them without sounding harsh.",
+            "explanation": "\"Wrong\" is the plain word, and \"incorrect\" is more formal. \"Misinformed\" is softer because it suggests the person got bad information rather than made an error.",
+            "textToSpeak": "I think you're *mistaken* about the date.",
             "acceptedSynonyms": [
-                "crucial",
-                "essential",
-                "vital",
-                "significant",
-                "critical"
+                "misinformed",
+                "wrong",
+                "incorrect"
             ],
-            "correctAnswer": "vital"
+            "correctAnswer": "wrong"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L44_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"holding your attention.\"",
-            "explanation": "\"interesting\" means holding your attention, and \"fascinating\" captures that same idea naturally in this sentence. \"intriguing\" is another solid option.",
-            "textToSpeak": "The documentary was genuinely *interesting*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're speaking to a hotel manager and want to show how bad the room was.",
+            "explanation": "Start with \"filthy\": it is much stronger than \"dirty\" and clearly shows you're upset. \"Grubby\" suggests the place is dirty from lack of cleaning, and \"unclean\" is formal and more restrained.",
+            "textToSpeak": "The bathroom was *dirty*, and nobody came to clean it.",
             "acceptedSynonyms": [
-                "fascinating",
-                "engaging",
-                "intriguing",
-                "captivating"
+                "unclean",
+                "grubby",
+                "filthy"
             ],
-            "correctAnswer": "fascinating"
+            "correctAnswer": "filthy"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L44_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"holding your attention.\"",
-            "explanation": "Good choice: \"engaging\" is a strong match for \"interesting\", which means holding your attention. You could also say \"captivating\" or \"fascinating\".",
-            "textToSpeak": "Her travel podcast was genuinely *interesting*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Your package was supposed to arrive on Tuesday and it still hasn't.",
+            "explanation": "\"Delayed\" is the neutral word for something arriving after the planned time. \"Overdue\" suggests it should have arrived already, and \"behind schedule\" is more formal and business-like.",
+            "textToSpeak": "My delivery is *late* again.",
             "acceptedSynonyms": [
-                "fascinating",
-                "engaging",
-                "intriguing",
-                "captivating"
+                "behind schedule",
+                "overdue",
+                "delayed"
             ],
-            "correctAnswer": "engaging"
+            "correctAnswer": "delayed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L44_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"holding your attention\"?",
-            "explanation": "\"intriguing\" fits because \"interesting\" means holding your attention here. Other natural alternatives include \"fascinating\" and \"engaging\".",
-            "textToSpeak": "That museum exhibit was genuinely *interesting*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Imagine you're describing the sound outside your apartment window to the landlord.",
+            "explanation": "Look at \"racket\" first: it is a lively, informal word for loud, unpleasant noise. \"Din\" is a bit dramatic and old-fashioned, and \"commotion\" suggests a lot of activity, not just sound.",
+            "textToSpeak": "The *noise* from the street keeps me awake at night.",
             "acceptedSynonyms": [
-                "fascinating",
-                "engaging",
-                "intriguing",
-                "captivating"
+                "din",
+                "racket",
+                "commotion"
             ],
-            "correctAnswer": "intriguing"
+            "correctAnswer": "racket"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L45_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"physically pleasant, with no strain.\"",
-            "explanation": "In this sentence, \"comfortable\" means physically pleasant, with no strain, so \"cozy\" slots in naturally. \"snug\" is a close second choice.",
-            "textToSpeak": "The airplane seat felt incredibly *comfortable*.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "You sent something to the wrong person and you're taking responsibility.",
+            "explanation": "\"Error\" is the direct and slightly more professional word. \"Fault\" is more personal and says you're to blame, and \"oversight\" suggests you didn't notice or forgot something.",
+            "textToSpeak": "I sent you the wrong file. It was my *mistake*.",
             "acceptedSynonyms": [
-                "cozy",
-                "relaxing",
-                "snug",
-                "comfy"
+                "oversight",
+                "fault",
+                "error"
             ],
-            "correctAnswer": "cozy"
+            "correctAnswer": "error"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L45_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"physically pleasant, with no strain.\" What's a good match?",
-            "explanation": "\"relaxing\" is a reliable synonym for \"comfortable\", which means physically pleasant, with no strain here. \"comfy\" and \"cozy\" are also accepted.",
-            "textToSpeak": "Her new mattress felt incredibly *comfortable*.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You said something hurtful and now you really regret it.",
+            "explanation": "Notice that \"terrible\" is the natural spoken choice for strong regret. \"Horrible\" shows even more discomfort, and \"dreadful\" is stronger and slightly formal.",
+            "textToSpeak": "I feel *awful* about what I said.",
             "acceptedSynonyms": [
-                "cozy",
-                "relaxing",
-                "snug",
-                "comfy"
+                "dreadful",
+                "terrible",
+                "horrible"
             ],
-            "correctAnswer": "relaxing"
+            "correctAnswer": "terrible"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L45_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"physically pleasant, with no strain.\"",
-            "explanation": "\"snug\" works well here because \"comfortable\" also means physically pleasant, with no strain. \"cozy\" and \"relaxing\" would work too.",
-            "textToSpeak": "That reclining chair felt incredibly *comfortable*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "A company representative is apologizing to a customer for a delay.",
+            "explanation": "\"Trouble\" is friendly and general. \"Hassle\" is informal and stresses the annoying extra work, and \"disruption\" is more formal, suggesting normal plans were interrupted.",
+            "textToSpeak": "Sorry for the *inconvenience*.",
             "acceptedSynonyms": [
-                "cozy",
-                "relaxing",
-                "snug",
-                "comfy"
+                "disruption",
+                "trouble",
+                "hassle"
             ],
-            "correctAnswer": "snug"
+            "correctAnswer": "trouble"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L46_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"having a wonderful taste\" -- what word comes to mind?",
-            "explanation": "\"delicious\" means having a wonderful taste, and \"tasty\" captures that same idea naturally in this sentence. \"delectable\" is another solid option.",
-            "textToSpeak": "The seafood pasta was absolutely *delicious*.",
+            "hint": "You're at a restaurant and you know the pasta is fantastic.",
+            "explanation": "In practice, \"certainly\" sounds polite and confident. \"Absolutely\" is stronger and more enthusiastic, and \"really\" is friendly and casual, as in \"you should really try it\".",
+            "textToSpeak": "You should *definitely* try the pasta here.",
             "acceptedSynonyms": [
-                "tasty",
-                "scrumptious",
-                "delectable",
-                "mouthwatering"
+                "really",
+                "absolutely",
+                "certainly"
             ],
-            "correctAnswer": "tasty"
+            "correctAnswer": "certainly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L46_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"having a wonderful taste.\"",
-            "explanation": "Good choice: \"scrumptious\" is a strong match for \"delicious\", which means having a wonderful taste. You could also say \"mouthwatering\" or \"tasty\".",
-            "textToSpeak": "Her homemade lasagna was absolutely *delicious*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Suppose a friend asks for a mechanic and you know one who never lets people down.",
+            "explanation": "Notice that \"dependable\" is a warm word for someone you can count on. \"Trustworthy\" focuses on honesty, and \"solid\" is informal and suggests good quality, not just reliability.",
+            "textToSpeak": "I'd recommend this mechanic. He's very *reliable*.",
             "acceptedSynonyms": [
-                "tasty",
-                "scrumptious",
-                "delectable",
-                "mouthwatering"
+                "dependable",
+                "solid",
+                "trustworthy"
             ],
-            "correctAnswer": "scrumptious"
+            "correctAnswer": "dependable"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L46_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"having a wonderful taste.\"",
-            "explanation": "\"delectable\" fits because \"delicious\" means having a wonderful taste here. Other natural alternatives include \"tasty\" and \"scrumptious\".",
-            "textToSpeak": "That street-food taco was absolutely *delicious*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "You're giving a friend a tip for getting to the airport.",
+            "explanation": "Think about \"skip\": it is casual and direct. \"Stay off\" is common when talking about roads, and \"steer clear of\" is a more colorful phrase that suggests you'd really rather not go there.",
+            "textToSpeak": "I'd *avoid* the highway at rush hour.",
             "acceptedSynonyms": [
-                "tasty",
-                "scrumptious",
-                "delectable",
-                "mouthwatering"
+                "stay off",
+                "steer clear of",
+                "skip"
             ],
-            "correctAnswer": "delectable"
+            "correctAnswer": "skip"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L47_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"costing a lot of money\"?",
-            "explanation": "In this sentence, \"expensive\" means costing a lot of money, so \"costly\" slots in naturally. \"overpriced\" is a close second choice.",
-            "textToSpeak": "That designer handbag turned out to be *expensive*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Think of it this way: you're asking a coworker to name the time more carefully.",
+            "explanation": "\"Precise\" and \"exact\" both focus on accuracy. \"Detailed\" is different in a useful way, since it asks for more information rather than more accuracy.",
+            "textToSpeak": "Could you be a little more *specific* about the time?",
             "acceptedSynonyms": [
-                "costly",
-                "pricey",
-                "overpriced",
-                "high-priced"
+                "exact",
+                "precise",
+                "detailed"
             ],
-            "correctAnswer": "costly"
+            "correctAnswer": "precise"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L47_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"costing a lot of money.\"",
-            "explanation": "\"pricey\" is a reliable synonym for \"expensive\", which means costing a lot of money here. \"high-priced\" and \"costly\" are also accepted.",
-            "textToSpeak": "Her wedding venue turned out to be *expensive*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You're in a group chat and you don't know which item they're talking about.",
+            "explanation": "To choose well, note that \"puzzled\" shows you're thinking about it, and \"lost\" says you've stopped following the conversation. \"Mixed up\" suggests you've got some details wrong.",
+            "textToSpeak": "Sorry, I'm a bit *confused*. Which file do you mean?",
             "acceptedSynonyms": [
-                "costly",
-                "pricey",
-                "overpriced",
-                "high-priced"
+                "puzzled",
+                "mixed up",
+                "lost"
             ],
-            "correctAnswer": "pricey"
+            "correctAnswer": "puzzled"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L47_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"costing a lot of money.\" What's a good match?",
-            "explanation": "\"overpriced\" works well here because \"expensive\" also means costing a lot of money. \"costly\" and \"pricey\" would work too.",
-            "textToSpeak": "The downtown apartment turned out to be *expensive*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Here's the scene: you're giving a friend the short version of what an app does.",
+            "explanation": "Notice that \"essentially\" is the most natural spoken option for the main idea. \"Fundamentally\" is more formal, and \"in essence\" is a common phrase in presentations.",
+            "textToSpeak": "*Basically*, the app just saves your notes.",
             "acceptedSynonyms": [
-                "costly",
-                "pricey",
-                "overpriced",
-                "high-priced"
+                "fundamentally",
+                "in essence",
+                "essentially"
             ],
-            "correctAnswer": "overpriced"
+            "correctAnswer": "essentially"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L48_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"full of people.\"",
-            "explanation": "\"crowded\" means full of people, and \"packed\" captures that same idea naturally in this sentence. \"congested\" is another solid option.",
-            "textToSpeak": "The subway platform was unbelievably *crowded*.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "You're offering your thoughts at a meeting, and you want to sound thoughtful rather than pushy.",
+            "explanation": "Remember that \"view\" is the neutral, everyday noun. \"Judgment\" suggests a reasoned decision, and \"estimation\" is formal and suggests you've weighed things up.",
+            "textToSpeak": "In my *opinion*, we should wait until Monday.",
             "acceptedSynonyms": [
-                "packed",
-                "jammed",
-                "congested",
-                "busy"
+                "judgment",
+                "view",
+                "estimation"
             ],
-            "correctAnswer": "packed"
+            "correctAnswer": "view"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L48_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"full of people\" -- what word comes to mind?",
-            "explanation": "Good choice: \"jammed\" is a strong match for \"crowded\", which means full of people. You could also say \"busy\" or \"packed\".",
-            "textToSpeak": "Her flight to Chicago was unbelievably *crowded*.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "A colleague has shared an unusual idea and you want to show you're intrigued.",
+            "explanation": "Notice that \"intriguing\" is the closest, showing that it caught your attention. \"Fascinating\" is more enthusiastic, and \"thought-provoking\" suggests the idea makes you think.",
+            "textToSpeak": "That's an *interesting* idea. Tell me more.",
             "acceptedSynonyms": [
-                "packed",
-                "jammed",
-                "congested",
-                "busy"
+                "intriguing",
+                "thought-provoking",
+                "fascinating"
             ],
-            "correctAnswer": "jammed"
+            "correctAnswer": "intriguing"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L48_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"full of people.\"",
-            "explanation": "\"congested\" fits because \"crowded\" means full of people here. Other natural alternatives include \"packed\" and \"jammed\".",
-            "textToSpeak": "That beach in August was unbelievably *crowded*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Picture this: you're looking at the sky and guessing what the afternoon will be like.",
+            "explanation": "Keep in mind that \"believe\" is neutral. \"Reckon\" is casual and often used in British and Australian English, and \"suspect\" suggests you have a feeling based on some evidence. \"Expect\" says it's likely.",
+            "textToSpeak": "I *think* it's going to rain later.",
             "acceptedSynonyms": [
-                "packed",
-                "jammed",
-                "congested",
-                "busy"
+                "suspect",
+                "reckon",
+                "believe",
+                "expect"
             ],
-            "correctAnswer": "congested"
+            "correctAnswer": "reckon"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L49_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"worried about what might happen.\"",
-            "explanation": "In this sentence, \"nervous\" means worried about what might happen, so \"anxious\" slots in naturally. \"tense\" is a close second choice.",
-            "textToSpeak": "The job candidate looked visibly *nervous*.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Imagine you're proposing a weekend meeting and letting a friend know your schedule is clear.",
+            "explanation": "In practice, \"available\" is the standard word, and it works in most situations. \"Open\" says your schedule has space, and \"around\" is casual and means you'll be nearby and reachable.",
+            "textToSpeak": "I'm *free* on Saturday if you want to meet.",
             "acceptedSynonyms": [
-                "anxious",
-                "uneasy",
-                "tense",
-                "jittery"
+                "available",
+                "open",
+                "around"
             ],
-            "correctAnswer": "anxious"
+            "correctAnswer": "available"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L49_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"worried about what might happen\"?",
-            "explanation": "\"uneasy\" is a reliable synonym for \"nervous\", which means worried about what might happen here. \"jittery\" and \"anxious\" are also accepted.",
-            "textToSpeak": "Her younger brother looked visibly *nervous*.",
+            "hint": "The manager can't meet this week and the team needs to move it.",
+            "explanation": "As a replacement, \"delay\" is the simplest word for making something happen later. \"Put off\" is casual, and \"push back\" is popular in workplace English for moving something to a later time.",
+            "textToSpeak": "Let's *postpone* the meeting until next week.",
             "acceptedSynonyms": [
-                "anxious",
-                "uneasy",
-                "tense",
-                "jittery"
+                "put off",
+                "delay",
+                "push back"
             ],
-            "correctAnswer": "uneasy"
+            "correctAnswer": "delay"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L49_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"worried about what might happen.\"",
-            "explanation": "\"tense\" works well here because \"nervous\" also means worried about what might happen. \"anxious\" and \"uneasy\" would work too.",
-            "textToSpeak": "The new hire looked visibly *nervous*.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You've tried to reserve a table online and something isn't right.",
+            "explanation": "Look at \"issue\" first: it is the polite, professional word. \"Glitch\" suggests a small technical fault, and \"complication\" implies something that has made things more difficult.",
+            "textToSpeak": "There's a *problem* with my booking.",
             "acceptedSynonyms": [
-                "anxious",
-                "uneasy",
-                "tense",
-                "jittery"
+                "issue",
+                "complication",
+                "glitch"
             ],
-            "correctAnswer": "tense"
+            "correctAnswer": "issue"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L50_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"full of enthusiastic energy.\" What's a good match?",
-            "explanation": "\"excited\" means full of enthusiastic energy, and \"thrilled\" captures that same idea naturally in this sentence. \"enthusiastic\" is another solid option.",
-            "textToSpeak": "The concert crowd was incredibly *excited*.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "A customer asks about availability, and you need to make sure before answering.",
+            "explanation": "\"Verify\" and \"confirm\" both mean making sure something is right. \"Review\" means looking at the information again, which is what you'd often do with a schedule.",
+            "textToSpeak": "Let me *check* the schedule and get back to you.",
             "acceptedSynonyms": [
-                "thrilled",
-                "eager",
-                "enthusiastic",
-                "pumped"
+                "review",
+                "confirm",
+                "verify"
             ],
-            "correctAnswer": "thrilled"
+            "correctAnswer": "verify"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L50_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"full of enthusiastic energy.\"",
-            "explanation": "Good choice: \"eager\" is a strong match for \"excited\", which means full of enthusiastic energy. You could also say \"pumped\" or \"thrilled\".",
-            "textToSpeak": "Her little cousin was incredibly *excited*.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You have bad news for a customer and want to sound polite.",
+            "explanation": "Quick reminder: \"sadly\" is the most natural, since it sounds sincere. \"Regrettably\" is formal and often used in letters, and \"I'm afraid\" is a very polite, spoken way to open bad news.",
+            "textToSpeak": "*Unfortunately*, the flight is fully booked.",
             "acceptedSynonyms": [
-                "thrilled",
-                "eager",
-                "enthusiastic",
-                "pumped"
+                "I'm afraid",
+                "regrettably",
+                "sadly"
             ],
-            "correctAnswer": "eager"
+            "correctAnswer": "sadly"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L50_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"full of enthusiastic energy\" -- what word comes to mind?",
-            "explanation": "\"enthusiastic\" fits because \"excited\" means full of enthusiastic energy here. Other natural alternatives include \"thrilled\" and \"eager\".",
-            "textToSpeak": "Our whole family was incredibly *excited*.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Your friend just told you about her promotion, and you want a short, friendly response.",
+            "explanation": "\"Well done\" is a warm, natural way to praise someone's success. \"Kudos\" is a fun, informal way to give credit, and \"bravo\" is playful and a little theatrical.",
+            "textToSpeak": "*Congratulations* on your new job!",
             "acceptedSynonyms": [
-                "thrilled",
-                "eager",
-                "enthusiastic",
-                "pumped"
+                "bravo",
+                "kudos",
+                "well done"
             ],
-            "correctAnswer": "enthusiastic"
+            "correctAnswer": "well done"
         }
     ]
 }

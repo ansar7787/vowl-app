@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
@@ -72,7 +73,7 @@ class DailyMotivationCard extends StatefulWidget {
 }
 
 class _DailyMotivationCardState extends State<DailyMotivationCard>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   final ValueNotifier<String?> _hootTitle = ValueNotifier(null);
   final ValueNotifier<String?> _hootText = ValueNotifier(null);
   final ValueNotifier<_HootStatus> _status = ValueNotifier(_HootStatus.loading);
@@ -83,9 +84,18 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
 
   final ValueNotifier<bool> _pressed = ValueNotifier(false);
 
+  /// Day the current content was loaded for ('year-month-day'). Compared
+  /// against today's date so the card can refresh itself after midnight.
+  String? _loadedDay;
+  Timer? _midnightTimer;
+
+  // Shown only if the JSON cannot be read or has nothing for today. It is a
+  // real calendar lesson rather than generic motivation, and the title avoids
+  // every keyword that _handleNavigation uses for routing.
   static const String _fallbackQuote =
-      "Small steps today make fluent conversations tomorrow.";
-  static const String _fallbackTitle = "Daily Wisdom";
+      "A day name and a date are different things: 'Monday' is the weekday, "
+      "and 'March 9' tells you which Monday.";
+  static const String _fallbackTitle = "Calendar Tip";
 
   @override
   void initState() {
@@ -102,17 +112,72 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
       begin: const Offset(0, 0.04),
       end: Offset.zero,
     ).animate(_fadeIn);
+    WidgetsBinding.instance.addObserver(this);
     _loadDailyHoot();
+    _scheduleMidnightRefresh();
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _midnightTimer?.cancel();
     _entranceController.dispose();
     _hootTitle.dispose();
     _hootText.dispose();
     _status.dispose();
     _pressed.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // The app may have been in the background across midnight.
+    if (state == AppLifecycleState.resumed) {
+      _refreshIfDayChanged();
+      _scheduleMidnightRefresh();
+    }
+  }
+
+  String _todayKey() {
+    final n = DateTime.now();
+    return '${n.year}-${n.month}-${n.day}';
+  }
+
+  /// Reloads today's content when the calendar day has moved on since the
+  /// card last loaded. The setState also refreshes the date line, which is
+  /// read from DateTime.now() on every build.
+  void _refreshIfDayChanged() {
+    if (!mounted || _loadedDay == _todayKey()) return;
+    _entranceController.reset();
+    _loadDailyHoot();
+    setState(() {});
+  }
+
+  /// Fires just after the next local midnight so a card left open on screen
+  /// switches to the new day's message without a restart.
+  void _scheduleMidnightRefresh() {
+    _midnightTimer?.cancel();
+    final now = DateTime.now();
+    final nextMidnight = DateTime(now.year, now.month, now.day + 1);
+    _midnightTimer = Timer(
+      nextMidnight.difference(now) + const Duration(seconds: 1),
+      () {
+        if (!mounted) return;
+        _refreshIfDayChanged();
+        _scheduleMidnightRefresh();
+      },
+    );
+  }
+
+  /// Formats the header date. DateFormat throws if date symbols for the
+  /// locale were never initialised, so fall back to English rather than
+  /// crashing the home screen.
+  String _formatToday(String locale, DateTime now) {
+    try {
+      return DateFormat('EEEE, d MMM', locale).format(now);
+    } catch (_) {
+      return DateFormat('EEEE, d MMM', 'en').format(now);
+    }
   }
 
   /// Resolves which message index to show for [date] out of
@@ -146,8 +211,14 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
       final Map<String, dynamic> data = json.decode(jsonString);
 
       final now = DateTime.now();
-      final String dateKey = DateFormat('MM-dd').format(now);
-      final String specificKey = DateFormat('yyyy-MM-dd').format(now);
+      _loadedDay = '${now.year}-${now.month}-${now.day}';
+      // Built by hand, not with DateFormat: DateFormat follows the default
+      // locale and can emit non-Latin digits (e.g. Bengali or Arabic), which
+      // would never match the ASCII keys in the JSON file.
+      String two(int v) => v.toString().padLeft(2, '0');
+      final String monthKey = two(now.month);
+      final String dateKey = '$monthKey-${two(now.day)}';
+      final String specificKey = '${now.year}-$dateKey';
 
       String? title;
       String? text;
@@ -159,7 +230,6 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
         title = data['annual'][dateKey]['title'] as String?;
         text = data['annual'][dateKey]['text'] as String?;
       } else if (data['monthly'] != null) {
-        final String monthKey = DateFormat('MM').format(now);
         final monthData = data['monthly'][monthKey];
         if (monthData != null) {
           title = monthData['theme'] as String?;
@@ -229,7 +299,7 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
         final isDark = theme.brightness == Brightness.dark;
         final locale = Localizations.localeOf(context).toString();
         final now = DateTime.now();
-        final dateString = DateFormat('EEEE, d MMM', locale).format(now);
+        final dateString = _formatToday(locale, now);
 
         final card = Container(
           width: double.infinity,
@@ -259,8 +329,11 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
               Positioned(
                 right: -30.w,
                 top: -20.h,
+                // Decorative watermark. A calendar icon fits the short
+                // calendar lessons better than a quotation mark, which
+                // suggested quoted sayings rather than practical tips.
                 child: Icon(
-                  Icons.format_quote_rounded,
+                  Icons.calendar_month_rounded,
                   size: 180.r,
                   color: isDark
                       ? Colors.white.withValues(alpha: 0.04)
@@ -400,13 +473,15 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                           width: double.infinity,
                           padding: EdgeInsets.symmetric(vertical: 14.h),
                           decoration: BoxDecoration(
-                            color: _VowlCardPalette.indigo,
+                            // textSafeIndigo, not the lighter brand indigo:
+                            // white text on this fill measures about 6.3:1,
+                            // clearing WCAG AA for normal-size text.
+                            color: _VowlCardPalette.textSafeIndigo,
                             borderRadius: BorderRadius.circular(16.r),
                             boxShadow: [
                               BoxShadow(
-                                color: _VowlCardPalette.indigo.withValues(
-                                  alpha: 0.3,
-                                ),
+                                color: _VowlCardPalette.textSafeIndigo
+                                    .withValues(alpha: 0.3),
                                 blurRadius: 12,
                                 offset: const Offset(0, 4),
                               ),
@@ -421,13 +496,8 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                                   fallback: 'Start Next Task',
                                 ),
                                 style: TextStyle(
-                                  // Pure white on the indigo fill keeps the same
-                                  // ~4.47:1 ratio as the eyebrow label did on
-                                  // white. Bumping weight/size alone won't fix
-                                  // contrast, so if this button ever needs to
-                                  // clear strict AA independently, darken the
-                                  // fill toward textSafeIndigo rather than the
-                                  // text color.
+                                  // Pure white on the darker textSafeIndigo
+                                  // fill (see the decoration above).
                                   color: Colors.white,
                                   fontWeight: FontWeight.w800,
                                   fontFamily: 'Outfit',
@@ -461,12 +531,22 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
           // repeating everything this label already says.
           excludeSemantics: true,
           onTap: _handleNavigation,
-          label:
-              '${_hootTitle.value ?? 'Daily Wisdom'}. ${_hootText.value ?? 'Loading...'}. ${widget.streakCount} day streak. Double tap to start next task.',
+          label: _semanticsLabel(),
           child: card,
         );
       },
     );
+  }
+
+  /// Screen-reader announcement. Adds a full stop after the message only
+  /// when it does not already end with sentence punctuation, so the label
+  /// never reads "..".
+  String _semanticsLabel() {
+    final title = _hootTitle.value ?? _fallbackTitle;
+    final text = _hootText.value ?? 'Loading...';
+    final endsWithStop = RegExp(r'''[.!?]['"]?$''').hasMatch(text);
+    return '$title. $text${endsWithStop ? '' : '.'} '
+        '${widget.streakCount} day streak. Double tap to start next task.';
   }
 
   Widget _buildShimmerQuote(bool isDark) {
@@ -506,7 +586,7 @@ class _ShimmerLineState extends State<_ShimmerLine>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1400),
-    )..forward();
+    )..repeat();
   }
 
   @override

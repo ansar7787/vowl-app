@@ -1,577 +1,577 @@
 {
-    "gameType": "consonantClarity",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "id": "ACC_CONSONANTCLARITY_L101_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "made",
-            "textToSpeak": "made",
-            "options": [
-                "/d/",
-                "/ð/"
-            ],
-            "correctAnswer": "/d/",
-            "correctAnswerIndex": 0,
-            "hint": "The two candidates for \"made\" feel different in the mouth: /d/ means you tap your tongue tip on the ridge behind your top teeth with your voice on, and /ð/ means you place your tongue tip lightly behind your top teeth and blow with your voice on. Which matches?",
-            "explanation": "\"made\" uses /d/, a voiced alveolar plosive. This contrasts with the voiced dental fricative /ð/, heard in words like \"this\", which is produced by placing your tongue tip lightly behind your top teeth and blowing with your voice on instead.",
-            "mouthPosition": "Tap your tongue tip on the ridge behind your top teeth with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L101_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "sheet",
-            "textToSpeak": "sheet",
-            "options": [
-                "/ʃ/",
-                "/tʃ/"
-            ],
-            "correctAnswer": "/ʃ/",
-            "correctAnswerIndex": 0,
-            "hint": "Isolate the target sound in \"sheet\" and hold it for a second. /ʃ/ should feel like you round your lips slightly and push air across your tongue with no voice — does it?",
-            "explanation": "The reason /ʃ/ is correct for \"sheet\" is simple: you round your lips slightly and push air across your tongue with no voice. That's a completely different action from /tʃ/, which needs you to stop the air just behind your top teeth, then release it as a hiss, with no voice.",
-            "mouthPosition": "To produce this sound, round your lips slightly and push air across your tongue with no voice.",
-            "voicing": "voiceless",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L101_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "work",
-            "textToSpeak": "work",
-            "options": [
-                "/w/",
-                "/v/"
-            ],
-            "correctAnswer": "/w/",
-            "correctAnswerIndex": 0,
-            "hint": "Break \"work\" down sound by sound. The consonant you want is either a voiced labial-velar approximant or a voiced labiodental fricative — remember that /w/ means you round your lips into a small circle and glide, like starting to say \"oo\".",
-            "explanation": "\"work\" targets /w/. Made by rounding your lips into a small circle and gliding, like starting to say \"oo\", it's a voiced labial-velar approximant — distinct from the voiced labiodental fricative /v/, which instead calls for resting your top teeth lightly on your bottom lip and blowing with your voice on.",
-            "mouthPosition": "Feel it in the mouth: round your lips into a small circle and glide, like starting to say \"oo\".",
-            "voicing": "voiced",
-            "airflow": "approximant"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L102_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "glow",
-            "textToSpeak": "glow",
-            "options": [
-                "/r/",
-                "/l/"
-            ],
-            "correctAnswer": "/l/",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"glow\" at normal speed, then again in slow motion. Isolating the consonant this way makes it much easier to tell /l/ from /r/.",
-            "explanation": "What makes \"glow\" contain /l/ rather than /r/ comes down to articulation: /l/ means you touch your tongue tip to the ridge behind your top teeth and let the air flow around its sides, while /r/ would instead mean curling your tongue tip back slightly without letting it touch the roof of your mouth.",
-            "mouthPosition": "Touch your tongue tip to the ridge behind your top teeth and let the air flow around its sides.",
-            "voicing": "voiced",
-            "airflow": "approximant"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L102_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "dim",
-            "textToSpeak": "dim",
-            "options": [
-                "/ð/",
-                "/d/"
-            ],
-            "correctAnswer": "/d/",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to \"dim\". For /d/, you tap your tongue tip on the ridge behind your top teeth with your voice on — like the start of \"day\". Does that match what you hear?",
-            "explanation": "Once you isolate the consonant in \"dim\", it's clearly /d/ — produced by tapping your tongue tip on the ridge behind your top teeth with your voice on. Words with /ð/ instead, like \"this\", require placing your tongue tip lightly behind your top teeth and blowing with your voice on.",
-            "mouthPosition": "To produce this sound, tap your tongue tip on the ridge behind your top teeth with your voice on.",
-            "voicing": "voiced",
-            "airflow": "plosive"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L102_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "thus",
-            "textToSpeak": "thus",
-            "options": [
-                "/d/",
-                "/ð/"
-            ],
-            "correctAnswer": "/ð/",
-            "correctAnswerIndex": 1,
-            "hint": "\"thus\" contains one of these two sounds. /ð/ is a voiced dental fricative, made when you place your tongue tip lightly behind your top teeth and blow with your voice on. /d/ is a voiced alveolar plosive instead.",
-            "explanation": "/ð/ is the sound in \"thus\", formed by placing your tongue tip lightly behind your top teeth and blowing with your voice on. Learners often mix this up with /d/, a voiced alveolar plosive made by tapping your tongue tip on the ridge behind your top teeth with your voice on, but the mouth is doing something different each time.",
-            "mouthPosition": "Feel it in the mouth: place your tongue tip lightly behind your top teeth and blow with your voice on.",
-            "voicing": "voiced",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L103_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "alive",
-            "textToSpeak": "alive",
-            "options": [
-                "/r/",
-                "/l/"
-            ],
-            "correctAnswer": "/l/",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"alive\" slowly and isolate just the target consonant. To make /l/, you touch your tongue tip to the ridge behind your top teeth and let the air flow around its sides. To make /r/, you curl your tongue tip back slightly without letting it touch the roof of your mouth. Which one are you actually doing?",
-            "explanation": "This is /l/, not /r/: in \"alive\", you touch your tongue tip to the ridge behind your top teeth and let the air flow around its sides. The distractor would instead need curling your tongue tip back slightly without letting it touch the roof of your mouth, which changes the sound completely.",
-            "mouthPosition": "Touch your tongue tip to the ridge behind your top teeth and let the air flow around its sides.",
-            "voicing": "voiced",
-            "airflow": "approximant"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L103_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "moon",
-            "textToSpeak": "moon",
-            "options": [
-                "/ŋ/",
-                "/n/"
-            ],
-            "correctAnswer": "/n/",
-            "correctAnswerIndex": 1,
-            "hint": "In \"moon\", focus on the target sound. /n/ comes from touching your tongue tip to the ridge behind your top teeth and letting the sound hum out through your nose, while /ŋ/ comes from raising the back of your tongue to the soft palate and letting the sound hum out through your nose — which one is really happening?",
-            "explanation": "\"moon\" is built on /n/ — touching your tongue tip to the ridge behind your top teeth and letting the sound hum out through your nose is how it's made. That's a voiced alveolar nasal, easy to tell apart from the voiced velar nasal /ŋ/ once you know both feel different in the mouth.",
-            "mouthPosition": "To produce this sound, touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L103_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "gang",
-            "textToSpeak": "gang",
-            "options": [
-                "/ŋ/",
-                "/n/"
-            ],
-            "correctAnswer": "/ŋ/",
-            "correctAnswerIndex": 0,
-            "hint": "Think about what your mouth is doing during the target sound in \"gang\". Does it raise the back of your tongue to the soft palate and let the sound hum out through your nose? Or does it touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose?",
-            "explanation": "\"gang\" features /ŋ/ rather than /n/. /ŋ/ comes from raising the back of your tongue to the soft palate and letting the sound hum out through your nose, which is why it sounds distinct from the voiced alveolar nasal /n/ used in words like \"nose\".",
-            "mouthPosition": "Feel it in the mouth: raise the back of your tongue to the soft palate and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L104_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "vow",
-            "textToSpeak": "vow",
-            "options": [
-                "/w/",
-                "/v/"
-            ],
-            "correctAnswer": "/v/",
-            "correctAnswerIndex": 1,
-            "hint": "\"vow\" holds either /v/ or /w/. One is a voiced labiodental fricative; the other, a voiced labial-velar approximant. Isolate the sound and compare it to both.",
-            "explanation": "In \"vow\", the target sound is /v/, made by resting your top teeth lightly on your bottom lip and blowing with your voice on. The distractor /w/ would instead require you to round your lips into a small circle and glide, like starting to say \"oo\" — a clearly different sound once you isolate it.",
-            "mouthPosition": "Rest your top teeth lightly on your bottom lip and blow with your voice on.",
-            "voicing": "voiced",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L104_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "mild",
-            "textToSpeak": "mild",
-            "options": [
-                "/n/",
-                "/m/"
-            ],
-            "correctAnswer": "/m/",
-            "correctAnswerIndex": 1,
-            "hint": "Try producing \"mild\" yourself. To make /m/, you press your lips together and let the sound hum out through your nose — quite different from /n/, which needs you to touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose.",
-            "explanation": "The word \"mild\" contains /m/, a voiced bilabial nasal, made by pressing your lips together and letting the sound hum out through your nose. It's easy to confuse with /n/, a voiced alveolar nasal, but the two are produced quite differently.",
-            "mouthPosition": "To produce this sound, press your lips together and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L104_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "wait",
-            "textToSpeak": "wait",
-            "options": [
-                "/w/",
-                "/v/"
-            ],
-            "correctAnswer": "/w/",
-            "correctAnswerIndex": 0,
-            "hint": "Here's the key contrast in \"wait\": /w/ is made by rounding your lips into a small circle and gliding, like starting to say \"oo\", and /v/ is made by resting your top teeth lightly on your bottom lip and blowing with your voice on. Which description fits what you hear?",
-            "explanation": "\"wait\" is a good example of /w/: you round your lips into a small circle and glide, like starting to say \"oo\". Compare that with /v/, where you'd instead rest your top teeth lightly on your bottom lip and blow with your voice on — the two shouldn't be mixed up once you feel the difference.",
-            "mouthPosition": "Feel it in the mouth: round your lips into a small circle and glide, like starting to say \"oo\".",
-            "voicing": "voiced",
-            "airflow": "approximant"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L105_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "vile",
-            "textToSpeak": "vile",
-            "options": [
-                "/v/",
-                "/w/"
-            ],
-            "correctAnswer": "/v/",
-            "correctAnswerIndex": 0,
-            "hint": "Don't let the spelling of \"vile\" guide you — isolate the exact consonant sound and test it against both options.",
-            "explanation": "The consonant in \"vile\" is /v/, not /w/. To produce /v/, you rest your top teeth lightly on your bottom lip and blow with your voice on; /w/ is made differently, by rounding your lips into a small circle and gliding, like starting to say \"oo\".",
-            "mouthPosition": "Rest your top teeth lightly on your bottom lip and blow with your voice on.",
-            "voicing": "voiced",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L105_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "cheat",
-            "textToSpeak": "cheat",
-            "options": [
-                "/ʃ/",
-                "/tʃ/"
-            ],
-            "correctAnswer": "/tʃ/",
-            "correctAnswerIndex": 1,
-            "hint": "For /tʃ/, the trick is to stop the air just behind your top teeth, then release it as a hiss, with no voice — like the start of \"chip\". Check whether \"cheat\" really does that.",
-            "explanation": "Here, /tʃ/ is correct because \"cheat\" is made by stopping the air just behind your top teeth, then releasing it as a hiss, with no voice. If it were /ʃ/ instead, you'd be doing this: rounding your lips slightly and pushing air across your tongue with no voice — a noticeably different articulation.",
-            "mouthPosition": "To produce this sound, stop the air just behind your top teeth, then release it as a hiss, with no voice.",
-            "voicing": "voiceless",
-            "airflow": "affricate"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L105_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "men",
-            "textToSpeak": "men",
-            "options": [
-                "/ŋ/",
-                "/n/"
-            ],
-            "correctAnswer": "/n/",
-            "correctAnswerIndex": 1,
-            "hint": "\"men\" needs careful listening. A voiced alveolar nasal like /n/ can sound close to a voiced velar nasal like /ŋ/ if you're not paying attention to exactly what your mouth is doing.",
-            "explanation": "\"men\" uses /n/, a voiced alveolar nasal. This contrasts with the voiced velar nasal /ŋ/, heard in words like \"sing\", which is produced by raising the back of your tongue to the soft palate and letting the sound hum out through your nose instead.",
-            "mouthPosition": "Feel it in the mouth: touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L106_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "wig",
-            "textToSpeak": "wig",
-            "options": [
-                "/w/",
-                "/v/"
-            ],
-            "correctAnswer": "/w/",
-            "correctAnswerIndex": 0,
-            "hint": "Whisper \"wig\" to yourself and freeze on the target consonant. Is your mouth doing this — rounding your lips into a small circle and gliding, like starting to say \"oo\" — or this — resting your top teeth lightly on your bottom lip and blowing with your voice on?",
-            "explanation": "The reason /w/ is correct for \"wig\" is simple: you round your lips into a small circle and glide, like starting to say \"oo\". That's a completely different action from /v/, which needs you to rest your top teeth lightly on your bottom lip and blow with your voice on.",
-            "mouthPosition": "Round your lips into a small circle and glide, like starting to say \"oo\".",
-            "voicing": "voiced",
-            "airflow": "approximant"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L106_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "rock",
-            "textToSpeak": "rock",
-            "options": [
-                "/r/",
-                "/l/"
-            ],
-            "correctAnswer": "/r/",
-            "correctAnswerIndex": 0,
-            "hint": "The two candidates for \"rock\" feel different in the mouth: /r/ means you curl your tongue tip back slightly without letting it touch the roof of your mouth, and /l/ means you touch your tongue tip to the ridge behind your top teeth and let the air flow around its sides. Which matches?",
-            "explanation": "\"rock\" targets /r/. Made by curling your tongue tip back slightly without letting it touch the roof of your mouth, it's a voiced alveolar approximant — distinct from the voiced alveolar lateral approximant /l/, which instead calls for touching your tongue tip to the ridge behind your top teeth and letting the air flow around its sides.",
-            "mouthPosition": "To produce this sound, curl your tongue tip back slightly without letting it touch the roof of your mouth.",
-            "voicing": "voiced",
-            "airflow": "approximant"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L106_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "vital",
-            "textToSpeak": "vital",
-            "options": [
-                "/w/",
-                "/v/"
-            ],
-            "correctAnswer": "/v/",
-            "correctAnswerIndex": 1,
-            "hint": "Isolate the target sound in \"vital\" and hold it for a second. /v/ should feel like you rest your top teeth lightly on your bottom lip and blow with your voice on — does it?",
-            "explanation": "What makes \"vital\" contain /v/ rather than /w/ comes down to articulation: /v/ means you rest your top teeth lightly on your bottom lip and blow with your voice on, while /w/ would instead mean rounding your lips into a small circle and gliding, like starting to say \"oo\".",
-            "mouthPosition": "Feel it in the mouth: rest your top teeth lightly on your bottom lip and blow with your voice on.",
-            "voicing": "voiced",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L107_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "champ",
-            "textToSpeak": "champ",
-            "options": [
-                "/ʃ/",
-                "/tʃ/"
-            ],
-            "correctAnswer": "/tʃ/",
-            "correctAnswerIndex": 1,
-            "hint": "Break \"champ\" down sound by sound. The consonant you want is either a voiceless postalveolar affricate or a voiceless postalveolar fricative — remember that /tʃ/ means you stop the air just behind your top teeth, then release it as a hiss, with no voice.",
-            "explanation": "Once you isolate the consonant in \"champ\", it's clearly /tʃ/ — produced by stopping the air just behind your top teeth, then releasing it as a hiss, with no voice. Words with /ʃ/ instead, like \"shoe\", require rounding your lips slightly and pushing air across your tongue with no voice.",
-            "mouthPosition": "Stop the air just behind your top teeth, then release it as a hiss, with no voice.",
-            "voicing": "voiceless",
-            "airflow": "affricate"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L107_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "thy",
-            "textToSpeak": "thy",
-            "options": [
-                "/d/",
-                "/ð/"
-            ],
-            "correctAnswer": "/ð/",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"thy\" at normal speed, then again in slow motion. Isolating the consonant this way makes it much easier to tell /ð/ from /d/.",
-            "explanation": "/ð/ is the sound in \"thy\", formed by placing your tongue tip lightly behind your top teeth and blowing with your voice on. Learners often mix this up with /d/, a voiced alveolar plosive made by tapping your tongue tip on the ridge behind your top teeth with your voice on, but the mouth is doing something different each time.",
-            "mouthPosition": "To produce this sound, place your tongue tip lightly behind your top teeth and blow with your voice on.",
-            "voicing": "voiced",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L107_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "spin",
-            "textToSpeak": "spin",
-            "options": [
-                "/ŋ/",
-                "/n/"
-            ],
-            "correctAnswer": "/n/",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to \"spin\". For /n/, you touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose — like the start of \"nose\". Does that match what you hear?",
-            "explanation": "This is /n/, not /ŋ/: in \"spin\", you touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose. The distractor would instead need raising the back of your tongue to the soft palate and letting the sound hum out through your nose, which changes the sound completely.",
-            "mouthPosition": "Feel it in the mouth: touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L108_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "mail",
-            "textToSpeak": "mail",
-            "options": [
-                "/n/",
-                "/m/"
-            ],
-            "correctAnswer": "/m/",
-            "correctAnswerIndex": 1,
-            "hint": "\"mail\" contains one of these two sounds. /m/ is a voiced bilabial nasal, made when you press your lips together and let the sound hum out through your nose. /n/ is a voiced alveolar nasal instead.",
-            "explanation": "\"mail\" is built on /m/ — pressing your lips together and letting the sound hum out through your nose is how it's made. That's a voiced bilabial nasal, easy to tell apart from the voiced alveolar nasal /n/ once you know both feel different in the mouth.",
-            "mouthPosition": "Press your lips together and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L108_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "wane",
-            "textToSpeak": "wane",
-            "options": [
-                "/v/",
-                "/w/"
-            ],
-            "correctAnswer": "/w/",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"wane\" slowly and isolate just the target consonant. To make /w/, you round your lips into a small circle and glide, like starting to say \"oo\". To make /v/, you rest your top teeth lightly on your bottom lip and blow with your voice on. Which one are you actually doing?",
-            "explanation": "\"wane\" features /w/ rather than /v/. /w/ comes from rounding your lips into a small circle and gliding, like starting to say \"oo\", which is why it sounds distinct from the voiced labiodental fricative /v/ used in words like \"van\".",
-            "mouthPosition": "To produce this sound, round your lips into a small circle and glide, like starting to say \"oo\".",
-            "voicing": "voiced",
-            "airflow": "approximant"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L108_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "pain",
-            "textToSpeak": "pain",
-            "options": [
-                "/ŋ/",
-                "/n/"
-            ],
-            "correctAnswer": "/n/",
-            "correctAnswerIndex": 1,
-            "hint": "In \"pain\", focus on the target sound. /n/ comes from touching your tongue tip to the ridge behind your top teeth and letting the sound hum out through your nose, while /ŋ/ comes from raising the back of your tongue to the soft palate and letting the sound hum out through your nose — which one is really happening?",
-            "explanation": "In \"pain\", the target sound is /n/, made by touching your tongue tip to the ridge behind your top teeth and letting the sound hum out through your nose. The distractor /ŋ/ would instead require you to raise the back of your tongue to the soft palate and let the sound hum out through your nose — a clearly different sound once you isolate it.",
-            "mouthPosition": "Feel it in the mouth: touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L109_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "right",
-            "textToSpeak": "right",
-            "options": [
-                "/l/",
-                "/r/"
-            ],
-            "correctAnswer": "/r/",
-            "correctAnswerIndex": 1,
-            "hint": "Think about what your mouth is doing during the target sound in \"right\". Does it curl your tongue tip back slightly without letting it touch the roof of your mouth? Or does it touch your tongue tip to the ridge behind your top teeth and let the air flow around its sides?",
-            "explanation": "The word \"right\" contains /r/, a voiced alveolar approximant, made by curling your tongue tip back slightly without letting it touch the roof of your mouth. It's easy to confuse with /l/, a voiced alveolar lateral approximant, but the two are produced quite differently.",
-            "mouthPosition": "Curl your tongue tip back slightly without letting it touch the roof of your mouth.",
-            "voicing": "voiced",
-            "airflow": "approximant"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L109_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "nice",
-            "textToSpeak": "nice",
-            "options": [
-                "/m/",
-                "/n/"
-            ],
-            "correctAnswer": "/n/",
-            "correctAnswerIndex": 1,
-            "hint": "\"nice\" holds either /n/ or /m/. One is a voiced alveolar nasal; the other, a voiced bilabial nasal. Isolate the sound and compare it to both.",
-            "explanation": "\"nice\" is a good example of /n/: you touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose. Compare that with /m/, where you'd instead press your lips together and let the sound hum out through your nose — the two shouldn't be mixed up once you feel the difference.",
-            "mouthPosition": "To produce this sound, touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L109_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "vain",
-            "textToSpeak": "vain",
-            "options": [
-                "/w/",
-                "/v/"
-            ],
-            "correctAnswer": "/v/",
-            "correctAnswerIndex": 1,
-            "hint": "Try producing \"vain\" yourself. To make /v/, you rest your top teeth lightly on your bottom lip and blow with your voice on — quite different from /w/, which needs you to round your lips into a small circle and glide, like starting to say \"oo\".",
-            "explanation": "The consonant in \"vain\" is /v/, not /w/. To produce /v/, you rest your top teeth lightly on your bottom lip and blow with your voice on; /w/ is made differently, by rounding your lips into a small circle and gliding, like starting to say \"oo\".",
-            "mouthPosition": "Feel it in the mouth: rest your top teeth lightly on your bottom lip and blow with your voice on.",
-            "voicing": "voiced",
-            "airflow": "fricative"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L110_Q1",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "sin",
-            "textToSpeak": "sin",
-            "options": [
-                "/n/",
-                "/ŋ/"
-            ],
-            "correctAnswer": "/n/",
-            "correctAnswerIndex": 0,
-            "hint": "Here's the key contrast in \"sin\": /n/ is made by touching your tongue tip to the ridge behind your top teeth and letting the sound hum out through your nose, and /ŋ/ is made by raising the back of your tongue to the soft palate and letting the sound hum out through your nose. Which description fits what you hear?",
-            "explanation": "Here, /n/ is correct because \"sin\" is made by touching your tongue tip to the ridge behind your top teeth and letting the sound hum out through your nose. If it were /ŋ/ instead, you'd be doing this: raising the back of your tongue to the soft palate and letting the sound hum out through your nose — a noticeably different articulation.",
-            "mouthPosition": "Touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L110_Q2",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "bun",
-            "textToSpeak": "bun",
-            "options": [
-                "/ŋ/",
-                "/n/"
-            ],
-            "correctAnswer": "/n/",
-            "correctAnswerIndex": 1,
-            "hint": "Don't let the spelling of \"bun\" guide you — isolate the exact consonant sound and test it against both options.",
-            "explanation": "\"bun\" uses /n/, a voiced alveolar nasal. This contrasts with the voiced velar nasal /ŋ/, heard in words like \"sing\", which is produced by raising the back of your tongue to the soft palate and letting the sound hum out through your nose instead.",
-            "mouthPosition": "To produce this sound, touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        },
-        {
-            "id": "ACC_CONSONANTCLARITY_L110_Q3",
-            "instruction": "IDENTIFY THE TARGET CONSONANT PHONEME IN THE WORD",
-            "subtype": "consonantClarity",
-            "interactionType": "speaking",
-            "word": "nail",
-            "textToSpeak": "nail",
-            "options": [
-                "/m/",
-                "/n/"
-            ],
-            "correctAnswer": "/n/",
-            "correctAnswerIndex": 1,
-            "hint": "For /n/, the trick is to touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose — like the start of \"nose\". Check whether \"nail\" really does that.",
-            "explanation": "The reason /n/ is correct for \"nail\" is simple: you touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose. That's a completely different action from /m/, which needs you to press your lips together and let the sound hum out through your nose.",
-            "mouthPosition": "Feel it in the mouth: touch your tongue tip to the ridge behind your top teeth and let the sound hum out through your nose.",
-            "voicing": "voiced",
-            "airflow": "nasal"
-        }
-    ]
+  "gameType": "consonantClarity",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "ACC_CONSONANTCLARITY_L101_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "window",
+      "textToSpeak": "window",
+      "options": [
+        "/v/",
+        "/w/"
+      ],
+      "correctAnswer": "/w/",
+      "correctAnswerIndex": 1,
+      "hint": "Clap the two syllables: WIN-dow. At the start of the first syllable, are your lips rounded, or is your lip touching your teeth?",
+      "explanation": "'Window' starts with /w/ at the front of a stressed syllable, where consonants are at their clearest. The lips round and spring open; touching the lip to the teeth gives 'vindow'. A longer word doesn't change how the first sound is made. It only tempts you to rush it.",
+      "mouthPosition": "Round your lips tightly, spring them open into 'win', and keep your teeth off your lip.",
+      "voicing": "voiced",
+      "airflow": "approximant"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L101_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "coffee",
+      "textToSpeak": "coffee",
+      "options": [
+        "/g/",
+        "/k/"
+      ],
+      "correctAnswer": "/k/",
+      "correctAnswerIndex": 1,
+      "hint": "The stress falls on the first syllable. Say it with extra push: is there a puff of air right at the start?",
+      "explanation": "'Coffee' begins with a stressed /k/: the back of the tongue releases with a clear puff. Voicing it gives 'goffee'. After the /k/ comes a lip-teeth hiss, so keep the /k/ firm before you hurry on.",
+      "mouthPosition": "Lift the back of your tongue to the soft palate and release with a strong puff into 'off', then finish with a quick 'ee'.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L101_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "rabbit",
+      "textToSpeak": "rabbit",
+      "options": [
+        "/r/",
+        "/l/"
+      ],
+      "correctAnswer": "/r/",
+      "correctAnswerIndex": 0,
+      "hint": "Before you say the rest of the word, check your tongue: is it pulled back and untouched, or pressing the ridge?",
+      "explanation": "'Rabbit' begins with /r/: the tongue pulls back without touching the roof. Touching the ridge gives /l/ and 'labbit'. The /b/ in the middle needs a full lip closure, so the whole word has to stay clear.",
+      "mouthPosition": "Draw the tongue back and up with its sides near the upper back teeth, tip free, then glide into 'rab'.",
+      "voicing": "voiced",
+      "airflow": "approximant"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L102_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "lazy",
+      "textToSpeak": "lazy",
+      "options": [
+        "/z/",
+        "/s/"
+      ],
+      "correctAnswer": "/z/",
+      "correctAnswerIndex": 0,
+      "hint": "Between the two vowels, does the voice keep running? Say it and feel for a steady hum.",
+      "explanation": "'Lazy' has /z/ between the stressed 'la' and the weak 'ee', and the buzz carries on between the vowels. Using /s/ gives 'lacy', a different word. Voiced consonants in the middle of a word need their buzz.",
+      "mouthPosition": "After 'lay-', put the tongue tip near the ridge and let a buzz run through before the weak 'ee'.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L102_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "ticket",
+      "textToSpeak": "ticket",
+      "options": [
+        "/k/",
+        "/g/"
+      ],
+      "correctAnswer": "/k/",
+      "correctAnswerIndex": 0,
+      "hint": "The middle consonant begins the weak second syllable. Is it a clean, voiceless stop?",
+      "explanation": "'Ticket' has /k/ in the middle, at the start of an unstressed syllable. Weak syllables tend to be short and the consonant can go soft. Voicing gives 'tigget'. Keep the /k/ crisp even though the vowel after it is weak.",
+      "mouthPosition": "After 'ti-', lift the back of your tongue to the soft palate with no voice, release quickly into the weak 'it', and finish with 't'.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L102_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "finger",
+      "textToSpeak": "finger",
+      "options": [
+        "/n/",
+        "/ŋ/"
+      ],
+      "correctAnswer": "/ŋ/",
+      "correctAnswerIndex": 1,
+      "hint": "The middle nasal is followed by a hard G. Which part of your tongue is raised for the nasal?",
+      "explanation": "'Finger' has /ŋ/ in the middle, followed by a sounded /g/. Unlike 'singer', the G is pronounced here. The nasal is made at the back of the tongue; using /n/ gives 'fin-ger', with the tongue in the wrong place for the /g/.",
+      "mouthPosition": "The back of the tongue goes up and hums, then lets go into a voiced 'g' before the weak 'er'.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L103_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "open",
+      "textToSpeak": "open",
+      "options": [
+        "/m/",
+        "/n/"
+      ],
+      "correctAnswer": "/n/",
+      "correctAnswerIndex": 1,
+      "hint": "The last syllable is weak. Do your lips close at the end, or does the tongue tip lift?",
+      "explanation": "'Open' ends in a weak syllable with /n/: the tongue tip on the ridge and voiced air through the nose. Closing the lips gives /m/ and 'opem'. The vowel in the last syllable is tiny, and the consonant shouldn't vanish with it.",
+      "mouthPosition": "After 'oh-p', lift your tongue tip to the ridge and hum through your nose, with your lips staying open.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L103_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "travel",
+      "textToSpeak": "travel",
+      "options": [
+        "/l/",
+        "/n/"
+      ],
+      "correctAnswer": "/l/",
+      "correctAnswerIndex": 0,
+      "hint": "The word ends with a very short syllable. Does the tongue tip finish on the ridge with air around the sides?",
+      "explanation": "'Travel' ends in a weak syllable with /l/: the tongue tip presses the ridge and air flows around the sides. Skipping it leaves 'trave', and swapping in /n/ gives 'travven'. The /l/ can carry the syllable on its own.",
+      "mouthPosition": "After 'trav-', press your tongue tip on the ridge behind your upper teeth and let voiced air run around the sides.",
+      "voicing": "voiced",
+      "airflow": "approximant"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L103_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "problem",
+      "textToSpeak": "problem",
+      "options": [
+        "/m/",
+        "/n/"
+      ],
+      "correctAnswer": "/m/",
+      "correctAnswerIndex": 0,
+      "hint": "The last syllable is tiny. Hold its consonant: are your lips pressed together while it hums?",
+      "explanation": "'Problem' ends with /m/ in a weak syllable: the lips close and the voice flows through the nose. Using /n/ gives 'problen'. Closing the lips is easy to forget when the vowel before it is tiny.",
+      "mouthPosition": "After 'prob-l', close both lips and hum through your nose as the weak syllable ends.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L104_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "yesterday",
+      "textToSpeak": "yesterday",
+      "options": [
+        "/dʒ/",
+        "/j/"
+      ],
+      "correctAnswer": "/j/",
+      "correctAnswerIndex": 1,
+      "hint": "The word starts with a glide. Does your tongue seal against the roof, or just rise toward it?",
+      "explanation": "'Yesterday' begins with /j/: the tongue glides up toward the palate with no closure. Sealing gives /dʒ/ and 'jesterday'. In a three-syllable word it's easy to over-articulate the first consonant, so keep it smooth.",
+      "mouthPosition": "Raise the middle of your tongue toward the roof as if for 'ee', glide into 'yes', and carry on through the rhythm of 'ter-day'.",
+      "voicing": "voiced",
+      "airflow": "approximant"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L104_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "potato",
+      "textToSpeak": "potato",
+      "options": [
+        "/t/",
+        "/d/"
+      ],
+      "correctAnswer": "/t/",
+      "correctAnswerIndex": 0,
+      "hint": "Stress falls on the middle syllable. Does the consonant that opens it come with a puff?",
+      "explanation": "'Potato' has /t/ at the start of the stressed middle syllable, so it gets a clear puff. Voicing it gives 'podato'. The second /t/ is lighter in fast speech, but this first one stays crisp.",
+      "mouthPosition": "After the weak 'puh', tap your tongue tip firmly on the ridge and release with a puff into the stressed 'tay'.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L104_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "family",
+      "textToSpeak": "family",
+      "options": [
+        "/m/",
+        "/n/"
+      ],
+      "correctAnswer": "/m/",
+      "correctAnswerIndex": 0,
+      "hint": "After the stressed first syllable, do your lips close for the middle consonant?",
+      "explanation": "'Family' has /m/ after the stressed 'fa': the lips close and voiced air goes through the nose. Using /n/ gives 'fanily'. Because the middle vowel is weak, the /m/ can get lost, so close the lips.",
+      "mouthPosition": "After 'fa-', close both lips and hum through your nose, then open into the quick 'uh-lee'.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L105_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "chocolate",
+      "textToSpeak": "chocolate",
+      "options": [
+        "/k/",
+        "/g/"
+      ],
+      "correctAnswer": "/k/",
+      "correctAnswerIndex": 0,
+      "hint": "The middle consonant follows the stressed first syllable. Is it voiced or voiceless?",
+      "explanation": "'Chocolate' has /k/ in the middle: voiceless, straight after the stressed first syllable. Voicing it gives 'choggolate'. The word is often said with two or three syllables, but the /k/ stays a clear closure either way.",
+      "mouthPosition": "After 'chock-', lift the back of your tongue with no voice, release quickly, and let the weak ending fade into 'lit'.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L105_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "vegetable",
+      "textToSpeak": "vegetable",
+      "options": [
+        "/tʃ/",
+        "/dʒ/"
+      ],
+      "correctAnswer": "/dʒ/",
+      "correctAnswerIndex": 1,
+      "hint": "The middle of the word is spelled G. Is the sound voiced or voiceless?",
+      "explanation": "'Vegetable' has /dʒ/ in the middle, spelled G, and it's voiced. Using /tʃ/ gives 'vetchtable'. Many speakers say it as three syllables, 'VEJ-tuh-bul', and the /dʒ/ stays clear.",
+      "mouthPosition": "Once the short 've-' is said, seal your tongue against the roof behind the ridge with voice on, and release into a buzzy hush before 'tuh-bul'.",
+      "voicing": "voiced",
+      "airflow": "affricate"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L105_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "hospital",
+      "textToSpeak": "hospital",
+      "options": [
+        "/b/",
+        "/p/"
+      ],
+      "correctAnswer": "/p/",
+      "correctAnswerIndex": 1,
+      "hint": "The middle consonant follows a hiss. Is the lip closure voiced or voiceless?",
+      "explanation": "'Hospital' has /p/ after /s/: the lips close with no voice and a tiny puff. Voicing gives 'hosbital'. After the hiss the /p/ is short and quiet, so it's easy to swallow, but it's needed.",
+      "mouthPosition": "After 'hos-', close your lips with no voice for a quick 'p', and release into the weak 'ih-tul'.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L106_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "television",
+      "textToSpeak": "television",
+      "options": [
+        "/v/",
+        "/f/"
+      ],
+      "correctAnswer": "/v/",
+      "correctAnswerIndex": 0,
+      "hint": "In the middle of the word, is the lip-teeth sound buzzing?",
+      "explanation": "'Television' has /v/ in the middle, and it's voiced. Using /f/ gives 'telefission'. The word also contains /ʒ/, but the question is about the lip-teeth consonant.",
+      "mouthPosition": "In the middle of the word, bring lip and upper teeth together with a buzz, brief but audible, before the final 'zhun'.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L106_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "official",
+      "textToSpeak": "official",
+      "options": [
+        "/ʃ/",
+        "/s/"
+      ],
+      "correctAnswer": "/ʃ/",
+      "correctAnswerIndex": 0,
+      "hint": "The middle sound is spelled CI. Is it thin and high, or broad and soft?",
+      "explanation": "'Official' has /ʃ/ in the middle, spelled CI. The tongue pulls back and the lips round for a broad hush. A thin /s/ gives 'offisial'. In longer words, CI, TI and SI often stand for /ʃ/.",
+      "mouthPosition": "After 'uh-fi', pull your tongue slightly back, round your lips, and hush air through before the weak 'ul'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L106_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "together",
+      "textToSpeak": "together",
+      "options": [
+        "/d/",
+        "/ð/"
+      ],
+      "correctAnswer": "/ð/",
+      "correctAnswerIndex": 1,
+      "hint": "The middle consonant sits just after a stop and before a vowel. Does air keep flowing past your teeth?",
+      "explanation": "'Together' has /ð/ after the stressed 'ge': the tongue tip touches the back of the teeth and voiced air flows. Using /d/ gives 'togedder'. The /g/ earlier in the word is a separate sound.",
+      "mouthPosition": "Mid-word, your tongue tip rests lightly on the back of your upper teeth while the voice runs; no tap, no seal.",
+      "voicing": "voiced",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L107_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "pillow",
+      "textToSpeak": "pillow",
+      "options": [
+        "/r/",
+        "/l/"
+      ],
+      "correctAnswer": "/l/",
+      "correctAnswerIndex": 1,
+      "hint": "After the short 'i', does the tongue tip press the ridge or stay back?",
+      "explanation": "'Pillow' has /l/ in the middle: the tongue tip presses the ridge and releases into 'ow'. Pulling the tongue back gives /r/ and 'pirrow'. The doubled L in the spelling is one sound.",
+      "mouthPosition": "After 'pi-', press your tongue tip on the ridge behind your upper teeth, voice on, and drop into the weak 'oh'.",
+      "voicing": "voiced",
+      "airflow": "approximant"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L107_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "hungry",
+      "textToSpeak": "hungry",
+      "options": [
+        "/n/",
+        "/ŋ/"
+      ],
+      "correctAnswer": "/ŋ/",
+      "correctAnswerIndex": 1,
+      "hint": "After the vowel, which part of the tongue is raised for the nasal: tip or back?",
+      "explanation": "'Hungry' has /ŋ/ followed by /g/ and /r/. The nasal is made at the back of the tongue. Using /n/ gives 'hun-gry', which sounds odd because the G is sounded here.",
+      "mouthPosition": "After 'hu-', raise the back of your tongue and hum through your nose, then release into 'g' and 'r'.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L107_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "memory",
+      "textToSpeak": "memory",
+      "options": [
+        "/m/",
+        "/n/"
+      ],
+      "correctAnswer": "/m/",
+      "correctAnswerIndex": 0,
+      "hint": "The word has two nasals made at the lips. Focus on the one in the middle: do your lips close?",
+      "explanation": "'Memory' has /m/ at the start and another /m/ in the middle: the lips close for both. The middle one begins a weak syllable, so it can blur into /n/ ('menory'). Close the lips.",
+      "mouthPosition": "After 'mem-', close your lips again and hum through your nose, then glide into the weak 'ree'.",
+      "voicing": "voiced",
+      "airflow": "nasal"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L108_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "comfortable",
+      "textToSpeak": "comfortable",
+      "options": [
+        "/v/",
+        "/f/"
+      ],
+      "correctAnswer": "/f/",
+      "correctAnswerIndex": 1,
+      "hint": "After the nasal, which lip-teeth sound follows? Is it voiced?",
+      "explanation": "'Comfortable' has /f/ after /m/: the lips open, the top teeth touch the bottom lip, and voiceless air hisses through. Voicing gives 'comvortable'. Many speakers shorten the word to 'COMF-ter-bul', but the /f/ stays clear.",
+      "mouthPosition": "After 'kum-', open your lips, rest your top teeth on your bottom lip, and hiss with no voice before 'ter-bul'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L108_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "dictionary",
+      "textToSpeak": "dictionary",
+      "options": [
+        "/s/",
+        "/ʃ/"
+      ],
+      "correctAnswer": "/ʃ/",
+      "correctAnswerIndex": 1,
+      "hint": "Between the stressed first syllable and the next, is the sound broad and soft, or thin and high?",
+      "explanation": "'Dictionary' has /ʃ/ in the middle, spelled TI. The tongue pulls back and the lips round for a hush. A thin /s/ gives 'diksionary'. The stress sits on the first syllable, so the rest can blur, but the /ʃ/ should stay distinct.",
+      "mouthPosition": "After 'dik-', pull your tongue slightly back and round your lips for a quick hush, then finish with 'uh-neh-ree'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L108_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "necessary",
+      "textToSpeak": "necessary",
+      "options": [
+        "/z/",
+        "/s/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 1,
+      "hint": "Two hissing sounds sit in the middle of this word. Do both stay voiceless?",
+      "explanation": "'Necessary' has /s/ twice in the middle, spelled C and SS. Both are voiceless. Voicing gives 'nezessary'. Keep the tongue tip forward and don't let a buzz creep in.",
+      "mouthPosition": "After 'nes-', hiss with your tongue tip near the ridge and no voice, then glide through 'uh-seh-ree'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L109_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "delicious",
+      "textToSpeak": "delicious",
+      "options": [
+        "/ʃ/",
+        "/s/"
+      ],
+      "correctAnswer": "/ʃ/",
+      "correctAnswerIndex": 0,
+      "hint": "The word ends with a hiss too, so focus on the consonant in the middle. Broad or thin?",
+      "explanation": "'Delicious' has /ʃ/ in the middle, spelled CI, before the final /s/. Using /s/ in the middle gives 'delisious'. The /ʃ/ starts the last syllable, so hold it for a moment.",
+      "mouthPosition": "After 'dih-li', pull your tongue back, round your lips, and hush air out before the weak 'us'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L109_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "December",
+      "textToSpeak": "December",
+      "options": [
+        "/z/",
+        "/s/"
+      ],
+      "correctAnswer": "/s/",
+      "correctAnswerIndex": 1,
+      "hint": "The first consonant after the weak first syllable: is it voiced or voiceless?",
+      "explanation": "'December' has /s/ at the start of the stressed syllable, even though the letter is C. Voicing gives 'dezember'. After the weak first syllable, the hiss opens the stressed one.",
+      "mouthPosition": "After 'dih-', put your tongue tip near the ridge and hiss with no voice before 'sem-ber'.",
+      "voicing": "voiceless",
+      "airflow": "fricative"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L109_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "restaurant",
+      "textToSpeak": "restaurant",
+      "options": [
+        "/t/",
+        "/d/"
+      ],
+      "correctAnswer": "/t/",
+      "correctAnswerIndex": 0,
+      "hint": "At the very end of this long word, is the last sound voiced?",
+      "explanation": "'Restaurant' ends in /nt/: the tongue tip closes for a voiceless /t/ after the nasal. Many speakers drop it and say 'restauran', but keeping it makes the word clearer. Voicing gives 'restaurand'.",
+      "mouthPosition": "Following the weak 'ruh-n', keep your tongue tip on the ridge and stop the air with a silent 't'.",
+      "voicing": "voiceless",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L110_Q1",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE END OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "understand",
+      "textToSpeak": "understand",
+      "options": [
+        "/d/",
+        "/t/"
+      ],
+      "correctAnswer": "/d/",
+      "correctAnswerIndex": 0,
+      "hint": "After the nasal, the last sound matches the nasal's voice. Does it buzz?",
+      "explanation": "'Understand' ends in /nd/, both voiced, after the stressed 'stan'. The final /d/ is often dropped in fast speech. Keep the buzz to the end: devoicing gives 'understant'.",
+      "mouthPosition": "After 'stan', hum with the tongue tip on the ridge and close the air off with your voice still on for a voiced 'd'.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L110_Q2",
+      "instruction": "IDENTIFY THE CONSONANT SOUND AT THE START OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "beautiful",
+      "textToSpeak": "beautiful",
+      "options": [
+        "/p/",
+        "/b/"
+      ],
+      "correctAnswer": "/b/",
+      "correctAnswerIndex": 1,
+      "hint": "The word begins with a lip sound. Is there a buzz before the lips open?",
+      "explanation": "'Beautiful' begins with /b/ before the /j/ glide of 'byoo'. Devoicing gives 'peautiful'. The lips close with voice on, then release into the glide.",
+      "mouthPosition": "Close your lips with voice on, release softly into 'byoo', and finish with the weak 'ti-ful'.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    },
+    {
+      "id": "ACC_CONSONANTCLARITY_L110_Q3",
+      "instruction": "IDENTIFY THE CONSONANT SOUND IN THE MIDDLE OF THE WORD",
+      "subtype": "consonantClarity",
+      "interactionType": "speaking",
+      "word": "neighbor",
+      "textToSpeak": "neighbor",
+      "options": [
+        "/b/",
+        "/v/"
+      ],
+      "correctAnswer": "/b/",
+      "correctAnswerIndex": 0,
+      "hint": "The GH makes the middle of this word look odd. Say it slowly: what happens at your lips right after the long 'ay'?",
+      "explanation": "'Neighbor' has /b/ in the middle: a full lip closure. Using /v/ gives 'neivor'. The silent GH makes the middle of the word look unfamiliar, so trust the sound.",
+      "mouthPosition": "After 'nay-', close both lips fully with voice on and release gently into the weak 'er'.",
+      "voicing": "voiced",
+      "airflow": "plosive"
+    }
+  ]
 }

@@ -5,592 +5,592 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L31_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Did you finish the reading assignment?",
-            "textToSpeak": "Did you finish the reading assignment?",
+            "word": "My sister booked the flights.",
+            "textToSpeak": "My sister booked the flights.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "It was her sister who did it, not someone else",
+                "She booked flights, not some other kind of travel"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "It was her sister who did it, not someone else",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Read the ending carefully — a yes/no question usually finishes on a rising note.",
-            "explanation": "Yes/no questions in English typically end with rising intonation, signaling that a yes-or-no answer is expected.",
-            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement.",
-            "emotionContext": "a yes/no question"
+            "hint": "Notice which word the voice lifts early. Then ask what alternative that word is being set against.",
+            "explanation": "The peak on SISTER sets her against other possible bookers, so the message is 'my sister did it, not you or anyone else'. If the speaker meant flights rather than hotels, the peak would move to FLIGHTS.",
+            "emphasisRule": "Moving the peak to a word tells the listener which alternatives are being ruled out.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L31_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The professor postponed the final exam.",
-            "textToSpeak": "The professor postponed the final exam.",
+            "word": "The meeting is on Friday.",
+            "textToSpeak": "The meeting is on Friday.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "And it is not on any other day, so nothing else is planned",
+                "But something else is happening on another day"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "But something else is happening on another day",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
                 3,
-                2,
                 1,
                 1,
                 1
             ],
-            "hint": "This isn't asking anything; it's telling you something, so the pitch should ease downward at the end.",
-            "explanation": "Statements share information rather than ask for it, so the pitch falls naturally toward the end.",
-            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement.",
-            "emotionContext": "a statement"
+            "hint": "The sentence doesn't mention any other event. Which word is hinting that there is one?",
+            "explanation": "The peak on MEETING separates it from other events, as if the speaker were saying 'the meeting is Friday, the workshop is another day'. A peak on FRIDAY would stress the day instead.",
+            "emphasisRule": "A peak on the topic noun can imply a contrast with other nouns not mentioned.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L31_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? The listener knows the destination.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Would you like front row seats?",
-            "textToSpeak": "Would you like front row seats?",
+            "word": "He's driving to Boston.",
+            "textToSpeak": "He's driving to Boston.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "He's driving, not taking the train",
+                "He's going to Boston, not somewhere else"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "He's driving, not taking the train",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "This isn't a statement; it's a direct question expecting yes or no, so listen for a climb at the end.",
-            "explanation": "Because this asks for a simple yes or no, the pitch rises toward the end rather than falling.",
-            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence.",
-            "emotionContext": "a yes/no question"
+            "hint": "The instruction says the destination is shared knowledge. Which word is therefore free to carry the news?",
+            "explanation": "With Boston already known, the peak on DRIVING highlights the way he's travelling. If Boston were the news, the voice would peak on BOSTON.",
+            "emphasisRule": "Shared information stays low; the peak lands on the part that is genuinely being clarified.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L32_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The printer ran out of ink.",
-            "textToSpeak": "The printer ran out of ink.",
+            "word": "Tom drove Maria to the station.",
+            "textToSpeak": "Tom drove Maria to the station.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "He took her to the station, not the airport",
+                "He drove Maria, not someone else"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "He drove Maria, not someone else",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Plain statements like this one typically end on a falling note, not a rising one.",
-            "explanation": "Because this sentence simply states a fact, the pitch drops at the end instead of rising.",
-            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end.",
-            "emotionContext": "a statement"
+            "hint": "Several words could be highlighted. Locate the early peak and decide which unspoken alternative it removes.",
+            "explanation": "The peak on MARIA marks her as the passenger who matters, as in 'Maria, not Jo'. The station would only be highlighted if the airport were in play.",
+            "emphasisRule": "A peak on an object person implies other possible people were being considered.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L32_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The concert sold out in minutes.",
-            "textToSpeak": "The concert sold out in minutes.",
+            "word": "Nina painted the kitchen yellow.",
+            "textToSpeak": "Nina painted the kitchen yellow.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "She painted it yellow, not another colour",
+                "She painted the kitchen, not another room"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "She painted the kitchen, not another room",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
-                2,
                 1,
+                2,
+                3,
                 1,
                 1
             ],
-            "hint": "Say this out loud as a simple fact — notice how natural it feels for the pitch to drop at the end.",
-            "explanation": "This is a plain declarative sentence, and those are marked by falling intonation at the finish.",
-            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement.",
-            "emotionContext": "a statement"
+            "hint": "The colour is the last word, but is it the highest point? Listen before you choose.",
+            "explanation": "Putting the peak on KITCHEN contrasts the room with other rooms. Had the colour been the point, YELLOW would carry the peak at the end.",
+            "emphasisRule": "The final word isn't automatically the focus; the peak tells you which word is being compared.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L32_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My phone restarted on its own.",
-            "textToSpeak": "My phone restarted on its own.",
+            "word": "I can pick up the kids at three.",
+            "textToSpeak": "I can pick up the kids at three.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "I'll collect them, but maybe someone else must drop them off",
+                "Three works for me, but other times don't suit the speaker"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "I'll collect them, but maybe someone else must drop them off",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "This sentence simply reports information — statements usually settle downward by the end.",
-            "explanation": "The falling pitch at the end signals that this is a statement, not a question.",
-            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end.",
-            "emotionContext": "a statement"
+            "hint": "Notice that a verb, not a time, takes the lift here. What other job might be left open?",
+            "explanation": "The peak on PICK implies there is another task, such as dropping off, that the speaker is not promising. THREE would peak if the time were the issue.",
+            "emphasisRule": "Peak on one verb among related tasks signals the other tasks are unresolved.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L33_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Did you watch the season finale?",
-            "textToSpeak": "Did you watch the season finale?",
+            "word": "Lena sent the proposal.",
+            "textToSpeak": "Lena sent the proposal.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "It's just a report of what happened",
+                "Someone else was expected to send it"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Someone else was expected to send it",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                3,
                 1,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Try asking this out loud — yes/no questions naturally lift the pitch as they finish.",
-            "explanation": "This is a classic yes/no question, and those are marked by an upward pitch glide at the finish.",
-            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement.",
-            "emotionContext": "a yes/no question"
+            "hint": "Compare how a plain news report would sound with this version. Which word is the voice drawing to?",
+            "explanation": "A neutral report would peak on PROPOSAL. The early peak on LENA suggests another person was expected or named, so the speaker is pointing out the surprise.",
+            "emphasisRule": "A peak on an early subject can signal that someone else was expected.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L33_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Did you send the client that email?",
-            "textToSpeak": "Did you send the client that email?",
+            "word": "I liked the second movie.",
+            "textToSpeak": "I liked the second movie.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "The speaker didn't like the first one",
+                "The speaker is just saying they liked it"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "The speaker didn't like the first one",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                2,
-                2,
-                3
+                1
             ],
-            "hint": "This is a yes/no question — in English, that usually means the pitch climbs upward right at the end.",
-            "explanation": "The rising pitch at the end signals a genuine yes/no question, inviting a direct answer.",
-            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence.",
-            "emotionContext": "a yes/no question"
+            "hint": "Ordinal words like first and second can set up a comparison. Which one is carrying the lift?",
+            "explanation": "SECOND takes the peak, which invites the listener to think about the other movie(s). If it were a plain opinion, MOVIE would peak.",
+            "emphasisRule": "A peak on an ordinal or modifier often implies the others in the set aren't included.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L33_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The band added an extra show.",
-            "textToSpeak": "The band added an extra show.",
+            "word": "My brother lives in London.",
+            "textToSpeak": "My brother lives in London.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "It's just a neutral statement of where he lives",
+                "Others in the family live somewhere else"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Others in the family live somewhere else",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
                 3,
-                2,
                 1,
                 1,
                 1
             ],
-            "hint": "There's no question here, just a plain statement, so expect the pitch to drop toward the end.",
-            "explanation": "Since nothing here is being asked, the voice naturally eases downward by the final word.",
-            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement.",
-            "emotionContext": "a statement"
+            "hint": "The location is the last word, but where does the strongest pitch actually sit?",
+            "explanation": "A neutral version would peak on LONDON. Here BROTHER takes the peak, so the speaker is setting him against other relatives who live elsewhere.",
+            "emphasisRule": "An early peak on a family noun suggests a comparison with other family members.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L34_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Have you taken out the trash?",
-            "textToSpeak": "Have you taken out the trash?",
+            "word": "I didn't borrow your charger.",
+            "textToSpeak": "I didn't borrow your charger.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "Someone else borrowed it",
+                "The speaker borrowed something else"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Someone else borrowed it",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                3,
                 1,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Notice this sentence is asking for a simple yes or no. Where does your voice go as you reach the last word?",
-            "explanation": "Since the speaker is asking rather than telling, the pitch climbs upward instead of dropping.",
-            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement.",
-            "emotionContext": "a yes/no question"
+            "hint": "The speaker is defending themselves. Which word does the voice use to push responsibility away?",
+            "explanation": "The peak on I rejects the accusation for the speaker alone, which suggests someone else did it. A peak on CHARGER would suggest a different item.",
+            "emphasisRule": "In a negative sentence, the peak marks which part of the claim is being denied.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L34_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My checkup went well this time.",
-            "textToSpeak": "My checkup went well this time.",
+            "word": "She doesn't live in Dubai.",
+            "textToSpeak": "She doesn't live in Dubai.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "She lives somewhere other than Dubai",
+                "She often visits Dubai but doesn't live there"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "She lives somewhere other than Dubai",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "Read this as a simple fact being shared — the voice usually falls as the sentence closes.",
-            "explanation": "Statements share information rather than ask for it, so the pitch falls naturally toward the end.",
-            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end.",
-            "emotionContext": "a statement"
+            "hint": "The negative sits in the middle. What does the final peak say about what is being denied?",
+            "explanation": "The peak on DUBAI says the place is the thing that's wrong; she lives elsewhere. If LIVE carried the peak, the denial would be about living versus visiting.",
+            "emphasisRule": "The word receiving the peak in a negative sentence is usually the part being corrected.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L34_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I already cleaned the kitchen.",
-            "textToSpeak": "I already cleaned the kitchen.",
+            "word": "I didn't eat the whole cake.",
+            "textToSpeak": "I didn't eat the whole cake.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "The speaker ate no cake at all",
+                "The speaker ate part of the cake"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "The speaker ate part of the cake",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
+                1,
+                1,
                 2,
-                1,
-                1,
+                3,
                 1
             ],
-            "hint": "This isn't asking anything; it's telling you something, so the pitch should ease downward at the end.",
-            "explanation": "Because this sentence simply states a fact, the pitch drops at the end instead of rising.",
-            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement.",
-            "emotionContext": "a statement"
+            "hint": "The word 'whole' is easy to skip. What does the voice do on it?",
+            "explanation": "WHOLE takes the peak, so the speaker is denying only that quantity. They ate some of it. If the denial were total, the peak would be on CAKE.",
+            "emphasisRule": "Peak on a quantity word inside a negative narrows the denial to that amount.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L35_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Our class is studying ancient history.",
-            "textToSpeak": "Our class is studying ancient history.",
+            "word": "Some of the guests left early.",
+            "textToSpeak": "Some of the guests left early.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "Not all of them left",
+                "Almost all of them left"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "Not all of them left",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Plain statements like this one typically end on a falling note, not a rising one.",
-            "explanation": "This is a plain declarative sentence, and those are marked by falling intonation at the finish.",
-            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end.",
-            "emotionContext": "a statement"
+            "hint": "Quantity words invite a comparison with the others. What does lifting SOME suggest?",
+            "explanation": "Peaking on SOME draws attention to a smaller group than 'all'. The speaker is hinting that other guests stayed.",
+            "emphasisRule": "A peak on a quantifier like some, few, or most implies a limit.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L35_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? You thought he had three.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Would you rather take the train?",
-            "textToSpeak": "Would you rather take the train?",
+            "word": "I have two brothers.",
+            "textToSpeak": "I have two brothers.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "It corrects someone who guessed a different number",
+                "It's a neutral description of his family"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "It corrects someone who guessed a different number",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                2,
-                2,
-                3
+                1
             ],
-            "hint": "Questions like this one typically end with an upward glide, not a drop.",
-            "explanation": "Yes/no questions in English typically end with rising intonation, signaling that a yes-or-no answer is expected.",
-            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence.",
-            "emotionContext": "a yes/no question"
+            "hint": "The context gives you a wrong guess. Which word in the reply answers it?",
+            "explanation": "A neutral description would peak on BROTHERS. With the instruction's wrong guess in mind, TWO takes the peak to correct the number.",
+            "emphasisRule": "A peak on a number can correct a wrong guess about quantity.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L35_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The soup needs a little more salt.",
-            "textToSpeak": "The soup needs a little more salt.",
+            "word": "Not everyone enjoyed it.",
+            "textToSpeak": "Not everyone enjoyed it.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "Nobody enjoyed it, so the whole event was a failure",
+                "Some people enjoyed it, but not all"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Some people enjoyed it, but not all",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
                 3,
-                2,
                 1,
                 1,
                 1
             ],
-            "hint": "Say this out loud as a simple fact — notice how natural it feels for the pitch to drop at the end.",
-            "explanation": "The falling pitch at the end signals that this is a statement, not a question.",
-            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement.",
-            "emotionContext": "a statement"
+            "hint": "Look at which word the voice treats as the point of the negative: 'not' or 'everyone'?",
+            "explanation": "The peak on EVERYONE shows that the denial is about the whole group; some may have liked it. If the speaker meant nobody, the sentence would use a different structure.",
+            "emphasisRule": "In 'not + everyone/all', the peak on the quantifier leaves room for some exceptions.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L36_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The store extended its return policy.",
-            "textToSpeak": "The store extended its return policy.",
+            "word": "She only invited Tom.",
+            "textToSpeak": "She only invited Tom.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "She invited Tom but never followed up",
+                "Tom was the single person invited"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "Tom was the single person invited",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "This sentence simply reports information — statements usually settle downward by the end.",
-            "explanation": "Since nothing here is being asked, the voice naturally eases downward by the final word.",
-            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end.",
-            "emotionContext": "a statement"
+            "hint": "'Only' limits something. Which word is the voice drawn to, once 'only' has been said?",
+            "explanation": "With the peak on TOM, 'only' limits the list of people. If the speaker meant she didn't follow up, INVITED would take the peak instead.",
+            "emphasisRule": "The word after 'only' with the peak is what gets limited.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L36_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Can you hear me clearly?",
-            "textToSpeak": "Can you hear me clearly?",
+            "word": "Even the manager forgot.",
+            "textToSpeak": "Even the manager forgot.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "The manager was the least likely person to forget",
+                "The manager was the only person who forgot"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "The manager was the least likely person to forget",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                2,
-                2,
-                3
+                1
             ],
-            "hint": "Read the ending carefully — a yes/no question usually finishes on a rising note.",
-            "explanation": "Because this asks for a simple yes or no, the pitch rises toward the end rather than falling.",
-            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement.",
-            "emotionContext": "a yes/no question"
+            "hint": "Think about what 'even' signals about expectations. Which word carries the surprise?",
+            "explanation": "'Even' plus a peak on MANAGER marks the manager as the unexpected one. 'Only' would limit the group instead, giving a different feeling.",
+            "emphasisRule": "'Even' marks the peaked word as the most surprising member of a group.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L36_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is your headache getting better?",
-            "textToSpeak": "Is your headache getting better?",
+            "word": "Ana also teaches yoga.",
+            "textToSpeak": "Ana also teaches yoga.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "Ana, like other people, teaches yoga",
+                "Yoga is another subject she teaches"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "Yoga is another subject she teaches",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 2,
-                2,
-                3
+                3,
+                1
             ],
-            "hint": "This isn't a statement; it's a direct question expecting yes or no, so listen for a climb at the end.",
-            "explanation": "This is a classic yes/no question, and those are marked by an upward pitch glide at the finish.",
-            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence.",
-            "emotionContext": "a yes/no question"
+            "hint": "'Also' adds something. Does the peak point to the thing being added?",
+            "explanation": "Peak on YOGA adds a new subject to Ana's list of classes. If the speaker were adding Ana to a group of teachers, ANA would take the peak.",
+            "emphasisRule": "In 'also', the peaked word is the thing being added.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L37_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? Your friend thinks you dislike his girlfriend.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Did you try the new bakery?",
-            "textToSpeak": "Did you try the new bakery?",
+            "word": "I do like her.",
+            "textToSpeak": "I do like her.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "It insists on the truth against a doubt",
+                "It softens the statement into a polite hint"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "It insists on the truth against a doubt",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Try asking this out loud — yes/no questions naturally lift the pitch as they finish.",
-            "explanation": "The rising pitch at the end signals a genuine yes/no question, inviting a direct answer.",
-            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement.",
-            "emotionContext": "a yes/no question"
+            "hint": "The context sets up a doubt. Which small word could answer it?",
+            "explanation": "The helper DO normally stays quiet. Here it takes the peak to confirm that the statement is true despite the doubt.",
+            "emphasisRule": "An auxiliary carrying the peak (do, did, does) affirms a statement against doubt.",
+            "emotionContext": "Certainty"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L37_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? You've already given this advice twice.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is this the line for security?",
-            "textToSpeak": "Is this the line for security?",
+            "word": "You should call him.",
+            "textToSpeak": "You should call him.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "It suggests a call rather than a text",
+                "It stresses the advice more strongly"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "It stresses the advice more strongly",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "This is a yes/no question — in English, that usually means the pitch climbs upward right at the end.",
-            "explanation": "Since the speaker is asking rather than telling, the pitch climbs upward instead of dropping.",
-            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence.",
-            "emotionContext": "a yes/no question"
+            "hint": "The context shows repeated advice. Which word could hold the added pressure?",
+            "explanation": "SHOULD takes the peak, adding force to advice that has been ignored. A peak on CALL would instead contrast calling with other ways of reaching him.",
+            "emphasisRule": "A modal with the peak adds force or insistence.",
+            "emotionContext": "Certainty"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L37_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The mall closes early on holidays.",
-            "textToSpeak": "The mall closes early on holidays.",
+            "word": "She could have told me.",
+            "textToSpeak": "She could have told me.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "Complaining that she had the chance and didn't",
+                "Saying telling me was impossible"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "Complaining that she had the chance and didn't",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
                 3,
-                2,
                 1,
                 1,
                 1
             ],
-            "hint": "There's no question here, just a plain statement, so expect the pitch to drop toward the end.",
-            "explanation": "Statements share information rather than ask for it, so the pitch falls naturally toward the end.",
-            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement.",
-            "emotionContext": "a statement"
+            "hint": "Listen to the helper word. Is it being rushed past or stretched?",
+            "explanation": "COULD carries the peak, which highlights that telling me was possible, and so she should have. Without that peak the sentence would sound neutral.",
+            "emphasisRule": "Peak on a past modal often signals a missed opportunity or complaint.",
+            "emotionContext": "Complaint"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L38_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My brother burned the toast again.",
-            "textToSpeak": "My brother burned the toast again.",
+            "word": "Did you take the train?",
+            "textToSpeak": "Did you take the train?",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "Asking whether you took a train, not a bus",
+                "Asking whether it was you, not someone else"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "Asking whether it was you, not someone else",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Read this as a simple fact being shared — the voice usually falls as the sentence closes.",
-            "explanation": "Because this sentence simply states a fact, the pitch drops at the end instead of rising.",
-            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end.",
-            "emotionContext": "a statement"
+            "hint": "This is a yes/no question, but the early lift does something extra. Which word does it highlight?",
+            "explanation": "The peak on YOU followed by a rise at the end checks the person, perhaps because someone else was expected. A peak on TRAIN would be about transport.",
+            "emphasisRule": "In yes/no questions the peak can mark which element is being checked.",
+            "emotionContext": "Information question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L38_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? Everyone said she might cancel.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is the kitchen still open?",
-            "textToSpeak": "Is the kitchen still open?",
+            "word": "Is she coming on Friday?",
+            "textToSpeak": "Is she coming on Friday?",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "Checking whether Friday is the day",
+                "Checking whether she's actually attending"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Checking whether she's actually attending",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                2,
-                2,
-                3
+                2
             ],
-            "hint": "Notice this sentence is asking for a simple yes or no. Where does your voice go as you reach the last word?",
-            "explanation": "Yes/no questions in English typically end with rising intonation, signaling that a yes-or-no answer is expected.",
-            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement.",
-            "emotionContext": "a yes/no question"
+            "hint": "The context contains a doubt. Which word in the question is being tested?",
+            "explanation": "COMING takes the peak because the doubt is about whether she will turn up. If the day were uncertain, FRIDAY would take it.",
+            "emphasisRule": "The peak in a yes/no question lands on the part the speaker is unsure about.",
+            "emotionContext": "Information question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L38_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? You thought the party was Saturday.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is the library open on Sundays?",
-            "textToSpeak": "Is the library open on Sundays?",
+            "word": "It's on Friday?",
+            "textToSpeak": "It's on Friday?",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "Checking a day that differs from what you believed",
+                "Checking whether a party is happening at all"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Checking a day that differs from what you believed",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -598,160 +598,160 @@
                 2,
                 3
             ],
-            "hint": "Questions like this one typically end with an upward glide, not a drop.",
-            "explanation": "Because this asks for a simple yes or no, the pitch rises toward the end rather than falling.",
-            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence.",
-            "emotionContext": "a yes/no question"
+            "hint": "A statement-shaped question can still check a particular detail. Which word does the final rise attach to?",
+            "explanation": "The rise lands on FRIDAY, which is the new, surprising piece. The speaker is confirming it because it conflicts with their earlier belief.",
+            "emphasisRule": "A rising ending on a detail checks that detail.",
+            "emotionContext": "Confirmation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L39_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the emphasis. She means he was invited to the reception, just not the ceremony.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is your brother visiting this weekend?",
-            "textToSpeak": "Is your brother visiting this weekend?",
+            "word": "I didn't invite him to the wedding.",
+            "textToSpeak": "I didn't invite him to the wedding.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "Emphasis on WEDDING",
+                "Emphasis on INVITE"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "Emphasis on WEDDING",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
                 2,
-                2,
-                3
+                3,
+                1
             ],
-            "hint": "Read the ending carefully — a yes/no question usually finishes on a rising note.",
-            "explanation": "This is a classic yes/no question, and those are marked by an upward pitch glide at the finish.",
-            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement.",
-            "emotionContext": "a yes/no question"
+            "hint": "The meaning is given. Which word needs the lift for that to be clear?",
+            "explanation": "WEDDING must carry the peak to show the denial is limited to that event. A peak on INVITE would say he wasn't invited at all, perhaps just told.",
+            "emphasisRule": "The peak on a place or event can narrow a negative to just that item.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L39_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "We ran out of coffee this morning.",
-            "textToSpeak": "We ran out of coffee this morning.",
+            "word": "She said he was late.",
+            "textToSpeak": "She said he was late.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "She was the one who reported it",
+                "It's her claim, and the speaker may not agree"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "It's her claim, and the speaker may not agree",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
                 3,
-                2,
                 1,
                 1,
                 1
             ],
-            "hint": "This isn't asking anything; it's telling you something, so the pitch should ease downward at the end.",
-            "explanation": "This is a plain declarative sentence, and those are marked by falling intonation at the finish.",
-            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement.",
-            "emotionContext": "a statement"
+            "hint": "Reported speech can carry doubt. Which word gets the lift?",
+            "explanation": "SAID takes the peak, suggesting the report is only a claim. If the speaker meant 'she, not someone else, told me', SHE would take the peak.",
+            "emphasisRule": "A peak on a reporting verb (said, claimed) can show doubt about what was reported.",
+            "emotionContext": "Uncertainty"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L39_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My favorite show got renewed.",
-            "textToSpeak": "My favorite show got renewed.",
+            "word": "He bought a bike for his daughter.",
+            "textToSpeak": "He bought a bike for his daughter.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "He bought it rather than making or borrowing it",
+                "It was for his daughter, not his son"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "He bought it rather than making or borrowing it",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Plain statements like this one typically end on a falling note, not a rising one.",
-            "explanation": "The falling pitch at the end signals that this is a statement, not a question.",
-            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end.",
-            "emotionContext": "a statement"
+            "hint": "There are two items here that could be stressed. Check which part the opening lift points to.",
+            "explanation": "BOUGHT takes the peak, so the contrast is about how he got it. DAUGHTER would take the peak if the recipient were the contrast.",
+            "emphasisRule": "A peak on a verb contrasts that action with other possible actions.",
+            "emotionContext": "Contrast"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L40_Q1",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? Your landlord assumed you'd leave in March.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is this jacket on sale today?",
-            "textToSpeak": "Is this jacket on sale today?",
+            "word": "We're not moving until June.",
+            "textToSpeak": "We're not moving until June.",
             "options": [
-                "Falling intonation (a statement)",
-                "Rising intonation (a yes/no question)"
+                "It says you will never move",
+                "It corrects the date to a later one"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswer": "It corrects the date to a later one",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 2,
-                2,
-                3
+                3,
+                1
             ],
-            "hint": "This isn't a statement; it's a direct question expecting yes or no, so listen for a climb at the end.",
-            "explanation": "The rising pitch at the end signals a genuine yes/no question, inviting a direct answer.",
-            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence.",
-            "emotionContext": "a yes/no question"
+            "hint": "The landlord already has a date in mind. What does the peaked word do to that date?",
+            "explanation": "JUNE takes the peak, replacing March as the date. The speaker isn't saying they won't move at all.",
+            "emphasisRule": "In 'not until', the peak on the time word corrects the timing.",
+            "emotionContext": "Correction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L40_Q2",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch?",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Is the meeting still at three?",
-            "textToSpeak": "Is the meeting still at three?",
+            "word": "Can you drive tonight?",
+            "textToSpeak": "Can you drive tonight?",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "Asking about tonight, not another night",
+                "Asking if you, not someone else, can drive"
             ],
-            "correctAnswer": "Rising intonation (a yes/no question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Asking if you, not someone else, can drive",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                2,
-                2,
+                1,
                 3
             ],
-            "hint": "Try asking this out loud — yes/no questions naturally lift the pitch as they finish.",
-            "explanation": "Since the speaker is asking rather than telling, the pitch climbs upward instead of dropping.",
-            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement.",
-            "emotionContext": "a yes/no question"
+            "hint": "It's a question, so the peak and the rise do different jobs. Which word receives the early lift?",
+            "explanation": "YOU takes the early lift, which checks whether the listener is the right driver. If the time mattered, TONIGHT would carry the stress and the rise.",
+            "emphasisRule": "A peak on a pronoun inside a question picks out the person being asked.",
+            "emotionContext": "Information question"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L40_Q3",
-            "instruction": "Identify the intonation pattern",
+            "instruction": "Identify the pitch pattern. What does the speaker mean by this pitch? Someone said she wouldn't help. She did.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "My parents renewed their vows quietly.",
-            "textToSpeak": "My parents renewed their vows quietly.",
+            "word": "She did help.",
+            "textToSpeak": "She did help.",
             "options": [
-                "Rising intonation (a yes/no question)",
-                "Falling intonation (a statement)"
+                "It says she helped more than anyone",
+                "It contradicts the idea that she hadn't"
             ],
-            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswer": "It contradicts the idea that she hadn't",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
-                2,
                 1,
+                2,
+                3,
                 1,
                 1
             ],
-            "hint": "Say this out loud as a simple fact — notice how natural it feels for the pitch to drop at the end.",
-            "explanation": "Since nothing here is being asked, the voice naturally eases downward by the final word.",
-            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement.",
-            "emotionContext": "a statement"
+            "hint": "Context sets up a denial. Which small word is carrying the correction?",
+            "explanation": "DID takes the peak, rejecting the earlier claim that she wouldn't help. It says nothing about how much.",
+            "emphasisRule": "A peaked auxiliary contradicts a previous negative.",
+            "emotionContext": "Contradiction"
         }
     ]
 }

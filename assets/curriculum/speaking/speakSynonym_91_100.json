@@ -6,449 +6,422 @@
         {
             "id": "SPK_SPEAKSYNONYM_L91_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"of several different kinds.\"",
-            "explanation": "In this sentence, \"various\" means of several different kinds, so \"different\" slots in naturally. \"diverse\" is a close second choice.",
-            "textToSpeak": "These hiking boots come in *various* sizes.",
+            "instruction": "Say a synonym with the same level of intensity.",
+            "hint": "A comedian's joke was so good that the whole room couldn't hold back.",
+            "explanation": "Keep in mind that \"roared\" is a loud, powerful word for laughter. \"Howled\" and \"screamed\" are just as strong, and \"erupted\" suggests a sudden burst. A quiet word like \"chuckled\" would not match the loud scene.",
+            "textToSpeak": "The audience *roared* with laughter.",
             "acceptedSynonyms": [
-                "different",
-                "assorted",
-                "diverse",
-                "multiple"
+                "erupted",
+                "screamed",
+                "howled"
             ],
-            "correctAnswer": "different"
+            "correctAnswer": "howled"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L91_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"of several different kinds\"?",
-            "explanation": "\"assorted\" is a reliable synonym for \"various\", which means of several different kinds here. \"multiple\" and \"different\" are also accepted.",
-            "textToSpeak": "Her favorite jeans come in *various* sizes.",
+            "instruction": "Say a word that matches the tone of the sentence.",
+            "hint": "Someone is upset but trying not to attract attention.",
+            "explanation": "Remember that \"sobbed\" is crying with sharp, broken breaths. \"Wept\" is more formal or literary, \"cried\" is the simple everyday word, and \"whimpered\" suggests a softer, smaller sound.",
+            "textToSpeak": "She *sobbed* quietly in the corner.",
             "acceptedSynonyms": [
-                "different",
-                "assorted",
-                "diverse",
-                "multiple"
+                "cried",
+                "wept",
+                "whimpered"
             ],
-            "correctAnswer": "assorted"
+            "correctAnswer": "wept"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L91_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"of several different kinds.\"",
-            "explanation": "\"diverse\" works well here because \"various\" also means of several different kinds. \"different\" and \"assorted\" would work too.",
-            "textToSpeak": "The kitchen containers come in *various* sizes.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "An older man looks through a box of old pictures and reacts with a soft, gentle laugh.",
+            "explanation": "To choose well, note that \"chuckled\" is quiet, low laughter, usually friendly. \"Laughed\" is the general word, and \"chortled\" is a cheerful, slightly old-fashioned laugh that sounds happy and pleased.",
+            "textToSpeak": "Grandpa *chuckled* at the old photos.",
             "acceptedSynonyms": [
-                "different",
-                "assorted",
-                "diverse",
-                "multiple"
+                "laughed",
+                "giggled",
+                "chortled"
             ],
-            "correctAnswer": "diverse"
+            "correctAnswer": "laughed"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L92_Q1",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"specific and distinct from others.\" What's a good match?",
-            "explanation": "\"particular\" means specific and distinct from others, and \"distinctive\" captures that same idea naturally in this sentence. \"unique\" is another solid option.",
-            "textToSpeak": "This imported cheese has a very *particular* taste.",
+            "hint": "Your friend was extremely hungry and the pizza disappeared in five minutes.",
+            "explanation": "Notice that \"devoured\" shows eating quickly and hungrily. \"Gobbled\" is casual and greedy, \"wolfed\" comes from the way a wolf eats, and \"scoffed\" is a British word for eating fast.",
+            "textToSpeak": "He *devoured* the whole pizza.",
             "acceptedSynonyms": [
-                "distinctive",
-                "specific",
-                "unique",
-                "peculiar"
+                "gobbled",
+                "wolfed",
+                "scoffed"
             ],
-            "correctAnswer": "distinctive"
+            "correctAnswer": "gobbled"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L92_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"specific and distinct from others.\"",
-            "explanation": "Good choice: \"specific\" is a strong match for \"particular\", which means specific and distinct from others. You could also say \"peculiar\" or \"distinctive\".",
-            "textToSpeak": "Her grandmother's stew has a very *particular* taste.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "You were thirsty after a run and drank fast, without stopping.",
+            "explanation": "In this sentence, \"gulped\" is about swallowing large amounts quickly. \"Chugged\" is casual and often used for cold drinks, \"swigged\" suggests a big swallow from a bottle, and \"downed\" means finishing something fast.",
+            "textToSpeak": "I *gulped* my water and ran outside.",
             "acceptedSynonyms": [
-                "distinctive",
-                "specific",
-                "unique",
-                "peculiar"
+                "downed",
+                "chugged",
+                "swigged"
             ],
-            "correctAnswer": "specific"
+            "correctAnswer": "chugged"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L92_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"specific and distinct from others\" -- what word comes to mind?",
-            "explanation": "\"unique\" fits because \"particular\" means specific and distinct from others here. Other natural alternatives include \"distinctive\" and \"specific\".",
-            "textToSpeak": "That aged wine has a very *particular* taste.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Picture this: you're giving honest feedback about a meal that needed more seasoning.",
+            "explanation": "Start with \"bland\": it is what people say when food has little taste. \"Tasteless\" is stronger and more negative, \"flavorless\" is more neutral, and \"insipid\" is formal and often used in reviews.",
+            "textToSpeak": "The soup was *bland*.",
             "acceptedSynonyms": [
-                "distinctive",
-                "specific",
-                "unique",
-                "peculiar"
+                "tasteless",
+                "insipid",
+                "flavorless"
             ],
-            "correctAnswer": "unique"
+            "correctAnswer": "tasteless"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L93_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"to a very high degree.\"",
-            "explanation": "In this sentence, \"extremely\" means to a very high degree, so \"remarkably\" slots in naturally. \"incredibly\" is a close second choice.",
-            "textToSpeak": "That coastal town became *extremely* popular this year.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "An old bridge is in bad shape and officials are warning the public.",
+            "explanation": "\"Crumbling\" suggests a slow breaking apart into pieces. \"Falling apart\" is casual and common in speech, and \"giving way\" describes something losing its ability to hold up weight.",
+            "textToSpeak": "The old bridge is *collapsing*, so it isn't safe to cross.",
             "acceptedSynonyms": [
-                "remarkably",
-                "exceptionally",
-                "incredibly",
-                "tremendously"
+                "falling apart",
+                "giving way",
+                "crumbling"
             ],
-            "correctAnswer": "remarkably"
+            "correctAnswer": "crumbling"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L93_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"to a very high degree.\"",
-            "explanation": "\"exceptionally\" is a reliable synonym for \"extremely\", which means to a very high degree here. \"tremendously\" and \"remarkably\" are also accepted.",
-            "textToSpeak": "Her travel blog became *extremely* popular this year.",
+            "instruction": "Say a synonym with the same level of intensity.",
+            "hint": "After a huge storm, the streets were full of damage and people were left with nothing.",
+            "explanation": "The word \"destroyed\" is very strong, so match it with a strong word. \"Wrecked\" is casual, \"demolished\" suggests being knocked down completely, and \"flattened\" is a vivid word for buildings brought down to the ground.",
+            "textToSpeak": "The storm *destroyed* many houses.",
             "acceptedSynonyms": [
-                "remarkably",
-                "exceptionally",
-                "incredibly",
-                "tremendously"
+                "flattened",
+                "demolished",
+                "wrecked"
             ],
-            "correctAnswer": "exceptionally"
+            "correctAnswer": "wrecked"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L93_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"to a very high degree\"?",
-            "explanation": "\"incredibly\" works well here because \"extremely\" also means to a very high degree. \"remarkably\" and \"exceptionally\" would work too.",
-            "textToSpeak": "The new theme park became *extremely* popular this year.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "You noticed a line running through a wall and it's worrying you.",
+            "explanation": "A \"crack\" is a narrow break. \"Split\" suggests a wider opening, \"fissure\" is more technical and geological, and \"fracture\" is a formal word often used in buildings or bones.",
+            "textToSpeak": "There's a *crack* in the wall.",
             "acceptedSynonyms": [
-                "remarkably",
-                "exceptionally",
-                "incredibly",
-                "tremendously"
+                "split",
+                "fissure",
+                "fracture"
             ],
-            "correctAnswer": "incredibly"
+            "correctAnswer": "split"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L94_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"without any doubt.\"",
-            "explanation": "\"definitely\" means without any doubt, and \"certainly\" captures that same idea naturally in this sentence. \"undoubtedly\" is another solid option.",
-            "textToSpeak": "My supervisor will *definitely* attend the conference.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Imagine you're planning your trip and you're almost sure you'll arrive on time.",
+            "explanation": "\"Probably\" shows a good chance, but not a promise. \"Likely\" is short and natural, \"most likely\" increases the chance, and \"in all likelihood\" is more formal.",
+            "textToSpeak": "*Probably*, I'll be there by nine.",
             "acceptedSynonyms": [
-                "certainly",
-                "surely",
-                "undoubtedly",
-                "without question"
+                "in all likelihood",
+                "most likely",
+                "likely"
             ],
-            "correctAnswer": "certainly"
+            "correctAnswer": "most likely"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L94_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"without any doubt.\" What's a good match?",
-            "explanation": "Good choice: \"surely\" is a strong match for \"definitely\", which means without any doubt. You could also say \"without question\" or \"certainly\".",
-            "textToSpeak": "Her research partner will *definitely* attend the conference.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Picture this: a friend asks for a favor, and you're glad to help without thinking twice.",
+            "explanation": "In practice, \"naturally\" suggests helping is obvious. \"Of course\" is the friendliest answer, \"obviously\" is more emphatic, and \"certainly\" sounds more polite and formal.",
+            "textToSpeak": "*Naturally*, I'll help you move.",
             "acceptedSynonyms": [
-                "certainly",
-                "surely",
-                "undoubtedly",
-                "without question"
+                "of course",
+                "obviously",
+                "certainly"
             ],
-            "correctAnswer": "surely"
+            "correctAnswer": "of course"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L94_Q3",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"without any doubt.\"",
-            "explanation": "\"undoubtedly\" fits because \"definitely\" means without any doubt here. Other natural alternatives include \"certainly\" and \"surely\".",
-            "textToSpeak": "The keynote speaker will *definitely* attend the conference.",
+            "hint": "Someone predicts an event that almost never happens.",
+            "explanation": "\"Unlikely\" means the chance is low. \"Improbable\" is the more formal version, \"doubtful\" shows you don't believe it, and \"far-fetched\" says it's hard to imagine.",
+            "textToSpeak": "That seems *unlikely*.",
             "acceptedSynonyms": [
-                "certainly",
-                "surely",
-                "undoubtedly",
-                "without question"
+                "far-fetched",
+                "improbable",
+                "doubtful"
             ],
-            "correctAnswer": "undoubtedly"
+            "correctAnswer": "improbable"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L95_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"happening in small steps rather than all at once\" -- what word comes to mind?",
-            "explanation": "In this sentence, \"gradually\" means happening in small steps rather than all at once, so \"slowly\" slots in naturally. \"progressively\" is a close second choice.",
-            "textToSpeak": "My grandfather *gradually* returned to full strength.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "Suppose you're describing how you feel about a colleague after seeing how she handled a hard moment.",
+            "explanation": "\"Admire\" is a warm word for respect and appreciation. \"Respect\" is more neutral, \"applaud\" suggests public approval, and \"esteem\" is very formal and rarely heard in speech.",
+            "textToSpeak": "I really *admire* her courage.",
             "acceptedSynonyms": [
-                "slowly",
-                "steadily",
-                "progressively",
-                "little by little"
+                "applaud",
+                "respect",
+                "esteem"
             ],
-            "correctAnswer": "slowly"
+            "correctAnswer": "respect"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L95_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"happening in small steps rather than all at once.\"",
-            "explanation": "\"steadily\" is a reliable synonym for \"gradually\", which means happening in small steps rather than all at once here. \"little by little\" and \"slowly\" are also accepted.",
-            "textToSpeak": "Her injured teammate *gradually* returned to full strength.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Here's the scene: you're standing at a store looking at two similar coats.",
+            "explanation": "\"Favor\" here means liking one choice more than another. \"Opt for\" suggests making a choice, and \"lean toward\" suggests you're leaning that way but haven't fully decided.",
+            "textToSpeak": "I *prefer* the blue one.",
             "acceptedSynonyms": [
-                "slowly",
-                "steadily",
-                "progressively",
-                "little by little"
+                "lean toward",
+                "opt for",
+                "favor"
             ],
-            "correctAnswer": "steadily"
+            "correctAnswer": "favor"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L95_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"happening in small steps rather than all at once.\"",
-            "explanation": "\"progressively\" works well here because \"gradually\" also means happening in small steps rather than all at once. \"slowly\" and \"steadily\" would work too.",
-            "textToSpeak": "The recovering patient *gradually* returned to full strength.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Someone just told you the hard truth about your work.",
+            "explanation": "The key word is \"appreciate\", which shows gratitude and respect. \"Value\" suggests you think it's important, \"welcome\" says you're happy to receive it, and \"treasure\" is emotional and sentimental.",
+            "textToSpeak": "I *appreciate* your honesty.",
             "acceptedSynonyms": [
-                "slowly",
-                "steadily",
-                "progressively",
-                "little by little"
+                "value",
+                "welcome",
+                "treasure"
             ],
-            "correctAnswer": "progressively"
+            "correctAnswer": "value"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L96_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"at consistent, repeated intervals\"?",
-            "explanation": "\"regularly\" means at consistent, repeated intervals, and \"routinely\" captures that same idea naturally in this sentence. \"frequently\" is another solid option.",
-            "textToSpeak": "The night nurse *regularly* checks the patient's vitals.",
+            "instruction": "Say a word that matches the tone of the sentence.",
+            "hint": "A boat is rocking and someone is afraid of falling.",
+            "explanation": "It helps to know that \"gripped\" suggests holding tightly. \"Clutched\" adds fear or strong emotion, \"grasped\" means taking hold firmly, and \"clasped\" is more careful and often used with hands.",
+            "textToSpeak": "She *gripped* the railing as the boat rocked.",
             "acceptedSynonyms": [
-                "routinely",
-                "consistently",
-                "frequently",
-                "habitually"
+                "clutched",
+                "clasped",
+                "grasped"
             ],
-            "correctAnswer": "routinely"
+            "correctAnswer": "clutched"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L96_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"at consistent, repeated intervals.\"",
-            "explanation": "Good choice: \"consistently\" is a strong match for \"regularly\", which means at consistent, repeated intervals. You could also say \"habitually\" or \"routinely\".",
-            "textToSpeak": "Her home caregiver *regularly* checks the patient's vitals.",
+            "hint": "You're telling a friend that someone casually sent the keys flying across the room.",
+            "explanation": "Look at \"tossed\" first: it is light and easy. \"Threw\" is the general verb, \"lobbed\" suggests a high, gentle arc, and \"chucked\" is very informal and can be a bit careless.",
+            "textToSpeak": "He *tossed* the keys to me.",
             "acceptedSynonyms": [
-                "routinely",
-                "consistently",
-                "frequently",
-                "habitually"
+                "lobbed",
+                "chucked",
+                "threw"
             ],
-            "correctAnswer": "consistently"
+            "correctAnswer": "threw"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L96_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"at consistent, repeated intervals.\" What's a good match?",
-            "explanation": "\"frequently\" fits because \"regularly\" means at consistent, repeated intervals here. Other natural alternatives include \"routinely\" and \"consistently\".",
-            "textToSpeak": "The visiting doctor *regularly* checks the patient's vitals.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "Imagine you're describing someone who opened a heavy door in one movement.",
+            "explanation": "It helps to know that \"pulled\" is neutral. \"Yanked\" is sudden and forceful, \"tugged\" is gentler and repeated, and \"drew\" is formal and slightly literary.",
+            "textToSpeak": "She *pulled* the door open.",
             "acceptedSynonyms": [
-                "routinely",
-                "consistently",
-                "frequently",
-                "habitually"
+                "tugged",
+                "yanked",
+                "drew"
             ],
-            "correctAnswer": "frequently"
+            "correctAnswer": "yanked"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L97_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"in the usual way.\"",
-            "explanation": "In this sentence, \"typically\" means in the usual way, so \"usually\" slots in naturally. \"generally\" is a close second choice.",
-            "textToSpeak": "Our legal department *typically* responds within a day.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "The forecast promises only the gentlest bit of wet weather, and you're telling a friend it won't ruin the trip.",
+            "explanation": "Start with \"drizzle\": it is very light rain. \"Light rain\" is the clearest replacement, \"sprinkle\" is small and brief, and \"mist\" is a fine, wet cloud of water. All of them are softer than a heavy storm.",
+            "textToSpeak": "It's only a *drizzle*, so we can still go out.",
             "acceptedSynonyms": [
-                "usually",
-                "normally",
-                "generally",
-                "ordinarily"
+                "light rain",
+                "sprinkle",
+                "mist"
             ],
-            "correctAnswer": "usually"
+            "correctAnswer": "light rain"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L97_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"in the usual way\" -- what word comes to mind?",
-            "explanation": "\"normally\" is a reliable synonym for \"typically\", which means in the usual way here. \"ordinarily\" and \"usually\" are also accepted.",
-            "textToSpeak": "Her insurance company *typically* responds within a day.",
+            "instruction": "Say a synonym with the same level of intensity.",
+            "hint": "You were outside with no umbrella and the rain was suddenly heavy.",
+            "explanation": "Remember that \"downpour\" is a heavy, sudden rainfall. \"Deluge\" is a formal word for a huge amount of water, \"cloudburst\" is a very sudden storm, and \"torrent\" suggests rain rushing down in a flood.",
+            "textToSpeak": "We got caught in a *downpour*.",
             "acceptedSynonyms": [
-                "usually",
-                "normally",
-                "generally",
-                "ordinarily"
+                "cloudburst",
+                "deluge",
+                "torrent"
             ],
-            "correctAnswer": "normally"
+            "correctAnswer": "deluge"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L97_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"in the usual way.\"",
-            "explanation": "\"generally\" works well here because \"typically\" also means in the usual way. \"usually\" and \"normally\" would work too.",
-            "textToSpeak": "The customer hotline *typically* responds within a day.",
+            "instruction": "Say another word with the same meaning.",
+            "hint": "Suppose you're walking on a hill and the wind is so strong you can barely stand.",
+            "explanation": "\"Fierce\" describes wind with strength and force. \"Violent\" is more extreme, \"ferocious\" sounds almost wild, and \"howling\" describes the sound as well as the strength.",
+            "textToSpeak": "The wind was *fierce* on the hilltop.",
             "acceptedSynonyms": [
-                "usually",
-                "normally",
-                "generally",
-                "ordinarily"
+                "howling",
+                "ferocious",
+                "violent"
             ],
-            "correctAnswer": "generally"
+            "correctAnswer": "violent"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L98_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"without stopping.\"",
-            "explanation": "\"constantly\" means without stopping, and \"continuously\" captures that same idea naturally in this sentence. \"endlessly\" is another solid option.",
-            "textToSpeak": "This software is *constantly* being updated.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "Imagine you're describing an empty bus, and you want the informal, chatty version.",
+            "explanation": "In practice, \"plenty\" means more than enough. \"Lots\" and \"loads\" are casual, and \"heaps\" is very informal and very common in Australian and British English.",
+            "textToSpeak": "There were *plenty* of seats left.",
             "acceptedSynonyms": [
-                "continuously",
-                "perpetually",
-                "endlessly",
-                "incessantly"
+                "lots",
+                "heaps",
+                "loads"
             ],
-            "correctAnswer": "continuously"
+            "correctAnswer": "lots"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L98_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"without stopping\"?",
-            "explanation": "Good choice: \"perpetually\" is a strong match for \"constantly\", which means without stopping. You could also say \"incessantly\" or \"continuously\".",
-            "textToSpeak": "Her security system is *constantly* being updated.",
+            "instruction": "Replace the highlighted word with a synonym.",
+            "hint": "Think of it this way: you're telling a friend you've visited a city again and again, and you want to sound natural.",
+            "explanation": "Here, \"several\" means more than two but not a huge number. \"Multiple\" and \"numerous\" are stronger and often used in writing, and \"many\" is the simple spoken alternative.",
+            "textToSpeak": "I've been there *several* times.",
             "acceptedSynonyms": [
-                "continuously",
-                "perpetually",
-                "endlessly",
-                "incessantly"
+                "numerous",
+                "multiple",
+                "many"
             ],
-            "correctAnswer": "perpetually"
+            "correctAnswer": "multiple"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L98_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Look for a word close in meaning to \"without stopping.\"",
-            "explanation": "\"endlessly\" fits because \"constantly\" means without stopping here. Other natural alternatives include \"continuously\" and \"perpetually\".",
-            "textToSpeak": "The company database is *constantly* being updated.",
+            "instruction": "Say a word that could replace the highlighted one here.",
+            "hint": "Here's the scene: you're describing a store on a quiet night where hardly anybody was inside.",
+            "explanation": "The key word is \"virtually\", which means \"almost completely\". \"Practically\" is the casual spoken word, while \"almost\" and \"nearly\" are simpler and still natural.",
+            "textToSpeak": "The store is *virtually* empty.",
             "acceptedSynonyms": [
-                "continuously",
-                "perpetually",
-                "endlessly",
-                "incessantly"
+                "nearly",
+                "almost",
+                "practically"
             ],
-            "correctAnswer": "endlessly"
+            "correctAnswer": "practically"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L99_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "The highlighted word means \"not very often.\" What's a good match?",
-            "explanation": "In this sentence, \"rarely\" means not very often, so \"seldom\" slots in naturally. \"hardly ever\" is a close second choice.",
-            "textToSpeak": "That acclaimed director *rarely* disappoints the critics.",
+            "instruction": "Give a natural synonym for the highlighted word.",
+            "hint": "You're describing a young performer who was praised for a natural gift.",
+            "explanation": "Notice that \"gifted\" suggests natural ability. \"Skilled\" suggests trained ability, and \"accomplished\" suggests she has already achieved a lot, which is a subtle but useful difference.",
+            "textToSpeak": "She's a very *talented* singer.",
             "acceptedSynonyms": [
-                "seldom",
-                "hardly ever",
-                "infrequently"
+                "skilled",
+                "accomplished",
+                "gifted"
             ],
-            "correctAnswer": "seldom"
+            "correctAnswer": "gifted"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L99_Q2",
             "interactionType": "voice",
             "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Say a word that also expresses \"not very often.\"",
-            "explanation": "\"hardly ever\" is a reliable synonym for \"rarely\", which means not very often here. \"infrequently\" and \"seldom\" are also accepted.",
-            "textToSpeak": "Her favorite author *rarely* disappoints the critics.",
+            "hint": "Every time he walks into the kitchen, something falls or spills.",
+            "explanation": "Think about \"clumsy\": it describes someone who often makes mistakes with their body. \"Uncoordinated\" is neutral and factual, \"awkward\" suggests stiff movement, and \"ungainly\" is more formal and slightly unkind.",
+            "textToSpeak": "He's *clumsy* and always knocks things over.",
             "acceptedSynonyms": [
-                "seldom",
-                "hardly ever",
-                "infrequently"
+                "uncoordinated",
+                "awkward",
+                "ungainly"
             ],
-            "correctAnswer": "hardly ever"
+            "correctAnswer": "uncoordinated"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L99_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Picture something \"not very often\" -- what word comes to mind?",
-            "explanation": "\"infrequently\" works well here because \"rarely\" also means not very often. \"seldom\" and \"hardly ever\" would work too.",
-            "textToSpeak": "The veteran orchestra *rarely* disappoints the critics.",
+            "instruction": "Say a word that matches the tone of the sentence.",
+            "hint": "He has achieved a lot but never talks about it.",
+            "explanation": "Keep in mind that \"modest\" is a positive word for not boasting. \"Humble\" suggests he doesn't think he's better than others, \"unassuming\" is quiet and low-key, and \"self-effacing\" suggests he plays down his own achievements.",
+            "textToSpeak": "He's very *modest* about his success.",
             "acceptedSynonyms": [
-                "seldom",
-                "hardly ever",
-                "infrequently"
+                "self-effacing",
+                "humble",
+                "unassuming"
             ],
-            "correctAnswer": "infrequently"
+            "correctAnswer": "humble"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L100_Q1",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Think of another word that means \"complete, leaving nothing out.\"",
-            "explanation": "\"thorough\" means complete, leaving nothing out, and \"comprehensive\" captures that same idea naturally in this sentence. \"exhaustive\" is another solid option.",
-            "textToSpeak": "The detective conducted a *thorough* investigation.",
+            "instruction": "What synonym could you say instead?",
+            "hint": "You've just left a meeting and it achieved what everyone needed.",
+            "explanation": "Quick reminder: \"productive\" says something useful happened. \"Constructive\" is a calm, professional word for helpful, \"fruitful\" suggests good results came out of it, and \"worthwhile\" says the time was well spent.",
+            "textToSpeak": "The meeting was *productive*.",
             "acceptedSynonyms": [
-                "comprehensive",
-                "meticulous",
-                "exhaustive",
-                "detailed"
+                "fruitful",
+                "worthwhile",
+                "constructive"
             ],
-            "correctAnswer": "comprehensive"
+            "correctAnswer": "constructive"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L100_Q2",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "Try a word that means \"complete, leaving nothing out.\"",
-            "explanation": "Good choice: \"meticulous\" is a strong match for \"thorough\", which means complete, leaving nothing out. You could also say \"detailed\" or \"comprehensive\".",
-            "textToSpeak": "Her legal team conducted a *thorough* investigation.",
+            "instruction": "Say a different word that keeps the same meaning.",
+            "hint": "You don't want to sign a contract until you know more.",
+            "explanation": "The word \"reluctant\" is polite and careful. \"Unwilling\" is more direct and can sound firmer, \"loath\" is formal and slightly old-fashioned, and \"disinclined\" is very formal and understated.",
+            "textToSpeak": "I'm *reluctant* to sign the contract.",
             "acceptedSynonyms": [
-                "comprehensive",
-                "meticulous",
-                "exhaustive",
-                "detailed"
+                "loath",
+                "disinclined",
+                "unwilling"
             ],
-            "correctAnswer": "meticulous"
+            "correctAnswer": "unwilling"
         },
         {
             "id": "SPK_SPEAKSYNONYM_L100_Q3",
             "interactionType": "voice",
-            "instruction": "Say a synonym for the highlighted word.",
-            "hint": "What's another word for something that means \"complete, leaving nothing out\"?",
-            "explanation": "\"exhaustive\" fits because \"thorough\" means complete, leaving nothing out here. Other natural alternatives include \"comprehensive\" and \"meticulous\".",
-            "textToSpeak": "The safety inspector conducted a *thorough* investigation.",
+            "instruction": "Give a synonym that sounds natural in this situation.",
+            "hint": "A manager approved an unusual plan that others wouldn't dare to try.",
+            "explanation": "To choose well, note that \"bold\" describes a choice that takes courage. \"Daring\" adds excitement and a bit of risk, \"audacious\" is stronger and can sound almost cheeky, and \"courageous\" is more serious and admirable.",
+            "textToSpeak": "It was a *bold* decision.",
             "acceptedSynonyms": [
-                "comprehensive",
-                "meticulous",
-                "exhaustive",
-                "detailed"
+                "audacious",
+                "daring",
+                "courageous"
             ],
-            "correctAnswer": "exhaustive"
+            "correctAnswer": "daring"
         }
     ]
 }

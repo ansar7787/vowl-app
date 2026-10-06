@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L141_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two clauses, one sentence. Follow where the voice pauses and where it comes to rest.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Do I look like a mind reader?",
-            "textToSpeak": "Do I look like a mind reader?",
+            "word": "We finished the survey, but nobody has analysed the results yet.",
+            "textToSpeak": "We finished the survey, but nobody has analysed the results yet.",
             "options": [
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "Falls after 'survey', lifts on 'yet'",
+                "Lifts after 'survey', falls on 'yet'"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
-            "correctAnswerIndex": 0,
-            "hint": "The speaker obviously can't read minds - this isn't a real request for an answer. Listen for the pitch to fall firmly.",
-            "explanation": "'Do I look like a mind reader?' falls firmly as a rhetorical question - the speaker is making a point, not genuinely asking.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - making a point, not really asking and a genuine yes/no question."
+            "correctAnswer": "Lifts after 'survey', falls on 'yet'",
+            "correctAnswerIndex": 1,
+            "hint": "Listen at the comma: does the voice sound as if more is coming?",
+            "explanation": "Stopping at the comma, the first clause lifts, and that tells the listener the sentence isn't over. The fall on 'yet' then closes the whole thought. If the voice fell at 'survey' it would sound like a complete statement, and 'but nobody...' would feel tacked on.",
+            "modulationPattern": "Rise at the clause boundary, fall on 'yet'.",
+            "meaningShift": "A lift after 'survey' joins the clauses; a fall there would split them into two separate statements."
         },
         {
             "id": "ACC_PITCHMODULATION_L141_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager is chasing a signature.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Did you finish the report?",
-            "textToSpeak": "Did you finish the report?",
+            "word": "The report I sent you yesterday still needs your signature.",
+            "textToSpeak": "The report I sent you yesterday still needs your signature.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
+                "'Signature' carries the peak; 'I sent you' stays low",
+                "'Yesterday' carries the peak; the timing is the news"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswer": "'Signature' carries the peak; 'I sent you' stays low",
             "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely doesn't know if the report is done. Listen for the pitch to lift at the end, inviting a real answer.",
-            "explanation": "'Did you finish the report?' rises at the end as a genuine Yes/No question, truly seeking information.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - making a point, not really asking."
+            "hint": "Which part of the sentence would the listener already know about?",
+            "explanation": "Everything about the report and its sending is background, so that stretch is spoken lower and quicker. The new point is what the report still needs, so 'signature' takes the peak. Pushing 'yesterday' would suggest the timing was the issue, like a complaint about how old the email was.",
+            "modulationPattern": "Reduced pitch on the relative clause, peak on 'signature'.",
+            "meaningShift": "A peak on 'signature' tells the listener what to do; a peak on 'yesterday' would turn the sentence into a remark about timing."
         },
         {
             "id": "ACC_PITCHMODULATION_L141_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is wrapping up a message.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Is that supposed to be funny?",
-            "textToSpeak": "Is that supposed to be funny?",
+            "word": "Call me when you're done, whenever that is.",
+            "textToSpeak": "Call me when you're done, whenever that is.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
+                "'Whenever that is' is low and quick: an afterthought",
+                "'Whenever that is' peaks: it is the main request itself"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
-            "correctAnswerIndex": 1,
-            "hint": "The speaker is making clear they don't find it funny, not really asking for an opinion. Listen for the pitch to fall firmly.",
-            "explanation": "'Is that supposed to be funny?' falls firmly as a rhetorical question, expressing displeasure rather than genuinely asking.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - making a point, not really asking."
+            "correctAnswer": "'Whenever that is' is low and quick: an afterthought",
+            "correctAnswerIndex": 0,
+            "hint": "Which part of the sentence would you drop if you were in a hurry?",
+            "explanation": "By 'done' the request is complete, and the final phrase is a casual add-on, so it is spoken quickly, at a lower pitch and with little movement. If it had a peak, the listener would treat 'whenever that is' as the key piece of instruction, which makes little sense.",
+            "modulationPattern": "Low, compressed tail after the main peak on 'done'.",
+            "meaningShift": "A low tail keeps the focus on the request; a peaked tail would turn the add-on into the point."
         },
         {
             "id": "ACC_PITCHMODULATION_L142_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone asks whether you like the new phone.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Have you finished your homework?",
-            "textToSpeak": "Have you finished your homework?",
+            "word": "I like the design, but I don't like the price.",
+            "textToSpeak": "I like the design, but I don't like the price.",
             "options": [
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "'Like' and 'don't like' stand out: stressing attitude",
+                "'Design' and 'price' stand out: setting up a contrast"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswer": "'Design' and 'price' stand out: setting up a contrast",
             "correctAnswerIndex": 1,
-            "hint": "The speaker genuinely doesn't know the answer yet. Listen for the pitch to lift at the end.",
-            "explanation": "'Have you finished your homework?' rises at the end as a genuine question, truly seeking to know the answer.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - making a point, not really asking and a genuine yes/no question."
+            "hint": "What exactly is being weighed against what?",
+            "explanation": "With the attitude already clear from the grammar, the contrast the listener needs is between the two things being assessed. 'Design' and 'price' carry the peaks, with 'design' typically rising and 'price' falling. Stressing the verbs would make it sound like an argument about whether the speaker has feelings at all.",
+            "modulationPattern": "Peaks on 'design' and 'price' with a rise then a fall.",
+            "meaningShift": "Peaks on the nouns compare two features; peaks on the verbs would compare two attitudes."
         },
         {
             "id": "ACC_PITCHMODULATION_L142_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone asks, 'Does your family like city life?'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Do you think money grows on trees?",
-            "textToSpeak": "Do you think money grows on trees?",
+            "word": "My brother loves the city, but I prefer the countryside.",
+            "textToSpeak": "My brother loves the city, but I prefer the countryside.",
             "options": [
-                "Falling Tone (Rhetorical - Implying 'Be Careful With Spending')",
-                "Rising Tone (Genuine Yes/No Question)"
+                "'City' and 'countryside' stand out: comparing places",
+                "'Brother' and 'I' stand out: comparing people"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Implying 'Be Careful With Spending')",
-            "correctAnswerIndex": 0,
-            "hint": "Nobody is really asking about trees here - it's a pointed remark about spending. Listen for the pitch to fall firmly.",
-            "explanation": "'Do you think money grows on trees?' falls firmly as a rhetorical question, making a point about careless spending.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - implying 'be careful with spending' and a genuine yes/no question."
+            "correctAnswer": "'Brother' and 'I' stand out: comparing people",
+            "correctAnswerIndex": 1,
+            "hint": "The question was about people's preferences. Who is being compared?",
+            "explanation": "Because the question asks about family members, the contrast that answers it is between people: 'brother' versus 'I'. The places are secondary, though they still get some movement. If the question were 'Which do you prefer, city or countryside?', the place names would lead.",
+            "modulationPattern": "Primary peaks on 'brother' and 'I', secondary on the places.",
+            "meaningShift": "Peaks on the people compare family members; peaks on the places would compare locations."
         },
         {
             "id": "ACC_PITCHMODULATION_L142_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A teammate has misunderstood your question.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Is this some kind of joke?",
-            "textToSpeak": "Is this some kind of joke?",
+            "word": "I didn't ask whether you could do it, I asked whether you would.",
+            "textToSpeak": "I didn't ask whether you could do it, I asked whether you would.",
             "options": [
-                "Falling Tone (Rhetorical - Expressing Disbelief)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "'Could' and 'would' stand out",
+                "'Ask' and 'asked' stand out"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Expressing Disbelief)",
+            "correctAnswer": "'Could' and 'would' stand out",
             "correctAnswerIndex": 0,
-            "hint": "The speaker is reacting with disbelief, not genuinely asking if it's a joke. Listen for the pitch to fall firmly.",
-            "explanation": "'Is this some kind of joke?' falls firmly as a rhetorical question, expressing disbelief rather than genuine curiosity.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - expressing disbelief and a genuine yes/no question."
+            "hint": "Which pair of words does the misunderstanding turn on?",
+            "explanation": "Ability versus willingness is the whole misunderstanding, so those two modal verbs carry the peaks. 'Ask' and 'asked' are repeated, which marks them as given information. Stressing them would sound as though the argument were about whether a question had been asked at all.",
+            "modulationPattern": "Contrastive peaks on 'could' and 'would'; repeated 'ask' deaccented.",
+            "meaningShift": "Peaks on 'could' and 'would' set ability against willingness; peaks on 'ask' would argue about asking."
         },
         {
             "id": "ACC_PITCHMODULATION_L143_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two turns. Listen to how the answer treats the question's words.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Did you remember the tickets?",
-            "textToSpeak": "Did you remember the tickets?",
+            "word": "Is it the red folder? No, the blue one.",
+            "textToSpeak": "Is it the red folder? No, the blue one.",
             "options": [
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "'No' is brief; 'blue' stands out",
+                "'No' stands out; 'blue' is light"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "hint": "The speaker genuinely doesn't know if the tickets were brought. Listen for the pitch to lift at the end.",
-            "explanation": "'Did you remember the tickets?' rises at the end as a genuine question, truly seeking to know the answer.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - making a point, not really asking and a genuine yes/no question."
+            "correctAnswer": "'No' is brief; 'blue' stands out",
+            "correctAnswerIndex": 0,
+            "hint": "What did the answerer change from the question?",
+            "explanation": "Only the colour has changed, so 'blue' carries the peak and 'folder' is reduced into 'one'. The 'no' is just a quick signal of correction. If 'no' were heavy it would suggest an annoyed rebuttal and 'blue' would lose its place as the new information.",
+            "modulationPattern": "Brief 'no', peak on 'blue', reduced 'one'.",
+            "meaningShift": "A peak on 'blue' fixes the detail; a heavy 'no' would sound irritated and weaken the correction."
         },
         {
             "id": "ACC_PITCHMODULATION_L143_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two turns. Listen to what the answer picks out.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Who do you think you are?",
-            "textToSpeak": "Who do you think you are?",
+            "word": "Did you call him? I texted him.",
+            "textToSpeak": "Did you call him? I texted him.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Expressing Displeasure)"
+                "'Him' stands out; 'texted' is given",
+                "'Texted' stands out; 'him' is given"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Expressing Displeasure)",
+            "correctAnswer": "'Texted' stands out; 'him' is given",
             "correctAnswerIndex": 1,
-            "hint": "This isn't a real request for someone's identity - it expresses anger at their behavior. Listen for the pitch to fall firmly.",
-            "explanation": "'Who do you think you are?' falls firmly as a rhetorical question, expressing displeasure rather than asking for an identity.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - expressing displeasure."
+            "hint": "The same person is in both turns. What changed?",
+            "explanation": "'Him' has already been named, so it shrinks to a quick, low word. The new information is the method, 'texted', which takes the peak. A peak on 'him' would suggest there had been confusion over who it was.",
+            "modulationPattern": "Peak on 'texted', deaccented 'him'.",
+            "meaningShift": "A peak on 'texted' replaces 'call' with a different action; a peak on 'him' would correct the person."
         },
         {
             "id": "ACC_PITCHMODULATION_L143_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Two turns. The second one gives a different day.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Are we there yet?",
-            "textToSpeak": "Are we there yet?",
+            "word": "Is she coming on Friday? She's coming on Saturday.",
+            "textToSpeak": "Is she coming on Friday? She's coming on Saturday.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Expressing Displeasure)"
+                "'Saturday' stands out; 'coming' is given",
+                "'Coming' stands out; 'Saturday' is given"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswer": "'Saturday' stands out; 'coming' is given",
             "correctAnswerIndex": 0,
-            "hint": "A restless traveler genuinely wants to know how much further there is to go. Listen for the pitch to lift at the end.",
-            "explanation": "'Are we there yet?' rises at the end as a genuine question, truly seeking to know how much of the trip remains.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - expressing displeasure."
+            "hint": "Decide whether the speaker is disagreeing about her arrival or about its timing.",
+            "explanation": "Her coming is not in dispute, so the verb is reduced and 'Saturday' takes the peak. 'Coming' would carry the peak if somebody had doubted that she would come at all.",
+            "modulationPattern": "Peak on 'Saturday', reduced 'coming'.",
+            "meaningShift": "A peak on 'Saturday' corrects the day; a peak on 'coming' would insist that she is arriving."
         },
         {
             "id": "ACC_PITCHMODULATION_L144_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You have two sisters. Listen to how the phrase is grouped.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Can you pass the menu?",
-            "textToSpeak": "Can you pass the menu?",
+            "word": "My sister who lives in Leeds called.",
+            "textToSpeak": "My sister who lives in Leeds called.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
+                "Picks out one sister from several",
+                "Adds a side detail about her"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswer": "Picks out one sister from several",
             "correctAnswerIndex": 0,
-            "hint": "This is a simple, real request at the table. Listen for the pitch to lift gently at the end.",
-            "explanation": "'Can you pass the menu?' rises at the end as a genuine, polite request, truly seeking the listener's help.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - making a point, not really asking."
+            "hint": "Is there a pause around 'who lives in Leeds'?",
+            "explanation": "With no break around the relative clause, it works as part of the identification: this is the sister in Leeds, as opposed to the other one. If it were set apart with pauses and a lowered pitch, it would just be an aside, and the listener would assume one sister.",
+            "modulationPattern": "No boundary around the relative clause; continuous phrasing.",
+            "meaningShift": "Continuous phrasing identifies which sister; a separated, lowered clause would add background."
         },
         {
             "id": "ACC_PITCHMODULATION_L144_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is explaining why a call never happened.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Do you think I was born yesterday?",
-            "textToSpeak": "Do you think I was born yesterday?",
+            "word": "I didn't call her, because I was angry.",
+            "textToSpeak": "I didn't call her, because I was angry.",
             "options": [
-                "Falling Tone (Rhetorical - Implying 'I'm Not Naive')",
-                "Rising Tone (Genuine Yes/No Question)"
+                "Pause before 'because': anger is why I didn't call",
+                "No pause: anger isn't the reason I called her"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Implying 'I'm Not Naive')",
+            "correctAnswer": "Pause before 'because': anger is why I didn't call",
             "correctAnswerIndex": 0,
-            "hint": "Nobody is really asking about the speaker's birth date - it's a pointed remark about not being fooled. Listen for a falling tone.",
-            "explanation": "'Do you think I was born yesterday?' falls firmly as a rhetorical question, making the point that the speaker isn't easily fooled.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - implying 'i'm not naive' and a genuine yes/no question."
+            "hint": "Where does the voice break, and where does it stay joined?",
+            "explanation": "Placing a boundary before 'because' separates the negative from the reason, so the reason belongs to not calling. If 'because' joined directly to 'call her', it would be the 'calling' that is negated, and the reason would be something else, like 'I called her for another reason'.",
+            "modulationPattern": "Boundary and lift after 'her', then 'because' clause.",
+            "meaningShift": "A break before 'because' explains the non-call; no break would negate the reason itself."
         },
         {
             "id": "ACC_PITCHMODULATION_L144_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone describes an incident at the observatory.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Is the wifi working for you?",
-            "textToSpeak": "Is the wifi working for you?",
+            "word": "We saw the man with the telescope.",
+            "textToSpeak": "We saw the man with the telescope.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Implying 'I'm Not Naive')"
+                "No break: the man was holding the telescope",
+                "Break before 'with': we used the telescope"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
-            "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely wants to know if the connection works. Listen for the pitch to lift at the end.",
-            "explanation": "'Is the wifi working for you?' rises at the end as a genuine question, truly checking on the connection.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - implying 'i'm not naive'."
+            "correctAnswer": "Break before 'with': we used the telescope",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'with the telescope' sound attached to 'man', or separate?",
+            "explanation": "Breaking briefly before 'with' attaches the phrase to the verb, so the telescope is the means of seeing. Without any break, 'the man with the telescope' becomes one description, and the listener pictures him holding it.",
+            "modulationPattern": "Boundary before 'with', separating the prepositional phrase.",
+            "meaningShift": "A break before 'with' makes the telescope the instrument; running on makes it the man's possession."
         },
         {
             "id": "ACC_PITCHMODULATION_L145_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is checking whether you can look over a draft tonight.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Did the package arrive?",
-            "textToSpeak": "Did the package arrive?",
+            "word": "If I send the draft tonight, will you be able to look at it?",
+            "textToSpeak": "If I send the draft tonight, will you be able to look at it?",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
+                "Lifts after 'tonight', lifts again on 'it'",
+                "Lifts after 'tonight', falls on 'it'"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswer": "Lifts after 'tonight', lifts again on 'it'",
             "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely doesn't know if the delivery has come. Listen for the pitch to lift at the end.",
-            "explanation": "'Did the package arrive?' rises at the end as a genuine question, truly seeking to know the delivery status.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - making a point, not really asking."
+            "hint": "Treat the sentence as two parts and compare the way each one ends.",
+            "explanation": "Conditional clauses lift at their boundary to show that the sentence continues, and since the main clause is a yes/no question it lifts again at the end. A fall on 'it' would turn the main clause into a statement of expectation, as if the colleague had already agreed.",
+            "modulationPattern": "Rise at the end of the if-clause, second rise on 'it' in a yes/no question.",
+            "meaningShift": "A second lift keeps it a real yes/no question; a fall would sound like an assumption that the answer is yes."
         },
         {
             "id": "ACC_PITCHMODULATION_L145_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A junior colleague asks for advice.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What's the point of complaining?",
-            "textToSpeak": "What's the point of complaining?",
+            "word": "What would you do if you were me?",
+            "textToSpeak": "What would you do if you were me?",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Implying Complaining Is Useless)"
+                "Lifts on 'me': a tentative, hopeful ask",
+                "Falls on 'me': a direct request for advice"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Implying Complaining Is Useless)",
+            "correctAnswer": "Falls on 'me': a direct request for advice",
             "correctAnswerIndex": 1,
-            "hint": "This isn't a real request for the purpose of complaining - it suggests it won't help. Listen for the pitch to fall firmly.",
-            "explanation": "'What's the point of complaining?' falls firmly as a rhetorical question, implying that complaining won't change anything.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - implying complaining is useless."
+            "hint": "Check whether the voice settles, or reach for a response.",
+            "explanation": "Because a question word starts the sentence, the voice can fall at the end and the question reads as a straight request. Lifting on 'me' adds a note of hope or nervousness, which may be appropriate if the speaker is anxious.",
+            "modulationPattern": "Falling at the end of a wh-question.",
+            "meaningShift": "A fall asks directly; a lift softens it into a hopeful appeal."
         },
         {
             "id": "ACC_PITCHMODULATION_L145_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "You can't find the manual and a colleague might know.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Are you free this weekend?",
-            "textToSpeak": "Are you free this weekend?",
+            "word": "You wouldn't happen to know where the manual is, would you?",
+            "textToSpeak": "You wouldn't happen to know where the manual is, would you?",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Implying Complaining Is Useless)"
+                "Falls on the tag: expecting a 'no'",
+                "Rises on the tag: a real, tentative ask"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
-            "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely wants to know about the listener's plans. Listen for the pitch to lift at the end.",
-            "explanation": "'Are you free this weekend?' rises at the end as a genuine question, truly checking on availability.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - implying complaining is useless."
+            "correctAnswer": "Rises on the tag: a real, tentative ask",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the speaker sounds as though they hope for an answer.",
+            "explanation": "Rising on the tag opens the question for a reply and leaves room for 'actually, yes'. A falling tag with a drop in tone would expect negative agreement and sound as if the speaker had given up.",
+            "modulationPattern": "Rising tag after a negative statement.",
+            "meaningShift": "A rising tag asks in earnest; a falling tag expects the answer to be no."
         },
         {
             "id": "ACC_PITCHMODULATION_L146_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager is replying to a critique of her proposal.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Will the doctor see me today?",
-            "textToSpeak": "Will the doctor see me today?",
+            "word": "I appreciate your honesty, but I think you're missing the point.",
+            "textToSpeak": "I appreciate your honesty, but I think you're missing the point.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
+                "Cool opening, soft landing: ready to give way to you",
+                "Warm opening, firm landing: courteous, not budging"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
-            "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely doesn't know if an appointment is possible. Listen for the pitch to lift at the end.",
-            "explanation": "'Will the doctor see me today?' rises at the end as a genuine question, truly seeking information about the appointment.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - making a point, not really asking."
+            "correctAnswer": "Warm opening, firm landing: courteous, not budging",
+            "correctAnswerIndex": 1,
+            "hint": "Compare how the first clause starts with how the sentence ends.",
+            "explanation": "Lifting warmly on 'appreciate' establishes goodwill, and the firm fall on 'point' shows that the disagreement stands. A cool opening with a soft, rising landing would suggest the speaker was ready to be persuaded.",
+            "modulationPattern": "Lifted first clause, firm fall on 'point'.",
+            "meaningShift": "A warm start with a firm end disagrees courteously; a cool start with a soft end gives way."
         },
         {
             "id": "ACC_PITCHMODULATION_L146_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague asks for an extra review.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Why bother explaining it again?",
-            "textToSpeak": "Why bother explaining it again?",
+            "word": "I know it's late, but could you take one more look?",
+            "textToSpeak": "I know it's late, but could you take one more look?",
             "options": [
-                "Falling Tone (Rhetorical - Implying It's Pointless)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "Apologetic, lifting at the end: asking a favour",
+                "Pressing, falling at the end: leaning on you"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Implying It's Pointless)",
+            "correctAnswer": "Apologetic, lifting at the end: asking a favour",
             "correctAnswerIndex": 0,
-            "hint": "This isn't a real request for a reason - it suggests explaining again won't help. Listen for the pitch to fall firmly.",
-            "explanation": "'Why bother explaining it again?' falls firmly as a rhetorical question, implying that another explanation would be pointless.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - implying it's pointless and a genuine yes/no question."
+            "hint": "Hear whether the voice leaves you free to refuse.",
+            "explanation": "Conceding the problem first, then lifting on 'look', leaves a real choice. A pressing tone would drop on 'look' and treat the favour as already agreed.",
+            "modulationPattern": "Lift on 'look' after a conceding first clause.",
+            "meaningShift": "A lifted end asks a favour; a falling end presumes agreement."
         },
         {
             "id": "ACC_PITCHMODULATION_L146_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A mentor reviews your second draft.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Is the meeting still happening?",
-            "textToSpeak": "Is the meeting still happening?",
+            "word": "It's not perfect, but it's a lot better than last time.",
+            "textToSpeak": "It's not perfect, but it's a lot better than last time.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Implying It's Pointless)"
+                "Encouraging: 'lot' and 'better' lifted",
+                "Faint praise: the clause even and low"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswer": "Encouraging: 'lot' and 'better' lifted",
             "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely doesn't know if plans have changed. Listen for the pitch to lift at the end.",
-            "explanation": "'Is the meeting still happening?' rises at the end as a genuine question, truly checking on the schedule.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - implying it's pointless."
+            "hint": "Does the second clause have more energy than the first?",
+            "explanation": "Lifting 'lot' and 'better' puts the weight on the improvement, so the praise is felt. If the second clause were even and low, 'not perfect' would be the headline and the praise would sound like a courtesy.",
+            "modulationPattern": "Lifts on 'lot' and 'better' in the second clause.",
+            "meaningShift": "A lifted second clause encourages; an even, low one damns with faint praise."
         },
         {
             "id": "ACC_PITCHMODULATION_L147_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is telling a story about a trip.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Did you check the weather forecast?",
-            "textToSpeak": "Did you check the weather forecast?",
+            "word": "So we get to the airport, right, and the gate's closed.",
+            "textToSpeak": "So we get to the airport, right, and the gate's closed.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
+                "Rises at each beat: the story is building",
+                "Falls at each beat: each point is closed"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswer": "Rises at each beat: the story is building",
             "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely wants to know if the forecast was checked. Listen for the pitch to lift at the end.",
-            "explanation": "'Did you check the weather forecast?' rises at the end as a genuine question, truly seeking the answer.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - making a point, not really asking."
+            "hint": "Pay attention to whether the voice sounds finished after 'airport' and 'right'.",
+            "explanation": "Storytellers lift at the end of each beat so the listener knows there is more to come. Falling at each beat would make each phrase sound complete, which would break the story into disconnected statements.",
+            "modulationPattern": "Rises at 'airport' and 'right', fall on 'closed'.",
+            "meaningShift": "Rises keep the story moving; falls would halt it at every beat."
         },
         {
             "id": "ACC_PITCHMODULATION_L147_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A storyteller reaches the dramatic moment.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Who's going to notice anyway?",
-            "textToSpeak": "Who's going to notice anyway?",
+            "word": "And then, out of nowhere, the lights go out.",
+            "textToSpeak": "And then, out of nowhere, the lights go out.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Implying Nobody Will Notice)"
+                "Even pace, no peak: a plain report",
+                "Slow build, peak on 'out': suspense"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Implying Nobody Will Notice)",
+            "correctAnswer": "Slow build, peak on 'out': suspense",
             "correctAnswerIndex": 1,
-            "hint": "This isn't a real request for a name - it suggests nobody will care. Listen for the pitch to fall firmly.",
-            "explanation": "'Who's going to notice anyway?' falls firmly as a rhetorical question, implying that no one will actually notice.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - implying nobody will notice."
+            "hint": "Compare the speed of the first half of the sentence with the speed just before the key word.",
+            "explanation": "Storytellers slow down before the key moment and let the peak land on 'out'. A plain report would run at one speed, and the lights going out would sound like any other fact.",
+            "modulationPattern": "Slowing tempo, peak on 'out'.",
+            "meaningShift": "A slow build and a peak create suspense; an even pace states a fact."
         },
         {
             "id": "ACC_PITCHMODULATION_L147_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is wrapping up a long story.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Have you tried the new restaurant?",
-            "textToSpeak": "Have you tried the new restaurant?",
+            "word": "Anyway, long story short, we missed the flight.",
+            "textToSpeak": "Anyway, long story short, we missed the flight.",
             "options": [
-                "Falling Tone (Rhetorical - Implying Nobody Will Notice)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "Quick, lowered aside, then a drop: wrapping up",
+                "Slow, building tempo: adding suspense and detail"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "hint": "The speaker genuinely wants to know about the listener's experience. Listen for the pitch to lift at the end.",
-            "explanation": "'Have you tried the new restaurant?' rises at the end as a genuine question, truly seeking an answer.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - implying nobody will notice and a genuine yes/no question."
+            "correctAnswer": "Quick, lowered aside, then a drop: wrapping up",
+            "correctAnswerIndex": 0,
+            "hint": "Decide whether the speaker wants to prolong or hurries the story.",
+            "explanation": "'Anyway, long story short' is delivered fast and low because it signals the speaker is skipping details. The fall on 'flight' then delivers the result. A slow build would add detail and suspense, which is the opposite of the intent.",
+            "modulationPattern": "Fast, low opener; firm fall on 'flight'.",
+            "meaningShift": "A fast, low opener signals a summary; a slow build would prolong the story."
         },
         {
             "id": "ACC_PITCHMODULATION_L148_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone is explaining how to restart a router.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Could this day get any worse?",
-            "textToSpeak": "Could this day get any worse?",
+            "word": "First, unplug it, then wait ten seconds, then plug it back in.",
+            "textToSpeak": "First, unplug it, then wait ten seconds, then plug it back in.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Implying It's Already Bad)"
+                "Lifts after 'unplug' and 'seconds', falls on 'in'",
+                "Falls after 'unplug' and 'seconds', and falls on 'in'"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Implying It's Already Bad)",
-            "correctAnswerIndex": 1,
-            "hint": "The speaker isn't really asking for a forecast of the day - they're venting frustration. Listen for the pitch to fall firmly.",
-            "explanation": "'Could this day get any worse?' falls firmly as a rhetorical question, expressing frustration rather than genuine curiosity.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - implying it's already bad."
+            "correctAnswer": "Lifts after 'unplug' and 'seconds', falls on 'in'",
+            "correctAnswerIndex": 0,
+            "hint": "Listen to what happens at each comma.",
+            "explanation": "Steps in a sequence lift at the end of each, signalling that more instructions follow. The final step falls to mark the end of the list. Falling at every comma would make each step sound like a complete instruction on its own, and the sequence would lose its flow.",
+            "modulationPattern": "Rises at step boundaries, final fall on 'in'.",
+            "meaningShift": "Rises link the steps; falls on each would make them separate commands."
         },
         {
             "id": "ACC_PITCHMODULATION_L148_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A technician is warning a new employee.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Are you coming to the wedding?",
-            "textToSpeak": "Are you coming to the wedding?",
+            "word": "Don't press the red button, press the green one.",
+            "textToSpeak": "Don't press the red button, press the green one.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Implying It's Already Bad)"
+                "'Press' and 'press' stand out: stressing the action",
+                "'Red' and 'green' stand out: sorting the buttons"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
-            "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely wants to know about attendance. Listen for the pitch to lift at the end.",
-            "explanation": "'Are you coming to the wedding?' rises at the end as a genuine question, truly checking on attendance.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - implying it's already bad."
+            "correctAnswer": "'Red' and 'green' stand out: sorting the buttons",
+            "correctAnswerIndex": 1,
+            "hint": "Which words separate the correct action from the mistake?",
+            "explanation": "Since the action is identical in both clauses, the difference lies in the colours, and those carry the peaks. Stressing 'press' would make little sense since both clauses involve pressing.",
+            "modulationPattern": "Contrastive peaks on 'red' and 'green'.",
+            "meaningShift": "Peaks on the colours separate wrong from right; peaks on 'press' would draw attention to something shared."
         },
         {
             "id": "ACC_PITCHMODULATION_L148_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A supervisor gives a safety reminder.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Do you really think that's a good idea?",
-            "textToSpeak": "Do you really think that's a good idea?",
+            "word": "Make sure it's switched off before you open it.",
+            "textToSpeak": "Make sure it's switched off before you open it.",
             "options": [
-                "Falling Tone (Rhetorical - Implying Skepticism)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "Peaks on 'sure' and 'before': the general rule",
+                "Peaks on 'off' and 'open': the key conditions"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Implying Skepticism)",
-            "correctAnswerIndex": 0,
-            "hint": "This isn't a neutral request for an opinion - it suggests the speaker disagrees. Listen for the pitch to fall firmly.",
-            "explanation": "'Do you really think that's a good idea?' falls firmly as a rhetorical question, implying skepticism rather than open curiosity.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - implying skepticism and a genuine yes/no question."
+            "correctAnswer": "Peaks on 'off' and 'open': the key conditions",
+            "correctAnswerIndex": 1,
+            "hint": "Which words describe the actions that matter?",
+            "explanation": "In safety instructions, the words that name the critical condition and action carry the peaks, so 'off' and 'open' stand out. 'Make sure' is a framing phrase, and a peak on 'before' would only make sense if the order were in doubt.",
+            "modulationPattern": "Peaks on 'off' and 'open'.",
+            "meaningShift": "Peaks on 'off' and 'open' mark what to check and do; peaks on 'sure' and 'before' would stress the framing."
         },
         {
             "id": "ACC_PITCHMODULATION_L149_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A clinic receptionist leaves a voicemail.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Is your phone charged?",
-            "textToSpeak": "Is your phone charged?",
+            "word": "Hi Sam, it's Priya from the clinic, calling to confirm your appointment tomorrow at ten.",
+            "textToSpeak": "Hi Sam, it's Priya from the clinic, calling to confirm your appointment tomorrow at ten.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
+                "Peaks on 'Priya', 'tomorrow' and 'ten': the new facts",
+                "Peaks on 'Hi', 'clinic' and 'calling': the framing"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswer": "Peaks on 'Priya', 'tomorrow' and 'ten': the new facts",
             "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely wants to know the battery status. Listen for the pitch to lift at the end.",
-            "explanation": "'Is your phone charged?' rises at the end as a genuine question, truly checking on the battery.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - making a point, not really asking."
+            "hint": "Imagine writing this message down. Which details would you need to note?",
+            "explanation": "Voicemail is a stream of information, and the listener should be able to jot down the new facts: who, when, and what time. Those get the peaks, and the framing words stay low and quick.",
+            "modulationPattern": "Peaks on 'Priya', 'tomorrow' and 'ten'.",
+            "meaningShift": "Peaks on the facts help the listener remember; peaks on the framing would hide them."
         },
         {
             "id": "ACC_PITCHMODULATION_L149_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A conference host makes an announcement.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "What's the use of worrying now?",
-            "textToSpeak": "What's the use of worrying now?",
+            "word": "Lunch will be served at twelve thirty, not one o'clock as previously stated.",
+            "textToSpeak": "Lunch will be served at twelve thirty, not one o'clock as previously stated.",
             "options": [
-                "Falling Tone (Rhetorical - Implying Worrying Won't Help)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "'One o'clock' stands out, 'twelve thirty' is lighter",
+                "'Twelve thirty' stands out, 'one o'clock' is lighter"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Implying Worrying Won't Help)",
-            "correctAnswerIndex": 0,
-            "hint": "This isn't a real request for the purpose of worry - it suggests worrying is pointless now. Listen for the pitch to fall firmly.",
-            "explanation": "'What's the use of worrying now?' falls firmly as a rhetorical question, implying that worrying won't change the outcome.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - implying worrying won't help and a genuine yes/no question."
+            "correctAnswer": "'Twelve thirty' stands out, 'one o'clock' is lighter",
+            "correctAnswerIndex": 1,
+            "hint": "Which time is the listener asked to remember?",
+            "explanation": "What matters is the corrected time, so 'twelve thirty' carries the peak. The old time is mentioned only to cancel it, so its pitch is lower and falls away.",
+            "modulationPattern": "Primary peak on 'twelve thirty', reduced 'one o'clock'.",
+            "meaningShift": "A peak on the new time fixes the correct one; a peak on the old time would confuse the audience."
         },
         {
             "id": "ACC_PITCHMODULATION_L149_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "An airline agent speaks over the loudspeaker.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Did you lock the front door?",
-            "textToSpeak": "Did you lock the front door?",
+            "word": "Passengers for Madrid, please proceed to gate fourteen.",
+            "textToSpeak": "Passengers for Madrid, please proceed to gate fourteen.",
             "options": [
-                "Falling Tone (Rhetorical - Implying Worrying Won't Help)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "Lifts after 'Madrid', falls on 'fourteen'",
+                "Falls after 'Madrid', lifts on 'fourteen'"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "hint": "The speaker genuinely doesn't know if the door was locked. Listen for the pitch to lift at the end.",
-            "explanation": "'Did you lock the front door?' rises at the end as a genuine question, truly seeking the answer.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - implying worrying won't help and a genuine yes/no question."
+            "correctAnswer": "Lifts after 'Madrid', falls on 'fourteen'",
+            "correctAnswerIndex": 0,
+            "hint": "Which part of the message is left open, and which closes it?",
+            "explanation": "'Passengers for Madrid' is the opening, so it rises slightly because the instruction is still to come. The fall on 'fourteen' signals the end of the announcement, giving the final detail a clear landing.",
+            "modulationPattern": "Rise after 'Madrid', fall on 'fourteen'.",
+            "meaningShift": "A lift after 'Madrid' sets up the instruction; a fall on 'fourteen' closes the announcement."
         },
         {
             "id": "ACC_PITCHMODULATION_L150_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager responds to a team member's request for more time, in a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Why does this always happen to me?",
-            "textToSpeak": "Why does this always happen to me?",
+            "word": "I understand the pressure, and I'm not saying no, but I need something by Friday.",
+            "textToSpeak": "I understand the pressure, and I'm not saying no, but I need something by Friday.",
             "options": [
-                "Falling Tone (Rhetorical - Frustrated, Not Seeking an Answer)",
-                "Rising Tone (Genuine Yes/No Question)"
+                "Cool, clipped start; 'no' carries the peak",
+                "Warm, open start; 'Friday' carries the peak"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Frustrated, Not Seeking an Answer)",
-            "correctAnswerIndex": 0,
-            "hint": "The speaker isn't really asking for a cause - they're venting frustration. Listen for the pitch to fall firmly.",
-            "explanation": "'Why does this always happen to me?' falls firmly as a rhetorical question, expressing frustration rather than genuinely asking why.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a rhetorical - frustrated, not seeking an answer and a genuine yes/no question."
+            "correctAnswer": "Warm, open start; 'Friday' carries the peak",
+            "correctAnswerIndex": 1,
+            "hint": "Which of the three ideas does the speaker most need you to remember?",
+            "explanation": "Both opening clauses concede, so they are spoken with a warm lift. The final clause delivers the actual constraint, and 'Friday' carries the strongest peak. If 'no' carried it, the manager would sound as though they were refusing.",
+            "modulationPattern": "Lifted concessions, strongest peak on 'Friday'.",
+            "meaningShift": "A strong peak on 'Friday' shows the real condition; a strong 'no' would turn the message into a refusal."
         },
         {
             "id": "ACC_PITCHMODULATION_L150_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend is describing a disappointing weekend.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Are the kids ready for school?",
-            "textToSpeak": "Are the kids ready for school?",
+            "word": "We planned the whole trip, we booked everything, and then it rained for three days.",
+            "textToSpeak": "We planned the whole trip, we booked everything, and then it rained for three days.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Frustrated, Not Seeking an Answer)"
+                "Falls on each early clause, peak on 'rained'",
+                "Rises on each early clause, peak on 'three days'"
             ],
-            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
-            "correctAnswerIndex": 0,
-            "hint": "The speaker genuinely wants to know if everyone is prepared. Listen for the pitch to lift at the end.",
-            "explanation": "'Are the kids ready for school?' rises at the end as a genuine question, truly checking on their readiness.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - frustrated, not seeking an answer."
+            "correctAnswer": "Rises on each early clause, peak on 'three days'",
+            "correctAnswerIndex": 1,
+            "hint": "Pinpoint which part is the punch line.",
+            "explanation": "In a build-up, each early clause lifts to show the story is still unfolding, and the final peak lands on the surprising detail, 'three days'. Falling on each early clause would turn the planning and booking into separate statements.",
+            "modulationPattern": "Rises on clause boundaries, final peak on 'three days'.",
+            "meaningShift": "Rises and a final peak on the detail deliver the punch line; falls would flatten the build-up."
         },
         {
             "id": "ACC_PITCHMODULATION_L150_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague politely disagrees in a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Do you actually expect me to believe that?",
-            "textToSpeak": "Do you actually expect me to believe that?",
+            "word": "I take your point, I really do, but I think we're overlooking one thing.",
+            "textToSpeak": "I take your point, I really do, but I think we're overlooking one thing.",
             "options": [
-                "Rising Tone (Genuine Yes/No Question)",
-                "Falling Tone (Rhetorical - Expressing Disbelief)"
+                "Flat early clauses, lift on 'thing'",
+                "Warm lifts early, firm fall on 'thing'"
             ],
-            "correctAnswer": "Falling Tone (Rhetorical - Expressing Disbelief)",
+            "correctAnswer": "Warm lifts early, firm fall on 'thing'",
             "correctAnswerIndex": 1,
-            "hint": "This isn't a neutral request for confirmation - it expresses strong doubt. Listen for the pitch to fall firmly.",
-            "explanation": "'Do you actually expect me to believe that?' falls firmly as a rhetorical question, expressing disbelief rather than genuine curiosity.",
-            "modulationPattern": "A genuine question rises at the end, inviting a real answer; a rhetorical question falls firmly, since the speaker isn't actually expecting a reply.",
-            "meaningShift": "The meaning shifts between a genuine yes/no question and a rhetorical - expressing disbelief."
+            "hint": "Which end of the sentence sounds more certain?",
+            "explanation": "'I take your point' and 'I really do' use lifts to soften the disagreement, and the firm fall on 'thing' shows that the speaker has a clear objection. A lift on 'thing' would make the objection sound tentative.",
+            "modulationPattern": "Lifted concessions, firm fall on 'thing'.",
+            "meaningShift": "A firm fall after warm lifts states the objection politely but clearly; a lift would make it sound unsure."
         }
     ]
 }

@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L181_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A candidate is asked whether they can start next week.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Well, at least you tried.",
-            "textToSpeak": "Well, at least you tried.",
+            "word": "I should be able to start next week.",
+            "textToSpeak": "I should be able to start next week.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Failure)"
+                "Real doubt, may not manage",
+                "Polite caution, fairly sure"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies Failure)",
+            "correctAnswer": "Polite caution, fairly sure",
             "correctAnswerIndex": 1,
-            "hint": "'At least' usually softens bad news rather than praising success. Listen for a flat, unconvinced tone, not warm pride.",
-            "explanation": "'Well, at least you tried' is a backhanded compliment - the flat delivery on 'tried' quietly implies the result wasn't actually good.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - implies failure."
+            "hint": "Does 'should' lift into doubt, or stay light before a firm landing?",
+            "explanation": "Keeping 'should' light and falling decisively on 'week' lets the speaker hedge out of courtesy while still sounding reliable. Doubt would stretch 'should' and lift towards the end, leaving the listener unsure. Both versions use identical words, so only the landing separates a safe hire from a risky one.",
+            "modulationPattern": "Light 'should', decisive fall on 'week'.",
+            "meaningShift": "A light 'should' with a firm landing is courteous but dependable; a stretched 'should' with a lift would show doubt."
         },
         {
             "id": "ACC_PITCHMODULATION_L181_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague agrees to review your slides.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You did a truly wonderful job on this.",
-            "textToSpeak": "You did a truly wonderful job on this.",
+            "word": "Yeah, I can take a look at it.",
+            "textToSpeak": "Yeah, I can take a look at it.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Failure)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Willing but reluctant",
+                "Open and unhurried"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
+            "correctAnswer": "Open and unhurried",
             "correctAnswerIndex": 1,
-            "hint": "'Truly wonderful' is direct, unreserved praise. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'You did a truly wonderful job on this' falls warmly, giving genuine, unreserved praise with nothing hidden.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies failure and a genuine, wholehearted compliment."
+            "hint": "Which of 'yeah' and 'can' sounds like it carries real energy?",
+            "explanation": "Brightness on 'yeah' and a loose fall on 'it' give the impression of someone with spare time and no resentment. Reluctance would flatten 'yeah' and press on 'can', as if the offer were being squeezed out. Listeners use this difference to decide whether to hand over the slides now or wait.",
+            "modulationPattern": "Bright 'yeah', loose fall on 'it'.",
+            "meaningShift": "A bright start and loose fall sound unhurried; a flat 'yeah' with a pressed 'can' would sound reluctant."
         },
         {
             "id": "ACC_PITCHMODULATION_L181_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A host asks whether you'd like tea. You would.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's impressive how confident you are, considering.",
-            "textToSpeak": "It's impressive how confident you are, considering.",
+            "word": "Only if it's no trouble.",
+            "textToSpeak": "Only if it's no trouble.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies the Confidence Isn't Deserved)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Real reluctance to accept",
+                "Polite, ritual deference"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies the Confidence Isn't Deserved)",
-            "correctAnswerIndex": 0,
-            "hint": "The trailing 'considering' hints at an unflattering comparison. Listen for a flat, pointed tone, not warm admiration.",
-            "explanation": "The trailing 'considering' turns this into a backhanded compliment, subtly suggesting the confidence isn't really justified.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies the confidence isn't deserved and a genuine, wholehearted compliment."
+            "correctAnswer": "Polite, ritual deference",
+            "correctAnswerIndex": 1,
+            "hint": "Decide whether the voice settles, or stays hesitant on 'trouble'.",
+            "explanation": "Settling on 'trouble' after a soft, quick start shows the speaker is following the courtesy ritual of not seeming greedy. Genuine reluctance would lift on 'trouble' and slow down, inviting the host to withdraw the offer. Hosts depend on this to know whether to go ahead and make the tea.",
+            "modulationPattern": "Soft start, settled fall on 'trouble'.",
+            "meaningShift": "A settled fall is ritual politeness; a lifted, slowed ending would show real reluctance."
         },
         {
             "id": "ACC_PITCHMODULATION_L182_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A sales director is addressing the team at quarter-end.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You've come a long way.",
-            "textToSpeak": "You've come a long way.",
+            "word": "I'm confident we'll hit the target.",
+            "textToSpeak": "I'm confident we'll hit the target.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies a Poor Starting Point)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Grounded confidence",
+                "Loud, empty bluster"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies a Poor Starting Point)",
+            "correctAnswer": "Grounded confidence",
             "correctAnswerIndex": 0,
-            "hint": "This can politely imply someone started out quite badly. Listen for a flat, measured tone rather than warm pride.",
-            "explanation": "'You've come a long way' delivered flatly is a backhanded compliment, quietly implying the starting point was weak.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies a poor starting point and a genuine, wholehearted compliment."
+            "hint": "Is the force spread evenly, or all dumped on 'confident'?",
+            "explanation": "Measured force on 'confident' and a calm fall on 'target' sound like conclusions drawn from evidence. Bluster would push 'confident' hard, widen the range and speed up, as though volume could substitute for proof. Colleagues learn to hear that difference before trusting a forecast.",
+            "modulationPattern": "Measured peak on 'confident', calm fall on 'target'.",
+            "meaningShift": "Measured force sounds evidence-based; a hard, wide push on 'confident' would sound like bluster."
         },
         {
             "id": "ACC_PITCHMODULATION_L182_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague is pitching an idea to a nervous client.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Your work consistently exceeds every expectation.",
-            "textToSpeak": "Your work consistently exceeds every expectation.",
+            "word": "Trust me, this will work.",
+            "textToSpeak": "Trust me, this will work.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies a Poor Starting Point)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Closing down questions fast",
+                "Reassuring a nervous client"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
+            "correctAnswer": "Reassuring a nervous client",
             "correctAnswerIndex": 1,
-            "hint": "'Consistently exceeds every expectation' is direct, unreserved praise. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Your work consistently exceeds every expectation' falls with full confidence, giving genuine, wholehearted praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies a poor starting point and a genuine, wholehearted compliment."
+            "hint": "Does the pace invite another question, or block it?",
+            "explanation": "Slowing on 'trust me' and falling gently on 'work' gives the client time to relax. Closing down questions would speed up, press 'will' and land hard, leaving no space to respond. Clients tend to ask more if the first version is used and fewer if the second is.",
+            "modulationPattern": "Slow 'trust me', gentle fall on 'work'.",
+            "meaningShift": "A slow, gentle delivery reassures; a fast, pressed one with a hard landing would shut the discussion."
         },
         {
             "id": "ACC_PITCHMODULATION_L182_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "An engineer is defending a new design in a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's a brave outfit choice.",
-            "textToSpeak": "That's a brave outfit choice.",
+            "word": "There's no way that can fail.",
+            "textToSpeak": "There's no way that can fail.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies It's Unflattering)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Excited conviction",
+                "Dismissing concerns"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies It's Unflattering)",
+            "correctAnswer": "Excited conviction",
             "correctAnswerIndex": 0,
-            "hint": "Calling an outfit 'brave' often hints it's unusual rather than attractive. Listen for a flat, careful tone.",
-            "explanation": "'That's a brave outfit choice' delivered flatly is a backhanded compliment, gently implying the outfit is unflattering rather than stylish.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies it's unflattering and a genuine, wholehearted compliment."
+            "hint": "Does 'no way' bounce, or hit down?",
+            "explanation": "Lifting and bouncing on 'no way' sounds like someone eager to show how robust the design is, with energy that invites others in. Dismissing concerns would flatten 'no way' and land heavily on 'fail', closing the conversation. Colleagues respond to this by either engaging or backing off.",
+            "modulationPattern": "Lifted, bouncing 'no way', light fall on 'fail'.",
+            "meaningShift": "A bouncing contour shows excitement; a flat, heavy one would dismiss the concerns."
         },
         {
             "id": "ACC_PITCHMODULATION_L183_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague who never apologises is reported to have apologised.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm surprised it turned out this well.",
-            "textToSpeak": "I'm surprised it turned out this well.",
+            "word": "He actually said sorry to everyone?",
+            "textToSpeak": "He actually said sorry to everyone?",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Low Expectations)"
+                "Doubting it happened",
+                "Surprised, taking it in"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies Low Expectations)",
+            "correctAnswer": "Surprised, taking it in",
             "correctAnswerIndex": 1,
-            "hint": "'I'm surprised' reveals the speaker expected something worse. Listen for a flat, measured tone rather than warm admiration.",
-            "explanation": "'I'm surprised it turned out this well' is a backhanded compliment, revealing that expectations were quite low to begin with.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - implies low expectations."
+            "hint": "How high does 'actually' go, and does the rise stay wide?",
+            "explanation": "Lifting 'actually' high and rising widely on 'everyone' shows that the speaker accepts the news and is amazed by it. Doubt would keep the range narrower and press on 'said', as though testing the claim. Speakers choose one or the other depending on whether they believe it.",
+            "modulationPattern": "High 'actually', wide rise on 'everyone'.",
+            "meaningShift": "A high 'actually' with a wide rise shows astonishment; a narrow rise with a pressed 'said' would test the claim."
         },
         {
             "id": "ACC_PITCHMODULATION_L183_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager says the deadline has been extended by a month.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Your performance tonight was absolutely magnificent.",
-            "textToSpeak": "Your performance tonight was absolutely magnificent.",
+            "word": "They're giving us the whole month?",
+            "textToSpeak": "They're giving us the whole month?",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Low Expectations)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Wary of a catch",
+                "Pleasantly stunned"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
+            "correctAnswer": "Pleasantly stunned",
             "correctAnswerIndex": 1,
-            "hint": "'Absolutely magnificent' is direct, unreserved praise. Listen for the pitch to fall fully and enthusiastically.",
-            "explanation": "'Your performance tonight was absolutely magnificent' falls with full enthusiasm, giving genuine, wholehearted praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies low expectations and a genuine, wholehearted compliment."
+            "hint": "Notice whether the voice rises brightly, or tightens.",
+            "explanation": "Rising brightly and widely on 'month' conveys relief and delight, and no suspicion is audible. A wary speaker would tighten, slow down on 'whole' and lower the end of the rise. Hearing delight tells the manager the news has landed well.",
+            "modulationPattern": "Wide, bright rise on 'month'.",
+            "meaningShift": "A bright, wide rise is delight; a tight, slow rise with weight on 'whole' would suggest suspicion."
         },
         {
             "id": "ACC_PITCHMODULATION_L183_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague confesses the report was always going to be late.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You're so brave for posting that.",
-            "textToSpeak": "You're so brave for posting that.",
+            "word": "So the report was always going to be late?",
+            "textToSpeak": "So the report was always going to be late?",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies It Was Embarrassing)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Surprised dismay",
+                "Sharp accusation"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies It Was Embarrassing)",
+            "correctAnswer": "Surprised dismay",
             "correctAnswerIndex": 0,
-            "hint": "Calling a post 'brave' can politely imply it was a questionable choice. Listen for a flat, careful tone.",
-            "explanation": "'You're so brave for posting that' delivered flatly is a backhanded compliment, hinting the post was embarrassing rather than admirable.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies it was embarrassing and a genuine, wholehearted compliment."
+            "hint": "Check whether the voice sounds stunned, or sharp.",
+            "explanation": "Dropping on 'always' and rising slowly and softly shows the speaker is processing bad news. Accusation would be sharper, with weight on 'always' and a clipped rise. This helps the confessor decide between explaining and defending.",
+            "modulationPattern": "Dropping 'always', slow soft rise on 'late'.",
+            "meaningShift": "A slow, soft rise with a drop on 'always' is dismay; a sharp, clipped one would accuse."
         },
         {
             "id": "ACC_PITCHMODULATION_L184_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager speaks to the team at the end of a project.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's nice that you're finally trying.",
-            "textToSpeak": "It's nice that you're finally trying.",
+            "word": "Great work, everyone, really.",
+            "textToSpeak": "Great work, everyone, really.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Past Laziness)"
+                "Routine group thanks",
+                "Meant, and personal"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies Past Laziness)",
+            "correctAnswer": "Meant, and personal",
             "correctAnswerIndex": 1,
-            "hint": "'Finally' suggests a long delay before this effort. Listen for a flat, pointed tone rather than warm encouragement.",
-            "explanation": "'It's nice that you're finally trying' is a backhanded compliment, with 'finally' quietly criticizing the earlier lack of effort.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - implies past laziness."
+            "hint": "What does the voice do on the final 'really'?",
+            "explanation": "Giving 'really' its own small fall and a warm tone adds a personal confirmation that the praise is not a formula. A routine version would run the whole phrase at one level and drop 'really' on to the end. Staff notice the difference, and it shapes how much they believe future praise.",
+            "modulationPattern": "Separate warm fall on 'really'.",
+            "meaningShift": "A separate, warm 'really' adds sincerity; an even, flat run-through would be routine."
         },
         {
             "id": "ACC_PITCHMODULATION_L184_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A recorded message plays while you wait on hold.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Your dedication to this project is truly inspiring.",
-            "textToSpeak": "Your dedication to this project is truly inspiring.",
+            "word": "We really do value your feedback.",
+            "textToSpeak": "We really do value your feedback.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Past Laziness)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "A recorded formula",
+                "Genuine interest"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
-            "correctAnswerIndex": 1,
-            "hint": "'Truly inspiring' is direct, unreserved praise. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'Your dedication to this project is truly inspiring' falls warmly, giving genuine, wholehearted praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies past laziness and a genuine, wholehearted compliment."
+            "correctAnswer": "A recorded formula",
+            "correctAnswerIndex": 0,
+            "hint": "Is any word pushed in a way that suggests a person thinking?",
+            "explanation": "Even weight on every word with a predictable fall on 'feedback' is typical of lines performed thousands of times. Genuine interest would show unevenness, perhaps lingering on 'value'. Most callers learn to hear the evenness as a sign of a script.",
+            "modulationPattern": "Even weight with a predictable fall on 'feedback'.",
+            "meaningShift": "Even, predictable delivery is a script; uneven, thoughtful delivery would show real interest."
         },
         {
             "id": "ACC_PITCHMODULATION_L184_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A host welcomes a friend who arrives late to a party.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "For someone with no experience, you did fine.",
-            "textToSpeak": "For someone with no experience, you did fine.",
+            "word": "I'm so glad you could make it.",
+            "textToSpeak": "I'm so glad you could make it.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Limits the Praise)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Warm and personal",
+                "Automatic politeness"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Limits the Praise)",
+            "correctAnswer": "Warm and personal",
             "correctAnswerIndex": 0,
-            "hint": "'For someone with no experience' limits the compliment significantly. Listen for a flat, measured tone.",
-            "explanation": "'For someone with no experience, you did fine' is a backhanded compliment - the opening condition quietly limits how much praise is really being given.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - limits the praise and a genuine, wholehearted compliment."
+            "hint": "Does 'glad' stretch?",
+            "explanation": "Lengthening and lifting 'glad', then letting 'it' fall softly, makes the greeting sound like a response to this particular guest. An automatic reply would be quick, flat and identical for every arrival. Friends feel the first and politely note the second.",
+            "modulationPattern": "Stretched, lifted 'glad', soft fall on 'it'.",
+            "meaningShift": "A stretched, lifted 'glad' is personal; a quick, flat delivery is automatic."
         },
         {
             "id": "ACC_PITCHMODULATION_L185_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague gets a small detail wrong in a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "At least you showed up.",
-            "textToSpeak": "At least you showed up.",
+            "word": "Actually, it was on Thursday.",
+            "textToSpeak": "Actually, it was on Thursday.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Little Else Went Right)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Contradicting to win",
+                "Helpful correction"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies Little Else Went Right)",
-            "correctAnswerIndex": 0,
-            "hint": "'At least' usually introduces the one good thing amid other problems. Listen for a flat, resigned tone.",
-            "explanation": "'At least you showed up' is a backhanded compliment, with 'at least' implying that showing up was the only thing that went well.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies little else went right and a genuine, wholehearted compliment."
+            "correctAnswer": "Helpful correction",
+            "correctAnswerIndex": 1,
+            "hint": "Is the tone cushioned, or sharp?",
+            "explanation": "Softening 'actually' and settling on 'Thursday' provides the right day without making the colleague look foolish. Contradicting to win would stress 'actually' sharply and finish with an edge. This difference affects how the colleague reacts, whether gratefully or defensively.",
+            "modulationPattern": "Soft 'actually', settled fall on 'Thursday'.",
+            "meaningShift": "A soft opener and settled fall correct helpfully; a sharp opener and edged finish would contradict."
         },
         {
             "id": "ACC_PITCHMODULATION_L185_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A debate is going badly and one speaker cuts in.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I genuinely admire your hard work and talent.",
-            "textToSpeak": "I genuinely admire your hard work and talent.",
+            "word": "No, no, no, that's completely wrong.",
+            "textToSpeak": "No, no, no, that's completely wrong.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Little Else Went Right)"
+                "Contradicting flatly",
+                "Correcting helpfully"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
+            "correctAnswer": "Contradicting flatly",
             "correctAnswerIndex": 0,
-            "hint": "'Genuinely admire' is direct, unreserved praise. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'I genuinely admire your hard work and talent' falls warmly, giving genuine, wholehearted praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - implies little else went right."
+            "hint": "Judge whether the speaker offers anything in place of what was said.",
+            "explanation": "Three quick 'no's, heavy stress on 'completely' and a hard fall on 'wrong' shut the other person down without proposing a replacement. A helpful correction would offer the right information and soften the tone. In meetings, this is the difference between a debate and an argument.",
+            "modulationPattern": "Repeated 'no', heavy 'completely', hard fall on 'wrong'.",
+            "meaningShift": "Heavy repeated rejection contradicts; a soft offer of the right information would correct."
         },
         {
             "id": "ACC_PITCHMODULATION_L185_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague quietly steps in during a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I have to say, I didn't expect much, but okay.",
-            "textToSpeak": "I have to say, I didn't expect much, but okay.",
+            "word": "I think you'll find it's Thursday.",
+            "textToSpeak": "I think you'll find it's Thursday.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Low Expectations)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Friendly, light suggestion",
+                "Condescending correction"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies Low Expectations)",
-            "correctAnswerIndex": 0,
-            "hint": "'Didn't expect much' openly reveals low expectations. Listen for a flat, unenthusiastic tone on 'okay'.",
-            "explanation": "'I have to say, I didn't expect much, but okay' is a backhanded compliment, openly admitting low expectations before the faint praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies low expectations and a genuine, wholehearted compliment."
+            "correctAnswer": "Condescending correction",
+            "correctAnswerIndex": 1,
+            "hint": "Is 'think' heavy, with a drawn-out 'find'?",
+            "explanation": "Dragging 'find' and putting dry weight on 'Thursday' gives the phrase a superior edge, as though the listener should have known. A friendly suggestion would stay light, with a lift on 'Thursday' that leaves room for doubt. People often hear the edge without being able to name it.",
+            "modulationPattern": "Drawn-out 'find', dry fall on 'Thursday'.",
+            "meaningShift": "A dry, drawn-out delivery sounds condescending; a light lift on 'Thursday' would be friendly."
         },
         {
             "id": "ACC_PITCHMODULATION_L186_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager has decided against your advice.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You clean up nicely.",
-            "textToSpeak": "You clean up nicely.",
+            "word": "Well, it's your call.",
+            "textToSpeak": "Well, it's your call.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Usual Appearance Is Less Impressive)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Accepting, but distancing",
+                "Delegating with trust"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies Usual Appearance Is Less Impressive)",
+            "correctAnswer": "Accepting, but distancing",
             "correctAnswerIndex": 0,
-            "hint": "This can politely imply someone doesn't usually look this good. Listen for a flat, teasing tone rather than warm admiration.",
-            "explanation": "'You clean up nicely' delivered flatly is a backhanded compliment, gently implying the person's usual look is less impressive.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies usual appearance is less impressive and a genuine, wholehearted compliment."
+            "hint": "Does 'your' carry weight?",
+            "explanation": "Weight on 'your' and a flat fall on 'call' put responsibility on the manager, and the speaker distances themselves. Happy delegation would be warmer and lighter, as an expression of trust. Hearing the distance tells you to expect little help if things go wrong.",
+            "modulationPattern": "Weight on 'your', flat fall on 'call'.",
+            "meaningShift": "Weight on 'your' with a flat fall distances the speaker; a warm, light delivery would hand over trust."
         },
         {
             "id": "ACC_PITCHMODULATION_L186_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A meeting is choosing between time slots.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You always look absolutely wonderful.",
-            "textToSpeak": "You always look absolutely wonderful.",
+            "word": "Whatever works for everyone.",
+            "textToSpeak": "Whatever works for everyone.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Usual Appearance Is Less Impressive)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Genuinely flexible",
+                "Tired and giving up"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
-            "correctAnswerIndex": 1,
-            "hint": "'Always' and 'absolutely wonderful' leave no room for a hidden insult. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'You always look absolutely wonderful' falls warmly, giving genuine, consistent, wholehearted praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies usual appearance is less impressive and a genuine, wholehearted compliment."
+            "correctAnswer": "Genuinely flexible",
+            "correctAnswerIndex": 0,
+            "hint": "Does the energy hold, or drain away on 'everyone'?",
+            "explanation": "Steady energy and a comfortable fall on 'everyone' suggest that no option bothers the speaker. Giving up would sag on 'works' and trail off, hinting the speaker would prefer not to be asked. It is easy to mistake one for the other without listening to how the sentence ends.",
+            "modulationPattern": "Steady energy, comfortable fall on 'everyone'.",
+            "meaningShift": "A steady, comfortable fall is flexible; a sagging, trailing one is giving up."
         },
         {
             "id": "ACC_PITCHMODULATION_L186_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend plans to move abroad.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "It's a unique way to interpret the assignment.",
-            "textToSpeak": "It's a unique way to interpret the assignment.",
+            "word": "I won't stand in your way.",
+            "textToSpeak": "I won't stand in your way.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Implies It Missed the Point)"
+                "Supportive but sad",
+                "Fully enthusiastic"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies It Missed the Point)",
-            "correctAnswerIndex": 1,
-            "hint": "Calling something 'unique' in feedback often hints it didn't quite follow the brief. Listen for a flat, careful tone.",
-            "explanation": "'It's a unique way to interpret the assignment' delivered flatly is a backhanded compliment, subtly implying the work missed the actual point.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - implies it missed the point."
+            "correctAnswer": "Supportive but sad",
+            "correctAnswerIndex": 0,
+            "hint": "How heavy is 'won't', and how slowly does it end?",
+            "explanation": "Lowering the pitch on 'won't' and falling slowly on 'way' leave room for the feeling the speaker is not stating. Full enthusiasm would lift and quicken. The sad version lets the friend know that support is real but it has a cost.",
+            "modulationPattern": "Lowered 'won't', slow fall on 'way'.",
+            "meaningShift": "A low, slow delivery is supportive but sad; a lifted, quick one would be enthusiastic."
         },
         {
             "id": "ACC_PITCHMODULATION_L187_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager reads out two agenda items.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Considering the circumstances, that wasn't terrible.",
-            "textToSpeak": "Considering the circumstances, that wasn't terrible.",
+            "word": "We need to talk about the budget and the schedule.",
+            "textToSpeak": "We need to talk about the budget and the schedule.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Faint, Limited Praise)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "'Budget' dominates; schedule trails",
+                "Both nouns peak about equally"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Faint, Limited Praise)",
-            "correctAnswerIndex": 0,
-            "hint": "'Wasn't terrible' is a famously low bar for praise. Listen for a flat, unenthusiastic tone.",
-            "explanation": "'Considering the circumstances, that wasn't terrible' is a backhanded compliment - 'wasn't terrible' is far short of real praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - faint, limited praise and a genuine, wholehearted compliment."
+            "correctAnswer": "Both nouns peak about equally",
+            "correctAnswerIndex": 1,
+            "hint": "Compare the strength of the pitch on the two item names.",
+            "explanation": "Equal peaks on 'budget' and 'schedule' present them as two matching items, with a rise on the first and a fall on the second. If 'budget' dominated, 'schedule' would be reduced into a trailing tag. Staff use this to tell whether both topics will get equal time.",
+            "modulationPattern": "Similar-sized peaks on 'budget' and 'schedule'.",
+            "meaningShift": "Equal peaks treat both items as equals; a dominant 'budget' with a reduced 'schedule' would demote the second."
         },
         {
             "id": "ACC_PITCHMODULATION_L187_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend reviews a concert.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "This is, without a doubt, your best work yet.",
-            "textToSpeak": "This is, without a doubt, your best work yet.",
+            "word": "It was a bit disappointing, really.",
+            "textToSpeak": "It was a bit disappointing, really.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Faint, Limited Praise)"
+                "Harsh: the peak is strong",
+                "Mild: the peak is softened"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
-            "correctAnswerIndex": 0,
-            "hint": "'Without a doubt' and 'best work yet' leave no room for a hidden insult. Listen for the pitch to fall fully.",
-            "explanation": "'This is, without a doubt, your best work yet' falls with full confidence, giving genuine, unreserved praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - faint, limited praise."
+            "correctAnswer": "Mild: the peak is softened",
+            "correctAnswerIndex": 1,
+            "hint": "How much does 'disappointing' stand out from its neighbours?",
+            "explanation": "Keeping the peak on 'disappointing' small, tempered by 'a bit' and 'really', lowers the temperature of the criticism. A strong peak would drop on the word and make the review sound harsh. Listeners decide whether the friend recommends or warns against it.",
+            "modulationPattern": "Small peak on 'disappointing', soft fall on 'really'.",
+            "meaningShift": "A small peak keeps the criticism mild; a strong peak would sound harsh."
         },
         {
             "id": "ACC_PITCHMODULATION_L187_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague describes a tight schedule.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You're surprisingly good at this for a beginner.",
-            "textToSpeak": "You're surprisingly good at this for a beginner.",
+            "word": "I mean, it's not impossible.",
+            "textToSpeak": "I mean, it's not impossible.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Limits the Praise to Beginners)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Faint hope: 'impossible' has a small fall",
+                "Stressing denial: 'not' takes the peak"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Limits the Praise to Beginners)",
+            "correctAnswer": "Faint hope: 'impossible' has a small fall",
             "correctAnswerIndex": 0,
-            "hint": "'For a beginner' quietly limits how impressive the skill really is. Listen for a flat, measured tone.",
-            "explanation": "'You're surprisingly good at this for a beginner' is a backhanded compliment - the closing condition narrows the praise considerably.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - limits the praise to beginners and a genuine, wholehearted compliment."
+            "hint": "Find the word that seems to be weighed most.",
+            "explanation": "Falling only slightly on 'impossible', with 'not' kept light, leaves a slim possibility on the table. A peak on 'not' would stress the denial and sound defensive, as if someone had claimed it was impossible. The hedge 'I mean' also suggests the speaker is thinking aloud.",
+            "modulationPattern": "Light 'not', small fall on 'impossible'.",
+            "meaningShift": "A small fall on 'impossible' signals faint hope; a peak on 'not' would stress that it can be done."
         },
         {
             "id": "ACC_PITCHMODULATION_L188_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has just said, 'The client wants it by Friday.'",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I'm impressed you managed that on your own.",
-            "textToSpeak": "I'm impressed you managed that on your own.",
+            "word": "Friday. Right.",
+            "textToSpeak": "Friday. Right.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Doubted Ability)"
+                "Processing the problem",
+                "Accepting it calmly"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies Doubted Ability)",
-            "correctAnswerIndex": 1,
-            "hint": "'I'm impressed you managed' can quietly reveal the speaker doubted the person could do it. Listen for a flat, surprised tone.",
-            "explanation": "'I'm impressed you managed that on your own' is a backhanded compliment, with the surprise revealing real doubt about the person's ability.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - implies doubted ability."
+            "correctAnswer": "Processing the problem",
+            "correctAnswerIndex": 0,
+            "hint": "Which word comes after a pause, and how does it end?",
+            "explanation": "Pausing after 'Friday' and saying 'right' low and slow shows the speaker is working out the consequences. Calm acceptance would be quick and light. In context, the first version tells the colleague to expect pushback soon.",
+            "modulationPattern": "Falling 'Friday', low slow 'right'.",
+            "meaningShift": "A pause with a low, slow 'right' shows processing; a quick, light one would be calm."
         },
         {
             "id": "ACC_PITCHMODULATION_L188_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has plans tonight but a deadline is looming.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Your kindness genuinely makes everyone's day better.",
-            "textToSpeak": "Your kindness genuinely makes everyone's day better.",
+            "word": "It's fine, I'll just stay late.",
+            "textToSpeak": "It's fine, I'll just stay late.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Doubted Ability)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Cheerfully offering to stay",
+                "Martyred, hoping to be stopped"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
+            "correctAnswer": "Martyred, hoping to be stopped",
             "correctAnswerIndex": 1,
-            "hint": "'Genuinely makes everyone's day better' is direct, unreserved praise. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'Your kindness genuinely makes everyone's day better' falls warmly, giving genuine, wholehearted praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies doubted ability and a genuine, wholehearted compliment."
+            "hint": "Is 'fine' heavy, and does 'late' sink?",
+            "explanation": "Weighted 'fine' and a sinking 'late' show that the speaker is resigned and hoping someone will say 'no, don't'. A cheerful offer would be bright and quick throughout. The context of having plans makes the first reading more likely.",
+            "modulationPattern": "Weighted 'fine', sinking 'late'.",
+            "meaningShift": "A weighted 'fine' with a sinking 'late' invites a rescue; a bright, quick offer would be cheerful."
         },
         {
             "id": "ACC_PITCHMODULATION_L188_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A friend has delayed a decision about your shared plan.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Well, it's certainly... different.",
-            "textToSpeak": "Well, it's certainly... different.",
+            "word": "Okay, well, let me know.",
+            "textToSpeak": "Okay, well, let me know.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Avoids Saying It's Bad)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Disappointed patience",
+                "Relaxed flexibility"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Avoids Saying It's Bad)",
+            "correctAnswer": "Disappointed patience",
             "correctAnswerIndex": 0,
-            "hint": "'Different' is a famously vague word used to avoid real criticism. Listen for a flat, hesitant tone, not warm enthusiasm.",
-            "explanation": "'Well, it's certainly... different' is a backhanded compliment - the hesitant, flat delivery on 'different' avoids saying anything is actually wrong.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - avoids saying it's bad and a genuine, wholehearted compliment."
+            "hint": "How much energy remains after 'well'?",
+            "explanation": "Saying 'well' low and letting 'know' fall flat shows that the speaker is making an effort to be patient. Relaxed flexibility would keep brightness through the sentence. It is a cue that the friend might want the decision sooner.",
+            "modulationPattern": "Low 'well', flat fall on 'know'.",
+            "meaningShift": "A low, flat delivery is patient disappointment; a bright one would be relaxed."
         },
         {
             "id": "ACC_PITCHMODULATION_L189_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A guest hopes someone has a spare charger.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I never thought you had it in you.",
-            "textToSpeak": "I never thought you had it in you.",
+            "word": "I was just wondering whether you might possibly have a spare.",
+            "textToSpeak": "I was just wondering whether you might possibly have a spare.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Reveals Past Doubt)"
+                "Over-softened request",
+                "Sarcastic and dry in tone"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Reveals Past Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "'I never thought' openly admits the speaker doubted this outcome. Listen for a flat, surprised tone rather than warm pride.",
-            "explanation": "'I never thought you had it in you' is a backhanded compliment, openly revealing that the speaker previously doubted the person's ability.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - reveals past doubt."
+            "correctAnswer": "Over-softened request",
+            "correctAnswerIndex": 0,
+            "hint": "Are all the hedging words equally gentle?",
+            "explanation": "Light, rising stresses on 'just', 'might' and 'possibly' pile softeners on top of one another, showing the speaker is eager not to impose. Sarcasm would flatten and exaggerate one or two of them. The listener should respond to the request, not to the politeness.",
+            "modulationPattern": "Light rising stress on each hedge.",
+            "meaningShift": "Evenly rising hedges soften the request; a flat, exaggerated one would be sarcastic."
         },
         {
             "id": "ACC_PITCHMODULATION_L189_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A guest is hesitant about opening a window.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Your generosity never fails to amaze me.",
-            "textToSpeak": "Your generosity never fails to amaze me.",
+            "word": "Would it be an awful nuisance if I opened the window?",
+            "textToSpeak": "Would it be an awful nuisance if I opened the window?",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Reveals Past Doubt)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Ironic over-politeness",
+                "Genuinely hesitant"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
+            "correctAnswer": "Genuinely hesitant",
             "correctAnswerIndex": 1,
-            "hint": "'Never fails to amaze me' is direct, consistent praise. Listen for the pitch to fall fully and warmly.",
-            "explanation": "'Your generosity never fails to amaze me' falls warmly, giving genuine, consistent, wholehearted praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - reveals past doubt and a genuine, wholehearted compliment."
+            "hint": "Is 'awful' sincere, or dripping?",
+            "explanation": "Rising gently and unevenly on 'awful' and 'window' shows the speaker is truly worried about inconveniencing others. Irony would stretch 'awful' and drop in a dry fall. The listener can relax and say yes if the first version is used.",
+            "modulationPattern": "Gentle, uneven rise on 'awful' and 'window'.",
+            "meaningShift": "A gentle, uneven rise shows real concern; a stretched, dry delivery would be ironic."
         },
         {
             "id": "ACC_PITCHMODULATION_L189_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "Someone is blocking your path in a corridor.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "You're handling this better than I expected.",
-            "textToSpeak": "You're handling this better than I expected.",
+            "word": "I don't mean to be rude, but you're in my way.",
+            "textToSpeak": "I don't mean to be rude, but you're in my way.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Low Expectations)"
+                "Truly apologetic about it",
+                "A polite cover for annoyance"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies Low Expectations)",
+            "correctAnswer": "A polite cover for annoyance",
             "correctAnswerIndex": 1,
-            "hint": "'Better than I expected' reveals the bar was set low. Listen for a flat, measured tone rather than warm admiration.",
-            "explanation": "'You're handling this better than I expected' is a backhanded compliment, revealing that expectations for the person were fairly low.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - implies low expectations."
+            "hint": "Spot which half has the weight.",
+            "explanation": "Weight on 'my' and a firm fall on 'way' reveal that the real message is the complaint, with the opening serving as a cushion. An apologetic version would lift on 'way' and soften. This helps the listener move without arguing.",
+            "modulationPattern": "Light opener, weight on 'my', firm fall on 'way'.",
+            "meaningShift": "A light opener and a firm second half is cushioned annoyance; a softened lift would be apologetic."
         },
         {
             "id": "ACC_PITCHMODULATION_L190_Q1",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A colleague has just called your design 'a mess'.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "That's quite the bold strategy.",
-            "textToSpeak": "That's quite the bold strategy.",
+            "word": "I wouldn't put it quite like that.",
+            "textToSpeak": "I wouldn't put it quite like that.",
             "options": [
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Skepticism)",
-                "Falling Tone (Genuine, Wholehearted Compliment)"
+                "Disagreeing diplomatically",
+                "Agreeing, open to edits"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Implies Skepticism)",
+            "correctAnswer": "Disagreeing diplomatically",
             "correctAnswerIndex": 0,
-            "hint": "Calling a plan 'bold' in a flat tone often hints the speaker thinks it's risky or unwise. Listen for a careful, measured delivery.",
-            "explanation": "'That's quite the bold strategy' delivered flatly is a backhanded compliment, politely masking real skepticism about the plan.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a backhanded compliment - implies skepticism and a genuine, wholehearted compliment."
+            "hint": "Which word gets the main push, and how does the end fall?",
+            "explanation": "Weight on 'wouldn't' and 'quite', with a firm fall on 'that', shows a polite but clear rejection of the label. Agreeing with edits would lift on 'that' and sound open. The distinction tells the colleague whether the argument is over.",
+            "modulationPattern": "Weight on 'wouldn't' and 'quite', firm fall on 'that'.",
+            "meaningShift": "Weighted negation with a firm fall disagrees diplomatically; a lift on 'that' would invite edits."
         },
         {
             "id": "ACC_PITCHMODULATION_L190_Q2",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A manager hears a suggestion in a meeting.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "Your strategy here is genuinely brilliant.",
-            "textToSpeak": "Your strategy here is genuinely brilliant.",
+            "word": "I'll bear that in mind.",
+            "textToSpeak": "I'll bear that in mind.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Implies Skepticism)"
+                "A polite brush-off",
+                "A genuine intention"
             ],
-            "correctAnswer": "Falling Tone (Genuine, Wholehearted Compliment)",
+            "correctAnswer": "A polite brush-off",
             "correctAnswerIndex": 0,
-            "hint": "'Genuinely brilliant' is direct, unreserved praise. Listen for the pitch to fall fully and confidently.",
-            "explanation": "'Your strategy here is genuinely brilliant' falls with full confidence, giving genuine, wholehearted praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - implies skepticism."
+            "hint": "Does 'mind' land with energy, or just stop?",
+            "explanation": "Staying level and falling flat on 'mind' ends the exchange without any commitment. A genuine intention would lift on 'bear' and add a specific follow-up. A brush-off may leave the suggester believing they have been heard.",
+            "modulationPattern": "Level contour, flat fall on 'mind'.",
+            "meaningShift": "A level, flat delivery is a polite brush-off; a lifted 'bear' with a follow-up would be genuine."
         },
         {
             "id": "ACC_PITCHMODULATION_L190_Q3",
-            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
+            "instruction": "A speaker is about to give a talk.",
             "subtype": "pitchModulation",
             "interactionType": "speaking",
-            "word": "I suppose it works, in its own way.",
-            "textToSpeak": "I suppose it works, in its own way.",
+            "word": "I'd be lying if I said I wasn't nervous.",
+            "textToSpeak": "I'd be lying if I said I wasn't nervous.",
             "options": [
-                "Falling Tone (Genuine, Wholehearted Compliment)",
-                "Flat, Hedged Tone (Backhanded Compliment - Faint, Reluctant Approval)"
+                "Fishing for reassurance",
+                "Honest vulnerability"
             ],
-            "correctAnswer": "Flat, Hedged Tone (Backhanded Compliment - Faint, Reluctant Approval)",
+            "correctAnswer": "Honest vulnerability",
             "correctAnswerIndex": 1,
-            "hint": "'I suppose' and 'in its own way' both hedge the approval carefully. Listen for a flat, reluctant tone.",
-            "explanation": "'I suppose it works, in its own way' is a backhanded compliment - the hedging reveals reluctant, lukewarm approval rather than real praise.",
-            "modulationPattern": "A flat, hedged delivery on a seemingly positive phrase often signals a backhanded compliment, with a hidden criticism underneath; a full, warm falling tone signals genuine praise.",
-            "meaningShift": "The meaning shifts between a genuine, wholehearted compliment and a backhanded compliment - faint, reluctant approval."
+            "hint": "Decide whether the voice rises at the end, as if asking.",
+            "explanation": "Falling steadily on 'nervous' with slightly lowered pitch shows the speaker simply sharing a feeling. Fishing for reassurance would lift at the end or on 'nervous' to invite a response. Listeners usually respond more warmly to the first.",
+            "modulationPattern": "Steady fall on 'nervous', lowered pitch.",
+            "meaningShift": "A steady, lowered fall is honest vulnerability; a lifted end would invite reassurance."
         }
     ]
 }

@@ -5,753 +5,753 @@
     "quests": [
         {
             "id": "ACC_PITCHPATTERNMATCH_L111_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A manager asks a new employee to close the door and wants to sound friendly.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The embarrassed waiter apologized to the table sincerely.",
-            "textToSpeak": "The embarrassed waiter apologized to the table sincerely.",
+            "word": "Could you close the door?",
+            "textToSpeak": "Could you close the door?",
             "options": [
-                "Emphasis on SINCERELY (Manner focus)",
-                "Emphasis on WAITER (Subject focus)"
+                "Rising: a polite request that leaves room to say no",
+                "Falling: a firm instruction with no room to refuse"
             ],
-            "correctAnswer": "Emphasis on SINCERELY (Manner focus)",
+            "correctAnswer": "Rising: a polite request that leaves room to say no",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
-            "explanation": "SINCERELY is the final content word here, so it takes the nuclear stress — its job as Manner focus doesn't change the default rule.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Manner focus"
+            "hint": "The manager wants the new employee to feel comfortable. How does the question end?",
+            "explanation": "The rise on DOOR turns the request into something the listener can answer, which sounds polite. A fall would sound like an order in question form.",
+            "emphasisRule": "A rising yes/no request sounds polite; a falling one sounds like a command.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L111_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A tired parent is asking for the third time.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The local jazz band is performing downtown.",
-            "textToSpeak": "The local jazz band is performing downtown.",
+            "word": "Can you put your shoes on.",
+            "textToSpeak": "Can you put your shoes on.",
             "options": [
-                "Emphasis on BAND (Subject focus)",
-                "Emphasis on DOWNTOWN (Place focus)"
+                "Rising: a genuine question about ability",
+                "Falling: an impatient command in question form"
             ],
-            "correctAnswer": "Emphasis on DOWNTOWN (Place focus)",
+            "correctAnswer": "Falling: an impatient command in question form",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
-            "explanation": "With no special contrast in this sentence, the pitch peak still falls on DOWNTOWN, the Place detail that closes it.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Place focus"
+            "hint": "The words form a question but the situation does not. What is the parent really doing?",
+            "explanation": "By the third request, the parent no longer wonders whether the child can. The falling ending on ON shows it is an instruction.",
+            "emphasisRule": "A falling 'can you...' is a command, not a question.",
+            "emotionContext": "Instruction"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L111_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. Two jobs are waiting: the printer and the projector. You ask a colleague for help.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "He handed the wireless microphone to the nervous host.",
-            "textToSpeak": "He handed the wireless microphone to the nervous host.",
+            "word": "Could you do the printer first?",
+            "textToSpeak": "Could you do the printer first?",
             "options": [
-                "Emphasis on HOST (Recipient focus)",
-                "Emphasis on MICROPHONE (Item focus)"
+                "Emphasis on PRINTER",
+                "Emphasis on FIRST"
             ],
-            "correctAnswer": "Emphasis on HOST (Recipient focus)",
+            "correctAnswer": "Emphasis on PRINTER",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                1,
+                3
             ],
-            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
-            "explanation": "MICROPHONE appears earlier in the sentence, so the stress lands on HOST, the word that ends it — here, a Recipient focus.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Recipient focus"
+            "hint": "You are asking about priority between two jobs. Which word names the one you want?",
+            "explanation": "The request is polite, but the contrast is between the two jobs. PRINTER takes the peak, and FIRST just sets the order.",
+            "emphasisRule": "In a polite request between two items, the item you want takes the peak.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L112_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A host notices a guest's glass is empty.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "He bought his exhausted roommate a strong coffee.",
-            "textToSpeak": "He bought his exhausted roommate a strong coffee.",
+            "word": "Can I top that up for you?",
+            "textToSpeak": "Can I top that up for you?",
             "options": [
-                "Emphasis on ROOMMATE (Recipient focus)",
-                "Emphasis on COFFEE (Item focus)"
+                "Rising: a friendly offer the guest can decline",
+                "Falling: announcing what the host is going to do"
             ],
-            "correctAnswer": "Emphasis on COFFEE (Item focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising: a friendly offer the guest can decline",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
+                2,
+                2,
                 3
             ],
-            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
-            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's COFFEE, functioning as Item focus.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Item focus"
+            "hint": "The guest should feel free to say no. What does the ending do?",
+            "explanation": "The rise on YOU leaves the choice with the guest. A fall would sound as though the host had already decided.",
+            "emphasisRule": "A rising offer leaves the choice with the listener.",
+            "emotionContext": "Offer"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L112_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A friend says her car is at the garage this week.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The final contract negotiation seemed genuinely productive.",
-            "textToSpeak": "The final contract negotiation seemed genuinely productive.",
+            "word": "I could drive you, if you like.",
+            "textToSpeak": "I could drive you, if you like.",
             "options": [
-                "Emphasis on PRODUCTIVE (Complement focus)",
-                "Emphasis on NEGOTIATION (Subject focus)"
+                "Emphasis on DRIVE",
+                "Emphasis on LIKE"
             ],
-            "correctAnswer": "Emphasis on PRODUCTIVE (Complement focus)",
+            "correctAnswer": "Emphasis on DRIVE",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
-            "explanation": "The sentence saves its strongest beat for PRODUCTIVE, the closing Complement detail, rather than NEGOTIATION earlier on.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Complement focus"
+            "hint": "The offer is the main point. 'If you like' is a softener. Which part has the peak?",
+            "explanation": "DRIVE is the offer itself, which is why it carries the peak. 'If you like' is a gentle tail that stays low and leaves the decision open.",
+            "emphasisRule": "In an offer with a softening tag, the offer takes the peak and the tag stays low.",
+            "emotionContext": "Offer"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L112_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A teacher notices a student who looks stuck.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The neighborhood library extends its hours tonight.",
-            "textToSpeak": "The neighborhood library extends its hours tonight.",
+            "word": "Would it help if I explained it again?",
+            "textToSpeak": "Would it help if I explained it again?",
             "options": [
-                "Emphasis on LIBRARY (Subject focus)",
-                "Emphasis on TONIGHT (Time focus)"
+                "Rising: a gentle offer",
+                "Falling: a firm decision to explain"
             ],
-            "correctAnswer": "Emphasis on TONIGHT (Time focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising: a gentle offer",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
+                2,
+                2,
                 3
             ],
-            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
-            "explanation": "TONIGHT is the final content word here, so it takes the nuclear stress — its job as Time focus doesn't change the default rule.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Time focus"
+            "hint": "The teacher doesn't want the student to feel judged. How does the question end?",
+            "explanation": "The final rise on AGAIN keeps it as an offer the student can accept or decline. A fall would sound like the teacher's decision.",
+            "emphasisRule": "A rising conditional offer sounds gentle and optional.",
+            "emotionContext": "Offer"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L113_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A neighbour invites you to dinner and hopes you'll come.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The first-year rookie answered the tough question confidently.",
-            "textToSpeak": "The first-year rookie answered the tough question confidently.",
+            "word": "Would you like to come for dinner on Friday?",
+            "textToSpeak": "Would you like to come for dinner on Friday?",
             "options": [
-                "Emphasis on CONFIDENTLY (Manner focus)",
-                "Emphasis on ROOKIE (Subject focus)"
+                "Falling: a fixed arrangement being announced",
+                "Rising: a warm, open invitation"
             ],
-            "correctAnswer": "Emphasis on CONFIDENTLY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising: a warm, open invitation",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
-            "explanation": "With no special contrast in this sentence, the pitch peak still falls on CONFIDENTLY, the Manner detail that closes it.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Manner focus"
+            "hint": "Is the host announcing a plan or inviting you to choose?",
+            "explanation": "The final rise on FRIDAY leaves room for the guest to answer, which makes it a warm invitation. A fall would sound like an arrangement the host had made for you.",
+            "emphasisRule": "A rising invitation leaves the decision with the guest.",
+            "emotionContext": "Invitation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L113_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. You're inviting a friend and want her partner to come as well.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After months of tense talks, the negotiations finally concluded.",
-            "textToSpeak": "After months of tense talks, the negotiations finally concluded.",
+            "word": "You should bring Sam too.",
+            "textToSpeak": "You should bring Sam too.",
             "options": [
-                "Emphasis on NEGOTIATIONS (Subject focus)",
-                "Emphasis on CONCLUDED (Verb focus)"
+                "Emphasis on SAM",
+                "Emphasis on BRING"
             ],
-            "correctAnswer": "Emphasis on CONCLUDED (Verb focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SAM",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
-            "explanation": "NEGOTIATIONS appears earlier in the sentence, so the stress lands on CONCLUDED, the word that ends it — here, a Verb focus.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Verb focus"
+            "hint": "The friend is already invited. What is the new part of the invitation?",
+            "explanation": "The friend's invitation is settled, so BRING is understood. SAM is the extension of the invitation, so it takes the peak.",
+            "emphasisRule": "When extending an invitation, the added person takes the peak.",
+            "emotionContext": "Invitation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L113_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"What time does the party start?\" B is relaxed about it.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The updated weekend forecast looks fairly promising.",
-            "textToSpeak": "The updated weekend forecast looks fairly promising.",
+            "word": "It starts at eight, but come whenever.",
+            "textToSpeak": "It starts at eight, but come whenever.",
             "options": [
-                "Emphasis on PROMISING (Complement focus)",
-                "Emphasis on FORECAST (Subject focus)"
+                "Emphasis on EIGHT and WHENEVER",
+                "Emphasis on STARTS and COME"
             ],
-            "correctAnswer": "Emphasis on PROMISING (Complement focus)",
+            "correctAnswer": "Emphasis on EIGHT and WHENEVER",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
-            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's PROMISING, functioning as Complement focus.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Complement focus"
+            "hint": "B gives a fixed time and then removes the pressure. Which two words carry that?",
+            "explanation": "EIGHT answers A's question, and WHENEVER cancels any strictness. STARTS and COME are only the frame.",
+            "emphasisRule": "In a flexible invitation, the time and the 'whenever' each take a peak.",
+            "emotionContext": "Invitation"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L114_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Are you free on Friday evening?\" B isn't.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The veteran trauma surgeon handled the crisis calmly.",
-            "textToSpeak": "The veteran trauma surgeon handled the crisis calmly.",
+            "word": "I'm afraid I'm busy then.",
+            "textToSpeak": "I'm afraid I'm busy then.",
             "options": [
-                "Emphasis on SURGEON (Subject focus)",
-                "Emphasis on CALMLY (Manner focus)"
+                "Emphasis on AFRAID",
+                "Emphasis on BUSY"
             ],
-            "correctAnswer": "Emphasis on CALMLY (Manner focus)",
+            "correctAnswer": "Emphasis on BUSY",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
+                3,
                 1,
-                1,
-                1,
-                3
+                1
             ],
-            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
-            "explanation": "The sentence saves its strongest beat for CALMLY, the closing Manner detail, rather than SURGEON earlier on.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Manner focus"
+            "hint": "The opening phrase softens the refusal. Which word carries the actual reason?",
+            "explanation": "'I'm afraid' cushions the answer, but it isn't the information. BUSY is, so it gets the main lift.",
+            "emphasisRule": "In a polite refusal, the softener stays low and the reason takes the peak.",
+            "emotionContext": "Declining politely"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L114_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"We're collecting names for the trip.\" B wants to go.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The quarterly budget meeting moved to the lobby.",
-            "textToSpeak": "The quarterly budget meeting moved to the lobby.",
+            "word": "Sure, count me in.",
+            "textToSpeak": "Sure, count me in.",
             "options": [
-                "Emphasis on LOBBY (Place focus)",
-                "Emphasis on MEETING (Subject focus)"
+                "Emphasis on IN",
+                "Emphasis on SURE"
             ],
-            "correctAnswer": "Emphasis on LOBBY (Place focus)",
+            "correctAnswer": "Emphasis on IN",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
-            "explanation": "LOBBY is the final content word here, so it takes the nuclear stress — its job as Place focus doesn't change the default rule.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Place focus"
+            "hint": "The reply starts with an agreeing word. Where does the real commitment sit?",
+            "explanation": "SURE is a quick agreement marker. IN carries the commitment, so the peak lands on it at the end.",
+            "emphasisRule": "In an informal acceptance, the word that expresses joining takes the peak.",
+            "emotionContext": "Accepting"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L114_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A: \"Can you cover my shift?\" B must decline kindly.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "I passed the urgent message to the front desk.",
-            "textToSpeak": "I passed the urgent message to the front desk.",
+            "word": "I wish I could.",
+            "textToSpeak": "I wish I could.",
             "options": [
-                "Emphasis on MESSAGE (Item focus)",
-                "Emphasis on DESK (Recipient focus)"
+                "A flat fall on WISH: a dismissal that shuts the topic down",
+                "Fall-rise on WISH: sincere regret softening the refusal"
             ],
-            "correctAnswer": "Emphasis on DESK (Recipient focus)",
+            "correctAnswer": "Fall-rise on WISH: sincere regret softening the refusal",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                2
             ],
-            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
-            "explanation": "With no special contrast in this sentence, the pitch peak still falls on DESK, the Recipient detail that closes it.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Recipient focus"
+            "hint": "B can't help but wants A to know it isn't because of indifference. What does the voice do after WISH?",
+            "explanation": "The lift after WISH leaves a gentle 'but I can't' hanging. It conveys regret instead of a blunt no.",
+            "emphasisRule": "A fall-rise on 'I wish' expresses regret in a refusal.",
+            "emotionContext": "Declining politely"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L115_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"Send it to the team.\" You know of the design team and the sales team.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She mailed the handwritten postcard to her grandmother.",
-            "textToSpeak": "She mailed the handwritten postcard to her grandmother.",
+            "word": "Do you mean the design team?",
+            "textToSpeak": "Do you mean the design team?",
             "options": [
-                "Emphasis on GRANDMOTHER (Recipient focus)",
-                "Emphasis on POSTCARD (Item focus)"
+                "Emphasis on MEAN",
+                "Emphasis on DESIGN"
             ],
-            "correctAnswer": "Emphasis on GRANDMOTHER (Recipient focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DESIGN",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
-            "explanation": "POSTCARD appears earlier in the sentence, so the stress lands on GRANDMOTHER, the word that ends it — here, a Recipient focus.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Recipient focus"
+            "hint": "You are checking a specific guess. Which word shows it?",
+            "explanation": "TEAM is shared by both candidates, so it stays low. DESIGN is the guess you want to confirm, so it takes the peak.",
+            "emphasisRule": "In a polite clarification, the guessed option takes the peak.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L115_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A colleague gave unclear instructions and you want to check without blaming them.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Long after the curtain fell, the applause slowly faded.",
-            "textToSpeak": "Long after the curtain fell, the applause slowly faded.",
+            "word": "Just so I'm clear, you want it by Monday?",
+            "textToSpeak": "Just so I'm clear, you want it by Monday?",
             "options": [
-                "Emphasis on APPLAUSE (Subject focus)",
-                "Emphasis on FADED (Verb focus)"
+                "Rising on MONDAY: checking, taking responsibility for the doubt",
+                "Falling on MONDAY: restating a decision that has been made"
             ],
-            "correctAnswer": "Emphasis on FADED (Verb focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising on MONDAY: checking, taking responsibility for the doubt",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
+                2,
+                2,
                 3
             ],
-            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
-            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's FADED, functioning as Verb focus.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Verb focus"
+            "hint": "'Just so I'm clear' puts the doubt on you. What does the ending do?",
+            "explanation": "The rise on MONDAY asks the colleague to confirm. Opening with 'just so I'm clear' makes it your check, not their mistake.",
+            "emphasisRule": "A rise plus a self-blaming opener makes a clarification polite.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L115_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A says: \"Let's use the standard template.\" You don't know which one.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The hospital's crowded waiting room felt oddly quiet.",
-            "textToSpeak": "The hospital's crowded waiting room felt oddly quiet.",
+            "word": "Is that the one from last year?",
+            "textToSpeak": "Is that the one from last year?",
             "options": [
-                "Emphasis on QUIET (Complement focus)",
-                "Emphasis on ROOM (Subject focus)"
+                "Emphasis on ONE",
+                "Emphasis on LAST"
             ],
-            "correctAnswer": "Emphasis on QUIET (Complement focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on LAST",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                1,
+                3
             ],
-            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
-            "explanation": "The sentence saves its strongest beat for QUIET, the closing Complement detail, rather than ROOM earlier on.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Complement focus"
+            "hint": "'The one' is a stand-in for something A hasn't specified. Which detail are you asking about?",
+            "explanation": "ONE is a placeholder, so it stays low. LAST is the detail that narrows it down, so the peak lands on it.",
+            "emphasisRule": "In a clarification question, the narrowing word takes the peak and 'one' stays low.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L116_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A colleague stayed late to help you finish a report.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The homemade tomato soup tastes surprisingly spicy.",
-            "textToSpeak": "The homemade tomato soup tastes surprisingly spicy.",
+            "word": "Thank you so much, I really appreciate it.",
+            "textToSpeak": "Thank you so much, I really appreciate it.",
             "options": [
-                "Emphasis on SOUP (Subject focus)",
-                "Emphasis on SPICY (Complement focus)"
+                "One flat fall on the last word: a routine, automatic thank-you",
+                "Two peaks on MUCH and APPRECIATE: a warm, sincere thank-you"
             ],
-            "correctAnswer": "Emphasis on SPICY (Complement focus)",
+            "correctAnswer": "Two peaks on MUCH and APPRECIATE: a warm, sincere thank-you",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
-            "explanation": "SPICY is the final content word here, so it takes the nuclear stress — its job as Complement focus doesn't change the default rule.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Complement focus"
+            "hint": "The speaker adds a second sentence after 'thank you'. What does the voice do on each part?",
+            "explanation": "Each half of the thanks gets a peak, so the gratitude sounds real. A routine thank-you would use a single fall.",
+            "emphasisRule": "A sincere thank-you often has two peaks, one on each part.",
+            "emotionContext": "Thanks"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L116_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. You bump into someone carrying a coffee.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Once the announcement ended, the restless crowd slowly dispersed.",
-            "textToSpeak": "Once the announcement ended, the restless crowd slowly dispersed.",
+            "word": "Oh, I'm so sorry!",
+            "textToSpeak": "Oh, I'm so sorry!",
             "options": [
-                "Emphasis on DISPERSED (Verb focus)",
-                "Emphasis on CROWD (Subject focus)"
+                "Emphasis on SO",
+                "Emphasis on SORRY"
             ],
-            "correctAnswer": "Emphasis on DISPERSED (Verb focus)",
+            "correctAnswer": "Emphasis on SO",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
+                1,
                 1
             ],
-            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
-            "explanation": "With no special contrast in this sentence, the pitch peak still falls on DISPERSED, the Verb detail that closes it.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Verb focus"
+            "hint": "In an emotional apology, does the intensifier stay quiet?",
+            "explanation": "In feeling expressions, the intensifier carries the sincerity. SO takes the peak, which tells the listener the apology is heartfelt.",
+            "emphasisRule": "In heartfelt apologies, 'so' takes the peak instead of the adjective.",
+            "emotionContext": "Apology"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L116_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? You're late to a meeting and apologise briefly before moving on.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The neighborhood kids are playing in the yard.",
-            "textToSpeak": "The neighborhood kids are playing in the yard.",
+            "word": "Sorry I'm late, shall we start?",
+            "textToSpeak": "Sorry I'm late, shall we start?",
             "options": [
-                "Emphasis on KIDS (Subject focus)",
-                "Emphasis on YARD (Place focus)"
+                "A quick, low 'sorry', then a rise: moving on",
+                "A strong peak on 'sorry': a deep apology"
             ],
-            "correctAnswer": "Emphasis on YARD (Place focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "A quick, low 'sorry', then a rise: moving on",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
+                2,
+                2,
                 3
             ],
-            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
-            "explanation": "KIDS appears earlier in the sentence, so the stress lands on YARD, the word that ends it — here, a Place focus.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Place focus"
+            "hint": "The speaker wants to restart the meeting. Which part of the sentence is the main message?",
+            "explanation": "SORRY is brief and low, a quick courtesy. The rise on START hands the meeting back, so the focus is on starting.",
+            "emphasisRule": "A brief, low apology followed by a rising question moves the conversation forward.",
+            "emotionContext": "Apology"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L117_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A manager has to tell an employee that a project has ended.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After weeks of gossip, the office rumors eventually stopped.",
-            "textToSpeak": "After weeks of gossip, the office rumors eventually stopped.",
+            "word": "Unfortunately, the project's been cancelled.",
+            "textToSpeak": "Unfortunately, the project's been cancelled.",
             "options": [
-                "Emphasis on STOPPED (Verb focus)",
-                "Emphasis on RUMORS (Subject focus)"
+                "Emphasis on UNFORTUNATELY",
+                "Emphasis on CANCELLED"
             ],
-            "correctAnswer": "Emphasis on STOPPED (Verb focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on CANCELLED",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                2,
                 3,
                 1
             ],
-            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
-            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's STOPPED, functioning as Verb focus.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Verb focus"
+            "hint": "The first word is a warning. Is it the news?",
+            "explanation": "UNFORTUNATELY prepares the listener, but it is not the information. CANCELLED is, so the peak lands on it.",
+            "emphasisRule": "A softening opener stays low; the bad news itself takes the peak.",
+            "emotionContext": "Softening"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L117_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A doctor reassures a worried patient.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "She taught the beginner students a brand new song.",
-            "textToSpeak": "She taught the beginner students a brand new song.",
+            "word": "It's nothing serious, but we should keep an eye on it.",
+            "textToSpeak": "It's nothing serious, but we should keep an eye on it.",
             "options": [
-                "Emphasis on STUDENTS (Recipient focus)",
-                "Emphasis on SONG (Item focus)"
+                "One peak on EYE: a warning only, with nothing reassuring in it",
+                "Peaks on SERIOUS and EYE: reassurance first, then a gentle caution"
             ],
-            "correctAnswer": "Emphasis on SONG (Item focus)",
+            "correctAnswer": "Peaks on SERIOUS and EYE: reassurance first, then a gentle caution",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
-                1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
-            "explanation": "The sentence saves its strongest beat for SONG, the closing Item detail, rather than STUDENTS earlier on.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Item focus"
+            "hint": "The doctor is giving good news and a caution. How many peaks would that need?",
+            "explanation": "SERIOUS delivers the reassurance and EYE the caution, so there are two peaks. A single peak would make it only a warning.",
+            "emphasisRule": "A reassurance-then-caution sentence uses a peak for each part.",
+            "emotionContext": "Reassurance"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L117_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A neighbour tells you that builders will be working next door.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "After three long days in the hospital, her fever finally broke.",
-            "textToSpeak": "After three long days in the hospital, her fever finally broke.",
+            "word": "I'm afraid it'll be a bit noisy for a while.",
+            "textToSpeak": "I'm afraid it'll be a bit noisy for a while.",
             "options": [
-                "Emphasis on BROKE (Verb focus)",
-                "Emphasis on FEVER (Subject focus)"
+                "A softened peak on NOISY with a gentle ending: cushioning the news",
+                "A sharp peak on NOISY: a firm warning of what is coming"
             ],
-            "correctAnswer": "Emphasis on BROKE (Verb focus)",
+            "correctAnswer": "A softened peak on NOISY with a gentle ending: cushioning the news",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
+                2,
                 3,
-                1
+                1,
+                2
             ],
-            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
-            "explanation": "BROKE is the final content word here, so it takes the nuclear stress — its job as Verb focus doesn't change the default rule.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Verb focus"
+            "hint": "The speaker uses 'a bit' and 'for a while'. How does the pitch match that?",
+            "explanation": "A gentle peak and a slight lift afterwards fit the softeners 'a bit' and 'for a while'. A sharp peak would sound alarming.",
+            "emphasisRule": "Softening language is matched by a gentler pitch peak.",
+            "emotionContext": "Softening"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L118_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A trainer explains a step and pauses.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The delayed biopsy results came back completely clear.",
-            "textToSpeak": "The delayed biopsy results came back completely clear.",
+            "word": "Does that make sense?",
+            "textToSpeak": "Does that make sense?",
             "options": [
-                "Emphasis on RESULTS (Subject focus)",
-                "Emphasis on CLEAR (Complement focus)"
+                "Falling: ending the topic",
+                "Rising: inviting questions"
             ],
-            "correctAnswer": "Emphasis on CLEAR (Complement focus)",
+            "correctAnswer": "Rising: inviting questions",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                1,
+                2,
+                2,
                 3
             ],
-            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
-            "explanation": "With no special contrast in this sentence, the pitch peak still falls on CLEAR, the Complement detail that closes it.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Complement focus"
+            "hint": "The trainer wants to know if anyone is lost. What does the ending suggest?",
+            "explanation": "The rise on SENSE invites people to respond. A fall would sound as if the trainer assumed everyone understood.",
+            "emphasisRule": "A rising check question invites a response.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L118_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A listener nods, but looks confused.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "We wished the exhausted travel team good luck.",
-            "textToSpeak": "We wished the exhausted travel team good luck.",
+            "word": "Is that clear, or shall I go over it again?",
+            "textToSpeak": "Is that clear, or shall I go over it again?",
             "options": [
-                "Emphasis on LUCK (Item focus)",
-                "Emphasis on TEAM (Recipient focus)"
+                "Rises on clear, falls on again: offering a choice",
+                "Rises on both clear and again: a plain yes/no question"
             ],
-            "correctAnswer": "Emphasis on LUCK (Item focus)",
+            "correctAnswer": "Rises on clear, falls on again: offering a choice",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
-            "explanation": "TEAM appears earlier in the sentence, so the stress lands on LUCK, the word that ends it — here, a Item focus.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Item focus"
+            "hint": "The sentence has an 'or'. What happens to each half?",
+            "explanation": "CLEAR rises because another option follows, and AGAIN falls to close the choice. Two rises would make it a yes/no question.",
+            "emphasisRule": "An 'or' question rises on the first option and falls on the last.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L118_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A: \"Remember to back up the files before you update.\" B checks the order.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The old diesel engine sounds unusually loud.",
-            "textToSpeak": "The old diesel engine sounds unusually loud.",
+            "word": "Back up first, then update?",
+            "textToSpeak": "Back up first, then update?",
             "options": [
-                "Emphasis on ENGINE (Subject focus)",
-                "Emphasis on LOUD (Complement focus)"
+                "Emphasis on BACK and THEN",
+                "Emphasis on FIRST and UPDATE"
             ],
-            "correctAnswer": "Emphasis on LOUD (Complement focus)",
+            "correctAnswer": "Emphasis on FIRST and UPDATE",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
+                3,
                 1,
                 1,
                 3
             ],
-            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
-            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's LOUD, functioning as Complement focus.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Complement focus"
+            "hint": "B is checking the order. Which two words carry it?",
+            "explanation": "FIRST and UPDATE mark the two steps in the sequence. BACK and THEN are the frame.",
+            "emphasisRule": "When checking an order, the sequence words take the peaks.",
+            "emotionContext": "Clarification"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L119_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A colleague has talked for a long time and you want to move the meeting on.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The overnight parcel was left at the entrance.",
-            "textToSpeak": "The overnight parcel was left at the entrance.",
+            "word": "Sorry to interrupt, but can we move on?",
+            "textToSpeak": "Sorry to interrupt, but can we move on?",
             "options": [
-                "Emphasis on ENTRANCE (Place focus)",
-                "Emphasis on PARCEL (Subject focus)"
+                "Falling: a firm cut-off",
+                "Rising: polite, leaving room to agree"
             ],
-            "correctAnswer": "Emphasis on ENTRANCE (Place focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising: polite, leaving room to agree",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
-            "explanation": "The sentence saves its strongest beat for ENTRANCE, the closing Place detail, rather than PARCEL earlier on.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Place focus"
+            "hint": "You still want to keep the speaker onside. What does the ending do?",
+            "explanation": "The rise on ON turns the redirect into a question the speaker can agree to. A fall would sound like an instruction.",
+            "emphasisRule": "A rising redirect sounds polite; a falling one sounds like a cut-off.",
+            "emotionContext": "Topic management"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L119_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. The budget was the original topic, but the speaker keeps drifting off.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The annual music festival starts next weekend.",
-            "textToSpeak": "The annual music festival starts next weekend.",
+            "word": "Let's get back to the budget.",
+            "textToSpeak": "Let's get back to the budget.",
             "options": [
-                "Emphasis on FESTIVAL (Subject focus)",
-                "Emphasis on WEEKEND (Time focus)"
+                "Emphasis on BACK",
+                "Emphasis on BUDGET"
             ],
-            "correctAnswer": "Emphasis on WEEKEND (Time focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BACK",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
-            "explanation": "WEEKEND is the final content word here, so it takes the nuclear stress — its job as Time focus doesn't change the default rule.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Time focus"
+            "hint": "The budget was already the topic. What is the speaker really asking for?",
+            "explanation": "BUDGET is given, so it falls away. BACK marks the return to the original topic, and it takes the peak.",
+            "emphasisRule": "When returning to a given topic, the word of returning takes the peak.",
+            "emotionContext": "Topic management"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L119_Q3",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. A louder colleague is talking over a quieter one.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The award-winning choir performed the anthem beautifully.",
-            "textToSpeak": "The award-winning choir performed the anthem beautifully.",
+            "word": "Hang on, I think Dana was about to say something.",
+            "textToSpeak": "Hang on, I think Dana was about to say something.",
             "options": [
-                "Emphasis on BEAUTIFULLY (Manner focus)",
-                "Emphasis on CHOIR (Subject focus)"
+                "Emphasis on SOMETHING",
+                "Emphasis on DANA"
             ],
-            "correctAnswer": "Emphasis on BEAUTIFULLY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DANA",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
-            "explanation": "With no special contrast in this sentence, the pitch peak still falls on BEAUTIFULLY, the Manner detail that closes it.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Manner focus"
+            "hint": "You want the group to look at someone else. Which word points them there?",
+            "explanation": "SOMETHING is vague and carries nothing new. DANA is the person you're redirecting attention to, so the peak lands on it.",
+            "emphasisRule": "When handing the floor to someone, their name takes the peak.",
+            "emotionContext": "Topic management"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L120_Q1",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the emphasis. You ask a colleague to review one particular section of a long report.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "The walk-in clinic opens unusually early today.",
-            "textToSpeak": "The walk-in clinic opens unusually early today.",
+            "word": "Could you take a look at the second section?",
+            "textToSpeak": "Could you take a look at the second section?",
             "options": [
-                "Emphasis on CLINIC (Subject focus)",
-                "Emphasis on TODAY (Time focus)"
+                "Emphasis on LOOK",
+                "Emphasis on SECOND"
             ],
-            "correctAnswer": "Emphasis on TODAY (Time focus)",
+            "correctAnswer": "Emphasis on SECOND",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
+                3,
                 1,
                 3
             ],
-            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
-            "explanation": "CLINIC appears earlier in the sentence, so the stress lands on TODAY, the word that ends it — here, a Time focus.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Time focus"
+            "hint": "The report is long. What are you asking the colleague to narrow down?",
+            "explanation": "'Take a look' is the usual request, so it stays low. SECOND tells the colleague which section, so the peak lands on it, and the rise keeps it polite.",
+            "emphasisRule": "In a polite request about part of a whole, the narrowing word takes the peak.",
+            "emotionContext": "Polite request"
         },
         {
             "id": "ACC_PITCHPATTERNMATCH_L120_Q2",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A shop assistant apologises after a long queue.",
             "subtype": "pitchPatternMatch",
             "interactionType": "speaking",
-            "word": "Our connecting flight to Chicago departs at dawn.",
-            "textToSpeak": "Our connecting flight to Chicago departs at dawn.",
+            "word": "Sorry about the wait.",
+            "textToSpeak": "Sorry about the wait.",
             "options": [
-                "Emphasis on DAWN (Time focus)",
-                "Emphasis on FLIGHT (Subject focus)"
+                "Falling: a brief, routine apology",
+                "Rising: asking whether you minded"
             ],
-            "correctAnswer": "Emphasis on DAWN (Time focus)",
+            "correctAnswer": "Falling: a brief, routine apology",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The assistant isn't asking anything. How does the sentence end?",
+            "explanation": "A fall on WAIT closes the apology. A rise would make it a question about whether the customer minded.",
+            "emphasisRule": "A falling 'sorry about...' is a brief apology, not a question.",
+            "emotionContext": "Apology"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_L120_Q3",
+            "instruction": "Identify the emphasis. A: \"Fancy a drink after work?\" B can't.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Not tonight, I've got an early start.",
+            "textToSpeak": "Not tonight, I've got an early start.",
+            "options": [
+                "Emphasis on GOT and START",
+                "Emphasis on TONIGHT and EARLY"
+            ],
+            "correctAnswer": "Emphasis on TONIGHT and EARLY",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
                 1,
                 3,
                 1
             ],
-            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
-            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's DAWN, functioning as Time focus.",
-            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself.",
-            "emotionContext": "Time focus"
-        },
-        {
-            "id": "ACC_PITCHPATTERNMATCH_L120_Q3",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "speaking",
-            "word": "The patient math tutor explained the concept patiently.",
-            "textToSpeak": "The patient math tutor explained the concept patiently.",
-            "options": [
-                "Emphasis on TUTOR (Subject focus)",
-                "Emphasis on PATIENTLY (Manner focus)"
-            ],
-            "correctAnswer": "Emphasis on PATIENTLY (Manner focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                1,
-                3
-            ],
-            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
-            "explanation": "The sentence saves its strongest beat for PATIENTLY, the closing Manner detail, rather than TUTOR earlier on.",
-            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays.",
-            "emotionContext": "Manner focus"
+            "hint": "B turns down this occasion, not the idea. Which two words show that?",
+            "explanation": "TONIGHT limits the refusal to this evening, and EARLY gives the reason. GOT and START are the frame.",
+            "emphasisRule": "A friendly refusal peaks on the limit and the reason.",
+            "emotionContext": "Declining politely"
         }
     ]
 }

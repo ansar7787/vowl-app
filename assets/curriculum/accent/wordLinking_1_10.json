@@ -5,542 +5,546 @@
     "quests": [
         {
             "id": "ACC_WORDLINKING_L1_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "call",
-                "us",
-                "right",
-                "now"
-            ],
-            "textToSpeak": "call us right now",
-            "correctAnswer": "call us",
-            "hint": "The final consonant /l/ of 'call' links directly onto the opening vowel of 'us' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /l/ of 'call' carries over to become the onset of 'us', so the phrase sounds like 'ca-lus'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L1_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "stop",
-                "it",
-                "right",
-                "there"
-            ],
-            "textToSpeak": "stop it right there",
-            "correctAnswer": "stop it",
-            "hint": "The final consonant /p/ of 'stop' links directly onto the opening vowel of 'it' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /p/ of 'stop' carries over to become the onset of 'it', so the phrase sounds like 'sto-pit'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L1_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Listen for the connected words",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
                 "pick",
                 "up",
-                "your",
-                "bag"
+                "the",
+                "phone"
             ],
-            "textToSpeak": "pick up your bag",
+            "textToSpeak": "pick up the phone",
             "correctAnswer": "pick up",
-            "hint": "The final consonant /k/ of 'pick' links directly onto the opening vowel of 'up' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'pick' carries over to become the onset of 'up', so the phrase sounds like 'pi-cup'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "hint": "Two words here end in a stop sound (/k/ and /p/), but only one of them is followed by a vowel.",
+            "explanation": "'Pick' ends in /k/ and 'up' begins with a vowel, so the /k/ is released straight into /ʌ/ instead of stopping first. At normal speed you hear something close to 'pickup'. Pausing between the two is what makes learners sound choppy.",
+            "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L1_Q2",
+            "instruction": "Identify the linked pair",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "please",
+                "wait",
+                "a",
+                "moment"
+            ],
+            "textToSpeak": "please wait a moment",
+            "correctAnswer": "wait a",
+            "hint": "'Please' ends in a buzzing /z/, but the word after it starts with a consonant, so there is nothing to link into. Keep looking.",
+            "explanation": "'Wait' ends in /t/ and the little word 'a' is just /ə/, so the /t/ lands directly on it. Weak words like 'a' almost never stand alone in speech; they cling to the word before them, which is why 'wait a' sounds like 'waita'.",
+            "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L1_Q3",
+            "instruction": "Read the line aloud and join the right pair",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "I'll",
+                "grab",
+                "it",
+                "later"
+            ],
+            "textToSpeak": "I'll grab it later",
+            "correctAnswer": "grab it",
+            "hint": "Say the whole thing quickly. Fluent speakers squeeze four words into three beats. Find where two words merge.",
+            "explanation": "'Grab' ends in /b/, which is released straight into the vowel of 'it', so it sounds close to 'grabit'. Voiced stops like /b/ link as easily as /k/ or /p/. 'It later' does not link, because 'later' starts with a consonant.",
+            "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L2_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair is spoken as one smooth unit?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "turn",
+                "off",
+                "the",
+                "lights"
+            ],
+            "textToSpeak": "turn off the lights",
+            "correctAnswer": "turn off",
+            "hint": "/n/ and /m/ keep your voice running. Find a word ending in one of them with a vowel right after it.",
+            "explanation": "'Turn' ends in /n/ and 'off' begins with a vowel, so the /n/ simply carries on into it and you get 'turnoff' as one stretch of sound. Because /n/ is voiced and continuous, there is no silent gap to notice, which is why this link is easy to miss.",
+            "flowRule": "Consonant-to-Vowel Linking (nasals): A word ending in /m/ or /n/ keeps your voice running, so the nasal sound flows directly into a following vowel with no gap.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L2_Q2",
+            "instruction": "Which pair would sound choppy if you stopped between them?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "we",
+                "swam",
+                "in",
+                "the",
+                "lake"
+            ],
+            "textToSpeak": "we swam in the lake",
+            "correctAnswer": "swam in",
+            "hint": "Check what follows each word that ends in /m/ or /n/. Only one is followed by a vowel.",
+            "explanation": "'Swam' ends in /m/ with the lips closed, and the voice carries on into the /ɪ/ of 'in'. The /n/ at the end of 'in' does not link here, because 'the' starts with a consonant sound.",
+            "flowRule": "Consonant-to-Vowel Linking (nasals): A word ending in /m/ or /n/ keeps your voice running, so the nasal sound flows directly into a following vowel with no gap.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L2_Q3",
+            "instruction": "Tap the pair that sounds like one word",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "let",
+                "them",
+                "come",
+                "in"
+            ],
+            "textToSpeak": "let them come in",
+            "correctAnswer": "come in",
+            "hint": "Two words end in /m/. Compare what each one is followed by.",
+            "explanation": "'Come' ends in /m/ and 'in' opens with a vowel, so the lips release into /ɪn/ without a break. A host at the door says it as one welcoming sound, not 'come… in'.",
+            "flowRule": "Consonant-to-Vowel Linking (nasals): A word ending in /m/ or /n/ keeps your voice running, so the nasal sound flows directly into a following vowel with no gap.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L3_Q1",
+            "instruction": "Find the natural transition",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "tell",
+                "us",
+                "what",
+                "happened"
+            ],
+            "textToSpeak": "tell us what happened",
+            "correctAnswer": "tell us",
+            "hint": "A word ending in /l/ needs a vowel to land on. Check which one gets it.",
+            "explanation": "The tongue tip stays raised for the /l/ of 'tell' while the vowel of 'us' begins, so you hear 'tellus' rather than 'tell… us'. Compare 'what happened', where /t/ meets /h/ and nothing joins.",
+            "flowRule": "Consonant-to-Vowel Linking (/l/): A word-final /l/ stays voiced and slides into the vowel of the next word, so the two words sound like one continuous stretch.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L3_Q2",
+            "instruction": "Find the pair that blends into one chunk",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "make",
+                "yourself",
+                "feel",
+                "at",
+                "home"
+            ],
+            "textToSpeak": "make yourself feel at home",
+            "correctAnswer": "feel at",
+            "hint": "Say it slowly, then at normal speed. Notice which spot changes the most.",
+            "explanation": "'Feel' ends in a dark /l/ and 'at' begins with a vowel. The tongue stays up for the /l/ and the vowel follows at once, giving 'feelat'. A host welcoming a guest would never leave a gap there.",
+            "flowRule": "Consonant-to-Vowel Linking (/l/): A word-final /l/ stays voiced and slides into the vowel of the next word, so the two words sound like one continuous stretch.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L3_Q3",
+            "instruction": "Find the smooth connection",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "try",
+                "not",
+                "to",
+                "fall",
+                "asleep"
+            ],
+            "textToSpeak": "try not to fall asleep",
+            "correctAnswer": "fall asleep",
+            "hint": "A weak /ə/ at the start of a word is easy to miss. Where might one be hiding?",
+            "explanation": "'Fall' ends in /l/ and 'asleep' opens with the weak vowel /ə/. The /l/ slides into it, so you hear 'falasleep' with the stress still on 'sleep'. Unstressed vowels at the start of a word are where linking is easiest to overlook.",
+            "flowRule": "Consonant-to-Vowel Linking (/l/): A word-final /l/ stays voiced and slides into the vowel of the next word, so the two words sound like one continuous stretch.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L4_Q1",
+            "instruction": "Say it aloud: which words join up?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "good",
+                "idea",
+                "let's",
+                "go"
+            ],
+            "textToSpeak": "good idea let's go",
+            "correctAnswer": "good idea",
+            "hint": "/b/, /d/ and /g/ link just like /p/, /t/ and /k/. Which of them ends a word before a vowel?",
+            "explanation": "'Good' ends in /d/ and 'idea' starts with /aɪ/, so the /d/ is released into the vowel with no pause. It comes out like 'goodidea', the way people say it when they like a suggestion.",
+            "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L4_Q2",
+            "instruction": "Which pair would a fluent speaker say in one breath?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
                 "hold",
                 "on",
-                "a",
+                "one",
                 "second"
             ],
-            "textToSpeak": "hold on a second",
+            "textToSpeak": "hold on one second",
             "correctAnswer": "hold on",
-            "hint": "The final consonant /d/ of 'hold' links directly onto the opening vowel of 'on' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /d/ of 'hold' carries over to become the onset of 'on', so the phrase sounds like 'hol-don'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L2_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "check",
-                "in",
-                "at",
-                "reception"
-            ],
-            "textToSpeak": "check in at reception",
-            "correctAnswer": "check in",
-            "hint": "The final consonant /k/ of 'check' links directly onto the opening vowel of 'in' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'check' carries over to become the onset of 'in', so the phrase sounds like 'che-kin'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L2_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "wash",
-                "up",
-                "before",
-                "dinner"
-            ],
-            "textToSpeak": "wash up before dinner",
-            "correctAnswer": "wash up",
-            "hint": "The final consonant /ʃ/ of 'wash' links directly onto the opening vowel of 'up' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /ʃ/ of 'wash' carries over to become the onset of 'up', so the phrase sounds like 'wa-shup'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L3_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "sit",
-                "up",
-                "and",
-                "listen"
-            ],
-            "textToSpeak": "sit up and listen",
-            "correctAnswer": "sit up",
-            "hint": "The final consonant /t/ of 'sit' links directly onto the opening vowel of 'up' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /t/ of 'sit' carries over to become the onset of 'up', so the phrase sounds like 'si-tup'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L3_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "read",
-                "aloud",
-                "for",
-                "class"
-            ],
-            "textToSpeak": "read aloud for class",
-            "correctAnswer": "read aloud",
-            "hint": "The final consonant /d/ of 'read' links directly onto the opening vowel of 'aloud' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /d/ of 'read' carries over to become the onset of 'aloud', so the phrase sounds like 'rea-daloud'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L3_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "hand",
-                "in",
-                "your",
-                "work"
-            ],
-            "textToSpeak": "hand in your work",
-            "correctAnswer": "hand in",
-            "hint": "The final consonant /d/ of 'hand' links directly onto the opening vowel of 'in' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /d/ of 'hand' carries over to become the onset of 'in', so the phrase sounds like 'han-din'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L4_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "look",
-                "after",
-                "your",
-                "health"
-            ],
-            "textToSpeak": "look after your health",
-            "correctAnswer": "look after",
-            "hint": "The final consonant /k/ of 'look' links directly onto the opening vowel of 'after' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'look' carries over to become the onset of 'after', so the phrase sounds like 'loo-kafter'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L4_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "book",
-                "a",
-                "table",
-                "please"
-            ],
-            "textToSpeak": "book a table please",
-            "correctAnswer": "book a",
-            "hint": "The final consonant /k/ of 'book' links directly onto the opening vowel of 'a' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'book' carries over to become the onset of 'a', so the phrase sounds like 'boo-ka'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "hint": "Try stopping dead after the first word, then try letting its last sound roll on. Which sounds more like a real person?",
+            "explanation": "'Hold' ends in /d/ and 'on' begins with a vowel. In fluent speech the /d/ is not cut short; it is released into the vowel, so a quick 'hold on' almost sounds like one word.",
+            "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L4_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair is spoken continuously?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "make",
-                "an",
-                "effort",
-                "today"
+                "no",
+                "that's",
+                "big",
+                "enough"
             ],
-            "textToSpeak": "make an effort today",
-            "correctAnswer": "make an",
-            "hint": "The final consonant /k/ of 'make' links directly onto the opening vowel of 'an' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'make' carries over to become the onset of 'an', so the phrase sounds like 'ma-kan'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "no that's big enough",
+            "correctAnswer": "big enough",
+            "hint": "'That's' also ends in a consonant, so check what comes after it before you decide.",
+            "explanation": "'Big' ends in /g/ and 'enough' begins with /ɪ/. The back of the tongue releases the /g/ right into the vowel, giving 'bigenough'. 'That's big' does not link, because 'big' starts with a consonant.",
+            "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L5_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which boundary has no pause?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "hand",
-                "over",
-                "the",
-                "keys"
+                "please",
+                "ask",
+                "Tom",
+                "later"
             ],
-            "textToSpeak": "hand over the keys",
-            "correctAnswer": "hand over",
-            "hint": "The final consonant /d/ of 'hand' links directly onto the opening vowel of 'over' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /d/ of 'hand' carries over to become the onset of 'over', so the phrase sounds like 'han-dover'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "please ask Tom later",
+            "correctAnswer": "please ask",
+            "hint": "A sound you can hold, like /z/ or /s/, can slide straight into a vowel. Look for one at the end of a word.",
+            "explanation": "'Please' ends in /z/, a buzzing sound you can hold, and 'ask' starts with a vowel. The buzz carries on into the vowel. Keep the voice on; cutting it off is what makes the words sound separated.",
+            "flowRule": "Consonant-to-Vowel Linking (continuous sounds): Sounds you can hold, such as /s/, /z/, /f/, /v/ and /ʃ/, glide directly into a following vowel without restarting.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L5_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which words melt together when you say this naturally?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "fill",
-                "in",
-                "this",
-                "form"
+                "I",
+                "really",
+                "miss",
+                "everyone"
             ],
-            "textToSpeak": "fill in this form",
-            "correctAnswer": "fill in",
-            "hint": "The final consonant /l/ of 'fill' links directly onto the opening vowel of 'in' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /l/ of 'fill' carries over to become the onset of 'in', so the phrase sounds like 'fi-lin'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "I really miss everyone",
+            "correctAnswer": "miss everyone",
+            "hint": "Check each word that ends in a consonant, then look at what starts the next word. Most of them meet another consonant.",
+            "explanation": "'Miss' ends in /s/ and 'everyone' begins with /e/, so the hiss glides into the vowel. 'Really miss' does not link, because 'miss' starts with /m/. A gap here would make an affectionate sentence sound stiff.",
+            "flowRule": "Consonant-to-Vowel Linking (continuous sounds): Sounds you can hold, such as /s/, /z/, /f/, /v/ and /ʃ/, glide directly into a following vowel without restarting.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L5_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which two words run together?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "call",
-                "out",
-                "the",
-                "answer"
+                "half",
+                "of",
+                "them",
+                "left"
             ],
-            "textToSpeak": "call out the answer",
-            "correctAnswer": "call out",
-            "hint": "The final consonant /l/ of 'call' links directly onto the opening vowel of 'out' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /l/ of 'call' carries over to become the onset of 'out', so the phrase sounds like 'ca-lout'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "half of them left",
+            "correctAnswer": "half of",
+            "hint": "In speech, little grammar words lose their strength and lean on the word before them. Which pair is that?",
+            "explanation": "'Half' ends in /f/ and 'of' is normally the weak form /əv/, so the /f/ runs into it and you get something like 'halfuv'. This is why 'of' is so hard to hear when people talk quickly.",
+            "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L6_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Spelling can mislead: which pair really links?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "set",
-                "off",
-                "at",
-                "dawn"
+                "never",
+                "give",
+                "up",
+                "hope"
             ],
-            "textToSpeak": "set off at dawn",
-            "correctAnswer": "set off",
-            "hint": "The final consonant /t/ of 'set' links directly onto the opening vowel of 'off' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /t/ of 'set' carries over to become the onset of 'off', so the phrase sounds like 'se-toff'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "never give up hope",
+            "correctAnswer": "give up",
+            "hint": "Look at the spelling of the first word in the pair: it ends in 'e'. Is that letter actually pronounced?",
+            "explanation": "Written 'give' ends in an 'e' you never say. The real final sound is /v/, and it rolls straight into the vowel of 'up', so 'give up' is heard as 'giveup'. If you wait for the letter 'e' to announce the word's ending, you will miss the link.",
+            "flowRule": "Linking follows sound, not spelling: a silent final 'e' (as in 'give' or 'close') does not block a link, because the word really ends in a consonant sound such as /v/ or /z/.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L6_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Read the line aloud and join the right pair",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "break",
-                "out",
-                "in",
-                "spots"
+                "I",
+                "have",
+                "a",
+                "question"
             ],
-            "textToSpeak": "break out in spots",
-            "correctAnswer": "break out",
-            "hint": "The final consonant /k/ of 'break' links directly onto the opening vowel of 'out' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'break' carries over to become the onset of 'out', so the phrase sounds like 'brea-kout'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "I have a question",
+            "correctAnswer": "have a",
+            "hint": "Say the verb in this sentence by itself and ignore its spelling. What is its very last sound?",
+            "explanation": "Try saying 'have a' with a gap and it feels oddly formal. In natural speech the /v/ of 'have' passes straight into the weak /ə/ of 'a', so the pair sounds like one short word. You will hear this in 'I have a…' constantly.",
+            "flowRule": "Linking follows sound, not spelling: a silent final letter (as in 'have', 'love', 'take') does not block a link, because the word really ends in a consonant sound.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L6_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Spot the linking point",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "sign",
-                "up",
-                "for",
-                "class"
+                "I",
+                "just",
+                "love",
+                "it"
             ],
-            "textToSpeak": "sign up for class",
-            "correctAnswer": "sign up",
-            "hint": "The final consonant /n/ of 'sign' links directly onto the opening vowel of 'up' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /n/ of 'sign' carries over to become the onset of 'up', so the phrase sounds like 'si-gnup'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "I just love it",
+            "correctAnswer": "love it",
+            "hint": "One word hides its last sound behind a letter. Say it aloud and feel what your lip and teeth do.",
+            "explanation": "Say 'love' alone and notice your lip and teeth touching at the end: that is /v/, not a vowel. Because 'it' starts with a vowel, the /v/ does not stop; it flows through. The final 'e' on the page is a spelling habit, not a sound.",
+            "flowRule": "Linking follows sound, not spelling: a silent final letter (as in 'have', 'love', 'take') does not block a link, because the word really ends in a consonant sound.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L7_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "speak",
-                "up",
-                "a",
-                "bit"
-            ],
-            "textToSpeak": "speak up a bit",
-            "correctAnswer": "speak up",
-            "hint": "The final consonant /k/ of 'speak' links directly onto the opening vowel of 'up' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'speak' carries over to become the onset of 'up', so the phrase sounds like 'spea-kup'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L7_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "ask",
-                "around",
-                "for",
-                "help"
-            ],
-            "textToSpeak": "ask around for help",
-            "correctAnswer": "ask around",
-            "hint": "The final consonant /k/ of 'ask' links directly onto the opening vowel of 'around' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'ask' carries over to become the onset of 'around', so the phrase sounds like 'as-karound'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L7_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "lock",
-                "up",
-                "at",
-                "night"
-            ],
-            "textToSpeak": "lock up at night",
-            "correctAnswer": "lock up",
-            "hint": "The final consonant /k/ of 'lock' links directly onto the opening vowel of 'up' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'lock' carries over to become the onset of 'up', so the phrase sounds like 'lo-ckup'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L8_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "drop",
-                "off",
-                "the",
-                "parcel"
-            ],
-            "textToSpeak": "drop off the parcel",
-            "correctAnswer": "drop off",
-            "hint": "The final consonant /p/ of 'drop' links directly onto the opening vowel of 'off' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /p/ of 'drop' carries over to become the onset of 'off', so the phrase sounds like 'dro-poff'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L8_Q2",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "plug",
-                "in",
-                "the",
-                "charger"
-            ],
-            "textToSpeak": "plug in the charger",
-            "correctAnswer": "plug in",
-            "hint": "The final consonant /g/ of 'plug' links directly onto the opening vowel of 'in' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /g/ of 'plug' carries over to become the onset of 'in', so the phrase sounds like 'plu-gin'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L8_Q3",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "turn",
-                "up",
-                "the",
-                "volume"
-            ],
-            "textToSpeak": "turn up the volume",
-            "correctAnswer": "turn up",
-            "hint": "The final consonant /n/ of 'turn' links directly onto the opening vowel of 'up' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /n/ of 'turn' carries over to become the onset of 'up', so the phrase sounds like 'tur-nup'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L9_Q1",
-            "instruction": "Identify the linking",
-            "subtype": "wordLinking",
-            "interactionType": "speaking",
-            "words": [
-                "sit",
-                "in",
-                "on",
-                "this"
-            ],
-            "textToSpeak": "sit in on this",
-            "correctAnswer": "sit in",
-            "hint": "The final consonant /t/ of 'sit' links directly onto the opening vowel of 'in' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /t/ of 'sit' carries over to become the onset of 'in', so the phrase sounds like 'si-tin'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
-            "linkingType": "consonant_to_vowel"
-        },
-        {
-            "id": "ACC_WORDLINKING_L9_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair would sound choppy if you stopped between them?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
                 "take",
-                "off",
-                "your",
-                "coat"
+                "a",
+                "short",
+                "break"
             ],
-            "textToSpeak": "take off your coat",
-            "correctAnswer": "take off",
-            "hint": "The final consonant /k/ of 'take' links directly onto the opening vowel of 'off' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'take' carries over to become the onset of 'off', so the phrase sounds like 'ta-koff'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "take a short break",
+            "correctAnswer": "take a",
+            "hint": "Cover the last letter of the first verb with your finger. Does the word sound any different?",
+            "explanation": "Whenever you hear 'take a', expect one beat. The final /k/ of 'take' (the 'e' is silent) is released into the weak /ə/ of 'a', which leaves the stress free to fall on 'short break'.",
+            "flowRule": "Linking follows sound, not spelling: a silent final letter (as in 'have', 'love', 'take') does not block a link, because the word really ends in a consonant sound.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L7_Q2",
+            "instruction": "Spelling can mislead: which pair really links?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "please",
+                "gently",
+                "close",
+                "it"
+            ],
+            "textToSpeak": "please gently close it",
+            "correctAnswer": "close it",
+            "hint": "The verb here does not end in /s/. What does it end with?",
+            "explanation": "Verbs like 'close' (to shut) end in /z/, not /s/, even though the spelling does not show it. That voiced /z/ carries on into the vowel of 'it', so the end of the sentence sounds like one piece instead of two.",
+            "flowRule": "Linking follows sound, not spelling: a silent final 'e' (as in 'give' or 'close') does not block a link, because the word really ends in a consonant sound such as /v/ or /z/.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L7_Q3",
+            "instruction": "Find the pair that flows without a break",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "I'd",
+                "like",
+                "another",
+                "one"
+            ],
+            "textToSpeak": "I'd like another one",
+            "correctAnswer": "like another",
+            "hint": "Polite requests often hide a link before a word with a weak first vowel. Say it fast and see what happens to the verb's last sound.",
+            "explanation": "Here is the silent-'e' idea inside a request. 'Like' ends in /k/ and 'another' starts with the weak vowel /ə/, so the two run together. That is why 'I'd like another one' sounds smooth and polite rather than hesitant.",
+            "flowRule": "Linking follows sound, not spelling: a silent final letter (as in 'have', 'love', 'take') does not block a link, because the word really ends in a consonant sound.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L8_Q1",
+            "instruction": "Find the pair that blends into one chunk",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "get",
+                "in",
+                "the",
+                "car"
+            ],
+            "textToSpeak": "get in the car",
+            "correctAnswer": "get in",
+            "hint": "Say it the way you would to a friend with the engine running: quickly. What does the /t/ do?",
+            "explanation": "'Get' ends in /t/ and 'in' begins with a vowel. In many North American accents that /t/ becomes a quick tap, a bit like a soft /d/, while in many British accents it stays a /t/. Either way it joins the vowel instead of stopping.",
+            "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L8_Q2",
+            "instruction": "Find the smooth connection",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "what",
+                "a",
+                "great",
+                "view"
+            ],
+            "textToSpeak": "what a great view",
+            "correctAnswer": "what a",
+            "hint": "Exclamations speed up at the start. Listen for the first weak, barely-there syllable.",
+            "explanation": "Exclamations put the stress on the noun, so the first two words are very light. 'What' ends in /t/ and 'a' is a weak /ə/; they collapse into something like 'whata' with no stop between them.",
+            "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L8_Q3",
+            "instruction": "Listen for the connected words",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "that's",
+                "not",
+                "on",
+                "sale"
+            ],
+            "textToSpeak": "that's not on sale",
+            "correctAnswer": "not on",
+            "hint": "A tiny negative word matters for meaning. Check whether anything stops it flowing onward.",
+            "explanation": "'Not' is short but it matters for meaning, and it still links: the /t/ runs into the vowel of 'on'. The earlier boundary, 'that's not', cannot link because /s/ meets /n/, two consonants.",
+            "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L9_Q1",
+            "instruction": "Which pair would a fluent speaker say in one breath?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "a",
+                "cup",
+                "of",
+                "tea"
+            ],
+            "textToSpeak": "a cup of tea",
+            "correctAnswer": "cup of",
+            "hint": "In speech the little preposition sounds like a tiny 'uh' attached to the word before it.",
+            "explanation": "'Of' is among the weakest words in English, usually just /əv/. It has no strength of its own, so it attaches to 'cup' and the rhythm belongs to 'cup' and 'tea'.",
+            "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
+            "linkingType": "consonant_to_vowel"
+        },
+        {
+            "id": "ACC_WORDLINKING_L9_Q2",
+            "instruction": "Which pair is spoken continuously?",
+            "subtype": "wordLinking",
+            "interactionType": "speaking",
+            "words": [
+                "fish",
+                "and",
+                "chips",
+                "please"
+            ],
+            "textToSpeak": "fish and chips please",
+            "correctAnswer": "fish and",
+            "hint": "The little connector is usually reduced to something like 'n'. Find the word it attaches to.",
+            "explanation": "'And' almost never gets its full sound in conversation. After 'fish' it shrinks to /ən/ or just /n/, fused onto the /ʃ/, which is why a menu item like this sounds like 'fishən chips'.",
+            "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L9_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Which pair is spoken as one smooth unit?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "mix",
-                "it",
-                "up",
-                "tonight"
+                "stop",
+                "at",
+                "the",
+                "lights"
             ],
-            "textToSpeak": "mix it up tonight",
-            "correctAnswer": "mix it",
-            "hint": "The final consonant /ks/ of 'mix' links directly onto the opening vowel of 'it' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /ks/ of 'mix' carries over to become the onset of 'it', so the phrase sounds like 'mi-ksit'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "stop at the lights",
+            "correctAnswer": "stop at",
+            "hint": "Short prepositions are usually weak. Which word before one ends in a consonant?",
+            "explanation": "A passenger asking a driver to stop says 'stop at' as one unit: the /p/ flows into the weak /ət/. 'At the' stays separate because 'the' begins with a consonant.",
+            "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L10_Q1",
-            "instruction": "Identify the linking",
+            "instruction": "Which words melt together when you say this naturally?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "look",
-                "it",
-                "up",
-                "online"
+                "sit",
+                "down",
+                "and",
+                "wait"
             ],
-            "textToSpeak": "look it up online",
-            "correctAnswer": "look it",
-            "hint": "The final consonant /k/ of 'look' links directly onto the opening vowel of 'it' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'look' carries over to become the onset of 'it', so the phrase sounds like 'loo-kit'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "sit down and wait",
+            "correctAnswer": "down and",
+            "hint": "Think about the little word in the middle. What does the word before it end with?",
+            "explanation": "Three words, two boundaries that look tempting. 'Sit down' does not work (/t/ + /d/), and 'and wait' does not either (/d/ + /w/). The genuine link is 'down and', where /n/ runs into the weak vowel of 'and'.",
+            "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L10_Q2",
-            "instruction": "Identify the linking",
+            "instruction": "Which two words run together?",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "work",
-                "out",
-                "at",
-                "gym"
+                "that's",
+                "all",
+                "for",
+                "today"
             ],
-            "textToSpeak": "work out at gym",
-            "correctAnswer": "work out",
-            "hint": "The final consonant /k/ of 'work' links directly onto the opening vowel of 'out' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /k/ of 'work' carries over to become the onset of 'out', so the phrase sounds like 'wor-kout'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "that's all for today",
+            "correctAnswer": "that's all",
+            "hint": "People use this phrase to wrap things up, and they say it almost as one word.",
+            "explanation": "Closing phrases get compressed. 'That's' ends in /s/, 'all' begins with a vowel, and the hiss flows in so the phrase comes out as one quick unit that tells the listener you are done.",
+            "flowRule": "Consonant-to-Vowel Linking (continuous sounds): Sounds you can hold, such as /s/, /z/, /f/, /v/ and /ʃ/, glide directly into a following vowel without restarting.",
             "linkingType": "consonant_to_vowel"
         },
         {
             "id": "ACC_WORDLINKING_L10_Q3",
-            "instruction": "Identify the linking",
+            "instruction": "Find the natural transition",
             "subtype": "wordLinking",
             "interactionType": "speaking",
             "words": [
-                "pull",
-                "out",
-                "your",
-                "ticket"
+                "can",
+                "I",
+                "pay",
+                "by",
+                "card"
             ],
-            "textToSpeak": "pull out your ticket",
-            "correctAnswer": "pull out",
-            "hint": "The final consonant /l/ of 'pull' links directly onto the opening vowel of 'out' in natural speech. Listen for where the two words fuse into a single smooth sound unit.",
-            "explanation": "Consonant-to-vowel linking occurs here: the final /l/ of 'pull' carries over to become the onset of 'out', so the phrase sounds like 'pu-llout'. This is the most fundamental type of linking in English connected speech - it happens whenever a word ending in a consonant is followed by a word starting with a vowel.",
-            "flowRule": "Consonant-to-Vowel Linking: When a word ends in a consonant and the next begins with a vowel, they link smoothly without a pause.",
+            "textToSpeak": "can I pay by card",
+            "correctAnswer": "can I",
+            "hint": "A very short word can hide at the start of a question. What comes before it?",
+            "explanation": "'Can' ends in /n/ and 'I' is /aɪ/, so the /n/ flows into the vowel. In questions 'can' is usually weak, /kən/, which makes it even easier for the two to merge.",
+            "flowRule": "Consonant-to-Vowel Linking (nasals): A word ending in /m/ or /n/ keeps your voice running, so the nasal sound flows directly into a following vowel with no gap.",
             "linkingType": "consonant_to_vowel"
         }
     ]
