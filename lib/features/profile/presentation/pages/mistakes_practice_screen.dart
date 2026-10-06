@@ -27,7 +27,6 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
   int _currentIndex = 0;
   late String _userId;
   bool _isAnswered = false;
-  bool _isCorrect = false;
 
   final AudioPlayer _audioPlayer = AudioPlayer();
 
@@ -69,7 +68,6 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     
     setState(() {
       _isAnswered = true;
-      _isCorrect = isCorrect;
     });
 
     if (isCorrect) {
@@ -93,7 +91,6 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
       setState(() {
         _currentIndex++;
         _isAnswered = false;
-        _isCorrect = false;
       });
     } else {
       // Session Complete

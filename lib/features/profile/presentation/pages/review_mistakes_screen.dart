@@ -176,7 +176,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     return ListView.separated(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       itemCount: _entries.length,
-      separatorBuilder: (_, __) => SizedBox(height: 12.h),
+      separatorBuilder: (_, _) => SizedBox(height: 12.h),
       itemBuilder: (context, index) {
         final entry = _entries[index];
         return GlassTile(
