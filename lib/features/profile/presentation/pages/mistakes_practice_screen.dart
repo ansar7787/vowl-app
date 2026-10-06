@@ -16,14 +16,12 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/data/constants/quest_registry.dart';
 
 class MistakesPracticeScreen extends StatefulWidget {
   final List<ErrorJournalEntry>? initialEntries;
 
-  const MistakesPracticeScreen({
-    super.key,
-    this.initialEntries,
-  });
+  const MistakesPracticeScreen({super.key, this.initialEntries});
 
   @override
   State<MistakesPracticeScreen> createState() => _MistakesPracticeScreenState();
@@ -67,9 +65,9 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     } else {
       final allEntries = await ErrorJournalCollector.fetch(
         userId: _userId,
-        limit: 100, 
+        limit: 100,
       );
-      
+
       allEntries.shuffle();
       sessionEntries = allEntries.take(10).toList();
     }
@@ -82,20 +80,24 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
 
   void _submitAnswer(bool isCorrect) {
     if (_isAnswered.value) return;
-    
+
     _isAnswered.value = true;
 
     if (isCorrect) {
       di.sl<HapticService>().success();
-      _audioPlayer.play(AssetSource('sounds/correct_chime.mp3')).catchError((_) {});
-      
+      _audioPlayer
+          .play(AssetSource('sounds/correct_chime.mp3'))
+          .catchError((_) {});
+
       ErrorJournalCollector.dismiss(
-        userId: _userId, 
-        entryId: _entries.value[_currentIndex.value].id
+        userId: _userId,
+        entryId: _entries.value[_currentIndex.value].id,
       );
     } else {
       di.sl<HapticService>().error();
-      _audioPlayer.play(AssetSource('sounds/wrong_buzz.mp3')).catchError((_) {});
+      _audioPlayer
+          .play(AssetSource('sounds/wrong_buzz.mp3'))
+          .catchError((_) {});
     }
   }
 
@@ -111,7 +113,7 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Scaffold(
       body: Stack(
         children: [
@@ -134,23 +136,75 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
                             elevation: 0,
                             pinned: true,
                             leading: IconButton(
-                              icon: Icon(Icons.close_rounded, color: isDark ? Colors.white : Colors.black),
+                              icon: Icon(
+                                Icons.close_rounded,
+                                color: isDark ? Colors.white : Colors.black,
+                              ),
                               onPressed: () => context.pop(),
                             ),
-                            title: (!isLoading && entries.isNotEmpty) 
-                                ? (VowlMotion.shouldReduceMotion(context) ? Text('${currentIndex + 1} / ${entries.length}', style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black)) : Text('${currentIndex + 1} / ${entries.length}', style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black)).animate(key: ValueKey(currentIndex)).scale(duration: 200.ms, curve: Curves.easeOutBack))
+                            title: (!isLoading && entries.isNotEmpty)
+                                ? (VowlMotion.shouldReduceMotion(context)
+                                      ? Text(
+                                          '${currentIndex + 1} / ${entries.length}',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 16.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: isDark
+                                                ? Colors.white
+                                                : Colors.black,
+                                          ),
+                                        )
+                                      : Text(
+                                              '${currentIndex + 1} / ${entries.length}',
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 16.sp,
+                                                fontWeight: FontWeight.bold,
+                                                color: isDark
+                                                    ? Colors.white
+                                                    : Colors.black,
+                                              ),
+                                            )
+                                            .animate(
+                                              key: ValueKey(currentIndex),
+                                            )
+                                            .scale(
+                                              duration: 200.ms,
+                                              curve: Curves.easeOutBack,
+                                            ))
                                 : const SizedBox.shrink(),
                             centerTitle: true,
                           ),
                           SliverFillRemaining(
                             hasScrollBody: false,
                             child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-                              child: isLoading 
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              child: isLoading
                                   ? _buildShimmerLoading(context, isDark)
-                                  : entries.isEmpty 
-                                      ? _buildEmptyState(context, isDark)
-                                      : (VowlMotion.shouldReduceMotion(context) ? _buildFlashcard(context, entries[currentIndex], isDark) : _buildFlashcard(context, entries[currentIndex], isDark).animate(key: ValueKey(entries[currentIndex].id)).slideX(begin: 0.1).fadeIn(duration: 300.ms)),
+                                  : entries.isEmpty
+                                  ? _buildEmptyState(context, isDark)
+                                  : (VowlMotion.shouldReduceMotion(context)
+                                        ? _buildFlashcard(
+                                            context,
+                                            entries[currentIndex],
+                                            isDark,
+                                          )
+                                        : _buildFlashcard(
+                                                context,
+                                                entries[currentIndex],
+                                                isDark,
+                                              )
+                                              .animate(
+                                                key: ValueKey(
+                                                  entries[currentIndex].id,
+                                                ),
+                                              )
+                                              .slideX(begin: 0.1)
+                                              .fadeIn(duration: 300.ms)),
                             ),
                           ),
                         ],
@@ -168,22 +222,33 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
 
   Widget _buildEmptyState(BuildContext context, bool isDark) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.workspace_premium_rounded, size: 80.r, color: AppColors.emerald500),
-          SizedBox(height: 24.h),
-          Text(
-            context.tr('profile.practice_empty', fallback: "No Mistakes to Practice!"),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 22.sp,
-              fontWeight: FontWeight.bold,
-              color: isDark ? Colors.white : Colors.black,
-            ),
-          ),
-        ],
-      ).animate().scale(delay: 100.ms, duration: 400.ms, curve: Curves.easeOutBack).fadeIn(),
+      child:
+          Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.workspace_premium_rounded,
+                    size: 80.r,
+                    color: AppColors.emerald500,
+                  ),
+                  SizedBox(height: 24.h),
+                  Text(
+                    context.tr(
+                      'profile.practice_empty',
+                      fallback: "No Mistakes to Practice!",
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.bold,
+                      color: isDark ? Colors.white : Colors.black,
+                    ),
+                  ),
+                ],
+              )
+              .animate()
+              .scale(delay: 100.ms, duration: 400.ms, curve: Curves.easeOutBack)
+              .fadeIn(),
     );
   }
 
@@ -192,7 +257,9 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Shimmer.fromColors(
-          baseColor: isDark ? AppColors.slate800.withValues(alpha: 0.5) : Colors.white54,
+          baseColor: isDark
+              ? AppColors.slate800.withValues(alpha: 0.5)
+              : Colors.white54,
           highlightColor: isDark ? AppColors.slate700 : Colors.white,
           child: Container(
             width: double.infinity,
@@ -207,14 +274,25 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     );
   }
 
-  Widget _buildFlashcard(BuildContext context, ErrorJournalEntry entry, bool isDark) {
+  Widget _buildFlashcard(
+    BuildContext context,
+    ErrorJournalEntry entry,
+    bool isDark,
+  ) {
     String wrongAnswer = entry.userAnswer.trim();
-    if (wrongAnswer.isEmpty || wrongAnswer.toLowerCase() == entry.correctAnswer.trim().toLowerCase()) {
-      wrongAnswer = context.tr('practice.timeout_answer', fallback: '(No Answer / Timeout)');
+    String correctAnswer = entry.correctAnswer.trim();
+
+    final isVisualOrInteractive = correctAnswer.isEmpty;
+
+    if (wrongAnswer.isEmpty ||
+        wrongAnswer.toLowerCase() == correctAnswer.toLowerCase()) {
+      wrongAnswer = context.tr(
+        'practice.timeout_answer',
+        fallback: '(No Answer / Timeout)',
+      );
     }
 
-    final options = {wrongAnswer, entry.correctAnswer}.toList();
-    
+    final options = {wrongAnswer, correctAnswer}.toList();
     final random = Random(entry.id.hashCode);
     options.shuffle(random);
 
@@ -256,30 +334,109 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
                 ),
               ),
               SizedBox(height: 32.h),
-              
-              ValueListenableBuilder<bool>(
-                valueListenable: _isAnswered,
-                builder: (context, isAnswered, _) {
-                  return Column(
-                    children: options.map((text) {
-                      final isCorrectOption = text == entry.correctAnswer;
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: 12.h),
-                        child: _buildOptionButton(text, isCorrectOption, isAnswered, isDark),
-                      );
-                    }).toList(),
-                  );
-                },
-              ),
+
+              if (isVisualOrInteractive)
+                Column(
+                  children: [
+                    Icon(
+                      Icons.extension_rounded,
+                      size: 48.r,
+                      color: AppColors.indigo500.withValues(alpha: 0.5),
+                    ),
+                    SizedBox(height: 16.h),
+                    Text(
+                      context.tr(
+                        'practice.interactive_puzzle',
+                        fallback: 'Interactive Puzzle',
+                      ),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        color: isDark ? Colors.white70 : Colors.black87,
+                      ),
+                    ),
+                    SizedBox(height: 24.h),
+                    ValueListenableBuilder<bool>(
+                      valueListenable: _isAnswered,
+                      builder: (context, isAnswered, _) {
+                        return ElevatedButton.icon(
+                          onPressed: isAnswered
+                              ? null
+                              : () async {
+                                  final category =
+                                      QuestRegistry.gameToCategory[entry
+                                          .gameType] ??
+                                      'reading';
+                                  final uri = Uri(
+                                    path: '/game',
+                                    queryParameters: {
+                                      'category': category,
+                                      'subtype': entry.gameType,
+                                      'level': entry.level.toString(),
+                                    },
+                                  );
+                                  // Launch the actual game
+                                  await context.push(uri.toString());
+                                  // When they return, we assume they practiced it and mark it as correct
+                                  _submitAnswer(true);
+                                },
+                          icon: const Icon(Icons.play_arrow_rounded),
+                          label: Text(
+                            context.tr(
+                              'practice.play_level',
+                              fallback: 'Play Original Level',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.indigo500,
+                            foregroundColor: Colors.white,
+                            minimumSize: Size(double.infinity, 56.h),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.r),
+                            ),
+                            elevation: 0,
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                )
+              else
+                ValueListenableBuilder<bool>(
+                  valueListenable: _isAnswered,
+                  builder: (context, isAnswered, _) {
+                    return Column(
+                      children: options.map((text) {
+                        final isCorrectOption = text == correctAnswer;
+                        return Padding(
+                          padding: EdgeInsets.only(bottom: 12.h),
+                          child: _buildOptionButton(
+                            text,
+                            isCorrectOption,
+                            isAnswered,
+                            isDark,
+                          ),
+                        );
+                      }).toList(),
+                    );
+                  },
+                ),
             ],
           ),
         ),
-        
+
         ValueListenableBuilder<bool>(
           valueListenable: _isAnswered,
           builder: (context, isAnswered, _) {
             if (!isAnswered) return const SizedBox.shrink();
-            
+
             return Padding(
               padding: EdgeInsets.only(top: 24.h),
               child: ElevatedButton(
@@ -292,8 +449,8 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
                   ),
                 ),
                 child: Text(
-                  _currentIndex.value == _entries.value.length - 1 
-                      ? context.tr('common.finish', fallback: 'FINISH') 
+                  _currentIndex.value == _entries.value.length - 1
+                      ? context.tr('common.finish', fallback: 'FINISH')
                       : context.tr('common.next', fallback: 'NEXT'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -310,8 +467,15 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     );
   }
 
-  Widget _buildOptionButton(String text, bool isCorrectOption, bool isAnswered, bool isDark) {
-    Color bgColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05);
+  Widget _buildOptionButton(
+    String text,
+    bool isCorrectOption,
+    bool isAnswered,
+    bool isDark,
+  ) {
+    Color bgColor = isDark
+        ? Colors.white.withValues(alpha: 0.05)
+        : Colors.black.withValues(alpha: 0.05);
     Color borderColor = Colors.transparent;
     Color textColor = isDark ? Colors.white : Colors.black;
 
@@ -321,7 +485,9 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
         borderColor = AppColors.emerald500;
         textColor = AppColors.emerald500;
       } else {
-        bgColor = isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02);
+        bgColor = isDark
+            ? Colors.white.withValues(alpha: 0.02)
+            : Colors.black.withValues(alpha: 0.02);
         textColor = isDark ? Colors.white38 : Colors.black38;
       }
     }
@@ -351,4 +517,3 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     );
   }
 }
-
