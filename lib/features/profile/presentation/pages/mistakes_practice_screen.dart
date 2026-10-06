@@ -260,7 +260,9 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
                 ),
               ),
               child: Text(
-                _currentIndex == _entries.length - 1 ? 'FINISH' : 'NEXT',
+                _currentIndex == _entries.length - 1 
+                  ? context.tr('common.finish', fallback: 'FINISH') 
+                  : context.tr('common.next', fallback: 'NEXT'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
