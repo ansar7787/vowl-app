@@ -23,6 +23,7 @@ import 'package:vowl/features/home/presentation/widgets/continue_learning_card.d
 import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
+import 'package:vowl/features/home/presentation/widgets/review_mistakes_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
@@ -248,6 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               SizedBox(height: 16.h),
                               ContinueLearningCard(user: user),
+                              ReviewMistakesHomeCard(user: user),
                             ],
                           ),
                         ),

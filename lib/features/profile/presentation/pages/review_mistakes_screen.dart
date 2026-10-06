@@ -13,6 +13,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:shimmer/shimmer.dart';
 import 'package:vowl/core/data/constants/quest_registry.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ReviewMistakesScreen extends StatefulWidget {
   const ReviewMistakesScreen({super.key});
@@ -198,7 +199,8 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                               stops: const [0.5, 0.8, 1.0],
                             ),
                           ),
-                          child: ElevatedButton.icon(
+                          child: () {
+                          Widget button = ElevatedButton.icon(
                             onPressed: () async {
                               await context.push('/practice_mistakes');
                               if (mounted) {
@@ -223,7 +225,12 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                               ),
                               elevation: 0,
                             ),
-                          ).animate().slideY(begin: 1, duration: 400.ms, curve: Curves.easeOut).fadeIn(),
+                          );
+                          if (!VowlMotion.shouldReduceMotion(context)) {
+                            button = button.animate().slideY(begin: 1, duration: 400.ms, curve: Curves.easeOut).fadeIn();
+                          }
+                          return button;
+                        }(),
                         ),
                       ),
                     ),
@@ -237,7 +244,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   }
 
   Widget _buildEmptyState(BuildContext context, bool isDark) {
-    return Center(
+    Widget w = Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -262,8 +269,11 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             ),
           ),
         ],
-      ).animate().scale(delay: 200.ms, duration: 400.ms, curve: Curves.easeOutBack).fadeIn(),
-    );
+      );
+      if (!VowlMotion.shouldReduceMotion(context)) {
+        w = w.animate().scale(delay: 200.ms, duration: 400.ms, curve: Curves.easeOutBack).fadeIn();
+      }
+      return w;
   }
 
   Widget _buildShimmerItem(bool isDark) {
@@ -281,7 +291,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   }
 
   Widget _buildMistakeCard(ErrorJournalEntry entry, int index, bool isDark) {
-    return ScaleButton(
+    Widget card = ScaleButton(
       onTap: () async {
         di.sl<HapticService>().selection();
         
@@ -362,13 +372,18 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             ),
           ],
         ),
-      ),
-    ).animate().slideY(
-      begin: 0.2, 
-      delay: (index.clamp(0, 10) * 50).ms, 
-      duration: 300.ms, 
-      curve: Curves.easeOutCubic,
-    ).fadeIn();
+    );
+    
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      return card.animate().slideY(
+        begin: 0.2, 
+        delay: (index.clamp(0, 10) * 50).ms, 
+        duration: 300.ms, 
+        curve: Curves.easeOutCubic,
+      ).fadeIn();
+    }
+    
+    return card;
   }
 
   Widget _buildAnswerRow(BuildContext context, IconData icon, Color color, String label, String value) {
@@ -406,3 +421,10 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     );
   }
 }
+
+
+
+
+
+
+

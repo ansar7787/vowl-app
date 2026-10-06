@@ -15,6 +15,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:audioplayers/audioplayers.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class MistakesPracticeScreen extends StatefulWidget {
   const MistakesPracticeScreen({super.key});
@@ -125,15 +126,7 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
                               onPressed: () => context.pop(),
                             ),
                             title: (!isLoading && entries.isNotEmpty) 
-                                ? Text(
-                                    '${currentIndex + 1} / ${entries.length}',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.bold,
-                                      color: isDark ? Colors.white : Colors.black,
-                                    ),
-                                  ).animate(key: ValueKey(currentIndex)).scale(duration: 200.ms, curve: Curves.easeOutBack)
+                                ? (VowlMotion.shouldReduceMotion(context) ? Text('${currentIndex + 1} / ${entries.length}', style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black)) : Text('${currentIndex + 1} / ${entries.length}', style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black)).animate(key: ValueKey(currentIndex)).scale(duration: 200.ms, curve: Curves.easeOutBack))
                                 : const SizedBox.shrink(),
                             centerTitle: true,
                           ),
@@ -145,7 +138,7 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
                                   ? _buildShimmerLoading(context, isDark)
                                   : entries.isEmpty 
                                       ? _buildEmptyState(context, isDark)
-                                      : _buildFlashcard(context, entries[currentIndex], isDark).animate(key: ValueKey(entries[currentIndex].id)).slideX(begin: 0.1).fadeIn(duration: 300.ms),
+                                      : (VowlMotion.shouldReduceMotion(context) ? _buildFlashcard(context, entries[currentIndex], isDark) : _buildFlashcard(context, entries[currentIndex], isDark).animate(key: ValueKey(entries[currentIndex].id)).slideX(begin: 0.1).fadeIn(duration: 300.ms)),
                             ),
                           ),
                         ],
@@ -346,3 +339,4 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     );
   }
 }
+
