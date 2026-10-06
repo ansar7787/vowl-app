@@ -153,16 +153,17 @@ class SignUpCubit extends Cubit<SignUpState> {
       return;
     }
 
+    emit(state.copyWith(isSubmitting: true, errorMessage: () => null));
+
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
+          isSubmitting: false,
           errorMessage: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
     }
-
-    emit(state.copyWith(isSubmitting: true, errorMessage: () => null));
 
     final result = await _signUp(
       SignUpParams(

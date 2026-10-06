@@ -126,15 +126,6 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
       return;
     }
 
-    if (_networkInfo != null && !(await _networkInfo.isConnected)) {
-      emit(
-        state.copyWith(
-          errorMessage: () => AuthErrorHandler.getKey('network-unreachable'),
-        ),
-      );
-      return;
-    }
-
     emit(
       state.copyWith(
         isSubmitting: true,
@@ -142,6 +133,16 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
         successMessage: () => null,
       ),
     );
+
+    if (_networkInfo != null && !(await _networkInfo.isConnected)) {
+      emit(
+        state.copyWith(
+          isSubmitting: false,
+          errorMessage: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
+      return;
+    }
 
     final result = await _forgotPassword(trimmedEmail);
     if (isClosed) return;

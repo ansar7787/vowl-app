@@ -181,16 +181,18 @@ class LoginCubit extends Cubit<LoginState> {
       return;
     }
 
+    emit(state.copyWith(isSubmitting: true, errorMessage: () => null));
+
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
+          isSubmitting: false,
           errorMessage: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
     }
 
-    emit(state.copyWith(isSubmitting: true, errorMessage: () => null));
     final result = await _logInWithEmail(
       LogInParams(email: trimmedEmail, password: state.password),
     );
@@ -223,16 +225,18 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> logInWithGoogle() async {
     if (state.isSubmitting) return;
 
+    emit(state.copyWith(isSubmitting: true, errorMessage: () => null));
+
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
+          isSubmitting: false,
           errorMessage: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
     }
 
-    emit(state.copyWith(isSubmitting: true, errorMessage: () => null));
     final result = await _logInWithGoogle(const NoParams());
     if (isClosed) return;
 
