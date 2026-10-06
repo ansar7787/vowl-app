@@ -134,6 +134,25 @@ class GameDialogHelper {
             description: desc,
             buttonText: resolvedButtonText,
             starsListener: GamificationRepositoryImpl.lastEarnedStars,
+            onSecondaryPressed: mistakesMade > 0
+                ? () {
+                    final router = GoRouter.of(context);
+                    Navigator.of(dialogCtx).pop();
+                    if (context.mounted) {
+                      context.read<AuthBloc>().add(const AuthRefreshUser());
+                      Navigator.of(context).pop(popResult);
+                      Future.delayed(const Duration(milliseconds: 300), () {
+                        router.push('/review_mistakes');
+                      });
+                    }
+                  }
+                : null,
+            secondaryButtonText: mistakesMade > 0
+                ? context.tr(
+                    'games.review_mistakes',
+                    fallback: 'Review Mistakes',
+                  )
+                : null,
             onButtonPressed: () {
               Navigator.of(dialogCtx).pop();
               if (context.mounted) {
@@ -269,6 +288,22 @@ class GameDialogHelper {
           buttonText: resolvedButtonText,
           isSuccess: false,
           isRescueLife: onRestore != null,
+          onSecondaryPressed: () {
+            if (isActionTaken) return;
+            isActionTaken = true;
+            final router = GoRouter.of(context);
+            Navigator.of(dialogCtx).pop(true); // Pop dialog
+            if (context.mounted) {
+              Navigator.of(context).pop(true); // Pop game screen
+              Future.delayed(const Duration(milliseconds: 300), () {
+                router.push('/review_mistakes');
+              });
+            }
+          },
+          secondaryButtonText: context.tr(
+            'games.review_mistakes',
+            fallback: 'Review Mistakes',
+          ),
           onButtonPressed: () {
             if (isActionTaken) return;
             isActionTaken = true;
@@ -540,4 +575,3 @@ class GameDialogHelper {
     );
   }
 }
-
