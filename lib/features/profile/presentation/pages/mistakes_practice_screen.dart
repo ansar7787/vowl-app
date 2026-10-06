@@ -181,8 +181,8 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     }
 
     // Generate options: their old wrong answer, and the correct one.
-    // Use a Set to ensure options are strictly unique, then toList.
-    final options = [wrongAnswer, entry.correctAnswer].toSet().toList();
+    // Use a Set literal to ensure options are strictly unique, then toList.
+    final options = {wrongAnswer, entry.correctAnswer}.toList();
     
     // Use the ID as a random seed so the shuffle is consistent for this specific card
     // but random across cards.
