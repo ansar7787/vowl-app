@@ -202,7 +202,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                           child: () {
                           Widget button = ElevatedButton.icon(
                             onPressed: () async {
-                              await context.push('/practice_mistakes');
+                              await context.push('/practice-mistakes');
                               if (mounted) {
                                 _loadMistakes();
                               }

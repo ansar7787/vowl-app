@@ -142,7 +142,7 @@ class GameDialogHelper {
                       context.read<AuthBloc>().add(const AuthRefreshUser());
                       Navigator.of(context).pop(popResult);
                       Future.delayed(const Duration(milliseconds: 300), () {
-                        router.push('/review_mistakes');
+                        router.push('/review-mistakes');
                       });
                     }
                   }
@@ -296,7 +296,7 @@ class GameDialogHelper {
             if (context.mounted) {
               Navigator.of(context).pop(true); // Pop game screen
               Future.delayed(const Duration(milliseconds: 300), () {
-                router.push('/review_mistakes');
+                router.push('/review-mistakes');
               });
             }
           },

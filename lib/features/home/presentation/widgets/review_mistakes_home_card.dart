@@ -58,7 +58,7 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
         Widget card = ScaleButton(
           onTap: () async {
             di.sl<HapticService>().selection();
-            await context.push('/review_mistakes');
+            await context.push('/review-mistakes');
             if (mounted) {
               _loadMistakeCount();
             }
