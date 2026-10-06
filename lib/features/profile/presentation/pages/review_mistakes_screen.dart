@@ -351,10 +351,11 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
               ),
             ],
           ),
-        ),
-        );
-      },
-    );
+        ), // GlassTile
+      ), // ScaleButton
+    ); // TweenAnimationBuilder
+  }, // itemBuilder
+); // ListView.separated
   }
 
   Widget _buildAnswerRow(BuildContext context, IconData icon, Color color, String label, String value) {
