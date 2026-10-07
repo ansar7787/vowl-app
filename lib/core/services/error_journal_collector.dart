@@ -54,7 +54,10 @@ class ErrorJournalCollector {
         logs.removeWhere((log) {
           try {
             final decoded = jsonDecode(log) as Map<String, dynamic>;
-            return decoded['question'] == question && decoded['gameType'] == gameType && decoded['level'] == level;
+            return decoded['question'] == question && 
+                   decoded['correctAnswer'] == correctAnswer && 
+                   decoded['gameType'] == gameType && 
+                   decoded['level'] == level;
           } catch (_) {
             return false;
           }
@@ -85,7 +88,7 @@ class ErrorJournalCollector {
       // Create a deterministic document ID to deduplicate identical questions.
       // If the user gets the same question wrong again, it will just overwrite 
       // the existing document and update the timestamp, bumping it to the top.
-      final String uniqueString = '${gameType}_${level}_$question';
+      final String uniqueString = '${gameType}_${level}_${question}_$correctAnswer';
       // base64UrlEncode is safe for Firestore paths (no slashes)
       final String docId = base64UrlEncode(utf8.encode(uniqueString));
 
@@ -241,6 +244,53 @@ class ErrorJournalCollector {
     } catch (e) {
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to clear all: $e');
+      }
+    }
+  }
+
+  /// Clears all error journal entries for a specific game and level.
+  /// Called when a user successfully completes a level, proving they've mastered the content.
+  static Future<void> clearLevelMistakes({
+    required String userId,
+    required String gameType,
+    required int level,
+  }) async {
+    try {
+      if (userId == 'local') {
+        final prefs = await SharedPreferences.getInstance();
+        final List<String> logs = prefs.getStringList(_localKey) ?? [];
+        
+        final filteredLogs = logs.where((str) {
+          final decoded = jsonDecode(str) as Map<String, dynamic>;
+          return !(decoded['gameType'] == gameType && decoded['level'] == level);
+        }).toList();
+
+        await prefs.setStringList(_localKey, filteredLogs);
+        updateNotifier.value++;
+        return;
+      }
+
+      final collection = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('errorJournal');
+
+      final snapshot = await collection
+          .where('gameType', isEqualTo: gameType)
+          .where('level', isEqualTo: level)
+          .get();
+
+      if (snapshot.docs.isNotEmpty) {
+        final batch = _firestore.batch();
+        for (final doc in snapshot.docs) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+        updateNotifier.value++;
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('[ErrorJournal] Failed to clear level mistakes: $e');
       }
     }
   }

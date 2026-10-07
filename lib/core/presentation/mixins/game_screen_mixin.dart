@@ -61,6 +61,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     required int coinsEarned,
   }) {
     showConfettiNotifier.value = true;
+    
     GameDialogHelper.showCompletion(
       context,
       xp: xpEarned,
