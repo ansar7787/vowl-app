@@ -245,7 +245,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                     padding: EdgeInsets.only(
                                       left: 20.w,
                                       right: 20.w,
-                                      top: 16.h,
+                                      top: 8.h,
                                       bottom: 16.h,
                                     ),
                                     sliver: SliverList.separated(
@@ -862,7 +862,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       physics: const BouncingScrollPhysics(),
-      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 16.h, bottom: 8.h),
+      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 28.h, bottom: 4.h),
       child: Row(
         children: [
           _buildChip(
