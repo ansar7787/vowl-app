@@ -120,11 +120,18 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     if (isAnsweredNotifier.value) return;
     hapticService.selection();
     final Map<String, String> currentMatches = Map.from(_matches.value);
+    
     if (currentMatches.containsKey(key)) {
       currentMatches.remove(key);
+      _matches.value = currentMatches;
+      _activeKey.value = key;
+    } else {
+      if (_activeKey.value == key) {
+        _activeKey.value = null;
+      } else {
+        _activeKey.value = key;
+      }
     }
-    _matches.value = currentMatches;
-    _activeKey.value = key;
   }
 
   void _onValueTap(
@@ -132,10 +139,22 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     List<Map<String, String>> pairs,
     ReadingQuest quest,
   ) {
-    if (isAnsweredNotifier.value || _activeKey.value == null) return;
+    if (isAnsweredNotifier.value) return;
+    
+    final Map<String, String> currentMatches = Map.from(_matches.value);
+
+    if (_activeKey.value == null) {
+      if (currentMatches.containsValue(value)) {
+        hapticService.selection();
+        final orphanedKey = currentMatches.entries.firstWhere((e) => e.value == value).key;
+        currentMatches.remove(orphanedKey);
+        _matches.value = currentMatches;
+        _activeKey.value = orphanedKey;
+      }
+      return;
+    }
 
     hapticService.success();
-    final Map<String, String> currentMatches = Map.from(_matches.value);
     currentMatches.removeWhere((k, v) => v == value);
     currentMatches[_activeKey.value!] = value;
     _matches.value = currentMatches;
