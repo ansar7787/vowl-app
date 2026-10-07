@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -43,7 +43,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+  String getCompletionTitle(BuildContext context) => 'VOCAB MASTERY!';
 
   late final FlashcardController _controller;
   late ThemeResult _theme;
@@ -127,6 +127,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
               level: widget.level,
               isAnswered: _controller.isAnswered,
               isCorrect: _controller.isCorrect,
+              isFinalFailure: state is VocabularyLoaded ? state.isFinalFailure : false,
               showConfetti: _controller.showConfetti,
               onContinue: () =>
                   context.read<VocabularyBloc>().add(const NextQuestion()),
@@ -166,22 +167,17 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   void _onBlocState(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
       final isNew = state.currentIndex != lastProcessedIndex;
-      final isRetry = !state.answerStatus.isAnswered && _controller.isAnswered;
+      final isRetry = !isNew && !state.answerStatus.isAnswered && _controller.isAnswered && !state.isFinalFailure;
+      
+      onVocabularyStateChanged(context, state);
+
       if (isNew || isRetry) {
         _lastQuest = state.currentQuestOrNull ?? _lastQuest;
-        lastProcessedIndex = state.currentIndex;
         _controller.reset(isRetry);
       }
     } else if (state is VocabularyGameComplete) {
+      onVocabularyStateChanged(context, state);
       _controller.completeGame();
-      if (!context.mounted) return;
-      GameDialogHelper.showCompletion(
-        context,
-        xp: state.xpEarned,
-        coins: state.coinsEarned,
-        title: 'VOCAB MASTERY!',
-        enableDoubleUp: true,
-      );
     }
   }
 }

@@ -61,6 +61,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     required int coinsEarned,
   }) {
     showConfettiNotifier.value = true;
+    
     GameDialogHelper.showCompletion(
       context,
       xp: xpEarned,
@@ -108,7 +109,11 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
         userId: authState.user!.id,
         gameType: gameType.name,
         question:
-            quest.question ?? quest.textToSpeak ?? getCompletionTitle(context),
+            quest.targetWord ?? 
+            quest.sentence ?? 
+            quest.question ?? 
+            quest.textToSpeak ?? 
+            getCompletionTitle(context),
         userAnswer: userAnswer ?? '[Timeout]',
         correctAnswer:
             quest.correctAnswer ??

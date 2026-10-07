@@ -19,6 +19,9 @@ import 'package:shimmer/shimmer.dart';
 import 'package:vowl/core/data/constants/quest_registry.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
+
+import 'package:vowl/core/utils/tts_service.dart';
 
 class ReviewMistakesScreen extends StatefulWidget {
   const ReviewMistakesScreen({super.key});
@@ -32,6 +35,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   final ValueNotifier<List<ErrorJournalEntry>> _entries = ValueNotifier([]);
   final ValueNotifier<int> _currentPage = ValueNotifier(0);
   final ValueNotifier<String?> _selectedCategory = ValueNotifier(null);
+  final ValueNotifier<Set<String>> _revealedCards = ValueNotifier({});
   final ScrollController _scrollController = ScrollController();
   late String _userId;
 
@@ -47,6 +51,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     _entries.dispose();
     _currentPage.dispose();
     _selectedCategory.dispose();
+    _revealedCards.dispose();
     _scrollController.dispose();
     super.dispose();
   }
@@ -88,18 +93,18 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   }
 
   Future<void> _dismissMistake(String id) async {
-    await ErrorJournalCollector.dismiss(userId: _userId, entryId: id);
-    if (mounted) {
-      final current = List<ErrorJournalEntry>.from(_entries.value);
-      current.removeWhere((e) => e.id == id);
-      _entries.value = current;
+    // 1. Update UI state synchronously so Dismissible doesn't crash
+    final current = List<ErrorJournalEntry>.from(_entries.value);
+    current.removeWhere((e) => e.id == id);
+    _entries.value = current;
 
-      // Adjust current page if current page becomes empty
-      final totalPages = (current.length / 10).ceil();
-      if (_currentPage.value >= totalPages && totalPages > 0) {
-        _currentPage.value = totalPages - 1;
-      }
+    final totalPages = (current.length / 10).ceil();
+    if (_currentPage.value >= totalPages && totalPages > 0) {
+      _currentPage.value = totalPages - 1;
     }
+
+    // 2. Perform DB deletion in the background
+    await ErrorJournalCollector.dismiss(userId: _userId, entryId: id);
   }
 
 
@@ -181,21 +186,41 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                       ),
                                       child: FlexibleSpaceBar(
                                         titlePadding: EdgeInsets.only(
-                                          bottom: 16.h,
+                                          bottom: 12.h,
                                         ),
-                                        title: Text(
-                                          context.tr(
-                                            'profile.review_mistakes',
-                                            fallback: 'Review & Master',
-                                          ),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontWeight: FontWeight.w800,
-                                            color: isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            letterSpacing: -0.5,
-                                          ),
+                                        title: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text(
+                                              context.tr(
+                                                'profile.review_mistakes',
+                                                fallback: 'Review & Master',
+                                              ),
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontWeight: FontWeight.w800,
+                                                color: isDark
+                                                    ? Colors.white
+                                                    : Colors.black,
+                                                letterSpacing: -0.5,
+                                              ),
+                                            ),
+                                            SizedBox(height: 2.h),
+                                            Text(
+                                              context.tr(
+                                                'profile.review_instructions',
+                                                fallback: 'Swipe left to dismiss when mastered',
+                                              ),
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 10.sp,
+                                                fontWeight: FontWeight.w500,
+                                                color: isDark
+                                                    ? Colors.white54
+                                                    : Colors.black54,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                         centerTitle: true,
                                       ),
@@ -269,6 +294,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                             paginatedEntries[index],
                                             index,
                                             isDark,
+                                            _revealedCards,
                                           ),
                                     ),
                                   ),
@@ -398,8 +424,6 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                         di.sl<HapticService>().selection();
 
                                         if (!(await _checkMonetizationGate())) return;
-
-                                        await _dismissMistake(target.id);
 
                                         final uri = Uri(
                                           path: '/game',
@@ -533,248 +557,276 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     );
   }
 
-  Widget _buildMistakeCard(ErrorJournalEntry entry, int index, bool isDark) {
-    final String uAnswer = entry.userAnswer.trim().isEmpty
-        ? context.tr('profile.missed', fallback: 'Missed / No text')
-        : entry.userAnswer;
-    final String cAnswer = entry.correctAnswer.trim().isEmpty
-        ? context.tr('profile.no_text', fallback: 'Visual match')
-        : entry.correctAnswer;
+  Widget _buildMistakeCard(
+    ErrorJournalEntry entry,
+    int index,
+    bool isDark,
+    ValueNotifier<Set<String>> revealedCardsNotifier,
+  ) {
+    return ValueListenableBuilder<Set<String>>(
+      valueListenable: revealedCardsNotifier,
+      builder: (context, revealedCards, _) {
+        final isRevealed = revealedCards.contains(entry.id);
 
-    final category = QuestRegistry.gameToCategory[entry.gameType] ?? 'reading';
-    final categoryColor = _categoryColor(category);
-    final humanName = ErrorJournalCollector.humanReadableName(entry.gameType);
+        final String uAnswer = entry.userAnswer.trim().isEmpty
+            ? context.tr('profile.missed', fallback: 'Missed / No text')
+            : entry.userAnswer;
+        final String cAnswer = entry.correctAnswer.trim().isEmpty
+            ? context.tr('profile.no_text', fallback: 'Visual match')
+            : entry.correctAnswer;
 
-    // Relative timestamp
-    final timeAgo = entry.timestamp != null
-        ? _relativeTime(entry.timestamp!)
-        : '';
+        final category =
+            QuestRegistry.gameToCategory[entry.gameType] ?? 'reading';
+        final categoryColor = _categoryColor(category);
+        final humanName = ErrorJournalCollector.humanReadableName(entry.gameType);
 
-    Widget card = Dismissible(
-      key: Key(entry.id),
-      direction: DismissDirection.endToStart,
-      background: Container(
-        alignment: Alignment.centerRight,
-        padding: EdgeInsets.only(right: 24.w),
-        margin: EdgeInsets.only(bottom: 4.h),
-        decoration: BoxDecoration(
-          color: AppColors.red500.withValues(alpha: 0.15),
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        child: Icon(
-          Icons.delete_outline_rounded,
-          color: AppColors.red500,
-          size: 28.r,
-        ),
-      ),
-      confirmDismiss: (_) async => true,
-      onDismissed: (_) {
-        // Capture the entry before removing
-        final dismissedEntry = entry;
+        final timeAgo =
+            entry.timestamp != null ? _relativeTime(entry.timestamp!) : '';
 
-        _dismissMistake(entry.id);
+        Widget card = Dismissible(
+          key: Key(entry.id),
+          direction: DismissDirection.endToStart,
+          background: Container(
+            margin: EdgeInsets.only(bottom: 4.h),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  AppColors.red500.withValues(alpha: 0.1),
+                  AppColors.red500.withValues(alpha: 0.8),
+                ],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+              borderRadius: BorderRadius.circular(16.r),
+            ),
+            alignment: Alignment.centerRight,
+            padding: EdgeInsets.only(right: 24.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  context.tr('general.dismiss', fallback: 'Dismiss'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                Icon(LucideIcons.trash2, color: Colors.white, size: 22.r),
+              ],
+            ),
+          ),
+          confirmDismiss: (_) async => true,
+          onDismissed: (_) {
+            _dismissMistake(entry.id);
 
-        if (mounted) {
-          ScaffoldMessenger.of(context).clearSnackBars();
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                context.tr(
+            if (mounted) {
+              CustomSnackBar.show(
+                context: context,
+                message: context.tr(
                   'profile.mistake_removed',
                   fallback: 'Skill mastered!',
                 ),
-                style: const TextStyle(fontFamily: 'Outfit'),
-              ),
-              action: SnackBarAction(
-                label: context.tr('general.undo', fallback: 'Undo'),
-                onPressed: () {
-                  // Re-record the entry to restore it
-                  ErrorJournalCollector.record(
-                    userId: _userId,
-                    gameType: dismissedEntry.gameType,
-                    question: dismissedEntry.question,
-                    userAnswer: dismissedEntry.userAnswer,
-                    correctAnswer: dismissedEntry.correctAnswer,
-                    level: dismissedEntry.level,
-                  );
-                  _loadMistakes();
-                },
-              ),
-              behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.r),
-              ),
-              duration: const Duration(seconds: 4),
-            ),
-          );
-        }
-      },
-      child: ScaleButton(
-        onTap: () async {
-          di.sl<HapticService>().selection();
+                type: CustomSnackBarType.success,
+              );
+            }
+          },
+          child: ScaleButton(
+            onTap: () async {
+              if (isRevealed) return; // Already revealed
 
-          if (!(await _checkMonetizationGate())) return;
+              di.sl<HapticService>().selection();
 
-          await _dismissMistake(entry.id);
+              // Consume monetization action to reveal
+              if (!(await _checkMonetizationGate())) return;
 
-          final uri = Uri(
-            path: '/game',
-            queryParameters: {
-              'category': category,
-              'subtype': entry.gameType,
-              'level': entry.level.toString(),
+              final currentSet = Set<String>.from(revealedCardsNotifier.value);
+              currentSet.add(entry.id);
+              revealedCardsNotifier.value = currentSet;
             },
-          );
-
-          if (!mounted) return;
-          await context.push(uri.toString());
-
-          if (mounted) {
-            _loadMistakes();
-          }
-        },
-        child: GlassTile(
-          borderRadius: BorderRadius.circular(16.r),
-          padding: EdgeInsets.all(16.r),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Top row: category badge + timestamp + level
-              Row(
+            child: GlassTile(
+              borderRadius: BorderRadius.circular(16.r),
+              padding: EdgeInsets.all(16.r),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: categoryColor.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(8.r),
-                    ),
-                    child: Text(
-                      humanName.toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.bold,
-                        color: categoryColor,
-                        letterSpacing: 0.5,
+                  // Top row: category badge + timestamp + level
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 8.w,
+                          vertical: 4.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: categoryColor.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
+                        child: Text(
+                          humanName.toUpperCase(),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.bold,
+                            color: categoryColor,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
                       ),
-                    ),
+                      SizedBox(width: 8.w),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 6.w,
+                          vertical: 3.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.06)
+                              : Colors.black.withValues(alpha: 0.05),
+                          borderRadius: BorderRadius.circular(6.r),
+                        ),
+                        child: Text(
+                          'Lv.${entry.level}',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark ? Colors.white54 : Colors.black45,
+                          ),
+                        ),
+                      ),
+                      const Spacer(),
+                      if (timeAgo.isNotEmpty)
+                        Text(
+                          timeAgo,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            color: isDark ? Colors.white38 : Colors.black38,
+                          ),
+                        ),
+                    ],
                   ),
-                  SizedBox(width: 8.w),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                      vertical: 3.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.06)
-                          : Colors.black.withValues(alpha: 0.05),
-                      borderRadius: BorderRadius.circular(6.r),
-                    ),
-                    child: Text(
-                      'Lv.${entry.level}',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white54 : Colors.black45,
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  if (timeAgo.isNotEmpty)
-                    Text(
-                      timeAgo,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        color: isDark ? Colors.white38 : Colors.black38,
-                      ),
-                    ),
-                ],
-              ),
 
-              SizedBox(height: 12.h),
+                  SizedBox(height: 12.h),
 
-              // Question
-              Text(
-                entry.question,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black,
-                ),
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-              ),
-
-              SizedBox(height: 14.h),
-
-              // Answers row
-              _buildAnswerRow(
-                context,
-                Icons.close_rounded,
-                AppColors.red500,
-                context.tr('profile.you_answered', fallback: 'You answered:'),
-                uAnswer,
-              ),
-              SizedBox(height: 8.h),
-              _buildAnswerRow(
-                context,
-                Icons.check_rounded,
-                AppColors.emerald500,
-                context.tr(
-                  'profile.correct_answer',
-                  fallback: 'Correct answer:',
-                ),
-                cAnswer,
-              ),
-
-              SizedBox(height: 10.h),
-
-              // Tap to replay hint
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
+                  // Question
                   Text(
-                    context.tr(
-                      'profile.tap_to_replay',
-                      fallback: 'Tap to replay',
-                    ),
+                    entry.question,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white30 : Colors.black26,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? Colors.white : Colors.black,
                     ),
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(width: 4.w),
-                  Icon(
-                    Icons.chevron_right_rounded,
-                    size: 14.r,
-                    color: isDark ? Colors.white30 : Colors.black26,
-                  ),
+
+                  SizedBox(height: 14.h),
+
+                  if (isRevealed) ...[
+                    // Answers row
+                    _buildAnswerRow(
+                      context,
+                      Icons.close_rounded,
+                      AppColors.red500,
+                      context.tr('profile.you_answered', fallback: 'You answered:'),
+                      uAnswer,
+                    ),
+                    SizedBox(height: 8.h),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: _buildAnswerRow(
+                            context,
+                            Icons.check_rounded,
+                            AppColors.emerald500,
+                            context.tr(
+                              'profile.correct_answer',
+                              fallback: 'Correct answer:',
+                            ),
+                            cAnswer,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            di.sl<HapticService>().selection();
+                            di.sl<TtsService>().speak(cAnswer);
+                          },
+                          icon: Icon(
+                            LucideIcons.volume2,
+                            color: AppColors.indigo500,
+                            size: 20.r,
+                          ),
+                          style: IconButton.styleFrom(
+                            backgroundColor: AppColors.indigo500.withValues(alpha: 0.1),
+                            padding: EdgeInsets.all(8.r),
+                            minimumSize: Size.zero,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ] else ...[
+                    // Tap to reveal hint
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 12.h),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : Colors.black.withValues(alpha: 0.03),
+                        borderRadius: BorderRadius.circular(12.r),
+                        border: Border.all(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.1)
+                              : Colors.black.withValues(alpha: 0.05),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            LucideIcons.eye,
+                            size: 16.r,
+                            color: isDark ? Colors.white54 : Colors.black54,
+                          ),
+                          SizedBox(width: 8.w),
+                          Text(
+                            context.tr(
+                              'profile.tap_to_reveal',
+                              fallback: 'Tap to Reveal Answer',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600,
+                              color: isDark ? Colors.white54 : Colors.black54,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+
+        if (!VowlMotion.shouldReduceMotion(context)) {
+          return card
+              .animate()
+              .slideY(begin: 0.1, duration: 300.ms, curve: Curves.easeOutCubic)
+              .fadeIn();
+        }
+
+        return card;
+      },
     );
-
-    // Removed the dynamic delay index to eliminate lag during scroll
-    if (!VowlMotion.shouldReduceMotion(context)) {
-      return card
-          .animate()
-          .slideY(begin: 0.1, duration: 300.ms, curve: Curves.easeOutCubic)
-          .fadeIn();
-    }
-
-    return card;
   }
 
   /// Returns a category-specific accent color for visual differentiation.

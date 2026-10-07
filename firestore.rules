@@ -79,16 +79,18 @@ service cloud.firestore {
         // Users can read and dismiss (delete) their own logs
         allow read, delete: if request.auth != null && request.auth.uid == userId;
         
-        // Strict create rules to prevent hackers from spamming huge payloads (Billing/Storage Attack)
-        allow create: if request.auth != null 
+        // Strict create and update rules to prevent hackers from spamming huge payloads
+        // Update is necessary for deduplication (bumping the timestamp on existing mistakes)
+        allow create, update: if request.auth != null 
           && request.auth.uid == userId
           // FIELD WHITELIST: Prevents injecting arbitrary junk fields to inflate document size
-          && request.resource.data.keys().hasOnly(['gameType', 'question', 'userAnswer', 'correctAnswer', 'level', 'timestamp'])
+          && request.resource.data.keys().hasOnly(['gameType', 'question', 'userAnswer', 'correctAnswer', 'level', 'timestamp', 'options'])
           // MAXIMUM payload length for strings (Prevents uploading massive fake logs to spike storage costs)
           && (!('gameType' in request.resource.data) || request.resource.data.gameType.size() < 100)
           && (!('question' in request.resource.data) || request.resource.data.question.size() < 1000)
           && (!('userAnswer' in request.resource.data) || request.resource.data.userAnswer.size() < 1000)
           && (!('correctAnswer' in request.resource.data) || request.resource.data.correctAnswer.size() < 1000)
+          && (!('options' in request.resource.data) || request.resource.data.options.size() < 20)
           // Ensures the timestamp is a true server-side timestamp
           && request.resource.data.timestamp == request.time;
       }

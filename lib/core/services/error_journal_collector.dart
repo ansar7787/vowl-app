@@ -11,6 +11,10 @@ class ErrorJournalCollector {
   static final _firestore = FirebaseFirestore.instance;
   static const String _localKey = 'vowl_local_error_journal';
 
+  /// A global notifier that increments whenever the journal is modified.
+  /// UI components can listen to this to refresh their counts dynamically.
+  static final ValueNotifier<int> updateNotifier = ValueNotifier(0);
+
   /// Maximum number of error journal entries to keep per user.
   static const int maxEntries = 200;
 
@@ -46,6 +50,19 @@ class ErrorJournalCollector {
           options: options,
         );
 
+        // Deduplicate: Remove older instance of the same question if it exists
+        logs.removeWhere((log) {
+          try {
+            final decoded = jsonDecode(log) as Map<String, dynamic>;
+            return decoded['question'] == question && 
+                   decoded['correctAnswer'] == correctAnswer && 
+                   decoded['gameType'] == gameType && 
+                   decoded['level'] == level;
+          } catch (_) {
+            return false;
+          }
+        });
+
         logs.add(jsonEncode(entry.toJson()));
         
         if (logs.length > maxEntries) {
@@ -53,6 +70,7 @@ class ErrorJournalCollector {
         }
         
         await prefs.setStringList(_localKey, logs);
+        updateNotifier.value++;
         return;
       }
 
@@ -67,11 +85,21 @@ class ErrorJournalCollector {
         if (options != null && options.isNotEmpty) 'options': options,
       };
 
+      // Create a deterministic document ID to deduplicate identical questions.
+      // If the user gets the same question wrong again, it will just overwrite 
+      // the existing document and update the timestamp, bumping it to the top.
+      final String uniqueString = '${gameType}_${level}_${question}_$correctAnswer';
+      // base64UrlEncode is safe for Firestore paths (no slashes)
+      final String docId = base64UrlEncode(utf8.encode(uniqueString));
+
       await _firestore
           .collection('users')
           .doc(userId)
           .collection('errorJournal')
-          .add(entryMap);
+          .doc(docId)
+          .set(entryMap, SetOptions(merge: true));
+
+      updateNotifier.value++;
     } catch (e) {
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to record: $e');
@@ -158,6 +186,7 @@ class ErrorJournalCollector {
         }).toList();
 
         await prefs.setStringList(_localKey, filteredLogs);
+        updateNotifier.value++;
         return;
       }
 
@@ -167,6 +196,8 @@ class ErrorJournalCollector {
           .collection('errorJournal')
           .doc(entryId)
           .delete();
+          
+      updateNotifier.value++;
     } catch (e) {
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to dismiss: $e');
@@ -180,6 +211,7 @@ class ErrorJournalCollector {
       if (userId == 'local') {
         final prefs = await SharedPreferences.getInstance();
         await prefs.remove(_localKey);
+        updateNotifier.value++;
         return;
       }
 
@@ -207,9 +239,58 @@ class ErrorJournalCollector {
           snapshot = await collection.limit(500).get();
         }
       }
+      
+      updateNotifier.value++;
     } catch (e) {
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to clear all: $e');
+      }
+    }
+  }
+
+  /// Clears all error journal entries for a specific game and level.
+  /// Called when a user successfully completes a level, proving they've mastered the content.
+  static Future<void> clearLevelMistakes({
+    required String userId,
+    required String gameType,
+    required int level,
+  }) async {
+    try {
+      if (userId == 'local') {
+        final prefs = await SharedPreferences.getInstance();
+        final List<String> logs = prefs.getStringList(_localKey) ?? [];
+        
+        final filteredLogs = logs.where((str) {
+          final decoded = jsonDecode(str) as Map<String, dynamic>;
+          return !(decoded['gameType'] == gameType && decoded['level'] == level);
+        }).toList();
+
+        await prefs.setStringList(_localKey, filteredLogs);
+        updateNotifier.value++;
+        return;
+      }
+
+      final collection = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('errorJournal');
+
+      final snapshot = await collection
+          .where('gameType', isEqualTo: gameType)
+          .where('level', isEqualTo: level)
+          .get();
+
+      if (snapshot.docs.isNotEmpty) {
+        final batch = _firestore.batch();
+        for (final doc in snapshot.docs) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+        updateNotifier.value++;
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('[ErrorJournal] Failed to clear level mistakes: $e');
       }
     }
   }

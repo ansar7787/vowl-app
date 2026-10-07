@@ -113,12 +113,19 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
         soundService.playWrong();
 
         final authState = context.read<AuthBloc>().state;
+        final speakingState = context.read<SpeakingBloc>().state;
+        String actualQuestion = 'Yes/No Listening Match';
+        if (speakingState is SpeakingLoaded && speakingState.currentQuestOrNull != null) {
+          final q = speakingState.currentQuestOrNull!;
+          actualQuestion = q.targetWord ?? q.sentence ?? q.textToSpeak ?? q.question ?? 'Yes/No Listening Match';
+        }
+
         if (authState.status == AuthStatus.authenticated &&
             authState.user != null) {
           ErrorJournalCollector.record(
             userId: authState.user!.id,
             gameType: widget.gameType.name,
-            question: 'Yes/No Listening Match',
+            question: actualQuestion,
             userAnswer: chosenMatch ? 'Yes' : 'No',
             correctAnswer: doTheyMatch ? 'Yes' : 'No',
             level: widget.level,
