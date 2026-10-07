@@ -1,7 +1,10 @@
 import 'dart:ui';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/reward_limit_service.dart';
+import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -440,6 +443,8 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                         
                                         di.sl<HapticService>().selection();
 
+                                        if (!(await _checkMonetizationGate())) return;
+
                                         final uri = Uri(
                                           path: '/game',
                                           queryParameters: {
@@ -650,6 +655,8 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       child: ScaleButton(
         onTap: () async {
           di.sl<HapticService>().selection();
+
+          if (!(await _checkMonetizationGate())) return;
 
           final uri = Uri(
             path: '/game',
@@ -945,6 +952,181 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
         ],
       ),
     );
+  }
+
+  Future<bool> _checkMonetizationGate() async {
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    if (isPremium) return true;
+
+    final hasReachedLimit = await RewardLimitService.hasReachedDailyLimit(
+      'practice',
+    );
+    if (!hasReachedLimit) {
+      await RewardLimitService.incrementClaimCount('practice');
+      return true;
+    }
+
+    final unlocked = await _showMonetizationGate();
+    return unlocked;
+  }
+
+  Future<bool> _showMonetizationGate() async {
+    final completer = Completer<bool>();
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      isDismissible: false,
+      enableDrag: false,
+      builder: (context) {
+        return Container(
+          padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
+          decoration: BoxDecoration(
+            color: isDark ? AppColors.slate900 : Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 48.w,
+                height: 6.h,
+                decoration: BoxDecoration(
+                  color: isDark ? AppColors.slate700 : AppColors.slate200,
+                  borderRadius: BorderRadius.circular(3.r),
+                ),
+              ),
+              SizedBox(height: 32.h),
+              Icon(
+                Icons.workspace_premium_rounded,
+                size: 64.sp,
+                color: AppColors.amber500,
+              ),
+              SizedBox(height: 24.h),
+              Text(
+                context.tr(
+                  'practice.limit_reached',
+                  fallback: 'Daily Limit Reached',
+                ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : Colors.black,
+                ),
+              ),
+              SizedBox(height: 12.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Text(
+                  context.tr(
+                    'practice.limit_desc',
+                    fallback:
+                        'You\'ve used your 5 free practice attempts today. Watch an ad to get 1 more, or go Premium for unlimited practice.',
+                  ),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark ? Colors.white70 : AppColors.slate600,
+                    height: 1.5,
+                  ),
+                ),
+              ),
+              SizedBox(height: 40.h),
+              Container(
+                width: double.infinity,
+                height: 60.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.r),
+                  gradient: const LinearGradient(
+                    colors: [AppColors.indigo500, AppColors.violet500],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.indigo500.withValues(alpha: 0.3),
+                      blurRadius: 20,
+                      offset: const Offset(0, 8),
+                    ),
+                  ],
+                ),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(20.r),
+                    onTap: () {
+                      final adService = di.sl<AdService>();
+                      adService.showRewardedAd(
+                        context: context,
+                        isPremium: false,
+                        childSafe: false,
+                        onUserEarnedReward: (_) {
+                          if (!completer.isCompleted) {
+                            completer.complete(true);
+                          }
+                        },
+                        onDismissed: () {
+                          if (!completer.isCompleted) {
+                            completer.complete(false);
+                          }
+                          context.pop();
+                        },
+                      );
+                    },
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.play_circle_outline_rounded,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 8.w),
+                          Text(
+                            context.tr(
+                              'practice.watch_ad',
+                              fallback: 'Watch Ad for +1',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h),
+              TextButton(
+                onPressed: () {
+                  if (!completer.isCompleted) completer.complete(false);
+                  context.pop();
+                },
+                child: Text(
+                  context.tr('general.maybe_later', fallback: 'Maybe Later'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    color: isDark ? Colors.white60 : AppColors.slate500,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+    return completer.future;
   }
 
   Widget _buildChip({
