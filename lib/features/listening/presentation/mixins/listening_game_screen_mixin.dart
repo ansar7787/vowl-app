@@ -57,11 +57,13 @@ mixin ListeningGameScreenMixin<T extends StatefulWidget>
   // ── Shared wrong answer / timeout handler ──────────────────────────────
 
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
+    if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
     context.read<ListeningBloc>().add(const SubmitAnswer(false));
   }
 
   void submitCorrectAnswer() {
+    if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();
     context.read<ListeningBloc>().add(SubmitAnswer(true));
   }
