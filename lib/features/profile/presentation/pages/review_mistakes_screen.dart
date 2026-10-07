@@ -101,51 +101,6 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     }
   }
 
-  Future<void> _clearAll() async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (context) {
-        final isDark = Theme.of(context).brightness == Brightness.dark;
-        return AlertDialog(
-          backgroundColor: isDark ? AppColors.slate800 : Colors.white,
-          title: Text(
-            context.tr(
-              'profile.clear_all_title',
-              fallback: 'Clear All Mistakes?',
-            ),
-          ),
-          content: Text(
-            context.tr(
-              'profile.clear_all_desc',
-              fallback:
-                  'This will permanently delete your entire error journal. You will not be able to practice these mistakes again.',
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: Text(context.tr('general.cancel', fallback: 'Cancel')),
-            ),
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(true),
-              child: Text(
-                context.tr('general.delete', fallback: 'Delete'),
-                style: const TextStyle(color: AppColors.red500),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (confirmed == true) {
-      await ErrorJournalCollector.clearAll(userId: _userId);
-      if (mounted) {
-        _entries.value = [];
-        _currentPage.value = 0;
-      }
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -214,6 +169,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                     alpha: 0.8,
                                   ),
                                   elevation: 0,
+                                  scrolledUnderElevation: 0,
                                   surfaceTintColor: Colors.transparent,
                                   flexibleSpace: ClipRect(
                                     child: BackdropFilter(
@@ -254,20 +210,6 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                     ),
                                     onPressed: () => context.pop(),
                                   ),
-                                  actions: [
-                                    if (entries.isNotEmpty && !isLoading)
-                                      IconButton(
-                                        icon: const Icon(
-                                          Icons.delete_sweep_rounded,
-                                          color: AppColors.red500,
-                                        ),
-                                        tooltip: context.tr(
-                                          'profile.clear_all',
-                                          fallback: 'Clear All',
-                                        ),
-                                        onPressed: _clearAll,
-                                      ),
-                                  ],
                                 ),
 
                                 if (!isLoading && entries.isNotEmpty)
