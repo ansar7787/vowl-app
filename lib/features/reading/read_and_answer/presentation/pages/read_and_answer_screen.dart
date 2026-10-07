@@ -61,7 +61,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
     initReadingGame();
   }
 
-  void _onOptionTap(int index, bool isCorrect, ReadingQuest quest) {
+  void _onOptionTap(int index, bool isCorrect, ReadingQuest quest, String displayPassage) {
     if (_showEvidenceStep.value || _pendingSelectedIndex.value != null) return;
 
     _pendingSelectedIndex.value = index;
@@ -69,11 +69,14 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
     if (isCorrect) {
       hapticService.selection();
 
-      // Prevent Soft-Lock: If there is no valid evidence string to highlight,
-      // skip the highlight step entirely and submit the correct answer.
-      final evidenceStr = (quest.evidenceLine ?? quest.correctAnswer ?? '')
-          .trim();
-      if (evidenceStr.isEmpty || (quest.passage ?? '').isEmpty) {
+      // Prevent Soft-Lock & Bad UX:
+      // Only show evidence step if the evidence string actually exists exactly in the passage.
+      // Otherwise, the fallback bag-of-words highlighting forces finding every disjointed word,
+      // which is pedagogically flawed and frustrating for non-exact matches.
+      final evidenceStr = (quest.evidenceLine ?? quest.correctAnswer ?? '').trim();
+      final hasExactMatch = displayPassage.toLowerCase().contains(evidenceStr.toLowerCase());
+
+      if (evidenceStr.isEmpty || displayPassage.isEmpty || !hasExactMatch) {
         _submitFinalAnswer(true, quest);
       } else {
         _showEvidenceStep.value = true;
@@ -103,7 +106,6 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
   @override
   void onQuestionReset() {
     _pendingSelectedIndex.value = null;
-
     _showEvidenceStep.value = false;
   }
 
@@ -132,8 +134,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
         String? displayTopic = quest?.paragraphTopic;
         String displayPassage = quest?.passage ?? '';
 
-        // Automatically extract embedded tags like "[My Family]" from the passage text
-        // This MUST happen at the top level so BOTH the main content and evidence wrapper sync perfectly
+        // Extract embedded tags like "[My Family]"
+        // BlocConsumer builder only runs on major state changes (like next question),
+        // so this regex is performant and perfectly scoped here.
         if (quest != null && quest.passage != null) {
           final match = RegExp(
             r'^\[(.*?)\]\s*(.*)$',
@@ -180,7 +183,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                           showEvidenceStep: _showEvidenceStep.value,
                           scrollController: _scrollController,
                           onOptionSelected: (idx, isCorrect) =>
-                              _onOptionTap(idx, isCorrect, quest),
+                              _onOptionTap(idx, isCorrect, quest, displayPassage),
                         ),
                         if (_showEvidenceStep.value && !isAnswered) ...[
                           Positioned.fill(
@@ -224,7 +227,7 @@ class _QuestLoadingPlaceholder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Loading questionâ€¦',
+      label: 'Loading question…',
       child: const SizedBox.expand(),
     );
   }
@@ -266,79 +269,72 @@ class _QuestContent extends StatelessWidget {
         thumbColor: primaryColor.withValues(alpha: 0.5),
         radius: Radius.circular(8.r),
         thickness: 4.w,
-        child: CustomScrollView(
+        child: SingleChildScrollView(
           controller: scrollController,
           physics: const BouncingScrollPhysics(),
-          slivers: [
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SizedBox(height: 16.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Flexible(
-                          child: ReadAndAnswerInstruction(
-                            primaryColor: primaryColor,
-                            instruction: displayTopic,
-                          ),
-                        ),
-                        SizedBox(width: 16.w),
-                        _buildReadTimeBadge(
-                          primaryColor,
-                          isDark,
-                          displayPassage,
-                        ),
-                      ],
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(height: 16.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: ReadAndAnswerInstruction(
+                      primaryColor: primaryColor,
+                      instruction: displayTopic,
                     ),
-                    SizedBox(height: 16.h),
-                    ReadAndAnswerAnchorPoint(
-                      question: quest.question ?? '',
-                      color: primaryColor,
-                      isDark: isDark,
-                    ),
-                    SizedBox(height: 24.h),
-                    // Render Passage Box
-                    ReadAndAnswerFloatingPassage(
-                      text: displayPassage,
-                      color: primaryColor,
-                      isDark: isDark,
-                    ),
-                    SizedBox(height: 24.h),
-                    if (quest.options != null)
-                      ...quest.options!.asMap().entries.map((e) {
-                        final isOptionCorrect =
-                            e.key == quest.correctAnswerIndex ||
-                            e.value.trim().toLowerCase() ==
-                                (quest.correctAnswer?.trim().toLowerCase() ??
-                                    '');
-
-                        return ReadAndAnswerBuoyOption(
-                          index: e.key,
-                          text: e.value,
-                          isCorrectOption: isOptionCorrect,
-                          color: primaryColor,
-                          isDark: isDark,
-                          isAnswered:
-                              isAnswered || (pendingSelectedIndex != null),
-                          selectedIndex: pendingSelectedIndex,
-                          onTap: () => onOptionSelected(e.key, isOptionCorrect),
-                        );
-                      }),
-
-                    SizedBox(
-                      height: (showEvidenceStep && !isAnswered) ? 380.h : 60.h,
-                    ),
-                  ],
-                ),
+                  ),
+                  SizedBox(width: 16.w),
+                  _buildReadTimeBadge(
+                    primaryColor,
+                    isDark,
+                    displayPassage,
+                  ),
+                ],
               ),
-            ),
-            SliverToBoxAdapter(child: SizedBox.shrink()),
-          ],
+              SizedBox(height: 16.h),
+              ReadAndAnswerAnchorPoint(
+                question: quest.question ?? '',
+                color: primaryColor,
+                isDark: isDark,
+              ),
+              SizedBox(height: 24.h),
+              // Render Passage Box
+              ReadAndAnswerFloatingPassage(
+                text: displayPassage,
+                color: primaryColor,
+                isDark: isDark,
+              ),
+              SizedBox(height: 24.h),
+              if (quest.options != null)
+                ...quest.options!.asMap().entries.map((e) {
+                  final isOptionCorrect =
+                      e.key == quest.correctAnswerIndex ||
+                      e.value.trim().toLowerCase() ==
+                          (quest.correctAnswer?.trim().toLowerCase() ??
+                              '');
+
+                  return ReadAndAnswerBuoyOption(
+                    index: e.key,
+                    text: e.value,
+                    isCorrectOption: isOptionCorrect,
+                    color: primaryColor,
+                    isDark: isDark,
+                    isAnswered:
+                        isAnswered || (pendingSelectedIndex != null),
+                    selectedIndex: pendingSelectedIndex,
+                    onTap: () => onOptionSelected(e.key, isOptionCorrect),
+                  );
+                }),
+
+              SizedBox(
+                height: (showEvidenceStep && !isAnswered) ? 380.h : 60.h,
+              ),
+            ],
+          ),
         ),
       ),
     );
