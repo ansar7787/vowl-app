@@ -9,6 +9,7 @@ class ReadAndMatchTerminal extends StatelessWidget {
   final bool isDark;
   final bool isMatched;
   final bool isActive;
+  final bool shouldPulse;
   final VoidCallback onTap;
 
   const ReadAndMatchTerminal({
@@ -19,6 +20,7 @@ class ReadAndMatchTerminal extends StatelessWidget {
     required this.isDark,
     required this.isMatched,
     required this.isActive,
+    this.shouldPulse = false,
     required this.onTap,
   });
 
@@ -55,17 +57,25 @@ class ReadAndMatchTerminal extends StatelessWidget {
           ],
         ),
         child: Text(
-          text.contains("]") ? text.split("]").last.trim() : text,
+          text.replaceFirst(RegExp(r'^\[.*?\]\s*'), ''),
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 13.sp,
+            fontSize: 15.sp,
             color: isMatched || isActive
                 ? (isDark ? Colors.white : color)
                 : (isDark ? Colors.white70 : Colors.black87),
             fontWeight: FontWeight.bold,
           ),
         ),
+      ).animate(
+        target: shouldPulse ? 1 : 0,
+        onPlay: (controller) => controller.repeat(reverse: true),
+      ).scaleXY(
+        begin: 1.0,
+        end: 1.015,
+        duration: 1.2.seconds,
+        curve: Curves.easeInOutSine,
       ),
     );
   }

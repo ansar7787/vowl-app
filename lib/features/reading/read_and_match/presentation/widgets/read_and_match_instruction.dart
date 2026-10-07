@@ -29,6 +29,7 @@ class ReadAndMatchInstruction extends StatelessWidget {
             child: Text(
               instruction?.toUpperCase() ??
                   "TAP A CONCEPT ON LEFT, THEN ITS DEFINITION ON RIGHT",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
