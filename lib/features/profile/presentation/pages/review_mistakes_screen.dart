@@ -456,6 +456,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                           },
                                         );
 
+                                        if (!mounted) return;
                                         await context.push(uri.toString());
 
                                         if (mounted) {
@@ -671,6 +672,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             },
           );
 
+          if (!mounted) return;
           await context.push(uri.toString());
 
           if (mounted) {
