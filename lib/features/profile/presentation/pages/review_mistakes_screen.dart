@@ -592,9 +592,6 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       ),
       confirmDismiss: (_) async => true,
       onDismissed: (_) {
-        // Capture the entry before removing
-        final dismissedEntry = entry;
-
         _dismissMistake(entry.id);
 
         if (mounted) {
