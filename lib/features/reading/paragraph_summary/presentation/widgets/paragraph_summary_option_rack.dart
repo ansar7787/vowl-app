@@ -30,7 +30,7 @@ class ParagraphSummaryOptionRack extends StatelessWidget {
         final bool isSelected = selectedOption == opt;
 
         Color cardColor = isDark ? Colors.grey.shade900 : Colors.white;
-        Color borderColor = isDark ? Colors.white10 : Colors.grey.shade300;
+        Color borderColor = isDark ? Colors.white24 : Colors.grey.shade300;
 
         if (isAnswered) {
           if (opt.trim().toLowerCase() == correctAnswer.trim().toLowerCase()) {

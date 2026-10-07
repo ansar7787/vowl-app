@@ -29,6 +29,7 @@ class ParagraphSummaryInstruction extends StatelessWidget {
             child: Text(
               instruction?.toUpperCase() ??
                   "SQUEEZE TUBE TO DISTILL & SUMMARIZE",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
