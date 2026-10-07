@@ -9,6 +9,7 @@ class ReadAndMatchTerminal extends StatelessWidget {
   final bool isDark;
   final bool isMatched;
   final bool isActive;
+  final bool shouldPulse;
   final VoidCallback onTap;
 
   const ReadAndMatchTerminal({
@@ -19,6 +20,7 @@ class ReadAndMatchTerminal extends StatelessWidget {
     required this.isDark,
     required this.isMatched,
     required this.isActive,
+    this.shouldPulse = false,
     required this.onTap,
   });
 
@@ -67,7 +69,7 @@ class ReadAndMatchTerminal extends StatelessWidget {
           ),
         ),
       ).animate(
-        target: (isSource && !isMatched && !isActive) ? 1 : 0,
+        target: shouldPulse ? 1 : 0,
         onPlay: (controller) => controller.repeat(reverse: true),
       ).scaleXY(
         begin: 1.0,

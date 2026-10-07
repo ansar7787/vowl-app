@@ -326,21 +326,25 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                                     .map(
                                                       (
                                                         k,
-                                                      ) => ReadAndMatchTerminal(
-                                                          text: k,
-                                                          isSource: true,
-                                                          color: getColorForKey(
-                                                            k,
-                                                          ),
-                                                          isDark: isDark,
-                                                          isMatched: _matches
-                                                              .value
-                                                              .containsKey(k),
-                                                          isActive:
-                                                              _activeKey.value ==
+                                                      ) => Padding(
+                                                          padding: EdgeInsets.symmetric(vertical: 8.h),
+                                                          child: ReadAndMatchTerminal(
+                                                            text: k,
+                                                            isSource: true,
+                                                            color: getColorForKey(
                                                               k,
-                                                          onTap: () =>
-                                                              _onKeyTap(k),
+                                                            ),
+                                                            isDark: isDark,
+                                                            isMatched: _matches
+                                                                .value
+                                                                .containsKey(k),
+                                                            isActive:
+                                                                _activeKey.value ==
+                                                                k,
+                                                            shouldPulse: _activeKey.value == null && !_matches.value.containsKey(k),
+                                                            onTap: () =>
+                                                                _onKeyTap(k),
+                                                          ),
                                                         ),
                                                     )
                                                     .toList(),
@@ -356,23 +360,27 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                                     .map(
                                                       (
                                                         v,
-                                                      ) => ReadAndMatchTerminal(
-                                                          text: v,
-                                                          isSource: false,
-                                                          color: getColorForValue(
-                                                            v,
+                                                      ) => Padding(
+                                                          padding: EdgeInsets.symmetric(vertical: 8.h),
+                                                          child: ReadAndMatchTerminal(
+                                                            text: v,
+                                                            isSource: false,
+                                                            color: getColorForValue(
+                                                              v,
+                                                            ),
+                                                            isDark: isDark,
+                                                            isMatched: _matches
+                                                                .value
+                                                                .containsValue(v),
+                                                            isActive: false,
+                                                            shouldPulse: _activeKey.value != null && !_matches.value.containsValue(v),
+                                                            onTap: () =>
+                                                                _onValueTap(
+                                                                  v,
+                                                                  pairs,
+                                                                  quest,
+                                                                ),
                                                           ),
-                                                          isDark: isDark,
-                                                          isMatched: _matches
-                                                              .value
-                                                              .containsValue(v),
-                                                          isActive: false,
-                                                          onTap: () =>
-                                                              _onValueTap(
-                                                                v,
-                                                                pairs,
-                                                                quest,
-                                                              ),
                                                         ),
                                                     )
                                                     .toList(),
