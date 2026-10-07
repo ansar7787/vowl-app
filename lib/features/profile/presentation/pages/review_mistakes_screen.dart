@@ -36,6 +36,8 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   final ValueNotifier<int> _currentPage = ValueNotifier(0);
   final ValueNotifier<String?> _selectedCategory = ValueNotifier(null);
   final ValueNotifier<Set<String>> _revealedCards = ValueNotifier({});
+  final Set<String> _revealingCards = {};
+  bool _isStartingGame = false;
   final ScrollController _scrollController = ScrollController();
   late String _userId;
 
@@ -415,30 +417,35 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                   child: () {
                                     Widget button = ElevatedButton.icon(
                                       onPressed: () async {
-                                        if (filteredEntries.isEmpty) return;
-                                        
-                                        final randomList = List.of(filteredEntries)..shuffle();
-                                        final target = randomList.first;
-                                        final cat = QuestRegistry.gameToCategory[target.gameType] ?? 'reading';
-                                        
-                                        di.sl<HapticService>().selection();
+                                        if (filteredEntries.isEmpty || _isStartingGame) return;
+                                        _isStartingGame = true;
 
-                                        if (!(await _checkMonetizationGate())) return;
+                                        try {
+                                          final randomList = List.of(filteredEntries)..shuffle();
+                                          final target = randomList.first;
+                                          final cat = QuestRegistry.gameToCategory[target.gameType] ?? 'reading';
+                                          
+                                          di.sl<HapticService>().selection();
 
-                                        final uri = Uri(
-                                          path: '/game',
-                                          queryParameters: {
-                                            'category': cat,
-                                            'subtype': target.gameType,
-                                            'level': target.level.toString(),
-                                          },
-                                        );
+                                          if (!(await _checkMonetizationGate())) return;
 
-                                        if (!context.mounted) return;
-                                        await context.push(uri.toString());
+                                          final uri = Uri(
+                                            path: '/game',
+                                            queryParameters: {
+                                              'category': cat,
+                                              'subtype': target.gameType,
+                                              'level': target.level.toString(),
+                                            },
+                                          );
 
-                                        if (mounted) {
-                                          _loadMistakes();
+                                          if (!context.mounted) return;
+                                          await context.push(uri.toString());
+
+                                          if (mounted) {
+                                            _loadMistakes();
+                                          }
+                                        } finally {
+                                          if (mounted) _isStartingGame = false;
                                         }
                                       },
                                       icon: const Icon(
