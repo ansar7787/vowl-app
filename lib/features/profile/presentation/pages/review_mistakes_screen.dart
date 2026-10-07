@@ -19,6 +19,7 @@ import 'package:shimmer/shimmer.dart';
 import 'package:vowl/core/data/constants/quest_registry.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class ReviewMistakesScreen extends StatefulWidget {
   const ReviewMistakesScreen({super.key});
@@ -554,17 +555,39 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       key: Key(entry.id),
       direction: DismissDirection.endToStart,
       background: Container(
-        alignment: Alignment.centerRight,
-        padding: EdgeInsets.only(right: 24.w),
         margin: EdgeInsets.only(bottom: 4.h),
         decoration: BoxDecoration(
-          color: AppColors.red500.withValues(alpha: 0.15),
+          gradient: LinearGradient(
+            colors: [
+              AppColors.red500.withValues(alpha: 0.1),
+              AppColors.red500.withValues(alpha: 0.8),
+            ],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+          ),
           borderRadius: BorderRadius.circular(16.r),
         ),
-        child: Icon(
-          Icons.delete_outline_rounded,
-          color: AppColors.red500,
-          size: 28.r,
+        alignment: Alignment.centerRight,
+        padding: EdgeInsets.only(right: 24.w),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              context.tr('general.dismiss', fallback: 'Dismiss'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(width: 8.w),
+            Icon(
+              LucideIcons.trash2,
+              color: Colors.white,
+              size: 22.r,
+            ),
+          ],
         ),
       ),
       confirmDismiss: (_) async => true,
@@ -575,37 +598,13 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
         _dismissMistake(entry.id);
 
         if (mounted) {
-          ScaffoldMessenger.of(context).clearSnackBars();
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                context.tr(
-                  'profile.mistake_removed',
-                  fallback: 'Skill mastered!',
-                ),
-                style: const TextStyle(fontFamily: 'Outfit'),
-              ),
-              action: SnackBarAction(
-                label: context.tr('general.undo', fallback: 'Undo'),
-                onPressed: () {
-                  // Re-record the entry to restore it
-                  ErrorJournalCollector.record(
-                    userId: _userId,
-                    gameType: dismissedEntry.gameType,
-                    question: dismissedEntry.question,
-                    userAnswer: dismissedEntry.userAnswer,
-                    correctAnswer: dismissedEntry.correctAnswer,
-                    level: dismissedEntry.level,
-                  );
-                  _loadMistakes();
-                },
-              ),
-              behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.r),
-              ),
-              duration: const Duration(seconds: 4),
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'profile.mistake_removed',
+              fallback: 'Skill mastered!',
             ),
+            type: CustomSnackBarType.success,
           );
         }
       },
