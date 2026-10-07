@@ -914,6 +914,8 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       return true;
     }
 
+    if (!mounted) return false;
+
     final unlocked = await _showMonetizationGate();
     return unlocked;
   }
@@ -1022,7 +1024,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                           if (!completer.isCompleted) {
                             completer.complete(false);
                           }
-                          context.pop();
+                          if (context.mounted) {
+                            context.pop();
+                          }
                         },
                       );
                     },
