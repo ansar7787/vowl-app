@@ -133,7 +133,7 @@ class StoryServiceImpl implements StoryService {
     'paragraphSummary':
         "Let's get to the point! Read the text and practice condensing complex ideas into a simple, clear summary.",
     'readAndAnswer':
-        "Let's put your comprehension to the test! Read the passage carefully and hunt down the key facts to answer the questions.",
+        "Let's hunt for facts! Read the story and track down the specific details to answer the questions.",
     'readAndMatch':
         "Let's connect the dots! Read the descriptions and match the related ideas together to see the whole picture.",
     'readingConclusion':
@@ -959,11 +959,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'readandanswer': [
       "",
-      "Excellent start! Your understanding of reading comprehension is growing.",
-      "Your mastery of reading comprehension is noticeably improving daily.",
-      "Halfway there! You are a rising star in reading comprehension.",
-      "Centurion! You have conquered the complexities of reading comprehension.",
-      "Level 200 reached! Your grasp of reading comprehension is legendary.",
+      "Great start! You're already getting the hang of spotting the right details.",
+      "Nice work! You're reading faster and catching all the important facts.",
+      "Halfway to 100! You can skim and find the right answers effortlessly.",
+      "Level 100! Your reading skills are super sharp now. Nothing gets past you!",
+      "Level 200 reached! You read exactly like a native speaker. Absolutely amazing!",
     ],
     'readandmatch': [
       "",
