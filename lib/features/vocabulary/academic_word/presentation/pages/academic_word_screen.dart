@@ -8,7 +8,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/academic_word/academic_word_constants.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_painters.dart';
