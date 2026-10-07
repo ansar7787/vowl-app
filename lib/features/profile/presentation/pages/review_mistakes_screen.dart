@@ -432,11 +432,25 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                   child: () {
                                     Widget button = ElevatedButton.icon(
                                       onPressed: () async {
-                                        // Pass ONLY the current paginated entries
-                                        await context.push(
-                                          '/practice-mistakes',
-                                          extra: entries,
+                                        if (entries.isEmpty) return;
+                                        
+                                        final randomList = List.of(entries)..shuffle();
+                                        final target = randomList.first;
+                                        final cat = QuestRegistry.gameToCategory[target.gameType] ?? 'reading';
+                                        
+                                        di.sl<HapticService>().selection();
+
+                                        final uri = Uri(
+                                          path: '/game',
+                                          queryParameters: {
+                                            'category': cat,
+                                            'subtype': target.gameType,
+                                            'level': target.level.toString(),
+                                          },
                                         );
+
+                                        await context.push(uri.toString());
+
                                         if (mounted) {
                                           _loadMistakes();
                                         }

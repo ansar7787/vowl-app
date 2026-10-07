@@ -18,7 +18,7 @@ import 'package:vowl/features/home/presentation/pages/quest_library_page.dart';
 import 'package:vowl/features/profile/presentation/pages/trophy_room_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/progress_dashboard_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/review_mistakes_screen.dart';
-import 'package:vowl/features/profile/presentation/pages/mistakes_practice_screen.dart';
+
 import 'package:vowl/features/scan_and_learn/presentation/pages/scan_and_learn_screen.dart';
 import 'package:vowl/features/photo_vocabulary/presentation/pages/photo_vocabulary_screen.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
@@ -160,15 +160,6 @@ class HomeRoutes {
       path: AppRouter.reviewMistakesRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
         child: const ReviewMistakesScreen(),
-        state: state,
-      ),
-    ),
-    GoRoute(
-      path: AppRouter.practiceMistakesRoute,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: MistakesPracticeScreen(
-          initialEntries: state.extra as List<ErrorJournalEntry>?,
-        ),
         state: state,
       ),
     ),
