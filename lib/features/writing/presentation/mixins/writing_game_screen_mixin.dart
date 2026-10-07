@@ -63,7 +63,7 @@ mixin WritingGameScreenMixin<T extends StatefulWidget>
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
-    submitWrongAnswer(quest: quest, userAnswer: '');
+    context.read<WritingBloc>().add(const SubmitAnswer(false));
   }
 
   void submitCorrectAnswer() {
