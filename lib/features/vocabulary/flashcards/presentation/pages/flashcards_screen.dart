@@ -57,7 +57,16 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
       hapticService: di.sl<HapticService>(),
       soundService: di.sl<SoundService>(),
       onSubmitAnswer: (mastered) {
-        context.read<VocabularyBloc>().add(SubmitAnswer(mastered));
+        if (mastered) {
+          submitCorrectAnswer();
+        } else {
+          final q = _lastQuest;
+          if (q != null) {
+            submitWrongAnswer(quest: q, userAnswer: null);
+          } else {
+            submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+          }
+        }
       },
     );
     initVocabularyGame();
@@ -100,6 +109,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
               ),
             ),
           );
+        }
+
+        if (state is VocabularyLoaded) {
+          _lastQuest = state.currentQuestOrNull ?? _lastQuest;
         }
 
         final VocabularyQuest? quest = state is VocabularyLoaded

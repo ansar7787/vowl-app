@@ -9,7 +9,6 @@ import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
-import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_instruction.dart';
@@ -17,8 +16,6 @@ import 'package:vowl/features/listening/audio_true_false/presentation/widgets/au
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_screen_display.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_verdict_buttons.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class AudioTrueFalseScreen extends StatefulWidget {
   final int level;
@@ -47,9 +44,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final GlobalKey<SpeedChallengeTimerState> _timerKey =
-      GlobalKey<SpeedChallengeTimerState>();
-
   final ValueNotifier<bool?> _selectedVerdict = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
@@ -67,6 +61,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
   @override
   void initState() {
     super.initState();
+    timerKey = GlobalKey<SpeedChallengeTimerState>();
     _audioController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
@@ -88,7 +83,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
 
   void _submitFinalAnswer(ListeningQuest quest) {
     if (isAnsweredNotifier.value || _selectedVerdict.value == null) return;
-    _timerKey.currentState?.stop();
 
     final correct = quest.correctAnswer ?? "";
     bool isCorrect =
@@ -96,58 +90,17 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
         correct.trim().toLowerCase();
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      context.read<ListeningBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question:
-              'Audio: ${quest.audioTranscript}\nStatement: ${quest.statement}',
-          userAnswer: _selectedVerdict.value.toString(),
-          correctAnswer: correct,
-          level: widget.level,
-        );
-      }
-
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: _selectedVerdict.value.toString(),
+      );
     }
   }
 
   void _submitWrongAnswer(ListeningQuest quest) {
-    if (isAnsweredNotifier.value) return;
-    _timerKey.currentState?.stop();
-
-    hapticService.error();
-    soundService.playWrong();
-
-    final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated &&
-        authState.user != null) {
-      ErrorJournalCollector.record(
-        userId: authState.user!.id,
-        gameType: widget.gameType.name,
-        question:
-            'Audio: ${quest.audioTranscript}\nStatement: ${quest.statement}',
-        userAnswer: '[Timeout]',
-        correctAnswer: '',
-        level: widget.level,
-      );
-    }
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = false;
-    context.read<ListeningBloc>().add(SubmitAnswer(false));
+    submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
   }
 
   void _playAudio(String? textToSpeak) {
@@ -198,10 +151,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
-              onContinue: () =>
-                  context.read<ListeningBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<ListeningBloc>().add(ListeningHintUsed()),
+              onContinue: dispatchNextQuestion,
+              onHint: dispatchHintUsed,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
@@ -228,7 +179,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 16.h),
                                         child: SpeedChallengeTimer(
-                                          key: _timerKey,
+                                          key: timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
                                           onTimeUp: () =>

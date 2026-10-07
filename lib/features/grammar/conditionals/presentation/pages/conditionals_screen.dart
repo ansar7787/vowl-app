@@ -71,7 +71,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
     initGrammarGame();
   }
 
-  void _onOptionSelected(int nodeIndex, int correctIndex) {
+  void _onOptionSelected(int nodeIndex, int correctIndex, GameQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     bool isCorrect = nodeIndex == correctIndex;
@@ -82,27 +82,25 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
       isFirstStagePassedNotifier.value = true;
       _targetIndex.value = nodeIndex;
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _targetIndex.value = nodeIndex;
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      String? userAnswer =
+          (nodeIndex < (quest.options?.length ?? 0))
+              ? quest.options![nodeIndex]
+              : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      String? userAnswer = (quest.options != null &&
+              _targetIndex.value < (quest.options?.length ?? 0))
+          ? quest.options![_targetIndex.value]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
 
     // Scroll back to top so the user can read the Result and Explanation cards.
@@ -502,6 +500,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                                 horizontal: 24.w,
                                               ),
                                               child: _buildOptionsList(
+                                                quest,
                                                 options,
                                                 quest.correctAnswerIndex ?? 0,
                                                 theme.primaryColor,
@@ -523,9 +522,9 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                         expectedText: cleanTargetSentence,
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () =>
-                                            _submitVerbalEvaluation(true),
+                                            _submitVerbalEvaluation(true, quest),
                                         onSkipped: () =>
-                                            _submitVerbalEvaluation(false),
+                                            _submitVerbalEvaluation(false, quest),
                                         isPositioned: false,
                                         displayText:
                                             "Type the full sentence to lock it in",
@@ -560,6 +559,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
   }
 
   Widget _buildOptionsList(
+    GameQuest quest,
     List<String> options,
     int correctIndex,
     Color primaryColor,
@@ -568,6 +568,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
     return Column(
       children: List.generate(options.length, (i) {
         return _buildOptionCard(
+          quest,
           i,
           options[i],
           correctIndex,
@@ -579,6 +580,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
   }
 
   Widget _buildOptionCard(
+    GameQuest quest,
     int i,
     String text,
     int correctIndex,
@@ -601,7 +603,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
           Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  onTap: () => _onOptionSelected(i, correctIndex),
+                  onTap: () => _onOptionSelected(i, correctIndex, quest),
                   borderRadius: BorderRadius.circular(16.r),
                   child: Container(
                     width: double.infinity,

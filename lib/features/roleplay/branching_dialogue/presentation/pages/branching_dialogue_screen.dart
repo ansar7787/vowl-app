@@ -147,18 +147,18 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     }
   }
 
-  void _onProbeDragEnd(int correctIndex) {
+  void _onProbeDragEnd(int correctIndex, RoleplayQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     if (_hoveredIndex.value != null) {
-      _submitChoice(_hoveredIndex.value!, correctIndex);
+      _submitChoice(_hoveredIndex.value!, correctIndex, quest);
     } else {
       _springController.forward(from: 0.0);
       hapticService.selection();
     }
   }
 
-  void _submitChoice(int index, int correct) {
+  void _submitChoice(int index, int correct, RoleplayQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     final isCorrect = index == correct;
@@ -170,28 +170,25 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
       isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      final userAnswer = quest.options != null && index < quest.options!.length
+          ? quest.options![index]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, RoleplayQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<RoleplayBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      final userAnswer = (_selectedIndex.value != null &&
+              quest.options != null &&
+              _selectedIndex.value! < quest.options!.length)
+          ? quest.options![_selectedIndex.value!]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
@@ -344,12 +341,17 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                                   onProbeDragUpdate:
                                                       _onProbeDragUpdate,
                                                   onProbeDragEnd:
-                                                      _onProbeDragEnd,
+                                                      (idx) =>
+                                                          _onProbeDragEnd(
+                                                            idx,
+                                                            quest,
+                                                          ),
                                                   onOptionTapped: (index) =>
                                                       _submitChoice(
                                                         index,
                                                         quest.correctAnswerIndex ??
                                                             0,
+                                                        quest,
                                                       ),
                                                 ),
                                                 SizedBox(
@@ -384,10 +386,10 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                         context.read<RoleplayBloc>().add(
                                           const RoleplaySpeakConfirmed(5),
                                         );
-                                        _submitVerbalEvaluation(true);
+                                        _submitVerbalEvaluation(true, quest);
                                       },
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),

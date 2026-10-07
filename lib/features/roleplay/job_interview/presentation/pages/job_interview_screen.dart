@@ -106,7 +106,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
     super.dispose();
   }
 
-  void _onOptionSelected(int index, int correctIndex) {
+  void _onOptionSelected(int index, int correctIndex, GameQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     final bool isCorrect = index == correctIndex;
@@ -118,34 +118,27 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _mercuryLevel.value = (_mercuryLevel.value - 0.2).clamp(0.0, 1.0);
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      final userAnswer = index < _shuffledOptions.value.length
+          ? _shuffledOptions.value[index]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
     if (nailedIt) {
       _mercuryLevel.value = (_mercuryLevel.value + 0.25).clamp(0.0, 1.0);
+      submitCorrectAnswer();
     } else {
       _mercuryLevel.value = (_mercuryLevel.value - 0.2).clamp(0.0, 1.0);
-    }
-
-    if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<RoleplayBloc>().add(SubmitAnswer(true));
-    } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      final userAnswer = (_selectedIndex.value != null &&
+              _selectedIndex.value! < _shuffledOptions.value.length)
+          ? _shuffledOptions.value[_selectedIndex.value!]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
@@ -308,7 +301,12 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                                   isCorrect:
                                                       isCorrectNotifier.value,
                                                   onOptionSelected:
-                                                      _onOptionSelected,
+                                                      (idx, corr) =>
+                                                          _onOptionSelected(
+                                                            idx,
+                                                            corr,
+                                                            quest,
+                                                          ),
                                                 ),
                                                 SizedBox(
                                                   height: isCompact
@@ -371,10 +369,10 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                         context.read<RoleplayBloc>().add(
                                           const RoleplaySpeakConfirmed(5),
                                         );
-                                        _submitVerbalEvaluation(true);
+                                        _submitVerbalEvaluation(true, quest);
                                       },
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),

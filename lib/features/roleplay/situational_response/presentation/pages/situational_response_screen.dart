@@ -61,6 +61,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   // Real-time ticking sound throttling
   int _lastTickSecond = -1;
 
+  RoleplayQuest? _lastQuest;
+
   @override
   void initState() {
     super.initState();
@@ -152,17 +154,14 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   void _triggerTimeoutFailure() {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _stopTimer();
-    hapticService.error();
-    soundService.playWrong();
-
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = false;
     _selectedOrbIndex.value = null;
 
-    context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    if (_lastQuest != null) {
+      submitWrongAnswer(quest: _lastQuest!, userAnswer: '[Timeout]');
+    }
   }
 
-  void _onOrbTap(int index, int correctIndex) {
+  void _onOrbTap(int index, int correctIndex, GameQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _stopTimer();
 
@@ -174,28 +173,24 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
       isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      final userAnswer = index < _shuffledOptions.value.length
+          ? _shuffledOptions.value[index]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<RoleplayBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      final userAnswer = (_selectedOrbIndex.value != null &&
+              _selectedOrbIndex.value! < _shuffledOptions.value.length)
+          ? _shuffledOptions.value[_selectedOrbIndex.value!]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
@@ -218,6 +213,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
       listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
+        if (quest != null) _lastQuest = quest;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -330,7 +326,13 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                                       selectedOrbIndex:
                                                           _selectedOrbIndex
                                                               .value,
-                                                      onOrbTap: _onOrbTap,
+                                                      onOrbTap:
+                                                          (idx, corr) =>
+                                                              _onOrbTap(
+                                                                idx,
+                                                                corr,
+                                                                quest,
+                                                              ),
                                                     );
                                                   },
                                                 ),
@@ -407,10 +409,10 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                         context.read<RoleplayBloc>().add(
                                           const RoleplaySpeakConfirmed(5),
                                         );
-                                        _submitVerbalEvaluation(true);
+                                        _submitVerbalEvaluation(true, quest);
                                       },
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),

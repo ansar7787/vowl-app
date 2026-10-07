@@ -140,7 +140,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
 
     if (!nailedTyping) {
       hapticService.error();
-      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: state.currentQuest);
       return;
     }
 
@@ -160,9 +160,14 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
         _rightPanArgs.value.length == 2 &&
         _rightPanArgs.value.every((arg) => correctCons.contains(arg));
 
-    context.read<WritingBloc>().add(
-      SubmitAnswer(isLeftCorrect && isRightCorrect),
-    );
+    final isCorrect = isLeftCorrect && isRightCorrect;
+    if (isCorrect) {
+      submitCorrectAnswer();
+    } else {
+      final userAns =
+          'Left: ${_leftPanArgs.value.join(", ")}; Right: ${_rightPanArgs.value.join(", ")}';
+      submitWrongAnswer(quest: quest, userAnswer: userAns);
+    }
   }
 
   @override

@@ -78,9 +78,18 @@ class _WordFormationScreenState extends State<WordFormationScreen>
     _controller = WordFormationController(
       hapticService: hapticService,
       soundService: soundService,
-      onSubmitAnswer: (isCorrect) {
+      onSubmitAnswer: (isCorrect, {quest, userAnswer}) {
         if (mounted) {
-          context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
+          if (isCorrect) {
+            submitCorrectAnswer();
+          } else {
+            final q = quest ?? _controller.lastQuest;
+            if (q != null) {
+              submitWrongAnswer(quest: q, userAnswer: userAnswer);
+            } else {
+              submitWrongAnswer(quest: quest!, userAnswer: '');
+            }
+          }
         }
       },
     );

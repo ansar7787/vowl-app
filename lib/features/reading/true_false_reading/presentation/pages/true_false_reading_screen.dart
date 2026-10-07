@@ -15,7 +15,6 @@ import 'package:vowl/features/reading/true_false_reading/presentation/widgets/tr
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_statement.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_coin_zone.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
 
 class TrueFalseReadingScreen extends StatefulWidget {
   final int level;
@@ -103,23 +102,10 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
     if (_pendingAnswer.value == null) return;
 
     if (!nailedEvidence || failedCoin) {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      ErrorJournalCollector.record(
-        userId: 'local',
-        gameType: widget.gameType.name,
-        question: quest.question ?? InstructionHelper.getInstruction(quest),
-        userAnswer: failedCoin
-            ? (_pendingAnswer.value! ? "True" : "False")
-            : 'Failed to find evidence',
-        correctAnswer: failedCoin
-            ? (quest.correctAnswer ?? '')
-            : (quest.evidenceLine ?? ''),
-        level: widget.level,
-      );
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      final String userAnswer = failedCoin
+          ? (_pendingAnswer.value! ? "True" : "False")
+          : 'Failed to find evidence';
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
       return;
     }
 

@@ -35,6 +35,7 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
   final ValueNotifier<List<ErrorJournalEntry>> _entries = ValueNotifier([]);
   final ValueNotifier<int> _currentIndex = ValueNotifier(0);
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<int> _correctCount = ValueNotifier(0);
   late String _userId;
 
   final AudioPlayer _audioPlayer = AudioPlayer();
@@ -51,6 +52,7 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     _entries.dispose();
     _currentIndex.dispose();
     _isAnswered.dispose();
+    _correctCount.dispose();
     _audioPlayer.dispose();
     super.dispose();
   }
@@ -96,6 +98,7 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     _isAnswered.value = true;
 
     if (isCorrect) {
+      _correctCount.value++;
       di.sl<HapticService>().success();
       _audioPlayer
           .play(AssetSource('sounds/correct_chime.mp3'))
@@ -121,8 +124,95 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
       _currentIndex.value++;
       _isAnswered.value = false;
     } else {
-      context.pop();
+      _showCompletionSummary();
     }
+  }
+
+  void _showCompletionSummary() {
+    if (!mounted) return;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final total = _entries.value.length;
+    final correct = _correctCount.value;
+    final pct = total > 0 ? (correct / total * 100).round() : 0;
+
+    final emoji = pct >= 80 ? '🏆' : (pct >= 50 ? '💪' : '📚');
+    final message = pct >= 80
+        ? context.tr('practice.summary_great', fallback: 'Outstanding mastery!')
+        : (pct >= 50
+            ? context.tr('practice.summary_good', fallback: 'Good progress! Keep it up.')
+            : context.tr('practice.summary_keep_going', fallback: 'Keep practicing — you\'ll get there!'));
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (dialogCtx) => AlertDialog(
+        backgroundColor: isDark ? AppColors.slate800 : Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24.r),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(emoji, style: TextStyle(fontSize: 48.sp)),
+            SizedBox(height: 16.h),
+            Text(
+              context.tr('practice.session_complete', fallback: 'Session Complete!'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : Colors.black,
+              ),
+            ),
+            SizedBox(height: 12.h),
+            Text(
+              '$correct / $total ${context.tr('practice.correct_label', fallback: 'correct')} ($pct%)',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w700,
+                color: pct >= 80
+                    ? AppColors.emerald500
+                    : (pct >= 50 ? AppColors.amber500 : AppColors.red500),
+              ),
+            ),
+            SizedBox(height: 8.h),
+            Text(
+              message,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+            SizedBox(height: 24.h),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(dialogCtx).pop();
+                if (context.mounted) context.pop();
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.indigo500,
+                minimumSize: Size(double.infinity, 52.h),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                ),
+              ),
+              child: Text(
+                context.tr('common.done', fallback: 'Done'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Future<bool> _checkMonetizationGate() async {
@@ -436,6 +526,27 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
                                             ))
                                 : const SizedBox.shrink(),
                             centerTitle: true,
+                            bottom: (!isLoading && entries.isNotEmpty)
+                                ? PreferredSize(
+                                    preferredSize: Size.fromHeight(4.h),
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(4.r),
+                                        child: LinearProgressIndicator(
+                                          value: (currentIndex + 1) / entries.length,
+                                          backgroundColor: isDark
+                                              ? Colors.white12
+                                              : Colors.black12,
+                                          valueColor: AlwaysStoppedAnimation<Color>(
+                                            AppColors.indigo500,
+                                          ),
+                                          minHeight: 4.h,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : null,
                           ),
                           SliverFillRemaining(
                             hasScrollBody: false,
@@ -482,35 +593,36 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
   }
 
   Widget _buildEmptyState(BuildContext context, bool isDark) {
-    return Center(
-      child:
-          Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.workspace_premium_rounded,
-                    size: 80.r,
-                    color: AppColors.emerald500,
-                  ),
-                  SizedBox(height: 24.h),
-                  Text(
-                    context.tr(
-                      'profile.practice_empty',
-                      fallback: "No Mistakes to Practice!",
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.bold,
-                      color: isDark ? Colors.white : Colors.black,
-                    ),
-                  ),
-                ],
-              )
-              .animate()
-              .scale(delay: 100.ms, duration: 400.ms, curve: Curves.easeOutBack)
-              .fadeIn(),
+    Widget content = Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          Icons.workspace_premium_rounded,
+          size: 80.r,
+          color: AppColors.emerald500,
+        ),
+        SizedBox(height: 24.h),
+        Text(
+          context.tr(
+            'profile.practice_empty',
+            fallback: "No Mistakes to Practice!",
+          ),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 22.sp,
+            fontWeight: FontWeight.bold,
+            color: isDark ? Colors.white : Colors.black,
+          ),
+        ),
+      ],
     );
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      content = content
+          .animate()
+          .scale(delay: 100.ms, duration: 400.ms, curve: Curves.easeOutBack)
+          .fadeIn();
+    }
+    return Center(child: content);
   }
 
   Widget _buildShimmerLoading(BuildContext context, bool isDark) {
@@ -543,7 +655,11 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
     String wrongAnswer = entry.userAnswer.trim();
     String correctAnswer = entry.correctAnswer.trim();
 
-    final isVisualOrInteractive = correctAnswer.isEmpty;
+    final category = QuestRegistry.gameToCategory[entry.gameType] ?? 'reading';
+    final isVisualOrInteractive = correctAnswer.isEmpty ||
+        category == 'reading' ||
+        category == 'listening' ||
+        category == 'roleplay';
 
     if (wrongAnswer.isEmpty ||
         wrongAnswer.toLowerCase() == correctAnswer.toLowerCase()) {
@@ -553,7 +669,26 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
       );
     }
 
-    final options = {wrongAnswer, correctAnswer}.toList();
+    final options = (entry.options != null && entry.options!.isNotEmpty)
+        ? List<String>.from(entry.options!)
+        : {wrongAnswer, correctAnswer}.toList();
+
+    // Guard: if options collapsed to 1 option (same text), add a fallback
+    if (options.length < 2) {
+      options.add(context.tr(
+        'practice.not_this_answer',
+        fallback: '(Not this one)',
+      ));
+    }
+    // Ensure the correct answer is always in the options (just in case)
+    if (!options.contains(correctAnswer) && correctAnswer.isNotEmpty) {
+      options.add(correctAnswer);
+    }
+    // Also ensure the user's wrong answer is in the options (optional, but good for feedback)
+    if (!options.contains(wrongAnswer) && wrongAnswer != context.tr('practice.timeout_answer', fallback: '(No Answer / Timeout)') && wrongAnswer.isNotEmpty) {
+      options.add(wrongAnswer);
+    }
+
     final random = Random(entry.id.hashCode);
     options.shuffle(random);
 
@@ -573,7 +708,7 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
                   borderRadius: BorderRadius.circular(12.r),
                 ),
                 child: Text(
-                  entry.gameType.toUpperCase(),
+                  ErrorJournalCollector.humanReadableName(entry.gameType).toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
@@ -698,29 +833,39 @@ class _MistakesPracticeScreenState extends State<MistakesPracticeScreen> {
           builder: (context, isAnswered, _) {
             if (!isAnswered) return const SizedBox.shrink();
 
-            return Padding(
-              padding: EdgeInsets.only(top: 24.h),
-              child: ElevatedButton(
-                onPressed: _nextCard,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.indigo500,
-                  minimumSize: Size(double.infinity, 56.h),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.r),
+            return ValueListenableBuilder<int>(
+              valueListenable: _currentIndex,
+              builder: (context, idx, _) {
+                final isLast = idx == _entries.value.length - 1;
+                Widget btn = Padding(
+                  padding: EdgeInsets.only(top: 24.h),
+                  child: ElevatedButton(
+                    onPressed: _nextCard,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.indigo500,
+                      minimumSize: Size(double.infinity, 56.h),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.r),
+                      ),
+                    ),
+                    child: Text(
+                      isLast
+                          ? context.tr('common.finish', fallback: 'FINISH')
+                          : context.tr('common.next', fallback: 'NEXT'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
-                ),
-                child: Text(
-                  _currentIndex.value == _entries.value.length - 1
-                      ? context.tr('common.finish', fallback: 'FINISH')
-                      : context.tr('common.next', fallback: 'NEXT'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ).animate().slideY(begin: 0.5).fadeIn(duration: 300.ms),
+                );
+                if (!VowlMotion.shouldReduceMotion(context)) {
+                  btn = btn.animate().slideY(begin: 0.5).fadeIn(duration: 300.ms);
+                }
+                return btn;
+              },
             );
           },
         ),

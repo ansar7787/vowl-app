@@ -113,7 +113,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
     }
   }
 
-  void _submitAnswer(String selected, String correct) {
+  void _submitAnswer(String selected, String correct, GameQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     _selectedOption.value = selected;
@@ -126,31 +126,21 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: selected);
     }
   }
 
-  void _submitFinalAnswer(bool nailedIt, [String? misspelledWord]) {
+  void _submitFinalAnswer(bool nailedIt, GameQuest quest, [String? misspelledWord]) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
     if (misspelledWord != null) {
       _selectedOption.value = misspelledWord;
     }
 
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: misspelledWord);
     }
   }
 
@@ -171,6 +161,10 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
           'vocabulary',
           level: widget.level,
         );
+
+        if (state is VocabularyLoaded) {
+          _lastQuest = state.currentQuest;
+        }
 
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
@@ -265,7 +259,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                                         instruction:
                                             "Find the ${quest.clueType ?? 'context'} clue that proves the answer",
                                         onCorrectHighlight: () =>
-                                            _submitFinalAnswer(true),
+                                            _submitFinalAnswer(true, quest),
                                         onWrongHighlight: () => {},
                                         isPositioned: false,
                                       ),
@@ -466,7 +460,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
               selectedOption: _selectedOption.value,
               isFinalFailure: isFinalFailure,
               onOptionSelected: (o) =>
-                  _submitAnswer(o, quest.correctAnswer ?? ""),
+                  _submitAnswer(o, quest.correctAnswer ?? "", quest),
             ),
             SizedBox(height: gapBottom),
           ],

@@ -71,22 +71,14 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
 
   void _submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
-    hapticService.success();
-    soundService.playCorrect();
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = true;
     _timerKey.currentState?.stop();
-    context.read<ReadingBloc>().add(SubmitAnswer(true));
+    submitCorrectAnswer();
   }
 
-  void _submitIncorrectAnswer() {
+  void _submitIncorrectAnswer(ReadingQuest quest, [String? word]) {
     if (isAnsweredNotifier.value) return;
-    hapticService.error();
-    soundService.playWrong();
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = false;
     _timerKey.currentState?.stop();
-    context.read<ReadingBloc>().add(SubmitAnswer(false));
+    submitWrongAnswer(quest: quest, userAnswer: word ?? '[Time up]');
   }
 
   @override
@@ -158,7 +150,8 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                       key: _timerKey,
                                       durationSeconds: 30,
                                       primaryColor: theme.primaryColor,
-                                      onTimeUp: _submitIncorrectAnswer,
+                                      onTimeUp: () =>
+                                          _submitIncorrectAnswer(quest),
                                       showBonusLabel: false,
                                     ),
 
@@ -180,7 +173,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                                 .toLowerCase()) {
                                           _submitCorrectAnswer();
                                         } else {
-                                          _submitIncorrectAnswer();
+                                          _submitIncorrectAnswer(quest, clean);
                                         }
                                       },
                                     ),

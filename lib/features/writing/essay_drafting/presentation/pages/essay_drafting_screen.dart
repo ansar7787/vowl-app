@@ -105,7 +105,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
 
     if (!nailedTyping) {
       hapticService.error();
-      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: state.currentQuest);
       return;
     }
 
@@ -132,7 +132,13 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
     final isCorrect =
         isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct;
 
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
+    if (isCorrect) {
+      submitCorrectAnswer();
+    } else {
+      final userAns =
+          points.map((p) => _blueprintSlots.value[p] ?? '').join('; ');
+      submitWrongAnswer(quest: quest, userAnswer: userAns);
+    }
   }
 
   void _scrollToBottom() {

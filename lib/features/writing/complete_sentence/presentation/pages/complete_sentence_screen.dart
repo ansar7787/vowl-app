@@ -96,7 +96,12 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen>
   // Answer logic
   // ---------------------------------------------------------------------------
 
-  void _onFire(String selected, String correct, bool isAnswered) {
+  void _onFire(
+    String selected,
+    String correct,
+    bool isAnswered, [
+    GameQuest? quest,
+  ]) {
     if (isAnswered) return;
 
     _selectedProjectile.value = selected;
@@ -112,18 +117,23 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen>
       _scrollToBottom();
     } else {
       hapticService.error();
-      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      final targetQuest = quest ?? _lastQuest;
+      if (targetQuest != null) {
+        submitWrongAnswer(quest: targetQuest, userAnswer: selected);
+      }
     }
   }
 
   void _onAnagramSuccess() {
     _showAnagram.value = false;
-    context.read<WritingBloc>().add(const SubmitAnswer(true));
+    submitCorrectAnswer();
   }
 
   void _onAnagramFailed() {
     _showAnagram.value = false;
-    context.read<WritingBloc>().add(const SubmitAnswer(false));
+    if (_lastQuest != null) {
+      submitWrongAnswer(quest: _lastQuest!);
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -211,6 +221,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen>
                           selected,
                           quest.correctAnswer ?? '',
                           isAnswered,
+                          quest,
                         ),
                       ),
                     );

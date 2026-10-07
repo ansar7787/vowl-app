@@ -57,15 +57,12 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
   }
 
   void _submitFinalAnswer(bool isCorrect, ReadingQuest quest) {
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = isCorrect;
+    if (isAnsweredNotifier.value) return;
 
     if (isCorrect) {
-      hapticService.success();
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: '[Skipped]');
     }
   }
 

@@ -56,20 +56,13 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     initRoleplayGame();
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<RoleplayBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: null);
     }
   }
 
@@ -182,10 +175,10 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                                         context.read<RoleplayBloc>().add(
                                           const RoleplaySpeakConfirmed(5),
                                         );
-                                        _submitVerbalEvaluation(true);
+                                        _submitVerbalEvaluation(true, quest);
                                       },
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),

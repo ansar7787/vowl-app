@@ -199,7 +199,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     _scanOffset.value = Offset.zero;
   }
 
-  void _submitDiagnosis(String correctAnswer) {
+  void _submitDiagnosis(String correctAnswer, GameQuest quest) {
     if (isAnsweredNotifier.value ||
         isFirstStagePassedNotifier.value ||
         _diagnosedSymptoms.value.isEmpty) {
@@ -223,28 +223,23 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
       isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: _diagnosedSymptoms.value.join(', '),
+      );
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<RoleplayBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: _diagnosedSymptoms.value.join(', '),
+      );
     }
   }
 
@@ -479,6 +474,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                             _submitDiagnosis(
                                                               quest.correctAnswer ??
                                                                   "",
+                                                              quest,
                                                             ),
                                                         child: Container(
                                                           padding:
@@ -612,10 +608,10 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                         context.read<RoleplayBloc>().add(
                                           const RoleplaySpeakConfirmed(5),
                                         );
-                                        _submitVerbalEvaluation(true);
+                                        _submitVerbalEvaluation(true, quest);
                                       },
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),

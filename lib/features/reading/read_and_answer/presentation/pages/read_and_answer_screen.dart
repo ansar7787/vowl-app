@@ -1,5 +1,4 @@
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,7 +14,6 @@ import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_buoy_option.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_floating_passage.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
 
 class ReadAndAnswerScreen extends StatefulWidget {
   final int level;
@@ -86,14 +84,11 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
   }
 
   void _submitFinalAnswer(bool isCorrect, ReadingQuest quest) {
-    if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
-    } else {
-      hapticService.error();
-      soundService.playWrong();
+    if (isAnsweredNotifier.value) return;
 
+    if (isCorrect) {
+      submitCorrectAnswer();
+    } else {
       final String userAnswer =
           (quest.options != null &&
               _pendingSelectedIndex.value != null &&
@@ -101,15 +96,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
           ? quest.options![_pendingSelectedIndex.value!]
           : 'Unknown';
 
-      ErrorJournalCollector.record(
-        userId: 'local',
-        gameType: widget.gameType.name,
-        question: quest.question ?? InstructionHelper.getInstruction(quest),
-        userAnswer: userAnswer,
-        correctAnswer: quest.correctAnswer ?? '',
-        level: widget.level,
-      );
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 

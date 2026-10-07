@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 class TopicVocabController extends ChangeNotifier {
   final HapticService _hapticService;
   final SoundService _soundService;
-  final void Function(bool) onSubmitAnswer;
+  final void Function(bool isCorrect, {GameQuest? quest, String? userAnswer})
+  onSubmitAnswer;
 
   int currentWordIndex = 0;
   bool isAnswered = false;
@@ -105,7 +107,7 @@ class TopicVocabController extends ChangeNotifier {
       flickStartOffset = null;
 
       if (!isCorrectChoice) {
-        _submitFinalAnswer(false);
+        _submitFinalAnswer(false, word: word);
         return;
       }
 
@@ -130,7 +132,7 @@ class TopicVocabController extends ChangeNotifier {
     });
   }
 
-  void _submitFinalAnswer(bool nailedIt) {
+  void _submitFinalAnswer(bool nailedIt, {String? word}) {
     if (isAnswered || _isDisposed) return;
     isAnswered = true;
     isCorrect = nailedIt;
@@ -143,7 +145,7 @@ class TopicVocabController extends ChangeNotifier {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      onSubmitAnswer(false);
+      onSubmitAnswer(false, quest: currentQuest, userAnswer: word);
     }
   }
 

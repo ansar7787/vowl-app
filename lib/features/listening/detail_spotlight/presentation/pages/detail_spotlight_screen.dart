@@ -7,7 +7,6 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
-import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_instruction.dart';
@@ -15,8 +14,6 @@ import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/de
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_prompt.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_dark_field.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class DetailSpotlightScreen extends StatefulWidget {
   final int level;
@@ -44,9 +41,6 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final GlobalKey<SpeedChallengeTimerState> _timerKey =
-      GlobalKey<SpeedChallengeTimerState>();
-
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
@@ -66,86 +60,35 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
   @override
   void initState() {
     super.initState();
+    timerKey = GlobalKey<SpeedChallengeTimerState>();
     initListeningGame();
   }
 
   void _submitFinalAnswer(GameQuest quest) {
     if (isAnsweredNotifier.value || _pendingSelectedIndex.value == null) return;
-    _timerKey.currentState?.stop();
 
     final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
 
+    _selectedIndex.value = _pendingSelectedIndex.value;
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      _selectedIndex.value = _pendingSelectedIndex.value;
-      context.read<ListeningBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
+      String uAns =
+          _pendingSelectedIndex.value != null &&
+              quest.options != null &&
+              _pendingSelectedIndex.value! < quest.options!.length
+          ? quest.options![_pendingSelectedIndex.value!]
+          : '[None]';
 
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        String uAns =
-            _pendingSelectedIndex.value != null &&
-                quest.options != null &&
-                _pendingSelectedIndex.value! < quest.options!.length
-            ? quest.options![_pendingSelectedIndex.value!]
-            : '[None]';
-        String cAns = quest.options != null && correct < quest.options!.length
-            ? quest.options![correct]
-            : '';
-
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: quest.textToSpeak ?? 'Detail Spotlight',
-          userAnswer: uAns,
-          correctAnswer: cAns,
-          level: widget.level,
-        );
-      }
-
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      _selectedIndex.value = _pendingSelectedIndex.value;
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: uAns);
     }
   }
 
   void _submitWrongAnswer(dynamic quest) {
-    if (isAnsweredNotifier.value) return;
-    _timerKey.currentState?.stop();
-
-    hapticService.error();
-    soundService.playWrong();
-
-    final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated &&
-        authState.user != null) {
-      String cAns =
-          quest.correctAnswerIndex != null &&
-              quest.options != null &&
-              quest.correctAnswerIndex < quest.options!.length
-          ? quest.options![quest.correctAnswerIndex]
-          : '';
-
-      ErrorJournalCollector.record(
-        userId: authState.user!.id,
-        gameType: widget.gameType.name,
-        question: quest.textToSpeak ?? 'Timeout',
-        userAnswer: '[Timeout]',
-        correctAnswer: cAns,
-        level: widget.level,
-      );
+    if (quest is GameQuest) {
+      submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
     }
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = false;
-    context.read<ListeningBloc>().add(SubmitAnswer(false));
   }
 
   @override
@@ -184,10 +127,8 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
-              onContinue: () =>
-                  context.read<ListeningBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<ListeningBloc>().add(ListeningHintUsed()),
+              onContinue: dispatchNextQuestion,
+              onHint: dispatchHintUsed,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
@@ -214,7 +155,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 16.h),
                                         child: SpeedChallengeTimer(
-                                          key: _timerKey,
+                                          key: timerKey,
                                           durationSeconds: 30,
                                           primaryColor: theme.primaryColor,
                                           onTimeUp: () =>

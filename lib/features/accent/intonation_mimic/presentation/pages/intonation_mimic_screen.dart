@@ -150,7 +150,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
     }
   }
 
@@ -168,7 +168,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
     }
   }
 

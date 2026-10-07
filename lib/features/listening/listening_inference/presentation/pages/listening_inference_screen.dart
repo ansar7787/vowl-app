@@ -8,15 +8,12 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
-import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_instruction.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_radar_core.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_grid.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_explanation.dart';
 
 class ListeningInferenceScreen extends StatefulWidget {
@@ -47,9 +44,6 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final GlobalKey<SpeedChallengeTimerState> _timerKey =
-      GlobalKey<SpeedChallengeTimerState>();
-
   late AnimationController _pulseController;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
@@ -77,6 +71,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   @override
   void initState() {
     super.initState();
+    timerKey = GlobalKey<SpeedChallengeTimerState>();
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -84,71 +79,29 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     initListeningGame();
   }
 
-  void _submitFinalAnswer(int index, int correct, dynamic quest) {
+  void _submitFinalAnswer(int index, int correct, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
-    _timerKey.currentState?.stop();
     _pulseController.stop();
 
     _selectedIndex.value = index;
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      context.read<ListeningBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
+      String uAns = (quest.options != null && quest.options!.length > index)
+          ? quest.options![index]
+          : index.toString();
 
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: quest.textToSpeak ?? 'Listening Inference',
-          userAnswer: (quest.options != null && quest.options.length > index)
-              ? quest.options[index]
-              : index.toString(),
-          correctAnswer:
-              (quest.options != null && quest.options.length > correct)
-              ? quest.options[correct]
-              : correct.toString(),
-          level: widget.level,
-        );
-      }
-
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: uAns);
     }
   }
 
   void _submitWrongAnswer(dynamic quest) {
-    if (isAnsweredNotifier.value) return;
-    _timerKey.currentState?.stop();
-    _pulseController.stop();
-
-    hapticService.error();
-    soundService.playWrong();
-
-    final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated &&
-        authState.user != null) {
-      ErrorJournalCollector.record(
-        userId: authState.user!.id,
-        gameType: widget.gameType.name,
-        question: quest.textToSpeak ?? 'Timeout',
-        userAnswer: '[Timeout]',
-        correctAnswer: '',
-        level: widget.level,
-      );
+    if (quest is GameQuest) {
+      _pulseController.stop();
+      submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
     }
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = false;
-    context.read<ListeningBloc>().add(SubmitAnswer(false));
   }
 
   void _showTranscriptBottomSheet(
@@ -260,10 +213,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               disablePadding: true,
-              onContinue: () =>
-                  context.read<ListeningBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<ListeningBloc>().add(ListeningHintUsed()),
+              onContinue: dispatchNextQuestion,
+              onHint: dispatchHintUsed,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
@@ -290,7 +241,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 16.h),
                                         child: SpeedChallengeTimer(
-                                          key: _timerKey,
+                                          key: timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
                                           onTimeUp: () =>

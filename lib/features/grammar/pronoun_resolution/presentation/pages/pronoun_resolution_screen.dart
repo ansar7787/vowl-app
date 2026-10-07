@@ -63,7 +63,12 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
     initGrammarGame();
   }
 
-  void _onFire(int nodeIndex, int correctIndex, bool hasSecondStage) {
+  void _onFire(
+    int nodeIndex,
+    int correctIndex,
+    bool hasSecondStage,
+    GameQuest quest,
+  ) {
     if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
     bool isCorrect = nodeIndex == correctIndex;
@@ -86,31 +91,30 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
         });
       } else {
         // Bypass second stage if curriculum data is missing
-        _submitFinalAnswer(true);
+        _submitFinalAnswer(true, quest);
       }
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _targetIndex.value = nodeIndex;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      String? userAnswer =
+          (quest.options != null && nodeIndex < quest.options!.length)
+              ? quest.options![nodeIndex]
+              : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitFinalAnswer(bool correct) {
+  void _submitFinalAnswer(bool correct, GameQuest quest) {
     _pendingJigsaw.value = false;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = correct;
 
     if (correct) {
-      hapticService.heavy();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      String? userAnswer = (_targetIndex.value != -1 &&
+              quest.options != null &&
+              _targetIndex.value < quest.options!.length)
+          ? quest.options![_targetIndex.value]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
@@ -408,6 +412,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
                                               isDark,
                                               isCompact,
                                               expectedTypeTarget.isNotEmpty,
+                                              quest,
                                             ),
                                           ),
                                         );
@@ -422,9 +427,9 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
                                         expectedText: expectedTypeTarget,
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () =>
-                                            _submitFinalAnswer(true),
+                                            _submitFinalAnswer(true, quest),
                                         onSkipped: () =>
-                                            _submitFinalAnswer(false),
+                                            _submitFinalAnswer(false, quest),
                                         isPositioned: false,
                                         displayText:
                                             "Type the matching word to lock it in",
@@ -466,6 +471,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
     bool isDark,
     bool isCompact,
     bool hasSecondStage,
+    GameQuest quest,
   ) {
     return Builder(
       builder: (context) {
@@ -506,7 +512,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
               diff = 2 * pi - diff;
             }
             if (diff < 0.35) {
-              _onFire(i, correctIndex, hasSecondStage);
+              _onFire(i, correctIndex, hasSecondStage, quest);
             }
           }
         }

@@ -107,28 +107,18 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
         }
       });
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _assembledSentence.value = quest.correctAnswer;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: result);
     }
   }
 
-  void _submitFinalAnswer(bool correct) {
+  void _submitFinalAnswer(bool correct, GameQuest quest) {
     _pendingJigsaw.value = false;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = correct;
 
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: _assembledSentence.value);
     }
   }
 
@@ -617,9 +607,9 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
                                         expectedText: cleanTargetSentence,
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () =>
-                                            _submitFinalAnswer(true),
+                                            _submitFinalAnswer(true, quest),
                                         onSkipped: () =>
-                                            _submitFinalAnswer(false),
+                                            _submitFinalAnswer(false, quest),
                                         isPositioned: false,
                                         displayText:
                                             "Type the complete sentence to lock it in",

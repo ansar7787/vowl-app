@@ -69,7 +69,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
     super.dispose();
   }
 
-  void _submitChoice(String selected, String correct) async {
+  void _submitChoice(String selected, String correct, GameQuest quest) async {
     if (isAnsweredNotifier.value ||
         isFirstStagePassedNotifier.value ||
         _selectedOption.value != null) {
@@ -95,11 +95,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
         }
       });
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: selected);
     }
   }
 
@@ -129,20 +125,13 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
     return sentence;
   }
 
-  void _submitFinalAnswer(bool nailedIt) {
+  void _submitFinalAnswer(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest);
     }
   }
 
@@ -163,6 +152,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
           'vocabulary',
           level: widget.level,
         );
+
+        if (state is VocabularyLoaded) {
+          _lastQuest = state.currentQuest;
+        }
 
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
@@ -232,8 +225,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                       hintUsed: state is VocabularyLoaded
                           ? state.hintUsed
                           : false,
-                      onChoiceSubmit: _submitChoice,
-                      onFinalSubmit: _submitFinalAnswer,
+                      onChoiceSubmit: (selected, correct) =>
+                          _submitChoice(selected, correct, quest),
+                      onFinalSubmit: (nailedIt) =>
+                          _submitFinalAnswer(nailedIt, quest),
                       formattedExampleSentence: _getFormattedExampleSentence(
                         quest,
                       ),

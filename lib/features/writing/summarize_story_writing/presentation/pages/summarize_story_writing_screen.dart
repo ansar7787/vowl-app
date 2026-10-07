@@ -114,14 +114,14 @@ class _SummarizeStoryWritingScreenState
     final state = context.read<WritingBloc>().state;
     if (state is! WritingLoaded) return;
 
-    if (!nailedTyping) {
-      hapticService.error();
-      context.read<WritingBloc>().add(const SubmitAnswer(false));
-      return;
-    }
-
     final WritingQuest? quest = state.currentQuest as WritingQuest?;
     if (quest == null) return;
+
+    if (!nailedTyping) {
+      hapticService.error();
+      submitWrongAnswer(quest: quest);
+      return;
+    }
 
     final options = quest.options ?? [];
     final correctIndices = quest.correctOrder ?? [0, 1, 2];
@@ -138,13 +138,23 @@ class _SummarizeStoryWritingScreenState
       }
     }
 
-    context.read<WritingBloc>().add(SubmitAnswer(isAllCorrect));
+    if (isAllCorrect) {
+      submitCorrectAnswer();
+    } else {
+      final userAns =
+          _slots.value.map((s) => s.sentence ?? '').join('; ');
+      submitWrongAnswer(quest: quest, userAnswer: userAns);
+    }
   }
 
   void _onTimerExpired() {
     if (_pendingSubmit.value) return;
     hapticService.error();
-    context.read<WritingBloc>().add(const SubmitAnswer(false));
+    final state = context.read<WritingBloc>().state;
+    final quest = (state is WritingLoaded) ? state.currentQuest : _lastQuest;
+    if (quest != null) {
+      submitWrongAnswer(quest: quest);
+    }
   }
 
   void _scrollToBottom() {

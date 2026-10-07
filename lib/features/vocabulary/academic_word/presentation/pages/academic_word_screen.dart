@@ -327,14 +327,17 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                                     onConfirmed: () =>
                                                         _submitFinalAnswer(
                                                           true,
+                                                          quest: quest,
                                                         ),
                                                     onSkipped: () =>
                                                         _submitFinalAnswer(
                                                           false,
+                                                          quest: quest,
                                                         ),
                                                     onBypassed: () =>
                                                         _submitFinalAnswer(
                                                           true,
+                                                          quest: quest,
                                                         ),
                                                     isPositioned: false,
                                                   ),
@@ -431,35 +434,30 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
         }
       });
     } else {
-      hapticService.error();
-      soundService.playWrong();
       _isSlotSelected.value = false;
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _activeShardIndex.value = null;
       _dragOffset.value = Offset.zero;
       _misspelledWord.value = options[index];
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: options[index]);
     }
   }
 
-  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
+  void _submitFinalAnswer(bool nailedIt, {GameQuest? quest, String? wrongWord}) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
     if (wrongWord != null && wrongWord.isNotEmpty) {
       _misspelledWord.value = wrongWord;
     }
 
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      final q = quest ?? _lastQuest;
+      if (q != null) {
+        submitWrongAnswer(quest: q, userAnswer: wrongWord);
+      } else {
+        submitWrongAnswer(quest: quest!, userAnswer: '');
+      }
     }
   }
 

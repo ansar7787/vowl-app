@@ -14,8 +14,6 @@ import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_tit
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_cargo_crate.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_label_rack.dart';
 
-import 'package:vowl/core/services/error_journal_collector.dart';
-
 class GuessTitleScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
@@ -60,33 +58,16 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
   }
 
   void _submitFinalAnswer(
-    bool isCorrect, [
-    ReadingQuest? quest,
+    bool isCorrect,
+    ReadingQuest quest, [
     String? selectedOption,
   ]) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = isCorrect;
-
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      if (quest != null) {
-        ErrorJournalCollector.record(
-          userId: 'local',
-          gameType: widget.gameType.name,
-          question: quest.question ?? InstructionHelper.getInstruction(quest),
-          userAnswer: selectedOption ?? 'Unknown',
-          correctAnswer: quest.correctAnswer ?? '',
-          level: widget.level,
-        );
-      }
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: selectedOption);
     }
   }
 

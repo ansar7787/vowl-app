@@ -117,7 +117,11 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     _activeKey.value = key;
   }
 
-  void _onValueTap(String value, List<Map<String, String>> pairs) {
+  void _onValueTap(
+    String value,
+    List<Map<String, String>> pairs,
+    ReadingQuest quest,
+  ) {
     if (isAnsweredNotifier.value || _activeKey.value == null) return;
 
     hapticService.success();
@@ -139,11 +143,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
       if (isCorrect) {
         _pendingSubmission.value = true;
       } else {
-        hapticService.error();
-        soundService.playWrong();
-        isAnsweredNotifier.value = true;
-        isCorrectNotifier.value = false;
-        context.read<ReadingBloc>().add(const SubmitAnswer(false));
+        submitWrongAnswer(quest: quest, userAnswer: 'Mismatched pairs');
         Future.delayed(const Duration(milliseconds: 1500), () {
           if (mounted) {
             _matches.value = {};
@@ -155,15 +155,11 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     }
   }
 
-  void _submitFinalAnswer(bool nailedSpeaking) {
+  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
     _pendingSubmission.value = false;
 
     if (!nailedSpeaking) {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: '[Speaking skipped]');
       Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
           _matches.value = {};
@@ -339,6 +335,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                                             _onValueTap(
                                                               v,
                                                               pairs,
+                                                              quest,
                                                             ),
                                                       ),
                                                     )
@@ -381,8 +378,10 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                       quest.correctAnswer ??
                                       "Confirm",
                                   primaryColor: theme.primaryColor,
-                                  onConfirmed: () => _submitFinalAnswer(true),
-                                  onSkipped: () => _submitFinalAnswer(false),
+                                  onConfirmed: () =>
+                                      _submitFinalAnswer(true, quest),
+                                  onSkipped: () =>
+                                      _submitFinalAnswer(false, quest),
                                   allowSkip: true,
                                   isPositioned: false,
                                 ),

@@ -123,7 +123,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     _rotation.value = progress.clamp(0.0, 1.0);
   }
 
-  void _submitCode(String input, String correctAnswer) {
+  void _submitCode(String input, String correctAnswer, GameQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     final String cleanInput = input.trim().replaceAll(' ', '').toLowerCase();
@@ -143,28 +143,17 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
       isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: input);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<RoleplayBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: _codeController.text);
     }
   }
 
@@ -311,6 +300,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                                     onTap: () => _submitCode(
                                                       _codeController.text,
                                                       quest.correctAnswer ?? "",
+                                                      quest,
                                                     ),
                                                     child: Container(
                                                       padding:
@@ -418,10 +408,10 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                         context.read<RoleplayBloc>().add(
                                           const RoleplaySpeakConfirmed(5),
                                         );
-                                        _submitVerbalEvaluation(true);
+                                        _submitVerbalEvaluation(true, quest);
                                       },
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),

@@ -187,7 +187,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
         isAnswered: true,
         isCorrect: false,
       );
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
     }
   }
 
@@ -205,7 +205,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
     }
   }
 

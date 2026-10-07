@@ -5,11 +5,14 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
+import 'package:vowl/core/domain/entities/game_quest.dart';
+
 class PrefixSuffixController extends ChangeNotifier {
   final HapticService _hapticService;
   final SoundService _soundService;
   final TtsService _ttsService;
-  final void Function(bool) onSubmitAnswer;
+  final void Function(bool isCorrect, {GameQuest? quest, String? userAnswer})
+  onSubmitAnswer;
 
   bool _isDisposed = false;
 
@@ -200,7 +203,7 @@ class PrefixSuffixController extends ChangeNotifier {
       isAnswered = true;
       isCorrect = false;
       notifyListeners();
-      onSubmitAnswer(false);
+      onSubmitAnswer(false, quest: quest, userAnswer: option);
     }
   }
 
@@ -228,7 +231,7 @@ class PrefixSuffixController extends ChangeNotifier {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      onSubmitAnswer(false);
+      onSubmitAnswer(false, quest: quest, userAnswer: wrongWord);
     }
   }
 

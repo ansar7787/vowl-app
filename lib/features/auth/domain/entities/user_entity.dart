@@ -190,6 +190,10 @@ class UserEntity {
     return count - kidsTotalLevelsCompleted;
   }
 
+  /// Whether this account is exclusively used for Kids mode.
+  /// Used to hide complex analytical features like Review Mistakes.
+  bool get isKidsModeOnly => totalExp == 0 && kidsTotalLevelsCompleted > 0;
+
   /// Total number of kids game levels completed.
   int get kidsTotalLevelsCompleted {
     final adultCategories = QuestType.values

@@ -150,12 +150,15 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
           _selectedCorrection.value != null) {
         _showEvidence.value = true;
       } else {
-        context.read<WritingBloc>().add(SubmitAnswer(correct));
+        submitCorrectAnswer();
       }
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<WritingBloc>().add(SubmitAnswer(correct));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: isHardMode ? typedText : _selectedCorrection.value,
+      );
     }
   }
 
@@ -411,9 +414,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                                   primaryColor: theme.primaryColor,
                                   onCorrectHighlight: () {
                                     _showEvidence.value = false;
-                                    context.read<WritingBloc>().add(
-                                      const SubmitAnswer(true),
-                                    );
+                                    submitCorrectAnswer();
                                   },
                                 ),
                               ),

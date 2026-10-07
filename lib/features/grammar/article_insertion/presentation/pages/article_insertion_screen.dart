@@ -60,7 +60,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
     initGrammarGame();
   }
 
-  void _onPop(String article, String correctAnswer) {
+  void _onPop(String article, String correctAnswer, GameQuest quest) {
     if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
     hapticService.selection();
@@ -73,12 +73,8 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
       _pendingJigsaw.value = true;
       _scrollToBottom();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _selectedArticle.value = article;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: article);
     }
   }
 
@@ -94,19 +90,13 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
     });
   }
 
-  void _submitFinalAnswer(bool correct) {
+  void _submitFinalAnswer(bool correct, GameQuest quest) {
     _pendingJigsaw.value = false;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = correct;
 
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: _selectedArticle.value);
     }
   }
 
@@ -478,6 +468,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                   onTap: () => _onPop(
                                                                     options[0],
                                                                     correctAnswer,
+                                                                    quest,
                                                                   ),
                                                                   primaryColor:
                                                                       theme
@@ -525,6 +516,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                   onTap: () => _onPop(
                                                                     options[2],
                                                                     correctAnswer,
+                                                                    quest,
                                                                   ),
                                                                   primaryColor:
                                                                       theme
@@ -582,6 +574,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                     onTap: () => _onPop(
                                                                       options[1],
                                                                       correctAnswer,
+                                                                      quest,
                                                                     ),
                                                                     primaryColor:
                                                                         theme
@@ -629,6 +622,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                     onTap: () => _onPop(
                                                                       options[3],
                                                                       correctAnswer,
+                                                                      quest,
                                                                     ),
                                                                     primaryColor:
                                                                         theme
@@ -682,9 +676,9 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                         expectedText: cleanTargetSentence,
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () =>
-                                            _submitFinalAnswer(true),
+                                            _submitFinalAnswer(true, quest),
                                         onSkipped: () =>
-                                            _submitFinalAnswer(false),
+                                            _submitFinalAnswer(false, quest),
                                         isPositioned: false,
                                         displayText:
                                             "Type the full sentence with the article to lock it in",

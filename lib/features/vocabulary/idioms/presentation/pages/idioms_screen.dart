@@ -63,7 +63,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
     initVocabularyGame();
   }
 
-  void _submitAnswer(String selected, String correct) {
+  void _submitAnswer(String selected, String correct, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
     _selectedOption.value = selected;
     isAnsweredNotifier.value = true;
@@ -86,31 +86,29 @@ class _IdiomsScreenState extends State<IdiomsScreen>
           }
         });
       } else {
-        hapticService.error();
-        soundService.playWrong();
-        isCorrectNotifier.value = false;
-        context.read<VocabularyBloc>().add(SubmitAnswer(false));
+        isAnsweredNotifier.value = false;
+        submitWrongAnswer(quest: quest, userAnswer: selected);
       }
     });
   }
 
-  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
+  void _submitFinalAnswer(bool nailedIt, {GameQuest? quest, String? wrongWord}) {
     if (isAnsweredNotifier.value && isCorrectNotifier.value != null) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
     if (wrongWord != null && wrongWord.isNotEmpty) {
       _selectedOption.value = wrongWord;
     }
 
+    isAnsweredNotifier.value = false;
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      final q = quest ?? _lastQuest;
+      if (q != null) {
+        submitWrongAnswer(quest: q, userAnswer: wrongWord);
+      } else {
+        submitWrongAnswer(quest: quest!, userAnswer: '');
+      }
     }
   }
 
@@ -129,6 +127,10 @@ class _IdiomsScreenState extends State<IdiomsScreen>
           'vocabulary',
           level: widget.level,
         );
+        if (state is VocabularyLoaded) {
+          _lastQuest = state.currentQuest;
+        }
+
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
             : _lastQuest;
@@ -304,9 +306,15 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                                 primaryColor:
                                                     theme.primaryColor,
                                                 onConfirmed: () =>
-                                                    _submitFinalAnswer(true),
+                                                    _submitFinalAnswer(
+                                                      true,
+                                                      quest: quest,
+                                                    ),
                                                 onSkipped: () =>
-                                                    _submitFinalAnswer(false),
+                                                    _submitFinalAnswer(
+                                                      false,
+                                                      quest: quest,
+                                                    ),
                                                 isPositioned: false,
                                               ),
                                               SizedBox(height: 60.h),
@@ -473,7 +481,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                     isAnswered: isAnsweredNotifier.value,
                     isCorrect: isCorrectNotifier.value,
                     selectedOption: _selectedOption.value,
-                    onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
+                    onTap: () => _submitAnswer(o, quest.correctAnswer ?? "", quest),
                   );
                 }).toList(),
               ),

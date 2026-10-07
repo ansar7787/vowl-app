@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 class WordFormationController extends ChangeNotifier {
   final HapticService _hapticService;
   final SoundService _soundService;
-  final void Function(bool) onSubmitAnswer;
+  final void Function(bool isCorrect, {GameQuest? quest, String? userAnswer})
+  onSubmitAnswer;
 
   bool isAnswered = false;
   bool? isCorrect;
@@ -81,13 +83,13 @@ class WordFormationController extends ChangeNotifier {
       isAnswered = true;
       isCorrect = false;
       notifyListeners();
-      onSubmitAnswer(false);
+      onSubmitAnswer(false, quest: lastQuest, userAnswer: suffix);
       return;
     }
     notifyListeners();
   }
 
-  void submitFinalAnswer(bool nailedIt) {
+  void submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
     if (isAnswered) return;
 
     isAnswered = true;
@@ -101,7 +103,7 @@ class WordFormationController extends ChangeNotifier {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      onSubmitAnswer(false);
+      onSubmitAnswer(false, quest: lastQuest, userAnswer: wrongWord);
     }
   }
 }

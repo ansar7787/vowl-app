@@ -105,6 +105,10 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
           level: widget.level,
         );
 
+        if (state is VocabularyLoaded) {
+          _lastQuest = state.currentQuest;
+        }
+
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
             : _lastQuest;
@@ -373,9 +377,15 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                                 "${quest.word?.toUpperCase()}   ↔   ${quest.correctAnswer?.toUpperCase()}",
                                             primaryColor: theme.primaryColor,
                                             onConfirmed: () =>
-                                                _submitVerbalEvaluation(true),
+                                                _submitVerbalEvaluation(
+                                                  true,
+                                                  quest: quest,
+                                                ),
                                             onSkipped: () =>
-                                                _submitVerbalEvaluation(false),
+                                                _submitVerbalEvaluation(
+                                                  false,
+                                                  quest: quest,
+                                                ),
                                             isPositioned: false,
                                           ),
                                           SizedBox(height: 60.h),
@@ -545,35 +555,37 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
     });
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, {GameQuest? quest}) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      final q = quest ?? _lastQuest;
+      if (q != null) {
+        submitWrongAnswer(quest: q);
+      } else {
+        submitWrongAnswer(quest: quest!, userAnswer: '');
+      }
     }
   }
 
   void _onFailure(int index) {
-    hapticService.error();
-    soundService.playWrong();
-
     if (_shardOffsets[index] != null) {
       _shardOffsets[index]!.value = Offset.zero;
     }
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = false;
     _activeShardIndex.value = null;
 
-    context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    final quest = _lastQuest;
+    if (quest != null) {
+      final userAnswer =
+          (quest.options != null && index < quest.options!.length)
+              ? quest.options![index]
+              : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
+    } else {
+      submitWrongAnswer(quest: quest!, userAnswer: '');
+    }
   }
 
   Widget _buildPlasmaThunder(
