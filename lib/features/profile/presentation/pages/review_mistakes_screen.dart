@@ -162,7 +162,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                               ),
                               slivers: [
                                 SliverAppBar(
-                                  expandedHeight: 110.h,
+                                  expandedHeight: 125.h,
                                   collapsedHeight: 60.h,
                                   pinned: true,
                                   backgroundColor: bgColor.withValues(
@@ -862,7 +862,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       physics: const BouncingScrollPhysics(),
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 16.h, bottom: 8.h),
       child: Row(
         children: [
           _buildChip(
