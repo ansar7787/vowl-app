@@ -105,6 +105,13 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
     _isSlotSelected.value = false;
     _dragOffset.value = Offset.zero;
     _activeShardIndex.value = null;
+    if (_scrollController.hasClients) {
+      _scrollController.animateTo(
+        0,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOutCubic,
+      );
+    }
   }
 
   @override
@@ -119,51 +126,12 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
 
   void _onStateChange(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
-      final isNewQuestion = state.currentIndex != lastProcessedIndex;
-      final isRetry =
-          isAnsweredNotifier.value && !state.answerStatus.isAnswered;
-
-      if (isNewQuestion || isRetry) {
-        if (_scrollController.hasClients) {
-          _scrollController.animateTo(
-            0,
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOutCubic,
-          );
-        }
+      if (state.currentIndex != lastProcessedIndex ||
+          (isAnsweredNotifier.value && !state.answerStatus.isAnswered)) {
         _lastQuest = state.currentQuest;
-        lastProcessedIndex = state.currentIndex;
-        _dragOffset.value = Offset.zero;
-        _activeShardIndex.value = null;
-
-        isAnsweredNotifier.value = false;
-        isCorrectNotifier.value = null;
-        _isDragPassed.value = false;
-        _misspelledWord.value = null;
-        _isSlotSelected.value = false;
-        return;
-      }
-
-      if (state.answerStatus.isAnswered && !isAnsweredNotifier.value) {
-        isAnsweredNotifier.value = true;
-        isCorrectNotifier.value = state.answerStatus.asBoolOrNull;
       }
     }
-
-    if (state is VocabularyGameComplete) {
-      showConfettiNotifier.value = true;
-      if (!mounted) return;
-      GameDialogHelper.showCompletion(
-        context,
-        xp: state.xpEarned,
-        coins: state.coinsEarned,
-        enableDoubleUp: true,
-      );
-      Future.delayed(const Duration(seconds: 3), () {
-        if (mounted) showConfettiNotifier.value = false;
-      });
-      return;
-    }
+    onVocabularyStateChanged(context, state);
   }
 
   // ── Builder ──────────────────────────────────────────────────────────────
