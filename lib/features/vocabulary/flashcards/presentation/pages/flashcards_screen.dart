@@ -43,7 +43,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+  String getCompletionTitle(BuildContext context) => 'VOCAB MASTERY!';
 
   late final FlashcardController _controller;
   late ThemeResult _theme;
@@ -168,21 +168,16 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
     if (state is VocabularyLoaded) {
       final isNew = state.currentIndex != lastProcessedIndex;
       final isRetry = !isNew && !state.answerStatus.isAnswered && _controller.isAnswered && !state.isFinalFailure;
+      
+      onVocabularyStateChanged(context, state);
+
       if (isNew || isRetry) {
         _lastQuest = state.currentQuestOrNull ?? _lastQuest;
-        lastProcessedIndex = state.currentIndex;
         _controller.reset(isRetry);
       }
     } else if (state is VocabularyGameComplete) {
+      onVocabularyStateChanged(context, state);
       _controller.completeGame();
-      if (!context.mounted) return;
-      GameDialogHelper.showCompletion(
-        context,
-        xp: state.xpEarned,
-        coins: state.coinsEarned,
-        title: 'VOCAB MASTERY!',
-        enableDoubleUp: true,
-      );
     }
   }
 }
