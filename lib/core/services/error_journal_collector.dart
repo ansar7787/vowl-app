@@ -80,7 +80,7 @@ class ErrorJournalCollector {
       // Create a deterministic document ID to deduplicate identical questions.
       // If the user gets the same question wrong again, it will just overwrite 
       // the existing document and update the timestamp, bumping it to the top.
-      final String uniqueString = '${gameType}_${level}_${question}';
+      final String uniqueString = '${gameType}_${level}_$question';
       // base64UrlEncode is safe for Firestore paths (no slashes)
       final String docId = base64UrlEncode(utf8.encode(uniqueString));
 
