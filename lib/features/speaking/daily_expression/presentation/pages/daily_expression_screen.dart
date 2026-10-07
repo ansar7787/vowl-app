@@ -135,7 +135,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: 'Speak to confirm expression',
+          question: _targetExpression,
           userAnswer: '[Failed Speak to Confirm]',
           correctAnswer: _targetExpression,
           level: widget.level,

@@ -81,12 +81,19 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
       soundService.playWrong();
 
       final authState = context.read<AuthBloc>().state;
+      final speakingState = context.read<SpeakingBloc>().state;
+      String actualQuestion = 'Speak Opposite';
+      if (speakingState is SpeakingLoaded && speakingState.currentQuestOrNull != null) {
+        final q = speakingState.currentQuestOrNull!;
+        actualQuestion = q.targetWord ?? q.sentence ?? q.textToSpeak ?? q.question ?? 'Speak Opposite';
+      }
+
       if (authState.status == AuthStatus.authenticated &&
           authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: 'Speak Opposite',
+          question: actualQuestion,
           userAnswer: '[Failed Antonym/Timer]',
           correctAnswer: expectedText,
           level: widget.level,
