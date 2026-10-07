@@ -159,7 +159,7 @@ class ModernFeatureBar extends StatelessWidget {
                 icon: LucideIcons.dumbbell,
                 title: context.tr(
                   'premium.feature_unlimited_practice',
-                  fallback: 'Unlimited Practice Weaknesses',
+                  fallback: 'Unlimited Mastery Training',
                 ),
                 color: AppColors.orange500,
               ),

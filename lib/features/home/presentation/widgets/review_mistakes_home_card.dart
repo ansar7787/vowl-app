@@ -92,7 +92,7 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
                       Text(
                         context.tr(
                           'home.review_mistakes_title',
-                          fallback: 'Review Mistakes',
+                          fallback: 'Review & Master',
                         ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -105,7 +105,7 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
                       Text(
                         context.tr(
                           'home.review_mistakes_subtitle',
-                          fallback: 'You have {0} mistakes to practice',
+                          fallback: 'Master {0} past challenges',
                           args: [count.toString()],
                         ),
                         style: TextStyle(

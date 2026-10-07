@@ -162,6 +162,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                               ),
                               slivers: [
                                 SliverAppBar(
+                                  centerTitle: true,
                                   expandedHeight: 125.h,
                                   collapsedHeight: 60.h,
                                   pinned: true,
@@ -179,14 +180,12 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                       ),
                                       child: FlexibleSpaceBar(
                                         titlePadding: EdgeInsets.only(
-                                          left: 56.w,
                                           bottom: 16.h,
-                                          right: 16.w,
                                         ),
                                         title: Text(
                                           context.tr(
                                             'profile.review_mistakes',
-                                            fallback: 'My Mistakes',
+                                            fallback: 'Review & Master',
                                           ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
@@ -197,18 +196,30 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                             letterSpacing: -0.5,
                                           ),
                                         ),
-                                        centerTitle: false,
+                                        centerTitle: true,
                                       ),
                                     ),
                                   ),
-                                  leading: IconButton(
-                                    icon: Icon(
-                                      Icons.arrow_back_ios_new_rounded,
-                                      color: isDark
-                                          ? Colors.white
-                                          : Colors.black,
+                                  leading: Center(
+                                    child: Container(
+                                      margin: EdgeInsets.only(left: 8.w),
+                                      decoration: BoxDecoration(
+                                        color: isDark 
+                                          ? Colors.white.withValues(alpha: 0.1) 
+                                          : Colors.black.withValues(alpha: 0.05),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.arrow_back_ios_new_rounded,
+                                          size: 20.sp,
+                                          color: isDark
+                                              ? Colors.white
+                                              : Colors.black,
+                                        ),
+                                        onPressed: () => context.pop(),
+                                      ),
                                     ),
-                                    onPressed: () => context.pop(),
                                   ),
                                 ),
 
@@ -406,12 +417,12 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                         }
                                       },
                                       icon: const Icon(
-                                        Icons.psychology_rounded,
+                                        Icons.fitness_center_rounded,
                                       ),
                                       label: Text(
                                         context.tr(
                                           'profile.practice_weaknesses',
-                                          fallback: 'Practice Weaknesses',
+                                          fallback: 'Start Mastery Training',
                                         ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
@@ -487,7 +498,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           Text(
             context.tr(
               'profile.no_mistakes_subtitle',
-              fallback: 'Your error journal is completely empty.',
+              fallback: 'You have mastered all your past challenges.',
             ),
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -569,7 +580,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
               content: Text(
                 context.tr(
                   'profile.mistake_removed',
-                  fallback: 'Mistake removed',
+                  fallback: 'Skill mastered!',
                 ),
                 style: const TextStyle(fontFamily: 'Outfit'),
               ),
