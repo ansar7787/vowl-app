@@ -642,16 +642,22 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           },
           child: ScaleButton(
             onTap: () async {
-              if (isRevealed) return; // Already revealed
+              if (isRevealed || _revealingCards.contains(entry.id)) return; // Already revealed or loading
+              
+              _revealingCards.add(entry.id);
 
-              di.sl<HapticService>().selection();
+              try {
+                di.sl<HapticService>().selection();
 
-              // Consume monetization action to reveal
-              if (!(await _checkMonetizationGate())) return;
+                // Consume monetization action to reveal
+                if (!(await _checkMonetizationGate())) return;
 
-              final currentSet = Set<String>.from(revealedCardsNotifier.value);
-              currentSet.add(entry.id);
-              revealedCardsNotifier.value = currentSet;
+                final currentSet = Set<String>.from(revealedCardsNotifier.value);
+                currentSet.add(entry.id);
+                revealedCardsNotifier.value = currentSet;
+              } finally {
+                _revealingCards.remove(entry.id);
+              }
             },
             child: GlassTile(
               borderRadius: BorderRadius.circular(16.r),
