@@ -445,6 +445,8 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
 
                                         if (!(await _checkMonetizationGate())) return;
 
+                                        await _dismissMistake(target.id);
+
                                         final uri = Uri(
                                           path: '/game',
                                           queryParameters: {
@@ -657,6 +659,8 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           di.sl<HapticService>().selection();
 
           if (!(await _checkMonetizationGate())) return;
+
+          await _dismissMistake(entry.id);
 
           final uri = Uri(
             path: '/game',
