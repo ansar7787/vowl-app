@@ -46,6 +46,16 @@ class ErrorJournalCollector {
           options: options,
         );
 
+        // Deduplicate: Remove older instance of the same question if it exists
+        logs.removeWhere((log) {
+          try {
+            final decoded = jsonDecode(log) as Map<String, dynamic>;
+            return decoded['question'] == question && decoded['gameType'] == gameType && decoded['level'] == level;
+          } catch (_) {
+            return false;
+          }
+        });
+
         logs.add(jsonEncode(entry.toJson()));
         
         if (logs.length > maxEntries) {
@@ -67,11 +77,19 @@ class ErrorJournalCollector {
         if (options != null && options.isNotEmpty) 'options': options,
       };
 
+      // Create a deterministic document ID to deduplicate identical questions.
+      // If the user gets the same question wrong again, it will just overwrite 
+      // the existing document and update the timestamp, bumping it to the top.
+      final String uniqueString = '${gameType}_${level}_${question}';
+      // base64UrlEncode is safe for Firestore paths (no slashes)
+      final String docId = base64UrlEncode(utf8.encode(uniqueString));
+
       await _firestore
           .collection('users')
           .doc(userId)
           .collection('errorJournal')
-          .add(entryMap);
+          .doc(docId)
+          .set(entryMap, SetOptions(merge: true));
     } catch (e) {
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to record: $e');
