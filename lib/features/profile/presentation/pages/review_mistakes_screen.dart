@@ -456,7 +456,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                           },
                                         );
 
-                                        if (!mounted) return;
+                                        if (!context.mounted) return;
                                         await context.push(uri.toString());
 
                                         if (mounted) {
