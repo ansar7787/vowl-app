@@ -132,7 +132,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     _rotation.value = progress.clamp(0.0, 1.0);
   }
 
-  void _submitAnswer(double target) {
+  void _submitAnswer(double target, GameQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     // 0.12 empathy tolerance proximity check
@@ -143,28 +143,20 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
       isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: '${(_rotation.value * 100).toStringAsFixed(0)}%',
+      );
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<RoleplayBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: null);
     }
   }
 
@@ -286,6 +278,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                   ScaleButton(
                                                     onTap: () => _submitAnswer(
                                                       empathyTarget,
+                                                      quest,
                                                     ),
                                                     child: Container(
                                                       padding:
@@ -394,10 +387,10 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                         context.read<RoleplayBloc>().add(
                                           const RoleplaySpeakConfirmed(5),
                                         );
-                                        _submitVerbalEvaluation(true);
+                                        _submitVerbalEvaluation(true, quest);
                                       },
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),

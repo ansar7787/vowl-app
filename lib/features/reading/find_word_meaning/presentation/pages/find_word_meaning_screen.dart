@@ -14,7 +14,6 @@ import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/fin
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_question_header.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_interactive_passage.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
 
 class FindWordMeaningScreen extends StatefulWidget {
   final int level;
@@ -62,7 +61,12 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
     super.dispose();
   }
 
-  void _submitFinalAnswer(bool isCorrect, int index, [ReadingQuest? quest]) {
+  void _submitFinalAnswer(
+    bool isCorrect,
+    int index,
+    ReadingQuest quest, [
+    String? word,
+  ]) {
     if (_showSentenceBuilder.value || _pendingSelectedIndex.value != null) {
       return;
     }
@@ -83,20 +87,10 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
         }
       });
     } else {
-      hapticService.error();
-      soundService.playWrong();
-
-      if (quest != null) {
-        ErrorJournalCollector.record(
-          userId: 'local',
-          gameType: widget.gameType.name,
-          question: quest.question ?? InstructionHelper.getInstruction(quest),
-          userAnswer: 'Incorrect meaning selected',
-          correctAnswer: quest.correctAnswer ?? '',
-          level: widget.level,
-        );
-      }
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: word ?? 'Incorrect meaning selected',
+      );
     }
   }
 
@@ -206,6 +200,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                                             isCorrectTap,
                                             index,
                                             quest,
+                                            word,
                                           );
                                         },
                                   ),

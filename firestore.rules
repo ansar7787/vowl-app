@@ -82,7 +82,10 @@ service cloud.firestore {
         // Strict create rules to prevent hackers from spamming huge payloads (Billing/Storage Attack)
         allow create: if request.auth != null 
           && request.auth.uid == userId
+          // FIELD WHITELIST: Prevents injecting arbitrary junk fields to inflate document size
+          && request.resource.data.keys().hasOnly(['gameType', 'question', 'userAnswer', 'correctAnswer', 'level', 'timestamp'])
           // MAXIMUM payload length for strings (Prevents uploading massive fake logs to spike storage costs)
+          && (!('gameType' in request.resource.data) || request.resource.data.gameType.size() < 100)
           && (!('question' in request.resource.data) || request.resource.data.question.size() < 1000)
           && (!('userAnswer' in request.resource.data) || request.resource.data.userAnswer.size() < 1000)
           && (!('correctAnswer' in request.resource.data) || request.resource.data.correctAnswer.size() < 1000)

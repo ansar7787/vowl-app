@@ -60,26 +60,21 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
     super.dispose();
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
     if (nailedIt) {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       _matchedIndices.value = Set.from(
         Iterable.generate(100),
       ); // Highlight all on success
-    }
-
-    if (nailedIt) {
       hapticService.success();
       soundService.playCorrect();
       context.read<EliteMasteryBloc>().add(const EliteSpeakConfirmed(5));
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
+      context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: 'Needs Practice');
     }
   }
 
@@ -263,7 +258,11 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                         "", // Removed duplicate text, it's already shown in the target panel
                                     primaryColor: theme.primaryColor,
                                     isCompact: isCompact,
-                                    onEvaluate: _submitVerbalEvaluation,
+                                    onEvaluate: (nailedIt) =>
+                                        _submitVerbalEvaluation(
+                                          nailedIt,
+                                          quest,
+                                        ),
                                   ),
                               ],
                             ),

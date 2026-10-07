@@ -111,7 +111,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
       _scrollToBottom();
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
     }
   }
 
@@ -129,7 +129,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
     }
   }
 

@@ -55,7 +55,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
     initGrammarGame();
   }
 
-  void _submitInitialAnswer(bool correct) {
+  void _submitInitialAnswer(bool correct, GameQuest quest, int selectedIndex) {
     if (isAnsweredNotifier.value) return;
     if (correct) {
       hapticService.success();
@@ -71,28 +71,20 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
         }
       });
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      String? userAnswer =
+          (quest.options != null && selectedIndex < quest.options!.length)
+              ? quest.options![selectedIndex]
+              : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitFinalAnswer(bool correct) {
+  void _submitFinalAnswer(bool correct, GameQuest quest) {
     _pendingTypeSubmit.value = false;
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: null);
     }
   }
 
@@ -295,7 +287,11 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                         onQuadrantSelect: (index) {
                                           bool isCorrect =
                                               index == quest.correctAnswerIndex;
-                                          _submitInitialAnswer(isCorrect);
+                                          _submitInitialAnswer(
+                                            isCorrect,
+                                            quest,
+                                            index,
+                                          );
                                         },
                                       ),
                                     ],
@@ -312,9 +308,9 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                       expectedText: fullSentence,
                                       primaryColor: theme.primaryColor,
                                       onConfirmed: () =>
-                                          _submitFinalAnswer(true),
+                                          _submitFinalAnswer(true, quest),
                                       onSkipped: () =>
-                                          _submitFinalAnswer(false),
+                                          _submitFinalAnswer(false, quest),
                                       allowSkip: true,
                                       isPositioned: false,
                                     ),

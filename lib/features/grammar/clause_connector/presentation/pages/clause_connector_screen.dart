@@ -58,7 +58,12 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
     initGrammarGame();
   }
 
-  void _onSnap(String connector, int correctIndex, List<String> options) {
+  void _onSnap(
+    String connector,
+    int correctIndex,
+    List<String> options,
+    GameQuest quest,
+  ) {
     if (isAnsweredNotifier.value || _pendingTypeSubmit.value) return;
 
     bool isCorrect = connector == options[correctIndex];
@@ -78,28 +83,18 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
         }
       });
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _draggingConnector.value = connector;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: connector);
     }
   }
 
-  void _submitFinalAnswer(bool correct) {
+  void _submitFinalAnswer(bool correct, GameQuest quest) {
     _pendingTypeSubmit.value = false;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = correct;
 
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: _draggingConnector.value);
     }
   }
 
@@ -262,6 +257,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                           if (!isAnsweredNotifier.value &&
                                               !_pendingTypeSubmit.value)
                                             _buildConnectorPalette(
+                                              quest,
                                               options,
                                               theme.primaryColor,
                                               isDark,
@@ -282,9 +278,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                             "Type the complete sentence to lock in the clause structure",
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () =>
-                                            _submitFinalAnswer(true),
+                                            _submitFinalAnswer(true, quest),
                                         onSkipped: () =>
-                                            _submitFinalAnswer(false),
+                                            _submitFinalAnswer(false, quest),
                                         allowSkip: true,
                                         isPositioned: false,
                                       ),
@@ -318,7 +314,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
   }
 
   Widget _buildMagneticPort(
-    GameQuest? quest,
+    GameQuest quest,
     List<String> options,
     Color primaryColor,
     bool isDark,
@@ -328,7 +324,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
       onWillAcceptWithDetails: (details) =>
           !isAnsweredNotifier.value && !_pendingTypeSubmit.value,
       onAcceptWithDetails: (details) =>
-          _onSnap(details.data, quest?.correctAnswerIndex ?? 0, options),
+          _onSnap(details.data, quest.correctAnswerIndex ?? 0, options, quest),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
         final portColor = (isAnsweredNotifier.value || _pendingTypeSubmit.value)
@@ -434,6 +430,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
   }
 
   Widget _buildConnectorPalette(
+    GameQuest quest,
     List<String> options,
     Color primaryColor,
     bool isDark,
@@ -463,7 +460,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                 child: _buildConnector(opt, primaryColor, isDark, isCompact),
               ),
               child: GestureDetector(
-                onTap: () => _onSnap(opt, correctIndex, options),
+                onTap: () => _onSnap(opt, correctIndex, options, quest),
                 child: _buildConnector(opt, primaryColor, isDark, isCompact),
               ),
             ),

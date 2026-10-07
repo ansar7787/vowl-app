@@ -63,7 +63,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
     initGrammarGame();
   }
 
-  void _onFlick(int targetIndex, int correctIndex) {
+  void _onFlick(int targetIndex, int correctIndex, GameQuest quest) {
     if (isAnsweredNotifier.value || _isSubmitting.value) {
       return;
     }
@@ -73,30 +73,25 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
     if (isCorrect) {
       _submitFinalAnswer(true);
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      String? userAnswer =
+          (quest.options != null && targetIndex < quest.options!.length)
+              ? quest.options![targetIndex]
+              : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
   void _submitFinalAnswer(bool correct) {
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = correct;
-
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
-    } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitCorrectAnswer();
     }
   }
 
-  void _checkCollision(int correctIndex, {required bool isCompact}) {
+  void _checkCollision(
+    int correctIndex,
+    GameQuest quest, {
+    required bool isCompact,
+  }) {
     if (isAnsweredNotifier.value) {
       return;
     }
@@ -116,7 +111,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
       (true, false) => 2, // Bottom-Left
       (false, false) => 3, // Bottom-Right
     };
-    _onFlick(targetIndex, correctIndex);
+    _onFlick(targetIndex, correctIndex, quest);
   }
 
   @override
@@ -215,6 +210,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
                                                     index,
                                                     quest.correctAnswerIndex ??
                                                         0,
+                                                    quest,
                                                   );
                                                 },
                                                 onPanUpdate: (details) {
@@ -227,6 +223,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
                                                   _checkCollision(
                                                     quest.correctAnswerIndex ??
                                                         0,
+                                                    quest,
                                                     isCompact: isCompact,
                                                   );
                                                 },

@@ -119,7 +119,12 @@ class _GenericRoleplayScenarioScreenState
   // Sound and haptic feedback for the *result* are owned exclusively by
   // [RoleplayBloc._onSubmitAnswer]. Only a light tap haptic fires here.
 
-  void _onOptionSelected(int index, int correctIndex, String text) async {
+  void _onOptionSelected(
+    int index,
+    int correctIndex,
+    String text,
+    GameQuest quest,
+  ) async {
     if (isAnsweredNotifier.value ||
         _selectedIndex.value != null ||
         _isProcessing.value) {
@@ -149,28 +154,29 @@ class _GenericRoleplayScenarioScreenState
       if (!mounted) return;
 
       if (_attempts.value >= kRoleplayMaxWrongAttempts) {
-        isAnsweredNotifier.value = true;
         _isProcessing.value = false;
       } else {
         _selectedIndex.value = null;
         _isProcessing.value = false;
       }
-      context.read<RoleplayBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: text);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
     isFirstStagePassedNotifier.value = false;
 
     if (nailedIt) {
-      hapticService.success();
-      context.read<RoleplayBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      context.read<RoleplayBloc>().add(const SubmitAnswer(false));
+      final userAnswer = (_selectedIndex.value != null &&
+              quest.options != null &&
+              _selectedIndex.value! < quest.options!.length)
+          ? quest.options![_selectedIndex.value!]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
@@ -269,7 +275,8 @@ class _GenericRoleplayScenarioScreenState
                               correctIndex: correctIndex,
                               primaryColor: theme.primaryColor,
                               isDark: isDark,
-                              onOptionSelected: _onOptionSelected,
+                              onOptionSelected: (idx, corr, txt) =>
+                                  _onOptionSelected(idx, corr, txt, quest),
                             ),
                           ],
                         ],
@@ -290,9 +297,10 @@ class _GenericRoleplayScenarioScreenState
                               context.read<RoleplayBloc>().add(
                                 const RoleplaySpeakConfirmed(5),
                               );
-                              _submitVerbalEvaluation(true);
+                              _submitVerbalEvaluation(true, quest);
                             },
-                            onSkipped: () => _submitVerbalEvaluation(false),
+                            onSkipped: () =>
+                                _submitVerbalEvaluation(false, quest),
                           ),
                           SizedBox(height: 60.h),
                         ],

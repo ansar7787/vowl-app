@@ -101,7 +101,10 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
       hapticService.error();
       soundService.playWrong();
       _selectedOption.value = _pendingSelectedOption.value;
-      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: _pendingSelectedOption.value,
+      );
       return;
     }
 
@@ -111,8 +114,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
 
     _selectedOption.value = _pendingSelectedOption.value;
 
-    context.read<WritingBloc>().add(SubmitAnswer(isAnsCorrect));
     if (isAnsCorrect) {
+      submitCorrectAnswer();
       final fullText = quest.passage ?? "";
       final targetWord = quest.missingWord ?? "";
       final String escapedTarget = RegExp.escape(targetWord);
@@ -124,6 +127,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
           ? fullText.replaceFirst(wordRegExp, selected)
           : fullText.replaceFirst(targetWord, selected);
       _ttsService.speak(correctedText);
+    } else {
+      submitWrongAnswer(quest: quest, userAnswer: selected);
     }
   }
 

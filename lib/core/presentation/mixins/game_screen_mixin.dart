@@ -116,6 +116,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
                 ? quest.options![quest.correctAnswerIndex ?? 0]
                 : ''),
         level: level,
+        options: quest.options,
       );
     }
     isAnsweredNotifier.value = true;

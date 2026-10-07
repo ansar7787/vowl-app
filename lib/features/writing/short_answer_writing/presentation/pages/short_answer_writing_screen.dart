@@ -186,7 +186,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
 
   void _onContextSentenceConfirmed() {
     _showContextSentence.value = false;
-    context.read<WritingBloc>().add(const SubmitAnswer(true));
+    submitCorrectAnswer();
   }
 
   @override
@@ -417,8 +417,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                   onConfirmed: _onContextSentenceConfirmed,
                                   onSkipped: () {
                                     _showContextSentence.value = false;
-                                    context.read<WritingBloc>().add(
-                                      const SubmitAnswer(false),
+                                    submitWrongAnswer(
+                                      quest: quest,
+                                      userAnswer: _answerController.text.trim(),
                                     );
                                   },
                                   allowSkip: true,

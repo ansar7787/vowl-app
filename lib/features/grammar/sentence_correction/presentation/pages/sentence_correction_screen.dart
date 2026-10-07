@@ -190,11 +190,11 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: '');
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
     isAnsweredNotifier.value = true;
@@ -207,7 +207,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: '');
     }
   }
 
@@ -534,9 +534,9 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                         '',
                                     primaryColor: theme.primaryColor,
                                     onConfirmed: () =>
-                                        _submitVerbalEvaluation(true),
+                                        _submitVerbalEvaluation(true, quest),
                                     onSkipped: () =>
-                                        _submitVerbalEvaluation(false),
+                                        _submitVerbalEvaluation(false, quest),
                                     isPositioned: false,
                                   ),
                                 ),

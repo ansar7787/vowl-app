@@ -201,7 +201,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
 
   void _onSpeakConfirmed() {
     _showSpeakToConfirm.value = false;
-    context.read<WritingBloc>().add(const SubmitAnswer(true));
+    submitCorrectAnswer();
   }
 
   @override
@@ -452,8 +452,9 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                   onConfirmed: _onSpeakConfirmed,
                                   onSkipped: () {
                                     _showSpeakToConfirm.value = false;
-                                    context.read<WritingBloc>().add(
-                                      const SubmitAnswer(false),
+                                    submitWrongAnswer(
+                                      quest: activeQuest,
+                                      userAnswer: _controller.text.trim(),
                                     );
                                   },
                                 ),

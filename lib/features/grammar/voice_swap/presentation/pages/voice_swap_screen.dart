@@ -119,11 +119,11 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: '');
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) {
       return;
     }
@@ -138,7 +138,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: '');
     }
   }
 
@@ -486,11 +486,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                   "Type the $targetVoiceStr conversion to lock it in",
                                               primaryColor: theme.primaryColor,
                                               onConfirmed: () =>
-                                                  _submitVerbalEvaluation(true),
+                                                  _submitVerbalEvaluation(true, quest),
                                               onSkipped: () =>
-                                                  _submitVerbalEvaluation(
-                                                    false,
-                                                  ),
+                                                  _submitVerbalEvaluation(false, quest),
                                               isPositioned: false,
                                             ),
                                             SizedBox(height: 60.h),

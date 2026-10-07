@@ -98,7 +98,10 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
+        userAnswer: '',
+      );
     }
   }
 
@@ -132,7 +135,10 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
+        userAnswer: '',
+      );
     }
   }
 

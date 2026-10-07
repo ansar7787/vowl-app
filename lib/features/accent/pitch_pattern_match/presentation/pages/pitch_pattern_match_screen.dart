@@ -113,20 +113,20 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
     });
   }
 
-  void _onSliderUpdate(double value, int correct) {
+  void _onSliderUpdate(double value, int correct, AccentQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _sliderValue.value = value;
 
     // Auto-lock when reaching ends:
     // With quarterTurns: 3, 1.0 is top and 0.0 is bottom.
     if (value > 0.9) {
-      _submitChoice(0, correct); // Select top card (index 0)
+      _submitChoice(0, correct, quest); // Select top card (index 0)
     } else if (value < 0.1) {
-      _submitChoice(1, correct); // Select bottom card (index 1)
+      _submitChoice(1, correct, quest); // Select bottom card (index 1)
     }
   }
 
-  void _submitChoice(int index, int correct) {
+  void _submitChoice(int index, int correct, AccentQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _selectedIndex.value = index;
     _sliderValue.value = index == 0 ? 1.0 : 0.0;
@@ -144,11 +144,11 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: _lastQuest!, userAnswer: quest.options?[index] ?? '[Mistake]');
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, AccentQuest quest) {
     if (isAnsweredNotifier.value) return;
 
     isAnsweredNotifier.value = true;
@@ -158,11 +158,11 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
       hapticService.success();
       soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: _lastQuest!, userAnswer: '[Skipped speaking]');
     }
   }
 
@@ -382,9 +382,13 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                                       sliderValue:
                                                           _sliderValue.value,
                                                       onSubmitChoice:
-                                                          _submitChoice,
+                                                          (index, correct) {
+                                                            _submitChoice(index, correct, quest);
+                                                          },
                                                       onSliderUpdate:
-                                                          _onSliderUpdate,
+                                                          (value, correct) {
+                                                            _onSliderUpdate(value, correct, quest);
+                                                          },
                                                     ),
                                                     SizedBox(height: gapBottom),
                                                   ],
@@ -422,10 +426,10 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                             primaryColor: theme.primaryColor,
                                             isPositioned: false,
                                             onConfirmed: () {
-                                              _submitVerbalEvaluation(true);
+                                              _submitVerbalEvaluation(true, quest);
                                             },
                                             onSkipped: () {
-                                              _submitVerbalEvaluation(false);
+                                              _submitVerbalEvaluation(false, quest);
                                             },
                                           ),
 

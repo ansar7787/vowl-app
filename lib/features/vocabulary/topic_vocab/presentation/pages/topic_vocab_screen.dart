@@ -57,8 +57,17 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     _controller = TopicVocabController(
       hapticService: di.sl<HapticService>(),
       soundService: di.sl<SoundService>(),
-      onSubmitAnswer: (nailedIt) {
-        context.read<VocabularyBloc>().add(SubmitAnswer(nailedIt));
+      onSubmitAnswer: (nailedIt, {quest, userAnswer}) {
+        if (nailedIt) {
+          submitCorrectAnswer();
+        } else {
+          final q = quest ?? _lastQuest ?? _controller.currentQuest;
+          if (q != null) {
+            submitWrongAnswer(quest: q, userAnswer: userAnswer);
+          } else {
+            submitWrongAnswer(quest: quest!, userAnswer: '');
+          }
+        }
       },
     );
     initVocabularyGame();
@@ -91,6 +100,10 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
           'vocabulary',
           level: widget.level,
         );
+
+        if (state is VocabularyLoaded) {
+          _lastQuest = state.currentQuest;
+        }
 
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest

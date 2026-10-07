@@ -59,7 +59,7 @@ mixin AccentGameScreenMixin<T extends StatefulWidget>
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
-    context.read<AccentBloc>().add(SubmitAnswer(false));
+    submitWrongAnswer(quest: quest, userAnswer: '');
   }
 
   void submitCorrectAnswer() {

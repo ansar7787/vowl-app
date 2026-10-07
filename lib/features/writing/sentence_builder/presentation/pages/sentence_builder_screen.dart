@@ -115,7 +115,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
     });
   }
 
-  void _submitAnswer(String correct, bool isAnswered) {
+  void _submitAnswer(String correct, bool isAnswered, [GameQuest? quest]) {
     final isHardMode = widget.level >= 6;
     if (isAnswered ||
         (!isHardMode && _assembledPieces.value.isEmpty) ||
@@ -149,9 +149,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
     }
 
     // FIX: normalize both sides before comparison.
-    final built = _normalizeAnswer(
-      isHardMode ? _textController.text : _assembledPieces.value.join(' '),
-    );
+    final rawUserAnswer =
+        isHardMode ? _textController.text : _assembledPieces.value.join(' ');
+    final built = _normalizeAnswer(rawUserAnswer);
     final expected = _normalizeAnswer(correct);
     final isCorrect = built == expected;
 
@@ -159,20 +159,23 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
       hapticService.success();
       if (isHardMode) {
         // They already typed it manually, no need to type to confirm.
-        context.read<WritingBloc>().add(const SubmitAnswer(true));
+        submitCorrectAnswer();
       } else {
         _showTypeToConfirm.value = true;
         _scrollToBottom();
       }
     } else {
       hapticService.error();
-      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      final targetQuest = quest ?? _lastQuest;
+      if (targetQuest != null) {
+        submitWrongAnswer(quest: targetQuest, userAnswer: rawUserAnswer);
+      }
     }
   }
 
   void _onTypeConfirmed() {
     _showTypeToConfirm.value = false;
-    context.read<WritingBloc>().add(const SubmitAnswer(true));
+    submitCorrectAnswer();
   }
 
   @override
@@ -255,13 +258,15 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
                         onSubmit: () => _submitAnswer(
                           quest.correctAnswer ?? '',
                           isAnswered,
+                          quest,
                         ),
                         onTypeConfirmed: _onTypeConfirmed,
                         onSkipped: () {
                           _showTypeToConfirm.value = false;
-                          context.read<WritingBloc>().add(
-                            const SubmitAnswer(false),
-                          );
+                          final targetQuest = quest ?? _lastQuest;
+                          if (targetQuest != null) {
+                            submitWrongAnswer(quest: targetQuest);
+                          }
                         },
                       ),
                     );

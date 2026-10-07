@@ -62,7 +62,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
     initGrammarGame();
   }
 
-  void _onPathEnd(int nodeIndex, int correctIndex) {
+  void _onPathEnd(int nodeIndex, int correctIndex, GameQuest quest) {
     if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
     bool isCorrect = nodeIndex == correctIndex;
@@ -84,12 +84,12 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
         }
       });
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _targetNode.value = nodeIndex;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      String? userAnswer =
+          (quest.options != null && nodeIndex < quest.options!.length)
+              ? quest.options![nodeIndex]
+              : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
 
       Future.delayed(const Duration(milliseconds: 100), () {
         if (_scrollController.hasClients) {
@@ -103,19 +103,18 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
     }
   }
 
-  void _submitFinalAnswer(bool correct) {
+  void _submitFinalAnswer(bool correct, GameQuest quest) {
     _pendingJigsaw.value = false;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = correct;
 
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      String? userAnswer = (_targetNode.value != -1 &&
+              quest.options != null &&
+              _targetNode.value < quest.options!.length)
+          ? quest.options![_targetNode.value]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
 
     // Auto-scroll back up so user can read the explanation/feedback
@@ -417,6 +416,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                     child: SizedBox(
                                       height: isCompact ? 220.h : 300.h,
                                       child: _buildPathCanvas(
+                                        quest,
                                         options,
                                         quest.correctAnswerIndex ?? 0,
                                         theme.primaryColor,
@@ -436,9 +436,9 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                           expectedText: cleanTargetSentence,
                                           primaryColor: theme.primaryColor,
                                           onConfirmed: () =>
-                                              _submitFinalAnswer(true),
+                                              _submitFinalAnswer(true, quest),
                                           onSkipped: () =>
-                                              _submitFinalAnswer(false),
+                                              _submitFinalAnswer(false, quest),
                                           isPositioned: false,
                                           displayText:
                                               "Type the full sentence to lock it in",
@@ -475,6 +475,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
   }
 
   Widget _buildPathCanvas(
+    GameQuest quest,
     List<String> options,
     int correctIndex,
     Color primaryColor,
@@ -500,7 +501,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
             for (int i = 0; i < nodePoints.length; i++) {
               if ((details.localPosition - nodePoints[i]).distance <
                   (isCompact ? 30.r : 50.r)) {
-                _onPathEnd(i, correctIndex);
+                _onPathEnd(i, correctIndex, quest);
                 break;
               }
             }
@@ -520,7 +521,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
             for (int i = 0; i < nodePoints.length; i++) {
               if ((details.localPosition - nodePoints[i]).distance <
                   (isCompact ? 40.r : 60.r)) {
-                _onPathEnd(i, correctIndex);
+                _onPathEnd(i, correctIndex, quest);
                 break;
               }
             }

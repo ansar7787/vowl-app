@@ -23,6 +23,7 @@ class ErrorJournalCollector {
     required String userAnswer,
     required String correctAnswer,
     required int level,
+    List<String>? options,
   }) async {
     try {
       if (userId.isEmpty || question.isEmpty) return;
@@ -42,6 +43,7 @@ class ErrorJournalCollector {
           correctAnswer: correctAnswer,
           level: level,
           timestamp: now,
+          options: options,
         );
 
         logs.add(jsonEncode(entry.toJson()));
@@ -62,6 +64,7 @@ class ErrorJournalCollector {
         'correctAnswer': correctAnswer,
         'level': level,
         'timestamp': FieldValue.serverTimestamp(),
+        if (options != null && options.isNotEmpty) 'options': options,
       };
 
       await _firestore
@@ -126,6 +129,9 @@ class ErrorJournalCollector {
           correctAnswer: data['correctAnswer'] as String? ?? '',
           level: (data['level'] as num?)?.toInt() ?? 1,
           timestamp: (data['timestamp'] as Timestamp?)?.toDate(),
+          options: data['options'] != null 
+              ? List<String>.from(data['options'] as List) 
+              : null,
         );
       }).toList();
     } catch (e) {
@@ -182,21 +188,68 @@ class ErrorJournalCollector {
           .doc(userId)
           .collection('errorJournal');
 
+      // Cap iterations to prevent unbounded billing if document count is 
+      // artificially inflated via direct Firestore writes. 
+      // 10 batches × 500 docs = 5000 max deletes — more than enough for 
+      // legitimate use (maxEntries is 200).
       var snapshot = await collection.limit(500).get();
+      int iterations = 0;
+      const maxIterations = 10;
 
-      while (snapshot.docs.isNotEmpty) {
+      while (snapshot.docs.isNotEmpty && iterations < maxIterations) {
         final batch = _firestore.batch();
         for (final doc in snapshot.docs) {
           batch.delete(doc.reference);
         }
         await batch.commit();
-        snapshot = await collection.limit(500).get();
+        iterations++;
+        if (iterations < maxIterations) {
+          snapshot = await collection.limit(500).get();
+        }
       }
     } catch (e) {
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to clear all: $e');
       }
     }
+  }
+
+  /// Returns the count of error journal entries without downloading full documents.
+  /// Uses Firestore aggregation query for authenticated users, avoids bandwidth waste.
+  static Future<int> count({required String userId}) async {
+    try {
+      if (userId == 'local') {
+        final prefs = await SharedPreferences.getInstance();
+        final List<String> logs = prefs.getStringList(_localKey) ?? [];
+        return logs.length;
+      }
+
+      final snapshot = await _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('errorJournal')
+          .count()
+          .get();
+
+      return snapshot.count ?? 0;
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('[ErrorJournal] Failed to count: $e');
+      }
+      return 0;
+    }
+  }
+
+  /// Converts a camelCase gameType enum name to a human-readable label.
+  /// e.g., 'syllableStress' → 'Syllable Stress', 'readAndAnswer' → 'Read And Answer'
+  static String humanReadableName(String gameType) {
+    if (gameType.isEmpty) return gameType;
+    final result = gameType.replaceAllMapped(
+      RegExp(r'([A-Z])'),
+      (match) => ' ${match.group(0)}',
+    );
+    // Capitalize first letter
+    return result[0].toUpperCase() + result.substring(1);
   }
 }
 
@@ -210,6 +263,7 @@ class ErrorJournalEntry {
   final String correctAnswer;
   final int level;
   final DateTime? timestamp;
+  final List<String>? options;
 
   const ErrorJournalEntry({
     required this.id,
@@ -219,6 +273,7 @@ class ErrorJournalEntry {
     required this.correctAnswer,
     required this.level,
     this.timestamp,
+    this.options,
   });
 
   Map<String, dynamic> toJson() {
@@ -230,6 +285,7 @@ class ErrorJournalEntry {
       'correctAnswer': correctAnswer,
       'level': level,
       'timestamp': timestamp?.toIso8601String(),
+      if (options != null) 'options': options,
     };
   }
 
@@ -243,6 +299,9 @@ class ErrorJournalEntry {
       level: json['level'] as int? ?? 1,
       timestamp: json['timestamp'] != null 
           ? DateTime.tryParse(json['timestamp'] as String) 
+          : null,
+      options: json['options'] != null 
+          ? List<String>.from(json['options']) 
           : null,
     );
   }

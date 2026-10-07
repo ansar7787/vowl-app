@@ -83,7 +83,11 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
     });
   }
 
-  void _onOptionSelected(int shuffledIndex, int? correctOriginalIndex) {
+  void _onOptionSelected(
+    GameQuest quest,
+    int shuffledIndex,
+    int? correctOriginalIndex,
+  ) {
     if (isAnsweredNotifier.value ||
         isFirstStagePassedNotifier.value ||
         _wrongIndices.value.contains(shuffledIndex)) {
@@ -100,37 +104,32 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
       _selectedIndex.value = shuffledIndex;
       // Do NOT submit yet! Wait for Phase 2.
     } else {
-      hapticService.error();
-      soundService.playWrong();
-
       if (!_wrongIndices.value.contains(shuffledIndex)) {
         final newWrong = List<int>.from(_wrongIndices.value);
         newWrong.add(shuffledIndex);
         _wrongIndices.value = newWrong;
       }
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _selectedIndex.value = shuffledIndex;
 
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
+      final userAnswer = _shuffledOptions.value.length > shuffledIndex
+          ? _shuffledOptions.value[shuffledIndex]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       hapticService.success();
       soundService.playCorrect();
       context.read<EliteMasteryBloc>().add(const EliteSpeakConfirmed(5));
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
+      context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: '[Skipped speaking]');
     }
   }
 
@@ -419,6 +418,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                       primaryColor: theme.primaryColor,
                                       onOptionSelected: (index) =>
                                           _onOptionSelected(
+                                            quest,
                                             index,
                                             quest.correctAnswerIndex,
                                           ),
@@ -557,8 +557,10 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                 "Speak the idiom in context:\n\n\"$expectedText\"",
                             primaryColor: theme.primaryColor,
                             isPositioned: false,
-                            onConfirmed: () => _submitVerbalEvaluation(true),
-                            onSkipped: () => _submitVerbalEvaluation(false),
+                            onConfirmed: () =>
+                                _submitVerbalEvaluation(true, quest),
+                            onSkipped: () =>
+                                _submitVerbalEvaluation(false, quest),
                           ),
                           SizedBox(height: 60.h),
                         ],

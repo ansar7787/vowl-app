@@ -77,9 +77,18 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
       hapticService: di.sl<HapticService>(),
       soundService: di.sl<SoundService>(),
       ttsService: di.sl<TtsService>(),
-      onSubmitAnswer: (bool isCorrect) {
+      onSubmitAnswer: (bool isCorrect, {quest, userAnswer}) {
         if (mounted) {
-          context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
+          if (isCorrect) {
+            submitCorrectAnswer();
+          } else {
+            final q = quest ?? _controller.lastQuest;
+            if (q != null) {
+              submitWrongAnswer(quest: q, userAnswer: userAnswer);
+            } else {
+              submitWrongAnswer(quest: quest!, userAnswer: '');
+            }
+          }
         }
       },
     );

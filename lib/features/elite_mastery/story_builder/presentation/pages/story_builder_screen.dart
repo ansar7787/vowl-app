@@ -1,3 +1,4 @@
+import '../../../domain/entities/elite_mastery_quest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,7 @@ import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
+
 import '../widgets/story_builder_narrative_tile.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
@@ -99,7 +101,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
     return true;
   }
 
-  void _submitOrder(List<int>? correctOrder) {
+  void _submitOrder(EliteMasteryQuest quest) {
+    final correctOrder = quest.correctOrder;
     if (correctOrder == null ||
         isAnsweredNotifier.value ||
         isFirstStagePassedNotifier.value) {
@@ -116,29 +119,27 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-
-      isCorrectNotifier.value = false;
-      isAnsweredNotifier.value = true;
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
+      final userAnswer = quest.sentences != null
+          ? _currentOrder.value
+              .where((i) => i < quest.sentences!.length)
+              .map((i) => quest.sentences![i])
+              .join(' -> ')
+          : _currentOrder.value.join(', ');
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, EliteMasteryQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
       hapticService.success();
       soundService.playCorrect();
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
+      context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: '[Skipped speaking]');
     }
   }
 
@@ -442,7 +443,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                   excludeSemantics: true,
                                   child: ScaleButton(
                                     onTap: () =>
-                                        _submitOrder(quest.correctOrder),
+                                        _submitOrder(quest),
                                     child: Container(
                                       width: double.infinity,
                                       constraints: const BoxConstraints(
@@ -528,8 +529,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                             "Narrate the final sentence to finish the story",
                         primaryColor: theme.primaryColor,
                         isPositioned: false,
-                        onConfirmed: () => _submitVerbalEvaluation(true),
-                        onSkipped: () => _submitVerbalEvaluation(false),
+                        onConfirmed: () =>
+                            _submitVerbalEvaluation(true, quest),
+                        onSkipped: () =>
+                            _submitVerbalEvaluation(false, quest),
                       ),
                       SizedBox(height: 60.h),
                     ],

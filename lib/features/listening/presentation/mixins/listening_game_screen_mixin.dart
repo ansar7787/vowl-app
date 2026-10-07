@@ -58,7 +58,7 @@ mixin ListeningGameScreenMixin<T extends StatefulWidget>
 
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
-    context.read<ListeningBloc>().add(SubmitAnswer(false));
+    submitWrongAnswer(quest: quest, userAnswer: '');
   }
 
   void submitCorrectAnswer() {

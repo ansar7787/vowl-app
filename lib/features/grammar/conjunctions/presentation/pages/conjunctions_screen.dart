@@ -73,7 +73,12 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
     });
   }
 
-  void _onBridge(String conj, int correctIndex, List<String> options) {
+  void _onBridge(
+    String conj,
+    int correctIndex,
+    List<String> options,
+    GameQuest quest,
+  ) {
     if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
     bool isCorrect = conj == options[correctIndex];
@@ -85,29 +90,19 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
       _pendingJigsaw.value = true;
       _scrollToBottom();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _placedBrick.value = conj;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: conj);
       _scrollToBottom();
     }
   }
 
-  void _submitFinalAnswer(bool correct) {
+  void _submitFinalAnswer(bool correct, GameQuest quest) {
     _pendingJigsaw.value = false;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = correct;
 
     if (correct) {
-      hapticService.heavy();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: _placedBrick.value);
     }
     _scrollToBottom();
   }
@@ -430,6 +425,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                                       ),
                                                                     ],
                                                                     _buildMagneticJunction(
+                                                                      quest,
                                                                       options,
                                                                       quest.correctAnswerIndex ??
                                                                           0,
@@ -488,6 +484,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                             quest.correctAnswerIndex ??
                                                                 0,
                                                             options,
+                                                            quest,
                                                           );
                                                         }
                                                       },
@@ -513,9 +510,9 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                         expectedText: cleanTargetSentence,
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () =>
-                                            _submitFinalAnswer(true),
+                                            _submitFinalAnswer(true, quest),
                                         onSkipped: () =>
-                                            _submitFinalAnswer(false),
+                                            _submitFinalAnswer(false, quest),
                                         isPositioned: false,
                                         displayText:
                                             "Type the full sentence to lock it in",
@@ -550,6 +547,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   }
 
   Widget _buildMagneticJunction(
+    GameQuest quest,
     List<String> options,
     int correctIndex,
     Color primaryColor,
@@ -558,7 +556,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) =>
-          _onBridge(details.data, correctIndex, options),
+          _onBridge(details.data, correctIndex, options, quest),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
         final nodeColor = _placedBrick.value != null

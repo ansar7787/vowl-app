@@ -117,7 +117,11 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
     _selectedIndices.value = [];
   }
 
-  void _submitAnswer(List<String> shuffledWords, String correctAnswer) {
+  void _submitAnswer(
+    List<String> shuffledWords,
+    String correctAnswer,
+    GameQuest quest,
+  ) {
     if (isAnsweredNotifier.value ||
         isFirstStagePassedNotifier.value ||
         _selectedIndices.value.isEmpty) {
@@ -143,28 +147,21 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
       isFirstStagePassedNotifier.value = true;
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: result);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(
+    bool nailedIt,
+    GameQuest quest,
+    String userAnswer,
+  ) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<RoleplayBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
@@ -391,6 +388,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                           words,
                                                           quest.correctAnswer ??
                                                               "",
+                                                          quest,
                                                         ),
                                                         child: Container(
                                                           padding:
@@ -509,10 +507,18 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                         context.read<RoleplayBloc>().add(
                                           const RoleplaySpeakConfirmed(5),
                                         );
-                                        _submitVerbalEvaluation(true);
+                                        _submitVerbalEvaluation(
+                                          true,
+                                          quest,
+                                          currentText,
+                                        );
                                       },
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(
+                                            false,
+                                            quest,
+                                            currentText,
+                                          ),
                                     ),
                                   ),
                                 ),

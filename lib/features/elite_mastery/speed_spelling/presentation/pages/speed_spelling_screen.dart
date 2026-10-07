@@ -1,3 +1,4 @@
+import '../../../domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +11,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
+
 import '../widgets/speed_spelling_input_field.dart';
 import '../widgets/speed_spelling_character_deck.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
@@ -117,8 +119,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
     hapticService.selection();
   }
 
-  void _submit(String correctWord) {
+  void _submit(EliteMasteryQuest quest) {
     if (isAnsweredNotifier.value) return;
+    final correctWord = quest.correctAnswer ?? '';
     if (_currentInput.value.length != correctWord.length) return;
     final isCorrect =
         _currentInput.value.toLowerCase() == correctWord.toLowerCase();
@@ -130,14 +133,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
       soundService.playCorrect();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = true;
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
+      context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
     } else {
-      hapticService.error();
-      soundService.playWrong();
-
-      isCorrectNotifier.value = false;
-      isAnsweredNotifier.value = true;
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: _currentInput.value);
     }
   }
 
@@ -503,8 +501,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                             // rationale. An empty fallback just resolves to "wrong
                                             // answer" rather than crashing the screen outright.
                                             onTap: canSubmit
-                                                ? () =>
-                                                      _submit(quest.word ?? '')
+                                                ? () => _submit(quest)
                                                 : null,
                                             child: Container(
                                               width: double.infinity,

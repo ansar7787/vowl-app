@@ -60,7 +60,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     initGrammarGame();
   }
 
-  void _submitAnswer(int correctIndex) {
+  void _submitAnswer(int correctIndex, GameQuest quest) {
     if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
 
     bool isCorrect = _selectedIndex.value == correctIndex;
@@ -82,27 +82,25 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
         }
       });
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      String? userAnswer = (quest.options != null &&
+              _selectedIndex.value < (quest.options?.length ?? 0))
+          ? quest.options![_selectedIndex.value]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitFinalAnswer(bool correct) {
+  void _submitFinalAnswer(bool correct, GameQuest quest) {
     _pendingJigsaw.value = false;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = correct;
 
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+      String? userAnswer = (quest.options != null &&
+              _selectedIndex.value < quest.options!.length)
+          ? quest.options![_selectedIndex.value]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
@@ -249,7 +247,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: ScaleButton(
-        onTap: () => _submitAnswer(quest.correctAnswerIndex ?? 0),
+        onTap: () => _submitAnswer(quest.correctAnswerIndex ?? 0, quest),
         child: Container(
           width: double.infinity,
           height: 65.h,
@@ -425,9 +423,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                                           expectedText: cleanTargetSentence,
                                           primaryColor: theme.primaryColor,
                                           onConfirmed: () =>
-                                              _submitFinalAnswer(true),
+                                              _submitFinalAnswer(true, quest),
                                           onSkipped: () =>
-                                              _submitFinalAnswer(false),
+                                              _submitFinalAnswer(false, quest),
                                           isPositioned: false,
                                           displayText:
                                               "Type the full sentence to lock it in",

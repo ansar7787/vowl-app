@@ -89,7 +89,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
     initGrammarGame();
   }
 
-  void _onReflectionSelect(int index, int correctIndex) {
+  void _onReflectionSelect(int index, int correctIndex, GameQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _selectedReflection.value = index;
 
@@ -102,27 +102,26 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
       _scrollToBottom();
       _rotation.value = 3.14;
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _rotation.value = 3.14;
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      String? userAnswer =
+          (quest.options != null && index < quest.options!.length)
+              ? quest.options![index]
+              : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      String? userAnswer = (_selectedReflection.value != -1 &&
+              quest.options != null &&
+              _selectedReflection.value < quest.options!.length)
+          ? quest.options![_selectedReflection.value]
+          : null;
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
@@ -260,6 +259,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                       children: List.generate(
                                         options.length,
                                         (i) => _buildReflectionChip(
+                                          quest,
                                           options[i],
                                           i,
                                           quest.correctAnswerIndex ?? 0,
@@ -289,9 +289,9 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                         options[_selectedReflection.value],
                                     primaryColor: theme.primaryColor,
                                     onConfirmed: () =>
-                                        _submitVerbalEvaluation(true),
+                                        _submitVerbalEvaluation(true, quest),
                                     onSkipped: () =>
-                                        _submitVerbalEvaluation(false),
+                                        _submitVerbalEvaluation(false, quest),
                                     isPositioned: false,
                                     displayText:
                                         "Type the indirect speech to lock it in",
@@ -415,6 +415,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
   }
 
   Widget _buildReflectionChip(
+    GameQuest quest,
     String text,
     int index,
     int correctIndex,
@@ -452,7 +453,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                     : Colors.white.withValues(alpha: 0.1)));
 
     return ScaleButton(
-      onTap: () => _onReflectionSelect(index, correctIndex),
+      onTap: () => _onReflectionSelect(index, correctIndex, quest),
       child: Container(
         width: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: 24.w),

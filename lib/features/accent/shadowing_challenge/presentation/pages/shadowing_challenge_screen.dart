@@ -101,7 +101,10 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
+        userAnswer: '',
+      );
     }
   }
 
@@ -119,7 +122,10 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
+        userAnswer: '',
+      );
     }
   }
 

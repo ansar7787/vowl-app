@@ -61,7 +61,7 @@ mixin SpeakingGameScreenMixin<T extends StatefulWidget>
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
-    context.read<SpeakingBloc>().add(SubmitAnswer(false));
+    submitWrongAnswer(quest: quest, userAnswer: '');
   }
 
   void submitCorrectAnswer() {

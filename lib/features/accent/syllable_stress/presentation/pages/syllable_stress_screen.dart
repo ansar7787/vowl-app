@@ -93,7 +93,10 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
+        userAnswer: '',
+      );
     }
   }
 
@@ -111,7 +114,10 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
+        userAnswer: '',
+      );
     }
   }
 

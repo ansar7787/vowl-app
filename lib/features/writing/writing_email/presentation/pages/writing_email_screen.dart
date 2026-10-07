@@ -170,13 +170,15 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
       _showSpeakToConfirm.value = true;
     } else {
       hapticService.error();
-      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      final userAns =
+          "Subject: ${_slots.value['SUBJECT'] ?? ''}, Salutation: ${_slots.value['SALUTATION'] ?? ''}, Body: ${_slots.value['BODY'] ?? ''}, Sign-off: ${_slots.value['SIGN-OFF'] ?? ''}";
+      submitWrongAnswer(quest: quest, userAnswer: userAns);
     }
   }
 
   void _onSpeakConfirmed() {
     _showSpeakToConfirm.value = false;
-    context.read<WritingBloc>().add(const SubmitAnswer(true));
+    submitCorrectAnswer();
   }
 
   @override
@@ -460,8 +462,11 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                   onConfirmed: _onSpeakConfirmed,
                                   onSkipped: () {
                                     _showSpeakToConfirm.value = false;
-                                    context.read<WritingBloc>().add(
-                                      const SubmitAnswer(false),
+                                    submitWrongAnswer(
+                                      quest: quest,
+                                      userAnswer:
+                                          "${_slots.value['SUBJECT'] ?? ''} ${_slots.value['SALUTATION'] ?? ''} ${_slots.value['BODY'] ?? ''} ${_slots.value['SIGN-OFF'] ?? ''}"
+                                              .trim(),
                                     );
                                   },
                                 ),

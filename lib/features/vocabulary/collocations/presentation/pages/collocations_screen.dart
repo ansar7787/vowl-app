@@ -65,7 +65,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     super.dispose();
   }
 
-  void _submitAnswer(String selected, String correct) {
+  void _submitAnswer(String selected, String correct, GameQuest quest) {
     if (isAnsweredNotifier.value ||
         _isDragPassed.value ||
         _selectedOption.value != null) {
@@ -91,11 +91,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
         }
       });
     } else {
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      hapticService.error();
-      soundService.playWrong();
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: selected);
     }
   }
 
@@ -114,20 +110,13 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     return sentence.replaceAll('__', replacementWord);
   }
 
-  void _submitFinalAnswer(bool nailedIt) {
+  void _submitFinalAnswer(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value && isCorrectNotifier.value != null) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest);
     }
   }
 
@@ -150,6 +139,10 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           'vocabulary',
           level: widget.level,
         );
+
+        if (state is VocabularyLoaded) {
+          _lastQuest = state.currentQuest;
+        }
 
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
@@ -303,6 +296,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                                                   details.data,
                                                                   quest.correctAnswer ??
                                                                       "",
+                                                                  quest,
                                                                 );
                                                               },
                                                           builder:
@@ -491,9 +485,9 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                               '${quest.word} ${quest.correctAnswer}',
                                           primaryColor: theme.primaryColor,
                                           onConfirmed: () =>
-                                              _submitFinalAnswer(true),
+                                              _submitFinalAnswer(true, quest),
                                           onSkipped: () =>
-                                              _submitFinalAnswer(false),
+                                              _submitFinalAnswer(false, quest),
                                           isPositioned: false,
                                           exampleSentence:
                                               _getFormattedExampleSentence(
@@ -553,7 +547,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           onTap: () {
             if (!isAnsweredNotifier.value) {
               hapticService.light();
-              _submitAnswer(entry.value, quest.correctAnswer ?? "");
+              _submitAnswer(entry.value, quest.correctAnswer ?? "", quest);
             }
           },
         );

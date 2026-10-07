@@ -74,17 +74,19 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
   }
 
   void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = isCorrect;
+    if (isAnsweredNotifier.value) return;
 
     if (isCorrect) {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = true;
+
       if (quest.clueWords != null && quest.clueWords!.isNotEmpty) {
         _showEvidence.value = true;
       } else {
         context.read<ReadingBloc>().add(const SubmitAnswer(true));
       }
     } else {
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: 'Self-evaluated incorrect');
     }
   }
 

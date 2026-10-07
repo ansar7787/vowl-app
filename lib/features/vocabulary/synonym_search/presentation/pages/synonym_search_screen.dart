@@ -180,11 +180,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      submitWrongAnswer(quest: quest, userAnswer: text);
     }
   }
 
@@ -202,20 +198,18 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, [GameQuest? quest]) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      final q = quest ?? _lastQuest;
+      if (q != null) {
+        submitWrongAnswer(quest: q);
+      } else {
+        submitWrongAnswer(quest: quest!, userAnswer: '');
+      }
     }
   }
 
@@ -273,6 +267,10 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
           'vocabulary',
           level: widget.level,
         );
+
+        if (state is VocabularyLoaded) {
+          _lastQuest = state.currentQuest;
+        }
 
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
@@ -595,9 +593,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                 quest.synonyms ??
                                                 [quest.correctAnswer ?? ""],
                                             onConfirmed: () =>
-                                                _submitVerbalEvaluation(true),
+                                                _submitVerbalEvaluation(
+                                                  true,
+                                                  quest,
+                                                ),
                                             onSkipped: () =>
-                                                _submitVerbalEvaluation(false),
+                                                _submitVerbalEvaluation(
+                                                  false,
+                                                  quest,
+                                                ),
                                             isPositioned: false,
                                             exampleSentence:
                                                 quest.contextSentence,
