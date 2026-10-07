@@ -1,3 +1,4 @@
+import 'package:lucide_icons/lucide_icons.dart';
 import 'dart:ui';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -960,16 +961,23 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                 ),
               ),
               SizedBox(height: 32.h),
-              Icon(
-                Icons.workspace_premium_rounded,
-                size: 64.sp,
-                color: AppColors.amber500,
+              Container(
+                padding: EdgeInsets.all(20.r),
+                decoration: BoxDecoration(
+                  color: AppColors.amber500.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  LucideIcons.crown,
+                  size: 48.sp,
+                  color: AppColors.amber500,
+                ),
               ),
               SizedBox(height: 24.h),
               Text(
                 context.tr(
                   'practice.limit_reached',
-                  fallback: 'Daily Limit Reached',
+                  fallback: 'Mastery Limit Reached!',
                 ),
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -985,7 +993,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                   context.tr(
                     'practice.limit_desc',
                     fallback:
-                        'You\'ve used your 5 free practice attempts today. Watch an ad to get 1 more, or go Premium for unlimited practice.',
+                        'You\'ve completed your 5 free training sessions today. Unlock Premium for endless training, or watch a quick ad to get 1 more session.',
                   ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -1004,17 +1012,66 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
                   gradient: const LinearGradient(
-                    colors: [AppColors.indigo500, AppColors.violet500],
+                    colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.indigo500.withValues(alpha: 0.3),
+                      color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
                       blurRadius: 20,
                       offset: const Offset(0, 8),
                     ),
                   ],
+                ),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(20.r),
+                    onTap: () {
+                      context.pop();
+                      context.push('/premium');
+                    },
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            LucideIcons.crown,
+                            color: Colors.white,
+                            size: 24.r,
+                          ),
+                          SizedBox(width: 8.w),
+                          Text(
+                            context.tr(
+                              'practice.go_premium',
+                              fallback: 'Unlock Unlimited Mastery',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h),
+              Container(
+                width: double.infinity,
+                height: 60.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: AppColors.indigo500.withValues(alpha: 0.3),
+                    width: 2,
+                  ),
+                  color: AppColors.indigo500.withValues(alpha: 0.05),
                 ),
                 child: Material(
                   color: Colors.transparent,
@@ -1045,72 +1102,27 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.play_circle_outline_rounded,
-                            color: Colors.white,
+                            color: AppColors.indigo500,
+                            size: 24.r,
                           ),
-                          SizedBox(width: 8.w),
+                          SizedBox(width: 12.w),
                           Text(
                             context.tr(
                               'practice.watch_ad',
-                              fallback: 'Watch Ad for +1',
+                              fallback: 'Watch Ad for 1 Session',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              color: AppColors.indigo500,
+                              letterSpacing: 0.5,
                             ),
                           ),
                         ],
                       ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.h),
-              Container(
-                width: double.infinity,
-                height: 60.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(
-                    color: AppColors.amber500.withValues(alpha: 0.3),
-                    width: 2,
-                  ),
-                  color: AppColors.amber500.withValues(alpha: 0.05),
-                ),
-                child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(20.r),
-                    onTap: () {
-                      context.pop();
-                      context.push('/premium');
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.workspace_premium_rounded,
-                          color: AppColors.amber500,
-                          size: 24.r,
-                        ),
-                        SizedBox(width: 12.w),
-                        Text(
-                          context.tr(
-                            'practice.go_premium',
-                            fallback: 'Unlock Premium',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w800,
-                            color: AppColors.amber500,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                 ),
