@@ -188,6 +188,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
           level: widget.level,
           isAnswered: isAnsweredNotifier.value,
           isCorrect: isCorrectNotifier.value,
+          isFinalFailure: state is VocabularyLoaded ? state.isFinalFailure : false,
           showConfetti: showConfettiNotifier.value,
           hasStage2: true,
           onContinue: () {

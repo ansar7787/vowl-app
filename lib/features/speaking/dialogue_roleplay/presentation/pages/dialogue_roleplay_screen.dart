@@ -275,6 +275,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                 level: widget.level,
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
+                isFinalFailure: state is SpeakingLoaded ? state.isFinalFailure : false,
                 disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
