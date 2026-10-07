@@ -435,9 +435,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                   child: () {
                                     Widget button = ElevatedButton.icon(
                                       onPressed: () async {
-                                        if (entries.isEmpty) return;
+                                        if (filteredEntries.isEmpty) return;
                                         
-                                        final randomList = List.of(entries)..shuffle();
+                                        final randomList = List.of(filteredEntries)..shuffle();
                                         final target = randomList.first;
                                         final cat = QuestRegistry.gameToCategory[target.gameType] ?? 'reading';
                                         
@@ -1158,15 +1158,6 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                 ? color
                 : (isDark ? AppColors.slate700 : AppColors.slate200),
           ),
-          boxShadow: isSelected
-              ? [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.3),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ]
-              : null,
         ),
         child: Text(
           label,
