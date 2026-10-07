@@ -1054,6 +1054,53 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                 ),
               ),
               SizedBox(height: 16.h),
+              Container(
+                width: double.infinity,
+                height: 60.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: AppColors.amber500.withValues(alpha: 0.3),
+                    width: 2,
+                  ),
+                  color: AppColors.amber500.withValues(alpha: 0.05),
+                ),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(20.r),
+                    onTap: () {
+                      context.pop();
+                      context.push('/premium');
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.workspace_premium_rounded,
+                          color: AppColors.amber500,
+                          size: 24.r,
+                        ),
+                        SizedBox(width: 12.w),
+                        Text(
+                          context.tr(
+                            'practice.go_premium',
+                            fallback: 'Unlock Premium',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.amber500,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h),
               TextButton(
                 onPressed: () {
                   if (!completer.isCompleted) completer.complete(false);
