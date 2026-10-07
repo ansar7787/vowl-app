@@ -27,10 +27,12 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
   void initState() {
     super.initState();
     _loadMistakeCount();
+    ErrorJournalCollector.updateNotifier.addListener(_loadMistakeCount);
   }
 
   @override
   void dispose() {
+    ErrorJournalCollector.updateNotifier.removeListener(_loadMistakeCount);
     _mistakeCount.dispose();
     super.dispose();
   }

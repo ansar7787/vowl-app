@@ -11,6 +11,10 @@ class ErrorJournalCollector {
   static final _firestore = FirebaseFirestore.instance;
   static const String _localKey = 'vowl_local_error_journal';
 
+  /// A global notifier that increments whenever the journal is modified.
+  /// UI components can listen to this to refresh their counts dynamically.
+  static final ValueNotifier<int> updateNotifier = ValueNotifier(0);
+
   /// Maximum number of error journal entries to keep per user.
   static const int maxEntries = 200;
 
@@ -63,6 +67,7 @@ class ErrorJournalCollector {
         }
         
         await prefs.setStringList(_localKey, logs);
+        updateNotifier.value++;
         return;
       }
 
@@ -90,6 +95,8 @@ class ErrorJournalCollector {
           .collection('errorJournal')
           .doc(docId)
           .set(entryMap, SetOptions(merge: true));
+
+      updateNotifier.value++;
     } catch (e) {
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to record: $e');
@@ -176,6 +183,7 @@ class ErrorJournalCollector {
         }).toList();
 
         await prefs.setStringList(_localKey, filteredLogs);
+        updateNotifier.value++;
         return;
       }
 
@@ -185,6 +193,8 @@ class ErrorJournalCollector {
           .collection('errorJournal')
           .doc(entryId)
           .delete();
+          
+      updateNotifier.value++;
     } catch (e) {
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to dismiss: $e');
@@ -198,6 +208,7 @@ class ErrorJournalCollector {
       if (userId == 'local') {
         final prefs = await SharedPreferences.getInstance();
         await prefs.remove(_localKey);
+        updateNotifier.value++;
         return;
       }
 
@@ -225,6 +236,8 @@ class ErrorJournalCollector {
           snapshot = await collection.limit(500).get();
         }
       }
+      
+      updateNotifier.value++;
     } catch (e) {
       if (kDebugMode) {
         debugPrint('[ErrorJournal] Failed to clear all: $e');
