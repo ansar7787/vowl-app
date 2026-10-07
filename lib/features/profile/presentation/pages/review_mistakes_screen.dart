@@ -93,18 +93,18 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
   }
 
   Future<void> _dismissMistake(String id) async {
-    await ErrorJournalCollector.dismiss(userId: _userId, entryId: id);
-    if (mounted) {
-      final current = List<ErrorJournalEntry>.from(_entries.value);
-      current.removeWhere((e) => e.id == id);
-      _entries.value = current;
+    // 1. Update UI state synchronously so Dismissible doesn't crash
+    final current = List<ErrorJournalEntry>.from(_entries.value);
+    current.removeWhere((e) => e.id == id);
+    _entries.value = current;
 
-      // Adjust current page if current page becomes empty
-      final totalPages = (current.length / 10).ceil();
-      if (_currentPage.value >= totalPages && totalPages > 0) {
-        _currentPage.value = totalPages - 1;
-      }
+    final totalPages = (current.length / 10).ceil();
+    if (_currentPage.value >= totalPages && totalPages > 0) {
+      _currentPage.value = totalPages - 1;
     }
+
+    // 2. Perform DB deletion in the background
+    await ErrorJournalCollector.dismiss(userId: _userId, entryId: id);
   }
 
 
