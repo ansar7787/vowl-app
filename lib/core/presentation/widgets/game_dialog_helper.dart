@@ -150,7 +150,7 @@ class GameDialogHelper {
             secondaryButtonText: mistakesMade > 0
                 ? context.tr(
                     'games.review_mistakes',
-                    fallback: 'Review Mistakes',
+                    fallback: 'Review & Master',
                   )
                 : null,
             onButtonPressed: () {
@@ -302,7 +302,7 @@ class GameDialogHelper {
           },
           secondaryButtonText: context.tr(
             'games.review_mistakes',
-            fallback: 'Review Mistakes',
+            fallback: 'Review & Master',
           ),
           onButtonPressed: () {
             if (isActionTaken) return;

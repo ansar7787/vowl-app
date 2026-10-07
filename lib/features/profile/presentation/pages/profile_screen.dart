@@ -289,7 +289,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           ),
                                           child: ProfileFeatureCard(
                                             iconContent: Icon(
-                                              Icons.psychology_alt_rounded,
+                                              Icons.fitness_center_rounded,
                                               color: Colors.white,
                                               size: 24.r,
                                             ),
@@ -297,11 +297,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             shadowColor: const Color(0xFFD97706),
                                             title: context.tr(
                                               'profile.review_mistakes',
-                                              fallback: 'Review Mistakes',
+                                              fallback: 'Review & Master',
                                             ),
                                             subtitle: context.tr(
                                               'profile.review_mistakes_subtitle',
-                                              fallback: 'Targeted practice for past errors.',
+                                              fallback: 'Master skills from previous challenges.',
                                             ),
                                             onTap: () {
                                               di.sl<HapticService>().selection();
