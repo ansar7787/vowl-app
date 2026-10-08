@@ -51,24 +51,23 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   final ValueNotifier<List<int>> _selectedIndices = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (!mounted) return;
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    isFirstStagePassedNotifier.addListener(() {
-      if (isFirstStagePassedNotifier.value &&
-          mounted &&
-          _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
+
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -145,8 +144,10 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
     if (isCorrect) {
       hapticService.selection();
       isFirstStagePassedNotifier.value = true;
+      _scrollToBottom();
       // Wait for Phase 2
     } else {
+      _scrollToBottom();
       submitWrongAnswer(quest: quest, userAnswer: result);
     }
   }
@@ -161,6 +162,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
+      _scrollToBottom();
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
@@ -196,7 +198,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
-            return RoleplayBaseLayout(fullScreenContent: true,
+            return RoleplayBaseLayout(
+              fullScreenContent: true,
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
@@ -221,9 +224,10 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
+                            controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
+                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverFillRemaining(
                                 hasScrollBody: true,
                                 child: Column(
@@ -495,31 +499,25 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                               if (isFirstStagePassedNotifier.value &&
                                   !isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 24.w,
-                                    ),
-                                    child: SpeakToConfirmOverlay(
-                                      expectedText:
-                                          quest.correctAnswer ?? currentText,
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      onConfirmed: () {
-                                        context.read<RoleplayBloc>().add(
-                                          const RoleplaySpeakConfirmed(5),
-                                        );
-                                        _submitVerbalEvaluation(
-                                          true,
-                                          quest,
-                                          currentText,
-                                        );
-                                      },
-                                      onSkipped: () =>
-                                          _submitVerbalEvaluation(
-                                            false,
-                                            quest,
-                                            currentText,
-                                          ),
+                                  child: SpeakToConfirmOverlay(
+                                    expectedText:
+                                        quest.correctAnswer ?? currentText,
+                                    primaryColor: theme.primaryColor,
+                                    isPositioned: false,
+                                    onConfirmed: () {
+                                      context.read<RoleplayBloc>().add(
+                                        const RoleplaySpeakConfirmed(5),
+                                      );
+                                      _submitVerbalEvaluation(
+                                        true,
+                                        quest,
+                                        currentText,
+                                      );
+                                    },
+                                    onSkipped: () => _submitVerbalEvaluation(
+                                      false,
+                                      quest,
+                                      currentText,
                                     ),
                                   ),
                                 ),

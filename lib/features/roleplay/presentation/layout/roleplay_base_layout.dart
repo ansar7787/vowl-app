@@ -63,7 +63,9 @@ class RoleplayBaseLayout extends StatelessWidget {
         ? child
         : Center(
             child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: kRoleplayMaxContentWidth),
+              constraints: const BoxConstraints(
+                maxWidth: kRoleplayMaxContentWidth,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [child],
