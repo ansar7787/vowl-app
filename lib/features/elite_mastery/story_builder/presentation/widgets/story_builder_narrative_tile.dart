@@ -18,6 +18,9 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final bool isReorderable;
+  final int originalIndex;
+  final bool isSelected;
+  final VoidCallback? onTap;
 
   const StoryBuilderNarrativeTile({
     super.key,
@@ -30,12 +33,14 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
     required this.isAnswered,
     this.isCorrect,
     this.isReorderable = true,
+    required this.originalIndex,
+    this.isSelected = false,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final originalIndex = quest.sentences?.indexOf(sentence) ?? -1;
     final correctOrderIndex = quest.correctOrder?.indexOf(originalIndex) ?? -1;
 
     // Check if this specific tile is currently in its correct position
@@ -50,30 +55,31 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
     Color borderColor = isDark
         ? Colors.white.withValues(alpha: 0.15)
         : Colors.black.withValues(alpha: 0.08);
-    if (isCorrect == true) {
+    if (isSelected) {
+      borderColor = theme.primaryColor;
+    } else if (isCorrect == true) {
       borderColor = tokens.gameCorrect;
     } else if (isCorrect == false) {
       borderColor = tokens.gameIncorrect;
     } else if (isHintVisible && isCorrectPosition) {
-      borderColor = theme.primaryColor;
+      borderColor = theme.primaryColor.withValues(alpha: 0.5);
     }
 
-    return Semantics(
-      // Additive label describing this tile's position and current
-      // correctness — layered on top of (not replacing) the reorder
-      // semantics ReorderableListView itself attaches around this whole
-      // item, so screen-reader "move up"/"move down" actions keep working.
-      label: _buildSemanticLabel(context, isCorrectPosition),
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(22.r),
-        padding: EdgeInsets.all(18.r),
-        color: isDark ? Colors.black.withValues(alpha: 0.3) : null,
-        border: Border.all(color: borderColor, width: 2),
-        child: Row(
-          children: [
+    Widget content = GlassTile(
+      borderRadius: BorderRadius.circular(16.r),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+      color: isSelected
+          ? theme.primaryColor.withValues(alpha: 0.1)
+          : (isDark ? Colors.black.withValues(alpha: 0.3) : null),
+      border: Border.all(
+        color: borderColor,
+        width: isSelected ? 2 : 1.5,
+      ),
+      child: Row(
+        children: [
             Container(
-              width: 32.r,
-              height: 32.r,
+              width: 28.r,
+              height: 28.r,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -83,7 +89,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
-                borderRadius: BorderRadius.circular(10.r),
+                borderRadius: BorderRadius.circular(8.r),
                 border: Border.all(
                   color: theme.primaryColor.withValues(alpha: 0.3),
                 ),
@@ -93,22 +99,22 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
                   "${index + 1}",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w900,
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.bold,
                     color: isDark ? theme.primaryColor : AppColors.slate900,
                   ),
                 ),
               ),
             ),
-            SizedBox(width: 16.w),
+            SizedBox(width: 14.w),
             Expanded(
               child: Text(
                 sentence,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  height: 1.3,
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  height: 1.4,
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
@@ -187,8 +193,22 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
               ),
           ],
         ),
-      ),
-    );
+      );
+
+      if (onTap != null) {
+        content = GestureDetector(
+          onTap: onTap,
+          behavior: HitTestBehavior.opaque,
+          child: content,
+        );
+      }
+
+      return Semantics(
+        label: _buildSemanticLabel(context, isCorrectPosition),
+        button: onTap != null,
+        selected: isSelected,
+        child: content,
+      );
   }
 
   String _buildSemanticLabel(BuildContext context, bool isCorrectPosition) {

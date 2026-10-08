@@ -14,6 +14,8 @@ class SpeakToConfirmOverlay extends StatefulWidget {
   final String? ttsText;
   final List<String> acceptedSynonyms;
   final String? displayText;
+  final double? displayFontSize;
+  final FontWeight? displayFontWeight;
   final bool hideExpectedText;
   final String title;
   final String subtitle;
@@ -33,6 +35,8 @@ class SpeakToConfirmOverlay extends StatefulWidget {
     this.ttsText,
     this.acceptedSynonyms = const [],
     this.displayText,
+    this.displayFontSize,
+    this.displayFontWeight,
     this.hideExpectedText = false,
     this.title = 'NOW SAY IT',
     this.subtitle = 'Speak the answer to confirm',
@@ -247,10 +251,11 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.w800,
+                                  fontSize: widget.displayFontSize ?? 20.sp,
+                                  fontWeight: widget.displayFontWeight ?? FontWeight.w800,
                                   color: textColor,
                                   letterSpacing: 0.5,
+                                  height: 1.3,
                                 ),
                               ),
                             ),
