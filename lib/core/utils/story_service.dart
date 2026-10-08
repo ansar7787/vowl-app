@@ -169,7 +169,7 @@ class StoryServiceImpl implements StoryService {
     'situationalResponse':
         "Every conversation is unique! Let's practice reading the room, choosing the best response, and speaking it with confidence.",
     'socialSpark':
-        "Meeting new people is exciting! Let's practice starting and maintaining engaging small talk with confidence.",
+        "Meeting new people can be nerve-wracking, but it doesn't have to be! Let's practice starting and keeping a conversation going naturally, so you feel comfortable chatting anywhere.",
     'travelDesk':
         "Exploring the world? Let's practice handling check-ins, asking for directions, and navigating travel scenarios smoothly.",
 
@@ -1094,12 +1094,12 @@ class StoryServiceImpl implements StoryService {
       "200 levels! You're speaking up and responding like a true natural in any situation.",
     ],
     'socialspark': [
-      "Great start! Breaking the ice is the hardest part, and you just did it.",
-      "You're getting the hang of this! Your conversations are sounding much more natural.",
-      "Look at you go! You're keeping the conversation flowing effortlessly.",
-      "Halfway to 100! You're starting to sound like a natural conversationalist.",
-      "Level 100! You can walk into any room and start a chat with anyone. Amazing work!",
-      "200 levels! You're an absolute natural at reading the room and connecting with people.",
+      "Great start! Breaking the ice is always the hardest part, and you just nailed it.",
+      "You're really getting the hang of this. Your responses are sounding a lot more natural.",
+      "Look at you go! You're keeping the conversation flowing without missing a beat.",
+      "Halfway to 100! You're starting to sound like someone who just loves to chat.",
+      "Level 100! You could walk into any room right now and strike up a conversation with anyone. Awesome work!",
+      "200 levels! You're a total natural at reading the room and connecting with people.",
     ],
     'traveldesk': [
       "",

@@ -313,19 +313,14 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                           size: isCompact ? 18.r : 20.r,
                                                         ),
                                                         SizedBox(width: 6.w),
-                                                        Flexible(
-                                                          child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
-                                                            child: Text(
-                                                              "CLEAR PATH",
-                                                              style: TextStyle(
-                                                                fontFamily: 'Outfit',
-                                                                fontSize: isCompact ? 12.sp : 14.sp,
-                                                                fontWeight: FontWeight.bold,
-                                                                color: theme.primaryColor,
-                                                                letterSpacing: 1.5,
-                                                              ),
-                                                            ),
+                                                        Text(
+                                                          "CLEAR PATH",
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: isCompact ? 12.sp : 14.sp,
+                                                            fontWeight: FontWeight.bold,
+                                                            color: theme.primaryColor,
+                                                            letterSpacing: 1.5,
                                                           ),
                                                         ),
                                                       ],
@@ -371,19 +366,14 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                           size: isCompact ? 18.r : 20.r,
                                                         ),
                                                         SizedBox(width: 6.w),
-                                                        Flexible(
-                                                          child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
-                                                            child: Text(
-                                                              "IGNITE SPARK",
-                                                              style: TextStyle(
-                                                                fontFamily: 'Outfit',
-                                                                fontSize: isCompact ? 12.sp : 14.sp,
-                                                                fontWeight: FontWeight.bold,
-                                                                color: Colors.white,
-                                                                letterSpacing: 1.5,
-                                                              ),
-                                                            ),
+                                                        Text(
+                                                          "IGNITE SPARK",
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: isCompact ? 12.sp : 14.sp,
+                                                            fontWeight: FontWeight.bold,
+                                                            color: Colors.white,
+                                                            letterSpacing: 1.5,
                                                           ),
                                                         ),
                                                       ],
