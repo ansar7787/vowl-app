@@ -130,7 +130,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
 
     // Clean all words
     String cleanString(String s) => s.toLowerCase().replaceAll(
-          RegExp(r'[.,!?;:"\'\[\]\(\)\-]+'),
+          RegExp(r'[.,!?;:"' "'" r'\[\]\(\)\-]+'),
           '',
         );
 
