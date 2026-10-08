@@ -147,7 +147,7 @@ class StoryServiceImpl implements StoryService {
     'trueFalseReading':
         "Don't let them trick you! Let's carefully verify the facts in the text to separate the truth from false assumptions.",
     'skimmingScanning':
-        "Let's practice reading efficiently! Skim the text quickly to find exactly the specific information you need.",
+        "Eagle eyes ready? Read quickly and tap the target word before the timer runs out!",
     'clozeTest':
         "Something is missing! Let's use logic and the context of the story to fill in the blank words perfectly.",
 
@@ -1015,11 +1015,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'skimmingscanning': [
       "",
-      "Excellent start! Your understanding of skimming and scanning is growing.",
-      "You are navigating skimming and scanning with increasing confidence.",
-      "Level 50! Your command of skimming and scanning is exceptional.",
-      "Level 100! You are an absolute master of skimming and scanning.",
-      "200 levels cleared! Your skimming and scanning abilities are unmatched globally.",
+      "Eagle eyes! You spotted that word so fast!",
+      "Wow, you're scanning like a real detective!",
+      "Level 50! Your eyes are faster than the ticking clock!",
+      "Level 100! You are officially a speed-reading champion!",
+      "200 levels! Nobody spots the target word faster than you!",
     ],
     'clozetest': [
       "",

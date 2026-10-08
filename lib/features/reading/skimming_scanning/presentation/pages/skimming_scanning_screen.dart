@@ -89,6 +89,8 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
     super.dispose();
   }
 
+  String? _lastQuestId;
+
   @override
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
@@ -96,11 +98,28 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
 
     return BlocConsumer<ReadingBloc, ReadingState>(
       listenWhen: readingListenWhen,
-      listener: onReadingStateChanged,
+      listener: (context, state) {
+        onReadingStateChanged(context, state);
+        if (state is ReadingLoaded) {
+          final quest = state.currentQuest as ReadingQuest?;
+          if (quest != null && quest.id != _lastQuestId) {
+            _lastQuestId = quest.id;
+            if (_scrollController.hasClients) {
+              _scrollController.jumpTo(0.0);
+            }
+            _startAutoScroll();
+          }
+        }
+      },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)
             ? state.currentQuest as ReadingQuest?
             : null;
+        
+        // Ensure initial quest id is set
+        if (quest != null && _lastQuestId == null) {
+          _lastQuestId = quest.id;
+        }
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -148,7 +167,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                   if (!isAnsweredNotifier.value)
                                     SpeedChallengeTimer(
                                       key: _timerKey,
-                                      durationSeconds: 30,
+                                      durationSeconds: quest.timeLimit ?? 30,
                                       primaryColor: theme.primaryColor,
                                       onTimeUp: () =>
                                           _submitIncorrectAnswer(quest),
@@ -157,9 +176,67 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
 
                                   SizedBox(height: 16.h),
 
+                                  // Instruction Card
+                                  Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                                    decoration: BoxDecoration(
+                                      color: theme.primaryColor.withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(12.r),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(alpha: 0.3),
+                                      ),
+                                    ),
+                                    child: Row(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Icon(Icons.info_outline, color: theme.primaryColor, size: 20.r),
+                                        SizedBox(width: 12.w),
+                                        Expanded(
+                                          child: Text(
+                                            isAnsweredNotifier.value
+                                                ? "TARGET ACQUIRED!"
+                                                : InstructionHelper.getInstruction(quest),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              color: isAnsweredNotifier.value
+                                                  ? tokens.gameCorrect
+                                                  : theme.primaryColor,
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 16.h),
+
+                                  // Interaction Prompt
+                                  if (!isAnsweredNotifier.value)
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom: 8.h),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Icon(Icons.touch_app, color: Colors.grey, size: 16.r),
+                                          SizedBox(width: 6.w),
+                                          Text(
+                                            "Tap the target in the text below",
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              color: Colors.grey,
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.bold,
+                                              letterSpacing: 1,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+
                                   // Scanning Terminal Box
                                   SizedBox(
-                                    height: 260.h,
                                     width: double.infinity,
                                     child: SkimmingScanningTerminal(
                                       text: quest.passage ?? "",
@@ -167,10 +244,8 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                       color: theme.primaryColor,
                                       scrollController: _scrollController,
                                       isAnswered: isAnsweredNotifier.value,
-                                      onTapWord: (clean) {
-                                        if (clean.toLowerCase() ==
-                                            (quest.correctAnswer ?? "")
-                                                .toLowerCase()) {
+                                      onTapWord: (clean, isCorrectTarget) {
+                                        if (isCorrectTarget) {
                                           _submitCorrectAnswer();
                                         } else {
                                           _submitIncorrectAnswer(quest, clean);
@@ -179,22 +254,6 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                     ),
                                   ),
                                   SizedBox(height: 20.h),
-                                  Text(
-                                    isAnsweredNotifier.value
-                                        ? "TARGET ACQUIRED!"
-                                        : (InstructionHelper.getInstruction(
-                                            quest,
-                                          ).toUpperCase()),
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      color: isAnsweredNotifier.value
-                                          ? tokens.gameCorrect
-                                          : theme.primaryColor,
-                                      fontSize: 12.sp,
-                                      letterSpacing: 2,
-                                    ),
-                                  ),
                                 ],
                               ),
                             ),

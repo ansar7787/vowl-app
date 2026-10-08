@@ -10,7 +10,7 @@ class SkimmingScanningTerminal extends StatelessWidget {
   final Color color;
   final ScrollController scrollController;
   final bool isAnswered;
-  final Function(String) onTapWord;
+  final Function(String, bool) onTapWord;
 
   const SkimmingScanningTerminal({
     super.key,
@@ -24,16 +24,53 @@ class SkimmingScanningTerminal extends StatelessWidget {
 
   String _cleanWord(String word) {
     return word
-        .replaceAll(RegExp(r'[.,\/#!$%\^&\*;:{}=\-_`~()\[\]]'), '')
+        .replaceAll(RegExp(r'''[.,\/#!$%\^&\*;:{}=\-_`~()\[\]"'?]'''), '')
         .trim();
+  }
+
+  List<String> _getChunks(String text, String correct) {
+    if (correct.trim().isEmpty) return text.split(RegExp(r'\s+'));
+
+    List<String> rawWords = text.split(RegExp(r'\s+'));
+    List<String> correctParts = correct.split(RegExp(r'\s+'));
+
+    if (correctParts.length <= 1) return rawWords;
+
+    List<String> merged = [];
+    for (int i = 0; i < rawWords.length; i++) {
+      bool match = true;
+      if (i + correctParts.length <= rawWords.length) {
+        for (int j = 0; j < correctParts.length; j++) {
+          if (_cleanWord(rawWords[i + j]).toLowerCase() !=
+              _cleanWord(correctParts[j]).toLowerCase()) {
+            match = false;
+            break;
+          }
+        }
+      } else {
+        match = false;
+      }
+
+      if (match) {
+        String mergedWord = rawWords
+            .sublist(i, i + correctParts.length)
+            .join(' ');
+        merged.add(mergedWord);
+        i += correctParts.length - 1;
+      } else {
+        merged.add(rawWords[i]);
+      }
+    }
+    return merged;
   }
 
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final List<String> words = text.split(RegExp(r'\s+'));
+    final List<String> chunks = _getChunks(text, correct);
 
     return Container(
+      constraints: BoxConstraints(minHeight: 150.h, maxHeight: 260.h),
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(24.r),
@@ -49,66 +86,58 @@ class SkimmingScanningTerminal extends StatelessWidget {
       child: Stack(
         children: [
           // Scrolling Content
-          ListView.builder(
-            controller: scrollController,
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-            itemCount: (words.length / 4).ceil(),
-            itemBuilder: (context, index) {
-              int start = index * 4;
-              int end = (start + 4).clamp(0, words.length);
-              final List<String> rowWords = words.sublist(start, end);
+          Positioned.fill(
+            child: SingleChildScrollView(
+              controller: scrollController,
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+              child: Wrap(
+                spacing: 8.w,
+                runSpacing: 12.h,
+                children: chunks.map((word) {
+                  final clean = _cleanWord(word);
+                  final isCorrectTarget =
+                      clean.toLowerCase() == _cleanWord(correct).toLowerCase();
+                  final bool isTapped = isAnswered && isCorrectTarget;
 
-              return Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.h),
-                child: Wrap(
-                  spacing: 8.w,
-                  runSpacing: 8.h,
-                  children: rowWords.map((word) {
-                    final clean = _cleanWord(word);
-                    final isCorrectTarget =
-                        clean.toLowerCase() == correct.toLowerCase();
-                    final bool isTapped = isAnswered && isCorrectTarget;
-
-                    return GestureDetector(
-                      onTap: () => onTapWord(clean),
-                      child: AnimatedContainer(
-                        duration: 300.milliseconds,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 6.h,
-                        ),
-                        decoration: BoxDecoration(
+                  return GestureDetector(
+                    onTap: () => onTapWord(clean, isCorrectTarget),
+                    child: AnimatedContainer(
+                      duration: 300.milliseconds,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 6.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isTapped
+                            ? tokens.gameCorrect.withValues(alpha: 0.25)
+                            : Colors.transparent,
+                        borderRadius: BorderRadius.circular(8.r),
+                        border: Border.all(
                           color: isTapped
-                              ? tokens.gameCorrect.withValues(alpha: 0.25)
+                              ? tokens.gameCorrect
                               : Colors.transparent,
-                          borderRadius: BorderRadius.circular(8.r),
-                          border: Border.all(
-                            color: isTapped
-                                ? tokens.gameCorrect
-                                : Colors.transparent,
-                            width: 1.5,
-                          ),
-                        ),
-                        child: Text(
-                          word,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            color: isTapped
-                                ? tokens.gameCorrect
-                                : tokens.gameCorrect.withValues(alpha: 0.8),
-                            fontWeight: isTapped
-                                ? FontWeight.bold
-                                : FontWeight.normal,
-                            letterSpacing: 1,
-                          ),
+                          width: 1.5,
                         ),
                       ),
-                    );
-                  }).toList(),
-                ),
-              );
-            },
+                      child: Text(
+                        word,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          color: isTapped
+                              ? tokens.gameCorrect
+                              : tokens.gameCorrect.withValues(alpha: 0.8),
+                          fontWeight: isTapped
+                              ? FontWeight.bold
+                              : FontWeight.normal,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
           ),
 
           // CRT Overlay
