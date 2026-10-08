@@ -56,7 +56,7 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
               ),
               SizedBox(width: 8.w),
               Text(
-                (isCorrect ?? false) ? "Perfect synergy!" : "Tension overload!",
+                (isCorrect ?? false) ? "Great response!" : "Not quite right!",
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
