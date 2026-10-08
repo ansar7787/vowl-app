@@ -12,7 +12,8 @@ import 'package:vowl/features/reading/presentation/layout/reading_base_layout.da
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_instruction.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_passage.dart';
-import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_options.dart';
+import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_logic_chain.dart';
 
 class ReadingConclusionScreen extends StatefulWidget {
   final int level;
@@ -42,6 +43,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ScrollController _scrollController = ScrollController();
+  int? _selectedIndex;
 
   @override
   void dispose() {
@@ -56,13 +58,31 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
     initReadingGame();
   }
 
-  void _submitFinalAnswer(bool isCorrect, ReadingQuest quest) {
+  @override
+  void onQuestionReset() {
+    super.onQuestionReset();
+    setState(() {
+      _selectedIndex = null;
+    });
+  }
+
+  void _onOptionTap(int index, String optionText, ReadingQuest quest) {
     if (isAnsweredNotifier.value) return;
+
+    hapticService.selection();
+
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    final correctAnswer = quest.correctAnswer ?? '';
+    final isCorrect =
+        optionText.trim().toLowerCase() == correctAnswer.trim().toLowerCase();
 
     if (isCorrect) {
       submitCorrectAnswer();
     } else {
-      submitWrongAnswer(quest: quest, userAnswer: '[Skipped]');
+      submitWrongAnswer(quest: quest, userAnswer: optionText);
     }
   }
 
@@ -121,69 +141,51 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
                                         InstructionHelper.getInstruction(quest),
                                   ),
                                   SizedBox(height: 32.h),
-
                                   ReadingConclusionPassage(
                                     passage: quest.passage ?? "",
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
                                   SizedBox(height: 32.h),
-
-                                  Text(
-                                    quest.question?.toUpperCase() ??
-                                        "WHAT IS THE LOGICAL CONCLUSION?",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: theme.primaryColor,
-                                      letterSpacing: 1.5,
-                                    ),
-                                  ),
                                 ],
                               ),
                             ),
                           ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  SizedBox(
-                                    height: (!isAnsweredNotifier.value)
-                                        ? 380.h
-                                        : 60.h,
-                                  ),
-                                ],
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: ReadingConclusionOptions(
+                                options: quest.options ?? [],
+                                correct: quest.correctAnswer ?? '',
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                selectedIndex: _selectedIndex,
+                                isAnswered: isAnsweredNotifier.value,
+                                onOptionTap: (index, optionText) =>
+                                    _onOptionTap(index, optionText, quest),
                               ),
                             ),
                           ),
-
-                          if (!isAnsweredNotifier.value)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: TypeToConfirmOverlay(
-                                  expectedText: quest.correctAnswer ?? "",
+                          if (isAnsweredNotifier.value &&
+                              quest.logicChain != null &&
+                              quest.logicChain!.isNotEmpty)
+                            SliverPadding(
+                              padding: EdgeInsets.only(
+                                left: 24.w,
+                                right: 24.w,
+                                top: 8.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
+                                child: ReadingConclusionLogicChain(
+                                  logicChain: quest.logicChain!,
                                   primaryColor: theme.primaryColor,
-                                  onConfirmed: () =>
-                                      _submitFinalAnswer(true, quest),
-                                  onSkipped: () =>
-                                      _submitFinalAnswer(false, quest),
-                                  allowSkip: true,
-                                  isPositioned: false,
+                                  isDark: isDark,
                                 ),
                               ),
                             ),
                           SliverToBoxAdapter(
                             child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
+                              height: 120.h,
                             ),
                           ),
                         ],

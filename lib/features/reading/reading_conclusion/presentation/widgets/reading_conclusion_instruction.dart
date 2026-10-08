@@ -27,14 +27,13 @@ class ReadingConclusionInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              instruction?.toUpperCase() ??
-                  "BRIDGE THE PASSAGE TO THE CORRECT VERDICT",
+              instruction ?? "Read the passage and select the correct conclusion",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w700,
                 color: primaryColor,
-                letterSpacing: 1.5,
               ),
             ),
           ),
