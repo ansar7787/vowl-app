@@ -47,7 +47,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
 
   final ValueNotifier<List<int>> _currentOrder = ValueNotifier([]);
   final ValueNotifier<int?> _selectedTileIndex = ValueNotifier(null);
-  final ValueNotifier<bool> _isDraggingNotifier = ValueNotifier(false);
   VisualConfig? _visualConfig;
   int _retryCount = 0;
 
@@ -67,7 +66,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   void dispose() {
     _currentOrder.dispose();
     _selectedTileIndex.dispose();
-    _isDraggingNotifier.dispose();
     _scrollController.dispose();
     disposeEliteMasteryGame();
     super.dispose();
@@ -96,16 +94,15 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   }
 
   void _scrollToBottom() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    Future.delayed(const Duration(milliseconds: 150), () {
       if (!mounted) return;
-      Future.delayed(const Duration(milliseconds: 150), () {
-        if (!mounted || !_scrollController.hasClients) return;
+      if (_scrollController.hasClients) {
         _scrollController.animateTo(
-          _scrollController.position.maxScrollExtent + 500.0,
+          _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 600),
           curve: Curves.easeOutCubic,
         );
-      });
+      }
     });
   }
 
@@ -329,21 +326,18 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
           listenable: Listenable.merge([
             _currentOrder,
             _selectedTileIndex,
-            _isDraggingNotifier,
           ]),
           builder: (context, _) {
             final currentOrder = _currentOrder.value;
             final selectedIndex = _selectedTileIndex.value;
-            final isDragging = _isDraggingNotifier.value;
             return RawScrollbar(
               controller: _scrollController,
               thumbColor: theme.primaryColor.withValues(alpha: 0.5),
               radius: Radius.circular(8.r),
               thickness: 4.w,
               child: CustomScrollView(
-                physics: isDragging
-                    ? const NeverScrollableScrollPhysics()
-                    : const BouncingScrollPhysics(),
+                controller: _scrollController,
+                physics: const BouncingScrollPhysics(),
                 slivers: [
                   SliverToBoxAdapter(child: SizedBox(height: 12.h)),
               SliverToBoxAdapter(
@@ -396,8 +390,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: isCompact ? 13.sp : 14.sp,
-                                  fontWeight: FontWeight.w500,
+                                  fontSize: isCompact ? 12.sp : 13.sp,
+                                  fontWeight: FontWeight.w400,
                                   color: isDark ? Colors.white70 : Colors.black87,
                                   height: 1.4,
                                 ),
@@ -540,12 +534,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                         itemCount: currentOrder.length,
                         onReorder: _onReorder,
                         onReorderStart: (index) {
-                          _isDraggingNotifier.value = true;
                           hapticService.selection();
                         },
-                        onReorderEnd: (index) {
-                          _isDraggingNotifier.value = false;
-                        },
+                        onReorderEnd: (index) {},
                         proxyDecorator: (child, index, animation) => Material(
                           color: Colors.transparent,
                           child: child.animate().scale(
@@ -659,9 +650,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                             : "Narrate the story",
                         title: 'NARRATE THE STORY',
                         subtitle: 'Read your completed story aloud',
-                        displayFontSize: 15.sp,
-                        displayFontWeight: FontWeight.w500,
-                        displayTextAlign: TextAlign.left,
+                        displayFontSize: 14.sp,
+                        displayFontWeight: FontWeight.w400,
+                        displayTextAlign: TextAlign.center,
                         primaryColor: theme.primaryColor,
                         isPositioned: false,
                         onConfirmed: () =>
