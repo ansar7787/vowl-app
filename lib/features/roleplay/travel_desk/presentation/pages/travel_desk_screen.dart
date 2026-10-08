@@ -45,13 +45,14 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   late AnimationController _rippleController;
-  late AnimationController _pulseController;
 
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   // Custom drag feedback coordinates
   final ValueNotifier<int?> _hoveredIndex = ValueNotifier(null);
+
+  late final Listenable _mergedListenable;
 
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 150), () {
@@ -70,13 +71,18 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   void initState() {
     super.initState();
 
+    _mergedListenable = Listenable.merge([
+      isAnsweredNotifier,
+      isCorrectNotifier,
+      showConfettiNotifier,
+      _selectedIndex,
+      _hoveredIndex,
+      isFirstStagePassedNotifier,
+    ]);
+
     _rippleController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 550),
-    );
-    _pulseController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
     );
 
     initRoleplayGame();
@@ -98,7 +104,6 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   @override
   void dispose() {
     _rippleController.dispose();
-    _pulseController.dispose();
     _selectedIndex.dispose();
     _hoveredIndex.dispose();
     _scrollController.dispose();
@@ -169,14 +174,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
         final options = quest?.options ?? [];
 
         return ListenableBuilder(
-          listenable: Listenable.merge([
-            isAnsweredNotifier,
-            isCorrectNotifier,
-            showConfettiNotifier,
-            _selectedIndex,
-            _hoveredIndex,
-            isFirstStagePassedNotifier,
-          ]),
+          listenable: _mergedListenable,
           builder: (context, _) {
             return RoleplayBaseLayout(
               fullScreenContent: true,
@@ -208,121 +206,138 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                             physics: const BouncingScrollPhysics(),
                             slivers: [
                               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
-                              SliverFillRemaining(
-                                hasScrollBody: true,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: LayoutBuilder(
-                                        builder: (context, constraints) {
-                                          final isCompact =
-                                              constraints.maxHeight < 580;
-                                          return Padding(
+                              SliverToBoxAdapter(
+                                child: LayoutBuilder(
+                                  builder: (context, constraints) {
+                                    final isCompact =
+                                        MediaQuery.of(context).size.height <
+                                        600;
+                                    return Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: isCompact ? 5.h : 10.h,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Padding(
                                             padding: EdgeInsets.symmetric(
                                               horizontal: 16.w,
-                                              vertical: isCompact ? 5.h : 10.h,
                                             ),
-                                            child: Column(
-                                              children: [
-                                                TravelDeskInstruction(
-                                                  primaryColor:
-                                                      theme.primaryColor,
-                                                  instruction:
-                                                      InstructionHelper.getInstruction(
-                                                        quest,
-                                                      ),
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 10.h
-                                                      : 16.h,
-                                                ),
-                                                TravelDeskCustomsTerminal(
-                                                  prompt: quest.prompt ?? "",
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 16.h
-                                                      : 24.h,
-                                                ),
+                                            child: TravelDeskInstruction(
+                                              primaryColor: theme.primaryColor,
+                                              instruction:
+                                                  InstructionHelper.getInstruction(
+                                                    quest,
+                                                  ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: isCompact ? 10.h : 16.h,
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                            ),
+                                            child: TravelDeskCustomsTerminal(
+                                              prompt: quest.prompt ?? "",
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: isCompact ? 16.h : 24.h,
+                                          ),
 
-                                                // Biometric Passport Book
-                                                TravelDeskPassportBook(
-                                                  options: options,
-                                                  color: theme.primaryColor,
-                                                  correctIndex:
-                                                      quest
-                                                          .correctAnswerIndex ??
-                                                      0,
-                                                  isDark: isDark,
-                                                  travelDocument:
-                                                      quest.travelDocuments,
-                                                  selectedIndex:
-                                                      _selectedIndex.value,
-                                                  hoveredIndex:
-                                                      _hoveredIndex.value,
-                                                  isAnswered:
-                                                      isAnsweredNotifier
-                                                          .value ||
-                                                      isFirstStagePassedNotifier
-                                                          .value,
-                                                  isCorrect:
-                                                      isCorrectNotifier.value,
-                                                  rippleAnimation:
-                                                      _rippleController,
-                                                  onSubmitStamp:
-                                                      (index, correctIndex) =>
-                                                          _submitStamp(
-                                                            index,
-                                                            correctIndex,
-                                                            quest,
-                                                          ),
-                                                  onHoverChanged: (index) {
-                                                    hapticService.selection();
-                                                    _hoveredIndex.value = index;
-                                                  },
-                                                  onHoverEnded: () {
-                                                    _hoveredIndex.value = null;
-                                                  },
-                                                  onDragStarted: () {},
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 20.h
-                                                      : 32.h,
-                                                ),
+                                          // Biometric Passport Book (Full Width)
+                                          TravelDeskPassportBook(
+                                            options: quest.itinerary ?? options,
+                                            color: theme.primaryColor,
+                                            correctIndex:
+                                                quest.correctAnswerIndex ?? 0,
+                                            isDark: isDark,
+                                            travelDocument:
+                                                quest.travelDocuments,
+                                            selectedIndex: _selectedIndex.value,
+                                            hoveredIndex: _hoveredIndex.value,
+                                            isAnswered:
+                                                isAnsweredNotifier.value ||
+                                                isFirstStagePassedNotifier
+                                                    .value,
+                                            isCorrect: isCorrectNotifier.value,
+                                            rippleAnimation: _rippleController,
+                                            onSubmitStamp:
+                                                (index, correctIndex) =>
+                                                    _submitStamp(
+                                                      index,
+                                                      correctIndex,
+                                                      quest,
+                                                    ),
+                                            onHoverChanged: (index) {
+                                              hapticService.selection();
+                                              _hoveredIndex.value = index;
+                                            },
+                                            onHoverEnded: () {
+                                              _hoveredIndex.value = null;
+                                            },
+                                            onDragStarted: () {},
+                                          ),
+                                          SizedBox(
+                                            height: isCompact ? 20.h : 32.h,
+                                          ),
 
-                                                // Stamp slammed terminal console
-                                                if (!isAnsweredNotifier.value &&
+                                          // Stamp slammed terminal console
+                                          AnimatedSwitcher(
+                                            duration: const Duration(
+                                              milliseconds: 300,
+                                            ),
+                                            switchOutCurve: Curves.easeOut,
+                                            transitionBuilder:
+                                                (child, animation) {
+                                                  return SizeTransition(
+                                                    sizeFactor: animation,
+                                                    axisAlignment: -1.0,
+                                                    child: FadeTransition(
+                                                      opacity: animation,
+                                                      child: child,
+                                                    ),
+                                                  );
+                                                },
+                                            child:
+                                                (!isAnsweredNotifier.value &&
                                                     !isFirstStagePassedNotifier
                                                         .value)
-                                                  TravelDeskStampStation(
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    onDragStarted: () {
-                                                      hapticService.selection();
-                                                      soundService.playHint();
-                                                    },
-                                                    onDragEnded: () {
-                                                      _hoveredIndex.value =
-                                                          null;
-                                                    },
-                                                  ),
+                                                ? Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: 16.w,
+                                                        ),
+                                                    child:
+                                                        TravelDeskStampStation(
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                          onDragStarted: () {
+                                                            hapticService
+                                                                .selection();
+                                                            soundService
+                                                                .playHint();
+                                                          },
+                                                          onDragEnded: () {
+                                                            _hoveredIndex
+                                                                    .value =
+                                                                null;
+                                                          },
+                                                        ),
+                                                  )
+                                                : const SizedBox.shrink(),
+                                          ),
 
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 20.h
-                                                      : 40.h,
-                                                ),
-                                              ],
-                                            ),
-                                          );
-                                        },
+                                          SizedBox(
+                                            height: isCompact ? 20.h : 40.h,
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                  ],
+                                    );
+                                  },
                                 ),
                               ),
 
