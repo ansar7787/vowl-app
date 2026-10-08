@@ -32,13 +32,13 @@ class ConstellationPainter extends CustomPainter {
 
     final Paint paint = Paint()
       ..color = lineColor.withValues(alpha: 0.6)
-      ..strokeWidth = 2.5
+      ..strokeWidth = 3.w
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
     final Paint glowPaint = Paint()
       ..color = lineColor.withValues(alpha: 0.2 + (0.15 * pulseValue))
-      ..strokeWidth = 7.0
+      ..strokeWidth = 8.w
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 

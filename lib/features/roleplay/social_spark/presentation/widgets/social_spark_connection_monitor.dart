@@ -7,6 +7,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 class SocialSparkConnectionMonitor extends StatelessWidget {
   final String text;
   final String? socialContext;
+  final String? instruction;
   final Color color;
   final bool isDark;
   final bool isAnswered;
@@ -16,6 +17,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
     super.key,
     required this.text,
     this.socialContext,
+    this.instruction,
     required this.color,
     required this.isDark,
     required this.isAnswered,
@@ -33,8 +35,8 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
     }
 
     return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(22.r),
+      width: double.infinity,
+      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(30.r),
@@ -50,32 +52,51 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
         ],
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.hub_rounded, color: outlineColor, size: 18.r),
+              Icon(Icons.hub_rounded, color: outlineColor, size: 20.r),
               SizedBox(width: 8.w),
-              Text(
-                isAnswered
-                    ? ((isCorrect ?? false)
-                          ? "ALIGNMENT STABLE"
-                          : "SIGNAL COLLAPSED")
-                    : "CONSTELLATION HARMONICS",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.bold,
-                  color: outlineColor,
-                  letterSpacing: 1.5,
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    isAnswered
+                        ? ((isCorrect ?? false)
+                              ? "ALIGNMENT STABLE"
+                              : "SIGNAL COLLAPSED")
+                        : "CONSTELLATION HARMONICS",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
+                      color: outlineColor,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
                 ),
               ),
             ],
           ),
+          if (instruction != null) ...[
+            SizedBox(height: 14.h),
+            Text(
+              instruction!,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+                color: isDark ? Colors.grey.shade300 : Colors.grey.shade700,
+              ),
+            ),
+          ],
           if (socialContext != null) ...[
-            SizedBox(height: 12.h),
+            SizedBox(height: 14.h),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
               decoration: BoxDecoration(
                 color: outlineColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12.r),
@@ -87,34 +108,39 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                   Icon(
                     Icons.location_on_outlined,
                     color: outlineColor,
-                    size: 12.r,
+                    size: 14.r,
                   ),
-                  SizedBox(width: 4.w),
-                  Text(
-                    "SCENE: ${socialContext!.toUpperCase()}",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 9.sp,
-                      fontWeight: FontWeight.bold,
-                      color: outlineColor,
-                      letterSpacing: 1.0,
+                  SizedBox(width: 6.w),
+                  Flexible(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        "SCENE: ${socialContext!.toUpperCase()}",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.bold,
+                          color: outlineColor,
+                          letterSpacing: 1.0,
+                        ),
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
           ],
-          SizedBox(height: 16.h),
+          SizedBox(height: 20.h),
           AnimatedSize(
             duration: const Duration(milliseconds: 250),
             curve: Curves.easeOut,
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.black.withValues(alpha: 0.25)
-                    : Colors.black.withValues(alpha: 0.02),
+                    : Colors.black.withValues(alpha: 0.03),
                 borderRadius: BorderRadius.circular(16.r),
               ),
               child: Text(
@@ -122,7 +148,8 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 20.sp,
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w500,
                   color: text.isEmpty
                       ? Colors.grey.shade600
                       : (Theme.of(context).colorScheme.onSurface),
@@ -136,3 +163,4 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
   }
 }
+
