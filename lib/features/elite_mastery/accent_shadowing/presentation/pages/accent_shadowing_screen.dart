@@ -482,8 +482,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                   ),
                 ),
               if (isFirstStagePassedNotifier.value &&
-                  !isAnsweredNotifier.value &&
-                  state is EliteMasteryLoaded)
+                  !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: EdgeInsets.symmetric(
@@ -491,7 +490,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                       vertical: 12.h,
                     ),
                     child: EliteFeedbackCard(
-                      state: state as EliteMasteryLoaded,
+                      state: state,
                       isCorrect: true,
                       onContinue: null,
                       isDark: isDark,
