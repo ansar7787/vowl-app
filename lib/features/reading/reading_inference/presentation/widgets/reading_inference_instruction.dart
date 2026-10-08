@@ -29,6 +29,7 @@ class ReadingInferenceInstruction extends StatelessWidget {
             child: Text(
               instruction?.toUpperCase() ??
                   "RUB THE MIRROR TO REVEAL SCIENTIFIC CLUES",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
