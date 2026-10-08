@@ -214,6 +214,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                           child: CustomScrollView(
                             physics: const BouncingScrollPhysics(),
                             slivers: [
+              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
                               SliverFillRemaining(
                                 hasScrollBody: true,
                                 child: Column(
