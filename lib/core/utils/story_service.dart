@@ -253,7 +253,7 @@ class StoryServiceImpl implements StoryService {
     'speedSpelling':
         "Listen closely to the word, then tap the floating letters to spell it out. Practicing this will make spelling feel like second nature!",
     'accentShadowing':
-        "Listen closely and mimic the rhythm! Tap the chat bubble that exactly matches the sentence you just heard.",
+        "Listen to the speaker and choose the right answer. Once you've got it, grab your mic and try repeating the sentence exactly how they said it.",
   };
 
   static const Map<String, List<String>> kidsScripts = {
@@ -608,11 +608,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'accentshadowing': [
       "",
-      "Great job! Shadowing is the fastest path to native pronunciation.",
-      "Your rhythm and pitch are aligning perfectly with native speakers.",
-      "Halfway to 100! You are conquering the nuances of connected speech.",
-      "Level 100! Your spoken cadence is incredibly natural.",
-      "Level 200 reached! You possess flawless phonetic mimicry.",
+      "Great start! You're already picking up on how locals actually talk.",
+      "You're getting the hang of it! Your voice is starting to flow much more naturally.",
+      "Halfway to 100! You're really starting to sound like a native speaker.",
+      "Level 100! Your pronunciation is incredibly smooth and confident.",
+      "Level 200 reached! Honestly, I could mistake you for a local. Amazing work!",
     ],
     'consonantclarity': [
       "",
