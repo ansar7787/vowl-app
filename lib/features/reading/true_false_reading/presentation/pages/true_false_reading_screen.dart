@@ -231,11 +231,11 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                                 child: EvidenceHighlightWrapper(
                                   passage: quest.passage ?? "",
-                                  evidenceWords:
-                                      (quest.evidenceLine ??
-                                              quest.passage ??
-                                              "")
-                                          .split(RegExp(r'\s+')),
+                                  evidenceWords: [
+                                    quest.evidenceLine ??
+                                        quest.passage ??
+                                        ""
+                                  ],
                                   primaryColor: theme.primaryColor,
                                   onCorrectHighlight: () =>
                                       _submitFinalAnswer(true, quest),

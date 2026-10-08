@@ -305,10 +305,11 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                                 child: EvidenceHighlightWrapper(
                                   passage: displayPassage,
-                                  evidenceWords: (quest.evidenceLine ??
-                                          quest.correctAnswer ??
-                                          '')
-                                      .split(' '),
+                                  evidenceWords: [
+                                    quest.evidenceLine ??
+                                        quest.correctAnswer ??
+                                        ''
+                                  ],
                                   primaryColor: theme.primaryColor,
                                   onCorrectHighlight: () =>
                                       _submitFinalAnswer(true, quest),
