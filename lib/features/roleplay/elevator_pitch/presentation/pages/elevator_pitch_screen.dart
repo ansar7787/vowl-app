@@ -50,6 +50,19 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     super.dispose();
   }
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (!mounted) return;
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -62,6 +75,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
+      _scrollToBottom();
       submitWrongAnswer(quest: quest, userAnswer: null);
     }
   }
@@ -84,7 +98,8 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
             showConfettiNotifier,
           ]),
           builder: (context, _) {
-            return RoleplayBaseLayout(fullScreenContent: true,
+            return RoleplayBaseLayout(
+              fullScreenContent: true,
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
@@ -106,9 +121,10 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
+                            controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
+                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverFillRemaining(
                                 hasScrollBody: true,
                                 child: Column(
@@ -162,25 +178,20 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
 
                               if (!isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 24.w,
-                                    ),
-                                    child: SpeakToConfirmOverlay(
-                                      expectedText:
-                                          quest.correctAnswer ??
-                                          "Elevator Pitch Example",
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      onConfirmed: () {
-                                        context.read<RoleplayBloc>().add(
-                                          const RoleplaySpeakConfirmed(5),
-                                        );
-                                        _submitVerbalEvaluation(true, quest);
-                                      },
-                                      onSkipped: () =>
-                                          _submitVerbalEvaluation(false, quest),
-                                    ),
+                                  child: SpeakToConfirmOverlay(
+                                    expectedText:
+                                        quest.correctAnswer ??
+                                        "Elevator Pitch Example",
+                                    primaryColor: theme.primaryColor,
+                                    isPositioned: false,
+                                    onConfirmed: () {
+                                      context.read<RoleplayBloc>().add(
+                                        const RoleplaySpeakConfirmed(5),
+                                      );
+                                      _submitVerbalEvaluation(true, quest);
+                                    },
+                                    onSkipped: () =>
+                                        _submitVerbalEvaluation(false, quest),
                                   ),
                                 ),
                               SliverToBoxAdapter(

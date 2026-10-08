@@ -59,24 +59,23 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   // Set of unlocked nodes that are locked/resolved by the scanner lens
   final ValueNotifier<List<String>> _scannedGlitches = ValueNotifier([]);
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (!mounted) return;
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    isFirstStagePassedNotifier.addListener(() {
-      if (isFirstStagePassedNotifier.value &&
-          mounted &&
-          _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
+
     _sweepController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
@@ -221,8 +220,10 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     if (isCorrect) {
       hapticService.selection();
       isFirstStagePassedNotifier.value = true;
+      _scrollToBottom();
       // Wait for Phase 2
     } else {
+      _scrollToBottom();
       submitWrongAnswer(
         quest: quest,
         userAnswer: _diagnosedSymptoms.value.join(', '),
@@ -236,6 +237,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
+      _scrollToBottom();
       submitWrongAnswer(
         quest: quest,
         userAnswer: _diagnosedSymptoms.value.join(', '),
@@ -275,7 +277,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
-            return RoleplayBaseLayout(fullScreenContent: true,
+            return RoleplayBaseLayout(
+              fullScreenContent: true,
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
@@ -300,9 +303,10 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
+                            controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
+                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverFillRemaining(
                                 hasScrollBody: true,
                                 child: Column(
@@ -595,25 +599,20 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                               if (isFirstStagePassedNotifier.value &&
                                   !isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 24.w,
-                                    ),
-                                    child: SpeakToConfirmOverlay(
-                                      expectedText:
-                                          quest.correctAnswer ??
-                                          _diagnosedSymptoms.value.join(', '),
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      onConfirmed: () {
-                                        context.read<RoleplayBloc>().add(
-                                          const RoleplaySpeakConfirmed(5),
-                                        );
-                                        _submitVerbalEvaluation(true, quest);
-                                      },
-                                      onSkipped: () =>
-                                          _submitVerbalEvaluation(false, quest),
-                                    ),
+                                  child: SpeakToConfirmOverlay(
+                                    expectedText:
+                                        quest.correctAnswer ??
+                                        _diagnosedSymptoms.value.join(', '),
+                                    primaryColor: theme.primaryColor,
+                                    isPositioned: false,
+                                    onConfirmed: () {
+                                      context.read<RoleplayBloc>().add(
+                                        const RoleplaySpeakConfirmed(5),
+                                      );
+                                      _submitVerbalEvaluation(true, quest);
+                                    },
+                                    onSkipped: () =>
+                                        _submitVerbalEvaluation(false, quest),
                                   ),
                                 ),
                               SliverToBoxAdapter(
