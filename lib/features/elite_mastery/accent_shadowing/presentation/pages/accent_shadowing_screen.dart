@@ -319,33 +319,58 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                               Container(
                                 width: double.infinity,
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 16.w,
-                                  vertical: 12.h,
+                                  horizontal: 20.w,
+                                  vertical: 16.h,
                                 ),
-                                margin: EdgeInsets.only(bottom: 16.h),
+                                margin: EdgeInsets.only(bottom: 24.h),
                                 decoration: BoxDecoration(
-                                  color: isDark
-                                      ? Colors.white.withValues(alpha: 0.08)
-                                      : Colors.white,
-                                  borderRadius: BorderRadius.circular(16.r),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: isDark
+                                        ? [
+                                            theme.primaryColor.withValues(alpha: 0.15),
+                                            theme.primaryColor.withValues(alpha: 0.05),
+                                          ]
+                                        : [
+                                            theme.primaryColor.withValues(alpha: 0.1),
+                                            Colors.white,
+                                          ],
+                                  ),
+                                  borderRadius: BorderRadius.circular(20.r),
                                   border: Border.all(
-                                    color: isDark
-                                        ? Colors.white.withValues(alpha: 0.1)
-                                        : Colors.black.withValues(alpha: 0.05),
+                                    color: theme.primaryColor.withValues(alpha: 0.3),
+                                    width: 1.5,
                                   ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: theme.primaryColor.withValues(alpha: 0.1),
+                                      blurRadius: 10,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ],
                                 ),
-                                child: Text(
-                                  quest.instruction,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: isDark
-                                        ? Colors.white
-                                        : AppColors.slate800,
-                                    height: 1.4,
-                                  ),
-                                  textAlign: TextAlign.center,
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.lightbulb_outline_rounded,
+                                      color: theme.primaryColor,
+                                      size: 24.r,
+                                    ),
+                                    SizedBox(width: 12.w),
+                                    Expanded(
+                                      child: Text(
+                                        quest.instruction,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w700,
+                                          color: isDark ? Colors.white : AppColors.slate800,
+                                          height: 1.4,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
@@ -418,60 +443,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                     _submitVerbalEvaluation(nailedIt, quest),
                               ),
 
-                            if (isAnsweredNotifier.value &&
-                                (quest.explanation != null ||
-                                    quest.shadowingFocus != null ||
-                                    quest.targetAccent != null)) ...[
-                              SizedBox(height: 24.h),
-                              Container(
-                                    width: double.infinity,
-                                    padding: EdgeInsets.all(20.r),
-                                    decoration: BoxDecoration(
-                                      color: isDark
-                                          ? AppColors.slate800
-                                          : Colors.blue.withValues(alpha: 0.05),
-                                      borderRadius: BorderRadius.circular(20.r),
-                                      border: Border.all(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.3,
-                                        ),
-                                        width: 1.5,
-                                      ),
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        _buildFeedbackItem(
-                                          context,
-                                          "WHY IT WORKS",
-                                          quest.explanation,
-                                          Icons.lightbulb_outline_rounded,
-                                          theme.primaryColor,
-                                          isDark,
-                                        ),
-                                        _buildFeedbackItem(
-                                          context,
-                                          "PHONETIC RULE",
-                                          quest.shadowingFocus,
-                                          Icons.rule_rounded,
-                                          Colors.tealAccent.shade400,
-                                          isDark,
-                                        ),
-                                        _buildFeedbackItem(
-                                          context,
-                                          "TARGET SOUND",
-                                          quest.targetAccent,
-                                          Icons.record_voice_over_rounded,
-                                          Colors.blueAccent.shade400,
-                                          isDark,
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                  .animate()
-                                  .fadeIn(duration: 400.ms)
-                                  .slideY(begin: 0.1),
                             ],
                           ],
                         ),
@@ -485,7 +456,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                   height:
                       (isAnsweredNotifier.value ||
                           isFirstStagePassedNotifier.value)
-                      ? 180.h
+                      ? 400.h // Increased height to allow scrolling behind the feedback card
                       : 60.h,
                 ),
               ),
@@ -517,48 +488,4 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
     );
   }
 
-  Widget _buildFeedbackItem(
-    BuildContext context,
-    String title,
-    String? content,
-    IconData icon,
-    Color color,
-    bool isDark,
-  ) {
-    if (content == null || content.isEmpty) return const SizedBox.shrink();
-    return Padding(
-      padding: EdgeInsets.only(bottom: 16.h),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(icon, color: color, size: 20.r),
-              SizedBox(width: 8.w),
-              Text(
-                title,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.bold,
-                  color: color,
-                  letterSpacing: 1.5,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 8.h),
-          Text(
-            content,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              color: isDark ? Colors.white70 : Colors.black87,
-              height: 1.4,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
