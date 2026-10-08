@@ -33,13 +33,15 @@ class SkimmingScanningTargetBadge extends StatelessWidget {
             size: 24.r,
           ).animate(onPlay: (c) => c.repeat()).shimmer(),
           SizedBox(width: 12.w),
-          Text(
-            "ACQUIRE: ${item.toUpperCase()}",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
+          Flexible(
+            child: Text(
+              "FIND: ${item.toUpperCase()}",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+              ),
             ),
           ),
         ],
