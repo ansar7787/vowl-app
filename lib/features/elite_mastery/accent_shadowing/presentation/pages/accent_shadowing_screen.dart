@@ -358,6 +358,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                     Expanded(
                                       child: Text(
                                         quest.instruction,
+                                        textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 16.sp,
