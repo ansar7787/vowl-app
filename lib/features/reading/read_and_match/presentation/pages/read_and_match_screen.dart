@@ -13,7 +13,6 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_instruction.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_terminal.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/laser_bridge_painter.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class ReadAndMatchScreen extends StatefulWidget {
   final int level;
@@ -47,7 +46,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
 
   final ValueNotifier<String?> _activeKey = ValueNotifier(null);
   final ValueNotifier<Map<String, String>> _matches = ValueNotifier({});
-  final ValueNotifier<bool> _pendingSubmission = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   String? _currentQuestId;
@@ -61,7 +59,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
   void dispose() {
     _activeKey.dispose();
     _matches.dispose();
-    _pendingSubmission.dispose();
     _scrollController.dispose();
     _laserController.dispose();
     disposeReadingGame();
@@ -86,19 +83,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
       vsync: this,
       duration: const Duration(milliseconds: 300),
     );
-    _pendingSubmission.addListener(() {
-      if (_pendingSubmission.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
     initReadingGame();
   }
 
@@ -122,7 +106,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
   }
 
   void _onKeyTap(String key) {
-    if (isAnsweredNotifier.value || _pendingSubmission.value) return;
+    if (isAnsweredNotifier.value) return;
     hapticService.selection();
     final Map<String, String> currentMatches = Map.from(_matches.value);
 
@@ -144,7 +128,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     List<Map<String, String>> pairs,
     ReadingQuest quest,
   ) {
-    if (isAnsweredNotifier.value || _pendingSubmission.value) return;
+    if (isAnsweredNotifier.value) return;
 
     final Map<String, String> currentMatches = Map.from(_matches.value);
 
@@ -179,7 +163,11 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
       }
 
       if (isCorrect) {
-        _pendingSubmission.value = true;
+        hapticService.success();
+        soundService.playCorrect();
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = true;
+        context.read<ReadingBloc>().add(const SubmitAnswer(true));
       } else {
         submitWrongAnswer(quest: quest, userAnswer: 'Mismatched pairs');
         Future.delayed(const Duration(milliseconds: 1500), () {
@@ -193,36 +181,10 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     }
   }
 
-  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
-    _pendingSubmission.value = false;
-
-    if (!nailedSpeaking) {
-      submitWrongAnswer(quest: quest, userAnswer: '[Speaking skipped]');
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        if (mounted) {
-          _matches.value = {};
-          isAnsweredNotifier.value = false;
-          isCorrectNotifier.value = null;
-        }
-      });
-      return;
-    }
-
-    hapticService.success();
-    soundService.playCorrect();
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = true;
-    context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
-    context.read<ReadingBloc>().add(const SubmitAnswer(true));
-  }
-
   @override
   void onQuestionReset() {
     _activeKey.value = null;
-
     _matches.value = {};
-
-    _pendingSubmission.value = false;
     _terminalKeys.clear();
   }
 
@@ -263,7 +225,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
         }
 
         Color getColorForValue(String v) {
-          // If matched, use the key's color. Otherwise primary
           if (_matches.value.containsValue(v)) {
             final key = _matches.value.entries
                 .firstWhere((e) => e.value == v)
@@ -280,7 +241,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
             showConfettiNotifier,
             _matches,
             _activeKey,
-            _pendingSubmission,
             _laserController,
           ]),
           builder: (context, _) {
@@ -335,14 +295,14 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                       ),
                                       child: Row(
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                            CrossAxisAlignment.center,
                                         children: [
                                           // Left Keys Column
                                           Expanded(
                                             flex: 2,
                                             child: Column(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.start,
+                                                  MainAxisAlignment.center,
                                               children: keys
                                                   .map(
                                                     (k) => Padding(
@@ -382,7 +342,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                             flex: 3,
                                             child: Column(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
+                                                  MainAxisAlignment.center,
                                               children: values
                                                   .map(
                                                     (v) => Padding(
@@ -428,27 +388,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                               ),
                             ),
                           ),
-
-                          if (_pendingSubmission.value &&
-                              !isAnsweredNotifier.value)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: SpeakToConfirmOverlay(
-                                  expectedText:
-                                      quest.textToSpeak ??
-                                      quest.correctAnswer ??
-                                      "Confirm",
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: () =>
-                                      _submitFinalAnswer(true, quest),
-                                  onSkipped: () =>
-                                      _submitFinalAnswer(false, quest),
-                                  allowSkip: true,
-                                  isPositioned: false,
-                                ),
-                              ),
-                            ),
 
                           SliverToBoxAdapter(
                             child: SizedBox(
