@@ -8,7 +8,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
-import '../../../presentation/widgets/elite_feedback_card.dart';
+
 
 import '../widgets/accent_shadowing_target_panel.dart';
 import '../widgets/accent_shadowing_options_panel.dart';
@@ -17,6 +17,8 @@ import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_
 import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
+import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
+
 
 class AccentShadowingScreen extends StatefulWidget {
   final int level;
@@ -325,37 +327,21 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                 ),
                                 margin: EdgeInsets.only(bottom: 24.h),
                                 decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                    colors: isDark
-                                        ? [
-                                            theme.primaryColor.withValues(
-                                              alpha: 0.15,
-                                            ),
-                                            theme.primaryColor.withValues(
-                                              alpha: 0.05,
-                                            ),
-                                          ]
-                                        : [
-                                            theme.primaryColor.withValues(
-                                              alpha: 0.1,
-                                            ),
-                                            Colors.white,
-                                          ],
-                                  ),
-                                  borderRadius: BorderRadius.circular(20.r),
+                                  color: isDark 
+                                      ? AppColors.slate800 
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(16.r),
                                   border: Border.all(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.3,
-                                    ),
+                                    color: isDark 
+                                        ? theme.primaryColor.withValues(alpha: 0.3)
+                                        : theme.primaryColor.withValues(alpha: 0.2),
                                     width: 1.5,
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.1,
-                                      ),
+                                      color: isDark
+                                          ? Colors.black.withValues(alpha: 0.2)
+                                          : theme.primaryColor.withValues(alpha: 0.05),
                                       blurRadius: 10,
                                       offset: const Offset(0, 4),
                                     ),
@@ -372,6 +358,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                     Expanded(
                                       child: Text(
                                         quest.instruction,
+                                        textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 16.sp,
@@ -462,6 +449,15 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                   },
                 ),
               ),
+              if (isFirstStagePassedNotifier.value &&
+                  !isAnsweredNotifier.value)
+                SliverToBoxAdapter(
+                  child: AccentShadowingInsightsPanel(
+                    quest: quest,
+                    isDark: isDark,
+                    primaryColor: theme.primaryColor,
+                  ),
+                ),
               if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
                   child: Padding(
@@ -481,22 +477,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                     ),
                   ),
                 ),
-              if (isFirstStagePassedNotifier.value &&
-                  !isAnsweredNotifier.value)
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 12.h,
-                    ),
-                    child: EliteFeedbackCard(
-                      state: state,
-                      isCorrect: true,
-                      onContinue: null,
-                      isDark: isDark,
-                    ),
-                  ),
-                ),
               SliverToBoxAdapter(
                 child: SizedBox(
                   height: isAnsweredNotifier.value ? 400.h : 60.h,
@@ -506,6 +486,161 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
           ),
         ),
       ],
+    );
+  }
+}
+
+class AccentShadowingInsightsPanel extends StatelessWidget {
+  final EliteMasteryQuest quest;
+  final bool isDark;
+  final Color primaryColor;
+
+  const AccentShadowingInsightsPanel({
+    super.key,
+    required this.quest,
+    required this.isDark,
+    required this.primaryColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final hasInsights = quest.explanation != null ||
+        quest.shadowingFocus != null ||
+        quest.targetAccent != null ||
+        quest.usageContext != null ||
+        quest.spellingRule != null ||
+        quest.sequenceLogic != null;
+
+    if (!hasInsights) return const SizedBox.shrink();
+
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(20.w),
+      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.slate800 : Colors.white,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.3),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark ? Colors.black.withValues(alpha: 0.2) : primaryColor.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.tips_and_updates_rounded, color: primaryColor, size: 24.r),
+              SizedBox(width: 8.w),
+              Text(
+                'Pedagogical Insights',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w800,
+                  color: isDark ? Colors.white : AppColors.slate800,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.h),
+          if (quest.targetAccent != null)
+            _buildInsightRow(
+              context,
+              icon: Icons.record_voice_over_rounded,
+              label: 'Target Sound',
+              value: quest.targetAccent!,
+            ),
+          if (quest.shadowingFocus != null)
+            _buildInsightRow(
+              context,
+              icon: Icons.rule_rounded,
+              label: 'Phonetic Rule',
+              value: quest.shadowingFocus!,
+            ),
+          if (quest.usageContext != null)
+            _buildInsightRow(
+              context,
+              icon: Icons.chat_bubble_outline_rounded,
+              label: 'Usage Context',
+              value: quest.usageContext!,
+            ),
+          if (quest.spellingRule != null)
+            _buildInsightRow(
+              context,
+              icon: Icons.spellcheck_rounded,
+              label: 'Spelling Pattern',
+              value: quest.spellingRule!,
+            ),
+          if (quest.sequenceLogic != null)
+            _buildInsightRow(
+              context,
+              icon: Icons.low_priority_rounded,
+              label: 'Sequence Logic',
+              value: quest.sequenceLogic!,
+            ),
+          if (quest.explanation != null)
+            _buildInsightRow(
+              context,
+              icon: Icons.menu_book_rounded,
+              label: 'Explanation',
+              value: quest.explanation!,
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInsightRow(
+    BuildContext context, {
+    required IconData icon,
+    required String label,
+    required String value,
+  }) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 12.h),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, color: primaryColor.withValues(alpha: 0.7), size: 20.r),
+          SizedBox(width: 12.w),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  label,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w700,
+                    color: primaryColor,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+                SizedBox(height: 4.h),
+                Text(
+                  value,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark ? Colors.white70 : AppColors.slate600,
+                    height: 1.4,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
