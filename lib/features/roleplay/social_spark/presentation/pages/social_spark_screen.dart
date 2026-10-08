@@ -284,8 +284,10 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                           // Trigger Action Buttons
                                           if (!isAnsweredNotifier.value &&
                                               _selectedIndices.value.isNotEmpty)
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
+                                            Wrap(
+                                              alignment: WrapAlignment.center,
+                                              spacing: isCompact ? 10.w : 16.w,
+                                              runSpacing: 10.h,
                                               children: [
                                                 ScaleButton(
                                                   onTap: _clearSelection,
@@ -306,6 +308,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       ),
                                                     ),
                                                     child: Row(
+                                                      mainAxisSize: MainAxisSize.min,
                                                       children: [
                                                         Icon(
                                                           Icons.refresh_rounded,
@@ -313,26 +316,20 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                           size: isCompact ? 18.r : 20.r,
                                                         ),
                                                         SizedBox(width: 6.w),
-                                                        Flexible(
-                                                          child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
-                                                            child: Text(
-                                                              "CLEAR PATH",
-                                                              style: TextStyle(
-                                                                fontFamily: 'Outfit',
-                                                                fontSize: isCompact ? 12.sp : 14.sp,
-                                                                fontWeight: FontWeight.bold,
-                                                                color: theme.primaryColor,
-                                                                letterSpacing: 1.5,
-                                                              ),
-                                                            ),
+                                                        Text(
+                                                          "CLEAR PATH",
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: isCompact ? 12.sp : 14.sp,
+                                                            fontWeight: FontWeight.bold,
+                                                            color: theme.primaryColor,
+                                                            letterSpacing: 1.5,
                                                           ),
                                                         ),
                                                       ],
                                                     ),
                                                   ),
                                                 ),
-                                                SizedBox(width: isCompact ? 10.w : 16.w),
                                                 ScaleButton(
                                                   onTap: () => _submitAnswer(
                                                     words,
@@ -364,6 +361,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       ],
                                                     ),
                                                     child: Row(
+                                                      mainAxisSize: MainAxisSize.min,
                                                       children: [
                                                         Icon(
                                                           Icons.bolt_rounded,
@@ -371,19 +369,14 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                           size: isCompact ? 18.r : 20.r,
                                                         ),
                                                         SizedBox(width: 6.w),
-                                                        Flexible(
-                                                          child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
-                                                            child: Text(
-                                                              "IGNITE SPARK",
-                                                              style: TextStyle(
-                                                                fontFamily: 'Outfit',
-                                                                fontSize: isCompact ? 12.sp : 14.sp,
-                                                                fontWeight: FontWeight.bold,
-                                                                color: Colors.white,
-                                                                letterSpacing: 1.5,
-                                                              ),
-                                                            ),
+                                                        Text(
+                                                          "IGNITE SPARK",
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: isCompact ? 12.sp : 14.sp,
+                                                            fontWeight: FontWeight.bold,
+                                                            color: Colors.white,
+                                                            letterSpacing: 1.5,
                                                           ),
                                                         ),
                                                       ],

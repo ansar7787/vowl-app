@@ -60,21 +60,19 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
               Icon(Icons.hub_rounded, color: outlineColor, size: 20.r),
               SizedBox(width: 8.w),
               Flexible(
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    isAnswered
-                        ? ((isCorrect ?? false)
-                              ? "ALIGNMENT STABLE"
-                              : "SIGNAL COLLAPSED")
-                        : "CONSTELLATION HARMONICS",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
-                      color: outlineColor,
-                      letterSpacing: 1.5,
-                    ),
+                child: Text(
+                  isAnswered
+                      ? ((isCorrect ?? false)
+                            ? "ALIGNMENT STABLE"
+                            : "SIGNAL COLLAPSED")
+                      : "CONSTELLATION HARMONICS",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.bold,
+                    color: outlineColor,
+                    letterSpacing: 1.5,
                   ),
                 ),
               ),
@@ -112,17 +110,15 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                   ),
                   SizedBox(width: 6.w),
                   Flexible(
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        "SCENE: ${socialContext!.toUpperCase()}",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.bold,
-                          color: outlineColor,
-                          letterSpacing: 1.0,
-                        ),
+                    child: Text(
+                      "SCENE: ${socialContext!.toUpperCase()}",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.bold,
+                        color: outlineColor,
+                        letterSpacing: 1.0,
                       ),
                     ),
                   ),
@@ -144,11 +140,11 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16.r),
               ),
               child: Text(
-                text.isEmpty ? "SELECT INITIAL STAR NODE..." : text,
+                text.isEmpty ? "Tap words to build your response" : text,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 24.sp,
+                  fontSize: text.isEmpty ? 16.sp : 18.sp,
                   fontWeight: FontWeight.w500,
                   color: text.isEmpty
                       ? Colors.grey.shade600
