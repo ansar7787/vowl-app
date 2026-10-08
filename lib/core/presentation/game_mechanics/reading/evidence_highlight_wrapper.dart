@@ -129,48 +129,52 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     _words = [];
 
     // Clean all words
-    final cleanRaw = rawWords
-        .map(
-          (w) => w.toLowerCase().replaceAll(
-            RegExp(
-              r'[.,!?;:"'
-              "'"
-              r']+',
-            ),
-            '',
-          ),
-        )
-        .toList();
-    final cleanEvidence = widget.evidenceWords
-        .map(
-          (w) => w.toLowerCase().replaceAll(
-            RegExp(
-              r'[.,!?;:"'
-              "'"
-              r']+',
-            ),
-            '',
-          ),
-        )
-        .where((w) => w.isNotEmpty)
-        .toList();
+    String cleanString(String s) => s.toLowerCase().replaceAll(
+          RegExp(r'[.,!?;:"\'\[\]\(\)\-]+'),
+          '',
+        );
 
-    // Find the exact sequence
-    List<int> evidenceIndices = [];
-    if (cleanEvidence.isNotEmpty) {
-      for (int i = 0; i <= cleanRaw.length - cleanEvidence.length; i++) {
+    final cleanRaw = rawWords.map(cleanString).toList();
+
+    // We want to find each phrase in the passage and mark its words as evidence.
+    Set<int> evidenceIndices = {};
+
+    for (final phrase in widget.evidenceWords) {
+      final phraseWords = phrase
+          .split(RegExp(r'\s+'))
+          .map(cleanString)
+          .where((w) => w.isNotEmpty)
+          .toList();
+      if (phraseWords.isEmpty) continue;
+
+      // Try to find exact sequence of phraseWords in cleanRaw
+      bool foundPhrase = false;
+      for (int i = 0; i <= cleanRaw.length - phraseWords.length; i++) {
         bool match = true;
-        for (int j = 0; j < cleanEvidence.length; j++) {
-          if (cleanRaw[i + j] != cleanEvidence[j]) {
+        for (int j = 0; j < phraseWords.length; j++) {
+          if (cleanRaw[i + j] != phraseWords[j]) {
             match = false;
             break;
           }
         }
         if (match) {
-          for (int j = 0; j < cleanEvidence.length; j++) {
+          for (int j = 0; j < phraseWords.length; j++) {
             evidenceIndices.add(i + j);
           }
-          break; // Found the first exact occurrence
+          foundPhrase = true;
+          break; // Found the phrase, move to next phrase
+        }
+      }
+
+      if (!foundPhrase) {
+        // Fallback: if exact phrase not found (maybe due to punctuation or missing word),
+        // fallback to bag-of-words for this phrase.
+        for (final pw in phraseWords) {
+          for (int i = 0; i < cleanRaw.length; i++) {
+            if (cleanRaw[i] == pw) {
+              evidenceIndices.add(i);
+            }
+          }
         }
       }
     }
@@ -178,12 +182,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     for (int i = 0; i < rawWords.length; i++) {
       final word = rawWords[i];
       final cleanWord = cleanRaw[i];
-
-      // If exact sequence was found, only mark those indices.
-      // Otherwise, fallback to any matching word (bag-of-words approach).
-      final isEvidence = evidenceIndices.isNotEmpty
-          ? evidenceIndices.contains(i)
-          : cleanEvidence.contains(cleanWord);
+      final isEvidence = evidenceIndices.contains(i);
 
       _words.add(
         _HighlightWord(
@@ -199,7 +198,10 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     // found, so the user can actually complete the task without soft-locking.
     int actualEvidenceCount = _words.where((w) => w.isEvidence).length;
     if (widget.requiredHighlights == null && actualEvidenceCount > 0) {
+      // Require finding 100% of the evidence words
       _targetCount = actualEvidenceCount;
+    } else if (widget.requiredHighlights == null) {
+      _targetCount = 1;
     }
   }
 
