@@ -12,7 +12,7 @@ import 'package:vowl/features/reading/presentation/layout/reading_base_layout.da
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_instruction.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_foggy_mirror.dart';
-import 'package:vowl/core/presentation/game_mechanics/reading/reading_self_evaluation_card.dart';
+import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_option.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 
 class ReadingInferenceScreen extends StatefulWidget {
@@ -45,6 +45,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
   final ValueNotifier<double> _clarity = ValueNotifier(0.0);
   final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
   final ValueNotifier<bool> _evidenceFound = ValueNotifier(false);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -53,6 +54,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
     _clarity.dispose();
     _showEvidence.dispose();
     _evidenceFound.dispose();
+    _selectedIndex.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
@@ -73,25 +75,35 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
     }
   }
 
-  void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
-    if (isAnsweredNotifier.value) return;
+  void _submitAnswer(int index, ReadingQuest quest) {
+    if (isAnsweredNotifier.value || quest.options == null || _clarity.value < 0.3) return;
+
+    _selectedIndex.value = index;
+    final String selectedText = quest.options![index];
+    final bool isCorrect =
+        selectedText.trim().toLowerCase() == quest.correctAnswer?.trim().toLowerCase();
 
     if (isCorrect) {
+      hapticService.success();
+      soundService.playCorrect();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = true;
 
       if (quest.clueWords != null && quest.clueWords!.isNotEmpty) {
-        _showEvidence.value = true;
+        Future.delayed(const Duration(milliseconds: 600), () {
+          if (mounted) _showEvidence.value = true;
+        });
       } else {
         context.read<ReadingBloc>().add(const SubmitAnswer(true));
       }
     } else {
-      submitWrongAnswer(quest: quest, userAnswer: 'Self-evaluated incorrect');
+      submitWrongAnswer(quest: quest, userAnswer: selectedText);
     }
   }
 
   void _onEvidenceFound() {
     hapticService.success();
+    soundService.playCorrect();
     _showEvidence.value = false;
     _evidenceFound.value = true;
     context.read<ReadingBloc>().add(const SubmitAnswer(true));
@@ -100,12 +112,10 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
   @override
   void onQuestionReset() {
     _rubPoints.value = [];
-
     _clarity.value = 0.0;
-
     _showEvidence.value = false;
-
     _evidenceFound.value = false;
+    _selectedIndex.value = null;
   }
 
   @override
@@ -126,10 +136,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
             isAnsweredNotifier,
             isCorrectNotifier,
             showConfettiNotifier,
-            _rubPoints,
-            _clarity,
             _showEvidence,
             _evidenceFound,
+            _selectedIndex,
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
@@ -137,7 +146,10 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnsweredNotifier.value,
+              isAnswered: isAnsweredNotifier.value &&
+                  (!(quest?.clueWords?.isNotEmpty ?? false) || 
+                   _evidenceFound.value || 
+                   isCorrectNotifier.value == false),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -168,30 +180,94 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                   ),
                                   SizedBox(height: 32.h),
 
-                                  ReadingInferenceFoggyMirror(
-                                    passage: quest.passage ?? "",
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    isAnswered:
-                                        isAnsweredNotifier.value ||
-                                        _showEvidence.value,
-                                    rubPoints: _rubPoints.value,
-                                    clarity: _clarity.value,
-                                    onRub: _onRub,
+                                  ListenableBuilder(
+                                    listenable: Listenable.merge([_rubPoints, _clarity, _showEvidence, _evidenceFound]),
+                                    builder: (context, _) {
+                                      return Column(
+                                        children: [
+                                          AnimatedSwitcher(
+                                            duration: const Duration(milliseconds: 500),
+                                            switchInCurve: Curves.easeOutCubic,
+                                            switchOutCurve: Curves.easeInCubic,
+                                            child: (_showEvidence.value || _evidenceFound.value)
+                                                ? EvidenceHighlightWrapper(
+                                                    key: const ValueKey('evidence'),
+                                                    passage: quest.passage ?? "",
+                                                    evidenceWords: quest.clueWords ?? [],
+                                                    primaryColor: theme.primaryColor,
+                                                    onCorrectHighlight: _onEvidenceFound,
+                                                    instruction:
+                                                        'Highlight the clue words that gave you the answer!',
+                                                    isPositioned: false,
+                                                  )
+                                                : ReadingInferenceFoggyMirror(
+                                                    key: const ValueKey('mirror'),
+                                                    passage: quest.passage ?? "",
+                                                    color: theme.primaryColor,
+                                                    isDark: isDark,
+                                                    isAnswered: isAnsweredNotifier.value,
+                                                    rubPoints: _rubPoints.value,
+                                                    clarity: _clarity.value,
+                                                    onRub: _onRub,
+                                                  ),
+                                          ),
+                                          if (!_showEvidence.value &&
+                                              !_evidenceFound.value &&
+                                              _clarity.value < 1.0)
+                                            Padding(
+                                              padding: EdgeInsets.only(top: 8.h),
+                                              child: Align(
+                                                alignment: Alignment.centerRight,
+                                                child: TextButton.icon(
+                                                  onPressed: () {
+                                                    hapticService.selection();
+                                                    _clarity.value = 1.0;
+                                                  },
+                                                  icon: Icon(
+                                                    Icons.accessibility_new_rounded,
+                                                    size: 14.sp,
+                                                    color: theme.primaryColor.withValues(alpha: 0.7),
+                                                  ),
+                                                  label: Text(
+                                                    'Auto-Clear Fog',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 12.sp,
+                                                      fontWeight: FontWeight.w700,
+                                                      color: theme.primaryColor.withValues(alpha: 0.7),
+                                                    ),
+                                                  ),
+                                                  style: TextButton.styleFrom(
+                                                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                                                    minimumSize: Size.zero,
+                                                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      );
+                                    },
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 24.h),
 
-                                  Text(
-                                    quest.question?.toUpperCase() ??
-                                        "INFER THE HIDDEN TRUTH",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: theme.primaryColor,
-                                      letterSpacing: 1.5,
-                                    ),
+                                  ListenableBuilder(
+                                    listenable: Listenable.merge([_showEvidence, _evidenceFound]),
+                                    builder: (context, _) {
+                                      if (_showEvidence.value || _evidenceFound.value) {
+                                        return const SizedBox.shrink();
+                                      }
+                                      return Text(
+                                        quest.question ?? "Infer the hidden truth:",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 18.sp,
+                                          fontWeight: FontWeight.w700,
+                                          color: Theme.of(context).colorScheme.onSurface,
+                                        ),
+                                      );
+                                    }
                                   ),
                                 ],
                               ),
@@ -204,65 +280,43 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   SizedBox(height: 24.h),
-                                  if (!_showEvidence.value &&
-                                      !_evidenceFound.value)
-                                    AnimatedOpacity(
-                                      duration: const Duration(
-                                        milliseconds: 300,
-                                      ),
-                                      opacity: _clarity.value >= 0.3
-                                          ? 1.0
-                                          : 0.3,
-                                      child: AbsorbPointer(
-                                        absorbing:
-                                            _clarity.value < 0.3 ||
-                                            isAnsweredNotifier.value,
-                                        child: ReadingSelfEvaluationCard(
-                                          correctAnswer:
-                                              quest.correctAnswer ?? "",
-                                          explanation: quest.explanation,
-                                          primaryColor: theme.primaryColor,
-                                          onEvaluated: (isCorrect) =>
-                                              _submitSelfEvalAnswer(
-                                                isCorrect,
-                                                quest,
-                                              ),
-                                        ),
-                                      ),
-                                    ),
-
-                                  SizedBox(
-                                    height: (_showEvidence.value)
-                                        ? 380.h
-                                        : 60.h,
+                                  ListenableBuilder(
+                                    listenable: Listenable.merge([_showEvidence, _evidenceFound]),
+                                    builder: (context, _) {
+                                      if (quest.options != null) {
+                                        return ValueListenableBuilder<double>(
+                                          valueListenable: _clarity,
+                                          builder: (context, clarityVal, _) {
+                                            return Column(
+                                              children: quest.options!.asMap().entries.map((entry) {
+                                                return ReadingInferenceOption(
+                                                  index: entry.key,
+                                                  text: entry.value,
+                                                  correct: quest.correctAnswer ?? "",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  selectedIndex: _selectedIndex.value,
+                                                  isAnswered: isAnsweredNotifier.value,
+                                                  clarity: clarityVal,
+                                                  onTap: () => _submitAnswer(entry.key, quest),
+                                                );
+                                              }).toList(),
+                                            );
+                                          },
+                                        );
+                                      }
+                                      return const SizedBox.shrink();
+                                    },
                                   ),
                                 ],
                               ),
                             ),
                           ),
-
-                          if (_showEvidence.value)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: EvidenceHighlightWrapper(
-                                  passage: quest.passage ?? "",
-                                  evidenceWords: quest.clueWords ?? [],
-                                  primaryColor: theme.primaryColor,
-                                  onCorrectHighlight: _onEvidenceFound,
-                                  instruction:
-                                      'Highlight the clue words that gave you the answer!',
-                                  isPositioned: false,
-                                ),
-                              ),
-                            ),
                           SliverToBoxAdapter(
                             child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
+                              height: MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                                  : 240.h,
                             ),
                           ),
                         ],
@@ -275,3 +329,4 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
     );
   }
 }
+
