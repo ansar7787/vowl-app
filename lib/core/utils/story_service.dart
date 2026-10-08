@@ -135,7 +135,7 @@ class StoryServiceImpl implements StoryService {
     'readAndAnswer':
         "Let's hunt for facts! Read the story and track down the specific details to answer the questions.",
     'readAndMatch':
-        "Let's build that vocabulary! Tap a word on the left, then find its perfect match on the right.",
+        "Connect the words to their meanings. It's an easy way to pick up new vocabulary.",
     'readingConclusion':
         "Time for some logical thinking! Let's read the evidence in the text and draw the final, logical conclusion.",
     'readingInference':
@@ -967,11 +967,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'readandmatch': [
       "",
-      "Great start! You're already getting faster at connecting words.",
-      "Nice work! Your vocabulary is growing every single day.",
-      "Halfway to 100! You can match tricky definitions without breaking a sweat.",
-      "Level 100! Your vocabulary is massive now. Nothing trips you up!",
-      "Level 200 reached! You know exactly what words mean, just like a native speaker. Amazing!",
+      "Good start. You're already getting faster at connecting words.",
+      "Nice work. You're picking up new words every single day.",
+      "Halfway to level 100. You're matching tricky definitions without overthinking it.",
+      "Level 100. Your vocabulary is solid now. You barely have to pause to think.",
+      "Level 200. You're reading and understanding these words naturally now. Great job.",
     ],
     'readingconclusion': [
       "",
