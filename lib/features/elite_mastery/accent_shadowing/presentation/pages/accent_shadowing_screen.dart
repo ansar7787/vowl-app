@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
+import '../../../presentation/widgets/elite_feedback_card.dart';
 
 import '../widgets/accent_shadowing_target_panel.dart';
 import '../widgets/accent_shadowing_options_panel.dart';
@@ -329,22 +330,32 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                     end: Alignment.bottomRight,
                                     colors: isDark
                                         ? [
-                                            theme.primaryColor.withValues(alpha: 0.15),
-                                            theme.primaryColor.withValues(alpha: 0.05),
+                                            theme.primaryColor.withValues(
+                                              alpha: 0.15,
+                                            ),
+                                            theme.primaryColor.withValues(
+                                              alpha: 0.05,
+                                            ),
                                           ]
                                         : [
-                                            theme.primaryColor.withValues(alpha: 0.1),
+                                            theme.primaryColor.withValues(
+                                              alpha: 0.1,
+                                            ),
                                             Colors.white,
                                           ],
                                   ),
                                   borderRadius: BorderRadius.circular(20.r),
                                   border: Border.all(
-                                    color: theme.primaryColor.withValues(alpha: 0.3),
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.3,
+                                    ),
                                     width: 1.5,
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: theme.primaryColor.withValues(alpha: 0.1),
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.1,
+                                      ),
                                       blurRadius: 10,
                                       offset: const Offset(0, 4),
                                     ),
@@ -365,7 +376,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                           fontFamily: 'Outfit',
                                           fontSize: 16.sp,
                                           fontWeight: FontWeight.w700,
-                                          color: isDark ? Colors.white : AppColors.slate800,
+                                          color: isDark
+                                              ? Colors.white
+                                              : AppColors.slate800,
                                           height: 1.4,
                                         ),
                                       ),
@@ -442,7 +455,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                 onEvaluate: (nailedIt) =>
                                     _submitVerbalEvaluation(nailedIt, quest),
                               ),
-
                           ],
                         ),
                       ),
@@ -469,6 +481,23 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                     ),
                   ),
                 ),
+              if (isFirstStagePassedNotifier.value &&
+                  !isAnsweredNotifier.value &&
+                  state is EliteMasteryLoaded)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 12.h,
+                    ),
+                    child: EliteFeedbackCard(
+                      state: state as EliteMasteryLoaded,
+                      isCorrect: true,
+                      onContinue: null,
+                      isDark: isDark,
+                    ),
+                  ),
+                ),
               SliverToBoxAdapter(
                 child: SizedBox(
                   height: isAnsweredNotifier.value ? 400.h : 60.h,
@@ -480,5 +509,4 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
       ],
     );
   }
-
 }

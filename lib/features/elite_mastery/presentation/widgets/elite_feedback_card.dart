@@ -36,7 +36,7 @@ class EliteFeedbackCard extends StatelessWidget {
   /// Result of the player's last submission.  `null` before any answer.
   final bool? isCorrect;
 
-  final VoidCallback onContinue;
+  final VoidCallback? onContinue;
 
   final bool isDark;
 
@@ -44,7 +44,7 @@ class EliteFeedbackCard extends StatelessWidget {
     super.key,
     required this.state,
     required this.isCorrect,
-    required this.onContinue,
+    this.onContinue,
     required this.isDark,
   });
 
@@ -265,13 +265,15 @@ class EliteFeedbackCard extends StatelessWidget {
                       titleFallback: 'Target Sound / IPA',
                     ),
                   ],
-                  SizedBox(height: 28.h),
-                  _ContinueButton(
-                    label: _buttonLabel(context),
-                    gradient: _gradient,
-                    shadowColor: _shadowColor,
-                    onTap: onContinue,
-                  ),
+                  if (onContinue != null) ...[
+                    SizedBox(height: 28.h),
+                    _ContinueButton(
+                      label: _buttonLabel(context),
+                      gradient: _gradient,
+                      shadowColor: _shadowColor,
+                      onTap: onContinue!,
+                    ),
+                  ],
                 ],
               ),
             ),
@@ -385,7 +387,7 @@ class EliteFeedbackCard extends StatelessWidget {
         ),
       );
     }
-    
+
     final usageContext = state.currentQuest.usageContext;
     if (usageContext != null && usageContext.trim().isNotEmpty) {
       buffer.write(
