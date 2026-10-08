@@ -448,6 +448,15 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                   },
                 ),
               ),
+              if (isFirstStagePassedNotifier.value &&
+                  !isAnsweredNotifier.value)
+                SliverToBoxAdapter(
+                  child: AccentShadowingInsightsPanel(
+                    quest: quest,
+                    isDark: isDark,
+                    primaryColor: theme.primaryColor,
+                  ),
+                ),
               if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
                   child: Padding(
@@ -465,15 +474,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                       onConfirmed: () => _submitVerbalEvaluation(true, quest),
                       onSkipped: () => _submitVerbalEvaluation(false, quest),
                     ),
-                  ),
-                ),
-              if (isFirstStagePassedNotifier.value &&
-                  !isAnsweredNotifier.value)
-                SliverToBoxAdapter(
-                  child: AccentShadowingInsightsPanel(
-                    quest: quest,
-                    isDark: isDark,
-                    primaryColor: theme.primaryColor,
                   ),
                 ),
               SliverToBoxAdapter(
