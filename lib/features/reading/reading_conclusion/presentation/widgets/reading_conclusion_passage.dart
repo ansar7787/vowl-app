@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class ReadingConclusionPassage extends StatelessWidget {
   final String passage;
@@ -17,33 +16,43 @@ class ReadingConclusionPassage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          padding: EdgeInsets.all(24.r),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-            borderRadius: BorderRadius.circular(24.r),
-            border: Border.all(color: color, width: 2),
-            boxShadow: [
-              BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 30),
-            ],
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: color, width: 2),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.1),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
           ),
-          child: Column(
-            children: [
-              Icon(Icons.auto_awesome_motion_rounded, color: color, size: 32.r),
-              SizedBox(height: 16.h),
-              Text(
-                passage,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 15.sp,
-                  height: 1.4,
-                  color: isDark ? Colors.white70 : Colors.black87,
-                ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(Icons.auto_awesome_motion_rounded, color: color, size: 28.r),
+          SizedBox(height: 12.h),
+          SizedBox(
+            width: double.infinity,
+            child: Text(
+              passage,
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                height: 1.5,
+                fontWeight: FontWeight.w500,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.9)
+                    : Colors.black.withValues(alpha: 0.85),
               ),
-            ],
+            ),
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(begin: -4, end: 4, duration: 2.seconds);
+        ],
+      ),
+    );
   }
 }
