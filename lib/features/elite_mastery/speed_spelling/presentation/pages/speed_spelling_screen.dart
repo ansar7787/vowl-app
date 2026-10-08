@@ -282,7 +282,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
-              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
+              SliverToBoxAdapter(child: SizedBox(height: 40.h)),
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
@@ -292,111 +292,117 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (quest.difficultyTier != null) ...[
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 12.w,
-                              vertical: 6.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: quest.difficultyTier == 'Rare'
-                                  ? Colors.red.withValues(alpha: 0.1)
-                                  : (quest.difficultyTier == 'Advanced'
-                                      ? Colors.orange.withValues(alpha: 0.1)
-                                      : Colors.green.withValues(alpha: 0.1)),
-                              borderRadius: BorderRadius.circular(12.r),
-                              border: Border.all(
-                                color: quest.difficultyTier == 'Rare'
-                                    ? AppColors.gameIncorrect.withValues(alpha: 0.3)
-                                    : (quest.difficultyTier == 'Advanced'
-                                        ? Colors.orangeAccent.withValues(alpha: 0.3)
-                                        : AppColors.gameCorrect.withValues(alpha: 0.3)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          if (quest.instruction.isNotEmpty)
+                            Expanded(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Flexible(
+                                    child: Semantics(
+                                      header: true,
+                                      child: Text(
+                                        quest.instruction,
+                                        textAlign: TextAlign.start,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: isCompact ? 16.sp : 18.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: isDark ? Colors.white70 : AppColors.slate700,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  if (quest.word != null) ...[
+                                    SizedBox(width: 8.w),
+                                    Semantics(
+                                      button: true,
+                                      label: context.tr('games.semantic_replay_audio', fallback: 'Replay audio'),
+                                      child: ScaleButton(
+                                        onTap: () => di.sl<TtsService>().speak(quest.word!),
+                                        child: Container(
+                                          padding: EdgeInsets.all(8.r),
+                                          decoration: BoxDecoration(
+                                            color: theme.primaryColor.withValues(alpha: 0.1),
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Icon(
+                                            Icons.volume_up_rounded,
+                                            color: theme.primaryColor,
+                                            size: 20.r,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ],
                               ),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  quest.difficultyTier == 'Rare'
-                                      ? Icons.local_fire_department_rounded
-                                      : (quest.difficultyTier == 'Advanced'
-                                          ? Icons.star_half_rounded
-                                          : Icons.star_border_rounded),
+                            )
+                          else
+                            const Spacer(),
+                          if (quest.difficultyTier != null) ...[
+                            SizedBox(width: 12.w),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 12.w,
+                                vertical: 6.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: quest.difficultyTier == 'Rare'
+                                    ? Colors.red.withValues(alpha: 0.1)
+                                    : (quest.difficultyTier == 'Advanced'
+                                        ? Colors.orange.withValues(alpha: 0.1)
+                                        : Colors.green.withValues(alpha: 0.1)),
+                                borderRadius: BorderRadius.circular(12.r),
+                                border: Border.all(
                                   color: quest.difficultyTier == 'Rare'
-                                      ? AppColors.gameIncorrect
+                                      ? AppColors.gameIncorrect.withValues(alpha: 0.3)
                                       : (quest.difficultyTier == 'Advanced'
-                                          ? Colors.orangeAccent
-                                          : AppColors.gameCorrect),
-                                  size: 14.r,
+                                          ? Colors.orangeAccent.withValues(alpha: 0.3)
+                                          : AppColors.gameCorrect.withValues(alpha: 0.3)),
                                 ),
-                                SizedBox(width: 4.w),
-                                Text(
-                                  quest.difficultyTier!.toUpperCase(),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w900,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    quest.difficultyTier == 'Rare'
+                                        ? Icons.local_fire_department_rounded
+                                        : (quest.difficultyTier == 'Advanced'
+                                            ? Icons.star_half_rounded
+                                            : Icons.star_border_rounded),
                                     color: quest.difficultyTier == 'Rare'
                                         ? AppColors.gameIncorrect
                                         : (quest.difficultyTier == 'Advanced'
                                             ? Colors.orangeAccent
                                             : AppColors.gameCorrect),
-                                    letterSpacing: 1.5,
+                                    size: 14.r,
                                   ),
-                                ),
-                              ],
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    quest.difficultyTier!.toUpperCase(),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: quest.difficultyTier == 'Rare'
+                                          ? AppColors.gameIncorrect
+                                          : (quest.difficultyTier == 'Advanced'
+                                              ? Colors.orangeAccent
+                                              : AppColors.gameCorrect),
+                                      letterSpacing: 1.5,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ),
-                        SizedBox(height: 12.h),
-                      ],
-                      if (quest.instruction.isNotEmpty) ...[
-                         Row(
-                           mainAxisAlignment: MainAxisAlignment.center,
-                           children: [
-                             Flexible(
-                               child: Semantics(
-                                 header: true,
-                                 child: Text(
-                                   quest.instruction,
-                                   textAlign: TextAlign.center,
-                                   style: TextStyle(
-                                     fontFamily: 'Outfit',
-                                     fontSize: isCompact ? 16.sp : 18.sp,
-                                     fontWeight: FontWeight.bold,
-                                     color: isDark ? Colors.white70 : AppColors.slate700,
-                                   ),
-                                 ),
-                               ),
-                             ),
-                             if (quest.word != null) ...[
-                               SizedBox(width: 8.w),
-                               Semantics(
-                                 button: true,
-                                 label: context.tr('games.semantic_replay_audio', fallback: 'Replay audio'),
-                                 child: ScaleButton(
-                                   onTap: () => di.sl<TtsService>().speak(quest.word!),
-                                   child: Container(
-                                     padding: EdgeInsets.all(8.r),
-                                     decoration: BoxDecoration(
-                                       color: theme.primaryColor.withValues(alpha: 0.1),
-                                       shape: BoxShape.circle,
-                                     ),
-                                     child: Icon(
-                                       Icons.volume_up_rounded,
-                                       color: theme.primaryColor,
-                                       size: 20.r,
-                                     ),
-                                   ),
-                                 ),
-                               ),
-                             ],
-                           ],
-                         ),
-                         SizedBox(height: 12.h),
-                      ],
+                          ],
+                        ],
+                      ),
+                      SizedBox(height: 12.h),
                       if (!isAnsweredNotifier.value)
                         TweenAnimationBuilder<double>(
                           key: ValueKey(quest.id),
