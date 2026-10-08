@@ -116,6 +116,18 @@ class EliteFeedbackCard extends StatelessWidget {
         sequenceLogic != null &&
         sequenceLogic.trim().isNotEmpty;
 
+    final shadowingFocus = state.currentQuest.shadowingFocus;
+    final hasShadowingFocus =
+        shouldRevealPedagogy &&
+        shadowingFocus != null &&
+        shadowingFocus.trim().isNotEmpty;
+
+    final targetAccent = state.currentQuest.targetAccent;
+    final hasTargetAccent =
+        shouldRevealPedagogy &&
+        targetAccent != null &&
+        targetAccent.trim().isNotEmpty;
+
     // Curriculum "why" note (e.g. the stress/linking/intonation rule behind
     // the sentence). Shown on both success and failure — reinforcing the
     // underlying rule regardless of outcome is more valuable for retention
@@ -225,6 +237,32 @@ class EliteFeedbackCard extends StatelessWidget {
                       capsFallback: 'SEQUENCE LOGIC',
                       titleKey: 'games.sequence_logic',
                       titleFallback: 'Sequence Logic',
+                    ),
+                  ],
+                  if (hasShadowingFocus) ...[
+                    SizedBox(height: 16.h),
+                    PedagogicalRuleBox(
+                      rule: shadowingFocus,
+                      shadowColor: _shadowColor,
+                      isDark: isDark,
+                      icon: Icons.rule_rounded,
+                      capsKey: 'games.phonetic_rule_caps',
+                      capsFallback: 'PHONETIC RULE',
+                      titleKey: 'games.phonetic_rule',
+                      titleFallback: 'Phonetic Rule',
+                    ),
+                  ],
+                  if (hasTargetAccent) ...[
+                    SizedBox(height: 16.h),
+                    PedagogicalRuleBox(
+                      rule: targetAccent,
+                      shadowColor: _shadowColor,
+                      isDark: isDark,
+                      icon: Icons.record_voice_over_rounded,
+                      capsKey: 'games.target_sound_caps',
+                      capsFallback: 'TARGET SOUND / IPA',
+                      titleKey: 'games.target_sound',
+                      titleFallback: 'Target Sound / IPA',
                     ),
                   ],
                   SizedBox(height: 28.h),
