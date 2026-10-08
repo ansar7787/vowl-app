@@ -36,6 +36,7 @@ class RoleplayBaseLayout extends StatelessWidget {
   final bool useScrolling;
   final bool disablePadding;
   final String mascotId;
+  final bool fullScreenContent;
 
   const RoleplayBaseLayout({
     super.key,
@@ -53,19 +54,25 @@ class RoleplayBaseLayout extends StatelessWidget {
     this.scrollController,
     this.useScrolling = false,
     this.disablePadding = false,
+    this.fullScreenContent = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final wrappedChild = Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: kRoleplayMaxContentWidth),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [child],
-        ),
-      ),
-    );
+    final wrappedChild = fullScreenContent
+        ? Padding(
+            padding: EdgeInsets.only(top: 80.h),
+            child: child,
+          )
+        : Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: kRoleplayMaxContentWidth),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [child],
+              ),
+            ),
+          );
 
     final config = GameScaffoldConfig(
       gameType: gameType,

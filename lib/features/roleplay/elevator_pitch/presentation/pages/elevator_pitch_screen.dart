@@ -84,7 +84,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
             showConfettiNotifier,
           ]),
           builder: (context, _) {
-            return RoleplayBaseLayout(
+            return RoleplayBaseLayout(fullScreenContent: true,
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
