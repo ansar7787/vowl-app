@@ -145,7 +145,13 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
 
   @override
   void onQuestionReset() {
-    _currentOrder.value = [];
+    final state = context.read<EliteMasteryBloc>().state;
+    if (state is EliteMasteryLoaded && state.currentQuest.sentences != null) {
+      _currentOrder.value =
+          List.generate(state.currentQuest.sentences!.length, (i) => i);
+    } else {
+      _currentOrder.value = [];
+    }
   }
 
   @override
@@ -174,23 +180,24 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
-            return EliteBaseLayout(
-              gameType: widget.gameType,
-              level: widget.level,
-              isAnswered:
-                  isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null ||
-                      !isFirstStagePassedNotifier.value),
-              state: state,
-              isCorrect: isCorrectNotifier.value,
-              isFinalFailure: (state is EliteMasteryLoaded)
-                  ? (state.isFinalFailure || state.livesRemaining <= 0)
-                  : false,
-              showConfetti: showConfettiNotifier.value,
-              useScrolling: false,
-              disablePadding: true,
-              visualConfig: _visualConfig,
-              onContinue: () {
+              return EliteBaseLayout(
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered:
+                    isAnsweredNotifier.value &&
+                    (isCorrectNotifier.value != null ||
+                        !isFirstStagePassedNotifier.value),
+                state: state,
+                isCorrect: isCorrectNotifier.value,
+                isFinalFailure: (state is EliteMasteryLoaded)
+                    ? (state.isFinalFailure || state.livesRemaining <= 0)
+                    : false,
+                showConfetti: showConfettiNotifier.value,
+                useScrolling: false,
+                disablePadding: true,
+                fullScreenContent: true,
+                visualConfig: _visualConfig,
+                onContinue: () {
                 isAnsweredNotifier.value = false;
                 isCorrectNotifier.value = null;
                 isFirstStagePassedNotifier.value = false;
@@ -338,7 +345,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                   ),
                                   SizedBox(height: 8.h),
                                   Text(
-                                    quest.plotStructure!.split(',').join(' ➔ '),
+                                    quest.plotStructure!.split(RegExp(r',\s*')).join(' ➔ '),
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
@@ -349,6 +356,20 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                           : Colors.black87,
                                     ),
                                   ),
+                                  if (quest.sequenceLogic != null) ...[
+                                    SizedBox(height: 6.h),
+                                    Text(
+                                      quest.sequenceLogic!.toUpperCase(),
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 9.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: theme.primaryColor.withValues(alpha: 0.7),
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
+                                  ],
                                 ],
                               ),
                             ),
@@ -363,8 +384,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 sliver:
-                    isFirstStagePassedNotifier.value &&
-                        !isAnsweredNotifier.value
+                    (isFirstStagePassedNotifier.value ||
+                        isAnsweredNotifier.value)
                     ? SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) => Padding(
@@ -380,11 +401,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                               isHintVisible: state.isHintVisible,
                               isDark: isDark,
                               theme: theme,
-                              isAnswered:
-                                  isAnsweredNotifier.value &&
-                                  (isCorrectNotifier.value != null ||
-                                      !isFirstStagePassedNotifier.value),
+                              isAnswered: isAnsweredNotifier.value,
                               isCorrect: isCorrectNotifier.value,
+                              isReorderable: false,
                             ),
                           ),
                           childCount: _currentOrder.value.length,
@@ -404,11 +423,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                             isHintVisible: state.isHintVisible,
                             isDark: isDark,
                             theme: theme,
-                            isAnswered:
-                                isAnsweredNotifier.value &&
-                                (isCorrectNotifier.value != null ||
-                                    !isFirstStagePassedNotifier.value),
-                            isCorrect: isCorrectNotifier.value,
+                            isAnswered: false,
+                            isCorrect: null,
+                            isReorderable: true,
                           ),
                         ),
                         itemCount: _currentOrder.value.length,

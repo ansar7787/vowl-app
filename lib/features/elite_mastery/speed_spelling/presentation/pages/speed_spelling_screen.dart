@@ -189,6 +189,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                   (state is EliteMasteryLoaded && state.isFinalFailure),
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
+              fullScreenContent: true,
               onContinue: () {
                 isAnsweredNotifier.value = false;
                 isCorrectNotifier.value = null;

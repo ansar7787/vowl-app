@@ -203,6 +203,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                   : false,
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
+              fullScreenContent: true,
               visualConfig: quest?.visualConfig,
               onContinue: () {
                 isAnsweredNotifier.value = false;

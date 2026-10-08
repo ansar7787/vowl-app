@@ -124,6 +124,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                       : false),
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
+              fullScreenContent: true,
               onContinue: () {
                 isAnsweredNotifier.value = false;
                 isCorrectNotifier.value = null;

@@ -34,6 +34,7 @@ class EliteBaseLayout extends StatelessWidget {
   final bool useScrolling;
   final ScrollController? scrollController;
   final bool disablePadding;
+  final bool fullScreenContent;
 
   const EliteBaseLayout({
     super.key,
@@ -52,6 +53,7 @@ class EliteBaseLayout extends StatelessWidget {
     this.useScrolling = true,
     this.scrollController,
     this.disablePadding = false,
+    this.fullScreenContent = false,
   });
 
   @override
@@ -71,26 +73,31 @@ class EliteBaseLayout extends StatelessWidget {
         ? (state as EliteMasteryLoaded).currentQuest
         : null;
 
-    final wrappedChild = Builder(
-      builder: (context) {
-        return Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: MediaQuery.sizeOf(context).height * 0.5,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 60.h),
-                // Titles removed to standardize global layout cleanliness
-                SizedBox(height: 20.h),
-                child,
-              ],
-            ),
-          ),
-        );
-      },
-    );
+    final wrappedChild = fullScreenContent
+        ? Padding(
+            padding: EdgeInsets.only(top: 80.h),
+            child: child,
+          )
+        : Builder(
+            builder: (context) {
+              return Center(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: MediaQuery.sizeOf(context).height * 0.5,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 60.h),
+                      // Titles removed to standardize global layout cleanliness
+                      SizedBox(height: 20.h),
+                      child,
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
 
     final config = GameScaffoldConfig(
       gameType: gameType,
