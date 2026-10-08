@@ -39,46 +39,49 @@ class ReadingInferenceOption extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.only(bottom: 12.h),
-      child: ScaleButton(
-        onTap: onTap,
-        child: AnimatedOpacity(
-          duration: const Duration(milliseconds: 300),
-          opacity: isDisabled ? 0.35 : 1.0,
-          child: Container(
-            padding: EdgeInsets.all(20.r),
-            decoration: BoxDecoration(
-              color: isCorrect
-                  ? tokens.gameCorrect.withValues(alpha: 0.15)
-                  : (isWrong
-                      ? tokens.gameIncorrect.withValues(alpha: 0.15)
-                      : (isSelected
-                          ? color.withValues(alpha: 0.15)
-                          : (isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.03)))),
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(
+      child: AbsorbPointer(
+        absorbing: isDisabled,
+        child: ScaleButton(
+          onTap: onTap,
+          child: AnimatedOpacity(
+            duration: const Duration(milliseconds: 300),
+            opacity: isDisabled ? 0.35 : 1.0,
+            child: Container(
+              padding: EdgeInsets.all(20.r),
+              decoration: BoxDecoration(
                 color: isCorrect
-                    ? tokens.gameCorrect.withValues(alpha: 0.5)
+                    ? tokens.gameCorrect.withValues(alpha: 0.15)
                     : (isWrong
-                        ? tokens.gameIncorrect.withValues(alpha: 0.5)
+                        ? tokens.gameIncorrect.withValues(alpha: 0.15)
                         : (isSelected
-                            ? color.withValues(alpha: 0.5)
+                            ? color.withValues(alpha: 0.15)
                             : (isDark
-                                ? Colors.white.withValues(alpha: 0.1)
-                                : Colors.black.withValues(alpha: 0.05)))),
-                width: isSelected || isCorrect || isWrong ? 2.w : 1.w,
+                                ? Colors.white.withValues(alpha: 0.05)
+                                : Colors.black.withValues(alpha: 0.03)))),
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(
+                  color: isCorrect
+                      ? tokens.gameCorrect.withValues(alpha: 0.5)
+                      : (isWrong
+                          ? tokens.gameIncorrect.withValues(alpha: 0.5)
+                          : (isSelected
+                              ? color.withValues(alpha: 0.5)
+                              : (isDark
+                                  ? Colors.white.withValues(alpha: 0.1)
+                                  : Colors.black.withValues(alpha: 0.05)))),
+                  width: isSelected || isCorrect || isWrong ? 2.w : 1.w,
+                ),
               ),
-            ),
-            child: Center(
-              child: Text(
-                text,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.onSurface,
+              child: Center(
+                child: Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
               ),
             ),
