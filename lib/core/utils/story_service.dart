@@ -251,7 +251,7 @@ class StoryServiceImpl implements StoryService {
     'idiomMatch':
         "Time to sound like a native! Read the context and choose the correct English idiom that perfectly matches the situation.",
     'speedSpelling':
-        "Let's test your reflexes and memory! Unscramble the flying letters as quickly as you can to spell the hidden vocabulary word.",
+        "Tap the floating letters to spell the word correctly. Doing this helps you remember how to write words perfectly in real life.",
     'accentShadowing':
         "Listen closely and mimic the rhythm! Tap the chat bubble that exactly matches the sentence you just heard.",
   };
@@ -600,11 +600,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'speedspelling': [
       "",
-      "Great job! Spelling under pressure sharpens your memory.",
-      "Your lexical recall is becoming incredibly fast.",
-      "Halfway to 100! You are decoding words with machine-like precision.",
-      "Level 100! Your orthography is elite.",
-      "Level 200 reached! You have mastered the most complex vocabulary spelling.",
+      "Great job! Thinking fast is really helping your spelling stick.",
+      "You're remembering how words are spelled so much faster now.",
+      "Halfway to 100! You're spelling tricky words without even hesitating.",
+      "Level 100! You've become a truly confident speller.",
+      "Level 200 reached! You can spell practically anything without a second thought.",
     ],
     'accentshadowing': [
       "",

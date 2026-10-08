@@ -180,6 +180,7 @@ class SpeedSpellingInputField extends StatelessWidget {
                       excludeSemantics: true,
                       child: ScaleButton(
                         onTap: onBackspace,
+                        debounceDuration: Duration.zero,
                         // FIX: 8.r padding + 18.r icon ≈ 34 logical px,
                         // under the 48dp touch-target minimum. Growing only
                         // the invisible tappable area, not the visible
@@ -219,6 +220,7 @@ class SpeedSpellingInputField extends StatelessWidget {
                       excludeSemantics: true,
                       child: ScaleButton(
                         onTap: onClear,
+                        debounceDuration: Duration.zero,
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(
                             minWidth: 48,
