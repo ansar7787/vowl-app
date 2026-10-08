@@ -451,36 +451,30 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                   },
                 ),
               ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height:
-                      (isAnsweredNotifier.value ||
-                          isFirstStagePassedNotifier.value)
-                      ? 400.h // Increased height to allow scrolling behind the feedback card
-                      : 60.h,
-                ),
-              ),
               if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
-                  child: Column(
-                    children: [
-                      SpeakToConfirmOverlay(
-                        expectedText: targetText ?? "",
-                        displayText: targetText ?? "",
-                        title: 'SPEAK TO SHADOW',
-                        subtitle: 'Shadow the native pronunciation',
-                        displayFontSize: 16.sp,
-                        displayFontWeight: FontWeight.w500,
-                        displayTextAlign: TextAlign.center,
-                        primaryColor: theme.primaryColor,
-                        isPositioned: false,
-                        onConfirmed: () => _submitVerbalEvaluation(true, quest),
-                        onSkipped: () => _submitVerbalEvaluation(false, quest),
-                      ),
-                      SizedBox(height: 60.h),
-                    ],
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 24.h, bottom: 24.h),
+                    child: SpeakToConfirmOverlay(
+                      expectedText: targetText ?? "",
+                      displayText: targetText ?? "",
+                      title: 'SPEAK TO SHADOW',
+                      subtitle: 'Shadow the native pronunciation',
+                      displayFontSize: 16.sp,
+                      displayFontWeight: FontWeight.w500,
+                      displayTextAlign: TextAlign.center,
+                      primaryColor: theme.primaryColor,
+                      isPositioned: false,
+                      onConfirmed: () => _submitVerbalEvaluation(true, quest),
+                      onSkipped: () => _submitVerbalEvaluation(false, quest),
+                    ),
                   ),
                 ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: isAnsweredNotifier.value ? 400.h : 60.h,
+                ),
+              ),
             ],
           ),
         ),
