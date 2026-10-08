@@ -183,7 +183,8 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      final userAnswer = (_selectedIndex.value != null &&
+      final userAnswer =
+          (_selectedIndex.value != null &&
               quest.options != null &&
               _selectedIndex.value! < quest.options!.length)
           ? quest.options![_selectedIndex.value!]
@@ -218,13 +219,12 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
             isAnsweredNotifier,
             isCorrectNotifier,
             showConfettiNotifier,
-            _probeOffset,
-            _hoveredIndex,
             _selectedIndex,
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
-            return RoleplayBaseLayout(fullScreenContent: true,
+            return RoleplayBaseLayout(
+              fullScreenContent: true,
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
@@ -243,6 +243,10 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
+                        final double availableHeight = constraints.maxHeight;
+                        // Estimate top content height (padding + instruction + persona) ~340.h
+                        final double boardHeight = math.max(320.h, availableHeight - 340.h);
+
                         return RawScrollbar(
                           controller: _scrollController,
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
@@ -251,136 +255,84 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                           child: CustomScrollView(
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
-                              SliverFillRemaining(
-                                hasScrollBody: true,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: LayoutBuilder(
-                                        builder: (context, constraints) {
-                                          final isCompact =
-                                              constraints.maxHeight < 580;
-                                          return Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                              vertical: isCompact ? 5.h : 10.h,
-                                            ),
-                                            child: Column(
-                                              children: [
-                                                BranchingDialogueInstruction(
-                                                  primaryColor:
-                                                      theme.primaryColor,
-                                                  instruction:
-                                                      InstructionHelper.getInstruction(
-                                                        quest,
-                                                      ),
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 10.h
-                                                      : 16.h,
-                                                ),
-                                                if (isAnsweredNotifier.value &&
-                                                    _selectedIndex.value !=
-                                                        null &&
-                                                    quest.consequenceScores !=
-                                                        null)
-                                                  Padding(
-                                                    padding: EdgeInsets.only(
-                                                      bottom: isCompact
-                                                          ? 10.h
-                                                          : 16.h,
-                                                    ),
-                                                    child: BranchingDialogueRelationshipMeter(
-                                                      consequenceScore:
-                                                          quest
-                                                              .consequenceScores![_selectedIndex
-                                                              .value!],
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                                  ),
-                                                BranchingDialoguePersonaConsole(
-                                                  quest: quest,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  onListen: () =>
-                                                      _triggerAutoPlay(quest),
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 12.h
-                                                      : 20.h,
-                                                ),
-                                                BranchingDialogueConsoleBoard(
-                                                  options: options,
-                                                  consequencePreviews:
-                                                      quest
-                                                          .consequencePreviews ??
-                                                      [],
-                                                  correctIndex:
-                                                      quest
-                                                          .correctAnswerIndex ??
-                                                      0,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  probeOffset:
-                                                      _probeOffset.value,
-                                                  hoveredIndex:
-                                                      _hoveredIndex.value,
-                                                  selectedIndex:
-                                                      _selectedIndex.value,
-                                                  isAnswered:
-                                                      isAnsweredNotifier
-                                                          .value ||
-                                                      isFirstStagePassedNotifier
-                                                          .value,
-                                                  onProbeDragStart:
-                                                      _onProbeDragStart,
-                                                  onProbeDragUpdate:
-                                                      _onProbeDragUpdate,
-                                                  onProbeDragEnd:
-                                                      (idx) =>
-                                                          _onProbeDragEnd(
-                                                            idx,
-                                                            quest,
-                                                          ),
-                                                  onOptionTapped: (index) =>
-                                                      _submitChoice(
-                                                        index,
-                                                        quest.correctAnswerIndex ??
-                                                            0,
-                                                        quest,
-                                                      ),
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 20.h
-                                                      : 40.h,
-                                                ),
-                                              ],
-                                            ),
-                                          );
-                                        },
+                              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                  child: Column(
+                                    children: [
+                                      BranchingDialogueInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        instruction: InstructionHelper.getInstruction(quest),
                                       ),
-                                    ),
-                                  ],
+                                      SizedBox(height: 12.h),
+                                      if (isAnsweredNotifier.value &&
+                                          _selectedIndex.value != null &&
+                                          quest.consequenceScores != null &&
+                                          _selectedIndex.value! < quest.consequenceScores!.length)
+                                        Padding(
+                                          padding: EdgeInsets.only(bottom: 12.h),
+                                          child: BranchingDialogueRelationshipMeter(
+                                            consequenceScore: quest.consequenceScores![_selectedIndex.value!],
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                          ),
+                                        ),
+                                      BranchingDialoguePersonaConsole(
+                                        quest: quest,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        onListen: () => _triggerAutoPlay(quest),
+                                      ),
+                                      SizedBox(height: 16.h),
+                                    ],
+                                  ),
                                 ),
                               ),
-
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height: boardHeight,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                    child: ListenableBuilder(
+                                      listenable: Listenable.merge([
+                                        _probeOffset,
+                                        _hoveredIndex,
+                                      ]),
+                                      builder: (context, _) {
+                                        return BranchingDialogueConsoleBoard(
+                                          options: options,
+                                          consequencePreviews: quest.consequencePreviews ?? [],
+                                          correctIndex: quest.correctAnswerIndex ?? 0,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          probeOffset: _probeOffset.value,
+                                          hoveredIndex: _hoveredIndex.value,
+                                          selectedIndex: _selectedIndex.value,
+                                          isAnswered: isAnsweredNotifier.value || isFirstStagePassedNotifier.value,
+                                          onProbeDragStart: _onProbeDragStart,
+                                          onProbeDragUpdate: _onProbeDragUpdate,
+                                          onProbeDragEnd: (idx) => _onProbeDragEnd(idx, quest),
+                                          onOptionTapped: (index) => _submitChoice(index, quest.correctAnswerIndex ?? 0, quest),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
                               if (isFirstStagePassedNotifier.value &&
                                   !isAnsweredNotifier.value &&
                                   _selectedIndex.value != null)
                                 SliverToBoxAdapter(
                                   child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 24.w,
+                                    padding: EdgeInsets.only(
+                                      left: 24.w,
+                                      right: 24.w,
+                                      top: 24.h,
+                                      bottom: 16.h,
                                     ),
                                     child: SpeakToConfirmOverlay(
-                                      expectedText:
-                                          options[_selectedIndex.value!],
+                                      expectedText: options[_selectedIndex.value!],
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       onConfirmed: () {
@@ -389,21 +341,15 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                         );
                                         _submitVerbalEvaluation(true, quest);
                                       },
-                                      onSkipped: () =>
-                                          _submitVerbalEvaluation(false, quest),
+                                      onSkipped: () => _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),
                               SliverToBoxAdapter(
                                 child: SizedBox(
-                                  height:
-                                      MediaQuery.of(context).viewInsets.bottom >
-                                          0
-                                      ? MediaQuery.of(
-                                              context,
-                                            ).viewInsets.bottom +
-                                            40.h
-                                      : 120.h,
+                                  height: MediaQuery.of(context).viewInsets.bottom > 0
+                                      ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                                      : 80.h,
                                 ),
                               ),
                             ],

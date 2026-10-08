@@ -20,7 +20,7 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     // Score defines if it's polite (+1) or rude (-1) or neutral (null/0)
-    final double value = consequenceScore == null
+    final double value = consequenceScore == null || consequenceScore == 0
         ? 0.5
         : (consequenceScore! > 0 ? 1.0 : 0.0);
     final Color activeColor = value > 0.5
@@ -76,21 +76,26 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4.r),
                 ),
               ),
-              AnimatedContainer(
-                duration: const Duration(milliseconds: 600),
-                curve: Curves.easeOutCubic,
-                height: 8.h,
-                width: (1.sw - 64.w) * value,
-                decoration: BoxDecoration(
-                  color: activeColor,
-                  borderRadius: BorderRadius.circular(4.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: activeColor.withValues(alpha: 0.5),
-                      blurRadius: 6,
-                      spreadRadius: 1,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: FractionallySizedBox(
+                  widthFactor: value,
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 600),
+                    curve: Curves.easeOutCubic,
+                    height: 8.h,
+                    decoration: BoxDecoration(
+                      color: activeColor,
+                      borderRadius: BorderRadius.circular(4.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: activeColor.withValues(alpha: 0.5),
+                          blurRadius: 6,
+                          spreadRadius: 1,
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ],
