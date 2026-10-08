@@ -48,7 +48,7 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
           ),
 
           // Fog Cover Layer
-          if (!isAnswered)
+          if (!isAnswered && clarity < 1.0)
             Positioned.fill(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(24.r),
@@ -109,8 +109,14 @@ class FogPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
 
-    for (int i = 0; i < points.length - 1; i++) {
-      canvas.drawLine(points[i], points[i + 1], clearPaint);
+    for (int i = 0; i < points.length; i++) {
+      canvas.drawCircle(points[i], 17.5.r, clearPaint);
+      if (i < points.length - 1) {
+        final dist = (points[i] - points[i + 1]).distance;
+        if (dist < 80.r) {
+          canvas.drawLine(points[i], points[i + 1], clearPaint);
+        }
+      }
     }
   }
 
