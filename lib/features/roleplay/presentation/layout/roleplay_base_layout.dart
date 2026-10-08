@@ -60,10 +60,7 @@ class RoleplayBaseLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final wrappedChild = fullScreenContent
-        ? Padding(
-            padding: EdgeInsets.only(top: 80.h),
-            child: child,
-          )
+        ? child
         : Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: kRoleplayMaxContentWidth),

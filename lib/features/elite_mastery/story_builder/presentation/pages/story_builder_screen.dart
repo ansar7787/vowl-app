@@ -284,6 +284,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                 ? const NeverScrollableScrollPhysics()
                 : const BouncingScrollPhysics(),
             slivers: [
+              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
               SliverToBoxAdapter(
                 child: LayoutBuilder(
                   builder: (context, constraints) {

@@ -294,6 +294,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                     ? const NeverScrollableScrollPhysics()
                     : const BouncingScrollPhysics(),
                 slivers: [
+              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
                   SliverToBoxAdapter(
                     child: IgnorePointer(
                       ignoring: isFirstStagePassedNotifier.value,

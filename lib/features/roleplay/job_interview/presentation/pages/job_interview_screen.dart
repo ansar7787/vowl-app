@@ -203,6 +203,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                           child: CustomScrollView(
                             physics: const BouncingScrollPhysics(),
                             slivers: [
+              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
                               SliverFillRemaining(
                                 hasScrollBody: true,
                                 child: Column(

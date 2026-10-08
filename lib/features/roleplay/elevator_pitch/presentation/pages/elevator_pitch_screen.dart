@@ -108,6 +108,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                           child: CustomScrollView(
                             physics: const BouncingScrollPhysics(),
                             slivers: [
+              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
                               SliverFillRemaining(
                                 hasScrollBody: true,
                                 child: Column(

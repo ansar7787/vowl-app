@@ -74,10 +74,7 @@ class EliteBaseLayout extends StatelessWidget {
         : null;
 
     final wrappedChild = fullScreenContent
-        ? Padding(
-            padding: EdgeInsets.only(top: 80.h),
-            child: child,
-          )
+        ? child
         : Builder(
             builder: (context) {
               return Center(
