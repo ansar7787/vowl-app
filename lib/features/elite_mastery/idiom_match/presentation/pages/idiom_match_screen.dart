@@ -325,43 +325,41 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                     children: [
                                     if (quest.instruction.isNotEmpty) ...[
                                       Container(
+                                        width: double.infinity,
                                         padding: EdgeInsets.symmetric(
                                           horizontal: 16.w,
-                                          vertical: 8.h,
+                                          vertical: 12.h,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: theme.primaryColor
-                                              .withValues(alpha: 0.1),
-                                          borderRadius:
-                                              BorderRadius.circular(16.r),
+                                          color: isDark
+                                              ? Colors.white.withValues(alpha: 0.08)
+                                              : Colors.white,
+                                          borderRadius: BorderRadius.circular(16.r),
                                           border: Border.all(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.2),
+                                            color: isDark
+                                                ? Colors.white.withValues(alpha: 0.1)
+                                                : Colors.grey.withValues(alpha: 0.2),
                                           ),
+                                          boxShadow: isDark
+                                              ? []
+                                              : [
+                                                  BoxShadow(
+                                                    color: Colors.black.withValues(alpha: 0.03),
+                                                    blurRadius: 10,
+                                                    offset: const Offset(0, 4),
+                                                  ),
+                                                ],
                                         ),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Icon(
-                                              Icons.info_outline_rounded,
-                                              color: theme.primaryColor,
-                                              size: 16.r,
-                                            ),
-                                            SizedBox(width: 8.w),
-                                            Flexible(
-                                              child: Text(
-                                                quest.instruction.toUpperCase(),
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 11.sp,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: theme.primaryColor,
-                                                  letterSpacing: 1.2,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
+                                        child: Text(
+                                          quest.instruction,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompact ? 12.sp : 13.sp,
+                                            fontWeight: FontWeight.w400,
+                                            color: isDark ? Colors.white70 : Colors.black87,
+                                            height: 1.4,
+                                          ),
                                         ),
                                       ),
                                       SizedBox(height: 12.h),
