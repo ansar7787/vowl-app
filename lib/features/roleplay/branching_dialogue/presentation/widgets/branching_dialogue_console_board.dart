@@ -40,8 +40,6 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1.sw,
-      height: 400.h,
       color: Colors.transparent,
       child: LayoutBuilder(
         builder: (context, constraints) {
@@ -52,10 +50,14 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
           final Offset launchCenter = Offset(width / 2, height - 70.h);
 
           // Calculate horizontal positioning of 3 terminal nodes evenly spaced along a curved arc
-          final double leftPadding = 45.w;
+          final double leftPadding = options.isNotEmpty
+              ? width / (options.length * 2)
+              : 0;
           final List<Offset> terminalCenters = List.generate(options.length, (
             i,
           ) {
+            if (options.length == 1) return Offset(width / 2, 80.h);
+
             double x =
                 leftPadding +
                 i * (width - 2 * leftPadding) / (options.length - 1);
@@ -89,7 +91,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
               // Orbiting path nodes (Dialogue Terminal options)
               ...List.generate(options.length, (i) {
                 final Offset termPos = terminalCenters[i];
-                return _buildPathTerminalNode(i, options[i], termPos);
+                return _buildPathTerminalNode(i, options[i], termPos, width);
               }),
 
               // Launch pad base
@@ -161,7 +163,12 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
     );
   }
 
-  Widget _buildPathTerminalNode(int index, String text, Offset position) {
+  Widget _buildPathTerminalNode(
+    int index,
+    String text,
+    Offset position,
+    double boardWidth,
+  ) {
     final bool isHovered = hoveredIndex == index;
     final bool isSelected = selectedIndex == index;
     final bool hideOther = isAnswered && !isSelected;
@@ -173,9 +180,13 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
           : AppColors.gameIncorrect;
     }
 
+    final double nodeWidth = options.isNotEmpty
+        ? (boardWidth / options.length) - 8.w
+        : boardWidth;
+
     return AnimatedPositioned(
       duration: const Duration(milliseconds: 250),
-      left: position.dx - 48.w,
+      left: position.dx - (nodeWidth / 2),
       top: position.dy - 60.h,
       child: GestureDetector(
         onTap: () {
@@ -226,20 +237,18 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
               ),
               SizedBox(height: 8.h),
               SizedBox(
-                width: 90.w,
+                width: nodeWidth,
                 child: Text(
                   text,
                   textAlign: TextAlign.center,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w600,
                     color: isHovered
                         ? color
                         : (isDark ? Colors.white70 : Colors.black87),
-                    height: 1.2,
+                    height: 1.25,
                   ),
                 ),
               ),
@@ -248,6 +257,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(top: 4.h),
                   child: Container(
+                    width: nodeWidth,
                     padding: EdgeInsets.symmetric(
                       horizontal: 6.w,
                       vertical: 2.h,
@@ -264,10 +274,11 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                     ),
                     child: Text(
                       consequencePreviews[index],
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 8.sp,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         color: (isSelected && isAnswered)
                             ? (index == correctIndex
                                   ? AppColors.gameCorrect

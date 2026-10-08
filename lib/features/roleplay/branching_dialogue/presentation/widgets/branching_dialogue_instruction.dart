@@ -28,7 +28,7 @@ class BranchingDialogueInstruction extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
               color: primaryColor,
               letterSpacing: 2.5,
             ),

@@ -22,7 +22,6 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1.sw,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
@@ -66,13 +65,11 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
                       quest.roleName?.toUpperCase() ?? "TELEMETRY AGENT",
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
                         color: color,
-                        letterSpacing: 1.5,
+                        letterSpacing: 1.2,
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: 4.h),
                     Text(
@@ -81,7 +78,7 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         color: Colors.grey.shade500,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],
@@ -108,7 +105,7 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w600,
                           color: color,
                         ),
                       ),
@@ -124,9 +121,10 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 18.sp,
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w500,
               color: isDark ? Colors.white70 : Colors.black87,
-              height: 1.3,
+              height: 1.4,
             ),
           ),
         ],

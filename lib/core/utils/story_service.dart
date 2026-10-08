@@ -153,7 +153,7 @@ class StoryServiceImpl implements StoryService {
 
     // Roleplay
     'branchingDialogue':
-        "Let's practice choosing the best responses in real-time conversations. This will help you sound natural and confident!",
+        "Time to jump into some real conversations! Drag the probe to choose what to say next and see how people react. You've got this!",
     'conflictResolver':
         "Navigating disagreements can be tricky. Let's practice using polite and tactful language to keep conversations positive!",
     'elevatorPitch':
@@ -1031,11 +1031,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'branchingdialogue': [
       "",
-      "Nice work! Conquering dialogue paths is a huge step forward.",
-      "You are decoding dialogue paths with impressive accuracy.",
-      "Level 50! Your command of dialogue paths is exceptional.",
-      "Level 100! You are an absolute master of dialogue paths.",
-      "200 levels cleared! Your dialogue paths abilities are unmatched globally.",
+      "Nice work! Steering these conversations is a huge step toward real fluency.",
+      "You're getting really good at reading the room and picking the right response!",
+      "Level 50! You're navigating these conversations like a total pro.",
+      "100 levels beat! You can handle any social situation with absolute confidence.",
+      "200 levels cleared! Your conversational skills are absolutely incredible.",
     ],
     'conflictresolver': [
       "",
