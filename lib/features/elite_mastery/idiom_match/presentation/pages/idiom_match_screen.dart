@@ -299,6 +299,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
               radius: Radius.circular(8.r),
               thickness: 4.w,
               child: CustomScrollView(
+                controller: _scrollController,
                 physics: const BouncingScrollPhysics(),
                 slivers: [
                   SliverToBoxAdapter(child: SizedBox(height: 24.h)),
