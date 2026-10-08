@@ -355,14 +355,6 @@ class EliteFeedbackCard extends StatelessWidget {
       );
     }
     if (ruleTip != null) {
-      // FIX: previously concatenated a raw label + the tip text directly
-      // (`context.tr('games.pro_tip_caps', fallback: 'PRO TIP') + ruleTip`), inconsistent with
-      // the properly parameterized template used a few lines above
-      // (`games.semantic_incorrect_explanation`, args: [...]). Naive
-      // concatenation can't be reordered for languages with different word
-      // order/grammar around an inserted value. NOTE: `games.semantic_pro_tip`
-      // is a new localization key needed in the ARB/localization files
-      // (outside this feature slice), e.g. English: "Pro tip: {0}".
       buffer.write(
         context.tr(
           'games.semantic_pro_tip',
@@ -371,6 +363,62 @@ class EliteFeedbackCard extends StatelessWidget {
         ),
       );
     }
+
+    final shadowingFocus = state.currentQuest.shadowingFocus;
+    if (shadowingFocus != null && shadowingFocus.trim().isNotEmpty) {
+      buffer.write(
+        context.tr(
+          'games.semantic_phonetic_rule',
+          fallback: ' Phonetic rule: {0}',
+          args: [shadowingFocus],
+        ),
+      );
+    }
+
+    final targetAccent = state.currentQuest.targetAccent;
+    if (targetAccent != null && targetAccent.trim().isNotEmpty) {
+      buffer.write(
+        context.tr(
+          'games.semantic_target_sound',
+          fallback: ' Target sound: {0}',
+          args: [targetAccent],
+        ),
+      );
+    }
+    
+    final usageContext = state.currentQuest.usageContext;
+    if (usageContext != null && usageContext.trim().isNotEmpty) {
+      buffer.write(
+        context.tr(
+          'games.semantic_usage_context',
+          fallback: ' Usage context: {0}',
+          args: [usageContext],
+        ),
+      );
+    }
+
+    final spellingRule = state.currentQuest.spellingRule;
+    if (spellingRule != null && spellingRule.trim().isNotEmpty) {
+      buffer.write(
+        context.tr(
+          'games.semantic_spelling_pattern',
+          fallback: ' Spelling pattern: {0}',
+          args: [spellingRule],
+        ),
+      );
+    }
+
+    final sequenceLogic = state.currentQuest.sequenceLogic;
+    if (sequenceLogic != null && sequenceLogic.trim().isNotEmpty) {
+      buffer.write(
+        context.tr(
+          'games.semantic_sequence_logic',
+          fallback: ' Sequence logic: {0}',
+          args: [sequenceLogic],
+        ),
+      );
+    }
+
     return buffer.toString();
   }
 
