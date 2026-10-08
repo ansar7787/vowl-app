@@ -11,6 +11,8 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 
 import '../widgets/speed_spelling_input_field.dart';
 import '../widgets/speed_spelling_character_deck.dart';
@@ -263,6 +265,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
         if (mounted && _shuffledChars.value.isEmpty) {
           _currentInput.value = "";
           _shuffledChars.value = quest.word!.split('')..shuffle();
+          di.sl<TtsService>().speak(quest.word!);
         }
       });
     }
@@ -350,18 +353,47 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                         SizedBox(height: 12.h),
                       ],
                       if (quest.instruction.isNotEmpty) ...[
-                         Semantics(
-                           header: true,
-                           child: Text(
-                             quest.instruction,
-                             textAlign: TextAlign.center,
-                             style: TextStyle(
-                               fontFamily: 'Outfit',
-                               fontSize: isCompact ? 16.sp : 18.sp,
-                               fontWeight: FontWeight.bold,
-                               color: isDark ? Colors.white70 : AppColors.slate700,
+                         Row(
+                           mainAxisAlignment: MainAxisAlignment.center,
+                           children: [
+                             Flexible(
+                               child: Semantics(
+                                 header: true,
+                                 child: Text(
+                                   quest.instruction,
+                                   textAlign: TextAlign.center,
+                                   style: TextStyle(
+                                     fontFamily: 'Outfit',
+                                     fontSize: isCompact ? 16.sp : 18.sp,
+                                     fontWeight: FontWeight.bold,
+                                     color: isDark ? Colors.white70 : AppColors.slate700,
+                                   ),
+                                 ),
+                               ),
                              ),
-                           ),
+                             if (quest.word != null) ...[
+                               SizedBox(width: 8.w),
+                               Semantics(
+                                 button: true,
+                                 label: context.tr('games.semantic_replay_audio', fallback: 'Replay audio'),
+                                 child: ScaleButton(
+                                   onTap: () => di.sl<TtsService>().speak(quest.word!),
+                                   child: Container(
+                                     padding: EdgeInsets.all(8.r),
+                                     decoration: BoxDecoration(
+                                       color: theme.primaryColor.withValues(alpha: 0.1),
+                                       shape: BoxShape.circle,
+                                     ),
+                                     child: Icon(
+                                       Icons.volume_up_rounded,
+                                       color: theme.primaryColor,
+                                       size: 20.r,
+                                     ),
+                                   ),
+                                 ),
+                               ),
+                             ],
+                           ],
                          ),
                          SizedBox(height: 12.h),
                       ],
@@ -370,6 +402,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                           key: ValueKey(quest.id),
                           tween: Tween(begin: 30.0, end: 0.0),
                           duration: const Duration(seconds: 30),
+                          onEnd: () {
+                            if (!isAnsweredNotifier.value && mounted) {
+                              submitWrongAnswer(quest: quest, userAnswer: _currentInput.value);
+                            }
+                          },
                           builder: (context, value, child) {
                             final color = value > 10
                                 ? theme.primaryColor
