@@ -8,7 +8,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+
 import '../widgets/accent_shadowing_target_panel.dart';
 import '../widgets/accent_shadowing_options_panel.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
@@ -443,7 +443,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                     _submitVerbalEvaluation(nailedIt, quest),
                               ),
 
-                            ],
                           ],
                         ),
                       ),
