@@ -211,6 +211,9 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     } else if (widget.requiredHighlights == null) {
       // Require finding 100% of the valid evidence words
       _targetCount = actualEvidenceCount;
+    } else if (_targetCount > actualEvidenceCount) {
+      // Prevent soft-lock if caller asks for more highlights than available words
+      _targetCount = actualEvidenceCount;
     }
   }
 
