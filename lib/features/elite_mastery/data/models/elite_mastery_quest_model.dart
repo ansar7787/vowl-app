@@ -98,9 +98,9 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
           : null,
       idiom: getString(json['idiom']),
       word: getString(json['word']),
-      speedMultiplier: (json['speedMultiplier'] as num?)?.toDouble(),
+      speedMultiplier: ((json['speedMultiplier'] ?? json['speedLevel']) as num?)?.toDouble(),
       textToSpeak: getString(json['textToSpeak']),
-      text: getString(json['text'] ?? json['textToSpeak']),
+      text: getString(json['text'] ?? json['textToSpeak'] ?? json['word']),
       // FIX: every Idiom Match quest carries a `question` field (the
       // scenario text the player reads before picking an idiom) which was
       // never parsed. Without it, IdiomMatchScreen's
@@ -111,7 +111,7 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
       // across all Accent Shadowing batches) but previously never parsed —
       // it was silently discarded by every prior version of this model.
       explanation: getString(json['explanation']),
-      shadowingFocus: getString(json['shadowingFocus']),
+      shadowingFocus: getString(json['shadowingFocus'] ?? json['flowRule']),
       usageContext: getString(json['usageContext']),
       spellingRule: getString(json['spellingRule']),
       sequenceLogic: getString(json['sequenceLogic']),
@@ -119,7 +119,7 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
       idiomOrigin: getString(json['idiomOrigin']),
       visualMetaphor: getString(json['visualMetaphor']),
       difficultyTier: getString(json['difficultyTier']),
-      targetAccent: getString(json['targetAccent']),
+      targetAccent: getString(json['targetAccent'] ?? json['ipa']),
     );
   }
 

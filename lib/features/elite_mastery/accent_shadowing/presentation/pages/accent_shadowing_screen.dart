@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,8 +8,11 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../widgets/accent_shadowing_target_panel.dart';
+import '../widgets/accent_shadowing_options_panel.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
@@ -43,6 +47,11 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
   final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<Set<int>> _matchedIndices = ValueNotifier({});
 
+  final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
+  final ValueNotifier<List<int>> _originalIndices = ValueNotifier([]);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<List<int>> _wrongIndices = ValueNotifier([]);
+
   static const double _kCompactHeightBreakpoint = 580;
 
   @override
@@ -55,6 +64,10 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
   void dispose() {
     _attempts.dispose();
     _matchedIndices.dispose();
+    _shuffledOptions.dispose();
+    _originalIndices.dispose();
+    _selectedIndex.dispose();
+    _wrongIndices.dispose();
     _scrollController.dispose();
     disposeEliteMasteryGame();
     super.dispose();
@@ -78,11 +91,72 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
     }
   }
 
+  void _initializeOptionsIfNeeded(GameQuest? quest) {
+    if (quest == null || quest.options == null || quest.options!.isEmpty) {
+      return;
+    }
+    if (_shuffledOptions.value.isEmpty) {
+      final options = List<String>.from(quest.options!);
+      final indices = List<int>.generate(options.length, (i) => i);
+      final combined = List.generate(
+        options.length,
+        (i) => (options[i], indices[i]),
+      );
+      combined.shuffle();
+
+      _shuffledOptions.value = combined.map((e) => e.$1).toList();
+      _originalIndices.value = combined.map((e) => e.$2).toList();
+    }
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (!mounted) return;
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
+  }
+
+  void _onOptionSelected(int shuffledIndex, GameQuest quest) {
+    if (isAnsweredNotifier.value ||
+        _wrongIndices.value.contains(shuffledIndex)) {
+      return;
+    }
+    _selectedIndex.value = shuffledIndex;
+
+    final originalIndex = _originalIndices.value[shuffledIndex];
+    final isCorrect = originalIndex == quest.correctAnswerIndex;
+
+    if (isCorrect) {
+      isFirstStagePassedNotifier.value = true;
+      hapticService.selection();
+      soundService.playClick();
+      _scrollToBottom();
+    } else {
+      _scrollToBottom();
+      final userAnswer = _shuffledOptions.value.length > shuffledIndex
+          ? _shuffledOptions.value[shuffledIndex]
+          : 'Unknown';
+      _attempts.value++;
+      _wrongIndices.value = [..._wrongIndices.value, shuffledIndex];
+      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
+    }
+  }
+
   @override
   void onQuestionReset() {
+    isFirstStagePassedNotifier.value = false;
     _attempts.value = 0;
-
     _matchedIndices.value = {};
+    _shuffledOptions.value = [];
+    _originalIndices.value = [];
+    _selectedIndex.value = null;
+    _wrongIndices.value = [];
   }
 
   @override
@@ -107,6 +181,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
             isAnsweredNotifier,
             isCorrectNotifier,
             showConfettiNotifier,
+            isFirstStagePassedNotifier,
             _attempts,
             _matchedIndices,
           ]),
@@ -124,9 +199,11 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                       : false),
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
+              disablePadding: true,
               fullScreenContent: true,
               onContinue: () {
                 isAnsweredNotifier.value = false;
+                isFirstStagePassedNotifier.value = false;
                 isCorrectNotifier.value = null;
                 _attempts.value = 0;
                 _matchedIndices.value = {};
@@ -187,6 +264,17 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
     return const SizedBox.shrink();
   }
 
+  @override
+  void onEliteMasteryStateChanged(
+    BuildContext context,
+    EliteMasteryState state,
+  ) {
+    super.onEliteMasteryStateChanged(context, state);
+    if (state is EliteMasteryLoaded) {
+      _initializeOptionsIfNeeded(state.currentQuest);
+    }
+  }
+
   Widget _buildGameUI(
     BuildContext context,
     EliteMasteryLoaded state,
@@ -203,83 +291,274 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
           radius: Radius.circular(8.r),
           thickness: 4.w,
+          crossAxisMargin: 4.w,
+          mainAxisMargin: 16.h,
           child: CustomScrollView(
+            controller: _scrollController,
             physics: const BouncingScrollPhysics(),
             slivers: [
-              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
-              SliverFillRemaining(
-                hasScrollBody: true,
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: LayoutBuilder(
-                        builder: (context, constraints) {
-                          final isCompact =
-                              constraints.maxHeight < _kCompactHeightBreakpoint;
-
-                          return Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: isCompact ? 5.h : 10.h,
-                            ),
-                            child: Column(
-                              children: [
-                                AccentShadowingTargetPanel(
-                                  text:
-                                      targetText ??
-                                      context.tr(
-                                        'games.target_text_fallback',
-                                        fallback: 'Target Text',
-                                      ),
-                                  shadowingFocus: quest.shadowingFocus,
-                                  targetAccent: quest.targetAccent,
-                                  matchedIndices: _matchedIndices.value,
-                                  isDark: isDark,
-                                  primaryColor: theme.primaryColor,
-                                  isAnswered: isAnsweredNotifier.value,
-                                  isCorrect: isCorrectNotifier.value,
-                                  attempts: _attempts.value,
-                                  onListenTap: () =>
-                                      soundService.playTts(targetText ?? ""),
+              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+              SliverToBoxAdapter(
+                child: Builder(
+                  builder: (context) {
+                    final isCompact =
+                        MediaQuery.of(context).size.height <
+                        _kCompactHeightBreakpoint;
+                    return IgnorePointer(
+                      ignoring:
+                          isFirstStagePassedNotifier.value ||
+                          isAnsweredNotifier.value,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: isCompact ? 5.h : 10.h,
+                        ),
+                        child: Column(
+                          children: [
+                            if (quest.instruction.isNotEmpty) ...[
+                              Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
+                                  vertical: 12.h,
                                 ),
-
-                                if (state.isHintVisible) ...[
-                                  SizedBox(height: isCompact ? 12.h : 20.h),
-                                  EliteHintCard(
-                                    hintText: quest.hint,
-                                    isVisible: true,
-                                    onShowHint: () {},
-                                    primaryColor: theme.primaryColor,
+                                margin: EdgeInsets.only(bottom: 16.h),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.08)
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.1)
+                                        : Colors.black.withValues(alpha: 0.05),
                                   ),
-                                ],
-                                SizedBox(height: isCompact ? 16.h : 30.h),
-
-                                if (!isAnsweredNotifier.value)
-                                  AccentSelfEvaluationPanel(
-                                    textToSpeak:
-                                        "", // Removed duplicate text, it's already shown in the target panel
-                                    primaryColor: theme.primaryColor,
-                                    isCompact: isCompact,
-                                    onEvaluate: (nailedIt) =>
-                                        _submitVerbalEvaluation(
-                                          nailedIt,
-                                          quest,
-                                        ),
+                                ),
+                                child: Text(
+                                  quest.instruction,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: isDark
+                                        ? Colors.white
+                                        : AppColors.slate800,
+                                    height: 1.4,
                                   ),
-                              ],
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                            AccentShadowingTargetPanel(
+                              text:
+                                  targetText ??
+                                  context.tr(
+                                    'games.target_text_fallback',
+                                    fallback: 'Target Text',
+                                  ),
+                              matchedIndices: _matchedIndices.value,
+                              isDark: isDark,
+                              primaryColor: theme.primaryColor,
+                              isAnswered: isAnsweredNotifier.value,
+                              isCorrect: isCorrectNotifier.value,
+                              attempts: _attempts.value,
+                              onListenTap: () => soundService.playTts(
+                                targetText ?? "",
+                                speed: quest.speedMultiplier ?? 0.4,
+                              ),
                             ),
-                          );
-                        },
+
+                            if (state.isHintVisible) ...[
+                              SizedBox(height: isCompact ? 12.h : 20.h),
+                              EliteHintCard(
+                                hintText: quest.hint,
+                                isVisible: true,
+                                onShowHint: () {},
+                                primaryColor: theme.primaryColor,
+                              ),
+                            ],
+                            SizedBox(height: isCompact ? 16.h : 30.h),
+
+                            if (quest.options != null &&
+                                quest.options!.isNotEmpty)
+                              ListenableBuilder(
+                                listenable: Listenable.merge([
+                                  _shuffledOptions,
+                                  _originalIndices,
+                                  _selectedIndex,
+                                  _wrongIndices,
+                                ]),
+                                builder: (context, _) {
+                                  return AccentShadowingOptionsPanel(
+                                    shuffledOptions: _shuffledOptions.value,
+                                    originalIndices: _originalIndices.value,
+                                    selectedIndex: _selectedIndex.value,
+                                    wrongIndices: _wrongIndices.value,
+                                    isAnswered:
+                                        isFirstStagePassedNotifier.value ||
+                                        isAnsweredNotifier.value,
+                                    showCorrectAnswer:
+                                        isFirstStagePassedNotifier.value ||
+                                        isAnsweredNotifier.value,
+                                    correctAnswerIndex:
+                                        quest.correctAnswerIndex ?? 0,
+                                    isDark: isDark,
+                                    primaryColor: theme.primaryColor,
+                                    onOptionSelected: (index) =>
+                                        _onOptionSelected(index, quest),
+                                  );
+                                },
+                              )
+                            else if (!isAnsweredNotifier.value)
+                              AccentSelfEvaluationPanel(
+                                textToSpeak: "", // Removed duplicate text
+                                primaryColor: theme.primaryColor,
+                                isCompact: isCompact,
+                                onEvaluate: (nailedIt) =>
+                                    _submitVerbalEvaluation(nailedIt, quest),
+                              ),
+
+                            if (isAnsweredNotifier.value &&
+                                (quest.explanation != null ||
+                                    quest.shadowingFocus != null ||
+                                    quest.targetAccent != null)) ...[
+                              SizedBox(height: 24.h),
+                              Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.all(20.r),
+                                    decoration: BoxDecoration(
+                                      color: isDark
+                                          ? AppColors.slate800
+                                          : Colors.blue.withValues(alpha: 0.05),
+                                      borderRadius: BorderRadius.circular(20.r),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.3,
+                                        ),
+                                        width: 1.5,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        _buildFeedbackItem(
+                                          context,
+                                          "WHY IT WORKS",
+                                          quest.explanation,
+                                          Icons.lightbulb_outline_rounded,
+                                          theme.primaryColor,
+                                          isDark,
+                                        ),
+                                        _buildFeedbackItem(
+                                          context,
+                                          "PHONETIC RULE",
+                                          quest.shadowingFocus,
+                                          Icons.rule_rounded,
+                                          Colors.tealAccent.shade400,
+                                          isDark,
+                                        ),
+                                        _buildFeedbackItem(
+                                          context,
+                                          "TARGET SOUND",
+                                          quest.targetAccent,
+                                          Icons.record_voice_over_rounded,
+                                          Colors.blueAccent.shade400,
+                                          isDark,
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                  .animate()
+                                  .fadeIn(duration: 400.ms)
+                                  .slideY(begin: 0.1),
+                            ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    );
+                  },
                 ),
               ),
-              SliverToBoxAdapter(child: SizedBox(height: 60.h)),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height:
+                      (isAnsweredNotifier.value ||
+                          isFirstStagePassedNotifier.value)
+                      ? 180.h
+                      : 60.h,
+                ),
+              ),
+              if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      SpeakToConfirmOverlay(
+                        expectedText: targetText ?? "",
+                        displayText: targetText ?? "",
+                        title: 'SPEAK TO SHADOW',
+                        subtitle: 'Shadow the native pronunciation',
+                        displayFontSize: 16.sp,
+                        displayFontWeight: FontWeight.w500,
+                        displayTextAlign: TextAlign.center,
+                        primaryColor: theme.primaryColor,
+                        isPositioned: false,
+                        onConfirmed: () => _submitVerbalEvaluation(true, quest),
+                        onSkipped: () => _submitVerbalEvaluation(false, quest),
+                      ),
+                      SizedBox(height: 60.h),
+                    ],
+                  ),
+                ),
             ],
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildFeedbackItem(
+    BuildContext context,
+    String title,
+    String? content,
+    IconData icon,
+    Color color,
+    bool isDark,
+  ) {
+    if (content == null || content.isEmpty) return const SizedBox.shrink();
+    return Padding(
+      padding: EdgeInsets.only(bottom: 16.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(icon, color: color, size: 20.r),
+              SizedBox(width: 8.w),
+              Text(
+                title,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 8.h),
+          Text(
+            content,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              color: isDark ? Colors.white70 : Colors.black87,
+              height: 1.4,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
