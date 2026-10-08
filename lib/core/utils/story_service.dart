@@ -167,7 +167,7 @@ class StoryServiceImpl implements StoryService {
     'medicalConsult':
         "Your health is important. Let's practice describing symptoms clearly so you can get the best care possible.",
     'situationalResponse':
-        "Every conversation is unique! Let's practice adapting your tone to fit any social scenario effortlessly.",
+        "Every conversation is unique! Let's practice reading the room, choosing the best response, and speaking it with confidence.",
     'socialSpark':
         "Meeting new people is exciting! Let's practice starting and maintaining engaging small talk with confidence.",
     'travelDesk':
@@ -1087,11 +1087,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'situationalresponse': [
       "",
-      "Fantastic! Exploring situational speaking will elevate your skills rapidly.",
-      "Your progress in situational speaking is genuinely impressive.",
-      "Halfway to 100! You are handling situational speaking effortlessly.",
-      "Level 100! Your expertise in situational speaking is elite.",
-      "200 levels cleared! Your situational speaking abilities are unmatched globally.",
+      "Great start! Getting comfortable with everyday situations takes practice, and you're already on your way.",
+      "You're getting the hang of this! Your responses are starting to sound much more natural.",
+      "Halfway to 100! You're picking up on the social cues and responding with confidence.",
+      "Level 100! Look at how easily you can think on your feet now. Awesome work!",
+      "200 levels! You're speaking up and responding like a true natural in any situation.",
     ],
     'socialspark': [
       "",

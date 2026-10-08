@@ -25,7 +25,7 @@ class SituationalResponseInstruction extends StatelessWidget {
             border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
           ),
           child: Text(
-            "TENSION REEL DECISION MATRIX",
+            "SITUATIONAL RESPONSE",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,
@@ -37,7 +37,7 @@ class SituationalResponseInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          instruction ?? "Replicate the best reaction before tension peaks",
+          instruction ?? "Choose the most natural reaction for this scenario",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
