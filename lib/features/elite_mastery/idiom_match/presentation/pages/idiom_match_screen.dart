@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import '../../../domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
@@ -71,19 +72,20 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (!mounted) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 400),
-          curve: Curves.easeOut,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
         );
       }
     });
   }
 
   void _onOptionSelected(
-    GameQuest quest,
+    EliteMasteryQuest quest,
     int shuffledIndex,
     int? correctOriginalIndex,
   ) {
@@ -118,7 +120,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
+  void _submitVerbalEvaluation(bool nailedIt, EliteMasteryQuest quest) {
     if (isAnsweredNotifier.value) return;
 
     if (nailedIt) {
@@ -129,11 +131,22 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
       context.read<EliteMasteryBloc>().add(const EliteSpeakConfirmed(5));
       context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
     } else {
-      submitWrongAnswer(quest: quest, userAnswer: '[Skipped speaking]');
+      final expectedText = quest.options != null &&
+              _selectedIndex.value != null &&
+              _shuffledOptions.value.length > _selectedIndex.value!
+          ? _shuffledOptions.value[_selectedIndex.value!]
+          : "";
+      submitWrongAnswer(
+        quest: quest.copyWith(
+          question: "Speak the idiom aloud",
+          correctAnswer: expectedText,
+        ),
+        userAnswer: '[Skipped speaking]',
+      );
     }
   }
 
-  void _initializeOptionsIfNeeded(GameQuest? quest) {
+  void _initializeOptionsIfNeeded(EliteMasteryQuest? quest) {
     if (quest == null || quest.options == null || quest.options!.isEmpty) return;
     if (_shuffledOptions.value.isEmpty) {
       final options = List<String>.from(quest.options!);
@@ -202,6 +215,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                   : false,
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
+              disablePadding: true,
               fullScreenContent: true,
               visualConfig: quest?.visualConfig,
               onContinue: () {
@@ -285,12 +299,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
               radius: Radius.circular(8.r),
               thickness: 4.w,
               child: CustomScrollView(
-                physics: (!isFirstStagePassedNotifier.value &&
-                        !isAnsweredNotifier.value)
-                    ? const NeverScrollableScrollPhysics()
-                    : const BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 slivers: [
-              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
+                  SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                   SliverToBoxAdapter(
                     child: IgnorePointer(
                       ignoring: isFirstStagePassedNotifier.value ||
@@ -307,100 +318,126 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                     constraints.maxHeight <
                                     _kCompactHeightBreakpoint;
 
-                                return Column(
-                                  children: [
+                                return Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                  child: Column(
+                                    children: [
                                     if (quest.instruction.isNotEmpty) ...[
-                                      Text(
-                                        quest.instruction.toUpperCase(),
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.bold,
-                                          color: theme.primaryColor,
-                                          letterSpacing: 1.5,
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                          vertical: 8.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: theme.primaryColor
+                                              .withValues(alpha: 0.1),
+                                          borderRadius:
+                                              BorderRadius.circular(16.r),
+                                          border: Border.all(
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.2),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Icon(
+                                              Icons.info_outline_rounded,
+                                              color: theme.primaryColor,
+                                              size: 16.r,
+                                            ),
+                                            SizedBox(width: 8.w),
+                                            Flexible(
+                                              child: Text(
+                                                quest.instruction.toUpperCase(),
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 11.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: theme.primaryColor,
+                                                  letterSpacing: 1.2,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                       SizedBox(height: 12.h),
                                     ],
                                     if (quest.question != null &&
                                         quest.question!.isNotEmpty) ...[
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 16.w,
-                                        ),
-                                        child: Container(
-                                          width: double.infinity,
-                                          padding: EdgeInsets.all(24.r),
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                              24.r,
-                                            ),
-                                            gradient: LinearGradient(
-                                              begin: Alignment.topLeft,
-                                              end: Alignment.bottomRight,
-                                              colors: isDark
-                                                  ? [
-                                                      Colors.white.withValues(
-                                                        alpha: 0.1,
-                                                      ),
-                                                      Colors.white.withValues(
-                                                        alpha: 0.02,
-                                                      ),
-                                                    ]
-                                                  : [
-                                                      Colors.white,
-                                                      Colors.white.withValues(
-                                                        alpha: 0.7,
-                                                      ),
-                                                    ],
-                                            ),
-                                            border: Border.all(
-                                              color: isDark
-                                                  ? Colors.white.withValues(
-                                                      alpha: 0.15,
-                                                    )
-                                                  : theme.primaryColor
-                                                        .withValues(alpha: 0.3),
-                                              width: 1.5,
-                                            ),
-                                            boxShadow: [
-                                              if (!isDark)
-                                                BoxShadow(
-                                                  color: theme.primaryColor
-                                                      .withValues(alpha: 0.15),
-                                                  blurRadius: 24,
-                                                  offset: const Offset(0, 12),
-                                                ),
-                                            ],
+                                      Container(
+                                        width: double.infinity,
+                                        padding: EdgeInsets.all(24.r),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            24.r,
                                           ),
-                                          child: Column(
-                                            children: [
-                                              Icon(
-                                                Icons.format_quote_rounded,
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                            colors: isDark
+                                                ? [
+                                                    Colors.white.withValues(
+                                                      alpha: 0.1,
+                                                    ),
+                                                    Colors.white.withValues(
+                                                      alpha: 0.02,
+                                                    ),
+                                                  ]
+                                                : [
+                                                    Colors.white,
+                                                    Colors.white.withValues(
+                                                      alpha: 0.7,
+                                                    ),
+                                                  ],
+                                          ),
+                                          border: Border.all(
+                                            color: isDark
+                                                ? Colors.white.withValues(
+                                                    alpha: 0.15,
+                                                  )
+                                                : theme.primaryColor
+                                                      .withValues(alpha: 0.3),
+                                            width: 1.5,
+                                          ),
+                                          boxShadow: [
+                                            if (!isDark)
+                                              BoxShadow(
                                                 color: theme.primaryColor
-                                                    .withValues(alpha: 0.6),
-                                                size: 32.r,
+                                                    .withValues(alpha: 0.15),
+                                                blurRadius: 24,
+                                                offset: const Offset(0, 12),
                                               ),
-                                              SizedBox(height: 8.h),
-                                              Text(
-                                                quest.question!,
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: isCompact
-                                                      ? 16.sp
-                                                      : 18.sp,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: isDark
-                                                      ? Colors.white
-                                                      : AppColors.slate900,
-                                                  height: 1.4,
-                                                  letterSpacing: 0.3,
-                                                ),
+                                          ],
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Icon(
+                                              Icons.format_quote_rounded,
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.6),
+                                              size: 24.r,
+                                            ),
+                                            SizedBox(height: 8.h),
+                                            Text(
+                                              quest.question!,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: isCompact
+                                                    ? 15.sp
+                                                    : 16.sp,
+                                                fontWeight: FontWeight.w500,
+                                                color: isDark
+                                                    ? Colors.white
+                                                    : AppColors.slate900,
+                                                height: 1.4,
+                                                letterSpacing: 0.3,
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ],
@@ -456,9 +493,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                       Container(
                                         width: double.infinity,
                                         padding: EdgeInsets.all(20.r),
-                                        margin: EdgeInsets.symmetric(
-                                          horizontal: 16.w,
-                                        ),
                                         decoration: BoxDecoration(
                                           color: isDark
                                               ? _LocalPalette.color1a1a2e
@@ -521,8 +555,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                           .slideY(begin: 0.1),
                                     ],
                                   ],
-                                );
-                              },
+                                ),
+                              );
+                            },
                             ),
                           ],
                         ),
@@ -557,8 +592,12 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                   : "";
                               return SpeakToConfirmOverlay(
                                 expectedText: expectedText,
-                                displayText:
-                                    "Say the idiom aloud:\n\n\"$expectedText\"",
+                                displayText: expectedText,
+                                title: 'SPEAK THE IDIOM',
+                                subtitle: 'Say the idiom aloud to confirm',
+                                displayFontSize: 16.sp,
+                                displayFontWeight: FontWeight.w500,
+                                displayTextAlign: TextAlign.center,
                                 primaryColor: theme.primaryColor,
                                 isPositioned: false,
                                 onConfirmed: () =>
