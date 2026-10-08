@@ -17,6 +17,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
   final ThemeResult theme;
   final bool isAnswered;
   final bool? isCorrect;
+  final bool isReorderable;
 
   const StoryBuilderNarrativeTile({
     super.key,
@@ -28,6 +29,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
     required this.theme,
     required this.isAnswered,
     this.isCorrect,
+    this.isReorderable = true,
   });
 
   @override
@@ -150,33 +152,39 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
                   .animate()
                   .scale(duration: 400.ms, curve: Curves.elasticOut)
                   .shimmer(duration: 1500.ms, color: Colors.white54),
-            SizedBox(width: 8.w),
-            // FIX: paired with `buildDefaultDragHandles: false` on the
-            // parent ReorderableListView. Without an explicit listener here,
-            // disabling the default handle would leave nothing to grab;
-            // wrapping just this icon keeps the same single, deliberate
-            // drag affordance shown today instead of risking a second,
-            // platform-added handle appearing next to it.
-            ReorderableDragStartListener(
-              index: index,
-              // FIX: a bare 26.r icon with no surrounding padding measures
-              // well under the 48dp touch-target minimum — and this handle
-              // is the *sole* way to interact with this entire game
-              // (reordering is the whole mechanic). Growing only the
-              // invisible tappable/drag-initiation area, not the visible
-              // icon, via the same ConstrainedBox+Center pattern used
-              // elsewhere in this review.
-              child: ConstrainedBox(
+            if (isReorderable)
+              ReorderableDragStartListener(
+                index: index,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+                  child: Center(
+                    child: Icon(
+                      Icons.drag_indicator_rounded,
+                      color: isDark ? Colors.white30 : Colors.black26,
+                      size: 26.r,
+                    ),
+                  ),
+                ),
+              )
+            else
+              ConstrainedBox(
                 constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
                 child: Center(
                   child: Icon(
-                    Icons.drag_indicator_rounded,
-                    color: isDark ? Colors.white30 : Colors.black26,
+                    isCorrect == true
+                        ? Icons.check_circle_rounded
+                        : (isCorrect == false
+                            ? Icons.cancel_rounded
+                            : Icons.check_circle_rounded),
+                    color: isCorrect == true
+                        ? tokens.gameCorrect
+                        : (isCorrect == false
+                            ? tokens.gameIncorrect
+                            : (isDark ? Colors.white30 : Colors.black26)),
                     size: 26.r,
                   ),
                 ),
               ),
-            ),
           ],
         ),
       ),
