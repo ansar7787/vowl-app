@@ -11,6 +11,8 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 
 import '../widgets/speed_spelling_input_field.dart';
 import '../widgets/speed_spelling_character_deck.dart';
@@ -41,7 +43,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
   final ScrollController _scrollController = ScrollController();
   final ValueNotifier<String> _currentInput = ValueNotifier("");
@@ -49,11 +52,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
   final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<List<int>> _tapHistory = ValueNotifier([]);
 
-  // Below this available height, use tighter spacing. See the identical
-  // constant in accent_shadowing_screen.dart / idiom_match_screen.dart /
-  // story_builder_screen.dart — worth consolidating into one shared
-  // constant, noted in the review report's Refactoring Opportunities.
-  static const double _kCompactHeightBreakpoint = 580;
+  // Below this available height, use tighter spacing.
+  static const double _kCompactHeightBreakpoint = 650;
 
   @override
   void initState() {
@@ -108,20 +108,25 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
   }
 
   void _onClear() {
-    if (isAnsweredNotifier.value) return;
-    final state = context.read<EliteMasteryBloc>().state;
-    if (state is EliteMasteryLoaded) {
-      _currentInput.value = "";
-      _tapHistory.value = [];
-      _shuffledChars.value = (state.currentQuest.word ?? '').split('')
-        ..shuffle();
+    if (isAnsweredNotifier.value || _tapHistory.value.isEmpty) return;
+
+    final newChars = List<String>.from(_shuffledChars.value);
+    for (int i = 0; i < _tapHistory.value.length; i++) {
+      final indexInDeck = _tapHistory.value[i];
+      final char = _currentInput.value[i];
+      newChars[indexInDeck] = char;
     }
+
+    _currentInput.value = "";
+    _tapHistory.value = [];
+    _shuffledChars.value = newChars;
+
     hapticService.selection();
   }
 
   void _submit(EliteMasteryQuest quest) {
     if (isAnsweredNotifier.value) return;
-    final correctWord = quest.correctAnswer ?? '';
+    final correctWord = quest.word ?? quest.correctAnswer ?? '';
     if (_currentInput.value.length != correctWord.length) return;
     final isCorrect =
         _currentInput.value.toLowerCase() == correctWord.toLowerCase();
@@ -142,11 +147,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
   @override
   void onQuestionReset() {
     _currentInput.value = "";
-
     _shuffledChars.value = [];
-
     _attempts.value = 0;
-
     _tapHistory.value = [];
   }
 
@@ -172,10 +174,6 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
             isAnsweredNotifier,
             isCorrectNotifier,
             showConfettiNotifier,
-            _currentInput,
-            _shuffledChars,
-            _attempts,
-            _tapHistory,
           ]),
           builder: (context, _) {
             return EliteBaseLayout(
@@ -210,17 +208,6 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                     GameDialogHelper.showHintAdDialog(
                       context,
                       onHintEarned: () {
-                        // FIX: Idiom Match's equivalent ad-dialog callback
-                        // already dispatches MarkEliteHintUsed() here (needed
-                        // for its 50/50 lifeline to activate); this screen's
-                        // didn't. Currently inert either way, since this game's
-                        // curriculum always supplies real hint text so this
-                        // branch is never actually reached — but this game also
-                        // has a fully-built letter-reveal mechanic in the Bloc
-                        // that depends on exactly this call. Added for
-                        // consistency and to not silently block that mechanic
-                        // if it's ever wired up to be reachable. See the review
-                        // report's Curriculum Utilization section.
                         if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                         bloc.add(ShowEliteHint());
                       },
@@ -242,10 +229,6 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
     bool isDark,
     ThemeResult theme,
   ) {
-    // `EliteMasteryLoading` and `EliteMasteryError` are both handled
-    // centrally by `EliteBaseLayout`: it renders its own shimmer/error UI
-    // directly inside its Stack and never includes this `child` slot for
-    // either state, so no local UI is built (or ever shown) for them here.
     if (state is EliteMasteryLoaded) {
       return _buildGameUI(context, state, isDark, theme);
     }
@@ -277,15 +260,17 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
   ) {
     final quest = state.currentQuest;
 
-    // Safety initialization if listener missed the first state
     if (_shuffledChars.value.isEmpty && quest.word != null) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted && _shuffledChars.value.isEmpty) {
           _currentInput.value = "";
           _shuffledChars.value = quest.word!.split('')..shuffle();
+          di.sl<TtsService>().speak(quest.word!);
         }
       });
     }
+
+    final isCompact = MediaQuery.sizeOf(context).height < _kCompactHeightBreakpoint;
 
     return Stack(
       children: [
@@ -297,283 +282,288 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
-              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
-              SliverFillRemaining(
-                hasScrollBody: true,
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: LayoutBuilder(
-                        builder: (context, constraints) {
-                          final isCompact =
-                              constraints.maxHeight < _kCompactHeightBreakpoint;
-
-                          return Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: isCompact ? 5.h : 10.h,
-                            ),
-                            child: Column(
-                              children: [
-                                if (quest.difficultyTier != null) ...[
-                                  Align(
-                                    alignment: Alignment.centerRight,
-                                    child: Container(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 12.w,
-                                        vertical: 6.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: quest.difficultyTier == 'Rare'
-                                            ? Colors.red.withValues(alpha: 0.1)
-                                            : (quest.difficultyTier ==
-                                                      'Advanced'
-                                                  ? Colors.orange.withValues(
-                                                      alpha: 0.1,
-                                                    )
-                                                  : Colors.green.withValues(
-                                                      alpha: 0.1,
-                                                    )),
-                                        borderRadius: BorderRadius.circular(
-                                          12.r,
+              SliverToBoxAdapter(child: SizedBox(height: 40.h)),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: isCompact ? 5.h : 10.h,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          if (quest.instruction.isNotEmpty)
+                            Expanded(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Flexible(
+                                    child: Semantics(
+                                      header: true,
+                                      child: Text(
+                                        quest.instruction,
+                                        textAlign: TextAlign.start,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: isCompact ? 16.sp : 18.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: isDark ? Colors.white70 : AppColors.slate700,
                                         ),
-                                        border: Border.all(
-                                          color: quest.difficultyTier == 'Rare'
-                                              ? AppColors.gameIncorrect
-                                                    .withValues(alpha: 0.3)
-                                              : (quest.difficultyTier ==
-                                                        'Advanced'
-                                                    ? Colors.orangeAccent
-                                                          .withValues(
-                                                            alpha: 0.3,
-                                                          )
-                                                    : AppColors.gameCorrect
-                                                          .withValues(
-                                                            alpha: 0.3,
-                                                          )),
-                                        ),
-                                      ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Icon(
-                                            quest.difficultyTier == 'Rare'
-                                                ? Icons
-                                                      .local_fire_department_rounded
-                                                : (quest.difficultyTier ==
-                                                          'Advanced'
-                                                      ? Icons.star_half_rounded
-                                                      : Icons
-                                                            .star_border_rounded),
-                                            color:
-                                                quest.difficultyTier == 'Rare'
-                                                ? AppColors.gameIncorrect
-                                                : (quest.difficultyTier ==
-                                                          'Advanced'
-                                                      ? Colors.orangeAccent
-                                                      : AppColors.gameCorrect),
-                                            size: 14.r,
-                                          ),
-                                          SizedBox(width: 4.w),
-                                          Text(
-                                            quest.difficultyTier!.toUpperCase(),
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 10.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color:
-                                                  quest.difficultyTier == 'Rare'
-                                                  ? AppColors.gameIncorrect
-                                                  : (quest.difficultyTier ==
-                                                            'Advanced'
-                                                        ? Colors.orangeAccent
-                                                        : AppColors
-                                                              .gameCorrect),
-                                              letterSpacing: 1.5,
-                                            ),
-                                          ),
-                                        ],
                                       ),
                                     ),
                                   ),
-                                  SizedBox(height: 12.h),
-                                ],
-                                if (!isAnsweredNotifier.value)
-                                  TweenAnimationBuilder<double>(
-                                    key: ValueKey(quest.id),
-                                    tween: Tween(begin: 30.0, end: 0.0),
-                                    duration: const Duration(seconds: 30),
-                                    builder: (context, value, child) {
-                                      final color = value > 10
-                                          ? theme.primaryColor
-                                          : AppColors.gameIncorrect;
-                                      return Column(
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text(
-                                                "SPEED BONUS",
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: isDark
-                                                      ? Colors.white54
-                                                      : Colors.black54,
-                                                  letterSpacing: 1.5,
-                                                ),
-                                              ),
-                                              Text(
-                                                "${value.ceil()}s",
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                  color: color,
-                                                ),
-                                              ),
-                                            ],
+                                  if (quest.word != null) ...[
+                                    SizedBox(width: 8.w),
+                                    Semantics(
+                                      button: true,
+                                      label: context.tr('games.semantic_replay_audio', fallback: 'Replay audio'),
+                                      child: ScaleButton(
+                                        onTap: () => di.sl<TtsService>().speak(quest.word!),
+                                        child: Container(
+                                          padding: EdgeInsets.all(8.r),
+                                          decoration: BoxDecoration(
+                                            color: theme.primaryColor.withValues(alpha: 0.1),
+                                            shape: BoxShape.circle,
                                           ),
-                                          SizedBox(height: 4.h),
-                                          LinearProgressIndicator(
-                                            value: value / 30.0,
-                                            backgroundColor: color.withValues(
-                                              alpha: 0.1,
-                                            ),
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                                  color,
-                                                ),
-                                            minHeight: 4.h,
-                                            borderRadius: BorderRadius.circular(
-                                              2.r,
-                                            ),
+                                          child: Icon(
+                                            Icons.volume_up_rounded,
+                                            color: theme.primaryColor,
+                                            size: 20.r,
                                           ),
-                                          SizedBox(height: 16.h),
-                                        ],
-                                      );
-                                    },
-                                  ),
-                                SpeedSpellingInputField(
-                                  currentInput: _currentInput.value,
-                                  isAnswered: isAnsweredNotifier.value,
-                                  isCorrect: isCorrectNotifier.value,
-                                  attempts: _attempts.value,
-                                  isDark: isDark,
-                                  primaryColor: theme.primaryColor,
-                                  onBackspace: _onBackspace,
-                                  onClear: _onClear,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ],
+                              ),
+                            )
+                          else
+                            const Spacer(),
+                          if (quest.difficultyTier != null) ...[
+                            SizedBox(width: 12.w),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 12.w,
+                                vertical: 6.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: quest.difficultyTier == 'Rare'
+                                    ? Colors.red.withValues(alpha: 0.1)
+                                    : (quest.difficultyTier == 'Advanced'
+                                        ? Colors.orange.withValues(alpha: 0.1)
+                                        : Colors.green.withValues(alpha: 0.1)),
+                                borderRadius: BorderRadius.circular(12.r),
+                                border: Border.all(
+                                  color: quest.difficultyTier == 'Rare'
+                                      ? AppColors.gameIncorrect.withValues(alpha: 0.3)
+                                      : (quest.difficultyTier == 'Advanced'
+                                          ? Colors.orangeAccent.withValues(alpha: 0.3)
+                                          : AppColors.gameCorrect.withValues(alpha: 0.3)),
                                 ),
-                                if (state.isHintVisible) ...[
-                                  SizedBox(height: isCompact ? 12.h : 20.h),
-                                  EliteHintCard(
-                                    hintText: quest.hint,
-                                    isVisible: true,
-                                    onShowHint: () {},
-                                    primaryColor: theme.primaryColor,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    quest.difficultyTier == 'Rare'
+                                        ? Icons.local_fire_department_rounded
+                                        : (quest.difficultyTier == 'Advanced'
+                                            ? Icons.star_half_rounded
+                                            : Icons.star_border_rounded),
+                                    color: quest.difficultyTier == 'Rare'
+                                        ? AppColors.gameIncorrect
+                                        : (quest.difficultyTier == 'Advanced'
+                                            ? Colors.orangeAccent
+                                            : AppColors.gameCorrect),
+                                    size: 14.r,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    quest.difficultyTier!.toUpperCase(),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: quest.difficultyTier == 'Rare'
+                                          ? AppColors.gameIncorrect
+                                          : (quest.difficultyTier == 'Advanced'
+                                              ? Colors.orangeAccent
+                                              : AppColors.gameCorrect),
+                                      letterSpacing: 1.5,
+                                    ),
                                   ),
                                 ],
-                                SizedBox(height: isCompact ? 16.h : 30.h),
-                                SpeedSpellingCharacterDeck(
-                                  shuffledChars: _shuffledChars.value,
-                                  isDark: isDark,
-                                  onCharTap: (char, index) =>
-                                      _onCharTap(char, index),
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
+                      SizedBox(height: 12.h),
+                      if (!isAnsweredNotifier.value)
+                        TweenAnimationBuilder<double>(
+                          key: ValueKey(quest.id),
+                          tween: Tween(begin: 30.0, end: 0.0),
+                          duration: const Duration(seconds: 30),
+                          onEnd: () {
+                            if (!isAnsweredNotifier.value && mounted) {
+                              submitWrongAnswer(quest: quest, userAnswer: _currentInput.value);
+                            }
+                          },
+                          builder: (context, value, child) {
+                            final color = value > 10
+                                ? theme.primaryColor
+                                : AppColors.gameIncorrect;
+                            return Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      context.tr('games.speed_bonus_caps', fallback: 'SPEED BONUS'),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.bold,
+                                        color: isDark
+                                            ? Colors.white54
+                                            : Colors.black54,
+                                        letterSpacing: 1.5,
+                                      ),
+                                    ),
+                                    Text(
+                                      "${value.ceil()}s",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: color,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                SizedBox(height: isCompact ? 16.h : 32.h),
-                                if (!isAnsweredNotifier.value) ...[
-                                  Builder(
-                                    builder: (context) {
-                                      final canSubmit =
-                                          _currentInput.value.length ==
-                                          (quest.word?.length ?? 0);
-                                      return Semantics(
-                                        button: true,
-                                        label: context.tr(
+                                SizedBox(height: 4.h),
+                                LinearProgressIndicator(
+                                  value: value / 30.0,
+                                  backgroundColor: color.withValues(alpha: 0.1),
+                                  valueColor: AlwaysStoppedAnimation<Color>(color),
+                                  minHeight: 4.h,
+                                  borderRadius: BorderRadius.circular(2.r),
+                                ),
+                                SizedBox(height: 16.h),
+                              ],
+                            );
+                          },
+                        ),
+                      ListenableBuilder(
+                        listenable: Listenable.merge([
+                          _currentInput,
+                          _attempts,
+                        ]),
+                        builder: (context, _) {
+                          return SpeedSpellingInputField(
+                            currentInput: _currentInput.value,
+                            isAnswered: isAnsweredNotifier.value,
+                            isCorrect: isCorrectNotifier.value,
+                            attempts: _attempts.value,
+                            isDark: isDark,
+                            primaryColor: theme.primaryColor,
+                            onBackspace: _onBackspace,
+                            onClear: _onClear,
+                          );
+                        }
+                      ),
+                      if (state.isHintVisible) ...[
+                        SizedBox(height: isCompact ? 12.h : 20.h),
+                        EliteHintCard(
+                          hintText: quest.hint,
+                          isVisible: true,
+                          onShowHint: () {},
+                          primaryColor: theme.primaryColor,
+                        ),
+                      ],
+                      SizedBox(height: isCompact ? 16.h : 30.h),
+                      ListenableBuilder(
+                        listenable: _shuffledChars,
+                        builder: (context, _) {
+                          return SpeedSpellingCharacterDeck(
+                            shuffledChars: _shuffledChars.value,
+                            isDark: isDark,
+                            onCharTap: _onCharTap,
+                          );
+                        }
+                      ),
+                      SizedBox(height: isCompact ? 16.h : 32.h),
+                      if (!isAnsweredNotifier.value) ...[
+                        ListenableBuilder(
+                          listenable: _currentInput,
+                          builder: (context, _) {
+                            final canSubmit =
+                                _currentInput.value.length ==
+                                (quest.word?.length ?? 0);
+                            return Semantics(
+                              button: true,
+                              label: context.tr(
+                                'games.submit_caps',
+                                fallback: 'SUBMIT',
+                              ),
+                              excludeSemantics: true,
+                              child: Opacity(
+                                opacity: canSubmit ? 1.0 : 0.5,
+                                child: ScaleButton(
+                                  onTap: canSubmit ? () => _submit(quest) : null,
+                                  child: Container(
+                                    width: double.infinity,
+                                    constraints: const BoxConstraints(
+                                      minHeight: 48,
+                                    ),
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: isCompact ? 14.h : 20.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: theme.primaryColor,
+                                      borderRadius: BorderRadius.circular(
+                                        isCompact ? 16.r : 24.r,
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: theme.primaryColor
+                                              .withValues(alpha: 0.3),
+                                          blurRadius: isCompact ? 10 : 20,
+                                          offset: Offset(
+                                            0,
+                                            isCompact ? 5 : 10,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        context.tr(
                                           'games.submit_caps',
                                           fallback: 'SUBMIT',
                                         ),
-                                        excludeSemantics: true,
-                                        child: Opacity(
-                                          opacity: canSubmit ? 1.0 : 0.5,
-                                          child: ScaleButton(
-                                            // FIX: was `_submit(quest.word!)` — see _onClear for
-                                            // rationale. An empty fallback just resolves to "wrong
-                                            // answer" rather than crashing the screen outright.
-                                            onTap: canSubmit
-                                                ? () => _submit(quest)
-                                                : null,
-                                            child: Container(
-                                              width: double.infinity,
-                                              // FIX: height was purely padding-driven (14-20.h
-                                              // vertical + text), which sits right at the 48dp
-                                              // touch-target floor in compact mode and could dip
-                                              // under it once ScreenUtil scales down on the smallest
-                                              // screens. This is the primary submit action for every
-                                              // question in this game — worth the extra insurance.
-                                              constraints: const BoxConstraints(
-                                                minHeight: 48,
-                                              ),
-                                              padding: EdgeInsets.symmetric(
-                                                vertical: isCompact
-                                                    ? 14.h
-                                                    : 20.h,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: theme.primaryColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                      isCompact ? 16.r : 24.r,
-                                                    ),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: theme.primaryColor
-                                                        .withValues(alpha: 0.3),
-                                                    blurRadius: isCompact
-                                                        ? 10
-                                                        : 20,
-                                                    offset: Offset(
-                                                      0,
-                                                      isCompact ? 5 : 10,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              child: Center(
-                                                child: Text(
-                                                  context.tr(
-                                                    'games.submit_caps',
-                                                    fallback: 'SUBMIT',
-                                                  ),
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: isCompact
-                                                        ? 16.sp
-                                                        : 18.sp,
-                                                    fontWeight: FontWeight.w900,
-                                                    color: Colors.white,
-                                                    letterSpacing: isCompact
-                                                        ? 1.5
-                                                        : 2,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: isCompact ? 16.sp : 18.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.white,
+                                          letterSpacing: isCompact ? 1.5 : 2,
                                         ),
-                                      );
-                                    },
+                                      ),
+                                    ),
                                   ),
-                                ],
-                              ],
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ],
+                  ),
                 ),
               ),
               SliverToBoxAdapter(child: SizedBox(height: 60.h)),

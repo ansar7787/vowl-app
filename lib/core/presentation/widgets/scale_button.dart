@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 /// A button that scales down slightly when pressed, providing organic tactile
-/// feedback. Includes a 500 ms debounce guard against accidental double-taps.
+/// feedback. Includes a configurable debounce guard against accidental double-taps
+/// (defaults to 500 ms).
 ///
 /// Wraps content in [Semantics] with `button: true` so TalkBack / VoiceOver
 /// correctly announces interactive elements to screen-reader users.
@@ -12,6 +13,7 @@ class ScaleButton extends StatefulWidget {
   final VoidCallback? onTap;
   final double scaleDown;
   final Duration duration;
+  final Duration debounceDuration;
 
   const ScaleButton({
     super.key,
@@ -19,6 +21,7 @@ class ScaleButton extends StatefulWidget {
     this.onTap,
     this.scaleDown = 0.95,
     this.duration = const Duration(milliseconds: 100),
+    this.debounceDuration = const Duration(milliseconds: 500),
   });
 
   @override
@@ -65,7 +68,7 @@ class _ScaleButtonState extends State<ScaleButton>
     if (widget.onTap == null) return;
     final now = clock.now();
     if (_lastTapTime == null ||
-        now.difference(_lastTapTime!) > const Duration(milliseconds: 500)) {
+        now.difference(_lastTapTime!) >= widget.debounceDuration) {
       _lastTapTime = now;
       HapticFeedback.lightImpact();
       widget.onTap!();
