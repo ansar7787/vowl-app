@@ -94,7 +94,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(8.r),
+                      padding: EdgeInsets.all(6.r),
                       decoration: BoxDecoration(
                         color: (isCorrect || isSelected)
                             ? Colors.green.withValues(alpha: 0.15)
@@ -112,7 +112,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                         color: (isCorrect || isSelected)
                             ? Colors.green
                             : (isWrong ? tokens.gameIncorrect : primaryColor),
-                        size: 20.r,
+                        size: 18.r,
                       ),
                     ),
                     SizedBox(width: 16.w),
@@ -121,8 +121,8 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                         option,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w400,
                           color: textColor,
                           height: 1.3,
                         ),
