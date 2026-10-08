@@ -366,48 +366,36 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                 SliverToBoxAdapter(
                                   child: Column(
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 16.w,
-                                        ),
-                                        child: Builder(
-                                          builder: (context) {
-                                            final expectedText =
-                                                _shuffledOptions
-                                                    .value[_selectedOrbIndex
-                                                    .value!];
-                                            return SpeakToConfirmOverlay(
-                                              expectedText: expectedText,
-                                              displayText: expectedText,
-                                              title: 'SPEAK TO RESPOND',
-                                              subtitle:
-                                                  'Say your response aloud',
-                                              displayFontSize: 16.sp,
-                                              displayFontWeight:
-                                                  FontWeight.w500,
-                                              displayTextAlign:
-                                                  TextAlign.center,
-                                              primaryColor: theme.primaryColor,
-                                              isPositioned: false,
-                                              onConfirmed: () {
-                                                context.read<RoleplayBloc>().add(
-                                                  const RoleplaySpeakConfirmed(
-                                                    5,
-                                                  ),
-                                                );
+                                      Builder(
+                                        builder: (context) {
+                                          final expectedText = _shuffledOptions
+                                              .value[_selectedOrbIndex.value!];
+                                          return SpeakToConfirmOverlay(
+                                            expectedText: expectedText,
+                                            displayText: expectedText,
+                                            title: 'SPEAK TO RESPOND',
+                                            subtitle: 'Say your response aloud',
+                                            displayFontSize: 16.sp,
+                                            displayFontWeight: FontWeight.w500,
+                                            displayTextAlign: TextAlign.center,
+                                            primaryColor: theme.primaryColor,
+                                            isPositioned: false,
+                                            onConfirmed: () {
+                                              context.read<RoleplayBloc>().add(
+                                                const RoleplaySpeakConfirmed(5),
+                                              );
+                                              _submitVerbalEvaluation(
+                                                true,
+                                                quest,
+                                              );
+                                            },
+                                            onSkipped: () =>
                                                 _submitVerbalEvaluation(
-                                                  true,
+                                                  false,
                                                   quest,
-                                                );
-                                              },
-                                              onSkipped: () =>
-                                                  _submitVerbalEvaluation(
-                                                    false,
-                                                    quest,
-                                                  ),
-                                            );
-                                          },
-                                        ),
+                                                ),
+                                          );
+                                        },
                                       ),
                                       SizedBox(height: 60.h),
                                     ],

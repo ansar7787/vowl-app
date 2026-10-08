@@ -56,24 +56,22 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   final ValueNotifier<int?> _hoveredIndex = ValueNotifier(null);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (!mounted) return;
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    isFirstStagePassedNotifier.addListener(() {
-      if (isFirstStagePassedNotifier.value &&
-          mounted &&
-          _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
     _springController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
@@ -169,8 +167,10 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     if (isCorrect) {
       hapticService.selection();
       isFirstStagePassedNotifier.value = true;
+      _scrollToBottom();
       // Wait for Phase 2
     } else {
+      _scrollToBottom();
       final userAnswer = quest.options != null && index < quest.options!.length
           ? quest.options![index]
           : null;
@@ -246,7 +246,10 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                       builder: (context, constraints) {
                         final double availableHeight = constraints.maxHeight;
                         // Estimate top content height (padding + instruction + persona) ~340.h
-                        final double boardHeight = math.max(320.h, availableHeight - 340.h);
+                        final double boardHeight = math.max(
+                          320.h,
+                          availableHeight - 340.h,
+                        );
 
                         return RawScrollbar(
                           controller: _scrollController,
@@ -254,27 +257,39 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
+                            controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-                              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
+                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverToBoxAdapter(
                                 child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                  ),
                                   child: Column(
                                     children: [
                                       BranchingDialogueInstruction(
                                         primaryColor: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 12.h),
                                       if (isAnsweredNotifier.value &&
                                           _selectedIndex.value != null &&
                                           quest.consequenceScores != null &&
-                                          _selectedIndex.value! < quest.consequenceScores!.length)
+                                          _selectedIndex.value! <
+                                              quest.consequenceScores!.length)
                                         Padding(
-                                          padding: EdgeInsets.only(bottom: 12.h),
+                                          padding: EdgeInsets.only(
+                                            bottom: 12.h,
+                                          ),
                                           child: BranchingDialogueRelationshipMeter(
-                                            consequenceScore: quest.consequenceScores![_selectedIndex.value!],
+                                            consequenceScore:
+                                                quest
+                                                    .consequenceScores![_selectedIndex
+                                                    .value!],
                                             primaryColor: theme.primaryColor,
                                             isDark: isDark,
                                           ),
@@ -294,7 +309,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                 child: SizedBox(
                                   height: boardHeight,
                                   child: Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                    ),
                                     child: ListenableBuilder(
                                       listenable: Listenable.merge([
                                         _probeOffset,
@@ -303,18 +320,28 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                       builder: (context, _) {
                                         return BranchingDialogueConsoleBoard(
                                           options: options,
-                                          consequencePreviews: quest.consequencePreviews ?? [],
-                                          correctIndex: quest.correctAnswerIndex ?? 0,
+                                          consequencePreviews:
+                                              quest.consequencePreviews ?? [],
+                                          correctIndex:
+                                              quest.correctAnswerIndex ?? 0,
                                           color: theme.primaryColor,
                                           isDark: isDark,
                                           probeOffset: _probeOffset.value,
                                           hoveredIndex: _hoveredIndex.value,
                                           selectedIndex: _selectedIndex.value,
-                                          isAnswered: isAnsweredNotifier.value || isFirstStagePassedNotifier.value,
+                                          isAnswered:
+                                              isAnsweredNotifier.value ||
+                                              isFirstStagePassedNotifier.value,
                                           onProbeDragStart: _onProbeDragStart,
                                           onProbeDragUpdate: _onProbeDragUpdate,
-                                          onProbeDragEnd: (idx) => _onProbeDragEnd(idx, quest),
-                                          onOptionTapped: (index) => _submitChoice(index, quest.correctAnswerIndex ?? 0, quest),
+                                          onProbeDragEnd: (idx) =>
+                                              _onProbeDragEnd(idx, quest),
+                                          onOptionTapped: (index) =>
+                                              _submitChoice(
+                                                index,
+                                                quest.correctAnswerIndex ?? 0,
+                                                quest,
+                                              ),
                                         );
                                       },
                                     ),
@@ -327,13 +354,12 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                 SliverToBoxAdapter(
                                   child: Padding(
                                     padding: EdgeInsets.only(
-                                      left: 24.w,
-                                      right: 24.w,
                                       top: 24.h,
                                       bottom: 16.h,
                                     ),
                                     child: SpeakToConfirmOverlay(
-                                      expectedText: options[_selectedIndex.value!],
+                                      expectedText:
+                                          options[_selectedIndex.value!],
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       onConfirmed: () {
@@ -342,14 +368,20 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                         );
                                         _submitVerbalEvaluation(true, quest);
                                       },
-                                      onSkipped: () => _submitVerbalEvaluation(false, quest),
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),
                               SliverToBoxAdapter(
                                 child: SizedBox(
-                                  height: MediaQuery.of(context).viewInsets.bottom > 0
-                                      ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom >
+                                          0
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            40.h
                                       : 80.h,
                                 ),
                               ),
