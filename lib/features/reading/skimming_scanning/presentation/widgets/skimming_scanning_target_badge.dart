@@ -35,10 +35,10 @@ class SkimmingScanningTargetBadge extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "ACQUIRE: ${item.toUpperCase()}",
+              "FIND: ${item.toUpperCase()}",
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w900,
                 color: color,
               ),

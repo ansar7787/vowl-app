@@ -187,27 +187,19 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                         color: theme.primaryColor.withValues(alpha: 0.3),
                                       ),
                                     ),
-                                    child: Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Icon(Icons.info_outline, color: theme.primaryColor, size: 20.r),
-                                        SizedBox(width: 12.w),
-                                        Expanded(
-                                          child: Text(
-                                            isAnsweredNotifier.value
-                                                ? "TARGET ACQUIRED!"
-                                                : InstructionHelper.getInstruction(quest),
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              color: isAnsweredNotifier.value
-                                                  ? tokens.gameCorrect
-                                                  : theme.primaryColor,
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                    child: Text(
+                                      isAnsweredNotifier.value
+                                          ? "TARGET FOUND!"
+                                          : InstructionHelper.getInstruction(quest),
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: isAnsweredNotifier.value
+                                            ? tokens.gameCorrect
+                                            : theme.primaryColor,
+                                        fontSize: 13.sp,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(height: 16.h),
