@@ -349,11 +349,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                         ),
                         SizedBox(height: 12.h),
                       ],
-                      if (quest.instruction != null) ...[
+                      if (quest.instruction.isNotEmpty) ...[
                          Semantics(
                            header: true,
                            child: Text(
-                             quest.instruction!,
+                             quest.instruction,
                              textAlign: TextAlign.center,
                              style: TextStyle(
                                fontFamily: 'Outfit',
