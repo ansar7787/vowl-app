@@ -197,11 +197,20 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     // Safety check: ensure target count matches actual valid evidence words
     // found, so the user can actually complete the task without soft-locking.
     int actualEvidenceCount = _words.where((w) => w.isEvidence).length;
-    if (widget.requiredHighlights == null && actualEvidenceCount > 0) {
-      // Require finding 100% of the evidence words
-      _targetCount = actualEvidenceCount;
+    
+    if (actualEvidenceCount == 0) {
+      // Anti-softlock: If no evidence words could be matched (e.g. JSON typo),
+      // auto-complete the highlight mechanic so the user isn't stuck.
+      _targetCount = 1; // dummy target
+      Future.microtask(() {
+        if (mounted && !_isComplete.value) {
+          _isComplete.value = true;
+          widget.onCorrectHighlight();
+        }
+      });
     } else if (widget.requiredHighlights == null) {
-      _targetCount = 1;
+      // Require finding 100% of the valid evidence words
+      _targetCount = actualEvidenceCount;
     }
   }
 
