@@ -284,8 +284,10 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                           // Trigger Action Buttons
                                           if (!isAnsweredNotifier.value &&
                                               _selectedIndices.value.isNotEmpty)
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
+                                            Wrap(
+                                              alignment: WrapAlignment.center,
+                                              spacing: isCompact ? 10.w : 16.w,
+                                              runSpacing: 10.h,
                                               children: [
                                                 ScaleButton(
                                                   onTap: _clearSelection,
@@ -306,6 +308,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       ),
                                                     ),
                                                     child: Row(
+                                                      mainAxisSize: MainAxisSize.min,
                                                       children: [
                                                         Icon(
                                                           Icons.refresh_rounded,
@@ -327,7 +330,6 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                     ),
                                                   ),
                                                 ),
-                                                SizedBox(width: isCompact ? 10.w : 16.w),
                                                 ScaleButton(
                                                   onTap: () => _submitAnswer(
                                                     words,
@@ -359,6 +361,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       ],
                                                     ),
                                                     child: Row(
+                                                      mainAxisSize: MainAxisSize.min,
                                                       children: [
                                                         Icon(
                                                           Icons.bolt_rounded,

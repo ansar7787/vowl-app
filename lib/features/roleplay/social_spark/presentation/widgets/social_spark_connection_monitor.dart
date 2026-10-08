@@ -59,13 +59,14 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
             children: [
               Icon(Icons.hub_rounded, color: outlineColor, size: 20.r),
               SizedBox(width: 8.w),
-              Expanded(
+              Flexible(
                 child: Text(
                   isAnswered
                       ? ((isCorrect ?? false)
                             ? "ALIGNMENT STABLE"
                             : "SIGNAL COLLAPSED")
                       : "CONSTELLATION HARMONICS",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
@@ -111,6 +112,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                   Flexible(
                     child: Text(
                       "SCENE: ${socialContext!.toUpperCase()}",
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
