@@ -16,6 +16,7 @@ class SpeakToConfirmOverlay extends StatefulWidget {
   final String? displayText;
   final double? displayFontSize;
   final FontWeight? displayFontWeight;
+  final TextAlign? displayTextAlign;
   final bool hideExpectedText;
   final String title;
   final String subtitle;
@@ -37,6 +38,7 @@ class SpeakToConfirmOverlay extends StatefulWidget {
     this.displayText,
     this.displayFontSize,
     this.displayFontWeight,
+    this.displayTextAlign = TextAlign.center,
     this.hideExpectedText = false,
     this.title = 'NOW SAY IT',
     this.subtitle = 'Speak the answer to confirm',
@@ -248,7 +250,7 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                               ),
                               child: Text(
                                 widget.displayText ?? widget.expectedText,
-                                textAlign: TextAlign.center,
+                                textAlign: widget.displayTextAlign,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: widget.displayFontSize ?? 20.sp,

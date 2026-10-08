@@ -49,6 +49,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   final ValueNotifier<int?> _selectedTileIndex = ValueNotifier(null);
   final ValueNotifier<bool> _isDraggingNotifier = ValueNotifier(false);
   VisualConfig? _visualConfig;
+  int _retryCount = 0;
 
   // Below this available height, use tighter spacing. See the identical
   // constant in accent_shadowing_screen.dart / idiom_match_screen.dart /
@@ -94,24 +95,18 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
     }
   }
 
-  void _scrollToBottom() async {
-    await Future.delayed(const Duration(milliseconds: 150));
-    if (!mounted || !_scrollController.hasClients) return;
-
-    await _scrollController.animateTo(
-      _scrollController.position.maxScrollExtent,
-      duration: const Duration(milliseconds: 400),
-      curve: Curves.easeOutCubic,
-    );
-
-    if (!mounted || !_scrollController.hasClients) return;
-    if (_scrollController.offset < _scrollController.position.maxScrollExtent) {
-      await _scrollController.animateTo(
-        _scrollController.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeOutCubic,
-      );
-    }
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      Future.delayed(const Duration(milliseconds: 150), () {
+        if (!mounted || !_scrollController.hasClients) return;
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent + 500.0,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
+        );
+      });
+    });
   }
 
   void _onReorder(int oldIndex, int newIndex) {
@@ -204,6 +199,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
 
   @override
   void onQuestionReset() {
+    _retryCount++;
     final state = context.read<EliteMasteryBloc>().state;
     _selectedTileIndex.value = null;
     if (state is EliteMasteryLoaded && state.currentQuest.sentences != null) {
@@ -349,7 +345,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                     ? const NeverScrollableScrollPhysics()
                     : const BouncingScrollPhysics(),
                 slivers: [
-                  SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+                  SliverToBoxAdapter(child: SizedBox(height: 12.h)),
               SliverToBoxAdapter(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
@@ -378,23 +374,32 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                               decoration: BoxDecoration(
                                 color: isDark
                                     ? Colors.white.withValues(alpha: 0.08)
-                                    : theme.primaryColor.withValues(alpha: 0.05),
-                                borderRadius: BorderRadius.circular(12.r),
+                                    : Colors.white,
+                                borderRadius: BorderRadius.circular(16.r),
                                 border: Border.all(
                                   color: isDark
                                       ? Colors.white.withValues(alpha: 0.1)
-                                      : theme.primaryColor.withValues(alpha: 0.1),
+                                      : Colors.grey.withValues(alpha: 0.2),
                                 ),
+                                boxShadow: isDark
+                                    ? []
+                                    : [
+                                        BoxShadow(
+                                          color: Colors.black.withValues(alpha: 0.03),
+                                          blurRadius: 10,
+                                          offset: const Offset(0, 4),
+                                        ),
+                                      ],
                               ),
                               child: Text(
                                 quest.instruction,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: isCompact ? 14.sp : 15.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark ? Colors.white : Colors.black87,
-                                  height: 1.3,
+                                  fontSize: isCompact ? 13.sp : 14.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: isDark ? Colors.white70 : Colors.black87,
+                                  height: 1.4,
                                 ),
                               ),
                             ),
@@ -482,13 +487,13 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 sliver:
-                    (isFirstStagePassedNotifier.value ||
+                  (isFirstStagePassedNotifier.value ||
                         isAnsweredNotifier.value)
                     ? SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) => Padding(
                             key: ValueKey(
-                              '${quest.id}_${currentOrder[index]}',
+                              '${quest.id}_${_retryCount}_${currentOrder[index]}',
                             ),
                             padding: EdgeInsets.only(bottom: 8.h),
                             child: StoryBuilderNarrativeTile(
@@ -513,7 +518,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                     : SliverReorderableList(
                         itemBuilder: (context, index) => Padding(
                           key: ValueKey(
-                            '${quest.id}_${currentOrder[index]}',
+                            '${quest.id}_${_retryCount}_${currentOrder[index]}',
                           ),
                           padding: EdgeInsets.only(bottom: 8.h),
                           child: StoryBuilderNarrativeTile(
@@ -654,8 +659,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                             : "Narrate the story",
                         title: 'NARRATE THE STORY',
                         subtitle: 'Read your completed story aloud',
-                        displayFontSize: 16.sp,
-                        displayFontWeight: FontWeight.w600,
+                        displayFontSize: 15.sp,
+                        displayFontWeight: FontWeight.w500,
+                        displayTextAlign: TextAlign.left,
                         primaryColor: theme.primaryColor,
                         isPositioned: false,
                         onConfirmed: () =>
