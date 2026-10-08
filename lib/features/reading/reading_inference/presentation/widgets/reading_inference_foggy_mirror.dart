@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+
 
 class ReadingInferenceFoggyMirror extends StatelessWidget {
   final String passage;
@@ -30,10 +30,15 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
       child: Stack(
         children: [
           // Clear Passage Text
-          GlassTile(
+          Container(
             padding: EdgeInsets.all(26.r),
-            borderRadius: BorderRadius.circular(24.r),
-            color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+              borderRadius: BorderRadius.circular(24.r),
+              border: Border.all(
+                color: Theme.of(context).dividerColor.withValues(alpha: 0.1),
+              ),
+            ),
             child: Text(
               passage,
               textAlign: TextAlign.center,
@@ -61,6 +66,34 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
                         : Colors.blueGrey.shade100,
                   ),
                 ),
+              ),
+            ),
+
+          // Hand Instruction Animation
+          if (rubPoints.isEmpty && !isAnswered)
+            Positioned.fill(
+              child: Center(
+                child: Icon(
+                  Icons.touch_app_rounded,
+                  size: 48.r,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                )
+                    .animate(onPlay: (c) => c.repeat())
+                    .moveX(
+                      begin: -40.w,
+                      end: 40.w,
+                      duration: 1.seconds,
+                      curve: Curves.easeInOut,
+                    )
+                    .fade(begin: 0.2, end: 1.0)
+                    .then()
+                    .moveX(
+                      begin: 40.w,
+                      end: -40.w,
+                      duration: 1.seconds,
+                      curve: Curves.easeInOut,
+                    )
+                    .fade(begin: 1.0, end: 0.2),
               ),
             ),
 
@@ -98,7 +131,7 @@ class FogPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = color.withValues(alpha: 0.95 - (clarity * 0.4))
+      ..color = color
       ..style = PaintingStyle.fill;
     canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
 
