@@ -355,7 +355,7 @@ class EliteFeedbackCard extends StatelessWidget {
       final ordered = quest.correctOrder!
           .where((i) => i >= 0 && i < sentences.length)
           .map((i) => sentences[i])
-          .join(' → ');
+          .join('\n\n');
       return ordered.isNotEmpty ? ordered : null;
     }
 

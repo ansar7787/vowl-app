@@ -247,7 +247,7 @@ class StoryServiceImpl implements StoryService {
 
     // Elite Mastery
     'storyBuilder':
-        "Let's be architects of language! Read the scrambled sentences and arrange them in the correct logical order to build a complete, cohesive story.",
+        "Put the scrambled sentences in the right order to build a complete story, then read it aloud.",
     'idiomMatch':
         "Time to sound like a native! Read the context and choose the correct English idiom that perfectly matches the situation.",
     'speedSpelling':
@@ -584,11 +584,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'storybuilder': [
       "",
-      "Great job! Building narratives is key to language fluency.",
-      "Your structural logic is becoming incredibly sharp.",
-      "Halfway to 100! You are constructing complex thoughts effortlessly.",
-      "Level 100! You are a master storyteller.",
-      "Level 200 reached! Your narrative architecture is flawless.",
+      "Great job! Putting thoughts in order is a huge step toward fluency.",
+      "You're getting really good at connecting ideas naturally.",
+      "Halfway to 100! You're building great stories without even breaking a sweat.",
+      "Level 100! You're officially a master storyteller.",
+      "Level 200 reached! Your storytelling flows perfectly.",
     ],
     'idiommatch': [
       "",

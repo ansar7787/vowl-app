@@ -46,7 +46,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   final ScrollController _scrollController = ScrollController();
 
   final ValueNotifier<List<int>> _currentOrder = ValueNotifier([]);
+  final ValueNotifier<int?> _selectedTileIndex = ValueNotifier(null);
   VisualConfig? _visualConfig;
+  int _retryCount = 0;
 
   // Below this available height, use tighter spacing. See the identical
   // constant in accent_shadowing_screen.dart / idiom_match_screen.dart /
@@ -63,18 +65,42 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   @override
   void dispose() {
     _currentOrder.dispose();
+    _selectedTileIndex.dispose();
     _scrollController.dispose();
     disposeEliteMasteryGame();
     super.dispose();
   }
 
+  void _onTileTap(int index) {
+    if (isAnsweredNotifier.value) return;
+
+    final currentSelected = _selectedTileIndex.value;
+    if (currentSelected == null) {
+      _selectedTileIndex.value = index;
+    } else if (currentSelected == index) {
+      _selectedTileIndex.value = null; // Toggle off
+    } else {
+      // Swap tiles
+      isCorrectNotifier.value = null;
+      final newOrder = List<int>.from(_currentOrder.value);
+      final temp = newOrder[currentSelected];
+      newOrder[currentSelected] = newOrder[index];
+      newOrder[index] = temp;
+      
+      _currentOrder.value = newOrder;
+      _selectedTileIndex.value = null;
+      hapticService.selection();
+    }
+  }
+
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (!mounted) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 400),
-          curve: Curves.easeOut,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
         );
       }
     });
@@ -83,6 +109,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   void _onReorder(int oldIndex, int newIndex) {
     if (isAnsweredNotifier.value) return;
     isCorrectNotifier.value = null; // Clear feedback borders on move
+    _selectedTileIndex.value = null; // Clear selection
     if (newIndex > oldIndex) newIndex -= 1;
     final newOrder = List<int>.from(_currentOrder.value);
     final item = newOrder.removeAt(oldIndex);
@@ -125,7 +152,21 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
               .map((i) => quest.sentences![i])
               .join(' -> ')
           : _currentOrder.value.join(', ');
-      submitWrongAnswer(quest: quest, userAnswer: userAnswer);
+          
+      final correctAnswer = (quest.sentences != null && quest.correctOrder != null)
+          ? quest.correctOrder!
+              .where((i) => i < quest.sentences!.length)
+              .map((i) => quest.sentences![i])
+              .join(' -> ')
+          : '';
+
+      submitWrongAnswer(
+        quest: quest.copyWith(
+          question: quest.instruction,
+          correctAnswer: correctAnswer,
+        ),
+        userAnswer: userAnswer,
+      );
     }
   }
 
@@ -139,13 +180,25 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
       soundService.playCorrect();
       context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
     } else {
-      submitWrongAnswer(quest: quest, userAnswer: '[Skipped speaking]');
+      final expectedText = (quest.sentences != null && quest.sentences!.isNotEmpty && quest.correctOrder != null)
+          ? quest.correctOrder!.map((i) => quest.sentences![i]).join(' ')
+          : "Narrate the story";
+          
+      submitWrongAnswer(
+        quest: quest.copyWith(
+          question: "Speak the story",
+          correctAnswer: expectedText,
+        ),
+        userAnswer: '[Skipped speaking]',
+      );
     }
   }
 
   @override
   void onQuestionReset() {
+    _retryCount++;
     final state = context.read<EliteMasteryBloc>().state;
+    _selectedTileIndex.value = null;
     if (state is EliteMasteryLoaded && state.currentQuest.sentences != null) {
       _currentOrder.value =
           List.generate(state.currentQuest.sentences!.length, (i) => i);
@@ -176,7 +229,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
             isAnsweredNotifier,
             isCorrectNotifier,
             showConfettiNotifier,
-            _currentOrder,
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
@@ -198,10 +250,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                 fullScreenContent: true,
                 visualConfig: _visualConfig,
                 onContinue: () {
-                isAnsweredNotifier.value = false;
-                isCorrectNotifier.value = null;
-                isFirstStagePassedNotifier.value = false;
-                _currentOrder.value = [];
                 context.read<EliteMasteryBloc>().add(NextEliteQuestion());
               },
               onHint: () {
@@ -274,17 +322,24 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
 
     return Stack(
       children: [
-        RawScrollbar(
-          controller: _scrollController,
-          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-          radius: Radius.circular(8.r),
-          thickness: 4.w,
-          child: CustomScrollView(
-            physics: (!isFirstStagePassedNotifier.value)
-                ? const NeverScrollableScrollPhysics()
-                : const BouncingScrollPhysics(),
-            slivers: [
-              SliverToBoxAdapter(child: SizedBox(height: 80.h)),
+        ListenableBuilder(
+          listenable: Listenable.merge([
+            _currentOrder,
+            _selectedTileIndex,
+          ]),
+          builder: (context, _) {
+            final currentOrder = _currentOrder.value;
+            final selectedIndex = _selectedTileIndex.value;
+            return RawScrollbar(
+              controller: _scrollController,
+              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+              radius: Radius.circular(8.r),
+              thickness: 4.w,
+              child: CustomScrollView(
+                controller: _scrollController,
+                physics: const BouncingScrollPhysics(),
+                slivers: [
+                  SliverToBoxAdapter(child: SizedBox(height: 12.h)),
               SliverToBoxAdapter(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
@@ -303,6 +358,47 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                             ),
                             SizedBox(height: isCompact ? 12.h : 20.h),
                           ],
+                          if (quest.instruction.isNotEmpty) ...[
+                            Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 12.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.08)
+                                    : Colors.white,
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.1)
+                                      : Colors.grey.withValues(alpha: 0.2),
+                                ),
+                                boxShadow: isDark
+                                    ? []
+                                    : [
+                                        BoxShadow(
+                                          color: Colors.black.withValues(alpha: 0.03),
+                                          blurRadius: 10,
+                                          offset: const Offset(0, 4),
+                                        ),
+                                      ],
+                              ),
+                              child: Text(
+                                quest.instruction,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isCompact ? 12.sp : 13.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: isDark ? Colors.white70 : Colors.black87,
+                                  height: 1.4,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: isCompact ? 12.h : 20.h),
+                          ],
                           if (quest.plotStructure != null) ...[
                             Container(
                               width: double.infinity,
@@ -312,12 +408,12 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                               ),
                               decoration: BoxDecoration(
                                 color: isDark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : Colors.black.withValues(alpha: 0.03),
-                                borderRadius: BorderRadius.circular(16.r),
+                                    ? Colors.white.withValues(alpha: 0.04)
+                                    : Colors.black.withValues(alpha: 0.02),
+                                borderRadius: BorderRadius.circular(12.r),
                                 border: Border.all(
                                   color: theme.primaryColor.withValues(
-                                    alpha: 0.2,
+                                    alpha: 0.15,
                                   ),
                                 ),
                               ),
@@ -351,7 +447,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 12.sp,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.w500,
                                       color: isDark
                                           ? Colors.white70
                                           : Colors.black87,
@@ -365,7 +461,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 9.sp,
-                                        fontWeight: FontWeight.w800,
+                                        fontWeight: FontWeight.bold,
                                         color: theme.primaryColor.withValues(alpha: 0.7),
                                         letterSpacing: 1.2,
                                       ),
@@ -385,19 +481,19 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 sliver:
-                    (isFirstStagePassedNotifier.value ||
+                  (isFirstStagePassedNotifier.value ||
                         isAnsweredNotifier.value)
                     ? SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) => Padding(
                             key: ValueKey(
-                              '${quest.id}_${_currentOrder.value[index]}',
+                              '${quest.id}_${_retryCount}_${currentOrder[index]}',
                             ),
                             padding: EdgeInsets.only(bottom: 8.h),
                             child: StoryBuilderNarrativeTile(
                               index: index,
                               sentence:
-                                  quest.sentences![_currentOrder.value[index]],
+                                  quest.sentences![currentOrder[index]],
                               quest: quest,
                               isHintVisible: state.isHintVisible,
                               isDark: isDark,
@@ -405,21 +501,24 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                               isAnswered: isAnsweredNotifier.value,
                               isCorrect: isCorrectNotifier.value,
                               isReorderable: false,
+                              originalIndex: currentOrder[index],
+                              isSelected: selectedIndex == index,
+                              onTap: () => _onTileTap(index),
                             ),
                           ),
-                          childCount: _currentOrder.value.length,
+                          childCount: currentOrder.length,
                         ),
                       )
                     : SliverReorderableList(
                         itemBuilder: (context, index) => Padding(
                           key: ValueKey(
-                            '${quest.id}_${_currentOrder.value[index]}',
+                            '${quest.id}_${_retryCount}_${currentOrder[index]}',
                           ),
                           padding: EdgeInsets.only(bottom: 8.h),
                           child: StoryBuilderNarrativeTile(
                             index: index,
                             sentence:
-                                quest.sentences![_currentOrder.value[index]],
+                                quest.sentences![currentOrder[index]],
                             quest: quest,
                             isHintVisible: state.isHintVisible,
                             isDark: isDark,
@@ -427,10 +526,17 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                             isAnswered: false,
                             isCorrect: null,
                             isReorderable: true,
+                            originalIndex: currentOrder[index],
+                            isSelected: selectedIndex == index,
+                            onTap: () => _onTileTap(index),
                           ),
                         ),
-                        itemCount: _currentOrder.value.length,
+                        itemCount: currentOrder.length,
                         onReorder: _onReorder,
+                        onReorderStart: (index) {
+                          hapticService.selection();
+                        },
+                        onReorderEnd: (index) {},
                         proxyDecorator: (child, index, animation) => Material(
                           color: Colors.transparent,
                           child: child.animate().scale(
@@ -451,7 +557,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                       child: Column(
                         children: [
                           SizedBox(height: isCompact ? 16.h : 30.h),
-                          if (!isAnsweredNotifier.value)
+                          if (!isAnsweredNotifier.value && !isFirstStagePassedNotifier.value)
                             Semantics(
                                   button: true,
                                   label: context.tr(
@@ -468,7 +574,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                         minHeight: 48,
                                       ),
                                       padding: EdgeInsets.symmetric(
-                                        vertical: isCompact ? 14.h : 20.h,
+                                        vertical: isCompact ? 12.h : 16.h,
                                       ),
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
@@ -482,16 +588,16 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                           end: Alignment.bottomRight,
                                         ),
                                         borderRadius: BorderRadius.circular(
-                                          isCompact ? 16.r : 24.r,
+                                          isCompact ? 14.r : 18.r,
                                         ),
                                         boxShadow: [
                                           BoxShadow(
                                             color: theme.primaryColor
-                                                .withValues(alpha: 0.6),
-                                            blurRadius: isCompact ? 10 : 20,
+                                                .withValues(alpha: 0.4),
+                                            blurRadius: isCompact ? 8 : 15,
                                             offset: Offset(
                                               0,
-                                              isCompact ? 5 : 10,
+                                              isCompact ? 4 : 8,
                                             ),
                                           ),
                                         ],
@@ -504,12 +610,12 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                           ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: isCompact ? 16.sp : 18.sp,
-                                            fontWeight: FontWeight.w900,
+                                            fontSize: isCompact ? 15.sp : 16.sp,
+                                            fontWeight: FontWeight.w800,
                                             color: Colors.white,
                                             letterSpacing: isCompact
                                                 ? 1.5
-                                                : 2.5,
+                                                : 2.0,
                                           ),
                                         ),
                                       ),
@@ -521,11 +627,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                 .slideY(begin: 0.2),
 
                           SizedBox(
-                            height:
-                                isAnsweredNotifier.value ||
-                                    isFirstStagePassedNotifier.value
-                                ? 160.h
-                                : 60.h,
+                            height: isAnsweredNotifier.value ? 160.h : 60.h,
                           ),
                         ],
                       ),
@@ -538,13 +640,19 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                   child: Column(
                     children: [
                       SpeakToConfirmOverlay(
-                        expectedText:
-                            quest.sentences != null &&
-                                quest.sentences!.isNotEmpty
-                            ? quest.sentences![_currentOrder.value.last]
-                            : "Narrate the ending",
-                        displayText:
-                            "Narrate the final sentence to finish the story",
+                        expectedText: (quest.sentences != null &&
+                                quest.sentences!.isNotEmpty && quest.correctOrder != null)
+                            ? quest.correctOrder!.map((i) => quest.sentences![i]).join(' ')
+                            : "Narrate the story",
+                        displayText: (quest.sentences != null &&
+                                quest.sentences!.isNotEmpty && quest.correctOrder != null)
+                            ? quest.correctOrder!.map((i) => quest.sentences![i]).join(' ')
+                            : "Narrate the story",
+                        title: 'NARRATE THE STORY',
+                        subtitle: 'Read your completed story aloud',
+                        displayFontSize: 14.sp,
+                        displayFontWeight: FontWeight.w400,
+                        displayTextAlign: TextAlign.center,
                         primaryColor: theme.primaryColor,
                         isPositioned: false,
                         onConfirmed: () =>
@@ -558,7 +666,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                 ),
             ],
           ),
-        ),
+        );
+       },
+      ),
       ],
     );
   }
