@@ -275,7 +275,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
-            return RoleplayBaseLayout(
+            return RoleplayBaseLayout(fullScreenContent: true,
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,

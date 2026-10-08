@@ -224,7 +224,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
-            return RoleplayBaseLayout(
+            return RoleplayBaseLayout(fullScreenContent: true,
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
