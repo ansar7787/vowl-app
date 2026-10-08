@@ -238,15 +238,15 @@ class GameInstructionService {
       title: "Speed Spelling",
       icon: Icons.bolt_rounded,
       objective:
-          "Tap the floating letters to spell the target word correctly. Mastering this skill ensures your written communication is clear, professional, and effective.",
+          "Listen to the word carefully, then tap the floating letters to spell it out. Spelling correctly helps you write with confidence in everyday life!",
       rules: [
-        "Spelling must be exact",
-        "Sound out the syllables",
-        "Review before submitting",
+        "Listen to the spoken word",
+        "You have 30 seconds to answer",
+        "Tap the letters in the correct order",
       ],
       actionText: "Start Spelling",
       tip:
-          "PRO TIP: Sound the word out slowly in your head before tapping the letters.",
+          "PRO TIP: If you missed the word, tap the replay button to hear it again!",
     ),
     GameSubtype.idiomMatch: GameBriefing(
       title: "Idiom Master",
