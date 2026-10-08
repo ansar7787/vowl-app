@@ -35,40 +35,54 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 1.sw,
-      height: 380.h,
-      decoration: BoxDecoration(
-        color: isDark
-            ? _LocalPalette.color07070f
-            : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(36.r),
-        border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.03)
-              : Colors.black.withValues(alpha: 0.03),
-        ),
-      ),
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          final double width = constraints.maxWidth;
-          final double height = constraints.maxHeight;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final double width = constraints.maxWidth;
+        
+        final int cols = width > 600 ? 5 : (width > 400 ? 4 : 3);
+        final double nodeWidth = 108.w;
+        final double nodeHeight = 72.h;
+        final double hSpacing = math.max(8.w, (width - (cols * nodeWidth)) / (cols + 1));
+        final double vSpacing = 24.h;
+        
+        final int rows = (words.length / cols).ceil();
+        final double calculatedHeight = 48.h + (rows * nodeHeight) + ((rows - 1) * vSpacing);
+        final double containerHeight = math.max(300.h, calculatedHeight);
 
-          // Deterministic geometric layout to spread stars organically without overlapping
-          final List<Offset> starOffsets = List.generate(words.length, (i) {
-            double angle = (i * 2 * math.pi / words.length) + (i * 0.15);
-            double radiusX = (width / 2) - 60.w;
-            double radiusY = (height / 2) - 50.h;
+        // Organic staggered layout to prevent overlapping for larger word counts
+        final List<Offset> starOffsets = [];
+        
+        for (int i = 0; i < words.length; i++) {
+          int row = i ~/ cols;
+          int col = i % cols;
 
-            // Alternating wave depth
-            double depth = (i % 2 == 0) ? 0.95 : 0.65;
+          int itemsInThisRow = math.min(cols, words.length - row * cols);
+          double rowWidth = (itemsInThisRow * nodeWidth) + ((itemsInThisRow - 1) * hSpacing);
+          double startX = (width - rowWidth) / 2;
 
-            double x = (width / 2) + radiusX * depth * math.cos(angle);
-            double y = (height / 2) + radiusY * depth * math.sin(angle);
-            return Offset(x, y);
-          });
+          double jitterY = (col % 2 == 0) ? 8.h : -8.h;
 
-          return Stack(
+          double cx = startX + (col * (nodeWidth + hSpacing)) + (nodeWidth / 2);
+          double cy = 24.h + (row * (nodeHeight + vSpacing)) + (nodeHeight / 2) + jitterY;
+
+          starOffsets.add(Offset(cx, cy));
+        }
+
+        return Container(
+          width: width,
+          height: containerHeight,
+          decoration: BoxDecoration(
+            color: isDark
+                ? _LocalPalette.color07070f
+                : Colors.black.withValues(alpha: 0.02),
+            borderRadius: BorderRadius.circular(36.r),
+            border: Border.all(
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.03)
+                  : Colors.black.withValues(alpha: 0.03),
+            ),
+          ),
+          child: Stack(
             children: [
               // Radial space dust glow
               Positioned.fill(
@@ -104,9 +118,9 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
                 return _buildStarNode(i, words[i], pos, color, isDark);
               }),
             ],
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 
@@ -128,16 +142,16 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
     }
 
     return Positioned(
-      left: pos.dx - 48.w,
-      top: pos.dy - 32.h,
+      left: pos.dx - 54.w,
+      top: pos.dy - 36.h,
       child:
           ScaleButton(
                 onTap: () => onStarTap(index),
                 child: Container(
-                  width: 96.w,
-                  height: 64.h,
+                  width: 108.w,
+                  height: 72.h,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius: BorderRadius.circular(22.r),
                     color: isSelected
                         ? nodeColor
                         : (isDark ? AppColors.deepDark : Colors.white),
@@ -163,22 +177,22 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
                       // Tiny connection index tag
                       if (isSelected)
                         Positioned(
-                          top: 4.h,
-                          left: 6.w,
+                          top: 6.h,
+                          left: 8.w,
                           child: Container(
                             padding: EdgeInsets.symmetric(
-                              horizontal: 4.w,
-                              vertical: 1.h,
+                              horizontal: 6.w,
+                              vertical: 2.h,
                             ),
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.25),
-                              borderRadius: BorderRadius.circular(4.r),
+                              borderRadius: BorderRadius.circular(6.r),
                             ),
                             child: Text(
                               "$selectOrderIndex",
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 8.sp,
+                                fontSize: 10.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -188,11 +202,11 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
 
                       // Sparkle particle stars
                       Positioned(
-                        right: 6.w,
-                        top: 4.h,
+                        right: 8.w,
+                        top: 6.h,
                         child: Icon(
                           Icons.star_rounded,
-                          size: 10.r,
+                          size: 12.r,
                           color: isSelected
                               ? Colors.white
                               : color.withValues(alpha: 0.3),
@@ -201,21 +215,22 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
 
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          horizontal: 8.w,
-                          vertical: 4.h,
+                          horizontal: 10.w,
+                          vertical: 6.h,
                         ),
-                        child: Text(
-                          text,
-                          textAlign: TextAlign.center,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.bold,
-                            color: isSelected
-                                ? Colors.white
-                                : (isDark ? Colors.white70 : Colors.black87),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            text,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                              color: isSelected
+                                  ? Colors.white
+                                  : (isDark ? Colors.white70 : Colors.black87),
+                            ),
                           ),
                         ),
                       ),
@@ -228,6 +243,12 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
                 begin: -4,
                 end: 4,
                 duration: (1.8 + index * 0.35).seconds,
+                curve: Curves.easeInOut,
+              )
+              .rotate(
+                begin: -0.015 - (index % 3) * 0.005,
+                end: 0.015 + (index % 3) * 0.005,
+                duration: (2.2 + index * 0.4).seconds,
                 curve: Curves.easeInOut,
               ),
     );

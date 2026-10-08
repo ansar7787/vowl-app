@@ -140,10 +140,8 @@ class RoleplayBaseLayout extends StatelessWidget {
           }
         }
 
-        final ruleContent = quest.situation ?? quest.scene ?? explanation;
-        final finalExplanation = (ruleContent == explanation)
-            ? null
-            : explanation;
+        final ruleContent = quest.situation ?? quest.scene ?? quest.socialContext;
+        final finalExplanation = quest.explanation;
 
         return GameFeedbackCard(
           isCorrect: isCorrect,

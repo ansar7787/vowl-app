@@ -1094,12 +1094,12 @@ class StoryServiceImpl implements StoryService {
       "200 levels! You're speaking up and responding like a true natural in any situation.",
     ],
     'socialspark': [
-      "",
-      "Excellent start! Your understanding of small talk is growing.",
-      "Your progress in small talk is genuinely impressive.",
-      "Halfway there! You are a rising star in small talk.",
-      "Level 100! Your expertise in small talk is elite.",
-      "Level 200 reached! Your grasp of small talk is legendary.",
+      "Great start! Breaking the ice is the hardest part, and you just did it.",
+      "You're getting the hang of this! Your conversations are sounding much more natural.",
+      "Look at you go! You're keeping the conversation flowing effortlessly.",
+      "Halfway to 100! You're starting to sound like a natural conversationalist.",
+      "Level 100! You can walk into any room and start a chat with anyone. Amazing work!",
+      "200 levels! You're an absolute natural at reading the room and connecting with people.",
     ],
     'traveldesk': [
       "",
