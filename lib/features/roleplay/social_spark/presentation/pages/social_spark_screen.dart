@@ -201,6 +201,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
           ]),
           builder: (context, _) {
             final String currentText = _formatSentence(_selectedIndices.value
+                .where((idx) => idx >= 0 && idx < words.length)
                 .map((idx) => words[idx])
                 .join(' '));
 
@@ -239,6 +240,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                   listenable: _selectedIndices,
                                   builder: (context, _) {
                                     final String currentText = _formatSentence(_selectedIndices.value
+                                        .where((idx) => idx >= 0 && idx < words.length)
                                         .map((idx) => words[idx])
                                         .join(' '));
                                     final isCompact = MediaQuery.of(context).size.height < 580;
@@ -270,7 +272,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                             words: words,
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            selectedIndices: _selectedIndices.value,
+                                            selectedIndices: _selectedIndices.value
+                                                .where((idx) => idx >= 0 && idx < words.length)
+                                                .toList(),
                                             isAnswered: isAnsweredNotifier.value &&
                                                 (isCorrectNotifier.value != null ||
                                                     !isFirstStagePassedNotifier.value),
