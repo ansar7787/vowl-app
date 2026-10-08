@@ -251,7 +251,7 @@ class StoryServiceImpl implements StoryService {
     'idiomMatch':
         "Time to sound like a native! Read the context and choose the correct English idiom that perfectly matches the situation.",
     'speedSpelling':
-        "Tap the floating letters to spell the word correctly. Doing this helps you remember how to write words perfectly in real life.",
+        "Listen closely to the word, then tap the floating letters to spell it out. Practicing this will make spelling feel like second nature!",
     'accentShadowing':
         "Listen closely and mimic the rhythm! Tap the chat bubble that exactly matches the sentence you just heard.",
   };
