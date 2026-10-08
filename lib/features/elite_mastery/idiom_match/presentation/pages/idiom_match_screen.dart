@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -104,6 +103,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
       _selectedIndex.value = shuffledIndex;
       // Do NOT submit yet! Wait for Phase 2.
     } else {
+      _scrollToBottom();
       if (!_wrongIndices.value.contains(shuffledIndex)) {
         final newWrong = List<int>.from(_wrongIndices.value);
         newWrong.add(shuffledIndex);
@@ -133,14 +133,34 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
     }
   }
 
+  void _initializeOptionsIfNeeded(GameQuest? quest) {
+    if (quest == null || quest.options == null || quest.options!.isEmpty) return;
+    if (_shuffledOptions.value.isEmpty) {
+      final options = List<String>.from(quest.options!);
+      final indices = List<int>.generate(options.length, (i) => i);
+      final combined = List.generate(options.length, (i) => (options[i], indices[i]));
+      combined.shuffle();
+      
+      // We must not call setState or modify notifiers during build without post frame if this was called from build,
+      // but onEliteMasteryStateChanged is a listener, so it's safe to update notifiers directly.
+      _shuffledOptions.value = combined.map((e) => e.$1).toList();
+      _originalIndices.value = combined.map((e) => e.$2).toList();
+    }
+  }
+
+  @override
+  void onEliteMasteryStateChanged(BuildContext context, EliteMasteryState state) {
+    super.onEliteMasteryStateChanged(context, state);
+    if (state is EliteMasteryLoaded) {
+      _initializeOptionsIfNeeded(state.currentQuest);
+    }
+  }
+
   @override
   void onQuestionReset() {
     _shuffledOptions.value = [];
-
     _originalIndices.value = [];
-
     _selectedIndex.value = null;
-
     _wrongIndices.value = [];
   }
 
@@ -168,30 +188,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
             isAnsweredNotifier,
             isCorrectNotifier,
             showConfettiNotifier,
-            _selectedIndex,
-            _shuffledOptions,
-            _originalIndices,
-            _wrongIndices,
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
-            final expectedText = quest != null && _selectedIndex.value != null
-                ? _shuffledOptions.value[_selectedIndex.value!]
-                : "";
-
-            String contextSentence = expectedText;
-            if (quest?.explanation != null &&
-                quest!.explanation!.contains("Example: '")) {
-              final parts = quest.explanation!.split("Example: '");
-              if (parts.length > 1) {
-                contextSentence = parts[1].split("'").first;
-              }
-            }
-
-            if (kDebugMode) {
-              debugPrint(contextSentence);
-            }
-
             return EliteBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
@@ -208,9 +207,8 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
               onContinue: () {
                 isAnsweredNotifier.value = false;
                 isCorrectNotifier.value = null;
-                _selectedIndex.value = null;
-                _wrongIndices.value = [];
                 isFirstStagePassedNotifier.value = false;
+                onQuestionReset();
                 context.read<EliteMasteryBloc>().add(NextEliteQuestion());
               },
               onHint: () {
@@ -232,7 +230,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                   }
                 }
               },
-              child: _buildBody(context, state, isDark, theme, expectedText),
+              child: _buildBody(context, state, isDark, theme),
             );
           },
         );
@@ -245,10 +243,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
     EliteMasteryState state,
     bool isDark,
     ThemeResult theme,
-    String expectedText,
   ) {
     if (state is EliteMasteryLoaded) {
-      return _buildGameUI(context, state, isDark, theme, expectedText);
+      return _buildGameUI(context, state, isDark, theme);
     }
     if (state is EliteMasteryGameOver) {
       return Opacity(
@@ -263,7 +260,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
             ),
             isDark,
             theme,
-            expectedText,
           ),
         ),
       );
@@ -276,7 +272,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
     EliteMasteryLoaded state,
     bool isDark,
     ThemeResult theme,
-    String expectedText,
   ) {
     final quest = state.currentQuest;
 
@@ -290,14 +285,16 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
               radius: Radius.circular(8.r),
               thickness: 4.w,
               child: CustomScrollView(
-                physics: (!isFirstStagePassedNotifier.value)
+                physics: (!isFirstStagePassedNotifier.value &&
+                        !isAnsweredNotifier.value)
                     ? const NeverScrollableScrollPhysics()
                     : const BouncingScrollPhysics(),
                 slivers: [
               SliverToBoxAdapter(child: SizedBox(height: 80.h)),
                   SliverToBoxAdapter(
                     child: IgnorePointer(
-                      ignoring: isFirstStagePassedNotifier.value,
+                      ignoring: isFirstStagePassedNotifier.value ||
+                          isAnsweredNotifier.value,
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
                           minHeight: outerConstraints.maxHeight,
@@ -312,6 +309,20 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
 
                                 return Column(
                                   children: [
+                                    if (quest.instruction.isNotEmpty) ...[
+                                      Text(
+                                        quest.instruction.toUpperCase(),
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: theme.primaryColor,
+                                          letterSpacing: 1.5,
+                                        ),
+                                      ),
+                                      SizedBox(height: 12.h),
+                                    ],
                                     if (quest.question != null &&
                                         quest.question!.isNotEmpty) ...[
                                       Padding(
@@ -403,129 +414,108 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                       ),
                                     ],
                                     SizedBox(height: isCompact ? 16.h : 24.h),
-                                    IdiomMatchOptionsPanel(
-                                      shuffledOptions: _shuffledOptions.value,
-                                      originalIndices: _originalIndices.value,
-                                      selectedIndex: _selectedIndex.value,
-                                      wrongIndices: _wrongIndices.value,
-                                      isAnswered:
-                                          isAnsweredNotifier.value ||
-                                          isFirstStagePassedNotifier.value,
-                                      showCorrectAnswer:
-                                          isCorrectNotifier.value == true ||
-                                          isFirstStagePassedNotifier.value,
-                                      correctAnswerIndex:
-                                          quest.correctAnswerIndex ?? 0,
-                                      isDark: isDark,
-                                      primaryColor: theme.primaryColor,
-                                      onOptionSelected: (index) =>
-                                          _onOptionSelected(
-                                            quest,
-                                            index,
-                                            quest.correctAnswerIndex,
-                                          ),
+                                    ListenableBuilder(
+                                      listenable: Listenable.merge([
+                                        _selectedIndex,
+                                        _shuffledOptions,
+                                        _originalIndices,
+                                        _wrongIndices,
+                                      ]),
+                                      builder: (context, _) {
+                                        return IdiomMatchOptionsPanel(
+                                          shuffledOptions: _shuffledOptions.value,
+                                          originalIndices: _originalIndices.value,
+                                          selectedIndex: _selectedIndex.value,
+                                          wrongIndices: _wrongIndices.value,
+                                          isAnswered:
+                                              isAnsweredNotifier.value ||
+                                              isFirstStagePassedNotifier.value,
+                                          showCorrectAnswer:
+                                              isAnsweredNotifier.value ||
+                                              isFirstStagePassedNotifier.value,
+                                          correctAnswerIndex:
+                                              quest.correctAnswerIndex ?? 0,
+                                          isDark: isDark,
+                                          primaryColor: theme.primaryColor,
+                                          onOptionSelected: (index) =>
+                                              _onOptionSelected(
+                                                quest,
+                                                index,
+                                                quest.correctAnswerIndex,
+                                              ),
+                                        );
+                                      },
                                     ),
                                     if ((isFirstStagePassedNotifier.value ||
                                             isAnsweredNotifier.value) &&
-                                        quest.idiomOrigin != null) ...[
+                                        (quest.explanation != null ||
+                                            quest.usageContext != null ||
+                                            quest.idiomOrigin != null ||
+                                            quest.visualMetaphor != null)) ...[
                                       SizedBox(height: 24.h),
                                       Container(
-                                            width: double.infinity,
-                                            padding: EdgeInsets.all(20.r),
-                                            margin: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color: isDark
-                                                  ? _LocalPalette.color1a1a2e
-                                                  : Colors.blue.withValues(
-                                                      alpha: 0.05,
-                                                    ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20.r),
-                                              border: Border.all(
-                                                color: Colors.blueAccent
-                                                    .withValues(alpha: 0.3),
-                                                width: 1.5,
+                                        width: double.infinity,
+                                        padding: EdgeInsets.all(20.r),
+                                        margin: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: isDark
+                                              ? _LocalPalette.color1a1a2e
+                                              : Colors.blue.withValues(
+                                                  alpha: 0.05,
+                                                ),
+                                          borderRadius:
+                                              BorderRadius.circular(20.r),
+                                          border: Border.all(
+                                            color: Colors.blueAccent
+                                                .withValues(alpha: 0.3),
+                                            width: 1.5,
+                                          ),
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            if (quest.explanation != null)
+                                              _buildFeedbackItem(
+                                                context,
+                                                "EXPLANATION",
+                                                quest.explanation!,
+                                                Icons.lightbulb_outline_rounded,
+                                                Colors.orangeAccent,
+                                                isDark,
                                               ),
-                                            ),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Row(
-                                                  children: [
-                                                    Icon(
-                                                      Icons.history_edu_rounded,
-                                                      color: Colors.blueAccent,
-                                                      size: 20.r,
-                                                    ),
-                                                    SizedBox(width: 8.w),
-                                                    Text(
-                                                      "IDIOM ORIGIN",
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 12.sp,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color:
-                                                            Colors.blueAccent,
-                                                        letterSpacing: 1.5,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                SizedBox(height: 8.h),
-                                                Text(
-                                                  quest.idiomOrigin!,
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 14.sp,
-                                                    color: isDark
-                                                        ? Colors.white70
-                                                        : Colors.black87,
-                                                    height: 1.4,
-                                                  ),
-                                                ),
-                                                SizedBox(height: 16.h),
-                                                Row(
-                                                  children: [
-                                                    Icon(
-                                                      Icons.visibility_rounded,
-                                                      color:
-                                                          Colors.purpleAccent,
-                                                      size: 20.r,
-                                                    ),
-                                                    SizedBox(width: 8.w),
-                                                    Text(
-                                                      "VISUAL METAPHOR",
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 12.sp,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color:
-                                                            Colors.purpleAccent,
-                                                        letterSpacing: 1.5,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                SizedBox(height: 8.h),
-                                                Text(
-                                                  quest.visualMetaphor ?? "",
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 14.sp,
-                                                    color: isDark
-                                                        ? Colors.white70
-                                                        : Colors.black87,
-                                                    height: 1.4,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          )
+                                            if (quest.usageContext != null)
+                                              _buildFeedbackItem(
+                                                context,
+                                                "USAGE CONTEXT",
+                                                quest.usageContext!,
+                                                Icons.chat_bubble_outline_rounded,
+                                                Colors.tealAccent.shade400,
+                                                isDark,
+                                              ),
+                                            if (quest.idiomOrigin != null)
+                                              _buildFeedbackItem(
+                                                context,
+                                                "IDIOM ORIGIN",
+                                                quest.idiomOrigin!,
+                                                Icons.history_edu_rounded,
+                                                Colors.blueAccent,
+                                                isDark,
+                                              ),
+                                            if (quest.visualMetaphor != null)
+                                              _buildFeedbackItem(
+                                                context,
+                                                "VISUAL METAPHOR",
+                                                quest.visualMetaphor!,
+                                                Icons.visibility_rounded,
+                                                Colors.purpleAccent,
+                                                isDark,
+                                              ),
+                                          ],
+                                        ),
+                                      )
                                           .animate()
                                           .fadeIn(duration: 400.ms)
                                           .slideY(begin: 0.1),
@@ -553,16 +543,30 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                     SliverToBoxAdapter(
                       child: Column(
                         children: [
-                          SpeakToConfirmOverlay(
-                            expectedText: expectedText,
-                            displayText:
-                                "Speak the idiom in context:\n\n\"$expectedText\"",
-                            primaryColor: theme.primaryColor,
-                            isPositioned: false,
-                            onConfirmed: () =>
-                                _submitVerbalEvaluation(true, quest),
-                            onSkipped: () =>
-                                _submitVerbalEvaluation(false, quest),
+                          ListenableBuilder(
+                            listenable: Listenable.merge([
+                              _selectedIndex,
+                              _shuffledOptions,
+                            ]),
+                            builder: (context, _) {
+                              final expectedText = quest.options != null &&
+                                      _selectedIndex.value != null &&
+                                      _shuffledOptions.value.length >
+                                          _selectedIndex.value!
+                                  ? _shuffledOptions.value[_selectedIndex.value!]
+                                  : "";
+                              return SpeakToConfirmOverlay(
+                                expectedText: expectedText,
+                                displayText:
+                                    "Say the idiom aloud:\n\n\"$expectedText\"",
+                                primaryColor: theme.primaryColor,
+                                isPositioned: false,
+                                onConfirmed: () =>
+                                    _submitVerbalEvaluation(true, quest),
+                                onSkipped: () =>
+                                    _submitVerbalEvaluation(false, quest),
+                              );
+                            },
                           ),
                           SizedBox(height: 60.h),
                         ],
@@ -574,6 +578,51 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
           },
         ),
       ],
+    );
+  }
+
+  Widget _buildFeedbackItem(
+    BuildContext context,
+    String title,
+    String? content,
+    IconData icon,
+    Color color,
+    bool isDark,
+  ) {
+    if (content == null || content.isEmpty) return const SizedBox.shrink();
+    return Padding(
+      padding: EdgeInsets.only(bottom: 16.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(icon, color: color, size: 20.r),
+              SizedBox(width: 8.w),
+              Text(
+                title,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 8.h),
+          Text(
+            content,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              color: isDark ? Colors.white70 : Colors.black87,
+              height: 1.4,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
