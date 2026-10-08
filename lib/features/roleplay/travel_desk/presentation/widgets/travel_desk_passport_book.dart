@@ -9,7 +9,7 @@ class _LocalPalette {
   static const Color color06060e = Color(0xFF06060E);
 }
 
-class TravelDeskPassportBook extends StatelessWidget {
+class TravelDeskPassportBook extends StatefulWidget {
   final List<String> options;
   final Color color;
   final int correctIndex;
@@ -44,54 +44,93 @@ class TravelDeskPassportBook extends StatelessWidget {
   });
 
   @override
+  State<TravelDeskPassportBook> createState() => _TravelDeskPassportBookState();
+}
+
+class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
+  late final ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: 1.sw,
-      padding: EdgeInsets.all(16.r),
+      padding: EdgeInsets.symmetric(vertical: 16.h),
       decoration: BoxDecoration(
-        color: isDark
+        color: widget.isDark
             ? _LocalPalette.color06060e
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(32.r),
-        border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.03)
-              : Colors.black.withValues(alpha: 0.03),
-        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                (travelDocument ?? "BIOMETRIC PASSPORT BOOKLET").toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: color.withValues(alpha: 0.7),
-                  letterSpacing: 1.5,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  (widget.travelDocument ?? "BIOMETRIC PASSPORT BOOKLET")
+                      .toUpperCase(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    color: widget.color.withValues(alpha: 0.7),
+                    letterSpacing: 1.5,
+                  ),
                 ),
-              ),
-              Icon(
-                Icons.menu_book_rounded,
-                color: color.withValues(alpha: 0.5),
-                size: 16.r,
-              ),
-            ],
+                Icon(
+                  Icons.menu_book_rounded,
+                  color: widget.color.withValues(alpha: 0.5),
+                  size: 16.r,
+                ),
+              ],
+            ),
           ),
           SizedBox(height: 16.h),
 
           // Horizontal scroll layout matching booklet pages without overflow crash
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            physics: const BouncingScrollPhysics(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                options.length,
-                (i) => _buildDragTargetPage(i, options[i]),
+          ShaderMask(
+            shaderCallback: (Rect bounds) {
+              return LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  Colors.transparent,
+                  Colors.white,
+                  Colors.white,
+                  Colors.transparent,
+                ],
+                stops: const [0.0, 0.05, 0.95, 1.0],
+              ).createShader(bounds);
+            },
+            blendMode: BlendMode.dstIn,
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              clipBehavior: Clip.none,
+              child: IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: List.generate(
+                    widget.options.length,
+                    (i) => _buildDragTargetPage(i, widget.options[i]),
+                  ),
+                ),
               ),
             ),
           ),
@@ -101,39 +140,39 @@ class TravelDeskPassportBook extends StatelessWidget {
   }
 
   Widget _buildDragTargetPage(int index, String text) {
-    final bool isSelected = selectedIndex == index;
-    final bool isHovered = hoveredIndex == index;
+    final bool isSelected = widget.selectedIndex == index;
+    final bool isHovered = widget.hoveredIndex == index;
 
-    Color borderColor = color.withValues(alpha: 0.15);
-    if (isHovered && !isAnswered) {
-      borderColor = color;
+    Color borderColor = widget.color.withValues(alpha: 0.15);
+    if (isHovered && !widget.isAnswered) {
+      borderColor = widget.color;
     } else if (isSelected) {
-      borderColor = (isCorrect ?? false)
+      borderColor = (widget.isCorrect ?? false)
           ? AppColors.gameCorrect
           : AppColors.gameIncorrect;
     }
 
     return DragTarget<int>(
-      onWillAcceptWithDetails: (data) => !isAnswered,
+      onWillAcceptWithDetails: (data) => !widget.isAnswered,
       onAcceptWithDetails: (details) {
-        onSubmitStamp(index, correctIndex);
+        widget.onSubmitStamp(index, widget.correctIndex);
       },
       onMove: (details) {
-        if (hoveredIndex != index) {
-          onHoverChanged(index);
+        if (widget.hoveredIndex != index) {
+          widget.onHoverChanged(index);
         }
       },
       onLeave: (data) {
-        onHoverEnded();
+        widget.onHoverEnded();
       },
       builder: (context, candidateData, rejectedData) {
         return AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              width: 110.w,
-              height: 165.h,
+              width: 120.w,
+              constraints: BoxConstraints(minHeight: 165.h),
               margin: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
               decoration: BoxDecoration(
-                color: isDark ? AppColors.deepDark : Colors.white,
+                color: widget.isDark ? AppColors.deepDark : Colors.white,
                 borderRadius: BorderRadius.circular(18.r),
                 border: Border.all(
                   color: borderColor,
@@ -143,10 +182,10 @@ class TravelDeskPassportBook extends StatelessWidget {
                   BoxShadow(
                     color: (isSelected || isHovered)
                         ? (isSelected
-                                  ? ((isCorrect ?? false)
+                                  ? ((widget.isCorrect ?? false)
                                         ? AppColors.gameCorrect
                                         : AppColors.gameIncorrect)
-                                  : color)
+                                  : widget.color)
                               .withValues(alpha: 0.25)
                         : Colors.black.withValues(alpha: 0.08),
                     blurRadius: (isSelected || isHovered) ? 14 : 6,
@@ -156,12 +195,28 @@ class TravelDeskPassportBook extends StatelessWidget {
               ),
               child: Stack(
                 clipBehavior: Clip.none,
+                fit: StackFit.expand,
                 children: [
-                  // Retro grid lines inside passport book
+                  // Retro grid lines inside passport book with parallax effect
                   Positioned.fill(
-                    child: CustomPaint(
-                      painter: PassportBackgroundGrid(
-                        color: color.withValues(alpha: 0.04),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16.r),
+                      child: AnimatedBuilder(
+                        animation: _scrollController,
+                        builder: (context, child) {
+                          double offset = 0;
+                          if (_scrollController.hasClients) {
+                            offset = _scrollController.offset;
+                          }
+                          return Transform.translate(
+                            offset: Offset(-offset * 0.15, 0),
+                            child: CustomPaint(
+                              painter: PassportBackgroundGrid(
+                                color: widget.color.withValues(alpha: 0.04),
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -173,36 +228,35 @@ class TravelDeskPassportBook extends StatelessWidget {
                       vertical: 14.h,
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Icon(
                           Icons.public_rounded,
-                          color: color.withValues(
+                          color: widget.color.withValues(
                             alpha: isHovered ? 0.35 : 0.12,
                           ),
                           size: 28.r,
                         ),
-                        const Spacer(),
+                        SizedBox(height: 12.h),
                         Text(
                           text.toUpperCase(),
                           textAlign: TextAlign.center,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
-                            color: isDark
+                            color: widget.isDark
                                 ? Colors.white.withValues(alpha: 0.9)
                                 : Colors.black87,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const Spacer(),
+                        SizedBox(height: 12.h),
                         Text(
                           "PAGE 0${index + 1}",
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 8.sp,
-                            color: color.withValues(alpha: 0.4),
+                            color: widget.color.withValues(alpha: 0.4),
                           ),
                         ),
                       ],
@@ -213,13 +267,13 @@ class TravelDeskPassportBook extends StatelessWidget {
                   if (isSelected)
                     Positioned.fill(
                       child: AnimatedBuilder(
-                        animation: rippleAnimation,
+                        animation: widget.rippleAnimation,
                         builder: (context, child) {
                           return CustomPaint(
                             painter: StampRipplePainter(
                               impactOffset: Offset(55.w, 82.h),
-                              animationValue: rippleAnimation.value,
-                              themeColor: (isCorrect ?? false)
+                              animationValue: widget.rippleAnimation.value,
+                              themeColor: (widget.isCorrect ?? false)
                                   ? AppColors.gameCorrect
                                   : AppColors.gameIncorrect,
                             ),
@@ -241,7 +295,7 @@ class TravelDeskPassportBook extends StatelessWidget {
                               ),
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: (isCorrect ?? false)
+                                  color: (widget.isCorrect ?? false)
                                       ? AppColors.gameCorrect
                                       : AppColors.gameIncorrect,
                                   width: 2.5,
@@ -250,12 +304,14 @@ class TravelDeskPassportBook extends StatelessWidget {
                                 color: Colors.black.withValues(alpha: 0.1),
                               ),
                               child: Text(
-                                (isCorrect ?? false) ? "APPROVED" : "DENIED",
+                                (widget.isCorrect ?? false)
+                                    ? "APPROVED"
+                                    : "DENIED",
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: (isCorrect ?? false)
+                                  color: (widget.isCorrect ?? false)
                                       ? AppColors.gameCorrect
                                       : AppColors.gameIncorrect,
                                   letterSpacing: 2,

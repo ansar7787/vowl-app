@@ -17,78 +17,83 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(22.r),
-      decoration: BoxDecoration(
-        color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
-        boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.08), blurRadius: 15),
-        ],
+    return Card(
+      elevation: 12,
+      shadowColor: color.withValues(alpha: 0.4),
+      color: isDark ? AppColors.deepDark : Colors.white,
+      surfaceTintColor: color.withValues(alpha: 0.05),
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24.r),
+        side: BorderSide(color: color.withValues(alpha: 0.3), width: 1.5),
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Builder(
-            builder: (context) {
-              final reduceMotion = MediaQuery.disableAnimationsOf(context);
-              Widget icon = Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.flight_takeoff_rounded,
-                  color: color,
-                  size: 24.r,
-                ),
-              );
-
-              if (!reduceMotion) {
-                icon = icon
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(1.15, 1.15),
-                      duration: 1.5.seconds,
-                      curve: Curves.easeInOut,
-                    );
-              }
-              return icon;
-            },
-          ),
-          SizedBox(width: 16.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "TRAVELER DECLARED REQUEST:",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
+      child: Padding(
+        padding: EdgeInsets.all(24.r),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Builder(
+              builder: (context) {
+                final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                Widget icon = Container(
+                  padding: EdgeInsets.all(14.r),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.12),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.record_voice_over_rounded,
                     color: color,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
+                    size: 26.r,
                   ),
-                ),
-                SizedBox(height: 6.h),
-                Text(
-                  "\"$prompt\"",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 17.sp,
-                    color: Theme.of(context).colorScheme.onSurface,
-                    height: 1.35,
-                  ),
-                ),
-              ],
+                );
+
+                if (!reduceMotion) {
+                  icon = icon
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.1, 1.1),
+                        duration: 2.seconds,
+                        curve: Curves.easeInOutSine,
+                      );
+                }
+                return icon;
+              },
             ),
-          ),
-        ],
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "TRAVELER REQUEST",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      color: color,
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  Text(
+                    "\"$prompt\"",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.95)
+                          : Colors.black87,
+                      height: 1.4,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

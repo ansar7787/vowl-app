@@ -171,7 +171,7 @@ class StoryServiceImpl implements StoryService {
     'socialSpark':
         "Meeting new people can be nerve-wracking, but it doesn't have to be! Let's practice starting and keeping a conversation going naturally, so you feel comfortable chatting anywhere.",
     'travelDesk':
-        "Exploring the world? Let's practice handling check-ins, asking for directions, and navigating travel scenarios smoothly.",
+        "Step up to the desk! Listen carefully to what the travelers need and stamp their passports for the right destination.",
 
     // Speaking
     'dailyExpression':
@@ -1103,11 +1103,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'traveldesk': [
       "",
-      "Well done! You are building a strong foundation in travel communication.",
-      "You are decoding travel communication with impressive accuracy.",
-      "50 levels cleared! Your travel communication skills are rock solid.",
-      "100 levels beat! You truly dominate travel communication.",
-      "Level 200 reached! Your grasp of travel communication is legendary.",
+      "Great start! You're already getting the hang of helping travelers find their way.",
+      "Nice work! You're pointing tourists in the right direction without breaking a sweat.",
+      "50 levels cleared! You're the most reliable customs officer at this desk.",
+      "100 levels! You know this city like the back of your hand. Awesome job!",
+      "Level 200! You're a legendary travel guide. Nobody gets lost on your watch!",
     ],
     'dailyexpression': [
       "",
