@@ -13,7 +13,6 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_instruction.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_terminal.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/laser_bridge_painter.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class ReadAndMatchScreen extends StatefulWidget {
   final int level;
@@ -47,9 +46,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
 
   final ValueNotifier<String?> _activeKey = ValueNotifier(null);
   final ValueNotifier<Map<String, String>> _matches = ValueNotifier({});
-  final ValueNotifier<bool> _pendingSubmission = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
-  
+
   String? _currentQuestId;
   List<String> _shuffledKeys = [];
   List<String> _shuffledValues = [];
@@ -61,7 +59,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
   void dispose() {
     _activeKey.dispose();
     _matches.dispose();
-    _pendingSubmission.dispose();
     _scrollController.dispose();
     _laserController.dispose();
     disposeReadingGame();
@@ -86,19 +83,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
       vsync: this,
       duration: const Duration(milliseconds: 300),
     );
-    _pendingSubmission.addListener(() {
-      if (_pendingSubmission.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
     initReadingGame();
   }
 
@@ -113,18 +97,30 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     if (box == null || parentBox == null) return null;
 
     final localPos = parentBox.globalToLocal(box.localToGlobal(Offset.zero));
-    return Rect.fromLTWH(localPos.dx, localPos.dy, box.size.width, box.size.height);
+    return Rect.fromLTWH(
+      localPos.dx,
+      localPos.dy,
+      box.size.width,
+      box.size.height,
+    );
   }
 
   void _onKeyTap(String key) {
     if (isAnsweredNotifier.value) return;
     hapticService.selection();
     final Map<String, String> currentMatches = Map.from(_matches.value);
+
     if (currentMatches.containsKey(key)) {
       currentMatches.remove(key);
+      _matches.value = currentMatches;
+      _activeKey.value = key;
+    } else {
+      if (_activeKey.value == key) {
+        _activeKey.value = null;
+      } else {
+        _activeKey.value = key;
+      }
     }
-    _matches.value = currentMatches;
-    _activeKey.value = key;
   }
 
   void _onValueTap(
@@ -132,15 +128,29 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     List<Map<String, String>> pairs,
     ReadingQuest quest,
   ) {
-    if (isAnsweredNotifier.value || _activeKey.value == null) return;
+    if (isAnsweredNotifier.value) return;
+
+    final Map<String, String> currentMatches = Map.from(_matches.value);
+
+    if (_activeKey.value == null) {
+      if (currentMatches.containsValue(value)) {
+        hapticService.selection();
+        final orphanedKey = currentMatches.entries
+            .firstWhere((e) => e.value == value)
+            .key;
+        currentMatches.remove(orphanedKey);
+        _matches.value = currentMatches;
+        _activeKey.value = orphanedKey;
+      }
+      return;
+    }
 
     hapticService.success();
-    final Map<String, String> currentMatches = Map.from(_matches.value);
     currentMatches.removeWhere((k, v) => v == value);
     currentMatches[_activeKey.value!] = value;
     _matches.value = currentMatches;
     _activeKey.value = null;
-    
+
     _laserController.forward(from: 0.0);
 
     if (_matches.value.length == pairs.length) {
@@ -153,7 +163,11 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
       }
 
       if (isCorrect) {
-        _pendingSubmission.value = true;
+        hapticService.success();
+        soundService.playCorrect();
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = true;
+        context.read<ReadingBloc>().add(const SubmitAnswer(true));
       } else {
         submitWrongAnswer(quest: quest, userAnswer: 'Mismatched pairs');
         Future.delayed(const Duration(milliseconds: 1500), () {
@@ -167,36 +181,10 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     }
   }
 
-  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
-    _pendingSubmission.value = false;
-
-    if (!nailedSpeaking) {
-      submitWrongAnswer(quest: quest, userAnswer: '[Speaking skipped]');
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        if (mounted) {
-          _matches.value = {};
-          isAnsweredNotifier.value = false;
-          isCorrectNotifier.value = null;
-        }
-      });
-      return;
-    }
-
-    hapticService.success();
-    soundService.playCorrect();
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = true;
-    context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
-    context.read<ReadingBloc>().add(const SubmitAnswer(true));
-  }
-
   @override
   void onQuestionReset() {
     _activeKey.value = null;
-
     _matches.value = {};
-
-    _pendingSubmission.value = false;
     _terminalKeys.clear();
   }
 
@@ -218,22 +206,25 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
           _currentQuestId = quest.id;
           _shuffledKeys = pairs.map((p) => p['key']!).toList()..shuffle();
           _shuffledValues = pairs.map((p) => p['value']!).toList()..shuffle();
-          
+
           _colorMap = {};
           for (int i = 0; i < pairs.length; i++) {
-             _colorMap[pairs[i]['key']!] = _matchColors[i % _matchColors.length];
+            _colorMap[pairs[i]['key']!] = _matchColors[i % _matchColors.length];
           }
         }
 
-        final keys = _shuffledKeys.isEmpty ? pairs.map((p) => p['key']!).toList() : _shuffledKeys;
-        final values = _shuffledValues.isEmpty ? pairs.map((p) => p['value']!).toList() : _shuffledValues;
+        final keys = _shuffledKeys.isEmpty
+            ? pairs.map((p) => p['key']!).toList()
+            : _shuffledKeys;
+        final values = _shuffledValues.isEmpty
+            ? pairs.map((p) => p['value']!).toList()
+            : _shuffledValues;
 
         Color getColorForKey(String k) {
           return _colorMap[k] ?? theme.primaryColor;
         }
 
         Color getColorForValue(String v) {
-          // If matched, use the key's color. Otherwise primary
           if (_matches.value.containsValue(v)) {
             final key = _matches.value.entries
                 .firstWhere((e) => e.value == v)
@@ -250,7 +241,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
             showConfettiNotifier,
             _matches,
             _activeKey,
-            _pendingSubmission,
             _laserController,
           ]),
           builder: (context, _) {
@@ -290,133 +280,114 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                   ),
                                   SizedBox(height: 32.h),
 
-                                  // Interactive Canvas Stack
+                                  // Interactive Canvas
                                   SizedBox(
                                     key: _canvasKey,
-                                    child: Stack(
-                                      children: [
-                                        // Render Glowing Lasers dynamically using key positions!
-                                        // Placed behind the items so lines don't cross over the text.
-                                        Positioned.fill(
-                                          child: IgnorePointer(
-                                            child: CustomPaint(
-                                              painter: LaserBridgePainter(
-                                                matches: _matches.value,
-                                                activeKey: _activeKey.value,
-                                                getRect: _getRectOf,
-                                                getKey: _getKeyFor,
-                                                color: theme.primaryColor,
-                                                colorMap: _colorMap,
-                                                animationValue: _laserController.value,
-                                              ),
-                                              size: Size.infinite,
+                                    child: CustomPaint(
+                                      painter: LaserBridgePainter(
+                                        matches: _matches.value,
+                                        activeKey: _activeKey.value,
+                                        getRect: _getRectOf,
+                                        getKey: _getKeyFor,
+                                        color: theme.primaryColor,
+                                        colorMap: _colorMap,
+                                        animationValue: _laserController.value,
+                                      ),
+                                      child: Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          // Left Keys Column
+                                          Expanded(
+                                            flex: 2,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: keys
+                                                  .map(
+                                                    (k) => Padding(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            vertical: 8.h,
+                                                          ),
+                                                      child: ReadAndMatchTerminal(
+                                                        text: k,
+                                                        isSource: true,
+                                                        color: getColorForKey(
+                                                          k,
+                                                        ),
+                                                        isDark: isDark,
+                                                        isMatched: _matches
+                                                            .value
+                                                            .containsKey(k),
+                                                        isActive:
+                                                            _activeKey.value ==
+                                                            k,
+                                                        shouldPulse:
+                                                            _activeKey.value ==
+                                                                null &&
+                                                            !_matches.value
+                                                                .containsKey(k),
+                                                        onTap: () =>
+                                                            _onKeyTap(k),
+                                                      ),
+                                                    ),
+                                                  )
+                                                  .toList(),
                                             ),
                                           ),
-                                        ),
-                                        IntrinsicHeight(
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                          children: [
-                                            // Left Keys Column
-                                            Expanded(
-                                              flex: 2,
-                                              child: Column(
-                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                children: keys
-                                                    .map(
-                                                      (
-                                                        k,
-                                                      ) => Padding(
-                                                          padding: EdgeInsets.symmetric(vertical: 8.h),
-                                                          child: ReadAndMatchTerminal(
-                                                            text: k,
-                                                            isSource: true,
-                                                            color: getColorForKey(
-                                                              k,
-                                                            ),
-                                                            isDark: isDark,
-                                                            isMatched: _matches
-                                                                .value
-                                                                .containsKey(k),
-                                                            isActive:
-                                                                _activeKey.value ==
-                                                                k,
-                                                            shouldPulse: _activeKey.value == null && !_matches.value.containsKey(k),
-                                                            onTap: () =>
-                                                                _onKeyTap(k),
+                                          SizedBox(width: 40.w),
+                                          // Right Values Column
+                                          Expanded(
+                                            flex: 3,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: values
+                                                  .map(
+                                                    (v) => Padding(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            vertical: 8.h,
                                                           ),
+                                                      child: ReadAndMatchTerminal(
+                                                        text: v,
+                                                        isSource: false,
+                                                        color: getColorForValue(
+                                                          v,
                                                         ),
-                                                    )
-                                                    .toList(),
-                                              ),
-                                            ),
-                                            SizedBox(width: 40.w),
-                                            // Right Values Column
-                                            Expanded(
-                                              flex: 3,
-                                              child: Column(
-                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                children: values
-                                                    .map(
-                                                      (
-                                                        v,
-                                                      ) => Padding(
-                                                          padding: EdgeInsets.symmetric(vertical: 8.h),
-                                                          child: ReadAndMatchTerminal(
-                                                            text: v,
-                                                            isSource: false,
-                                                            color: getColorForValue(
-                                                              v,
-                                                            ),
-                                                            isDark: isDark,
-                                                            isMatched: _matches
-                                                                .value
-                                                                .containsValue(v),
-                                                            isActive: false,
-                                                            shouldPulse: _activeKey.value != null && !_matches.value.containsValue(v),
-                                                            onTap: () =>
-                                                                _onValueTap(
+                                                        isDark: isDark,
+                                                        isMatched: _matches
+                                                            .value
+                                                            .containsValue(v),
+                                                        isActive: false,
+                                                        shouldPulse:
+                                                            _activeKey.value !=
+                                                                null &&
+                                                            !_matches.value
+                                                                .containsValue(
                                                                   v,
-                                                                  pairs,
-                                                                  quest,
                                                                 ),
-                                                          ),
-                                                        ),
-                                                    )
-                                                    .toList(),
-                                              ),
+                                                        onTap: () =>
+                                                            _onValueTap(
+                                                              v,
+                                                              pairs,
+                                                              quest,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                  )
+                                                  .toList(),
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
                                     ),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-
-                          if (_pendingSubmission.value &&
-                              !isAnsweredNotifier.value)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: SpeakToConfirmOverlay(
-                                  expectedText:
-                                      quest.textToSpeak ??
-                                      quest.correctAnswer ??
-                                      "Confirm",
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: () =>
-                                      _submitFinalAnswer(true, quest),
-                                  onSkipped: () =>
-                                      _submitFinalAnswer(false, quest),
-                                  allowSkip: true,
-                                  isPositioned: false,
-                                ),
-                              ),
-                            ),
 
                           SliverToBoxAdapter(
                             child: SizedBox(

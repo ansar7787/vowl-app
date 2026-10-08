@@ -48,6 +48,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
 
   @override
   void dispose() {
+    _showEvidenceStep.removeListener(_scrollToBottom);
     _pendingSelectedIndex.dispose();
     _showEvidenceStep.dispose();
     _scrollController.dispose();
@@ -59,10 +60,25 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
   void initState() {
     super.initState();
     initReadingGame();
+    _showEvidenceStep.addListener(_scrollToBottom);
+  }
+
+  void _scrollToBottom() {
+    if (_showEvidenceStep.value && mounted && _scrollController.hasClients) {
+      Future.delayed(const Duration(milliseconds: 300), () {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeOutCubic,
+          );
+        }
+      });
+    }
   }
 
   void _onOptionTap(int index, bool isCorrect, ReadingQuest quest, String displayPassage) {
-    if (_showEvidenceStep.value || _pendingSelectedIndex.value != null) return;
+    if (_showEvidenceStep.value || _pendingSelectedIndex.value != null || isAnsweredNotifier.value) return;
 
     _pendingSelectedIndex.value = index;
 
@@ -109,246 +125,13 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
     _showEvidenceStep.value = false;
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      widget.gameType.name,
-      isDark: isDark,
-    );
-
-    return BlocConsumer<ReadingBloc, ReadingState>(
-      listenWhen: (prev, curr) =>
-          (curr is ReadingGameComplete && prev is! ReadingGameComplete) ||
-          (curr is ReadingGameOver && prev is! ReadingGameOver) ||
-          (curr is ReadingLoaded && !curr.answerStatus.isAnswered),
-      listener: onReadingStateChanged,
-      builder: (context, state) {
-        final isLoaded = state is ReadingLoaded;
-        final ReadingQuest? quest = isLoaded ? state.currentQuest : null;
-        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded
-            ? state.answerStatus.asBoolOrNull
-            : null;
-
-        String? displayTopic = quest?.paragraphTopic;
-        String displayPassage = quest?.passage ?? '';
-
-        // Extract embedded tags like "[My Family]"
-        // BlocConsumer builder only runs on major state changes (like next question),
-        // so this regex is performant and perfectly scoped here.
-        if (quest != null && quest.passage != null) {
-          final match = RegExp(
-            r'^\[(.*?)\]\s*(.*)$',
-            dotAll: true,
-          ).firstMatch(quest.passage!);
-          if (match != null) {
-            displayTopic = match.group(1);
-            displayPassage = match.group(2) ?? '';
-          }
-        }
-
-        return ListenableBuilder(
-          listenable: Listenable.merge([
-            showConfettiNotifier,
-            _pendingSelectedIndex,
-            _showEvidenceStep,
-          ]),
-          builder: (context, _) {
-            return ReadingBaseLayout(
-              gameType: widget.gameType,
-              level: widget.level,
-              isAnswered: isAnswered,
-              isCorrect: isCorrect,
-              showConfetti: showConfettiNotifier.value,
-              useScrolling: false,
-              disablePadding: true,
-              onContinue: () =>
-                  context.read<ReadingBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
-              child: quest == null
-                  ? const _QuestLoadingPlaceholder()
-                  : Stack(
-                      children: [
-                        _QuestContent(
-                          quest: quest,
-                          displayTopic: displayTopic,
-                          displayPassage: displayPassage,
-                          primaryColor: theme.primaryColor,
-                          isDark: isDark,
-                          isAnswered: isAnswered,
-                          isCorrect: isCorrect,
-                          pendingSelectedIndex: _pendingSelectedIndex.value,
-                          showEvidenceStep: _showEvidenceStep.value,
-                          scrollController: _scrollController,
-                          onOptionSelected: (idx, isCorrect) =>
-                              _onOptionTap(idx, isCorrect, quest, displayPassage),
-                        ),
-                        if (_showEvidenceStep.value && !isAnswered) ...[
-                          Positioned.fill(
-                            child:
-                                Container(
-                                  color: isDark
-                                      ? Colors.black87
-                                      : Colors.black.withValues(alpha: 0.6),
-                                ).animate().fadeIn(
-                                  duration: 400.ms,
-                                  curve: Curves.easeOut,
-                                ),
-                          ),
-                          EvidenceHighlightWrapper(
-                            passage: displayPassage,
-                            // Use evidenceLine from JSON for precise pedagogical targeting
-                            evidenceWords:
-                                (quest.evidenceLine ??
-                                        quest.correctAnswer ??
-                                        '')
-                                    .split(' '),
-                            primaryColor: theme.primaryColor,
-                            onCorrectHighlight: () =>
-                                _submitFinalAnswer(true, quest),
-                            instruction: 'Tap the words that prove your answer',
-                          ),
-                        ],
-                      ],
-                    ),
-            );
-          },
-        );
-      },
-    );
-  }
-}
-
-class _QuestLoadingPlaceholder extends StatelessWidget {
-  const _QuestLoadingPlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      label: 'Loading question…',
-      child: const SizedBox.expand(),
-    );
-  }
-}
-
-class _QuestContent extends StatelessWidget {
-  final ReadingQuest quest;
-  final String? displayTopic;
-  final String displayPassage;
-  final Color primaryColor;
-  final bool isDark;
-  final bool isAnswered;
-  final bool? isCorrect;
-  final int? pendingSelectedIndex;
-  final bool showEvidenceStep;
-  final ScrollController scrollController;
-  final void Function(int index, bool isCorrect) onOptionSelected;
-
-  const _QuestContent({
-    required this.quest,
-    required this.displayTopic,
-    required this.displayPassage,
-    required this.primaryColor,
-    required this.isDark,
-    required this.isAnswered,
-    required this.isCorrect,
-    required this.pendingSelectedIndex,
-    required this.showEvidenceStep,
-    required this.scrollController,
-    required this.onOptionSelected,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      explicitChildNodes: true,
-      child: RawScrollbar(
-        controller: scrollController,
-        thumbColor: primaryColor.withValues(alpha: 0.5),
-        radius: Radius.circular(8.r),
-        thickness: 4.w,
-        child: SingleChildScrollView(
-          controller: scrollController,
-          physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(height: 16.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: ReadAndAnswerInstruction(
-                      primaryColor: primaryColor,
-                      instruction: displayTopic,
-                    ),
-                  ),
-                  SizedBox(width: 16.w),
-                  _buildReadTimeBadge(
-                    primaryColor,
-                    isDark,
-                    displayPassage,
-                  ),
-                ],
-              ),
-              SizedBox(height: 16.h),
-              ReadAndAnswerAnchorPoint(
-                question: quest.question ?? '',
-                color: primaryColor,
-                isDark: isDark,
-              ),
-              SizedBox(height: 24.h),
-              // Render Passage Box
-              ReadAndAnswerFloatingPassage(
-                text: displayPassage,
-                color: primaryColor,
-                isDark: isDark,
-              ),
-              SizedBox(height: 24.h),
-              if (quest.options != null)
-                ...quest.options!.asMap().entries.map((e) {
-                  final isOptionCorrect =
-                      e.key == quest.correctAnswerIndex ||
-                      e.value.trim().toLowerCase() ==
-                          (quest.correctAnswer?.trim().toLowerCase() ??
-                              '');
-
-                  return ReadAndAnswerBuoyOption(
-                    index: e.key,
-                    text: e.value,
-                    isCorrectOption: isOptionCorrect,
-                    color: primaryColor,
-                    isDark: isDark,
-                    isAnswered:
-                        isAnswered || (pendingSelectedIndex != null),
-                    selectedIndex: pendingSelectedIndex,
-                    onTap: () => onOptionSelected(e.key, isOptionCorrect),
-                  );
-                }),
-
-              SizedBox(
-                height: (showEvidenceStep && !isAnswered) ? 380.h : 60.h,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget _buildReadTimeBadge(
     Color primaryColor,
     bool isDark,
     String displayPassage,
+    int? passageWordCount,
   ) {
-    // Avoid costly regex split in build method by relying on fast space split fallback
-    final wordCount =
-        quest.passageWordCount ?? (displayPassage.split(' ').length);
-    // Assume 130 WPM reading speed
+    final wordCount = passageWordCount ?? (displayPassage.split(' ').length);
     final readTimeSec = (wordCount / 130 * 60).round();
     final timeStr = readTimeSec < 60
         ? '$readTimeSec sec read'
@@ -369,6 +152,190 @@ class _QuestContent extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme(
+      widget.gameType.name,
+      isDark: isDark,
+    );
+
+    return BlocConsumer<ReadingBloc, ReadingState>(
+      listenWhen: (prev, curr) =>
+          (curr is ReadingGameComplete && prev is! ReadingGameComplete) ||
+          (curr is ReadingGameOver && prev is! ReadingGameOver) ||
+          (curr is ReadingLoaded && !curr.answerStatus.isAnswered),
+      listener: onReadingStateChanged,
+      builder: (context, state) {
+        final isLoaded = state is ReadingLoaded;
+        final ReadingQuest? quest = isLoaded ? state.currentQuest : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
+
+        String? displayTopic = quest?.paragraphTopic;
+        String displayPassage = quest?.passage ?? '';
+
+        if (quest != null && quest.passage != null) {
+          final match = RegExp(
+            r'^\[(.*?)\]\s*(.*)$',
+            dotAll: true,
+          ).firstMatch(quest.passage!);
+          if (match != null) {
+            displayTopic = match.group(1);
+            displayPassage = match.group(2) ?? '';
+          }
+        }
+
+        return ListenableBuilder(
+          listenable: Listenable.merge([
+            showConfettiNotifier,
+            _pendingSelectedIndex,
+            _showEvidenceStep,
+            isAnsweredNotifier,
+          ]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value ?? isCorrect,
+              showConfetti: showConfettiNotifier.value,
+              useScrolling: false,
+              disablePadding: true,
+              onContinue: () =>
+                  context.read<ReadingBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              child: quest == null
+                  ? Semantics(
+                      label: 'Loading question…',
+                      child: const SizedBox.expand(),
+                    )
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Flexible(
+                                        child: ReadAndAnswerInstruction(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: displayTopic,
+                                        ),
+                                      ),
+                                      SizedBox(width: 16.w),
+                                      _buildReadTimeBadge(
+                                        theme.primaryColor,
+                                        isDark,
+                                        displayPassage,
+                                        quest.passageWordCount,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 16.h),
+                                  ReadAndAnswerAnchorPoint(
+                                    question: quest.question ?? '',
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  ReadAndAnswerFloatingPassage(
+                                    text: displayPassage,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  if (quest.options != null)
+                                    ...quest.options!.asMap().entries.map((e) {
+                                      final isOptionCorrect =
+                                          e.key == quest.correctAnswerIndex ||
+                                          e.value.trim().toLowerCase() ==
+                                              (quest.correctAnswer?.trim().toLowerCase() ??
+                                                  '');
+
+                                      return ReadAndAnswerBuoyOption(
+                                        index: e.key,
+                                        text: e.value,
+                                        isCorrectOption: isOptionCorrect,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isAnswered: isAnsweredNotifier.value || (_pendingSelectedIndex.value != null),
+                                        selectedIndex: _pendingSelectedIndex.value,
+                                        onTap: () => _onOptionTap(
+                                          e.key,
+                                          isOptionCorrect,
+                                          quest,
+                                          displayPassage,
+                                        ),
+                                      );
+                                    }),
+                                  
+                                  // Give space if Phase 2 is hidden, otherwise let Phase 2 dictate height
+                                  if (!_showEvidenceStep.value) 
+                                    SizedBox(height: 120.h),
+                                  
+                                  if (_showEvidenceStep.value && !isAnsweredNotifier.value)
+                                    SizedBox(height: 32.h),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          if (_showEvidenceStep.value && !isAnsweredNotifier.value)
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: EvidenceHighlightWrapper(
+                                  passage: displayPassage,
+                                  evidenceWords: (quest.evidenceLine ??
+                                          quest.correctAnswer ??
+                                          '')
+                                      .split(' '),
+                                  primaryColor: theme.primaryColor,
+                                  onCorrectHighlight: () =>
+                                      _submitFinalAnswer(true, quest),
+                                  instruction: 'Tap the words that prove your answer',
+                                  isPositioned: false,
+                                ).animate().fadeIn(
+                                  duration: 400.ms,
+                                  curve: Curves.easeOut,
+                                ),
+                              ),
+                            ),
+
+                          if (_showEvidenceStep.value)
+                            SliverToBoxAdapter(
+                              child: SizedBox(
+                                height: MediaQuery.of(context).viewInsets.bottom > 0
+                                    ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                                    : 120.h,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+            );
+          },
+        );
+      },
     );
   }
 }
