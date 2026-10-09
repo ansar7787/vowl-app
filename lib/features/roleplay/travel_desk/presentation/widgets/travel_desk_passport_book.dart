@@ -303,18 +303,22 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                 borderRadius: BorderRadius.circular(8.r),
                                 color: Colors.black.withValues(alpha: 0.1),
                               ),
-                              child: Text(
-                                (index == widget.correctIndex)
-                                    ? "APPROVED"
-                                    : "DENIED",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: (index == widget.correctIndex)
-                                      ? AppColors.gameCorrect
-                                      : AppColors.gameIncorrect,
-                                  letterSpacing: 2,
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  (index == widget.correctIndex)
+                                      ? "APPROVED"
+                                      : "DENIED",
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: (index == widget.correctIndex)
+                                        ? AppColors.gameCorrect
+                                        : AppColors.gameIncorrect,
+                                    letterSpacing: 2,
+                                  ),
                                 ),
                               ),
                             ),
