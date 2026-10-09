@@ -326,184 +326,162 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                   _selectedItems
                                                       .value
                                                       .isNotEmpty)
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
+                                                Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment
+                                                          .stretch,
                                                   children: [
-                                                    Expanded(
-                                                      child: ScaleButton(
-                                                        onTap: _clearItems,
-                                                        child: Container(
-                                                          padding:
-                                                              EdgeInsets.symmetric(
-                                                                horizontal:
-                                                                    isCompact
-                                                                    ? 16.w
-                                                                    : 24.w,
-                                                                vertical:
-                                                                    isCompact
-                                                                    ? 10.h
-                                                                    : 12.h,
+                                                    ScaleButton(
+                                                      onTap: () => _submitAnswer(
+                                                        quest.correctAnswer ??
+                                                            "",
+                                                        quest,
+                                                      ),
+                                                      child: Container(
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              vertical:
+                                                                  isCompact
+                                                                  ? 12.h
+                                                                  : 14.h,
+                                                            ),
+                                                        decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                30.r,
                                                               ),
-                                                          decoration: BoxDecoration(
-                                                            color: theme
-                                                                .primaryColor
-                                                                .withValues(
-                                                                  alpha: 0.1,
-                                                                ),
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  30.r,
-                                                                ),
-                                                            border: Border.all(
+                                                          gradient: LinearGradient(
+                                                            colors: [
+                                                              theme
+                                                                  .primaryColor,
+                                                              theme.primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.8,
+                                                                  ),
+                                                            ],
+                                                          ),
+                                                          boxShadow: [
+                                                            BoxShadow(
                                                               color: theme
                                                                   .primaryColor
                                                                   .withValues(
-                                                                    alpha: 0.3,
+                                                                    alpha: 0.35,
                                                                   ),
+                                                              blurRadius:
+                                                                  isCompact
+                                                                  ? 10
+                                                                  : 15,
                                                             ),
-                                                          ),
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .min,
-                                                              children: [
-                                                                Icon(
-                                                                  Icons
-                                                                      .refresh_rounded,
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  size:
-                                                                      isCompact
-                                                                      ? 16.r
-                                                                      : 18.r,
-                                                                ),
-                                                                SizedBox(
-                                                                  width: 6.w,
-                                                                ),
-                                                                Text(
-                                                                  "CLEAR PLATTER",
-                                                                  style: TextStyle(
-                                                                    fontFamily:
-                                                                        'Outfit',
-                                                                    fontSize:
-                                                                        isCompact
-                                                                        ? 10.sp
-                                                                        : 12.sp,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    color: theme
-                                                                        .primaryColor,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                          ],
+                                                        ),
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons
+                                                                  .restaurant_menu_rounded,
+                                                              color:
+                                                                  Colors.white,
+                                                              size: isCompact
+                                                                  ? 16.r
+                                                                  : 18.r,
                                                             ),
-                                                          ),
+                                                            SizedBox(
+                                                              width: 8.w,
+                                                            ),
+                                                            Text(
+                                                              "SERVE PLATTER",
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    isCompact
+                                                                    ? 12.sp
+                                                                    : 14.sp,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color: Colors
+                                                                    .white,
+                                                                letterSpacing:
+                                                                    1.5,
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                     ),
                                                     SizedBox(
-                                                      width: isCompact
-                                                          ? 10.w
-                                                          : 16.w,
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 16.h,
                                                     ),
-                                                    Expanded(
-                                                      child: ScaleButton(
-                                                        onTap: () => _submitAnswer(
-                                                          quest.correctAnswer ??
-                                                              "",
-                                                          quest,
+                                                    ScaleButton(
+                                                      onTap: _clearItems,
+                                                      child: Container(
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              vertical:
+                                                                  isCompact
+                                                                  ? 12.h
+                                                                  : 14.h,
+                                                            ),
+                                                        decoration: BoxDecoration(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.1,
+                                                              ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                30.r,
+                                                              ),
+                                                          border: Border.all(
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.3,
+                                                                ),
+                                                          ),
                                                         ),
-                                                        child: Container(
-                                                          padding:
-                                                              EdgeInsets.symmetric(
-                                                                horizontal:
-                                                                    isCompact
-                                                                    ? 20.w
-                                                                    : 32.w,
-                                                                vertical:
-                                                                    isCompact
-                                                                    ? 10.h
-                                                                    : 12.h,
-                                                              ),
-                                                          decoration: BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  30.r,
-                                                                ),
-                                                            gradient: LinearGradient(
-                                                              colors: [
-                                                                theme
-                                                                    .primaryColor,
-                                                                theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.8,
-                                                                    ),
-                                                              ],
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons
+                                                                  .refresh_rounded,
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              size: isCompact
+                                                                  ? 16.r
+                                                                  : 18.r,
                                                             ),
-                                                            boxShadow: [
-                                                              BoxShadow(
+                                                            SizedBox(
+                                                              width: 8.w,
+                                                            ),
+                                                            Text(
+                                                              "CLEAR PLATTER",
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    isCompact
+                                                                    ? 11.sp
+                                                                    : 13.sp,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
                                                                 color: theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.35,
-                                                                    ),
-                                                                blurRadius:
-                                                                    isCompact
-                                                                    ? 10
-                                                                    : 15,
+                                                                    .primaryColor,
+                                                                letterSpacing:
+                                                                    1.0,
                                                               ),
-                                                            ],
-                                                          ),
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .min,
-                                                              children: [
-                                                                Icon(
-                                                                  Icons
-                                                                      .restaurant_menu_rounded,
-                                                                  color: Colors
-                                                                      .white,
-                                                                  size:
-                                                                      isCompact
-                                                                      ? 16.r
-                                                                      : 18.r,
-                                                                ),
-                                                                SizedBox(
-                                                                  width: 6.w,
-                                                                ),
-                                                                Text(
-                                                                  "SERVE PLATTER",
-                                                                  style: TextStyle(
-                                                                    fontFamily:
-                                                                        'Outfit',
-                                                                    fontSize:
-                                                                        isCompact
-                                                                        ? 10.sp
-                                                                        : 12.sp,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    color: Colors
-                                                                        .white,
-                                                                    letterSpacing:
-                                                                        1.5,
-                                                                  ),
-                                                                ),
-                                                              ],
                                                             ),
-                                                          ),
+                                                          ],
                                                         ),
                                                       ),
                                                     ),
