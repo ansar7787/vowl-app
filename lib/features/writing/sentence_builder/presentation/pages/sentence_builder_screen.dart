@@ -18,6 +18,7 @@ import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sent
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_piece_pool.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_keyboard_input.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 class SentenceBuilderScreen extends StatefulWidget {
   final int level;
@@ -117,9 +118,16 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
 
   void _submitAnswer(String correct, bool isAnswered, [GameQuest? quest]) {
     final isHardMode = widget.level >= 6;
-    if (isAnswered ||
-        (!isHardMode && _assembledPieces.value.isEmpty) ||
+    if (isAnswered) return;
+
+    if ((!isHardMode && _assembledPieces.value.isEmpty) ||
         (isHardMode && _textController.text.trim().isEmpty)) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please build your sentence first.",
+        type: CustomSnackBarType.warning,
+      );
+      hapticService.selection();
       return;
     }
 
@@ -149,11 +157,30 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
     }
 
     // FIX: normalize both sides before comparison.
-    final rawUserAnswer =
-        isHardMode ? _textController.text : _assembledPieces.value.join(' ');
+    final rawUserAnswer = isHardMode
+        ? _textController.text
+        : _assembledPieces.value.join(' ');
     final built = _normalizeAnswer(rawUserAnswer);
     final expected = _normalizeAnswer(correct);
     final isCorrect = built == expected;
+
+    if (!isCorrect && isHardMode) {
+      // Allow them to fix typos without losing a life immediately!
+      bool isClose = TextSimilarityHelper.isMatch(
+        built,
+        expected,
+        threshold: 0.85,
+      );
+      if (isClose) {
+        CustomSnackBar.show(
+          context: context,
+          message: "Almost! Check your spelling against the words above.",
+          type: CustomSnackBarType.warning,
+        );
+        hapticService.selection();
+        return;
+      }
+    }
 
     if (isCorrect) {
       hapticService.success();

@@ -46,7 +46,7 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
               // The left notch padding and right tab padding ensure text doesn't clip
               padding: EdgeInsets.only(
                 left: 20.w,
-                right: 28.w,
+                right: 20.w,
                 top: 10.h,
                 bottom: 10.h,
               ),
@@ -74,7 +74,14 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
     );
 
     if (isAssembled) {
-      return piece.animate().shimmer(duration: 600.ms);
+      return piece.animate()
+          .scale(
+            begin: const Offset(0.85, 0.85),
+            end: const Offset(1.0, 1.0),
+            duration: 400.ms,
+            curve: Curves.easeOutBack,
+          )
+          .shimmer(duration: 600.ms, delay: 100.ms);
     }
     return piece;
   }
