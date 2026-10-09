@@ -288,52 +288,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                           // Trigger Action Buttons
                                           if (!isAnsweredNotifier.value &&
                                               _selectedIndices.value.isNotEmpty)
-                                            Wrap(
-                                              alignment: WrapAlignment.center,
-                                              spacing: isCompact ? 10.w : 16.w,
-                                              runSpacing: 10.h,
+                                            Column(
+                                              crossAxisAlignment: CrossAxisAlignment.stretch,
                                               children: [
-                                                ScaleButton(
-                                                  onTap: _clearSelection,
-                                                  child: Container(
-                                                    padding: EdgeInsets.symmetric(
-                                                      horizontal: isCompact ? 16.w : 24.w,
-                                                      vertical: isCompact ? 10.h : 14.h,
-                                                    ),
-                                                    decoration: BoxDecoration(
-                                                      color: theme.primaryColor.withValues(
-                                                        alpha: 0.1,
-                                                      ),
-                                                      borderRadius: BorderRadius.circular(30.r),
-                                                      border: Border.all(
-                                                        color: theme.primaryColor.withValues(
-                                                          alpha: 0.3,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    child: Row(
-                                                      mainAxisSize: MainAxisSize.min,
-                                                      children: [
-                                                        Icon(
-                                                          Icons.refresh_rounded,
-                                                          color: theme.primaryColor,
-                                                          size: isCompact ? 18.r : 20.r,
-                                                        ),
-                                                        SizedBox(width: 6.w),
-                                                        Text(
-                                                          "CLEAR PATH",
-                                                          style: TextStyle(
-                                                            fontFamily: 'Outfit',
-                                                            fontSize: isCompact ? 12.sp : 14.sp,
-                                                            fontWeight: FontWeight.bold,
-                                                            color: theme.primaryColor,
-                                                            letterSpacing: 1.5,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
                                                 ScaleButton(
                                                   onTap: () => _submitAnswer(
                                                     words,
@@ -341,9 +298,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                     quest,
                                                   ),
                                                   child: Container(
+                                                    alignment: Alignment.center,
                                                     padding: EdgeInsets.symmetric(
-                                                      horizontal: isCompact ? 20.w : 32.w,
-                                                      vertical: isCompact ? 10.h : 14.h,
+                                                      vertical: isCompact ? 12.h : 16.h,
                                                     ),
                                                     decoration: BoxDecoration(
                                                       borderRadius: BorderRadius.circular(30.r),
@@ -365,21 +322,52 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       ],
                                                     ),
                                                     child: Row(
-                                                      mainAxisSize: MainAxisSize.min,
+                                                      mainAxisAlignment: MainAxisAlignment.center,
                                                       children: [
                                                         Icon(
                                                           Icons.bolt_rounded,
                                                           color: Colors.white,
                                                           size: isCompact ? 18.r : 20.r,
                                                         ),
-                                                        SizedBox(width: 6.w),
+                                                        SizedBox(width: 8.w),
                                                         Text(
                                                           "IGNITE SPARK",
                                                           style: TextStyle(
                                                             fontFamily: 'Outfit',
-                                                            fontSize: isCompact ? 12.sp : 14.sp,
+                                                            fontSize: isCompact ? 14.sp : 16.sp,
                                                             fontWeight: FontWeight.bold,
                                                             color: Colors.white,
+                                                            letterSpacing: 1.5,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(height: isCompact ? 12.h : 16.h),
+                                                ScaleButton(
+                                                  onTap: _clearSelection,
+                                                  child: Container(
+                                                    alignment: Alignment.center,
+                                                    padding: EdgeInsets.symmetric(
+                                                      vertical: isCompact ? 10.h : 14.h,
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.refresh_rounded,
+                                                          color: theme.primaryColor.withValues(alpha: 0.7),
+                                                          size: isCompact ? 16.r : 18.r,
+                                                        ),
+                                                        SizedBox(width: 6.w),
+                                                        Text(
+                                                          "CLEAR PATH",
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: isCompact ? 12.sp : 14.sp,
+                                                            fontWeight: FontWeight.bold,
+                                                            color: theme.primaryColor.withValues(alpha: 0.7),
                                                             letterSpacing: 1.5,
                                                           ),
                                                         ),
