@@ -5,13 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class EmergencyHubTelexCard extends StatelessWidget {
-  final String telex;
+  final String instruction;
+  final String dispatcherQuestion;
   final int urgencyLevel;
   final bool isDark;
 
   const EmergencyHubTelexCard({
     super.key,
-    required this.telex,
+    required this.instruction,
+    required this.dispatcherQuestion,
     required this.urgencyLevel,
     required this.isDark,
   });
@@ -24,72 +26,95 @@ class EmergencyHubTelexCard extends StatelessWidget {
       padding: EdgeInsets.all(22.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(
+          16.r,
+        ), // More utilitarian border radius
         border: Border.all(
-          color: tokens.gameIncorrect.withValues(alpha: 0.2),
-          width: 1.5,
+          color: tokens.gameIncorrect, // Solid border, no alpha, flat design
+          width: 2.0,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: tokens.gameIncorrect.withValues(alpha: 0.08),
-            blurRadius: 15,
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min, // Allow it to shrink wrap
         children: [
           Row(
             children: [
               Container(
                     padding: EdgeInsets.all(8.r),
                     decoration: BoxDecoration(
-                      color: tokens.gameIncorrect.withValues(alpha: 0.1),
+                      color: tokens.gameIncorrect,
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
                       Icons.warning_amber_rounded,
-                      color: tokens.gameIncorrect,
+                      color: isDark ? AppColors.deepDark : Colors.white,
                       size: 20.r,
                     ),
                   )
                   .animate(onPlay: (c) => c.repeat(reverse: true))
                   .scale(
                     begin: const Offset(1, 1),
-                    end: const Offset(1.15, 1.15),
+                    end: const Offset(1.1, 1.1),
                     duration: 1.2.seconds,
                     curve: Curves.easeInOut,
                   ),
               SizedBox(width: 10.w),
-              Text(
-                "CRITICAL INCOMING HAZARD ALERT",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: tokens.gameIncorrect,
-                  letterSpacing: 2.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+              Expanded(
+                child:
+                    Text(
+                          "INCOMING BROADCAST",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            color: tokens.gameIncorrect,
+                            letterSpacing: 2.0,
+                            fontWeight: FontWeight.w800,
+                          ),
+                          softWrap: true,
+                        )
+                        .animate(onPlay: (c) => c.repeat())
+                        .shimmer(duration: 2.seconds),
+              ),
             ],
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 16.h),
+
+          // Instruction Field (First)
           Text(
-            telex,
+            instruction,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              color: Theme.of(context).colorScheme.onSurface,
-              height: 1.35,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: isDark ? Colors.white70 : Colors.black87,
+              height: 1.3,
             ),
-          ),
-          SizedBox(height: 16.h),
-          Divider(
-            color: tokens.gameIncorrect.withValues(alpha: 0.15),
-            thickness: 1,
-            height: 1,
+            softWrap: true, // Never overflow, wrap to next line
           ),
           SizedBox(height: 12.h),
+
+          // Dispatcher Question Field (Second)
+          if (dispatcherQuestion.isNotEmpty)
+            Text(
+              dispatcherQuestion,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w700,
+                color: isDark ? Colors.white : Colors.black,
+                height: 1.4,
+              ),
+              softWrap: true, // Never overflow, wrap to next line
+            ),
+
+          SizedBox(height: 20.h),
+          Divider(
+            color: tokens.gameIncorrect.withValues(alpha: 0.3),
+            thickness: 2,
+            height: 1,
+          ),
+          SizedBox(height: 16.h),
           Row(
             children: [
               Text(
@@ -109,29 +134,19 @@ class EmergencyHubTelexCard extends StatelessWidget {
                     final isActive = index < urgencyLevel;
                     return Expanded(
                       child: Container(
-                        height: 6.h,
+                        height: 8.h,
                         margin: EdgeInsets.symmetric(horizontal: 2.w),
                         decoration: BoxDecoration(
                           color: isActive
                               ? (urgencyLevel >= 4
                                     ? tokens.gameIncorrect
                                     : (urgencyLevel >= 3
-                                          ? Colors.orangeAccent
-                                          : Colors.yellowAccent))
+                                          ? Colors.orange
+                                          : Colors.yellow))
                               : (isDark ? Colors.white10 : Colors.black12),
-                          borderRadius: BorderRadius.circular(4.r),
-                          boxShadow: isActive
-                              ? [
-                                  BoxShadow(
-                                    color:
-                                        (urgencyLevel >= 4
-                                                ? tokens.gameIncorrect
-                                                : Colors.orangeAccent)
-                                            .withValues(alpha: 0.4),
-                                    blurRadius: 4,
-                                  ),
-                                ]
-                              : null,
+                          borderRadius: BorderRadius.circular(
+                            2.r,
+                          ), // Sharper, utilitarian
                         ),
                       ),
                     );
