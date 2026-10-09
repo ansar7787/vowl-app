@@ -4,13 +4,18 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class CompleteSentenceInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? text;
 
-  const CompleteSentenceInstruction({super.key, required this.primaryColor});
+  const CompleteSentenceInstruction({
+    super.key,
+    required this.primaryColor,
+    this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Instruction: Launch the missing fragment',
+      label: 'Instruction: ${text ?? "Complete the sentence"}',
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
@@ -30,9 +35,7 @@ class CompleteSentenceInstruction extends StatelessWidget {
               ),
             ),
             SizedBox(width: 12.w),
-            // FIX: Flexible prevents overflow on long localized strings.
-            // Scale clamp prevents 10.sp label overflowing the pill at
-            // large accessibility font sizes.
+            // Flexible prevents overflow on long localized strings.
             Flexible(
               child: MediaQuery(
                 data: MediaQuery.of(context).copyWith(
@@ -41,21 +44,21 @@ class CompleteSentenceInstruction extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  context
-                      .tr(
-                        'games.completeSentence_instruction',
-                        fallback:
-                            'Launch the correct fragment to complete the sentence!',
-                      )
+                  (text ??
+                          context.tr(
+                            'games.completeSentence_instruction',
+                            fallback:
+                                'Launch the correct fragment to complete the sentence!',
+                          ))
                       .toUpperCase(),
                   textAlign: TextAlign.center,
                   maxLines: null,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w900,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w800,
                     color: primaryColor,
-                    letterSpacing: 1.5,
+                    letterSpacing: 1.2,
                   ),
                 ),
               ),

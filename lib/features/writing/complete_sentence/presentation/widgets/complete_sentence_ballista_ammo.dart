@@ -25,27 +25,31 @@ class CompleteSentenceBallistaAmmo extends StatelessWidget {
         alignment: WrapAlignment.center,
         children: options.map((o) {
           final buttonWidget = ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 0.7.sw),
+            constraints: BoxConstraints(maxWidth: 0.8.sw),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
               decoration: BoxDecoration(
-                color: isDark ? Colors.black87 : Colors.white,
-                borderRadius: BorderRadius.circular(30.r),
-                border: Border.all(color: color, width: 2),
+                color: isDark ? Colors.grey[900] : Colors.white,
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: color.withValues(alpha: 0.8),
+                  width: 2,
+                ),
                 boxShadow: [
                   BoxShadow(
-                    color: color.withValues(alpha: isDark ? 0.35 : 0.15),
-                    blurRadius: 10,
+                    color: color.withValues(alpha: isDark ? 0.3 : 0.15),
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
               child: Text(
-                o.toUpperCase(),
+                o,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
@@ -61,9 +65,12 @@ class CompleteSentenceBallistaAmmo extends StatelessWidget {
                 data: o,
                 feedback: Material(
                   color: Colors.transparent,
-                  child: buttonWidget,
+                  child: Transform.scale(
+                    scale: 1.05,
+                    child: buttonWidget,
+                  ),
                 ),
-                childWhenDragging: Opacity(opacity: 0.5, child: buttonWidget),
+                childWhenDragging: Opacity(opacity: 0.3, child: buttonWidget),
                 child: buttonWidget,
               ),
             ),
