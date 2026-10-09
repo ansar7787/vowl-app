@@ -8,13 +8,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_instruction.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_telex_card.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_terminal_input.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_valve_chamber.dart';
@@ -103,6 +103,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     super.dispose();
   }
 
+  double _lastHapticProgress = 0.0;
+
   // Trigonometry-based circular dial update
   void _onValveDragged(DragUpdateDetails details, Offset localCenter) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
@@ -118,8 +120,20 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     double progress = (angle + math.pi / 2) / (2 * math.pi);
     if (progress > 1.0) progress -= 1.0;
 
-    hapticService.selection();
+    // Throttle haptics so it only clicks every ~5% rotation
+    if ((progress - _lastHapticProgress).abs() > 0.05) {
+      hapticService.selection();
+      _lastHapticProgress = progress;
+    }
+
     _rotation.value = progress.clamp(0.0, 1.0);
+  }
+
+  // Accessible fallback for screen readers or motor difficulties
+  void _onValveAccessibleAlign() {
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    hapticService.selection();
+    _rotation.value = 1.0;
   }
 
   void _submitCode(String input, String correctAnswer, GameQuest quest) {
@@ -131,13 +145,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
         .replaceAll(' ', '')
         .toLowerCase();
 
-    // Check if code matches AND safety valve is rotated past 85% to pressurize the lock
     final bool codeMatches = cleanInput == cleanCorrect;
-    final bool valveAligned = _rotation.value >= 0.85;
 
-    final bool isCorrect = codeMatches && valveAligned;
-
-    if (isCorrect) {
+    if (codeMatches) {
       hapticService.selection();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
@@ -219,180 +229,177 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                             physics: const BouncingScrollPhysics(),
                             slivers: [
                               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
-                              SliverFillRemaining(
-                                hasScrollBody: true,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: LayoutBuilder(
-                                        builder: (context, constraints) {
-                                          final isCompact =
-                                              constraints.maxHeight < 580;
-                                          return Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                              vertical: isCompact ? 5.h : 10.h,
-                                            ),
-                                            child: Column(
-                                              children: [
-                                                EmergencyHubInstruction(
-                                                  instruction:
-                                                      InstructionHelper.getInstruction(
-                                                        quest,
-                                                      ),
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 10.h
-                                                      : 16.h,
-                                                ),
-
-                                                // Critical dispatcher prompt telex
-                                                EmergencyHubTelexCard(
-                                                  telex:
-                                                      quest
-                                                          .dispatcherQuestion ??
-                                                      "AWAITING BROADCAST VECTOR DETAILS...",
-                                                  urgencyLevel:
-                                                      quest.urgencyLevel ?? 3,
-                                                  isDark: isDark,
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 12.h
-                                                      : 20.h,
-                                                ),
-
-                                                // Retro terminal input text field
-                                                EmergencyHubTerminalInput(
-                                                  controller: _codeController,
-                                                  correctAnswer:
-                                                      quest.correctAnswer ?? "",
-                                                  isDark: isDark,
-                                                  onChanged: () {},
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 12.h
-                                                      : 20.h,
-                                                ),
-
-                                                // Mechanical safety valve chamber
-                                                EmergencyHubValveChamber(
-                                                  correctAnswer:
-                                                      quest.correctAnswer ?? "",
-                                                  inputText:
-                                                      _codeController.text,
-                                                  isDark: isDark,
-                                                  rotation: _rotation.value,
-                                                  pulseAnimation:
-                                                      _pulseController,
-                                                  onValveDragged:
-                                                      _onValveDragged,
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 16.h
-                                                      : 24.h,
-                                                ),
-
-                                                // Dispatch lock confirm trigger button
-                                                if (!isAnsweredNotifier.value &&
-                                                    _codeController
-                                                        .text
-                                                        .isNotEmpty)
-                                                  ScaleButton(
-                                                    onTap: () => _submitCode(
-                                                      _codeController.text,
-                                                      quest.correctAnswer ?? "",
-                                                      quest,
-                                                    ),
-                                                    child: Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 48.w,
-                                                            vertical: isCompact
-                                                                ? 10.h
-                                                                : 14.h,
-                                                          ),
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              30.r,
-                                                            ),
-                                                        gradient:
-                                                            const LinearGradient(
-                                                              colors: [
-                                                                Colors
-                                                                    .redAccent,
-                                                                Colors
-                                                                    .deepOrangeAccent,
-                                                              ],
-                                                            ),
-                                                        boxShadow: [
-                                                          BoxShadow(
-                                                            color: Colors
-                                                                .redAccent
-                                                                .withValues(
-                                                                  alpha: 0.45,
-                                                                ),
-                                                            blurRadius:
-                                                                isCompact
-                                                                ? 10
-                                                                : 15,
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        children: [
-                                                          Icon(
-                                                            Icons
-                                                                .flash_on_rounded,
-                                                            color: Colors.white,
-                                                            size: isCompact
-                                                                ? 16.r
-                                                                : 18.r,
-                                                          ),
-                                                          SizedBox(width: 8.w),
-                                                          Text(
-                                                            "LAUNCH EMERGENCY BEACON",
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize:
-                                                                  isCompact
-                                                                  ? 10.sp
-                                                                  : 12.sp,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                              color:
-                                                                  Colors.white,
-                                                              letterSpacing: 2,
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ).animate().fadeIn(
-                                                    duration: 300.ms,
-                                                  ),
-
-                                                // Review details
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 20.h
-                                                      : 40.h,
-                                                ),
-                                              ],
-                                            ),
-                                          );
-                                        },
+                              SliverToBoxAdapter(
+                                child: Builder(
+                                  builder: (context) {
+                                    final isCompact =
+                                        MediaQuery.sizeOf(context).height < 700;
+                                    return Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                        vertical: isCompact ? 5.h : 10.h,
                                       ),
-                                    ),
-                                  ],
+                                      child: Column(
+                                        children: [
+                                          // Critical dispatcher prompt telex
+                                          EmergencyHubTelexCard(
+                                            instruction:
+                                                InstructionHelper.getInstruction(
+                                                  quest,
+                                                ),
+                                            dispatcherQuestion:
+                                                quest.dispatcherQuestion ?? "",
+                                            urgencyLevel:
+                                                quest.urgencyLevel ?? 3,
+                                            isDark: isDark,
+                                          ),
+                                          SizedBox(
+                                            height: isCompact ? 12.h : 20.h,
+                                          ),
+
+                                          // Retro terminal input text field
+                                          EmergencyHubTerminalInput(
+                                            controller: _codeController,
+                                            correctAnswer:
+                                                quest.correctAnswer ?? "",
+                                            isDark: isDark,
+                                            onChanged: () {},
+                                          ),
+                                          SizedBox(
+                                            height: isCompact ? 12.h : 20.h,
+                                          ),
+
+                                          // Mechanical safety valve chamber
+                                          EmergencyHubValveChamber(
+                                            correctAnswer:
+                                                quest.correctAnswer ?? "",
+                                            inputText: _codeController.text,
+                                            isDark: isDark,
+                                            rotation: _rotation.value,
+                                            pulseAnimation: _pulseController,
+                                            onValveDragged: _onValveDragged,
+                                            onValveAccessibleAlign:
+                                                _onValveAccessibleAlign,
+                                          ),
+                                          SizedBox(
+                                            height: isCompact ? 16.h : 24.h,
+                                          ),
+
+                                          // Dispatch lock confirm trigger button
+                                          if (!isAnsweredNotifier.value &&
+                                              _codeController.text.isNotEmpty)
+                                            Builder(
+                                              builder: (context) {
+                                                final bool isValveAligned =
+                                                    _rotation.value >= 0.85;
+                                                return ScaleButton(
+                                                  onTap: isValveAligned
+                                                      ? () => _submitCode(
+                                                          _codeController.text,
+                                                          quest.correctAnswer ??
+                                                              "",
+                                                          quest,
+                                                        )
+                                                      : null,
+                                                  child: AnimatedContainer(
+                                                    duration: const Duration(
+                                                      milliseconds: 300,
+                                                    ),
+                                                    curve: Curves.easeInOut,
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: 24.w,
+                                                          vertical: isCompact
+                                                              ? 10.h
+                                                              : 14.h,
+                                                        ),
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            30.r,
+                                                          ),
+                                                      color: isValveAligned
+                                                          ? Colors.red.shade700
+                                                          : (isDark
+                                                                ? Colors
+                                                                      .grey
+                                                                      .shade800
+                                                                : Colors
+                                                                      .grey
+                                                                      .shade400),
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Icon(
+                                                          isValveAligned
+                                                              ? Icons
+                                                                    .flash_on_rounded
+                                                              : Icons
+                                                                    .lock_outline_rounded,
+                                                          color: isValveAligned
+                                                              ? Colors.white
+                                                              : Colors.white70,
+                                                          size: isCompact
+                                                              ? 16.r
+                                                              : 18.r,
+                                                        ),
+                                                        SizedBox(width: 8.w),
+                                                        Flexible(
+                                                          child: FittedBox(
+                                                            fit: BoxFit
+                                                                .scaleDown,
+                                                            child: AnimatedDefaultTextStyle(
+                                                              duration:
+                                                                  const Duration(
+                                                                    milliseconds:
+                                                                        300,
+                                                                  ),
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    isCompact
+                                                                    ? 10.sp
+                                                                    : 12.sp,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color:
+                                                                    isValveAligned
+                                                                    ? Colors
+                                                                          .white
+                                                                    : Colors
+                                                                          .white70,
+                                                                letterSpacing:
+                                                                    2,
+                                                              ),
+                                                              child: Text(
+                                                                isValveAligned
+                                                                    ? "LAUNCH EMERGENCY BEACON"
+                                                                    : "ALIGN VALVE TO LAUNCH",
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ).animate().fadeIn(
+                                                  duration: 300.ms,
+                                                );
+                                              },
+                                            ),
+
+                                          // Review details
+                                          SizedBox(
+                                            height: isCompact ? 20.h : 40.h,
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
 

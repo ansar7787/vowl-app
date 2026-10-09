@@ -1,17 +1,20 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EmergencyValvePainter extends CustomPainter {
   final double rotationValue;
-  final bool isCodeCorrect;
+  final bool isValveAligned;
   final double animationTime;
+  final Color errorColor;
+  final Color correctColor;
 
   EmergencyValvePainter({
     required this.rotationValue,
-    required this.isCodeCorrect,
+    required this.isValveAligned,
     required this.animationTime,
+    required this.errorColor,
+    required this.correctColor,
   });
 
   @override
@@ -49,8 +52,8 @@ class EmergencyValvePainter extends CustomPainter {
 
     // Indicator sectors (AWAITING / ALIGNED)
     final Paint sectorPaint = Paint()
-      ..color = isCodeCorrect
-          ? AppColors.gameIncorrect.withValues(alpha: 0.15)
+      ..color = isValveAligned
+          ? correctColor.withValues(alpha: 0.15)
           : Colors.grey.withValues(alpha: 0.05)
       ..style = PaintingStyle.fill;
     canvas.drawCircle(center, radius - 20.w, sectorPaint);
@@ -59,7 +62,9 @@ class EmergencyValvePainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant EmergencyValvePainter oldDelegate) {
     return oldDelegate.rotationValue != rotationValue ||
-        oldDelegate.isCodeCorrect != isCodeCorrect ||
-        oldDelegate.animationTime != animationTime;
+        oldDelegate.isValveAligned != isValveAligned ||
+        oldDelegate.animationTime != animationTime ||
+        oldDelegate.errorColor != errorColor ||
+        oldDelegate.correctColor != correctColor;
   }
 }

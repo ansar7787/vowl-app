@@ -16,6 +16,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
   final double rotation;
   final Animation<double> pulseAnimation;
   final Function(DragUpdateDetails, Offset) onValveDragged;
+  final VoidCallback? onValveAccessibleAlign;
 
   const EmergencyHubValveChamber({
     super.key,
@@ -25,6 +26,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
     required this.rotation,
     required this.pulseAnimation,
     required this.onValveDragged,
+    this.onValveAccessibleAlign,
   });
 
   @override
@@ -32,10 +34,6 @@ class EmergencyHubValveChamber extends StatelessWidget {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final double size = 200.r;
     final Offset center = Offset(size / 2, size / 2);
-
-    final bool isCodeValid =
-        inputText.trim().replaceAll(' ', '').toLowerCase() ==
-        correctAnswer.trim().replaceAll(' ', '').toLowerCase();
 
     final bool isValveAligned = rotation >= 0.85;
 
@@ -55,116 +53,139 @@ class EmergencyHubValveChamber extends StatelessWidget {
       ),
       child: Column(
         children: [
-          GestureDetector(
-            onPanUpdate: (details) => onValveDragged(details, center),
-            child: Container(
-              width: size,
-              height: size,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.transparent,
-              ),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  // Hazard stripes warning outer sweep ring
-                  Positioned.fill(
-                    child: AnimatedBuilder(
-                      animation: pulseAnimation,
-                      builder: (context, child) {
-                        return CustomPaint(
-                          painter: EmergencyValvePainter(
-                            rotationValue: rotation,
-                            isCodeCorrect: isCodeValid,
-                            animationTime: pulseAnimation.value,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-
-                  // Heavy metal wheel knob
-                  Transform.rotate(
-                    angle: rotation * 2 * math.pi,
-                    child: Container(
-                      width: 120.r,
-                      height: 120.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey.shade900,
-                        border: Border.all(
-                          color: isValveAligned
-                              ? tokens.gameCorrect
-                              : tokens.gameIncorrect,
-                          width: 4,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.4),
-                            blurRadius: 10,
-                            offset: const Offset(2, 2),
-                          ),
-                        ],
+          Semantics(
+            label: "Emergency release valve",
+            hint: "Double tap to align the valve automatically",
+            button: true,
+            onTap: onValveAccessibleAlign,
+            child: GestureDetector(
+              onPanUpdate: (details) => onValveDragged(details, center),
+              child: Container(
+                width: size,
+                height: size,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.transparent,
+                ),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // Hazard stripes warning outer sweep ring
+                    Positioned.fill(
+                      child: AnimatedBuilder(
+                        animation: pulseAnimation,
+                        builder: (context, child) {
+                          return CustomPaint(
+                            painter: EmergencyValvePainter(
+                              rotationValue: rotation,
+                              isValveAligned: isValveAligned,
+                              animationTime: pulseAnimation.value,
+                              errorColor: tokens.gameIncorrect,
+                              correctColor: tokens.gameCorrect,
+                            ),
+                          );
+                        },
                       ),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          // Spokes
-                          for (int i = 0; i < 3; i++)
-                            Transform.rotate(
-                              angle: i * 2 * math.pi / 3,
-                              child: Container(
-                                width: 8.w,
-                                height: 96.h,
-                                color: Colors.grey.shade800,
+                    ),
+
+                    // Heavy metal wheel knob
+                    Transform.rotate(
+                      angle: rotation * 2 * math.pi,
+                      child: Container(
+                        width: 120.r,
+                        height: 120.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.grey.shade900,
+                          border: Border.all(
+                            color: isValveAligned
+                                ? tokens.gameCorrect
+                                : tokens.gameIncorrect,
+                            width: 4,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.4),
+                              blurRadius: 10,
+                              offset: const Offset(2, 2),
+                            ),
+                          ],
+                        ),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            // Spokes
+                            for (int i = 0; i < 3; i++)
+                              Transform.rotate(
+                                angle: i * 2 * math.pi / 3,
+                                child: Container(
+                                  width: 8.w,
+                                  height: 96.h,
+                                  color: Colors.grey.shade800,
+                                ),
+                              ),
+
+                            // Centre locking warning lens
+                            AnimatedContainer(
+                              duration: const Duration(milliseconds: 300),
+                              width: 50.r,
+                              height: 50.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: isValveAligned
+                                    ? tokens.gameCorrect
+                                    : tokens.gameIncorrect,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color:
+                                        (isValveAligned
+                                                ? tokens.gameCorrect
+                                                : tokens.gameIncorrect)
+                                            .withValues(alpha: 0.35),
+                                    blurRadius: 10,
+                                  ),
+                                ],
+                              ),
+                              child: AnimatedSwitcher(
+                                duration: const Duration(milliseconds: 300),
+                                transitionBuilder:
+                                    (
+                                      Widget child,
+                                      Animation<double> animation,
+                                    ) {
+                                      return ScaleTransition(
+                                        scale: animation,
+                                        child: child,
+                                      );
+                                    },
+                                child: Icon(
+                                  isValveAligned
+                                      ? Icons.lock_open_rounded
+                                      : Icons.lock_rounded,
+                                  key: ValueKey<bool>(isValveAligned),
+                                  color: Colors.white,
+                                  size: 24.r,
+                                ),
                               ),
                             ),
 
-                          // Centre locking warning lens
-                          Container(
-                            width: 50.r,
-                            height: 50.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: isValveAligned
-                                  ? tokens.gameCorrect
-                                  : tokens.gameIncorrect,
-                              boxShadow: [
-                                BoxShadow(
-                                  color:
-                                      (isValveAligned
-                                              ? tokens.gameCorrect
-                                              : tokens.gameIncorrect)
-                                          .withValues(alpha: 0.35),
-                                  blurRadius: 10,
-                                ),
-                              ],
+                            // Indicator needle notch
+                            Positioned(
+                              top: 6.r,
+                              child: Icon(
+                                Icons.arrow_drop_up_rounded,
+                                color: isValveAligned
+                                    ? tokens.gameCorrect
+                                    : Colors.white70,
+                                size: 24.r,
+                              ),
                             ),
-                            child: Icon(
-                              isValveAligned
-                                  ? Icons.lock_open_rounded
-                                  : Icons.lock_rounded,
-                              color: Colors.white,
-                              size: 24.r,
-                            ),
-                          ),
-
-                          // Indicator needle notch
-                          Positioned(
-                            top: 6.r,
-                            child: Icon(
-                              Icons.arrow_drop_up_rounded,
-                              color: isValveAligned
-                                  ? tokens.gameCorrect
-                                  : Colors.white70,
-                              size: 24.r,
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -183,17 +204,20 @@ class EmergencyHubValveChamber extends StatelessWidget {
                   letterSpacing: 1.5,
                 ),
               ),
-              Text(
-                isValveAligned
-                    ? "ALIGNED (READY)"
-                    : "LOCK PENDING (TURN TO 90%)",
+              AnimatedDefaultTextStyle(
+                duration: const Duration(milliseconds: 300),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   color: isValveAligned
                       ? tokens.gameCorrect
                       : tokens.gameIncorrect,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
+                ),
+                child: Text(
+                  isValveAligned
+                      ? "ALIGNED (READY)"
+                      : "LOCK PENDING (TURN TO 90%)",
                 ),
               ),
             ],
