@@ -58,7 +58,7 @@ class GameInstructionService {
       fallback: baseBriefing.tip,
     );
     final tip = level == 100
-        ? "🏆 MILESTONE: You've reached Level 100! This is an Elite Mastery test. Show us your best! $rawTip"
+        ? "🏆 WOW, LEVEL 100! You've made it so far. Take a deep breath and show us what you can do! $rawTip"
         : rawTip;
 
     final translatedRules = baseBriefing.rules

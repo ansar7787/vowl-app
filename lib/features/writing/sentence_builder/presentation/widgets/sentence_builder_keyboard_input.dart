@@ -24,6 +24,7 @@ class SentenceBuilderKeyboardInput extends StatelessWidget {
       ),
       child: TextField(
         controller: controller,
+        textCapitalization: TextCapitalization.sentences,
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 16.sp,
