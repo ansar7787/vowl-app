@@ -147,7 +147,7 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
     if (isHovered && !widget.isAnswered) {
       borderColor = widget.color;
     } else if (isSelected) {
-      borderColor = (widget.isCorrect ?? false)
+      borderColor = (index == widget.correctIndex)
           ? AppColors.gameCorrect
           : AppColors.gameIncorrect;
     }
@@ -182,7 +182,7 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                   BoxShadow(
                     color: (isSelected || isHovered)
                         ? (isSelected
-                                  ? ((widget.isCorrect ?? false)
+                                  ? ((index == widget.correctIndex)
                                         ? AppColors.gameCorrect
                                         : AppColors.gameIncorrect)
                                   : widget.color)
@@ -273,7 +273,7 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                             painter: StampRipplePainter(
                               impactOffset: Offset(55.w, 82.h),
                               animationValue: widget.rippleAnimation.value,
-                              themeColor: (widget.isCorrect ?? false)
+                              themeColor: (index == widget.correctIndex)
                                   ? AppColors.gameCorrect
                                   : AppColors.gameIncorrect,
                             ),
@@ -295,7 +295,7 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                               ),
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: (widget.isCorrect ?? false)
+                                  color: (index == widget.correctIndex)
                                       ? AppColors.gameCorrect
                                       : AppColors.gameIncorrect,
                                   width: 2.5,
@@ -304,14 +304,14 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                 color: Colors.black.withValues(alpha: 0.1),
                               ),
                               child: Text(
-                                (widget.isCorrect ?? false)
+                                (index == widget.correctIndex)
                                     ? "APPROVED"
                                     : "DENIED",
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: (widget.isCorrect ?? false)
+                                  color: (index == widget.correctIndex)
                                       ? AppColors.gameCorrect
                                       : AppColors.gameIncorrect,
                                   letterSpacing: 2,

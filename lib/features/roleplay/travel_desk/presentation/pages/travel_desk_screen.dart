@@ -205,7 +205,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+                              SliverToBoxAdapter(child: SizedBox(height: 12.h)),
                               SliverToBoxAdapter(
                                 child: LayoutBuilder(
                                   builder: (context, constraints) {
@@ -222,29 +222,19 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                             padding: EdgeInsets.symmetric(
                                               horizontal: 16.w,
                                             ),
-                                            child: TravelDeskInstruction(
-                                              primaryColor: theme.primaryColor,
+                                            child: TravelDeskCustomsTerminal(
                                               instruction:
                                                   InstructionHelper.getInstruction(
                                                     quest,
-                                                  ),
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: isCompact ? 10.h : 16.h,
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                            ),
-                                            child: TravelDeskCustomsTerminal(
+                                                  ) ??
+                                                  "",
                                               prompt: quest.prompt ?? "",
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                             ),
                                           ),
                                           SizedBox(
-                                            height: isCompact ? 16.h : 24.h,
+                                            height: isCompact ? 12.h : 16.h,
                                           ),
 
                                           // Biometric Passport Book (Full Width)
@@ -281,7 +271,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                             onDragStarted: () {},
                                           ),
                                           SizedBox(
-                                            height: isCompact ? 20.h : 32.h,
+                                            height: isCompact ? 16.h : 20.h,
                                           ),
 
                                           // Stamp slammed terminal console
