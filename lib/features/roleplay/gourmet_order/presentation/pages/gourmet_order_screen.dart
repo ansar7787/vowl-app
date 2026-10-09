@@ -363,40 +363,45 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                                   ),
                                                             ),
                                                           ),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: [
-                                                              Icon(
-                                                                Icons
-                                                                    .refresh_rounded,
-                                                                color: theme
-                                                                    .primaryColor,
-                                                                size: isCompact
-                                                                    ? 16.r
-                                                                    : 18.r,
-                                                              ),
-                                                              SizedBox(
-                                                                width: 6.w,
-                                                              ),
-                                                              Text(
-                                                                "CLEAR PLATTER",
-                                                                style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontSize:
-                                                                      isCompact
-                                                                      ? 10.sp
-                                                                      : 12.sp,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
+                                                          child: FittedBox(
+                                                            fit: BoxFit
+                                                                .scaleDown,
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              children: [
+                                                                Icon(
+                                                                  Icons
+                                                                      .refresh_rounded,
                                                                   color: theme
                                                                       .primaryColor,
+                                                                  size:
+                                                                      isCompact
+                                                                      ? 16.r
+                                                                      : 18.r,
                                                                 ),
-                                                              ),
-                                                            ],
+                                                                SizedBox(
+                                                                  width: 6.w,
+                                                                ),
+                                                                Text(
+                                                                  "CLEAR PLATTER",
+                                                                  style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Outfit',
+                                                                    fontSize:
+                                                                        isCompact
+                                                                        ? 10.sp
+                                                                        : 12.sp,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    color: theme
+                                                                        .primaryColor,
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
@@ -457,42 +462,47 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                               ),
                                                             ],
                                                           ),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: [
-                                                              Icon(
-                                                                Icons
-                                                                    .restaurant_menu_rounded,
-                                                                color: Colors
-                                                                    .white,
-                                                                size: isCompact
-                                                                    ? 16.r
-                                                                    : 18.r,
-                                                              ),
-                                                              SizedBox(
-                                                                width: 6.w,
-                                                              ),
-                                                              Text(
-                                                                "SERVE PLATTER",
-                                                                style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontSize:
-                                                                      isCompact
-                                                                      ? 10.sp
-                                                                      : 12.sp,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
+                                                          child: FittedBox(
+                                                            fit: BoxFit
+                                                                .scaleDown,
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              children: [
+                                                                Icon(
+                                                                  Icons
+                                                                      .restaurant_menu_rounded,
                                                                   color: Colors
                                                                       .white,
-                                                                  letterSpacing:
-                                                                      1.5,
+                                                                  size:
+                                                                      isCompact
+                                                                      ? 16.r
+                                                                      : 18.r,
                                                                 ),
-                                                              ),
-                                                            ],
+                                                                SizedBox(
+                                                                  width: 6.w,
+                                                                ),
+                                                                Text(
+                                                                  "SERVE PLATTER",
+                                                                  style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Outfit',
+                                                                    fontSize:
+                                                                        isCompact
+                                                                        ? 10.sp
+                                                                        : 12.sp,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    color: Colors
+                                                                        .white,
+                                                                    letterSpacing:
+                                                                        1.5,
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
