@@ -13,38 +13,59 @@ class ConflictResolverInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: primaryColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+      decoration: BoxDecoration(
+        color: isDark 
+            ? primaryColor.withValues(alpha: 0.12) 
+            : primaryColor.withValues(alpha: 0.06),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.25),
+          width: 1.5,
+        ),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.track_changes_rounded,
+                color: primaryColor,
+                size: 16.r,
+              ),
+              SizedBox(width: 6.w),
+              Text(
+                "OBJECTIVE",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w700,
+                  color: primaryColor,
+                  letterSpacing: 2.0,
+                ),
+              ),
+            ],
           ),
-          child: Text(
-            "EMPATHY DIAL SPECTRUM",
+          SizedBox(height: 10.h),
+          Text(
+            instruction ?? "Choose the best response.",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 2.5,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
+              color: Theme.of(context).colorScheme.onSurface,
+              height: 1.4,
             ),
           ),
-        ),
-        SizedBox(height: 10.h),
-        Text(
-          instruction ?? "Tune the console to balance the argument frequency",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey.shade400,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -12,6 +12,7 @@ import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_instruction.dart';
@@ -47,12 +48,21 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   late AnimationController _waveController;
-  late AnimationController _pulseController;
 
   final ValueNotifier<double> _rotation = ValueNotifier(
     0.0,
   ); // Slider score level (0.0 to 1.0)
   final ScrollController _scrollController = ScrollController();
+  List<RoleplayQuest> _currentOptions = [];
+
+  int? get _focusedIndex {
+    double val = _rotation.value;
+    if ((val - 0.125).abs() < 0.1) return 0;
+    if ((val - 0.375).abs() < 0.1) return 1;
+    if ((val - 0.625).abs() < 0.1) return 2;
+    if ((val - 0.875).abs() < 0.1) return 3;
+    return null;
+  }
 
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 150), () {
@@ -75,10 +85,6 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
       vsync: this,
       duration: const Duration(seconds: 2),
     );
-    _pulseController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    );
 
     initRoleplayGame();
   }
@@ -89,17 +95,14 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
     if (reduceMotion) {
       if (_waveController.isAnimating) _waveController.stop();
-      if (_pulseController.isAnimating) _pulseController.stop();
     } else {
       if (!_waveController.isAnimating) _waveController.repeat();
-      if (!_pulseController.isAnimating) _pulseController.repeat(reverse: true);
     }
   }
 
   @override
   void dispose() {
     _waveController.dispose();
-    _pulseController.dispose();
     _rotation.dispose();
     _scrollController.dispose();
     disposeRoleplayGame();
@@ -127,15 +130,39 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     double progress = (angle + math.pi / 2) / (2 * math.pi);
     if (progress > 1.0) progress -= 1.0;
 
-    hapticService.selection();
+    final previousIndex = _focusedIndex;
     _rotation.value = progress.clamp(0.0, 1.0);
+    
+    if (previousIndex != _focusedIndex) {
+      hapticService.selection();
+    }
   }
 
-  void _submitAnswer(double target, GameQuest quest) {
+  void _stepLeft() {
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    hapticService.selection();
+    int currentIndex = _focusedIndex ?? 0;
+    int nextIndex = (currentIndex - 1) % 4;
+    if (nextIndex < 0) nextIndex = 3;
+    _rotation.value = 0.125 + (nextIndex * 0.25);
+  }
+
+  void _stepRight() {
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    hapticService.selection();
+    int currentIndex = _focusedIndex ?? 0;
+    int nextIndex = (currentIndex + 1) % 4;
+    _rotation.value = 0.125 + (nextIndex * 0.25);
+  }
+
+  void _submitAnswer(GameQuest currentQuest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
-    // 0.12 empathy tolerance proximity check
-    bool isCorrect = (_rotation.value - target).abs() < 0.12;
+    final focused = _focusedIndex;
+    if (focused == null || _currentOptions.isEmpty || focused >= _currentOptions.length) return;
+
+    final selectedQuest = _currentOptions[focused];
+    bool isCorrect = selectedQuest.id == currentQuest.id;
 
     if (isCorrect) {
       hapticService.selection();
@@ -145,8 +172,8 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     } else {
       _scrollToBottom();
       submitWrongAnswer(
-        quest: quest,
-        userAnswer: '${(_rotation.value * 100).toStringAsFixed(0)}%',
+        quest: currentQuest,
+        userAnswer: selectedQuest.correctAnswer,
       );
     }
   }
@@ -162,9 +189,25 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     }
   }
 
+  void _generateOptions() {
+    if (!mounted) return;
+    final state = context.read<RoleplayBloc>().state;
+    if (state is RoleplayLoaded) {
+      final currentQuest = state.currentQuest;
+      final allQuests = state.quests.where((q) => q.id != currentQuest.id).toList();
+      allQuests.shuffle();
+      
+      _currentOptions = allQuests.take(3).toList();
+      _currentOptions.add(currentQuest);
+      _currentOptions.shuffle();
+      _currentOptions.sort((a, b) => (a.empathyScore ?? 0.0).compareTo(b.empathyScore ?? 0.0));
+    }
+  }
+
   @override
   void onQuestionReset() {
     _rotation.value = 0.0;
+    _generateOptions();
   }
 
   @override
@@ -177,7 +220,6 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
       listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
-        final double empathyTarget = quest?.empathyScore ?? 0.75;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -219,15 +261,12 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                             slivers: [
                               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverFillRemaining(
-                                hasScrollBody: true,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: LayoutBuilder(
-                                        builder: (context, constraints) {
-                                          final isCompact =
-                                              constraints.maxHeight < 580;
-                                          return Padding(
+                                hasScrollBody: false,
+                                child: Builder(
+                                  builder: (context) {
+                                    final isCompact =
+                                        MediaQuery.sizeOf(context).height < 600;
+                                    return Padding(
                                             padding: EdgeInsets.symmetric(
                                               horizontal: 16.w,
                                               vertical: isCompact ? 5.h : 10.h,
@@ -254,7 +293,6 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                       5,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  rotation: _rotation.value,
                                                 ),
                                                 SizedBox(
                                                   height: isCompact
@@ -264,13 +302,22 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
 
                                                 // Circular audio dials
                                                 ConflictResolverDialConsole(
-                                                  targetValue: empathyTarget,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                   rotation: _rotation.value,
                                                   waveAnimation:
                                                       _waveController,
                                                   onDialDragged: _onDialDragged,
+                                                  onStepLeft: _stepLeft,
+                                                  onStepRight: _stepRight,
+                                                  focusedText: _focusedIndex != null && 
+                                                               _currentOptions.isNotEmpty && 
+                                                               _focusedIndex! < _currentOptions.length
+                                                      ? _currentOptions[_focusedIndex!].correctAnswer
+                                                      : null,
+                                                  isAnswered: isAnsweredNotifier.value,
+                                                  isCorrect: isCorrectNotifier.value,
+                                                  isFirstStagePassed: isFirstStagePassedNotifier.value,
                                                 ),
                                                 SizedBox(
                                                   height: isCompact
@@ -279,16 +326,13 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                 ),
 
                                                 // Submit control button
-                                                if (!isAnsweredNotifier.value)
+                                                if (!isAnsweredNotifier.value && !isFirstStagePassedNotifier.value)
                                                   ScaleButton(
-                                                    onTap: () => _submitAnswer(
-                                                      empathyTarget,
-                                                      quest,
-                                                    ),
+                                                    onTap: () => _submitAnswer(quest),
                                                     child: Container(
                                                       padding:
                                                           EdgeInsets.symmetric(
-                                                            horizontal: 48.w,
+                                                            horizontal: 24.w,
                                                             vertical: isCompact
                                                                 ? 10.h
                                                                 : 14.h,
@@ -321,35 +365,25 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                           ),
                                                         ],
                                                       ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
+                                                      child: Wrap(
+                                                        alignment: WrapAlignment.center,
+                                                        crossAxisAlignment: WrapCrossAlignment.center,
+                                                        spacing: 8.w,
                                                         children: [
                                                           Icon(
-                                                            Icons
-                                                                .security_rounded,
+                                                            Icons.security_rounded,
                                                             color: Colors.white,
-                                                            size: isCompact
-                                                                ? 16.r
-                                                                : 18.r,
+                                                            size: isCompact ? 16.r : 18.r,
                                                           ),
-                                                          SizedBox(width: 8.w),
                                                           Text(
-                                                            "LOCK HARMONIC FREQUENCY",
+                                                            "CONFIRM RESPONSE",
+                                                            textAlign: TextAlign.center,
                                                             style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize:
-                                                                  isCompact
-                                                                  ? 10.sp
-                                                                  : 12.sp,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                              color:
-                                                                  Colors.white,
-                                                              letterSpacing:
-                                                                  1.5,
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: isCompact ? 12.sp : 14.sp,
+                                                              fontWeight: FontWeight.w600,
+                                                              color: Colors.white,
+                                                              letterSpacing: 1.5,
                                                             ),
                                                           ),
                                                         ],
@@ -370,9 +404,6 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                           );
                                         },
                                       ),
-                                    ),
-                                  ],
-                                ),
                               ),
 
                               if (isFirstStagePassedNotifier.value &&

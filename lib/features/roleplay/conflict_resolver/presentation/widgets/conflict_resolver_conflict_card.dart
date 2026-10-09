@@ -9,7 +9,6 @@ class ConflictResolverConflictCard extends StatelessWidget {
   final int escalationLevel;
   final Color color;
   final bool isDark;
-  final double rotation;
 
   const ConflictResolverConflictCard({
     super.key,
@@ -17,17 +16,12 @@ class ConflictResolverConflictCard extends StatelessWidget {
     required this.escalationLevel,
     required this.color,
     required this.isDark,
-    required this.rotation,
   });
 
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    Color emotionalColor =
-        Color.lerp(Colors.cyanAccent, tokens.gameIncorrect, rotation) ?? color;
-    if ((rotation - 0.75).abs() < 0.12) {
-      emotionalColor = tokens.gameCorrect;
-    }
+    Color emotionalColor = color;
 
     return Container(
       width: 1.sw,
@@ -46,112 +40,86 @@ class ConflictResolverConflictCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: emotionalColor.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.forum_rounded,
-                  color: emotionalColor,
-                  size: 24.r,
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.15, 1.15),
-                duration: 1.5.seconds,
-                curve: Curves.easeInOut,
-              ),
-          SizedBox(width: 16.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "CONFLICT SCENARIO DETECTED:",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    color: emotionalColor,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 6.h),
-                Text(
-                  scene,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 17.sp,
-                    color: Theme.of(context).colorScheme.onSurface,
-                    height: 1.35,
-                  ),
-                ),
-                SizedBox(height: 16.h),
-                // Tension Meter
-                Row(
-                  children: [
-                    Text(
-                      "TENSION",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        color: isDark ? Colors.white54 : Colors.black54,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.0,
-                      ),
-                    ),
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: Row(
-                        children: List.generate(10, (index) {
-                          final isActive = index < escalationLevel;
-                          final levelColor =
-                              Color.lerp(
-                                tokens.gameCorrect,
-                                tokens.gameIncorrect,
-                                index / 9,
-                              ) ??
-                              color;
-
-                          return Expanded(
-                            child: Container(
-                              height: 6.h,
-                              margin: EdgeInsets.symmetric(horizontal: 2.w),
-                              decoration: BoxDecoration(
-                                color: isActive
-                                    ? levelColor
-                                    : (isDark
-                                          ? Colors.white10
-                                          : Colors.black12),
-                                borderRadius: BorderRadius.circular(4.r),
-                                boxShadow: isActive
-                                    ? [
-                                        BoxShadow(
-                                          color: levelColor.withValues(
-                                            alpha: 0.4,
-                                          ),
-                                          blurRadius: 4,
-                                          spreadRadius: 0,
-                                        ),
-                                      ]
-                                    : null,
-                              ),
-                            ),
-                          );
-                        }),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+            padding: EdgeInsets.all(12.r),
+            decoration: BoxDecoration(
+              color: emotionalColor.withValues(alpha: 0.1),
+              shape: BoxShape.circle,
             ),
+            child: Icon(
+              Icons.forum_rounded,
+              color: emotionalColor,
+              size: 24.r,
+            ),
+          )
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.1, 1.1),
+            duration: 2.seconds,
+            curve: Curves.easeInOut,
+          ),
+          SizedBox(height: 16.h),
+          Text(
+            scene,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w400,
+              color: Theme.of(context).colorScheme.onSurface,
+              height: 1.5,
+            ),
+          ),
+          SizedBox(height: 20.h),
+          // Tension Meter
+          Wrap(
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 12.w,
+            runSpacing: 8.h,
+            children: [
+              Text(
+                "TENSION",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 10.sp,
+                  color: isDark ? Colors.white54 : Colors.black54,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1.0,
+                ),
+              ),
+              SizedBox(
+                width: 160.w,
+                child: Row(
+                  children: List.generate(10, (index) {
+                    final isActive = index < escalationLevel;
+                    final levelColor = Color.lerp(
+                      tokens.gameCorrect,
+                      tokens.gameIncorrect,
+                      index / 9,
+                    ) ?? color;
+
+                    return Expanded(
+                      child: Container(
+                        height: 4.h,
+                        margin: EdgeInsets.symmetric(horizontal: 2.w),
+                        decoration: BoxDecoration(
+                          color: isActive
+                              ? levelColor
+                              : (isDark ? Colors.white10 : Colors.black12),
+                          borderRadius: BorderRadius.circular(4.r),
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+            ],
           ),
         ],
       ),
