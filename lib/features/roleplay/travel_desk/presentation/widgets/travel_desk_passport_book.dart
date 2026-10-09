@@ -310,6 +310,8 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                       ? "APPROVED"
                                       : "DENIED",
                                   maxLines: 1,
+                                  softWrap: false,
+                                  overflow: TextOverflow.visible,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 13.sp,
