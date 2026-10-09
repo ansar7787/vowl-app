@@ -290,8 +290,8 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                             angle: -0.22,
                             child: Container(
                               padding: EdgeInsets.symmetric(
-                                horizontal: 10.w,
-                                vertical: 6.h,
+                                horizontal: 6.w,
+                                vertical: 4.h,
                               ),
                               decoration: BoxDecoration(
                                 border: Border.all(
@@ -303,24 +303,20 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                 borderRadius: BorderRadius.circular(8.r),
                                 color: Colors.black.withValues(alpha: 0.1),
                               ),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  (index == widget.correctIndex)
-                                      ? "APPROVED"
-                                      : "DENIED",
-                                  maxLines: 1,
-                                  softWrap: false,
-                                  overflow: TextOverflow.visible,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 13.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: (index == widget.correctIndex)
-                                        ? AppColors.gameCorrect
-                                        : AppColors.gameIncorrect,
-                                    letterSpacing: 2,
-                                  ),
+                              child: Text(
+                                (index == widget.correctIndex)
+                                    ? "APPROVED"
+                                    : "DENIED",
+                                maxLines: 1,
+                                softWrap: false,
+                                overflow: TextOverflow.visible,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: (index == widget.correctIndex)
+                                      ? AppColors.gameCorrect
+                                      : AppColors.gameIncorrect,
                                 ),
                               ),
                             ),

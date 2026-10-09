@@ -124,10 +124,10 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
                         "\"$prompt\"",
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w400,
                           color: isDark
-                              ? Colors.white.withValues(alpha: 0.95)
+                              ? Colors.white.withValues(alpha: 0.9)
                               : Colors.black87,
                           height: 1.4,
                         ),
