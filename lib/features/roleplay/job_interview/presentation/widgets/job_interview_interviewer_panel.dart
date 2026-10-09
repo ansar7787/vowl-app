@@ -25,12 +25,19 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final Color activeColor = reaction == 'impressed'
+    final isPositive = reaction == 'impressed' || reaction == 'interested';
+    final isNegative = reaction == 'disappointed' || 
+                       reaction == 'unconvinced' || 
+                       reaction == 'uncertain' || 
+                       reaction == 'losing interest';
+
+    final Color activeColor = isPositive
         ? tokens.gameCorrect
-        : (reaction == 'disappointed' ? tokens.gameIncorrect : color);
-    final IconData activeIcon = reaction == 'impressed'
+        : (isNegative ? tokens.gameIncorrect : color);
+    
+    final IconData activeIcon = isPositive
         ? Icons.sentiment_very_satisfied_rounded
-        : (reaction == 'disappointed'
+        : (isNegative
               ? Icons.sentiment_dissatisfied_rounded
               : Icons.business_center_rounded);
 
@@ -64,34 +71,34 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                 child: Icon(activeIcon, color: activeColor, size: 20.r),
               ),
               SizedBox(width: 12.w),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    reaction == 'impressed'
-                        ? "IMPRESSED"
-                        : (reaction == 'disappointed'
-                              ? "DISAPPOINTED"
-                              : "CHIEF EXECUTIVE V-407"),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: activeColor,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.2,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      reaction != null
+                          ? reaction!.toUpperCase()
+                          : "CHIEF EXECUTIVE V-407",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        color: activeColor,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.2,
+                      ),
                     ),
-                  ),
-                  Text(
-                    reaction != null
-                        ? "INTERVIEWER REACTION"
-                        : "ACTIVE BIO-TRANSCEIVER",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 7.sp,
-                      color: activeColor.withValues(alpha: 0.5),
+                    Text(
+                      reaction != null
+                          ? "INTERVIEWER REACTION"
+                          : "ACTIVE BIO-TRANSCEIVER",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 7.sp,
+                        color: activeColor.withValues(alpha: 0.5),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
@@ -108,9 +115,11 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
             ),
             child: Text(
               text,
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 18.sp,
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w500,
                 color: Theme.of(context).colorScheme.onSurface,
                 height: 1.35,
               ),

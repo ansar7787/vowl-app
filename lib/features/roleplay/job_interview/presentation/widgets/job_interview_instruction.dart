@@ -4,50 +4,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class JobInterviewInstruction extends StatelessWidget {
   final Color primaryColor;
   final String? instruction;
-  final bool isDark;
-
   const JobInterviewInstruction({
     super.key,
     required this.primaryColor,
-    required this.isDark,
     this.instruction,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: primaryColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-          ),
-          child: Text(
-            "BOARDROOM INTERVIEW SIMULATOR",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 2.5,
-            ),
-          ),
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
+      child: Text(
+        instruction ??
+            "Choose the best answer to show off your professional skills.",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w600,
+          color: primaryColor,
         ),
-        SizedBox(height: 10.h),
-        Text(
-          instruction ??
-              "Select the answer that maximizes your Professionalism Rating",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w500,
-            color: isDark ? Colors.grey.shade400 : Colors.black54,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
