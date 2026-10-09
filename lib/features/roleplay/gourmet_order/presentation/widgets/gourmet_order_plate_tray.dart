@@ -68,15 +68,19 @@ class GourmetOrderPlateTray extends StatelessWidget {
           SizedBox(height: 18.h),
 
           // Scrollable Plate drawer containing Draggables
-          SizedBox(
-            height: 110.h,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              itemCount: options.length,
-              itemBuilder: (context, i) => _buildDraggablePlate(
-                options[i],
-                prices.length > i ? prices[i] : "\$3.50",
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            child: IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: List.generate(
+                  options.length,
+                  (i) => _buildDraggablePlate(
+                    options[i],
+                    prices.length > i ? prices[i] : "\$3.50",
+                  ),
+                ),
               ),
             ),
           ),
@@ -145,89 +149,92 @@ class GourmetOrderPlateTray extends StatelessWidget {
   }) {
     return Material(
       color: Colors.transparent,
-      child: Container(
-        width: 100.r,
-        height: 110.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
-          color: isSelected
-              ? color
-              : (isDark ? _LocalPalette.color131326 : Colors.white),
-          border: Border.all(
-            color: isSelected ? Colors.white : color.withValues(alpha: 0.4),
-            width: isSelected ? 3.0 : 1.5,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: (isSelected ? color : Colors.black).withValues(
-                alpha: isDraggingFeedback ? 0.45 : 0.08,
-              ),
-              blurRadius: isDraggingFeedback ? 15 : 6,
-              offset: const Offset(0, 4),
+      child: Semantics(
+        label: '$item, $price',
+        selected: isSelected,
+        button: true,
+        excludeSemantics: true,
+        child: Container(
+          width: 110.w,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16.r),
+            color: isSelected
+                ? color
+                : (isDark ? _LocalPalette.color131326 : Colors.white),
+            border: Border.all(
+              color: isSelected ? Colors.white : color.withValues(alpha: 0.4),
+              width: isSelected ? 3.0 : 1.5,
             ),
-          ],
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(10.r),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    item.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isSelected
-                          ? Colors.white
-                          : (isDark ? Colors.white70 : Colors.black87),
-                    ),
-                  ),
-                  SizedBox(height: 8.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: isSelected
-                          ? Colors.white.withValues(alpha: 0.2)
-                          : color.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(8.r),
-                    ),
-                    child: Text(
-                      price,
+            boxShadow: [
+              BoxShadow(
+                color: (isSelected ? color : Colors.black).withValues(
+                  alpha: isDraggingFeedback ? 0.45 : 0.08,
+                ),
+                blurRadius: isDraggingFeedback ? 15 : 6,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10.r),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      item.toUpperCase(),
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
-                        fontWeight: FontWeight.bold,
-                        color: isSelected ? Colors.white : color,
+                        fontWeight: FontWeight.w900,
+                        color: isSelected
+                            ? Colors.white
+                            : (isDark ? Colors.white70 : Colors.black87),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            if (isSelected)
-              Positioned(
-                top: 4.h,
-                right: 4.w,
-                child: Container(
-                  padding: EdgeInsets.all(2.r),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(Icons.check_rounded, color: color, size: 10.r),
+                    SizedBox(height: 8.h),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 4.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isSelected
+                            ? Colors.white.withValues(alpha: 0.2)
+                            : color.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
+                      child: Text(
+                        price,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.bold,
+                          color: isSelected ? Colors.white : color,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-          ],
+              if (isSelected)
+                Positioned(
+                  top: 4.h,
+                  right: 4.w,
+                  child: Container(
+                    padding: EdgeInsets.all(2.r),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(Icons.check_rounded, color: color, size: 10.r),
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );
