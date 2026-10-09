@@ -1,7 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class MedicalConsultPatientRecord extends StatelessWidget {
   final String prompt;
@@ -19,59 +18,44 @@ class MedicalConsultPatientRecord extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 1.sw,
-      padding: EdgeInsets.all(22.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: color.withValues(alpha: 0.1), width: 1.0),
         boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.08), blurRadius: 15),
+          BoxShadow(color: color.withValues(alpha: 0.05), blurRadius: 10),
         ],
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.favorite_rounded, color: color, size: 24.r),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.15, 1.15),
-                duration: 1.5.seconds,
-                curve: Curves.easeInOut,
-              ),
-          SizedBox(width: 16.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "ADMITTED CLINICAL COMPLAINT:",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    color: color,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 6.h),
-                Text(
-                  prompt,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 17.sp,
-                    color: Theme.of(context).colorScheme.onSurface,
-                    height: 1.35,
-                  ),
-                ),
-              ],
+          Icon(
+            Icons.person_outline_rounded,
+            color: color.withValues(alpha: 0.7),
+            size: 28.r,
+          ),
+          SizedBox(height: 8.h),
+          Text(
+            "PATIENT COMPLAINT",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 11.sp,
+              color: color,
+              letterSpacing: 1.2,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          SizedBox(height: 8.h),
+          Text(
+            prompt,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w500,
+              color: Theme.of(context).colorScheme.onSurface,
+              height: 1.4,
             ),
           ),
         ],

@@ -36,32 +36,33 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: 1.sw,
-      padding: EdgeInsets.all(18.r),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(28.r),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: color.withValues(alpha: 0.1)),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "ANATOMICAL DIAGNOSTICS SLATE",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: color,
-                  letterSpacing: 2,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               Icon(
                 Icons.health_and_safety_rounded,
-                color: color.withValues(alpha: 0.5),
+                color: color.withValues(alpha: 0.6),
                 size: 16.r,
+              ),
+              SizedBox(width: 6.w),
+              Text(
+                "DIAGNOSTIC OPTIONS",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  color: color,
+                  letterSpacing: 1.5,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -70,7 +71,7 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
           // Symptoms grid chips
           Wrap(
             alignment: WrapAlignment.center,
-            spacing: 10.w,
+            spacing: 8.w,
             runSpacing: 10.h,
             children: symptoms.map((s) {
               final bool isScanned = scannedGlitches.contains(s);
@@ -86,9 +87,10 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
               return ScaleButton(
                 onTap: () => onSymptomTapped(s),
                 child: Container(
+                  constraints: BoxConstraints(maxWidth: 1.sw - 60.w),
                   padding: EdgeInsets.symmetric(
-                    horizontal: 18.w,
-                    vertical: 12.h,
+                    horizontal: 14.w,
+                    vertical: 10.h,
                   ),
                   decoration: BoxDecoration(
                     color: isChecked
@@ -96,14 +98,14 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
                         : (isDark
                               ? _LocalPalette.color131326
                               : Colors.grey.shade100),
-                    borderRadius: BorderRadius.circular(16.r),
+                    borderRadius: BorderRadius.circular(14.r),
                     border: Border.all(
                       color: isChecked
                           ? Colors.white
                           : isScanned
                           ? color.withValues(alpha: 0.4)
                           : color.withValues(alpha: 0.08),
-                      width: 1.5,
+                      width: 1.0,
                     ),
                     boxShadow: [
                       BoxShadow(
@@ -131,19 +133,22 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
                         size: 14.r,
                       ),
                       SizedBox(width: 8.w),
-                      Text(
-                        s.toUpperCase(),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isChecked
-                              ? Colors.white
-                              : isScanned
-                              ? (isDark
-                                    ? Colors.white.withValues(alpha: 0.9)
-                                    : Colors.black87)
-                              : (isDark ? Colors.white24 : Colors.black26),
+                      Flexible(
+                        child: Text(
+                          s.toUpperCase(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isChecked
+                                ? Colors.white
+                                : isScanned
+                                ? (isDark
+                                      ? Colors.white.withValues(alpha: 0.9)
+                                      : Colors.black87)
+                                : (isDark ? Colors.white24 : Colors.black26),
+                          ),
                         ),
                       ),
                     ],

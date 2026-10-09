@@ -165,7 +165,7 @@ class StoryServiceImpl implements StoryService {
     'jobInterview':
         "Ready to land your dream job? Let's practice answering common interview questions professionally and confidently.",
     'medicalConsult':
-        "Your health is important. Let's practice describing symptoms clearly so you can get the best care possible.",
+        "It's time for rounds! Listen closely to the patient's complaint and use your holographic scanner to diagnose the correct symptom.",
     'situationalResponse':
         "Every conversation is unique! Let's practice reading the room, choosing the best response, and speaking it with confidence.",
     'socialSpark':
@@ -1079,11 +1079,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'medicalconsult': [
       "",
-      "Fantastic! Exploring medical communication will elevate your skills rapidly.",
-      "You are decoding medical communication with impressive accuracy.",
-      "Level 50! Your command of medical communication is exceptional.",
-      "Level 100! Your expertise in medical communication is elite.",
-      "200 levels cleared! Your medical communication abilities are unmatched globally.",
+      "Great start! Diagnosing patients takes a sharp ear, and you're already doing great.",
+      "Nice work! You're really getting the hang of pinning down these symptoms.",
+      "Halfway to 100! Your diagnostic skills are getting sharper every day.",
+      "100 levels cleared! You're scanning and diagnosing like a seasoned pro.",
+      "Level 200 reached! Honestly, you could run this clinic yourself. Amazing work!",
     ],
     'situationalresponse': [
       "",
