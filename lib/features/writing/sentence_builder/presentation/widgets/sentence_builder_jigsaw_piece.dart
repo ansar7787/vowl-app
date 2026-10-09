@@ -74,7 +74,8 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
     );
 
     if (isAssembled) {
-      return piece.animate()
+      return piece
+          .animate()
           .scale(
             begin: const Offset(0.85, 0.85),
             end: const Offset(1.0, 1.0),

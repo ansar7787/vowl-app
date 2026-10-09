@@ -431,10 +431,12 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                     ),
                                   SizedBox(
                                     height: !isAnswered
-                                        ? MediaQuery.viewInsetsOf(
-                                                context,
-                                              ).bottom +
-                                              40.h
+                                        ? (_showSpeakToConfirm.value
+                                              ? MediaQuery.viewInsetsOf(
+                                                      context,
+                                                    ).bottom +
+                                                    40.h
+                                              : 60.h)
                                         : 160.h,
                                   ),
                                 ],

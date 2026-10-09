@@ -91,25 +91,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
     _blueprintSlots.value = newSlots;
   }
 
-  void _submitAnswer(bool isAnswered) {
+  void _submitAnswer(bool isAnswered, WritingQuest quest) {
     if (isAnswered) return;
-    _pendingSubmit.value = true;
-    _scrollToBottom();
-  }
 
-  void _submitFinalAnswer(bool nailedTyping) {
-    _pendingSubmit.value = false;
-
-    final state = context.read<WritingBloc>().state;
-    if (state is! WritingLoaded) return;
-
-    if (!nailedTyping) {
-      hapticService.error();
-      submitWrongAnswer(quest: state.currentQuest);
-      return;
-    }
-
-    final quest = state.currentQuest;
     final points = quest.requiredPoints ?? [];
     final options = quest.options ?? [];
     final correctOrderIndices = quest.correctOrder ?? [0, 1, 2, 3];
@@ -133,12 +117,31 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
         isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct;
 
     if (isCorrect) {
-      submitCorrectAnswer();
+      hapticService.success();
+      _pendingSubmit.value = true;
+      _scrollToBottom();
     } else {
-      final userAns =
-          points.map((p) => _blueprintSlots.value[p] ?? '').join('; ');
+      hapticService.error();
+      final userAns = points
+          .map((p) => _blueprintSlots.value[p] ?? '')
+          .join('; ');
       submitWrongAnswer(quest: quest, userAnswer: userAns);
     }
+  }
+
+  void _submitFinalAnswer(bool nailedTyping) {
+    _pendingSubmit.value = false;
+
+    final state = context.read<WritingBloc>().state;
+    if (state is! WritingLoaded) return;
+
+    if (!nailedTyping) {
+      hapticService.error();
+      submitWrongAnswer(quest: state.currentQuest);
+      return;
+    }
+
+    submitCorrectAnswer();
   }
 
   void _scrollToBottom() {
@@ -343,7 +346,10 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                   if (!isAnswered)
                                     ScaleButton(
                                       onTap: slotsFilled
-                                          ? () => _submitAnswer(isAnswered)
+                                          ? () => _submitAnswer(
+                                              isAnswered,
+                                              activeQuest,
+                                            )
                                           : null,
                                       child: Container(
                                         width: double.infinity,
@@ -401,10 +407,12 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                     ),
                                   SizedBox(
                                     height: !isAnswered
-                                        ? MediaQuery.viewInsetsOf(
-                                                context,
-                                              ).bottom +
-                                              40.h
+                                        ? (_pendingSubmit.value
+                                              ? MediaQuery.viewInsetsOf(
+                                                      context,
+                                                    ).bottom +
+                                                    40.h
+                                              : 60.h)
                                         : 160.h,
                                   ),
                                 ],

@@ -127,24 +127,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
     _scaleRotation.value = (diff * 0.06).clamp(-0.15, 0.15);
   }
 
-  void _submitAnswer(bool isAnswered) {
+  void _submitAnswer(bool isAnswered, WritingQuest quest) {
     if (isAnswered) return;
-    _pendingScaleSubmit.value = true;
-  }
 
-  void _submitFinalAnswer(bool nailedTyping) {
-    _pendingScaleSubmit.value = false;
-
-    final state = context.read<WritingBloc>().state;
-    if (state is! WritingLoaded) return;
-
-    if (!nailedTyping) {
-      hapticService.error();
-      submitWrongAnswer(quest: state.currentQuest);
-      return;
-    }
-
-    final quest = state.currentQuest;
     final options = quest.options ?? [];
     final correctProsIndices = quest.correctOrder ?? [0, 1];
 
@@ -162,12 +147,29 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
 
     final isCorrect = isLeftCorrect && isRightCorrect;
     if (isCorrect) {
-      submitCorrectAnswer();
+      hapticService.success();
+      _pendingScaleSubmit.value = true;
     } else {
+      hapticService.error();
       final userAns =
           'Left: ${_leftPanArgs.value.join(", ")}; Right: ${_rightPanArgs.value.join(", ")}';
       submitWrongAnswer(quest: quest, userAnswer: userAns);
     }
+  }
+
+  void _submitFinalAnswer(bool nailedTyping) {
+    _pendingScaleSubmit.value = false;
+
+    final state = context.read<WritingBloc>().state;
+    if (state is! WritingLoaded) return;
+
+    if (!nailedTyping) {
+      hapticService.error();
+      submitWrongAnswer(quest: state.currentQuest);
+      return;
+    }
+
+    submitCorrectAnswer();
   }
 
   @override
@@ -257,49 +259,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                   SizedBox(height: 16.h),
                                   OpinionWritingInstruction(
                                     primaryColor: theme.primaryColor,
+                                    structureGuide: quest.structureGuide,
                                   ),
-                                  SizedBox(height: 16.h),
-                                  if (quest.structureGuide != null)
-                                    Container(
-                                      margin: EdgeInsets.only(bottom: 16.h),
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 12.w,
-                                        vertical: 8.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.1,
-                                        ),
-                                        borderRadius: BorderRadius.circular(
-                                          12.r,
-                                        ),
-                                        border: Border.all(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.3,
-                                          ),
-                                        ),
-                                      ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Icon(
-                                            Icons.format_list_bulleted,
-                                            color: theme.primaryColor,
-                                            size: 16.sp,
-                                          ),
-                                          SizedBox(width: 8.w),
-                                          Text(
-                                            quest.structureGuide!,
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 12.sp,
-                                              fontWeight: FontWeight.w700,
-                                              color: theme.primaryColor,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
                                   OpinionWritingThesisCard(
                                     text: quest.prompt ?? "",
                                     color: theme.primaryColor,
@@ -341,7 +302,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                   if (!isAnswered)
                                     ScaleButton(
                                       onTap: totalPlaced == 4
-                                          ? () => _submitAnswer(isAnswered)
+                                          ? () =>
+                                                _submitAnswer(isAnswered, quest)
                                           : null,
                                       child: Container(
                                         width: double.infinity,
@@ -380,10 +342,12 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                     ),
                                   SizedBox(
                                     height: !isAnswered
-                                        ? MediaQuery.viewInsetsOf(
-                                                context,
-                                              ).bottom +
-                                              40.h
+                                        ? (_pendingScaleSubmit.value
+                                              ? MediaQuery.viewInsetsOf(
+                                                      context,
+                                                    ).bottom +
+                                                    40.h
+                                              : 60.h)
                                         : 160.h,
                                   ),
                                 ],

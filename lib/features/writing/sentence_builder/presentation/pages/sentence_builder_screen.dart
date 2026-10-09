@@ -185,7 +185,6 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
     if (isCorrect) {
       hapticService.success();
       if (isHardMode) {
-        // They already typed it manually, no need to type to confirm.
         submitCorrectAnswer();
       } else {
         _showTypeToConfirm.value = true;
@@ -365,32 +364,8 @@ class _SentenceBuilderBody extends StatelessWidget {
                   SentenceBuilderInstruction(
                     primaryColor: theme.primaryColor,
                     instruction: InstructionHelper.getInstruction(quest),
+                    sentenceType: quest.sentenceType,
                   ),
-                  SizedBox(height: 16.h),
-                  if (quest.sentenceType != null)
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12.w,
-                        vertical: 6.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: theme.primaryColor.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(
-                          color: theme.primaryColor.withValues(alpha: 0.3),
-                        ),
-                      ),
-                      child: Text(
-                        quest.sentenceType!.toUpperCase(),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w800,
-                          color: theme.primaryColor,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                    ),
                   SizedBox(height: 32.h),
 
                   if (level >= 6) ...[
@@ -448,7 +423,7 @@ class _SentenceBuilderBody extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              SizedBox(height: 40.h),
+              SizedBox(height: 32.h),
               if (!isAnswered && !showTypeToConfirm)
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),

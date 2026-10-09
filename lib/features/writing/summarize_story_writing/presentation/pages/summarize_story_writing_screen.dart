@@ -102,26 +102,8 @@ class _SummarizeStoryWritingScreenState
     _slots.value = newSlots;
   }
 
-  void _submitAnswer(bool isAnswered) {
+  void _submitAnswer(bool isAnswered, WritingQuest quest) {
     if (isAnswered) return;
-    _pendingSubmit.value = true;
-    _scrollToBottom();
-  }
-
-  void _submitFinalAnswer(bool nailedTyping) {
-    _pendingSubmit.value = false;
-
-    final state = context.read<WritingBloc>().state;
-    if (state is! WritingLoaded) return;
-
-    final WritingQuest? quest = state.currentQuest as WritingQuest?;
-    if (quest == null) return;
-
-    if (!nailedTyping) {
-      hapticService.error();
-      submitWrongAnswer(quest: quest);
-      return;
-    }
 
     final options = quest.options ?? [];
     final correctIndices = quest.correctOrder ?? [0, 1, 2];
@@ -139,12 +121,32 @@ class _SummarizeStoryWritingScreenState
     }
 
     if (isAllCorrect) {
-      submitCorrectAnswer();
+      hapticService.success();
+      _pendingSubmit.value = true;
+      _scrollToBottom();
     } else {
-      final userAns =
-          _slots.value.map((s) => s.sentence ?? '').join('; ');
+      hapticService.error();
+      final userAns = _slots.value.map((s) => s.sentence ?? '').join('; ');
       submitWrongAnswer(quest: quest, userAnswer: userAns);
     }
+  }
+
+  void _submitFinalAnswer(bool nailedTyping) {
+    _pendingSubmit.value = false;
+
+    final state = context.read<WritingBloc>().state;
+    if (state is! WritingLoaded) return;
+
+    final WritingQuest? quest = state.currentQuest as WritingQuest?;
+    if (quest == null) return;
+
+    if (!nailedTyping) {
+      hapticService.error();
+      submitWrongAnswer(quest: quest);
+      return;
+    }
+
+    submitCorrectAnswer();
   }
 
   void _onTimerExpired() {
@@ -398,7 +400,8 @@ class _SummarizeStoryWritingScreenState
                                 children: [
                                   if (isSlotsFilled && !isAnswered)
                                     ScaleButton(
-                                      onTap: () => _submitAnswer(isAnswered),
+                                      onTap: () =>
+                                          _submitAnswer(isAnswered, quest),
                                       child: Container(
                                         width: double.infinity,
                                         padding: EdgeInsets.symmetric(
@@ -452,10 +455,12 @@ class _SummarizeStoryWritingScreenState
                                     ),
                                   SizedBox(
                                     height: !isAnswered
-                                        ? MediaQuery.viewInsetsOf(
-                                                context,
-                                              ).bottom +
-                                              40.h
+                                        ? (_pendingSubmit.value
+                                              ? MediaQuery.viewInsetsOf(
+                                                      context,
+                                                    ).bottom +
+                                                    40.h
+                                              : 60.h)
                                         : 160.h,
                                   ),
                                 ],

@@ -288,43 +288,8 @@ class _CompleteSentenceBody extends StatelessWidget {
                     CompleteSentenceInstruction(
                       primaryColor: theme.primaryColor,
                       text: quest.instruction,
+                      grammarFocus: quest.grammarFocus,
                     ),
-                    if (quest.grammarFocus != null) ...[
-                      SizedBox(height: 12.h),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 8.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: theme.primaryColor.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(16.r),
-                          border: Border.all(
-                            color: theme.primaryColor.withValues(alpha: 0.3),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.rule,
-                              color: theme.primaryColor,
-                              size: 16.sp,
-                            ),
-                            SizedBox(width: 8.w),
-                            Text(
-                              quest.grammarFocus!,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w700,
-                                color: theme.primaryColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
                     SizedBox(height: 32.h),
                     CompleteSentenceTargetWall(
                       text: quest.partialSentence ?? '',

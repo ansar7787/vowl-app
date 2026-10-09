@@ -27,6 +27,6 @@ class FixTheSentenceScratchOverlayPainter extends CustomPainter {
   bool shouldRepaint(
     covariant FixTheSentenceScratchOverlayPainter oldDelegate,
   ) {
-    return oldDelegate.points != points;
+    return true; // The list is mutated in-place, so we must always repaint on rebuild
   }
 }

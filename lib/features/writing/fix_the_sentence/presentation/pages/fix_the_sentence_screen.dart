@@ -101,10 +101,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
       hapticService.error();
       soundService.playWrong();
       _selectedOption.value = _pendingSelectedOption.value;
-      submitWrongAnswer(
-        quest: quest,
-        userAnswer: _pendingSelectedOption.value,
-      );
+      submitWrongAnswer(quest: quest, userAnswer: _pendingSelectedOption.value);
       return;
     }
 
@@ -158,6 +155,21 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
   }
 
   @override
+  void onWritingStateChanged(BuildContext context, WritingState state) {
+    super.onWritingStateChanged(context, state);
+    if (state is WritingLoaded && state.currentQuest != _lastQuest) {
+      _lastQuest = state.currentQuest;
+      final opts = state.currentQuest.options?.toList();
+      if (opts != null) {
+        opts.shuffle();
+        _shuffledOptions.value = opts;
+      } else {
+        _shuffledOptions.value = null;
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
@@ -199,7 +211,6 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
               _isWiped,
               _selectedOption,
               _pendingSelectedOption,
-              _erasePoints,
               _erasedAmount,
               _shuffledOptions,
             ]),
@@ -218,116 +229,86 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                           SliverPadding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             sliver: SliverToBoxAdapter(
-                              child: AbsorbPointer(
-                                absorbing:
-                                    _pendingSelectedOption.value != null &&
-                                    !isAnswered,
-                                child: Column(
-                                  children: [
-                                    SizedBox(height: 16.h),
-                                    FixTheSentenceInstruction(
-                                      isWiped: _isWiped.value,
-                                      primaryColor: theme.primaryColor,
-                                      instruction:
-                                          InstructionHelper.getInstruction(
-                                            quest,
-                                          ),
-                                    ),
-                                    SizedBox(height: 16.h),
-                                    if (quest.errorType != null)
-                                      Container(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 12.w,
-                                          vertical: 6.h,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.1,
-                                          ),
-                                          borderRadius: BorderRadius.circular(
-                                            12.r,
-                                          ),
-                                          border: Border.all(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.3),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Icon(
-                                              Icons.bug_report,
-                                              color: theme.primaryColor,
-                                              size: 14.sp,
-                                            ),
-                                            SizedBox(width: 8.w),
-                                            Text(
-                                              quest.errorType!.toUpperCase(),
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 10.sp,
-                                                fontWeight: FontWeight.w800,
-                                                color: theme.primaryColor,
-                                                letterSpacing: 2,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    SizedBox(height: 32.h),
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  FixTheSentenceInstruction(
+                                    isWiped: _isWiped.value,
+                                    primaryColor: theme.primaryColor,
+                                    instruction:
+                                        InstructionHelper.getInstruction(quest),
+                                    errorType: quest.errorType,
+                                  ),
+                                  SizedBox(height: 32.h),
 
-                                    FixTheSentenceDigitalBlackboard(
-                                      fullText: quest.passage ?? "",
-                                      targetWord: quest.missingWord ?? "",
-                                      selectedReplacement:
-                                          _selectedOption.value ??
-                                          _pendingSelectedOption.value,
-                                      isWiped: _isWiped.value,
-                                      erasePoints: _erasePoints.points,
-                                      onErase: (pos) =>
-                                          _onErase(pos, isAnswered),
-                                      onTap: () {
-                                        if (isAnswered || _isWiped.value) {
-                                          return;
-                                        }
-                                        hapticService.success();
-                                        soundService.playHint();
-                                        _isWiped.value = true;
-                                      },
+                                  FixTheSentenceDigitalBlackboard(
+                                    fullText: quest.passage ?? "",
+                                    targetWord: quest.missingWord ?? "",
+                                    selectedReplacement:
+                                        _selectedOption.value ??
+                                        _pendingSelectedOption.value,
+                                    isWiped: _isWiped.value,
+                                    eraseListenable: _erasePoints,
+                                    getErasePoints: () => _erasePoints.points,
+                                    onErase: (pos) => _onErase(pos, isAnswered),
+                                    onTap: () {
+                                      if (isAnswered || _isWiped.value) {
+                                        return;
+                                      }
+                                      hapticService.success();
+                                      soundService.playHint();
+                                      _isWiped.value = true;
+                                    },
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 32.h),
+
+                                  if (_isWiped.value)
+                                    FixTheSentenceCorrectionOptions(
+                                      options:
+                                          _shuffledOptions.value ??
+                                          quest.options ??
+                                          [],
+                                      correct: quest.correctAnswer ?? "",
                                       color: theme.primaryColor,
                                       isDark: isDark,
-                                    ),
-                                    SizedBox(height: 32.h),
+                                      onSelect: (selected, correct) {
+                                        if (isAnswered) {
+                                          return;
+                                        }
 
-                                    if (_isWiped.value && !isAnswered)
-                                      FixTheSentenceWipedAlert(
-                                        primaryColor: theme.primaryColor,
-                                      ),
-                                    if (_isWiped.value && !isAnswered)
-                                      SizedBox(height: 16.h),
+                                        final isCorrect =
+                                            selected
+                                                .trim()
+                                                .toLowerCase()
+                                                .replaceAll(
+                                                  RegExp(r'[^\w\s]'),
+                                                  '',
+                                                ) ==
+                                            correct
+                                                .trim()
+                                                .toLowerCase()
+                                                .replaceAll(
+                                                  RegExp(r'[^\w\s]'),
+                                                  '',
+                                                );
 
-                                    if (_isWiped.value)
-                                      FixTheSentenceCorrectionOptions(
-                                        options:
-                                            _shuffledOptions.value ??
-                                            quest.options ??
-                                            [],
-                                        correct: quest.correctAnswer ?? "",
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        onSelect: (selected, correct) {
-                                          if (isAnswered ||
-                                              _pendingSelectedOption.value !=
-                                                  null) {
-                                            return;
-                                          }
+                                        if (isCorrect) {
+                                          hapticService.success();
                                           _pendingSelectedOption.value =
                                               selected;
                                           _scrollToBottom();
-                                        },
-                                      ),
-                                  ],
-                                ),
+                                        } else {
+                                          hapticService.error();
+                                          submitWrongAnswer(
+                                            quest: quest,
+                                            userAnswer: selected,
+                                          );
+                                        }
+                                      },
+                                    ),
+                                ],
                               ),
                             ),
                           ),
@@ -336,7 +317,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 if (_pendingSelectedOption.value != null &&
-                                    !isAnswered)
+                                    !isAnswered) ...[
+                                  SizedBox(height: 32.h),
                                   TypeToConfirmOverlay(
                                     expectedText: _pendingSelectedOption.value!,
                                     primaryColor: theme.primaryColor,
@@ -347,12 +329,15 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                                     allowSkip: true,
                                     isPositioned: false,
                                   ),
+                                ],
                                 SizedBox(
                                   height: !isAnswered
-                                      ? MediaQuery.viewInsetsOf(
-                                              context,
-                                            ).bottom +
-                                            40.h
+                                      ? (_pendingSelectedOption.value != null
+                                            ? MediaQuery.viewInsetsOf(
+                                                    context,
+                                                  ).bottom +
+                                                  40.h
+                                            : 60.h)
                                       : 160.h,
                                 ),
                               ],
