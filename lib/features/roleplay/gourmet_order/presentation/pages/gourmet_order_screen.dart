@@ -117,6 +117,17 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
     _selectedItems.value = current;
   }
 
+  void _onItemDropped(String item) {
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    final current = List<String>.from(_selectedItems.value);
+    if (!current.contains(item)) {
+      hapticService.selection();
+      soundService.playHint();
+      current.add(item);
+      _selectedItems.value = current;
+    }
+  }
+
   void _clearItems() {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     hapticService.selection();
@@ -275,7 +286,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                     _selectedItems.value,
                                                 steamAnimation:
                                                     _steamController,
-                                                onItemTapped: _onItemTapped,
+                                                onItemDropped: _onItemDropped,
                                                 onHapticFeedback:
                                                     hapticService.selection,
                                               ),

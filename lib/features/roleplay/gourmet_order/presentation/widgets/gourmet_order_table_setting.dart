@@ -16,7 +16,7 @@ class GourmetOrderTableSetting extends StatefulWidget {
   final bool? isCorrect;
   final List<String> selectedItems;
   final Animation<double> steamAnimation;
-  final Function(String) onItemTapped;
+  final Function(String) onItemDropped;
   final VoidCallback onHapticFeedback;
 
   const GourmetOrderTableSetting({
@@ -27,7 +27,7 @@ class GourmetOrderTableSetting extends StatefulWidget {
     required this.isCorrect,
     required this.selectedItems,
     required this.steamAnimation,
-    required this.onItemTapped,
+    required this.onItemDropped,
     required this.onHapticFeedback,
   });
 
@@ -58,7 +58,7 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
     return DragTarget<String>(
       onWillAcceptWithDetails: (data) => !widget.isAnswered,
       onAcceptWithDetails: (details) {
-        widget.onItemTapped(details.data);
+        widget.onItemDropped(details.data);
         _isHoveringPlatter.value = false;
       },
       onMove: (details) {
