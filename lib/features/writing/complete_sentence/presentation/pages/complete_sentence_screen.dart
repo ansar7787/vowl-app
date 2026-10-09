@@ -287,6 +287,7 @@ class _CompleteSentenceBody extends StatelessWidget {
                     SizedBox(height: 16.h),
                     CompleteSentenceInstruction(
                       primaryColor: theme.primaryColor,
+                      text: quest.instruction,
                     ),
                     if (quest.grammarFocus != null) ...[
                       SizedBox(height: 12.h),
@@ -381,15 +382,12 @@ class _CompleteSentenceBody extends StatelessWidget {
           SliverPadding(
             padding: EdgeInsets.only(top: 32.h, left: 24.w, right: 24.w),
             sliver: SliverToBoxAdapter(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: DynamicAnagramWrapper(
-                  expectedText: quest.correctAnswer ?? '',
-                  primaryColor: theme.primaryColor,
-                  onConfirmed: onAnagramSuccess,
-                  onFailed: onAnagramFailed,
-                  isPositioned: false,
-                ),
+              child: DynamicAnagramWrapper(
+                expectedText: quest.correctAnswer ?? '',
+                primaryColor: theme.primaryColor,
+                onConfirmed: onAnagramSuccess,
+                onFailed: onAnagramFailed,
+                isPositioned: false,
               ),
             ),
           ),
