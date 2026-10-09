@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
+
 class CompleteSentenceTargetWall extends StatelessWidget {
   final String text;
   final String? injected;
@@ -44,12 +45,7 @@ class CompleteSentenceTargetWall extends StatelessWidget {
     for (int i = 0; i < parts.length; i++) {
       spans.add(TextSpan(text: parts[i], style: normalStyle));
       if (i < parts.length - 1) {
-        spans.add(
-          TextSpan(
-            text: injected ?? '______',
-            style: highlightStyle,
-          ),
-        );
+        spans.add(TextSpan(text: injected ?? '______', style: highlightStyle));
       }
     }
 
@@ -64,10 +60,7 @@ class CompleteSentenceTargetWall extends StatelessWidget {
         decoration: BoxDecoration(
           color: color.withValues(alpha: isDark ? 0.05 : 0.08),
           borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(
-            color: color.withValues(alpha: 0.3),
-            width: 2,
-          ),
+          border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
           boxShadow: [
             BoxShadow(
               color: color.withValues(alpha: 0.05),

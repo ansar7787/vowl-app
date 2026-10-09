@@ -1,55 +1,6 @@
-import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-
-class FixTheSentenceWipedAlert extends StatelessWidget {
-  final Color primaryColor;
-
-  const FixTheSentenceWipedAlert({super.key, required this.primaryColor});
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final displayColor = isDark ? tokens.gameCorrect : KidsColors.safeGreen;
-
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.check_circle_outline_rounded,
-            color: displayColor,
-            size: 16.r,
-          ),
-          SizedBox(width: 8.w),
-          Flexible(
-            child: Text(
-              "DECAY WIPED! CHOOSE REPLACEMENT CELL",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.bold,
-                color: displayColor,
-              ),
-            ),
-          ),
-        ],
-      ),
-    ).animate().shimmer(duration: const Duration(milliseconds: 1500));
-  }
-}
 
 class FixTheSentenceCorrectionOptions extends StatelessWidget {
   final List<String> options;

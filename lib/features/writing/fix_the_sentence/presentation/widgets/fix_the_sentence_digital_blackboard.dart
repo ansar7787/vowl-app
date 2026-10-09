@@ -16,7 +16,8 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
   final String targetWord;
   final String? selectedReplacement;
   final bool isWiped;
-  final List<Offset> erasePoints;
+  final Listenable eraseListenable;
+  final List<Offset> Function() getErasePoints;
   final Function(Offset) onErase;
   final VoidCallback onTap;
   final Color color;
@@ -28,7 +29,8 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
     required this.targetWord,
     required this.selectedReplacement,
     required this.isWiped,
-    required this.erasePoints,
+    required this.eraseListenable,
+    required this.getErasePoints,
     required this.onErase,
     required this.onTap,
     required this.color,
@@ -141,64 +143,72 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                               onTap: onTap,
                               onPanUpdate: (details) =>
                                   onErase(details.localPosition),
-                              child: Stack(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 12.w,
-                                      vertical: 6.h,
-                                    ),
-                                    child: Text(
-                                      targetWord.toUpperCase(),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 13.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: isDark
-                                            ? tokens.gameIncorrect
-                                            : _LocalPalette.colordc2626,
-                                      ),
-                                    ),
-                                  ),
-                                  if (erasePoints.isEmpty)
-                                    Positioned.fill(
-                                      child: IgnorePointer(
-                                        child: Center(
-                                          child:
-                                              Icon(
-                                                    Icons.swipe_rounded,
-                                                    size: 24.r,
-                                                    color: isDark
-                                                        ? Colors.white70
-                                                        : Colors.black54,
-                                                  )
-                                                  .animate(
-                                                    onPlay: (c) => c.repeat(),
-                                                  )
-                                                  .moveX(
-                                                    begin: -15,
-                                                    end: 15,
-                                                    duration: 1.seconds,
-                                                    curve: Curves.easeInOutSine,
-                                                  )
-                                                  .fadeIn(duration: 400.ms)
-                                                  .fadeOut(
-                                                    delay: 600.ms,
-                                                    duration: 400.ms,
-                                                  ),
+                              child: ListenableBuilder(
+                                listenable: eraseListenable,
+                                builder: (context, _) {
+                                  final erasePoints = getErasePoints();
+                                  return Stack(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 12.w,
+                                          vertical: 6.h,
+                                        ),
+                                        child: Text(
+                                          targetWord.toUpperCase(),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 13.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: isDark
+                                                ? tokens.gameIncorrect
+                                                : _LocalPalette.colordc2626,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  if (erasePoints.isNotEmpty)
-                                    Positioned.fill(
-                                      child: CustomPaint(
-                                        painter:
-                                            FixTheSentenceScratchOverlayPainter(
-                                              points: erasePoints,
+                                      if (erasePoints.isEmpty)
+                                        Positioned.fill(
+                                          child: IgnorePointer(
+                                            child: Center(
+                                              child:
+                                                  Icon(
+                                                        Icons.swipe_rounded,
+                                                        size: 24.r,
+                                                        color: isDark
+                                                            ? Colors.white70
+                                                            : Colors.black54,
+                                                      )
+                                                      .animate(
+                                                        onPlay: (c) =>
+                                                            c.repeat(),
+                                                      )
+                                                      .moveX(
+                                                        begin: -15,
+                                                        end: 15,
+                                                        duration: 1.seconds,
+                                                        curve: Curves
+                                                            .easeInOutSine,
+                                                      )
+                                                      .fadeIn(duration: 400.ms)
+                                                      .fadeOut(
+                                                        delay: 600.ms,
+                                                        duration: 400.ms,
+                                                      ),
                                             ),
-                                      ),
-                                    ),
-                                ],
+                                          ),
+                                        ),
+                                      if (erasePoints.isNotEmpty)
+                                        Positioned.fill(
+                                          child: CustomPaint(
+                                            painter:
+                                                FixTheSentenceScratchOverlayPainter(
+                                                  points: erasePoints,
+                                                ),
+                                          ),
+                                        ),
+                                    ],
+                                  );
+                                },
                               ),
                             ),
                           ),

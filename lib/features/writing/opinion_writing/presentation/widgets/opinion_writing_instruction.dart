@@ -4,40 +4,51 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class OpinionWritingInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? structureGuide;
 
-  const OpinionWritingInstruction({super.key, required this.primaryColor});
+  const OpinionWritingInstruction({
+    super.key,
+    required this.primaryColor,
+    this.structureGuide,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final baseText = context.tr(
+      'games.opinion_writing_instruction',
+      fallback: 'Decide if each statement supports or opposes the opinion.',
+    );
+    final fullText = structureGuide != null
+        ? '$baseText (${structureGuide!.toUpperCase()})'
+        : baseText;
+
     return Container(
+      width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.balance_rounded, size: 16.r, color: primaryColor),
+          Icon(Icons.balance_rounded, size: 20.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Flexible(
+          Expanded(
             child: Text(
-              context.tr(
-                'games.opinion_writing_instruction',
-                fallback:
-                    'Decide if each statement supports or opposes the opinion.',
-              ),
+              fullText,
               textAlign: TextAlign.center,
+              maxLines: null,
               style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w600,
                 color: primaryColor,
-                letterSpacing: 1.2,
               ),
             ),
           ),
+          SizedBox(width: 12.w),
+          Icon(Icons.balance_rounded, size: 20.r, color: Colors.transparent),
         ],
       ),
     );

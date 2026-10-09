@@ -189,7 +189,11 @@ class WritingBaseLayout extends StatelessWidget {
                         },
                       )
                       .animate(
-                        target: (hintShouldGlow && !VowlMotion.shouldReduceMotion(context)) ? 1 : 0,
+                        target:
+                            (hintShouldGlow &&
+                                !VowlMotion.shouldReduceMotion(context))
+                            ? 1
+                            : 0,
                         onPlay: (c) => c.repeat(reverse: true),
                       )
                       .shimmer(
@@ -251,27 +255,27 @@ class WritingBaseLayout extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                color: isDark ? AppColors.slate800 : Colors.white,
-                borderRadius: BorderRadius.circular(12.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    blurRadius: 10,
-                  ),
-                ],
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+          decoration: BoxDecoration(
+            color: isDark ? AppColors.slate800 : Colors.white,
+            borderRadius: BorderRadius.circular(12.r),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.1),
+                blurRadius: 10,
               ),
-              child: Text(
-                message,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.white70 : Colors.blueAccent,
-                ),
-              ),
+            ],
+          ),
+          child: Text(
+            message,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 11.sp,
+              fontWeight: FontWeight.bold,
+              color: isDark ? Colors.white70 : Colors.blueAccent,
             ),
+          ),
+        ),
         SizedBox(height: 0.h),
         VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId),
       ],

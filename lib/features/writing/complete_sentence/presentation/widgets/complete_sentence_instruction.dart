@@ -5,38 +5,49 @@ import 'package:vowl/core/utils/locale_service.dart';
 class CompleteSentenceInstruction extends StatelessWidget {
   final Color primaryColor;
   final String? text;
+  final String? grammarFocus;
 
   const CompleteSentenceInstruction({
     super.key,
     required this.primaryColor,
     this.text,
+    this.grammarFocus,
   });
 
   @override
   Widget build(BuildContext context) {
+    final baseText =
+        text ??
+        context.tr(
+          'games.completeSentence_instruction',
+          fallback: 'Launch the correct fragment to complete the sentence!',
+        );
+    final fullText = grammarFocus != null
+        ? '$baseText (${grammarFocus!.toUpperCase()})'
+        : baseText;
+
     return Semantics(
-      label: 'Instruction: ${text ?? "Complete the sentence"}',
+      label: 'Instruction: $fullText',
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(30.r),
+          borderRadius: BorderRadius.circular(16.r),
           border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Decorative icon — excluded from accessibility tree.
             ExcludeSemantics(
               child: Icon(
                 Icons.gps_fixed_rounded,
-                size: 14.r,
+                size: 20.r,
                 color: primaryColor,
               ),
             ),
             SizedBox(width: 12.w),
-            // Flexible prevents overflow on long localized strings.
-            Flexible(
+            Expanded(
               child: MediaQuery(
                 data: MediaQuery.of(context).copyWith(
                   textScaler: TextScaler.linear(
@@ -44,23 +55,23 @@ class CompleteSentenceInstruction extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  (text ??
-                          context.tr(
-                            'games.completeSentence_instruction',
-                            fallback:
-                                'Launch the correct fragment to complete the sentence!',
-                          ))
-                      .toUpperCase(),
+                  fullText,
                   textAlign: TextAlign.center,
                   maxLines: null,
                   style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w800,
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w600,
                     color: primaryColor,
-                    letterSpacing: 1.2,
                   ),
                 ),
+              ),
+            ),
+            SizedBox(width: 12.w),
+            ExcludeSemantics(
+              child: Icon(
+                Icons.gps_fixed_rounded,
+                size: 20.r,
+                color: Colors.transparent,
               ),
             ),
           ],

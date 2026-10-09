@@ -235,51 +235,12 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                                   CorrectionWritingInstruction(
                                     instruction: activeQuest.instruction,
                                     primaryColor: theme.primaryColor,
+                                    errorsRemainingText:
+                                        activeQuest.errorCount != null
+                                        ? "${activeQuest.errorCount} ERRORS REMAINING"
+                                        : null,
                                   ),
                                   SizedBox(height: 16.h),
-                                  if (activeQuest.errorCount != null)
-                                    Container(
-                                      margin: EdgeInsets.only(bottom: 16.h),
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: 8.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.1,
-                                        ),
-                                        borderRadius: BorderRadius.circular(
-                                          16.r,
-                                        ),
-                                        border: Border.all(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.3,
-                                          ),
-                                        ),
-                                      ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Icon(
-                                            Icons.bug_report,
-                                            color: theme.primaryColor,
-                                            size: 16.sp,
-                                          ),
-                                          SizedBox(width: 8.w),
-                                          Text(
-                                            "${activeQuest.errorCount} ERRORS REMAINING",
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 12.sp,
-                                              fontWeight: FontWeight.w800,
-                                              color: theme.primaryColor,
-                                              letterSpacing: 2,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  SizedBox(height: 8.h),
 
                                   CorrectionWritingSentenceCard(
                                     passage: activeQuest.passage ?? "",
@@ -387,10 +348,12 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                                     ),
                                   SizedBox(
                                     height: !isAnswered
-                                        ? MediaQuery.viewInsetsOf(
-                                                context,
-                                              ).bottom +
-                                              40.h
+                                        ? (_showEvidence.value
+                                              ? MediaQuery.viewInsetsOf(
+                                                      context,
+                                                    ).bottom +
+                                                    32.h
+                                              : 60.h)
                                         : 160.h,
                                   ),
                                 ],

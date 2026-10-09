@@ -65,10 +65,7 @@ class CompleteSentenceBallistaAmmo extends StatelessWidget {
                 data: o,
                 feedback: Material(
                   color: Colors.transparent,
-                  child: Transform.scale(
-                    scale: 1.05,
-                    child: buttonWidget,
-                  ),
+                  child: Transform.scale(scale: 1.05, child: buttonWidget),
                 ),
                 childWhenDragging: Opacity(opacity: 0.3, child: buttonWidget),
                 child: buttonWidget,
