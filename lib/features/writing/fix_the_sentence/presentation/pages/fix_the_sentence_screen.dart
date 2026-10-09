@@ -75,6 +75,21 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
     super.initState();
     _scrollController = ScrollController();
     initWritingGame();
+    
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        final bloc = context.read<WritingBloc>();
+        if (bloc.state is WritingLoaded) {
+          final state = bloc.state as WritingLoaded;
+          _lastQuest = state.currentQuest;
+          final opts = state.currentQuest.options?.toList();
+          if (opts != null) {
+            opts.shuffle();
+            _shuffledOptions.value = opts;
+          }
+        }
+      }
+    });
   }
 
   void _onErase(Offset localPosition, bool isAnswered) {
@@ -117,8 +132,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
       final targetWord = quest.missingWord ?? "";
       final String escapedTarget = RegExp.escape(targetWord);
       final RegExp wordRegExp = RegExp(
-        r'\b' + escapedTarget + r'\b',
-        caseSensitive: false,
+        r'(?<![a-zA-Z0-9_])' + escapedTarget + r'(?![a-zA-Z0-9_])',
+        caseSensitive: true,
       );
       final correctedText = fullText.contains(wordRegExp)
           ? fullText.replaceFirst(wordRegExp, selected)
@@ -143,15 +158,41 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
 
   @override
   void onQuestionReset() {
-    _isWiped.value = false;
+    bool isNewQuest = true;
+    if (mounted) {
+      final bloc = context.read<WritingBloc>();
+      if (bloc.state is WritingLoaded) {
+        isNewQuest = (bloc.state as WritingLoaded).currentQuest != _lastQuest;
+      }
+    }
 
+    if (isNewQuest) {
+      _isWiped.value = false;
+      _erasedAmount.value = 0;
+      _erasePoints.clear();
+    }
+    
     _selectedOption.value = null;
-
     _pendingSelectedOption.value = null;
-
-    _erasedAmount.value = 0;
-
-    _shuffledOptions.value = null;
+    
+    if (mounted) {
+      final bloc = context.read<WritingBloc>();
+      if (bloc.state is WritingLoaded) {
+        final opts = (bloc.state as WritingLoaded).currentQuest.options?.toList();
+        if (opts != null) {
+          if (isNewQuest) {
+            opts.shuffle();
+            _shuffledOptions.value = opts;
+          }
+        } else {
+          _shuffledOptions.value = null;
+        }
+      } else {
+        _shuffledOptions.value = null;
+      }
+    } else {
+      _shuffledOptions.value = null;
+    }
   }
 
   @override

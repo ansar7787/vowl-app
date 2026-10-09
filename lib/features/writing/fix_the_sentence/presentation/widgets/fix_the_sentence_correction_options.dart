@@ -28,34 +28,41 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
       children: options.map((o) {
         return ScaleButton(
           onTap: () => onSelect(o, correct),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: isDark ? Colors.black87 : Colors.white,
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: color, width: 2),
-              boxShadow: [
-                BoxShadow(
-                  color: color.withValues(alpha: isDark ? 0.35 : 0.15),
-                  blurRadius: 8,
-                ),
-              ],
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width - 48.w,
             ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.bolt_rounded, size: 14.r, color: color),
-                SizedBox(width: 8.w),
-                Text(
-                  o.toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onSurface,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.black87 : Colors.white,
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(color: color, width: 2),
+                boxShadow: [
+                  BoxShadow(
+                    color: color.withValues(alpha: isDark ? 0.35 : 0.15),
+                    blurRadius: 8,
                   ),
-                ),
-              ],
+                ],
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.bolt_rounded, size: 14.r, color: color),
+                  SizedBox(width: 8.w),
+                  Flexible(
+                    child: Text(
+                      o.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
