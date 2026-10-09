@@ -11,9 +11,9 @@ import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
-import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_instruction.dart';
+import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_recorder.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_prompt_card.dart';
+import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 
 class ElevatorPitchScreen extends StatefulWidget {
   final int level;
@@ -113,103 +113,50 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : LayoutBuilder(
-                      builder: (context, constraints) {
-                        return RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
-                              SliverFillRemaining(
-                                hasScrollBody: true,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: LayoutBuilder(
-                                        builder: (context, constraints) {
-                                          final isCompact =
-                                              constraints.maxHeight < 580;
-                                          return Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                              vertical: isCompact ? 5.h : 10.h,
-                                            ),
-                                            child: Column(
-                                              children: [
-                                                ElevatorPitchInstruction(
-                                                  primaryColor:
-                                                      theme.primaryColor,
-                                                  instruction:
-                                                      InstructionHelper.getInstruction(
-                                                        quest,
-                                                      ),
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 10.h
-                                                      : 16.h,
-                                                ),
-                                                ElevatorPitchPromptCard(
-                                                  prompt: quest.prompt ?? "",
-                                                  timeLimit:
-                                                      quest.timeLimit ?? 30,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 20.h
-                                                      : 40.h,
-                                                ),
-                                              ],
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                  ],
+                  : GameScrollbar(
+                      controller: _scrollController,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            sliver: SliverList(
+                              delegate: SliverChildListDelegate([
+                                SizedBox(height: 16.h),
+                                ElevatorPitchPromptCard(
+                                  instruction: InstructionHelper.getInstruction(quest),
+                                  prompt: quest.prompt ?? "",
+                                  timeLimit: quest.timeLimit ?? 30,
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
                                 ),
-                              ),
-
-                              if (!isAnsweredNotifier.value)
-                                SliverToBoxAdapter(
-                                  child: SpeakToConfirmOverlay(
+                                SizedBox(height: 24.h),
+                                if (!isAnsweredNotifier.value)
+                                  ElevatorPitchRecorder(
                                     expectedText:
                                         quest.correctAnswer ??
                                         "Elevator Pitch Example",
                                     primaryColor: theme.primaryColor,
-                                    isPositioned: false,
+                                    timeLimit: quest.timeLimit ?? 30,
                                     onConfirmed: () {
                                       context.read<RoleplayBloc>().add(
                                         const RoleplaySpeakConfirmed(5),
                                       );
                                       _submitVerbalEvaluation(true, quest);
                                     },
-                                    onSkipped: () =>
-                                        _submitVerbalEvaluation(false, quest),
+                                    onFailed: () {
+                                      _submitVerbalEvaluation(false, quest);
+                                    },
                                   ),
-                                ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height:
-                                      MediaQuery.of(context).viewInsets.bottom >
-                                          0
-                                      ? MediaQuery.of(
-                                              context,
-                                            ).viewInsets.bottom +
-                                            40.h
-                                      : 120.h,
-                                ),
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 120.h,
+                                ), // Bottom padding for feedback card
+                              ]),
+                            ),
                           ),
-                        );
-                      },
+                        ],
+                      ),
                     ),
             );
           },

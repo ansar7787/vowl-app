@@ -157,7 +157,7 @@ class StoryServiceImpl implements StoryService {
     'conflictResolver':
         "Navigating disagreements can be tricky. Let's practice by tuning the dial to find the most helpful response, then saying it out loud to de-escalate the situation!",
     'elevatorPitch':
-        "Got a great idea? Let's practice delivering your message clearly and concisely so you always leave a strong impression.",
+        "Time to pitch! Read the prompt and speak your answer out loud. Stay fluent, hit the key points, and don't freeze up—if you go silent for too long, you'll lose the room!",
     'emergencyHub':
         "In stressful moments, clear communication is key. Let's practice staying calm and giving exact details when it matters most.",
     'gourmetOrder':
@@ -1047,11 +1047,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'elevatorpitch': [
       "",
-      "Excellent start! Your understanding of elevator pitches is growing.",
-      "Your mastery of elevator pitches is noticeably improving daily.",
-      "Halfway to 100! You are handling elevator pitches effortlessly.",
-      "Centurion! You have conquered the complexities of elevator pitches.",
-      "Double Centurion! No one knows elevator pitches better than you.",
+      "Great start! You're speaking up and getting your ideas out there.",
+      "You're sounding so much more confident! Your pitches are getting really smooth.",
+      "Level 50! You're thinking on your feet and pitching like a true natural.",
+      "Level 100! You could sell ice to a polar bear. Your fluency is incredible!",
+      "Level 200! You're an absolute master of persuasion. No one pitches better than you!",
     ],
     'emergencyhub': [
       "",
