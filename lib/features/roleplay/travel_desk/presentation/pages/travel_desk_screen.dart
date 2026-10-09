@@ -11,7 +11,7 @@ import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
-import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_instruction.dart';
+
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_customs_terminal.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_passport_book.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_stamp_station.dart';
@@ -205,7 +205,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+                              SliverToBoxAdapter(child: SizedBox(height: 12.h)),
                               SliverToBoxAdapter(
                                 child: LayoutBuilder(
                                   builder: (context, constraints) {
@@ -222,29 +222,18 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                             padding: EdgeInsets.symmetric(
                                               horizontal: 16.w,
                                             ),
-                                            child: TravelDeskInstruction(
-                                              primaryColor: theme.primaryColor,
+                                            child: TravelDeskCustomsTerminal(
                                               instruction:
                                                   InstructionHelper.getInstruction(
                                                     quest,
                                                   ),
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: isCompact ? 10.h : 16.h,
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                            ),
-                                            child: TravelDeskCustomsTerminal(
                                               prompt: quest.prompt ?? "",
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                             ),
                                           ),
                                           SizedBox(
-                                            height: isCompact ? 16.h : 24.h,
+                                            height: isCompact ? 12.h : 16.h,
                                           ),
 
                                           // Biometric Passport Book (Full Width)
@@ -281,7 +270,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                             onDragStarted: () {},
                                           ),
                                           SizedBox(
-                                            height: isCompact ? 20.h : 32.h,
+                                            height: isCompact ? 16.h : 20.h,
                                           ),
 
                                           // Stamp slammed terminal console
