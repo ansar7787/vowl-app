@@ -47,12 +47,12 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
               ),
               SizedBox(width: 8.w),
               Text(
-                "BIOMETRIC SCAN: MEDICAL VOCAB",
+                "MEDICAL VOCABULARY",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 12.sp,
+                  fontSize: 11.sp,
                   color: primaryColor,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                   letterSpacing: 1.2,
                 ),
               ),
