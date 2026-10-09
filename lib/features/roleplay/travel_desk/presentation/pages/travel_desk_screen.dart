@@ -232,9 +232,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                               isDark: isDark,
                                             ),
                                           ),
-                                          SizedBox(
-                                            height: isCompact ? 12.h : 16.h,
-                                          ),
+                                          SizedBox(height: 16.h),
 
                                           // Biometric Passport Book (Full Width)
                                           TravelDeskPassportBook(
@@ -269,9 +267,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                             },
                                             onDragStarted: () {},
                                           ),
-                                          SizedBox(
-                                            height: isCompact ? 16.h : 20.h,
-                                          ),
+                                          SizedBox(height: 16.h),
 
                                           // Stamp slammed terminal console
                                           AnimatedSwitcher(
