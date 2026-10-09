@@ -221,107 +221,106 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                           builder: (context, selectedItemsList, _) {
                             return RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
-                                  SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(height: 24.h),
+                                  ),
                                   SliverToBoxAdapter(
                                     child: LayoutBuilder(
                                       builder: (context, constraints) {
-                                        final isCompact = MediaQuery.sizeOf(context).height < 650;
-                                          return Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                              vertical: isCompact ? 5.h : 10.h,
-                                            ),
-                                            child: Column(
-                                              children: [
-                                                GourmetOrderBanquetHeader(
-                                                  prompt: quest.prompt ?? "",
-                                                  instruction: InstructionHelper.getInstruction(quest),
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 16.h
-                                                      : 24.h,
-                                                ),
+                                        final isCompact =
+                                            MediaQuery.sizeOf(context).height <
+                                            650;
+                                        return Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 16.w,
+                                            vertical: isCompact ? 5.h : 10.h,
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              GourmetOrderBanquetHeader(
+                                                prompt: quest.prompt ?? "",
+                                                instruction:
+                                                    InstructionHelper.getInstruction(
+                                                      quest,
+                                                    ),
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                              ),
+                                              SizedBox(
+                                                height: isCompact ? 16.h : 24.h,
+                                              ),
 
-                                                // Floating Cloche Platter
-                                                GourmetOrderTableSetting(
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered:
-                                                      isAnsweredNotifier
-                                                          .value &&
-                                                      (isCorrectNotifier
-                                                                  .value !=
-                                                              null ||
-                                                          !isFirstStagePassedNotifier
-                                                              .value),
-                                                  isCorrect:
-                                                      isCorrectNotifier.value,
-                                                  selectedItems:
-                                                      _selectedItems.value,
-                                                  steamAnimation:
-                                                      _steamController,
-                                                  onItemTapped: _onItemTapped,
-                                                  onHapticFeedback:
-                                                      hapticService.selection,
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 16.h
-                                                      : 24.h,
-                                                ),
+                                              // Floating Cloche Platter
+                                              GourmetOrderTableSetting(
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                                isAnswered:
+                                                    isAnsweredNotifier.value &&
+                                                    (isCorrectNotifier.value !=
+                                                            null ||
+                                                        !isFirstStagePassedNotifier
+                                                            .value),
+                                                isCorrect:
+                                                    isCorrectNotifier.value,
+                                                selectedItems:
+                                                    _selectedItems.value,
+                                                steamAnimation:
+                                                    _steamController,
+                                                onItemTapped: _onItemTapped,
+                                                onHapticFeedback:
+                                                    hapticService.selection,
+                                              ),
+                                              SizedBox(
+                                                height: isCompact ? 16.h : 24.h,
+                                              ),
 
-                                                // Tray of plate choices
-                                                GourmetOrderPlateTray(
-                                                  options: options,
-                                                  prices: prices,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered:
-                                                      isAnsweredNotifier
-                                                          .value &&
-                                                      (isCorrectNotifier
-                                                                  .value !=
-                                                              null ||
-                                                          !isFirstStagePassedNotifier
-                                                              .value),
-                                                  isCorrect:
-                                                      isCorrectNotifier.value,
-                                                  selectedItems:
-                                                      _selectedItems.value,
-                                                  onItemTapped: _onItemTapped,
-                                                  onDragStarted: () {
-                                                    hapticService.selection();
-                                                    soundService
-                                                        .playHint(); // Play synth note
-                                                  },
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 20.h
-                                                      : 28.h,
-                                                ),
+                                              // Tray of plate choices
+                                              GourmetOrderPlateTray(
+                                                options: options,
+                                                prices: prices,
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                                isAnswered:
+                                                    isAnsweredNotifier.value &&
+                                                    (isCorrectNotifier.value !=
+                                                            null ||
+                                                        !isFirstStagePassedNotifier
+                                                            .value),
+                                                isCorrect:
+                                                    isCorrectNotifier.value,
+                                                selectedItems:
+                                                    _selectedItems.value,
+                                                onItemTapped: _onItemTapped,
+                                                onDragStarted: () {
+                                                  hapticService.selection();
+                                                  soundService
+                                                      .playHint(); // Play synth note
+                                                },
+                                              ),
+                                              SizedBox(
+                                                height: isCompact ? 20.h : 28.h,
+                                              ),
 
-                                                // Trigger Action Buttons
-                                                if (!isAnsweredNotifier.value &&
-                                                    _selectedItems
-                                                        .value
-                                                        .isNotEmpty)
-                                                  Wrap(
-                                                    alignment: WrapAlignment.center,
-                                                    spacing: isCompact ? 10.w : 16.w,
-                                                    runSpacing: 10.h,
-                                                    children: [
-                                                      ScaleButton(
+                                              // Trigger Action Buttons
+                                              if (!isAnsweredNotifier.value &&
+                                                  _selectedItems
+                                                      .value
+                                                      .isNotEmpty)
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Expanded(
+                                                      child: ScaleButton(
                                                         onTap: _clearItems,
                                                         child: Container(
                                                           padding:
@@ -354,7 +353,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                             ),
                                                           ),
                                                           child: Row(
-                                                            mainAxisSize: MainAxisSize.min,
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
                                                             children: [
                                                               Icon(
                                                                 Icons
@@ -388,7 +389,14 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                           ),
                                                         ),
                                                       ),
-                                                      ScaleButton(
+                                                    ),
+                                                    SizedBox(
+                                                      width: isCompact
+                                                          ? 10.w
+                                                          : 16.w,
+                                                    ),
+                                                    Expanded(
+                                                      child: ScaleButton(
                                                         onTap: () => _submitAnswer(
                                                           quest.correctAnswer ??
                                                               "",
@@ -439,7 +447,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                             ],
                                                           ),
                                                           child: Row(
-                                                            mainAxisSize: MainAxisSize.min,
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
                                                             children: [
                                                               Icon(
                                                                 Icons
@@ -475,58 +485,62 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                           ),
                                                         ),
                                                       ),
-                                                    ],
-                                                  ).animate().fadeIn(
-                                                    duration: 300.ms,
-                                                  ),
-
-                                                // Explanations cards post-selection
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 20.h
-                                                      : 40.h,
+                                                    ),
+                                                  ],
+                                                ).animate().fadeIn(
+                                                  duration: 300.ms,
                                                 ),
-                                              ],
-                                            ),
-                                          );
-                                        },
-                                      ),
+
+                                              // Explanations cards post-selection
+                                              SizedBox(
+                                                height: isCompact ? 20.h : 40.h,
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    ),
                                   ),
 
-                              if (isFirstStagePassedNotifier.value &&
-                                  !isAnsweredNotifier.value)
-                                SliverToBoxAdapter(
-                                  child: SpeakToConfirmOverlay(
-                                    expectedText:
-                                        quest.correctAnswer ??
-                                        _selectedItems.value.join(', '),
-                                    primaryColor: theme.primaryColor,
-                                    isPositioned: false,
-                                    onConfirmed: () {
-                                      context.read<RoleplayBloc>().add(
-                                        const RoleplaySpeakConfirmed(5),
-                                      );
-                                      _submitVerbalEvaluation(true, quest);
-                                    },
-                                    onSkipped: () =>
-                                        _submitVerbalEvaluation(false, quest),
+                                  if (isFirstStagePassedNotifier.value &&
+                                      !isAnsweredNotifier.value)
+                                    SliverToBoxAdapter(
+                                      child: SpeakToConfirmOverlay(
+                                        expectedText:
+                                            quest.correctAnswer ??
+                                            _selectedItems.value.join(', '),
+                                        primaryColor: theme.primaryColor,
+                                        isPositioned: false,
+                                        onConfirmed: () {
+                                          context.read<RoleplayBloc>().add(
+                                            const RoleplaySpeakConfirmed(5),
+                                          );
+                                          _submitVerbalEvaluation(true, quest);
+                                        },
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(
+                                              false,
+                                              quest,
+                                            ),
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 120.h,
+                                    ),
                                   ),
-                                ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height:
-                                      MediaQuery.of(context).viewInsets.bottom >
-                                          0
-                                      ? MediaQuery.of(
-                                              context,
-                                            ).viewInsets.bottom +
-                                            40.h
-                                      : 120.h,
-                                ),
+                                ],
                               ),
-                            ],
-                          ),
-                        );
+                            );
                           },
                         );
                       },

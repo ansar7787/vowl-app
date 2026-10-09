@@ -67,20 +67,17 @@ class GourmetOrderPlateTray extends StatelessWidget {
           ),
           SizedBox(height: 18.h),
 
-          // Scrollable Plate drawer containing Draggables
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            physics: const BouncingScrollPhysics(),
-            child: IntrinsicHeight(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: List.generate(
-                  options.length,
-                  (i) => _buildDraggablePlate(
-                    options[i],
-                    prices.length > i ? prices[i] : "\$3.50",
-                  ),
-                ),
+          // Plate grid (Wrap) containing Draggables. 
+          // Using Wrap instead of horizontal scroll prevents drag-vs-scroll gesture conflicts.
+          Wrap(
+            spacing: 12.w,
+            runSpacing: 12.h,
+            alignment: WrapAlignment.center,
+            children: List.generate(
+              options.length,
+              (i) => _buildDraggablePlate(
+                options[i],
+                prices.length > i ? prices[i] : "\$3.50",
               ),
             ),
           ),
@@ -99,41 +96,38 @@ class GourmetOrderPlateTray extends StatelessWidget {
           : AppColors.gameIncorrect;
     }
 
-    return Padding(
-      padding: EdgeInsets.only(right: 14.w),
-      child: Draggable<String>(
-        data: item,
-        onDragStarted: onDragStarted,
-        feedback: _buildPlateCore(
+    return Draggable<String>(
+      data: item,
+      onDragStarted: onDragStarted,
+      feedback: _buildPlateCore(
+        item,
+        price,
+        plateColor,
+        isSelected,
+        isDark,
+        isDraggingFeedback: true,
+      ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: _buildPlateCore(
           item,
           price,
           plateColor,
           isSelected,
           isDark,
-          isDraggingFeedback: true,
+          isDraggingFeedback: false,
         ),
-        childWhenDragging: Opacity(
-          opacity: 0.3,
-          child: _buildPlateCore(
-            item,
-            price,
-            plateColor,
-            isSelected,
-            isDark,
-            isDraggingFeedback: false,
-          ),
-        ),
-        child: InkWell(
-          onTap: () => onItemTapped(item),
-          borderRadius: BorderRadius.circular(16.r),
-          child: _buildPlateCore(
-            item,
-            price,
-            plateColor,
-            isSelected,
-            isDark,
-            isDraggingFeedback: false,
-          ),
+      ),
+      child: InkWell(
+        onTap: () => onItemTapped(item),
+        borderRadius: BorderRadius.circular(16.r),
+        child: _buildPlateCore(
+          item,
+          price,
+          plateColor,
+          isSelected,
+          isDark,
+          isDraggingFeedback: false,
         ),
       ),
     );
@@ -155,7 +149,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
         button: true,
         excludeSemantics: true,
         child: Container(
-          width: 110.w,
+          width: 140.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
             color: isSelected
