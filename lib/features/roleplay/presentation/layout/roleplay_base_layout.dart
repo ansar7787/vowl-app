@@ -153,7 +153,7 @@ class RoleplayBaseLayout extends StatelessWidget {
           explanation: finalExplanation,
           ruleTitle: 'SCENARIO CONTEXT',
           ruleContent: ruleContent,
-          sampleAnswer: quest.sampleAnswer,
+          sampleAnswer: quest.sampleAnswer ?? quest.correctAnswer,
         );
       },
     );

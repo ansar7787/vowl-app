@@ -64,16 +64,16 @@ class AudioRecordingServiceImpl implements AudioRecordingService {
 
   @override
   Future<String?> stopRecording() async {
+    if (!_isRecording) return _currentPath;
     try {
-      final path = await _audioRecorder.stop();
       _isRecording = false;
+      final path = await _audioRecorder.stop();
       return path ?? _currentPath;
     } catch (e) {
       sl<AppLogger>().error(
         'AudioRecordingService: Stop recording error',
         error: e,
       );
-      _isRecording = false;
       return null;
     }
   }
