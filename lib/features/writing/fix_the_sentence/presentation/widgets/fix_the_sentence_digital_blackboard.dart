@@ -42,8 +42,8 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final String escapedTarget = RegExp.escape(targetWord);
     final RegExp wordRegExp = RegExp(
-      r'\b' + escapedTarget + r'\b',
-      caseSensitive: false,
+      r'(?<![a-zA-Z0-9_])' + escapedTarget + r'(?![a-zA-Z0-9_])',
+      caseSensitive: true,
     );
     final Match? match = wordRegExp.firstMatch(fullText);
 
@@ -85,133 +85,145 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                 children: [
                   if (prefix.isNotEmpty) TextSpan(text: prefix),
                   WidgetSpan(
-                    alignment: PlaceholderAlignment.middle,
-                    child: isWiped
-                        ? Builder(
-                            builder: (context) {
-                              final successColor = isDark
-                                  ? tokens.gameCorrect
-                                  : KidsColors.safeGreen;
-                              return Container(
-                                margin: EdgeInsets.symmetric(horizontal: 8.w),
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 12.w,
-                                  vertical: 6.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: selectedReplacement != null
-                                      ? successColor.withValues(alpha: 0.25)
-                                      : (isDark
-                                            ? Colors.white12
-                                            : Colors.black12),
-                                  borderRadius: BorderRadius.circular(10.r),
-                                  border: Border.all(
-                                    color: selectedReplacement != null
-                                        ? successColor
-                                        : (isDark
-                                              ? Colors.white30
-                                              : Colors.black26),
-                                    width: 2,
+                    alignment: PlaceholderAlignment.baseline,
+                    baseline: TextBaseline.alphabetic,
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width - 80.w,
+                      ),
+                      child: isWiped
+                          ? Builder(
+                              builder: (context) {
+                                final successColor = isDark
+                                    ? tokens.gameCorrect
+                                    : KidsColors.safeGreen;
+                                return Container(
+                                  margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 12.w,
+                                    vertical: 6.h,
                                   ),
-                                ),
-                                child: Text(
-                                  selectedReplacement?.toUpperCase() ?? "____",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 13.sp,
-                                    fontWeight: FontWeight.w900,
+                                  decoration: BoxDecoration(
                                     color: selectedReplacement != null
-                                        ? (isDark
-                                              ? Colors.white
-                                              : Colors.black87)
+                                        ? successColor.withValues(alpha: 0.25)
                                         : (isDark
-                                              ? Colors.white30
-                                              : Colors.black38),
+                                              ? Colors.white12
+                                              : Colors.black12),
+                                    borderRadius: BorderRadius.circular(10.r),
+                                    border: Border.all(
+                                      color: selectedReplacement != null
+                                          ? successColor
+                                          : (isDark
+                                                ? Colors.white30
+                                                : Colors.black26),
+                                      width: 2,
+                                    ),
                                   ),
-                                ),
-                              );
-                            },
-                          )
-                        : Container(
-                            margin: EdgeInsets.symmetric(horizontal: 8.w),
-                            decoration: BoxDecoration(
-                              color: color.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(10.r),
-                              border: Border.all(color: color, width: 2),
-                            ),
-                            child: GestureDetector(
-                              onTap: onTap,
-                              onPanUpdate: (details) =>
-                                  onErase(details.localPosition),
-                              child: ListenableBuilder(
-                                listenable: eraseListenable,
-                                builder: (context, _) {
-                                  final erasePoints = getErasePoints();
-                                  return Stack(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 12.w,
-                                          vertical: 6.h,
-                                        ),
-                                        child: Text(
-                                          targetWord.toUpperCase(),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 13.sp,
-                                            fontWeight: FontWeight.w900,
-                                            color: isDark
-                                                ? tokens.gameIncorrect
-                                                : _LocalPalette.colordc2626,
+                                  child: Text(
+                                    selectedReplacement?.toUpperCase() ?? "____",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: selectedReplacement != null
+                                          ? (isDark
+                                                ? Colors.white
+                                                : Colors.black87)
+                                          : (isDark
+                                                ? Colors.white30
+                                                : Colors.black38),
+                                    ),
+                                  ),
+                                );
+                              },
+                            )
+                          : Container(
+                              margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+                              decoration: BoxDecoration(
+                                color: color.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(10.r),
+                                border: Border.all(color: color, width: 2),
+                              ),
+                              child: GestureDetector(
+                                onTap: onTap,
+                                onPanUpdate: (details) =>
+                                    onErase(details.localPosition),
+                                child: ListenableBuilder(
+                                  listenable: eraseListenable,
+                                  builder: (context, _) {
+                                    final erasePoints = getErasePoints();
+                                    return Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 12.w,
+                                            vertical: 6.h,
                                           ),
-                                        ),
-                                      ),
-                                      if (erasePoints.isEmpty)
-                                        Positioned.fill(
-                                          child: IgnorePointer(
-                                            child: Center(
-                                              child:
-                                                  Icon(
-                                                        Icons.swipe_rounded,
-                                                        size: 24.r,
-                                                        color: isDark
-                                                            ? Colors.white70
-                                                            : Colors.black54,
-                                                      )
-                                                      .animate(
-                                                        onPlay: (c) =>
-                                                            c.repeat(),
-                                                      )
-                                                      .moveX(
-                                                        begin: -15,
-                                                        end: 15,
-                                                        duration: 1.seconds,
-                                                        curve: Curves
-                                                            .easeInOutSine,
-                                                      )
-                                                      .fadeIn(duration: 400.ms)
-                                                      .fadeOut(
-                                                        delay: 600.ms,
-                                                        duration: 400.ms,
-                                                      ),
+                                          child: Text(
+                                            targetWord.toUpperCase(),
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 13.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: isDark
+                                                  ? tokens.gameIncorrect
+                                                  : _LocalPalette.colordc2626,
                                             ),
                                           ),
                                         ),
-                                      if (erasePoints.isNotEmpty)
-                                        Positioned.fill(
-                                          child: CustomPaint(
-                                            painter:
-                                                FixTheSentenceScratchOverlayPainter(
-                                                  points: erasePoints,
-                                                ),
+                                        if (erasePoints.isEmpty)
+                                          Positioned.fill(
+                                            child: IgnorePointer(
+                                              child: Center(
+                                                child:
+                                                    Icon(
+                                                          Icons.swipe_rounded,
+                                                          size: 24.r,
+                                                          color: isDark
+                                                              ? Colors.white70
+                                                              : Colors.black54,
+                                                        )
+                                                        .animate(
+                                                          onPlay: (c) =>
+                                                              c.repeat(),
+                                                        )
+                                                        .moveX(
+                                                          begin: -15,
+                                                          end: 15,
+                                                          duration: 1.seconds,
+                                                          curve: Curves
+                                                              .easeInOutSine,
+                                                        )
+                                                        .fadeIn(duration: 400.ms)
+                                                        .fadeOut(
+                                                          delay: 600.ms,
+                                                          duration: 400.ms,
+                                                        ),
+                                              ),
+                                            ),
                                           ),
-                                        ),
-                                    ],
-                                  );
-                                },
+                                        if (erasePoints.isNotEmpty)
+                                          Positioned.fill(
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(8.r),
+                                              child: CustomPaint(
+                                                painter:
+                                                    FixTheSentenceScratchOverlayPainter(
+                                                      points: erasePoints,
+                                                    ),
+                                              ),
+                                            ),
+                                          ),
+                                      ],
+                                    );
+                                  },
+                                ),
                               ),
                             ),
-                          ),
+                    ),
                   ),
                   if (suffix.isNotEmpty) TextSpan(text: suffix),
                 ],

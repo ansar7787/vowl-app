@@ -778,15 +778,15 @@ class GameInstructionService {
       title: "Clarity Editor",
       icon: Icons.edit_rounded,
       objective:
-          "Scrub the logical decay and select the correct replacement word. Mastering this skill ensures your written communication is clear, professional, and effective.",
+          "Find the mistake in the sentence! Scrub the wrong word to erase it, then type the correct word to make the sentence clear and natural.",
       rules: [
         "Locate the error",
-        "Scrub the decay away",
-        "Select correct replacement",
+        "Scrub to erase it",
+        "Type the correct word",
       ],
-      actionText: "Apply Edit",
+      actionText: "Fix the Sentence",
       tip:
-          "PRO TIP: Read the sentence out loud in your head! If it sounds clumsy, revise it.",
+          "PRO TIP: Read the sentence out loud! If something sounds a little weird, that's probably the word you need to scrub.",
     ),
     GameSubtype.shortAnswerWriting: GameBriefing(
       title: "Briefing Pro",

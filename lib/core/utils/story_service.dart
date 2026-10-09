@@ -233,7 +233,7 @@ class StoryServiceImpl implements StoryService {
     'essayDrafting':
         "Great essays are built on clear structure. Let's practice organizing your thoughts into a strong, compelling argument.",
     'fixTheSentence':
-        "Even the best writers need to edit! Let's practice spotting and fixing structural errors to make your sentences shine.",
+        "Even the best writers need to edit! Let's practice finding the mistake, scrubbing it away, and typing the right word to fix the sentence.",
     'opinionWriting':
         "Your voice matters! Let's practice sharing your opinions clearly and persuasively so others understand your perspective.",
     'sentenceBuilder':
@@ -1297,11 +1297,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'fixthesentence': [
       "",
-      "Well done! You are building a strong foundation in sentence editing.",
-      "Your mastery of sentence editing is noticeably improving daily.",
-      "Halfway there! You are a rising star in sentence editing.",
-      "100 levels beat! You truly dominate sentence editing.",
-      "200 levels cleared! Your sentence editing abilities are unmatched globally.",
+      "Great start! You're getting the hang of spotting mistakes and fixing them up.",
+      "Nice work! Your eyes are getting really sharp at catching those tricky errors.",
+      "50 levels cleared! You're scrubbing away mistakes and typing fixes like a pro.",
+      "100 levels beat! Your editing skills are fantastic. Keep up the amazing work!",
+      "200 levels cleared! You have a natural instinct for fixing sentences. Incredible!",
     ],
     'opinionwriting': [
       "",
