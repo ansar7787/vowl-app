@@ -1071,11 +1071,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'jobinterview': [
       "",
-      "Fantastic! Exploring interviews will elevate your skills rapidly.",
-      "Your mastery of interviews is noticeably improving daily.",
-      "50 levels cleared! Your interviews skills are rock solid.",
-      "Level 100! Your expertise in interviews is elite.",
-      "Double Centurion! No one knows interviews better than you.",
+      "Great start! Navigating an interview takes real practice, and you're doing great.",
+      "Nice work! Your responses are sounding a lot more confident and professional.",
+      "Halfway to 100! You're handling these tricky questions like a total pro.",
+      "Level 100! You're ready to walk into any interview and own the room.",
+      "Level 200 reached! Honestly, any company would be lucky to hire you. Amazing work!",
     ],
     'medicalconsult': [
       "",
