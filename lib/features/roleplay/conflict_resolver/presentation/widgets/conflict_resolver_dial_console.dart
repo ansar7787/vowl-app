@@ -12,38 +12,58 @@ class _LocalPalette {
 }
 
 class ConflictResolverDialConsole extends StatelessWidget {
-  final double targetValue;
   final Color color;
   final bool isDark;
   final double rotation;
   final Animation<double> waveAnimation;
   final Function(DragUpdateDetails, Offset) onDialDragged;
+  final VoidCallback? onStepLeft;
+  final VoidCallback? onStepRight;
+  final String? focusedText;
+  final bool isAnswered;
+  final bool? isCorrect;
+  final bool isFirstStagePassed;
 
   const ConflictResolverDialConsole({
     super.key,
-    required this.targetValue,
     required this.color,
     required this.isDark,
     required this.rotation,
     required this.waveAnimation,
     required this.onDialDragged,
+    this.onStepLeft,
+    this.onStepRight,
+    this.focusedText,
+    this.isAnswered = false,
+    this.isCorrect,
+    this.isFirstStagePassed = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final double dialDiameter = 220.r;
+    final double dialDiameter = 180.r;
     final Offset dialCenter = Offset(dialDiameter / 2, dialDiameter / 2);
-    final bool isMatched = (rotation - targetValue).abs() < 0.12;
+    
+    // Only show correct/incorrect colors AFTER submission
+    // If they passed phase 1, their dial selection was correct, so color it green regardless of phase 2.
+    final bool showCorrect = (isAnswered && isCorrect == true) || isFirstStagePassed;
+    final bool showIncorrect = isAnswered && isCorrect == false && !isFirstStagePassed;
+    
+    Color currentColor = color;
+    if (showCorrect) currentColor = tokens.gameCorrect;
+    if (showIncorrect) currentColor = tokens.gameIncorrect;
+
+    final bool isSignalTuned = focusedText != null;
 
     return Container(
       width: 1.sw,
-      padding: EdgeInsets.symmetric(vertical: 24.h),
+      padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
       decoration: BoxDecoration(
         color: isDark
             ? _LocalPalette.color07070f
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(36.r),
+        borderRadius: BorderRadius.circular(30.r),
         border: Border.all(
           color: isDark
               ? Colors.white.withValues(alpha: 0.03)
@@ -73,9 +93,8 @@ class ConflictResolverDialConsole extends StatelessWidget {
                         return CustomPaint(
                           painter: EqualizerArcPainter(
                             rotationValue: rotation,
-                            targetValue: targetValue,
                             timeAnimation: waveAnimation.value,
-                            themeColor: color,
+                            themeColor: currentColor,
                           ),
                         );
                       },
@@ -86,8 +105,8 @@ class ConflictResolverDialConsole extends StatelessWidget {
                   Transform.rotate(
                     angle: rotation * 2 * math.pi,
                     child: Container(
-                      width: 130.r,
-                      height: 130.r,
+                      width: 110.r,
+                      height: 110.r,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
@@ -108,10 +127,8 @@ class ConflictResolverDialConsole extends StatelessWidget {
                           ),
                         ],
                         border: Border.all(
-                          color: isMatched
-                              ? tokens.gameCorrect
-                              : color.withValues(alpha: 0.3),
-                          width: 3,
+                          color: isSignalTuned ? currentColor : currentColor.withValues(alpha: 0.3),
+                          width: isSignalTuned ? 3 : 1.5,
                         ),
                       ),
                       child: Stack(
@@ -124,19 +141,17 @@ class ConflictResolverDialConsole extends StatelessWidget {
                               width: 6.r,
                               height: 16.r,
                               decoration: BoxDecoration(
-                                color: isMatched ? tokens.gameCorrect : color,
+                                color: isSignalTuned ? currentColor : currentColor.withValues(alpha: 0.5),
                                 borderRadius: BorderRadius.circular(3.r),
                               ),
                             ),
                           ),
                           Icon(
-                            isMatched
-                                ? Icons.check_rounded
-                                : Icons.tune_rounded,
-                            color: isMatched
-                                ? tokens.gameCorrect
-                                : color.withValues(alpha: 0.7),
-                            size: 32.r,
+                            showCorrect 
+                              ? Icons.check_rounded 
+                              : (showIncorrect ? Icons.close_rounded : Icons.sensors_rounded),
+                            color: isSignalTuned ? currentColor : currentColor.withValues(alpha: 0.5),
+                            size: 28.r,
                           ),
                         ],
                       ),
@@ -146,37 +161,99 @@ class ConflictResolverDialConsole extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 16.h),
 
-          // Calibration level metrics
+          // D-Pad Controls for Accessibility
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "DIAL LEVEL: ",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: Colors.grey,
-                  letterSpacing: 1.5,
+              IconButton(
+                onPressed: onStepLeft,
+                icon: Icon(Icons.arrow_left_rounded, size: 36.r, color: currentColor),
+                style: IconButton.styleFrom(
+                  backgroundColor: currentColor.withValues(alpha: 0.1),
+                  padding: EdgeInsets.all(4.r),
                 ),
               ),
-              Text(
-                "${(rotation * 100).toInt()}% empathy",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isMatched
-                      ? tokens.gameCorrect
-                      : Color.lerp(
-                          Colors.cyanAccent,
-                          tokens.gameIncorrect,
-                          rotation,
-                        ),
+              SizedBox(width: 32.w),
+              IconButton(
+                onPressed: onStepRight,
+                icon: Icon(Icons.arrow_right_rounded, size: 36.r, color: currentColor),
+                style: IconButton.styleFrom(
+                  backgroundColor: currentColor.withValues(alpha: 0.1),
+                  padding: EdgeInsets.all(4.r),
                 ),
               ),
             ],
+          ),
+          SizedBox(height: 16.h),
+
+          // Calibration level metrics / Text Options
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 200),
+            child: focusedText == null
+                ? Container(
+                    key: const ValueKey("static"),
+                    constraints: BoxConstraints(minHeight: 80.h),
+                    padding: EdgeInsets.symmetric(vertical: 12.h),
+                    alignment: Alignment.center,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.blur_on_rounded, color: Colors.grey.withValues(alpha: 0.5), size: 24.r),
+                        SizedBox(height: 8.h),
+                        Text(
+                          "TUNING... STATIC NOISE",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            color: Colors.grey,
+                            letterSpacing: 2.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                : Container(
+                    key: ValueKey(focusedText),
+                    constraints: BoxConstraints(minHeight: 80.h),
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                    decoration: BoxDecoration(
+                      color: currentColor.withValues(alpha: 0.08),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: currentColor.withValues(alpha: 0.3),
+                      ),
+                    ),
+                    alignment: Alignment.center,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "PROPOSED RESPONSE:",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            color: currentColor,
+                            letterSpacing: 1.2,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(height: 6.h),
+                        Text(
+                          focusedText!,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            height: 1.3,
+                            color: Theme.of(context).colorScheme.onSurface,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
           ),
         ],
       ),

@@ -155,7 +155,7 @@ class StoryServiceImpl implements StoryService {
     'branchingDialogue':
         "Time to jump into some real conversations! Drag the probe to choose what to say next and see how people react. You've got this!",
     'conflictResolver':
-        "Navigating disagreements can be tricky. Let's practice using polite and tactful language to keep conversations positive!",
+        "Navigating disagreements can be tricky. Let's practice by tuning the dial to find the most helpful response, then saying it out loud to de-escalate the situation!",
     'elevatorPitch':
         "Got a great idea? Let's practice delivering your message clearly and concisely so you always leave a strong impression.",
     'emergencyHub':
@@ -1039,11 +1039,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'conflictresolver': [
       "",
-      "Fantastic! Exploring conflict resolution will elevate your skills rapidly.",
-      "Your skills in conflict resolution are becoming incredibly sharp.",
-      "Amazing! You manipulate conflict resolution with natural ease.",
-      "Level 100! Your expertise in conflict resolution is elite.",
-      "200 levels cleared! Your conflict resolution abilities are unmatched globally.",
+      "Great start! You're already getting the hang of choosing the right words to calm things down.",
+      "Nice work! You're really learning how to handle tricky conversations with care.",
+      "Halfway to 100! Your ability to find common ground is getting stronger every day.",
+      "Level 100! You're officially a natural at turning arguments into agreements.",
+      "200 levels cleared! You handle conflict so smoothly, nothing can shake you.",
     ],
     'elevatorpitch': [
       "",

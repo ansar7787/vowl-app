@@ -222,9 +222,7 @@ class GameFeedbackCard extends StatelessWidget {
         Expanded(
           child: AutoSizeText(
             title,
-            maxLines: 1,
             minFontSize: 14,
-            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 24.sp,
@@ -275,9 +273,7 @@ class GameFeedbackCard extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: AutoSizeText(
                     label,
-                    maxLines: 1,
                     minFontSize: 10,
-                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
