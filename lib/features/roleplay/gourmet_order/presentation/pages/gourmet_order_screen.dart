@@ -13,7 +13,7 @@ import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_instruction.dart';
+
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_banquet_header.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_table_setting.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_plate_tray.dart';
@@ -193,7 +193,6 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
             isAnsweredNotifier,
             isCorrectNotifier,
             showConfettiNotifier,
-            _selectedItems,
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
@@ -217,25 +216,23 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
-                              SliverFillRemaining(
-                                hasScrollBody: true,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: LayoutBuilder(
-                                        builder: (context, constraints) {
-                                          final isCompact =
-                                              constraints.maxHeight < 580;
+                        return ValueListenableBuilder<List<String>>(
+                          valueListenable: _selectedItems,
+                          builder: (context, selectedItemsList, _) {
+                            return RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+                                  SliverToBoxAdapter(
+                                    child: LayoutBuilder(
+                                      builder: (context, constraints) {
+                                        final isCompact = MediaQuery.sizeOf(context).height < 650;
                                           return Padding(
                                             padding: EdgeInsets.symmetric(
                                               horizontal: 16.w,
@@ -243,21 +240,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                             ),
                                             child: Column(
                                               children: [
-                                                GourmetOrderInstruction(
-                                                  primaryColor:
-                                                      theme.primaryColor,
-                                                  instruction:
-                                                      InstructionHelper.getInstruction(
-                                                        quest,
-                                                      ),
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 10.h
-                                                      : 16.h,
-                                                ),
                                                 GourmetOrderBanquetHeader(
                                                   prompt: quest.prompt ?? "",
+                                                  instruction: InstructionHelper.getInstruction(quest),
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                 ),
@@ -331,10 +316,10 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                     _selectedItems
                                                         .value
                                                         .isNotEmpty)
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                  Wrap(
+                                                    alignment: WrapAlignment.center,
+                                                    spacing: isCompact ? 10.w : 16.w,
+                                                    runSpacing: 10.h,
                                                     children: [
                                                       ScaleButton(
                                                         onTap: _clearItems,
@@ -369,6 +354,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                             ),
                                                           ),
                                                           child: Row(
+                                                            mainAxisSize: MainAxisSize.min,
                                                             children: [
                                                               Icon(
                                                                 Icons
@@ -401,11 +387,6 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                             ],
                                                           ),
                                                         ),
-                                                      ),
-                                                      SizedBox(
-                                                        width: isCompact
-                                                            ? 10.w
-                                                            : 16.w,
                                                       ),
                                                       ScaleButton(
                                                         onTap: () => _submitAnswer(
@@ -458,6 +439,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                             ],
                                                           ),
                                                           child: Row(
+                                                            mainAxisSize: MainAxisSize.min,
                                                             children: [
                                                               Icon(
                                                                 Icons
@@ -509,10 +491,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                           );
                                         },
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                                  ),
 
                               if (isFirstStagePassedNotifier.value &&
                                   !isAnsweredNotifier.value)
@@ -547,6 +526,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                               ),
                             ],
                           ),
+                        );
+                          },
                         );
                       },
                     ),

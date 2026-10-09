@@ -1,16 +1,17 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class GourmetOrderBanquetHeader extends StatelessWidget {
   final String prompt;
+  final String? instruction;
   final Color color;
   final bool isDark;
 
   const GourmetOrderBanquetHeader({
     super.key,
     required this.prompt,
+    this.instruction,
     required this.color,
     required this.isDark,
   });
@@ -19,66 +20,88 @@ class GourmetOrderBanquetHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 1.sw,
-      padding: EdgeInsets.all(22.r),
+      padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
         boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.08), blurRadius: 15),
+          BoxShadow(
+            color: color.withValues(alpha: 0.08),
+            blurRadius: 15,
+            offset: const Offset(0, 4),
+          ),
         ],
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.room_service_rounded,
-                  color: color,
-                  size: 24.r,
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.15, 1.15),
-                duration: 1.5.seconds,
-                curve: Curves.easeInOut,
+          Row(
+            children: [
+              Icon(
+                Icons.room_service_rounded,
+                color: color,
+                size: 16.r,
               ),
-          SizedBox(width: 16.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "CLIENT ORDER TICKET SPECIFICATION:",
+              SizedBox(width: 8.w),
+              Expanded(
+                child: Text(
+                  "CLIENT REQUEST",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
+                    fontSize: 12.sp,
                     color: color,
-                    letterSpacing: 1.5,
+                    letterSpacing: 1.2,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 6.h),
-                Text(
-                  "\"$prompt\"",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 17.sp,
-                    color: Theme.of(context).colorScheme.onSurface,
-                    height: 1.35,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              ],
+              ),
+            ],
+          ),
+          SizedBox(height: 12.h),
+          Text(
+            prompt,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w600,
+              color: Theme.of(context).colorScheme.onSurface,
+              height: 1.4,
             ),
           ),
+          if (instruction != null) ...[
+            SizedBox(height: 16.h),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: color.withValues(alpha: 0.1)),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.info_outline_rounded,
+                    color: color.withValues(alpha: 0.8),
+                    size: 16.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      instruction!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500,
+                        color: color.withValues(alpha: 0.9),
+                        height: 1.3,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     );
