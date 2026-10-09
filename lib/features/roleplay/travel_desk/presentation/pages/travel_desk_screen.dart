@@ -11,7 +11,7 @@ import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
-import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_instruction.dart';
+
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_customs_terminal.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_passport_book.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_stamp_station.dart';
@@ -226,8 +226,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                               instruction:
                                                   InstructionHelper.getInstruction(
                                                     quest,
-                                                  ) ??
-                                                  "",
+                                                  ),
                                               prompt: quest.prompt ?? "",
                                               color: theme.primaryColor,
                                               isDark: isDark,
