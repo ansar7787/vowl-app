@@ -27,12 +27,12 @@ class DailyJournalBoosterTokens extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          "REQUIRED REFLECTION TERMS (USE AT LEAST 2)",
+          "Target words (use at least 2)",
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 10.sp,
             color: isDark ? Colors.white54 : Colors.black54,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w600,
           ),
         ),
         SizedBox(height: 12.h),
@@ -41,7 +41,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
           runSpacing: 8.h,
           alignment: WrapAlignment.center,
           children: keywords.map((k) {
-            final bool isUsed = text.toLowerCase().contains(k.toLowerCase());
+            final bool isUsed = RegExp(r'\b' + RegExp.escape(k.toLowerCase())).hasMatch(text.toLowerCase());
             final displayColor = isUsed
                 ? tokens.gameCorrect
                 : (isDark ? Colors.white24 : Colors.black26);
@@ -90,14 +90,14 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                     ),
                     SizedBox(width: 8.w),
                     Text(
-                      k.toUpperCase(),
+                      k,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         color: isUsed
                             ? tokens.gameCorrect
                             : (isDark ? Colors.white60 : Colors.black54),
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],

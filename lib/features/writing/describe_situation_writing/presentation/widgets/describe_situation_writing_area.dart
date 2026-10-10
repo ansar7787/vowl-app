@@ -44,6 +44,9 @@ class DescribeSituationWritingArea extends StatelessWidget {
           TextField(
             controller: textController,
             maxLines: 4,
+            onTapOutside: (PointerDownEvent event) {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
             style: TextStyle(
               fontFamily: 'Outfit',
               color: Theme.of(context).colorScheme.onSurface,

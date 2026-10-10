@@ -22,33 +22,18 @@ class DailyJournalInstruction extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(Icons.auto_awesome_rounded, size: 20.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: Text(
-              context.tr(
-                'games.dailyJournal_instruction',
-                fallback: instruction,
-              ),
-              textAlign: TextAlign.center,
-              maxLines: null,
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w600,
-                color: primaryColor,
-              ),
-            ),
-          ),
-          SizedBox(width: 12.w),
-          Icon(
-            Icons.auto_awesome_rounded,
-            size: 20.r,
-            color: Colors.transparent,
-          ),
-        ],
+      child: Text(
+        context.tr(
+          'games.dailyJournal_instruction',
+          fallback: instruction,
+        ),
+        textAlign: TextAlign.center,
+        maxLines: null,
+        style: TextStyle(
+          fontSize: 15.sp,
+          fontWeight: FontWeight.w500,
+          color: primaryColor,
+        ),
       ),
     );
   }

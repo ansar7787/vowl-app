@@ -333,19 +333,28 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
   @override
   void onQuestionReset() {
+    bool isNewQuest = true;
+    if (mounted) {
+      final bloc = context.read<WritingBloc>();
+      if (bloc.state is WritingLoaded) {
+        isNewQuest = (bloc.state as WritingLoaded).currentQuest != _lastQuest;
+      }
+    }
+
     _usedKeywords.value = [];
     _expandedEmojiIndex.value = null;
     _showSpeakToConfirm.value = false;
     _wordCount.value = 0;
     _isSubmitting.value = false;
 
-    if (_savedTextForRetry != null) {
+    if (_savedTextForRetry != null && !isNewQuest) {
       _textController.text = _savedTextForRetry!;
       _savedTextForRetry = null;
       _strikeCount = 0;
       _onTextChanged();
     } else {
       _textController.clear();
+      _savedTextForRetry = null;
       _strikeCount = 0;
     }
   }

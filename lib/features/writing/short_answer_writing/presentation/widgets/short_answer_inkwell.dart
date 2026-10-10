@@ -91,25 +91,31 @@ class ShortAnswerInkwell extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 8.w),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                  decoration: BoxDecoration(
-                    color: wordCount >= 4
-                        ? (isDark
-                              ? tokens.gameCorrect.withValues(alpha: 0.1)
-                              : KidsColors.safeGreen.withValues(alpha: 0.1))
-                        : (isDark ? Colors.white10 : Colors.black12),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: Text(
-                    "$wordCount / 4 WORDS MIN",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 9.sp,
-                      color: wordCount >= 4
-                          ? (isDark ? tokens.gameCorrect : KidsColors.safeGreen)
-                          : (isDark ? Colors.white54 : Colors.black54),
-                      fontWeight: FontWeight.w600,
+                Semantics(
+                  label: "Word count: $wordCount out of 4 minimum",
+                  container: true,
+                  child: ExcludeSemantics(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                      decoration: BoxDecoration(
+                        color: wordCount >= 4
+                            ? (isDark
+                                  ? tokens.gameCorrect.withValues(alpha: 0.1)
+                                  : KidsColors.safeGreen.withValues(alpha: 0.1))
+                            : (isDark ? Colors.white10 : Colors.black12),
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: Text(
+                        "$wordCount / 4 WORDS MIN",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.sp,
+                          color: wordCount >= 4
+                              ? (isDark ? tokens.gameCorrect : KidsColors.safeGreen)
+                              : (isDark ? Colors.white54 : Colors.black54),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -139,32 +145,39 @@ class ShortAnswerInkwell extends StatelessWidget {
               ),
             ),
             SizedBox(height: 12.h),
-            Stack(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 4.h,
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white10 : Colors.black12,
-                    borderRadius: BorderRadius.circular(2.r),
+            Semantics(
+              label: "Ink level progress",
+              value: "${(inkLevel * 100).round()} percent",
+              child: Stack(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: 4.h,
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.white10 : Colors.black12,
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
                   ),
-                ),
-                AnimatedContainer(
-                  duration: 300.milliseconds,
-                  width: MediaQuery.of(context).size.width * inkLevel * 0.8,
-                  height: 4.h,
-                  decoration: BoxDecoration(
-                    color: color,
-                    borderRadius: BorderRadius.circular(2.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.6),
-                        blurRadius: 6,
+                  FractionallySizedBox(
+                    alignment: Alignment.centerLeft,
+                    widthFactor: inkLevel,
+                    child: AnimatedContainer(
+                      duration: 300.milliseconds,
+                      height: 4.h,
+                      decoration: BoxDecoration(
+                        color: color,
+                        borderRadius: BorderRadius.circular(2.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: color.withValues(alpha: 0.6),
+                            blurRadius: 6,
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),

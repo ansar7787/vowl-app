@@ -55,6 +55,33 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
   final ValueNotifier<double> _journalProgress = ValueNotifier(0.0);
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
+  
+  int _strikeCount = 0;
+  String? _savedTextForRetry;
+
+  void _handleValidationFailure(
+    String message, {
+    CustomSnackBarType type = CustomSnackBarType.warning,
+  }) {
+    _strikeCount++;
+    if (_strikeCount >= 3) {
+      _savedTextForRetry = _controller.text;
+      _isSubmitting.value = false;
+      submitWrongAnswer(quest: _lastQuest!);
+    } else {
+      CustomSnackBar.show(
+        context: context,
+        message: "$message (${3 - _strikeCount} tries left)",
+        type: type,
+      );
+      if (type == CustomSnackBarType.warning) {
+        hapticService.warning();
+      } else {
+        hapticService.selection();
+      }
+      _isSubmitting.value = false;
+    }
+  }
 
   late final ScrollController _scrollController;
 
@@ -95,7 +122,13 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
 
   void _onTextChanged() {
     final text = _controller.text.trim();
-    final words = text.isEmpty ? 0 : text.split(RegExp(r'\s+')).length;
+    final words = text.isEmpty
+        ? 0
+        : text
+              .split(RegExp(r'\s+'))
+              .map((w) => w.replaceAll(RegExp(r'[^\w\s]'), ''))
+              .where((w) => w.isNotEmpty)
+              .length;
     _wordCount.value = words;
     _journalProgress.value = (text.length / 80).clamp(0.0, 1.0);
   }
@@ -111,27 +144,25 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
     _isSubmitting.value = true;
 
     final rawText = _controller.text.trim();
-    if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Please start your journal entry with a capital letter.",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+    if (rawText.isEmpty) return;
+    
+    if (!RegExp(r'^[A-Z]').hasMatch(
+      rawText.trimLeft().replaceAll(
+        RegExp(
+          r'^["'
+          "'"
+          r']',
+        ),
+        '',
+      ),
+    )) {
+      _handleValidationFailure("Please start your journal entry with a capital letter.");
       return;
     }
 
-    final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
-    if (!['.', '!', '?'].contains(lastChar)) {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "Please end your entry with a full stop, exclamation mark, or question mark.",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+    final lastChar = rawText[rawText.length - 1];
+    if (!['.', '!', '?', '"', "'", '”'].contains(lastChar)) {
+      _handleValidationFailure("Please end your entry with proper punctuation (e.g., full stop).");
       return;
     }
 
@@ -139,31 +170,19 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
 
     int matchedCount = 0;
     for (var kw in targetKeywords) {
-      if (text.contains(kw.toLowerCase())) {
+      final regExp = RegExp(r'\b' + RegExp.escape(kw.toLowerCase()));
+      if (regExp.hasMatch(text)) {
         matchedCount++;
       }
     }
 
     if (_wordCount.value < 10) {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "Keep writing! A valid journal entry requires at least 10 words.",
-        type: CustomSnackBarType.info,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Keep writing! A valid journal entry requires at least 10 words.", type: CustomSnackBarType.info);
       return;
     }
 
     if (matchedCount < 2) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Use at least 2 reflection terms to complete your entry!",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Use at least 2 target words to complete your entry!");
       return;
     }
 
@@ -179,20 +198,11 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
     if (!mounted) return;
 
     if (language != 'en') {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "Your answer must be written in English. Please write a natural sentence!",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.warning();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Your answer must be written in English. Please write a natural sentence!");
       return;
     }
 
     hapticService.success();
-    soundService.playCorrect();
-
     soundService.playCorrect();
 
     _showSpeakToConfirm.value = true;
@@ -206,15 +216,29 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
 
   @override
   void onQuestionReset() {
+    bool isNewQuest = true;
+    if (mounted) {
+      final bloc = context.read<WritingBloc>();
+      if (bloc.state is WritingLoaded) {
+        isNewQuest = (bloc.state as WritingLoaded).currentQuest != _lastQuest;
+      }
+    }
+
     _showSpeakToConfirm.value = false;
-
     _wordCount.value = 0;
-
     _journalProgress.value = 0.0;
-
     _isSubmitting.value = false;
 
-    _controller.clear();
+    if (_savedTextForRetry != null && !isNewQuest) {
+      _controller.text = _savedTextForRetry!;
+      _savedTextForRetry = null;
+      _strikeCount = 0;
+      _onTextChanged();
+    } else {
+      _controller.clear();
+      _savedTextForRetry = null;
+      _strikeCount = 0;
+    }
   }
 
   @override
@@ -266,6 +290,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
               _wordCount,
               _journalProgress,
               _isSubmitting,
+              _controller,
             ]),
             builder: (context, _) {
               return activeQuest == null
@@ -329,13 +354,13 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                               ),
                                               SizedBox(width: 8.w),
                                               Text(
-                                                "GUIDING QUESTIONS",
+                                                "Guiding Questions",
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.w800,
+                                                  fontSize: 13.sp,
+                                                  fontWeight: FontWeight.w600,
                                                   color: theme.primaryColor,
-                                                  letterSpacing: 2,
+                                                  letterSpacing: 0.5,
                                                 ),
                                               ),
                                             ],
@@ -344,13 +369,14 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                           ...activeQuest.promptQuestions!.map(
                                             (q) => Padding(
                                               padding: EdgeInsets.only(
-                                                bottom: 4.h,
+                                                bottom: 6.h,
                                               ),
                                               child: Text(
                                                 "• $q",
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  fontSize: 12.sp,
+                                                  fontSize: 13.sp,
+                                                  fontWeight: FontWeight.w400,
                                                   color: isDark
                                                       ? Colors.white70
                                                       : Colors.black87,
@@ -398,10 +424,10 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                       ),
                                       child: Container(
                                         width: double.infinity,
-                                        height: 60.h,
+                                        height: 56.h,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(
-                                            20.r,
+                                            16.r,
                                           ),
                                           color: _wordCount.value >= 10
                                               ? theme.primaryColor
@@ -411,39 +437,28 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                               BoxShadow(
                                                 color: theme.primaryColor
                                                     .withValues(alpha: 0.3),
-                                                blurRadius: 15,
+                                                blurRadius: 10,
                                               ),
                                           ],
                                         ),
                                         child: Center(
                                           child: Text(
-                                            "CRYSTALLIZE MEMORY",
+                                            "SAVE ENTRY",
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
-                                              fontSize: 16.sp,
-                                              fontWeight: FontWeight.w900,
+                                              fontSize: 15.sp,
+                                              fontWeight: FontWeight.w700,
                                               color: Colors.white,
-                                              letterSpacing: 2,
+                                              letterSpacing: 1,
                                             ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  SizedBox(
-                                    height: !isAnswered
-                                        ? (_showSpeakToConfirm.value
-                                              ? MediaQuery.viewInsetsOf(
-                                                      context,
-                                                    ).bottom +
-                                                    40.h
-                                              : 60.h)
-                                        : 160.h,
-                                  ),
                                 ],
                               ),
                             ),
                           ),
-
                           if (_showSpeakToConfirm.value && !isAnswered)
                             SliverToBoxAdapter(
                               child: Padding(
@@ -454,21 +469,20 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                   onConfirmed: _onSpeakConfirmed,
                                   onSkipped: () {
                                     _showSpeakToConfirm.value = false;
-                                    submitWrongAnswer(
-                                      quest: activeQuest,
-                                      userAnswer: _controller.text.trim(),
-                                    );
+                                    submitCorrectAnswer();
                                   },
                                 ),
                               ),
                             ),
                           SliverToBoxAdapter(
                             child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
+                              height: !isAnswered
+                                  ? (_showSpeakToConfirm.value
+                                      ? 20.h
+                                      : (MediaQuery.of(context).viewInsets.bottom > 0
+                                          ? MediaQuery.of(context).viewInsets.bottom + 20.h
+                                          : 40.h))
+                                  : 200.h, // Space for Feedback Card
                             ),
                           ),
                         ],
