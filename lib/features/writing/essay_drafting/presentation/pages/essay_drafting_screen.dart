@@ -172,7 +172,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
 
     if (state is WritingLoaded) {
       final currentQuest = state.currentQuest as WritingQuest?;
-      if (_lastQuest?.id != currentQuest?.id) {
+      if (_lastQuest?.id != currentQuest?.id || _blueprintSlots.value.isEmpty) {
         _lastQuest = currentQuest;
         if (currentQuest != null) {
           final Map<String, String?> slots = {};
