@@ -83,9 +83,15 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
       final authState = context.read<AuthBloc>().state;
       final speakingState = context.read<SpeakingBloc>().state;
       String actualQuestion = 'Speak Opposite';
-      if (speakingState is SpeakingLoaded && speakingState.currentQuestOrNull != null) {
+      if (speakingState is SpeakingLoaded &&
+          speakingState.currentQuestOrNull != null) {
         final q = speakingState.currentQuestOrNull!;
-        actualQuestion = q.targetWord ?? q.sentence ?? q.textToSpeak ?? q.question ?? 'Speak Opposite';
+        actualQuestion =
+            q.targetWord ??
+            q.sentence ??
+            q.textToSpeak ??
+            q.question ??
+            'Speak Opposite';
       }
 
       if (authState.status == AuthStatus.authenticated &&

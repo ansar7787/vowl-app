@@ -115,7 +115,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
         final ReadingQuest? quest = (state is ReadingLoaded)
             ? state.currentQuest as ReadingQuest?
             : null;
-        
+
         // Ensure initial quest id is set
         if (quest != null && _lastQuestId == null) {
           _lastQuestId = quest.id;
@@ -179,18 +179,27 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                   // Instruction Card
                                   Container(
                                     width: double.infinity,
-                                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 12.h,
+                                    ),
                                     decoration: BoxDecoration(
-                                      color: theme.primaryColor.withValues(alpha: 0.1),
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.1,
+                                      ),
                                       borderRadius: BorderRadius.circular(12.r),
                                       border: Border.all(
-                                        color: theme.primaryColor.withValues(alpha: 0.3),
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.3,
+                                        ),
                                       ),
                                     ),
                                     child: Text(
                                       isAnsweredNotifier.value
                                           ? "TARGET FOUND!"
-                                          : InstructionHelper.getInstruction(quest),
+                                          : InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
@@ -209,9 +218,14 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                     Padding(
                                       padding: EdgeInsets.only(bottom: 8.h),
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
-                                          Icon(Icons.touch_app, color: Colors.grey, size: 16.r),
+                                          Icon(
+                                            Icons.touch_app,
+                                            color: Colors.grey,
+                                            size: 16.r,
+                                          ),
                                           SizedBox(width: 6.w),
                                           Text(
                                             "Tap the target in the text below",

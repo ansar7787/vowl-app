@@ -58,7 +58,7 @@ class AppRouter {
   // Daily Words
   static const String dailyWordsRoute = DailyWordsRoutes.dailyWordsRoute;
   static const String wordBankRoute = DailyWordsRoutes.wordBankRoute;
-  
+
   static const String reviewMistakesRoute = '/review-mistakes';
 
   // Translation

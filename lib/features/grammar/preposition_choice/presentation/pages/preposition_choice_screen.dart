@@ -87,8 +87,8 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
       _targetNode.value = nodeIndex;
       String? userAnswer =
           (quest.options != null && nodeIndex < quest.options!.length)
-              ? quest.options![nodeIndex]
-              : null;
+          ? quest.options![nodeIndex]
+          : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
 
       Future.delayed(const Duration(milliseconds: 100), () {
@@ -109,7 +109,8 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
     if (correct) {
       submitCorrectAnswer();
     } else {
-      String? userAnswer = (_targetNode.value != -1 &&
+      String? userAnswer =
+          (_targetNode.value != -1 &&
               quest.options != null &&
               _targetNode.value < quest.options!.length)
           ? quest.options![_targetNode.value]

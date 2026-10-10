@@ -175,7 +175,8 @@ class GameScaffold<S> extends StatelessWidget {
             ),
 
           // ── Layer 5: Confetti ───────────────────────────────────────────
-          if (config.showConfetti && baseState is GameCompleteState) const GameConfetti(),
+          if (config.showConfetti && baseState is GameCompleteState)
+            const GameConfetti(),
         ],
       ),
     );

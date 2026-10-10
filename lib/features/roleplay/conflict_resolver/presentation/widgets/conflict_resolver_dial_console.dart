@@ -44,12 +44,14 @@ class ConflictResolverDialConsole extends StatelessWidget {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final double dialDiameter = 180.r;
     final Offset dialCenter = Offset(dialDiameter / 2, dialDiameter / 2);
-    
+
     // Only show correct/incorrect colors AFTER submission
     // If they passed phase 1, their dial selection was correct, so color it green regardless of phase 2.
-    final bool showCorrect = (isAnswered && isCorrect == true) || isFirstStagePassed;
-    final bool showIncorrect = isAnswered && isCorrect == false && !isFirstStagePassed;
-    
+    final bool showCorrect =
+        (isAnswered && isCorrect == true) || isFirstStagePassed;
+    final bool showIncorrect =
+        isAnswered && isCorrect == false && !isFirstStagePassed;
+
     Color currentColor = color;
     if (showCorrect) currentColor = tokens.gameCorrect;
     if (showIncorrect) currentColor = tokens.gameIncorrect;
@@ -127,7 +129,9 @@ class ConflictResolverDialConsole extends StatelessWidget {
                           ),
                         ],
                         border: Border.all(
-                          color: isSignalTuned ? currentColor : currentColor.withValues(alpha: 0.3),
+                          color: isSignalTuned
+                              ? currentColor
+                              : currentColor.withValues(alpha: 0.3),
                           width: isSignalTuned ? 3 : 1.5,
                         ),
                       ),
@@ -141,16 +145,22 @@ class ConflictResolverDialConsole extends StatelessWidget {
                               width: 6.r,
                               height: 16.r,
                               decoration: BoxDecoration(
-                                color: isSignalTuned ? currentColor : currentColor.withValues(alpha: 0.5),
+                                color: isSignalTuned
+                                    ? currentColor
+                                    : currentColor.withValues(alpha: 0.5),
                                 borderRadius: BorderRadius.circular(3.r),
                               ),
                             ),
                           ),
                           Icon(
-                            showCorrect 
-                              ? Icons.check_rounded 
-                              : (showIncorrect ? Icons.close_rounded : Icons.sensors_rounded),
-                            color: isSignalTuned ? currentColor : currentColor.withValues(alpha: 0.5),
+                            showCorrect
+                                ? Icons.check_rounded
+                                : (showIncorrect
+                                      ? Icons.close_rounded
+                                      : Icons.sensors_rounded),
+                            color: isSignalTuned
+                                ? currentColor
+                                : currentColor.withValues(alpha: 0.5),
                             size: 28.r,
                           ),
                         ],
@@ -169,7 +179,11 @@ class ConflictResolverDialConsole extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: onStepLeft,
-                icon: Icon(Icons.arrow_left_rounded, size: 36.r, color: currentColor),
+                icon: Icon(
+                  Icons.arrow_left_rounded,
+                  size: 36.r,
+                  color: currentColor,
+                ),
                 style: IconButton.styleFrom(
                   backgroundColor: currentColor.withValues(alpha: 0.1),
                   padding: EdgeInsets.all(4.r),
@@ -178,7 +192,11 @@ class ConflictResolverDialConsole extends StatelessWidget {
               SizedBox(width: 32.w),
               IconButton(
                 onPressed: onStepRight,
-                icon: Icon(Icons.arrow_right_rounded, size: 36.r, color: currentColor),
+                icon: Icon(
+                  Icons.arrow_right_rounded,
+                  size: 36.r,
+                  color: currentColor,
+                ),
                 style: IconButton.styleFrom(
                   backgroundColor: currentColor.withValues(alpha: 0.1),
                   padding: EdgeInsets.all(4.r),
@@ -200,7 +218,11 @@ class ConflictResolverDialConsole extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.blur_on_rounded, color: Colors.grey.withValues(alpha: 0.5), size: 24.r),
+                        Icon(
+                          Icons.blur_on_rounded,
+                          color: Colors.grey.withValues(alpha: 0.5),
+                          size: 24.r,
+                        ),
                         SizedBox(height: 8.h),
                         Text(
                           "TUNING... STATIC NOISE",
@@ -218,7 +240,10 @@ class ConflictResolverDialConsole extends StatelessWidget {
                     key: ValueKey(focusedText),
                     constraints: BoxConstraints(minHeight: 80.h),
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 12.h,
+                    ),
                     decoration: BoxDecoration(
                       color: currentColor.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(16.r),

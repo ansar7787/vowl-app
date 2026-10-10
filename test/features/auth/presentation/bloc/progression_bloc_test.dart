@@ -77,7 +77,7 @@ void main() {
     mockPurchasePermanentXPBoost = MockPurchasePermanentXPBoost();
     mockClaimStreakMilestone = MockClaimStreakMilestone();
     mockClaimLevelMilestone = MockClaimLevelMilestone();
-    
+
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
     );

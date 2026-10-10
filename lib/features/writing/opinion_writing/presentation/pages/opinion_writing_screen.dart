@@ -484,6 +484,18 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                             primaryColor: theme.primaryColor,
                                           );
                                         }
+
+                                        void handleTap() {
+                                          if (draftedOptions.length <
+                                              requiredCount) {
+                                            hapticService.selection();
+                                            _draftedOptions.value = [
+                                              ...draftedOptions,
+                                              option,
+                                            ];
+                                          }
+                                        }
+
                                         return Draggable<String>(
                                           data: option,
                                           feedback: Material(
@@ -515,6 +527,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                             text: option,
                                             isDark: isDark,
                                             primaryColor: theme.primaryColor,
+                                            onTap: handleTap,
                                           ),
                                         );
                                       }),

@@ -115,9 +115,15 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
         final authState = context.read<AuthBloc>().state;
         final speakingState = context.read<SpeakingBloc>().state;
         String actualQuestion = 'Yes/No Listening Match';
-        if (speakingState is SpeakingLoaded && speakingState.currentQuestOrNull != null) {
+        if (speakingState is SpeakingLoaded &&
+            speakingState.currentQuestOrNull != null) {
           final q = speakingState.currentQuestOrNull!;
-          actualQuestion = q.targetWord ?? q.sentence ?? q.textToSpeak ?? q.question ?? 'Yes/No Listening Match';
+          actualQuestion =
+              q.targetWord ??
+              q.sentence ??
+              q.textToSpeak ??
+              q.question ??
+              'Yes/No Listening Match';
         }
 
         if (authState.status == AuthStatus.authenticated &&

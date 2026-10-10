@@ -26,15 +26,16 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final isPositive = reaction == 'impressed' || reaction == 'interested';
-    final isNegative = reaction == 'disappointed' || 
-                       reaction == 'unconvinced' || 
-                       reaction == 'uncertain' || 
-                       reaction == 'losing interest';
+    final isNegative =
+        reaction == 'disappointed' ||
+        reaction == 'unconvinced' ||
+        reaction == 'uncertain' ||
+        reaction == 'losing interest';
 
     final Color activeColor = isPositive
         ? tokens.gameCorrect
         : (isNegative ? tokens.gameIncorrect : color);
-    
+
     final IconData activeIcon = isPositive
         ? Icons.sentiment_very_satisfied_rounded
         : (isNegative

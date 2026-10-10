@@ -86,7 +86,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
     if (isCorrect) {
       submitCorrectAnswer();
     } else {
-      String uAns = quest.options != null &&
+      String uAns =
+          quest.options != null &&
               _pendingSelectedIndex.value! < quest.options!.length
           ? quest.options![_pendingSelectedIndex.value!]
           : _pendingSelectedIndex.value.toString();

@@ -25,7 +25,7 @@ class FixTheSentenceScratchOverlayPainter extends CustomPainter {
       final particlePaint = Paint()
         ..color = Colors.black.withValues(alpha: 0.6)
         ..style = PaintingStyle.fill;
-        
+
       // Draw a few small particles around the last few points
       final recentPoints = points.reversed.take(5).toList();
       for (var i = 0; i < recentPoints.length; i++) {

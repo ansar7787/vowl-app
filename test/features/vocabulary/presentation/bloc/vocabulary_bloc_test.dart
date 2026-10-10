@@ -80,7 +80,6 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
-    
 
     bloc = VocabularyBloc(
       getQuests: mockGetQuests,

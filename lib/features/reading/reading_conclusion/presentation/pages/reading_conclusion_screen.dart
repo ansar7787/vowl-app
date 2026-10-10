@@ -183,11 +183,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
                                 ),
                               ),
                             ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height: 120.h,
-                            ),
-                          ),
+                          SliverToBoxAdapter(child: SizedBox(height: 120.h)),
                         ],
                       ),
                     ),

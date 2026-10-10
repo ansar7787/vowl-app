@@ -45,24 +45,24 @@ class ConflictResolverConflictCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            padding: EdgeInsets.all(12.r),
-            decoration: BoxDecoration(
-              color: emotionalColor.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              Icons.forum_rounded,
-              color: emotionalColor,
-              size: 24.r,
-            ),
-          )
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.1, 1.1),
-            duration: 2.seconds,
-            curve: Curves.easeInOut,
-          ),
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: emotionalColor.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.forum_rounded,
+                  color: emotionalColor,
+                  size: 24.r,
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.1, 1.1),
+                duration: 2.seconds,
+                curve: Curves.easeInOut,
+              ),
           SizedBox(height: 16.h),
           Text(
             scene,
@@ -98,11 +98,13 @@ class ConflictResolverConflictCard extends StatelessWidget {
                 child: Row(
                   children: List.generate(10, (index) {
                     final isActive = index < escalationLevel;
-                    final levelColor = Color.lerp(
-                      tokens.gameCorrect,
-                      tokens.gameIncorrect,
-                      index / 9,
-                    ) ?? color;
+                    final levelColor =
+                        Color.lerp(
+                          tokens.gameCorrect,
+                          tokens.gameIncorrect,
+                          index / 9,
+                        ) ??
+                        color;
 
                     return Expanded(
                       child: Container(

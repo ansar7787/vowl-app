@@ -660,7 +660,11 @@ class GameInstructionService {
       icon: Icons.title_rounded,
       objective:
           "Read the story and figure out the main point. Picking the right title proves you understand the whole picture, not just a random detail.",
-      rules: ["Read the whole story", "Find the main point", "Drag the best title"],
+      rules: [
+        "Read the whole story",
+        "Find the main point",
+        "Drag the best title",
+      ],
       actionText: "Play Now",
       tip:
           "PRO TIP: Don't get tricked by a word that only appeared once. A good title summarizes the entire text!",
@@ -779,11 +783,7 @@ class GameInstructionService {
       icon: Icons.edit_rounded,
       objective:
           "Find the mistake in the sentence! Scrub the wrong word to erase it, then type the correct word to make the sentence clear and natural.",
-      rules: [
-        "Locate the error",
-        "Scrub to erase it",
-        "Type the correct word",
-      ],
+      rules: ["Locate the error", "Scrub to erase it", "Type the correct word"],
       actionText: "Fix the Sentence",
       tip:
           "PRO TIP: Read the sentence out loud! If something sounds a little weird, that's probably the word you need to scrub.",

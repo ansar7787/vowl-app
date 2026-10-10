@@ -580,8 +580,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
     if (quest != null) {
       final userAnswer =
           (quest.options != null && index < quest.options!.length)
-              ? quest.options![index]
-              : null;
+          ? quest.options![index]
+          : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     } else {
       submitWrongAnswer(quest: quest!, userAnswer: '');

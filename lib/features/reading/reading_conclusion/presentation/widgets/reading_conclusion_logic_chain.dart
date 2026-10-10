@@ -46,8 +46,11 @@ class ReadingConclusionLogicChain extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.psychology_alt_rounded,
-                  color: primaryColor, size: 24.r),
+              Icon(
+                Icons.psychology_alt_rounded,
+                color: primaryColor,
+                size: 24.r,
+              ),
               SizedBox(width: 8.w),
               Text(
                 "LOGICAL DEDUCTION",
@@ -120,4 +123,3 @@ class ReadingConclusionLogicChain extends StatelessWidget {
     );
   }
 }
-

@@ -75,8 +75,8 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
     } else {
       String? userAnswer =
           (quest.options != null && targetIndex < quest.options!.length)
-              ? quest.options![targetIndex]
-              : null;
+          ? quest.options![targetIndex]
+          : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }

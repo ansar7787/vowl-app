@@ -47,7 +47,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
   final ValueNotifier<bool> _isPinching = ValueNotifier(false);
   final ValueNotifier<bool> _hasPinchedOnce = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
-  
+
   String? _selectedOption;
 
   @override
@@ -88,10 +88,10 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
 
   void _onPinchUpdate(double scale) {
     if (isAnsweredNotifier.value || _isDistilled.value) return;
-    
+
     final previousWidth = _pinchWidth.value;
     _pinchWidth.value = scale.clamp(0.4, 1.0);
-    
+
     if (_pinchWidth.value < 0.6 && previousWidth >= 0.6) {
       hapticService.selection();
     }
@@ -116,7 +116,8 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
       _selectedOption = option;
     });
 
-    final bool isCorrect = option.trim().toLowerCase() ==
+    final bool isCorrect =
+        option.trim().toLowerCase() ==
         (quest.correctAnswer ?? '').trim().toLowerCase();
 
     if (isCorrect) {
@@ -210,7 +211,9 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
                                           isPinching: _isPinching.value,
                                         ),
                                         if (!_hasPinchedOnce.value)
-                                          PinchHintAnimation(color: theme.primaryColor),
+                                          PinchHintAnimation(
+                                            color: theme.primaryColor,
+                                          ),
                                       ],
                                     ),
                                   ),
@@ -252,11 +255,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
                                 ),
                               ),
                             ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height: 120.h,
-                            ),
-                          ),
+                          SliverToBoxAdapter(child: SizedBox(height: 120.h)),
                         ],
                       ),
                     ),

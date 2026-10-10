@@ -1,4 +1,4 @@
-﻿import 'dart:ui';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -1212,4 +1212,3 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         .moveY(begin: 20, end: 0, curve: Curves.easeOutCubic);
   }
 }
-

@@ -133,7 +133,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       // Use professionalismRating if available (assume scale of 1-5)
       double profScore = 0.25;
       if (quest is RoleplayQuest && quest.professionalismRating != null) {
-        profScore = (quest.professionalismRating! / 5.0) * 0.3; 
+        profScore = (quest.professionalismRating! / 5.0) * 0.3;
       }
       _mercuryLevel.value = (_mercuryLevel.value + profScore).clamp(0.0, 1.0);
       submitCorrectAnswer();
@@ -151,11 +151,11 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   @override
   void onRoleplayStateChanged(BuildContext context, RoleplayState state) {
     super.onRoleplayStateChanged(context, state);
-    
+
     if (state is RoleplayLoaded) {
       final quest = state.currentQuest;
-      if (_shuffledOptions.value.isEmpty && 
-          quest.options != null && 
+      if (_shuffledOptions.value.isEmpty &&
+          quest.options != null &&
           quest.options!.isNotEmpty) {
         final options = List<String>.from(quest.options!);
         final correctOption = options[quest.correctAnswerIndex ?? 0];
@@ -240,7 +240,10 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                   delegate: SliverChildListDelegate([
                                     JobInterviewInstruction(
                                       primaryColor: theme.primaryColor,
-                                      instruction: InstructionHelper.getInstruction(quest),
+                                      instruction:
+                                          InstructionHelper.getInstruction(
+                                            quest,
+                                          ),
                                     ),
                                     SizedBox(height: isCompact ? 10.h : 16.h),
                                     JobInterviewTelemetryDashboard(
@@ -259,10 +262,17 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                             _selectedIndex.value != null &&
                                             quest.interviewerReaction != null &&
                                             quest.options != null) {
-                                          final selectedText = _shuffledOptions.value[_selectedIndex.value!];
-                                          final originalIndex = quest.options!.indexOf(selectedText);
-                                          if (originalIndex >= 0 && originalIndex < quest.interviewerReaction!.length) {
-                                            return quest.interviewerReaction![originalIndex];
+                                          final selectedText = _shuffledOptions
+                                              .value[_selectedIndex.value!];
+                                          final originalIndex = quest.options!
+                                              .indexOf(selectedText);
+                                          if (originalIndex >= 0 &&
+                                              originalIndex <
+                                                  quest
+                                                      .interviewerReaction!
+                                                      .length) {
+                                            return quest
+                                                .interviewerReaction![originalIndex];
                                           }
                                         }
                                         return null;
@@ -275,7 +285,8 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                       color: theme.primaryColor,
                                       isDark: isDark,
                                       selectedIndex: _selectedIndex.value,
-                                      isAnswered: isAnsweredNotifier.value ||
+                                      isAnswered:
+                                          isAnsweredNotifier.value ||
                                           isFirstStagePassedNotifier.value,
                                       isCorrect: isCorrectNotifier.value,
                                       onOptionSelected: (idx, corr) =>

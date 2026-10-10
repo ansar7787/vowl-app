@@ -28,55 +28,58 @@ class ReadAndMatchTerminal extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: AnimatedContainer(
-        duration: 300.milliseconds,
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-        decoration: BoxDecoration(
-          color: isMatched
-              ? color.withValues(alpha: isDark ? 0.15 : 0.08)
-              : (isActive
-                    ? color.withValues(alpha: isDark ? 0.3 : 0.15)
-                    : (isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.04))),
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: isMatched || isActive
-                ? color
-                : (isDark ? Colors.white10 : Colors.black12),
-            width: 2,
-          ),
-          boxShadow: [
-            if (isMatched || isActive)
-              BoxShadow(
-                color: color.withValues(alpha: 0.25),
-                blurRadius: 12,
-                offset: const Offset(0, 4),
+      child:
+          AnimatedContainer(
+                duration: 300.milliseconds,
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                decoration: BoxDecoration(
+                  color: isMatched
+                      ? color.withValues(alpha: isDark ? 0.15 : 0.08)
+                      : (isActive
+                            ? color.withValues(alpha: isDark ? 0.3 : 0.15)
+                            : (isDark
+                                  ? Colors.white.withValues(alpha: 0.05)
+                                  : Colors.black.withValues(alpha: 0.04))),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: isMatched || isActive
+                        ? color
+                        : (isDark ? Colors.white10 : Colors.black12),
+                    width: 2,
+                  ),
+                  boxShadow: [
+                    if (isMatched || isActive)
+                      BoxShadow(
+                        color: color.withValues(alpha: 0.25),
+                        blurRadius: 12,
+                        offset: const Offset(0, 4),
+                      ),
+                  ],
+                ),
+                child: Text(
+                  text.replaceFirst(RegExp(r'^\[.*?\]\s*'), ''),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    color: isMatched || isActive
+                        ? (isDark ? Colors.white : color)
+                        : (isDark ? Colors.white70 : Colors.black87),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+              .animate(
+                target: shouldPulse ? 1 : 0,
+                onPlay: (controller) => controller.repeat(reverse: true),
+              )
+              .scaleXY(
+                begin: 1.0,
+                end: 1.015,
+                duration: 1.2.seconds,
+                curve: Curves.easeInOutSine,
               ),
-          ],
-        ),
-        child: Text(
-          text.replaceFirst(RegExp(r'^\[.*?\]\s*'), ''),
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 15.sp,
-            color: isMatched || isActive
-                ? (isDark ? Colors.white : color)
-                : (isDark ? Colors.white70 : Colors.black87),
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ).animate(
-        target: shouldPulse ? 1 : 0,
-        onPlay: (controller) => controller.repeat(reverse: true),
-      ).scaleXY(
-        begin: 1.0,
-        end: 1.015,
-        duration: 1.2.seconds,
-        curve: Curves.easeInOutSine,
-      ),
     );
   }
 }

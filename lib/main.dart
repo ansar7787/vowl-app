@@ -462,4 +462,3 @@ class _AppShell extends StatelessWidget {
     );
   }
 }
-

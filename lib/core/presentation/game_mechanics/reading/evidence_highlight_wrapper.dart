@@ -130,9 +130,13 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
 
     // Clean all words
     String cleanString(String s) => s.toLowerCase().replaceAll(
-          RegExp(r'[.,!?;:"' "'" r'\[\]\(\)\-]+'),
-          '',
-        );
+      RegExp(
+        r'[.,!?;:"'
+        "'"
+        r'\[\]\(\)\-]+',
+      ),
+      '',
+    );
 
     final cleanRaw = rawWords.map(cleanString).toList();
 
@@ -197,7 +201,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     // Safety check: ensure target count matches actual valid evidence words
     // found, so the user can actually complete the task without soft-locking.
     int actualEvidenceCount = _words.where((w) => w.isEvidence).length;
-    
+
     if (actualEvidenceCount == 0) {
       // Anti-softlock: If no evidence words could be matched (e.g. JSON typo),
       // auto-complete the highlight mechanic so the user isn't stuck.

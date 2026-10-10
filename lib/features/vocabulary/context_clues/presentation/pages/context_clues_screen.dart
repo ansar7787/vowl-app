@@ -130,7 +130,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
     }
   }
 
-  void _submitFinalAnswer(bool nailedIt, GameQuest quest, [String? misspelledWord]) {
+  void _submitFinalAnswer(
+    bool nailedIt,
+    GameQuest quest, [
+    String? misspelledWord,
+  ]) {
     if (isAnsweredNotifier.value) return;
 
     if (misspelledWord != null) {

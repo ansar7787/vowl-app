@@ -58,11 +58,14 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
-  
+
   int _strikeCount = 0;
   String? _savedTextForRetry;
 
-  void _handleValidationFailure(String message, {CustomSnackBarType type = CustomSnackBarType.warning}) {
+  void _handleValidationFailure(
+    String message, {
+    CustomSnackBarType type = CustomSnackBarType.warning,
+  }) {
     _strikeCount++;
     if (_strikeCount >= 3) {
       _savedTextForRetry = _textController.text;
@@ -228,13 +231,17 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
         '',
       ),
     )) {
-      _handleValidationFailure("Please start your description with a capital letter.");
+      _handleValidationFailure(
+        "Please start your description with a capital letter.",
+      );
       return;
     }
 
     final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
     if (!['.', '!', '?', '"', "'"].contains(lastChar)) {
-      _handleValidationFailure("Please end your description with proper punctuation (., !, or ?).");
+      _handleValidationFailure(
+        "Please end your description with proper punctuation (., !, or ?).",
+      );
       return;
     }
 
@@ -249,12 +256,17 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     }
 
     if (_wordCount.value < minWords) {
-      _handleValidationFailure("Keep writing! You need at least $minWords words.", type: CustomSnackBarType.info);
+      _handleValidationFailure(
+        "Keep writing! You need at least $minWords words.",
+        type: CustomSnackBarType.info,
+      );
       return;
     }
 
     if (matchedCount < 2) {
-      _handleValidationFailure("Inject at least 2 narrative keywords from the emojis!");
+      _handleValidationFailure(
+        "Inject at least 2 narrative keywords from the emojis!",
+      );
       return;
     }
 
@@ -266,7 +278,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     final uniqueWords = cleanWordsList.toSet();
 
     if (uniqueWords.length < (minWords * 0.5).ceil()) {
-      _handleValidationFailure("Your description lacks variety. Try using different words!");
+      _handleValidationFailure(
+        "Your description lacks variety. Try using different words!",
+      );
       return;
     }
 
@@ -281,7 +295,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     // We require at least 50% of the minimum words to be "glue/structure" words
     // to prevent students from just chaining booster keywords together (word salad).
     if (nonKeywordCount < (minWords * 0.5).ceil()) {
-      _handleValidationFailure("This looks like a list of keywords! Please write full, complete sentences connecting the words.");
+      _handleValidationFailure(
+        "This looks like a list of keywords! Please write full, complete sentences connecting the words.",
+      );
       return;
     }
 
@@ -297,7 +313,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     if (!mounted) return;
 
     if (language != 'en') {
-      _handleValidationFailure("Your answer must be written in English. Please write a natural sentence!");
+      _handleValidationFailure(
+        "Your answer must be written in English. Please write a natural sentence!",
+      );
       return;
     }
 
@@ -320,7 +338,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     _showSpeakToConfirm.value = false;
     _wordCount.value = 0;
     _isSubmitting.value = false;
-    
+
     if (_savedTextForRetry != null) {
       _textController.text = _savedTextForRetry!;
       _savedTextForRetry = null;

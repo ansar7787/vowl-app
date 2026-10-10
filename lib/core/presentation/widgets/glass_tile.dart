@@ -60,7 +60,7 @@ class GlassTile extends StatelessWidget {
         isDark && theme.scaffoldBackgroundColor.computeLuminance() < 0.02;
 
     final r = borderRadius ?? BorderRadius.circular(32.r);
-    
+
     // PERF: Force disable expensive blur on low-end devices / low animation mode
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final sigma = reduceMotion ? 0.0 : (blur ?? 14.0);
@@ -173,7 +173,11 @@ class _GlassOverlay extends StatelessWidget {
     // gradient will let background text bleed through, ruining readability.
     if (!hasBlur) {
       return Container(
-        color: color ?? (isMidnight ? Theme.of(context).scaffoldBackgroundColor : Theme.of(context).colorScheme.surface),
+        color:
+            color ??
+            (isMidnight
+                ? Theme.of(context).scaffoldBackgroundColor
+                : Theme.of(context).colorScheme.surface),
       );
     }
 

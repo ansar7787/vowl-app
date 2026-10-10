@@ -67,7 +67,7 @@ void main() {
     mockForgotPassword = MockForgotPassword();
     mockGetCurrentUser = MockGetCurrentUser();
     mockSendEmailVerification = MockSendEmailVerification();
-    
+
     userStreamController = StreamController<UserEntity?>();
 
     when(() => mockNetworkInfo.setPremiumOverride(any())).thenReturn(null);

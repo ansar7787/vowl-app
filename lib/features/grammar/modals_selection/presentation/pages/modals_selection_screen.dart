@@ -82,7 +82,8 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
         }
       });
     } else {
-      String? userAnswer = (quest.options != null &&
+      String? userAnswer =
+          (quest.options != null &&
               _selectedIndex.value < (quest.options?.length ?? 0))
           ? quest.options![_selectedIndex.value]
           : null;
@@ -96,7 +97,8 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     if (correct) {
       submitCorrectAnswer();
     } else {
-      String? userAnswer = (quest.options != null &&
+      String? userAnswer =
+          (quest.options != null &&
               _selectedIndex.value < quest.options!.length)
           ? quest.options![_selectedIndex.value]
           : null;

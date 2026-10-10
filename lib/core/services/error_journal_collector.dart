@@ -33,12 +33,12 @@ class ErrorJournalCollector {
       if (userId.isEmpty || question.isEmpty) return;
 
       final now = DateTime.now();
-      
+
       if (userId == 'local') {
         // Local Guest Storage
         final prefs = await SharedPreferences.getInstance();
         final List<String> logs = prefs.getStringList(_localKey) ?? [];
-        
+
         final entry = ErrorJournalEntry(
           id: now.millisecondsSinceEpoch.toString(),
           gameType: gameType,
@@ -54,21 +54,21 @@ class ErrorJournalCollector {
         logs.removeWhere((log) {
           try {
             final decoded = jsonDecode(log) as Map<String, dynamic>;
-            return decoded['question'] == question && 
-                   decoded['correctAnswer'] == correctAnswer && 
-                   decoded['gameType'] == gameType && 
-                   decoded['level'] == level;
+            return decoded['question'] == question &&
+                decoded['correctAnswer'] == correctAnswer &&
+                decoded['gameType'] == gameType &&
+                decoded['level'] == level;
           } catch (_) {
             return false;
           }
         });
 
         logs.add(jsonEncode(entry.toJson()));
-        
+
         if (logs.length > maxEntries) {
           logs.removeAt(0); // Prune oldest
         }
-        
+
         await prefs.setStringList(_localKey, logs);
         updateNotifier.value++;
         return;
@@ -86,9 +86,10 @@ class ErrorJournalCollector {
       };
 
       // Create a deterministic document ID to deduplicate identical questions.
-      // If the user gets the same question wrong again, it will just overwrite 
+      // If the user gets the same question wrong again, it will just overwrite
       // the existing document and update the timestamp, bumping it to the top.
-      final String uniqueString = '${gameType}_${level}_${question}_$correctAnswer';
+      final String uniqueString =
+          '${gameType}_${level}_${question}_$correctAnswer';
       // base64UrlEncode is safe for Firestore paths (no slashes)
       final String docId = base64UrlEncode(utf8.encode(uniqueString));
 
@@ -117,10 +118,13 @@ class ErrorJournalCollector {
       if (userId == 'local') {
         final prefs = await SharedPreferences.getInstance();
         final List<String> logs = prefs.getStringList(_localKey) ?? [];
-        
+
         var entries = logs
-            .map((str) => ErrorJournalEntry.fromJson(
-                jsonDecode(str) as Map<String, dynamic>))
+            .map(
+              (str) => ErrorJournalEntry.fromJson(
+                jsonDecode(str) as Map<String, dynamic>,
+              ),
+            )
             .toList();
 
         if (filterGameType != null && filterGameType.isNotEmpty) {
@@ -128,8 +132,11 @@ class ErrorJournalCollector {
         }
 
         // Sort descending (newest first)
-        entries.sort((a, b) => (b.timestamp ?? DateTime.now())
-            .compareTo(a.timestamp ?? DateTime.now()));
+        entries.sort(
+          (a, b) => (b.timestamp ?? DateTime.now()).compareTo(
+            a.timestamp ?? DateTime.now(),
+          ),
+        );
 
         return entries.take(limit).toList();
       }
@@ -157,8 +164,8 @@ class ErrorJournalCollector {
           correctAnswer: data['correctAnswer'] as String? ?? '',
           level: (data['level'] as num?)?.toInt() ?? 1,
           timestamp: (data['timestamp'] as Timestamp?)?.toDate(),
-          options: data['options'] != null 
-              ? List<String>.from(data['options'] as List) 
+          options: data['options'] != null
+              ? List<String>.from(data['options'] as List)
               : null,
         );
       }).toList();
@@ -179,7 +186,7 @@ class ErrorJournalCollector {
       if (userId == 'local') {
         final prefs = await SharedPreferences.getInstance();
         final List<String> logs = prefs.getStringList(_localKey) ?? [];
-        
+
         final filteredLogs = logs.where((str) {
           final decoded = jsonDecode(str) as Map<String, dynamic>;
           return decoded['id'] != entryId;
@@ -196,7 +203,7 @@ class ErrorJournalCollector {
           .collection('errorJournal')
           .doc(entryId)
           .delete();
-          
+
       updateNotifier.value++;
     } catch (e) {
       if (kDebugMode) {
@@ -220,9 +227,9 @@ class ErrorJournalCollector {
           .doc(userId)
           .collection('errorJournal');
 
-      // Cap iterations to prevent unbounded billing if document count is 
-      // artificially inflated via direct Firestore writes. 
-      // 10 batches × 500 docs = 5000 max deletes — more than enough for 
+      // Cap iterations to prevent unbounded billing if document count is
+      // artificially inflated via direct Firestore writes.
+      // 10 batches × 500 docs = 5000 max deletes — more than enough for
       // legitimate use (maxEntries is 200).
       var snapshot = await collection.limit(500).get();
       int iterations = 0;
@@ -239,7 +246,7 @@ class ErrorJournalCollector {
           snapshot = await collection.limit(500).get();
         }
       }
-      
+
       updateNotifier.value++;
     } catch (e) {
       if (kDebugMode) {
@@ -259,10 +266,11 @@ class ErrorJournalCollector {
       if (userId == 'local') {
         final prefs = await SharedPreferences.getInstance();
         final List<String> logs = prefs.getStringList(_localKey) ?? [];
-        
+
         final filteredLogs = logs.where((str) {
           final decoded = jsonDecode(str) as Map<String, dynamic>;
-          return !(decoded['gameType'] == gameType && decoded['level'] == level);
+          return !(decoded['gameType'] == gameType &&
+              decoded['level'] == level);
         }).toList();
 
         await prefs.setStringList(_localKey, filteredLogs);
@@ -378,11 +386,11 @@ class ErrorJournalEntry {
       userAnswer: json['userAnswer'] as String? ?? '',
       correctAnswer: json['correctAnswer'] as String? ?? '',
       level: json['level'] as int? ?? 1,
-      timestamp: json['timestamp'] != null 
-          ? DateTime.tryParse(json['timestamp'] as String) 
+      timestamp: json['timestamp'] != null
+          ? DateTime.tryParse(json['timestamp'] as String)
           : null,
-      options: json['options'] != null 
-          ? List<String>.from(json['options']) 
+      options: json['options'] != null
+          ? List<String>.from(json['options'])
           : null,
     );
   }

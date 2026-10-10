@@ -254,7 +254,9 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: widget.displayFontSize ?? 20.sp,
-                                  fontWeight: widget.displayFontWeight ?? FontWeight.w800,
+                                  fontWeight:
+                                      widget.displayFontWeight ??
+                                      FontWeight.w800,
                                   color: textColor,
                                   letterSpacing: 0.5,
                                   height: 1.3,

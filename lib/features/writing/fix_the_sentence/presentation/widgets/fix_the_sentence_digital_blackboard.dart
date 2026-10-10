@@ -98,7 +98,10 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                     ? tokens.gameCorrect
                                     : KidsColors.safeGreen;
                                 return Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+                                  margin: EdgeInsets.symmetric(
+                                    horizontal: 4.w,
+                                    vertical: 4.h,
+                                  ),
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 12.w,
                                     vertical: 6.h,
@@ -120,7 +123,8 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                     ),
                                   ),
                                   child: Text(
-                                    selectedReplacement?.toUpperCase() ?? "____",
+                                    selectedReplacement?.toUpperCase() ??
+                                        "____",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
@@ -139,7 +143,10 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                               },
                             )
                           : Container(
-                              margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+                              margin: EdgeInsets.symmetric(
+                                horizontal: 4.w,
+                                vertical: 4.h,
+                              ),
                               decoration: BoxDecoration(
                                 color: color.withValues(alpha: 0.15),
                                 borderRadius: BorderRadius.circular(10.r),
@@ -197,7 +204,9 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                                           curve: Curves
                                                               .easeInOutSine,
                                                         )
-                                                        .fadeIn(duration: 400.ms)
+                                                        .fadeIn(
+                                                          duration: 400.ms,
+                                                        )
                                                         .fadeOut(
                                                           delay: 600.ms,
                                                           duration: 400.ms,
@@ -208,7 +217,8 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                         if (erasePoints.isNotEmpty)
                                           Positioned.fill(
                                             child: ClipRRect(
-                                              borderRadius: BorderRadius.circular(8.r),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.r),
                                               child: CustomPaint(
                                                 painter:
                                                     FixTheSentenceScratchOverlayPainter(

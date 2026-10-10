@@ -1,4 +1,4 @@
-﻿import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -1432,4 +1432,3 @@ class _PremiumScreenState extends State<PremiumScreen> {
     );
   }
 }
-

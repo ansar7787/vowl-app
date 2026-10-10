@@ -90,7 +90,6 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
-    
 
     bloc = AccentBloc(
       getQuest: mockGetQuest,

@@ -89,7 +89,9 @@ class _SummarizeStoryWritingScreenState
     if (firstEmptyIdx != -1) {
       hapticService.success();
       final newSlots = List<SummarizeStoryFrameSlot>.from(_slots.value);
-      newSlots[firstEmptyIdx] = newSlots[firstEmptyIdx].copyWith(sentence: sentence);
+      newSlots[firstEmptyIdx] = newSlots[firstEmptyIdx].copyWith(
+        sentence: sentence,
+      );
       _slots.value = newSlots;
     }
   }
@@ -101,6 +103,7 @@ class _SummarizeStoryWritingScreenState
     newSlots[slotIdx] = newSlots[slotIdx].copyWith(clearSentence: true);
     _slots.value = newSlots;
   }
+
   void _submitAnswer(bool isAnswered, WritingQuest quest) {
     if (isAnswered) return;
 
@@ -380,10 +383,24 @@ class _SummarizeStoryWritingScreenState
                                       padding: EdgeInsets.only(top: 48.h),
                                       child: TypeToConfirmOverlay(
                                         expectedText: _slots.value.isNotEmpty
-                                            ? (_slots.value.map((s) => s.sentence ?? "").join(" ").trim().replaceAll(RegExp(r'\s+'), ' '))
+                                            ? (_slots.value
+                                                  .map((s) => s.sentence ?? "")
+                                                  .join(" ")
+                                                  .trim()
+                                                  .replaceAll(
+                                                    RegExp(r'\s+'),
+                                                    ' ',
+                                                  ))
                                             : "",
                                         displayText: _slots.value.isNotEmpty
-                                            ? (_slots.value.map((s) => s.sentence ?? "").join(" ").trim().replaceAll(RegExp(r'\s+'), ' '))
+                                            ? (_slots.value
+                                                  .map((s) => s.sentence ?? "")
+                                                  .join(" ")
+                                                  .trim()
+                                                  .replaceAll(
+                                                    RegExp(r'\s+'),
+                                                    ' ',
+                                                  ))
                                             : "",
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () =>

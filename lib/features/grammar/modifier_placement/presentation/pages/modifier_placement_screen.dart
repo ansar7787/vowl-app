@@ -497,7 +497,8 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
                                                           ),
                                                     ).animate().scale(
                                                       duration: 400.ms,
-                                                      curve: Curves.easeOutCubic,
+                                                      curve:
+                                                          Curves.easeOutCubic,
                                                     ),
 
                                                   // Submit Button

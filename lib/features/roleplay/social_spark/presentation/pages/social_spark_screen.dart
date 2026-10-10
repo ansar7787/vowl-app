@@ -200,10 +200,12 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
-            final String currentText = _formatSentence(_selectedIndices.value
-                .where((idx) => idx >= 0 && idx < words.length)
-                .map((idx) => words[idx])
-                .join(' '));
+            final String currentText = _formatSentence(
+              _selectedIndices.value
+                  .where((idx) => idx >= 0 && idx < words.length)
+                  .map((idx) => words[idx])
+                  .join(' '),
+            );
 
             return RoleplayBaseLayout(
               fullScreenContent: true,
@@ -239,11 +241,18 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                 child: ListenableBuilder(
                                   listenable: _selectedIndices,
                                   builder: (context, _) {
-                                    final String currentText = _formatSentence(_selectedIndices.value
-                                        .where((idx) => idx >= 0 && idx < words.length)
-                                        .map((idx) => words[idx])
-                                        .join(' '));
-                                    final isCompact = MediaQuery.of(context).size.height < 580;
+                                    final String currentText = _formatSentence(
+                                      _selectedIndices.value
+                                          .where(
+                                            (idx) =>
+                                                idx >= 0 && idx < words.length,
+                                          )
+                                          .map((idx) => words[idx])
+                                          .join(' '),
+                                    );
+                                    final isCompact =
+                                        MediaQuery.of(context).size.height <
+                                        580;
                                     return Padding(
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 16.w,
@@ -257,12 +266,18 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                           SocialSparkConnectionMonitor(
                                             text: currentText,
                                             socialContext: quest.socialContext,
-                                            instruction: InstructionHelper.getInstruction(quest),
+                                            instruction:
+                                                InstructionHelper.getInstruction(
+                                                  quest,
+                                                ),
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: isAnsweredNotifier.value &&
-                                                (isCorrectNotifier.value != null ||
-                                                    !isFirstStagePassedNotifier.value),
+                                            isAnswered:
+                                                isAnsweredNotifier.value &&
+                                                (isCorrectNotifier.value !=
+                                                        null ||
+                                                    !isFirstStagePassedNotifier
+                                                        .value),
                                             isCorrect: isCorrectNotifier.value,
                                           ),
                                           SizedBox(
@@ -272,12 +287,20 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                             words: words,
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            selectedIndices: _selectedIndices.value
-                                                .where((idx) => idx >= 0 && idx < words.length)
+                                            selectedIndices: _selectedIndices
+                                                .value
+                                                .where(
+                                                  (idx) =>
+                                                      idx >= 0 &&
+                                                      idx < words.length,
+                                                )
                                                 .toList(),
-                                            isAnswered: isAnsweredNotifier.value &&
-                                                (isCorrectNotifier.value != null ||
-                                                    !isFirstStagePassedNotifier.value),
+                                            isAnswered:
+                                                isAnsweredNotifier.value &&
+                                                (isCorrectNotifier.value !=
+                                                        null ||
+                                                    !isFirstStagePassedNotifier
+                                                        .value),
                                             isCorrect: isCorrectNotifier.value,
                                             pulseValue: _pulseController.value,
                                             onStarTap: _onStarTap,
@@ -289,7 +312,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                           if (!isAnsweredNotifier.value &&
                                               _selectedIndices.value.isNotEmpty)
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.stretch,
                                               children: [
                                                 ScaleButton(
                                                   onTap: () => _submitAnswer(
@@ -299,43 +323,62 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                   ),
                                                   child: Container(
                                                     alignment: Alignment.center,
-                                                    padding: EdgeInsets.symmetric(
-                                                      vertical: isCompact ? 12.h : 16.h,
-                                                    ),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          vertical: isCompact
+                                                              ? 12.h
+                                                              : 16.h,
+                                                        ),
                                                     decoration: BoxDecoration(
-                                                      borderRadius: BorderRadius.circular(30.r),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            30.r,
+                                                          ),
                                                       gradient: LinearGradient(
                                                         colors: [
                                                           theme.primaryColor,
-                                                          theme.primaryColor.withValues(
-                                                            alpha: 0.8,
-                                                          ),
+                                                          theme.primaryColor
+                                                              .withValues(
+                                                                alpha: 0.8,
+                                                              ),
                                                         ],
                                                       ),
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          color: theme.primaryColor.withValues(
-                                                            alpha: 0.35,
-                                                          ),
-                                                          blurRadius: isCompact ? 10 : 15,
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.35,
+                                                              ),
+                                                          blurRadius: isCompact
+                                                              ? 10
+                                                              : 15,
                                                         ),
                                                       ],
                                                     ),
                                                     child: Row(
-                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Icon(
                                                           Icons.bolt_rounded,
                                                           color: Colors.white,
-                                                          size: isCompact ? 18.r : 20.r,
+                                                          size: isCompact
+                                                              ? 18.r
+                                                              : 20.r,
                                                         ),
                                                         SizedBox(width: 8.w),
                                                         Text(
                                                           "IGNITE SPARK",
                                                           style: TextStyle(
-                                                            fontFamily: 'Outfit',
-                                                            fontSize: isCompact ? 14.sp : 16.sp,
-                                                            fontWeight: FontWeight.bold,
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: isCompact
+                                                                ? 14.sp
+                                                                : 16.sp,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                             color: Colors.white,
                                                             letterSpacing: 1.5,
                                                           ),
@@ -344,30 +387,53 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                     ),
                                                   ),
                                                 ),
-                                                SizedBox(height: isCompact ? 12.h : 16.h),
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 12.h
+                                                      : 16.h,
+                                                ),
                                                 ScaleButton(
                                                   onTap: _clearSelection,
                                                   child: Container(
                                                     alignment: Alignment.center,
-                                                    padding: EdgeInsets.symmetric(
-                                                      vertical: isCompact ? 10.h : 14.h,
-                                                    ),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          vertical: isCompact
+                                                              ? 10.h
+                                                              : 14.h,
+                                                        ),
                                                     child: Row(
-                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Icon(
                                                           Icons.refresh_rounded,
-                                                          color: theme.primaryColor.withValues(alpha: 0.7),
-                                                          size: isCompact ? 16.r : 18.r,
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.7,
+                                                              ),
+                                                          size: isCompact
+                                                              ? 16.r
+                                                              : 18.r,
                                                         ),
                                                         SizedBox(width: 6.w),
                                                         Text(
                                                           "CLEAR PATH",
                                                           style: TextStyle(
-                                                            fontFamily: 'Outfit',
-                                                            fontSize: isCompact ? 12.sp : 14.sp,
-                                                            fontWeight: FontWeight.bold,
-                                                            color: theme.primaryColor.withValues(alpha: 0.7),
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: isCompact
+                                                                ? 12.sp
+                                                                : 14.sp,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.7,
+                                                                ),
                                                             letterSpacing: 1.5,
                                                           ),
                                                         ),
@@ -376,7 +442,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                   ),
                                                 ),
                                               ],
-                                            ).animate().fadeIn(duration: 300.ms),
+                                            ).animate().fadeIn(
+                                              duration: 300.ms,
+                                            ),
                                           // Post-answer review cards
                                           SizedBox(
                                             height: isCompact ? 20.h : 40.h,
@@ -392,8 +460,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                   !isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
                                   child: SpeakToConfirmOverlay(
-                                    expectedText:
-                                        _formatSentence(quest.correctAnswer ?? currentText),
+                                    expectedText: _formatSentence(
+                                      quest.correctAnswer ?? currentText,
+                                    ),
                                     primaryColor: theme.primaryColor,
                                     isPositioned: false,
                                     onConfirmed: () {

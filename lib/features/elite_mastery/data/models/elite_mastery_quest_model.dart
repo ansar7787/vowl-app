@@ -98,7 +98,8 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
           : null,
       idiom: getString(json['idiom']),
       word: getString(json['word']),
-      speedMultiplier: ((json['speedMultiplier'] ?? json['speedLevel']) as num?)?.toDouble(),
+      speedMultiplier: ((json['speedMultiplier'] ?? json['speedLevel']) as num?)
+          ?.toDouble(),
       textToSpeak: getString(json['textToSpeak']),
       text: getString(json['text'] ?? json['textToSpeak'] ?? json['word']),
       // FIX: every Idiom Match quest carries a `question` field (the

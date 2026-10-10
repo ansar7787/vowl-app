@@ -67,7 +67,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
           ),
           SizedBox(height: 18.h),
 
-          // Plate grid (Wrap) containing Draggables. 
+          // Plate grid (Wrap) containing Draggables.
           // Using Wrap instead of horizontal scroll prevents drag-vs-scroll gesture conflicts.
           Wrap(
             spacing: 12.w,

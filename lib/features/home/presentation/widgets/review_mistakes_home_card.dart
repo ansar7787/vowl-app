@@ -38,9 +38,7 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
   }
 
   Future<void> _loadMistakeCount() async {
-    final count = await ErrorJournalCollector.count(
-      userId: widget.user.id,
-    );
+    final count = await ErrorJournalCollector.count(userId: widget.user.id);
     if (mounted) {
       _mistakeCount.value = count;
     }

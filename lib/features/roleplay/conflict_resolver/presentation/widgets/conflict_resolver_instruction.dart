@@ -19,8 +19,8 @@ class ConflictResolverInstruction extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: isDark 
-            ? primaryColor.withValues(alpha: 0.12) 
+        color: isDark
+            ? primaryColor.withValues(alpha: 0.12)
             : primaryColor.withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(

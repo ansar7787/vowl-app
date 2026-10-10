@@ -92,7 +92,11 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
     });
   }
 
-  void _submitFinalAnswer(bool nailedIt, {GameQuest? quest, String? wrongWord}) {
+  void _submitFinalAnswer(
+    bool nailedIt, {
+    GameQuest? quest,
+    String? wrongWord,
+  }) {
     if (isAnsweredNotifier.value && isCorrectNotifier.value != null) return;
 
     if (wrongWord != null && wrongWord.isNotEmpty) {
@@ -318,11 +322,10 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                                                   true,
                                                   quest: quest,
                                                 ),
-                                            onSkipped: () =>
-                                                _submitFinalAnswer(
-                                                  false,
-                                                  quest: quest,
-                                                ),
+                                            onSkipped: () => _submitFinalAnswer(
+                                              false,
+                                              quest: quest,
+                                            ),
                                             isPositioned: false,
                                           ),
                                           SizedBox(height: 60.h),

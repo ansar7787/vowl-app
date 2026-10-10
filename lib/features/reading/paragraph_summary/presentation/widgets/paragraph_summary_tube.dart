@@ -27,7 +27,7 @@ class ParagraphSummaryTube extends StatelessWidget {
     return AnimatedContainer(
       duration: isPinching ? Duration.zero : 200.milliseconds,
       width: 320.w * pinchWidth,
-      padding: isDistilled 
+      padding: isDistilled
           ? EdgeInsets.symmetric(horizontal: 12.w, vertical: 16.h)
           : EdgeInsets.all(24.r),
       decoration: BoxDecoration(
@@ -49,50 +49,50 @@ class ParagraphSummaryTube extends StatelessWidget {
         child: AnimatedSwitcher(
           duration: 400.milliseconds,
           child: !isDistilled
-            ? Text(
-                passage,
-                key: const ValueKey("passage"),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 15.sp,
-                  height: 1.4,
-                  color: isDark ? Colors.white70 : Colors.black87,
-                ),
-              )
-            : Column(
-                key: const ValueKey("keywords"),
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: keywords
-                    .map(
-                      (k) => Padding(
-                        padding: EdgeInsets.only(bottom: 8.h),
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 12.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(12.r),
-                            border: Border.all(color: color, width: 2),
-                          ),
-                          child: Text(
-                            k,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w600,
-                              color: isDark ? Colors.white : color,
+              ? Text(
+                  passage,
+                  key: const ValueKey("passage"),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    height: 1.4,
+                    color: isDark ? Colors.white70 : Colors.black87,
+                  ),
+                )
+              : Column(
+                  key: const ValueKey("keywords"),
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: keywords
+                      .map(
+                        (k) => Padding(
+                          padding: EdgeInsets.only(bottom: 8.h),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: 12.h,
                             ),
-                          ),
-                        ).animate().scale(duration: 300.milliseconds),
-                      ),
-                    )
-                    .toList(),
-              ),
+                            decoration: BoxDecoration(
+                              color: color.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(12.r),
+                              border: Border.all(color: color, width: 2),
+                            ),
+                            child: Text(
+                              k,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark ? Colors.white : color,
+                              ),
+                            ),
+                          ).animate().scale(duration: 300.milliseconds),
+                        ),
+                      )
+                      .toList(),
+                ),
         ),
       ),
     );

@@ -9,7 +9,6 @@ import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 
-
 import '../widgets/accent_shadowing_target_panel.dart';
 import '../widgets/accent_shadowing_options_panel.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
@@ -18,7 +17,6 @@ import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
-
 
 class AccentShadowingScreen extends StatefulWidget {
   final int level;
@@ -327,21 +325,27 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                 ),
                                 margin: EdgeInsets.only(bottom: 24.h),
                                 decoration: BoxDecoration(
-                                  color: isDark 
-                                      ? AppColors.slate800 
+                                  color: isDark
+                                      ? AppColors.slate800
                                       : Colors.white,
                                   borderRadius: BorderRadius.circular(16.r),
                                   border: Border.all(
-                                    color: isDark 
-                                        ? theme.primaryColor.withValues(alpha: 0.3)
-                                        : theme.primaryColor.withValues(alpha: 0.2),
+                                    color: isDark
+                                        ? theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          )
+                                        : theme.primaryColor.withValues(
+                                            alpha: 0.2,
+                                          ),
                                     width: 1.5,
                                   ),
                                   boxShadow: [
                                     BoxShadow(
                                       color: isDark
                                           ? Colors.black.withValues(alpha: 0.2)
-                                          : theme.primaryColor.withValues(alpha: 0.05),
+                                          : theme.primaryColor.withValues(
+                                              alpha: 0.05,
+                                            ),
                                       blurRadius: 10,
                                       offset: const Offset(0, 4),
                                     ),
@@ -449,8 +453,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                   },
                 ),
               ),
-              if (isFirstStagePassedNotifier.value &&
-                  !isAnsweredNotifier.value)
+              if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
                   child: AccentShadowingInsightsPanel(
                     quest: quest,
@@ -504,7 +507,8 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasInsights = quest.explanation != null ||
+    final hasInsights =
+        quest.explanation != null ||
         quest.shadowingFocus != null ||
         quest.targetAccent != null ||
         quest.usageContext != null ||
@@ -526,7 +530,9 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: isDark ? Colors.black.withValues(alpha: 0.2) : primaryColor.withValues(alpha: 0.05),
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : primaryColor.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -537,7 +543,11 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.tips_and_updates_rounded, color: primaryColor, size: 24.r),
+              Icon(
+                Icons.tips_and_updates_rounded,
+                color: primaryColor,
+                size: 24.r,
+              ),
               SizedBox(width: 8.w),
               Text(
                 'Pedagogical Insights',

@@ -14,7 +14,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
-
 class _LocalPalette {
   _LocalPalette._();
   static const Color colorbe123c = Color(0xFFBE123C);
@@ -61,8 +60,8 @@ class ToolsStrip extends StatelessWidget {
         darkColor: _LocalPalette.colorbe123c,
         route: AppRouter.kidsZoneRoute,
         requiresAd: false,
-          isFeatured: true,
-        ),
+        isFeatured: true,
+      ),
       _ToolDef(
         title: context.tr('home.tools_daily_words', fallback: 'Daily Words'),
         subtitle: context.tr('home.tools_daily_new', fallback: 'New Today'),
