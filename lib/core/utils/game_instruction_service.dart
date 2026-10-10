@@ -1634,18 +1634,18 @@ class GameInstructionService {
         );
       case 'family':
         return const GameBriefing(
-          title: "Family Tree",
+          title: "Family",
           icon: Icons.family_restroom_rounded,
           objective:
-              "Let's build our family history! Check the grand banner to see who we are looking for, and hang their portrait on the family tree.",
+              "Match the family member to the description by placing their photo in the frame.",
           rules: [
-            "Read the family title",
-            "Find the right relative",
-            "Hang the portrait",
+            "Listen to the clue",
+            "Find the matching photo",
+            "Drag or tap to select",
           ],
-          actionText: "Meet Family",
+          actionText: "Start",
           tip:
-              "PRO TIP: Family words show how people are related, like brother or sister! ❤️",
+              "PRO TIP: Pay attention to key relationship words like 'parent' or 'sibling'.",
         );
       case 'food':
         return const GameBriefing(
