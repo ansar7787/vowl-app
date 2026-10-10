@@ -55,12 +55,12 @@ class KidsFamilyLayout extends StatelessWidget {
             KidsFittedText(
               context.tr(
                 'games.kids_family_drag',
-                fallback: 'Drag the photo to the frame! ✨',
+                fallback: 'Drag or tap the photo.',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
@@ -98,8 +98,8 @@ class KidsFamilyLayout extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(
                       bottom: 24.h,
-                      left: 16.w,
-                      right: 16.w,
+                      left: 8.w,
+                      right: 8.w,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -110,7 +110,7 @@ class KidsFamilyLayout extends StatelessWidget {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4.w),
+                            padding: EdgeInsets.symmetric(horizontal: 2.w),
                             child: _buildPolaroidOption(
                               context,
                               state,
@@ -188,9 +188,29 @@ class KidsFamilyLayout extends StatelessWidget {
                     children: [
                       if (quest.emoji != null)
                         state.answerStatus == AnswerStatus.correct
-                            ? Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 80.sp),
+                            ? Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 64.sp),
+                                  ),
+                                  SizedBox(height: 8.h),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                    child: KidsFittedText(
+                                      quest.correctAnswer.toString().replaceAll(quest.emoji!, '').trim(),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: const Color(0xFF78350F),
+                                      ),
+                                      maxLines: 4,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ],
                               )
                             : ColorFiltered(
                                 colorFilter: ColorFilter.mode(
@@ -201,16 +221,16 @@ class KidsFamilyLayout extends StatelessWidget {
                                 ),
                                 child: Text(
                                   quest.emoji!,
-                                  style: TextStyle(fontSize: 80.sp),
+                                  style: TextStyle(fontSize: 64.sp),
                                 ),
                               ),
                       if (state.answerStatus != AnswerStatus.correct)
                         KidsFittedText(
-                          "?",
+                          quest.question ?? "?",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 60.sp,
-                            fontWeight: FontWeight.w900,
+                            fontSize: 48.sp,
+                            fontWeight: FontWeight.w700,
                             color: const Color(
                               0xFF78350F,
                             ).withValues(alpha: 0.7),
@@ -247,54 +267,88 @@ class KidsFamilyLayout extends StatelessWidget {
 
     final polaroidWidget = Transform.rotate(
       angle: rotation,
-      child: Container(
-        height: 110.h,
-        width: 90.w,
-        padding: EdgeInsets.fromLTRB(8.w, 8.h, 8.w, 20.h),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(2.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.15),
-              offset: const Offset(0, 4),
-              blurRadius: 6,
+      child: Stack(
+        children: [
+          Container(
+            height: 160.h,
+            width: double.infinity, // Let Expanded control the width
+            padding: EdgeInsets.fromLTRB(2.w, 8.h, 2.w, 4.h),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(2.r),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.15),
+                  offset: const Offset(0, 4),
+                  blurRadius: 6,
+                ),
+              ],
             ),
-          ],
-        ),
-        child: Column(
-          children: [
-            // Photo area
-            Expanded(
+            child: Column(
+              children: [
+                // Photo area
+                Expanded(
+                  flex: 3,
+                  child: Container(
+                    width: double.infinity,
+                    color: AppColors.slate200, // Blank photo grey
+                    child: Center(
+                      child: emoji.isNotEmpty
+                          ? Text(emoji, style: TextStyle(fontSize: 32.sp))
+                          : Icon(
+                              Icons.photo_rounded,
+                              color: AppColors.slate400,
+                              size: 24.r,
+                            ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 6.h),
+                // Handwriting text
+                Expanded(
+                  flex: 2,
+                  child: Center(
+                    child: KidsFittedText(
+                      word,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.slate700,
+                      ),
+                      maxLines: 6, // Never show ellipses
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // TTS Speaker Button
+          Positioned(
+            top: 4.h,
+            right: 4.w,
+            child: GestureDetector(
+              onTap: () {
+                if (!state.answerStatus.isAnswered) {
+                  di.sl<KidsTTSService>().speak(text);
+                }
+              },
               child: Container(
-                width: double.infinity,
-                color: AppColors.slate200, // Blank photo grey
-                child: Center(
-                  child: emoji.isNotEmpty
-                      ? Text(emoji, style: TextStyle(fontSize: 32.sp))
-                      : Icon(
-                          Icons.photo_rounded,
-                          color: AppColors.slate400,
-                          size: 24.r,
-                        ),
+                padding: EdgeInsets.all(4.r),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.8),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.volume_up_rounded,
+                  size: 16.r,
+                  color: AppColors.slate500,
                 ),
               ),
             ),
-            SizedBox(height: 8.h),
-            // Handwriting text
-            KidsFittedText(
-              word,
-              style: TextStyle(
-                fontFamily: 'ComicSans', // Or any casual font
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColors.slate700,
-              ),
-              maxLines: 2,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
 
@@ -308,7 +362,17 @@ class KidsFamilyLayout extends StatelessWidget {
         ),
       ),
       childWhenDragging: Opacity(opacity: 0.3, child: polaroidWidget),
-      child: polaroidWidget,
+      child: GestureDetector(
+        onTap: () {
+          if (!state.answerStatus.isAnswered) {
+            if (!isCorrect) {
+              di.sl<KidsTTSService>().speak(text);
+            }
+            context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+          }
+        },
+        child: polaroidWidget,
+      ),
     );
   }
 }
