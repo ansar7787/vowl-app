@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -45,25 +46,25 @@ class KidsFoodLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: 90.h),
             // The Chef's Hat / Board
             Expanded(
               flex: 5,
               child: Center(child: _buildKitchenBoard(context, state, quest)),
             ),
-            SizedBox(height: 24.h),
+            SizedBox(height: 16.h),
             KidsFittedText(
               context.tr(
                 'games.kids_food_drag',
-                fallback: 'Drag the food to the plate! ✨',
+                fallback: 'Drag the right food to the board!',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 14.sp,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white.withValues(alpha: 0.8)
-                    : Colors.black.withValues(alpha: 0.6),
+                    ? Colors.white.withValues(alpha: 0.9)
+                    : Colors.black.withValues(alpha: 0.7),
               ),
               maxLines: 2,
               textAlign: TextAlign.center,
@@ -77,7 +78,7 @@ class KidsFoodLayout extends StatelessWidget {
                 children: [
                   // Checkered Tablecloth
                   Container(
-                    height: 40.h,
+                    height: 50.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.red[600],
@@ -85,13 +86,18 @@ class KidsFoodLayout extends StatelessWidget {
                         top: Radius.circular(8.r),
                       ),
                     ),
-                    child: CustomPaint(painter: _CheckeredPainter()),
+                    clipBehavior: Clip.hardEdge,
+                    child: SvgPicture.string(
+                      _checkeredTableclothSvg,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      bottom: 20.h,
-                      left: 16.w,
-                      right: 16.w,
+                      bottom: 24.h,
+                      left: 12.w,
+                      right: 12.w,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -128,159 +134,187 @@ class KidsFoodLayout extends StatelessWidget {
     KidsLoaded state,
     dynamic quest,
   ) {
-    return DragTarget<String>(
-      onAcceptWithDetails: (details) {
-        final text = details.data;
-        final isCorrect = (text == quest.correctAnswer);
-        if (!isCorrect) {
-          di.sl<KidsTTSService>().speak(text);
-        }
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      builder: (context, candidateData, rejectedData) {
-        final isHovering = candidateData.isNotEmpty;
-        return InkWell(
-          onTap: state.answerStatus.isAnswered
-              ? null
-              : () {
-                  if (InstructionHelper.getInstruction(quest).isNotEmpty) {
-                    di.sl<KidsTTSService>().speak(
-                      InstructionHelper.getInstruction(quest),
-                    );
-                  }
-                },
-          child: Stack(
-            alignment: Alignment.topCenter,
-            clipBehavior: Clip.none,
-            children: [
-              // The White Kitchen Tile Board
-              Container(
-                width: 280.w,
-                height: 200.h,
-                decoration: BoxDecoration(
-                  color: isHovering
-                      ? _LocalPalette.colorfef2f2
-                      : Colors.white, // Light red tint on hover
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: isHovering
-                        ? AppColors.rose700
-                        : _LocalPalette.colord4d4d8,
-                    width: isHovering ? 6.r : 4.r,
-                  ), // Light grey tile border
-                  boxShadow: [
-                    BoxShadow(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final double boardWidth = constraints.maxWidth > 0
+            ? (constraints.maxWidth * 0.9).clamp(200.0, 400.0)
+            : 280.w;
+        final double boardHeight = constraints.maxHeight > 0
+            ? (constraints.maxHeight * 0.9).clamp(150.0, 220.0)
+            : 200.h;
+
+        return DragTarget<String>(
+          onAcceptWithDetails: (details) {
+            final text = details.data;
+            final isCorrect = (text == quest.correctAnswer);
+            final parts = text.trim().split(' ');
+            final cleanText = parts.length > 1
+                ? parts.sublist(0, parts.length - 1).join(' ')
+                : text;
+            di.sl<KidsTTSService>().speak(cleanText);
+            context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+          },
+          builder: (context, candidateData, rejectedData) {
+            final isHovering = candidateData.isNotEmpty;
+            return InkWell(
+              onTap: state.answerStatus.isAnswered
+                  ? null
+                  : () {
+                      if (InstructionHelper.getInstruction(quest).isNotEmpty) {
+                        di.sl<KidsTTSService>().speak(
+                          InstructionHelper.getInstruction(quest),
+                        );
+                      }
+                    },
+              child: Stack(
+                alignment: Alignment.topCenter,
+                clipBehavior: Clip.none,
+                children: [
+                  // The White Kitchen Tile Board
+                  Container(
+                    width: boardWidth,
+                    height: boardHeight,
+                    decoration: BoxDecoration(
                       color: isHovering
-                          ? AppColors.rose700.withValues(alpha: 0.3)
-                          : Colors.black.withValues(alpha: 0.1),
-                      blurRadius: isHovering ? 20 : 10,
-                      offset: const Offset(0, 8),
+                          ? _LocalPalette.colorfef2f2
+                          : Colors.white, // Light red tint on hover
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: isHovering
+                            ? AppColors.rose700
+                            : _LocalPalette.colord4d4d8,
+                        width: isHovering ? 6.r : 4.r,
+                      ), // Light grey tile border
+                      boxShadow: [
+                        BoxShadow(
+                          color: isHovering
+                              ? AppColors.rose700.withValues(alpha: 0.3)
+                              : Colors.black.withValues(alpha: 0.1),
+                          blurRadius: isHovering ? 20 : 10,
+                          offset: const Offset(0, 8),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 16.w),
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            if (quest.emoji != null &&
-                                (quest.question == "?" ||
-                                    quest.question == null))
-                              state.answerStatus == AnswerStatus.correct
-                                  ? Text(
-                                      quest.emoji!,
-                                      style: TextStyle(fontSize: 80.sp),
-                                    )
-                                  : ColorFiltered(
-                                      colorFilter: ColorFilter.mode(
-                                        const Color(
-                                          0xFFE11D48,
-                                        ).withValues(alpha: 0.15),
-                                        BlendMode.srcIn,
-                                      ),
-                                      child: Text(
-                                        quest.emoji!,
-                                        style: TextStyle(fontSize: 80.sp),
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                if (quest.emoji != null &&
+                                    (quest.question == "?" ||
+                                        quest.question == null))
+                                  state.answerStatus == AnswerStatus.correct
+                                      ? Text(
+                                          quest.emoji!,
+                                          style: TextStyle(fontSize: 70.sp),
+                                        )
+                                      : ColorFiltered(
+                                          colorFilter: const ColorFilter.mode(
+                                            AppColors.slate300,
+                                            BlendMode.srcIn,
+                                          ),
+                                          child: Text(
+                                            quest.emoji!,
+                                            style: TextStyle(fontSize: 70.sp),
+                                          ),
+                                        ),
+                                if (state.answerStatus !=
+                                        AnswerStatus.correct ||
+                                    (quest.question != "?" &&
+                                        quest.question != null))
+                                  KidsFittedText(
+                                    quest.question ?? "?",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize:
+                                          (quest.question == "?" ||
+                                              quest.question == null)
+                                          ? 60.sp
+                                          : 24.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.rose700.withValues(
+                                        alpha:
+                                            (quest.question == "?" ||
+                                                quest.question == null)
+                                            ? 0.7
+                                            : 1.0,
                                       ),
                                     ),
-                            if (state.answerStatus != AnswerStatus.correct ||
-                                (quest.question != "?" &&
-                                    quest.question != null))
-                              KidsFittedText(
-                                quest.question ?? "?",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize:
-                                      (quest.question == "?" ||
-                                          quest.question == null)
-                                      ? 70.sp
-                                      : 24.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: AppColors.rose700.withValues(
-                                    alpha:
-                                        (quest.question == "?" ||
-                                            quest.question == null)
-                                        ? 0.7
-                                        : 1.0,
+                                    textAlign: TextAlign.center,
+                                    maxLines: 3,
                                   ),
-                                ),
-                                textAlign: TextAlign.center,
-                                maxLines: 3,
-                              ),
-                          ],
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  // A cute chef hat resting on top
+                  Positioned(
+                    top: -(boardHeight * 0.15).clamp(20.0, 40.0),
+                    child: Container(
+                      width: (boardWidth * 0.28).clamp(60.0, 90.0),
+                      height: (boardHeight * 0.2).clamp(30.0, 50.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(40.r),
+                        ),
+                        border: Border.all(
+                          color: _LocalPalette.colore4e4e7,
+                          width: 2,
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              ),
-              // A cute chef hat resting on top
-              Positioned(
-                top: -30.h,
-                child: Container(
-                  width: 80.w,
-                  height: 40.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(40.r),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: 2.w,
+                            height: 20.h,
+                            color: _LocalPalette.colore4e4e7,
+                          ),
+                          Container(
+                            width: 2.w,
+                            height: 25.h,
+                            color: _LocalPalette.colore4e4e7,
+                          ),
+                          Container(
+                            width: 2.w,
+                            height: 20.h,
+                            color: _LocalPalette.colore4e4e7,
+                          ),
+                        ],
+                      ),
                     ),
-                    border: Border.all(
-                      color: _LocalPalette.colore4e4e7,
-                      width: 2,
-                    ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        width: 2.w,
-                        height: 20.h,
-                        color: _LocalPalette.colore4e4e7,
-                      ),
-                      Container(
-                        width: 2.w,
-                        height: 25.h,
-                        color: _LocalPalette.colore4e4e7,
-                      ),
-                      Container(
-                        width: 2.w,
-                        height: 20.h,
-                        color: _LocalPalette.colore4e4e7,
-                      ),
-                    ],
-                  ),
-                ),
+                ],
               ),
-            ],
-          ),
+            );
+          },
         );
       },
     );
+  }
+
+  void _handleAnswer(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+    String text,
+  ) {
+    if (state.answerStatus.isAnswered) return;
+    final isCorrect = (text == quest.correctAnswer);
+    final parts = text.trim().split(' ');
+    final cleanText = parts.length > 1
+        ? parts.sublist(0, parts.length - 1).join(' ')
+        : text;
+    di.sl<KidsTTSService>().speak(cleanText);
+    context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
   }
 
   Widget _buildServingPlatterOption(
@@ -289,12 +323,21 @@ class KidsFoodLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
+    final parts = text.trim().split(' ');
+    String namePart = text;
+    String emojiPart = '';
+    if (parts.length > 1) {
+      emojiPart = parts.last;
+      namePart = parts.sublist(0, parts.length - 1).join(' ');
+    }
+
     final platterWidget = Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         // The Cloche (Silver Dome)
         Container(
           height: 50.h,
+          width: double.infinity,
           decoration: BoxDecoration(
             color: AppColors.slate200, // Silver
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
@@ -320,8 +363,8 @@ class KidsFoodLayout extends StatelessWidget {
         ),
         // The Platter Base
         Container(
-          height: 35.h,
-          width: 80.w,
+          height: 60.h,
+          width: double.infinity,
           decoration: BoxDecoration(
             color: AppColors.slate100, // Light silver plate
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(16.r)),
@@ -335,19 +378,29 @@ class KidsFoodLayout extends StatelessWidget {
           ),
           child: Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4.w),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.slate900,
+              padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (emojiPart.isNotEmpty)
+                    Text(emojiPart, style: TextStyle(fontSize: 18.sp)),
+                  Flexible(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        namePart,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.slate900,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
+                ],
               ),
             ),
           ),
@@ -355,7 +408,7 @@ class KidsFoodLayout extends StatelessWidget {
       ],
     );
 
-    return Draggable<String>(
+    final draggable = Draggable<String>(
       data: text,
       feedback: Material(
         color: Colors.transparent,
@@ -367,24 +420,25 @@ class KidsFoodLayout extends StatelessWidget {
       childWhenDragging: Opacity(opacity: 0.3, child: platterWidget),
       child: platterWidget,
     );
+
+    return GestureDetector(
+      onTap: state.answerStatus.isAnswered
+          ? null
+          : () => _handleAnswer(context, state, state.currentQuest, text),
+      child: draggable,
+    );
   }
 }
 
-class _CheckeredPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = Colors.white;
-    final squareSize = 20.0;
-
-    for (double y = 0; y < size.height; y += squareSize) {
-      for (double x = 0; x < size.width; x += squareSize) {
-        if (((x / squareSize).floor() + (y / squareSize).floor()) % 2 == 0) {
-          canvas.drawRect(Rect.fromLTWH(x, y, squareSize, squareSize), paint);
-        }
-      }
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
+const String _checkeredTableclothSvg = '''
+<svg width="2000" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="checker" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#E53935" />
+      <rect x="0" y="0" width="20" height="20" fill="#FFFFFF" opacity="0.9" />
+      <rect x="20" y="20" width="20" height="20" fill="#FFFFFF" opacity="0.9" />
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#checker)" />
+</svg>
+''';

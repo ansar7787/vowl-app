@@ -177,7 +177,10 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
     }
 
     if (newOffset != _scrollController.offset) {
-      newOffset = newOffset.clamp(0.0, _scrollController.position.maxScrollExtent);
+      newOffset = newOffset.clamp(
+        0.0,
+        _scrollController.position.maxScrollExtent,
+      );
       _scrollController.jumpTo(newOffset);
     }
   }
@@ -205,11 +208,11 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
             slots[point.toString()] = null;
           }
           _blueprintSlots.value = slots;
-          
+
           final opts = List<String>.from(currentQuest.options ?? []);
           opts.shuffle();
           _shuffledOptions.value = opts;
-          
+
           _pendingSubmit.value = false;
         }
       }
@@ -286,13 +289,17 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                     SizedBox(height: 16.h),
                                     EssayDraftingInstruction(
                                       primaryColor: theme.primaryColor,
-                                      instruction: InstructionHelper.getInstruction(activeQuest),
+                                      instruction:
+                                          InstructionHelper.getInstruction(
+                                            activeQuest,
+                                          ),
                                     ),
                                     SizedBox(height: 24.h),
 
                                     EssayDraftingTopicBanner(
                                       topic: activeQuest.essayTopic ?? "",
-                                      thesisStatement: activeQuest.thesisStatement,
+                                      thesisStatement:
+                                          activeQuest.thesisStatement,
                                       color: theme.primaryColor,
                                       isDark: isDark,
                                     ),
@@ -350,7 +357,11 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                           ),
                                           color: slotsFilled
                                               ? theme.primaryColor
-                                              : (isDark ? Colors.white12 : Colors.black.withValues(alpha: 0.05)),
+                                              : (isDark
+                                                    ? Colors.white12
+                                                    : Colors.black.withValues(
+                                                        alpha: 0.05,
+                                                      )),
                                           boxShadow: [
                                             if (slotsFilled)
                                               BoxShadow(
@@ -369,7 +380,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                               fontWeight: FontWeight.w700,
                                               color: slotsFilled
                                                   ? Colors.white
-                                                  : (isDark ? Colors.white30 : Colors.black26),
+                                                  : (isDark
+                                                        ? Colors.white30
+                                                        : Colors.black26),
                                               letterSpacing: 1.5,
                                             ),
                                           ),

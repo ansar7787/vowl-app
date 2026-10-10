@@ -26,7 +26,11 @@ class EssayDraftingInstruction extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(top: 2.h),
-            child: Icon(Icons.architecture_rounded, size: 20.r, color: primaryColor),
+            child: Icon(
+              Icons.architecture_rounded,
+              size: 20.r,
+              color: primaryColor,
+            ),
           ),
           SizedBox(width: 12.w),
           Expanded(

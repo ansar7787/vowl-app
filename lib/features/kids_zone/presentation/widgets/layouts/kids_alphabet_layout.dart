@@ -126,15 +126,22 @@ class KidsAlphabetLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final bool showAsCorrect = state.answerStatus.isAnswered && isCorrect;
-    final baseColor = showAsCorrect ? _LocalPalette.colora7f3d0 : _LocalPalette.colorfde68a; // Light wood or Mint
-    final shadowColor = showAsCorrect ? _LocalPalette.color2d6a4f : AppColors.amber600; // Dark wood or Dark Green
-    final textColor = showAsCorrect ? _LocalPalette.color1b4332 : AppColors.amber900;
+    final baseColor = showAsCorrect
+        ? _LocalPalette.colora7f3d0
+        : _LocalPalette.colorfde68a; // Light wood or Mint
+    final shadowColor = showAsCorrect
+        ? _LocalPalette.color2d6a4f
+        : AppColors.amber600; // Dark wood or Dark Green
+    final textColor = showAsCorrect
+        ? _LocalPalette.color1b4332
+        : AppColors.amber900;
 
     final blockWidget = Semantics(
       label: 'Letter $text',
       button: !state.answerStatus.isAnswered,
       enabled: !state.answerStatus.isAnswered,
-      excludeSemantics: true, // Exclude the inner Text semantics so it doesn't double-read
+      excludeSemantics:
+          true, // Exclude the inner Text semantics so it doesn't double-read
       child: GestureDetector(
         onTap: () {
           if (state.answerStatus.isAnswered) return;
@@ -222,7 +229,10 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
     if (!success && mounted) {
       CustomSnackBar.show(
         context: context,
-        message: context.tr('errors.tts_failed', fallback: 'Audio not available right now.'),
+        message: context.tr(
+          'errors.tts_failed',
+          fallback: 'Audio not available right now.',
+        ),
         type: CustomSnackBarType.warning,
       );
     }
@@ -239,8 +249,11 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        final shouldReveal = widget.state.answerStatus == AnswerStatus.correct || widget.state.isFinalFailure || _isRevealedLocally;
-        
+        final shouldReveal =
+            widget.state.answerStatus == AnswerStatus.correct ||
+            widget.state.isFinalFailure ||
+            _isRevealedLocally;
+
         return AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           width: 320.w,
@@ -423,7 +436,9 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                         String? textToRead;
                         if (quest.wordExample != null) {
                           textToRead = quest.wordExample;
-                        } else if (InstructionHelper.getInstruction(quest).isNotEmpty) {
+                        } else if (InstructionHelper.getInstruction(
+                          quest,
+                        ).isNotEmpty) {
                           textToRead = InstructionHelper.getInstruction(quest);
                         } else if (quest.question != null) {
                           textToRead = quest.question;
@@ -435,7 +450,9 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                       child: Container(
                         padding: EdgeInsets.all(8.r),
                         decoration: BoxDecoration(
-                          color: _LocalPalette.colorfde68a.withValues(alpha: 0.2),
+                          color: _LocalPalette.colorfde68a.withValues(
+                            alpha: 0.2,
+                          ),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
@@ -469,4 +486,3 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
     );
   }
 }
-

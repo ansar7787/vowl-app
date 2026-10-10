@@ -142,8 +142,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             audio.playFailureSFX();
           }
-          
-          if (state.answerStatus == AnswerStatus.correct || state.isFinalFailure) {
+
+          if (state.answerStatus == AnswerStatus.correct ||
+              state.isFinalFailure) {
             final funFact = state.currentQuest.funFact;
             final explanation = state.currentQuest.explanation;
             final combinedMsg = [
@@ -300,10 +301,14 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 isDark: isDark,
                 primaryColor: widget.primaryColor,
                 ruleTitle: 'FUN FACT',
-                ruleContent: (state.answerStatus == AnswerStatus.correct || state.isFinalFailure)
+                ruleContent:
+                    (state.answerStatus == AnswerStatus.correct ||
+                        state.isFinalFailure)
                     ? state.currentQuest.funFact
                     : null,
-                explanation: (state.answerStatus == AnswerStatus.correct || state.isFinalFailure)
+                explanation:
+                    (state.answerStatus == AnswerStatus.correct ||
+                        state.isFinalFailure)
                     ? state.currentQuest.explanation
                     : null,
                 onContinue: () {
@@ -399,7 +404,10 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                           ),
                           SizedBox(width: 12.w),
                           Text(
-                            context.tr('games.try_again', fallback: 'Try again'),
+                            context.tr(
+                              'games.try_again',
+                              fallback: 'Try again',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,

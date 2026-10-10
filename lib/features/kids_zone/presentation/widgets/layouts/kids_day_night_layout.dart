@@ -9,6 +9,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+
 class _LocalPalette {
   _LocalPalette._();
   static const Color color38bdf8 = Color(0xFF38BDF8);
@@ -192,9 +193,7 @@ class KidsDayNightLayout extends StatelessWidget {
                 ),
                 if (isHovering)
                   BoxShadow(
-                    color: _LocalPalette.color0ea5e9.withValues(
-                      alpha: 0.2,
-                    ),
+                    color: _LocalPalette.color0ea5e9.withValues(alpha: 0.2),
                     blurRadius: 20,
                     spreadRadius: 2,
                   ),
@@ -410,10 +409,7 @@ class KidsDayNightLayout extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.r),
           border: Border.all(color: borderColor, width: 2.r),
           boxShadow: [
-            BoxShadow(
-              color: shadowColor,
-              offset: const Offset(0, 4),
-            ),
+            BoxShadow(color: shadowColor, offset: const Offset(0, 4)),
           ],
         ),
         child: Column(

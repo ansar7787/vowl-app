@@ -59,10 +59,7 @@ class KidsEmotionsLayout extends StatelessWidget {
             SizedBox(height: 24.h),
             KidsFittedText(
               state.answerStatus == AnswerStatus.correct
-                  ? context.tr(
-                      'games.kids_emotions_done',
-                      fallback: 'Correct!',
-                    )
+                  ? context.tr('games.kids_emotions_done', fallback: 'Correct!')
                   : context.tr(
                       'games.kids_emotions_drag',
                       fallback: 'Match the feeling to the stage.',
@@ -172,10 +169,7 @@ class KidsEmotionsLayout extends StatelessWidget {
             children: [
               // The Stage background
               Container(
-                constraints: BoxConstraints(
-                  maxWidth: 320.w,
-                  maxHeight: 240.h,
-                ),
+                constraints: BoxConstraints(maxWidth: 320.w, maxHeight: 240.h),
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: isHovering
@@ -219,7 +213,8 @@ class KidsEmotionsLayout extends StatelessWidget {
                         Stack(
                           alignment: Alignment.center,
                           children: [
-                            if (quest.emoji != null && state.answerStatus == AnswerStatus.correct)
+                            if (quest.emoji != null &&
+                                state.answerStatus == AnswerStatus.correct)
                               Text(
                                 quest.emoji!,
                                 style: TextStyle(fontSize: 64.sp),
@@ -335,61 +330,63 @@ class KidsEmotionsLayout extends StatelessWidget {
     }
 
     final maskWidget = GestureDetector(
-      onTap: state.answerStatus.isAnswered ? null : () {
-        if (!isCorrect) {
-          final p = text.trim().split(' ');
-          if (p.length > 1 && p.last.runes.any((r) => r > 127)) {
-            p.removeLast();
-          }
-          final textToSpeak = p.join(' ');
-          di.sl<KidsTTSService>().speak(textToSpeak);
-        }
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
+      onTap: state.answerStatus.isAnswered
+          ? null
+          : () {
+              if (!isCorrect) {
+                final p = text.trim().split(' ');
+                if (p.length > 1 && p.last.runes.any((r) => r > 127)) {
+                  p.removeLast();
+                }
+                final textToSpeak = p.join(' ');
+                di.sl<KidsTTSService>().speak(textToSpeak);
+              }
+              context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+            },
       child: Container(
         constraints: BoxConstraints(minHeight: 85.h),
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.r),
-          topRight: Radius.circular(20.r),
-          bottomLeft: Radius.circular(40.r),
-          bottomRight: Radius.circular(40.r),
-        ), // Mask shape
-        border: Border.all(color: Colors.white, width: 2),
-        boxShadow: [BoxShadow(color: shadowColor, offset: const Offset(0, 6))],
-      ),
-      child: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              KidsFittedText(
-                wordPart,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.slate800,
-                ),
-                textAlign: TextAlign.center,
-                maxLines: 2,
-              ),
-              if (emojiPart.isNotEmpty)
-                Padding(
-                  padding: EdgeInsets.only(top: 4.h),
-                  child: Text(
-                    emojiPart,
-                    style: TextStyle(fontSize: 22.sp),
+            topRight: Radius.circular(20.r),
+            bottomLeft: Radius.circular(40.r),
+            bottomRight: Radius.circular(40.r),
+          ), // Mask shape
+          border: Border.all(color: Colors.white, width: 2),
+          boxShadow: [
+            BoxShadow(color: shadowColor, offset: const Offset(0, 6)),
+          ],
+        ),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                KidsFittedText(
+                  wordPart,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.slate800,
                   ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
                 ),
-            ],
+                if (emojiPart.isNotEmpty)
+                  Padding(
+                    padding: EdgeInsets.only(top: 4.h),
+                    child: Text(emojiPart, style: TextStyle(fontSize: 22.sp)),
+                  ),
+              ],
+            ),
           ),
         ),
       ),
-    ));
+    );
 
     return Draggable<String>(
       data: text,
