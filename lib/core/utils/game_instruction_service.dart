@@ -1533,18 +1533,18 @@ class GameInstructionService {
     switch (category.toLowerCase()) {
       case 'alphabet':
         return const GameBriefing(
-          title: "Alphabet Adventure",
+          title: "Alphabet Game",
           icon: Icons.abc_rounded,
           objective:
-              "Let's unlock the magic of letters! Tap the mystery box to hear the hidden sound, and stick the correct letter onto the chalkboard.",
+              "Listen to the spoken word and find the missing letter to complete the spelling on the chalkboard.",
           rules: [
-            "Listen to the phonetic sound",
-            "Find the matching letter",
-            "Place it on the board",
+            "Listen to the spoken word",
+            "Look at the word on the board",
+            "Tap the correct missing letter",
           ],
-          actionText: "Play ABCs",
+          actionText: "Start Playing",
           tip:
-              "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵",
+              "Pro tip: Pay attention to the highlighted part of the word on the board, it usually gives away the missing letter sound.",
         );
       case 'animals':
         return const GameBriefing(
