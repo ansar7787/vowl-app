@@ -65,14 +65,18 @@ class EssayDraftingHexSlot extends StatelessWidget {
                     color: color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8.r),
                   ),
-                  child: Text(
-                    slotKey.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: color,
-                      fontSize: 9.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 1.2,
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 80.w),
+                    child: Text(
+                      slotKey.toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: color,
+                        fontSize: 9.sp,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.2,
+                      ),
                     ),
                   ),
                 ),
@@ -86,7 +90,7 @@ class EssayDraftingHexSlot extends StatelessWidget {
                           ? (isDark ? Colors.white70 : Colors.black87)
                           : (isDark ? Colors.white24 : Colors.black26),
                       fontSize: 12.sp,
-                      fontWeight: hasData ? FontWeight.w600 : FontWeight.normal,
+                      fontWeight: hasData ? FontWeight.w500 : FontWeight.normal,
                       height: 1.3,
                     ),
                   ),

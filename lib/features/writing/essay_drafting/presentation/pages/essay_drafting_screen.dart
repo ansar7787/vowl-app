@@ -98,23 +98,18 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
     final options = quest.options ?? [];
     final correctOrderIndices = quest.correctOrder ?? [0, 1, 2, 3];
 
-    if (points.length != 4 ||
-        options.length != 4 ||
-        correctOrderIndices.length != 4) {
+    if (points.isEmpty || options.isEmpty || correctOrderIndices.isEmpty) {
       return;
     }
 
-    bool isSlot0Correct =
-        _blueprintSlots.value[points[0]] == options[correctOrderIndices[0]];
-    bool isSlot1Correct =
-        _blueprintSlots.value[points[1]] == options[correctOrderIndices[1]];
-    bool isSlot2Correct =
-        _blueprintSlots.value[points[2]] == options[correctOrderIndices[2]];
-    bool isSlot3Correct =
-        _blueprintSlots.value[points[3]] == options[correctOrderIndices[3]];
-
-    final isCorrect =
-        isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct;
+    bool isCorrect = true;
+    for (int i = 0; i < points.length; i++) {
+      if (i >= correctOrderIndices.length) break;
+      if (_blueprintSlots.value[points[i]] != options[correctOrderIndices[i]]) {
+        isCorrect = false;
+        break;
+      }
+    }
 
     if (isCorrect) {
       hapticService.success();
@@ -166,24 +161,42 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
   }
 
   @override
+  void onWritingStateChanged(BuildContext context, WritingState state) {
+    if (state is WritingLoaded) {
+      final currentQuest = state.currentQuest as WritingQuest?;
+      if (_lastQuest?.id != currentQuest?.id) {
+        _lastQuest = currentQuest;
+        if (currentQuest != null) {
+          final Map<String, String?> slots = {};
+          for (final point in currentQuest.requiredPoints ?? []) {
+            slots[point.toString()] = null;
+          }
+          _blueprintSlots.value = slots;
+          
+          final opts = List<String>.from(currentQuest.options ?? []);
+          opts.shuffle();
+          _shuffledOptions.value = opts;
+          
+          _pendingSubmit.value = false;
+        }
+      }
+    }
+    super.onWritingStateChanged(context, state);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
-      listenWhen: (prev, curr) =>
-          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
-          (curr is WritingLoaded && !curr.answerStatus.isAnswered),
+      listenWhen: writingListenWhen,
       listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         final WritingQuest? quest = isLoaded
             ? state.currentQuest as WritingQuest?
             : null;
-
-        if (quest != null) {
-          _lastQuest = quest;
-        }
 
         final activeQuest = quest ?? _lastQuest;
 
@@ -247,66 +260,10 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
 
                                     EssayDraftingTopicBanner(
                                       topic: activeQuest.essayTopic ?? "",
+                                      thesisStatement: activeQuest.thesisStatement,
                                       color: theme.primaryColor,
                                       isDark: isDark,
                                     ),
-                                    SizedBox(height: 16.h),
-                                    if (activeQuest.thesisStatement != null)
-                                      Container(
-                                        margin: EdgeInsets.only(bottom: 16.h),
-                                        padding: EdgeInsets.all(12.r),
-                                        decoration: BoxDecoration(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.1,
-                                          ),
-                                          borderRadius: BorderRadius.circular(
-                                            12.r,
-                                          ),
-                                          border: Border.all(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.3),
-                                          ),
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.center_focus_strong,
-                                                  color: theme.primaryColor,
-                                                  size: 14.sp,
-                                                ),
-                                                SizedBox(width: 8.w),
-                                                Text(
-                                                  "THESIS STATEMENT",
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 10.sp,
-                                                    fontWeight: FontWeight.w800,
-                                                    color: theme.primaryColor,
-                                                    letterSpacing: 1.5,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(height: 8.h),
-                                            Text(
-                                              activeQuest.thesisStatement!,
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 14.sp,
-                                                fontWeight: FontWeight.w600,
-                                                color: isDark
-                                                    ? Colors.white
-                                                    : Colors.black87,
-                                                fontStyle: FontStyle.italic,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
                                     SizedBox(height: 8.h),
 
                                     ..._blueprintSlots.value.keys.map(
@@ -343,7 +300,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  if (!isAnswered)
+                                  if (!isAnswered && !_pendingSubmit.value)
                                     ScaleButton(
                                       onTap: slotsFilled
                                           ? () => _submitAnswer(
@@ -360,7 +317,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                           ),
                                           color: slotsFilled
                                               ? theme.primaryColor
-                                              : Colors.grey,
+                                              : (isDark ? Colors.white12 : Colors.black.withValues(alpha: 0.05)),
                                           boxShadow: [
                                             if (slotsFilled)
                                               BoxShadow(
@@ -372,13 +329,15 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                         ),
                                         child: Center(
                                           child: Text(
-                                            "TRANSMIT BLUEPRINT",
+                                            "CONFIRM OUTLINE",
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 16.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color: Colors.white,
-                                              letterSpacing: 2,
+                                              fontWeight: FontWeight.w700,
+                                              color: slotsFilled
+                                                  ? Colors.white
+                                                  : (isDark ? Colors.white30 : Colors.black26),
+                                              letterSpacing: 1.5,
                                             ),
                                           ),
                                         ),
@@ -396,7 +355,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                           ? _blueprintSlots.value.values.first!
                                           : "",
                                       displayText:
-                                          "Type the first point to finalize the outline",
+                                          "Type the sentence to confirm",
                                       primaryColor: theme.primaryColor,
                                       onConfirmed: () =>
                                           _submitFinalAnswer(true),
