@@ -372,7 +372,7 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                 ),
                 SizedBox(width: 8.w),
                 KidsFittedText(
-                  context.tr('games.kids_tap_clue', fallback: 'Tap for clue'),
+                  context.tr('games.kids_tap_listen', fallback: 'Tap to listen'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
