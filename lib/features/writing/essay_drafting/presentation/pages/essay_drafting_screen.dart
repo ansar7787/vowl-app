@@ -158,6 +158,30 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
     });
   }
 
+  void _handleAutoScroll(DragUpdateDetails details) {
+    if (!_scrollController.hasClients) return;
+
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double pointerY = details.globalPosition.dy;
+    final double scrollThreshold = 150.0; // Margin from top/bottom
+    final double scrollSpeed = 10.0;
+
+    double newOffset = _scrollController.offset;
+
+    if (pointerY < scrollThreshold) {
+      // Scroll up
+      newOffset -= scrollSpeed;
+    } else if (pointerY > screenHeight - scrollThreshold) {
+      // Scroll down
+      newOffset += scrollSpeed;
+    }
+
+    if (newOffset != _scrollController.offset) {
+      newOffset = newOffset.clamp(0.0, _scrollController.position.maxScrollExtent);
+      _scrollController.jumpTo(newOffset);
+    }
+  }
+
   @override
   void onQuestionReset() {
     _blueprintSlots.value = {};
@@ -295,6 +319,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                       slots: _blueprintSlots.value,
                                       color: theme.primaryColor,
                                       isDark: isDark,
+                                      onDragUpdate: _handleAutoScroll,
                                     ),
                                     SizedBox(height: 16.h),
                                   ],

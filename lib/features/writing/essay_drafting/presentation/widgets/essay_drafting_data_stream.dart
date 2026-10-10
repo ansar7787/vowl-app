@@ -6,6 +6,7 @@ class EssayDraftingDataStream extends StatelessWidget {
   final Map<String, String?> slots;
   final Color color;
   final bool isDark;
+  final void Function(DragUpdateDetails)? onDragUpdate;
 
   const EssayDraftingDataStream({
     super.key,
@@ -13,6 +14,7 @@ class EssayDraftingDataStream extends StatelessWidget {
     required this.slots,
     required this.color,
     required this.isDark,
+    this.onDragUpdate,
   });
 
   Widget _buildItem(BuildContext context, String text, {bool isFeedback = false}) {
@@ -72,6 +74,7 @@ class EssayDraftingDataStream extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 12.h),
               child: Draggable<String>(
                 data: i,
+                onDragUpdate: onDragUpdate,
                 feedback: Material(
                   color: Colors.transparent,
                   child: _buildItem(context, i, isFeedback: true),
