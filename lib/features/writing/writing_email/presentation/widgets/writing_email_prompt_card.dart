@@ -32,8 +32,8 @@ class WritingEmailPromptCard extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w600,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
               color: Theme.of(context).colorScheme.onSurface,
               height: 1.4,
             ),

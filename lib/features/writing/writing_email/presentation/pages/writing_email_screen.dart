@@ -12,14 +12,11 @@ import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_instruction.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_prompt_card.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_hex_slot.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_data_stream.dart';
-import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_keyboard_input.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class WritingEmailScreen extends StatefulWidget {
   final int level;
@@ -47,25 +44,44 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final ValueNotifier<Map<String, String?>> _slots = ValueNotifier({
-    'SUBJECT': null,
-    'SALUTATION': null,
-    'BODY': null,
-    'SIGN-OFF': null,
-  });
-
+  final ValueNotifier<Map<String, String?>> _slots = ValueNotifier({});
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
-  final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
   WritingQuest? _lastQuest;
+  List<String> _currentSlotKeys = [];
 
   late final ScrollController _scrollController;
+
+  List<String> _getSlotKeys(int count) {
+    if (count == 4) {
+      return ['SUBJECT', 'GREETING', 'BODY', 'SIGN-OFF'];
+    }
+    return List.generate(count, (i) => 'PART ${i + 1}');
+  }
+
+  @override
+  void onWritingStateChanged(BuildContext context, WritingState state) {
+    super.onWritingStateChanged(context, state);
+    if (state is WritingLoaded && state.currentQuest != _lastQuest) {
+      _lastQuest = state.currentQuest;
+      final opts = List<String>.from(state.currentQuest.options ?? []);
+
+      _currentSlotKeys = _getSlotKeys(opts.length);
+      final newSlots = <String, String?>{};
+      for (final key in _currentSlotKeys) {
+        newSlots[key] = null;
+      }
+      _slots.value = newSlots;
+
+      opts.shuffle();
+      _shuffledOptions.value = opts;
+    }
+  }
 
   @override
   void dispose() {
     _scrollController.dispose();
     _slots.dispose();
     _shuffledOptions.dispose();
-    _showSpeakToConfirm.dispose();
     disposeWritingGame();
     super.dispose();
   }
@@ -73,21 +89,6 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
   @override
   void initState() {
     super.initState();
-    _showSpeakToConfirm.addListener(() {
-      if (_showSpeakToConfirm.value &&
-          mounted &&
-          _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
     _scrollController = ScrollController();
     initWritingGame();
   }
@@ -110,7 +111,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
     if (isAnswered) return;
 
     String? targetSlot;
-    for (final key in ['SUBJECT', 'SALUTATION', 'BODY', 'SIGN-OFF']) {
+    for (final key in _currentSlotKeys) {
       if (_slots.value[key] == null) {
         targetSlot = key;
         break;
@@ -148,51 +149,46 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
     if (quest == null) return;
 
     final options = quest.options ?? [];
-    final correctOrderIndices = quest.correctOrder ?? [0, 1, 2, 3];
+    // fallback to [0, 1, 2, 3...] if not provided
+    final correctOrderIndices =
+        quest.correctOrder ?? List.generate(_currentSlotKeys.length, (i) => i);
 
-    bool isSubjectCorrect =
-        _slots.value['SUBJECT'] == options[correctOrderIndices[0]];
-    bool isSalutationCorrect =
-        _slots.value['SALUTATION'] == options[correctOrderIndices[1]];
-    bool isBodyCorrect =
-        _slots.value['BODY'] == options[correctOrderIndices[2]];
-    bool isSignOffCorrect =
-        _slots.value['SIGN-OFF'] == options[correctOrderIndices[3]];
-
-    final isCorrect =
-        isSubjectCorrect &&
-        isSalutationCorrect &&
-        isBodyCorrect &&
-        isSignOffCorrect;
+    bool isCorrect = true;
+    for (int i = 0; i < _currentSlotKeys.length; i++) {
+      final key = _currentSlotKeys[i];
+      final expectedIndex = (i < correctOrderIndices.length)
+          ? correctOrderIndices[i]
+          : i;
+      final expectedValue = (expectedIndex < options.length)
+          ? options[expectedIndex]
+          : null;
+      if (_slots.value[key] != expectedValue) {
+        isCorrect = false;
+        break;
+      }
+    }
 
     if (isCorrect) {
       hapticService.success();
-      _showSpeakToConfirm.value = true;
+      submitCorrectAnswer();
     } else {
       hapticService.error();
-      final userAns =
-          "Subject: ${_slots.value['SUBJECT'] ?? ''}, Salutation: ${_slots.value['SALUTATION'] ?? ''}, Body: ${_slots.value['BODY'] ?? ''}, Sign-off: ${_slots.value['SIGN-OFF'] ?? ''}";
+      final userAns = _currentSlotKeys
+          .map((key) => "$key: ${_slots.value[key] ?? ''}")
+          .join(", ");
       submitWrongAnswer(quest: quest, userAnswer: userAns);
     }
   }
 
-  void _onSpeakConfirmed() {
-    _showSpeakToConfirm.value = false;
-    submitCorrectAnswer();
-  }
-
   @override
   void onQuestionReset() {
-    _slots.value = {
-      'SUBJECT': null,
-      'SALUTATION': null,
-      'BODY': null,
-      'SIGN-OFF': null,
-    };
+    final newSlots = <String, String?>{};
+    for (final key in _currentSlotKeys) {
+      newSlots[key] = null;
+    }
+    _slots.value = newSlots;
 
     _shuffledOptions.value = [];
-
-    _showSpeakToConfirm.value = false;
   }
 
   @override
@@ -208,9 +204,6 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
       listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        if (isLoaded && state.currentQuest != _lastQuest) {
-          _lastQuest = state.currentQuest;
-        }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
 
         final options = quest?.options ?? [];
@@ -245,7 +238,6 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                     showConfettiNotifier,
                     _slots,
                     _shuffledOptions,
-                    _showSpeakToConfirm,
                   ]),
                   builder: (context, _) {
                     final slotsFilled = _slots.value.values.every(
@@ -274,7 +266,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                     formalityLevel: quest.formalityLevel
                                         ?.toUpperCase(),
                                   ),
-
+                                  SizedBox(height: 16.h),
                                   WritingEmailPromptCard(
                                     text: quest.prompt ?? "",
                                     color: theme.primaryColor,
@@ -296,54 +288,16 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                   ),
                                   if (!slotsFilled && !isAnswered) ...[
                                     SizedBox(height: 24.h),
-                                    if (widget.level >= 6) ...[
-                                      GestureDetector(
-                                        onTap: () {
-                                          CustomSnackBar.show(
-                                            context: context,
-                                            message:
-                                                "Hard Mode! Tapping is disabled. Please type your answer below.",
-                                            type: CustomSnackBarType.info,
-                                          );
-                                        },
-                                        child: AbsorbPointer(
-                                          child: Opacity(
-                                            opacity: 0.8,
-                                            child: WritingEmailDataStream(
-                                              items:
-                                                  options, // Show full list for reference
-                                              slots: _slots.value,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              onTapItem: (_) {}, // Disabled
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(height: 16.h),
-                                      WritingEmailKeyboardInput(
-                                        validOptions: options
-                                            .where(
-                                              (opt) => !_slots.value.values
-                                                  .contains(opt),
-                                            )
-                                            .toList(),
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        onValidInput: (data) =>
-                                            _onTapOption(data, isAnswered),
-                                      ),
-                                    ] else
-                                      WritingEmailDataStream(
-                                        items: _shuffledOptions.value.isNotEmpty
-                                            ? _shuffledOptions.value
-                                            : options,
-                                        slots: _slots.value,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        onTapItem: (data) =>
-                                            _onTapOption(data, isAnswered),
-                                      ),
+                                    WritingEmailDataStream(
+                                      items: _shuffledOptions.value.isNotEmpty
+                                          ? _shuffledOptions.value
+                                          : options,
+                                      slots: _slots.value,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      onTapItem: (data) =>
+                                          _onTapOption(data, isAnswered),
+                                    ),
                                     SizedBox(height: 32.h),
                                   ] else ...[
                                     SizedBox(height: 48.h),
@@ -358,7 +312,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  if (!_showSpeakToConfirm.value && !isAnswered)
+                                  if (!isAnswered)
                                     ScaleButton(
                                       onTap: slotsFilled
                                           ? () => _submitAnswer(isAnswered)
@@ -384,13 +338,13 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                         ),
                                         child: Center(
                                           child: Text(
-                                            "SEND EMAIL",
+                                            "Send",
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 16.sp,
-                                              fontWeight: FontWeight.w900,
+                                              fontWeight: FontWeight.w700,
                                               color: Colors.white,
-                                              letterSpacing: 2,
+                                              letterSpacing: 1,
                                             ),
                                           ),
                                         ),
@@ -408,29 +362,6 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                               ),
                             ),
                           ),
-
-                          if (_showSpeakToConfirm.value && !isAnswered)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: SpeakToConfirmOverlay(
-                                  expectedText:
-                                      "${_slots.value['SUBJECT'] ?? ''} ${_slots.value['SALUTATION'] ?? ''} ${_slots.value['BODY'] ?? ''} ${_slots.value['SIGN-OFF'] ?? ''}"
-                                          .trim(),
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: _onSpeakConfirmed,
-                                  onSkipped: () {
-                                    _showSpeakToConfirm.value = false;
-                                    submitWrongAnswer(
-                                      quest: quest,
-                                      userAnswer:
-                                          "${_slots.value['SUBJECT'] ?? ''} ${_slots.value['SALUTATION'] ?? ''} ${_slots.value['BODY'] ?? ''} ${_slots.value['SIGN-OFF'] ?? ''}"
-                                              .trim(),
-                                    );
-                                  },
-                                ),
-                              ),
-                            ),
                           SliverToBoxAdapter(
                             child: SizedBox(
                               height:

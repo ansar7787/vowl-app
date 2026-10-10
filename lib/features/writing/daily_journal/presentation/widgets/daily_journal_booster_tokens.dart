@@ -41,7 +41,9 @@ class DailyJournalBoosterTokens extends StatelessWidget {
           runSpacing: 8.h,
           alignment: WrapAlignment.center,
           children: keywords.map((k) {
-            final bool isUsed = RegExp(r'\b' + RegExp.escape(k.toLowerCase())).hasMatch(text.toLowerCase());
+            final bool isUsed = RegExp(
+              r'\b' + RegExp.escape(k.toLowerCase()),
+            ).hasMatch(text.toLowerCase());
             final displayColor = isUsed
                 ? tokens.gameCorrect
                 : (isDark ? Colors.white24 : Colors.black26);

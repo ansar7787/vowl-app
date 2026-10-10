@@ -321,7 +321,12 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                     ],
                                     DragTarget<String>(
                                       onWillAcceptWithDetails: (details) {
-                                        return !isAnswered && draftedOptions.length < requiredCount && !draftedOptions.contains(details.data);
+                                        return !isAnswered &&
+                                            draftedOptions.length <
+                                                requiredCount &&
+                                            !draftedOptions.contains(
+                                              details.data,
+                                            );
                                       },
                                       onAcceptWithDetails: (details) {
                                         hapticService.selection();
@@ -399,14 +404,18 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                             hapticService
                                                                 .selection();
                                                             final current =
-                                                                List<String>.from(
-                                                              _draftedOptions
-                                                                  .value,
-                                                            );
+                                                                List<
+                                                                  String
+                                                                >.from(
+                                                                  _draftedOptions
+                                                                      .value,
+                                                                );
                                                             current.remove(
-                                                                option);
+                                                              option,
+                                                            );
                                                             _draftedOptions
-                                                                .value = current;
+                                                                    .value =
+                                                                current;
                                                           },
                                                   );
                                                 } else {
@@ -487,7 +496,11 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                         }
 
                                         void handleTap() {
-                                          if (draftedOptions.length < requiredCount && !draftedOptions.contains(option)) {
+                                          if (draftedOptions.length <
+                                                  requiredCount &&
+                                              !draftedOptions.contains(
+                                                option,
+                                              )) {
                                             hapticService.selection();
                                             _draftedOptions.value = [
                                               ...draftedOptions,

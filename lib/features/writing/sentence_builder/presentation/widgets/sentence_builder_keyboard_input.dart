@@ -36,7 +36,10 @@ class _SentenceBuilderKeyboardInputState
       decoration: BoxDecoration(
         color: widget.isDark ? Colors.grey[850] : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: widget.color.withValues(alpha: 0.3), width: 1.5),
+        border: Border.all(
+          color: widget.color.withValues(alpha: 0.3),
+          width: 1.5,
+        ),
       ),
       child: TextField(
         controller: widget.controller,
