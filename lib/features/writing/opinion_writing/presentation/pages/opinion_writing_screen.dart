@@ -393,18 +393,21 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                     isCorrectOption:
                                                         correctOptionsSet
                                                             .contains(option),
-                                                    onRemove: () {
-                                                      if (isAnswered) return;
-                                                      hapticService.selection();
-                                                      final current =
-                                                          List<String>.from(
+                                                    onRemove: isAnswered
+                                                        ? null
+                                                        : () {
+                                                            hapticService
+                                                                .selection();
+                                                            final current =
+                                                                List<String>.from(
+                                                              _draftedOptions
+                                                                  .value,
+                                                            );
+                                                            current.remove(
+                                                                option);
                                                             _draftedOptions
-                                                                .value,
-                                                          );
-                                                      current.remove(option);
-                                                      _draftedOptions.value =
-                                                          current;
-                                                    },
+                                                                .value = current;
+                                                          },
                                                   );
                                                 } else {
                                                   return Padding(

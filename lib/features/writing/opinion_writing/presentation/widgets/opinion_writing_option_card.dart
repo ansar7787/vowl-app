@@ -93,7 +93,7 @@ class OpinionWritingDraftedCard extends StatelessWidget {
   final bool isDark;
   final bool isAnswered;
   final bool isCorrectOption;
-  final VoidCallback onRemove;
+  final VoidCallback? onRemove;
 
   const OpinionWritingDraftedCard({
     super.key,
@@ -102,7 +102,7 @@ class OpinionWritingDraftedCard extends StatelessWidget {
     required this.isDark,
     required this.isAnswered,
     required this.isCorrectOption,
-    required this.onRemove,
+    this.onRemove,
   });
 
   @override
