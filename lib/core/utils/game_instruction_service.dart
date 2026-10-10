@@ -883,17 +883,18 @@ class GameInstructionService {
           "PRO TIP: Read the sentence out loud in your head! Clunky phrasing often reveals the grammatical flaw.",
     ),
     GameSubtype.essayDrafting: GameBriefing(
-      title: "Essay Architect",
+      title: "Essay Drafting",
       icon: Icons.article_rounded,
       objective:
-          "Sequence the paragraph blocks into their correct logical structure. Mastering this skill ensures your written communication is clear, professional, and effective.",
+          "Look at the empty hex slots (e.g., REQUEST, CURRENT PROBLEM). Grab the sentence cards from the bottom (using the dotted drag handles) and drag and drop them into their correct logical slots. (If you make a mistake, just tap a filled slot to remove the card and send it back to the bottom).",
       rules: [
-        "Find the opening claim",
-        "Sequence supporting reasons",
-        "Lock the structural blueprint",
+        "Check the empty slots",
+        "Drag the sentence cards",
+        "Fill all slots to submit",
       ],
-      actionText: "Construct Blueprint",
-      tip: "PRO TIP: Ensure each body paragraph has a clear topic sentence.",
+      actionText: "Start Drafting",
+      tip:
+          "PRO TIP: Pay attention to the labels on the hex slots—they tell you exactly what kind of sentence belongs there!",
     ),
     // 5. Grammar
     GameSubtype.grammarQuest: GameBriefing(

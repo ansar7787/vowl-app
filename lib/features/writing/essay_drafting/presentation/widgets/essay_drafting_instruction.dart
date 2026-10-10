@@ -32,10 +32,7 @@ class EssayDraftingInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Expanded(
             child: Text(
-              context.tr(
-                'games.essayDrafting_instruction',
-                fallback: instruction,
-              ),
+              instruction,
               textAlign: TextAlign.left,
               maxLines: null,
               style: TextStyle(
