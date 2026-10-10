@@ -1,22 +1,18 @@
-import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
-import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
-import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_instruction.dart';
-import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_thesis_card.dart';
-import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_scale_interface.dart';
-import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_argument_stones.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
+import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_option_card.dart';
 
 class OpinionWritingScreen extends StatefulWidget {
   final int level;
@@ -44,145 +40,81 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final ValueNotifier<List<String>> _leftPanArgs = ValueNotifier([]);
-  final ValueNotifier<List<String>> _rightPanArgs = ValueNotifier([]);
-
-  final ValueNotifier<double> _scaleRotation = ValueNotifier(0.0);
   WritingQuest? _lastQuest;
-  final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
-  final ValueNotifier<bool> _pendingScaleSubmit = ValueNotifier(false);
+  bool _hasShuffled = false;
+  List<String> _currentShuffledOptions = [];
+  final ValueNotifier<Set<String>> _selectedOptions = ValueNotifier({});
 
   late final ScrollController _scrollController;
 
   @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+    initWritingGame();
+  }
+
+  @override
   void dispose() {
     _scrollController.dispose();
-    _leftPanArgs.dispose();
-    _rightPanArgs.dispose();
-    _scaleRotation.dispose();
-    _shuffledOptions.dispose();
-    _pendingScaleSubmit.dispose();
+    _selectedOptions.dispose();
     disposeWritingGame();
     super.dispose();
   }
 
   @override
-  void initState() {
-    super.initState();
-    _pendingScaleSubmit.addListener(() {
-      if (_pendingScaleSubmit.value &&
-          mounted &&
-          _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
-    _scrollController = ScrollController();
-    initWritingGame();
+  void onQuestionReset() {
+    _hasShuffled = false;
+    _currentShuffledOptions = [];
+    _selectedOptions.value = {};
   }
 
-  void _onDropArg(String arg, bool isLeft, bool isAnswered) {
+  void _toggleSelection(String option, WritingQuest quest, bool isAnswered) {
     if (isAnswered) return;
 
-    hapticService.success();
-    final newLeft = List<String>.from(_leftPanArgs.value)..remove(arg);
-    final newRight = List<String>.from(_rightPanArgs.value)..remove(arg);
-
-    if (isLeft) {
-      newLeft.add(arg);
-    } else {
-      newRight.add(arg);
-    }
-
-    _leftPanArgs.value = newLeft;
-    _rightPanArgs.value = newRight;
-
-    double diff = (newLeft.length - newRight.length).toDouble();
-    _scaleRotation.value = (diff * 0.06).clamp(-0.15, 0.15);
-  }
-
-  void _removeArg(String arg, bool isLeft, bool isAnswered) {
-    if (isAnswered) return;
     hapticService.selection();
-    final newLeft = List<String>.from(_leftPanArgs.value);
-    final newRight = List<String>.from(_rightPanArgs.value);
+    final requiredCount = quest.correctOrder?.length ?? 1;
+    final currentSelection = Set<String>.from(_selectedOptions.value);
 
-    if (isLeft) {
-      newLeft.remove(arg);
+    if (currentSelection.contains(option)) {
+      currentSelection.remove(option);
     } else {
-      newRight.remove(arg);
+      if (currentSelection.length < requiredCount) {
+        currentSelection.add(option);
+      } else if (requiredCount == 1) {
+        currentSelection.clear();
+        currentSelection.add(option);
+      } else {
+        // Option to swap the oldest one, but for now just clear and add for UX
+        if (requiredCount > 1 && currentSelection.isNotEmpty) {
+          currentSelection.remove(currentSelection.first);
+          currentSelection.add(option);
+        }
+      }
     }
 
-    _leftPanArgs.value = newLeft;
-    _rightPanArgs.value = newRight;
-
-    double diff = (newLeft.length - newRight.length).toDouble();
-    _scaleRotation.value = (diff * 0.06).clamp(-0.15, 0.15);
+    _selectedOptions.value = currentSelection;
   }
 
-  void _submitAnswer(bool isAnswered, WritingQuest quest) {
-    if (isAnswered) return;
+  void _submitAnswer(WritingQuest quest) {
+    final requiredCount = quest.correctOrder?.length ?? 1;
+    if (_selectedOptions.value.length < requiredCount) return;
 
-    final options = quest.options ?? [];
-    final correctProsIndices = quest.correctOrder ?? [0, 1];
+    final correctOptions =
+        quest.correctOrder?.map((idx) => quest.options![idx]).toSet() ?? {};
 
-    final correctPros = correctProsIndices.map((idx) => options[idx]).toSet();
-    final correctCons = options
-        .where((opt) => !correctPros.contains(opt))
-        .toSet();
+    final isCorrect =
+        _selectedOptions.value.length == correctOptions.length &&
+        _selectedOptions.value.every((opt) => correctOptions.contains(opt));
 
-    bool isLeftCorrect =
-        _leftPanArgs.value.length == 2 &&
-        _leftPanArgs.value.every((arg) => correctPros.contains(arg));
-    bool isRightCorrect =
-        _rightPanArgs.value.length == 2 &&
-        _rightPanArgs.value.every((arg) => correctCons.contains(arg));
-
-    final isCorrect = isLeftCorrect && isRightCorrect;
     if (isCorrect) {
       hapticService.success();
-      _pendingScaleSubmit.value = true;
+      submitCorrectAnswer();
     } else {
       hapticService.error();
-      final userAns =
-          'Left: ${_leftPanArgs.value.join(", ")}; Right: ${_rightPanArgs.value.join(", ")}';
+      final userAns = 'Selected: ${_selectedOptions.value.join(" | ")}';
       submitWrongAnswer(quest: quest, userAnswer: userAns);
     }
-  }
-
-  void _submitFinalAnswer(bool nailedTyping) {
-    _pendingScaleSubmit.value = false;
-
-    final state = context.read<WritingBloc>().state;
-    if (state is! WritingLoaded) return;
-
-    if (!nailedTyping) {
-      hapticService.error();
-      submitWrongAnswer(quest: state.currentQuest);
-      return;
-    }
-
-    submitCorrectAnswer();
-  }
-
-  @override
-  void onQuestionReset() {
-    _leftPanArgs.value = [];
-
-    _rightPanArgs.value = [];
-
-    _scaleRotation.value = 0.0;
-
-    _shuffledOptions.value = [];
-
-    _pendingScaleSubmit.value = false;
   }
 
   @override
@@ -200,6 +132,13 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
         final isLoaded = state is WritingLoaded;
         if (isLoaded) {
           _lastQuest = state.currentQuest;
+          if (!_hasShuffled && state.currentQuest.options != null) {
+            _hasShuffled = true;
+            _currentShuffledOptions = List<String>.from(
+              state.currentQuest.options!,
+            );
+            _currentShuffledOptions.shuffle();
+          }
         }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
 
@@ -224,165 +163,268 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
               context.read<WritingBloc>().add(const NextQuestion()),
           onHint: () =>
               context.read<WritingBloc>().add(const WritingHintUsed()),
-          child: ListenableBuilder(
-            listenable: Listenable.merge([
-              showConfettiNotifier,
-              _leftPanArgs,
-              _rightPanArgs,
-              _scaleRotation,
-              _shuffledOptions,
-              _pendingScaleSubmit,
-            ]),
-            builder: (context, _) {
-              final options = _shuffledOptions.value.isNotEmpty
-                  ? _shuffledOptions.value
-                  : (quest?.options ?? []);
-              final totalPlaced =
-                  _leftPanArgs.value.length + _rightPanArgs.value.length;
+          child: quest == null || quest.options == null
+              ? GameShimmerLoading(primaryColor: theme.primaryColor)
+              : Builder(
+                  builder: (context) {
+                    final options = _currentShuffledOptions.isNotEmpty
+                        ? _currentShuffledOptions
+                        : (quest.options ?? <String>[]);
 
-              return quest == null
-                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            sliver: SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  SizedBox(height: 16.h),
-                                  OpinionWritingInstruction(
-                                    primaryColor: theme.primaryColor,
-                                    structureGuide: quest.structureGuide,
-                                  ),
-                                  OpinionWritingThesisCard(
-                                    text: quest.prompt ?? "",
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                  ),
-                                  SizedBox(height: 8.h),
+                    return ValueListenableBuilder<Set<String>>(
+                      valueListenable: _selectedOptions,
+                      builder: (context, selectedOptions, _) {
+                        final requiredCount = quest.correctOrder?.length ?? 1;
+                        final correctOptions =
+                            quest.correctOrder
+                                ?.map((idx) => quest.options![idx])
+                                .toSet() ??
+                            {};
+                        final canSubmit =
+                            selectedOptions.length == requiredCount;
 
-                                  OpinionWritingScaleInterface(
-                                    scaleRotation: _scaleRotation.value,
-                                    leftPanArgs: _leftPanArgs.value,
-                                    rightPanArgs: _rightPanArgs.value,
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    onDropArg: (arg, isLeft) =>
-                                        _onDropArg(arg, isLeft, isAnswered),
-                                    onRemoveArg: (arg, isLeft) =>
-                                        _removeArg(arg, isLeft, isAnswered),
-                                  ),
-                                  SizedBox(height: 8.h),
-
-                                  OpinionWritingArgumentStones(
-                                    options: options,
-                                    leftPanArgs: _leftPanArgs.value,
-                                    rightPanArgs: _rightPanArgs.value,
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                  ),
-                                  SizedBox(height: 24.h),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  if (!isAnswered)
-                                    ScaleButton(
-                                      onTap: totalPlaced == 4
-                                          ? () =>
-                                                _submitAnswer(isAnswered, quest)
-                                          : null,
-                                      child: Container(
+                        return RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 24.w,
+                                  vertical: 16.h,
+                                ),
+                                sliver: SliverList(
+                                  delegate: SliverChildListDelegate([
+                                    if (quest.prompt != null ||
+                                        quest.structureGuide != null) ...[
+                                      Container(
                                         width: double.infinity,
-                                        height: 60.h,
+                                        padding: EdgeInsets.all(20.w),
                                         decoration: BoxDecoration(
+                                          color: isDark
+                                              ? const Color(0xFF1E293B)
+                                              : Colors.white,
                                           borderRadius: BorderRadius.circular(
-                                            20.r,
+                                            16.r,
                                           ),
-                                          color: totalPlaced == 4
-                                              ? theme.primaryColor
-                                              : Colors.grey,
+                                          border: Border.all(
+                                            color: isDark
+                                                ? Colors.white12
+                                                : Colors.black.withValues(
+                                                    alpha: 0.05,
+                                                  ),
+                                          ),
                                           boxShadow: [
-                                            if (totalPlaced == 4)
-                                              BoxShadow(
-                                                color: theme.primaryColor
-                                                    .withValues(alpha: 0.3),
-                                                blurRadius: 15,
+                                            BoxShadow(
+                                              color: Colors.black.withValues(
+                                                alpha: 0.03,
+                                              ),
+                                              blurRadius: 10,
+                                              offset: const Offset(0, 4),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            if (quest.structureGuide !=
+                                                null) ...[
+                                              Container(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 10.w,
+                                                  vertical: 4.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: theme.primaryColor
+                                                      .withValues(alpha: 0.1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        8.r,
+                                                      ),
+                                                ),
+                                                child: Text(
+                                                  quest.structureGuide!
+                                                      .toUpperCase(),
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 11.sp,
+                                                    fontWeight: FontWeight.w700,
+                                                    letterSpacing: 0.5,
+                                                    color: theme.primaryColor,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 12.h),
+                                            ],
+                                            if (quest.prompt != null)
+                                              Text(
+                                                quest.prompt!,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: isDark
+                                                      ? Colors.white70
+                                                      : const Color(0xFF475569),
+                                                  height: 1.5,
+                                                ),
                                               ),
                                           ],
                                         ),
-                                        child: Center(
-                                          child: Text(
-                                            totalPlaced == 4
-                                                ? "BALANCE THE TRUTH"
-                                                : "PLACE ${4 - totalPlaced} MORE CARDS",
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 16.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color: Colors.white,
-                                              letterSpacing: 2,
+                                      ),
+                                      SizedBox(height: 16.h),
+                                    ],
+                                    if (quest.instruction.isNotEmpty) ...[
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                          vertical: 12.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.08,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            12.r,
+                                          ),
+                                          border: Border.all(
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.2),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                top: 2.h,
+                                              ),
+                                              child: Icon(
+                                                Icons.flag_rounded,
+                                                color: theme.primaryColor,
+                                                size: 20.w,
+                                              ),
+                                            ),
+                                            SizedBox(width: 12.w),
+                                            Expanded(
+                                              child: Text(
+                                                quest.instruction,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 15.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: isDark
+                                                      ? Colors.white
+                                                      : const Color(0xFF1E293B),
+                                                  height: 1.4,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                    ],
+                                    ...options.map((option) {
+                                      final isSelected = selectedOptions
+                                          .contains(option);
+                                      final isCorrectOption = correctOptions
+                                          .contains(option);
+
+                                      return OpinionWritingOptionCard(
+                                        text: option,
+                                        isSelected: isSelected,
+                                        isAnswered: isAnswered,
+                                        isCorrectOption: isCorrectOption,
+                                        isMultiSelect: requiredCount > 1,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onTap: () => _toggleSelection(
+                                          option,
+                                          quest,
+                                          isAnswered,
+                                        ),
+                                      );
+                                    }),
+                                    SizedBox(height: 24.h),
+                                  ]),
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      if (!isAnswered)
+                                        ScaleButton(
+                                          onTap: canSubmit
+                                              ? () => _submitAnswer(quest)
+                                              : null,
+                                          child: AnimatedContainer(
+                                            duration: const Duration(
+                                              milliseconds: 200,
+                                            ),
+                                            width: double.infinity,
+                                            height: 60.h,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20.r),
+                                              color: canSubmit
+                                                  ? theme.primaryColor
+                                                  : Colors.grey.withValues(
+                                                      alpha: 0.5,
+                                                    ),
+                                              boxShadow: canSubmit
+                                                  ? [
+                                                      BoxShadow(
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.3,
+                                                            ),
+                                                        blurRadius: 15,
+                                                        offset: const Offset(
+                                                          0,
+                                                          4,
+                                                        ),
+                                                      ),
+                                                    ]
+                                                  : [],
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                "SUBMIT",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: Colors.white,
+                                                  letterSpacing: 1.2,
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                  SizedBox(
-                                    height: !isAnswered
-                                        ? (_pendingScaleSubmit.value
-                                              ? MediaQuery.viewInsetsOf(
-                                                      context,
-                                                    ).bottom +
-                                                    40.h
-                                              : 60.h)
-                                        : 160.h,
+                                      SizedBox(height: 120.h),
+                                    ],
                                   ),
-                                ],
-                              ),
-                            ),
-                          ),
-
-                          if (_pendingScaleSubmit.value && !isAnswered)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: SpeakToConfirmOverlay(
-                                  expectedText:
-                                      quest.prompt ??
-                                      "I have balanced the arguments",
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: () => _submitFinalAnswer(true),
-                                  onSkipped: () => _submitFinalAnswer(false),
                                 ),
                               ),
-                            ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
-                            ),
+                            ],
                           ),
-                        ],
-                      ),
+                        );
+                      },
                     );
-            },
-          ),
+                  },
+                ),
         );
       },
     );
