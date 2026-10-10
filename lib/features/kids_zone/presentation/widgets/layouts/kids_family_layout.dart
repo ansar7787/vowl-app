@@ -197,9 +197,14 @@ class KidsFamilyLayout extends StatelessWidget {
                                   ),
                                   SizedBox(height: 8.h),
                                   Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                    ),
                                     child: KidsFittedText(
-                                      quest.correctAnswer.toString().replaceAll(quest.emoji!, '').trim(),
+                                      quest.correctAnswer
+                                          .toString()
+                                          .replaceAll(quest.emoji!, '')
+                                          .trim(),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 20.sp,
@@ -352,7 +357,9 @@ class KidsFamilyLayout extends StatelessWidget {
       ),
     );
 
-    final itemWidth = (MediaQuery.of(context).size.width - 32.w) / (state.currentQuest.options?.length ?? 4);
+    final itemWidth =
+        (MediaQuery.of(context).size.width - 32.w) /
+        (state.currentQuest.options?.length ?? 4);
 
     return Draggable<String>(
       data: text,

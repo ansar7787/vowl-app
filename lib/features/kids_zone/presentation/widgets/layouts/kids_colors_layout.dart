@@ -117,8 +117,20 @@ class KidsColorsLayout extends StatelessWidget {
                         child: LayoutBuilder(
                           builder: (context, constraints) {
                             return isColorQuest
-                                ? _buildPaintTube(context, state, option, quest.correctAnswer == option, constraints.maxWidth)
-                                : _buildObjectCard(context, state, option, quest.correctAnswer == option, constraints.maxWidth);
+                                ? _buildPaintTube(
+                                    context,
+                                    state,
+                                    option,
+                                    quest.correctAnswer == option,
+                                    constraints.maxWidth,
+                                  )
+                                : _buildObjectCard(
+                                    context,
+                                    state,
+                                    option,
+                                    quest.correctAnswer == option,
+                                    constraints.maxWidth,
+                                  );
                           },
                         ),
                       ),
@@ -208,7 +220,9 @@ class KidsColorsLayout extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (quest.question != null && quest.question != "?" && quest.question!.isNotEmpty)
+                      if (quest.question != null &&
+                          quest.question != "?" &&
+                          quest.question!.isNotEmpty)
                         Padding(
                           padding: EdgeInsets.only(bottom: 8.h),
                           child: KidsFittedText(
@@ -383,9 +397,7 @@ class KidsColorsLayout extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(color: _LocalPalette.colord4d4d8, width: 2),
-        boxShadow: [
-          BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
-        ],
+        boxShadow: [BoxShadow(color: Colors.black12, offset: Offset(0, 6.h))],
       ),
       child: Center(
         child: Padding(
@@ -414,10 +426,18 @@ class KidsColorsLayout extends StatelessWidget {
 
   bool _isColorOption(String name) {
     final lower = name.toLowerCase();
-    return lower.contains('red') || lower.contains('blue') || lower.contains('green') || 
-           lower.contains('yellow') || lower.contains('orange') || lower.contains('purple') || 
-           lower.contains('pink') || lower.contains('black') || lower.contains('white') || 
-           lower.contains('brown') || lower.contains('gray') || lower.contains('grey');
+    return lower.contains('red') ||
+        lower.contains('blue') ||
+        lower.contains('green') ||
+        lower.contains('yellow') ||
+        lower.contains('orange') ||
+        lower.contains('purple') ||
+        lower.contains('pink') ||
+        lower.contains('black') ||
+        lower.contains('white') ||
+        lower.contains('brown') ||
+        lower.contains('gray') ||
+        lower.contains('grey');
   }
 
   Color _getColorFromName(String name, Color fallback) {

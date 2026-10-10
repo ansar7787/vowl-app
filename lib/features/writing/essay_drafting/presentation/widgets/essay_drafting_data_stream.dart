@@ -17,22 +17,27 @@ class EssayDraftingDataStream extends StatelessWidget {
     this.onDragUpdate,
   });
 
-  Widget _buildItem(BuildContext context, String text, {bool isFeedback = false}) {
+  Widget _buildItem(
+    BuildContext context,
+    String text, {
+    bool isFeedback = false,
+  }) {
     return Container(
-      width: isFeedback ? MediaQuery.of(context).size.width - 48.w : double.infinity,
+      width: isFeedback
+          ? MediaQuery.of(context).size.width - 48.w
+          : double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: isFeedback ? color : (isDark ? Colors.black87 : Colors.white),
         borderRadius: BorderRadius.circular(16.r),
         border: isFeedback
             ? null
-            : Border.all(
-                color: color.withValues(alpha: 0.3),
-                width: 2,
-              ),
+            : Border.all(color: color.withValues(alpha: 0.3), width: 2),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: isFeedback ? 0.4 : (isDark ? 0.35 : 0.15)),
+            color: color.withValues(
+              alpha: isFeedback ? 0.4 : (isDark ? 0.35 : 0.15),
+            ),
             blurRadius: isFeedback ? 20 : 6,
           ),
         ],
@@ -50,7 +55,9 @@ class EssayDraftingDataStream extends StatelessWidget {
               text,
               textAlign: TextAlign.left,
               style: TextStyle(
-                color: isFeedback ? Colors.white : (isDark ? Colors.white70 : Colors.black87),
+                color: isFeedback
+                    ? Colors.white
+                    : (isDark ? Colors.white70 : Colors.black87),
                 fontSize: 14.sp,
                 fontWeight: isFeedback ? FontWeight.w500 : FontWeight.w400,
                 height: 1.4,

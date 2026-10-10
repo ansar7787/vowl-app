@@ -138,7 +138,9 @@ class KidsBodyPartsLayout extends StatelessWidget {
         final isCorrect = (text == quest.correctAnswer);
         if (!isCorrect) {
           final lastSpace = text.lastIndexOf(' ');
-          final wordOnly = lastSpace != -1 ? text.substring(0, lastSpace) : text;
+          final wordOnly = lastSpace != -1
+              ? text.substring(0, lastSpace)
+              : text;
           di.sl<KidsTTSService>().speak(wordOnly);
         }
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
@@ -146,7 +148,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         final bool isCorrect = state.answerStatus == AnswerStatus.correct;
-        
+
         return Semantics(
           label: 'X-Ray board',
           hint: 'Drag a band-aid here to answer',
@@ -164,10 +166,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 300),
               width: double.infinity,
-              constraints: BoxConstraints(
-                maxWidth: 320.w,
-                maxHeight: 220.h,
-              ),
+              constraints: BoxConstraints(maxWidth: 320.w, maxHeight: 220.h),
               margin: EdgeInsets.symmetric(horizontal: 24.w),
               decoration: BoxDecoration(
                 color: isHovering ? AppColors.slate800 : AppColors.slate900,
@@ -193,9 +192,13 @@ class KidsBodyPartsLayout extends StatelessWidget {
                   padding: EdgeInsets.all(16.w),
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 400),
-                    transitionBuilder: (Widget child, Animation<double> animation) {
-                      return ScaleTransition(scale: animation, child: child);
-                    },
+                    transitionBuilder:
+                        (Widget child, Animation<double> animation) {
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          );
+                        },
                     child: isCorrect && quest.emoji != null
                         ? Text(
                             quest.emoji!,
@@ -208,9 +211,15 @@ class KidsBodyPartsLayout extends StatelessWidget {
                             key: const ValueKey('question_text'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: (quest.question == "?" || quest.question == null) ? 70.sp : 24.sp,
+                              fontSize:
+                                  (quest.question == "?" ||
+                                      quest.question == null)
+                                  ? 70.sp
+                                  : 24.sp,
                               fontWeight: FontWeight.w600,
-                              color: isHovering ? Colors.white : Colors.white.withValues(alpha: 0.8),
+                              color: isHovering
+                                  ? Colors.white
+                                  : Colors.white.withValues(alpha: 0.8),
                             ),
                             textAlign: TextAlign.center,
                             maxLines: 4,
@@ -235,14 +244,18 @@ class KidsBodyPartsLayout extends StatelessWidget {
     return _KidsBandaidDraggable(
       text: text,
       index: index,
-      onTap: state.answerStatus.isAnswered ? null : () {
-        if (!isCorrect) {
-          final lastSpace = text.lastIndexOf(' ');
-          final wordOnly = lastSpace != -1 ? text.substring(0, lastSpace) : text;
-          di.sl<KidsTTSService>().speak(wordOnly);
-        }
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
+      onTap: state.answerStatus.isAnswered
+          ? null
+          : () {
+              if (!isCorrect) {
+                final lastSpace = text.lastIndexOf(' ');
+                final wordOnly = lastSpace != -1
+                    ? text.substring(0, lastSpace)
+                    : text;
+                di.sl<KidsTTSService>().speak(wordOnly);
+              }
+              context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+            },
     );
   }
 }
@@ -262,15 +275,26 @@ class _KidsBandaidDraggable extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final bandaidWidget = _KidsBandaidUI(text: text, index: index, width: constraints.maxWidth);
-        
+        final bandaidWidget = _KidsBandaidUI(
+          text: text,
+          index: index,
+          width: constraints.maxWidth,
+        );
+
         return Draggable<String>(
           data: text,
           feedback: Material(
             color: Colors.transparent,
             child: Transform.scale(
               scale: 1.05,
-              child: Opacity(opacity: 0.9, child: _KidsBandaidUI(text: text, index: index, width: constraints.maxWidth)),
+              child: Opacity(
+                opacity: 0.9,
+                child: _KidsBandaidUI(
+                  text: text,
+                  index: index,
+                  width: constraints.maxWidth,
+                ),
+              ),
             ),
           ),
           childWhenDragging: Opacity(opacity: 0.3, child: bandaidWidget),
@@ -314,7 +338,9 @@ class _KidsBandaidUI extends StatelessWidget {
       width: width, // Responsive width
       decoration: BoxDecoration(
         color: bandaidColor,
-        borderRadius: BorderRadius.circular(35.r), // True pill shape for 70.h height
+        borderRadius: BorderRadius.circular(
+          35.r,
+        ), // True pill shape for 70.h height
         border: Border.all(
           color: Colors.black.withValues(alpha: 0.1),
           width: 1,
@@ -346,8 +372,12 @@ class _KidsBandaidUI extends StatelessWidget {
               child: Builder(
                 builder: (context) {
                   final lastSpace = text.lastIndexOf(' ');
-                  final wordText = lastSpace != -1 ? text.substring(0, lastSpace) : text;
-                  final emojiText = lastSpace != -1 ? text.substring(lastSpace + 1) : '';
+                  final wordText = lastSpace != -1
+                      ? text.substring(0, lastSpace)
+                      : text;
+                  final emojiText = lastSpace != -1
+                      ? text.substring(lastSpace + 1)
+                      : '';
 
                   return Column(
                     mainAxisSize: MainAxisSize.min,
@@ -363,7 +393,8 @@ class _KidsBandaidUI extends StatelessWidget {
                             color: AppColors.slate900,
                           ),
                           textAlign: TextAlign.center,
-                          maxLines: 1, // Force word onto one line, preventing awkward wrapping
+                          maxLines:
+                              1, // Force word onto one line, preventing awkward wrapping
                         ),
                       ),
                       if (emojiText.isNotEmpty)

@@ -120,26 +120,26 @@ class KidsClothingLayout extends StatelessWidget {
                           children: List.generate(quest.options?.length ?? 0, (
                             index,
                           ) {
-                        final option = quest.options![index];
-                        return Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4.w),
-                            child: _buildHangerOption(
-                              context,
-                              state,
-                              quest,
-                              option,
-                              index,
-                            ),
-                          ),
-                        );
-                      }),
-                    ),
+                            final option = quest.options![index];
+                            return Expanded(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                child: _buildHangerOption(
+                                  context,
+                                  state,
+                                  quest,
+                                  option,
+                                  index,
+                                ),
+                              ),
+                            );
+                          }),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
-            ),
             ),
           ],
         );
@@ -202,7 +202,8 @@ class KidsClothingLayout extends StatelessWidget {
                       Stack(
                         alignment: Alignment.center,
                         children: [
-                          if (quest.emoji != null && state.answerStatus == AnswerStatus.correct)
+                          if (quest.emoji != null &&
+                              state.answerStatus == AnswerStatus.correct)
                             Text(
                               quest.emoji!,
                               style: TextStyle(fontSize: 80.sp),
@@ -220,7 +221,8 @@ class KidsClothingLayout extends StatelessWidget {
                                           quest.question == null)
                                       ? 80.sp
                                       : 24.sp,
-                                  fontWeight: FontWeight.w600, // Reduced from w700
+                                  fontWeight:
+                                      FontWeight.w600, // Reduced from w700
                                   color: AppColors.amber600,
                                 ),
                                 textAlign: TextAlign.center,
@@ -306,8 +308,8 @@ class KidsClothingLayout extends StatelessWidget {
         ),
         // Clothing Tag hanging from it
         Container(
-          height: 85.h, 
-          width: double.infinity, 
+          height: 85.h,
+          width: double.infinity,
           margin: EdgeInsets.symmetric(horizontal: 4.w).copyWith(top: 2.h),
           decoration: BoxDecoration(
             color: tagColor,
@@ -330,20 +332,19 @@ class KidsClothingLayout extends StatelessWidget {
                     label,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 16.sp, // Reduced for a professional standard look
-                      fontWeight: FontWeight.w500, // Reduced from w600 for standard look
+                      fontSize:
+                          16.sp, // Reduced for a professional standard look
+                      fontWeight: FontWeight
+                          .w500, // Reduced from w600 for standard look
                       color: AppColors.slate900,
                       height: 1.1,
                     ),
                     textAlign: TextAlign.center,
-                    maxLines: 2, 
+                    maxLines: 2,
                   ),
                   if (emoji.isNotEmpty) ...[
                     SizedBox(height: 2.h),
-                    Text(
-                      emoji,
-                      style: TextStyle(fontSize: 22.sp, height: 1.0),
-                    ),
+                    Text(emoji, style: TextStyle(fontSize: 22.sp, height: 1.0)),
                   ],
                 ],
               ),
