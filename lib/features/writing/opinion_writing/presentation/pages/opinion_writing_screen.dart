@@ -172,10 +172,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                 sliver: SliverList(
                                   delegate: SliverChildListDelegate([
                                     if (quest.prompt != null ||
-                                        quest.structureGuide != null) ...[
+                                        quest.instruction.isNotEmpty) ...[
                                       Container(
                                         width: double.infinity,
-                                        padding: EdgeInsets.all(20.w),
                                         decoration: BoxDecoration(
                                           color: isDark
                                               ? const Color(0xFF1E293B)
@@ -193,10 +192,10 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                           boxShadow: [
                                             BoxShadow(
                                               color: Colors.black.withValues(
-                                                alpha: 0.03,
+                                                alpha: 0.02,
                                               ),
-                                              blurRadius: 10,
-                                              offset: const Offset(0, 4),
+                                              blurRadius: 8,
+                                              offset: const Offset(0, 2),
                                             ),
                                           ],
                                         ),
@@ -204,100 +203,117 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            if (quest.structureGuide !=
-                                                null) ...[
+                                            if (quest.prompt != null)
+                                              Padding(
+                                                padding: EdgeInsets.all(20.w),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    if (quest.structureGuide !=
+                                                        null) ...[
+                                                      Text(
+                                                        quest.structureGuide!
+                                                            .toUpperCase(),
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 11.sp,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          letterSpacing: 0.8,
+                                                          color: theme
+                                                              .primaryColor,
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 8.h),
+                                                    ],
+                                                    Text(
+                                                      quest.prompt!,
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 16.sp,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: isDark
+                                                            ? Colors.white
+                                                                  .withValues(
+                                                                    alpha: 0.8,
+                                                                  )
+                                                            : const Color(
+                                                                0xFF334155,
+                                                              ),
+                                                        height: 1.5,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            if (quest.instruction.isNotEmpty)
                                               Container(
+                                                width: double.infinity,
                                                 padding: EdgeInsets.symmetric(
-                                                  horizontal: 10.w,
-                                                  vertical: 4.h,
+                                                  horizontal: 20.w,
+                                                  vertical: 16.h,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: theme.primaryColor
-                                                      .withValues(alpha: 0.1),
+                                                      .withValues(alpha: 0.05),
+                                                  border: Border(
+                                                    top: BorderSide(
+                                                      color: theme.primaryColor
+                                                          .withValues(
+                                                            alpha: 0.1,
+                                                          ),
+                                                    ),
+                                                  ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                        8.r,
+                                                      BorderRadius.only(
+                                                        bottomLeft:
+                                                            Radius.circular(
+                                                              16.r,
+                                                            ),
+                                                        bottomRight:
+                                                            Radius.circular(
+                                                              16.r,
+                                                            ),
                                                       ),
                                                 ),
-                                                child: Text(
-                                                  quest.structureGuide!
-                                                      .toUpperCase(),
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 11.sp,
-                                                    fontWeight: FontWeight.w700,
-                                                    letterSpacing: 0.5,
-                                                    color: theme.primaryColor,
-                                                  ),
+                                                child: Row(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding: EdgeInsets.only(
+                                                        top: 1.h,
+                                                      ),
+                                                      child: Icon(
+                                                        Icons.task_alt_rounded,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        size: 20.w,
+                                                      ),
+                                                    ),
+                                                    SizedBox(width: 12.w),
+                                                    Expanded(
+                                                      child: Text(
+                                                        quest.instruction,
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 15.sp,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          color: isDark
+                                                              ? Colors.white
+                                                              : const Color(
+                                                                  0xFF0F172A,
+                                                                ),
+                                                          height: 1.4,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
-                                              SizedBox(height: 12.h),
-                                            ],
-                                            if (quest.prompt != null)
-                                              Text(
-                                                quest.prompt!,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 16.sp,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: isDark
-                                                      ? Colors.white70
-                                                      : const Color(0xFF475569),
-                                                  height: 1.5,
-                                                ),
-                                              ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(height: 16.h),
-                                    ],
-                                    if (quest.instruction.isNotEmpty) ...[
-                                      Container(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 16.w,
-                                          vertical: 12.h,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.08,
-                                          ),
-                                          borderRadius: BorderRadius.circular(
-                                            12.r,
-                                          ),
-                                          border: Border.all(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.2),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                top: 2.h,
-                                              ),
-                                              child: Icon(
-                                                Icons.flag_rounded,
-                                                color: theme.primaryColor,
-                                                size: 20.w,
-                                              ),
-                                            ),
-                                            SizedBox(width: 12.w),
-                                            Expanded(
-                                              child: Text(
-                                                quest.instruction,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 15.sp,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: isDark
-                                                      ? Colors.white
-                                                      : const Color(0xFF1E293B),
-                                                  height: 1.4,
-                                                ),
-                                              ),
-                                            ),
                                           ],
                                         ),
                                       ),
@@ -581,4 +597,3 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
     );
   }
 }
-
