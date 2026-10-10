@@ -49,6 +49,9 @@ class DailyJournalScratchArea extends StatelessWidget {
             controller: controller,
             maxLines: 5,
             enabled: !isAnswered,
+            onTapOutside: (PointerDownEvent event) {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
             style: TextStyle(
               fontFamily: 'Spectral',
               fontSize: 16.sp,
