@@ -352,17 +352,26 @@ class KidsFamilyLayout extends StatelessWidget {
       ),
     );
 
+    final itemWidth = (MediaQuery.of(context).size.width - 32.w) / (state.currentQuest.options?.length ?? 4);
+
     return Draggable<String>(
       data: text,
       feedback: Material(
         color: Colors.transparent,
-        child: Transform.scale(
-          scale: 1.05,
-          child: Opacity(opacity: 0.9, child: polaroidWidget),
+        child: SizedBox(
+          width: itemWidth,
+          child: Transform.scale(
+            scale: 1.05,
+            child: Opacity(opacity: 0.9, child: polaroidWidget),
+          ),
         ),
       ),
-      childWhenDragging: Opacity(opacity: 0.3, child: polaroidWidget),
+      childWhenDragging: SizedBox(
+        width: itemWidth,
+        child: Opacity(opacity: 0.3, child: polaroidWidget),
+      ),
       child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
         onTap: () {
           if (!state.answerStatus.isAnswered) {
             if (!isCorrect) {
