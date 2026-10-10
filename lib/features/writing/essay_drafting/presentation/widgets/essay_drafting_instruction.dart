@@ -23,9 +23,12 @@ class EssayDraftingInstruction extends StatelessWidget {
         border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.architecture_rounded, size: 20.r, color: primaryColor),
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
+            child: Icon(Icons.architecture_rounded, size: 20.r, color: primaryColor),
+          ),
           SizedBox(width: 12.w),
           Expanded(
             child: Text(
