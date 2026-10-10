@@ -2,102 +2,149 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
-class OpinionWritingOptionCard extends StatelessWidget {
+class OpinionWritingIdeaCard extends StatelessWidget {
   final String text;
-  final bool isSelected;
-  final bool isAnswered;
-  final bool isCorrectOption;
-  final bool isMultiSelect;
   final Color primaryColor;
   final bool isDark;
-  final VoidCallback onTap;
+  final bool isDragging;
 
-  const OpinionWritingOptionCard({
+  const OpinionWritingIdeaCard({
     super.key,
     required this.text,
-    required this.isSelected,
-    required this.isAnswered,
-    required this.isCorrectOption,
-    required this.isMultiSelect,
     required this.primaryColor,
     required this.isDark,
-    required this.onTap,
+    this.isDragging = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    Color bgColor = isDark ? const Color(0xFF1E293B) : Colors.white;
-    Color borderColor = isDark ? Colors.white24 : Colors.black12;
+    return Container(
+      margin: EdgeInsets.only(bottom: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: isDark ? Colors.white24 : Colors.black12),
+        boxShadow: isDragging
+            ? [
+                BoxShadow(
+                  color: primaryColor.withValues(alpha: 0.2),
+                  blurRadius: 15,
+                  spreadRadius: 2,
+                ),
+              ]
+            : [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.03),
+                  blurRadius: 5,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
+            child: Icon(
+              Icons.drag_indicator_rounded,
+              color: isDark ? Colors.white38 : Colors.black26,
+              size: 20.w,
+            ),
+          ),
+          SizedBox(width: 12.w),
+          Expanded(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+                color: isDark ? Colors.white : const Color(0xFF1E293B),
+                height: 1.5,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class OpinionWritingDraftedCard extends StatelessWidget {
+  final String text;
+  final Color primaryColor;
+  final bool isDark;
+  final bool isAnswered;
+  final bool isCorrectOption;
+  final VoidCallback onRemove;
+
+  const OpinionWritingDraftedCard({
+    super.key,
+    required this.text,
+    required this.primaryColor,
+    required this.isDark,
+    required this.isAnswered,
+    required this.isCorrectOption,
+    required this.onRemove,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    Color bgColor = isDark
+        ? Colors.white.withValues(alpha: 0.05)
+        : primaryColor.withValues(alpha: 0.05);
+    Color borderColor = primaryColor.withValues(alpha: 0.3);
     Color textColor = isDark ? Colors.white : const Color(0xFF1E293B);
-    IconData iconData = isMultiSelect
-        ? Icons.check_box_outline_blank
-        : Icons.radio_button_unchecked;
-    Color iconColor = isDark ? Colors.white38 : Colors.black38;
+    IconData iconData = Icons.remove_circle_outline;
+    Color iconColor = primaryColor;
 
     if (isAnswered) {
       if (isCorrectOption) {
         bgColor = Colors.green.withValues(alpha: 0.1);
         borderColor = Colors.green;
-        iconData = isMultiSelect ? Icons.check_box : Icons.check_circle;
+        iconData = Icons.check_circle;
         iconColor = Colors.green;
-      } else if (isSelected && !isCorrectOption) {
+      } else {
         bgColor = Colors.red.withValues(alpha: 0.1);
         borderColor = Colors.red;
         iconData = Icons.cancel;
         iconColor = Colors.red;
       }
-    } else if (isSelected) {
-      bgColor = primaryColor.withValues(alpha: 0.05);
-      borderColor = primaryColor;
-      iconData = isMultiSelect ? Icons.check_box : Icons.check_circle;
-      iconColor = primaryColor;
     }
 
-    return Padding(
-      padding: EdgeInsets.only(bottom: 12.h),
-      child: ScaleButton(
-        onTap: onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 150),
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
-          decoration: BoxDecoration(
-            color: bgColor,
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: borderColor,
-              width: isSelected || (isAnswered && isCorrectOption) ? 2 : 1,
+    return ScaleButton(
+      onTap: onRemove,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        margin: EdgeInsets.only(bottom: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(color: borderColor, width: isAnswered ? 2 : 1),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: textColor,
+                  height: 1.5,
+                ),
+              ),
             ),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 2.h),
-                child: AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 150),
-                  child: Icon(
-                    iconData,
-                    key: ValueKey(iconData),
-                    color: iconColor,
-                    size: 24.w,
-                  ),
-                ),
-              ),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w500,
-                    color: textColor,
-                    height: 1.5,
-                  ),
-                ),
-              ),
-            ],
-          ),
+            SizedBox(width: 12.w),
+            Padding(
+              padding: EdgeInsets.only(top: 2.h),
+              child: Icon(iconData, color: iconColor, size: 22.w),
+            ),
+          ],
         ),
       ),
     );

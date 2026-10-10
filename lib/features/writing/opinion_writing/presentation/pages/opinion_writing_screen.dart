@@ -43,7 +43,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
   WritingQuest? _lastQuest;
   bool _hasShuffled = false;
   List<String> _currentShuffledOptions = [];
-  final ValueNotifier<Set<String>> _selectedOptions = ValueNotifier({});
+  final ValueNotifier<List<String>> _draftedOptions = ValueNotifier([]);
 
   late final ScrollController _scrollController;
 
@@ -57,7 +57,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
   @override
   void dispose() {
     _scrollController.dispose();
-    _selectedOptions.dispose();
+    _draftedOptions.dispose();
     disposeWritingGame();
     super.dispose();
   }
@@ -66,53 +66,26 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
   void onQuestionReset() {
     _hasShuffled = false;
     _currentShuffledOptions = [];
-    _selectedOptions.value = {};
-  }
-
-  void _toggleSelection(String option, WritingQuest quest, bool isAnswered) {
-    if (isAnswered) return;
-
-    hapticService.selection();
-    final requiredCount = quest.correctOrder?.length ?? 1;
-    final currentSelection = Set<String>.from(_selectedOptions.value);
-
-    if (currentSelection.contains(option)) {
-      currentSelection.remove(option);
-    } else {
-      if (currentSelection.length < requiredCount) {
-        currentSelection.add(option);
-      } else if (requiredCount == 1) {
-        currentSelection.clear();
-        currentSelection.add(option);
-      } else {
-        // Option to swap the oldest one, but for now just clear and add for UX
-        if (requiredCount > 1 && currentSelection.isNotEmpty) {
-          currentSelection.remove(currentSelection.first);
-          currentSelection.add(option);
-        }
-      }
-    }
-
-    _selectedOptions.value = currentSelection;
+    _draftedOptions.value = [];
   }
 
   void _submitAnswer(WritingQuest quest) {
     final requiredCount = quest.correctOrder?.length ?? 1;
-    if (_selectedOptions.value.length < requiredCount) return;
+    if (_draftedOptions.value.length < requiredCount) return;
 
     final correctOptions =
         quest.correctOrder?.map((idx) => quest.options![idx]).toSet() ?? {};
 
     final isCorrect =
-        _selectedOptions.value.length == correctOptions.length &&
-        _selectedOptions.value.every((opt) => correctOptions.contains(opt));
+        _draftedOptions.value.length == correctOptions.length &&
+        _draftedOptions.value.every((opt) => correctOptions.contains(opt));
 
     if (isCorrect) {
       hapticService.success();
       submitCorrectAnswer();
     } else {
       hapticService.error();
-      final userAns = 'Selected: ${_selectedOptions.value.join(" | ")}';
+      final userAns = 'Drafted: ${_draftedOptions.value.join(" | ")}';
       submitWrongAnswer(quest: quest, userAnswer: userAns);
     }
   }
@@ -167,21 +140,20 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : Builder(
                   builder: (context) {
-                    final options = _currentShuffledOptions.isNotEmpty
-                        ? _currentShuffledOptions
-                        : (quest.options ?? <String>[]);
-
-                    return ValueListenableBuilder<Set<String>>(
-                      valueListenable: _selectedOptions,
-                      builder: (context, selectedOptions, _) {
+                    return ValueListenableBuilder<List<String>>(
+                      valueListenable: _draftedOptions,
+                      builder: (context, draftedOptions, _) {
                         final requiredCount = quest.correctOrder?.length ?? 1;
-                        final correctOptions =
+                        final canSubmit =
+                            draftedOptions.length == requiredCount;
+                        final availableOptions = _currentShuffledOptions
+                            .where((opt) => !draftedOptions.contains(opt))
+                            .toList();
+                        final correctOptionsSet =
                             quest.correctOrder
                                 ?.map((idx) => quest.options![idx])
                                 .toSet() ??
                             {};
-                        final canSubmit =
-                            selectedOptions.length == requiredCount;
 
                         return RawScrollbar(
                           controller: _scrollController,
@@ -331,27 +303,206 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                       ),
                                       SizedBox(height: 24.h),
                                     ],
-                                    ...options.map((option) {
-                                      final isSelected = selectedOptions
-                                          .contains(option);
-                                      final isCorrectOption = correctOptions
-                                          .contains(option);
-
-                                      return OpinionWritingOptionCard(
-                                        text: option,
-                                        isSelected: isSelected,
-                                        isAnswered: isAnswered,
-                                        isCorrectOption: isCorrectOption,
-                                        isMultiSelect: requiredCount > 1,
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onTap: () => _toggleSelection(
-                                          option,
-                                          quest,
-                                          isAnswered,
+                                    DragTarget<String>(
+                                      onWillAcceptWithDetails: (details) {
+                                        return !isAnswered &&
+                                            draftedOptions.length <
+                                                requiredCount;
+                                      },
+                                      onAcceptWithDetails: (details) {
+                                        hapticService.selection();
+                                        _draftedOptions.value = [
+                                          ...draftedOptions,
+                                          details.data,
+                                        ];
+                                      },
+                                      builder: (context, candidateData, rejectedData) {
+                                        return Container(
+                                          width: double.infinity,
+                                          padding: EdgeInsets.all(20.w),
+                                          decoration: BoxDecoration(
+                                            color: isDark
+                                                ? const Color(0xFF1E293B)
+                                                : const Color(0xFFF8FAFC),
+                                            borderRadius: BorderRadius.circular(
+                                              16.r,
+                                            ),
+                                            border: Border.all(
+                                              color: candidateData.isNotEmpty
+                                                  ? theme.primaryColor
+                                                  : (isDark
+                                                        ? Colors.white12
+                                                        : Colors.black12),
+                                              width: candidateData.isNotEmpty
+                                                  ? 2
+                                                  : 1,
+                                            ),
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons.edit_document,
+                                                    color: theme.primaryColor,
+                                                    size: 20.w,
+                                                  ),
+                                                  SizedBox(width: 8.w),
+                                                  Text(
+                                                    "Drafting Pad",
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 14.sp,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color: theme.primaryColor,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(height: 16.h),
+                                              ...List.generate(requiredCount, (
+                                                index,
+                                              ) {
+                                                if (index <
+                                                    draftedOptions.length) {
+                                                  final option =
+                                                      draftedOptions[index];
+                                                  return OpinionWritingDraftedCard(
+                                                    text: option,
+                                                    isDark: isDark,
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    isAnswered: isAnswered,
+                                                    isCorrectOption:
+                                                        correctOptionsSet
+                                                            .contains(option),
+                                                    onRemove: () {
+                                                      if (isAnswered) return;
+                                                      hapticService.selection();
+                                                      final current =
+                                                          List<String>.from(
+                                                            _draftedOptions
+                                                                .value,
+                                                          );
+                                                      current.remove(option);
+                                                      _draftedOptions.value =
+                                                          current;
+                                                    },
+                                                  );
+                                                } else {
+                                                  return Padding(
+                                                    padding: EdgeInsets.only(
+                                                      bottom: 12.h,
+                                                    ),
+                                                    child: Container(
+                                                      width: double.infinity,
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            vertical: 20.h,
+                                                          ),
+                                                      decoration: BoxDecoration(
+                                                        color: isDark
+                                                            ? Colors.white
+                                                                  .withValues(
+                                                                    alpha: 0.02,
+                                                                  )
+                                                            : Colors.black
+                                                                  .withValues(
+                                                                    alpha: 0.02,
+                                                                  ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: isDark
+                                                              ? Colors.white24
+                                                              : Colors.black24,
+                                                        ),
+                                                      ),
+                                                      child: Center(
+                                                        child: Text(
+                                                          "Drag option here...",
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: 14.sp,
+                                                            color: isDark
+                                                                ? Colors.white38
+                                                                : Colors
+                                                                      .black38,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                              }),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    SizedBox(height: 24.h),
+                                    if (availableOptions.isNotEmpty) ...[
+                                      Text(
+                                        "Idea Board",
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: isDark
+                                              ? Colors.white70
+                                              : Colors.black54,
                                         ),
-                                      );
-                                    }),
+                                      ),
+                                      SizedBox(height: 12.h),
+                                      ...availableOptions.map((option) {
+                                        if (isAnswered) {
+                                          return OpinionWritingIdeaCard(
+                                            text: option,
+                                            isDark: isDark,
+                                            primaryColor: theme.primaryColor,
+                                          );
+                                        }
+                                        return Draggable<String>(
+                                          data: option,
+                                          feedback: Material(
+                                            color: Colors.transparent,
+                                            child: SizedBox(
+                                              width:
+                                                  MediaQuery.of(
+                                                    context,
+                                                  ).size.width -
+                                                  48.w,
+                                              child: OpinionWritingIdeaCard(
+                                                text: option,
+                                                isDark: isDark,
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                isDragging: true,
+                                              ),
+                                            ),
+                                          ),
+                                          childWhenDragging: Opacity(
+                                            opacity: 0.3,
+                                            child: OpinionWritingIdeaCard(
+                                              text: option,
+                                              isDark: isDark,
+                                              primaryColor: theme.primaryColor,
+                                            ),
+                                          ),
+                                          child: OpinionWritingIdeaCard(
+                                            text: option,
+                                            isDark: isDark,
+                                            primaryColor: theme.primaryColor,
+                                          ),
+                                        );
+                                      }),
+                                    ],
                                     SizedBox(height: 24.h),
                                   ]),
                                 ),
