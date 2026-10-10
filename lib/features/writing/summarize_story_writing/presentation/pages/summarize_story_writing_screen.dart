@@ -14,7 +14,7 @@ import 'package:vowl/features/writing/presentation/layout/writing_base_layout.da
 import 'package:vowl/core/utils/locale_service.dart';
 
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
-import 'package:vowl/features/writing/summarize_story_writing/presentation/models/describe_frame_slot.dart';
+import 'package:vowl/features/writing/summarize_story_writing/presentation/models/summarize_story_frame_slot.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_writing_instruction.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_manuscript.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_film_strip.dart';
@@ -51,7 +51,7 @@ class _SummarizeStoryWritingScreenState
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final ValueNotifier<List<DescribeFrameSlot>> _slots = ValueNotifier([]);
+  final ValueNotifier<List<SummarizeStoryFrameSlot>> _slots = ValueNotifier([]);
 
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
@@ -77,8 +77,8 @@ class _SummarizeStoryWritingScreenState
   void _onDropFrame(int slotIdx, String sentence, bool isAnswered) {
     if (isAnswered) return;
     hapticService.success();
-    final newSlots = List<DescribeFrameSlot>.from(_slots.value);
-    newSlots[slotIdx].sentence = sentence;
+    final newSlots = List<SummarizeStoryFrameSlot>.from(_slots.value);
+    newSlots[slotIdx] = newSlots[slotIdx].copyWith(sentence: sentence);
     _slots.value = newSlots;
   }
 
@@ -88,8 +88,8 @@ class _SummarizeStoryWritingScreenState
     final firstEmptyIdx = _slots.value.indexWhere((s) => s.sentence == null);
     if (firstEmptyIdx != -1) {
       hapticService.success();
-      final newSlots = List<DescribeFrameSlot>.from(_slots.value);
-      newSlots[firstEmptyIdx].sentence = sentence;
+      final newSlots = List<SummarizeStoryFrameSlot>.from(_slots.value);
+      newSlots[firstEmptyIdx] = newSlots[firstEmptyIdx].copyWith(sentence: sentence);
       _slots.value = newSlots;
     }
   }
@@ -97,11 +97,10 @@ class _SummarizeStoryWritingScreenState
   void _removeFrame(int slotIdx, bool isAnswered) {
     if (isAnswered) return;
     hapticService.selection();
-    final newSlots = List<DescribeFrameSlot>.from(_slots.value);
-    newSlots[slotIdx].sentence = null;
+    final newSlots = List<SummarizeStoryFrameSlot>.from(_slots.value);
+    newSlots[slotIdx] = newSlots[slotIdx].copyWith(clearSentence: true);
     _slots.value = newSlots;
   }
-
   void _submitAnswer(bool isAnswered, WritingQuest quest) {
     if (isAnswered) return;
 
@@ -173,9 +172,23 @@ class _SummarizeStoryWritingScreenState
 
   @override
   void onQuestionReset() {
-    _slots.value = [];
+    final newSlots = List<SummarizeStoryFrameSlot>.from(_slots.value);
+    for (int i = 0; i < newSlots.length; i++) {
+      newSlots[i] = newSlots[i].copyWith(clearSentence: true);
+    }
+    _slots.value = newSlots;
 
     _pendingSubmit.value = false;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          0.0,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
   }
 
   @override
@@ -199,8 +212,11 @@ class _SummarizeStoryWritingScreenState
               final correctCount = newQuest.correctOrder?.length ?? 3;
               _slots.value = List.generate(
                 correctCount,
-                (i) => DescribeFrameSlot(index: i),
+                (i) => SummarizeStoryFrameSlot(index: i),
               );
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                _pendingSubmit.value = false;
+              });
             }
           }
         }
@@ -275,87 +291,6 @@ class _SummarizeStoryWritingScreenState
                                     ),
                                     SizedBox(height: 24.h),
 
-                                    if (quest.storyKeyEvents != null)
-                                      Container(
-                                        margin: EdgeInsets.only(bottom: 24.h),
-                                        padding: EdgeInsets.all(16.r),
-                                        decoration: BoxDecoration(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.1,
-                                          ),
-                                          borderRadius: BorderRadius.circular(
-                                            16.r,
-                                          ),
-                                          border: Border.all(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.3),
-                                          ),
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.checklist_rtl,
-                                                  color: theme.primaryColor,
-                                                  size: 16.sp,
-                                                ),
-                                                SizedBox(width: 8.w),
-                                                Text(
-                                                  "KEY EVENTS CHECKLIST",
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 10.sp,
-                                                    fontWeight: FontWeight.w800,
-                                                    color: theme.primaryColor,
-                                                    letterSpacing: 2,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(height: 12.h),
-                                            ...quest.storyKeyEvents!.map(
-                                              (event) => Padding(
-                                                padding: EdgeInsets.only(
-                                                  bottom: 6.h,
-                                                ),
-                                                child: Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Icon(
-                                                      Icons
-                                                          .check_circle_outline,
-                                                      color: theme.primaryColor
-                                                          .withValues(
-                                                            alpha: 0.7,
-                                                          ),
-                                                      size: 14.sp,
-                                                    ),
-                                                    SizedBox(width: 8.w),
-                                                    Expanded(
-                                                      child: Text(
-                                                        event,
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 12.sp,
-                                                          color: isDark
-                                                              ? Colors.white70
-                                                              : Colors.black87,
-                                                          height: 1.3,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-
                                     SummarizeStoryFilmStrip(
                                       slots: _slots.value,
                                       color: theme.primaryColor,
@@ -380,7 +315,7 @@ class _SummarizeStoryWritingScreenState
                                           _onTapOption(text, isAnswered),
                                     ),
                                     SizedBox(height: 32.h),
-                                    if (!isAnswered)
+                                    if (!isAnswered && !_pendingSubmit.value)
                                       SpeedChallengeTimer(
                                         durationSeconds: 90,
                                         primaryColor: theme.primaryColor,
@@ -398,7 +333,9 @@ class _SummarizeStoryWritingScreenState
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  if (isSlotsFilled && !isAnswered)
+                                  if (isSlotsFilled &&
+                                      !isAnswered &&
+                                      !_pendingSubmit.value)
                                     ScaleButton(
                                       onTap: () =>
                                           _submitAnswer(isAnswered, quest),
@@ -439,41 +376,45 @@ class _SummarizeStoryWritingScreenState
                                       ),
                                     ),
                                   if (_pendingSubmit.value && !isAnswered)
-                                    TypeToConfirmOverlay(
-                                      expectedText: _slots.value.isNotEmpty
-                                          ? (_slots.value[0].sentence ?? "")
-                                          : "",
-                                      displayText:
-                                          "Type the first sentence to finalize your summary",
-                                      primaryColor: theme.primaryColor,
-                                      onConfirmed: () =>
-                                          _submitFinalAnswer(true),
-                                      onSkipped: () =>
-                                          _submitFinalAnswer(false),
-                                      allowSkip: true,
-                                      isPositioned: false,
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 48.h),
+                                      child: TypeToConfirmOverlay(
+                                        expectedText: _slots.value.isNotEmpty
+                                            ? (_slots.value.map((s) => s.sentence ?? "").join(" ").trim().replaceAll(RegExp(r'\s+'), ' '))
+                                            : "",
+                                        displayText: _slots.value.isNotEmpty
+                                            ? (_slots.value.map((s) => s.sentence ?? "").join(" ").trim().replaceAll(RegExp(r'\s+'), ' '))
+                                            : "",
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitFinalAnswer(true),
+                                        onSkipped: () =>
+                                            _submitFinalAnswer(false),
+                                        allowSkip: true,
+                                        isPositioned: false,
+                                        displayFontSize: 16.sp,
+                                        displayFontWeight: FontWeight.w600,
+                                        displayTextAlign: TextAlign.start,
+                                      ),
                                     ),
                                   SizedBox(
-                                    height: !isAnswered
-                                        ? (_pendingSubmit.value
-                                              ? MediaQuery.viewInsetsOf(
-                                                      context,
-                                                    ).bottom +
-                                                    40.h
-                                              : 60.h)
-                                        : 160.h,
+                                    height:
+                                        MediaQuery.viewInsetsOf(
+                                              context,
+                                            ).bottom >
+                                            0
+                                        ? MediaQuery.viewInsetsOf(
+                                                context,
+                                              ).bottom +
+                                              40.h
+                                        : (isAnswered
+                                              ? 160.h
+                                              : (_pendingSubmit.value
+                                                    ? 40.h
+                                                    : 80.h)),
                                   ),
                                 ],
                               ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
                             ),
                           ),
                         ],

@@ -19,7 +19,6 @@ class SummarizeStoryManuscript extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(24.r),
@@ -32,23 +31,29 @@ class SummarizeStoryManuscript extends StatelessWidget {
           ),
         ],
       ),
-      child: Stack(
-        children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
-          Text(
-            story,
-            textAlign: TextAlign.justify,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.9)
-                  : AppColors.slate700,
-              height: 1.5,
-              fontWeight: FontWeight.w500,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(22.r),
+        child: Stack(
+          children: [
+            const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
+            Padding(
+              padding: EdgeInsets.all(24.r),
+              child: Text(
+                story,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.9)
+                      : AppColors.slate700,
+                  height: 1.5,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

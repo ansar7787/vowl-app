@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/features/writing/summarize_story_writing/presentation/models/describe_frame_slot.dart';
+import 'package:vowl/features/writing/summarize_story_writing/presentation/models/summarize_story_frame_slot.dart';
 
 class SummarizeStoryFrameVault extends StatelessWidget {
   final List<String> options;
-  final List<DescribeFrameSlot> slots;
+  final List<SummarizeStoryFrameSlot> slots;
   final Color color;
   final bool isDark;
   final void Function(String text)? onTapOption;
@@ -20,7 +20,10 @@ class SummarizeStoryFrameVault extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final slottedSentences = slots.map((s) => s.sentence).toSet();
+    final slottedSentences = slots
+        .map((s) => s.sentence)
+        .whereType<String>()
+        .toSet();
     final availableOptions = options
         .where((o) => !slottedSentences.contains(o))
         .toList();
@@ -49,12 +52,13 @@ class SummarizeStoryFrameVault extends StatelessWidget {
                 ),
                 child: Text(
                   o,
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.start,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: Colors.white,
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w600,
+                    height: 1.4,
                   ),
                 ),
               ),
@@ -84,12 +88,13 @@ class SummarizeStoryFrameVault extends StatelessWidget {
       ),
       child: Text(
         text,
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.start,
         style: TextStyle(
           fontFamily: 'Outfit',
           color: Theme.of(context).colorScheme.onSurface,
-          fontSize: 12.sp,
-          fontWeight: FontWeight.bold,
+          fontSize: 13.sp,
+          fontWeight: FontWeight.w600,
+          height: 1.4,
         ),
       ),
     );
