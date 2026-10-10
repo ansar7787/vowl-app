@@ -139,9 +139,14 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         } else if (state is KidsLoaded) {
           if (state.answerStatus == AnswerStatus.correct) {
             audio.playSuccessSFX();
+            final funFact = state.currentQuest.funFact;
             final explanation = state.currentQuest.explanation;
-            if (explanation != null && explanation.isNotEmpty) {
-              _speakInstruction(explanation);
+            final combinedMsg = [
+              if (funFact != null && funFact.isNotEmpty) funFact,
+              if (explanation != null && explanation.isNotEmpty) explanation,
+            ].join(' ');
+            if (combinedMsg.isNotEmpty) {
+              _speakInstruction(combinedMsg);
             }
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             audio.playFailureSFX();
@@ -292,7 +297,12 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 isDark: isDark,
                 primaryColor: widget.primaryColor,
                 explanation: state.answerStatus == AnswerStatus.correct
-                    ? state.currentQuest.explanation
+                    ? [
+                        if (state.currentQuest.funFact?.isNotEmpty == true)
+                          state.currentQuest.funFact,
+                        if (state.currentQuest.explanation?.isNotEmpty == true)
+                          state.currentQuest.explanation,
+                      ].where((s) => s != null).join(' ')
                     : null,
                 onContinue: () {
                   di.sl<KidsTTSService>().stop();
@@ -436,10 +446,13 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             } else if (state.answerStatus == AnswerStatus.unanswered) {
               displayMessage = state.currentQuest.instruction;
             } else if (state.answerStatus == AnswerStatus.correct) {
-              displayMessage =
-                  state.currentQuest.funFact ??
-                  state.currentQuest.explanation ??
-                  "Great job!";
+              final combined = [
+                if (state.currentQuest.funFact?.isNotEmpty == true)
+                  state.currentQuest.funFact,
+                if (state.currentQuest.explanation?.isNotEmpty == true)
+                  state.currentQuest.explanation,
+              ].join(' ');
+              displayMessage = combined.isNotEmpty ? combined : "Great job!";
             } else {
               displayMessage = "";
             }

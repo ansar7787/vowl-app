@@ -337,29 +337,17 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
   }
 
   Widget _buildUnrevealedState(BuildContext context, dynamic quest) {
-    final emoji = quest.wordEmoji ?? quest.emoji;
     return FittedBox(
       fit: BoxFit.scaleDown,
       child: Column(
         key: const ValueKey('unrevealed'),
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (emoji != null)
-            ColorFiltered(
-              colorFilter: ColorFilter.mode(
-                const Color(
-                  0xFF1B4332,
-                ).withValues(alpha: 0.15), // Dark green chalk dust shadow
-                BlendMode.srcIn,
-              ),
-              child: Text(emoji, style: TextStyle(fontSize: 80.sp)),
-            )
-          else
-            Icon(
-              Icons.help_outline_rounded,
-              size: 64.sp,
-              color: _LocalPalette.colorfde68a.withValues(alpha: 0.5),
-            ),
+          Icon(
+            Icons.help_outline_rounded,
+            size: 64.sp,
+            color: _LocalPalette.colorfde68a.withValues(alpha: 0.5),
+          ),
           SizedBox(height: 16.h),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
@@ -436,12 +424,6 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                     fontWeight: FontWeight.w600,
                   ),
                   textAlign: TextAlign.center,
-                ),
-              if (quest.wordExample != null) SizedBox(height: 12.h),
-              if ((quest.wordEmoji ?? quest.emoji) != null)
-                Text(
-                  (quest.wordEmoji ?? quest.emoji)!,
-                  style: TextStyle(fontSize: 80.sp),
                 ),
             ],
           ),
