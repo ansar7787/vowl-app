@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 
 class EssayDraftingInstruction extends StatelessWidget {
   final Color primaryColor;
