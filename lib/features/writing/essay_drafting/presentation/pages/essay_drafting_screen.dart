@@ -168,6 +168,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
 
   @override
   void onWritingStateChanged(BuildContext context, WritingState state) {
+    super.onWritingStateChanged(context, state);
+
     if (state is WritingLoaded) {
       final currentQuest = state.currentQuest as WritingQuest?;
       if (_lastQuest?.id != currentQuest?.id) {
@@ -187,7 +189,6 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
         }
       }
     }
-    super.onWritingStateChanged(context, state);
   }
 
   @override
