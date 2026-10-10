@@ -3,7 +3,6 @@ import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -47,36 +46,45 @@ class KidsAlphabetLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h), // Mascot space
+            Flexible(
+              flex: 3,
+              child: SizedBox(height: 120.h), // Mascot space, now flexible
+            ),
             // The Chalkboard for the Question
             Expanded(
               flex: 5,
               child: Center(
-                child: _KidsChalkboard(
-                  key: ValueKey(
-                    quest,
-                  ), // CRITICAL: Reset state when the question changes
-                  state: state,
-                  quest: quest,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: _KidsChalkboard(
+                    key: ValueKey(
+                      quest,
+                    ), // CRITICAL: Reset state when the question changes
+                    state: state,
+                    quest: quest,
+                  ),
                 ),
               ),
             ),
 
-            KidsFittedText(
-              context.tr(
-                'games.kids_alphabet_drag',
-                fallback: 'Drag the block to the chalkboard! 👆',
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: KidsFittedText(
+                context.tr(
+                  'games.kids_alphabet_drag',
+                  fallback: 'Tap or drag the block to the chalkboard 👆',
+                ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white.withValues(alpha: 0.8)
+                      : Colors.black.withValues(alpha: 0.6),
+                ),
+                maxLines: 3,
+                textAlign: TextAlign.center,
               ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white.withValues(alpha: 0.8)
-                    : Colors.black.withValues(alpha: 0.6),
-              ),
-              maxLines: 2,
-              textAlign: TextAlign.center,
             ),
             SizedBox(height: 12.h),
 
@@ -116,31 +124,45 @@ class KidsAlphabetLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    final baseColor = _LocalPalette.colorfde68a; // Light wood
-    final shadowColor = AppColors.amber600; // Dark wood
+    final bool showAsCorrect = state.answerStatus.isAnswered && isCorrect;
+    final baseColor = showAsCorrect ? _LocalPalette.colora7f3d0 : _LocalPalette.colorfde68a; // Light wood or Mint
+    final shadowColor = showAsCorrect ? _LocalPalette.color2d6a4f : AppColors.amber600; // Dark wood or Dark Green
+    final textColor = showAsCorrect ? _LocalPalette.color1b4332 : AppColors.amber900;
 
-    final blockWidget = Container(
-      height: 100.h,
-      padding: EdgeInsets.symmetric(horizontal: 8.w),
-      decoration: BoxDecoration(
-        color: baseColor,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: shadowColor, width: 2),
-        boxShadow: [BoxShadow(color: shadowColor, offset: Offset(0, 8.h))],
-      ),
-      child: Center(
-        child: FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 32.sp,
-              fontWeight: FontWeight.w700,
-              color: AppColors.amber900, // Etched wood color
+    final blockWidget = Semantics(
+      label: 'Letter $text',
+      button: !state.answerStatus.isAnswered,
+      enabled: !state.answerStatus.isAnswered,
+      excludeSemantics: true, // Exclude the inner Text semantics so it doesn't double-read
+      child: GestureDetector(
+        onTap: () {
+          if (state.answerStatus.isAnswered) return;
+          final isCorrectAnswer = (text == state.currentQuest.correctAnswer);
+          context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrectAnswer));
+        },
+        child: Container(
+          height: 100.h,
+          padding: EdgeInsets.symmetric(horizontal: 8.w),
+          decoration: BoxDecoration(
+            color: baseColor,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(color: shadowColor, width: 2),
+            boxShadow: [BoxShadow(color: shadowColor, offset: Offset(0, 8.h))],
+          ),
+          child: Center(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 32.sp,
+                  fontWeight: FontWeight.w600,
+                  color: textColor, // Etched wood color or dark green
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
-
-            textAlign: TextAlign.center,
           ),
         ),
       ),
@@ -315,65 +337,55 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
   }
 
   Widget _buildUnrevealedState(BuildContext context, dynamic quest) {
-    final emoji = quest.wordEmoji ?? quest.emoji;
-    return Column(
-      key: const ValueKey('unrevealed'),
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        if (emoji != null)
-          ColorFiltered(
-            colorFilter: ColorFilter.mode(
-              const Color(
-                0xFF1B4332,
-              ).withValues(alpha: 0.15), // Dark green chalk dust shadow
-              BlendMode.srcIn,
-            ),
-            child: Text(emoji, style: TextStyle(fontSize: 80.sp)),
-          )
-        else
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Column(
+        key: const ValueKey('unrevealed'),
+        mainAxisSize: MainAxisSize.min,
+        children: [
           Icon(
             Icons.help_outline_rounded,
             size: 64.sp,
             color: _LocalPalette.colorfde68a.withValues(alpha: 0.5),
           ),
-        SizedBox(height: 16.h),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            color: _LocalPalette.colorfde68a,
-            borderRadius: BorderRadius.circular(24.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.2),
-                offset: Offset(0, 4.h),
-                blurRadius: 4,
-              ),
-            ],
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                Icons.volume_up_rounded,
-                size: 20.sp,
-                color: AppColors.amber900,
-              ),
-              SizedBox(width: 8.w),
-              KidsFittedText(
-                context.tr('games.kids_tap_clue', fallback: 'TAP FOR CLUE!'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w800,
-                  color: AppColors.amber900,
-                  letterSpacing: 1.2,
+          SizedBox(height: 16.h),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+            decoration: BoxDecoration(
+              color: _LocalPalette.colorfde68a,
+              borderRadius: BorderRadius.circular(24.r),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.2),
+                  offset: Offset(0, 4.h),
+                  blurRadius: 4,
                 ),
-                maxLines: 1,
-              ),
-            ],
+              ],
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.volume_up_rounded,
+                  size: 20.sp,
+                  color: AppColors.amber900,
+                ),
+                SizedBox(width: 8.w),
+                KidsFittedText(
+                  context.tr('games.kids_tap_clue', fallback: 'Tap for clue'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.amber900,
+                  ),
+                  maxLines: 1,
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -383,45 +395,41 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: FittedBox(
         fit: BoxFit.scaleDown,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (quest.wordExample != null)
-              AutoSizeText.rich(
-                TextSpan(
-                  children: [
-                    ..._buildHighlightedWordSpans(
-                      quest.wordExample!,
-                      quest.correctAnswer,
-                    ),
-                    if (quest.phonetic != null)
-                      TextSpan(
-                        text: ' (/${quest.phonetic}/)',
-                        style: const TextStyle(
-                          color: _LocalPalette.colorfcd34d,
-                        ),
+        child: SizedBox(
+          width: 280.w,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (quest.wordExample != null)
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      ..._buildHighlightedWordSpans(
+                        quest.wordExample!,
+                        quest.correctAnswer,
                       ),
-                  ],
+                      if (quest.phonetic != null)
+                        TextSpan(
+                          text: ' (/${quest.phonetic}/)',
+                          style: const TextStyle(
+                            color: _LocalPalette.colorfcd34d,
+                          ),
+                        ),
+                    ],
+                  ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 28.sp, // Made slightly smaller for standard look
+                    fontWeight: FontWeight.w600,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 32.sp, // Made bigger since it's the main focus now
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-            if (quest.wordExample != null) SizedBox(height: 12.h),
-            if ((quest.wordEmoji ?? quest.emoji) != null)
-              Text(
-                (quest.wordEmoji ?? quest.emoji)!,
-                style: TextStyle(fontSize: 80.sp),
-              ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
+

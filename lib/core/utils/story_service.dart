@@ -283,12 +283,12 @@ class StoryServiceImpl implements StoryService {
     ],
 
     'alphabet': [
-      "Hi little explorer! Let's find all the hidden magic letters in the forest! 🕵️‍♂️",
-      "Yay! The Alphabet Bridge is fixed! Now we can cross into the Land of Stories! 🌈",
-      "You found the Golden A! You're a superstar learner and a great friend! ⭐",
-      "The Letter Dragon is so happy! You've learned so many magic words today! 🐉",
-      "100 letters found! You are now the officially crowned King of the Alphabet! 👑",
-      "ABC Master! You have the power to read every story in the whole wide world! 🌍",
+      "Hey there! Ready to start learning your letters? Let's go! 🎈",
+      "You're getting the hang of this! Keep up the good work. ⭐",
+      "Wow, 20 levels down! You're getting really good at recognizing these sounds. 👏",
+      "Halfway to 100! You've learned so many new letters and words today. 🌟",
+      "Level 100! That's incredible. You know your alphabet so well now! 👑",
+      "You finished all the levels! Now you can read so many new words all on your own. 📖",
     ],
     'numbers': [
       "One, two, three... Let's count all the twinkling stars in the night sky! ✨",

@@ -103,7 +103,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     try {
       final isGeneric = import_hint.HintUtility.isGenericHint(hint);
       final displayHint = isGeneric
-          ? "Pro Tip: Look closely at the pictures and tap!"
+          ? "Tip: look closely at the pictures."
           : hint;
 
       _hintText.value = displayHint;
@@ -139,9 +139,14 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         } else if (state is KidsLoaded) {
           if (state.answerStatus == AnswerStatus.correct) {
             audio.playSuccessSFX();
+            final funFact = state.currentQuest.funFact;
             final explanation = state.currentQuest.explanation;
-            if (explanation != null && explanation.isNotEmpty) {
-              _speakInstruction(explanation);
+            final combinedMsg = [
+              if (funFact != null && funFact.isNotEmpty) funFact,
+              if (explanation != null && explanation.isNotEmpty) explanation,
+            ].join(' ');
+            if (combinedMsg.isNotEmpty) {
+              _speakInstruction(combinedMsg);
             }
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             audio.playFailureSFX();
@@ -292,7 +297,12 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 isDark: isDark,
                 primaryColor: widget.primaryColor,
                 explanation: state.answerStatus == AnswerStatus.correct
-                    ? state.currentQuest.explanation
+                    ? [
+                        if (state.currentQuest.funFact?.isNotEmpty == true)
+                          state.currentQuest.funFact,
+                        if (state.currentQuest.explanation?.isNotEmpty == true)
+                          state.currentQuest.explanation,
+                      ].where((s) => s != null).join(' ')
                     : null,
                 onContinue: () {
                   di.sl<KidsTTSService>().stop();
@@ -334,9 +344,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 28.sp,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w600,
                   color: Colors.white,
-                  letterSpacing: 1,
                 ),
               ).animate().fadeIn().slideY(begin: 0.2),
               SizedBox(height: 12.h),
@@ -349,7 +358,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
                   color: Colors.white.withValues(alpha: 0.9),
                   height: 1.5,
                 ),
@@ -388,15 +397,12 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                           ),
                           SizedBox(width: 12.w),
                           Text(
-                            context
-                                .tr('games.try_again', fallback: 'Try Again')
-                                .toUpperCase(),
+                            context.tr('games.try_again', fallback: 'Try again'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w600,
                               color: widget.primaryColor,
-                              letterSpacing: 1,
                             ),
                           ),
                         ],
@@ -440,10 +446,13 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             } else if (state.answerStatus == AnswerStatus.unanswered) {
               displayMessage = state.currentQuest.instruction;
             } else if (state.answerStatus == AnswerStatus.correct) {
-              displayMessage =
-                  state.currentQuest.funFact ??
-                  state.currentQuest.explanation ??
-                  "Great job!";
+              final combined = [
+                if (state.currentQuest.funFact?.isNotEmpty == true)
+                  state.currentQuest.funFact,
+                if (state.currentQuest.explanation?.isNotEmpty == true)
+                  state.currentQuest.explanation,
+              ].join(' ');
+              displayMessage = combined.isNotEmpty ? combined : "Great job!";
             } else {
               displayMessage = "";
             }
@@ -497,7 +506,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 14.sp,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w500,
           color: AppColors.slate800,
           height: 1.2,
         ),
