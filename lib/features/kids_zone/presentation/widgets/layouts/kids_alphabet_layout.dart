@@ -382,86 +382,88 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: FittedBox(
         fit: BoxFit.scaleDown,
-        child: SizedBox(
-          width: 280.w,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if ((quest.wordEmoji ?? quest.emoji) != null)
-                Padding(
-                  padding: EdgeInsets.only(bottom: 16.h),
-                  child: Text(
-                    (quest.wordEmoji ?? quest.emoji)!,
-                    style: TextStyle(fontSize: 72.sp),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if ((quest.wordEmoji ?? quest.emoji) != null)
+              Padding(
+                padding: EdgeInsets.only(bottom: 12.h),
+                child: Text(
+                  (quest.wordEmoji ?? quest.emoji)!,
+                  style: TextStyle(fontSize: 64.sp),
+                ),
+              ),
+            if (quest.wordExample != null)
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text.rich(
+                    TextSpan(
+                      children: _buildHighlightedWordSpans(
+                        quest.wordExample!,
+                        quest.correctAnswer,
+                      ),
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 32.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
                   ),
-                ),
-              if (quest.wordExample != null)
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      child: Text.rich(
-                        TextSpan(
-                          children: [
-                            ..._buildHighlightedWordSpans(
-                              quest.wordExample!,
-                              quest.correctAnswer,
-                            ),
-                            if (quest.phonetic != null)
-                              TextSpan(
-                                text: ' (/${quest.phonetic}/)',
-                                style: const TextStyle(
-                                  color: _LocalPalette.colorfcd34d,
-                                ),
-                              ),
-                          ],
+                  SizedBox(width: 12.w),
+                  Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(24.r),
+                      onTap: () {
+                        String? textToRead;
+                        if (quest.wordExample != null) {
+                          textToRead = quest.wordExample;
+                        } else if (InstructionHelper.getInstruction(quest).isNotEmpty) {
+                          textToRead = InstructionHelper.getInstruction(quest);
+                        } else if (quest.question != null) {
+                          textToRead = quest.question;
+                        }
+                        if (textToRead != null) {
+                          _playTTS(textToRead);
+                        }
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: _LocalPalette.colorfde68a.withValues(alpha: 0.2),
+                          shape: BoxShape.circle,
                         ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 28.sp, // Made slightly smaller for standard look
-                          fontWeight: FontWeight.w600,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(width: 12.w),
-                    Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(24.r),
-                        onTap: () {
-                          String? textToRead;
-                          if (quest.wordExample != null) {
-                            textToRead = quest.wordExample;
-                          } else if (InstructionHelper.getInstruction(quest).isNotEmpty) {
-                            textToRead = InstructionHelper.getInstruction(quest);
-                          } else if (quest.question != null) {
-                            textToRead = quest.question;
-                          }
-                          if (textToRead != null) {
-                            _playTTS(textToRead);
-                          }
-                        },
-                        child: Container(
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: _LocalPalette.colorfde68a.withValues(alpha: 0.2),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.volume_up_rounded,
-                            size: 28.sp,
-                            color: _LocalPalette.colorfde68a,
-                          ),
+                        child: Icon(
+                          Icons.volume_up_rounded,
+                          size: 24.sp,
+                          color: _LocalPalette.colorfde68a,
                         ),
                       ),
                     ),
-                  ],
+                  ),
+                ],
+              ),
+            if (quest.phonetic != null)
+              Padding(
+                padding: EdgeInsets.only(top: 8.h),
+                child: Text(
+                  '/${quest.phonetic}/',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w500,
+                    color: _LocalPalette.colorfcd34d,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
                 ),
-            ],
-          ),
+              ),
+          ],
         ),
       ),
     );
