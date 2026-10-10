@@ -139,6 +139,11 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         } else if (state is KidsLoaded) {
           if (state.answerStatus == AnswerStatus.correct) {
             audio.playSuccessSFX();
+          } else if (state.answerStatus == AnswerStatus.incorrect) {
+            audio.playFailureSFX();
+          }
+          
+          if (state.answerStatus == AnswerStatus.correct || state.isFinalFailure) {
             final funFact = state.currentQuest.funFact;
             final explanation = state.currentQuest.explanation;
             final combinedMsg = [
@@ -148,8 +153,6 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             if (combinedMsg.isNotEmpty) {
               _speakInstruction(combinedMsg);
             }
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            audio.playFailureSFX();
           }
           if (state.answerStatus == AnswerStatus.unanswered &&
               !state.hintUsed) {
@@ -296,13 +299,12 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 livesRemaining: state.livesRemaining,
                 isDark: isDark,
                 primaryColor: widget.primaryColor,
-                explanation: state.answerStatus == AnswerStatus.correct
-                    ? [
-                        if (state.currentQuest.funFact?.isNotEmpty == true)
-                          state.currentQuest.funFact,
-                        if (state.currentQuest.explanation?.isNotEmpty == true)
-                          state.currentQuest.explanation,
-                      ].where((s) => s != null).join(' ')
+                ruleTitle: 'FUN FACT',
+                ruleContent: (state.answerStatus == AnswerStatus.correct || state.isFinalFailure)
+                    ? state.currentQuest.funFact
+                    : null,
+                explanation: (state.answerStatus == AnswerStatus.correct || state.isFinalFailure)
+                    ? state.currentQuest.explanation
                     : null,
                 onContinue: () {
                   di.sl<KidsTTSService>().stop();
