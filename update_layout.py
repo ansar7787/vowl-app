@@ -1,212 +1,16 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import re
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color colorfde68a = Color(0xFFFDE68A);
-  static const Color color2d6a4f = Color(0xFF2D6A4F);
-  static const Color color1b4332 = Color(0xFF1B4332);
-  static const Color colorb07d45 = Color(0xFFB07D45);
-  static const Color color8b5a2b = Color(0xFF8B5A2B);
-  static const Color colora7f3d0 = Color(0xFFA7F3D0);
-  static const Color colorfcd34d = Color(0xFFFCD34D);
-}
+with open('lib/features/kids_zone/presentation/widgets/layouts/kids_alphabet_layout.dart', 'r', encoding='utf-8') as f:
+    content = f.read()
 
-class KidsAlphabetLayout extends StatelessWidget {
-  final int level;
-  final String title;
-  final Color primaryColor;
+# Add import
+import_stmt = "import 'package:vowl/core/utils/custom_snack_bar.dart';\n"
+content = content.replace("import 'package:vowl/core/theme/app_colors.dart';\n", "import 'package:vowl/core/theme/app_colors.dart';\n" + import_stmt)
 
-  const KidsAlphabetLayout({
-    super.key,
-    required this.level,
-    required this.title,
-    required this.primaryColor,
-  });
+# Replace class
+class_pattern = re.compile(r'class _KidsChalkboardState extends State<_KidsChalkboard> \{.*\}', re.DOTALL)
 
-  @override
-  Widget build(BuildContext context) {
-    return KidsGameBaseScreen(
-      title: title,
-      gameType: 'alphabet',
-      level: level,
-      primaryColor: primaryColor,
-      backgroundColors: const [],
-      buildGameUI: (context, state, onHintTap) {
-        final quest = state.currentQuest;
-
-        return Column(
-          children: [
-            Flexible(
-              flex: 3,
-              child: SizedBox(height: 120.h), // Mascot space, now flexible
-            ),
-            // The Chalkboard for the Question
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: _KidsChalkboard(
-                    key: ValueKey(
-                      quest,
-                    ), // CRITICAL: Reset state when the question changes
-                    state: state,
-                    quest: quest,
-                  ),
-                ),
-              ),
-            ),
-
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: KidsFittedText(
-                context.tr(
-                  'games.kids_alphabet_drag',
-                  fallback: 'Tap or drag the block to the chalkboard 👆',
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white.withValues(alpha: 0.8)
-                      : Colors.black.withValues(alpha: 0.6),
-                ),
-                maxLines: 3,
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(height: 12.h),
-
-            // The Wooden Blocks for Options
-            Flexible(
-              flex: 5,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(quest.options?.length ?? 0, (index) {
-                    final option = quest.options![index];
-                    return Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w),
-                        child: _buildWoodenBlock(
-                          context,
-                          state,
-                          option,
-                          quest.correctAnswer == option,
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  Widget _buildWoodenBlock(
-    BuildContext context,
-    KidsLoaded state,
-    String text,
-    bool isCorrect,
-  ) {
-    final bool showAsCorrect = state.answerStatus.isAnswered && isCorrect;
-    final baseColor = showAsCorrect ? _LocalPalette.colora7f3d0 : _LocalPalette.colorfde68a; // Light wood or Mint
-    final shadowColor = showAsCorrect ? _LocalPalette.color2d6a4f : AppColors.amber600; // Dark wood or Dark Green
-    final textColor = showAsCorrect ? _LocalPalette.color1b4332 : AppColors.amber900;
-
-    final blockWidget = Semantics(
-      label: 'Letter $text',
-      button: !state.answerStatus.isAnswered,
-      enabled: !state.answerStatus.isAnswered,
-      excludeSemantics: true, // Exclude the inner Text semantics so it doesn't double-read
-      child: GestureDetector(
-        onTap: () {
-          if (state.answerStatus.isAnswered) return;
-          final isCorrectAnswer = (text == state.currentQuest.correctAnswer);
-          context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrectAnswer));
-        },
-        child: Container(
-          height: 100.h,
-          padding: EdgeInsets.symmetric(horizontal: 8.w),
-          decoration: BoxDecoration(
-            color: baseColor,
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(color: shadowColor, width: 2),
-            boxShadow: [BoxShadow(color: shadowColor, offset: Offset(0, 8.h))],
-          ),
-          child: Center(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 32.sp,
-                  fontWeight: FontWeight.w600,
-                  color: textColor, // Etched wood color or dark green
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-
-    if (state.answerStatus.isAnswered) {
-      return blockWidget;
-    }
-
-    return Draggable<String>(
-      data: text,
-      feedback: Material(
-        color: Colors.transparent,
-        child: Transform.scale(
-          scale: 1.15, // Make it pop more when picked up
-          child: Transform.rotate(
-            angle:
-                0.08, // Playful slight tilt while dragging (AAA micro-interaction)
-            child: Opacity(opacity: 0.95, child: blockWidget),
-          ),
-        ),
-      ),
-      childWhenDragging: Opacity(opacity: 0.3, child: blockWidget),
-      child: blockWidget,
-    );
-  }
-}
-
-class _KidsChalkboard extends StatefulWidget {
-  final KidsLoaded state;
-  final dynamic quest;
-
-  const _KidsChalkboard({
-    required super.key,
-    required this.state,
-    required this.quest,
-  });
-
-  @override
-  State<_KidsChalkboard> createState() => _KidsChalkboardState();
-}
-
-class _KidsChalkboardState extends State<_KidsChalkboard> {
+new_class = '''class _KidsChalkboardState extends State<_KidsChalkboard> {
   bool _isRevealedLocally = false;
 
   @override
@@ -420,7 +224,7 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                         ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 28.sp, // Made slightly smaller for standard look
+                          fontSize: 28.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         textAlign: TextAlign.center,
@@ -466,5 +270,9 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
       ),
     );
   }
-}
+}'''
 
+content = class_pattern.sub(new_class, content)
+
+with open('lib/features/kids_zone/presentation/widgets/layouts/kids_alphabet_layout.dart', 'w', encoding='utf-8') as f:
+    f.write(content)
