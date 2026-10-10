@@ -48,10 +48,9 @@ class EssayDraftingDataStream extends StatelessWidget {
               text,
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontFamily: 'Outfit',
                 color: isFeedback ? Colors.white : (isDark ? Colors.white70 : Colors.black87),
-                fontSize: 13.sp,
-                fontWeight: isFeedback ? FontWeight.w600 : FontWeight.w500,
+                fontSize: 14.sp,
+                fontWeight: isFeedback ? FontWeight.w500 : FontWeight.w400,
                 height: 1.4,
               ),
             ),
