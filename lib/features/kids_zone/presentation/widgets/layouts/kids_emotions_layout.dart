@@ -58,14 +58,19 @@ class KidsEmotionsLayout extends StatelessWidget {
             ),
             SizedBox(height: 24.h),
             KidsFittedText(
-              context.tr(
-                'games.kids_emotions_drag',
-                fallback: 'Drag the feeling to the stage! ✨',
-              ),
+              state.answerStatus == AnswerStatus.correct
+                  ? context.tr(
+                      'games.kids_emotions_done',
+                      fallback: 'Correct!',
+                    )
+                  : context.tr(
+                      'games.kids_emotions_drag',
+                      fallback: 'Match the feeling to the stage.',
+                    ),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
@@ -141,7 +146,12 @@ class KidsEmotionsLayout extends StatelessWidget {
         final text = details.data;
         final isCorrect = (text == quest.correctAnswer);
         if (!isCorrect) {
-          di.sl<KidsTTSService>().speak(text);
+          final parts = text.trim().split(' ');
+          if (parts.length > 1 && parts.last.runes.any((r) => r > 127)) {
+            parts.removeLast();
+          }
+          final textToSpeak = parts.join(' ');
+          di.sl<KidsTTSService>().speak(textToSpeak);
         }
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
       },
@@ -162,8 +172,11 @@ class KidsEmotionsLayout extends StatelessWidget {
             children: [
               // The Stage background
               Container(
-                width: 280.w,
-                height: 200.h,
+                constraints: BoxConstraints(
+                  maxWidth: 320.w,
+                  maxHeight: 240.h,
+                ),
+                width: double.infinity,
                 decoration: BoxDecoration(
                   color: isHovering
                       ? AppColors.slate700
@@ -206,29 +219,18 @@ class KidsEmotionsLayout extends StatelessWidget {
                         Stack(
                           alignment: Alignment.center,
                           children: [
-                            if (quest.emoji != null)
-                              state.answerStatus == AnswerStatus.correct
-                                  ? Text(
-                                      quest.emoji!,
-                                      style: TextStyle(fontSize: 80.sp),
-                                    )
-                                  : ColorFiltered(
-                                      colorFilter: ColorFilter.mode(
-                                        Colors.black.withValues(alpha: 0.1),
-                                        BlendMode.srcIn,
-                                      ),
-                                      child: Text(
-                                        quest.emoji!,
-                                        style: TextStyle(fontSize: 80.sp),
-                                      ),
-                                    ),
+                            if (quest.emoji != null && state.answerStatus == AnswerStatus.correct)
+                              Text(
+                                quest.emoji!,
+                                style: TextStyle(fontSize: 64.sp),
+                              ),
                             if (state.answerStatus != AnswerStatus.correct)
                               KidsFittedText(
-                                "?",
+                                quest.question ?? "?",
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 60.sp,
-                                  fontWeight: FontWeight.w900,
+                                  fontSize: 48.sp,
+                                  fontWeight: FontWeight.w600,
                                   color: Colors.black.withValues(alpha: 0.5),
                                 ),
                                 textAlign: TextAlign.center,
@@ -324,9 +326,16 @@ class KidsEmotionsLayout extends StatelessWidget {
         ? _LocalPalette.colorca8a04
         : _LocalPalette.color0284c7;
 
+    final parts = text.trim().split(' ');
+    String wordPart = text;
+    String emojiPart = '';
+    if (parts.length > 1 && parts.last.runes.any((r) => r > 127)) {
+      emojiPart = parts.removeLast();
+      wordPart = parts.join(' ');
+    }
+
     final maskWidget = Container(
-      height: 85.h,
-      width: 80.w,
+      constraints: BoxConstraints(minHeight: 85.h),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.only(
@@ -340,19 +349,31 @@ class KidsEmotionsLayout extends StatelessWidget {
       ),
       child: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 4.w),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColors.slate800,
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              KidsFittedText(
+                wordPart,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.slate800,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 2,
               ),
-              textAlign: TextAlign.center,
-            ),
+              if (emojiPart.isNotEmpty)
+                Padding(
+                  padding: EdgeInsets.only(top: 4.h),
+                  child: Text(
+                    emojiPart,
+                    style: TextStyle(fontSize: 22.sp),
+                  ),
+                ),
+            ],
           ),
         ),
       ),
