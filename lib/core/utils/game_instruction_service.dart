@@ -57,9 +57,7 @@ class GameInstructionService {
       'instructions.$baseKey.tip',
       fallback: baseBriefing.tip,
     );
-    final tip = level == 100
-        ? "Level 100! You are doing a great job! $rawTip"
-        : rawTip;
+    final tip = rawTip;
 
     final translatedRules = baseBriefing.rules
         .asMap()
@@ -1711,18 +1709,18 @@ class GameInstructionService {
         );
       case 'emotions':
         return const GameBriefing(
-          title: "Feeling Happy",
+          title: "Emotions",
           icon: Icons.mood_rounded,
           objective:
-              "How are you feeling today? Read the feelings banner, and help the actor put on the correct emotion mask on the stage.",
+              "Listen to the scenario, understand how the person is feeling, and match the correct emotion mask to the stage.",
           rules: [
-            "Read the feeling word",
-            "Find the matching expression",
-            "Put on the mask",
+            "Listen to the scenario",
+            "Identify the correct emotion",
+            "Match the mask to the stage",
           ],
-          actionText: "Share Feelings",
+          actionText: "Play Now",
           tip:
-              "PRO TIP: Try making that face in a mirror to see how it feels! 😊",
+              "PRO TIP: Think about how you would feel in that exact situation.",
         );
       case 'school':
         return const GameBriefing(
