@@ -32,10 +32,10 @@ class DescribeSituationWritingArea extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: isDark ? Colors.black87 : Colors.white,
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: isDark ? Colors.white10 : Colors.black12,
-          width: 2,
+          width: 1,
         ),
       ),
       padding: EdgeInsets.all(16.r),
@@ -44,14 +44,6 @@ class DescribeSituationWritingArea extends StatelessWidget {
           TextField(
             controller: textController,
             maxLines: 4,
-            maxLength: 400,
-            buildCounter:
-                (
-                  context, {
-                  required currentLength,
-                  required isFocused,
-                  maxLength,
-                }) => null,
             style: TextStyle(
               fontFamily: 'Outfit',
               color: Theme.of(context).colorScheme.onSurface,
@@ -76,9 +68,9 @@ class DescribeSituationWritingArea extends StatelessWidget {
                 "Booster words used: ${usedKeywords.length}",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
+                  fontSize: 11.sp,
                   color: color,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               Builder(
@@ -101,9 +93,9 @@ class DescribeSituationWritingArea extends StatelessWidget {
                       "$wordCount / $minWords words",
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
+                        fontSize: 11.sp,
                         color: displayColor,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   );

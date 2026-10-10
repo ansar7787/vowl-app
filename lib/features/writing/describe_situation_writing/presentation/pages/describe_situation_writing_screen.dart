@@ -99,8 +99,28 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
   void _onTextChanged() {
     final text = _textController.text.trim();
-    final words = text.isEmpty ? 0 : text.split(RegExp(r'\s+')).length;
+    final words = text.isEmpty
+        ? 0
+        : text
+              .split(RegExp(r'\s+'))
+              .map((w) => w.replaceAll(RegExp(r'[^\w\s]'), ''))
+              .where((w) => w.isNotEmpty)
+              .length;
     _wordCount.value = words;
+
+    if (_lastQuest != null) {
+      final rawKeywords = _lastQuest!.keywords ?? {};
+      final allKeywords = rawKeywords.values.expand((e) => e).toList();
+      final composedText = text.toLowerCase();
+      final List<String> matched = [];
+      for (var kw in allKeywords) {
+        final regExp = RegExp(r'\b' + RegExp.escape(kw.toLowerCase()));
+        if (regExp.hasMatch(composedText)) {
+          matched.add(kw);
+        }
+      }
+      _usedKeywords.value = matched;
+    }
   }
 
   void _onEmojiTap(int index, bool isAnswered) {
@@ -120,7 +140,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
     String newText;
     int newCursorPosition;
-    String insertText = keyword;
+    String insertText = keyword.toLowerCase();
+
+    if (text.isEmpty || (selection.isValid && selection.start == 0)) {
+      insertText = insertText[0].toUpperCase() + insertText.substring(1);
+    }
+
     if (selection.isValid) {
       final before = text.substring(0, selection.start);
       final after = text.substring(selection.end);
@@ -169,7 +194,16 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     _isSubmitting.value = true;
 
     final rawText = _textController.text.trim();
-    if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
+    if (!RegExp(r'^[A-Z]').hasMatch(
+      rawText.trimLeft().replaceAll(
+        RegExp(
+          r'^["'
+          "'"
+          r']',
+        ),
+        '',
+      ),
+    )) {
       CustomSnackBar.show(
         context: context,
         message: "Please start your description with a capital letter.",
@@ -181,7 +215,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     }
 
     final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
-    if (!['.', '!', '?'].contains(lastChar)) {
+    if (!['.', '!', '?', '"', "'"].contains(lastChar)) {
       CustomSnackBar.show(
         context: context,
         message:
@@ -197,7 +231,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
     int matchedCount = 0;
     for (var kw in availableKeywords) {
-      if (composedText.contains(kw.toLowerCase())) {
+      final regExp = RegExp(r'\b' + RegExp.escape(kw.toLowerCase()));
+      if (regExp.hasMatch(composedText)) {
         matchedCount++;
       }
     }
@@ -225,7 +260,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     }
 
     final wordsList = composedText.split(RegExp(r'\s+'));
-    final uniqueWords = wordsList.toSet();
+    final cleanWordsList = wordsList
+        .map((w) => w.replaceAll(RegExp(r'[^\w\s]'), ''))
+        .where((w) => w.isNotEmpty)
+        .toList();
+    final uniqueWords = cleanWordsList.toSet();
+
     if (uniqueWords.length < (minWords * 0.5).ceil()) {
       CustomSnackBar.show(
         context: context,
@@ -283,8 +323,6 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     }
 
     hapticService.success();
-    soundService.playCorrect();
-
     soundService.playCorrect();
 
     _showSpeakToConfirm.value = true;
@@ -526,14 +564,6 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                         ),
                                       ),
                                     ),
-                                  SizedBox(
-                                    height: !isAnswered
-                                        ? MediaQuery.viewInsetsOf(
-                                                context,
-                                              ).bottom +
-                                              40.h
-                                        : 160.h,
-                                  ),
                                 ],
                               ),
                             ),
@@ -541,31 +571,21 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
                           if (_showSpeakToConfirm.value && !isAnswered)
                             SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: SpeakToConfirmOverlay(
-                                  expectedText: _textController.text.trim(),
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: _onSpeakConfirmed,
-                                  onSkipped: () {
-                                    _showSpeakToConfirm.value = false;
-                                    submitWrongAnswer(
-                                      quest: activeQuest,
-                                      userAnswer: _textController.text.trim(),
-                                    );
-                                  },
-                                ),
+                              child: SpeakToConfirmOverlay(
+                                expectedText: _textController.text.trim(),
+                                primaryColor: theme.primaryColor,
+                                isPositioned: false,
+                                displayFontSize: 14.sp,
+                                displayFontWeight: FontWeight.w400,
+                                displayTextAlign: TextAlign.left,
+                                onConfirmed: _onSpeakConfirmed,
+                                onSkipped: () {
+                                  _showSpeakToConfirm.value = false;
+                                  submitCorrectAnswer();
+                                },
                               ),
                             ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
-                            ),
-                          ),
+                          SliverToBoxAdapter(child: SizedBox(height: 120.h)),
                         ],
                       ),
                     );
