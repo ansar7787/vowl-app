@@ -33,12 +33,12 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
             ),
             SizedBox(width: 8.w),
             Text(
-              "REQUIRED KEYWORDS (USE AT LEAST 2)",
+              "REQUIRED KEYWORDS (USE ALL)",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 color: isDark ? Colors.white54 : Colors.black54,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
                 letterSpacing: 1.2,
               ),
             ),
@@ -93,7 +93,7 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
                           ? successColor
                           : (isDark ? Colors.white60 : Colors.black54),
                       fontSize: 11.sp,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ],
