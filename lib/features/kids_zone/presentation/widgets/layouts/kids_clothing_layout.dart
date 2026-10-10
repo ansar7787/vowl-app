@@ -125,6 +125,9 @@ class KidsClothingLayout extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 4.w),
                             child: _buildHangerOption(
+                              context,
+                              state,
+                              quest,
                               option,
                               index,
                             ),
@@ -248,6 +251,9 @@ class KidsClothingLayout extends StatelessWidget {
   }
 
   Widget _buildHangerOption(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
     String text,
     int index,
   ) {
@@ -353,18 +359,34 @@ class KidsClothingLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(opacity: 0.9, child: hangerWidget),
+          child: Opacity(
+            opacity: 0.9,
+            child: SizedBox(
+              width: 80.w, // Constrain double.infinity during drag
+              child: hangerWidget,
+            ),
+          ),
         ),
       ),
       childWhenDragging: Opacity(opacity: 0.3, child: hangerWidget),
-      child: hangerWidget
-          .animate(delay: (200 + index * 150).ms)
-          .shake(
-            hz: 2,
-            rotation: 0.08,
-            offset: Offset.zero,
-            duration: 800.ms,
-          ),
+      child: GestureDetector(
+        onTap: () {
+          if (state.answerStatus.isAnswered) return;
+          final isCorrect = (text == quest.correctAnswer);
+          if (!isCorrect) {
+            di.sl<KidsTTSService>().speak(text);
+          }
+          context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+        },
+        child: hangerWidget
+            .animate(delay: (200 + index * 150).ms)
+            .shake(
+              hz: 2,
+              rotation: 0.08,
+              offset: Offset.zero,
+              duration: 800.ms,
+            ),
+      ),
     );
   }
 }
