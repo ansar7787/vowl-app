@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -53,7 +54,12 @@ class KidsClothingLayout extends StatelessWidget {
             // The Open Closet
             Expanded(
               flex: 5,
-              child: Center(child: _buildClosetBoard(context, state, quest)),
+              child: Center(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: _buildClosetBoard(context, state, quest),
+                ),
+              ),
             ),
             SizedBox(height: 24.h),
             KidsFittedText(
@@ -64,7 +70,7 @@ class KidsClothingLayout extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500, // Reduced from w600
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
@@ -76,49 +82,50 @@ class KidsClothingLayout extends StatelessWidget {
             // The Clothing Hangers (Options)
             Flexible(
               flex: 5,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  // The metal closet rod
-                  Positioned(
-                    top: 15.h,
-                    left: 16.w,
-                    right: 16.w,
-                    child: Container(
-                      height: 8.h,
-                      decoration: BoxDecoration(
-                        color: AppColors.slate400, // Silver rod
-                        borderRadius: BorderRadius.circular(4.r),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black26,
-                            offset: Offset(0, 2),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: Stack(
+                    alignment: Alignment.bottomCenter,
+                    children: [
+                      // The metal closet rod
+                      Positioned(
+                        top: 15.h,
+                        left: 16.w,
+                        right: 16.w,
+                        child: Container(
+                          height: 8.h,
+                          decoration: BoxDecoration(
+                            color: AppColors.slate400, // Silver rod
+                            borderRadius: BorderRadius.circular(4.r),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.black26,
+                                offset: Offset(0, 2),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      bottom: 20.h,
-                      left: 16.w,
-                      right: 16.w,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (
-                        index,
-                      ) {
+                      Padding(
+                        padding: EdgeInsets.only(
+                          bottom: 20.h,
+                          left: 16.w,
+                          right: 16.w,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: List.generate(quest.options?.length ?? 0, (
+                            index,
+                          ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 4.w),
                             child: _buildHangerOption(
-                              context,
-                              state,
                               option,
-                              quest.correctAnswer == option,
                               index,
                             ),
                           ),
@@ -128,6 +135,8 @@ class KidsClothingLayout extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+            ),
             ),
           ],
         );
@@ -171,7 +180,7 @@ class KidsClothingLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isHovering ? AppColors.amber600 : KidsColors.warmAmber,
-                width: 12.r,
+                width: 8.r, // Reduced from 12.r for a cleaner look
               ), // Dark wood frame
               boxShadow: [
                 BoxShadow(
@@ -181,62 +190,56 @@ class KidsClothingLayout extends StatelessWidget {
                 ),
               ],
             ),
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Stack(
-                    alignment: Alignment.center,
+            child: Stack(
+              children: [
+                Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (quest.emoji != null &&
-                          (quest.question == "?" || quest.question == null))
-                        state.answerStatus == AnswerStatus.correct
-                            ? Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 80.sp),
-                              )
-                            : ColorFiltered(
-                                colorFilter: ColorFilter.mode(
-                                  const Color(
-                                    0xFFD97706,
-                                  ).withValues(alpha: 0.4),
-                                  BlendMode.srcIn,
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          if (quest.emoji != null && state.answerStatus == AnswerStatus.correct)
+                            Text(
+                              quest.emoji!,
+                              style: TextStyle(fontSize: 80.sp),
+                            ),
+                          if (state.answerStatus != AnswerStatus.correct ||
+                              (quest.question != "?" && quest.question != null))
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 16.w),
+                              child: KidsFittedText(
+                                quest.question ?? "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 80.sp
+                                      : 24.sp,
+                                  fontWeight: FontWeight.w600, // Reduced from w700
+                                  color: AppColors.amber600,
                                 ),
-                                child: Text(
-                                  quest.emoji!,
-                                  style: TextStyle(fontSize: 80.sp),
-                                ),
-                              ),
-                      if (state.answerStatus != AnswerStatus.correct ||
-                          (quest.question != "?" && quest.question != null))
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          child: KidsFittedText(
-                            quest.question ?? "?",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize:
-                                  (quest.question == "?" ||
-                                      quest.question == null)
-                                  ? 70.sp
-                                  : 24.sp,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.amber600.withValues(
-                                alpha:
-                                    (quest.question == "?" ||
-                                        quest.question == null)
-                                    ? 0.7
-                                    : 1.0,
+                                textAlign: TextAlign.center,
+                                maxLines: 6,
                               ),
                             ),
-                            textAlign: TextAlign.center,
-                            maxLines: 6,
-                          ),
-                        ),
+                        ],
+                      ),
                     ],
                   ),
-                ],
-              ),
+                ),
+                if (!state.answerStatus.isAnswered)
+                  Positioned(
+                    bottom: 12.h,
+                    right: 12.w,
+                    child: Icon(
+                      Icons.volume_up_rounded,
+                      color: AppColors.amber600.withValues(alpha: 0.4),
+                      size: 28.r,
+                    ),
+                  ),
+              ],
             ),
           ),
         );
@@ -245,10 +248,7 @@ class KidsClothingLayout extends StatelessWidget {
   }
 
   Widget _buildHangerOption(
-    BuildContext context,
-    KidsLoaded state,
     String text,
-    bool isCorrect,
     int index,
   ) {
     final colors = [
@@ -258,6 +258,19 @@ class KidsClothingLayout extends StatelessWidget {
       _LocalPalette.colorc4b5fd, // Light Purple
     ];
     final tagColor = colors[index % colors.length];
+
+    // Split text and emoji to place emoji on a new line and prevent awkward wrapping
+    final lastSpaceIndex = text.lastIndexOf(' ');
+    String label = text;
+    String emoji = '';
+    if (lastSpaceIndex != -1 && lastSpaceIndex < text.length - 1) {
+      final potentialEmoji = text.substring(lastSpaceIndex + 1);
+      // Check if it's an emoji (no letters/numbers)
+      if (!RegExp(r'[a-zA-Z0-9]').hasMatch(potentialEmoji)) {
+        label = text.substring(0, lastSpaceIndex);
+        emoji = potentialEmoji;
+      }
+    }
 
     final hangerWidget = Column(
       mainAxisSize: MainAxisSize.min,
@@ -277,8 +290,9 @@ class KidsClothingLayout extends StatelessWidget {
         ),
         // Wooden Hanger Base
         Container(
-          height: 10.h,
-          width: 80.w,
+          height: 8.h,
+          width: double.infinity,
+          margin: EdgeInsets.symmetric(horizontal: 10.w),
           decoration: BoxDecoration(
             color: AppColors.amber600,
             borderRadius: BorderRadius.circular(10.r),
@@ -286,11 +300,12 @@ class KidsClothingLayout extends StatelessWidget {
         ),
         // Clothing Tag hanging from it
         Container(
-          height: 60.h,
-          margin: EdgeInsets.symmetric(horizontal: 10.w),
+          height: 85.h, 
+          width: double.infinity, 
+          margin: EdgeInsets.symmetric(horizontal: 4.w).copyWith(top: 2.h),
           decoration: BoxDecoration(
             color: tagColor,
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(8.r)),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(12.r)),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.15),
@@ -300,18 +315,31 @@ class KidsClothingLayout extends StatelessWidget {
           ),
           child: Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4.w),
-              child: KidsFittedText(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.slate900,
-                  height: 1.1,
-                ),
-                textAlign: TextAlign.center,
-                maxLines: 3,
+              padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  KidsFittedText(
+                    label,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp, // Reduced for a professional standard look
+                      fontWeight: FontWeight.w500, // Reduced from w600 for standard look
+                      color: AppColors.slate900,
+                      height: 1.1,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 2, 
+                  ),
+                  if (emoji.isNotEmpty) ...[
+                    SizedBox(height: 2.h),
+                    Text(
+                      emoji,
+                      style: TextStyle(fontSize: 22.sp, height: 1.0),
+                    ),
+                  ],
+                ],
               ),
             ),
           ),
@@ -329,7 +357,14 @@ class KidsClothingLayout extends StatelessWidget {
         ),
       ),
       childWhenDragging: Opacity(opacity: 0.3, child: hangerWidget),
-      child: hangerWidget,
+      child: hangerWidget
+          .animate(delay: (200 + index * 150).ms)
+          .shake(
+            hz: 2,
+            rotation: 0.08,
+            offset: Offset.zero,
+            duration: 800.ms,
+          ),
     );
   }
 }

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
@@ -1665,18 +1665,18 @@ class GameInstructionService {
         );
       case 'clothing':
         return const GameBriefing(
-          title: "Dress Up",
+          title: "Clothing Riddles",
           icon: Icons.checkroom_rounded,
           objective:
-              "Let's get dressed for the day! Look at the mirror to see what the weather is like, and put the perfect outfit into the wardrobe.",
+              "Let's solve some fun clothing riddles! Listen carefully to the clue, find the matching clothing tag, and hang it in the closet.",
           rules: [
-            "Check the weather clue",
-            "Pick the right outfit",
+            "Listen to the riddle",
+            "Find the matching clothes",
             "Hang it in the closet",
           ],
-          actionText: "Get Dressed",
+          actionText: "Play Now",
           tip:
-              "PRO TIP: Think about what you wear when it's hot or cold outside! 👕",
+              "PRO TIP: If you missed the clue, just tap the glowing closet to hear the riddle again! 👕",
         );
       case 'nature':
         return const GameBriefing(
