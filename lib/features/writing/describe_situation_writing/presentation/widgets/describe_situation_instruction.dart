@@ -16,7 +16,7 @@ class DescribeSituationInstruction extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16.r),
@@ -25,7 +25,7 @@ class DescribeSituationInstruction extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.auto_fix_high_rounded, size: 20.r, color: primaryColor),
+          Icon(Icons.auto_fix_high_rounded, size: 18.r, color: primaryColor),
           SizedBox(width: 12.w),
           Expanded(
             child: Text(
@@ -37,8 +37,8 @@ class DescribeSituationInstruction extends StatelessWidget {
               textAlign: TextAlign.center,
               maxLines: null,
               style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w600,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
                 color: primaryColor,
               ),
             ),
@@ -46,7 +46,7 @@ class DescribeSituationInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Icon(
             Icons.auto_fix_high_rounded,
-            size: 20.r,
+            size: 18.r,
             color: Colors.transparent,
           ),
         ],

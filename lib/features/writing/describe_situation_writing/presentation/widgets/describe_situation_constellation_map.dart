@@ -28,7 +28,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.03 : 0.05),
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
       ),
       padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
@@ -39,45 +39,52 @@ class DescribeSituationConstellationMap extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(emojis.length, (index) {
               final isExpanded = expandedEmojiIndex == index;
-              return GestureDetector(
-                onTap: () => onEmojiTap(index),
-                child:
-                    Container(
-                          width: 55.r,
-                          height: 55.r,
-                          decoration: BoxDecoration(
-                            color: isExpanded
-                                ? color
-                                : (isDark
-                                      ? Colors.white.withValues(alpha: 0.1)
-                                      : Colors.white),
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              if (isExpanded)
-                                BoxShadow(
-                                  color: color.withValues(alpha: 0.5),
-                                  blurRadius: 15,
-                                )
-                              else if (!isDark)
-                                BoxShadow(
-                                  color: Colors.black.withValues(alpha: 0.05),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 4),
-                                ),
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              emojis[index],
-                              style: TextStyle(fontSize: 26.sp),
+              return Semantics(
+                button: true,
+                label: 'Category emoji ${emojis[index]}',
+                hint: isExpanded
+                    ? 'Double tap to close keyword list'
+                    : 'Double tap to open keywords for this category',
+                child: GestureDetector(
+                  onTap: () => onEmojiTap(index),
+                  child:
+                      Container(
+                            width: 48.r,
+                            height: 48.r,
+                            decoration: BoxDecoration(
+                              color: isExpanded
+                                  ? color
+                                  : (isDark
+                                        ? Colors.white.withValues(alpha: 0.1)
+                                        : Colors.white),
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                if (isExpanded)
+                                  BoxShadow(
+                                    color: color.withValues(alpha: 0.5),
+                                    blurRadius: 15,
+                                  )
+                                else if (!isDark)
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.05),
+                                    blurRadius: 10,
+                                    offset: const Offset(0, 4),
+                                  ),
+                              ],
                             ),
+                            child: Center(
+                              child: Text(
+                                emojis[index],
+                                style: TextStyle(fontSize: 24.sp),
+                              ),
+                            ),
+                          )
+                          .animate(target: isExpanded ? 1 : 0)
+                          .scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.1, 1.1),
                           ),
-                        )
-                        .animate(target: isExpanded ? 1 : 0)
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.1, 1.1),
-                        ),
+                ),
               );
             }),
           ),
@@ -90,7 +97,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                     padding: EdgeInsets.only(top: 20.h),
                     child: Container(
                       width: double.infinity,
-                      padding: EdgeInsets.all(16.r),
+                      padding: EdgeInsets.all(12.r),
                       decoration: BoxDecoration(
                         color: isDark ? Colors.black87 : Colors.white,
                         borderRadius: BorderRadius.circular(16.r),
@@ -110,7 +117,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w600,
                               color: color.withValues(alpha: 0.8),
                               letterSpacing: 1.5,
                             ),
@@ -123,36 +130,44 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                             children:
                                 (keywords[expandedEmojiIndex.toString()] ?? [])
                                     .map(
-                                      (k) => InkWell(
-                                        onTap: () => onInjectKeyword(k),
-                                        borderRadius: BorderRadius.circular(
-                                          12.r,
-                                        ),
-                                        child: Container(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 16.w,
-                                            vertical: 8.h,
+                                      (k) => Semantics(
+                                        button: true,
+                                        label:
+                                            'Keyword booster ${k.toLowerCase()}',
+                                        hint:
+                                            'Double tap to inject into your text',
+                                        child: InkWell(
+                                          onTap: () => onInjectKeyword(k),
+                                          borderRadius: BorderRadius.circular(
+                                            12.r,
                                           ),
-                                          decoration: BoxDecoration(
-                                            color: color.withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(
-                                              12.r,
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 12.w,
+                                              vertical: 8.h,
                                             ),
-                                            border: Border.all(
+                                            decoration: BoxDecoration(
                                               color: color.withValues(
-                                                alpha: 0.3,
+                                                alpha: 0.1,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(12.r),
+                                              border: Border.all(
+                                                color: color.withValues(
+                                                  alpha: 0.3,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          child: Text(
-                                            k,
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              color: isDark
-                                                  ? Colors.white
-                                                  : Colors.black87,
-                                              fontSize: 13.sp,
-                                              fontWeight: FontWeight.bold,
+                                            child: Text(
+                                              k,
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                color: isDark
+                                                    ? Colors.white
+                                                    : Colors.black87,
+                                                fontSize: 13.sp,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                             ),
                                           ),
                                         ),

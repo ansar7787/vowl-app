@@ -58,6 +58,30 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
+  
+  int _strikeCount = 0;
+  String? _savedTextForRetry;
+
+  void _handleValidationFailure(String message, {CustomSnackBarType type = CustomSnackBarType.warning}) {
+    _strikeCount++;
+    if (_strikeCount >= 3) {
+      _savedTextForRetry = _textController.text;
+      _isSubmitting.value = false;
+      submitWrongAnswer(quest: _lastQuest!);
+    } else {
+      CustomSnackBar.show(
+        context: context,
+        message: "$message (${3 - _strikeCount} tries left)",
+        type: type,
+      );
+      if (type == CustomSnackBarType.warning) {
+        hapticService.warning();
+      } else {
+        hapticService.selection();
+      }
+      _isSubmitting.value = false;
+    }
+  }
 
   late final ScrollController _scrollController;
 
@@ -99,8 +123,28 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
   void _onTextChanged() {
     final text = _textController.text.trim();
-    final words = text.isEmpty ? 0 : text.split(RegExp(r'\s+')).length;
+    final words = text.isEmpty
+        ? 0
+        : text
+              .split(RegExp(r'\s+'))
+              .map((w) => w.replaceAll(RegExp(r'[^\w\s]'), ''))
+              .where((w) => w.isNotEmpty)
+              .length;
     _wordCount.value = words;
+
+    if (_lastQuest != null) {
+      final rawKeywords = _lastQuest!.keywords ?? {};
+      final allKeywords = rawKeywords.values.expand((e) => e).toList();
+      final composedText = text.toLowerCase();
+      final List<String> matched = [];
+      for (var kw in allKeywords) {
+        final regExp = RegExp(r'\b' + RegExp.escape(kw.toLowerCase()));
+        if (regExp.hasMatch(composedText)) {
+          matched.add(kw);
+        }
+      }
+      _usedKeywords.value = matched;
+    }
   }
 
   void _onEmojiTap(int index, bool isAnswered) {
@@ -120,7 +164,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
     String newText;
     int newCursorPosition;
-    String insertText = keyword;
+    String insertText = keyword.toLowerCase();
+
+    if (text.isEmpty || (selection.isValid && selection.start == 0)) {
+      insertText = insertText[0].toUpperCase() + insertText.substring(1);
+    }
+
     if (selection.isValid) {
       final before = text.substring(0, selection.start);
       final after = text.substring(selection.end);
@@ -169,27 +218,23 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     _isSubmitting.value = true;
 
     final rawText = _textController.text.trim();
-    if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Please start your description with a capital letter.",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+    if (!RegExp(r'^[A-Z]').hasMatch(
+      rawText.trimLeft().replaceAll(
+        RegExp(
+          r'^["'
+          "'"
+          r']',
+        ),
+        '',
+      ),
+    )) {
+      _handleValidationFailure("Please start your description with a capital letter.");
       return;
     }
 
     final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
-    if (!['.', '!', '?'].contains(lastChar)) {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "Please end your description with proper punctuation (., !, or ?).",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+    if (!['.', '!', '?', '"', "'"].contains(lastChar)) {
+      _handleValidationFailure("Please end your description with proper punctuation (., !, or ?).");
       return;
     }
 
@@ -197,43 +242,31 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
     int matchedCount = 0;
     for (var kw in availableKeywords) {
-      if (composedText.contains(kw.toLowerCase())) {
+      final regExp = RegExp(r'\b' + RegExp.escape(kw.toLowerCase()));
+      if (regExp.hasMatch(composedText)) {
         matchedCount++;
       }
     }
 
     if (_wordCount.value < minWords) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Keep writing! You need at least $minWords words.",
-        type: CustomSnackBarType.info,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Keep writing! You need at least $minWords words.", type: CustomSnackBarType.info);
       return;
     }
 
     if (matchedCount < 2) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Inject at least 2 narrative keywords from the emojis!",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Inject at least 2 narrative keywords from the emojis!");
       return;
     }
 
     final wordsList = composedText.split(RegExp(r'\s+'));
-    final uniqueWords = wordsList.toSet();
+    final cleanWordsList = wordsList
+        .map((w) => w.replaceAll(RegExp(r'[^\w\s]'), ''))
+        .where((w) => w.isNotEmpty)
+        .toList();
+    final uniqueWords = cleanWordsList.toSet();
+
     if (uniqueWords.length < (minWords * 0.5).ceil()) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Your description lacks variety. Try using different words!",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.warning();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Your description lacks variety. Try using different words!");
       return;
     }
 
@@ -248,14 +281,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     // We require at least 50% of the minimum words to be "glue/structure" words
     // to prevent students from just chaining booster keywords together (word salad).
     if (nonKeywordCount < (minWords * 0.5).ceil()) {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "This looks like a list of keywords! Please write full, complete sentences connecting the words.",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.warning();
-      _isSubmitting.value = false;
+      _handleValidationFailure("This looks like a list of keywords! Please write full, complete sentences connecting the words.");
       return;
     }
 
@@ -271,20 +297,11 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     if (!mounted) return;
 
     if (language != 'en') {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "Your answer must be written in English. Please write a natural sentence!",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.warning();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Your answer must be written in English. Please write a natural sentence!");
       return;
     }
 
     hapticService.success();
-    soundService.playCorrect();
-
     soundService.playCorrect();
 
     _showSpeakToConfirm.value = true;
@@ -299,16 +316,20 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
   @override
   void onQuestionReset() {
     _usedKeywords.value = [];
-
     _expandedEmojiIndex.value = null;
-
     _showSpeakToConfirm.value = false;
-
     _wordCount.value = 0;
-
     _isSubmitting.value = false;
-
-    _textController.clear();
+    
+    if (_savedTextForRetry != null) {
+      _textController.text = _savedTextForRetry!;
+      _savedTextForRetry = null;
+      _strikeCount = 0;
+      _onTextChanged();
+    } else {
+      _textController.clear();
+      _strikeCount = 0;
+    }
   }
 
   @override
@@ -526,14 +547,6 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                         ),
                                       ),
                                     ),
-                                  SizedBox(
-                                    height: !isAnswered
-                                        ? MediaQuery.viewInsetsOf(
-                                                context,
-                                              ).bottom +
-                                              40.h
-                                        : 160.h,
-                                  ),
                                 ],
                               ),
                             ),
@@ -541,31 +554,21 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
                           if (_showSpeakToConfirm.value && !isAnswered)
                             SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: SpeakToConfirmOverlay(
-                                  expectedText: _textController.text.trim(),
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: _onSpeakConfirmed,
-                                  onSkipped: () {
-                                    _showSpeakToConfirm.value = false;
-                                    submitWrongAnswer(
-                                      quest: activeQuest,
-                                      userAnswer: _textController.text.trim(),
-                                    );
-                                  },
-                                ),
+                              child: SpeakToConfirmOverlay(
+                                expectedText: _textController.text.trim(),
+                                primaryColor: theme.primaryColor,
+                                isPositioned: false,
+                                displayFontSize: 14.sp,
+                                displayFontWeight: FontWeight.w400,
+                                displayTextAlign: TextAlign.left,
+                                onConfirmed: _onSpeakConfirmed,
+                                onSkipped: () {
+                                  _showSpeakToConfirm.value = false;
+                                  submitCorrectAnswer();
+                                },
                               ),
                             ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
-                            ),
-                          ),
+                          SliverToBoxAdapter(child: SizedBox(height: 120.h)),
                         ],
                       ),
                     );

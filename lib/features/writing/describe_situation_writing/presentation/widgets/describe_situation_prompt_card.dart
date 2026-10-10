@@ -21,14 +21,14 @@ class DescribeSituationPromptCard extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
       ),
       child: Stack(
         children: [
           const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 20.w),
+            padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -45,23 +45,23 @@ class DescribeSituationPromptCard extends StatelessWidget {
                       "SITUATION PROMPT",
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 11.sp,
+                        fontSize: 10.sp,
                         color: color,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         letterSpacing: 1.5,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 16.h),
+                SizedBox(height: 12.h),
                 Text(
                   prompt,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 15.sp,
+                    fontSize: 14.sp,
                     color: isDark ? Colors.white : AppColors.slate800,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
                     height: 1.4,
                     letterSpacing: 0.3,
                   ),
