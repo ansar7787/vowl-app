@@ -37,7 +37,8 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
         border: Border.all(color: color.withValues(alpha: 0.1)),
       ),
       child: Semantics(
-        label: "Professionalism level is at ${(mercuryLevel * 100).toInt()} percent",
+        label:
+            "Professionalism level is at ${(mercuryLevel * 100).toInt()} percent",
         excludeSemantics: true,
         child: Row(
           children: [

@@ -61,10 +61,10 @@ class GuessTitleLabelRack extends StatelessWidget {
             child: _buildLabelCard(label, color, isDark),
           ),
           child: _buildLabelCard(
-            label, 
-            color, 
-            isDark, 
-            isAnswered: isAnswered, 
+            label,
+            color,
+            isDark,
+            isAnswered: isAnswered,
             isCorrectOption: isCorrectOption,
           ),
         );
@@ -82,12 +82,12 @@ class GuessTitleLabelRack extends StatelessWidget {
     bool isCorrectOption = false,
   }) {
     final showCorrect = isAnswered && isCorrectOption;
-    
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: showCorrect 
-            ? AppColors.gameCorrect.withValues(alpha: 0.15) 
+        color: showCorrect
+            ? AppColors.gameCorrect.withValues(alpha: 0.15)
             : (isDark ? Colors.grey.shade900 : Colors.white),
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
@@ -100,11 +100,11 @@ class GuessTitleLabelRack extends StatelessWidget {
           ),
         ],
         border: Border.all(
-          color: showCorrect 
-              ? AppColors.gameCorrect 
+          color: showCorrect
+              ? AppColors.gameCorrect
               : (isFeedback
-                  ? color
-                  : (isDark ? Colors.white10 : Colors.grey.shade300)),
+                    ? color
+                    : (isDark ? Colors.white10 : Colors.grey.shade300)),
           width: showCorrect ? 2 : (isFeedback ? 2 : 1.5),
         ),
       ),
@@ -115,8 +115,8 @@ class GuessTitleLabelRack extends StatelessWidget {
           fontFamily: 'Outfit',
           fontSize: 12.sp,
           fontWeight: FontWeight.w900,
-          color: showCorrect 
-              ? AppColors.gameCorrect 
+          color: showCorrect
+              ? AppColors.gameCorrect
               : (isDark ? Colors.white70 : Colors.black87),
         ),
       ),

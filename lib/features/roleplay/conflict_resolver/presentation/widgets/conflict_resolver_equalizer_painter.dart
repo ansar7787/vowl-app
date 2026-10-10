@@ -86,4 +86,3 @@ class EqualizerArcPainter extends CustomPainter {
         oldDelegate.themeColor != themeColor;
   }
 }
-

@@ -486,9 +486,15 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                   "Type the $targetVoiceStr conversion to lock it in",
                                               primaryColor: theme.primaryColor,
                                               onConfirmed: () =>
-                                                  _submitVerbalEvaluation(true, quest),
+                                                  _submitVerbalEvaluation(
+                                                    true,
+                                                    quest,
+                                                  ),
                                               onSkipped: () =>
-                                                  _submitVerbalEvaluation(false, quest),
+                                                  _submitVerbalEvaluation(
+                                                    false,
+                                                    quest,
+                                                  ),
                                               isPositioned: false,
                                             ),
                                             SizedBox(height: 60.h),

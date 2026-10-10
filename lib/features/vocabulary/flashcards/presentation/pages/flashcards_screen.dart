@@ -127,7 +127,9 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
               level: widget.level,
               isAnswered: _controller.isAnswered,
               isCorrect: _controller.isCorrect,
-              isFinalFailure: state is VocabularyLoaded ? state.isFinalFailure : false,
+              isFinalFailure: state is VocabularyLoaded
+                  ? state.isFinalFailure
+                  : false,
               showConfetti: _controller.showConfetti,
               onContinue: () =>
                   context.read<VocabularyBloc>().add(const NextQuestion()),
@@ -167,8 +169,12 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   void _onBlocState(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
       final isNew = state.currentIndex != lastProcessedIndex;
-      final isRetry = !isNew && !state.answerStatus.isAnswered && _controller.isAnswered && !state.isFinalFailure;
-      
+      final isRetry =
+          !isNew &&
+          !state.answerStatus.isAnswered &&
+          _controller.isAnswered &&
+          !state.isFinalFailure;
+
       onVocabularyStateChanged(context, state);
 
       if (isNew || isRetry) {

@@ -318,9 +318,9 @@ class _DustPainter extends CustomPainter {
           Colors.lightBlueAccent.withValues(alpha: 0.5),
         ],
       ).createShader(rect);
-      
+
       canvas.drawOval(rect, paint);
-      
+
       // Draw border
       canvas.drawOval(rect, borderPaint);
 

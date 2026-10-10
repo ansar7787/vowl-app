@@ -29,35 +29,34 @@ class ReadingConclusionOptions extends StatelessWidget {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return Column(
-      children: List.generate(
-        options.length,
-        (index) {
-          final optionText = options[index];
-          final isSelected = selectedIndex == index;
-          final isCorrect = isAnswered &&
-              optionText.trim().toLowerCase() ==
-                  correct.trim().toLowerCase();
-          final isWrong = isAnswered && isSelected && !isCorrect;
+      children: List.generate(options.length, (index) {
+        final optionText = options[index];
+        final isSelected = selectedIndex == index;
+        final isCorrect =
+            isAnswered &&
+            optionText.trim().toLowerCase() == correct.trim().toLowerCase();
+        final isWrong = isAnswered && isSelected && !isCorrect;
 
-          return _OptionCard(
-            key: ValueKey(optionText), // ensure unique state reset per option text
-            optionText: optionText,
-            isSelected: isSelected,
-            isCorrect: isCorrect,
-            isWrong: isWrong,
-            primaryColor: primaryColor,
-            isDark: isDark,
-            isAnswered: isAnswered,
-            tokens: tokens,
-            onTap: () {
-              if (!isAnswered) {
-                di.sl<HapticService>().selection();
-                onOptionTap(index, optionText);
-              }
-            },
-          );
-        },
-      ),
+        return _OptionCard(
+          key: ValueKey(
+            optionText,
+          ), // ensure unique state reset per option text
+          optionText: optionText,
+          isSelected: isSelected,
+          isCorrect: isCorrect,
+          isWrong: isWrong,
+          primaryColor: primaryColor,
+          isDark: isDark,
+          isAnswered: isAnswered,
+          tokens: tokens,
+          onTap: () {
+            if (!isAnswered) {
+              di.sl<HapticService>().selection();
+              onOptionTap(index, optionText);
+            }
+          },
+        );
+      }),
     );
   }
 }
@@ -150,7 +149,7 @@ class _OptionCardState extends State<_OptionCard> {
                     color: borderColor.withValues(alpha: 0.1),
                     blurRadius: 8,
                     offset: const Offset(0, 4),
-                  )
+                  ),
               ],
             ),
             child: Text(

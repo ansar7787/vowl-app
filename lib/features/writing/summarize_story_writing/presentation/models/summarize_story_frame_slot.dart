@@ -2,10 +2,7 @@ class SummarizeStoryFrameSlot {
   final int index;
   final String? sentence;
 
-  const SummarizeStoryFrameSlot({
-    required this.index,
-    this.sentence,
-  });
+  const SummarizeStoryFrameSlot({required this.index, this.sentence});
 
   SummarizeStoryFrameSlot copyWith({
     int? index,

@@ -76,12 +76,16 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
   }
 
   void _submitAnswer(int index, ReadingQuest quest) {
-    if (isAnsweredNotifier.value || quest.options == null || _clarity.value < 0.3) return;
+    if (isAnsweredNotifier.value ||
+        quest.options == null ||
+        _clarity.value < 0.3)
+      return;
 
     _selectedIndex.value = index;
     final String selectedText = quest.options![index];
     final bool isCorrect =
-        selectedText.trim().toLowerCase() == quest.correctAnswer?.trim().toLowerCase();
+        selectedText.trim().toLowerCase() ==
+        quest.correctAnswer?.trim().toLowerCase();
 
     if (isCorrect) {
       hapticService.success();
@@ -146,10 +150,11 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnsweredNotifier.value &&
-                  (!(quest?.clueWords?.isNotEmpty ?? false) || 
-                   _evidenceFound.value || 
-                   isCorrectNotifier.value == false),
+              isAnswered:
+                  isAnsweredNotifier.value &&
+                  (!(quest?.clueWords?.isNotEmpty ?? false) ||
+                      _evidenceFound.value ||
+                      isCorrectNotifier.value == false),
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
@@ -181,31 +186,51 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                   SizedBox(height: 32.h),
 
                                   ListenableBuilder(
-                                    listenable: Listenable.merge([_rubPoints, _clarity, _showEvidence, _evidenceFound]),
+                                    listenable: Listenable.merge([
+                                      _rubPoints,
+                                      _clarity,
+                                      _showEvidence,
+                                      _evidenceFound,
+                                    ]),
                                     builder: (context, _) {
                                       return Column(
                                         children: [
                                           AnimatedSwitcher(
-                                            duration: const Duration(milliseconds: 500),
+                                            duration: const Duration(
+                                              milliseconds: 500,
+                                            ),
                                             switchInCurve: Curves.easeOutCubic,
                                             switchOutCurve: Curves.easeInCubic,
-                                            child: (_showEvidence.value || _evidenceFound.value)
+                                            child:
+                                                (_showEvidence.value ||
+                                                    _evidenceFound.value)
                                                 ? EvidenceHighlightWrapper(
-                                                    key: const ValueKey('evidence'),
-                                                    passage: quest.passage ?? "",
-                                                    evidenceWords: quest.clueWords ?? [],
-                                                    primaryColor: theme.primaryColor,
-                                                    onCorrectHighlight: _onEvidenceFound,
+                                                    key: const ValueKey(
+                                                      'evidence',
+                                                    ),
+                                                    passage:
+                                                        quest.passage ?? "",
+                                                    evidenceWords:
+                                                        quest.clueWords ?? [],
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    onCorrectHighlight:
+                                                        _onEvidenceFound,
                                                     instruction:
                                                         'Highlight the clue words that gave you the answer!',
                                                     isPositioned: false,
                                                   )
                                                 : ReadingInferenceFoggyMirror(
-                                                    key: const ValueKey('mirror'),
-                                                    passage: quest.passage ?? "",
+                                                    key: const ValueKey(
+                                                      'mirror',
+                                                    ),
+                                                    passage:
+                                                        quest.passage ?? "",
                                                     color: theme.primaryColor,
                                                     isDark: isDark,
-                                                    isAnswered: isAnsweredNotifier.value,
+                                                    isAnswered:
+                                                        isAnsweredNotifier
+                                                            .value,
                                                     rubPoints: _rubPoints.value,
                                                     clarity: _clarity.value,
                                                     onRub: _onRub,
@@ -215,32 +240,47 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                               !_evidenceFound.value &&
                                               _clarity.value < 1.0)
                                             Padding(
-                                              padding: EdgeInsets.only(top: 8.h),
+                                              padding: EdgeInsets.only(
+                                                top: 8.h,
+                                              ),
                                               child: Align(
-                                                alignment: Alignment.centerRight,
+                                                alignment:
+                                                    Alignment.centerRight,
                                                 child: TextButton.icon(
                                                   onPressed: () {
                                                     hapticService.selection();
                                                     _clarity.value = 1.0;
                                                   },
                                                   icon: Icon(
-                                                    Icons.accessibility_new_rounded,
+                                                    Icons
+                                                        .accessibility_new_rounded,
                                                     size: 14.sp,
-                                                    color: theme.primaryColor.withValues(alpha: 0.7),
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.7),
                                                   ),
                                                   label: Text(
                                                     'Auto-Clear Fog',
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
                                                       fontSize: 12.sp,
-                                                      fontWeight: FontWeight.w700,
-                                                      color: theme.primaryColor.withValues(alpha: 0.7),
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color: theme.primaryColor
+                                                          .withValues(
+                                                            alpha: 0.7,
+                                                          ),
                                                     ),
                                                   ),
                                                   style: TextButton.styleFrom(
-                                                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: 12.w,
+                                                          vertical: 8.h,
+                                                        ),
                                                     minimumSize: Size.zero,
-                                                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                                    tapTargetSize:
+                                                        MaterialTapTargetSize
+                                                            .shrinkWrap,
                                                   ),
                                                 ),
                                               ),
@@ -252,22 +292,29 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                   SizedBox(height: 24.h),
 
                                   ListenableBuilder(
-                                    listenable: Listenable.merge([_showEvidence, _evidenceFound]),
+                                    listenable: Listenable.merge([
+                                      _showEvidence,
+                                      _evidenceFound,
+                                    ]),
                                     builder: (context, _) {
-                                      if (_showEvidence.value || _evidenceFound.value) {
+                                      if (_showEvidence.value ||
+                                          _evidenceFound.value) {
                                         return const SizedBox.shrink();
                                       }
                                       return Text(
-                                        quest.question ?? "Infer the hidden truth:",
+                                        quest.question ??
+                                            "Infer the hidden truth:",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 18.sp,
                                           fontWeight: FontWeight.w700,
-                                          color: Theme.of(context).colorScheme.onSurface,
+                                          color: Theme.of(
+                                            context,
+                                          ).colorScheme.onSurface,
                                         ),
                                       );
-                                    }
+                                    },
                                   ),
                                 ],
                               ),
@@ -281,26 +328,42 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                 children: [
                                   SizedBox(height: 24.h),
                                   ListenableBuilder(
-                                    listenable: Listenable.merge([_showEvidence, _evidenceFound]),
+                                    listenable: Listenable.merge([
+                                      _showEvidence,
+                                      _evidenceFound,
+                                    ]),
                                     builder: (context, _) {
                                       if (quest.options != null) {
                                         return ValueListenableBuilder<double>(
                                           valueListenable: _clarity,
                                           builder: (context, clarityVal, _) {
                                             return Column(
-                                              children: quest.options!.asMap().entries.map((entry) {
-                                                return ReadingInferenceOption(
-                                                  index: entry.key,
-                                                  text: entry.value,
-                                                  correct: quest.correctAnswer ?? "",
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  selectedIndex: _selectedIndex.value,
-                                                  isAnswered: isAnsweredNotifier.value,
-                                                  clarity: clarityVal,
-                                                  onTap: () => _submitAnswer(entry.key, quest),
-                                                );
-                                              }).toList(),
+                                              children: quest.options!
+                                                  .asMap()
+                                                  .entries
+                                                  .map((entry) {
+                                                    return ReadingInferenceOption(
+                                                      index: entry.key,
+                                                      text: entry.value,
+                                                      correct:
+                                                          quest.correctAnswer ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      selectedIndex:
+                                                          _selectedIndex.value,
+                                                      isAnswered:
+                                                          isAnsweredNotifier
+                                                              .value,
+                                                      clarity: clarityVal,
+                                                      onTap: () =>
+                                                          _submitAnswer(
+                                                            entry.key,
+                                                            quest,
+                                                          ),
+                                                    );
+                                                  })
+                                                  .toList(),
                                             );
                                           },
                                         );
@@ -314,8 +377,10 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                           ),
                           SliverToBoxAdapter(
                             child: SizedBox(
-                              height: MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                              height:
+                                  MediaQuery.of(context).viewInsets.bottom > 0
+                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                        40.h
                                   : 240.h,
                             ),
                           ),
@@ -329,4 +394,3 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
     );
   }
 }
-

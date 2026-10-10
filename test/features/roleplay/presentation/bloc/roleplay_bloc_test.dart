@@ -91,7 +91,6 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
-    
 
     bloc = RoleplayBloc(
       getQuest: mockGetQuest,

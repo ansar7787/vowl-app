@@ -457,7 +457,8 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                           ),
                           SliverToBoxAdapter(
                             child: SizedBox(
-                              height: 120.h +
+                              height:
+                                  120.h +
                                   MediaQuery.of(context).viewInsets.bottom,
                             ),
                           ),

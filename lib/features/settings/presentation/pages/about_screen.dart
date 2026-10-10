@@ -1,4 +1,4 @@
-﻿import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -334,4 +334,3 @@ class _AboutScreenState extends State<AboutScreen> {
     );
   }
 }
-

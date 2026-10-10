@@ -176,7 +176,12 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                         if (!reduceMotion) {
                                           iconContainer = iconContainer
                                               .animate(
-                                                target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
+                                                target:
+                                                    VowlMotion.shouldReduceMotion(
+                                                      context,
+                                                    )
+                                                    ? 0
+                                                    : 1,
                                                 onPlay: (c) =>
                                                     c.repeat(reverse: true),
                                               )

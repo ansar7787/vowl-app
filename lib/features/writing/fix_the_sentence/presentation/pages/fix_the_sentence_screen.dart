@@ -75,7 +75,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
     super.initState();
     _scrollController = ScrollController();
     initWritingGame();
-    
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         final bloc = context.read<WritingBloc>();
@@ -171,14 +171,15 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
       _erasedAmount.value = 0;
       _erasePoints.clear();
     }
-    
+
     _selectedOption.value = null;
     _pendingSelectedOption.value = null;
-    
+
     if (mounted) {
       final bloc = context.read<WritingBloc>();
       if (bloc.state is WritingLoaded) {
-        final opts = (bloc.state as WritingLoaded).currentQuest.options?.toList();
+        final opts = (bloc.state as WritingLoaded).currentQuest.options
+            ?.toList();
         if (opts != null) {
           if (isNewQuest) {
             opts.shuffle();

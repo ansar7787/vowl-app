@@ -83,10 +83,9 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
       _targetIndex.value = nodeIndex;
     } else {
       _targetIndex.value = nodeIndex;
-      String? userAnswer =
-          (nodeIndex < (quest.options?.length ?? 0))
-              ? quest.options![nodeIndex]
-              : null;
+      String? userAnswer = (nodeIndex < (quest.options?.length ?? 0))
+          ? quest.options![nodeIndex]
+          : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
@@ -96,7 +95,8 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      String? userAnswer = (quest.options != null &&
+      String? userAnswer =
+          (quest.options != null &&
               _targetIndex.value < (quest.options?.length ?? 0))
           ? quest.options![_targetIndex.value]
           : null;
@@ -522,9 +522,15 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                         expectedText: cleanTargetSentence,
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () =>
-                                            _submitVerbalEvaluation(true, quest),
+                                            _submitVerbalEvaluation(
+                                              true,
+                                              quest,
+                                            ),
                                         onSkipped: () =>
-                                            _submitVerbalEvaluation(false, quest),
+                                            _submitVerbalEvaluation(
+                                              false,
+                                              quest,
+                                            ),
                                         isPositioned: false,
                                         displayText:
                                             "Type the full sentence to lock it in",

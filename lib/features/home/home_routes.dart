@@ -158,10 +158,8 @@ class HomeRoutes {
     ),
     GoRoute(
       path: AppRouter.reviewMistakesRoute,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: const ReviewMistakesScreen(),
-        state: state,
-      ),
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: const ReviewMistakesScreen(), state: state),
     ),
     GoRoute(
       path: scanAndLearnRoute,

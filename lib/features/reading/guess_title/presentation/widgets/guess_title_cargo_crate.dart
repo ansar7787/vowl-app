@@ -101,7 +101,9 @@ class GuessTitleCargoCrate extends StatelessWidget {
                                     fontWeight: FontWeight.w900,
                                     color: isCorrect == true
                                         ? tokens.gameCorrect
-                                        : (isCorrect == false ? tokens.gameIncorrect : color),
+                                        : (isCorrect == false
+                                              ? tokens.gameIncorrect
+                                              : color),
                                   ),
                                 )
                               : Text(

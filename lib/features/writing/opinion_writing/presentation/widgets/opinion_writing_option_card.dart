@@ -7,6 +7,7 @@ class OpinionWritingIdeaCard extends StatelessWidget {
   final Color primaryColor;
   final bool isDark;
   final bool isDragging;
+  final VoidCallback? onTap;
 
   const OpinionWritingIdeaCard({
     super.key,
@@ -14,58 +15,73 @@ class OpinionWritingIdeaCard extends StatelessWidget {
     required this.primaryColor,
     required this.isDark,
     this.isDragging = false,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 12.h),
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: isDark ? Colors.white24 : Colors.black12),
-        boxShadow: isDragging
-            ? [
-                BoxShadow(
-                  color: primaryColor.withValues(alpha: 0.2),
-                  blurRadius: 15,
-                  spreadRadius: 2,
-                ),
-              ]
-            : [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.03),
-                  blurRadius: 5,
-                  offset: const Offset(0, 2),
-                ),
-              ],
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(top: 2.h),
-            child: Icon(
-              Icons.drag_indicator_rounded,
-              color: isDark ? Colors.white38 : Colors.black26,
-              size: 20.w,
-            ),
-          ),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white : const Color(0xFF1E293B),
-                height: 1.5,
+    return ScaleButton(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.only(bottom: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: isDark ? Colors.white24 : Colors.black12),
+          boxShadow: isDragging
+              ? [
+                  BoxShadow(
+                    color: primaryColor.withValues(alpha: 0.2),
+                    blurRadius: 15,
+                    spreadRadius: 2,
+                  ),
+                ]
+              : [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.03),
+                    blurRadius: 5,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 2.h),
+              child: Icon(
+                Icons.drag_indicator_rounded,
+                color: isDark ? Colors.white38 : Colors.black26,
+                size: 20.w,
               ),
             ),
-          ),
-        ],
+            SizedBox(width: 12.w),
+            Expanded(
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  height: 1.5,
+                ),
+              ),
+            ),
+            if (onTap != null && !isDragging) ...[
+              SizedBox(width: 12.w),
+              Padding(
+                padding: EdgeInsets.only(top: 2.h),
+                child: Icon(
+                  Icons.add_circle_outline,
+                  color: primaryColor.withValues(alpha: 0.6),
+                  size: 20.w,
+                ),
+              ),
+            ],
+          ],
+        ),
       ),
     );
   }

@@ -38,32 +38,41 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final double width = constraints.maxWidth;
-        
+
         final int cols = width > 600 ? 5 : (width > 400 ? 4 : 3);
         final double nodeWidth = 108.w;
         final double nodeHeight = 72.h;
-        final double hSpacing = math.max(8.w, (width - (cols * nodeWidth)) / (cols + 1));
+        final double hSpacing = math.max(
+          8.w,
+          (width - (cols * nodeWidth)) / (cols + 1),
+        );
         final double vSpacing = 24.h;
-        
+
         final int rows = (words.length / cols).ceil();
-        final double calculatedHeight = 48.h + (rows * nodeHeight) + ((rows - 1) * vSpacing);
+        final double calculatedHeight =
+            48.h + (rows * nodeHeight) + ((rows - 1) * vSpacing);
         final double containerHeight = math.max(300.h, calculatedHeight);
 
         // Organic staggered layout to prevent overlapping for larger word counts
         final List<Offset> starOffsets = [];
-        
+
         for (int i = 0; i < words.length; i++) {
           int row = i ~/ cols;
           int col = i % cols;
 
           int itemsInThisRow = math.min(cols, words.length - row * cols);
-          double rowWidth = (itemsInThisRow * nodeWidth) + ((itemsInThisRow - 1) * hSpacing);
+          double rowWidth =
+              (itemsInThisRow * nodeWidth) + ((itemsInThisRow - 1) * hSpacing);
           double startX = (width - rowWidth) / 2;
 
           double jitterY = (col % 2 == 0) ? 8.h : -8.h;
 
           double cx = startX + (col * (nodeWidth + hSpacing)) + (nodeWidth / 2);
-          double cy = 24.h + (row * (nodeHeight + vSpacing)) + (nodeHeight / 2) + jitterY;
+          double cy =
+              24.h +
+              (row * (nodeHeight + vSpacing)) +
+              (nodeHeight / 2) +
+              jitterY;
 
           starOffsets.add(Offset(cx, cy));
         }

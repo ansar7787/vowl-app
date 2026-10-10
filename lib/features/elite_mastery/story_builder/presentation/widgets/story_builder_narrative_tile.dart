@@ -71,144 +71,141 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
       color: isSelected
           ? theme.primaryColor.withValues(alpha: 0.1)
           : (isDark ? Colors.black.withValues(alpha: 0.3) : null),
-      border: Border.all(
-        color: borderColor,
-        width: isSelected ? 2 : 1.5,
-      ),
+      border: Border.all(color: borderColor, width: isSelected ? 2 : 1.5),
       child: Row(
         children: [
-            Container(
-              width: 28.r,
-              height: 28.r,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    theme.primaryColor.withValues(alpha: 0.2),
-                    theme.primaryColor.withValues(alpha: 0.05),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(8.r),
-                border: Border.all(
-                  color: theme.primaryColor.withValues(alpha: 0.3),
-                ),
+          Container(
+            width: 28.r,
+            height: 28.r,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  theme.primaryColor.withValues(alpha: 0.2),
+                  theme.primaryColor.withValues(alpha: 0.05),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
               ),
-              child: Center(
-                child: Text(
-                  "${index + 1}",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? theme.primaryColor : AppColors.slate900,
-                  ),
-                ),
+              borderRadius: BorderRadius.circular(8.r),
+              border: Border.all(
+                color: theme.primaryColor.withValues(alpha: 0.3),
               ),
             ),
-            SizedBox(width: 14.w),
-            Expanded(
+            child: Center(
               child: Text(
-                sentence,
+                "${index + 1}",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
-                  height: 1.4,
-                  color: Theme.of(context).colorScheme.onSurface,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.bold,
+                  color: isDark ? theme.primaryColor : AppColors.slate900,
                 ),
               ),
             ),
-            if (isHintVisible)
-              Container(
-                    // FIX: was `EdgeInsets.only(left: 8.w)` — a literal side
-                    // that doesn't flip when this Row mirrors for RTL
-                    // locales. `EdgeInsetsDirectional` keeps this spacing on
-                    // the correct side of the badge regardless of direction.
-                    margin: EdgeInsetsDirectional.only(start: 8.w),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 6.h,
-                    ),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          theme.primaryColor,
-                          theme.primaryColor.withValues(alpha: 0.8),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.circular(12.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: theme.primaryColor.withValues(alpha: 0.3),
-                          blurRadius: 8,
-                        ),
+          ),
+          SizedBox(width: 14.w),
+          Expanded(
+            child: Text(
+              sentence,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w500,
+                height: 1.4,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+            ),
+          ),
+          if (isHintVisible)
+            Container(
+                  // FIX: was `EdgeInsets.only(left: 8.w)` — a literal side
+                  // that doesn't flip when this Row mirrors for RTL
+                  // locales. `EdgeInsetsDirectional` keeps this spacing on
+                  // the correct side of the badge regardless of direction.
+                  margin: EdgeInsetsDirectional.only(start: 8.w),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 6.h,
+                  ),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        theme.primaryColor,
+                        theme.primaryColor.withValues(alpha: 0.8),
                       ],
                     ),
-                    child: Text(
-                      "#${correctOrderIndex + 1}",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
+                    borderRadius: BorderRadius.circular(12.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: theme.primaryColor.withValues(alpha: 0.3),
+                        blurRadius: 8,
                       ),
-                    ),
-                  )
-                  .animate()
-                  .scale(duration: 400.ms, curve: Curves.elasticOut)
-                  .shimmer(duration: 1500.ms, color: Colors.white54),
-            if (isReorderable)
-              ReorderableDragStartListener(
-                index: index,
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
-                  child: Center(
-                    child: Icon(
-                      Icons.drag_indicator_rounded,
-                      color: isDark ? Colors.white30 : Colors.black26,
-                      size: 26.r,
+                    ],
+                  ),
+                  child: Text(
+                    "#${correctOrderIndex + 1}",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
                     ),
                   ),
-                ),
-              )
-            else
-              ConstrainedBox(
+                )
+                .animate()
+                .scale(duration: 400.ms, curve: Curves.elasticOut)
+                .shimmer(duration: 1500.ms, color: Colors.white54),
+          if (isReorderable)
+            ReorderableDragStartListener(
+              index: index,
+              child: ConstrainedBox(
                 constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
                 child: Center(
                   child: Icon(
-                    isCorrect == true
-                        ? Icons.check_circle_rounded
-                        : (isCorrect == false
-                            ? Icons.cancel_rounded
-                            : Icons.check_circle_rounded),
-                    color: isCorrect == true
-                        ? tokens.gameCorrect
-                        : (isCorrect == false
-                            ? tokens.gameIncorrect
-                            : (isDark ? Colors.white30 : Colors.black26)),
+                    Icons.drag_indicator_rounded,
+                    color: isDark ? Colors.white30 : Colors.black26,
                     size: 26.r,
                   ),
                 ),
               ),
-          ],
-        ),
-      );
+            )
+          else
+            ConstrainedBox(
+              constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+              child: Center(
+                child: Icon(
+                  isCorrect == true
+                      ? Icons.check_circle_rounded
+                      : (isCorrect == false
+                            ? Icons.cancel_rounded
+                            : Icons.check_circle_rounded),
+                  color: isCorrect == true
+                      ? tokens.gameCorrect
+                      : (isCorrect == false
+                            ? tokens.gameIncorrect
+                            : (isDark ? Colors.white30 : Colors.black26)),
+                  size: 26.r,
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
 
-      if (onTap != null) {
-        content = GestureDetector(
-          onTap: onTap,
-          behavior: HitTestBehavior.opaque,
-          child: content,
-        );
-      }
-
-      return Semantics(
-        label: _buildSemanticLabel(context, isCorrectPosition),
-        button: onTap != null,
-        selected: isSelected,
+    if (onTap != null) {
+      content = GestureDetector(
+        onTap: onTap,
+        behavior: HitTestBehavior.opaque,
         child: content,
       );
+    }
+
+    return Semantics(
+      label: _buildSemanticLabel(context, isCorrectPosition),
+      button: onTap != null,
+      selected: isSelected,
+      child: content,
+    );
   }
 
   String _buildSemanticLabel(BuildContext context, bool isCorrectPosition) {

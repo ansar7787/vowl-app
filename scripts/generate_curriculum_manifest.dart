@@ -82,8 +82,12 @@ void main() {
     ..sort((a, b) => a.key.compareTo(b.key));
 
   // Separate main games and kids games for documentation
-  final mainGames = sortedEntries.where((e) => !e.key.startsWith('kids_')).toList();
-  final kidsEntries = sortedEntries.where((e) => e.key.startsWith('kids_')).toList();
+  final mainGames = sortedEntries
+      .where((e) => !e.key.startsWith('kids_'))
+      .toList();
+  final kidsEntries = sortedEntries
+      .where((e) => e.key.startsWith('kids_'))
+      .toList();
 
   // Generate the Dart file
   final buffer = StringBuffer();
@@ -91,25 +95,43 @@ void main() {
   buffer.writeln('// Run: dart run scripts/generate_curriculum_manifest.dart');
   buffer.writeln('//');
   buffer.writeln('// Generated: ${DateTime.now().toIso8601String()}');
-  buffer.writeln('// Total game types: ${sortedEntries.length} (${mainGames.length} main + ${kidsEntries.length} kids)');
+  buffer.writeln(
+    '// Total game types: ${sortedEntries.length} (${mainGames.length} main + ${kidsEntries.length} kids)',
+  );
   buffer.writeln();
   buffer.writeln("import 'package:flutter/foundation.dart';");
   buffer.writeln();
-  buffer.writeln('/// Build-time generated manifest of curriculum level counts.');
+  buffer.writeln(
+    '/// Build-time generated manifest of curriculum level counts.',
+  );
   buffer.writeln('///');
-  buffer.writeln('/// Each entry maps a game type to its total number of available levels,');
-  buffer.writeln('/// derived from the highest batch file found in `assets/curriculum/`.');
+  buffer.writeln(
+    '/// Each entry maps a game type to its total number of available levels,',
+  );
+  buffer.writeln(
+    '/// derived from the highest batch file found in `assets/curriculum/`.',
+  );
   buffer.writeln('///');
-  buffer.writeln('/// **Main games** use their gameType as-is (e.g., `repeatSentence`).');
-  buffer.writeln('/// **Kids games** are prefixed with `kids_` (e.g., `kids_alphabet`).');
+  buffer.writeln(
+    '/// **Main games** use their gameType as-is (e.g., `repeatSentence`).',
+  );
+  buffer.writeln(
+    '/// **Kids games** are prefixed with `kids_` (e.g., `kids_alphabet`).',
+  );
   buffer.writeln('///');
-  buffer.writeln('/// This eliminates runtime asset manifest scanning entirely.');
+  buffer.writeln(
+    '/// This eliminates runtime asset manifest scanning entirely.',
+  );
   buffer.writeln('@immutable');
   buffer.writeln('abstract class CurriculumManifest {');
   buffer.writeln('  const CurriculumManifest._();');
   buffer.writeln();
-  buffer.writeln('  /// Default level count when a game type is not in the manifest.');
-  buffer.writeln('  /// New games added after the last code-gen run will fall back to this.');
+  buffer.writeln(
+    '  /// Default level count when a game type is not in the manifest.',
+  );
+  buffer.writeln(
+    '  /// New games added after the last code-gen run will fall back to this.',
+  );
   buffer.writeln('  static const int defaultLevelCount = 10;');
   buffer.writeln();
 
@@ -130,7 +152,9 @@ void main() {
 
   // --- Kids-only convenience map ---
   buffer.writeln('  /// Kids game level counts (without the `kids_` prefix).');
-  buffer.writeln('  /// Use this when looking up kids games by their raw topic name.');
+  buffer.writeln(
+    '  /// Use this when looking up kids games by their raw topic name.',
+  );
   buffer.writeln('  static const Map<String, int> kidsLevelCounts = {');
   for (final entry in kidsEntries) {
     final rawName = entry.key.replaceFirst('kids_', '');
@@ -139,15 +163,23 @@ void main() {
   buffer.writeln('  };');
   buffer.writeln();
 
-  buffer.writeln('  /// Returns the level count for [gameType], or [defaultLevelCount]');
+  buffer.writeln(
+    '  /// Returns the level count for [gameType], or [defaultLevelCount]',
+  );
   buffer.writeln('  /// if the game type was not present at build time.');
   buffer.writeln('  static int getLevels(String gameType) =>');
   buffer.writeln('      levelCounts[gameType] ?? defaultLevelCount;');
   buffer.writeln();
-  buffer.writeln('  /// Returns the level count for a kids game by topic name.');
-  buffer.writeln('  /// Accepts both `"alphabet"` and `"kids_alphabet"` forms.');
+  buffer.writeln(
+    '  /// Returns the level count for a kids game by topic name.',
+  );
+  buffer.writeln(
+    '  /// Accepts both `"alphabet"` and `"kids_alphabet"` forms.',
+  );
   buffer.writeln('  static int getKidsLevels(String topic) =>');
-  buffer.writeln("      kidsLevelCounts[topic] ?? levelCounts['kids_\$topic'] ?? defaultLevelCount;");
+  buffer.writeln(
+    "      kidsLevelCounts[topic] ?? levelCounts['kids_\$topic'] ?? defaultLevelCount;",
+  );
   buffer.writeln('}');
 
   // Write the output

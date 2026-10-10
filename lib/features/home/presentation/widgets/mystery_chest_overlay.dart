@@ -195,7 +195,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
   void didChangeDependencies() {
     super.didChangeDependencies();
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    
+
     if (!_hasTriggeredOpen) {
       if (!reduceMotion) {
         if (!_idlePulseCtrl.isAnimating) _idlePulseCtrl.repeat(reverse: true);

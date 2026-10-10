@@ -156,7 +156,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
           level: widget.level,
           isAnswered: isAnsweredNotifier.value,
           isCorrect: isCorrectNotifier.value,
-          isFinalFailure: state is VocabularyLoaded ? state.isFinalFailure : false,
+          isFinalFailure: state is VocabularyLoaded
+              ? state.isFinalFailure
+              : false,
           showConfetti: showConfettiNotifier.value,
           hasStage2: true,
           onContinue: () {
@@ -411,7 +413,11 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
     }
   }
 
-  void _submitFinalAnswer(bool nailedIt, {GameQuest? quest, String? wrongWord}) {
+  void _submitFinalAnswer(
+    bool nailedIt, {
+    GameQuest? quest,
+    String? wrongWord,
+  }) {
     if (isAnsweredNotifier.value) return;
 
     if (wrongWord != null && wrongWord.isNotEmpty) {

@@ -76,7 +76,7 @@ void main() {
     mockBuyVowlAccessory = MockBuyVowlAccessory();
     mockPurchaseGoldenKey = MockPurchaseGoldenKey();
     mockAddGoldenKey = MockAddGoldenKey();
-    
+
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
     );

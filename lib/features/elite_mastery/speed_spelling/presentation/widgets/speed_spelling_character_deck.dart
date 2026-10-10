@@ -47,68 +47,64 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
             scaleDown: 0.9,
             debounceDuration: const Duration(milliseconds: 50),
             onTap: char == "" ? null : () => onCharTap(char, index),
-            child: Container(
-              width: math.max(54.r, 48.0),
-              height: math.max(54.r, 48.0),
-              decoration: BoxDecoration(
-                color: char == ""
-                    ? (isDark
-                          ? Colors.white.withValues(alpha: 0.02)
-                          : Colors.black.withValues(alpha: 0.02))
-                    : (isDark
-                          ? Colors.white.withValues(alpha: 0.12)
-                          : Colors.white),
-                borderRadius: BorderRadius.circular(18.r),
-                border: Border.all(
-                  color: char == ""
-                      ? (isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : Colors.black.withValues(alpha: 0.05))
-                      : (isDark
-                            ? Colors.white.withValues(alpha: 0.2)
-                            : Colors.black.withValues(alpha: 0.08)),
-                  width: 1.5,
-                ),
-                boxShadow: char == ""
-                    ? []
-                    : [
-                        BoxShadow(
-                          color: isDark
-                              ? Colors.black.withValues(alpha: 0.3)
-                              : Colors.black.withValues(alpha: 0.08),
-                          blurRadius: 12,
-                          offset: const Offset(0, 6),
+            child:
+                Container(
+                      width: math.max(54.r, 48.0),
+                      height: math.max(54.r, 48.0),
+                      decoration: BoxDecoration(
+                        color: char == ""
+                            ? (isDark
+                                  ? Colors.white.withValues(alpha: 0.02)
+                                  : Colors.black.withValues(alpha: 0.02))
+                            : (isDark
+                                  ? Colors.white.withValues(alpha: 0.12)
+                                  : Colors.white),
+                        borderRadius: BorderRadius.circular(18.r),
+                        border: Border.all(
+                          color: char == ""
+                              ? (isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.05))
+                              : (isDark
+                                    ? Colors.white.withValues(alpha: 0.2)
+                                    : Colors.black.withValues(alpha: 0.08)),
+                          width: 1.5,
                         ),
-                      ],
-              ),
-              child: Center(
-                child: Text(
-                  char,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate800,
-                  ),
-                ),
-              ),
-            )
-            .animate(target: char == "" ? 1 : 0)
-            .scaleXY(
-              begin: 1.0, 
-              end: 0.8, 
-              duration: 250.ms, 
-              curve: Curves.easeOutBack
-            )
-            .fade(
-              begin: 1.0, 
-              end: 0.3, 
-              duration: 200.ms,
-            ),
+                        boxShadow: char == ""
+                            ? []
+                            : [
+                                BoxShadow(
+                                  color: isDark
+                                      ? Colors.black.withValues(alpha: 0.3)
+                                      : Colors.black.withValues(alpha: 0.08),
+                                  blurRadius: 12,
+                                  offset: const Offset(0, 6),
+                                ),
+                              ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          char,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white : AppColors.slate800,
+                          ),
+                        ),
+                      ),
+                    )
+                    .animate(target: char == "" ? 1 : 0)
+                    .scaleXY(
+                      begin: 1.0,
+                      end: 0.8,
+                      duration: 250.ms,
+                      curve: Curves.easeOutBack,
+                    )
+                    .fade(begin: 1.0, end: 0.3, duration: 200.ms),
           ),
         );
       }),
     );
   }
 }
-

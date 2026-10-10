@@ -270,7 +270,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
       });
     }
 
-    final isCompact = MediaQuery.sizeOf(context).height < _kCompactHeightBreakpoint;
+    final isCompact =
+        MediaQuery.sizeOf(context).height < _kCompactHeightBreakpoint;
 
     return Stack(
       children: [
@@ -311,7 +312,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                           fontFamily: 'Outfit',
                                           fontSize: isCompact ? 16.sp : 18.sp,
                                           fontWeight: FontWeight.bold,
-                                          color: isDark ? Colors.white70 : AppColors.slate700,
+                                          color: isDark
+                                              ? Colors.white70
+                                              : AppColors.slate700,
                                         ),
                                       ),
                                     ),
@@ -320,13 +323,19 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                     SizedBox(width: 8.w),
                                     Semantics(
                                       button: true,
-                                      label: context.tr('games.semantic_replay_audio', fallback: 'Replay audio'),
+                                      label: context.tr(
+                                        'games.semantic_replay_audio',
+                                        fallback: 'Replay audio',
+                                      ),
                                       child: ScaleButton(
-                                        onTap: () => di.sl<TtsService>().speak(quest.word!),
+                                        onTap: () => di.sl<TtsService>().speak(
+                                          quest.word!,
+                                        ),
                                         child: Container(
                                           padding: EdgeInsets.all(8.r),
                                           decoration: BoxDecoration(
-                                            color: theme.primaryColor.withValues(alpha: 0.1),
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.1),
                                             shape: BoxShape.circle,
                                           ),
                                           child: Icon(
@@ -354,15 +363,23 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                 color: quest.difficultyTier == 'Rare'
                                     ? Colors.red.withValues(alpha: 0.1)
                                     : (quest.difficultyTier == 'Advanced'
-                                        ? Colors.orange.withValues(alpha: 0.1)
-                                        : Colors.green.withValues(alpha: 0.1)),
+                                          ? Colors.orange.withValues(alpha: 0.1)
+                                          : Colors.green.withValues(
+                                              alpha: 0.1,
+                                            )),
                                 borderRadius: BorderRadius.circular(12.r),
                                 border: Border.all(
                                   color: quest.difficultyTier == 'Rare'
-                                      ? AppColors.gameIncorrect.withValues(alpha: 0.3)
+                                      ? AppColors.gameIncorrect.withValues(
+                                          alpha: 0.3,
+                                        )
                                       : (quest.difficultyTier == 'Advanced'
-                                          ? Colors.orangeAccent.withValues(alpha: 0.3)
-                                          : AppColors.gameCorrect.withValues(alpha: 0.3)),
+                                            ? Colors.orangeAccent.withValues(
+                                                alpha: 0.3,
+                                              )
+                                            : AppColors.gameCorrect.withValues(
+                                                alpha: 0.3,
+                                              )),
                                 ),
                               ),
                               child: Row(
@@ -372,13 +389,13 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                     quest.difficultyTier == 'Rare'
                                         ? Icons.local_fire_department_rounded
                                         : (quest.difficultyTier == 'Advanced'
-                                            ? Icons.star_half_rounded
-                                            : Icons.star_border_rounded),
+                                              ? Icons.star_half_rounded
+                                              : Icons.star_border_rounded),
                                     color: quest.difficultyTier == 'Rare'
                                         ? AppColors.gameIncorrect
                                         : (quest.difficultyTier == 'Advanced'
-                                            ? Colors.orangeAccent
-                                            : AppColors.gameCorrect),
+                                              ? Colors.orangeAccent
+                                              : AppColors.gameCorrect),
                                     size: 14.r,
                                   ),
                                   SizedBox(width: 4.w),
@@ -391,8 +408,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                       color: quest.difficultyTier == 'Rare'
                                           ? AppColors.gameIncorrect
                                           : (quest.difficultyTier == 'Advanced'
-                                              ? Colors.orangeAccent
-                                              : AppColors.gameCorrect),
+                                                ? Colors.orangeAccent
+                                                : AppColors.gameCorrect),
                                       letterSpacing: 1.5,
                                     ),
                                   ),
@@ -410,7 +427,10 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                           duration: const Duration(seconds: 30),
                           onEnd: () {
                             if (!isAnsweredNotifier.value && mounted) {
-                              submitWrongAnswer(quest: quest, userAnswer: _currentInput.value);
+                              submitWrongAnswer(
+                                quest: quest,
+                                userAnswer: _currentInput.value,
+                              );
                             }
                           },
                           builder: (context, value, child) {
@@ -420,10 +440,14 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                             return Column(
                               children: [
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      context.tr('games.speed_bonus_caps', fallback: 'SPEED BONUS'),
+                                      context.tr(
+                                        'games.speed_bonus_caps',
+                                        fallback: 'SPEED BONUS',
+                                      ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 10.sp,
@@ -449,7 +473,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                 LinearProgressIndicator(
                                   value: value / 30.0,
                                   backgroundColor: color.withValues(alpha: 0.1),
-                                  valueColor: AlwaysStoppedAnimation<Color>(color),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    color,
+                                  ),
                                   minHeight: 4.h,
                                   borderRadius: BorderRadius.circular(2.r),
                                 ),
@@ -474,7 +500,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                             onBackspace: _onBackspace,
                             onClear: _onClear,
                           );
-                        }
+                        },
                       ),
                       if (state.isHintVisible) ...[
                         SizedBox(height: isCompact ? 12.h : 20.h),
@@ -494,7 +520,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                             isDark: isDark,
                             onCharTap: _onCharTap,
                           );
-                        }
+                        },
                       ),
                       SizedBox(height: isCompact ? 16.h : 32.h),
                       if (!isAnsweredNotifier.value) ...[
@@ -514,7 +540,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                               child: Opacity(
                                 opacity: canSubmit ? 1.0 : 0.5,
                                 child: ScaleButton(
-                                  onTap: canSubmit ? () => _submit(quest) : null,
+                                  onTap: canSubmit
+                                      ? () => _submit(quest)
+                                      : null,
                                   child: Container(
                                     width: double.infinity,
                                     constraints: const BoxConstraints(
@@ -530,13 +558,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                       ),
                                       boxShadow: [
                                         BoxShadow(
-                                          color: theme.primaryColor
-                                              .withValues(alpha: 0.3),
-                                          blurRadius: isCompact ? 10 : 20,
-                                          offset: Offset(
-                                            0,
-                                            isCompact ? 5 : 10,
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.3,
                                           ),
+                                          blurRadius: isCompact ? 10 : 20,
+                                          offset: Offset(0, isCompact ? 5 : 10),
                                         ),
                                       ],
                                     ),

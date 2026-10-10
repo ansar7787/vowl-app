@@ -38,11 +38,7 @@ class GourmetOrderBanquetHeader extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.room_service_rounded,
-                color: color,
-                size: 16.r,
-              ),
+              Icon(Icons.room_service_rounded, color: color, size: 16.r),
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -170,17 +170,33 @@ class _SignUpViewState extends State<SignUpView> {
         builder: (context) {
           final bgColor = Theme.of(context).scaffoldBackgroundColor;
 
-          final signUpPassword = context.select((SignUpCubit c) => c.state.password);
+          final signUpPassword = context.select(
+            (SignUpCubit c) => c.state.password,
+          );
           final signUpName = context.select((SignUpCubit c) => c.state.name);
-          final signUpSubmitting = context.select((SignUpCubit c) => c.state.isSubmitting);
-          final signUpSuccess = context.select((SignUpCubit c) => c.state.isSuccess);
+          final signUpSubmitting = context.select(
+            (SignUpCubit c) => c.state.isSubmitting,
+          );
+          final signUpSuccess = context.select(
+            (SignUpCubit c) => c.state.isSuccess,
+          );
 
-          final loginSubmitting = context.select((LoginCubit c) => c.state.isSubmitting);
-          final loginSuccess = context.select((LoginCubit c) => c.state.isSuccess);
+          final loginSubmitting = context.select(
+            (LoginCubit c) => c.state.isSubmitting,
+          );
+          final loginSuccess = context.select(
+            (LoginCubit c) => c.state.isSuccess,
+          );
 
-          final isLoading = signUpSubmitting || signUpSuccess || loginSubmitting || loginSuccess;
+          final isLoading =
+              signUpSubmitting ||
+              signUpSuccess ||
+              loginSubmitting ||
+              loginSuccess;
 
-          final contrastColor = MeshGradientBackground.getContrastColor(context);
+          final contrastColor = MeshGradientBackground.getContrastColor(
+            context,
+          );
           final secondaryColor = contrastColor.withValues(alpha: 0.6);
 
           return LoadingOverlay(
@@ -202,7 +218,8 @@ class _SignUpViewState extends State<SignUpView> {
                         listenable: _passwordFocus,
                         builder: (context, _) {
                           Color? auraColor;
-                          if (_passwordFocus.hasFocus && signUpPassword.isNotEmpty) {
+                          if (_passwordFocus.hasFocus &&
+                              signUpPassword.isNotEmpty) {
                             if (signUpPassword.length < 6) {
                               auraColor = Colors.red;
                             } else if (signUpPassword.length < 10) {
@@ -211,153 +228,141 @@ class _SignUpViewState extends State<SignUpView> {
                               auraColor = Colors.green;
                             }
                           }
-                          return MeshGradientBackground(
-                            auraColor: auraColor,
-                          );
+                          return MeshGradientBackground(auraColor: auraColor);
                         },
                       ),
-                          SafeArea(
-                            child: LayoutBuilder(
-                              builder: (context, constraints) {
-                                return SingleChildScrollView(
-                                  physics: const BouncingScrollPhysics(),
-                                  padding: EdgeInsets.only(
-                                    bottom:
-                                        MediaQuery.of(
-                                          context,
-                                        ).viewInsets.bottom +
-                                        20.h,
+                      SafeArea(
+                        child: LayoutBuilder(
+                          builder: (context, constraints) {
+                            return SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              padding: EdgeInsets.only(
+                                bottom:
+                                    MediaQuery.of(context).viewInsets.bottom +
+                                    20.h,
+                              ),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  minHeight: constraints.maxHeight,
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                    vertical: 10.h,
                                   ),
-                                  child: ConstrainedBox(
-                                    constraints: BoxConstraints(
-                                      minHeight: constraints.maxHeight,
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 24.w,
-                                        vertical: 10.h,
-                                      ),
-                                      child: Form(
-                                        key: _formKey,
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            // --- Header: Brand (Perfectly Centered) ---
-                                            Hero(
-                                              tag: 'auth_title',
-                                              child: Material(
-                                                color: Colors.transparent,
-                                                child: FittedBox(
-                                                  fit: BoxFit.scaleDown,
-                                                  child: Text(
-                                                    'Vowl',
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 48.sp,
-                                                      fontWeight:
-                                                          FontWeight.w900,
-                                                      color: const Color(
-                                                        0xFF6366F1,
-                                                      ), // Solid premium brand color
-                                                      letterSpacing: -1.5,
-                                                      height: 1.0,
-                                                    ),
-                                                  ),
+                                  child: Form(
+                                    key: _formKey,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        // --- Header: Brand (Perfectly Centered) ---
+                                        Hero(
+                                          tag: 'auth_title',
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: Text(
+                                                'Vowl',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 48.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: const Color(
+                                                    0xFF6366F1,
+                                                  ), // Solid premium brand color
+                                                  letterSpacing: -1.5,
+                                                  height: 1.0,
                                                 ),
                                               ),
                                             ),
-                                            SizedBox(
-                                              height: 36.h,
-                                            ), // Perfect premium gap without disconnecting the UI
-                                            // --- Interactive Form Card ---
-                                            Stack(
-                                              clipBehavior: Clip.none,
-                                              alignment: Alignment.topCenter,
-                                              children: [
-                                                // The card itself, pushed down slightly so the mascot can straddle the top border
-                                                Padding(
-                                                  padding: EdgeInsets.only(
-                                                    top: 30.r,
-                                                  ),
-                                                  child: HolographicCard(
-                                                    child: Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .stretch,
-                                                      children: [
-                                                        ValueListenableBuilder<
-                                                          int
-                                                        >(
-                                                          valueListenable:
-                                                              _nameShake,
-                                                          builder:
-                                                              (
-                                                                context,
-                                                                shakeCount,
-                                                                child,
-                                                              ) {
-                                                                return ShakeableWrapper(
-                                                                  shakeCount:
-                                                                      shakeCount,
-                                                                  child: child!,
-                                                                );
-                                                              },
-                                                          child: SignUpNameInput(
-                                                            fieldKey: _nameKey,
-                                                            focusNode:
-                                                                _nameFocus,
-                                                            onSubmitted: () =>
-                                                                _emailFocus
-                                                                    .requestFocus(),
-                                                          ),
-                                                        ),
-                                                        SizedBox(height: 16.h),
-                                                        ValueListenableBuilder<
-                                                          int
-                                                        >(
-                                                          valueListenable:
-                                                              _emailShake,
-                                                          builder:
-                                                              (
-                                                                context,
-                                                                shakeCount,
-                                                                child,
-                                                              ) {
-                                                                return ShakeableWrapper(
-                                                                  shakeCount:
-                                                                      shakeCount,
-                                                                  child: child!,
-                                                                );
-                                                              },
-                                                          child: SignUpEmailInput(
-                                                            fieldKey: _emailKey,
-                                                            focusNode:
-                                                                _emailFocus,
-                                                            onSubmitted: () =>
-                                                                _passwordFocus
-                                                                    .requestFocus(),
-                                                          ),
-                                                        ),
-                                                        SizedBox(height: 16.h),
-                                                        ValueListenableBuilder<
-                                                          int
-                                                        >(
-                                                          valueListenable:
-                                                              _passwordShake,
-                                                          builder:
-                                                              (
-                                                                context,
-                                                                shakeCount,
-                                                                child,
-                                                              ) {
-                                                                return ShakeableWrapper(
-                                                                  shakeCount:
-                                                                      shakeCount,
-                                                                  child: child!,
-                                                                );
-                                                              },
-                                                          child: SignUpPasswordInput(
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 36.h,
+                                        ), // Perfect premium gap without disconnecting the UI
+                                        // --- Interactive Form Card ---
+                                        Stack(
+                                          clipBehavior: Clip.none,
+                                          alignment: Alignment.topCenter,
+                                          children: [
+                                            // The card itself, pushed down slightly so the mascot can straddle the top border
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                top: 30.r,
+                                              ),
+                                              child: HolographicCard(
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment
+                                                          .stretch,
+                                                  children: [
+                                                    ValueListenableBuilder<int>(
+                                                      valueListenable:
+                                                          _nameShake,
+                                                      builder:
+                                                          (
+                                                            context,
+                                                            shakeCount,
+                                                            child,
+                                                          ) {
+                                                            return ShakeableWrapper(
+                                                              shakeCount:
+                                                                  shakeCount,
+                                                              child: child!,
+                                                            );
+                                                          },
+                                                      child: SignUpNameInput(
+                                                        fieldKey: _nameKey,
+                                                        focusNode: _nameFocus,
+                                                        onSubmitted: () =>
+                                                            _emailFocus
+                                                                .requestFocus(),
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 16.h),
+                                                    ValueListenableBuilder<int>(
+                                                      valueListenable:
+                                                          _emailShake,
+                                                      builder:
+                                                          (
+                                                            context,
+                                                            shakeCount,
+                                                            child,
+                                                          ) {
+                                                            return ShakeableWrapper(
+                                                              shakeCount:
+                                                                  shakeCount,
+                                                              child: child!,
+                                                            );
+                                                          },
+                                                      child: SignUpEmailInput(
+                                                        fieldKey: _emailKey,
+                                                        focusNode: _emailFocus,
+                                                        onSubmitted: () =>
+                                                            _passwordFocus
+                                                                .requestFocus(),
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 16.h),
+                                                    ValueListenableBuilder<int>(
+                                                      valueListenable:
+                                                          _passwordShake,
+                                                      builder:
+                                                          (
+                                                            context,
+                                                            shakeCount,
+                                                            child,
+                                                          ) {
+                                                            return ShakeableWrapper(
+                                                              shakeCount:
+                                                                  shakeCount,
+                                                              child: child!,
+                                                            );
+                                                          },
+                                                      child:
+                                                          SignUpPasswordInput(
                                                             fieldKey:
                                                                 _passwordKey,
                                                             focusNode:
@@ -367,334 +372,319 @@ class _SignUpViewState extends State<SignUpView> {
                                                                   context,
                                                                 ),
                                                           ),
-                                                        ),
-                                                        SizedBox(height: 24.h),
-                                                        ValueListenableBuilder<
-                                                          int
-                                                        >(
-                                                          valueListenable:
-                                                              _legalShake,
-                                                          builder:
-                                                              (
+                                                    ),
+                                                    SizedBox(height: 24.h),
+                                                    ValueListenableBuilder<int>(
+                                                      valueListenable:
+                                                          _legalShake,
+                                                      builder:
+                                                          (
+                                                            context,
+                                                            shakeCount,
+                                                            child,
+                                                          ) {
+                                                            return ShakeableWrapper(
+                                                              shakeCount:
+                                                                  shakeCount,
+                                                              child: child!,
+                                                            );
+                                                          },
+                                                      child: FormField<bool>(
+                                                        key: _legalKey,
+                                                        initialValue: false,
+                                                        validator: (value) {
+                                                          if (value != true) {
+                                                            return context.tr(
+                                                              'auth.legal_consent_required',
+                                                              fallback:
+                                                                  'You must agree to the Terms & Privacy Policy',
+                                                            );
+                                                          }
+                                                          return null;
+                                                        },
+                                                        builder: (state) {
+                                                          final isDark =
+                                                              Theme.of(
                                                                 context,
-                                                                shakeCount,
-                                                                child,
-                                                              ) {
-                                                                return ShakeableWrapper(
-                                                                  shakeCount:
-                                                                      shakeCount,
-                                                                  child: child!,
-                                                                );
-                                                              },
-                                                          child: FormField<bool>(
-                                                            key: _legalKey,
-                                                            initialValue: false,
-                                                            validator: (value) {
-                                                              if (value !=
-                                                                  true) {
-                                                                return context.tr(
-                                                                  'auth.legal_consent_required',
-                                                                  fallback:
-                                                                      'You must agree to the Terms & Privacy Policy',
-                                                                );
-                                                              }
-                                                              return null;
-                                                            },
-                                                            builder: (state) {
-                                                              final isDark =
-                                                                  Theme.of(
-                                                                    context,
-                                                                  ).brightness ==
-                                                                  Brightness
-                                                                      .dark;
-                                                              return Column(
+                                                              ).brightness ==
+                                                              Brightness.dark;
+                                                          return Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Row(
                                                                 crossAxisAlignment:
                                                                     CrossAxisAlignment
                                                                         .start,
                                                                 children: [
-                                                                  Row(
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      SizedBox(
-                                                                        width:
-                                                                            24.r,
-                                                                        height:
-                                                                            24.r,
-                                                                        child: Checkbox(
-                                                                          value:
-                                                                              state.value,
-                                                                          onChanged: (val) {
-                                                                            state.didChange(
-                                                                              val,
-                                                                            );
-                                                                            _acceptedLegal.value =
-                                                                                val ??
-                                                                                false;
-                                                                          },
-                                                                          activeColor: const Color(
+                                                                  SizedBox(
+                                                                    width: 24.r,
+                                                                    height:
+                                                                        24.r,
+                                                                    child: Checkbox(
+                                                                      value: state
+                                                                          .value,
+                                                                      onChanged: (val) {
+                                                                        state.didChange(
+                                                                          val,
+                                                                        );
+                                                                        _acceptedLegal.value =
+                                                                            val ??
+                                                                            false;
+                                                                      },
+                                                                      activeColor:
+                                                                          const Color(
                                                                             0xFF6366F1,
                                                                           ),
-                                                                          shape: RoundedRectangleBorder(
-                                                                            borderRadius: BorderRadius.circular(
+                                                                      shape: RoundedRectangleBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(
                                                                               6.r,
                                                                             ),
-                                                                          ),
-                                                                          side: BorderSide(
-                                                                            color:
-                                                                                state.hasError
-                                                                                ? Colors.red
-                                                                                : (isDark
-                                                                                      ? Colors.white54
-                                                                                      : Colors.black54),
-                                                                          ),
-                                                                        ),
                                                                       ),
-                                                                      SizedBox(
-                                                                        width:
-                                                                            12.w,
+                                                                      side: BorderSide(
+                                                                        color:
+                                                                            state.hasError
+                                                                            ? Colors.red
+                                                                            : (isDark
+                                                                                  ? Colors.white54
+                                                                                  : Colors.black54),
                                                                       ),
-                                                                      Expanded(
-                                                                        child: GestureDetector(
-                                                                          onTap: () {
-                                                                            state.didChange(
-                                                                              !(state.value ??
-                                                                                  false),
-                                                                            );
-                                                                            _acceptedLegal.value =
-                                                                                state.value ??
-                                                                                false;
-                                                                          },
-                                                                          child: Text.rich(
-                                                                            TextSpan(
-                                                                              children: [
-                                                                                TextSpan(
-                                                                                  text: context.tr(
-                                                                                    'auth.i_agree_to',
-                                                                                    fallback: 'I agree to the ',
-                                                                                  ),
-                                                                                  style: TextStyle(
-                                                                                    fontFamily: 'Outfit',
-                                                                                    color: isDark
-                                                                                        ? Colors.white70
-                                                                                        : Colors.black87,
-                                                                                    fontSize: 14.sp,
-                                                                                  ),
-                                                                                ),
-                                                                                TextSpan(
-                                                                                  text: context.tr(
-                                                                                    'auth.terms_of_service',
-                                                                                    fallback: 'Terms of Service',
-                                                                                  ),
-                                                                                  style: TextStyle(
-                                                                                    fontFamily: 'Outfit',
-                                                                                    color: const Color(
-                                                                                      0xFF6366F1,
-                                                                                    ),
-                                                                                    fontWeight: FontWeight.bold,
-                                                                                    fontSize: 14.sp,
-                                                                                  ),
-                                                                                  recognizer: TapGestureRecognizer()
-                                                                                    ..onTap = () async {
-                                                                                      final url = Uri.parse(
-                                                                                        context.tr(
-                                                                                          'settings.terms_url',
-                                                                                          fallback: 'https://vowl-official.github.io/vowl-legal/terms.html',
-                                                                                        ),
-                                                                                      );
-                                                                                      if (await canLaunchUrl(
-                                                                                        url,
-                                                                                      )) {
-                                                                                        await launchUrl(
-                                                                                          url,
-                                                                                          mode: LaunchMode.externalApplication,
-                                                                                        );
-                                                                                      }
-                                                                                    },
-                                                                                ),
-                                                                                TextSpan(
-                                                                                  text: context.tr(
-                                                                                    'auth.and',
-                                                                                    fallback: ' and ',
-                                                                                  ),
-                                                                                  style: TextStyle(
-                                                                                    fontFamily: 'Outfit',
-                                                                                    color: isDark
-                                                                                        ? Colors.white70
-                                                                                        : Colors.black87,
-                                                                                    fontSize: 14.sp,
-                                                                                  ),
-                                                                                ),
-                                                                                TextSpan(
-                                                                                  text: context.tr(
-                                                                                    'auth.privacy_policy',
-                                                                                    fallback: 'Privacy Policy',
-                                                                                  ),
-                                                                                  style: TextStyle(
-                                                                                    fontFamily: 'Outfit',
-                                                                                    color: const Color(
-                                                                                      0xFF6366F1,
-                                                                                    ),
-                                                                                    fontWeight: FontWeight.bold,
-                                                                                    fontSize: 14.sp,
-                                                                                  ),
-                                                                                  recognizer: TapGestureRecognizer()
-                                                                                    ..onTap = () async {
-                                                                                      final url = Uri.parse(
-                                                                                        context.tr(
-                                                                                          'settings.privacy_url',
-                                                                                          fallback: 'https://vowl-official.github.io/vowl-legal/privacy.html',
-                                                                                        ),
-                                                                                      );
-                                                                                      if (await canLaunchUrl(
-                                                                                        url,
-                                                                                      )) {
-                                                                                        await launchUrl(
-                                                                                          url,
-                                                                                          mode: LaunchMode.externalApplication,
-                                                                                        );
-                                                                                      }
-                                                                                    },
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
+                                                                    ),
                                                                   ),
-                                                                  if (state
-                                                                      .hasError) ...[
-                                                                    SizedBox(
-                                                                      height:
-                                                                          8.h,
-                                                                    ),
-                                                                    Text(
-                                                                      state
-                                                                          .errorText!,
-                                                                      style: TextStyle(
-                                                                        fontFamily:
-                                                                            'Outfit',
-                                                                        color: Colors
-                                                                            .red,
-                                                                        fontSize:
-                                                                            12.sp,
+                                                                  SizedBox(
+                                                                    width: 12.w,
+                                                                  ),
+                                                                  Expanded(
+                                                                    child: GestureDetector(
+                                                                      onTap: () {
+                                                                        state.didChange(
+                                                                          !(state.value ??
+                                                                              false),
+                                                                        );
+                                                                        _acceptedLegal.value =
+                                                                            state.value ??
+                                                                            false;
+                                                                      },
+                                                                      child: Text.rich(
+                                                                        TextSpan(
+                                                                          children: [
+                                                                            TextSpan(
+                                                                              text: context.tr(
+                                                                                'auth.i_agree_to',
+                                                                                fallback: 'I agree to the ',
+                                                                              ),
+                                                                              style: TextStyle(
+                                                                                fontFamily: 'Outfit',
+                                                                                color: isDark
+                                                                                    ? Colors.white70
+                                                                                    : Colors.black87,
+                                                                                fontSize: 14.sp,
+                                                                              ),
+                                                                            ),
+                                                                            TextSpan(
+                                                                              text: context.tr(
+                                                                                'auth.terms_of_service',
+                                                                                fallback: 'Terms of Service',
+                                                                              ),
+                                                                              style: TextStyle(
+                                                                                fontFamily: 'Outfit',
+                                                                                color: const Color(
+                                                                                  0xFF6366F1,
+                                                                                ),
+                                                                                fontWeight: FontWeight.bold,
+                                                                                fontSize: 14.sp,
+                                                                              ),
+                                                                              recognizer: TapGestureRecognizer()
+                                                                                ..onTap = () async {
+                                                                                  final url = Uri.parse(
+                                                                                    context.tr(
+                                                                                      'settings.terms_url',
+                                                                                      fallback: 'https://vowl-official.github.io/vowl-legal/terms.html',
+                                                                                    ),
+                                                                                  );
+                                                                                  if (await canLaunchUrl(
+                                                                                    url,
+                                                                                  )) {
+                                                                                    await launchUrl(
+                                                                                      url,
+                                                                                      mode: LaunchMode.externalApplication,
+                                                                                    );
+                                                                                  }
+                                                                                },
+                                                                            ),
+                                                                            TextSpan(
+                                                                              text: context.tr(
+                                                                                'auth.and',
+                                                                                fallback: ' and ',
+                                                                              ),
+                                                                              style: TextStyle(
+                                                                                fontFamily: 'Outfit',
+                                                                                color: isDark
+                                                                                    ? Colors.white70
+                                                                                    : Colors.black87,
+                                                                                fontSize: 14.sp,
+                                                                              ),
+                                                                            ),
+                                                                            TextSpan(
+                                                                              text: context.tr(
+                                                                                'auth.privacy_policy',
+                                                                                fallback: 'Privacy Policy',
+                                                                              ),
+                                                                              style: TextStyle(
+                                                                                fontFamily: 'Outfit',
+                                                                                color: const Color(
+                                                                                  0xFF6366F1,
+                                                                                ),
+                                                                                fontWeight: FontWeight.bold,
+                                                                                fontSize: 14.sp,
+                                                                              ),
+                                                                              recognizer: TapGestureRecognizer()
+                                                                                ..onTap = () async {
+                                                                                  final url = Uri.parse(
+                                                                                    context.tr(
+                                                                                      'settings.privacy_url',
+                                                                                      fallback: 'https://vowl-official.github.io/vowl-legal/privacy.html',
+                                                                                    ),
+                                                                                  );
+                                                                                  if (await canLaunchUrl(
+                                                                                    url,
+                                                                                  )) {
+                                                                                    await launchUrl(
+                                                                                      url,
+                                                                                      mode: LaunchMode.externalApplication,
+                                                                                    );
+                                                                                  }
+                                                                                },
+                                                                            ),
+                                                                          ],
+                                                                        ),
                                                                       ),
                                                                     ),
-                                                                  ],
+                                                                  ),
                                                                 ],
-                                                              );
-                                                            },
-                                                          ),
-                                                        ),
-                                                        SizedBox(height: 32.h),
-                                                        SignUpButton(
-                                                          onPressed: () =>
-                                                              _submitForm(
-                                                                context,
                                                               ),
-                                                        ),
-                                                        SizedBox(height: 16.h),
-                                                        const GoogleLoginButton(),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ), // Close Padding
-                                                Positioned(
-                                                  top: 0,
-                                                  child: VowlyAuthCompanion(
-                                                    nameFocus: _nameFocus,
-                                                    nameValue: signUpName,
-                                                    emailFocus: _emailFocus,
-                                                    passwordFocus:
-                                                        _passwordFocus,
-                                                    size: 60,
-                                                    isSignup: true,
-                                                  ),
-                                                ),
-                                              ],
-                                            ), // Close Stack
-                                            SizedBox(height: 16.h),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                // FittedBox ensures text scales
-                                                // down on narrow devices instead
-                                                // of overflowing.
-                                                Flexible(
-                                                  child: FittedBox(
-                                                    fit: BoxFit.scaleDown,
-                                                    alignment:
-                                                        Alignment.centerLeft,
-                                                    child: Text(
-                                                      context.tr(
-                                                        'auth.have_account_prompt',
-                                                        fallback:
-                                                            'Already have an account?',
-                                                      ),
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        color: secondaryColor,
-                                                        fontWeight:
-                                                            FontWeight.w600,
+                                                              if (state
+                                                                  .hasError) ...[
+                                                                SizedBox(
+                                                                  height: 8.h,
+                                                                ),
+                                                                Text(
+                                                                  state
+                                                                      .errorText!,
+                                                                  style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Outfit',
+                                                                    color: Colors
+                                                                        .red,
+                                                                    fontSize:
+                                                                        12.sp,
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ],
+                                                          );
+                                                        },
                                                       ),
                                                     ),
-                                                  ),
+                                                    SizedBox(height: 32.h),
+                                                    SignUpButton(
+                                                      onPressed: () =>
+                                                          _submitForm(context),
+                                                    ),
+                                                    SizedBox(height: 16.h),
+                                                    const GoogleLoginButton(),
+                                                  ],
                                                 ),
-                                                TextButton(
-                                                  onPressed: () {
-                                                    if (context.canPop()) {
-                                                      context.pop();
-                                                    } else {
-                                                      context.go(
-                                                        AppRouter.loginRoute,
-                                                      );
-                                                    }
-                                                  },
-                                                  style: TextButton.styleFrom(
-                                                    minimumSize: const Size(
-                                                      48,
-                                                      48,
-                                                    ),
-                                                    splashFactory:
-                                                        NoSplash.splashFactory,
-                                                    overlayColor:
-                                                        Colors.transparent,
-                                                  ),
-                                                  child: Text(
-                                                    context.tr(
-                                                      'auth.login',
-                                                      fallback: 'Log In',
-                                                    ),
-                                                    style: const TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      color:
-                                                          AppColors.indigo500,
-                                                      fontWeight:
-                                                          FontWeight.w900,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
+                                              ),
+                                            ), // Close Padding
+                                            Positioned(
+                                              top: 0,
+                                              child: VowlyAuthCompanion(
+                                                nameFocus: _nameFocus,
+                                                nameValue: signUpName,
+                                                emailFocus: _emailFocus,
+                                                passwordFocus: _passwordFocus,
+                                                size: 60,
+                                                isSignup: true,
+                                              ),
                                             ),
-                                            SizedBox(height: 24.h),
+                                          ],
+                                        ), // Close Stack
+                                        SizedBox(height: 16.h),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            // FittedBox ensures text scales
+                                            // down on narrow devices instead
+                                            // of overflowing.
+                                            Flexible(
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                alignment: Alignment.centerLeft,
+                                                child: Text(
+                                                  context.tr(
+                                                    'auth.have_account_prompt',
+                                                    fallback:
+                                                        'Already have an account?',
+                                                  ),
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    color: secondaryColor,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            TextButton(
+                                              onPressed: () {
+                                                if (context.canPop()) {
+                                                  context.pop();
+                                                } else {
+                                                  context.go(
+                                                    AppRouter.loginRoute,
+                                                  );
+                                                }
+                                              },
+                                              style: TextButton.styleFrom(
+                                                minimumSize: const Size(48, 48),
+                                                splashFactory:
+                                                    NoSplash.splashFactory,
+                                                overlayColor:
+                                                    Colors.transparent,
+                                              ),
+                                              child: Text(
+                                                context.tr(
+                                                  'auth.login',
+                                                  fallback: 'Log In',
+                                                ),
+                                                style: const TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  color: AppColors.indigo500,
+                                                  fontWeight: FontWeight.w900,
+                                                ),
+                                              ),
+                                            ),
                                           ],
                                         ),
-                                      ),
+                                        SizedBox(height: 24.h),
+                                      ],
                                     ),
                                   ),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
-              );
+              ),
+            ),
+          );
         },
       ),
     );
@@ -712,4 +702,3 @@ class _SignUpViewState extends State<SignUpView> {
     );
   }
 }
-

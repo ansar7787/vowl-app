@@ -105,8 +105,8 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
       _rotation.value = 3.14;
       String? userAnswer =
           (quest.options != null && index < quest.options!.length)
-              ? quest.options![index]
-              : null;
+          ? quest.options![index]
+          : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
@@ -116,7 +116,8 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      String? userAnswer = (_selectedReflection.value != -1 &&
+      String? userAnswer =
+          (_selectedReflection.value != -1 &&
               quest.options != null &&
               _selectedReflection.value < quest.options!.length)
           ? quest.options![_selectedReflection.value]

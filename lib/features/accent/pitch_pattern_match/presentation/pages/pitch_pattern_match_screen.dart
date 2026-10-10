@@ -144,7 +144,10 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: quest.options?[index] ?? '[Mistake]');
+      submitWrongAnswer(
+        quest: _lastQuest!,
+        userAnswer: quest.options?[index] ?? '[Mistake]',
+      );
     }
   }
 
@@ -383,11 +386,19 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                                           _sliderValue.value,
                                                       onSubmitChoice:
                                                           (index, correct) {
-                                                            _submitChoice(index, correct, quest);
+                                                            _submitChoice(
+                                                              index,
+                                                              correct,
+                                                              quest,
+                                                            );
                                                           },
                                                       onSliderUpdate:
                                                           (value, correct) {
-                                                            _onSliderUpdate(value, correct, quest);
+                                                            _onSliderUpdate(
+                                                              value,
+                                                              correct,
+                                                              quest,
+                                                            );
                                                           },
                                                     ),
                                                     SizedBox(height: gapBottom),
@@ -426,10 +437,16 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                             primaryColor: theme.primaryColor,
                                             isPositioned: false,
                                             onConfirmed: () {
-                                              _submitVerbalEvaluation(true, quest);
+                                              _submitVerbalEvaluation(
+                                                true,
+                                                quest,
+                                              );
                                             },
                                             onSkipped: () {
-                                              _submitVerbalEvaluation(false, quest);
+                                              _submitVerbalEvaluation(
+                                                false,
+                                                quest,
+                                              );
                                             },
                                           ),
 

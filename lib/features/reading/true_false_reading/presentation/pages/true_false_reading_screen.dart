@@ -232,9 +232,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                 child: EvidenceHighlightWrapper(
                                   passage: quest.passage ?? "",
                                   evidenceWords: [
-                                    quest.evidenceLine ??
-                                        quest.passage ??
-                                        ""
+                                    quest.evidenceLine ?? quest.passage ?? "",
                                   ],
                                   primaryColor: theme.primaryColor,
                                   onCorrectHighlight: () =>

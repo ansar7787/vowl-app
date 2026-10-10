@@ -188,9 +188,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                               ),
                             ),
                           ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(height: 60.h),
-                          ),
+                          SliverToBoxAdapter(child: SizedBox(height: 60.h)),
                           SliverToBoxAdapter(
                             child: SizedBox(
                               height:

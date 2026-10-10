@@ -77,8 +77,16 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
     }
   }
 
-  void _onOptionTap(int index, bool isCorrect, ReadingQuest quest, String displayPassage) {
-    if (_showEvidenceStep.value || _pendingSelectedIndex.value != null || isAnsweredNotifier.value) return;
+  void _onOptionTap(
+    int index,
+    bool isCorrect,
+    ReadingQuest quest,
+    String displayPassage,
+  ) {
+    if (_showEvidenceStep.value ||
+        _pendingSelectedIndex.value != null ||
+        isAnsweredNotifier.value)
+      return;
 
     _pendingSelectedIndex.value = index;
 
@@ -89,8 +97,11 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
       // Only show evidence step if the evidence string actually exists exactly in the passage.
       // Otherwise, the fallback bag-of-words highlighting forces finding every disjointed word,
       // which is pedagogically flawed and frustrating for non-exact matches.
-      final evidenceStr = (quest.evidenceLine ?? quest.correctAnswer ?? '').trim();
-      final hasExactMatch = displayPassage.toLowerCase().contains(evidenceStr.toLowerCase());
+      final evidenceStr = (quest.evidenceLine ?? quest.correctAnswer ?? '')
+          .trim();
+      final hasExactMatch = displayPassage.toLowerCase().contains(
+        evidenceStr.toLowerCase(),
+      );
 
       if (evidenceStr.isEmpty || displayPassage.isEmpty || !hasExactMatch) {
         _submitFinalAnswer(true, quest);
@@ -232,8 +243,10 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                 children: [
                                   SizedBox(height: 16.h),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Flexible(
                                         child: ReadAndAnswerInstruction(
@@ -268,7 +281,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                       final isOptionCorrect =
                                           e.key == quest.correctAnswerIndex ||
                                           e.value.trim().toLowerCase() ==
-                                              (quest.correctAnswer?.trim().toLowerCase() ??
+                                              (quest.correctAnswer
+                                                      ?.trim()
+                                                      .toLowerCase() ??
                                                   '');
 
                                       return ReadAndAnswerBuoyOption(
@@ -277,8 +292,12 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                         isCorrectOption: isOptionCorrect,
                                         color: theme.primaryColor,
                                         isDark: isDark,
-                                        isAnswered: isAnsweredNotifier.value || (_pendingSelectedIndex.value != null),
-                                        selectedIndex: _pendingSelectedIndex.value,
+                                        isAnswered:
+                                            isAnsweredNotifier.value ||
+                                            (_pendingSelectedIndex.value !=
+                                                null),
+                                        selectedIndex:
+                                            _pendingSelectedIndex.value,
                                         onTap: () => _onOptionTap(
                                           e.key,
                                           isOptionCorrect,
@@ -287,46 +306,52 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                         ),
                                       );
                                     }),
-                                  
+
                                   // Give space if Phase 2 is hidden, otherwise let Phase 2 dictate height
-                                  if (!_showEvidenceStep.value) 
+                                  if (!_showEvidenceStep.value)
                                     SizedBox(height: 120.h),
-                                  
-                                  if (_showEvidenceStep.value && !isAnsweredNotifier.value)
+
+                                  if (_showEvidenceStep.value &&
+                                      !isAnsweredNotifier.value)
                                     SizedBox(height: 32.h),
                                 ],
                               ),
                             ),
                           ),
 
-                          if (_showEvidenceStep.value && !isAnsweredNotifier.value)
+                          if (_showEvidenceStep.value &&
+                              !isAnsweredNotifier.value)
                             SliverToBoxAdapter(
                               child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: EvidenceHighlightWrapper(
-                                  passage: displayPassage,
-                                  evidenceWords: [
-                                    quest.evidenceLine ??
-                                        quest.correctAnswer ??
-                                        ''
-                                  ],
-                                  primaryColor: theme.primaryColor,
-                                  onCorrectHighlight: () =>
-                                      _submitFinalAnswer(true, quest),
-                                  instruction: 'Tap the words that prove your answer',
-                                  isPositioned: false,
-                                ).animate().fadeIn(
-                                  duration: 400.ms,
-                                  curve: Curves.easeOut,
-                                ),
+                                child:
+                                    EvidenceHighlightWrapper(
+                                      passage: displayPassage,
+                                      evidenceWords: [
+                                        quest.evidenceLine ??
+                                            quest.correctAnswer ??
+                                            '',
+                                      ],
+                                      primaryColor: theme.primaryColor,
+                                      onCorrectHighlight: () =>
+                                          _submitFinalAnswer(true, quest),
+                                      instruction:
+                                          'Tap the words that prove your answer',
+                                      isPositioned: false,
+                                    ).animate().fadeIn(
+                                      duration: 400.ms,
+                                      curve: Curves.easeOut,
+                                    ),
                               ),
                             ),
 
                           if (_showEvidenceStep.value)
                             SliverToBoxAdapter(
                               child: SizedBox(
-                                height: MediaQuery.of(context).viewInsets.bottom > 0
-                                    ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                                height:
+                                    MediaQuery.of(context).viewInsets.bottom > 0
+                                    ? MediaQuery.of(context).viewInsets.bottom +
+                                          40.h
                                     : 120.h,
                               ),
                             ),

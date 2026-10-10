@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-
 class ReadingInferenceFoggyMirror extends StatelessWidget {
   final String passage;
   final Color color;
@@ -73,27 +72,28 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
           if (rubPoints.isEmpty && !isAnswered)
             Positioned.fill(
               child: Center(
-                child: Icon(
-                  Icons.touch_app_rounded,
-                  size: 48.r,
-                  color: isDark ? Colors.white70 : Colors.black54,
-                )
-                    .animate(onPlay: (c) => c.repeat())
-                    .moveX(
-                      begin: -40.w,
-                      end: 40.w,
-                      duration: 1.seconds,
-                      curve: Curves.easeInOut,
-                    )
-                    .fade(begin: 0.2, end: 1.0)
-                    .then()
-                    .moveX(
-                      begin: 40.w,
-                      end: -40.w,
-                      duration: 1.seconds,
-                      curve: Curves.easeInOut,
-                    )
-                    .fade(begin: 1.0, end: 0.2),
+                child:
+                    Icon(
+                          Icons.touch_app_rounded,
+                          size: 48.r,
+                          color: isDark ? Colors.white70 : Colors.black54,
+                        )
+                        .animate(onPlay: (c) => c.repeat())
+                        .moveX(
+                          begin: -40.w,
+                          end: 40.w,
+                          duration: 1.seconds,
+                          curve: Curves.easeInOut,
+                        )
+                        .fade(begin: 0.2, end: 1.0)
+                        .then()
+                        .moveX(
+                          begin: 40.w,
+                          end: -40.w,
+                          duration: 1.seconds,
+                          curve: Curves.easeInOut,
+                        )
+                        .fade(begin: 1.0, end: 0.2),
               ),
             ),
 

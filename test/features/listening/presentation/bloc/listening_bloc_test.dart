@@ -73,7 +73,7 @@ void main() {
   setUp(() {
     mockNetworkInfo = MockNetworkInfo();
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-    
+
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     mockGetQuest = MockGetListeningQuests();
     mockUpdateUserCoins = MockUpdateUserCoins();
@@ -83,7 +83,6 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
-    
 
     bloc = ListeningBloc(
       getQuest: mockGetQuest,

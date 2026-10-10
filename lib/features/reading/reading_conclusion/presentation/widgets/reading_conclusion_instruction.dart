@@ -27,7 +27,8 @@ class ReadingConclusionInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              instruction ?? "Read the passage and select the correct conclusion",
+              instruction ??
+                  "Read the passage and select the correct conclusion",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',

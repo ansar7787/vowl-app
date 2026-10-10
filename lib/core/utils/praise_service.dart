@@ -12,17 +12,17 @@ abstract class PraiseStrategy {
 class StandardPraiseStrategy implements PraiseStrategy {
   @override
   List<String> get encouragements => const [
-        "Correct!",
-        "Well done.",
-        "Nice work!",
-        "Good recall!",
-        "Solid answer.",
-        "That's right.",
-        "Nailed it.",
-        "Sharp!",
-        "Spot on.",
-        "Great progress.",
-      ];
+    "Correct!",
+    "Well done.",
+    "Nice work!",
+    "Good recall!",
+    "Solid answer.",
+    "That's right.",
+    "Nailed it.",
+    "Sharp!",
+    "Spot on.",
+    "Great progress.",
+  ];
 
   @override
   String get localizedPrefix => 'praise.standard';
@@ -31,14 +31,14 @@ class StandardPraiseStrategy implements PraiseStrategy {
 class KidsPraiseStrategy implements PraiseStrategy {
   @override
   List<String> get encouragements => const [
-        "Yay! You did it!",
-        "Wow! You're so smart!",
-        "Great job, friend!",
-        "You found it! Awesome!",
-        "Superstar learner!",
-        "You're the best!",
-        "High five! That's right!",
-      ];
+    "Yay! You did it!",
+    "Wow! You're so smart!",
+    "Great job, friend!",
+    "You found it! Awesome!",
+    "Superstar learner!",
+    "You're the best!",
+    "High five! That's right!",
+  ];
 
   @override
   String get localizedPrefix => 'praise.kids';
@@ -71,7 +71,7 @@ class PraiseServiceImpl implements PraiseService {
   static final Random _random = Random();
 
   const PraiseServiceImpl(this._ttsService, {LocaleService? localeService})
-      : _localeService = localeService;
+    : _localeService = localeService;
 
   @override
   void givePraise() {

@@ -97,8 +97,8 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
       _targetIndex.value = nodeIndex;
       String? userAnswer =
           (quest.options != null && nodeIndex < quest.options!.length)
-              ? quest.options![nodeIndex]
-              : null;
+          ? quest.options![nodeIndex]
+          : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
@@ -109,7 +109,8 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
     if (correct) {
       submitCorrectAnswer();
     } else {
-      String? userAnswer = (_targetIndex.value != -1 &&
+      String? userAnswer =
+          (_targetIndex.value != -1 &&
               quest.options != null &&
               _targetIndex.value < quest.options!.length)
           ? quest.options![_targetIndex.value]

@@ -47,8 +47,8 @@ class LaserBridgePainter extends CustomPainter {
       if (keyRect != null && valRect != null) {
         final start = Offset(keyRect.right, keyRect.center.dy);
         final endTarget = Offset(valRect.left, valRect.center.dy);
-        
-        final end = isLast 
+
+        final end = isLast
             ? (Offset.lerp(start, endTarget, animationValue) ?? endTarget)
             : endTarget;
 

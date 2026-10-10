@@ -44,7 +44,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
   int _silentSeconds = 0;
   String _finalTranscript = "";
   bool _passedAutoGrade = false;
-  
+
   int _wordCount = 0;
   int _matchedKeywords = 0;
   late Set<String> _targetKeywords;
@@ -62,7 +62,34 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
   Set<String> _extractKeywords(String text) {
     final cleanText = text.replaceAll(RegExp(r'[^\w\s]'), '').toLowerCase();
     final words = cleanText.split(RegExp(r'\s+'));
-    final stopWords = {'this', 'is', 'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from', 'made', 'it', 'that', 'which', 'you', 'can', 'are', 'we', 'they'};
+    final stopWords = {
+      'this',
+      'is',
+      'a',
+      'an',
+      'the',
+      'and',
+      'or',
+      'but',
+      'in',
+      'on',
+      'at',
+      'to',
+      'for',
+      'of',
+      'with',
+      'by',
+      'from',
+      'made',
+      'it',
+      'that',
+      'which',
+      'you',
+      'can',
+      'are',
+      'we',
+      'they',
+    };
     return words.where((w) => w.length > 3 && !stopWords.contains(w)).toSet();
   }
 
@@ -104,14 +131,15 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
         if (!mounted) return;
         // Level is typically between -50 and +50
         _currentAmplitude.value = level;
-        
+
         if (level < -40.0) {
           _silentSeconds++;
         } else {
           _silentSeconds = 0;
         }
 
-        if (_silentSeconds >= 12) { // 6 seconds (called ~twice a second)
+        if (_silentSeconds >= 12) {
+          // 6 seconds (called ~twice a second)
           _abortPitchDueToSilence();
         }
       },
@@ -150,17 +178,25 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
     }
   }
 
-  int get _requiredKeywords => _targetKeywords.length < 2 ? _targetKeywords.length : 2;
+  int get _requiredKeywords =>
+      _targetKeywords.length < 2 ? _targetKeywords.length : 2;
 
   void _evaluateTranscript() {
     final words = _finalTranscript.trim().split(RegExp(r'\s+'));
     _wordCount = _finalTranscript.trim().isEmpty ? 0 : words.length;
 
     final lowerTranscript = _finalTranscript.toLowerCase();
-    _matchedKeywords = _targetKeywords.where((k) => lowerTranscript.contains(k)).length;
+    _matchedKeywords = _targetKeywords
+        .where((k) => lowerTranscript.contains(k))
+        .length;
 
-    final expectedWordsCount = widget.expectedText.trim().split(RegExp(r'\s+')).length;
-    final requiredWords = expectedWordsCount < 15 ? (expectedWordsCount * 0.5).ceil() : 15;
+    final expectedWordsCount = widget.expectedText
+        .trim()
+        .split(RegExp(r'\s+'))
+        .length;
+    final requiredWords = expectedWordsCount < 15
+        ? (expectedWordsCount * 0.5).ceil()
+        : 15;
 
     if (_wordCount >= requiredWords && _matchedKeywords >= _requiredKeywords) {
       _passedAutoGrade = true;
@@ -169,12 +205,13 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
     }
   }
 
-
   Future<void> _playNative() async {
     if (_isPlaying.value) return;
     _isPlaying.value = true;
     try {
-      await _soundService.playTts(widget.expectedText).timeout(const Duration(seconds: 45));
+      await _soundService
+          .playTts(widget.expectedText)
+          .timeout(const Duration(seconds: 45));
     } catch (_) {}
     if (mounted) _isPlaying.value = false;
   }
@@ -213,7 +250,11 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
     );
   }
 
-  Widget _buildStateContent(BuildContext context, PitchState state, bool isDark) {
+  Widget _buildStateContent(
+    BuildContext context,
+    PitchState state,
+    bool isDark,
+  ) {
     switch (state) {
       case PitchState.ready:
         return _buildReadyState();
@@ -230,11 +271,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
     return Column(
       key: const ValueKey('ready'),
       children: [
-        Icon(
-          Icons.mic_none_rounded,
-          size: 48.sp,
-          color: widget.primaryColor,
-        ),
+        Icon(Icons.mic_none_rounded, size: 48.sp, color: widget.primaryColor),
         SizedBox(height: 16.h),
         Text(
           "GET READY",
@@ -263,7 +300,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           decoration: BoxDecoration(
             color: widget.primaryColor.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(color: widget.primaryColor.withValues(alpha: 0.2)),
+            border: Border.all(
+              color: widget.primaryColor.withValues(alpha: 0.2),
+            ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -284,7 +323,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
-                  color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black87,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white70
+                      : Colors.black87,
                   fontStyle: FontStyle.italic,
                 ),
               ),
@@ -324,16 +365,20 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 10.r,
-              height: 10.r,
-              decoration: const BoxDecoration(
-                color: Colors.redAccent,
-                shape: BoxShape.circle,
-              ),
-            )
+                  width: 10.r,
+                  height: 10.r,
+                  decoration: const BoxDecoration(
+                    color: Colors.redAccent,
+                    shape: BoxShape.circle,
+                  ),
+                )
                 .animate(onPlay: (c) => c.repeat(reverse: true))
                 .fade(begin: 0.2, end: 1.0, duration: 600.ms)
-                .scale(begin: const Offset(0.8, 0.8), end: const Offset(1.2, 1.2), duration: 600.ms),
+                .scale(
+                  begin: const Offset(0.8, 0.8),
+                  end: const Offset(1.2, 1.2),
+                  duration: 600.ms,
+                ),
             SizedBox(width: 8.w),
             Text(
               "RECORDING...",
@@ -371,17 +416,23 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: widget.primaryColor.withValues(alpha: 0.05),
-              border: Border.all(color: widget.primaryColor.withValues(alpha: 0.3), width: 2),
+              border: Border.all(
+                color: widget.primaryColor.withValues(alpha: 0.3),
+                width: 2,
+              ),
             ),
             child: Center(
               child: ValueListenableBuilder<double>(
                 valueListenable: _currentAmplitude,
                 builder: (context, amplitude, _) {
                   // STT amplitude is usually -50 to 50. Let's normalize it.
-                  final normalizedAmp = ((amplitude + 50) / 100).clamp(0.0, 1.0);
+                  final normalizedAmp = ((amplitude + 50) / 100).clamp(
+                    0.0,
+                    1.0,
+                  );
                   final innerScale = 1.0 + (normalizedAmp * 0.3);
                   final outerScale = 1.0 + (normalizedAmp * 0.6);
-                  
+
                   return Stack(
                     alignment: Alignment.center,
                     children: [
@@ -392,7 +443,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                           height: 80.r,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: widget.primaryColor.withValues(alpha: 0.15 * normalizedAmp),
+                            color: widget.primaryColor.withValues(
+                              alpha: 0.15 * normalizedAmp,
+                            ),
                           ),
                         ),
                       ),
@@ -516,16 +569,18 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           ),
         ),
         SizedBox(height: 16.h),
-        
+
         // AI Grade Card
         Container(
           width: double.infinity,
           padding: EdgeInsets.all(16.w),
           decoration: BoxDecoration(
-            color: (_passedAutoGrade ? Colors.green : Colors.redAccent).withValues(alpha: 0.05),
+            color: (_passedAutoGrade ? Colors.green : Colors.redAccent)
+                .withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: (_passedAutoGrade ? Colors.green : Colors.redAccent).withValues(alpha: 0.2),
+              color: (_passedAutoGrade ? Colors.green : Colors.redAccent)
+                  .withValues(alpha: 0.2),
             ),
           ),
           child: Column(
@@ -560,9 +615,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
             ],
           ),
         ),
-        
+
         SizedBox(height: 24.h),
-        
+
         // Native example fallback
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -582,14 +637,23 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                 valueListenable: _isPlaying,
                 builder: (context, isPlaying, _) {
                   return Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 8.h,
+                    ),
                     decoration: BoxDecoration(
                       color: widget.primaryColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(100.r),
                     ),
                     child: Row(
                       children: [
-                        Icon(isPlaying ? Icons.stop_circle_rounded : Icons.play_arrow_rounded, color: widget.primaryColor, size: 16.r),
+                        Icon(
+                          isPlaying
+                              ? Icons.stop_circle_rounded
+                              : Icons.play_arrow_rounded,
+                          color: widget.primaryColor,
+                          size: 16.r,
+                        ),
                         SizedBox(width: 4.w),
                         Text(
                           "LISTEN",
@@ -610,7 +674,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
         ),
 
         SizedBox(height: 24.h),
-        
+
         // Action buttons
         ElevatedButton(
           onPressed: () {

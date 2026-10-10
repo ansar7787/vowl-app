@@ -125,7 +125,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                               delegate: SliverChildListDelegate([
                                 SizedBox(height: 16.h),
                                 ElevatorPitchPromptCard(
-                                  instruction: InstructionHelper.getInstruction(quest),
+                                  instruction: InstructionHelper.getInstruction(
+                                    quest,
+                                  ),
                                   prompt: quest.prompt ?? "",
                                   timeLimit: quest.timeLimit ?? 30,
                                   color: theme.primaryColor,

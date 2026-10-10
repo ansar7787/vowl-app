@@ -73,8 +73,8 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
     } else {
       String? userAnswer =
           (quest.options != null && selectedIndex < quest.options!.length)
-              ? quest.options![selectedIndex]
-              : null;
+          ? quest.options![selectedIndex]
+          : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }

@@ -149,7 +149,9 @@ class QuestHintButton extends StatelessWidget {
                           size: 26.r,
                         )
                         .animate(
-                          target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
+                          target: VowlMotion.shouldReduceMotion(context)
+                              ? 0
+                              : 1,
                           onPlay: (c) =>
                               used ? c.stop() : c.repeat(reverse: true),
                         )

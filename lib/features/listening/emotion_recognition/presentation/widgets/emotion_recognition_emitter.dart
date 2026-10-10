@@ -39,10 +39,9 @@ class EmotionRecognitionEmitter extends StatelessWidget {
               ],
             ),
             child: isCorrectState == true && emoji != null
-                ? Text(
-                    emoji!,
-                    style: TextStyle(fontSize: 40.r),
-                  ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic)
+                ? Text(emoji!, style: TextStyle(fontSize: 40.r))
+                      .animate()
+                      .scale(duration: 400.ms, curve: Curves.easeOutCubic)
                 : Icon(Icons.volume_up_rounded, color: color, size: 40.r)
                       .animate(
                         onPlay: (controller) =>

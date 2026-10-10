@@ -1,4 +1,4 @@
-﻿import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -407,7 +407,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                   _translationLanguageNameVal,
                                               isDark: isDark,
                                               soundEnabled: _soundEnabledVal,
-                                              gameSoundsEnabled: _gameSoundsEnabledVal,
+                                              gameSoundsEnabled:
+                                                  _gameSoundsEnabledVal,
                                               notificationsEnabled:
                                                   _notificationsEnabledVal,
                                               reduceComplexGestures:
@@ -418,7 +419,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                   _analyticsEnabledVal,
                                               isLoading: _isLoadingVal,
                                               onToggleSound: _toggleSound,
-                                              onToggleGameSounds: _toggleGameSounds,
+                                              onToggleGameSounds:
+                                                  _toggleGameSounds,
                                               onToggleNotifications:
                                                   _toggleNotifications,
                                               onToggleGestures: _toggleGestures,
@@ -967,4 +969,3 @@ class _SettingsDangerGroup extends StatelessWidget {
     );
   }
 }
-

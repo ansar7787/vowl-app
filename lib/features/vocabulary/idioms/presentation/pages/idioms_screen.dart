@@ -92,7 +92,11 @@ class _IdiomsScreenState extends State<IdiomsScreen>
     });
   }
 
-  void _submitFinalAnswer(bool nailedIt, {GameQuest? quest, String? wrongWord}) {
+  void _submitFinalAnswer(
+    bool nailedIt, {
+    GameQuest? quest,
+    String? wrongWord,
+  }) {
     if (isAnsweredNotifier.value && isCorrectNotifier.value != null) return;
 
     if (wrongWord != null && wrongWord.isNotEmpty) {
@@ -481,7 +485,8 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                     isAnswered: isAnsweredNotifier.value,
                     isCorrect: isCorrectNotifier.value,
                     selectedOption: _selectedOption.value,
-                    onTap: () => _submitAnswer(o, quest.correctAnswer ?? "", quest),
+                    onTap: () =>
+                        _submitAnswer(o, quest.correctAnswer ?? "", quest),
                   );
                 }).toList(),
               ),

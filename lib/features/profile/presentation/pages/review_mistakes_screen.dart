@@ -109,7 +109,6 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
     await ErrorJournalCollector.dismiss(userId: _userId, entryId: id);
   }
 
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -211,7 +210,8 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                             Text(
                                               context.tr(
                                                 'profile.review_instructions',
-                                                fallback: 'Swipe left to dismiss when mastered',
+                                                fallback:
+                                                    'Swipe left to dismiss when mastered',
                                               ),
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
@@ -232,9 +232,13 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                     child: Container(
                                       margin: EdgeInsets.only(left: 8.w),
                                       decoration: BoxDecoration(
-                                        color: isDark 
-                                          ? Colors.white.withValues(alpha: 0.1) 
-                                          : Colors.black.withValues(alpha: 0.05),
+                                        color: isDark
+                                            ? Colors.white.withValues(
+                                                alpha: 0.1,
+                                              )
+                                            : Colors.black.withValues(
+                                                alpha: 0.05,
+                                              ),
                                         shape: BoxShape.circle,
                                       ),
                                       child: IconButton(
@@ -417,17 +421,26 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                   child: () {
                                     Widget button = ElevatedButton.icon(
                                       onPressed: () async {
-                                        if (filteredEntries.isEmpty || _isStartingGame) return;
+                                        if (filteredEntries.isEmpty ||
+                                            _isStartingGame)
+                                          return;
                                         _isStartingGame = true;
 
                                         try {
-                                          final randomList = List.of(filteredEntries)..shuffle();
+                                          final randomList = List.of(
+                                            filteredEntries,
+                                          )..shuffle();
                                           final target = randomList.first;
-                                          final cat = QuestRegistry.gameToCategory[target.gameType] ?? 'reading';
-                                          
+                                          final cat =
+                                              QuestRegistry
+                                                  .gameToCategory[target
+                                                  .gameType] ??
+                                              'reading';
+
                                           di.sl<HapticService>().selection();
 
-                                          if (!(await _checkMonetizationGate())) return;
+                                          if (!(await _checkMonetizationGate()))
+                                            return;
 
                                           final uri = Uri(
                                             path: '/game',
@@ -585,10 +598,13 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
         final category =
             QuestRegistry.gameToCategory[entry.gameType] ?? 'reading';
         final categoryColor = _categoryColor(category);
-        final humanName = ErrorJournalCollector.humanReadableName(entry.gameType);
+        final humanName = ErrorJournalCollector.humanReadableName(
+          entry.gameType,
+        );
 
-        final timeAgo =
-            entry.timestamp != null ? _relativeTime(entry.timestamp!) : '';
+        final timeAgo = entry.timestamp != null
+            ? _relativeTime(entry.timestamp!)
+            : '';
 
         Widget card = Dismissible(
           key: Key(entry.id),
@@ -642,8 +658,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           },
           child: ScaleButton(
             onTap: () async {
-              if (isRevealed || _revealingCards.contains(entry.id)) return; // Already revealed or loading
-              
+              if (isRevealed || _revealingCards.contains(entry.id))
+                return; // Already revealed or loading
+
               _revealingCards.add(entry.id);
 
               try {
@@ -652,7 +669,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                 // Consume monetization action to reveal
                 if (!(await _checkMonetizationGate())) return;
 
-                final currentSet = Set<String>.from(revealedCardsNotifier.value);
+                final currentSet = Set<String>.from(
+                  revealedCardsNotifier.value,
+                );
                 currentSet.add(entry.id);
                 revealedCardsNotifier.value = currentSet;
               } finally {
@@ -746,7 +765,10 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                       context,
                       Icons.close_rounded,
                       AppColors.red500,
-                      context.tr('profile.you_answered', fallback: 'You answered:'),
+                      context.tr(
+                        'profile.you_answered',
+                        fallback: 'You answered:',
+                      ),
                       uAnswer,
                     ),
                     SizedBox(height: 8.h),
@@ -776,7 +798,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                             size: 20.r,
                           ),
                           style: IconButton.styleFrom(
-                            backgroundColor: AppColors.indigo500.withValues(alpha: 0.1),
+                            backgroundColor: AppColors.indigo500.withValues(
+                              alpha: 0.1,
+                            ),
                             padding: EdgeInsets.all(8.r),
                             minimumSize: Size.zero,
                           ),

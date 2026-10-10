@@ -261,7 +261,9 @@ class StreakHero extends StatelessWidget {
                         ),
                       );
 
-                      final reduceMotion = VowlMotion.shouldReduceMotion(context);
+                      final reduceMotion = VowlMotion.shouldReduceMotion(
+                        context,
+                      );
                       if (!reduceMotion) {
                         container = container
                             .animate(onPlay: (c) => c.repeat(reverse: true))

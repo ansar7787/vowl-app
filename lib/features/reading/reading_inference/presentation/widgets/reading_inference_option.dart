@@ -52,23 +52,25 @@ class ReadingInferenceOption extends StatelessWidget {
                 color: isCorrect
                     ? tokens.gameCorrect.withValues(alpha: 0.15)
                     : (isWrong
-                        ? tokens.gameIncorrect.withValues(alpha: 0.15)
-                        : (isSelected
-                            ? color.withValues(alpha: 0.15)
-                            : (isDark
-                                ? Colors.white.withValues(alpha: 0.05)
-                                : Colors.black.withValues(alpha: 0.03)))),
+                          ? tokens.gameIncorrect.withValues(alpha: 0.15)
+                          : (isSelected
+                                ? color.withValues(alpha: 0.15)
+                                : (isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03)))),
                 borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(
                   color: isCorrect
                       ? tokens.gameCorrect.withValues(alpha: 0.5)
                       : (isWrong
-                          ? tokens.gameIncorrect.withValues(alpha: 0.5)
-                          : (isSelected
-                              ? color.withValues(alpha: 0.5)
-                              : (isDark
-                                  ? Colors.white.withValues(alpha: 0.1)
-                                  : Colors.black.withValues(alpha: 0.05)))),
+                            ? tokens.gameIncorrect.withValues(alpha: 0.5)
+                            : (isSelected
+                                  ? color.withValues(alpha: 0.5)
+                                  : (isDark
+                                        ? Colors.white.withValues(alpha: 0.1)
+                                        : Colors.black.withValues(
+                                            alpha: 0.05,
+                                          )))),
                   width: isSelected || isCorrect || isWrong ? 2.w : 1.w,
                 ),
               ),

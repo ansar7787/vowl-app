@@ -211,17 +211,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                      children: [
-                                        SizedBox(height: 8.h),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
-                                          ),
-                                          child: const VowlMascotCard(),
+                                    children: [
+                                      SizedBox(height: 8.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
                                         ),
-                                        SizedBox(height: 16.h),
-                                      ],
-                                    ),
+                                        child: const VowlMascotCard(),
+                                      ),
+                                      SizedBox(height: 16.h),
+                                    ],
+                                  ),
 
                                   // ── 1. Adventure Stats ──
                                   Column(
@@ -293,18 +293,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               color: Colors.white,
                                               size: 24.r,
                                             ),
-                                            color: const Color(0xFFF59E0B), // Amber/Orange for review
-                                            shadowColor: const Color(0xFFD97706),
+                                            color: const Color(
+                                              0xFFF59E0B,
+                                            ), // Amber/Orange for review
+                                            shadowColor: const Color(
+                                              0xFFD97706,
+                                            ),
                                             title: context.tr(
                                               'profile.review_mistakes',
                                               fallback: 'Review & Master',
                                             ),
                                             subtitle: context.tr(
                                               'profile.review_mistakes_subtitle',
-                                              fallback: 'Master skills from previous challenges.',
+                                              fallback:
+                                                  'Master skills from previous challenges.',
                                             ),
                                             onTap: () {
-                                              di.sl<HapticService>().selection();
+                                              di
+                                                  .sl<HapticService>()
+                                                  .selection();
                                               context.push(
                                                 AppRouter.reviewMistakesRoute,
                                               );
@@ -357,7 +364,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ),
 
                                   // ── 4. Kids Zone (conditional) ──
-                                  if (user.kidsStickers.isNotEmpty || user.kidsTotalLevelsCompleted > 0)
+                                  if (user.kidsStickers.isNotEmpty ||
+                                      user.kidsTotalLevelsCompleted > 0)
                                     Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,

@@ -181,7 +181,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                 level: widget.level,
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
-                isFinalFailure: state is SpeakingLoaded ? state.isFinalFailure : false,
+                isFinalFailure: state is SpeakingLoaded
+                    ? state.isFinalFailure
+                    : false,
                 showConfetti: _showConfetti.value,
                 disablePadding:
                     true, // Fixes "width not fully used" and "scroll bar not edge"
