@@ -387,6 +387,14 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              if ((quest.wordEmoji ?? quest.emoji) != null)
+                Padding(
+                  padding: EdgeInsets.only(bottom: 16.h),
+                  child: Text(
+                    (quest.wordEmoji ?? quest.emoji)!,
+                    style: TextStyle(fontSize: 72.sp),
+                  ),
+                ),
               if (quest.wordExample != null)
                 Text.rich(
                   TextSpan(
