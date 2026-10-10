@@ -1265,11 +1265,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'correctionwriting': [
       "",
-      "Excellent start! Your understanding of writing correction is growing.",
-      "Your mastery of writing correction is noticeably improving daily.",
-      "Level 50! Your command of writing correction is exceptional.",
-      "Centurion! You have conquered the complexities of writing correction.",
-      "Double Centurion! No one knows writing correction better than you.",
+      "Great start! You're already getting better at spotting grammar mistakes.",
+      "You're doing fantastic! Finding those tricky little errors is getting much easier for you.",
+      "Level 50! Your sentences are looking incredibly clean and natural.",
+      "Level 100! That's a huge milestone. You've built a really sharp eye for catching English mistakes.",
+      "Level 200! Honestly, incredible. You're editing English sentences like a true native speaker.",
     ],
     'dailyjournal': [
       "",

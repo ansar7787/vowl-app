@@ -9,6 +9,8 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
   final String? selectedCorrection;
   final Color color;
   final bool isDark;
+  final bool isAnswered;
+  final bool? isCorrect;
 
   const CorrectionWritingSentenceCard({
     super.key,
@@ -16,6 +18,8 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
     required this.selectedCorrection,
     required this.color,
     required this.isDark,
+    this.isAnswered = false,
+    this.isCorrect,
   });
 
   @override
@@ -85,12 +89,24 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: selectedCorrection != null
-                          ? tokens.gameCorrect.withValues(alpha: 0.1)
+                          ? (isAnswered
+                                ? (isCorrect == true
+                                      ? tokens.gameCorrect.withValues(
+                                          alpha: 0.1,
+                                        )
+                                      : tokens.gameIncorrect.withValues(
+                                          alpha: 0.1,
+                                        ))
+                                : color.withValues(alpha: 0.1))
                           : tokens.gameIncorrect.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
                         color: selectedCorrection != null
-                            ? tokens.gameCorrect
+                            ? (isAnswered
+                                  ? (isCorrect == true
+                                        ? tokens.gameCorrect
+                                        : tokens.gameIncorrect)
+                                  : color)
                             : tokens.gameIncorrect,
                         width: 2,
                         style: selectedCorrection != null
@@ -102,26 +118,32 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          selectedCorrection ?? errorText.toUpperCase(),
+                          selectedCorrection ?? errorText,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 14.sp,
+                            fontSize: 15.sp,
                             color: selectedCorrection != null
-                                ? tokens.gameCorrect
+                                ? (isAnswered
+                                      ? (isCorrect == true
+                                            ? tokens.gameCorrect
+                                            : tokens.gameIncorrect)
+                                      : color)
                                 : tokens.gameIncorrect,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        SizedBox(width: 6.w),
-                        Icon(
-                          selectedCorrection != null
-                              ? Icons.check_circle_outline_rounded
-                              : Icons.cancel_outlined,
-                          size: 14.r,
-                          color: selectedCorrection != null
-                              ? tokens.gameCorrect
-                              : tokens.gameIncorrect,
-                        ),
+                        if (isAnswered && selectedCorrection != null) ...[
+                          SizedBox(width: 6.w),
+                          Icon(
+                            isCorrect == true
+                                ? Icons.check_circle_outline_rounded
+                                : Icons.cancel_outlined,
+                            size: 14.r,
+                            color: isCorrect == true
+                                ? tokens.gameCorrect
+                                : tokens.gameIncorrect,
+                          ),
+                        ],
                       ],
                     ),
                   ),

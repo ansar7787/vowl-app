@@ -5,24 +5,19 @@ import 'package:vowl/core/utils/locale_service.dart';
 class CorrectionWritingInstruction extends StatelessWidget {
   final String instruction;
   final Color primaryColor;
-  final String? errorsRemainingText;
 
   const CorrectionWritingInstruction({
     super.key,
     required this.instruction,
     required this.primaryColor,
-    this.errorsRemainingText,
   });
 
   @override
   Widget build(BuildContext context) {
-    final baseText = context.tr(
+    final fullText = context.tr(
       'games.correctionWriting_instruction',
       fallback: instruction,
     );
-    final fullText = errorsRemainingText != null
-        ? '$baseText (${errorsRemainingText!.toUpperCase()})'
-        : baseText;
 
     return Container(
       width: double.infinity,

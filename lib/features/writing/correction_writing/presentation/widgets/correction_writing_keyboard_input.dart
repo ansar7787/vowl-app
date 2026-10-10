@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class CorrectionWritingKeyboardInput extends StatefulWidget {
   final Color color;
@@ -47,13 +48,16 @@ class _CorrectionWritingKeyboardInputState
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "RETYPE THE CORRECTED SENTENCE:",
+          context.tr(
+            'games.correctionWriting.type_sentence',
+            fallback: "Type the corrected sentence",
+          ),
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.bold,
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w700,
             color: widget.isDark ? Colors.white70 : Colors.black54,
-            letterSpacing: 1.5,
+            letterSpacing: 1.2,
           ),
         ),
         SizedBox(height: 12.h),
@@ -89,7 +93,10 @@ class _CorrectionWritingKeyboardInputState
                   minLines: 1,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: "Type the full sentence here...",
+                    hintText: context.tr(
+                      'games.correctionWriting.hint_full_sentence',
+                      fallback: "Type the full sentence here...",
+                    ),
                     hintStyle: TextStyle(
                       fontFamily: 'Outfit',
                       color: widget.isDark ? Colors.white38 : Colors.black38,

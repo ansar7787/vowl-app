@@ -136,7 +136,7 @@ class WritingBaseLayout extends StatelessWidget {
           explanation: finalExplanation,
           ruleTitle: 'WRITING CONTEXT',
           ruleContent: ruleContent,
-          sampleAnswer: quest.sampleAnswer,
+          sampleAnswer: quest.sampleAnswer ?? quest.correctAnswer,
           requiredPoints: quest.requiredPoints,
         );
       },

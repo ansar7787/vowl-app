@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +18,6 @@ import 'package:vowl/features/writing/correction_writing/presentation/widgets/co
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_sentence_card.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_vault.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_keyboard_input.dart';
-import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 
 class CorrectionWritingScreen extends StatefulWidget {
   final int level;
@@ -49,26 +49,11 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
   final ValueNotifier<String?> _selectedCorrection = ValueNotifier(null);
   WritingQuest? _lastQuest;
 
-  final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
-
   late final ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
-    _showEvidence.addListener(() {
-      if (_showEvidence.value && mounted && _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
     _scrollController = ScrollController();
     initWritingGame();
   }
@@ -77,7 +62,6 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
   void dispose() {
     _scrollController.dispose();
     _selectedCorrection.dispose();
-    _showEvidence.dispose();
     disposeWritingGame();
     super.dispose();
   }
@@ -114,7 +98,10 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
       if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
         CustomSnackBar.show(
           context: context,
-          message: "Please start your sentence with a capital letter.",
+          message: context.tr(
+            'games.correctionWriting.error_capital_letter',
+            fallback: "Please start your sentence with a capital letter.",
+          ),
           type: CustomSnackBarType.warning,
         );
         hapticService.selection();
@@ -125,8 +112,11 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
       if (!['.', '!', '?'].contains(lastChar)) {
         CustomSnackBar.show(
           context: context,
-          message:
-              "Please end your sentence with proper punctuation (., !, or ?).",
+          message: context.tr(
+            'games.correctionWriting.error_punctuation',
+            fallback:
+                "Please end your sentence with proper punctuation (., !, or ?).",
+          ),
           type: CustomSnackBarType.warning,
         );
         hapticService.selection();
@@ -146,12 +136,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
     if (correct) {
       hapticService.success();
       soundService.playCorrect();
-      if ((quest.options?.isNotEmpty ?? false) &&
-          _selectedCorrection.value != null) {
-        _showEvidence.value = true;
-      } else {
-        submitCorrectAnswer();
-      }
+      submitCorrectAnswer();
     } else {
       hapticService.error();
       soundService.playWrong();
@@ -165,8 +150,6 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
   @override
   void onQuestionReset() {
     _selectedCorrection.value = null;
-
-    _showEvidence.value = false;
   }
 
   @override
@@ -212,7 +195,6 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
             listenable: Listenable.merge([
               showConfettiNotifier,
               _selectedCorrection,
-              _showEvidence,
             ]),
             builder: (context, _) {
               return activeQuest == null
@@ -235,20 +217,20 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                                   CorrectionWritingInstruction(
                                     instruction: activeQuest.instruction,
                                     primaryColor: theme.primaryColor,
-                                    errorsRemainingText:
-                                        activeQuest.errorCount != null
-                                        ? "${activeQuest.errorCount} ERRORS REMAINING"
-                                        : null,
                                   ),
                                   SizedBox(height: 16.h),
 
                                   CorrectionWritingSentenceCard(
                                     passage: activeQuest.passage ?? "",
                                     selectedCorrection: widget.level >= 6
-                                        ? null
+                                        ? (isAnswered && isCorrect == true
+                                              ? activeQuest.correctAnswer
+                                              : null)
                                         : _selectedCorrection.value,
                                     color: theme.primaryColor,
                                     isDark: isDark,
+                                    isAnswered: isAnswered,
+                                    isCorrect: isCorrect,
                                   ),
                                   SizedBox(height: 32.h),
 
@@ -257,8 +239,11 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                                       onTap: () {
                                         CustomSnackBar.show(
                                           context: context,
-                                          message:
-                                              "Hard Mode! Tapping is disabled. Please type your answer below.",
+                                          message: context.tr(
+                                            'games.correctionWriting.hard_mode_tap_disabled',
+                                            fallback:
+                                                "Hard Mode! Tapping is disabled. Please type your answer below.",
+                                          ),
                                           type: CustomSnackBarType.info,
                                         );
                                       },
@@ -334,54 +319,25 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                                         ),
                                         child: Center(
                                           child: Text(
-                                            "AUDIT SYNTAX",
+                                            context.tr(
+                                              'games.correctionWriting.actionText',
+                                              fallback: "Check Answer",
+                                            ),
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 16.sp,
-                                              fontWeight: FontWeight.w900,
+                                              fontWeight: FontWeight.w600,
                                               color: Colors.white,
-                                              letterSpacing: 2,
                                             ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  SizedBox(
-                                    height: !isAnswered
-                                        ? (_showEvidence.value
-                                              ? MediaQuery.viewInsetsOf(
-                                                      context,
-                                                    ).bottom +
-                                                    32.h
-                                              : 60.h)
-                                        : 160.h,
-                                  ),
+                                  SizedBox(height: !isAnswered ? 60.h : 160.h),
                                 ],
                               ),
                             ),
                           ),
-
-                          if (_showEvidence.value && !isAnswered)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: EvidenceHighlightWrapper(
-                                  passage: (activeQuest.passage ?? "")
-                                      .replaceAll(
-                                        RegExp(r'\[(.*?)\]'),
-                                        _selectedCorrection.value ?? "",
-                                      ),
-                                  evidenceWords: [
-                                    _selectedCorrection.value ?? "",
-                                  ],
-                                  primaryColor: theme.primaryColor,
-                                  onCorrectHighlight: () {
-                                    _showEvidence.value = false;
-                                    submitCorrectAnswer();
-                                  },
-                                ),
-                              ),
-                            ),
                           SliverToBoxAdapter(
                             child: SizedBox(
                               height:
