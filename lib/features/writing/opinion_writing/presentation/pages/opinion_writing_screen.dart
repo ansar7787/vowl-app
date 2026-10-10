@@ -321,9 +321,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                     ],
                                     DragTarget<String>(
                                       onWillAcceptWithDetails: (details) {
-                                        return !isAnswered &&
-                                            draftedOptions.length <
-                                                requiredCount;
+                                        return !isAnswered && draftedOptions.length < requiredCount && !draftedOptions.contains(details.data);
                                       },
                                       onAcceptWithDetails: (details) {
                                         hapticService.selection();
@@ -486,8 +484,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                         }
 
                                         void handleTap() {
-                                          if (draftedOptions.length <
-                                              requiredCount) {
+                                          if (draftedOptions.length < requiredCount && !draftedOptions.contains(option)) {
                                             hapticService.selection();
                                             _draftedOptions.value = [
                                               ...draftedOptions,
