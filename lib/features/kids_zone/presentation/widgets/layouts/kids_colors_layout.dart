@@ -66,10 +66,12 @@ class KidsColorsLayout extends StatelessWidget {
       backgroundColors: const [],
       buildGameUI: (context, state, onHintTap) {
         final quest = state.currentQuest;
+        final options = quest.options?.map((e) => e.toString()).toList() ?? [];
+        final isColorQuest = options.every(_isColorOption);
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: 90.h),
             // The Artist Easel
             Expanded(
               flex: 5,
@@ -78,40 +80,46 @@ class KidsColorsLayout extends StatelessWidget {
 
             SizedBox(height: 24.h),
             KidsFittedText(
-              context.tr(
-                'games.kids_colors_drag',
-                fallback: 'Drag the paint to the canvas! 🎨',
-              ),
+              isColorQuest
+                  ? context.tr(
+                      'games.kids_colors_drag',
+                      fallback: 'Drag the correct color to the canvas.',
+                    )
+                  : context.tr(
+                      'games.kids_colors_drag_object',
+                      fallback: 'Drag the correct answer to the canvas.',
+                    ),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
                 color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white.withValues(alpha: 0.8)
-                    : Colors.black.withValues(alpha: 0.6),
+                    ? Colors.white.withValues(alpha: 0.9)
+                    : Colors.black.withValues(alpha: 0.7),
               ),
               maxLines: 2,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
 
-            // The Squeezed Paint Tubes
+            // Options
             Flexible(
-              flex: 5,
+              flex: 4,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(quest.options?.length ?? 0, (index) {
-                    final option = quest.options![index];
+                  children: List.generate(options.length, (index) {
+                    final option = options[index];
                     return Expanded(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 6.w),
-                        child: _buildPaintTube(
-                          context,
-                          state,
-                          option,
-                          quest.correctAnswer == option,
+                        child: LayoutBuilder(
+                          builder: (context, constraints) {
+                            return isColorQuest
+                                ? _buildPaintTube(context, state, option, quest.correctAnswer == option, constraints.maxWidth)
+                                : _buildObjectCard(context, state, option, quest.correctAnswer == option, constraints.maxWidth);
+                          },
                         ),
                       ),
                     );
@@ -119,6 +127,7 @@ class KidsColorsLayout extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 16.h),
           ],
         );
       },
@@ -199,6 +208,21 @@ class KidsColorsLayout extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      if (quest.question != null && quest.question != "?" && quest.question!.isNotEmpty)
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 8.h),
+                          child: KidsFittedText(
+                            quest.question!,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w600,
+                              color: _LocalPalette.color3f3f46,
+                            ),
+                            maxLines: 2,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                       if (quest.emoji != null)
                         state.answerStatus == AnswerStatus.correct
                             ? Text(
@@ -241,25 +265,55 @@ class KidsColorsLayout extends StatelessWidget {
     );
   }
 
+  Widget _buildOptionText(String text) {
+    final hasSpace = text.trim().contains(' ');
+    final textStyle = TextStyle(
+      fontFamily: 'Outfit',
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w600,
+      color: _LocalPalette.color3f3f46,
+    );
+
+    if (!hasSpace) {
+      // Single word: Force one line, let FittedBox scale it down properly without breaking characters.
+      return FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          text,
+          style: textStyle,
+          textAlign: TextAlign.center,
+          maxLines: 1,
+          softWrap: false,
+          overflow: TextOverflow.visible,
+        ),
+      );
+    } else {
+      // Multi-word: Allow wrapping to 2 lines using KidsFittedText.
+      return KidsFittedText(
+        text,
+        style: textStyle,
+        textAlign: TextAlign.center,
+        maxLines: 2,
+      );
+    }
+  }
+
   Widget _buildPaintTube(
     BuildContext context,
     KidsLoaded state,
     String text,
     bool isCorrect,
+    double maxWidth,
   ) {
-    // Determine color based on text if possible, otherwise fallback to primary
     Color tubeColor = _getColorFromName(text, primaryColor);
 
     final tubeWidget = Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Paint Splatter at the top (simulating squeezed paint)
         Icon(Icons.water_drop_rounded, color: tubeColor, size: 28.r),
-        // The Tube
         Container(
           height: 90.h,
-          width: 75
-              .w, // Fixed width prevents infinite constraint crash in Draggable feedback
+          width: maxWidth,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -275,38 +329,23 @@ class KidsColorsLayout extends StatelessWidget {
           ),
           child: Column(
             children: [
-              // Tube label color strip
               Container(height: 30.h, width: double.infinity, color: tubeColor),
               Expanded(
                 child: Center(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: SizedBox(
-                      width: 65.w,
-                      child: Text(
-                        text,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w700,
-                          color: _LocalPalette.color3f3f46,
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 3,
-                      ),
-                    ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 4.w),
+                    child: _buildOptionText(text),
                   ),
                 ),
               ),
             ],
           ),
         ),
-        // Tube Cap
         Container(
           height: 12.h,
-          width: 30.w,
+          width: maxWidth * 0.4,
           decoration: BoxDecoration(
-            color: _LocalPalette.color52525b, // Grey cap
+            color: _LocalPalette.color52525b,
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(4.r)),
           ),
         ),
@@ -317,14 +356,68 @@ class KidsColorsLayout extends StatelessWidget {
       data: text,
       feedback: Material(
         color: Colors.transparent,
-        child: Transform.scale(
-          scale: 1.05,
-          child: Opacity(opacity: 0.9, child: tubeWidget),
+        child: SizedBox(
+          width: maxWidth,
+          child: Transform.scale(
+            scale: 1.05,
+            child: Opacity(opacity: 0.9, child: tubeWidget),
+          ),
         ),
       ),
       childWhenDragging: Opacity(opacity: 0.3, child: tubeWidget),
       child: tubeWidget,
     );
+  }
+
+  Widget _buildObjectCard(
+    BuildContext context,
+    KidsLoaded state,
+    String text,
+    bool isCorrect,
+    double maxWidth,
+  ) {
+    final cardWidget = Container(
+      width: maxWidth,
+      height: 110.h,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: _LocalPalette.colord4d4d8, width: 2),
+        boxShadow: [
+          BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
+        ],
+      ),
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
+          child: _buildOptionText(text),
+        ),
+      ),
+    );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: SizedBox(
+          width: maxWidth,
+          child: Transform.scale(
+            scale: 1.05,
+            child: Opacity(opacity: 0.9, child: cardWidget),
+          ),
+        ),
+      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: cardWidget),
+      child: cardWidget,
+    );
+  }
+
+  bool _isColorOption(String name) {
+    final lower = name.toLowerCase();
+    return lower.contains('red') || lower.contains('blue') || lower.contains('green') || 
+           lower.contains('yellow') || lower.contains('orange') || lower.contains('purple') || 
+           lower.contains('pink') || lower.contains('black') || lower.contains('white') || 
+           lower.contains('brown') || lower.contains('gray') || lower.contains('grey');
   }
 
   Color _getColorFromName(String name, Color fallback) {

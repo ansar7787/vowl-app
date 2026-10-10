@@ -58,7 +58,7 @@ class GameInstructionService {
       fallback: baseBriefing.tip,
     );
     final tip = level == 100
-        ? "🏆 WOW, LEVEL 100! You've made it so far. Take a deep breath and show us what you can do! $rawTip"
+        ? "Level 100! You are doing a great job! $rawTip"
         : rawTip;
 
     final translatedRules = baseBriefing.rules
@@ -1577,18 +1577,18 @@ class GameInstructionService {
         );
       case 'colors':
         return const GameBriefing(
-          title: "Rainbow World",
+          title: "Learning Colors",
           icon: Icons.palette_rounded,
           objective:
-              "Time to paint a masterpiece! Look at the easel to see what color we are mixing, and squeeze the right paint tube onto the canvas.",
+              "Look at the color word on the easel, then drag the matching color or item onto the canvas.",
           rules: [
-            "Check the requested color",
-            "Find the matching tube",
-            "Squeeze the paint",
+            "Read the color word",
+            "Find the matching item",
+            "Drag it to the easel",
           ],
-          actionText: "Paint Colors",
+          actionText: "Start",
           tip:
-              "PRO TIP: Colors are everywhere! Think about the color of the sky or grass. 🎨",
+              "Tip: Think about things you see every day that match the color.",
         );
       case 'fruits':
         return const GameBriefing(
