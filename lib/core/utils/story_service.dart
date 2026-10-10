@@ -403,12 +403,12 @@ class StoryServiceImpl implements StoryService {
       "Harmony Legend! You've brought peace to the world of words! 🕊️",
     ],
     'daynight': [
-      "Sun and Moon! Let's explore the world from dawn to dusk! ☀️",
-      "Star Gazer! You're a hero of the day and a guardian of the night! 🌙",
-      "The Eternal Cycle! You understand the rhythm of our beautiful earth! 🌍",
-      "A sky full of wonder! You're the star of the day and night! ✨",
-      "100 cycles completed! You are the Guardian of the Sky! 🏹",
-      "Master of the Elements! You control the light and the shadows! 🌌",
+      "Let's learn about daytime and nighttime! Are you ready? ☀️",
+      "Great job! You're getting really good at telling day from night. 🌙",
+      "Sun or moon? You know exactly when things happen! 🌍",
+      "You've learned so much about the day and night cycle. 🕰️",
+      "Amazing! You are an expert at daytime and nighttime. 🌟",
+      "Incredible! You know everything about the sun and the stars! 🦉",
     ],
     'nature': [
       "Green trees and blue seas! Let's protect our beautiful planet! 🌳",
@@ -1648,4 +1648,3 @@ class StoryServiceImpl implements StoryService {
     return LevelThemeHelper.getCategoryBaseColor('grammar');
   }
 }
-

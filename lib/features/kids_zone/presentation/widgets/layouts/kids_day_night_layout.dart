@@ -9,8 +9,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
-
 class _LocalPalette {
   _LocalPalette._();
   static const Color color38bdf8 = Color(0xFF38BDF8);
@@ -57,26 +55,36 @@ class KidsDayNightLayout extends StatelessWidget {
               children: [
                 SizedBox(height: 120.h),
                 // The Observatory Telescope View
-                Expanded(
+                Flexible(
                   flex: 5,
-                  child: Center(child: _buildSkyView(context, state, quest)),
+                  child: Center(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: _buildSkyView(context, state, quest),
+                      ),
+                    ),
+                  ),
                 ),
                 SizedBox(height: 24.h),
-                KidsFittedText(
-                  context.tr(
-                    'games.kids_day_night_drag',
-                    fallback: 'Drag the card to the sky! ✨',
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Text(
+                    context.tr(
+                      'games.kids_day_night_drag',
+                      fallback: 'Select the correct option',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white.withValues(alpha: 0.9)
+                          : Colors.black.withValues(alpha: 0.7),
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: Theme.of(context).brightness == Brightness.dark
-                        ? Colors.white.withValues(alpha: 0.8)
-                        : Colors.black.withValues(alpha: 0.6),
-                  ),
-                  maxLines: 2,
-                  textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 16.h),
                 // Celestial Cards (Options)
@@ -85,22 +93,23 @@ class KidsDayNightLayout extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: 24.w,
-                      vertical: 20.h,
+                      vertical: 16.h,
                     ),
-                    child: Row(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: List.generate(quest.options?.length ?? 0, (
                         index,
                       ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 8.w),
+                            padding: EdgeInsets.symmetric(vertical: 8.h),
                             child: _buildCelestialCard(
                               context,
                               state,
                               option,
-                              quest.correctAnswer == option,
+                              quest,
                             ),
                           ),
                         );
@@ -162,38 +171,38 @@ class KidsDayNightLayout extends StatelessWidget {
                     );
                   }
                 },
+          borderRadius: BorderRadius.circular(24.r),
           child: Container(
-            width: 280.w,
-            height: 220.h,
+            width: 300.w,
+            height: 240.h,
             decoration: BoxDecoration(
               color: isHovering ? AppColors.slate800 : AppColors.slate900,
-              borderRadius: BorderRadius.circular(
-                40.r,
-              ), // Chunky rounded rectangle
+              borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
                 color: isHovering
                     ? _LocalPalette.color38bdf8
-                    : AppColors.slate500,
-                width: isHovering ? 12.r : 8.r,
-              ), // Thick observatory metal frame
+                    : AppColors.slate600,
+                width: isHovering ? 4.r : 2.r,
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
-                  blurRadius: isHovering ? 30 : 20,
-                  offset: const Offset(0, 10),
+                  color: Colors.black.withValues(alpha: 0.15),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
                 ),
-                BoxShadow(
-                  color: _LocalPalette.color0ea5e9.withValues(
-                    alpha: isHovering ? 0.3 : 0.1,
-                  ), // Slight atmospheric glow
-                  blurRadius: isHovering ? 60 : 40,
-                  spreadRadius: isHovering ? 10 : 5,
-                ),
+                if (isHovering)
+                  BoxShadow(
+                    color: _LocalPalette.color0ea5e9.withValues(
+                      alpha: 0.2,
+                    ),
+                    blurRadius: 20,
+                    spreadRadius: 2,
+                  ),
               ],
             ),
             child: Stack(
               children: [
-                // Twinkling stars in the observatory view
+                // Twinkling stars in the background
                 Positioned(top: 20.h, left: 30.w, child: _buildTwinklingStar()),
                 Positioned(
                   bottom: 40.h,
@@ -207,55 +216,69 @@ class KidsDayNightLayout extends StatelessWidget {
                 ),
 
                 Center(
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      if (quest.emoji != null &&
-                          (quest.question == "?" || quest.question == null))
-                        state.answerStatus == AnswerStatus.correct
-                            ? Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 80.sp),
-                              )
-                            : ColorFiltered(
-                                colorFilter: ColorFilter.mode(
-                                  const Color(
-                                    0xFF38BDF8, // Sky Blue
-                                  ).withValues(alpha: 0.3),
-                                  BlendMode.srcIn,
-                                ),
-                                child: Text(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 16.h,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (quest.emoji != null)
+                          state.answerStatus == AnswerStatus.correct
+                              ? Text(
                                   quest.emoji!,
-                                  style: TextStyle(fontSize: 80.sp),
+                                  style: TextStyle(fontSize: 48.sp),
+                                )
+                              : ColorFiltered(
+                                  colorFilter: ColorFilter.mode(
+                                    const Color(
+                                      0xFF38BDF8,
+                                    ).withValues(alpha: 0.3),
+                                    BlendMode.srcIn,
+                                  ),
+                                  child: Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 48.sp),
+                                  ),
                                 ),
-                              ),
-                      if (state.answerStatus != AnswerStatus.correct ||
-                          (quest.question != "?" && quest.question != null))
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          child: KidsFittedText(
-                            quest.question ?? "?",
+                        SizedBox(height: 12.h),
+                        if (state.answerStatus == AnswerStatus.correct)
+                          Text(
+                            quest.correctAnswer ?? "",
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize:
-                                  (quest.question == "?" ||
-                                      quest.question == null)
-                                  ? 70.sp
-                                  : 24.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white.withValues(
-                                alpha:
-                                    (quest.question == "?" ||
-                                        quest.question == null)
-                                    ? 0.7
-                                    : 1.0,
-                              ),
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
                             ),
                             textAlign: TextAlign.center,
-                            maxLines: 6,
+                          )
+                        else if (quest.question != null &&
+                            quest.question != "?")
+                          Text(
+                            quest.question!,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                          )
+                        else
+                          Text(
+                            "?",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 40.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white.withValues(alpha: 0.5),
+                            ),
                           ),
-                        ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -273,7 +296,7 @@ class KidsDayNightLayout extends StatelessWidget {
         Widget star = Icon(
           Icons.star_rounded,
           color: Colors.white.withValues(alpha: 0.8),
-          size: 12.r,
+          size: 16.r,
         );
         if (!reduceMotion) {
           star = star
@@ -290,34 +313,112 @@ class KidsDayNightLayout extends StatelessWidget {
     );
   }
 
+  bool _isDaytime(String text, dynamic quest) {
+    final options = quest.options as List<dynamic>? ?? [];
+    if (options.length == 2) {
+      final lowerOpt = text.toLowerCase();
+      final otherOpt = options
+          .firstWhere((o) => o != text, orElse: () => '')
+          .toString()
+          .toLowerCase();
+
+      final dayWords = [
+        'day',
+        'sun',
+        'morning',
+        'wake',
+        'breakfast',
+        'school',
+        'recess',
+        'lunch',
+        'bright',
+        'light',
+      ];
+      final nightWords = [
+        'night',
+        'moon',
+        'star',
+        'sleep',
+        'bed',
+        'dark',
+        'lamp',
+        'pajama',
+        'evening',
+      ];
+
+      bool hasDay(String s) => dayWords.any((w) => s.contains(w));
+      bool hasNight(String s) => nightWords.any((w) => s.contains(w));
+
+      if (hasDay(lowerOpt)) return true;
+      if (hasNight(lowerOpt)) return false;
+
+      // Check the other option
+      if (hasDay(otherOpt)) return false;
+      if (hasNight(otherOpt)) return true;
+
+      // Fallback to quest text analysis
+      bool isCorrect = text == quest.correctAnswer;
+      final questText = '${quest.instruction ?? ''} ${quest.explanation ?? ''}'
+          .toLowerCase();
+      int dayScore = dayWords.where((w) => questText.contains(w)).length;
+      int nightScore = nightWords.where((w) => questText.contains(w)).length;
+
+      if (dayScore != nightScore) {
+        if (isCorrect) {
+          return dayScore > nightScore;
+        } else {
+          return nightScore > dayScore;
+        }
+      }
+
+      // Ultimate fallback: assign based on index to ensure visual variety
+      return options.indexOf(text) == 0;
+    }
+
+    return true;
+  }
+
   Widget _buildCelestialCard(
     BuildContext context,
     KidsLoaded state,
     String text,
-    bool isCorrect,
+    dynamic quest,
   ) {
-    final isDay =
-        text.toLowerCase().contains("day") ||
-        text.toLowerCase().contains("sun") ||
-        text.toLowerCase().contains("morning");
+    final isDay = _isDaytime(text, quest);
+    final isCorrect = text == quest.correctAnswer;
 
     // Day = Sunny Sky colors, Night = Deep Space colors
     final color = isDay ? _LocalPalette.color38bdf8 : AppColors.slate800;
     final borderColor = isDay ? _LocalPalette.color7dd3fc : AppColors.slate700;
     final shadowColor = isDay ? _LocalPalette.color0284c7 : AppColors.slate900;
 
-    final cardWidget = Container(
-      height: 120.h,
-      width: 140.w,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: borderColor, width: 4.r),
-        boxShadow: [BoxShadow(color: shadowColor, offset: const Offset(0, 8))],
-      ),
-      child: Center(
+    final cardWidget = GestureDetector(
+      onTap: state.answerStatus.isAnswered
+          ? null
+          : () {
+              if (!isCorrect) {
+                di.sl<KidsTTSService>().speak(text);
+              }
+              context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+            },
+      child: Container(
+        constraints: BoxConstraints(minHeight: 100.h),
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: borderColor, width: 2.r),
+          boxShadow: [
+            BoxShadow(
+              color: shadowColor,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Bouncing icon (Sun or Moon)
             Builder(
@@ -326,9 +427,9 @@ class KidsDayNightLayout extends StatelessWidget {
                 Widget icon = Icon(
                   isDay ? Icons.wb_sunny_rounded : Icons.mode_night_rounded,
                   color: isDay ? _LocalPalette.colorfef08a : AppColors.slate200,
-                  size: 42.sp,
+                  size: 32.sp,
                 );
-                if (!reduceMotion) {
+                if (!reduceMotion && !state.answerStatus.isAnswered) {
                   icon = icon
                       .animate(onPlay: (c) => c.repeat(reverse: true))
                       .moveY(
@@ -341,23 +442,21 @@ class KidsDayNightLayout extends StatelessWidget {
                 return icon;
               },
             ),
-
             SizedBox(height: 12.h),
-
-            FittedBox(
-              fit: BoxFit.scaleDown,
+            Flexible(
               child: Text(
                 text,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
                   color: Colors.white,
+                  height: 1.3,
                   shadows: [
                     Shadow(
-                      color: Colors.black.withValues(alpha: 0.2),
-                      blurRadius: 4,
-                      offset: const Offset(0, 2),
+                      color: Colors.black.withValues(alpha: 0.1),
+                      blurRadius: 2,
+                      offset: const Offset(0, 1),
                     ),
                   ],
                 ),
@@ -371,11 +470,20 @@ class KidsDayNightLayout extends StatelessWidget {
 
     return Draggable<String>(
       data: text,
+      maxSimultaneousDrags: state.answerStatus.isAnswered ? 0 : 1,
       feedback: Material(
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(opacity: 0.9, child: cardWidget),
+          child: Opacity(
+            opacity: 0.9,
+            child: SizedBox(
+              width:
+                  MediaQuery.of(context).size.width *
+                  0.4, // Responsive feedback width
+              child: cardWidget,
+            ),
+          ),
         ),
       ),
       childWhenDragging: Opacity(opacity: 0.3, child: cardWidget),

@@ -1631,7 +1631,8 @@ class GameInstructionService {
             "Place it on the X-Ray",
           ],
           actionText: "Play Now",
-          tip: "Tip: Try pointing to that body part on yourself to guess the answer! 🧠",
+          tip:
+              "Tip: Try pointing to that body part on yourself to guess the answer! 🧠",
         );
       case 'family':
         return const GameBriefing(
@@ -1857,17 +1858,18 @@ class GameInstructionService {
         );
       case 'day_night':
         return const GameBriefing(
-          title: "Sun and Moon",
+          title: "Day and Night",
           icon: Icons.brightness_6_rounded,
           objective:
-              "Look up at the sky! Peer through the telescope to read the clue, and switch the window to show the correct time of day.",
+              "Read the clue in the sky, then select the right option to show when it happens.",
           rules: [
-            "Read the sky clue",
-            "Decide if it's day or night",
-            "Switch the window scene",
+            "Read the clue",
+            "Think about the time",
+            "Select the correct answer",
           ],
-          actionText: "Switch Sky",
-          tip: "PRO TIP: Does this happen when it's sunny or dark outside? 🌙",
+          actionText: "Play",
+          tip:
+              "PRO TIP: Think about whether the sun is up or the stars are out! ☀️🌙",
         );
       case 'weather':
         return const GameBriefing(
@@ -1920,4 +1922,3 @@ class GameInstructionService {
     );
   }
 }
-
