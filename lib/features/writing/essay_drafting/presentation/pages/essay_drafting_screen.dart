@@ -67,6 +67,12 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
     super.initState();
     _scrollController = ScrollController();
     initWritingGame();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        final state = context.read<WritingBloc>().state;
+        onWritingStateChanged(context, state);
+      }
+    });
   }
 
   void _onSlot(String slotKey, String data, bool isAnswered) {
