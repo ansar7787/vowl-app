@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -26,6 +27,7 @@ class WritingEmailKeyboardInput extends StatefulWidget {
 
 class _WritingEmailKeyboardInputState extends State<WritingEmailKeyboardInput> {
   final _controller = TextEditingController();
+  final _focusNode = FocusNode();
   final _hapticService = di.sl<HapticService>();
 
   void _submitInput() {
@@ -78,6 +80,7 @@ class _WritingEmailKeyboardInputState extends State<WritingEmailKeyboardInput> {
   @override
   void dispose() {
     _controller.dispose();
+    _focusNode.dispose();
     super.dispose();
   }
 
@@ -112,6 +115,13 @@ class _WritingEmailKeyboardInputState extends State<WritingEmailKeyboardInput> {
               Expanded(
                 child: TextField(
                   controller: _controller,
+                  focusNode: _focusNode,
+                  onTap: () {
+                    if (_focusNode.hasFocus) {
+                      SystemChannels.textInput.invokeMethod('TextInput.show');
+                    }
+                  },
+                  onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
