@@ -206,14 +206,6 @@ class _KidsChalkboard extends StatefulWidget {
 }
 
 class _KidsChalkboardState extends State<_KidsChalkboard> {
-  final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
-
-  @override
-  void dispose() {
-    _isRevealed.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return DragTarget<String>(
@@ -225,72 +217,68 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return ValueListenableBuilder<bool>(
-          valueListenable: _isRevealed,
-          builder: (context, isRevealed, child) {
-            return AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              width: 320.w,
-              height: 220.h,
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? _LocalPalette.color2d6a4f
-                    : _LocalPalette.color1b4332,
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: isHovering
-                      ? _LocalPalette.colorb07d45
-                      : _LocalPalette.color8b5a2b,
-                  width: 12.r,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.2),
-                    blurRadius: 15,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
+        final shouldReveal = widget.state.answerStatus == AnswerStatus.correct || widget.state.isFinalFailure;
+        
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          width: 320.w,
+          height: 220.h,
+          padding: EdgeInsets.all(12.r),
+          decoration: BoxDecoration(
+            color: isHovering
+                ? _LocalPalette.color2d6a4f
+                : _LocalPalette.color1b4332,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: isHovering
+                  ? _LocalPalette.colorb07d45
+                  : _LocalPalette.color8b5a2b,
+              width: 12.r,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 15,
+                offset: const Offset(0, 10),
               ),
-              child: InkWell(
-                onTap: widget.state.answerStatus.isAnswered
-                    ? null
-                    : () {
-                        if (InstructionHelper.getInstruction(
-                          widget.quest,
-                        ).isNotEmpty) {
-                          di.sl<KidsTTSService>().speak(
-                            InstructionHelper.getInstruction(widget.quest),
-                          );
-                        } else if (widget.quest.wordExample != null) {
-                          di.sl<KidsTTSService>().speak(
-                            widget.quest.wordExample!,
-                          );
-                        } else if (widget.quest.question != null) {
-                          di.sl<KidsTTSService>().speak(widget.quest.question!);
-                        }
-                        if (!isRevealed) {
-                          _isRevealed.value = true;
-                        }
-                      },
-                child: Center(
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 500),
+            ],
+          ),
+          child: InkWell(
+            onTap: widget.state.answerStatus.isAnswered
+                ? null
+                : () {
+                    if (InstructionHelper.getInstruction(
+                      widget.quest,
+                    ).isNotEmpty) {
+                      di.sl<KidsTTSService>().speak(
+                        InstructionHelper.getInstruction(widget.quest),
+                        force: true,
+                      );
+                    } else if (widget.quest.wordExample != null) {
+                      di.sl<KidsTTSService>().speak(
+                        widget.quest.wordExample!,
+                        force: true,
+                      );
+                    } else if (widget.quest.question != null) {
+                      di.sl<KidsTTSService>().speak(widget.quest.question!, force: true);
+                    }
+                  },
+            child: Center(
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
                     transitionBuilder: (child, animation) {
                       return FadeTransition(
                         opacity: animation,
                         child: ScaleTransition(scale: animation, child: child),
                       );
                     },
-                    child: !isRevealed
+                    child: !shouldReveal
                         ? _buildUnrevealedState(context, widget.quest)
                         : _buildRevealedState(context, widget.quest),
                   ),
                 ),
               ),
             );
-          },
-        );
       },
     );
   }
@@ -372,7 +360,7 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                 ),
                 SizedBox(width: 8.w),
                 KidsFittedText(
-                  context.tr('games.kids_tap_clue', fallback: 'Tap for clue'),
+                  context.tr('games.kids_tap_listen', fallback: 'Tap to listen'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
@@ -401,6 +389,14 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              if ((quest.wordEmoji ?? quest.emoji) != null)
+                Padding(
+                  padding: EdgeInsets.only(bottom: 16.h),
+                  child: Text(
+                    (quest.wordEmoji ?? quest.emoji)!,
+                    style: TextStyle(fontSize: 72.sp),
+                  ),
+                ),
               if (quest.wordExample != null)
                 Text.rich(
                   TextSpan(
