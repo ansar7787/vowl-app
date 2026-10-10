@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -443,12 +443,12 @@ class StoryServiceImpl implements StoryService {
       "Master Explorer! You've traveled through the land, the sea, and the stars! 🛸",
     ],
     'bodyparts': [
-      "Head, shoulders, knees, and toes! Let's learn about ourselves! 🧒",
-      "Human Wonder! You're discovering how amazing your body is! 💪",
-      "The Anatomy Ace! You're getting so smart about your senses! 👂",
-      "A miracle of motion! You're the star of your own physical journey! 🏃",
-      "100 levels of self-discovery! You are the Master of the Mirror! 🪞",
-      "Grand Biologist! You know every secret of the human form! 🧬",
+      "Head, shoulders, knees, and toes! Let's learn the names of our body parts! 🧒",
+      "Great job! You're learning how to talk about the things your body can do. 💪",
+      "Keep it up! You're doing so well matching the body parts with their jobs. 👂",
+      "Halfway there! You are really getting to know all the words for our body parts. 🏃",
+      "Wow, 100 levels! You know so much about how your body works! 🪞",
+      "Amazing! You have learned every single body part word in this game! 🧬",
     ],
     'clothing': [
       "Dressed for success! Let's find the colorful hat in the closet! 🎩",
@@ -1648,3 +1648,4 @@ class StoryServiceImpl implements StoryService {
     return LevelThemeHelper.getCategoryBaseColor('grammar');
   }
 }
+

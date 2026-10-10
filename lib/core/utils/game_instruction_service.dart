@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
@@ -1624,14 +1624,14 @@ class GameInstructionService {
           title: "My Body",
           icon: Icons.accessibility_new_rounded,
           objective:
-              "Time for a quick checkup! Read the symptoms on the doctor's clipboard, and place the healing bandage on the correct body part.",
+              "Listen to the fun clue, find the band-aid for that body part, and place it on the X-Ray!",
           rules: [
-            "Read the medical clues",
-            "Identify the body part",
-            "Apply the bandage",
+            "Listen to the clue",
+            "Pick the right band-aid",
+            "Place it on the X-Ray",
           ],
-          actionText: "Start Learning",
-          tip: "PRO TIP: Can you point to that body part on yourself? 🧍",
+          actionText: "Play Now",
+          tip: "Tip: Try pointing to that body part on yourself to guess the answer! 🧠",
         );
       case 'family':
         return const GameBriefing(
@@ -1920,3 +1920,4 @@ class GameInstructionService {
     );
   }
 }
+
