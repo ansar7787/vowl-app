@@ -1536,15 +1536,15 @@ class GameInstructionService {
           title: "Alphabet Game",
           icon: Icons.abc_rounded,
           objective:
-              "Listen to the spoken word and find the missing letter to complete the spelling on the chalkboard.",
+              "Listen to the instruction and tap the correct letter block to reveal a fun word on the chalkboard.",
           rules: [
-            "Listen to the spoken word",
-            "Look at the word on the board",
-            "Tap the correct missing letter",
+            "Tap the chalkboard to hear the instruction",
+            "Find the matching letter block",
+            "Tap it to reveal the word",
           ],
           actionText: "Start Playing",
           tip:
-              "Pro tip: Pay attention to the highlighted part of the word on the board, it usually gives away the missing letter sound.",
+              "Pro tip: If you get stuck, tap the chalkboard question mark again to hear the instruction as many times as you need!",
         );
       case 'animals':
         return const GameBriefing(
