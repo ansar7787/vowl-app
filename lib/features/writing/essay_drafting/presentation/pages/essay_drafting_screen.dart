@@ -378,17 +378,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                     ),
                                   if (_pendingSubmit.value && !isAnswered)
                                     TypeToConfirmOverlay(
-                                      expectedText:
-                                          _blueprintSlots.value.isNotEmpty &&
-                                              _blueprintSlots
-                                                      .value
-                                                      .values
-                                                      .first !=
-                                                  null
-                                          ? _blueprintSlots.value.values.first!
-                                          : "",
-                                      displayText:
-                                          "Type the sentence to confirm",
+                                      expectedText: _blueprintSlots.value.values
+                                          .where((v) => v != null)
+                                          .join(' '),
                                       primaryColor: theme.primaryColor,
                                       onConfirmed: () =>
                                           _submitFinalAnswer(true),
@@ -396,6 +388,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                           _submitFinalAnswer(false),
                                       allowSkip: true,
                                       isPositioned: false,
+                                      displayFontSize: 16.sp,
+                                      displayFontWeight: FontWeight.w500,
+                                      displayTextAlign: TextAlign.left,
                                     ),
                                   SizedBox(
                                     height: !isAnswered
