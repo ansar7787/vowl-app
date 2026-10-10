@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/features/writing/summarize_story_writing/presentation/models/describe_frame_slot.dart';
+import 'package:vowl/features/writing/summarize_story_writing/presentation/models/summarize_story_frame_slot.dart';
 
 class SummarizeStoryFilmStrip extends StatelessWidget {
-  final List<DescribeFrameSlot> slots;
+  final List<SummarizeStoryFrameSlot> slots;
   final Color color;
   final bool isDark;
   final Function(int, String) onDropFrame;
@@ -88,14 +88,16 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                                     width: 2,
                                   ),
                                 ),
-                                child: Center(
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
                                   child: Text(
                                     text ?? "Drop event here...",
-                                    textAlign: TextAlign.center,
+                                    textAlign: TextAlign.start,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w600,
+                                      height: 1.4,
                                       color: text != null
                                           ? (isDark
                                                 ? Colors.white

@@ -24,6 +24,9 @@ class TypeToConfirmOverlay extends StatefulWidget {
   final int? bonusCoins;
   final bool allowSkip;
   final bool isPositioned;
+  final double? displayFontSize;
+  final FontWeight? displayFontWeight;
+  final TextAlign? displayTextAlign;
 
   const TypeToConfirmOverlay({
     super.key,
@@ -38,6 +41,9 @@ class TypeToConfirmOverlay extends StatefulWidget {
     this.bonusCoins,
     this.allowSkip = true,
     this.isPositioned = true,
+    this.displayFontSize,
+    this.displayFontWeight,
+    this.displayTextAlign,
   });
 
   @override
@@ -138,8 +144,8 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
       type: MaterialType.transparency,
       child: Padding(
         padding: EdgeInsets.only(
-          left: 24.w,
-          right: 24.w,
+          left: widget.isPositioned ? 24.w : 0,
+          right: widget.isPositioned ? 24.w : 0,
           bottom: widget.isPositioned
               ? MediaQuery.of(context).viewInsets.bottom + 12.h
               : 0,
@@ -345,13 +351,14 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                   ),
                   child: Text(
                     widget.displayText ?? widget.expectedText,
-                    textAlign: TextAlign.center,
+                    textAlign: widget.displayTextAlign ?? TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w800,
+                      fontSize: widget.displayFontSize ?? 20.sp,
+                      fontWeight: widget.displayFontWeight ?? FontWeight.w800,
                       color: textColor,
                       letterSpacing: 0.5,
+                      height: 1.4,
                     ),
                   ),
                 ),
