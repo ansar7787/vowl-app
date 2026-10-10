@@ -420,7 +420,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                         border: Border.all(
                                                           color: isDark
                                                               ? Colors.white24
-                                                              : Colors.black24,
+                                                              : Colors.black26,
                                                         ),
                                                       ),
                                                       child: Center(
@@ -581,3 +581,4 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
     );
   }
 }
+
