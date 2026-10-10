@@ -49,6 +49,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final _answerController = TextEditingController();
+  final _focusNode = FocusNode();
   final _scrollController = ScrollController();
 
   final ValueNotifier<double> _inkLevel = ValueNotifier(0.0);
@@ -92,6 +93,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
   @override
   void dispose() {
     _answerController.dispose();
+    _focusNode.dispose();
     _scrollController.dispose();
     _inkLevel.dispose();
     _wordCount.dispose();
@@ -285,6 +287,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
 
                                   ShortAnswerInkwell(
                                     controller: _answerController,
+                                    focusNode: _focusNode,
                                     isAnswered: isAnswered,
                                     wordCount: _wordCount.value,
                                     inkLevel: _inkLevel.value,
@@ -396,7 +399,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                       ),
                                     ),
                                   if (!isAnswered && livesRemaining > 0) ...[
-                                    SizedBox(height: 24.h),
                                     ScaleButton(
                                       onTap: () => _submitAnswer(
                                         targetKeywords,
@@ -453,7 +455,12 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                               ),
                             ),
                           ),
-                          SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height: 120.h +
+                                  MediaQuery.of(context).viewInsets.bottom,
+                            ),
+                          ),
                         ],
                       ),
                     );

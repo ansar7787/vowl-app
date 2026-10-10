@@ -11,6 +11,7 @@ class _LocalPalette {
 
 class ShortAnswerInkwell extends StatelessWidget {
   final TextEditingController controller;
+  final FocusNode focusNode;
   final bool isAnswered;
   final int wordCount;
   final double inkLevel;
@@ -20,6 +21,7 @@ class ShortAnswerInkwell extends StatelessWidget {
   const ShortAnswerInkwell({
     super.key,
     required this.controller,
+    required this.focusNode,
     required this.isAnswered,
     required this.wordCount,
     required this.inkLevel,
@@ -30,137 +32,142 @@ class ShortAnswerInkwell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: isDark ? _LocalPalette.color121212 : Colors.white,
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: isAnswered
-              ? color.withValues(alpha: 0.5)
-              : (isDark ? Colors.white12 : Colors.black12),
-          width: 2,
+    return GestureDetector(
+      onTap: isAnswered ? null : () => focusNode.requestFocus(),
+      behavior: HitTestBehavior.opaque,
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(20.r),
+        decoration: BoxDecoration(
+          color: isDark ? _LocalPalette.color121212 : Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: isAnswered
+                ? color.withValues(alpha: 0.5)
+                : (isDark ? Colors.white12 : Colors.black12),
+            width: 2,
+          ),
+          boxShadow: isAnswered
+              ? [
+                  BoxShadow(
+                    color: color.withValues(alpha: 0.2),
+                    blurRadius: 30,
+                    spreadRadius: -5,
+                  ),
+                ]
+              : [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 10,
+                    spreadRadius: 2,
+                  ),
+                ],
         ),
-        boxShadow: isAnswered
-            ? [
-                BoxShadow(
-                  color: color.withValues(alpha: 0.2),
-                  blurRadius: 30,
-                  spreadRadius: -5,
-                ),
-              ]
-            : [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.05),
-                  blurRadius: 10,
-                  spreadRadius: 2,
-                ),
-              ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Row(
-                  children: [
-                    Icon(Icons.edit_note_rounded, size: 18.r, color: color),
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: Text(
-                        "YOUR RESPONSE",
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          color: color,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.5,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      Icon(Icons.edit_note_rounded, size: 18.r, color: color),
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        child: Text(
+                          "YOUR RESPONSE",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            color: color,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 1.5,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(width: 8.w),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  color: wordCount >= 4
-                      ? (isDark
-                            ? tokens.gameCorrect.withValues(alpha: 0.1)
-                            : KidsColors.safeGreen.withValues(alpha: 0.1))
-                      : (isDark ? Colors.white10 : Colors.black12),
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-                child: Text(
-                  "$wordCount / 4 WORDS MIN",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 9.sp,
-                    color: wordCount >= 4
-                        ? (isDark ? tokens.gameCorrect : KidsColors.safeGreen)
-                        : (isDark ? Colors.white54 : Colors.black54),
-                    fontWeight: FontWeight.w600,
+                    ],
                   ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          TextField(
-            controller: controller,
-            maxLines: 5,
-            enabled: !isAnswered,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 15.sp,
-              color: Theme.of(context).colorScheme.onSurface,
-              height: 1.6,
-              fontWeight: FontWeight.w500,
-            ),
-            decoration: InputDecoration(
-              hintText: "Type your sentence here...",
-              hintStyle: TextStyle(
-                fontFamily: 'Outfit',
-                color: isDark ? Colors.white30 : Colors.black38,
-                fontWeight: FontWeight.w400,
-              ),
-              border: InputBorder.none,
-            ),
-          ),
-          SizedBox(height: 12.h),
-          Stack(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 4.h,
-                decoration: BoxDecoration(
-                  color: isDark ? Colors.white10 : Colors.black12,
-                  borderRadius: BorderRadius.circular(2.r),
-                ),
-              ),
-              AnimatedContainer(
-                duration: 300.milliseconds,
-                width: MediaQuery.of(context).size.width * inkLevel * 0.8,
-                height: 4.h,
-                decoration: BoxDecoration(
-                  color: color,
-                  borderRadius: BorderRadius.circular(2.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: color.withValues(alpha: 0.6),
-                      blurRadius: 6,
+                SizedBox(width: 8.w),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                  decoration: BoxDecoration(
+                    color: wordCount >= 4
+                        ? (isDark
+                              ? tokens.gameCorrect.withValues(alpha: 0.1)
+                              : KidsColors.safeGreen.withValues(alpha: 0.1))
+                        : (isDark ? Colors.white10 : Colors.black12),
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Text(
+                    "$wordCount / 4 WORDS MIN",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 9.sp,
+                      color: wordCount >= 4
+                          ? (isDark ? tokens.gameCorrect : KidsColors.safeGreen)
+                          : (isDark ? Colors.white54 : Colors.black54),
+                      fontWeight: FontWeight.w600,
                     ),
-                  ],
+                  ),
                 ),
+              ],
+            ),
+            SizedBox(height: 12.h),
+            TextField(
+              controller: controller,
+              focusNode: focusNode,
+              maxLines: 5,
+              enabled: !isAnswered,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                color: Theme.of(context).colorScheme.onSurface,
+                height: 1.6,
+                fontWeight: FontWeight.w500,
               ),
-            ],
-          ),
-        ],
+              decoration: InputDecoration(
+                hintText: "Type your sentence here...",
+                hintStyle: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: isDark ? Colors.white30 : Colors.black38,
+                  fontWeight: FontWeight.w400,
+                ),
+                border: InputBorder.none,
+              ),
+            ),
+            SizedBox(height: 12.h),
+            Stack(
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 4.h,
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white10 : Colors.black12,
+                    borderRadius: BorderRadius.circular(2.r),
+                  ),
+                ),
+                AnimatedContainer(
+                  duration: 300.milliseconds,
+                  width: MediaQuery.of(context).size.width * inkLevel * 0.8,
+                  height: 4.h,
+                  decoration: BoxDecoration(
+                    color: color,
+                    borderRadius: BorderRadius.circular(2.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withValues(alpha: 0.6),
+                        blurRadius: 6,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
