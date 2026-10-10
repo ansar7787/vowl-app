@@ -447,14 +447,18 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               displayMessage = hintTextValue;
             } else if (state.answerStatus == AnswerStatus.unanswered) {
               displayMessage = state.currentQuest.instruction;
-            } else if (state.answerStatus == AnswerStatus.correct) {
+            } else if (state.answerStatus == AnswerStatus.correct || state.isFinalFailure) {
               final combined = [
                 if (state.currentQuest.funFact?.isNotEmpty == true)
                   state.currentQuest.funFact,
                 if (state.currentQuest.explanation?.isNotEmpty == true)
                   state.currentQuest.explanation,
               ].join(' ');
-              displayMessage = combined.isNotEmpty ? combined : "Great job!";
+              if (combined.isNotEmpty) {
+                displayMessage = combined;
+              } else {
+                displayMessage = state.answerStatus == AnswerStatus.correct ? "Great job!" : "";
+              }
             } else {
               displayMessage = "";
             }
