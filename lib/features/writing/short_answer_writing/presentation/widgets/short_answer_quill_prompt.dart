@@ -50,7 +50,7 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(24.r),
+            padding: EdgeInsets.all(20.r),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -65,7 +65,7 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
                           child: Icon(
                             Icons.psychology_alt_rounded,
                             color: color,
-                            size: 20.r,
+                            size: 18.r,
                           ),
                         )
                         .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -73,26 +73,26 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
                           begin: const Offset(1, 1),
                           end: const Offset(1.1, 1.1),
                         ),
-                    SizedBox(width: 12.w),
+                    SizedBox(width: 10.w),
                     Text(
-                      "ANALYSIS PROMPT",
+                      "PROMPT",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         color: color,
-                        letterSpacing: 2,
+                        letterSpacing: 1.5,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 16.h),
+                SizedBox(height: 12.h),
                 Text(
                   prompt,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
                     color: Theme.of(context).colorScheme.onSurface,
                     height: 1.5,
                   ),

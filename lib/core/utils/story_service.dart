@@ -239,7 +239,7 @@ class StoryServiceImpl implements StoryService {
     'sentenceBuilder':
         "Connect the scattered word fragments to build a natural-sounding sentence. It's a great way to develop an instinctive feel for how native speakers put words together.",
     'shortAnswerWriting':
-        "Sometimes less is more! Let's practice answering questions clearly and concisely to deliver your message perfectly.",
+        "Let's practice writing natural, everyday sentences. Read the context prompt and use the keywords to write a clear sentence that fits the situation.",
     'summarizeStoryWriting':
         "Can you capture the main idea? Let's practice reading a story and distilling it down to its most important points.",
     'writingEmail':
@@ -1313,11 +1313,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'shortanswerwriting': [
       "",
-      "Excellent start! Your understanding of short answers is growing.",
-      "You are navigating short answers with increasing confidence.",
-      "Halfway there! You are a rising star in short answers.",
-      "Level 100! You are an absolute master of short answers.",
-      "Level 200 reached! Your grasp of short answers is legendary.",
+      "Great start! You're already getting the hang of writing natural sentences.",
+      "Nice work! Your writing is sounding more and more like a native speaker.",
+      "50 levels cleared! You're doing a fantastic job putting these keywords together.",
+      "100 levels cleared! Your sentences are flowing naturally and perfectly. Amazing work!",
+      "200 levels! You have a true gift for writing clear and natural English.",
     ],
     'summarizestorywriting': [
       "",

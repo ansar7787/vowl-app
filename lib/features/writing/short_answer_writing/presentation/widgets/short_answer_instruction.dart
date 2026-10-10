@@ -39,7 +39,7 @@ class ShortAnswerInstruction extends StatelessWidget {
               maxLines: null,
               style: TextStyle(
                 fontSize: 15.sp,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
                 color: primaryColor,
               ),
             ),

@@ -32,10 +32,10 @@ class ShortAnswerInkwell extends StatelessWidget {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark ? _LocalPalette.color121212 : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isAnswered
               ? color.withValues(alpha: 0.5)
@@ -77,7 +77,7 @@ class ShortAnswerInkwell extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
                           color: color,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: 1.5,
                         ),
                       ),
@@ -89,7 +89,7 @@ class ShortAnswerInkwell extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                 decoration: BoxDecoration(
-                  color: wordCount >= 10
+                  color: wordCount >= 4
                       ? (isDark
                             ? tokens.gameCorrect.withValues(alpha: 0.1)
                             : KidsColors.safeGreen.withValues(alpha: 0.1))
@@ -97,33 +97,33 @@ class ShortAnswerInkwell extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12.r),
                 ),
                 child: Text(
-                  "$wordCount / 10 WORDS MIN",
+                  "$wordCount / 4 WORDS MIN",
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 9.sp,
-                    color: wordCount >= 10
+                    color: wordCount >= 4
                         ? (isDark ? tokens.gameCorrect : KidsColors.safeGreen)
                         : (isDark ? Colors.white54 : Colors.black54),
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 16.h),
+          SizedBox(height: 12.h),
           TextField(
             controller: controller,
             maxLines: 5,
             enabled: !isAnswered,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 16.sp,
+              fontSize: 15.sp,
               color: Theme.of(context).colorScheme.onSurface,
               height: 1.6,
               fontWeight: FontWeight.w500,
             ),
             decoration: InputDecoration(
-              hintText: "Type your analytical response here...",
+              hintText: "Type your sentence here...",
               hintStyle: TextStyle(
                 fontFamily: 'Outfit',
                 color: isDark ? Colors.white30 : Colors.black38,

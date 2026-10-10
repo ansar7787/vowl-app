@@ -21,7 +21,6 @@ import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_quill_prompt.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_booster_tokens.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_inkwell.dart';
-import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 
 class ShortAnswerScreen extends StatefulWidget {
   final int level;
@@ -52,30 +51,40 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
   final _answerController = TextEditingController();
   final _scrollController = ScrollController();
 
-  final ValueNotifier<bool> _showContextSentence = ValueNotifier(false);
   final ValueNotifier<double> _inkLevel = ValueNotifier(0.0);
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
   WritingQuest? _lastQuest;
 
+  int _strikeCount = 0;
+  String? _savedTextForRetry;
+
+  void _handleValidationFailure(
+    String message, {
+    CustomSnackBarType type = CustomSnackBarType.warning,
+  }) {
+    _strikeCount++;
+    if (_strikeCount >= 3) {
+      _savedTextForRetry = _answerController.text;
+      if (_lastQuest != null) {
+        submitWrongAnswer(quest: _lastQuest!);
+      }
+    } else {
+      CustomSnackBar.show(
+        context: context,
+        message: "$message (${3 - _strikeCount} tries left)",
+        type: type,
+      );
+      if (type == CustomSnackBarType.warning) {
+        hapticService.warning();
+      } else {
+        hapticService.selection();
+      }
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    _showContextSentence.addListener(() {
-      if (_showContextSentence.value &&
-          mounted &&
-          _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _scrollController.hasClients) {
-            _scrollController.animateTo(
-              _scrollController.position.maxScrollExtent,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutCubic,
-            );
-          }
-        });
-      }
-    });
-
     initWritingGame();
     _answerController.addListener(_onTextChanged);
   }
@@ -84,7 +93,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
   void dispose() {
     _answerController.dispose();
     _scrollController.dispose();
-    _showContextSentence.dispose();
     _inkLevel.dispose();
     _wordCount.dispose();
     disposeWritingGame();
@@ -105,24 +113,27 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
     if (isAnswered || _answerController.text.trim().isEmpty) return;
 
     final rawText = _answerController.text.trim();
-    if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Please start your answer with a capital letter.",
-        type: CustomSnackBarType.warning,
+    if (!RegExp(r'^[A-Z]').hasMatch(
+      rawText.trimLeft().replaceAll(
+        RegExp(
+          r'^["'
+          "'"
+          r']',
+        ),
+        '',
+      ),
+    )) {
+      _handleValidationFailure(
+        "Please start your answer with a capital letter.",
       );
-      hapticService.selection();
       return;
     }
 
     final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
-    if (!['.', '!', '?'].contains(lastChar)) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Please end your answer with proper punctuation (., !, or ?).",
-        type: CustomSnackBarType.warning,
+    if (!['.', '!', '?', '"', "'"].contains(lastChar)) {
+      _handleValidationFailure(
+        "Please end your answer with proper punctuation (., !, or ?).",
       );
-      hapticService.selection();
       return;
     }
 
@@ -137,13 +148,11 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
       }
     }
 
-    if (_wordCount.value < 10) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Keep writing! A valid answer requires at least 10 words.",
+    if (_wordCount.value < 4) {
+      _handleValidationFailure(
+        "Keep writing! A valid answer requires at least 4 words.",
         type: CustomSnackBarType.info,
       );
-      hapticService.selection();
       return;
     }
 
@@ -156,13 +165,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
     if (!mounted) return;
 
     if (languageCode != 'en') {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "Your answer must be written in English. Please write a natural sentence!",
-        type: CustomSnackBarType.warning,
+      _handleValidationFailure(
+        "Your answer must be written in English. Please write a natural sentence!",
       );
-      hapticService.selection();
       return;
     }
 
@@ -170,34 +175,29 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
     if (!GibberishDetectorService.isNaturalSentence(context, rawText)) return;
     // ---------------------------------
 
-    if (matchedCount < 2) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Use at least 2 key terms to complete your answer!",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
+    if (matchedCount < targetKeywords.length) {
+      _handleValidationFailure("Use all key words to complete your answer!");
       return;
     }
 
     hapticService.success();
-    _showContextSentence.value = true;
-  }
-
-  void _onContextSentenceConfirmed() {
-    _showContextSentence.value = false;
     submitCorrectAnswer();
   }
 
   @override
   void onQuestionReset() {
-    _showContextSentence.value = false;
-
     _inkLevel.value = 0.0;
-
     _wordCount.value = 0;
 
-    _answerController.clear();
+    if (_savedTextForRetry != null) {
+      _answerController.text = _savedTextForRetry!;
+      _savedTextForRetry = null;
+      _strikeCount = 0;
+      _onTextChanged();
+    } else {
+      _answerController.clear();
+      _strikeCount = 0;
+    }
   }
 
   @override
@@ -240,7 +240,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
           child: ListenableBuilder(
             listenable: Listenable.merge([
               showConfettiNotifier,
-              _showContextSentence,
               _inkLevel,
               _wordCount,
             ]),
@@ -329,7 +328,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w900,
+                                                  fontWeight: FontWeight.w700,
                                                   color: theme.primaryColor,
                                                   letterSpacing: 1.2,
                                                 ),
@@ -348,12 +347,55 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                               height: 1.5,
                                             ),
                                           ),
+                                          if (quest.explanation != null &&
+                                              quest
+                                                  .explanation!
+                                                  .isNotEmpty) ...[
+                                            SizedBox(height: 12.h),
+                                            Container(
+                                              padding: EdgeInsets.all(12.r),
+                                              decoration: BoxDecoration(
+                                                color: isDark
+                                                    ? Colors.black26
+                                                    : Colors.black.withValues(
+                                                        alpha: 0.03,
+                                                      ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.r),
+                                              ),
+                                              child: Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Icon(
+                                                    Icons.info_outline_rounded,
+                                                    size: 16.r,
+                                                    color: theme.primaryColor,
+                                                  ),
+                                                  SizedBox(width: 8.w),
+                                                  Expanded(
+                                                    child: Text(
+                                                      quest.explanation!,
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 13.sp,
+                                                        color: isDark
+                                                            ? Colors.white70
+                                                            : Colors.black87,
+                                                        height: 1.4,
+                                                        fontStyle:
+                                                            FontStyle.italic,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
                                         ],
                                       ),
                                     ),
-                                  if (!_showContextSentence.value &&
-                                      !isAnswered &&
-                                      livesRemaining > 0) ...[
+                                  if (!isAnswered && livesRemaining > 0) ...[
                                     SizedBox(height: 24.h),
                                     ScaleButton(
                                       onTap: () => _submitAnswer(
@@ -365,13 +407,13 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                         height: 60.h,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(
-                                            20.r,
+                                            30.r,
                                           ),
-                                          color: _wordCount.value >= 10
+                                          color: _wordCount.value >= 4
                                               ? theme.primaryColor
                                               : Colors.grey,
                                           boxShadow: [
-                                            if (_wordCount.value >= 10)
+                                            if (_wordCount.value >= 4)
                                               BoxShadow(
                                                 color: theme.primaryColor
                                                     .withValues(alpha: 0.3),
@@ -380,63 +422,38 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                           ],
                                         ),
                                         child: Center(
-                                          child: Text(
-                                            "SEAL WITH WAX",
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 16.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color: Colors.white,
-                                              letterSpacing: 2,
-                                            ),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.approval_rounded,
+                                                color: Colors.white,
+                                                size: 24.r,
+                                              ),
+                                              SizedBox(width: 8.w),
+                                              Text(
+                                                "SUBMIT",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: Colors.white,
+                                                  letterSpacing: 2,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
                                     ),
                                   ],
-                                  SizedBox(
-                                    height: !isAnswered
-                                        ? MediaQuery.viewInsetsOf(
-                                                context,
-                                              ).bottom +
-                                              40.h
-                                        : 160.h,
-                                  ),
+                                  SizedBox(height: 40.h),
                                 ],
                               ),
                             ),
                           ),
-
-                          if (_showContextSentence.value && !isAnswered)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: ContextSentenceBuilder(
-                                  targetKeyword: targetKeywords.first,
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: _onContextSentenceConfirmed,
-                                  onSkipped: () {
-                                    _showContextSentence.value = false;
-                                    submitWrongAnswer(
-                                      quest: quest,
-                                      userAnswer: _answerController.text.trim(),
-                                    );
-                                  },
-                                  allowSkip: true,
-                                  isPositioned: false,
-                                  exampleSentence: quest.sampleAnswer,
-                                ),
-                              ),
-                            ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
-                            ),
-                          ),
+                          SliverToBoxAdapter(child: SizedBox(height: 120.h)),
                         ],
                       ),
                     );
