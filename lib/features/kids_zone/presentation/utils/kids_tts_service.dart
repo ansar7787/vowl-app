@@ -33,12 +33,13 @@ class KidsTTSService {
     await prefs.setBool(_narrationKey, enabled);
   }
 
-  Future<void> speak(String text) async {
+  Future<void> speak(String text, {bool force = false}) async {
     if (text.isEmpty) return;
-    if (!(await isNarrationEnabled())) return;
+    if (!force && !(await isNarrationEnabled())) return;
 
     try {
       await _flutterTts.stop();
+      // Ensure the language matches the current locale if we want to fix potential language issues, but for now just fix the mute check.
       await _flutterTts.speak(text);
     } catch (e) {
       di.sl<AppLogger>().warning("Kids TTS Error: $e", tag: 'KidsZone');

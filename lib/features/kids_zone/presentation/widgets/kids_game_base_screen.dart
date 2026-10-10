@@ -423,9 +423,15 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
   }
 
   Widget _buildDynamicMascot(BuildContext context, KidsLoaded state) {
+    bool isAnswered = state.answerStatus.isAnswered;
+    bool isFinalFailure = state.isFinalFailure;
+
+    if (isAnswered || isFinalFailure) {
+      return const SizedBox.shrink();
+    }
+
     bool isComplete = false;
     bool isGameOver = false;
-    bool isAnswered = state.answerStatus.isAnswered;
     bool? isCorrect = state.answerStatus.asBoolOrNull;
     int lives = state.livesRemaining;
 

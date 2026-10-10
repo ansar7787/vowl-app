@@ -252,13 +252,15 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                     ).isNotEmpty) {
                       di.sl<KidsTTSService>().speak(
                         InstructionHelper.getInstruction(widget.quest),
+                        force: true,
                       );
                     } else if (widget.quest.wordExample != null) {
                       di.sl<KidsTTSService>().speak(
                         widget.quest.wordExample!,
+                        force: true,
                       );
                     } else if (widget.quest.question != null) {
-                      di.sl<KidsTTSService>().speak(widget.quest.question!);
+                      di.sl<KidsTTSService>().speak(widget.quest.question!, force: true);
                     }
                   },
             child: Center(
