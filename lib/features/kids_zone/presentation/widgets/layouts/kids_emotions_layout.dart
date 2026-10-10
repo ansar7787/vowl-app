@@ -334,12 +334,24 @@ class KidsEmotionsLayout extends StatelessWidget {
       wordPart = parts.join(' ');
     }
 
-    final maskWidget = Container(
-      constraints: BoxConstraints(minHeight: 85.h),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20.r),
+    final maskWidget = GestureDetector(
+      onTap: state.answerStatus.isAnswered ? null : () {
+        if (!isCorrect) {
+          final p = text.trim().split(' ');
+          if (p.length > 1 && p.last.runes.any((r) => r > 127)) {
+            p.removeLast();
+          }
+          final textToSpeak = p.join(' ');
+          di.sl<KidsTTSService>().speak(textToSpeak);
+        }
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      child: Container(
+        constraints: BoxConstraints(minHeight: 85.h),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20.r),
           topRight: Radius.circular(20.r),
           bottomLeft: Radius.circular(40.r),
           bottomRight: Radius.circular(40.r),
@@ -377,7 +389,7 @@ class KidsEmotionsLayout extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ));
 
     return Draggable<String>(
       data: text,
