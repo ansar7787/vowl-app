@@ -49,6 +49,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final _controller = TextEditingController();
+  final _focusNode = FocusNode();
 
   final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
@@ -112,6 +113,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
   void dispose() {
     _scrollController.dispose();
     _controller.dispose();
+    _focusNode.dispose();
     _showSpeakToConfirm.dispose();
     _wordCount.dispose();
     _journalProgress.dispose();
@@ -399,6 +401,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
 
                                   DailyJournalScratchArea(
                                     controller: _controller,
+                                    focusNode: _focusNode,
                                     isAnswered: isAnswered,
                                     wordCount: _wordCount.value,
                                     journalProgress: _journalProgress.value,

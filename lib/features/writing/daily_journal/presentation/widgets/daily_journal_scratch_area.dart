@@ -1,10 +1,12 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class DailyJournalScratchArea extends StatelessWidget {
   final TextEditingController controller;
+  final FocusNode focusNode;
   final bool isAnswered;
   final int wordCount;
   final double journalProgress;
@@ -14,6 +16,7 @@ class DailyJournalScratchArea extends StatelessWidget {
   const DailyJournalScratchArea({
     super.key,
     required this.controller,
+    required this.focusNode,
     required this.isAnswered,
     required this.wordCount,
     required this.journalProgress,
@@ -47,10 +50,16 @@ class DailyJournalScratchArea extends StatelessWidget {
         children: [
           TextField(
             controller: controller,
+            focusNode: focusNode,
             maxLines: 5,
             enabled: !isAnswered,
             onTapOutside: (PointerDownEvent event) {
               FocusManager.instance.primaryFocus?.unfocus();
+            },
+            onTap: () {
+              if (focusNode.hasFocus) {
+                SystemChannels.textInput.invokeMethod('TextInput.show');
+              }
             },
             style: TextStyle(
               fontFamily: 'Spectral',

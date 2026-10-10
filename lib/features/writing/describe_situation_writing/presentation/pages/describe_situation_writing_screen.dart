@@ -50,6 +50,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final _textController = TextEditingController();
+  final _focusNode = FocusNode();
 
   final ValueNotifier<List<String>> _usedKeywords = ValueNotifier([]);
   final ValueNotifier<int?> _expandedEmojiIndex = ValueNotifier(null);
@@ -115,6 +116,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
   void dispose() {
     _scrollController.dispose();
     _textController.dispose();
+    _focusNode.dispose();
     _usedKeywords.dispose();
     _expandedEmojiIndex.dispose();
     _showSpeakToConfirm.dispose();
@@ -455,6 +457,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
                                   DescribeSituationWritingArea(
                                     textController: _textController,
+                                    focusNode: _focusNode,
                                     minWords: minWords,
                                     wordCount: _wordCount.value,
                                     usedKeywords: _usedKeywords.value,
