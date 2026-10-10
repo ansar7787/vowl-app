@@ -244,25 +244,32 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
             ],
           ),
           child: InkWell(
-            onTap: widget.state.answerStatus.isAnswered
-                ? null
-                : () {
-                    if (InstructionHelper.getInstruction(
-                      widget.quest,
-                    ).isNotEmpty) {
-                      di.sl<KidsTTSService>().speak(
-                        InstructionHelper.getInstruction(widget.quest),
-                        force: true,
-                      );
-                    } else if (widget.quest.wordExample != null) {
-                      di.sl<KidsTTSService>().speak(
-                        widget.quest.wordExample!,
-                        force: true,
-                      );
-                    } else if (widget.quest.question != null) {
-                      di.sl<KidsTTSService>().speak(widget.quest.question!, force: true);
-                    }
-                  },
+            onTap: () {
+              if (widget.state.answerStatus.isAnswered || widget.state.isFinalFailure) {
+                if (widget.quest.wordExample != null) {
+                  di.sl<KidsTTSService>().speak(
+                    widget.quest.wordExample!,
+                    force: true,
+                  );
+                }
+              } else {
+                if (InstructionHelper.getInstruction(
+                  widget.quest,
+                ).isNotEmpty) {
+                  di.sl<KidsTTSService>().speak(
+                    InstructionHelper.getInstruction(widget.quest),
+                    force: true,
+                  );
+                } else if (widget.quest.wordExample != null) {
+                  di.sl<KidsTTSService>().speak(
+                    widget.quest.wordExample!,
+                    force: true,
+                  );
+                } else if (widget.quest.question != null) {
+                  di.sl<KidsTTSService>().speak(widget.quest.question!, force: true);
+                }
+              }
+            },
             child: Center(
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 500),
