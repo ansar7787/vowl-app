@@ -188,16 +188,25 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
 
   @override
   void onQuestionReset() {
+    bool isNewQuest = true;
+    if (mounted) {
+      final bloc = context.read<WritingBloc>();
+      if (bloc.state is WritingLoaded) {
+        isNewQuest = (bloc.state as WritingLoaded).currentQuest != _lastQuest;
+      }
+    }
+
     _inkLevel.value = 0.0;
     _wordCount.value = 0;
 
-    if (_savedTextForRetry != null) {
+    if (_savedTextForRetry != null && !isNewQuest) {
       _answerController.text = _savedTextForRetry!;
       _savedTextForRetry = null;
       _strikeCount = 0;
       _onTextChanged();
     } else {
       _answerController.clear();
+      _savedTextForRetry = null;
       _strikeCount = 0;
     }
   }

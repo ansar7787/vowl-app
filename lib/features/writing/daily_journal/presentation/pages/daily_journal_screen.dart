@@ -216,21 +216,27 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
 
   @override
   void onQuestionReset() {
+    bool isNewQuest = true;
+    if (mounted) {
+      final bloc = context.read<WritingBloc>();
+      if (bloc.state is WritingLoaded) {
+        isNewQuest = (bloc.state as WritingLoaded).currentQuest != _lastQuest;
+      }
+    }
+
     _showSpeakToConfirm.value = false;
-
     _wordCount.value = 0;
-
     _journalProgress.value = 0.0;
-
     _isSubmitting.value = false;
 
-    if (_savedTextForRetry != null) {
+    if (_savedTextForRetry != null && !isNewQuest) {
       _controller.text = _savedTextForRetry!;
       _savedTextForRetry = null;
       _strikeCount = 0;
       _onTextChanged();
     } else {
       _controller.clear();
+      _savedTextForRetry = null;
       _strikeCount = 0;
     }
   }
