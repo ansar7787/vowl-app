@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -22,6 +23,7 @@ class CompleteSentenceKeyboardInput extends StatefulWidget {
 class _CompleteSentenceKeyboardInputState
     extends State<CompleteSentenceKeyboardInput> {
   final _controller = TextEditingController();
+  final _focusNode = FocusNode();
 
   void _submitInput() {
     final rawText = _controller.text.trim();
@@ -35,6 +37,7 @@ class _CompleteSentenceKeyboardInputState
   @override
   void dispose() {
     _controller.dispose();
+    _focusNode.dispose();
     super.dispose();
   }
 
@@ -69,6 +72,13 @@ class _CompleteSentenceKeyboardInputState
               Expanded(
                 child: TextField(
                   controller: _controller,
+                  focusNode: _focusNode,
+                  onTap: () {
+                    if (_focusNode.hasFocus) {
+                      SystemChannels.textInput.invokeMethod('TextInput.show');
+                    }
+                  },
+                  onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
