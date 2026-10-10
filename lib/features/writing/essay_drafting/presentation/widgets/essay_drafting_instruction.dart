@@ -33,7 +33,7 @@ class EssayDraftingInstruction extends StatelessWidget {
           Expanded(
             child: Text(
               instruction,
-              textAlign: TextAlign.left,
+              textAlign: TextAlign.center,
               maxLines: null,
               style: TextStyle(
                 fontSize: 14.sp,
