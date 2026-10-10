@@ -17,6 +17,7 @@ import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_
 import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_hex_slot.dart';
 import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_data_stream.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 
 class EssayDraftingScreen extends StatefulWidget {
   final int level;
@@ -261,7 +262,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                     SizedBox(height: 16.h),
                                     EssayDraftingInstruction(
                                       primaryColor: theme.primaryColor,
-                                      instruction: activeQuest.instruction,
+                                      instruction: InstructionHelper.getInstruction(activeQuest),
                                     ),
                                     SizedBox(height: 24.h),
 
