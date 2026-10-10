@@ -47,9 +47,9 @@ class DailyJournalPrompt extends StatelessWidget {
               Row(
                 children: [
                   Icon(
-                        Icons.nightlight_round,
+                        Icons.edit_note_rounded,
                         color: Colors.amberAccent,
-                        size: 24.r,
+                        size: 28.r,
                       )
                       .animate(onPlay: (c) => c.repeat(reverse: true))
                       .shimmer(duration: 3.seconds),
@@ -60,7 +60,7 @@ class DailyJournalPrompt extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white70 : Colors.black87,
                         height: 1.4,
                       ),
@@ -70,11 +70,6 @@ class DailyJournalPrompt extends StatelessWidget {
               ),
             ],
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(
-          duration: 4.seconds,
-          color: primaryColor.withValues(alpha: 0.1),
         );
   }
 }
