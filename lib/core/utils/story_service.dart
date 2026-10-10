@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -451,12 +451,12 @@ class StoryServiceImpl implements StoryService {
       "Amazing! You have learned every single body part word in this game! 🧬",
     ],
     'clothing': [
-      "Dressed for success! Let's find the colorful hat in the closet! 🎩",
-      "Fashion Hero! You're looking sharp and learning even sharper! 👔",
-      "The Style Icon! You have the perfect outfit for every occasion! 👗",
-      "A runway of words! You're the trendsetter of the classroom! 👟",
-      "100 levels of fashion! You are the Master of the Wardrobe! 🧥",
-      "Grand Designer! You've dressed the world in beautiful words! 👑",
+      "Listen closely! Let's solve the riddle and put the right clothes in the closet! 👕",
+      "Great listening! You're getting so fast at solving these fun clues! 🧦",
+      "You have such sharp ears! You found the exact match for the riddle! 👗",
+      "Halfway to 100! You're solving every clothing riddle like a true detective! 🕵️",
+      "100 riddles solved! You know all your clothes so perfectly! 🧢",
+      "Wow! You've listened to every clue and matched all the clothes beautifully! 👟",
     ],
   };
 
