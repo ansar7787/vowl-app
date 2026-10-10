@@ -58,6 +58,30 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
   final ValueNotifier<int> _wordCount = ValueNotifier(0);
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
+  
+  int _strikeCount = 0;
+  String? _savedTextForRetry;
+
+  void _handleValidationFailure(String message, {CustomSnackBarType type = CustomSnackBarType.warning}) {
+    _strikeCount++;
+    if (_strikeCount >= 3) {
+      _savedTextForRetry = _textController.text;
+      _isSubmitting.value = false;
+      submitWrongAnswer(quest: _lastQuest!);
+    } else {
+      CustomSnackBar.show(
+        context: context,
+        message: "$message (${3 - _strikeCount} tries left)",
+        type: type,
+      );
+      if (type == CustomSnackBarType.warning) {
+        hapticService.warning();
+      } else {
+        hapticService.selection();
+      }
+      _isSubmitting.value = false;
+    }
+  }
 
   late final ScrollController _scrollController;
 
@@ -204,26 +228,13 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
         '',
       ),
     )) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Please start your description with a capital letter.",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Please start your description with a capital letter.");
       return;
     }
 
     final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
     if (!['.', '!', '?', '"', "'"].contains(lastChar)) {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "Please end your description with proper punctuation (., !, or ?).",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Please end your description with proper punctuation (., !, or ?).");
       return;
     }
 
@@ -238,24 +249,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     }
 
     if (_wordCount.value < minWords) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Keep writing! You need at least $minWords words.",
-        type: CustomSnackBarType.info,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Keep writing! You need at least $minWords words.", type: CustomSnackBarType.info);
       return;
     }
 
     if (matchedCount < 2) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Inject at least 2 narrative keywords from the emojis!",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.selection();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Inject at least 2 narrative keywords from the emojis!");
       return;
     }
 
@@ -267,13 +266,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     final uniqueWords = cleanWordsList.toSet();
 
     if (uniqueWords.length < (minWords * 0.5).ceil()) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Your description lacks variety. Try using different words!",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.warning();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Your description lacks variety. Try using different words!");
       return;
     }
 
@@ -288,14 +281,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     // We require at least 50% of the minimum words to be "glue/structure" words
     // to prevent students from just chaining booster keywords together (word salad).
     if (nonKeywordCount < (minWords * 0.5).ceil()) {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "This looks like a list of keywords! Please write full, complete sentences connecting the words.",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.warning();
-      _isSubmitting.value = false;
+      _handleValidationFailure("This looks like a list of keywords! Please write full, complete sentences connecting the words.");
       return;
     }
 
@@ -311,14 +297,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
     if (!mounted) return;
 
     if (language != 'en') {
-      CustomSnackBar.show(
-        context: context,
-        message:
-            "Your answer must be written in English. Please write a natural sentence!",
-        type: CustomSnackBarType.warning,
-      );
-      hapticService.warning();
-      _isSubmitting.value = false;
+      _handleValidationFailure("Your answer must be written in English. Please write a natural sentence!");
       return;
     }
 
@@ -337,16 +316,20 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
   @override
   void onQuestionReset() {
     _usedKeywords.value = [];
-
     _expandedEmojiIndex.value = null;
-
     _showSpeakToConfirm.value = false;
-
     _wordCount.value = 0;
-
     _isSubmitting.value = false;
-
-    _textController.clear();
+    
+    if (_savedTextForRetry != null) {
+      _textController.text = _savedTextForRetry!;
+      _savedTextForRetry = null;
+      _strikeCount = 0;
+      _onTextChanged();
+    } else {
+      _textController.clear();
+      _strikeCount = 0;
+    }
   }
 
   @override
