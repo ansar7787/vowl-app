@@ -56,7 +56,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
   final ValueNotifier<double> _journalProgress = ValueNotifier(0.0);
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
-  
+
   int _strikeCount = 0;
   String? _savedTextForRetry;
 
@@ -147,7 +147,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
 
     final rawText = _controller.text.trim();
     if (rawText.isEmpty) return;
-    
+
     if (!RegExp(r'^[A-Z]').hasMatch(
       rawText.trimLeft().replaceAll(
         RegExp(
@@ -158,13 +158,17 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
         '',
       ),
     )) {
-      _handleValidationFailure("Please start your journal entry with a capital letter.");
+      _handleValidationFailure(
+        "Please start your journal entry with a capital letter.",
+      );
       return;
     }
 
     final lastChar = rawText[rawText.length - 1];
     if (!['.', '!', '?', '"', "'", '”'].contains(lastChar)) {
-      _handleValidationFailure("Please end your entry with proper punctuation (e.g., full stop).");
+      _handleValidationFailure(
+        "Please end your entry with proper punctuation (e.g., full stop).",
+      );
       return;
     }
 
@@ -179,12 +183,17 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
     }
 
     if (_wordCount.value < 10) {
-      _handleValidationFailure("Keep writing! A valid journal entry requires at least 10 words.", type: CustomSnackBarType.info);
+      _handleValidationFailure(
+        "Keep writing! A valid journal entry requires at least 10 words.",
+        type: CustomSnackBarType.info,
+      );
       return;
     }
 
     if (matchedCount < 2) {
-      _handleValidationFailure("Use at least 2 target words to complete your entry!");
+      _handleValidationFailure(
+        "Use at least 2 target words to complete your entry!",
+      );
       return;
     }
 
@@ -200,7 +209,9 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
     if (!mounted) return;
 
     if (language != 'en') {
-      _handleValidationFailure("Your answer must be written in English. Please write a natural sentence!");
+      _handleValidationFailure(
+        "Your answer must be written in English. Please write a natural sentence!",
+      );
       return;
     }
 
@@ -481,10 +492,16 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                             child: SizedBox(
                               height: !isAnswered
                                   ? (_showSpeakToConfirm.value
-                                      ? 20.h
-                                      : (MediaQuery.of(context).viewInsets.bottom > 0
-                                          ? MediaQuery.of(context).viewInsets.bottom + 20.h
-                                          : 40.h))
+                                        ? 20.h
+                                        : (MediaQuery.of(
+                                                    context,
+                                                  ).viewInsets.bottom >
+                                                  0
+                                              ? MediaQuery.of(
+                                                      context,
+                                                    ).viewInsets.bottom +
+                                                    20.h
+                                              : 40.h))
                                   : 200.h, // Space for Feedback Card
                             ),
                           ),

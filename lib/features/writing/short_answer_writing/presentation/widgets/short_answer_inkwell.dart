@@ -97,7 +97,10 @@ class ShortAnswerInkwell extends StatelessWidget {
                   container: true,
                   child: ExcludeSemantics(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 4.h,
+                      ),
                       decoration: BoxDecoration(
                         color: wordCount >= 4
                             ? (isDark
@@ -112,7 +115,9 @@ class ShortAnswerInkwell extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 9.sp,
                           color: wordCount >= 4
-                              ? (isDark ? tokens.gameCorrect : KidsColors.safeGreen)
+                              ? (isDark
+                                    ? tokens.gameCorrect
+                                    : KidsColors.safeGreen)
                               : (isDark ? Colors.white54 : Colors.black54),
                           fontWeight: FontWeight.w600,
                         ),

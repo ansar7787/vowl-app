@@ -23,10 +23,7 @@ class DailyJournalInstruction extends StatelessWidget {
         border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
       ),
       child: Text(
-        context.tr(
-          'games.dailyJournal_instruction',
-          fallback: instruction,
-        ),
+        context.tr('games.dailyJournal_instruction', fallback: instruction),
         textAlign: TextAlign.center,
         maxLines: null,
         style: TextStyle(

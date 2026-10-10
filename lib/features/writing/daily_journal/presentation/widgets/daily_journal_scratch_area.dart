@@ -31,15 +31,23 @@ class DailyJournalScratchArea extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? Colors.grey.shade900 : const Color(0xFFFDF8EE), // Warm paper tint
-        borderRadius: BorderRadius.circular(16.r), // Slightly sharper corners like a book
+        color: isDark
+            ? Colors.grey.shade900
+            : const Color(0xFFFDF8EE), // Warm paper tint
+        borderRadius: BorderRadius.circular(
+          16.r,
+        ), // Slightly sharper corners like a book
         border: Border.all(
-          color: isDark ? Colors.white10 : const Color(0xFFE5D5C5), // Subtle paper border
+          color: isDark
+              ? Colors.white10
+              : const Color(0xFFE5D5C5), // Subtle paper border
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: isDark ? Colors.black26 : const Color(0xFFD3C5B5).withValues(alpha: 0.3),
+            color: isDark
+                ? Colors.black26
+                : const Color(0xFFD3C5B5).withValues(alpha: 0.3),
             blurRadius: 15,
             spreadRadius: -2,
             offset: const Offset(0, 4), // Paper drop shadow

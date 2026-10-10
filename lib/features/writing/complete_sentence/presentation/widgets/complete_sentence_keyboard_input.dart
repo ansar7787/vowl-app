@@ -78,7 +78,8 @@ class _CompleteSentenceKeyboardInputState
                       SystemChannels.textInput.invokeMethod('TextInput.show');
                     }
                   },
-                  onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
+                  onTapOutside: (_) =>
+                      FocusManager.instance.primaryFocus?.unfocus(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,

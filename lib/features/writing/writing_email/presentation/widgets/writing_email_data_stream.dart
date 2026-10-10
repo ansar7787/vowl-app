@@ -19,72 +19,83 @@ class WritingEmailDataStream extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final placed = slots.values.toSet();
-    final availableItems = items.where((i) => !placed.contains(i)).toList();
+    List<String> availableItems = List.from(items);
+    for (var val in slots.values) {
+      if (val != null) {
+        availableItems.remove(val);
+      }
+    }
 
     return Container(
       constraints: BoxConstraints(minHeight: 80.h),
-      child: Wrap(
-        spacing: 12.w,
-        runSpacing: 12.h,
-        alignment: WrapAlignment.center,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: availableItems
             .map(
-              (i) => GestureDetector(
-                onTap: () => onTapItem(i),
-                child: Draggable<String>(
-                  data: i,
-                  feedback: Material(
-                    color: Colors.transparent,
-                    child: Container(
-                      width: 260.w,
-                      padding: EdgeInsets.all(12.r),
-                      decoration: BoxDecoration(
-                        color: color,
-                        borderRadius: BorderRadius.circular(12.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: color.withValues(alpha: 0.4),
-                            blurRadius: 20,
+              (i) => Padding(
+                padding: EdgeInsets.only(bottom: 12.h),
+                child: Semantics(
+                  label: "Email part: $i",
+                  hint: "Double tap to place in next available slot",
+                  button: true,
+                  child: GestureDetector(
+                    onTap: () => onTapItem(i),
+                    child: Draggable<String>(
+                      data: i,
+                      feedback: Material(
+                        color: Colors.transparent,
+                        child: Container(
+                          width: 280.w,
+                          padding: EdgeInsets.all(16.r),
+                          decoration: BoxDecoration(
+                            color: color,
+                            borderRadius: BorderRadius.circular(12.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: color.withValues(alpha: 0.4),
+                                blurRadius: 20,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                      child: Text(
-                        i,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          color: Colors.white,
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
+                          child: Text(
+                            i,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: Colors.white,
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(12.r),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.black87 : Colors.white,
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(
-                        color: color.withValues(alpha: 0.3),
-                        width: 2,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: color.withValues(alpha: isDark ? 0.35 : 0.15),
-                          blurRadius: 6,
+                      child: Container(
+                        padding: EdgeInsets.all(16.r),
+                        decoration: BoxDecoration(
+                          color: isDark ? Colors.black87 : Colors.white,
+                          borderRadius: BorderRadius.circular(16.r),
+                          border: Border.all(
+                            color: color.withValues(alpha: 0.3),
+                            width: 2,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: color.withValues(
+                                alpha: isDark ? 0.35 : 0.15,
+                              ),
+                              blurRadius: 6,
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: Text(
-                      i,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: isDark ? Colors.white70 : Colors.black87,
-                        fontSize: 9.sp,
-                        fontWeight: FontWeight.bold,
+                        child: Text(
+                          i,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            color: isDark ? Colors.white70 : Colors.black87,
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
                     ),
                   ),
