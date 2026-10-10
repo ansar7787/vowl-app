@@ -74,6 +74,7 @@ class WritingBaseLayout extends StatelessWidget {
       showConfetti: showConfetti,
       useScrolling: useScrolling,
       disablePadding: disablePadding,
+      resizeToAvoidBottomInset: true,
     );
 
     return GameBaseLayout<WritingBloc, WritingState>(

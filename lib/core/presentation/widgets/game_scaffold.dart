@@ -78,7 +78,7 @@ class GameScaffold<S> extends StatelessWidget {
         : null;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: config.resizeToAvoidBottomInset,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [

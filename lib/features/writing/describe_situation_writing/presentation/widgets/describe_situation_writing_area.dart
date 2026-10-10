@@ -2,6 +2,7 @@ import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/services.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -10,6 +11,7 @@ class _LocalPalette {
 
 class DescribeSituationWritingArea extends StatelessWidget {
   final TextEditingController textController;
+  final FocusNode focusNode;
   final int minWords;
   final int wordCount;
   final List<String> usedKeywords;
@@ -19,6 +21,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
   const DescribeSituationWritingArea({
     super.key,
     required this.textController,
+    required this.focusNode,
     required this.minWords,
     required this.wordCount,
     required this.usedKeywords,
@@ -43,7 +46,13 @@ class DescribeSituationWritingArea extends StatelessWidget {
         children: [
           TextField(
             controller: textController,
+            focusNode: focusNode,
             maxLines: 4,
+            onTap: () {
+              if (focusNode.hasFocus) {
+                SystemChannels.textInput.invokeMethod('TextInput.show');
+              }
+            },
             onTapOutside: (PointerDownEvent event) {
               FocusManager.instance.primaryFocus?.unfocus();
             },

@@ -2,6 +2,7 @@ import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class _LocalPalette {
@@ -127,6 +128,14 @@ class ShortAnswerInkwell extends StatelessWidget {
               focusNode: focusNode,
               maxLines: 5,
               enabled: !isAnswered,
+              onTapOutside: (PointerDownEvent event) {
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
+              onTap: () {
+                if (focusNode.hasFocus) {
+                  SystemChannels.textInput.invokeMethod('TextInput.show');
+                }
+              },
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 15.sp,

@@ -13,6 +13,7 @@ class GameScaffoldConfig {
   final bool showConfetti;
   final bool useScrolling;
   final bool disablePadding;
+  final bool resizeToAvoidBottomInset;
 
   const GameScaffoldConfig({
     required this.gameType,
@@ -26,5 +27,6 @@ class GameScaffoldConfig {
     this.showConfetti = false,
     this.useScrolling = false,
     this.disablePadding = false,
+    this.resizeToAvoidBottomInset = false,
   });
 }
