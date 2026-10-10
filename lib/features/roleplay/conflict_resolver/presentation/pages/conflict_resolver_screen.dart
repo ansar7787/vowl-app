@@ -161,8 +161,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     final focused = _focusedIndex;
     if (focused == null ||
         _currentOptions.isEmpty ||
-        focused >= _currentOptions.length)
+        focused >= _currentOptions.length) {
       return;
+    }
 
     final selectedQuest = _currentOptions[focused];
     bool isCorrect = selectedQuest.id == currentQuest.id;

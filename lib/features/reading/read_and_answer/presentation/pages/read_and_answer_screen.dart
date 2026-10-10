@@ -85,8 +85,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
   ) {
     if (_showEvidenceStep.value ||
         _pendingSelectedIndex.value != null ||
-        isAnsweredNotifier.value)
+        isAnsweredNotifier.value) {
       return;
+    }
 
     _pendingSelectedIndex.value = index;
 

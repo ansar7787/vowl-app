@@ -148,8 +148,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
   }
 
   void _initializeOptionsIfNeeded(EliteMasteryQuest? quest) {
-    if (quest == null || quest.options == null || quest.options!.isEmpty)
+    if (quest == null || quest.options == null || quest.options!.isEmpty) {
       return;
+    }
     if (_shuffledOptions.value.isEmpty) {
       final options = List<String>.from(quest.options!);
       final indices = List<int>.generate(options.length, (i) => i);

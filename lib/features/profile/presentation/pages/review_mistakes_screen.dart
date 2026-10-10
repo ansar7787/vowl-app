@@ -422,8 +422,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                     Widget button = ElevatedButton.icon(
                                       onPressed: () async {
                                         if (filteredEntries.isEmpty ||
-                                            _isStartingGame)
+                                            _isStartingGame) {
                                           return;
+                                        }
                                         _isStartingGame = true;
 
                                         try {
@@ -439,8 +440,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
 
                                           di.sl<HapticService>().selection();
 
-                                          if (!(await _checkMonetizationGate()))
+                                          if (!(await _checkMonetizationGate())) {
                                             return;
+                                          }
 
                                           final uri = Uri(
                                             path: '/game',
@@ -658,8 +660,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           },
           child: ScaleButton(
             onTap: () async {
-              if (isRevealed || _revealingCards.contains(entry.id))
+              if (isRevealed || _revealingCards.contains(entry.id)) {
                 return; // Already revealed or loading
+              }
 
               _revealingCards.add(entry.id);
 
