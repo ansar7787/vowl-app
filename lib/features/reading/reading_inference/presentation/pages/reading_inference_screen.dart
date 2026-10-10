@@ -78,8 +78,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
   void _submitAnswer(int index, ReadingQuest quest) {
     if (isAnsweredNotifier.value ||
         quest.options == null ||
-        _clarity.value < 0.3)
+        _clarity.value < 0.3) {
       return;
+    }
 
     _selectedIndex.value = index;
     final String selectedText = quest.options![index];
