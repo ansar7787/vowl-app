@@ -57,12 +57,12 @@ class KidsBodyPartsLayout extends StatelessWidget {
             KidsFittedText(
               context.tr(
                 'games.kids_body_parts_drag',
-                fallback: 'Drag the band-aid to the x-ray! ✨',
+                fallback: 'Place the correct band-aid on the X-Ray.',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
@@ -137,101 +137,86 @@ class KidsBodyPartsLayout extends StatelessWidget {
         final text = details.data;
         final isCorrect = (text == quest.correctAnswer);
         if (!isCorrect) {
-          di.sl<KidsTTSService>().speak(text);
+          final lastSpace = text.lastIndexOf(' ');
+          final wordOnly = lastSpace != -1 ? text.substring(0, lastSpace) : text;
+          di.sl<KidsTTSService>().speak(wordOnly);
         }
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return InkWell(
-          onTap: state.answerStatus.isAnswered
-              ? null
-              : () {
-                  if (InstructionHelper.getInstruction(quest).isNotEmpty) {
-                    di.sl<KidsTTSService>().speak(
-                      InstructionHelper.getInstruction(quest),
-                    );
-                  }
-                },
-          child: Container(
-            width: 280.w,
-            height: 200.h,
-            decoration: BoxDecoration(
-              color: isHovering
-                  ? AppColors.slate800
-                  : AppColors.slate900, // Dark X-Ray background
-              borderRadius: BorderRadius.circular(8.r),
-              border: Border.all(
-                color: isHovering
-                    ? _LocalPalette.color38bdf8
-                    : AppColors.slate200,
-                width: 12.r,
-              ), // Medical white frame
-              boxShadow: [
-                BoxShadow(
-                  color: _LocalPalette.color38bdf8.withValues(
-                    alpha: isHovering ? 0.6 : 0.3,
-                  ), // Blue glowing backlight
-                  blurRadius: isHovering ? 30 : 20,
-                  spreadRadius: isHovering ? 10 : 5,
+        final bool isCorrect = state.answerStatus == AnswerStatus.correct;
+        
+        return Semantics(
+          label: 'X-Ray board',
+          hint: 'Drag a band-aid here to answer',
+          child: InkWell(
+            onTap: state.answerStatus.isAnswered
+                ? null
+                : () {
+                    if (InstructionHelper.getInstruction(quest).isNotEmpty) {
+                      di.sl<KidsTTSService>().speak(
+                        InstructionHelper.getInstruction(quest),
+                      );
+                    }
+                  },
+            borderRadius: BorderRadius.circular(12.r),
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              width: double.infinity,
+              constraints: BoxConstraints(
+                maxWidth: 320.w,
+                maxHeight: 220.h,
+              ),
+              margin: EdgeInsets.symmetric(horizontal: 24.w),
+              decoration: BoxDecoration(
+                color: isHovering ? AppColors.slate800 : AppColors.slate900,
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: isHovering
+                      ? _LocalPalette.color38bdf8
+                      : AppColors.slate300,
+                  width: 12.r,
                 ),
-              ],
-            ),
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      if (quest.emoji != null &&
-                          (quest.question == "?" || quest.question == null))
-                        state.answerStatus == AnswerStatus.correct
-                            ? Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 80.sp),
-                              )
-                            : ColorFiltered(
-                                colorFilter: ColorFilter.mode(
-                                  const Color(
-                                    0xFF38BDF8,
-                                  ).withValues(alpha: 0.4),
-                                  BlendMode.srcIn,
-                                ),
-                                child: Text(
-                                  quest.emoji!,
-                                  style: TextStyle(fontSize: 80.sp),
-                                ),
-                              ),
-                      if (state.answerStatus != AnswerStatus.correct ||
-                          (quest.question != "?" && quest.question != null))
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          child: KidsFittedText(
-                            quest.question ?? "?",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize:
-                                  (quest.question == "?" ||
-                                      quest.question == null)
-                                  ? 70.sp
-                                  : 24.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white.withValues(
-                                alpha:
-                                    (quest.question == "?" ||
-                                        quest.question == null)
-                                    ? 0.7
-                                    : 1.0,
-                              ),
-                            ),
-                            textAlign: TextAlign.center,
-                            maxLines: 6,
-                          ),
-                        ),
-                    ],
+                boxShadow: [
+                  BoxShadow(
+                    color: _LocalPalette.color38bdf8.withValues(
+                      alpha: isHovering ? 0.6 : 0.3,
+                    ),
+                    blurRadius: isHovering ? 30 : 15,
+                    spreadRadius: isHovering ? 10 : 2,
                   ),
                 ],
+              ),
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.all(16.w),
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 400),
+                    transitionBuilder: (Widget child, Animation<double> animation) {
+                      return ScaleTransition(scale: animation, child: child);
+                    },
+                    child: isCorrect && quest.emoji != null
+                        ? Text(
+                            quest.emoji!,
+                            key: const ValueKey('correct_emoji'),
+                            style: TextStyle(fontSize: 80.sp),
+                            textAlign: TextAlign.center,
+                          )
+                        : KidsFittedText(
+                            quest.question ?? "?",
+                            key: const ValueKey('question_text'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: (quest.question == "?" || quest.question == null) ? 70.sp : 24.sp,
+                              fontWeight: FontWeight.w600,
+                              color: isHovering ? Colors.white : Colors.white.withValues(alpha: 0.8),
+                            ),
+                            textAlign: TextAlign.center,
+                            maxLines: 4,
+                          ),
+                  ),
+                ),
               ),
             ),
           ),
@@ -247,7 +232,76 @@ class KidsBodyPartsLayout extends StatelessWidget {
     bool isCorrect,
     int index,
   ) {
-    final colors = [
+    return _KidsBandaidDraggable(
+      text: text,
+      index: index,
+      onTap: state.answerStatus.isAnswered ? null : () {
+        if (!isCorrect) {
+          final lastSpace = text.lastIndexOf(' ');
+          final wordOnly = lastSpace != -1 ? text.substring(0, lastSpace) : text;
+          di.sl<KidsTTSService>().speak(wordOnly);
+        }
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+    );
+  }
+}
+
+class _KidsBandaidDraggable extends StatelessWidget {
+  final String text;
+  final int index;
+  final VoidCallback? onTap;
+
+  const _KidsBandaidDraggable({
+    required this.text,
+    required this.index,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final bandaidWidget = _KidsBandaidUI(text: text, index: index, width: constraints.maxWidth);
+        
+        return Draggable<String>(
+          data: text,
+          feedback: Material(
+            color: Colors.transparent,
+            child: Transform.scale(
+              scale: 1.05,
+              child: Opacity(opacity: 0.9, child: _KidsBandaidUI(text: text, index: index, width: constraints.maxWidth)),
+            ),
+          ),
+          childWhenDragging: Opacity(opacity: 0.3, child: bandaidWidget),
+          child: GestureDetector(
+            onTap: onTap,
+            child: Semantics(
+              button: true,
+              hint: 'Double tap to select this answer without dragging',
+              child: bandaidWidget,
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _KidsBandaidUI extends StatelessWidget {
+  final String text;
+  final int index;
+  final double width;
+
+  const _KidsBandaidUI({
+    required this.text,
+    required this.index,
+    required this.width,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    const colors = [
       _LocalPalette.colorfde68a, // Light tan
       _LocalPalette.colorfca5a5, // Pinkish
       _LocalPalette.color6ee7b7, // Mint green (fun kid bandaid)
@@ -255,12 +309,12 @@ class KidsBodyPartsLayout extends StatelessWidget {
     ];
     final bandaidColor = colors[index % colors.length];
 
-    final bandaidWidget = Container(
+    return Container(
       height: 70.h,
-      width: 80.w,
+      width: width, // Responsive width
       decoration: BoxDecoration(
         color: bandaidColor,
-        borderRadius: BorderRadius.circular(30.r), // Pill shape for bandaid
+        borderRadius: BorderRadius.circular(35.r), // True pill shape for 70.h height
         border: Border.all(
           color: Colors.black.withValues(alpha: 0.1),
           width: 1,
@@ -275,56 +329,65 @@ class KidsBodyPartsLayout extends StatelessWidget {
       child: Stack(
         children: [
           // Band-aid dots texture
-          Positioned(left: 10.w, top: 20.h, child: _buildDot()),
-          Positioned(left: 10.w, bottom: 20.h, child: _buildDot()),
-          Positioned(right: 10.w, top: 20.h, child: _buildDot()),
-          Positioned(right: 10.w, bottom: 20.h, child: _buildDot()),
+          Positioned(left: 12.w, top: 20.h, child: const _BandaidDot()),
+          Positioned(left: 12.w, bottom: 20.h, child: const _BandaidDot()),
+          Positioned(right: 12.w, top: 20.h, child: const _BandaidDot()),
+          Positioned(right: 12.w, bottom: 20.h, child: const _BandaidDot()),
 
           // White pad in the middle
           Center(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 16.w),
-              padding: EdgeInsets.symmetric(vertical: 8.h),
+              margin: EdgeInsets.symmetric(horizontal: 18.w),
+              padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 8.w),
               decoration: BoxDecoration(
                 color: Colors.white.withValues(alpha: 0.8),
-                borderRadius: BorderRadius.circular(4.r),
+                borderRadius: BorderRadius.circular(8.r),
               ),
-              child: Center(
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.slate900,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
+              child: Builder(
+                builder: (context) {
+                  final lastSpace = text.lastIndexOf(' ');
+                  final wordText = lastSpace != -1 ? text.substring(0, lastSpace) : text;
+                  final emojiText = lastSpace != -1 ? text.substring(lastSpace + 1) : '';
+
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: KidsFittedText(
+                          wordText,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.slate900,
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 1, // Force word onto one line, preventing awkward wrapping
+                        ),
+                      ),
+                      if (emojiText.isNotEmpty)
+                        Text(
+                          emojiText,
+                          style: TextStyle(fontSize: 16.sp, height: 1.1),
+                        ),
+                    ],
+                  );
+                },
               ),
             ),
           ),
         ],
       ),
     );
-
-    return Draggable<String>(
-      data: text,
-      feedback: Material(
-        color: Colors.transparent,
-        child: Transform.scale(
-          scale: 1.05,
-          child: Opacity(opacity: 0.9, child: bandaidWidget),
-        ),
-      ),
-      childWhenDragging: Opacity(opacity: 0.3, child: bandaidWidget),
-      child: bandaidWidget,
-    );
   }
+}
 
-  Widget _buildDot() {
+class _BandaidDot extends StatelessWidget {
+  const _BandaidDot();
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       width: 4.r,
       height: 4.r,
