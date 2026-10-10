@@ -1289,11 +1289,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'essaydrafting': [
       "",
-      "Fantastic! Exploring essay drafting will elevate your skills rapidly.",
-      "You are navigating essay drafting with increasing confidence.",
-      "Halfway to 100! You are handling essay drafting effortlessly.",
-      "Level 100! You are an absolute master of essay drafting.",
-      "Level 200 reached! Your grasp of essay drafting is legendary.",
+      "Great job! Breaking things down into a clear structure makes writing so much easier.",
+      "You're getting really good at organizing your thoughts logically.",
+      "Halfway to 100! Your paragraphs are flowing beautifully now.",
+      "Level 100! You've built a really strong instinct for how to structure a compelling argument.",
+      "Level 200! Honestly, incredible. You're writing with the clarity of a true professional.",
     ],
     'fixthesentence': [
       "",
