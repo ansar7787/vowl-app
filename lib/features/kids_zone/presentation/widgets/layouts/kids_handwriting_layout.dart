@@ -261,6 +261,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
         }
 
         final targetWord = state.currentQuest.question?.trim() ?? '';
+        final instruction = state.currentQuest.instruction.trim();
         final promptLabel = _getPromptLabel(context, targetWord);
         final targetFontSize = _calculateTargetFontSize(targetWord);
         final targetLetterSpacing = _calculateLetterSpacing(targetWord);
@@ -324,8 +325,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                                 borderRadius: BorderRadius.circular(16.r),
                                 onTap: () {
                                   di.sl<HapticService>().light();
-                                  final instruction =
-                                      state.currentQuest.instruction?.trim() ?? '';
                                   final speakText =
                                       (targetWord.length <= 2 && instruction.isNotEmpty)
                                           ? instruction
@@ -361,13 +360,11 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                         ),
 
                         // Pedagogical Curriculum Instruction Guidance
-                        if (state.currentQuest.instruction != null &&
-                            state.currentQuest.instruction!.trim().isNotEmpty &&
-                            state.currentQuest.instruction!.trim() != targetWord)
+                        if (instruction.isNotEmpty && instruction != targetWord)
                           Padding(
                             padding: EdgeInsets.only(top: 4.h),
                             child: Text(
-                              state.currentQuest.instruction!.trim(),
+                              instruction,
                               textAlign: TextAlign.center,
                               maxLines: isCompactScreen ? 1 : 2,
                               overflow: TextOverflow.ellipsis,
