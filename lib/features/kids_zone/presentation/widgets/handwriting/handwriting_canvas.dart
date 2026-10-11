@@ -330,46 +330,13 @@ class HandwritingCanvasState extends State<HandwritingCanvas>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Left Tools (Chalk & Trace & Demo)
+                      // Left Tools (Trace & Demo)
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          // Chalk tool badge
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 4,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  LucideIcons.pencil,
-                                  size: 14,
-                                  color: widget.strokeColor,
-                                ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  'Chalk',
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white.withValues(alpha: 0.9),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-
                           // Guide / Trace toggle button (if ghostText provided)
                           if (widget.ghostText != null &&
                               widget.ghostText!.trim().isNotEmpty) ...[
-                            const SizedBox(width: 6),
                             Semantics(
                               button: true,
                               label: _showGuide
