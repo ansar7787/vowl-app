@@ -196,9 +196,8 @@ class SoundServiceImpl implements SoundService {
     await _initFuture;
     if (_isMuted) return;
     try {
-      if (_player.state == PlayerState.playing) await _player.stop();
-      await _player.setSource(AssetSource(assetCorrect));
-      await _player.resume();
+      await _player.stop();
+      await _player.play(AssetSource(assetCorrect));
     } catch (e) {
       di.sl<AppLogger>().error(
         'SoundService: Error playing sound (correct)',
@@ -212,9 +211,8 @@ class SoundServiceImpl implements SoundService {
     await _initFuture;
     if (_isMuted) return;
     try {
-      if (_player.state == PlayerState.playing) await _player.stop();
-      await _player.setSource(AssetSource(assetWrong));
-      await _player.resume();
+      await _player.stop();
+      await _player.play(AssetSource(assetWrong));
     } catch (e) {
       di.sl<AppLogger>().error(
         'SoundService: Error playing sound (wrong)',
@@ -235,9 +233,8 @@ class SoundServiceImpl implements SoundService {
     await _initFuture;
     if (_isMuted) return;
     try {
-      if (_player.state == PlayerState.playing) await _player.stop();
-      await _player.setSource(AssetSource(assetHint));
-      await _player.resume();
+      await _player.stop();
+      await _player.play(AssetSource(assetHint));
     } catch (e) {
       di.sl<AppLogger>().error(
         'SoundService: Error playing sound (hint)',
@@ -256,11 +253,8 @@ class SoundServiceImpl implements SoundService {
     await _initFuture;
     if (_isMuted || !_isGameSoundsEnabled) return;
     try {
-      if (_overlayPlayer.state == PlayerState.playing) {
-        await _overlayPlayer.stop();
-      }
-      await _overlayPlayer.setSource(AssetSource(assetLevelCompleted));
-      await _overlayPlayer.resume();
+      await _overlayPlayer.stop();
+      await _overlayPlayer.play(AssetSource(assetLevelCompleted));
     } catch (e) {
       di.sl<AppLogger>().error(
         'SoundService: Error playing sound (level_completed); using fallback',
@@ -279,9 +273,8 @@ class SoundServiceImpl implements SoundService {
       return;
     }
     try {
-      if (_player.state == PlayerState.playing) await _player.stop();
-      await _player.setSource(UrlSource(url));
-      await _player.resume();
+      await _player.stop();
+      await _player.play(UrlSource(url));
     } catch (e) {
       di.sl<AppLogger>().error(
         'SoundService: Error playing sound (url)',
@@ -299,9 +292,8 @@ class SoundServiceImpl implements SoundService {
       return;
     }
     try {
-      if (_player.state == PlayerState.playing) await _player.stop();
-      await _player.setSource(DeviceFileSource(filePath));
-      await _player.resume();
+      await _player.stop();
+      await _player.play(DeviceFileSource(filePath));
     } catch (e) {
       di.sl<AppLogger>().error(
         'SoundService: Error playing sound (file)',
@@ -348,12 +340,8 @@ class SoundServiceImpl implements SoundService {
   @override
   Future<void> stopAudio() async {
     try {
-      if (_player.state == PlayerState.playing) {
-        await _player.stop();
-      }
-      if (_overlayPlayer.state == PlayerState.playing) {
-        await _overlayPlayer.stop();
-      }
+      await _player.stop();
+      await _overlayPlayer.stop();
     } catch (e) {
       di.sl<AppLogger>().error('SoundService: Error stopping audio', error: e);
     }
