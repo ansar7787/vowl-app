@@ -137,12 +137,6 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             primaryColor: widget.primaryColor,
           );
         } else if (state is KidsLoaded) {
-          if (state.answerStatus == AnswerStatus.correct) {
-            audio.playSuccessSFX();
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            audio.playFailureSFX();
-          }
-
           if (state.answerStatus == AnswerStatus.correct ||
               state.isFinalFailure) {
             final funFact = state.currentQuest.funFact;
