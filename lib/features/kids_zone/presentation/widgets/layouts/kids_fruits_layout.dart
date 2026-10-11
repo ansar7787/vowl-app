@@ -4,6 +4,7 @@ import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -47,30 +48,37 @@ class KidsFruitsLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 80.h),
+            const Spacer(flex: 1),
             // The Fruit Stand Awning
             Expanded(
-              flex: 5,
-              child: Center(child: _buildAwningFrame(context, state, quest)),
+              flex: 7,
+              child: Center(
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final double boardHeight = (constraints.maxHeight * 0.9).clamp(120.0, 240.0);
+                    return _buildAwningFrame(context, state, quest, boardHeight);
+                  },
+                ),
+              ),
             ),
-            SizedBox(height: 32.h),
+            SizedBox(height: 16.h),
             KidsFittedText(
               context.tr(
                 'games.kids_fruits_drag',
-                fallback: 'Drag the correct fruit to the stand! 🧺',
+                fallback: 'Tap or drag the correct fruit.',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 14.sp,
+                fontSize: 15.sp,
                 fontWeight: FontWeight.w600,
                 color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white.withValues(alpha: 0.8)
-                    : Colors.black.withValues(alpha: 0.6),
+                    ? Colors.white.withValues(alpha: 0.9)
+                    : Colors.black.withValues(alpha: 0.7),
               ),
               maxLines: 2,
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 32.h),
+            SizedBox(height: 16.h),
             // Wicker Baskets for Options
             Flexible(
               flex: 5,
@@ -96,6 +104,7 @@ class KidsFruitsLayout extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 8.h),
           ],
         );
       },
@@ -106,8 +115,10 @@ class KidsFruitsLayout extends StatelessWidget {
     BuildContext context,
     KidsLoaded state,
     dynamic quest,
+    double boardHeight,
   ) {
     return DragTarget<String>(
+      onWillAcceptWithDetails: (details) => !state.answerStatus.isAnswered,
       onAcceptWithDetails: (details) {
         final text = details.data;
         final isCorrect = (text == quest.correctAnswer);
@@ -134,7 +145,7 @@ class KidsFruitsLayout extends StatelessWidget {
               // Main wooden board
               Container(
                 width: 280.w,
-                height: 200.h,
+                height: boardHeight,
                 decoration: BoxDecoration(
                   color: isHovering
                       ? _LocalPalette.colorfef9c3
@@ -171,8 +182,8 @@ class KidsFruitsLayout extends StatelessWidget {
                               state.answerStatus == AnswerStatus.correct
                                   ? Text(
                                       quest.emoji!,
-                                      style: TextStyle(fontSize: 100.sp),
-                                    )
+                                      style: TextStyle(fontSize: 80.sp),
+                                    ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
                                   : ColorFiltered(
                                       colorFilter: ColorFilter.mode(
                                         const Color(
@@ -182,7 +193,7 @@ class KidsFruitsLayout extends StatelessWidget {
                                       ),
                                       child: Text(
                                         quest.emoji!,
-                                        style: TextStyle(fontSize: 100.sp),
+                                        style: TextStyle(fontSize: 80.sp),
                                       ),
                                     ),
                             if (state.answerStatus != AnswerStatus.correct ||
@@ -195,9 +206,9 @@ class KidsFruitsLayout extends StatelessWidget {
                                   fontSize:
                                       (quest.question == "?" ||
                                           quest.question == null)
-                                      ? 70.sp
-                                      : 24.sp,
-                                  fontWeight: FontWeight.w900,
+                                      ? 60.sp
+                                      : 20.sp,
+                                  fontWeight: FontWeight.w700,
                                   color: AppColors.amber900.withValues(
                                     alpha:
                                         (quest.question == "?" ||
@@ -263,57 +274,64 @@ class KidsFruitsLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final basketColor = AppColors.amber600; // Wicker yellow/brown
+    final bool isAnswered = state.answerStatus.isAnswered;
+    final double opacity = (isAnswered && !isCorrect) ? 0.4 : 1.0;
 
-    final basketWidget = Stack(
+    Widget basketWidget = Stack(
       alignment: Alignment.bottomCenter,
       clipBehavior: Clip.none,
       children: [
         // The label sticking out
         Positioned(
-          top: -24.h,
-          child: Container(
-            constraints: BoxConstraints(
-              minWidth: 60.w,
-              maxWidth: 90.w,
-              minHeight: 34.h,
-            ),
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(6.r),
-              border: Border.all(color: _LocalPalette.color92400e, width: 1.5),
-            ),
+          top: -20.h,
+          left: 0,
+          right: 0,
+          child: Align(
             alignment: Alignment.center,
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
+            child: Container(
+              constraints: BoxConstraints(
+                minHeight: 32.h,
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(6.r),
+                border: Border.all(color: _LocalPalette.color92400e, width: 1.5),
+              ),
               alignment: Alignment.center,
-              child: Text(
-                text.trim(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w800,
-                  height:
-                      1.2, // Fixes descenders like p, g from touching bottom
-                  color: _LocalPalette.color451a03,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.center,
+                child: Text(
+                  text.trim(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w600,
+                    height: 1.2,
+                    color: _LocalPalette.color451a03,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 1,
               ),
             ),
           ),
         ),
         // The basket
         Container(
-          height: 80.h,
-          width: 80.w,
+          height: 75.h,
+          width: double.infinity,
           decoration: BoxDecoration(
             color: basketColor,
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20.r),
               bottomRight: Radius.circular(20.r),
             ),
-            border: Border.all(color: AppColors.amber900, width: 2),
+            border: Border.all(
+              color: (isAnswered && isCorrect) ? Colors.green.shade600 : AppColors.amber900, 
+              width: (isAnswered && isCorrect) ? 4 : 2,
+            ),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.2),
@@ -321,27 +339,56 @@ class KidsFruitsLayout extends StatelessWidget {
               ),
             ],
           ),
-          child: CustomPaint(painter: _WickerPainter()),
+          child: CustomPaint(painter: const _WickerPainter()),
         ),
       ],
     );
 
-    return Draggable<String>(
-      data: text,
-      feedback: Material(
-        color: Colors.transparent,
-        child: Transform.scale(
-          scale: 1.05,
-          child: Opacity(opacity: 0.9, child: basketWidget),
+    if (isAnswered && isCorrect) {
+      basketWidget = basketWidget.animate(onPlay: (controller) => controller.repeat(reverse: true))
+          .scaleXY(begin: 1.0, end: 1.05, duration: 600.ms, curve: Curves.easeInOut);
+    }
+
+    basketWidget = Opacity(
+      opacity: opacity,
+      child: basketWidget,
+    );
+
+    return Semantics(
+      label: 'Basket for $text',
+      button: true,
+      enabled: !isAnswered,
+      child: GestureDetector(
+        onTap: isAnswered
+            ? null
+            : () {
+                if (!isCorrect) {
+                  di.sl<KidsTTSService>().speak(text);
+                }
+                context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+              },
+        child: Draggable<String>(
+          data: text,
+          maxSimultaneousDrags: isAnswered ? 0 : 1,
+          onDragStarted: () => di.sl<KidsTTSService>().speak(text),
+          feedback: Material(
+            color: Colors.transparent,
+            child: Transform.scale(
+              scale: 1.05,
+              child: Opacity(opacity: 0.9, child: basketWidget),
+            ),
+          ),
+          childWhenDragging: Opacity(opacity: 0.3, child: basketWidget),
+          child: basketWidget,
         ),
       ),
-      childWhenDragging: Opacity(opacity: 0.3, child: basketWidget),
-      child: basketWidget,
     );
   }
 }
 
 class _WickerPainter extends CustomPainter {
+  const _WickerPainter();
+
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
