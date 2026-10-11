@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -56,21 +57,37 @@ class _TtsVoiceSelectionBottomSheetState
   final FlutterTts _previewTts = FlutterTts();
   String? _currentlyPlayingId;
   int _previewSessionId = 0;
+  StreamSubscription<AuthState>? _authSubscription;
 
   bool get _isPremium {
-    if (widget.isPremium != null) return widget.isPremium!;
     try {
       if (di.sl.isRegistered<AuthBloc>()) {
-        return di.sl<AuthBloc>().state.user?.isPremium ?? false;
+        final blocUser = di.sl<AuthBloc>().state.user;
+        if (blocUser != null) {
+          return blocUser.isPremium;
+        }
       }
     } catch (_) {}
+    if (widget.isPremium != null) return widget.isPremium!;
     return false;
   }
 
   @override
   void initState() {
     super.initState();
-    _selectedPreset = widget.initialPreset;
+    _selectedPreset = (widget.initialPreset.isPremium && !_isPremium)
+        ? TtsVoicePreset.friendlyTeacher
+        : widget.initialPreset;
+
+    try {
+      if (di.sl.isRegistered<AuthBloc>()) {
+        _authSubscription = di.sl<AuthBloc>().stream.listen((_) {
+          if (mounted) {
+            setState(() {});
+          }
+        });
+      }
+    } catch (_) {}
 
     _previewTts.setCompletionHandler(() {
       if (mounted) {
@@ -99,6 +116,7 @@ class _TtsVoiceSelectionBottomSheetState
 
   @override
   void dispose() {
+    _authSubscription?.cancel();
     _previewSessionId++;
     try {
       _previewTts.stop();
@@ -178,9 +196,12 @@ class _TtsVoiceSelectionBottomSheetState
       // Smoothly display the Premium Store sheet
       await PremiumStoreBottomSheet.show(context: context);
 
-      // Re-check premium status upon return
-      if (mounted && _isPremium) {
-        await _applyPresetSelection(preset);
+      // Re-check premium status upon return and refresh UI immediately
+      if (mounted) {
+        setState(() {});
+        if (_isPremium) {
+          await _applyPresetSelection(preset);
+        }
       }
       return;
     }
@@ -221,7 +242,10 @@ class _TtsVoiceSelectionBottomSheetState
     try {
       _previewTts.stop();
     } catch (_) {}
-    Navigator.of(context).pop(_selectedPreset);
+    final safePreset = (_selectedPreset.isPremium && !_isPremium)
+        ? TtsVoicePreset.friendlyTeacher
+        : _selectedPreset;
+    Navigator.of(context).pop(safePreset);
   }
 
   @override

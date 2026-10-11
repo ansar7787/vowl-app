@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -205,4 +206,25 @@ void main() {
     expect(find.text('Pronunciation Voice'), findsNothing);
     expect(selectedResult, TtsVoicePreset.britishAccent);
   });
+
+  testWidgets(
+    'free user opening sheet with initial preset set to locked voice sanitizes safely to Friendly Teacher',
+    (tester) async {
+      await tester.pumpWidget(
+        buildTestableWidget(
+          initialPreset: TtsVoicePreset.britishAccent,
+          isPremium: false,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // Check lock icons are rendered for locked presets
+      expect(find.byIcon(LucideIcons.lock), findsWidgets);
+
+      // Verify that the sheet opens without error and friendly teacher is rendered
+      expect(find.text('Pronunciation Voice'), findsOneWidget);
+      expect(find.text('Friendly Teacher'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    },
+  );
 }

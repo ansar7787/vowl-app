@@ -4,6 +4,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 /// Available human-like voice presets for speech synthesis across the application.
 enum TtsVoicePreset {
@@ -84,7 +85,25 @@ class TtsVoiceHelper {
     try {
       final prefs = await SharedPreferences.getInstance();
       final id = prefs.getString(prefsKeyVoicePreset);
-      return TtsVoicePreset.fromId(id);
+      final preset = TtsVoicePreset.fromId(id);
+
+      // If the saved preset is premium, verify active entitlement
+      if (preset.isPremium) {
+        try {
+          if (di.sl.isRegistered<AuthBloc>()) {
+            final authState = di.sl<AuthBloc>().state;
+            if (authState.status == AuthStatus.authenticated &&
+                !(authState.user?.isPremium ?? false)) {
+              return TtsVoicePreset.friendlyTeacher;
+            }
+            if (authState.status == AuthStatus.unauthenticated) {
+              return TtsVoicePreset.friendlyTeacher;
+            }
+          }
+        } catch (_) {}
+      }
+
+      return preset;
     } catch (e) {
       return TtsVoicePreset.friendlyTeacher;
     }
@@ -93,6 +112,22 @@ class TtsVoiceHelper {
   /// Persists the selected voice preset to local storage.
   static Future<void> savePreset(TtsVoicePreset preset) async {
     try {
+      // Guard against saving premium presets for non-premium accounts
+      if (preset.isPremium) {
+        try {
+          if (di.sl.isRegistered<AuthBloc>()) {
+            final authState = di.sl<AuthBloc>().state;
+            if (authState.status == AuthStatus.authenticated &&
+                !(authState.user?.isPremium ?? false)) {
+              return;
+            }
+            if (authState.status == AuthStatus.unauthenticated) {
+              return;
+            }
+          }
+        } catch (_) {}
+      }
+
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString(prefsKeyVoicePreset, preset.id);
     } catch (e) {
