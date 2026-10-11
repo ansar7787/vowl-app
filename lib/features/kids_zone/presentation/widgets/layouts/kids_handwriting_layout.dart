@@ -1,25 +1,28 @@
-import 'dart:async';
 import 'package:flutter/material.dart' hide Ink;
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_recognition.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
 import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
-import 'package:vowl/core/utils/widgets/handwriting_canvas.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/handwriting/handwriting_canvas.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
-import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/kids_zone/presentation/utils/handwriting_evaluator.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color color1b3b2b = Color(0xFF1B3B2B);
-  static const Color color8b4513 = Color(0xFF8B4513);
+  static const Color chalkboardGreen = Color(0xFF1B3B2B);
+  static const Color woodBrown = Color(0xFF8B4513);
 }
 
 class KidsHandwritingLayout extends StatefulWidget {
@@ -39,8 +42,11 @@ class KidsHandwritingLayout extends StatefulWidget {
 }
 
 class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
+  static const HandwritingEvaluator _evaluator = HandwritingEvaluator();
+
   Ink? _currentInk;
   final ValueNotifier<bool> _isChecking = ValueNotifier(false);
+  final ValueNotifier<bool> _hasInk = ValueNotifier(false);
   bool? _isCorrect;
   int _attemptsCount = 0;
   String? _lastQuestId;
@@ -50,11 +56,36 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   @override
   void dispose() {
     _isChecking.dispose();
+    _hasInk.dispose();
     super.dispose();
   }
 
   Future<void> _checkHandwriting(BuildContext context, KidsLoaded state) async {
-    if (_currentInk == null || _currentInk!.strokes.isEmpty) return;
+    if (_currentInk == null || _currentInk!.strokes.isEmpty) {
+      di.sl<HapticService>().warning();
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            context.tr(
+              'kids_zone.handwriting_draw_first',
+              fallback: 'Use chalk to draw on the board first!',
+            ),
+            style: const TextStyle(
+              fontFamily: 'Outfit',
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          duration: const Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.r),
+          ),
+          backgroundColor: widget.primaryColor,
+        ),
+      );
+      return;
+    }
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
@@ -89,19 +120,36 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
     _isChecking.value = true;
     _attemptsCount++;
 
-    final targetWord = state.currentQuest.question?.toUpperCase() ?? '';
-    final results = await di.sl<DigitalInkService>().recognize(_currentInk!);
+    final targetWord = state.currentQuest.question?.trim() ?? '';
+    List<String> recognitionResults = const [];
+
+    try {
+      final digitalInkService = di.sl<DigitalInkService>();
+      recognitionResults = await digitalInkService.recognize(_currentInk!);
+    } catch (e) {
+      if (di.sl.isRegistered<AppLogger>()) {
+        di.sl<AppLogger>().warning(
+          'DigitalInkService recognition fallback to geometric evaluation: $e',
+          tag: 'KidsHandwriting',
+        );
+      }
+      recognitionResults = const [];
+    }
 
     if (!mounted) return;
 
-    bool correct = false;
-    // Only check the top 3 candidates to prevent loose matching (false positives)
-    final topCandidates = results.take(3).toList();
-    for (final result in topCandidates) {
-      if (result.toUpperCase().trim() == targetWord) {
-        correct = true;
-        break;
-      }
+    // Use comprehensive evaluator combining candidates, equivalences, and geometric strokes
+    final bool correct = _evaluator.evaluate(
+      ink: _currentInk!,
+      target: targetWord,
+      candidates: recognitionResults,
+    );
+
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl<AppLogger>().debug(
+        'Handwriting checked for "$targetWord" -> correct: $correct (candidates: $recognitionResults)',
+        tag: 'KidsHandwriting',
+      );
     }
 
     _isChecking.value = false;
@@ -109,12 +157,76 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
 
     if (!mounted || !context.mounted) return;
 
-    // Delegate success/failure and lives/score management to KidsBloc
+    // Delegate success/failure feedback (sound chime, haptic pulse, lives & score) to KidsBloc
     context.read<KidsBloc>().add(SubmitKidsAnswer(correct));
+  }
+
+  /// Categorizes question target to provide pedagogically accurate prompt label.
+  String _getPromptLabel(BuildContext context, String target) {
+    final clean = target.trim();
+    if (clean.contains(' ') && clean.length > 10) {
+      return context.tr(
+        'kids_zone.handwriting_prompt_sentence',
+        fallback: 'Write this sentence:',
+      );
+    }
+    if (['|', '-', '/', '\\', '+', 'X', '—', '∩', '∪', '(', ')'].contains(clean) ||
+        clean.contains('|') ||
+        clean.contains('-')) {
+      return context.tr(
+        'kids_zone.handwriting_prompt_stroke',
+        fallback: 'Practice this stroke:',
+      );
+    }
+    if (['□', '△', '◇', '▭', '○', '⬭'].contains(clean)) {
+      return context.tr(
+        'kids_zone.handwriting_prompt_shape',
+        fallback: 'Draw this shape:',
+      );
+    }
+    if (RegExp(r'^[0-9:]+$').hasMatch(clean)) {
+      return context.tr(
+        'kids_zone.handwriting_prompt_number',
+        fallback: 'Write this number:',
+      );
+    }
+    if (clean.length == 1 && RegExp(r'^[a-zA-Z]$').hasMatch(clean)) {
+      return context.tr(
+        'kids_zone.handwriting_prompt_letter',
+        fallback: 'Write this letter:',
+      );
+    }
+    return context.tr(
+      'kids_zone.handwriting_prompt_word',
+      fallback: 'Write this word:',
+    );
+  }
+
+  /// Calculates responsive font size based on string length to guarantee zero text overflow.
+  double _calculateTargetFontSize(String target) {
+    final len = target.length;
+    if (len <= 2) return 54.sp;
+    if (len <= 4) return 38.sp;
+    if (len <= 7) return 30.sp;
+    if (len <= 12) return 24.sp;
+    if (len <= 20) return 20.sp;
+    return 17.sp;
+  }
+
+  /// Calculates letter spacing based on text length.
+  double _calculateLetterSpacing(String target) {
+    final len = target.length;
+    if (len <= 2) return 4.0;
+    if (len <= 5) return 2.5;
+    if (len <= 10) return 1.5;
+    return 0.5;
   }
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final isCompactScreen = screenHeight < 720;
+
     return KidsGameBaseScreen(
       title: widget.title,
       gameType: 'handwriting',
@@ -122,14 +234,16 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
       primaryColor: widget.primaryColor,
       backgroundColors: const [],
       buildGameUI: (context, state, onHintTap) {
-        // Reset canvas state if the quest changes (next question)
+        // Reset canvas state and clear drawing when the quest changes (next question)
         if (_lastQuestId != state.currentQuest.id) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) {
               _currentInk = null;
               _isCorrect = null;
+              _hasInk.value = false;
               if (_isChecking.value) _isChecking.value = false;
               _lastQuestId = state.currentQuest.id;
+              _canvasKey.currentState?.clearCanvas();
             }
           });
         }
@@ -139,174 +253,271 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) {
               _isCorrect = null;
+              _hasInk.value = false;
               if (_isChecking.value) _isChecking.value = false;
               _canvasKey.currentState?.clearCanvas();
             }
           });
         }
 
-        final targetWord = state.currentQuest.question ?? '';
+        final targetWord = state.currentQuest.question?.trim() ?? '';
+        final promptLabel = _getPromptLabel(context, targetWord);
+        final targetFontSize = _calculateTargetFontSize(targetWord);
+        final targetLetterSpacing = _calculateLetterSpacing(targetWord);
 
-        return Column(
-          children: [
-            SizedBox(
-              height: 120.h,
-            ), // Mascot space reserved by KidsGameBaseScreen
-            // Flashcard Target Word Display
-            InkWell(
-              onTap: state.answerStatus.isAnswered
-                  ? null
-                  : () {
-                      di.sl<KidsTTSService>().speak(
-                        state.currentQuest.instruction,
-                      );
-                    },
-              child: Container(
-                width: 300.w,
-                padding: EdgeInsets.symmetric(vertical: 20.h),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
-                  borderRadius: BorderRadius.circular(32.r),
-                  border: Border.all(
-                    color: widget.primaryColor.withValues(alpha: 0.3),
-                    width: 4.w,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: widget.primaryColor.withValues(alpha: 0.2),
-                      blurRadius: 16,
-                      offset: Offset(0, 8.h),
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            return Column(
+              children: [
+                // Mascot space reserved by KidsGameBaseScreen (adaptive for short screens)
+                SizedBox(height: isCompactScreen ? 90.h : 115.h),
+
+                // Responsive Flashcard Target Display
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  child: Container(
+                    width: double.infinity,
+                    constraints: BoxConstraints(
+                      maxWidth: 420.w,
+                      minHeight: isCompactScreen ? 80.h : 95.h,
                     ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    Text(
-                      context.tr(
-                        'kids_zone.handwriting_instruction',
-                        fallback: 'Draw this word:',
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: isCompactScreen ? 10.h : 14.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.surface,
+                      borderRadius: BorderRadius.circular(24.r),
+                      border: Border.all(
+                        color: widget.primaryColor.withValues(alpha: 0.35),
+                        width: 3.5.w,
                       ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey.shade500,
-                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: widget.primaryColor.withValues(alpha: 0.18),
+                          blurRadius: 14,
+                          offset: Offset(0, 6.h),
+                        ),
+                      ],
                     ),
-                    Text(
-                      targetWord,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 64.sp,
-                        fontWeight: FontWeight.w700,
-                        color: widget.primaryColor,
-                        letterSpacing: 6,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ).animate().scale(delay: 200.ms, curve: Curves.easeOutCubic),
-
-            SizedBox(height: 16.h),
-
-            // Chalkboard Canvas Frame
-            Expanded(
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 24.w),
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.3),
-                      blurRadius: 16,
-                      offset: Offset(0, 8.h),
-                    ),
-                  ],
-                ),
-                child: HandwritingCanvas(
-                  key: _canvasKey,
-                  canvasColor:
-                      _LocalPalette.color1b3b2b, // Deep chalkboard green
-                  strokeColor: Colors.white, // White chalk
-                  borderColor: _LocalPalette.color8b4513, // Wood brown frame
-                  borderWidth: 12.w, // Thick wood frame
-                  onInkUpdated: (ink) {
-                    if (state.answerStatus.isAnswered) {
-                      return;
-                    }
-                    _currentInk = ink;
-                    if (_isCorrect != null) {
-                      _isCorrect = null;
-                    }
-                  },
-                  onClear: () {
-                    if (state.answerStatus.isAnswered) {
-                      return;
-                    }
-                    _currentInk = null;
-                    _isCorrect = null;
-                  },
-                ),
-              ),
-            ),
-
-            SizedBox(height: 16.h),
-
-            // Action Button
-            if (state.answerStatus == AnswerStatus.unanswered)
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: ValueListenableBuilder<bool>(
-                  valueListenable: _isChecking,
-                  builder: (context, isChecking, child) {
-                    return ScaleButton(
-                      onTap: isChecking
-                          ? null
-                          : () => _checkHandwriting(context, state),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 20.h),
-                        decoration: BoxDecoration(
-                          color: isChecking ? Colors.grey : widget.primaryColor,
-                          borderRadius: BorderRadius.circular(32.r),
-                          boxShadow: [
-                            if (!isChecking)
-                              BoxShadow(
-                                color: widget.primaryColor.withValues(
-                                  alpha: 0.5,
-                                ),
-                                offset: Offset(0, 8.h),
-                                blurRadius: 12,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Prompt Label and Audio Listen Button
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              promptLabel,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey.shade600,
                               ),
+                            ),
+                            SizedBox(width: 6.w),
+                            Semantics(
+                              button: true,
+                              label: 'Listen to target word or instruction',
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(16.r),
+                                onTap: () {
+                                  di.sl<HapticService>().light();
+                                  final instruction =
+                                      state.currentQuest.instruction?.trim() ?? '';
+                                  final speakText =
+                                      (targetWord.length <= 2 && instruction.isNotEmpty)
+                                          ? instruction
+                                          : targetWord;
+                                  di.sl<KidsTTSService>().speak(speakText);
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.all(4.r),
+                                  child: Icon(
+                                    LucideIcons.volume2,
+                                    size: 16.r,
+                                    color: widget.primaryColor,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
-                        child: Center(
-                          child: isChecking
-                              ? VowlButtonSpinner(
-                                  color: Colors.white,
-                                  size: 24.h,
-                                )
-                              : Text(
-                                  context.tr(
-                                    'common.check',
-                                    fallback: 'Check My Answer!',
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 26.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.white,
-                                  ),
-                                ),
+                        SizedBox(height: 4.h),
+
+                        // Target Character / Word / Sentence Display
+                        SelectableText(
+                          targetWord,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: targetFontSize,
+                            fontWeight: FontWeight.w700,
+                            color: widget.primaryColor,
+                            letterSpacing: targetLetterSpacing,
+                            height: 1.2,
+                          ),
+                        ),
+
+                        // Pedagogical Curriculum Instruction Guidance
+                        if (state.currentQuest.instruction != null &&
+                            state.currentQuest.instruction!.trim().isNotEmpty &&
+                            state.currentQuest.instruction!.trim() != targetWord)
+                          Padding(
+                            padding: EdgeInsets.only(top: 4.h),
+                            child: Text(
+                              state.currentQuest.instruction!.trim(),
+                              textAlign: TextAlign.center,
+                              maxLines: isCompactScreen ? 1 : 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: isCompactScreen ? 11.sp : 12.sp,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.grey.shade700,
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ).animate().scale(delay: 150.ms, curve: Curves.easeOutCubic),
+
+                SizedBox(height: isCompactScreen ? 10.h : 14.h),
+
+                // Classroom Blackboard Slate Canvas Frame
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: 520.w),
+                        child: HandwritingCanvas(
+                          key: _canvasKey,
+                          ghostText: targetWord,
+                          canvasColor: _LocalPalette.chalkboardGreen,
+                          strokeColor: Colors.white,
+                          borderColor: _LocalPalette.woodBrown,
+                          borderWidth: isCompactScreen ? 8.w : 10.w,
+                          showGuidelines: true,
+                          initialShowGuide: widget.level <= 10,
+                          onStrokeCountChanged: (count) {
+                            _hasInk.value = count > 0;
+                          },
+                          onInkUpdated: (ink) {
+                            if (state.answerStatus.isAnswered || _isChecking.value) return;
+                            _currentInk = ink;
+                            _hasInk.value = ink.strokes.isNotEmpty;
+                            if (_isCorrect != null) _isCorrect = null;
+                          },
+                          onClear: () {
+                            if (state.answerStatus.isAnswered || _isChecking.value) return;
+                            _currentInk = null;
+                            _hasInk.value = false;
+                            _isCorrect = null;
+                          },
                         ),
                       ),
-                    );
-                  },
+                    ),
+                  ),
                 ),
-              ),
 
-            SizedBox(height: 32.h), // Padding at bottom for safe area
-          ],
+                SizedBox(height: isCompactScreen ? 10.h : 14.h),
+
+                // Primary Action Button (Check My Answer)
+                if (state.answerStatus == AnswerStatus.unanswered)
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: ValueListenableBuilder<bool>(
+                      valueListenable: _isChecking,
+                      builder: (context, isChecking, _) {
+                        return ValueListenableBuilder<bool>(
+                          valueListenable: _hasInk,
+                          builder: (context, hasInk, _) {
+                            final Color buttonColor = isChecking
+                                ? Colors.grey.shade400
+                                : (hasInk
+                                    ? widget.primaryColor
+                                    : widget.primaryColor.withValues(alpha: 0.65));
+
+                            return ScaleButton(
+                              onTap: isChecking
+                                  ? null
+                                  : () => _checkHandwriting(context, state),
+                              child: Container(
+                                width: double.infinity,
+                                constraints: BoxConstraints(
+                                  maxWidth: 420.w,
+                                  minHeight: isCompactScreen ? 54.h : 60.h,
+                                ),
+                                padding: EdgeInsets.symmetric(
+                                  vertical: isCompactScreen ? 14.h : 16.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: buttonColor,
+                                  borderRadius: BorderRadius.circular(28.r),
+                                  boxShadow: [
+                                    if (!isChecking && hasInk)
+                                      BoxShadow(
+                                        color: widget.primaryColor.withValues(
+                                          alpha: 0.45,
+                                        ),
+                                        offset: Offset(0, 6.h),
+                                        blurRadius: 14,
+                                      ),
+                                  ],
+                                ),
+                                child: Center(
+                                  child: isChecking
+                                      ? Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            VowlButtonSpinner(
+                                              color: Colors.white,
+                                              size: 22.h,
+                                            ),
+                                            SizedBox(width: 10.w),
+                                            Text(
+                                              context.tr(
+                                                'kids_zone.checking_writing',
+                                                fallback: 'Checking...',
+                                              ),
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 18.sp,
+                                                fontWeight: FontWeight.w700,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      : Text(
+                                          context.tr(
+                                            'common.check',
+                                            fallback: 'Check My Answer!',
+                                          ),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompactScreen ? 20.sp : 22.sp,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.white,
+                                            letterSpacing: 0.5,
+                                          ),
+                                        ),
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ),
+
+                SizedBox(height: isCompactScreen ? 14.h : 22.h),
+              ],
+            );
+          },
         );
       },
     );

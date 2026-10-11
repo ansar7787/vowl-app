@@ -258,12 +258,12 @@ class StoryServiceImpl implements StoryService {
 
   static const Map<String, List<String>> kidsScripts = {
     'handwriting': [
-      "Pen in hand! Let's draw some beautiful magic letters today! ✍️",
-      "Calligraphy Hero! You're making every word look like art! 🎨",
-      "The Magic Scroll is glowing! Your writing is becoming so clear! ✨",
-      "A master of lines! You draw the perfect shapes every time! 📐",
-      "100 levels of writing! You are the Master of the Golden Pen! 🖋️",
-      "Legendary Scribe! Your handwriting is the most beautiful in the world! 📜",
+      "Welcome to the chalkboard! Let's warm up your fingers and draw our very first strokes together. ✍️",
+      "Look at how steady your hand is getting! Your lines and shapes are looking clearer every day. 🎨",
+      "You're building real confidence! Writing whole letters is starting to feel natural and smooth. ✨",
+      "Fifty levels completed! You're connecting letters into words with such wonderful care and patience. 🌟",
+      "One hundred levels of handwriting! You should be so proud of your hard work and how beautiful your writing has become. 🏆",
+      "You've mastered the chalkboard! From simple lines to complete sentences, your writing shines with confidence. 📜",
     ],
     'weather': [
       "Sun or rain! Let's learn about the beautiful sky today! ☀️",
@@ -1375,8 +1375,11 @@ class StoryServiceImpl implements StoryService {
         return StoryBeat(
           title: context.tr('story.new_quest', fallback: 'New Quest'),
           text: context.tr(
-            'story_scripts.$cleanId',
-            fallback: kidsScripts[cleanId]![0],
+            'story_scripts.${cleanId}_beat_0',
+            fallback: context.tr(
+              'story_scripts.$cleanId',
+              fallback: kidsScripts[cleanId]![0],
+            ),
           ),
           mascotEmoji: _getMascotEmoji(cleanId),
           themeColor: _getCategoryColor(cleanId),
