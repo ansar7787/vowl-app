@@ -126,19 +126,19 @@ class SoundServiceImpl implements SoundService {
   @override
   void setMuted(bool muted) {
     _isMuted = muted;
-    // PERSISTENCE BUG FIX: this previously only updated the in-memory
-    // flag and never wrote the new value back to SharedPreferences, so a
-    // user's mute choice did not survive an app restart (it would silently
-    // revert to whatever was last persisted - or the default - the next
-    // time the app launched). This service owns reading the preference in
-    // `_init()`, so it should also own writing it, regardless of whether
-    // some other layer happens to also persist it.
+    if (muted) {
+      unawaited(stopAudio());
+      unawaited(stopTts());
+    }
     unawaited(_persistMuted(muted));
   }
 
   @override
   void setGameSoundsEnabled(bool enabled) {
     _isGameSoundsEnabled = enabled;
+    if (!enabled) {
+      unawaited(stopAudio());
+    }
     unawaited(_persistGameSoundsEnabled(enabled));
   }
 
