@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -59,10 +58,7 @@ class TtsVoiceSelectionBottomSheet extends StatefulWidget {
 class _TtsVoiceSelectionBottomSheetState
     extends State<TtsVoiceSelectionBottomSheet> {
   late TtsVoicePreset _selectedPreset;
-  final FlutterTts _previewTts = FlutterTts();
   String? _currentlyPlayingId;
-  int _previewSessionId = 0;
-  Timer? _previewSafetyTimer;
   StreamSubscription<AuthState>? _authSubscription;
 
   bool get _isPremium {
@@ -94,58 +90,28 @@ class _TtsVoiceSelectionBottomSheetState
         });
       }
     } catch (_) {}
-
-    // Pre-warm voices cache in memory so preview taps start instantly
-    TtsVoiceHelper.warmUpVoices(_previewTts);
-
-    _previewTts.setCompletionHandler(() {
-      _previewSafetyTimer?.cancel();
-      if (mounted) {
-        setState(() {
-          _currentlyPlayingId = null;
-        });
-      }
-    });
-
-    _previewTts.setCancelHandler(() {
-      _previewSafetyTimer?.cancel();
-      if (mounted) {
-        setState(() {
-          _currentlyPlayingId = null;
-        });
-      }
-    });
-
-    _previewTts.setErrorHandler((_) {
-      _previewSafetyTimer?.cancel();
-      if (mounted) {
-        setState(() {
-          _currentlyPlayingId = null;
-        });
-      }
-    });
   }
 
   @override
   void dispose() {
     _authSubscription?.cancel();
-    _previewSafetyTimer?.cancel();
-    _previewSessionId++;
     try {
-      _previewTts.stop();
+      if (di.sl.isRegistered<TtsService>()) {
+        di.sl<TtsService>().stop();
+      }
     } catch (_) {}
     super.dispose();
   }
 
   Future<void> _playPreview(TtsVoicePreset preset) async {
     di.sl<HapticService>().light();
-    _previewSafetyTimer?.cancel();
 
     // Toggle stop if already playing the current preset
     if (_currentlyPlayingId == preset.id) {
-      _previewSessionId++;
       try {
-        await _previewTts.stop();
+        if (di.sl.isRegistered<TtsService>()) {
+          await di.sl<TtsService>().stop();
+        }
       } catch (_) {}
       if (mounted) {
         setState(() {
@@ -155,82 +121,33 @@ class _TtsVoiceSelectionBottomSheetState
       return;
     }
 
-    final sessionId = ++_previewSessionId;
-
-    try {
-      // Cancel any ongoing app speech so preview plays clearly
-      if (di.sl.isRegistered<TtsService>()) {
-        di.sl<TtsService>().stop();
-      }
-      if (di.sl.isRegistered<KidsTTSService>()) {
-        di.sl<KidsTTSService>().stop();
-      }
-      await _previewTts.stop();
-    } catch (_) {}
-    if (!mounted || sessionId != _previewSessionId) return;
-
     setState(() {
       _currentlyPlayingId = preset.id;
     });
 
+    final targetId = preset.id;
     try {
-      await TtsVoiceHelper.applyPresetToTts(
-        _previewTts,
-        preset: preset,
-        isKids: preset == TtsVoicePreset.friendlyTeacher,
-      );
-      if (!mounted || sessionId != _previewSessionId) return;
-
-      final sample = TtsVoiceHelper.getSampleSentence(preset);
-
-      // Re-bind completion handler for current session to ensure direct callback delivery
-      _previewTts.setCompletionHandler(() {
-        if (mounted && _previewSessionId == sessionId) {
-          _previewSafetyTimer?.cancel();
-          setState(() {
-            _currentlyPlayingId = null;
-          });
-        }
-      });
-      _previewTts.setCancelHandler(() {
-        if (mounted && _previewSessionId == sessionId) {
-          _previewSafetyTimer?.cancel();
-          setState(() {
-            _currentlyPlayingId = null;
-          });
-        }
-      });
-      _previewTts.setErrorHandler((_) {
-        if (mounted && _previewSessionId == sessionId) {
-          _previewSafetyTimer?.cancel();
-          setState(() {
-            _currentlyPlayingId = null;
-          });
-        }
-      });
-
-      // Safety timeout: calculate natural duration based on sample length + 1.5s margin
-      // Guaranteed to revert button to sound icon even if platform event drops
-      final estimatedMs = ((sample.split(' ').length / 2.2) * 1000).toInt() + 1500;
-      _previewSafetyTimer = Timer(Duration(milliseconds: estimatedMs), () {
-        if (mounted && _previewSessionId == sessionId && _currentlyPlayingId == preset.id) {
-          setState(() {
-            _currentlyPlayingId = null;
-          });
-        }
-      });
-
-      _previewTts.speak(sample).catchError((_) {
-        if (mounted && _previewSessionId == sessionId) {
-          _previewSafetyTimer?.cancel();
-          setState(() {
-            _currentlyPlayingId = null;
-          });
-        }
-      });
+      if (di.sl.isRegistered<TtsService>()) {
+        await di.sl<TtsService>().previewPreset(
+          preset,
+          onDone: () {
+            if (mounted && _currentlyPlayingId == targetId) {
+              setState(() {
+                _currentlyPlayingId = null;
+              });
+            }
+          },
+          onError: (_) {
+            if (mounted && _currentlyPlayingId == targetId) {
+              setState(() {
+                _currentlyPlayingId = null;
+              });
+            }
+          },
+        );
+      }
     } catch (_) {
-      if (mounted && sessionId == _previewSessionId) {
-        _previewSafetyTimer?.cancel();
+      if (mounted && _currentlyPlayingId == targetId) {
         setState(() {
           _currentlyPlayingId = null;
         });
@@ -242,9 +159,10 @@ class _TtsVoiceSelectionBottomSheetState
     // If the voice is premium and user is on free tier, handle upsell or info
     if (preset.isPremium && !_isPremium) {
       di.sl<HapticService>().selection();
-      _previewSessionId++;
       try {
-        await _previewTts.stop();
+        if (di.sl.isRegistered<TtsService>()) {
+          await di.sl<TtsService>().stop();
+        }
       } catch (_) {}
       if (mounted) {
         setState(() {
@@ -340,10 +258,10 @@ class _TtsVoiceSelectionBottomSheetState
     if (_selectedPreset == preset) return;
 
     di.sl<HapticService>().selection();
-    _previewSafetyTimer?.cancel();
-    _previewSessionId++;
     try {
-      await _previewTts.stop();
+      if (di.sl.isRegistered<TtsService>()) {
+        await di.sl<TtsService>().stop();
+      }
     } catch (_) {}
 
     setState(() {
@@ -366,10 +284,10 @@ class _TtsVoiceSelectionBottomSheetState
 
   void _closeSheet() {
     di.sl<HapticService>().light();
-    _previewSafetyTimer?.cancel();
-    _previewSessionId++;
     try {
-      _previewTts.stop();
+      if (di.sl.isRegistered<TtsService>()) {
+        di.sl<TtsService>().stop();
+      }
     } catch (_) {}
     final safePreset = (_selectedPreset.isPremium && !_isPremium)
         ? TtsVoicePreset.friendlyTeacher

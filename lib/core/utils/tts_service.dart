@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/app_logger.dart';
@@ -27,33 +28,60 @@ abstract class TtsService {
 
   /// Reloads active voice calibration according to saved user preferences.
   Future<void> reloadVoice();
+
+  /// True if TTS is actively synthesizing or speaking.
+  bool get isSpeaking;
+
+  /// Speaks a voice sample for the given [preset] in a preview context.
+  /// Handles engine calibration, utterance lifecycle tracking, and invokes
+  /// [onStart], [onDone], and [onError] deterministically without UI heuristics.
+  Future<void> previewPreset(
+    TtsVoicePreset preset, {
+    void Function()? onStart,
+    void Function()? onDone,
+    void Function(dynamic error)? onError,
+  });
+
+  /// Attaches a word-level progress handler (for phonics, karaoke, or speech highlighting).
+  void setWordCallback(void Function(String word)? callback);
 }
 
 /// Concrete high-performance implementation of [TtsService] integrating with the `flutter_tts` package.
 class TtsServiceImpl implements TtsService {
   final FlutterTts _flutterTts = FlutterTts();
   SharedPreferences? _prefs;
-
-  /// RACE-CONDITION FIX: `_initTts()` caches `SharedPreferences` asynchronously
-  /// from the constructor with nothing awaiting it. The previous `speak()`
-  /// read `_prefs?.getBool(...)` directly - if called before this finished,
-  /// `_prefs` was still null and the null-aware fallback (`?? true`) meant
-  /// speech could play even for an already-muted user, for a brief window
-  /// right after app startup. `speak()` now awaits this stored Future first.
   late final Future<void> _initFuture;
+
+  bool _isSpeaking = false;
+  int _activeSessionId = 0;
+  void Function(String word)? _wordCallback;
+  Timer? _watchdogTimer;
 
   TtsServiceImpl() {
     _initFuture = _initTts();
   }
 
+  @override
+  bool get isSpeaking => _isSpeaking;
+
+  @override
+  void setWordCallback(void Function(String word)? callback) {
+    _wordCallback = callback;
+  }
+
   Future<void> _initTts() async {
     try {
+      // Warm up voices cache immediately to avoid any initial preview delay
+      await TtsVoiceHelper.warmUpVoices(_flutterTts);
+
       final preset = await TtsVoiceHelper.getSavedPreset();
       await TtsVoiceHelper.applyPresetToTts(
         _flutterTts,
         preset: preset,
         isKids: false,
       );
+
+      _setupDefaultHandlers();
 
       // Cache SharedPreferences in memory to evaluate app mute state instantly without circular references
       _prefs = await SharedPreferences.getInstance();
@@ -65,9 +93,38 @@ class TtsServiceImpl implements TtsService {
     }
   }
 
+  void _setupDefaultHandlers() {
+    _flutterTts.setStartHandler(() {
+      _isSpeaking = true;
+    });
+
+    _flutterTts.setCompletionHandler(() {
+      _watchdogTimer?.cancel();
+      _isSpeaking = false;
+    });
+
+    _flutterTts.setCancelHandler(() {
+      _watchdogTimer?.cancel();
+      _isSpeaking = false;
+    });
+
+    _flutterTts.setErrorHandler((dynamic msg) {
+      _watchdogTimer?.cancel();
+      _isSpeaking = false;
+      sl<AppLogger>().warning('TtsService native error: $msg', tag: 'TTS');
+    });
+
+    _flutterTts.setProgressHandler((text, start, end, word) {
+      _wordCallback?.call(word);
+    });
+  }
+
   @override
   Future<void> reloadVoice() async {
     await _initFuture;
+    _watchdogTimer?.cancel();
+    _activeSessionId++;
+    _setupDefaultHandlers();
     try {
       final preset = await TtsVoiceHelper.getSavedPreset();
       await TtsVoiceHelper.applyPresetToTts(
@@ -80,6 +137,82 @@ class TtsServiceImpl implements TtsService {
         'TtsService: Error reloading voice preset',
         error: e,
       );
+    }
+  }
+
+  @override
+  Future<void> previewPreset(
+    TtsVoicePreset preset, {
+    void Function()? onStart,
+    void Function()? onDone,
+    void Function(dynamic error)? onError,
+  }) async {
+    await _initFuture;
+    _watchdogTimer?.cancel();
+    final sessionId = ++_activeSessionId;
+
+    try {
+      await _flutterTts.stop();
+    } catch (_) {}
+
+    if (sessionId != _activeSessionId) return;
+
+    try {
+      await TtsVoiceHelper.applyPresetToTts(
+        _flutterTts,
+        preset: preset,
+        isKids: preset == TtsVoicePreset.friendlyTeacher,
+      );
+
+      if (sessionId != _activeSessionId) return;
+
+      final sample = TtsVoiceHelper.getSampleSentence(preset);
+
+      _flutterTts.setStartHandler(() {
+        if (sessionId == _activeSessionId) {
+          _isSpeaking = true;
+          onStart?.call();
+        }
+      });
+
+      void handleDone() {
+        if (sessionId == _activeSessionId) {
+          _watchdogTimer?.cancel();
+          _isSpeaking = false;
+          _setupDefaultHandlers();
+          onDone?.call();
+        }
+      }
+
+      _flutterTts.setCompletionHandler(handleDone);
+      _flutterTts.setCancelHandler(handleDone);
+      _flutterTts.setErrorHandler((dynamic err) {
+        if (sessionId == _activeSessionId) {
+          _watchdogTimer?.cancel();
+          _isSpeaking = false;
+          _setupDefaultHandlers();
+          onError?.call(err);
+          onDone?.call();
+        }
+      });
+
+      // Defensive hardware watchdog: fires ONLY if Android OEM drops onDone event completely
+      _watchdogTimer = Timer(const Duration(seconds: 10), () {
+        if (sessionId == _activeSessionId && _isSpeaking) {
+          sl<AppLogger>().debug('TtsService: Watchdog auto-cleared preview state');
+          handleDone();
+        }
+      });
+
+      await _flutterTts.speak(sample);
+    } catch (e) {
+      if (sessionId == _activeSessionId) {
+        _watchdogTimer?.cancel();
+        _isSpeaking = false;
+        _setupDefaultHandlers();
+        onError?.call(e);
+        onDone?.call();
+      }
     }
   }
 
@@ -166,6 +299,10 @@ class TtsServiceImpl implements TtsService {
 
   @override
   Future<void> stop() async {
+    _watchdogTimer?.cancel();
+    _activeSessionId++;
+    _isSpeaking = false;
+    _setupDefaultHandlers();
     try {
       await _flutterTts.stop();
     } catch (e) {
@@ -175,6 +312,9 @@ class TtsServiceImpl implements TtsService {
 
   @override
   Future<void> dispose() async {
+    _watchdogTimer?.cancel();
+    _activeSessionId++;
+    _isSpeaking = false;
     try {
       await _flutterTts.stop();
     } catch (_) {}
