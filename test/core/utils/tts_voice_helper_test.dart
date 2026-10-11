@@ -33,11 +33,11 @@ void main() {
       );
       expect(
         TtsVoicePreset.fromId('unknown_id'),
-        equals(TtsVoicePreset.friendlyTeacher),
+        equals(TtsVoicePreset.clearGuide),
       );
       expect(
         TtsVoicePreset.fromId(null),
-        equals(TtsVoicePreset.friendlyTeacher),
+        equals(TtsVoicePreset.clearGuide),
       );
     });
 
@@ -64,10 +64,10 @@ void main() {
     test('savePreset and getSavedPreset round-trip via SharedPreferences', () async {
       SharedPreferences.setMockInitialValues({});
 
-      // Defaults to friendlyTeacher when not set
+      // Defaults to clearGuide when not set
       expect(
         await TtsVoiceHelper.getSavedPreset(),
-        equals(TtsVoicePreset.friendlyTeacher),
+        equals(TtsVoicePreset.clearGuide),
       );
 
       // Save clearGuide

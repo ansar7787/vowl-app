@@ -18,6 +18,8 @@ abstract class TtsService {
     double? rate,
     String? locale,
     List<int>? pauseMarkers,
+    TtsVoicePreset? forcedPreset,
+    bool isKids = false,
   });
 
   /// Aborts active audio speech outputs immediately.
@@ -56,6 +58,7 @@ class TtsServiceImpl implements TtsService {
   int _activeSessionId = 0;
   void Function(String word)? _wordCallback;
   Timer? _watchdogTimer;
+  TtsVoicePreset? _activeEnginePreset;
 
   TtsServiceImpl() {
     _initFuture = _initTts();
@@ -75,6 +78,7 @@ class TtsServiceImpl implements TtsService {
       await TtsVoiceHelper.warmUpVoices(_flutterTts);
 
       final preset = await TtsVoiceHelper.getSavedPreset();
+      _activeEnginePreset = preset;
       await TtsVoiceHelper.applyPresetToTts(
         _flutterTts,
         preset: preset,
@@ -127,6 +131,7 @@ class TtsServiceImpl implements TtsService {
     _setupDefaultHandlers();
     try {
       final preset = await TtsVoiceHelper.getSavedPreset();
+      _activeEnginePreset = preset;
       await TtsVoiceHelper.applyPresetToTts(
         _flutterTts,
         preset: preset,
@@ -158,6 +163,7 @@ class TtsServiceImpl implements TtsService {
     if (sessionId != _activeSessionId) return;
 
     try {
+      _activeEnginePreset = null;
       await TtsVoiceHelper.applyPresetToTts(
         _flutterTts,
         preset: preset,
@@ -179,6 +185,7 @@ class TtsServiceImpl implements TtsService {
         if (sessionId == _activeSessionId) {
           _watchdogTimer?.cancel();
           _isSpeaking = false;
+          _activeEnginePreset = null;
           _setupDefaultHandlers();
           onDone?.call();
         }
@@ -190,6 +197,7 @@ class TtsServiceImpl implements TtsService {
         if (sessionId == _activeSessionId) {
           _watchdogTimer?.cancel();
           _isSpeaking = false;
+          _activeEnginePreset = null;
           _setupDefaultHandlers();
           onError?.call(err);
           onDone?.call();
@@ -209,6 +217,7 @@ class TtsServiceImpl implements TtsService {
       if (sessionId == _activeSessionId) {
         _watchdogTimer?.cancel();
         _isSpeaking = false;
+        _activeEnginePreset = null;
         _setupDefaultHandlers();
         onError?.call(e);
         onDone?.call();
@@ -222,6 +231,8 @@ class TtsServiceImpl implements TtsService {
     double? rate,
     String? locale,
     List<int>? pauseMarkers,
+    TtsVoicePreset? forcedPreset,
+    bool isKids = false,
   }) async {
     if (text.isEmpty) return;
 
@@ -266,6 +277,17 @@ class TtsServiceImpl implements TtsService {
     }
 
     try {
+      final targetPreset = forcedPreset ?? await TtsVoiceHelper.getSavedPreset();
+      if (_activeEnginePreset != targetPreset || isKids) {
+        await TtsVoiceHelper.applyPresetToTts(
+          _flutterTts,
+          preset: targetPreset,
+          isKids: isKids,
+          explicitLocale: locale,
+        );
+        _activeEnginePreset = isKids ? null : targetPreset;
+      }
+
       if (locale != null) {
         await _flutterTts.setLanguage(locale);
       }
