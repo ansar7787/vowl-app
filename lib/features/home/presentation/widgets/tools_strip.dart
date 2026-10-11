@@ -581,14 +581,16 @@ class _ExploreAllCard extends StatelessWidget {
           di.sl<HapticService>().selection();
           onTap();
         },
-        child: GlassTile(
-          blur: 0,
-          showShadow: false,
-          borderRadius: BorderRadius.circular(24.r),
-          borderColor: AppColors.indigo500.withValues(alpha: isDark ? 0.35 : 0.25),
-          padding: EdgeInsets.all(16.r),
-          child: SizedBox(
-            width: width,
+        child: ExcludeSemantics(
+          child: RepaintBoundary(
+            child: GlassTile(
+              blur: 0,
+              showShadow: false,
+              borderRadius: BorderRadius.circular(24.r),
+              borderColor: AppColors.indigo500.withValues(alpha: isDark ? 0.35 : 0.25),
+              padding: EdgeInsets.all(16.r),
+              child: SizedBox(
+                width: width,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -648,7 +650,9 @@ class _ExploreAllCard extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ),
+  ),
+);
   }
 }
 

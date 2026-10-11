@@ -152,6 +152,16 @@ class AppFeatureCatalog {
       category: FeatureCategory.games,
       route: AppRouter.libraryRoute,
     ),
+    AppFeatureItem(
+      id: 'elite_mastery',
+      title: 'Elite Mastery (Advanced Quests)',
+      subtitle: 'Accent shadowing, idiom match, speed spelling & story builder',
+      badge: 'Elite Tier',
+      icon: LucideIcons.crown,
+      accentColor: AppColors.amber500,
+      category: FeatureCategory.games,
+      route: AppRouter.gamesRoute,
+    ),
 
     // ── 2. AI Vision & Global Tools ─────────────────────────────────────────
     AppFeatureItem(
