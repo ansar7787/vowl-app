@@ -102,6 +102,15 @@ class ModernFeatureBar extends StatelessWidget {
               ),
               _buildListFeature(
                 context,
+                icon: LucideIcons.volume2,
+                title: context.tr(
+                  'premium.feature_world_accents',
+                  fallback: 'World Voice Accents (British, US, AU & IN)',
+                ),
+                color: AppColors.violet500,
+              ),
+              _buildListFeature(
+                context,
                 icon: LucideIcons.shieldCheck,
                 title: context.tr(
                   'premium.feature_zero_ads',
