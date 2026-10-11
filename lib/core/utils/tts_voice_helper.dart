@@ -12,32 +12,57 @@ enum TtsVoicePreset {
     'Friendly Teacher',
     'Warm, cheerful & encouraging (recommended for Kids & Phonics)',
     Icons.school_rounded,
+    isPremium: false,
   ),
   clearGuide(
     'clear_guide',
     'Clear Guide',
     'Natural, crisp American pronunciation for clear learning',
     Icons.record_voice_over_rounded,
+    isPremium: false,
   ),
   britishAccent(
     'british_accent',
     'British Accent',
-    'Refined UK English pronunciation with natural intonation',
+    'Refined UK English for IELTS & international study',
     Icons.travel_explore_rounded,
+    isPremium: true,
+  ),
+  australianAccent(
+    'australian_accent',
+    'Australian Accent',
+    'Natural Aussie English pronunciation for global mastery',
+    Icons.terrain_rounded,
+    isPremium: true,
+  ),
+  indianEnglish(
+    'indian_english',
+    'Indian English',
+    'Clear South Asian English pronunciation & intonation',
+    Icons.translate_rounded,
+    isPremium: true,
   ),
   systemDefault(
     'system_default',
     'Device Default',
     'Use device system accessibility voice engine',
     Icons.settings_voice_rounded,
+    isPremium: false,
   );
 
   final String id;
   final String title;
   final String subtitle;
   final IconData icon;
+  final bool isPremium;
 
-  const TtsVoicePreset(this.id, this.title, this.subtitle, this.icon);
+  const TtsVoicePreset(
+    this.id,
+    this.title,
+    this.subtitle,
+    this.icon, {
+    this.isPremium = false,
+  });
 
   static TtsVoicePreset fromId(String? id) {
     return TtsVoicePreset.values.firstWhere(
@@ -102,7 +127,12 @@ class TtsVoiceHelper {
       // 2. Set Language Locale
       final targetLocale =
           explicitLocale ??
-          (preset == TtsVoicePreset.britishAccent ? 'en-GB' : 'en-US');
+          switch (preset) {
+            TtsVoicePreset.britishAccent => 'en-GB',
+            TtsVoicePreset.australianAccent => 'en-AU',
+            TtsVoicePreset.indianEnglish => 'en-IN',
+            _ => 'en-US',
+          };
       await tts.setLanguage(targetLocale);
 
       // 3. Cadence and Pitch Calibration
@@ -239,6 +269,40 @@ class TtsVoiceHelper {
           ),
         );
 
+      case TtsVoicePreset.australianAccent:
+        // Priority 1: Google AU voices or Apple Karen/Lee/Russell
+        return candidatePool.firstWhere(
+          (v) {
+            final name = v['name']!.toLowerCase();
+            final loc = v['locale']!.toLowerCase();
+            return loc.contains('au') ||
+                name.contains('karen') ||
+                name.contains('lee') ||
+                name.contains('russell');
+          },
+          orElse: () => candidatePool.firstWhere(
+            (v) => (v['locale']?.toLowerCase().contains('au') ?? false),
+            orElse: () => candidatePool.first,
+          ),
+        );
+
+      case TtsVoicePreset.indianEnglish:
+        // Priority 1: Google IN voices or Apple Rishi/Isha/Sangeeta
+        return candidatePool.firstWhere(
+          (v) {
+            final name = v['name']!.toLowerCase();
+            final loc = v['locale']!.toLowerCase();
+            return loc.contains('in') ||
+                name.contains('rishi') ||
+                name.contains('isha') ||
+                name.contains('sangeeta');
+          },
+          orElse: () => candidatePool.firstWhere(
+            (v) => (v['locale']?.toLowerCase().contains('in') ?? false),
+            orElse: () => candidatePool.first,
+          ),
+        );
+
       case TtsVoicePreset.systemDefault:
         return null;
     }
@@ -253,6 +317,10 @@ class TtsVoiceHelper {
         return "Hello! Welcome to Vowl. Let's practice English.";
       case TtsVoicePreset.britishAccent:
         return "Hello! Welcome to Vowl. Ready for today's lesson?";
+      case TtsVoicePreset.australianAccent:
+        return "Hello! Welcome to Vowl. Ready to practice Australian English?";
+      case TtsVoicePreset.indianEnglish:
+        return "Hello! Welcome to Vowl. Let's master English together.";
       case TtsVoicePreset.systemDefault:
         return "Hello! This is your device's default speech voice.";
     }

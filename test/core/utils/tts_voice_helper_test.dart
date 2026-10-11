@@ -20,6 +20,14 @@ void main() {
         equals(TtsVoicePreset.britishAccent),
       );
       expect(
+        TtsVoicePreset.fromId('australian_accent'),
+        equals(TtsVoicePreset.australianAccent),
+      );
+      expect(
+        TtsVoicePreset.fromId('indian_english'),
+        equals(TtsVoicePreset.indianEnglish),
+      );
+      expect(
         TtsVoicePreset.fromId('system_default'),
         equals(TtsVoicePreset.systemDefault),
       );
@@ -31,6 +39,16 @@ void main() {
         TtsVoicePreset.fromId(null),
         equals(TtsVoicePreset.friendlyTeacher),
       );
+    });
+
+    test('isPremium flag distinguishes free vs premium voices accurately', () {
+      expect(TtsVoicePreset.friendlyTeacher.isPremium, isFalse);
+      expect(TtsVoicePreset.clearGuide.isPremium, isFalse);
+      expect(TtsVoicePreset.systemDefault.isPremium, isFalse);
+
+      expect(TtsVoicePreset.britishAccent.isPremium, isTrue);
+      expect(TtsVoicePreset.australianAccent.isPremium, isTrue);
+      expect(TtsVoicePreset.indianEnglish.isPremium, isTrue);
     });
 
     test('getSampleSentence returns non-empty friendly text for all presets', () {
@@ -59,13 +77,12 @@ void main() {
         equals(TtsVoicePreset.clearGuide),
       );
 
-      // Save britishAccent
-      await TtsVoiceHelper.savePreset(TtsVoicePreset.britishAccent);
+      // Save australianAccent
+      await TtsVoiceHelper.savePreset(TtsVoicePreset.australianAccent);
       expect(
         await TtsVoiceHelper.getSavedPreset(),
-        equals(TtsVoicePreset.britishAccent),
+        equals(TtsVoicePreset.australianAccent),
       );
     });
   });
 }
-

@@ -4,31 +4,43 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/tts_voice_helper.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
 /// Modal bottom sheet allowing users to customize speech pronunciation voice style.
 /// Designed with responsive layout to prevent overflows across all screen sizes and text scales.
+/// Supports Freemium monetization: free users can preview all voices, while premium voices
+/// gracefully trigger [PremiumStoreBottomSheet] when tapped for selection.
 class TtsVoiceSelectionBottomSheet extends StatefulWidget {
   final TtsVoicePreset initialPreset;
+  final bool? isPremium;
 
-  const TtsVoiceSelectionBottomSheet({super.key, required this.initialPreset});
+  const TtsVoiceSelectionBottomSheet({
+    super.key,
+    required this.initialPreset,
+    this.isPremium,
+  });
 
   static Future<TtsVoicePreset?> show(
     BuildContext context, {
     required TtsVoicePreset currentPreset,
+    bool? isPremium,
   }) async {
     final result = await showModalBottomSheet<TtsVoicePreset>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (ctx) =>
-          TtsVoiceSelectionBottomSheet(initialPreset: currentPreset),
+      builder: (ctx) => TtsVoiceSelectionBottomSheet(
+        initialPreset: currentPreset,
+        isPremium: isPremium,
+      ),
     );
     return result ?? await TtsVoiceHelper.getSavedPreset();
   }
@@ -43,6 +55,17 @@ class _TtsVoiceSelectionBottomSheetState
   late TtsVoicePreset _selectedPreset;
   final FlutterTts _previewTts = FlutterTts();
   String? _currentlyPlayingId;
+  int _previewSessionId = 0;
+
+  bool get _isPremium {
+    if (widget.isPremium != null) return widget.isPremium!;
+    try {
+      if (di.sl.isRegistered<AuthBloc>()) {
+        return di.sl<AuthBloc>().state.user?.isPremium ?? false;
+      }
+    } catch (_) {}
+    return false;
+  }
 
   @override
   void initState() {
@@ -82,8 +105,6 @@ class _TtsVoiceSelectionBottomSheetState
     } catch (_) {}
     super.dispose();
   }
-
-  int _previewSessionId = 0;
 
   Future<void> _playPreview(TtsVoicePreset preset) async {
     di.sl<HapticService>().light();
@@ -140,6 +161,34 @@ class _TtsVoiceSelectionBottomSheetState
   }
 
   Future<void> _selectPreset(TtsVoicePreset preset) async {
+    // If the voice is premium and user is on free tier, trigger Premium Store upsell
+    if (preset.isPremium && !_isPremium) {
+      di.sl<HapticService>().selection();
+      _previewSessionId++;
+      try {
+        await _previewTts.stop();
+      } catch (_) {}
+      if (mounted) {
+        setState(() {
+          _currentlyPlayingId = null;
+        });
+      }
+      if (!mounted) return;
+
+      // Smoothly display the Premium Store sheet
+      await PremiumStoreBottomSheet.show(context: context);
+
+      // Re-check premium status upon return
+      if (mounted && _isPremium) {
+        await _applyPresetSelection(preset);
+      }
+      return;
+    }
+
+    await _applyPresetSelection(preset);
+  }
+
+  Future<void> _applyPresetSelection(TtsVoicePreset preset) async {
     if (_selectedPreset == preset) return;
 
     di.sl<HapticService>().selection();
@@ -179,6 +228,7 @@ class _TtsVoiceSelectionBottomSheetState
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bottomInset = MediaQuery.of(context).padding.bottom;
+    final isUserPremium = _isPremium;
 
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
@@ -295,6 +345,7 @@ class _TtsVoiceSelectionBottomSheetState
 
                 // Voice Preset Option Cards
                 ...TtsVoicePreset.values.map((preset) {
+                  final isLocked = preset.isPremium && !isUserPremium;
                   final isSelected = _selectedPreset == preset;
                   final isPlaying = _currentlyPlayingId == preset.id;
 
@@ -360,7 +411,7 @@ class _TtsVoiceSelectionBottomSheetState
                               ),
                               SizedBox(width: 12.w),
 
-                              // Title, Badge and Subtitle
+                              // Title, Badges and Subtitle
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -420,6 +471,55 @@ class _TtsVoiceSelectionBottomSheetState
                                               ),
                                             ),
                                           ),
+                                        if (preset.isPremium)
+                                          Container(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 6.w,
+                                              vertical: 2.h,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: isDark
+                                                  ? const Color(0xFF261D0C)
+                                                  : const Color(0xFFFEF3C7),
+                                              borderRadius:
+                                                  BorderRadius.circular(5.r),
+                                              border: Border.all(
+                                                color: isDark
+                                                    ? const Color(0xFF453314)
+                                                    : const Color(0xFFFDE68A),
+                                                width: 0.8,
+                                              ),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Icon(
+                                                  LucideIcons.crown,
+                                                  size: 9.r,
+                                                  color: isDark
+                                                      ? const Color(0xFFFBBF24)
+                                                      : const Color(0xFFD97706),
+                                                ),
+                                                SizedBox(width: 3.w),
+                                                Text(
+                                                  'PRO',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 9.sp,
+                                                    fontWeight: FontWeight.w800,
+                                                    letterSpacing: 0.5,
+                                                    color: isDark
+                                                        ? const Color(
+                                                            0xFFFBBF24,
+                                                          )
+                                                        : const Color(
+                                                            0xFFD97706,
+                                                          ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                       ],
                                     ),
                                     SizedBox(height: 3.h),
@@ -441,7 +541,7 @@ class _TtsVoiceSelectionBottomSheetState
                               ),
                               SizedBox(width: 8.w),
 
-                              // Interactive Audio Preview Button
+                              // Interactive Audio Preview Button (Always available for preview)
                               _AudioPreviewButton(
                                 isPlaying: isPlaying,
                                 isSelected: isSelected,
@@ -451,40 +551,65 @@ class _TtsVoiceSelectionBottomSheetState
 
                               SizedBox(width: 8.w),
 
-                              // Selection Indicator (Radio / Checkmark)
-                              AnimatedContainer(
-                                duration: const Duration(milliseconds: 180),
-                                width: 22.r,
-                                height: 22.r,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: isSelected
-                                      ? AppColors.indigo500
-                                      : Colors.transparent,
-                                  border: Border.all(
+                              // Selection or Lock Indicator
+                              if (isLocked)
+                                Container(
+                                  width: 22.r,
+                                  height: 22.r,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.05)
+                                        : Colors.black.withValues(alpha: 0.04),
+                                    border: Border.all(
+                                      color: isDark
+                                          ? Colors.white12
+                                          : Colors.black12,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  child: Icon(
+                                    LucideIcons.lock,
+                                    size: 11.r,
+                                    color: isDark
+                                        ? Colors.white38
+                                        : Colors.black38,
+                                  ),
+                                )
+                              else
+                                AnimatedContainer(
+                                  duration: const Duration(milliseconds: 180),
+                                  width: 22.r,
+                                  height: 22.r,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
                                     color: isSelected
                                         ? AppColors.indigo500
-                                        : (isDark
-                                            ? Colors.white.withValues(
-                                                alpha: 0.2,
-                                              )
-                                            : Colors.black.withValues(
-                                                alpha: 0.2,
-                                              )),
-                                    width: 1.5,
+                                        : Colors.transparent,
+                                    border: Border.all(
+                                      color: isSelected
+                                          ? AppColors.indigo500
+                                          : (isDark
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.2,
+                                                )
+                                              : Colors.black.withValues(
+                                                  alpha: 0.2,
+                                                )),
+                                      width: 1.5,
+                                    ),
+                                  ),
+                                  child: AnimatedScale(
+                                    scale: isSelected ? 1.0 : 0.0,
+                                    duration: const Duration(milliseconds: 180),
+                                    curve: Curves.easeOutBack,
+                                    child: Icon(
+                                      Icons.check,
+                                      size: 14.r,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
-                                child: AnimatedScale(
-                                  scale: isSelected ? 1.0 : 0.0,
-                                  duration: const Duration(milliseconds: 180),
-                                  curve: Curves.easeOutBack,
-                                  child: Icon(
-                                    Icons.check,
-                                    size: 14.r,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
                         ),
@@ -654,10 +779,10 @@ class _AudioPreviewButtonState extends State<_AudioPreviewButton>
                       },
                     )
                   : Icon(
-                      LucideIcons.volume2,
-                      size: 16.r,
-                      color: widget.isSelected ? activeColor : idleColor,
-                    ),
+                    LucideIcons.volume2,
+                    size: 16.r,
+                    color: widget.isSelected ? activeColor : idleColor,
+                  ),
             ),
           ),
         ),
