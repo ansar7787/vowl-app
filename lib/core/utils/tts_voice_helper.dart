@@ -137,6 +137,19 @@ class TtsVoiceHelper {
     }
   }
 
+  static List<dynamic>? _cachedVoices;
+
+  /// Warm up and cache available voices in memory to remove preview tap delay.
+  static Future<void> warmUpVoices(FlutterTts tts) async {
+    if (_cachedVoices != null) return;
+    try {
+      final dynamic raw = await tts.getVoices;
+      if (raw is List && raw.isNotEmpty) {
+        _cachedVoices = raw;
+      }
+    } catch (_) {}
+  }
+
   /// Configures a [FlutterTts] instance with optimal high-fidelity on-device voices,
   /// natural human speaking rates, and pleasant pitches.
   static Future<void> applyPresetToTts(
@@ -173,7 +186,15 @@ class TtsVoiceHelper {
 
       // 3. Voice Search & Resolution
       if (preset != TtsVoicePreset.systemDefault) {
-        final dynamic rawVoices = await tts.getVoices;
+        if (_cachedVoices == null) {
+          try {
+            final dynamic raw = await tts.getVoices;
+            if (raw is List) {
+              _cachedVoices = raw;
+            }
+          } catch (_) {}
+        }
+        final dynamic rawVoices = _cachedVoices;
         if (rawVoices is List && rawVoices.isNotEmpty) {
           final selectedVoice = _resolveVoice(rawVoices, preset, targetLocale);
           if (selectedVoice != null) {

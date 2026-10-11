@@ -41,6 +41,9 @@ void main() {
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(const MethodChannel('flutter_tts'), (call) async {
+      if (call.method == 'getVoices') {
+        return <Map<String, String>>[];
+      }
       return 1;
     });
 
