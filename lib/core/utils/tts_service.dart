@@ -2,6 +2,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart';
+import 'package:vowl/core/utils/tts_voice_helper.dart';
 
 /// Abstract contract defining the Text-To-Speech (TTS) synthesis engine.
 ///
@@ -23,6 +24,9 @@ abstract class TtsService {
 
   /// Releases the TTS engine and all associated platform resources.
   Future<void> dispose();
+
+  /// Reloads active voice calibration according to saved user preferences.
+  Future<void> reloadVoice();
 }
 
 /// Concrete high-performance implementation of [TtsService] integrating with the `flutter_tts` package.
@@ -44,17 +48,36 @@ class TtsServiceImpl implements TtsService {
 
   Future<void> _initTts() async {
     try {
-      await _flutterTts.setLanguage("en-US");
-      await _flutterTts.setSpeechRate(0.4);
-      await _flutterTts.setVolume(1.0);
-      await _flutterTts.setPitch(1.0);
-      await _flutterTts.awaitSpeakCompletion(true);
+      final preset = await TtsVoiceHelper.getSavedPreset();
+      await TtsVoiceHelper.applyPresetToTts(
+        _flutterTts,
+        preset: preset,
+        isKids: false,
+      );
 
       // Cache SharedPreferences in memory to evaluate app mute state instantly without circular references
       _prefs = await SharedPreferences.getInstance();
     } catch (e) {
       sl<AppLogger>().error(
         'TtsService: Configuration initialization error',
+        error: e,
+      );
+    }
+  }
+
+  @override
+  Future<void> reloadVoice() async {
+    await _initFuture;
+    try {
+      final preset = await TtsVoiceHelper.getSavedPreset();
+      await TtsVoiceHelper.applyPresetToTts(
+        _flutterTts,
+        preset: preset,
+        isKids: false,
+      );
+    } catch (e) {
+      sl<AppLogger>().error(
+        'TtsService: Error reloading voice preset',
         error: e,
       );
     }
@@ -112,13 +135,9 @@ class TtsServiceImpl implements TtsService {
     try {
       if (locale != null) {
         await _flutterTts.setLanguage(locale);
-      } else {
-        await _flutterTts.setLanguage("en-US");
       }
       if (rate != null) {
         await _flutterTts.setSpeechRate(rate);
-      } else {
-        await _flutterTts.setSpeechRate(0.4); // Default speed for learners
       }
       final estimatedSeconds = (cleanText.length / 5).ceil() + 3;
       final timeoutDuration = Duration(seconds: estimatedSeconds.clamp(3, 45));

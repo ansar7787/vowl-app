@@ -30,6 +30,8 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/core/utils/tts_voice_helper.dart';
+import 'package:vowl/features/settings/presentation/widgets/tts_voice_selection_bottom_sheet.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -55,6 +57,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _analyticsEnabledVal = true;
   bool _isLoadingVal = true;
   String? _translationLanguageNameVal;
+  TtsVoicePreset _voicePresetVal = TtsVoicePreset.friendlyTeacher;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
@@ -86,6 +89,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final gesturesPref = prefs.getBool('reduce_complex_gestures') ?? false;
     final lowAnimationPref = prefs.getBool('low_animation_mode') ?? false;
     final analyticsPref = prefs.getBool('analytics_enabled') ?? true;
+    final voicePreset = await TtsVoiceHelper.getSavedPreset();
 
     if (!mounted) return;
     _appVersionVal = info.version;
@@ -96,6 +100,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _reduceComplexGesturesVal = gesturesPref;
     _lowAnimationModeVal = lowAnimationPref;
     _analyticsEnabledVal = analyticsPref;
+    _voicePresetVal = voicePreset;
     _isLoadingVal = false;
     _updateState();
   }
@@ -418,6 +423,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                               analyticsEnabled:
                                                   _analyticsEnabledVal,
                                               isLoading: _isLoadingVal,
+                                              voicePresetTitle:
+                                                  _voicePresetVal.title,
+                                              onTapVoicePreset: () async {
+                                                final newPreset =
+                                                    await TtsVoiceSelectionBottomSheet
+                                                        .show(
+                                                          context,
+                                                          currentPreset:
+                                                              _voicePresetVal,
+                                                        );
+                                                if (newPreset != null &&
+                                                    mounted) {
+                                                  _voicePresetVal = newPreset;
+                                                  _updateState();
+                                                }
+                                              },
                                               onToggleSound: _toggleSound,
                                               onToggleGameSounds:
                                                   _toggleGameSounds,
@@ -635,6 +656,8 @@ class _SettingsPreferencesGroup extends StatelessWidget {
   final bool isLoading;
   final String? translationLanguageName;
   final VoidCallback onTapTranslationLanguage;
+  final String voicePresetTitle;
+  final VoidCallback onTapVoicePreset;
   final ValueChanged<bool> onToggleSound;
   final ValueChanged<bool> onToggleGameSounds;
   final ValueChanged<bool> onToggleNotifications;
@@ -653,6 +676,8 @@ class _SettingsPreferencesGroup extends StatelessWidget {
     required this.isLoading,
     required this.translationLanguageName,
     required this.onTapTranslationLanguage,
+    required this.voicePresetTitle,
+    required this.onTapVoicePreset,
     required this.onToggleSound,
     required this.onToggleGameSounds,
     required this.onToggleNotifications,
@@ -704,6 +729,21 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               value: gameSoundsEnabled,
               isLoading: isLoading,
               onChanged: onToggleGameSounds,
+            ),
+            SettingsTile(
+              title: context.tr(
+                'settings.pronunciation_voice',
+                fallback: 'Pronunciation Voice',
+              ),
+              subtitle: voicePresetTitle,
+              icon: Icons.record_voice_over_rounded,
+              color: AppColors.indigo500,
+              onTap: onTapVoicePreset,
+              trailing: Icon(
+                Icons.chevron_right_rounded,
+                color: isDark ? Colors.white38 : Colors.grey[400],
+                size: 20.r,
+              ),
             ),
             SettingsSwitchTile(
               title: context.tr(
