@@ -144,15 +144,9 @@ class KidsFoodLayout extends StatelessWidget {
             : 200.h;
 
         return DragTarget<String>(
+          onWillAcceptWithDetails: (details) => !state.answerStatus.isAnswered,
           onAcceptWithDetails: (details) {
-            final text = details.data;
-            final isCorrect = (text == quest.correctAnswer);
-            final parts = text.trim().split(' ');
-            final cleanText = parts.length > 1
-                ? parts.sublist(0, parts.length - 1).join(' ')
-                : text;
-            di.sl<KidsTTSService>().speak(cleanText);
-            context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+            _handleAnswer(context, state, quest, details.data);
           },
           builder: (context, candidateData, rejectedData) {
             final isHovering = candidateData.isNotEmpty;
@@ -331,101 +325,119 @@ class KidsFoodLayout extends StatelessWidget {
       namePart = parts.sublist(0, parts.length - 1).join(' ');
     }
 
-    final platterWidget = Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        // The Cloche (Silver Dome)
-        Container(
-          height: 50.h,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: AppColors.slate200, // Silver
-            borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-            border: Border.all(color: AppColors.slate400, width: 2),
-            gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.white, AppColors.slate300],
-            ),
-          ),
-          child: Align(
-            alignment: Alignment.topCenter,
-            child: Container(
-              margin: EdgeInsets.only(top: 4.h),
-              width: 15.w,
-              height: 8.h,
-              decoration: BoxDecoration(
-                color: AppColors.slate400, // Dome handle
-                borderRadius: BorderRadius.circular(4.r),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final double optionWidth =
+            constraints.maxWidth.isFinite && constraints.maxWidth > 0
+                ? constraints.maxWidth
+                : 100.w;
+
+        final platterWidget = SizedBox(
+          width: optionWidth,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // The Cloche (Silver Dome)
+              Container(
+                height: 50.h,
+                decoration: BoxDecoration(
+                  color: AppColors.slate200, // Silver
+                  borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(40.r)),
+                  border: Border.all(color: AppColors.slate400, width: 2),
+                  gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Colors.white, AppColors.slate300],
+                  ),
+                ),
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 4.h),
+                    width: 15.w,
+                    height: 8.h,
+                    decoration: BoxDecoration(
+                      color: AppColors.slate400, // Dome handle
+                      borderRadius: BorderRadius.circular(4.r),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-        ),
-        // The Platter Base
-        Container(
-          height: 60.h,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: AppColors.slate100, // Light silver plate
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(16.r)),
-            border: Border.all(color: AppColors.slate400, width: 2),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.3),
-                offset: const Offset(0, 4),
+              // The Platter Base
+              Container(
+                height: 60.h,
+                decoration: BoxDecoration(
+                  color: AppColors.slate100, // Light silver plate
+                  borderRadius:
+                      BorderRadius.vertical(bottom: Radius.circular(16.r)),
+                  border: Border.all(color: AppColors.slate400, width: 2),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.3),
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (emojiPart.isNotEmpty)
+                          Text(emojiPart, style: TextStyle(fontSize: 18.sp)),
+                        Flexible(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              namePart,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.slate900,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (emojiPart.isNotEmpty)
-                    Text(emojiPart, style: TextStyle(fontSize: 18.sp)),
-                  Flexible(
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        namePart,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.slate900,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ],
+        );
+
+        final draggable = Draggable<String>(
+          data: text,
+          maxSimultaneousDrags: state.answerStatus.isAnswered ? 0 : 1,
+          feedback: Material(
+            color: Colors.transparent,
+            child: SizedBox(
+              width: optionWidth,
+              child: Transform.scale(
+                scale: 1.05,
+                child: Opacity(opacity: 0.9, child: platterWidget),
               ),
             ),
           ),
-        ),
-      ],
-    );
+          childWhenDragging: Opacity(opacity: 0.3, child: platterWidget),
+          child: platterWidget,
+        );
 
-    final draggable = Draggable<String>(
-      data: text,
-      feedback: Material(
-        color: Colors.transparent,
-        child: Transform.scale(
-          scale: 1.05,
-          child: Opacity(opacity: 0.9, child: platterWidget),
-        ),
-      ),
-      childWhenDragging: Opacity(opacity: 0.3, child: platterWidget),
-      child: platterWidget,
-    );
-
-    return GestureDetector(
-      onTap: state.answerStatus.isAnswered
-          ? null
-          : () => _handleAnswer(context, state, state.currentQuest, text),
-      child: draggable,
+        return GestureDetector(
+          onTap: state.answerStatus.isAnswered
+              ? null
+              : () => _handleAnswer(context, state, state.currentQuest, text),
+          child: draggable,
+        );
+      },
     );
   }
 }
