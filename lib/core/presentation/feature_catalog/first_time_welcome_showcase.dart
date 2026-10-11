@@ -37,7 +37,11 @@ class FirstTimeWelcomeShowcase extends StatefulWidget {
       final prefs = await SharedPreferences.getInstance();
       final hasSeen = prefs.getBool(prefsKeyHasSeenShowcase) ?? false;
       if (!hasSeen && context.mounted) {
-        await show(context);
+        // Allow initial screen transition & daily reward check to settle smoothly
+        await Future.delayed(const Duration(milliseconds: 600));
+        if (context.mounted) {
+          await show(context);
+        }
       }
     } catch (_) {}
   }

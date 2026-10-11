@@ -56,8 +56,9 @@ class _FeatureDirectoryBottomSheetState
 
   void _launchFeature(AppFeatureItem feature) {
     di.sl<HapticService>().selection();
+    final router = GoRouter.of(context);
     Navigator.of(context).pop();
-    context.push(feature.route);
+    router.push(feature.route);
   }
 
   @override

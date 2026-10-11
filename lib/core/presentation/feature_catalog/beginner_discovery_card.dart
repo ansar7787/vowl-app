@@ -98,6 +98,16 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
     _loadProgress();
   }
 
+  @override
+  void didUpdateWidget(covariant BeginnerDiscoveryCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.user.totalLevelsCompleted > 0 &&
+        _completedMap['first_game'] != true) {
+      _completedMap['first_game'] = true;
+      _checkRewardEligibility();
+    }
+  }
+
   Future<void> _loadProgress() async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -121,6 +131,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
           _rewardClaimed = rewardClaimed;
           _completedMap.addAll(map);
         });
+        _checkRewardEligibility();
       }
     } catch (_) {}
   }
