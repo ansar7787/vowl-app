@@ -323,12 +323,12 @@ class StoryServiceImpl implements StoryService {
       "Master of Nature! All the animals in the world want to be your best friend! 🦖",
     ],
     'fruits': [
-      "Mmm, yummy! Let's find the sweet red strawberry hiding in the garden! 🍓",
-      "A big basket of goodness! You're a healthy hero with lots of energy! 🍌",
-      "The Fruit Garden is growing big! You've found the magical mango treat! 🥭",
-      "A tropical surprise! You've discovered the pineapple crown in the sand! 🍍",
-      "100 levels of fruit fun! You're the King of the Enchanted Fruit Garden! 🍏",
-      "Healthy Master! You've tasted all the sweetest treats in the whole world! 🍇",
+      "Mmm, yummy! Let's match the fruits to their names! 🍓",
+      "You're a natural! You know so many fruits now! 🍌",
+      "Great job! You've unlocked even more tasty fruits to learn! 🥭",
+      "Wow, 50 levels! You're getting so fast at reading these names! 🍍",
+      "100 levels of fruit fun! You are a true fruit expert! 🍏",
+      "Amazing! You've matched every single fruit! 🍇",
     ],
     'family': [
       "Family is love! Let's meet everyone in our happy little house! 🏠",
