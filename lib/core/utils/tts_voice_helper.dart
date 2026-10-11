@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -147,19 +146,7 @@ class TtsVoiceHelper {
     String? explicitLocale,
   }) async {
     try {
-      // 1. Android Engine Optimization: Google Speech Services provides highest-grade neural models
-      if (Platform.isAndroid) {
-        try {
-          final engines = await tts.getEngines;
-          if (engines is List && engines.contains('com.google.android.tts')) {
-            await tts.setEngine('com.google.android.tts');
-          }
-        } catch (_) {
-          // Gracefully continue if engine switching is restricted on device
-        }
-      }
-
-      // 2. Set Language Locale
+      // 1. Set Language Locale
       final targetLocale =
           explicitLocale ??
           switch (preset) {
@@ -170,7 +157,7 @@ class TtsVoiceHelper {
           };
       await tts.setLanguage(targetLocale);
 
-      // 3. Cadence and Pitch Calibration
+      // 2. Cadence and Pitch Calibration
       // Kids mode: 0.42 speech rate (patient and clear) with 1.03 pitch (warm teacher, no chipmunk distortion)
       // Adult mode: 0.44 speech rate with 1.0 pitch (natural human cadence)
       if (isKids) {
@@ -184,7 +171,7 @@ class TtsVoiceHelper {
       await tts.setVolume(1.0);
       await tts.awaitSpeakCompletion(true);
 
-      // 4. Voice Search & Resolution
+      // 3. Voice Search & Resolution
       if (preset != TtsVoicePreset.systemDefault) {
         final dynamic rawVoices = await tts.getVoices;
         if (rawVoices is List && rawVoices.isNotEmpty) {
