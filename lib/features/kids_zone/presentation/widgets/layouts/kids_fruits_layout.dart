@@ -205,20 +205,20 @@ class KidsFruitsLayout extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize:
                                       (quest.question == "?" ||
-                                          quest.question == null)
-                                      ? 60.sp
-                                      : 20.sp,
-                                  fontWeight: FontWeight.w700,
+                                              quest.question == null)
+                                          ? 60.sp
+                                          : 22.sp,
+                                  fontWeight: FontWeight.w600,
                                   color: AppColors.amber900.withValues(
                                     alpha:
                                         (quest.question == "?" ||
-                                            quest.question == null)
-                                        ? 0.7
-                                        : 1.0,
+                                                quest.question == null)
+                                            ? 0.7
+                                            : 1.0,
                                   ),
                                 ),
                                 textAlign: TextAlign.center,
-                                maxLines: 6,
+                                maxLines: 4,
                               ),
                           ],
                         ),
@@ -273,115 +273,115 @@ class KidsFruitsLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    final basketColor = AppColors.amber600; // Wicker yellow/brown
-    final bool isAnswered = state.answerStatus.isAnswered;
-    final double opacity = (isAnswered && !isCorrect) ? 0.4 : 1.0;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final basketColor = AppColors.amber600; // Wicker yellow/brown
+        final bool isAnswered = state.answerStatus.isAnswered;
+        final double opacity = (isAnswered && !isCorrect) ? 0.4 : 1.0;
+        final double basketWidth = constraints.maxWidth;
 
-    Widget basketWidget = Stack(
-      alignment: Alignment.bottomCenter,
-      clipBehavior: Clip.none,
-      children: [
-        // The label sticking out
-        Positioned(
-          top: -20.h,
-          left: 0,
-          right: 0,
-          child: Align(
-            alignment: Alignment.center,
-            child: Container(
-              constraints: BoxConstraints(
-                minHeight: 32.h,
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(6.r),
-                border: Border.all(color: _LocalPalette.color92400e, width: 1.5),
-              ),
-              alignment: Alignment.center,
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
+        Widget basketWidget = Stack(
+          alignment: Alignment.bottomCenter,
+          clipBehavior: Clip.none,
+          children: [
+            // The label sticking out
+            Positioned(
+              top: -24.h,
+              left: 0,
+              right: 0,
+              child: Container(
+                constraints: BoxConstraints(
+                  minHeight: 36.h,
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 4.h),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(6.r),
+                  border: Border.all(color: _LocalPalette.color92400e, width: 1.5),
+                ),
                 alignment: Alignment.center,
-                child: Text(
-                  text.trim(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    height: 1.2,
-                    color: _LocalPalette.color451a03,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.center,
+                  child: Text(
+                    text.trim(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: _LocalPalette.color451a03,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
                 ),
               ),
             ),
-          ),
-        ),
-        // The basket
-        Container(
-          height: 75.h,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: basketColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20.r),
-              bottomRight: Radius.circular(20.r),
-            ),
-            border: Border.all(
-              color: (isAnswered && isCorrect) ? Colors.green.shade600 : AppColors.amber900, 
-              width: (isAnswered && isCorrect) ? 4 : 2,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.2),
-                offset: Offset(0, 4.h),
+            // The basket
+            Container(
+              height: 75.h,
+              width: basketWidth,
+              decoration: BoxDecoration(
+                color: basketColor,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.r),
+                  bottomRight: Radius.circular(20.r),
+                ),
+                border: Border.all(
+                  color: (isAnswered && isCorrect) ? Colors.green.shade600 : AppColors.amber900, 
+                  width: (isAnswered && isCorrect) ? 4 : 2,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    offset: Offset(0, 4.h),
+                  ),
+                ],
               ),
-            ],
-          ),
-          child: CustomPaint(painter: const _WickerPainter()),
-        ),
-      ],
-    );
+              child: const CustomPaint(painter: _WickerPainter()),
+            ),
+          ],
+        );
 
-    if (isAnswered && isCorrect) {
-      basketWidget = basketWidget.animate(onPlay: (controller) => controller.repeat(reverse: true))
-          .scaleXY(begin: 1.0, end: 1.05, duration: 600.ms, curve: Curves.easeInOut);
-    }
+        if (isAnswered && isCorrect) {
+          basketWidget = basketWidget.animate(onPlay: (controller) => controller.repeat(reverse: true))
+              .scaleXY(begin: 1.0, end: 1.05, duration: 600.ms, curve: Curves.easeInOut);
+        }
 
-    basketWidget = Opacity(
-      opacity: opacity,
-      child: basketWidget,
-    );
+        basketWidget = Opacity(
+          opacity: opacity,
+          child: basketWidget,
+        );
 
-    return Semantics(
-      label: 'Basket for $text',
-      button: true,
-      enabled: !isAnswered,
-      child: GestureDetector(
-        onTap: isAnswered
-            ? null
-            : () {
-                if (!isCorrect) {
-                  di.sl<KidsTTSService>().speak(text);
-                }
-                context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-              },
-        child: Draggable<String>(
-          data: text,
-          maxSimultaneousDrags: isAnswered ? 0 : 1,
-          onDragStarted: () => di.sl<KidsTTSService>().speak(text),
-          feedback: Material(
-            color: Colors.transparent,
-            child: Transform.scale(
-              scale: 1.05,
-              child: Opacity(opacity: 0.9, child: basketWidget),
+        return Semantics(
+          label: 'Basket for $text',
+          button: true,
+          enabled: !isAnswered,
+          child: GestureDetector(
+            onTap: isAnswered
+                ? null
+                : () {
+                    if (!isCorrect) {
+                      di.sl<KidsTTSService>().speak(text);
+                    }
+                    context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+                  },
+            child: Draggable<String>(
+              data: text,
+              maxSimultaneousDrags: isAnswered ? 0 : 1,
+              onDragStarted: () => di.sl<KidsTTSService>().speak(text),
+              feedback: Material(
+                color: Colors.transparent,
+                child: Transform.scale(
+                  scale: 1.05,
+                  child: Opacity(opacity: 0.9, child: basketWidget),
+                ),
+              ),
+              childWhenDragging: Opacity(opacity: 0.3, child: basketWidget),
+              child: basketWidget,
             ),
           ),
-          childWhenDragging: Opacity(opacity: 0.3, child: basketWidget),
-          child: basketWidget,
-        ),
-      ),
+        );
+      },
     );
   }
 }

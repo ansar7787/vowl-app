@@ -1590,16 +1590,15 @@ class GameInstructionService {
         );
       case 'fruits':
         return const GameBriefing(
-          title: "Fruit Garden",
+          title: "Fruit Stand",
           icon: Icons.shopping_basket_rounded,
           objective:
-              "Let's harvest some yummy treats! Check the wooden sign to see what fruit we need, and pack it safely into the picnic basket.",
+              "Read the clue on the wooden board and drag the correct fruit into the basket. Let's harvest some healthy treats!",
           rules: [
-            "Identify the fresh fruit",
-            "Pick the matching shape",
-            "Pack it in the basket",
+            "Read or listen to the clue",
+            "Drag the matching fruit to the basket",
           ],
-          actionText: "Pick Fruits",
+          actionText: "Play Now",
           tip:
               "PRO TIP: Fruits can be sweet or sour. Think about how they taste! 🍎",
         );
