@@ -52,6 +52,7 @@ void main() {
   Widget buildTestableWidget({
     Size screenSize = const Size(360, 690),
     TtsVoicePreset initialPreset = TtsVoicePreset.friendlyTeacher,
+    bool isPremium = true,
   }) {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
@@ -59,7 +60,10 @@ void main() {
         home: Scaffold(
           body: MediaQuery(
             data: MediaQueryData(size: screenSize),
-            child: TtsVoiceSelectionBottomSheet(initialPreset: initialPreset),
+            child: TtsVoiceSelectionBottomSheet(
+              initialPreset: initialPreset,
+              isPremium: isPremium,
+            ),
           ),
         ),
       ),
@@ -77,6 +81,8 @@ void main() {
       expect(find.text('KIDS FAVORITE'), findsOneWidget);
       expect(find.text('Clear Guide'), findsOneWidget);
       expect(find.text('British Accent'), findsOneWidget);
+      expect(find.text('Australian Accent'), findsOneWidget);
+      expect(find.text('Indian English'), findsOneWidget);
       expect(find.text('Device Default'), findsOneWidget);
       expect(find.text('Done'), findsOneWidget);
 
@@ -95,6 +101,7 @@ void main() {
 
       expect(find.text('Friendly Teacher'), findsOneWidget);
       expect(find.text('KIDS FAVORITE'), findsOneWidget);
+      expect(find.text('Australian Accent'), findsOneWidget);
       expect(tester.takeException(), isNull);
     },
   );
@@ -147,10 +154,10 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('tapping Done button dismisses sheet and returns selected preset', (
+  testWidgets('premium user can select British Accent and tap Done to return it', (
     tester,
   ) async {
-    tester.view.physicalSize = const Size(400, 900);
+    tester.view.physicalSize = const Size(400, 1100);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
@@ -159,7 +166,7 @@ void main() {
 
     await tester.pumpWidget(
       ScreenUtilInit(
-        designSize: const Size(400, 900),
+        designSize: const Size(400, 1100),
         builder: (context, child) => MaterialApp(
           home: Scaffold(
             body: Builder(
@@ -168,6 +175,7 @@ void main() {
                   selectedResult = await TtsVoiceSelectionBottomSheet.show(
                     ctx,
                     currentPreset: TtsVoicePreset.friendlyTeacher,
+                    isPremium: true,
                   );
                 },
                 child: const Text('Open Sheet'),
@@ -187,7 +195,9 @@ void main() {
     await tester.tap(find.text('British Accent'));
     await tester.pumpAndSettle();
 
-    // Tap Done
+    // Ensure Done is visible and tap
+    await tester.ensureVisible(find.text('Done'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Done'));
     await tester.pumpAndSettle();
 
@@ -196,4 +206,3 @@ void main() {
     expect(selectedResult, TtsVoicePreset.britishAccent);
   });
 }
-
