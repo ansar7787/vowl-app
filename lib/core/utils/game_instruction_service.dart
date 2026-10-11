@@ -1796,18 +1796,18 @@ class GameInstructionService {
         );
       case 'handwriting':
         return const GameBriefing(
-          title: "Write and Learn",
+          title: "Chalkboard Writing",
           icon: Icons.draw_rounded,
           objective:
-              "Unlock your magic pen! Follow the glowing arrows to trace the letter perfectly on the chalkboard.",
+              "Pick up your chalk and practice drawing lines, shapes, and letters right on the chalkboard slate.",
           rules: [
-            "Follow the glowing arrows",
-            "Trace inside the lines",
-            "Write the letter yourself",
+            "Tap Demo to watch how each stroke is drawn step by step",
+            "Turn on Trace to follow the dotted lines, or practice on your own",
+            "Tap Check My Answer when ready, or use the duster to try again",
           ],
-          actionText: "Start Writing",
+          actionText: "Let's Write",
           tip:
-              "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨",
+              "PRO TIP: Take your time. Drawing strokes from top to bottom and left to right makes writing so much easier!",
         );
       case 'routine':
         return const GameBriefing(
