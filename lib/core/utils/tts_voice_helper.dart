@@ -100,7 +100,8 @@ class TtsVoiceHelper {
       }
 
       // 2. Set Language Locale
-      final targetLocale = explicitLocale ??
+      final targetLocale =
+          explicitLocale ??
           (preset == TtsVoicePreset.britishAccent ? 'en-GB' : 'en-US');
       await tts.setLanguage(targetLocale);
 
@@ -164,8 +165,9 @@ class TtsVoiceHelper {
           loc.startsWith(langPrefix.split('-').first);
     }).toList();
 
-    final candidatePool =
-        matchingLocaleVoices.isNotEmpty ? matchingLocaleVoices : voiceList;
+    final candidatePool = matchingLocaleVoices.isNotEmpty
+        ? matchingLocaleVoices
+        : voiceList;
 
     switch (preset) {
       case TtsVoicePreset.friendlyTeacher:
@@ -177,16 +179,13 @@ class TtsVoiceHelper {
             final name = v['name']!.toLowerCase();
             return name.contains('sfg') || name.contains('tpf');
           },
-          orElse: () => candidatePool.firstWhere(
-            (v) {
-              final name = v['name']!.toLowerCase();
-              return name.contains('samantha') ||
-                  name.contains('karen') ||
-                  name.contains('ava') ||
-                  name.contains('female');
-            },
-            orElse: () => candidatePool.first,
-          ),
+          orElse: () => candidatePool.firstWhere((v) {
+            final name = v['name']!.toLowerCase();
+            return name.contains('samantha') ||
+                name.contains('karen') ||
+                name.contains('ava') ||
+                name.contains('female');
+          }, orElse: () => candidatePool.first),
         );
 
       case TtsVoicePreset.clearGuide:
@@ -197,16 +196,13 @@ class TtsVoiceHelper {
             final name = v['name']!.toLowerCase();
             return name.contains('iol') || name.contains('iom');
           },
-          orElse: () => candidatePool.firstWhere(
-            (v) {
-              final name = v['name']!.toLowerCase();
-              return name.contains('daniel') ||
-                  name.contains('oliver') ||
-                  name.contains('aaron') ||
-                  name.contains('male');
-            },
-            orElse: () => candidatePool.first,
-          ),
+          orElse: () => candidatePool.firstWhere((v) {
+            final name = v['name']!.toLowerCase();
+            return name.contains('daniel') ||
+                name.contains('oliver') ||
+                name.contains('aaron') ||
+                name.contains('male');
+          }, orElse: () => candidatePool.first),
         );
 
       case TtsVoicePreset.britishAccent:

@@ -15,10 +15,7 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 class TtsVoiceSelectionBottomSheet extends StatefulWidget {
   final TtsVoicePreset initialPreset;
 
-  const TtsVoiceSelectionBottomSheet({
-    super.key,
-    required this.initialPreset,
-  });
+  const TtsVoiceSelectionBottomSheet({super.key, required this.initialPreset});
 
   static Future<TtsVoicePreset?> show(
     BuildContext context, {
@@ -28,9 +25,8 @@ class TtsVoiceSelectionBottomSheet extends StatefulWidget {
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (ctx) => TtsVoiceSelectionBottomSheet(
-        initialPreset: currentPreset,
-      ),
+      builder: (ctx) =>
+          TtsVoiceSelectionBottomSheet(initialPreset: currentPreset),
     );
   }
 
@@ -83,6 +79,7 @@ class _TtsVoiceSelectionBottomSheetState
 
   Future<void> _selectPreset(TtsVoicePreset preset) async {
     di.sl<HapticService>().selection();
+    await _previewTts.stop();
     setState(() {
       _selectedPreset = preset;
     });
@@ -211,17 +208,19 @@ class _TtsVoiceSelectionBottomSheetState
                       ),
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? AppColors.indigo500.withValues(alpha: isDark ? 0.18 : 0.08)
+                            ? AppColors.indigo500.withValues(
+                                alpha: isDark ? 0.18 : 0.08,
+                              )
                             : (isDark
-                                ? Colors.white.withValues(alpha: 0.04)
-                                : Colors.black.withValues(alpha: 0.02)),
+                                  ? Colors.white.withValues(alpha: 0.04)
+                                  : Colors.black.withValues(alpha: 0.02)),
                         borderRadius: BorderRadius.circular(20.r),
                         border: Border.all(
                           color: isSelected
                               ? AppColors.indigo500
                               : (isDark
-                                  ? Colors.white.withValues(alpha: 0.08)
-                                  : Colors.black.withValues(alpha: 0.06)),
+                                    ? Colors.white.withValues(alpha: 0.08)
+                                    : Colors.black.withValues(alpha: 0.06)),
                           width: isSelected ? 1.5 : 1,
                         ),
                       ),
@@ -234,8 +233,8 @@ class _TtsVoiceSelectionBottomSheetState
                               color: isSelected
                                   ? AppColors.indigo500.withValues(alpha: 0.2)
                                   : (isDark
-                                      ? Colors.white.withValues(alpha: 0.08)
-                                      : Colors.black.withValues(alpha: 0.05)),
+                                        ? Colors.white.withValues(alpha: 0.08)
+                                        : Colors.black.withValues(alpha: 0.05)),
                               borderRadius: BorderRadius.circular(12.r),
                             ),
                             child: Icon(
@@ -263,10 +262,13 @@ class _TtsVoiceSelectionBottomSheetState
                                         fontWeight: FontWeight.w700,
                                         color: isSelected
                                             ? AppColors.indigo500
-                                            : Theme.of(context).colorScheme.onSurface,
+                                            : Theme.of(
+                                                context,
+                                              ).colorScheme.onSurface,
                                       ),
                                     ),
-                                    if (preset == TtsVoicePreset.friendlyTeacher) ...[
+                                    if (preset ==
+                                        TtsVoicePreset.friendlyTeacher) ...[
                                       SizedBox(width: 6.w),
                                       Container(
                                         padding: EdgeInsets.symmetric(
@@ -274,8 +276,12 @@ class _TtsVoiceSelectionBottomSheetState
                                           vertical: 2.h,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: Colors.green.withValues(alpha: 0.15),
-                                          borderRadius: BorderRadius.circular(6.r),
+                                          color: Colors.green.withValues(
+                                            alpha: 0.15,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            6.r,
+                                          ),
                                         ),
                                         child: Text(
                                           'KIDS FAVORITE',
@@ -297,7 +303,9 @@ class _TtsVoiceSelectionBottomSheetState
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 11.sp,
-                                    color: isDark ? Colors.white54 : Colors.black45,
+                                    color: isDark
+                                        ? Colors.white54
+                                        : Colors.black45,
                                   ),
                                 ),
                               ],
@@ -326,8 +334,8 @@ class _TtsVoiceSelectionBottomSheetState
                                       color: isSelected
                                           ? AppColors.indigo500
                                           : (isDark
-                                              ? Colors.white54
-                                              : Colors.black45),
+                                                ? Colors.white54
+                                                : Colors.black45),
                                     ),
                               onPressed: () => _playPreview(preset),
                               tooltip: 'Listen Sample',

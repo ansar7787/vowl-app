@@ -96,4 +96,10 @@ class KidsTTSService {
       di.sl<AppLogger>().warning("Kids TTS Error: $e", tag: 'KidsZone');
     }
   }
+
+  Future<void> dispose() async {
+    try {
+      await _flutterTts.stop();
+    } catch (_) {}
+  }
 }
