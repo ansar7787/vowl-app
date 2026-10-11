@@ -127,6 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 context.read<EconomyBloc>().add(
                   const EconomyCheckDailyRewardRequested(),
                 );
+                FirstTimeWelcomeShowcase.checkAndShow(context);
               } else if (state.status == AuthStatus.unauthenticated) {
                 context.read<EconomyBloc>().add(const EconomyResetRequested());
                 context.read<ProgressionBloc>().add(

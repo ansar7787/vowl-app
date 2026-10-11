@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -422,6 +423,47 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
               ),
             );
           }),
+          SizedBox(height: 10.h),
+          InkWell(
+            onTap: () {
+              di.sl<HapticService>().light();
+              FeatureDirectoryBottomSheet.show(context);
+            },
+            borderRadius: BorderRadius.circular(8.r),
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 4.h),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    LucideIcons.compass,
+                    size: 13.r,
+                    color: AppColors.indigo500,
+                  ),
+                  SizedBox(width: 6.w),
+                  Flexible(
+                    child: Text(
+                      'Explore full directory of all 50+ features & games',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.indigo500,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  SizedBox(width: 4.w),
+                  Icon(
+                    LucideIcons.chevronRight,
+                    size: 13.r,
+                    color: AppColors.indigo500,
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

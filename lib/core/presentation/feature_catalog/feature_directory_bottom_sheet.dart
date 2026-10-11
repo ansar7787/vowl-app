@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/feature_catalog/app_feature_catalog.dart';
+import 'package:vowl/core/presentation/feature_catalog/first_time_welcome_showcase.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -160,6 +161,24 @@ class _FeatureDirectoryBottomSheetState
                     ),
                   ),
                   SizedBox(width: 8.w),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      FirstTimeWelcomeShowcase.show(context);
+                    },
+                    icon: Icon(
+                      LucideIcons.playCircle,
+                      size: 20.r,
+                      color: AppColors.indigo500,
+                    ),
+                    padding: EdgeInsets.zero,
+                    constraints: BoxConstraints(
+                      minWidth: 32.r,
+                      minHeight: 32.r,
+                    ),
+                    tooltip: 'Take Welcome Tour',
+                  ),
+                  SizedBox(width: 4.w),
                   IconButton(
                     onPressed: () => Navigator.of(context).pop(),
                     icon: Icon(
