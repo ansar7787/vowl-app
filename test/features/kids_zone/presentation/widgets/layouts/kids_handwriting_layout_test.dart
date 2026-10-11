@@ -64,9 +64,9 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      // Check toolbar elements
-      expect(find.text('Chalk'), findsOneWidget);
+      // Check toolbar actionable buttons
       expect(find.text('Trace'), findsOneWidget);
+      expect(find.text('Demo'), findsOneWidget);
       expect(find.text('Undo'), findsOneWidget);
       expect(find.text('Clear'), findsOneWidget);
 
