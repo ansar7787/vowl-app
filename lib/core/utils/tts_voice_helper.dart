@@ -128,6 +128,21 @@ class TtsVoiceHelper {
             await tts.setVoice(selectedVoice);
           }
         }
+      } else {
+        try {
+          await tts.clearVoice();
+        } catch (_) {
+          try {
+            final dynamic defaultVoice = await tts.getDefaultVoice;
+            if (defaultVoice is Map) {
+              final Map<String, String> mapped = {};
+              defaultVoice.forEach(
+                (k, v) => mapped[k.toString()] = v.toString(),
+              );
+              await tts.setVoice(mapped);
+            }
+          } catch (_) {}
+        }
       }
     } catch (e) {
       di.sl<AppLogger>().warning(

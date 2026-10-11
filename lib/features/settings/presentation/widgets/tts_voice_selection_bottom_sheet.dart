@@ -82,11 +82,14 @@ class _TtsVoiceSelectionBottomSheetState
     super.dispose();
   }
 
+  int _previewSessionId = 0;
+
   Future<void> _playPreview(TtsVoicePreset preset) async {
     di.sl<HapticService>().light();
 
     // Toggle stop if already playing the current preset
     if (_currentlyPlayingId == preset.id) {
+      _previewSessionId++;
       try {
         await _previewTts.stop();
       } catch (_) {}
@@ -98,21 +101,29 @@ class _TtsVoiceSelectionBottomSheetState
       return;
     }
 
+    final sessionId = ++_previewSessionId;
+
+    try {
+      await _previewTts.stop();
+    } catch (_) {}
+    if (!mounted || sessionId != _previewSessionId) return;
+
     setState(() {
       _currentlyPlayingId = preset.id;
     });
 
     try {
-      await _previewTts.stop();
       await TtsVoiceHelper.applyPresetToTts(
         _previewTts,
         preset: preset,
         isKids: preset == TtsVoicePreset.friendlyTeacher,
       );
+      if (!mounted || sessionId != _previewSessionId) return;
+
       final sample = TtsVoiceHelper.getSampleSentence(preset);
       await _previewTts.speak(sample);
     } catch (_) {
-      if (mounted) {
+      if (mounted && sessionId == _previewSessionId) {
         setState(() {
           _currentlyPlayingId = null;
         });
@@ -124,6 +135,7 @@ class _TtsVoiceSelectionBottomSheetState
     if (_selectedPreset == preset) return;
 
     di.sl<HapticService>().selection();
+    _previewSessionId++;
     try {
       await _previewTts.stop();
     } catch (_) {}
