@@ -4,10 +4,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
@@ -18,21 +19,24 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 /// Modal bottom sheet allowing users to customize speech pronunciation voice style.
 /// Designed with responsive layout to prevent overflows across all screen sizes and text scales.
 /// Supports Freemium monetization: free users can preview all voices, while premium voices
-/// gracefully trigger [PremiumStoreBottomSheet] when tapped for selection.
+/// gracefully trigger [AppRouter.premiumRoute] when tapped for selection.
 class TtsVoiceSelectionBottomSheet extends StatefulWidget {
   final TtsVoicePreset initialPreset;
   final bool? isPremium;
+  final bool showUpgradePaywall;
 
   const TtsVoiceSelectionBottomSheet({
     super.key,
     required this.initialPreset,
     this.isPremium,
+    this.showUpgradePaywall = true,
   });
 
   static Future<TtsVoicePreset?> show(
     BuildContext context, {
     required TtsVoicePreset currentPreset,
     bool? isPremium,
+    bool showUpgradePaywall = true,
   }) async {
     final result = await showModalBottomSheet<TtsVoicePreset>(
       context: context,
@@ -41,6 +45,7 @@ class TtsVoiceSelectionBottomSheet extends StatefulWidget {
       builder: (ctx) => TtsVoiceSelectionBottomSheet(
         initialPreset: currentPreset,
         isPremium: isPremium,
+        showUpgradePaywall: showUpgradePaywall,
       ),
     );
     return result ?? await TtsVoiceHelper.getSavedPreset();
@@ -179,7 +184,7 @@ class _TtsVoiceSelectionBottomSheetState
   }
 
   Future<void> _selectPreset(TtsVoicePreset preset) async {
-    // If the voice is premium and user is on free tier, trigger Premium Store upsell
+    // If the voice is premium and user is on free tier, handle upsell or info
     if (preset.isPremium && !_isPremium) {
       di.sl<HapticService>().selection();
       _previewSessionId++;
@@ -193,8 +198,14 @@ class _TtsVoiceSelectionBottomSheetState
       }
       if (!mounted) return;
 
-      // Smoothly display the Premium Store sheet
-      await PremiumStoreBottomSheet.show(context: context);
+      if (!widget.showUpgradePaywall) {
+        // Post-signup/login mode: Do not show hard paywall. Show polite informational guidance.
+        _showPostSignupVoiceInfoDialog();
+        return;
+      }
+
+      // Settings mode: Navigate directly to the full Premium screen
+      await context.push(AppRouter.premiumRoute);
 
       // Re-check premium status upon return and refresh UI immediately
       if (mounted) {
@@ -207,6 +218,67 @@ class _TtsVoiceSelectionBottomSheetState
     }
 
     await _applyPresetSelection(preset);
+  }
+
+  void _showPostSignupVoiceInfoDialog() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: isDark ? const Color(0xFF1E2235) : Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        icon: Container(
+          width: 48.r,
+          height: 48.r,
+          decoration: BoxDecoration(
+            color: AppColors.amber500.withValues(alpha: 0.15),
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            LucideIcons.crown,
+            color: AppColors.amber500,
+            size: 24.r,
+          ),
+        ),
+        title: Text(
+          'Premium Voice Accent',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w700,
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
+        content: Text(
+          'Free accounts start with standard natural voices. You can unlock British, US, Australian, and Indian accents anytime with Vowl Premium.\n\nIf you already have a Premium subscription, simply log in to get full instant access.',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 13.sp,
+            height: 1.4,
+            color: isDark ? Colors.white70 : Colors.black87,
+          ),
+        ),
+        actionsAlignment: MainAxisAlignment.center,
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(),
+            child: Text(
+              'Got it',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w700,
+                color: AppColors.indigo500,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Future<void> _applyPresetSelection(TtsVoicePreset preset) async {
