@@ -112,8 +112,14 @@ Future<void> initExternalAndCore(GetIt sl) async {
   // NOTE: TtsService must be registered before SoundService since
   // SoundService depends on it. Both are lazy singletons so the order
   // here only matters for readability; the actual resolution is deferred.
-  sl.registerLazySingleton<TtsService>(() => TtsService());
-  sl.registerLazySingleton<SoundService>(() => SoundService(sl<TtsService>()));
+  sl.registerLazySingleton<TtsService>(
+    () => TtsService(),
+    dispose: (service) => service.dispose(),
+  );
+  sl.registerLazySingleton<SoundService>(
+    () => SoundService(sl<TtsService>()),
+    dispose: (service) => service.dispose(),
+  );
   sl.registerLazySingleton<HapticService>(() => HapticService());
   sl.registerLazySingleton<SmartTutor>(() => const LocalSmartTutor());
   // FIX (CRITICAL — RESOURCE LEAK): AdService.dispose() already existed
@@ -147,8 +153,14 @@ Future<void> initExternalAndCore(GetIt sl) async {
     () => AudioRecordingService(),
     dispose: (service) => service.dispose(),
   );
-  sl.registerLazySingleton<KidsTTSService>(() => KidsTTSService());
-  sl.registerLazySingleton<KidsAudioService>(() => KidsAudioService());
+  sl.registerLazySingleton<KidsTTSService>(
+    () => KidsTTSService(),
+    dispose: (service) => service.dispose(),
+  );
+  sl.registerLazySingleton<KidsAudioService>(
+    () => KidsAudioService(),
+    dispose: (service) => service.dispose(),
+  );
   sl.registerLazySingleton<AssetQuestService>(() => AssetQuestService());
   sl.registerLazySingleton<StoryService>(() => StoryService());
   sl.registerLazySingleton<PraiseService>(
