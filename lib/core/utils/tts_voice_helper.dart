@@ -67,7 +67,7 @@ enum TtsVoicePreset {
   static TtsVoicePreset fromId(String? id) {
     return TtsVoicePreset.values.firstWhere(
       (e) => e.id == id,
-      orElse: () => TtsVoicePreset.friendlyTeacher,
+      orElse: () => TtsVoicePreset.clearGuide,
     );
   }
 }
@@ -79,7 +79,7 @@ class TtsVoiceHelper {
 
   static const String prefsKeyVoicePreset = 'tts_voice_preset';
 
-  /// Retrieves the saved voice preset or defaults to [TtsVoicePreset.friendlyTeacher].
+  /// Retrieves the saved voice preset or defaults to [TtsVoicePreset.clearGuide].
   static Future<TtsVoicePreset> getSavedPreset() async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -93,10 +93,10 @@ class TtsVoiceHelper {
             final authState = di.sl<AuthBloc>().state;
             if (authState.status == AuthStatus.authenticated &&
                 !(authState.user?.isPremium ?? false)) {
-              return TtsVoicePreset.friendlyTeacher;
+              return TtsVoicePreset.clearGuide;
             }
             if (authState.status == AuthStatus.unauthenticated) {
-              return TtsVoicePreset.friendlyTeacher;
+              return TtsVoicePreset.clearGuide;
             }
           }
         } catch (_) {}
@@ -104,7 +104,7 @@ class TtsVoiceHelper {
 
       return preset;
     } catch (e) {
-      return TtsVoicePreset.friendlyTeacher;
+      return TtsVoicePreset.clearGuide;
     }
   }
 

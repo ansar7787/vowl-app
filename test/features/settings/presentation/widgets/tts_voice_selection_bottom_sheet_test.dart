@@ -63,7 +63,7 @@ void main() {
 
   Widget buildTestableWidget({
     Size screenSize = const Size(360, 690),
-    TtsVoicePreset initialPreset = TtsVoicePreset.friendlyTeacher,
+    TtsVoicePreset initialPreset = TtsVoicePreset.clearGuide,
     bool isPremium = true,
   }) {
     return ScreenUtilInit(
@@ -219,7 +219,7 @@ void main() {
   });
 
   testWidgets(
-    'free user opening sheet with initial preset set to locked voice sanitizes safely to Friendly Teacher',
+    'free user opening sheet with initial preset set to locked voice sanitizes safely to Clear Guide',
     (tester) async {
       await tester.pumpWidget(
         buildTestableWidget(
@@ -232,9 +232,9 @@ void main() {
       // Check lock icons are rendered for locked presets
       expect(find.byIcon(LucideIcons.lock), findsWidgets);
 
-      // Verify that the sheet opens without error and friendly teacher is rendered
+      // Verify that the sheet opens without error and clear guide is rendered
       expect(find.text('Pronunciation Voice'), findsOneWidget);
-      expect(find.text('Friendly Teacher'), findsOneWidget);
+      expect(find.text('Clear Guide'), findsOneWidget);
       expect(tester.takeException(), isNull);
     },
   );

@@ -2,6 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/tts_voice_helper.dart';
 
 class KidsTTSService {
   final TtsService _ttsService;
@@ -54,7 +55,12 @@ class KidsTTSService {
     if (cleanText.isEmpty) return false;
 
     try {
-      await _ttsService.speak(cleanText);
+      // Kids Zone ALWAYS enforces Friendly Teacher voice preset with warm kid cadence
+      await _ttsService.speak(
+        cleanText,
+        forcedPreset: TtsVoicePreset.friendlyTeacher,
+        isKids: true,
+      );
       return true;
     } catch (e) {
       di.sl<AppLogger>().warning("Kids TTS Error: $e", tag: 'KidsZone');

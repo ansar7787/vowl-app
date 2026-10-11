@@ -57,7 +57,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _analyticsEnabledVal = true;
   bool _isLoadingVal = true;
   String? _translationLanguageNameVal;
-  TtsVoicePreset _voicePresetVal = TtsVoicePreset.friendlyTeacher;
+  TtsVoicePreset _voicePresetVal = TtsVoicePreset.clearGuide;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 

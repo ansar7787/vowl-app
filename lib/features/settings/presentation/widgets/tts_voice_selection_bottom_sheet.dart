@@ -78,7 +78,7 @@ class _TtsVoiceSelectionBottomSheetState
   void initState() {
     super.initState();
     _selectedPreset = (widget.initialPreset.isPremium && !_isPremium)
-        ? TtsVoicePreset.friendlyTeacher
+        ? TtsVoicePreset.clearGuide
         : widget.initialPreset;
 
     try {
@@ -290,7 +290,7 @@ class _TtsVoiceSelectionBottomSheetState
       }
     } catch (_) {}
     final safePreset = (_selectedPreset.isPremium && !_isPremium)
-        ? TtsVoicePreset.friendlyTeacher
+        ? TtsVoicePreset.clearGuide
         : _selectedPreset;
     Navigator.of(context).pop(safePreset);
   }
