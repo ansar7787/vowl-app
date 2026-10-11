@@ -62,6 +62,7 @@ class _TtsVoiceSelectionBottomSheetState
   final FlutterTts _previewTts = FlutterTts();
   String? _currentlyPlayingId;
   int _previewSessionId = 0;
+  Timer? _previewSafetyTimer;
   StreamSubscription<AuthState>? _authSubscription;
 
   bool get _isPremium {
@@ -94,7 +95,11 @@ class _TtsVoiceSelectionBottomSheetState
       }
     } catch (_) {}
 
+    // Pre-warm voices cache in memory so preview taps start instantly
+    TtsVoiceHelper.warmUpVoices(_previewTts);
+
     _previewTts.setCompletionHandler(() {
+      _previewSafetyTimer?.cancel();
       if (mounted) {
         setState(() {
           _currentlyPlayingId = null;
@@ -103,6 +108,7 @@ class _TtsVoiceSelectionBottomSheetState
     });
 
     _previewTts.setCancelHandler(() {
+      _previewSafetyTimer?.cancel();
       if (mounted) {
         setState(() {
           _currentlyPlayingId = null;
@@ -111,6 +117,7 @@ class _TtsVoiceSelectionBottomSheetState
     });
 
     _previewTts.setErrorHandler((_) {
+      _previewSafetyTimer?.cancel();
       if (mounted) {
         setState(() {
           _currentlyPlayingId = null;
@@ -122,6 +129,7 @@ class _TtsVoiceSelectionBottomSheetState
   @override
   void dispose() {
     _authSubscription?.cancel();
+    _previewSafetyTimer?.cancel();
     _previewSessionId++;
     try {
       _previewTts.stop();
@@ -131,6 +139,7 @@ class _TtsVoiceSelectionBottomSheetState
 
   Future<void> _playPreview(TtsVoicePreset preset) async {
     di.sl<HapticService>().light();
+    _previewSafetyTimer?.cancel();
 
     // Toggle stop if already playing the current preset
     if (_currentlyPlayingId == preset.id) {
@@ -173,9 +182,55 @@ class _TtsVoiceSelectionBottomSheetState
       if (!mounted || sessionId != _previewSessionId) return;
 
       final sample = TtsVoiceHelper.getSampleSentence(preset);
-      await _previewTts.speak(sample);
+
+      // Re-bind completion handler for current session to ensure direct callback delivery
+      _previewTts.setCompletionHandler(() {
+        if (mounted && _previewSessionId == sessionId) {
+          _previewSafetyTimer?.cancel();
+          setState(() {
+            _currentlyPlayingId = null;
+          });
+        }
+      });
+      _previewTts.setCancelHandler(() {
+        if (mounted && _previewSessionId == sessionId) {
+          _previewSafetyTimer?.cancel();
+          setState(() {
+            _currentlyPlayingId = null;
+          });
+        }
+      });
+      _previewTts.setErrorHandler((_) {
+        if (mounted && _previewSessionId == sessionId) {
+          _previewSafetyTimer?.cancel();
+          setState(() {
+            _currentlyPlayingId = null;
+          });
+        }
+      });
+
+      // Safety timeout: calculate natural duration based on sample length + 1.5s margin
+      // Guaranteed to revert button to sound icon even if platform event drops
+      final estimatedMs = ((sample.split(' ').length / 2.2) * 1000).toInt() + 1500;
+      _previewSafetyTimer = Timer(Duration(milliseconds: estimatedMs), () {
+        if (mounted && _previewSessionId == sessionId && _currentlyPlayingId == preset.id) {
+          setState(() {
+            _currentlyPlayingId = null;
+          });
+        }
+      });
+
+      _previewTts.speak(sample).catchError((_) {
+        if (mounted && _previewSessionId == sessionId) {
+          _previewSafetyTimer?.cancel();
+          setState(() {
+            _currentlyPlayingId = null;
+          });
+        }
+      });
     } catch (_) {
       if (mounted && sessionId == _previewSessionId) {
+        _previewSafetyTimer?.cancel();
         setState(() {
           _currentlyPlayingId = null;
         });
@@ -285,6 +340,7 @@ class _TtsVoiceSelectionBottomSheetState
     if (_selectedPreset == preset) return;
 
     di.sl<HapticService>().selection();
+    _previewSafetyTimer?.cancel();
     _previewSessionId++;
     try {
       await _previewTts.stop();
@@ -310,6 +366,7 @@ class _TtsVoiceSelectionBottomSheetState
 
   void _closeSheet() {
     di.sl<HapticService>().light();
+    _previewSafetyTimer?.cancel();
     _previewSessionId++;
     try {
       _previewTts.stop();
