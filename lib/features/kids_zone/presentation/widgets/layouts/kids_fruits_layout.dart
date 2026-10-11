@@ -61,7 +61,7 @@ class KidsFruitsLayout extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.h),
+            SizedBox(height: 4.h),
             KidsFittedText(
               context.tr(
                 'games.kids_fruits_drag',
@@ -78,7 +78,7 @@ class KidsFruitsLayout extends StatelessWidget {
               maxLines: 2,
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 16.h),
+            SizedBox(height: 32.h),
             // Wicker Baskets for Options
             Flexible(
               flex: 5,
@@ -293,7 +293,7 @@ class KidsFruitsLayout extends StatelessWidget {
                 constraints: BoxConstraints(
                   minHeight: 36.h,
                 ),
-                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 4.h),
+                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(6.r),
@@ -303,15 +303,19 @@ class KidsFruitsLayout extends StatelessWidget {
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   alignment: Alignment.center,
-                  child: Text(
-                    text.trim(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                      color: _LocalPalette.color451a03,
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 2.h), // Micro-adjustment for font baseline
+                    child: Text(
+                      text.trim(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                        color: _LocalPalette.color451a03,
+                        height: 1.1,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
