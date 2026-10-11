@@ -76,6 +76,7 @@ class _TtsVoiceSelectionBottomSheetState
 
   @override
   void dispose() {
+    _previewSessionId++;
     try {
       _previewTts.stop();
     } catch (_) {}
@@ -104,6 +105,13 @@ class _TtsVoiceSelectionBottomSheetState
     final sessionId = ++_previewSessionId;
 
     try {
+      // Cancel any ongoing app speech so preview plays clearly
+      if (di.sl.isRegistered<TtsService>()) {
+        di.sl<TtsService>().stop();
+      }
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
       await _previewTts.stop();
     } catch (_) {}
     if (!mounted || sessionId != _previewSessionId) return;
@@ -160,6 +168,7 @@ class _TtsVoiceSelectionBottomSheetState
 
   void _closeSheet() {
     di.sl<HapticService>().light();
+    _previewSessionId++;
     try {
       _previewTts.stop();
     } catch (_) {}
@@ -176,6 +185,9 @@ class _TtsVoiceSelectionBottomSheetState
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
         child: Container(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height * 0.88,
+          ),
           decoration: BoxDecoration(
             color: isDark
                 ? const Color(0xFF13141C).withValues(alpha: 0.96)
@@ -462,13 +474,16 @@ class _TtsVoiceSelectionBottomSheetState
                                     width: 1.5,
                                   ),
                                 ),
-                                child: isSelected
-                                    ? Icon(
-                                        Icons.check,
-                                        size: 14.r,
-                                        color: Colors.white,
-                                      )
-                                    : null,
+                                child: AnimatedScale(
+                                  scale: isSelected ? 1.0 : 0.0,
+                                  duration: const Duration(milliseconds: 180),
+                                  curve: Curves.easeOutBack,
+                                  child: Icon(
+                                    Icons.check,
+                                    size: 14.r,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
