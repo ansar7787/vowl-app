@@ -1,43 +1,19 @@
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/tts_voice_helper.dart';
-import 'package:flutter_tts/flutter_tts.dart';
-
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 
 class KidsTTSService {
-  final FlutterTts _flutterTts = FlutterTts();
+  final TtsService _ttsService;
   static const String _narrationKey = "is_kids_narration_enabled";
 
-  late final Future<void> _initFuture;
-
-  KidsTTSService() {
-    _initFuture = _initTts();
-  }
-
-  Future<void> _initTts() async {
-    try {
-      final preset = await TtsVoiceHelper.getSavedPreset();
-      await TtsVoiceHelper.applyPresetToTts(
-        _flutterTts,
-        preset: preset,
-        isKids: true,
-      );
-    } catch (e) {
-      di.sl<AppLogger>().warning("Kids TTS Init Error: $e", tag: 'KidsZone');
-    }
-  }
+  KidsTTSService({TtsService? ttsService})
+      : _ttsService = ttsService ?? di.sl<TtsService>();
 
   /// Reloads active voice calibration when user changes settings.
   Future<void> reloadVoice() async {
-    await _initFuture;
     try {
-      final preset = await TtsVoiceHelper.getSavedPreset();
-      await TtsVoiceHelper.applyPresetToTts(
-        _flutterTts,
-        preset: preset,
-        isKids: true,
-      );
+      await _ttsService.reloadVoice();
     } catch (e) {
       di.sl<AppLogger>().warning("Kids TTS Reload Error: $e", tag: 'KidsZone');
     }
@@ -57,7 +33,6 @@ class KidsTTSService {
 
   Future<bool> speak(String text, {bool force = false}) async {
     if (text.isEmpty) return false;
-    await _initFuture;
     if (!force && !(await isNarrationEnabled())) return false;
 
     // Clean emojis and decorative symbols for pure phonetic speech output
@@ -79,10 +54,8 @@ class KidsTTSService {
     if (cleanText.isEmpty) return false;
 
     try {
-      await _flutterTts.stop();
-      var result = await _flutterTts.speak(cleanText);
-      if (result == 1 || result == true) return true;
-      return false;
+      await _ttsService.speak(cleanText);
+      return true;
     } catch (e) {
       di.sl<AppLogger>().warning("Kids TTS Error: $e", tag: 'KidsZone');
       return false;
@@ -91,7 +64,7 @@ class KidsTTSService {
 
   Future<void> stop() async {
     try {
-      await _flutterTts.stop();
+      await _ttsService.stop();
     } catch (e) {
       di.sl<AppLogger>().warning("Kids TTS Error: $e", tag: 'KidsZone');
     }
@@ -99,7 +72,7 @@ class KidsTTSService {
 
   Future<void> dispose() async {
     try {
-      await _flutterTts.stop();
+      await _ttsService.stop();
     } catch (_) {}
   }
 }

@@ -13,7 +13,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:flutter_tts/flutter_tts.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:confetti/confetti.dart';
 
 class _LocalPalette {
@@ -37,43 +37,22 @@ class HatchingPage extends StatefulWidget {
 class _HatchingPageState extends State<HatchingPage> {
   /// 0: Egg shown | 1: Cracking | 2: Hatched | 3: Introduction
   final ValueNotifier<int> _stage = ValueNotifier(0);
-  final FlutterTts _tts = FlutterTts();
   final ConfettiController _confettiController = ConfettiController(
     duration: const Duration(seconds: 3),
   );
   Timer? _hatchTimer;
 
   @override
-  void initState() {
-    super.initState();
-    _initTts();
-  }
-
-  @override
   void dispose() {
     _hatchTimer?.cancel();
-    // FIX (MEDIUM-3): Always stop TTS unconditionally in dispose().
-    _tts.stop();
+    try {
+      if (sl.isRegistered<TtsService>()) {
+        sl<TtsService>().stop();
+      }
+    } catch (_) {}
     _confettiController.dispose();
     _stage.dispose();
     super.dispose();
-  }
-
-  Future<void> _initTts() async {
-    try {
-      // FIX (H3): Use user's locale for TTS instead of hardcoded en-US.
-      final locale = sl<LocaleService>().currentLocale;
-      final ttsLang = _mapLocaleToTtsLanguage(locale.languageCode);
-      await _tts.setLanguage(ttsLang);
-      await _tts.setPitch(1.2);
-      await _tts.setSpeechRate(0.5);
-
-      _tts.setStartHandler(() {});
-      _tts.setCompletionHandler(() {});
-      _tts.setErrorHandler((_) {});
-    } catch (e) {
-      if (kDebugMode) debugPrint('HatchingPage: TTS initialization failed: $e');
-    }
   }
 
   /// Maps a locale language code to a TTS-compatible language tag.
@@ -131,7 +110,15 @@ class _HatchingPageState extends State<HatchingPage> {
   Future<void> _speakIntroduction() async {
     if (!mounted) return;
     try {
-      await _tts.speak(_getIntroMessage(context));
+      final locale = sl<LocaleService>().currentLocale;
+      final ttsLang = _mapLocaleToTtsLanguage(locale.languageCode);
+      if (sl.isRegistered<TtsService>()) {
+        await sl<TtsService>().speak(
+          _getIntroMessage(context),
+          locale: ttsLang,
+          rate: 0.5,
+        );
+      }
     } catch (e) {
       if (kDebugMode) debugPrint('HatchingPage: TTS speak failed: $e');
     }
@@ -427,7 +414,11 @@ class _HatchingPageState extends State<HatchingPage> {
       padding: EdgeInsets.symmetric(horizontal: 40.w),
       child: ScaleButton(
         onTap: () {
-          _tts.stop();
+          try {
+            if (sl.isRegistered<TtsService>()) {
+              sl<TtsService>().stop();
+            }
+          } catch (_) {}
           context.go('/home');
         },
         child: Container(

@@ -4,8 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/tts_voice_helper.dart';
 import 'package:vowl/features/settings/presentation/widgets/tts_voice_selection_bottom_sheet.dart';
 
@@ -48,8 +50,14 @@ void main() {
     });
 
     SharedPreferences.setMockInitialValues({});
+    if (!di.sl.isRegistered<AppLogger>()) {
+      di.sl.registerLazySingleton<AppLogger>(() => const DebugAppLogger());
+    }
     if (!di.sl.isRegistered<HapticService>()) {
       di.sl.registerLazySingleton<HapticService>(() => MockHapticService());
+    }
+    if (!di.sl.isRegistered<TtsService>()) {
+      di.sl.registerLazySingleton<TtsService>(() => TtsService());
     }
   });
 

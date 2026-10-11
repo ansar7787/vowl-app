@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart' show VoidCallback;
-import 'package:flutter_tts/flutter_tts.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vowl/core/utils/app_logger.dart';
@@ -61,83 +61,31 @@ abstract class SpeechService {
   });
 }
 
-/// Concrete implementation of [SpeechService] integrating with FlutterTts and SpeechToText.
+/// Concrete implementation of [SpeechService] integrating with TtsService and SpeechToText.
 class SpeechServiceImpl implements SpeechService {
-  final FlutterTts _tts = FlutterTts();
+  final TtsService _ttsService;
   final SpeechToText _stt = SpeechToText();
 
   bool _isSttInitialized = false;
-  bool _isPlaying = false;
   VoidCallback? _onDoneCallback;
-  Function(String)? _onWordCallback;
 
-  /// RACE-CONDITION FIX: matches the same fix already applied to
-  /// TtsServiceImpl and SoundServiceImpl elsewhere in this codebase.
-  /// `_initTts()` configures language/rate/volume/pitch AND registers the
-  /// playback-state handlers (`setStartHandler`, `setCompletionHandler`,
-  /// `setErrorHandler`, `setCancelHandler`, `setProgressHandler`) that
-  /// `isPlaying` and the karaoke word callback depend on entirely.
-  /// Previously fired from the constructor as a `void async` method with
-  /// nothing awaiting it, so a `speak()` (or `stop()`/`initializeStt()`)
-  /// call made in the brief window before this completed could run before
-  /// those handlers were registered - `_isPlaying` would then never flip
-  /// to `true` for that utterance, silently breaking any UI bound to
-  /// `isPlaying`, and the karaoke word-highlight callback would silently
-  /// never fire for that call. Every public method now awaits this first.
-  late final Future<void> _initFuture;
-
-  SpeechServiceImpl() {
-    _initFuture = _initTts();
-  }
-
-  Future<void> _initTts() async {
-    try {
-      await _tts.setLanguage("en-US");
-      await _tts.setSpeechRate(0.5); // Better default for learners
-      await _tts.setVolume(1.0);
-      await _tts.setPitch(1.0);
-
-      // Track playback states safely
-      _tts.setStartHandler(() {
-        _isPlaying = true;
-      });
-      _tts.setCompletionHandler(() {
-        _isPlaying = false;
-      });
-      _tts.setErrorHandler((_) {
-        _isPlaying = false;
-      });
-      _tts.setCancelHandler(() {
-        _isPlaying = false;
-      });
-
-      // Karaoke Progress Tracking
-      _tts.setProgressHandler((text, start, end, word) {
-        _onWordCallback?.call(word);
-      });
-    } catch (e) {
-      sl<AppLogger>().error(
-        'SpeechService: TTS configuration initialization error',
-        error: e,
-      );
-    }
-  }
+  SpeechServiceImpl({TtsService? ttsService})
+      : _ttsService = ttsService ?? sl<TtsService>();
 
   @override
-  bool get isPlaying => _isPlaying;
+  bool get isPlaying => _ttsService.isSpeaking;
 
   @override
   bool get isListening => _stt.isListening;
 
   @override
   void setWordCallback(Function(String)? callback) {
-    _onWordCallback = callback;
+    _ttsService.setWordCallback(callback != null ? (word) => callback(word) : null);
   }
 
   @override
   Future<void> setSpeechRate(double rate) async {
-    await _initFuture;
-    await _tts.setSpeechRate(rate);
+    // Handled dynamically per speak call in centralized TtsService
   }
 
   @override
@@ -146,11 +94,8 @@ class SpeechServiceImpl implements SpeechService {
     double rate = 0.5,
     String locale = "en-US",
   }) async {
-    await _initFuture;
     try {
-      await _tts.setLanguage(locale);
-      await _tts.setSpeechRate(rate);
-      await _tts.speak(text);
+      await _ttsService.speak(text, rate: rate, locale: locale);
     } catch (e) {
       sl<AppLogger>().error(
         'SpeechService: TTS speech execution error',
@@ -161,9 +106,8 @@ class SpeechServiceImpl implements SpeechService {
 
   @override
   Future<void> stop() async {
-    await _initFuture;
     try {
-      await _tts.stop();
+      await _ttsService.stop();
       await _stt.stop();
     } catch (e) {
       sl<AppLogger>().error(
@@ -175,9 +119,8 @@ class SpeechServiceImpl implements SpeechService {
 
   @override
   Future<void> cancel() async {
-    await _initFuture;
     try {
-      await _tts.stop();
+      await _ttsService.stop();
       await _stt.cancel(); // Force-release mic resources immediately
     } catch (e) {
       sl<AppLogger>().error(
@@ -189,7 +132,6 @@ class SpeechServiceImpl implements SpeechService {
 
   @override
   Future<bool> initializeStt() async {
-    await _initFuture;
     if (_isSttInitialized) return true;
 
     try {
