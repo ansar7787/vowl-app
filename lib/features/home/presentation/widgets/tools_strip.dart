@@ -1,7 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -13,6 +12,8 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -153,43 +154,38 @@ class ToolsStrip extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: tools
-                .asMap()
-                .entries
-                .map((entry) {
-                  final isDark =
-                      Theme.of(context).brightness == Brightness.dark;
-                  final index = entry.key;
-                  final tool = entry.value;
+            children: [
+              ...tools.asMap().entries.map((entry) {
+                final isDark =
+                    Theme.of(context).brightness == Brightness.dark;
+                final index = entry.key;
+                final tool = entry.value;
 
-                  final Widget card = tool.isFeatured
-                      ? _FeaturedToolCard(
-                          def: tool,
-                          isDark: isDark,
-                          width: featuredWidth,
-                          index: index,
-                        )
-                      : _CompactToolCard(
-                          def: tool,
-                          isDark: isDark,
-                          width: compactWidth,
-                          index: index,
-                        );
+                final Widget card = tool.isFeatured
+                    ? _FeaturedToolCard(
+                        def: tool,
+                        isDark: isDark,
+                        width: featuredWidth,
+                        index: index,
+                      )
+                    : _CompactToolCard(
+                        def: tool,
+                        isDark: isDark,
+                        width: compactWidth,
+                        index: index,
+                      );
 
-                  if (index == tools.length - 1) return card;
-                  return Padding(
-                    padding: EdgeInsets.only(right: 12.w),
-                    child: card,
-                  );
-                })
-                .toList()
-                .animate(interval: 50.ms)
-                .fadeIn(duration: 400.ms)
-                .scale(
-                  begin: const Offset(0.8, 0.8),
-                  duration: 400.ms,
-                  curve: Curves.easeOutCubic,
-                ),
+                return Padding(
+                  padding: EdgeInsets.only(right: 12.w),
+                  child: card,
+                );
+              }),
+              _ExploreAllCard(
+                width: compactWidth,
+                isDark: Theme.of(context).brightness == Brightness.dark,
+                onTap: () => FeatureDirectoryBottomSheet.show(context),
+              ),
+            ],
           ),
         ),
       ],
@@ -563,3 +559,96 @@ class _CompactToolCard extends StatelessWidget {
     );
   }
 }
+
+class _ExploreAllCard extends StatelessWidget {
+  final double width;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  const _ExploreAllCard({
+    required this.width,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: 'Explore all 50+ features and tools',
+      child: ScaleButton(
+        onTap: () {
+          di.sl<HapticService>().selection();
+          onTap();
+        },
+        child: GlassTile(
+          blur: 0,
+          showShadow: false,
+          borderRadius: BorderRadius.circular(24.r),
+          borderColor: AppColors.indigo500.withValues(alpha: isDark ? 0.35 : 0.25),
+          padding: EdgeInsets.all(16.r),
+          child: SizedBox(
+            width: width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(10.r),
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500.withValues(alpha: 0.15),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    LucideIcons.compass,
+                    color: AppColors.indigo500,
+                    size: 20.r,
+                  ),
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  'Explore All',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+                SizedBox(height: 4.h),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 8.w,
+                    vertical: 3.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(
+                      color: AppColors.indigo500.withValues(alpha: 0.2),
+                      width: 0.5,
+                    ),
+                  ),
+                  child: Text(
+                    '50+ TOOLS',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.indigo500,
+                      letterSpacing: 0.8,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+

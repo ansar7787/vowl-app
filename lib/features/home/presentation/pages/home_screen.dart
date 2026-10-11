@@ -29,6 +29,9 @@ import 'package:vowl/features/home/presentation/widgets/home_section_header.dart
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/feature_catalog/beginner_discovery_card.dart';
+import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
+import 'package:vowl/core/presentation/feature_catalog/first_time_welcome_showcase.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -52,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
         context.read<EconomyBloc>().add(
           const EconomyCheckDailyRewardRequested(),
         );
+        FirstTimeWelcomeShowcase.checkAndShow(context);
       }
     });
   }
@@ -247,6 +251,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: [
                               SizedBox(height: 16.h),
+                              if (!user.isKidsModeOnly)
+                                BeginnerDiscoveryCard(user: user),
                               ContinueLearningCard(user: user),
                             ],
                           ),
@@ -343,6 +349,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           fallback: 'Your learning toolkit',
                         ),
                         categoryColor: AppColors.emerald500,
+                        onSeeAll: () =>
+                            FeatureDirectoryBottomSheet.show(context),
                       ),
                       const SliverToBoxAdapter(child: ToolsStrip()),
 
