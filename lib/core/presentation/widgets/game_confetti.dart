@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math';
@@ -41,6 +42,9 @@ class _GameConfettiState extends State<GameConfetti> {
 
   static const int _maxReplays = 2;
   int _replayCount = 0;
+  Timer? _replayTimer;
+  Timer? _initTimer;
+  late final VoidCallback _controllerListener;
 
   /// Cached during [build] so the listener can reference it safely
   /// (MediaQuery lookups are only valid during the build phase).
@@ -51,21 +55,22 @@ class _GameConfettiState extends State<GameConfetti> {
     super.initState();
     _controller = ConfettiController(duration: const Duration(seconds: 2));
 
-    _controller.addListener(() {
+    _controllerListener = () {
       if (_controller.state == ConfettiControllerState.stopped && mounted) {
         if (_reduceMotion) return;
 
         if (_replayCount < _maxReplays) {
           _replayCount++;
-          Future.delayed(const Duration(milliseconds: 1500), () {
+          _replayTimer = Timer(const Duration(milliseconds: 1500), () {
             if (mounted) _controller.play();
           });
         }
       }
-    });
+    };
+    _controller.addListener(_controllerListener);
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(const Duration(milliseconds: 300), () {
+      _initTimer = Timer(const Duration(milliseconds: 300), () {
         if (mounted) _controller.play();
       });
     });
@@ -82,7 +87,18 @@ class _GameConfettiState extends State<GameConfetti> {
   }
 
   @override
+  void deactivate() {
+    _controller.removeListener(_controllerListener);
+    _initTimer?.cancel();
+    _replayTimer?.cancel();
+    super.deactivate();
+  }
+
+  @override
   void dispose() {
+    _controller.removeListener(_controllerListener);
+    _initTimer?.cancel();
+    _replayTimer?.cancel();
     _controller.dispose();
     super.dispose();
   }

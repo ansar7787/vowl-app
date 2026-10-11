@@ -18,6 +18,7 @@ import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/feature_catalog/beginner_discovery_card.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
@@ -81,6 +82,11 @@ class GamesScreen extends StatelessWidget {
     UserEntity user,
     bool isDark,
   ) => [
+    if (!user.isKidsModeOnly)
+      Padding(
+        padding: EdgeInsets.fromLTRB(24.w, 12.h, 24.w, 8.h),
+        child: BeginnerDiscoveryCard(user: user),
+      ),
     // Phase 1: Hero Dashboard
     _HeroDashboard(user: user, isDark: isDark),
     // Kids Zone — visually differentiated section

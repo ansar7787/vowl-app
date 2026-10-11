@@ -164,6 +164,60 @@ void main() {
       // Card disappears
       expect(find.text('Beginner Discovery Quests'), findsNothing);
     });
+
+    testWidgets('shows Claim 150 Coins button when all quests complete and triggers celebration', (
+      tester,
+    ) async {
+      SharedPreferences.setMockInitialValues({
+        'beginner_discovery_quest_first_game': true,
+        'beginner_discovery_quest_photo_vocab': true,
+        'beginner_discovery_quest_translate': true,
+        'beginner_discovery_quest_boutique': true,
+        'beginner_discovery_quest_reports': true,
+        'beginner_discovery_reward_claimed': false,
+      });
+
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
+
+      await tester.pumpWidget(
+        wrapWidget(
+          const BeginnerDiscoveryCard(user: testUser),
+          scrollable: true,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Claim 150 Coins Reward'), findsOneWidget);
+
+      await tester.tap(find.text('Claim 150 Coins Reward'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      verify(
+        () => mockEconomyBloc.add(
+          const EconomyAddCoinsRequested(
+            150,
+            title: 'coin_history.beginner_quest_reward',
+          ),
+        ),
+      ).called(1);
+
+      expect(find.text('150 COINS CLAIMED!'), findsOneWidget);
+      expect(find.text('AWESOME'), findsOneWidget);
+
+      await tester.tap(find.text('AWESOME'));
+      await tester.pumpAndSettle();
+
+      expect(
+        find.text('150 Coins Claimed • All Quests Completed ✨'),
+        findsOneWidget,
+      );
+    });
   });
 
   group('FirstTimeWelcomeShowcase', () {
