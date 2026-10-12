@@ -1782,18 +1782,18 @@ class GameInstructionService {
         );
       case 'prepositions':
         return const GameBriefing(
-          title: "Where is it?",
+          title: "Where Is It?",
           icon: Icons.location_on_rounded,
           objective:
-              "Let's go on a treasure hunt! Read the directional banner, and drop the correct arrow block onto the treasure map.",
+              "Read or listen to the sentence, find where the object is, and choose the correct position word to complete the blank.",
           rules: [
-            "Read the position clue",
-            "Find the matching arrow",
-            "Place it on the map",
+            "Read or listen to the sentence clue",
+            "Tap or drag the matching preposition to the blank",
+            "Tap any speaker icon to hear the words spoken aloud",
           ],
-          actionText: "Find It",
+          actionText: "Start Playing",
           tip:
-              "PRO TIP: Think about where things are placed, like IN a box or ON a table! 📦",
+              "Tip: Words like 'in', 'on', and 'under' tell you exactly where things are placed.",
         );
       case 'handwriting':
         return const GameBriefing(

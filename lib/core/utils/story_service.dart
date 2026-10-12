@@ -371,12 +371,12 @@ class StoryServiceImpl implements StoryService {
       "Master of Hearts! You have the magic power to make everyone in the world smile! 🌈",
     ],
     'prepositions': [
-      "In, on, and under! Where is the little mouse hiding today? 🐭",
-      "Spatial Explorer! You found the treasure behind the magic waterfall! 🗺️",
-      "Above the clouds! You're learning how everything fits together! ☁️",
-      "The Navigator! You never get lost in the forest of words! 🌲",
-      "100 levels of placement! You are the Master of the Map! 📍",
-      "Grand Navigator! You know exactly where everything in the world is! 🌍",
+      "In, on, and under! Let's explore where objects and animals are placed in everyday sentences.",
+      "Great job on your first 10 levels! You're already getting so good at telling where things are.",
+      "Look at you go! Twenty levels complete, and you're placing words like 'next to' and 'between' with ease.",
+      "Halfway to 100! Fifty levels done, and your understanding of position words is growing so strong.",
+      "One hundred levels completed! You've mastered how words connect places, objects, and sentences together!",
+      "Two hundred levels completed! Fantastic achievement! You can describe where anything is with complete confidence!",
     ],
     'phonics': [
       "Welcome to Phonics! Every letter has its own sound. Let's listen closely and match the sounds to words together.",
