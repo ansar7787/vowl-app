@@ -1737,18 +1737,18 @@ class GameInstructionService {
         );
       case 'home':
         return const GameBriefing(
-          title: "My Sweet Home",
+          title: "Home",
           icon: Icons.home_rounded,
           objective:
-              "Let's decorate our dream house! Read the architect's blueprint, and move the correct piece of furniture into the home.",
+              "Explore parts of a house, different rooms, daily items, and home safety. Read or listen to each clue and choose the answer.",
           rules: [
-            "Read the room blueprint",
-            "Find the furniture box",
-            "Move it into the house",
+            "Read or listen to the clue",
+            "Tap or drag the matching answer to the house",
+            "Tap the speaker anytime to hear words spoken aloud",
           ],
-          actionText: "Enter House",
+          actionText: "Start Playing",
           tip:
-              "PRO TIP: Think about which room you would find this item in! 🏠",
+              "Tip: Tap any card's speaker to hear how the word is pronounced before answering.",
         );
       case 'opposites':
         return const GameBriefing(

@@ -419,12 +419,12 @@ class StoryServiceImpl implements StoryService {
       "Nature Legend! You are one with the heart of the world! 🌿",
     ],
     'home': [
-      "Home sweet home! Let's find the cozy chair in the living room! 🛋️",
-      "Domestic Hero! You're making our home a place of magic and joy! ✨",
-      "The Hearth is warm! You bring so much comfort to everyone! 🔥",
-      "A sanctuary of love! Our house is a castle because of you! 🏰",
-      "100 levels of home! You are the heart of the household! 🏠",
-      "Grand Architect! You've made every room a place of happiness! 🏡",
+      "Welcome home! Let's explore the rooms, parts of a house, and learn helpful words together.",
+      "Great work! You are learning how different rooms and parts of a house fit together.",
+      "You're doing wonderful! You know so many parts of a home and the things we use every day.",
+      "Halfway to 100! You understand how homes keep us safe, cozy, and cared for.",
+      "100 levels completed! You know all about rooms, everyday home items, and staying safe at home.",
+      "200 levels completed! You have mastered all home vocabulary and safety habits.",
     ],
     'food': [
       "Yum yum! Let's cook up some magic in the kitchen today! 🍳",

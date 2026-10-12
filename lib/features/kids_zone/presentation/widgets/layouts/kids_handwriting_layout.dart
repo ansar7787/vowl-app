@@ -161,46 +161,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
     context.read<KidsBloc>().add(SubmitKidsAnswer(correct));
   }
 
-  /// Categorizes question target to provide pedagogically accurate prompt label.
-  String _getPromptLabel(BuildContext context, String target) {
-    final clean = target.trim();
-    if (clean.contains(' ') && clean.length > 10) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_sentence',
-        fallback: 'Write this sentence:',
-      );
-    }
-    if (['|', '-', '/', '\\', '+', 'X', '—', '∩', '∪', '(', ')'].contains(clean) ||
-        clean.contains('|') ||
-        clean.contains('-')) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_stroke',
-        fallback: 'Practice this stroke:',
-      );
-    }
-    if (['□', '△', '◇', '▭', '○', '⬭'].contains(clean)) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_shape',
-        fallback: 'Draw this shape:',
-      );
-    }
-    if (RegExp(r'^[0-9:]+$').hasMatch(clean)) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_number',
-        fallback: 'Write this number:',
-      );
-    }
-    if (clean.length == 1 && RegExp(r'^[a-zA-Z]$').hasMatch(clean)) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_letter',
-        fallback: 'Write this letter:',
-      );
-    }
-    return context.tr(
-      'kids_zone.handwriting_prompt_word',
-      fallback: 'Write this word:',
-    );
-  }
 
   /// Calculates responsive font size based on string length to guarantee zero text overflow.
   double _calculateTargetFontSize(String target) {
@@ -262,7 +222,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
 
         final targetWord = state.currentQuest.question?.trim() ?? '';
         final instruction = state.currentQuest.instruction.trim();
-        final promptLabel = _getPromptLabel(context, targetWord);
         final targetFontSize = _calculateTargetFontSize(targetWord);
         final targetLetterSpacing = _calculateLetterSpacing(targetWord);
 
@@ -280,11 +239,11 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     width: double.infinity,
                     constraints: BoxConstraints(
                       maxWidth: 420.w,
-                      minHeight: isCompactScreen ? 80.h : 95.h,
+                      minHeight: isCompactScreen ? 72.h : 86.h,
                     ),
                     padding: EdgeInsets.symmetric(
                       horizontal: 16.w,
-                      vertical: isCompactScreen ? 10.h : 14.h,
+                      vertical: isCompactScreen ? 8.h : 10.h,
                     ),
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.surface,
@@ -304,12 +263,16 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Prompt Label and Audio Listen Button
+                        // Universal Guidance Label and Audio Listen Button
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              promptLabel,
+                              context.tr(
+                                'kids_zone.handwriting_universal_prompt',
+                                fallback: 'Trace & Write',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 13.sp,
@@ -317,18 +280,17 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                                 color: Colors.grey.shade600,
                               ),
                             ),
-                            SizedBox(width: 6.w),
+                            SizedBox(width: 8.w),
                             Semantics(
                               button: true,
-                              label: 'Listen to target word or instruction',
+                              label: 'Listen to instruction',
                               child: InkWell(
                                 borderRadius: BorderRadius.circular(16.r),
                                 onTap: () {
                                   di.sl<HapticService>().light();
-                                  final speakText =
-                                      (targetWord.length <= 2 && instruction.isNotEmpty)
-                                          ? instruction
-                                          : targetWord;
+                                  final speakText = instruction.isNotEmpty
+                                      ? instruction
+                                      : targetWord;
                                   di.sl<KidsTTSService>().speak(speakText);
                                 },
                                 child: Padding(
@@ -345,7 +307,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                         ),
                         SizedBox(height: 4.h),
 
-                        // Target Character / Word / Sentence Display
+                        // Target Character / Stroke / Word Display
                         SelectableText(
                           targetWord,
                           textAlign: TextAlign.center,
@@ -355,27 +317,9 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                             fontWeight: FontWeight.w700,
                             color: widget.primaryColor,
                             letterSpacing: targetLetterSpacing,
-                            height: 1.2,
+                            height: 1.15,
                           ),
                         ),
-
-                        // Pedagogical Curriculum Instruction Guidance
-                        if (instruction.isNotEmpty && instruction != targetWord)
-                          Padding(
-                            padding: EdgeInsets.only(top: 4.h),
-                            child: Text(
-                              instruction,
-                              textAlign: TextAlign.center,
-                              maxLines: isCompactScreen ? 1 : 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: isCompactScreen ? 11.sp : 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.grey.shade700,
-                              ),
-                            ),
-                          ),
                       ],
                     ),
                   ),

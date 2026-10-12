@@ -1184,6 +1184,13 @@ class VowlCoinsScreen extends StatelessWidget {
     final milestone = params?['milestone']?.toString() ?? '';
 
     switch (rawKey) {
+      case 'coin_history.beginner_quest_reward':
+      case 'coin_history.beginner_quests_reward':
+      case 'coin_history.begginer_quest_reward':
+        return context.tr(
+          'coin_history.beginner_quest_reward',
+          fallback: 'Beginner Discovery Quests Reward 🎯',
+        );
       case 'coin_history.quest_reward':
         return context.tr(
           'coin_history.quest_reward',
