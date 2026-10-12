@@ -164,7 +164,7 @@ class LevelThemeHelper {
       case 'emotions':
         return _LocalPalette.color06b6d4;
       case 'prepositions':
-        return AppColors.slate500;
+        return _LocalPalette.color9333ea;
       case 'phonics':
         return _LocalPalette.colord946ef;
       case 'jumble':
