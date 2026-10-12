@@ -1827,18 +1827,18 @@ class GameInstructionService {
         );
       case 'phonics':
         return const GameBriefing(
-          title: "Sound Master",
-          icon: Icons.record_voice_over_rounded,
+          title: "Sound Match",
+          icon: Icons.hearing_rounded,
           objective:
-              "Turn up the volume! Read the phonetic clue on the speaker, and plug the matching sound wave into the amplifier.",
+              "Listen to the sound clue, check the word or letters on the speaker, and choose the matching sound to complete the word.",
           rules: [
-            "Read the sound blend",
-            "Find the matching wave",
-            "Plug it into the amp",
+            "Listen to the sound clue",
+            "Choose the matching sound",
+            "Complete the word",
           ],
-          actionText: "Make Sounds",
+          actionText: "Let's Play",
           tip:
-              "PRO TIP: Say the sound out loud to help you find the right match! 🗣️",
+              "Say the sound out loud as you listen—it helps your brain connect letters to real words!",
         );
       case 'time':
         return const GameBriefing(
