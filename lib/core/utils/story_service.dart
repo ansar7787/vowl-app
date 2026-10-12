@@ -339,12 +339,12 @@ class StoryServiceImpl implements StoryService {
       "Master of Hearts! Your kindness makes every family happy! 👨‍👩‍👧‍👦",
     ],
     'school': [
-      "Welcome to the Fun School! Let's grab our backpacks and start learning! 🎒",
-      "Teacher's Pet! You're the brightest student in the whole classroom! 🍎",
-      "Recess is fun, but learning is a superpower! You're doing great! 🏫",
-      "The Principal is impressed! You've solved the big chalkboard puzzle! 🎓",
-      "100 levels of school! You're the smartest student in the world! 📚",
-      "Grand Graduate! You've mastered everything in the Fun School! 🏅",
+      "Welcome to the classroom! Let's unpack our backpacks and explore all the wonderful things we use at school every day.",
+      "Great job on your first 10 levels! You already know the names of so many classroom tools, teachers, and spaces.",
+      "Twenty levels complete! From art supplies to the library, you're learning how our school day works together.",
+      "Halfway to 100! Fifty levels done, and your classroom vocabulary is growing stronger and clearer every day.",
+      "One hundred levels completed! Amazing work! You know all about classroom routines, school helpers, and learning together.",
+      "Two hundred levels completed! Incredible achievement! You have mastered all school and classroom vocabulary in English!",
     ],
     'verbs': [
       "Jump, run, and play! Let's find all the action words in the yard! 🏃",
