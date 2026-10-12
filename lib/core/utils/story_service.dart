@@ -307,12 +307,12 @@ class StoryServiceImpl implements StoryService {
       "The Color King! You've made the whole world look like a beautiful castle! 🏰",
     ],
     'shapes': [
-      "Circles, squares, and triangles! Let's find all the hidden shapes in the park! 🔺",
-      "Shape Shifter! You found the perfect circle. You're getting so smart! 🔵",
-      "Geometry Genius! The world is made of beautiful patterns and shapes. ⬛",
-      "The Shape Kingdom is safe! You've solved the puzzle of the stars! ⭐",
-      "100 shapes found! You are now the Grand Architect of the World! 🏛️",
-      "Master of Forms! You can build anything with your magic shapes! 🏰",
+      "Circles, squares, and triangles! Let's explore shapes all around us and see how they build our world. 📐",
+      "Great job on your first 10 levels! You're spotting straight sides, round curves, and corners with confidence. 🔵",
+      "Twenty levels complete! You can easily tell circles, triangles, rectangles, and stars apart. Keep exploring! 🔺",
+      "Fifty levels done! From flat 2D shapes to solid 3D cubes and cones, your shape vocabulary is growing strong! 📦",
+      "One hundred levels of shapes! You understand how shapes connect, stack, and fit together in everyday life. 🌟",
+      "Two hundred levels completed! You are a true shape explorer with a sharp eye for every pattern and form! 🏆",
     ],
     'animals': [
       "Welcome to the Great Safari! Can you help me find the king of the jungle? 🦁",

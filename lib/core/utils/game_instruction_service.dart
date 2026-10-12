@@ -1605,17 +1605,17 @@ class GameInstructionService {
         );
       case 'shapes':
         return const GameBriefing(
-          title: "Shape Explorer",
+          title: "Shapes",
           icon: Icons.category_rounded,
           objective:
-              "Let's learn about geometry! Look closely at the notebook to see which shape we need, and place the right block on the desk.",
+              "Look at the clue and picture to find the matching shape, then tap or drag the block to answer.",
           rules: [
-            "Count the edges carefully",
-            "Match the silhouette",
-            "Drop the shape in place",
+            "Read or listen to the shape clue",
+            "Tap or drag the matching shape block to answer",
+            "Tap any block's speaker to hear the shape name out loud",
           ],
-          actionText: "Explore Shapes",
-          tip: "PRO TIP: Count the corners or edges if you are stuck! 📐",
+          actionText: "Start Playing",
+          tip: "Tip: Count the sides and corners to help you find the right shape! 📐",
         );
       case 'body_parts':
         return const GameBriefing(
