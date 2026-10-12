@@ -411,12 +411,12 @@ class StoryServiceImpl implements StoryService {
       "Incredible! You know everything about the sun and the stars! 🦉",
     ],
     'nature': [
-      "Green trees and blue seas! Let's protect our beautiful planet! 🌳",
-      "Eco Hero! You're a friend to every flower and every forest! 🌺",
-      "The Earth is happy! Your love for nature is making it bloom! 🌏",
-      "Wilderness Explorer! You've found the secret waterfall! 💦",
-      "100 levels of nature! You are the Protector of the Wild! 🏹",
-      "Nature Legend! You are one with the heart of the world! 🌿",
+      "Welcome to Nature! Let's explore plants, trees, weather, habitats, and the world around us.",
+      "Great start! You are learning wonderful words for living things and natural places.",
+      "You are doing so well! You can recognize different trees, animals, and weather patterns.",
+      "Halfway to 100! You understand how sunlight, soil, water, and living things connect.",
+      "100 levels completed! You know all about forests, oceans, seasons, and caring for our living world.",
+      "200 levels completed! You have mastered all nature vocabulary and science concepts.",
     ],
     'home': [
       "Welcome home! Let's explore the rooms, parts of a house, and learn helpful words together.",

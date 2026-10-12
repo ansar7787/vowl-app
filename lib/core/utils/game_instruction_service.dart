@@ -1678,18 +1678,18 @@ class GameInstructionService {
         );
       case 'nature':
         return const GameBriefing(
-          title: "Nature Walk",
+          title: "Nature",
           icon: Icons.forest_rounded,
           objective:
-              "Let's go on a wilderness adventure! Read the wooden trail sign, and collect the correct piece of nature on the tree stump.",
+              "Explore living things, weather, seasons, and habitats. Read or listen to the clue on the tree sign, then choose the matching answer on the stones.",
           rules: [
-            "Read the nature guide",
-            "Find the forest item",
-            "Collect it on the stump",
+            "Read or listen to the clue on the tree sign",
+            "Tap or drag the matching stone to answer",
+            "Tap any stone's speaker to hear it spoken aloud",
           ],
-          actionText: "Start Walk",
+          actionText: "Start Playing",
           tip:
-              "PRO TIP: Look outside! Nature is everything that grows and lives outside. 🌳",
+              "Tip: Tap the speaker icon on any stone to hear how the word is pronounced before choosing.",
         );
       case 'transport':
         return const GameBriefing(
