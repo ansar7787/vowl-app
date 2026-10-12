@@ -203,7 +203,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                                   message: context.tr(
                                     'kids_zone.internet_required_smart_pen',
                                     fallback:
-                                        'Internet connection required to download smart pen model.',
+                                        'Connect to the internet to get your chalkboard ready!',
                                   ),
                                   type: CustomSnackBarType.warning,
                                 );
@@ -231,7 +231,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                                     message: context.tr(
                                       'kids_zone.failed_download_smart_pen',
                                       fallback:
-                                          'Failed to download handwriting model.',
+                                          'Couldn\'t set up the chalkboard. Please check your internet and try again.',
                                     ),
                                     type: CustomSnackBarType.error,
                                   );
@@ -591,7 +591,7 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
             Text(
               context.tr(
                 'kids_zone.downloading_smart_pen',
-                fallback: "Downloading Smart Pen...",
+                fallback: "Setting up your chalkboard...",
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',
