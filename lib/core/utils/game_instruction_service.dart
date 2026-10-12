@@ -1753,18 +1753,18 @@ class GameInstructionService {
         );
       case 'opposites':
         return const GameBriefing(
-          title: "Big and Small",
-          icon: Icons.compare_rounded,
+          title: "Opposites",
+          icon: Icons.compare_arrows_rounded,
           objective:
-              "Let's find the perfect balance! Read the clue on the golden scale, and drop the exact opposite word to level it out.",
+              "Look at the clue word, think of its opposite, and tap or drag the matching word to complete the pair.",
           rules: [
-            "Read the starting word",
-            "Think of its total opposite",
-            "Balance the scale",
+            "Read or listen to the clue word",
+            "Tap or drag the matching opposite word",
+            "Tap any speaker to hear words spoken aloud",
           ],
-          actionText: "Match Pairs",
+          actionText: "Start Playing",
           tip:
-              "PRO TIP: Opposites are totally different, like Hot and Cold! 🧊",
+              "Tip: Tap any card's speaker to hear how the word sounds before choosing.",
         );
       case 'verbs':
         return const GameBriefing(

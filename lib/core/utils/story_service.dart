@@ -395,12 +395,12 @@ class StoryServiceImpl implements StoryService {
       "Time Lord! You have mastered the past, present, and future! 🌌",
     ],
     'opposites': [
-      "Hot and cold, big and small! Let's find all the pairs today! 🌗",
-      "Balance Master! You've found the perfect match for every word! ⚖️",
-      "The Mirror World is clear! You see both sides of every story! 🪞",
-      "Dynamic Duo! You're getting so fast at finding the opposites! 💥",
-      "100 levels of contrast! You are the Master of the Balance! ☯️",
-      "Harmony Legend! You've brought peace to the world of words! 🕊️",
+      "Welcome to Opposites! Hot and cold, big and small—let's discover all the word pairs together!",
+      "Great job on your first 10 levels! You're already getting so good at finding opposite word pairs.",
+      "Look at you go! Twenty levels complete, and you can spot the opposite of almost any word.",
+      "Halfway to 100! You've matched 50 levels of opposites, and your English vocabulary is growing so fast.",
+      "One hundred levels completed! You are an opposites master—you know both sides of so many English words!",
+      "Two hundred levels completed! Incredible achievement! You have mastered all opposites in English!",
     ],
     'daynight': [
       "Let's learn about daytime and nighttime! Are you ready? ☀️",
