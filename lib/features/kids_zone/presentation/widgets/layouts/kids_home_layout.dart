@@ -105,7 +105,7 @@ class _KidsHomeLayoutState extends State<KidsHomeLayout> {
           builder: (context, constraints) {
             final maxHeight = constraints.maxHeight;
             final isCompactHeight = maxHeight < 580;
-            final topSpacing = isCompactHeight ? 80.0.h : 100.0.h;
+            final topSpacing = isCompactHeight ? 56.0.h : KidsGameBaseScreen.mascotClearanceHeight;
             final dollhouseHeight = isCompactHeight ? 140.0.h : 170.0.h;
             final dollhouseWidth = math.min(constraints.maxWidth * 0.78, 290.0.w);
 

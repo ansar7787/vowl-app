@@ -230,7 +230,11 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
             return Column(
               children: [
                 // Mascot space reserved by KidsGameBaseScreen (adaptive for short screens)
-                SizedBox(height: isCompactScreen ? 90.h : 115.h),
+                SizedBox(
+                  height: isCompactScreen
+                      ? 50.h
+                      : KidsGameBaseScreen.mascotClearanceHeight,
+                ),
 
                 // Responsive Flashcard Target Display
                 Padding(

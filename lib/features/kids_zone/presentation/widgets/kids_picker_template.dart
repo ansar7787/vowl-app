@@ -67,8 +67,8 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
 
         return Column(
           children: [
-            // Extra space at the top to accommodate the Mascot + Speech Bubble injected by KidsGameBaseScreen
-            SizedBox(height: 120.h),
+            // Reserved space for the compact Mascot + Speech Bubble injected by KidsGameBaseScreen
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
 
             Expanded(
               flex: 5,

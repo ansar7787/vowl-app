@@ -46,7 +46,7 @@ class KidsProfessionsLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 60.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Shop Storefront (Target)
             Expanded(
               flex: 6,

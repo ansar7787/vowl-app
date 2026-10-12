@@ -46,7 +46,7 @@ class KidsFoodLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 90.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Chef's Hat / Board
             Expanded(
               flex: 5,

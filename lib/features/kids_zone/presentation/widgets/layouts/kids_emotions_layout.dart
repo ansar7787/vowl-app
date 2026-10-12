@@ -50,7 +50,7 @@ class KidsEmotionsLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Theater Stage
             Expanded(
               flex: 5,

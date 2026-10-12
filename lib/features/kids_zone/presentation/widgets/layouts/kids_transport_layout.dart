@@ -48,7 +48,7 @@ class KidsTransportLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Traffic Light / Road Sign
             Expanded(
               flex: 5,

@@ -45,7 +45,7 @@ class KidsFamilyLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Framed Painting
             Expanded(
               flex: 5,

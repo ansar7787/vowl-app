@@ -54,7 +54,7 @@ class KidsDayNightLayout extends StatelessWidget {
 
             Column(
               children: [
-                SizedBox(height: 120.h),
+                SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
                 // The Observatory Telescope View
                 Flexible(
                   flex: 5,

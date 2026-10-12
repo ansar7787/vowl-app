@@ -46,7 +46,7 @@ class KidsNumbersLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Rocket Window for the Question
             Expanded(
               flex: 5,

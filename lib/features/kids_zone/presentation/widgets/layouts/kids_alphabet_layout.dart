@@ -47,10 +47,7 @@ class KidsAlphabetLayout extends StatelessWidget {
 
         return Column(
           children: [
-            Flexible(
-              flex: 3,
-              child: SizedBox(height: 120.h), // Mascot space, now flexible
-            ),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Chalkboard for the Question
             Expanded(
               flex: 5,

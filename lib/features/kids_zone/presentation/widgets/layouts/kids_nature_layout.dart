@@ -57,7 +57,7 @@ class KidsNatureLayout extends StatelessWidget {
 
             Column(
               children: [
-                SizedBox(height: 120.h),
+                SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
                 // The Wooden Tree Sign
                 Expanded(
                   flex: 5,
