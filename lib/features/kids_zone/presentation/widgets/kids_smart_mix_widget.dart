@@ -1,15 +1,10 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color0ea5e9 = Color(0xFF0EA5E9);
-}
+import 'package:vowl/features/kids_zone/domain/services/kids_game_helper.dart';
 
 class KidsSmartMixWidget extends StatelessWidget {
   const KidsSmartMixWidget({super.key, required this.isDark});
@@ -24,50 +19,14 @@ class KidsSmartMixWidget extends StatelessWidget {
       today.year * 10000 + today.month * 100 + today.day,
     );
 
-    final allKidsCategories = [
-      {
-        'route': '/kids/map/handwriting',
-        'title': 'Write & Learn',
-        'color': AppColors.rose500,
-        'icon': Icons.edit_rounded,
-      },
-      {
-        'route': '/kids/map/alphabet',
-        'title': 'ABC',
-        'color': AppColors.rose500,
-        'icon': Icons.abc_rounded,
-      },
-      {
-        'route': '/kids/map/numbers',
-        'title': '123',
-        'color': _LocalPalette.color0ea5e9,
-        'icon': Icons.pin_rounded,
-      },
-      {
-        'route': '/kids/map/colors',
-        'title': 'Colors',
-        'color': AppColors.amber500,
-        'icon': Icons.palette_rounded,
-      },
-      {
-        'route': '/kids/map/shapes',
-        'title': 'Shapes',
-        'color': AppColors.emerald500,
-        'icon': Icons.category_rounded,
-      },
-      {
-        'route': '/kids/map/animals',
-        'title': 'Animals',
-        'color': AppColors.violet500,
-        'icon': Icons.pets_rounded,
-      },
-      {
-        'route': '/kids/map/fruits',
-        'title': 'Fruits',
-        'color': IllustrationColors.vibrantPink,
-        'icon': Icons.apple_rounded,
-      },
-    ];
+    final allKidsCategories = KidsGameHelper.allGames.map((game) {
+      return {
+        'route': '/kids/map/${game.gameType}',
+        'title': game.gridTitle,
+        'color': game.color,
+        'icon': game.icon,
+      };
+    }).toList();
 
     allKidsCategories.shuffle(random);
     final dailyAdventures = allKidsCategories.take(3).toList();

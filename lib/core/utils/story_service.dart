@@ -274,12 +274,12 @@ class StoryServiceImpl implements StoryService {
       "Sky Guardian! You control the sunshine and the rain! 🌦️",
     ],
     'professions': [
-      "What do you want to be? Let's explore all the amazing jobs! 👩‍🚀",
-      "The Helper! You know how everyone makes the world a better place! 👨‍🚒",
-      "A community of heroes! You're learning how we all work together! 👩‍⚕️",
-      "The Architect of Dreams! You can be anything you want to be! 👷",
-      "100 levels of careers! You are the Mayor of the City! 🏙️",
-      "World Leader! You understand every amazing job in the world! 🌍",
+      "Welcome to our neighborhood! Let's explore all the amazing jobs and helpers who take care of our community! 🏘️",
+      "Ten jobs explored! You're learning how doctors, teachers, and firefighters help keep everyone safe and smiling. 👨‍🚒",
+      "Twenty community helpers! You know who to turn to whenever someone needs a helping hand or a problem solved. 👩‍⚕️",
+      "Halfway to 100! From bakers to bus drivers, you understand so many important roles that keep a town running smoothly. 👷",
+      "One hundred levels completed! You know our community inside and out, and you appreciate everyone who makes a difference. 🌟",
+      "Two hundred levels! You've learned about so many caring helpers and how we all work together to make the world a wonderful place. 🏆",
     ],
 
     'alphabet': [

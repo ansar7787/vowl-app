@@ -1888,15 +1888,15 @@ class GameInstructionService {
           title: "Community Helpers",
           icon: Icons.work_rounded,
           objective:
-              "Meet our community heroes! Read the job description on the building, and pin the correct worker badge to the town board.",
+              "Read the clue on the board to find out who can help, then tap or drag the right helper to solve it!",
           rules: [
-            "Read the job description",
-            "Find the right worker",
-            "Pin their badge",
+            "Read the clue on the board",
+            "Tap or drag the helper who fits the job",
+            "Tap the speaker to hear any word aloud",
           ],
-          actionText: "Go to Work",
+          actionText: "Let's Play",
           tip:
-              "PRO TIP: Think about what this person does to help the town! 👩‍🚒",
+              "Tip: Tap the Listen button if you want to hear the clue read aloud! 💡",
         );
       default:
         return null;
