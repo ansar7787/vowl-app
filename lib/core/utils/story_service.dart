@@ -355,12 +355,12 @@ class StoryServiceImpl implements StoryService {
       "Master of Motion! You can do anything with your action words! 🚀",
     ],
     'routine': [
-      "Good morning! Let's start our day with a smile and a big stretch! ☀️",
-      "Tick-tock! You're a master of time and a hero of your daily habits! ⏰",
-      "The Daily Rhythm is perfect! You're getting so organized and smart! 📅",
-      "A day full of wonder! You handle every part of your day like a pro! 🌙",
-      "100 days of routine! You are the master of your own destiny! 🌟",
-      "Eternal Hero! You've mastered the art of living a happy life! 🌈",
+      "Welcome to Daily Routines! From waking up in the morning to cozy bedtime, let's learn how we spend our day together.",
+      "Great job on your first 10 levels! You're already recognizing morning, afternoon, and evening routines so easily.",
+      "Look at you go! Twenty levels complete, and you know just what to do at every time of the day.",
+      "Halfway to 100! Fifty levels done, and your daily routine English words are getting stronger every day.",
+      "One hundred levels completed! Amazing work! You know all the daily routines that keep our days happy, healthy, and organized.",
+      "Two hundred levels completed! Incredible achievement! You have mastered daily routine vocabulary in English!",
     ],
     'emotions': [
       "How are you feeling today? Let's find the biggest, brightest happy face! 😊",
