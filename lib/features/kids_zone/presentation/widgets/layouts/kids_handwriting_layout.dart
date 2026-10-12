@@ -239,11 +239,11 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     width: double.infinity,
                     constraints: BoxConstraints(
                       maxWidth: 420.w,
-                      minHeight: isCompactScreen ? 62.h : 76.h,
+                      minHeight: isCompactScreen ? 72.h : 86.h,
                     ),
                     padding: EdgeInsets.symmetric(
                       horizontal: 16.w,
-                      vertical: isCompactScreen ? 8.h : 12.h,
+                      vertical: isCompactScreen ? 8.h : 10.h,
                     ),
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.surface,
@@ -260,53 +260,64 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                         ),
                       ],
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Target Character / Word / Sentence Display
-                        Flexible(
-                          child: SelectableText(
-                            targetWord,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: targetFontSize,
-                              fontWeight: FontWeight.w700,
-                              color: widget.primaryColor,
-                              letterSpacing: targetLetterSpacing,
-                              height: 1.15,
+                        // Universal Guidance Label and Audio Listen Button
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              context.tr(
+                                'kids_zone.handwriting_universal_prompt',
+                                fallback: 'Trace & Write',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey.shade600,
+                              ),
                             ),
-                          ),
-                        ),
-                        SizedBox(width: 8.w),
-
-                        // Audio Listen / Pronunciation Button
-                        Semantics(
-                          button: true,
-                          label: 'Listen to target word or instruction',
-                          child: InkWell(
-                            borderRadius: BorderRadius.circular(20.r),
-                            onTap: () {
-                              di.sl<HapticService>().light();
-                              final speakText =
-                                  (targetWord.length <= 2 && instruction.isNotEmpty)
+                            SizedBox(width: 8.w),
+                            Semantics(
+                              button: true,
+                              label: 'Listen to instruction',
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(16.r),
+                                onTap: () {
+                                  di.sl<HapticService>().light();
+                                  final speakText = instruction.isNotEmpty
                                       ? instruction
                                       : targetWord;
-                              di.sl<KidsTTSService>().speak(speakText);
-                            },
-                            child: Container(
-                              padding: EdgeInsets.all(7.r),
-                              decoration: BoxDecoration(
-                                color: widget.primaryColor.withValues(alpha: 0.1),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                LucideIcons.volume2,
-                                size: 18.r,
-                                color: widget.primaryColor,
+                                  di.sl<KidsTTSService>().speak(speakText);
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.all(4.r),
+                                  child: Icon(
+                                    LucideIcons.volume2,
+                                    size: 16.r,
+                                    color: widget.primaryColor,
+                                  ),
+                                ),
                               ),
                             ),
+                          ],
+                        ),
+                        SizedBox(height: 4.h),
+
+                        // Target Character / Stroke / Word Display
+                        SelectableText(
+                          targetWord,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: targetFontSize,
+                            fontWeight: FontWeight.w700,
+                            color: widget.primaryColor,
+                            letterSpacing: targetLetterSpacing,
+                            height: 1.15,
                           ),
                         ),
                       ],
