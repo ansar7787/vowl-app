@@ -379,12 +379,12 @@ class StoryServiceImpl implements StoryService {
       "Grand Navigator! You know exactly where everything in the world is! 🌍",
     ],
     'phonics': [
-      "A-A-Apple! Let's listen to the secret sounds of the letters! 🔊",
-      "Sound Scientist! You've unlocked the music hidden in every word! 🎵",
-      "The Phonics Symphony is playing! You're the lead conductor! 🎻",
-      "A chorus of clarity! Your reading is becoming magical and clear! ✨",
-      "100 phonics puzzles! You are the Master of the Sound Garden! 🎤",
-      "Legendary Reader! You can hear the music in every book! 🎼",
+      "Welcome to Phonics! Every letter has its own sound. Let's listen closely and match the sounds to words together.",
+      "Great job on your first 10 levels! You're already getting so good at hearing the beginning and ending sounds of words.",
+      "Look at you go! Twenty levels complete, and you can hear how sounds blend together into everyday words.",
+      "Halfway to 100! You're matching consonant blends and word families with wonderful confidence.",
+      "One hundred levels completed! You've mastered vowel teams, letter patterns, and word blanks. That's a huge reading milestone!",
+      "Two hundred levels completed! Incredible achievement! You can sound out syllables, chunks, and new words all on your own!",
     ],
     'time': [
       "Tick-tock! Can you help me find the big clock in the tower? 🕰️",

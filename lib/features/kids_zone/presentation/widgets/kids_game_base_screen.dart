@@ -466,22 +466,24 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               left: 16.w,
               right: 16.w,
               top: 2.h,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  VowlMascot(
-                    isKidsMode: true,
-                    size: 48.r,
-                    state: mascotState,
-                    useFloatingAnimation: true,
-                  ),
-                  if (displayMessage.isNotEmpty) ...[
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: _buildSpeechBubble(context, displayMessage),
+              child: IgnorePointer(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    VowlMascot(
+                      isKidsMode: true,
+                      size: 48.r,
+                      state: mascotState,
+                      useFloatingAnimation: true,
                     ),
+                    if (displayMessage.isNotEmpty) ...[
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        child: _buildSpeechBubble(context, displayMessage),
+                      ),
+                    ],
                   ],
-                ],
+                ),
               ),
             );
           },
