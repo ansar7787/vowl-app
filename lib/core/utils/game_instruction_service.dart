@@ -1561,17 +1561,18 @@ class GameInstructionService {
         );
       case 'numbers':
         return const GameBriefing(
-          title: "Number Fun",
+          title: "Numbers in Space",
           icon: Icons.numbers_rounded,
           objective:
-              "Houston, we are ready for liftoff! Look out the rocket window to read the clues, and lock the matching planet into the ship.",
+              "Look through your rocket window to count the items, then choose the planet that matches to help your spaceship fly!",
           rules: [
-            "Read the space clues",
-            "Find the matching number",
-            "Lock it into the rocket",
+            "Look at the pictures or numbers in the rocket window",
+            "Tap a planet or drag it up to your rocket to answer",
+            "Tap the speaker button any time you want to hear the numbers out loud",
           ],
-          actionText: "Start Counting",
-          tip: "PRO TIP: Count the items carefully if you need to! 🚀",
+          actionText: "Let's Count!",
+          tip:
+              "Helpful tip: You can tap each item on the screen with your finger while counting out loud so you never lose your place! 🚀",
         );
       case 'colors':
         return const GameBriefing(
