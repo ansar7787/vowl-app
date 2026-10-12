@@ -161,46 +161,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
     context.read<KidsBloc>().add(SubmitKidsAnswer(correct));
   }
 
-  /// Categorizes question target to provide pedagogically accurate prompt label.
-  String _getPromptLabel(BuildContext context, String target) {
-    final clean = target.trim();
-    if (clean.contains(' ') && clean.length > 10) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_sentence',
-        fallback: 'Write this sentence:',
-      );
-    }
-    if (['|', '-', '/', '\\', '+', 'X', '—', '∩', '∪', '(', ')'].contains(clean) ||
-        clean.contains('|') ||
-        clean.contains('-')) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_stroke',
-        fallback: 'Practice this stroke:',
-      );
-    }
-    if (['□', '△', '◇', '▭', '○', '⬭'].contains(clean)) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_shape',
-        fallback: 'Draw this shape:',
-      );
-    }
-    if (RegExp(r'^[0-9:]+$').hasMatch(clean)) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_number',
-        fallback: 'Write this number:',
-      );
-    }
-    if (clean.length == 1 && RegExp(r'^[a-zA-Z]$').hasMatch(clean)) {
-      return context.tr(
-        'kids_zone.handwriting_prompt_letter',
-        fallback: 'Write this letter:',
-      );
-    }
-    return context.tr(
-      'kids_zone.handwriting_prompt_word',
-      fallback: 'Write this word:',
-    );
-  }
 
   /// Calculates responsive font size based on string length to guarantee zero text overflow.
   double _calculateTargetFontSize(String target) {
@@ -262,7 +222,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
 
         final targetWord = state.currentQuest.question?.trim() ?? '';
         final instruction = state.currentQuest.instruction.trim();
-        final promptLabel = _getPromptLabel(context, targetWord);
         final targetFontSize = _calculateTargetFontSize(targetWord);
         final targetLetterSpacing = _calculateLetterSpacing(targetWord);
 
@@ -280,11 +239,11 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     width: double.infinity,
                     constraints: BoxConstraints(
                       maxWidth: 420.w,
-                      minHeight: isCompactScreen ? 80.h : 95.h,
+                      minHeight: isCompactScreen ? 62.h : 76.h,
                     ),
                     padding: EdgeInsets.symmetric(
                       horizontal: 16.w,
-                      vertical: isCompactScreen ? 10.h : 14.h,
+                      vertical: isCompactScreen ? 8.h : 12.h,
                     ),
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.surface,
@@ -301,81 +260,55 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                         ),
                       ],
                     ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        // Prompt Label and Audio Listen Button
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              promptLabel,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey.shade600,
-                              ),
-                            ),
-                            SizedBox(width: 6.w),
-                            Semantics(
-                              button: true,
-                              label: 'Listen to target word or instruction',
-                              child: InkWell(
-                                borderRadius: BorderRadius.circular(16.r),
-                                onTap: () {
-                                  di.sl<HapticService>().light();
-                                  final speakText =
-                                      (targetWord.length <= 2 && instruction.isNotEmpty)
-                                          ? instruction
-                                          : targetWord;
-                                  di.sl<KidsTTSService>().speak(speakText);
-                                },
-                                child: Padding(
-                                  padding: EdgeInsets.all(4.r),
-                                  child: Icon(
-                                    LucideIcons.volume2,
-                                    size: 16.r,
-                                    color: widget.primaryColor,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 4.h),
-
                         // Target Character / Word / Sentence Display
-                        SelectableText(
-                          targetWord,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: targetFontSize,
-                            fontWeight: FontWeight.w700,
-                            color: widget.primaryColor,
-                            letterSpacing: targetLetterSpacing,
-                            height: 1.2,
+                        Flexible(
+                          child: SelectableText(
+                            targetWord,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: targetFontSize,
+                              fontWeight: FontWeight.w700,
+                              color: widget.primaryColor,
+                              letterSpacing: targetLetterSpacing,
+                              height: 1.15,
+                            ),
                           ),
                         ),
+                        SizedBox(width: 8.w),
 
-                        // Pedagogical Curriculum Instruction Guidance
-                        if (instruction.isNotEmpty && instruction != targetWord)
-                          Padding(
-                            padding: EdgeInsets.only(top: 4.h),
-                            child: Text(
-                              instruction,
-                              textAlign: TextAlign.center,
-                              maxLines: isCompactScreen ? 1 : 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: isCompactScreen ? 11.sp : 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.grey.shade700,
+                        // Audio Listen / Pronunciation Button
+                        Semantics(
+                          button: true,
+                          label: 'Listen to target word or instruction',
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(20.r),
+                            onTap: () {
+                              di.sl<HapticService>().light();
+                              final speakText =
+                                  (targetWord.length <= 2 && instruction.isNotEmpty)
+                                      ? instruction
+                                      : targetWord;
+                              di.sl<KidsTTSService>().speak(speakText);
+                            },
+                            child: Container(
+                              padding: EdgeInsets.all(7.r),
+                              decoration: BoxDecoration(
+                                color: widget.primaryColor.withValues(alpha: 0.1),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                LucideIcons.volume2,
+                                size: 18.r,
+                                color: widget.primaryColor,
                               ),
                             ),
                           ),
+                        ),
                       ],
                     ),
                   ),
