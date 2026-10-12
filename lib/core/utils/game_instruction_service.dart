@@ -1812,18 +1812,18 @@ class GameInstructionService {
         );
       case 'routine':
         return const GameBriefing(
-          title: "My Daily Day",
-          icon: Icons.today_rounded,
+          title: "Daily Routines",
+          icon: Icons.bed_rounded,
           objective:
-              "Let's plan a healthy day! Check the alarm clock to see what time it is, and stick the right daily habit on your calendar.",
+              "Match daily routines to the right time of day. Read or listen to the clue, look outside the window, and choose the routine that fits best.",
           rules: [
-            "Check the time of day",
-            "Find the healthy habit",
-            "Stick it on the schedule",
+            "Read or listen to the clue at the top",
+            "Look outside the window to see the time of day",
+            "Tap or drag the matching routine pillow to the window",
           ],
-          actionText: "Start Day",
+          actionText: "Let's Play",
           tip:
-              "PRO TIP: Think about what you do when you wake up or go to bed! 🪥",
+              "Tip: Tap the speaker on any pillow to hear the routine words out loud before you choose!",
         );
       case 'phonics':
         return const GameBriefing(
