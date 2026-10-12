@@ -50,7 +50,7 @@ class KidsPhonicsLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Studio Monitor
             Expanded(
               flex: 5,

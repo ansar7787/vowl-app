@@ -10,6 +10,7 @@ class KidsFittedText extends StatelessWidget {
   final TextAlign? textAlign;
   final int? maxLines;
   final TextOverflow? overflow;
+  final AlignmentGeometry? alignment;
 
   const KidsFittedText(
     this.text, {
@@ -18,6 +19,7 @@ class KidsFittedText extends StatelessWidget {
     this.textAlign,
     this.maxLines,
     this.overflow,
+    this.alignment,
   });
 
   @override
@@ -30,8 +32,14 @@ class KidsFittedText extends StatelessWidget {
             ? constraints.maxWidth
             : 300.0;
 
+        final effectiveAlignment = alignment ??
+            (textAlign == TextAlign.start || textAlign == TextAlign.left
+                ? AlignmentDirectional.centerStart
+                : Alignment.center);
+
         return FittedBox(
           fit: BoxFit.scaleDown,
+          alignment: effectiveAlignment,
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: maxWidth),
             child: Text(

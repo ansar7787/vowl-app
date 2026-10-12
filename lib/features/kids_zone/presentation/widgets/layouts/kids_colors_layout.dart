@@ -71,7 +71,7 @@ class KidsColorsLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 90.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Artist Easel
             Expanded(
               flex: 5,

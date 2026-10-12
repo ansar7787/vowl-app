@@ -48,7 +48,7 @@ class KidsSchoolLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Bus Window
             Expanded(
               flex: 5,

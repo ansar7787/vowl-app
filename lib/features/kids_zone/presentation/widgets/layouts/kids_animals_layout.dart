@@ -82,7 +82,7 @@ class KidsAnimalsLayout extends StatelessWidget {
 
             Column(
               children: [
-                SizedBox(height: 120.h),
+                SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
 
                 // The Binoculars / Safari Frame
                 Expanded(

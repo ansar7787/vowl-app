@@ -48,7 +48,7 @@ class KidsOppositesLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Split Mirror / Split World
             Expanded(
               flex: 5,

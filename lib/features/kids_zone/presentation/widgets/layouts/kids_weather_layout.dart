@@ -47,7 +47,7 @@ class KidsWeatherLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 60.h),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Weather Window (Target)
             Expanded(
               flex: 6,

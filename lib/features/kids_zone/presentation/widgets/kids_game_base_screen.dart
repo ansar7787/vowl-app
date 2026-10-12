@@ -54,6 +54,9 @@ class KidsGameBaseScreen extends StatefulWidget {
     this.shaderName,
   });
 
+  /// Standard top clearance reserved for the buddy mascot and speech bubble across all games.
+  static double get mascotClearanceHeight => 60.h;
+
   @override
   State<KidsGameBaseScreen> createState() => KidsGameBaseScreenState();
 }
@@ -461,21 +464,23 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
             return Positioned(
               left: 16.w,
-              top: 10.h,
+              right: 16.w,
+              top: 2.h,
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   VowlMascot(
                     isKidsMode: true,
-                    size: 60.r,
+                    size: 48.r,
                     state: mascotState,
                     useFloatingAnimation: true,
                   ),
-                  if (displayMessage.isNotEmpty)
-                    Padding(
-                      padding: EdgeInsets.only(left: 12.w, top: 10.h),
+                  if (displayMessage.isNotEmpty) ...[
+                    SizedBox(width: 8.w),
+                    Expanded(
                       child: _buildSpeechBubble(context, displayMessage),
                     ),
+                  ],
                 ],
               ),
             );
@@ -487,37 +492,41 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
   Widget _buildSpeechBubble(BuildContext context, String text) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      constraints: BoxConstraints(maxWidth: 240.w),
+      key: ValueKey(text),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(4.r),
-          topRight: Radius.circular(20.r),
-          bottomRight: Radius.circular(20.r),
-          bottomLeft: Radius.circular(20.r),
+          topRight: Radius.circular(16.r),
+          bottomRight: Radius.circular(16.r),
+          bottomLeft: Radius.circular(16.r),
         ),
-        border: Border.all(color: Colors.grey.shade300, width: 3.w),
+        border: Border.all(color: Colors.grey.shade300, width: 2.5.w),
         boxShadow: [
-          BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 5.h)),
+          BoxShadow(
+            color: Colors.grey.shade300,
+            offset: Offset(0, 3.h),
+          ),
         ],
       ),
       child: KidsFittedText(
         text,
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.start,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w500,
+          fontSize: 13.sp,
+          fontWeight: FontWeight.w400,
           color: AppColors.slate800,
-          height: 1.2,
+          height: 1.25,
         ),
-        maxLines: 6,
+        maxLines: 4,
       ),
     ).animate().scale(
-      begin: Offset.zero,
-      duration: 400.ms,
+      begin: const Offset(0.9, 0.9),
+      duration: 300.ms,
       curve: Curves.easeOutCubic,
-    );
+    ).fadeIn(duration: 250.ms);
   }
 }

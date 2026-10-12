@@ -48,7 +48,7 @@ class KidsFruitsLayout extends StatelessWidget {
 
         return Column(
           children: [
-            const Spacer(flex: 1),
+            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
             // The Fruit Stand Awning
             Expanded(
               flex: 7,
