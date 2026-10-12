@@ -1727,14 +1727,14 @@ class GameInstructionService {
           title: "School Days",
           icon: Icons.school_rounded,
           objective:
-              "Ring ring, time for class! Check the teacher's notepad, and pack the correct school supply onto your desk.",
+              "Read or listen to the teacher's classroom clue, then choose or place the matching answer on the desk.",
           rules: [
-            "Check the supply list",
-            "Find your school tool",
-            "Place it on the desk",
+            "Read or listen to the clue on the chalkboard",
+            "Tap your answer or drag it onto the desk",
+            "Tap any card's speaker to hear the word pronounced aloud",
           ],
           actionText: "Go to School",
-          tip: "PRO TIP: Think about what you carry in your backpack! 🎒",
+          tip: "Tip: Tap the Listen button on the board anytime to hear the teacher's clue again.",
         );
       case 'home':
         return const GameBriefing(
