@@ -41,9 +41,15 @@ class KidsQuestModel extends KidsQuest {
       question: json['question'] as String?,
       correctAnswer: json['correctAnswer'] as String?,
       options: parseStringList(json['options']),
-      metadata: json['metadata'] != null
-          ? Map<String, dynamic>.from(json['metadata'] as Map)
-          : null,
+      metadata: () {
+        final Map<String, dynamic> meta = json['metadata'] != null
+            ? Map<String, dynamic>.from(json['metadata'] as Map)
+            : <String, dynamic>{};
+        if (json['subtype'] != null && !meta.containsKey('subtype')) {
+          meta['subtype'] = json['subtype'];
+        }
+        return meta.isNotEmpty ? meta : null;
+      }(),
       painter: json['painter'] as String?,
       shader: json['shader'] as String?,
       emoji: json['emoji'] as String?,
