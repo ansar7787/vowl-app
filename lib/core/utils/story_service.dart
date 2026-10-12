@@ -291,12 +291,12 @@ class StoryServiceImpl implements StoryService {
       "You finished all the levels! Now you can read so many new words all on your own. 📖",
     ],
     'numbers': [
-      "One, two, three... Let's count all the twinkling stars in the night sky! ✨",
-      "You're a Number Hero! The counting dragon is doing a happy dance for you! 🐉",
-      "Double digits! You're getting super fast at solving these number puzzles! 🚀",
-      "Halfway to 100! You're becoming a real Math Wizard with a magic wand! 🧙‍♂️",
-      "100 levels of number fun! You can count all the way to the moon and back! 🌕",
-      "The Math Legend! You've solved every single puzzle in the Number Kingdom! 🏆",
+      "Welcome aboard our little rocket! Let's count the twinkling stars together as we set off on our space journey. 🚀",
+      "You're flying high! You've already counted past your first ten star clusters, and your rocket is zooming ahead. ⭐",
+      "Look at you go! Twenty missions complete. You're spotting numbers as smoothly as an astronaut navigating the galaxy. 🛰️",
+      "Halfway to 100! Your number skills are shining bright across the stars. Keep exploring, space captain! 🌟",
+      "One hundred missions finished! You've counted all the way across the galaxy and back. That's a wonderful accomplishment! 🪐",
+      "Two hundred space journeys complete! You know your numbers from front to back, and the whole universe is proud of you! 🏆",
     ],
     'colors': [
       "The world is a giant rainbow! Can you help me find the juicy red apple? 🍎",
