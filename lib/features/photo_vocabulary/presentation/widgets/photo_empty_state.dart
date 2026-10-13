@@ -24,33 +24,33 @@ class PhotoEmptyState extends StatelessWidget {
     final textColor = isDark ? Colors.white : Colors.black87;
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
-    Widget radarSweep = Positioned.fill(
-      child: Center(
-        child: Container(
-          width: 2.w,
-          height: 180.r,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                const Color(0xFF14B8A6).withValues(alpha: 0.0),
-                const Color(0xFF14B8A6).withValues(alpha: 0.8),
-                const Color(0xFF14B8A6).withValues(alpha: 0.0),
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
+    Widget sweepLine = Center(
+      child: Container(
+        width: 2.w,
+        height: 160.r,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              const Color(0xFF14B8A6).withValues(alpha: 0.0),
+              const Color(0xFF14B8A6).withValues(alpha: 0.8),
+              const Color(0xFF14B8A6).withValues(alpha: 0.0),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
         ),
       ),
     );
 
     if (!reduceMotion) {
-      radarSweep = RepaintBoundary(
-        child: radarSweep
+      sweepLine = RepaintBoundary(
+        child: sweepLine
             .animate(onPlay: (c) => c.repeat())
             .rotate(duration: 4.seconds),
       );
     }
+
+    final radarSweep = Positioned.fill(child: sweepLine);
 
     Widget cameraBtn = _buildGlassAction(
       context,
@@ -85,125 +85,132 @@ class PhotoEmptyState extends StatelessWidget {
           .slideY(begin: 0.2);
     }
 
-    Widget content = Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // Standby AI Core Radar
-          ExcludeSemantics(
-            child: Container(
-              height: 200.r,
-              width: 200.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: AppColors.teal500.withValues(alpha: 0.2),
-                  width: 1.w,
+    Widget content = SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Standby AI Core Radar
+            ExcludeSemantics(
+              child: Container(
+                height: 180.r,
+                width: 180.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: AppColors.teal500.withValues(alpha: 0.2),
+                    width: 1.w,
+                  ),
                 ),
-              ),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  // Pulsing rings
-                  Container(
-                    height: 140.r,
-                    width: 140.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
-                        width: 1.5.w,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // Pulsing ring
+                    Container(
+                      height: 125.r,
+                      width: 125.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                          width: 1.5.w,
+                        ),
                       ),
                     ),
-                  ),
-                  // Glowing Core
-                  Container(
-                    height: 80.r,
-                    width: 80.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.teal500.withValues(alpha: 0.15),
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors.teal500.withValues(alpha: 0.3),
-                          blurRadius: 30,
-                          spreadRadius: 10,
-                        ),
-                      ],
+                    // Glowing Core
+                    Container(
+                      height: 72.r,
+                      width: 72.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.teal500.withValues(alpha: 0.15),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.teal500.withValues(alpha: 0.3),
+                            blurRadius: 25,
+                            spreadRadius: 8,
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        Icons.camera_alt_rounded,
+                        size: 34.r,
+                        color: AppColors.teal500,
+                      ),
                     ),
-                    child: Icon(
-                      Icons.camera_alt_rounded,
-                      size: 40.r,
-                      color: AppColors.teal500,
-                    ),
-                  ),
-                  // Radar sweep line
-                  radarSweep,
-                ],
+                    // Radar sweep line inside Stack
+                    radarSweep,
+                  ],
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 32.h),
-          Text(
-            context
-                .tr('vocabulary.system_standby', fallback: 'SYSTEM STANDBY')
-                .toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w900,
-              color: AppColors.teal500,
-              letterSpacing: 4.0,
-            ),
-          ),
-          SizedBox(height: 8.h),
-          Text(
-            context.tr(
-              'vocabulary.photo_vocab_title',
-              fallback: 'Photo Vocabulary',
-            ),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 32.sp,
-              fontWeight: FontWeight.w900,
-              color: textColor,
-              letterSpacing: -0.5,
-            ),
-          ),
-          SizedBox(height: 12.h),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32.w),
-            child: Text(
-              context.tr(
-                'vocabulary.photo_vocab_desc',
-                fallback:
-                    'Snap a photo and let our AI engine instantly identify objects in your environment.',
-              ),
-              textAlign: TextAlign.center,
+            SizedBox(height: 24.h),
+            Text(
+              context
+                  .tr('vocabulary.system_standby', fallback: 'SYSTEM STANDBY')
+                  .toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white70 : Colors.black54,
-                height: 1.4,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w900,
+                color: AppColors.teal500,
+                letterSpacing: 3.5,
               ),
             ),
-          ),
-          SizedBox(height: 48.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              cameraBtn,
-              SizedBox(width: 24.w),
-              galleryBtn,
-            ],
-          ),
-        ],
+            SizedBox(height: 8.h),
+            Text(
+              context.tr(
+                'vocabulary.photo_vocab_title',
+                fallback: 'Photo Vocabulary',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 28.sp,
+                fontWeight: FontWeight.w900,
+                color: textColor,
+                letterSpacing: -0.5,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 10.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Text(
+                context.tr(
+                  'vocabulary.photo_vocab_desc',
+                  fallback:
+                      'Snap a photo and let our AI engine instantly identify objects in your environment.',
+                ),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                  height: 1.4,
+                ),
+              ),
+            ),
+            SizedBox(height: 36.h),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 20.w,
+              runSpacing: 16.h,
+              children: [
+                cameraBtn,
+                galleryBtn,
+              ],
+            ),
+          ],
+        ),
       ),
     );
 
     if (!reduceMotion) {
-      content = content.animate().fadeIn(duration: 800.ms);
+      content = content.animate().fadeIn(duration: 600.ms);
     }
 
     return content;
@@ -218,16 +225,17 @@ class PhotoEmptyState extends StatelessWidget {
     required bool isDark,
   }) {
     return Semantics(
-      label: label,
+      label: '$label: $subtitle',
       button: true,
       child: ScaleButton(
         onTap: onTap,
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(40.r), // Pill shape
+          borderRadius: BorderRadius.circular(32.r),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+              constraints: BoxConstraints(minWidth: 130.w),
+              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 14.h),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -237,7 +245,7 @@ class PhotoEmptyState extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
-                borderRadius: BorderRadius.circular(40.r),
+                borderRadius: BorderRadius.circular(32.r),
                 border: Border.all(
                   color: AppColors.teal500.withValues(alpha: 0.4),
                   width: 1.5.w,
@@ -245,26 +253,26 @@ class PhotoEmptyState extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.teal500.withValues(alpha: 0.1),
-                    blurRadius: 20,
-                    offset: const Offset(0, 8),
+                    blurRadius: 18,
+                    offset: const Offset(0, 6),
                   ),
                 ],
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(icon, color: AppColors.teal500, size: 36.r),
-                  SizedBox(height: 12.h),
+                  Icon(icon, color: AppColors.teal500, size: 32.r),
+                  SizedBox(height: 10.h),
                   Text(
                     label,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 16.sp,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.w800,
                       color: isDark ? Colors.white : AppColors.slate900,
                     ),
                   ),
-                  SizedBox(height: 4.h),
+                  SizedBox(height: 3.h),
                   Text(
                     subtitle,
                     style: TextStyle(
