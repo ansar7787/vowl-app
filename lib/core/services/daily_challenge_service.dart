@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:isolate';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 /// Service responsible for loading daily challenges and practice mode curriculum.
@@ -58,7 +60,7 @@ class DailyChallengeService {
 
     try {
       final jsonStr = await rootBundle.loadString(_wordMixerCurriculumPath);
-      final dynamic decoded = jsonDecode(jsonStr);
+      final dynamic decoded = await Isolate.run(() => jsonDecode(jsonStr));
       if (decoded is Map<String, dynamic> && decoded.containsKey('items')) {
         _cachedMixerItems = decoded['items'] as List<dynamic>;
         return _cachedMixerItems!;
@@ -66,7 +68,9 @@ class DailyChallengeService {
         _cachedMixerItems = decoded;
         return _cachedMixerItems!;
       }
-    } catch (_) {}
+    } catch (e) {
+      debugPrint('[DailyChallengeService] Failed to load Word Mixer curriculum: $e');
+    }
 
     return const [];
   }
@@ -76,7 +80,7 @@ class DailyChallengeService {
 
     try {
       final jsonStr = await rootBundle.loadString(_wordSnapCurriculumPath);
-      final dynamic decoded = jsonDecode(jsonStr);
+      final dynamic decoded = await Isolate.run(() => jsonDecode(jsonStr));
       if (decoded is Map<String, dynamic> && decoded.containsKey('items')) {
         _cachedSnapItems = decoded['items'] as List<dynamic>;
         return _cachedSnapItems!;
@@ -84,7 +88,9 @@ class DailyChallengeService {
         _cachedSnapItems = decoded;
         return _cachedSnapItems!;
       }
-    } catch (_) {}
+    } catch (e) {
+      debugPrint('[DailyChallengeService] Failed to load Word Snap curriculum: $e');
+    }
 
     return const [];
   }
