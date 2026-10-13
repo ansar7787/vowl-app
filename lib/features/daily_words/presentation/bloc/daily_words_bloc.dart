@@ -281,7 +281,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
             streak: _service.streak,
             longestStreak: _service.longestStreak,
             totalWordsLearned: _service.totalWordsLearned,
-            currentDay: _service.currentDay,
+            currentDay: _service.completedDay > 0
+                ? _service.completedDay
+                : _service.currentDay,
             reviewQueue: _service.wordsForReview,
             masteryStats: _service.masteryStats,
             learnedThisSession: const {},
@@ -340,6 +342,7 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       state.copyWith(
         totalWordsLearned: _service.totalWordsLearned,
         masteryStats: _service.masteryStats,
+        wordBankEntries: _service.wordBankEntries,
         learnedThisSession: updatedLearned,
       ),
     );
@@ -356,6 +359,7 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     emit(
       state.copyWith(
         masteryStats: _service.masteryStats,
+        wordBankEntries: _service.wordBankEntries,
         reviewQueue: _service.wordsForReview,
         reviewedThisSession: updatedReviewed,
       ),
@@ -385,7 +389,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
         state.copyWith(
           status: DailyWordsStatus.sessionComplete,
           currentIndex: nextIndex,
-          currentDay: _service.currentDay,
+          currentDay: _service.completedDay > 0
+              ? _service.completedDay
+              : _service.currentDay,
         ),
       );
     } else {
@@ -410,7 +416,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     emit(
       state.copyWith(
         status: DailyWordsStatus.sessionComplete,
-        currentDay: _service.currentDay,
+        currentDay: _service.completedDay > 0
+            ? _service.completedDay
+            : _service.currentDay,
       ),
     );
   }

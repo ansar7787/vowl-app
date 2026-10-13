@@ -105,7 +105,19 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
     _translationUnlocked.value = isPremium;
     final isTodayDone = di.sl<DailyWordsService>().isTodayCompleted;
-    _unlockedUpToIndex.value = (isPremium || isTodayDone) ? 9 : 4;
+    final blocState = context.read<DailyWordsBloc>().state;
+    if (isPremium ||
+        isTodayDone ||
+        blocState.isSessionDone ||
+        blocState.currentIndex >= 9) {
+      _unlockedUpToIndex.value = 9;
+    } else if (blocState.currentIndex >= 7) {
+      _unlockedUpToIndex.value = 8;
+    } else if (blocState.currentIndex >= 5) {
+      _unlockedUpToIndex.value = 6;
+    } else {
+      _unlockedUpToIndex.value = 4;
+    }
 
     context.read<DailyWordsBloc>().add(
       DailyWordsLoadRequested(isPremium: isPremium),
@@ -215,12 +227,14 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
         break;
     }
 
+    bool isAdRequestInProgress = false;
+
     await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (context) {
-        final isDark = Theme.of(context).brightness == Brightness.dark;
+      builder: (sheetContext) {
+        final isDark = Theme.of(sheetContext).brightness == Brightness.dark;
         return Container(
           padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
           decoration: BoxDecoration(
@@ -335,9 +349,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     child: InkWell(
                       borderRadius: BorderRadius.circular(20.r),
                       onTap: () {
+                        if (isAdRequestInProgress) return;
+                        isAdRequestInProgress = true;
                         final adService = di.sl<AdService>();
                         adService.showRewardedAd(
-                          context: context,
+                          context: sheetContext,
                           isPremium: false,
                           childSafe: false,
                           onUserEarnedReward: (_) {
@@ -346,11 +362,12 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                             }
                           },
                           onDismissed: () {
+                            isAdRequestInProgress = false;
                             if (!completer.isCompleted) {
                               completer.complete(false);
                             }
-                            if (context.mounted) {
-                              context.pop();
+                            if (sheetContext.mounted) {
+                              Navigator.of(sheetContext).pop();
                             }
                           },
                         );
@@ -397,7 +414,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     child: InkWell(
                       borderRadius: BorderRadius.circular(20.r),
                       onTap: () {
-                        context.pop();
+                        Navigator.of(sheetContext).pop();
                         context.push('/premium');
                       },
                       child: Row(
@@ -430,7 +447,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 SizedBox(height: 16.h),
                 // Dismiss Ghost Button
                 TextButton(
-                  onPressed: () => context.pop(),
+                  onPressed: () => Navigator.of(sheetContext).pop(),
                   style: TextButton.styleFrom(
                     foregroundColor: isDark
                         ? Colors.white54
@@ -759,10 +776,19 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
     return BlocConsumer<DailyWordsBloc, DailyWordsState>(
       listenWhen: (prev, current) =>
-          prev.status != current.status &&
-          current.status == DailyWordsStatus.sessionComplete,
+          prev.status != current.status ||
+          prev.currentIndex != current.currentIndex,
       listener: (context, state) {
-        _sound.playLevelComplete();
+        if (state.status == DailyWordsStatus.sessionComplete) {
+          _unlockedUpToIndex.value = 9;
+          _sound.playLevelComplete();
+        } else if (state.currentIndex >= 9) {
+          if (_unlockedUpToIndex.value < 9) _unlockedUpToIndex.value = 9;
+        } else if (state.currentIndex >= 7) {
+          if (_unlockedUpToIndex.value < 8) _unlockedUpToIndex.value = 8;
+        } else if (state.currentIndex >= 5) {
+          if (_unlockedUpToIndex.value < 6) _unlockedUpToIndex.value = 6;
+        }
       },
       builder: (context, state) {
         final canDirectPop =
