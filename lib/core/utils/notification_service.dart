@@ -301,6 +301,23 @@ class NotificationService {
           }
         }
       }
+
+      // Dual-path verification: Check native plugin launch details if SharedPreferences was empty
+      if (AppRouter.pendingDeepLink == null) {
+        final launchDetails =
+            await _localNotifications.getNotificationAppLaunchDetails();
+        if (launchDetails != null && launchDetails.didNotificationLaunchApp) {
+          final payload = launchDetails.notificationResponse?.payload;
+          if (payload != null && _isSafeInternalPath(payload)) {
+            AppRouter.pendingDeepLink = payload;
+            if (kDebugMode) {
+              debugPrint(
+                'NotificationService: Restored pending route from getNotificationAppLaunchDetails: $payload',
+              );
+            }
+          }
+        }
+      }
     } catch (e) {
       if (kDebugMode) {
         debugPrint(
