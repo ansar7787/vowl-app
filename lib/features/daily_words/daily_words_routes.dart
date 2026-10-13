@@ -26,13 +26,16 @@ class DailyWordsRoutes {
     ),
     GoRoute(
       path: wordBankRoute,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: BlocProvider<DailyWordsBloc>(
-          create: (_) => DailyWordsBloc(service: di.sl<DailyWordsService>()),
-          child: const WordBankScreen(),
-        ),
-        state: state,
-      ),
+      pageBuilder: (context, state) {
+        final filter = state.uri.queryParameters['filter'];
+        return fadeTransitionPage(
+          child: BlocProvider<DailyWordsBloc>(
+            create: (_) => DailyWordsBloc(service: di.sl<DailyWordsService>()),
+            child: WordBankScreen(initialFilter: filter),
+          ),
+          state: state,
+        );
+      },
     ),
   ];
 }

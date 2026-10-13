@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -16,8 +16,17 @@ import 'package:vowl/features/daily_words/data/services/daily_words_service.dart
 import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
 
+enum WordBankFilter {
+  all,
+  today,
+  learning,
+  reviewing,
+  mastered,
+}
+
 class WordBankScreen extends StatefulWidget {
-  const WordBankScreen({super.key});
+  final String? initialFilter;
+  const WordBankScreen({super.key, this.initialFilter});
 
   @override
   State<WordBankScreen> createState() => _WordBankScreenState();
@@ -28,11 +37,24 @@ class _WordBankScreenState extends State<WordBankScreen> {
   final HapticService _haptics = di.sl<HapticService>();
   bool _isPremium = false;
   Timer? _debounceTimer;
+  late WordBankFilter _currentFilter;
 
   @override
   void initState() {
     super.initState();
     _isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+
+    if (widget.initialFilter == 'today') {
+      _currentFilter = WordBankFilter.today;
+    } else if (widget.initialFilter == 'learning') {
+      _currentFilter = WordBankFilter.learning;
+    } else if (widget.initialFilter == 'reviewing') {
+      _currentFilter = WordBankFilter.reviewing;
+    } else if (widget.initialFilter == 'mastered') {
+      _currentFilter = WordBankFilter.mastered;
+    } else {
+      _currentFilter = WordBankFilter.all;
+    }
 
     // Initial load of the word bank
     context.read<DailyWordsBloc>().add(
@@ -83,16 +105,10 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         return const Center(child: CircularProgressIndicator());
                       }
 
-                      return Column(
-                        children: [
-                          _buildMasteryStats(state.masteryStats, isDark),
-                          SizedBox(height: 12.h),
-                          Expanded(
-                            child: state.wordBankEntries.isEmpty
-                                ? _buildEmptyState(context, isDark)
-                                : _buildWordList(state.wordBankEntries, isDark),
-                          ),
-                        ],
+                      return _buildContent(
+                        state.wordBankEntries,
+                        state.masteryStats,
+                        isDark,
                       );
                     },
                   ),
@@ -224,9 +240,52 @@ class _WordBankScreenState extends State<WordBankScreen> {
     );
   }
 
+  Widget _buildContent(
+    List<WordProgress> allWords,
+    Map<String, int> stats,
+    bool isDark,
+  ) {
+    final service = di.sl<DailyWordsService>();
+    final query = _searchController.text.trim().toLowerCase();
+
+    // Segment words into categories with Leitner logic
+    final todayWords =
+        allWords.where((w) => service.isWordLearnedToday(w.wordId)).toList();
+    final learningWords = allWords.where((w) => w.box == 1).toList();
+    final reviewingWords =
+        allWords.where((w) => w.box == 0 || w.box == 2).toList();
+    final masteredWords = allWords.where((w) => w.box >= 3).toList();
+
+    return Column(
+      children: [
+        _buildMasteryStats(stats, isDark),
+        _buildFilterTabs(
+          totalCount: allWords.length,
+          todayCount: todayWords.length,
+          learningCount: learningWords.length,
+          reviewingCount: reviewingWords.length,
+          masteredCount: masteredWords.length,
+          isDark: isDark,
+        ),
+        SizedBox(height: 6.h),
+        Expanded(
+          child: _buildFilteredList(
+            allWords: allWords,
+            todayWords: todayWords,
+            learningWords: learningWords,
+            reviewingWords: reviewingWords,
+            masteredWords: masteredWords,
+            query: query,
+            isDark: isDark,
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _buildMasteryStats(Map<String, int> stats, bool isDark) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 8.h),
+      padding: EdgeInsets.fromLTRB(20.w, 14.h, 20.w, 6.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -235,94 +294,524 @@ class _WordBankScreenState extends State<WordBankScreen> {
             count: stats['learning'] ?? 0,
             color: AppColors.blue500,
             isDark: isDark,
+            isSelected: _currentFilter == WordBankFilter.learning,
+            onTap: () {
+              _haptics.selection();
+              setState(() {
+                _currentFilter = _currentFilter == WordBankFilter.learning
+                    ? WordBankFilter.all
+                    : WordBankFilter.learning;
+              });
+            },
           ),
           _StatIndicator(
             label: 'Reviewing',
             count: stats['reviewing'] ?? 0,
             color: AppColors.amber500,
             isDark: isDark,
+            isSelected: _currentFilter == WordBankFilter.reviewing,
+            onTap: () {
+              _haptics.selection();
+              setState(() {
+                _currentFilter = _currentFilter == WordBankFilter.reviewing
+                    ? WordBankFilter.all
+                    : WordBankFilter.reviewing;
+              });
+            },
           ),
           _StatIndicator(
             label: 'Mastered',
             count: stats['mastered'] ?? 0,
             color: AppColors.emerald500,
             isDark: isDark,
+            isSelected: _currentFilter == WordBankFilter.mastered,
+            onTap: () {
+              _haptics.selection();
+              setState(() {
+                _currentFilter = _currentFilter == WordBankFilter.mastered
+                    ? WordBankFilter.all
+                    : WordBankFilter.mastered;
+              });
+            },
           ),
         ],
       ),
     );
   }
 
-  Widget _buildWordList(List<WordProgress> words, bool isDark) {
-    return ListView.builder(
-      padding: EdgeInsets.fromLTRB(20.w, 8.h, 20.w, 24.h),
+  Widget _buildFilterTabs({
+    required int totalCount,
+    required int todayCount,
+    required int learningCount,
+    required int reviewingCount,
+    required int masteredCount,
+    required bool isDark,
+  }) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
       physics: const BouncingScrollPhysics(),
-      itemCount: words.length,
-      itemBuilder: (context, index) {
-        final word = words[index];
-        return Padding(
-          padding: EdgeInsets.only(bottom: 12.h),
-          child: Material(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.circular(18.r),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(18.r),
-              onTap: () => _showWordDetailSheet(context, word, isDark),
-              child: GlassTile(
-                padding: EdgeInsets.all(16.r),
-                usePremiumStyle: false,
-                blur: 0,
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AutoSizeText(
-                            word.word,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Theme.of(context).colorScheme.onSurface,
-                            ),
-                            maxLines: 1,
-                          ),
-                          SizedBox(height: 4.h),
-                          AutoSizeText(
-                            'Learned on ${word.learnedDate}',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w400,
-                              color: isDark ? Colors.white54 : AppColors.slate500,
-                            ),
-                            maxLines: 1,
-                          ),
-                        ],
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        _haptics.selection();
-                        di.sl<TtsService>().speak(word.word);
-                      },
-                      icon: Icon(
-                        Icons.volume_up_rounded,
-                        size: 20.r,
-                        color: AppColors.indigo500,
-                      ),
-                      tooltip: 'Listen to ${word.word}',
-                    ),
-                    SizedBox(width: 4.w),
-                    _buildMasteryBadge(word.box, isDark),
-                  ],
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+      child: Row(
+        children: [
+          _buildFilterChip(
+            label: 'All',
+            count: totalCount,
+            isSelected: _currentFilter == WordBankFilter.all,
+            color: AppColors.indigo500,
+            isDark: isDark,
+            onTap: () {
+              _haptics.selection();
+              setState(() => _currentFilter = WordBankFilter.all);
+            },
+          ),
+          SizedBox(width: 8.w),
+          _buildFilterChip(
+            label: 'Today',
+            icon: Icons.bolt_rounded,
+            count: todayCount,
+            isSelected: _currentFilter == WordBankFilter.today,
+            color: AppColors.indigo500,
+            isDark: isDark,
+            onTap: () {
+              _haptics.selection();
+              setState(() => _currentFilter = WordBankFilter.today);
+            },
+          ),
+          SizedBox(width: 8.w),
+          _buildFilterChip(
+            label: 'Learning',
+            icon: Icons.school_rounded,
+            count: learningCount,
+            isSelected: _currentFilter == WordBankFilter.learning,
+            color: AppColors.blue500,
+            isDark: isDark,
+            onTap: () {
+              _haptics.selection();
+              setState(() => _currentFilter = WordBankFilter.learning);
+            },
+          ),
+          SizedBox(width: 8.w),
+          _buildFilterChip(
+            label: 'Reviewing',
+            icon: Icons.loop_rounded,
+            count: reviewingCount,
+            isSelected: _currentFilter == WordBankFilter.reviewing,
+            color: AppColors.amber500,
+            isDark: isDark,
+            onTap: () {
+              _haptics.selection();
+              setState(() => _currentFilter = WordBankFilter.reviewing);
+            },
+          ),
+          SizedBox(width: 8.w),
+          _buildFilterChip(
+            label: 'Mastered',
+            icon: Icons.workspace_premium_rounded,
+            count: masteredCount,
+            isSelected: _currentFilter == WordBankFilter.mastered,
+            color: AppColors.emerald500,
+            isDark: isDark,
+            onTap: () {
+              _haptics.selection();
+              setState(() => _currentFilter = WordBankFilter.mastered);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFilterChip({
+    required String label,
+    required int count,
+    required bool isSelected,
+    required Color color,
+    required bool isDark,
+    required VoidCallback onTap,
+    IconData? icon,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? color
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.06)
+                  : AppColors.slate100),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: isSelected
+                ? color
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate200),
+            width: 1,
+          ),
+          boxShadow: isSelected
+              ? [
+                  BoxShadow(
+                    color: color.withValues(alpha: 0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ]
+              : null,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (icon != null) ...[
+              Icon(
+                icon,
+                size: 14.r,
+                color: isSelected
+                    ? Colors.white
+                    : (isDark ? Colors.white70 : AppColors.slate600),
+              ),
+              SizedBox(width: 5.w),
+            ],
+            Text(
+              label,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 13.sp,
+                fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
+                color: isSelected
+                    ? Colors.white
+                    : (isDark ? Colors.white70 : AppColors.slate700),
+              ),
+            ),
+            SizedBox(width: 6.w),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 1.h),
+              decoration: BoxDecoration(
+                color: isSelected
+                    ? Colors.white.withValues(alpha: 0.25)
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.1)
+                        : AppColors.slate200),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Text(
+                '$count',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w700,
+                  color: isSelected
+                      ? Colors.white
+                      : (isDark ? Colors.white70 : AppColors.slate600),
                 ),
               ),
             ),
-          ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFilteredList({
+    required List<WordProgress> allWords,
+    required List<WordProgress> todayWords,
+    required List<WordProgress> learningWords,
+    required List<WordProgress> reviewingWords,
+    required List<WordProgress> masteredWords,
+    required String query,
+    required bool isDark,
+  }) {
+    if (query.isNotEmpty) {
+      final List<WordProgress> pool;
+      switch (_currentFilter) {
+        case WordBankFilter.today:
+          pool = todayWords;
+          break;
+        case WordBankFilter.learning:
+          pool = learningWords;
+          break;
+        case WordBankFilter.reviewing:
+          pool = reviewingWords;
+          break;
+        case WordBankFilter.mastered:
+          pool = masteredWords;
+          break;
+        case WordBankFilter.all:
+          pool = allWords;
+          break;
+      }
+      final matches =
+          pool.where((w) => w.word.toLowerCase().contains(query)).toList();
+      if (matches.isEmpty) {
+        return _buildEmptyState(
+          context,
+          isDark,
+          customMessage: 'No words found matching "$query"',
         );
-      },
+      }
+      return ListView.builder(
+        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
+        physics: const BouncingScrollPhysics(),
+        itemCount: matches.length,
+        itemBuilder: (context, index) => _buildWordCard(matches[index], isDark),
+      );
+    }
+
+    if (_currentFilter == WordBankFilter.today) {
+      if (todayWords.isEmpty) {
+        return _buildEmptyState(
+          context,
+          isDark,
+          customMessage: 'No words completed today yet.',
+          icon: Icons.bolt_rounded,
+        );
+      }
+      return ListView(
+        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
+        physics: const BouncingScrollPhysics(),
+        children: [
+          _buildSectionHeader(
+            title: "Today's Words",
+            count: todayWords.length,
+            color: AppColors.indigo500,
+            icon: Icons.bolt_rounded,
+            isDark: isDark,
+          ),
+          ...todayWords.map((w) => _buildWordCard(w, isDark)),
+        ],
+      );
+    }
+
+    if (_currentFilter == WordBankFilter.learning) {
+      if (learningWords.isEmpty) {
+        return _buildEmptyState(
+          context,
+          isDark,
+          customMessage: 'No words currently in learning.',
+          icon: Icons.school_rounded,
+        );
+      }
+      return ListView(
+        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
+        physics: const BouncingScrollPhysics(),
+        children: [
+          _buildSectionHeader(
+            title: 'Learning',
+            count: learningWords.length,
+            color: AppColors.blue500,
+            icon: Icons.school_rounded,
+            isDark: isDark,
+          ),
+          ...learningWords.map((w) => _buildWordCard(w, isDark)),
+        ],
+      );
+    }
+
+    if (_currentFilter == WordBankFilter.reviewing) {
+      if (reviewingWords.isEmpty) {
+        return _buildEmptyState(
+          context,
+          isDark,
+          customMessage: 'No words pending review right now.',
+          icon: Icons.loop_rounded,
+        );
+      }
+      return ListView(
+        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
+        physics: const BouncingScrollPhysics(),
+        children: [
+          _buildSectionHeader(
+            title: 'Reviewing',
+            count: reviewingWords.length,
+            color: AppColors.amber500,
+            icon: Icons.loop_rounded,
+            isDark: isDark,
+          ),
+          ...reviewingWords.map((w) => _buildWordCard(w, isDark)),
+        ],
+      );
+    }
+
+    if (_currentFilter == WordBankFilter.mastered) {
+      if (masteredWords.isEmpty) {
+        return _buildEmptyState(
+          context,
+          isDark,
+          customMessage: 'No words mastered yet. Keep practicing!',
+          icon: Icons.workspace_premium_rounded,
+        );
+      }
+      return ListView(
+        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
+        physics: const BouncingScrollPhysics(),
+        children: [
+          _buildSectionHeader(
+            title: 'Mastered',
+            count: masteredWords.length,
+            color: AppColors.emerald500,
+            icon: Icons.workspace_premium_rounded,
+            isDark: isDark,
+          ),
+          ...masteredWords.map((w) => _buildWordCard(w, isDark)),
+        ],
+      );
+    }
+
+    // Default: WordBankFilter.all -> Sections for Learning, Reviewing, Mastered!
+    if (allWords.isEmpty) {
+      return _buildEmptyState(context, isDark);
+    }
+
+    final children = <Widget>[];
+
+    if (learningWords.isNotEmpty) {
+      children.add(_buildSectionHeader(
+        title: 'Learning',
+        count: learningWords.length,
+        color: AppColors.blue500,
+        icon: Icons.school_rounded,
+        isDark: isDark,
+      ));
+      children.addAll(learningWords.map((w) => _buildWordCard(w, isDark)));
+    }
+
+    if (reviewingWords.isNotEmpty) {
+      children.add(_buildSectionHeader(
+        title: 'Reviewing',
+        count: reviewingWords.length,
+        color: AppColors.amber500,
+        icon: Icons.loop_rounded,
+        isDark: isDark,
+      ));
+      children.addAll(reviewingWords.map((w) => _buildWordCard(w, isDark)));
+    }
+
+    if (masteredWords.isNotEmpty) {
+      children.add(_buildSectionHeader(
+        title: 'Mastered',
+        count: masteredWords.length,
+        color: AppColors.emerald500,
+        icon: Icons.workspace_premium_rounded,
+        isDark: isDark,
+      ));
+      children.addAll(masteredWords.map((w) => _buildWordCard(w, isDark)));
+    }
+
+    return ListView(
+      padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
+      physics: const BouncingScrollPhysics(),
+      children: children,
+    );
+  }
+
+  Widget _buildSectionHeader({
+    required String title,
+    required int count,
+    required Color color,
+    required IconData icon,
+    required bool isDark,
+  }) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(4.w, 14.h, 4.w, 10.h),
+      child: Row(
+        children: [
+          Icon(icon, size: 16.r, color: color),
+          SizedBox(width: 8.w),
+          Text(
+            title.toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 1.0,
+              color: color,
+            ),
+          ),
+          SizedBox(width: 8.w),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(10.r),
+            ),
+            child: Text(
+              '$count',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w700,
+                color: color,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildWordCard(WordProgress word, bool isDark) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 10.h),
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(18.r),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(18.r),
+          onTap: () => _showWordDetailSheet(context, word, isDark),
+          child: GlassTile(
+            padding: EdgeInsets.all(16.r),
+            usePremiumStyle: false,
+            blur: 0,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AutoSizeText(
+                        word.word,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                        maxLines: 1,
+                      ),
+                      SizedBox(height: 4.h),
+                      AutoSizeText(
+                        'Learned on ${word.learnedDate}',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
+                          color: isDark ? Colors.white54 : AppColors.slate500,
+                        ),
+                        maxLines: 1,
+                      ),
+                    ],
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    _haptics.selection();
+                    di.sl<TtsService>().speak(word.word);
+                  },
+                  icon: Icon(
+                    Icons.volume_up_rounded,
+                    size: 20.r,
+                    color: AppColors.indigo500,
+                  ),
+                  tooltip: 'Listen to ${word.word}',
+                ),
+                SizedBox(width: 4.w),
+                _buildMasteryBadge(word.box, isDark),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -477,7 +966,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
                   ),
                   SizedBox(height: 6.h),
                   Text(
-                    wordDetail?.definition ?? 'Definition currently unavailable.',
+                    wordDetail?.definition ??
+                        'Definition currently unavailable.',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 15.sp,
@@ -525,7 +1015,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                                 fontSize: 14.sp,
                                 height: 1.4,
                                 fontStyle: FontStyle.italic,
-                                color: Theme.of(sheetContext).colorScheme.onSurface,
+                                color: Theme.of(sheetContext)
+                                    .colorScheme
+                                    .onSurface,
                               ),
                             ),
                           ),
@@ -661,7 +1153,20 @@ class _WordBankScreenState extends State<WordBankScreen> {
     );
   }
 
-  Widget _buildEmptyState(BuildContext context, bool isDark) {
+  Widget _buildEmptyState(
+    BuildContext context,
+    bool isDark, {
+    String? customMessage,
+    IconData? icon,
+  }) {
+    final message = customMessage ??
+        (_searchController.text.isEmpty
+            ? context.tr('word_bank.empty', fallback: 'No words learned yet.')
+            : context.tr(
+                'word_bank.no_results',
+                fallback: 'No matching words found.',
+              ));
+
     return Center(
       child: Padding(
         padding: EdgeInsets.all(32.r),
@@ -669,25 +1174,17 @@ class _WordBankScreenState extends State<WordBankScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
-              Icons.menu_book_rounded,
-              size: 64.r,
+              icon ?? Icons.menu_book_rounded,
+              size: 56.r,
               color: isDark ? Colors.white24 : AppColors.slate300,
             ),
             SizedBox(height: 16.h),
             AutoSizeText(
-              _searchController.text.isEmpty
-                  ? context.tr(
-                      'word_bank.empty',
-                      fallback: 'No words learned yet.',
-                    )
-                  : context.tr(
-                      'word_bank.no_results',
-                      fallback: 'No matching words found.',
-                    ),
+              message,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
+                fontSize: 15.sp,
                 fontWeight: FontWeight.w500,
                 color: isDark ? Colors.white54 : AppColors.slate500,
               ),
@@ -705,45 +1202,72 @@ class _StatIndicator extends StatelessWidget {
   final int count;
   final Color color;
   final bool isDark;
+  final bool isSelected;
+  final VoidCallback? onTap;
 
   const _StatIndicator({
     required this.label,
     required this.count,
     required this.color,
     required this.isDark,
+    this.isSelected = false,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          '$count',
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 22.sp,
-            fontWeight: FontWeight.w700,
-            color: Theme.of(context).colorScheme.onSurface,
-          ),
+    final content = AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: isSelected
+            ? color.withValues(alpha: isDark ? 0.25 : 0.12)
+            : Colors.transparent,
+        borderRadius: BorderRadius.circular(14.r),
+        border: Border.all(
+          color: isSelected ? color : Colors.transparent,
+          width: 1.5,
         ),
-        SizedBox(height: 4.h),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.15),
-            borderRadius: BorderRadius.circular(8.r),
-          ),
-          child: Text(
-            label.toUpperCase(),
+      ),
+      child: Column(
+        children: [
+          Text(
+            '$count',
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w600,
-              color: color,
+              fontSize: 22.sp,
+              fontWeight: FontWeight.w700,
+              color:
+                  isSelected ? color : Theme.of(context).colorScheme.onSurface,
             ),
           ),
-        ),
-      ],
+          SizedBox(height: 4.h),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(8.r),
+            ),
+            child: Text(
+              label.toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w600,
+                color: color,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
+
+    if (onTap != null) {
+      return GestureDetector(
+        onTap: onTap,
+        child: content,
+      );
+    }
+    return content;
   }
 }

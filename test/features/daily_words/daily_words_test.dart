@@ -258,6 +258,16 @@ void main() {
       expect(stats['reviewing'], 1); // sampleWord1 (Box 3)
       expect(stats['total'], 2);
     });
+
+    test('todayWords and isWordLearnedToday correctly identify words from today', () async {
+      await service.markWordLearned(sampleWord1);
+      await service.markWordNeedsReview(sampleWord2);
+
+      expect(service.isWordLearnedToday(sampleWord1.id), isTrue);
+      expect(service.isWordLearnedToday(sampleWord2.id), isTrue);
+      expect(service.isWordLearnedToday('non_existent_word'), isFalse);
+      expect(service.todayWords.length, 2);
+    });
   });
 
   group('DailyWordsBloc State Transitions', () {

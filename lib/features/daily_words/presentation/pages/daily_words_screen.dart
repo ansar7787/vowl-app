@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -679,14 +680,17 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     child: Builder(
                       builder: (context) {
                         final authUser = context.watch<AuthBloc>().state.user;
-                        final streakVal = state.streak > 0
-                            ? state.streak
-                            : (authUser?.currentStreak ?? 0);
+                        final streakVal = authUser != null && authUser.currentStreak > 0
+                            ? authUser.currentStreak
+                            : state.streak;
+                        final wordsCount = state.learnedThisSession.isNotEmpty
+                            ? state.learnedThisSession.length
+                            : (state.wordSet?.words.length ?? 10);
                         return SessionCompleteView(
                           streak: streakVal,
                           totalLearned: state.totalWordsLearned,
                           day: state.currentDay,
-                          wordsThisSession: state.learnedThisSession.length,
+                          wordsThisSession: wordsCount,
                           wordsForReview: state.reviewedThisSession.length,
                           isPremium: authUser?.isPremium ?? false,
                           onReviewAgain: () {
@@ -694,7 +698,12 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                 .read<DailyWordsBloc>()
                                 .add(const DailySessionRestartRequested());
                           },
-                          onOpenWordBank: () => context.push('/word-bank'),
+                          onWordsTodayTap: () =>
+                              context.push('/word-bank?filter=today'),
+                          onTotalWordsTap: () =>
+                              context.push('/word-bank?filter=all'),
+                          onStreakTap: () =>
+                              context.push(AppRouter.streakRoute),
                         );
                       },
                     ),

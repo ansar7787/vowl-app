@@ -85,6 +85,35 @@ class DailyWordsService {
     return entries;
   }
 
+  /// Current date formatted as YYYY-MM-DD.
+  String get todayDateString => _todayString();
+
+  /// Returns whether a word was completed or practiced in today's session.
+  bool isWordLearnedToday(String wordId) {
+    final entry = _wordBank[wordId];
+    if (entry != null && entry.learnedDate == _todayString()) return true;
+    if (_cachedWordSet != null &&
+        _cachedWordSet!.words.any((w) => w.id == wordId)) {
+      return true;
+    }
+    return false;
+  }
+
+  /// All words completed or learned in today's daily session.
+  List<WordProgress> get todayWords {
+    final today = _todayString();
+    final entries = _wordBank.values.where((wp) {
+      if (wp.learnedDate == today) return true;
+      if (_cachedWordSet != null &&
+          _cachedWordSet!.words.any((w) => w.id == wp.wordId)) {
+        return true;
+      }
+      return false;
+    }).toList();
+    entries.sort((a, b) => b.learnedDate.compareTo(a.learnedDate));
+    return entries;
+  }
+
   /// Words due for spaced-repetition review today.
   List<WordProgress> get wordsForReview {
     final today = _todayString();

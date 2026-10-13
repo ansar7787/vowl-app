@@ -3,6 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -713,6 +714,9 @@ class SessionCompleteView extends StatelessWidget {
   final bool isPremium;
   final VoidCallback? onReviewAgain;
   final VoidCallback? onOpenWordBank;
+  final VoidCallback? onStreakTap;
+  final VoidCallback? onWordsTodayTap;
+  final VoidCallback? onTotalWordsTap;
 
   const SessionCompleteView({
     super.key,
@@ -724,6 +728,9 @@ class SessionCompleteView extends StatelessWidget {
     this.isPremium = false,
     this.onReviewAgain,
     this.onOpenWordBank,
+    this.onStreakTap,
+    this.onWordsTodayTap,
+    this.onTotalWordsTap,
   });
 
   @override
@@ -859,19 +866,23 @@ class SessionCompleteView extends StatelessWidget {
                       ),
                       color: AppColors.amber500,
                       isDark: isDark,
+                      onTap: onStreakTap ??
+                          () => context.push(AppRouter.streakRoute),
                     ),
                   ),
                   SizedBox(width: 10.w),
                   Expanded(
                     child: _CompletionStatTile(
                       icon: Icons.auto_stories_rounded,
-                      value: '$wordsThisSession',
+                      value: '${wordsThisSession > 0 ? wordsThisSession : 10}',
                       label: context.tr(
                         'daily_words.words_today',
-                        fallback: 'Learned',
+                        fallback: 'Words Today',
                       ),
                       color: AppColors.indigo500,
                       isDark: isDark,
+                      onTap: onWordsTodayTap ??
+                          () => context.push('/word-bank?filter=today'),
                     ),
                   ),
                   SizedBox(width: 10.w),
@@ -885,6 +896,8 @@ class SessionCompleteView extends StatelessWidget {
                       ),
                       color: AppColors.emerald500,
                       isDark: isDark,
+                      onTap: onTotalWordsTap ??
+                          () => context.push('/word-bank?filter=all'),
                     ),
                   ),
                 ],
@@ -1007,39 +1020,7 @@ class SessionCompleteView extends StatelessWidget {
                 ),
                 SizedBox(height: 12.h),
               ],
-              // Word Bank quick link
-              if (onOpenWordBank != null) ...[
-                SizedBox(
-                  width: double.infinity,
-                  height: 52.h,
-                  child: OutlinedButton.icon(
-                    onPressed: onOpenWordBank,
-                    icon: Icon(Icons.menu_book_rounded, size: 20.r),
-                    label: Text(
-                      context.tr(
-                        'daily_words.view_word_bank',
-                        fallback: 'View Word Bank',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: isDark ? Colors.white70 : AppColors.slate700,
-                      side: BorderSide(
-                        color: isDark ? Colors.white24 : AppColors.slate300,
-                        width: 1.5,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 16.h),
-              ],
+
               // Continue button (Primary)
               SizedBox(
                 width: double.infinity,
@@ -1083,6 +1064,7 @@ class _CompletionStatTile extends StatelessWidget {
   final String label;
   final Color color;
   final bool isDark;
+  final VoidCallback? onTap;
 
   const _CompletionStatTile({
     required this.icon,
@@ -1090,11 +1072,12 @@ class _CompletionStatTile extends StatelessWidget {
     required this.label,
     required this.color,
     required this.isDark,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final tile = Container(
       padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 8.w),
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.1 : 0.06),
@@ -1115,20 +1098,50 @@ class _CompletionStatTile extends StatelessWidget {
             ),
           ),
           SizedBox(height: 4.h),
-          AutoSizeText(
-            label,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w600,
-              color: color,
-            ),
-            maxLines: 1,
-            textAlign: TextAlign.center,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Flexible(
+                child: AutoSizeText(
+                  label,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w600,
+                    color: color,
+                  ),
+                  maxLines: 1,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              if (onTap != null) ...[
+                SizedBox(width: 3.w),
+                Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  size: 9.r,
+                  color: color.withValues(alpha: 0.7),
+                ),
+              ],
+            ],
           ),
         ],
       ),
     );
+
+    if (onTap != null) {
+      return Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(16.r),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(16.r),
+          onTap: onTap,
+          child: tile,
+        ),
+      );
+    }
+
+    return tile;
   }
 }
 
