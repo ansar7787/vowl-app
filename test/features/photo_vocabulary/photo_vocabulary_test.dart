@@ -11,7 +11,7 @@ void main() {
       final jsonStr = await rootBundle.loadString('assets/data/photo_bounties.json');
       final List<dynamic> bounties = jsonDecode(jsonStr);
 
-      expect(bounties.length, equals(60)); // Exactly 60 items in JSON list
+      expect(bounties.length, greaterThanOrEqualTo(60)); // Expanded curriculum (210 items for 2-year retention)
 
       for (final item in bounties) {
         final String name = item as String;

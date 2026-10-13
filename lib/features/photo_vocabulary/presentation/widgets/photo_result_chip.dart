@@ -148,7 +148,7 @@ class PhotoResultChip extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 11.sp,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                             letterSpacing: 0.5,
                             color: isDark
                                 ? Colors.amber.shade300
@@ -176,7 +176,7 @@ class PhotoResultChip extends StatelessWidget {
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 22.sp,
-                                    fontWeight: FontWeight.w900,
+                                    fontWeight: FontWeight.w800,
                                     color: textColor,
                                     height: 1.2,
                                   ),
@@ -363,7 +363,7 @@ class PhotoResultChip extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                             color: isDark
                                 ? _LocalPalette.color2dd4bf
                                 : primaryTeal,

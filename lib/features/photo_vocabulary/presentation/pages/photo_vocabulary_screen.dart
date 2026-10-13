@@ -515,10 +515,14 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
             if (_isProcessingVal) _buildLaserScanner(),
 
             // 4. Scrollable UI Layer
-            CustomScrollView(
-              physics: const BouncingScrollPhysics(
-                parent: AlwaysScrollableScrollPhysics(),
-              ),
+            Scrollbar(
+              radius: Radius.circular(8.r),
+              thickness: 4.w,
+              interactive: true,
+              child: CustomScrollView(
+                physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics(),
+                ),
               slivers: [
                 _buildSliverAppBar(context, isDark),
                 SliverToBoxAdapter(
@@ -548,6 +552,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                 SliverToBoxAdapter(child: SizedBox(height: 120.h)),
               ],
             ),
+          ),
 
             // Confetti Celebration
             Align(
@@ -646,7 +651,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 22.sp,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w800,
           color: _imagePathVal != null || isDark
               ? Colors.white
               : Colors.black87,
@@ -701,7 +706,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   Widget _buildPhotoSummary(bool isDark) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16.r),
           child: BackdropFilter(
@@ -758,7 +763,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     if (_hasErrorVal) {
       return SliverToBoxAdapter(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 32.h),
           child: Center(
             child: Container(
               padding: EdgeInsets.all(28.r),
@@ -876,7 +881,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     if (_labelsVal!.isEmpty) {
       return SliverToBoxAdapter(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 32.h),
           child: Center(
             child: Container(
               padding: EdgeInsets.all(28.r),
@@ -998,7 +1003,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     }
 
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       sliver: SliverList(
         delegate: SliverChildBuilderDelegate((context, index) {
           final label = _labelsVal![index];
@@ -1054,7 +1059,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   Widget _buildRetakeBar() {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         child: ScaleButton(
           onTap: () {
             if (_translationsVal.isNotEmpty) {
@@ -1126,19 +1131,66 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
         children: [
           // Dark overlay while scanning for dramatic laser contrast
           Container(color: Colors.black.withValues(alpha: 0.45)),
-          // HUD Reticle Corners
+          // HUD Reticle Corners with Confined Scanning Laser
           Center(
             child: Container(
               width: 270.w,
               height: 270.w,
+              clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
-                  color: AppColors.teal500.withValues(alpha: 0.3),
-                  width: 1.w,
+                  color: AppColors.teal500.withValues(alpha: 0.35),
+                  width: 1.5.w,
                 ),
+                color: Colors.black.withValues(alpha: 0.2),
               ),
               child: Stack(
+                clipBehavior: Clip.hardEdge,
                 children: [
+                  // Moving Laser Line - CONFINED INSIDE RETICLE BOX
+                  RepaintBoundary(
+                    child: AnimatedBuilder(
+                      animation: _scannerController,
+                      builder: (context, child) {
+                        return Align(
+                          alignment: Alignment(
+                            0,
+                            -1.0 + (_scannerController.value * 2.0),
+                          ),
+                          child: child,
+                        );
+                      },
+                      child: Container(
+                        height: 3.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              AppColors.teal500.withValues(alpha: 0.0),
+                              AppColors.teal500,
+                              Colors.white,
+                              AppColors.teal500,
+                              AppColors.teal500.withValues(alpha: 0.0),
+                            ],
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.teal500,
+                              blurRadius: 12,
+                              spreadRadius: 3,
+                            ),
+                            BoxShadow(
+                              color: Colors.white.withValues(alpha: 0.8),
+                              blurRadius: 6,
+                              spreadRadius: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+
                   // Top Left Corner
                   Positioned(
                     top: 0,
@@ -1254,41 +1306,6 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
               curve: Curves.easeInOut,
             ),
           ),
-
-          // Moving Laser Line
-          RepaintBoundary(
-            child: AnimatedBuilder(
-              animation: _scannerController,
-              builder: (context, child) {
-                return Align(
-                  alignment: Alignment(
-                    0,
-                    -1.0 + (_scannerController.value * 2.0),
-                  ),
-                  child: child,
-                );
-              },
-              child: Container(
-                height: 3.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.teal500,
-                      blurRadius: 10,
-                      spreadRadius: 2,
-                    ),
-                    BoxShadow(
-                      color: AppColors.teal500.withValues(alpha: 0.5),
-                      blurRadius: 30,
-                      spreadRadius: 10,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );
@@ -1304,9 +1321,9 @@ class _AnimatedScannerText extends StatefulWidget {
 
 class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
   static const _steps = [
-    'SCANNING OBJECTS...',
-    'DETECTING LABELS...',
-    'MATCHING VOCABULARY...',
+    'SEARCHING OBJECTS...',
+    'RECOGNIZING ITEMS...',
+    'PREPARING LESSON...',
   ];
   int _currentStep = 0;
   Timer? _cycleTimer;
@@ -1339,10 +1356,10 @@ class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
           fontSize: 14.sp,
           color: AppColors.teal500,
-          letterSpacing: 3.0,
+          letterSpacing: 2.0,
         ),
       ),
     );
