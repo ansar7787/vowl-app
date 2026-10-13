@@ -506,7 +506,14 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _sound.playCorrect();
 
     if (!mounted) return;
-    context.read<DailyWordsBloc>().add(DailyWordMarkedLearned(word));
+    final service = di.sl<DailyWordsService>();
+    if (service.isWordLearned(word.id)) {
+      context.read<DailyWordsBloc>().add(
+        DailyWordReviewed(wordId: word.id, correct: true),
+      );
+    } else {
+      context.read<DailyWordsBloc>().add(DailyWordMarkedLearned(word));
+    }
 
     _slideTween.end = const Offset(1.5, 0);
     await _slideController.forward();
@@ -561,9 +568,16 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _isAnimating.value = true;
     _haptics.light();
 
-    // Mark as needs review (Box 0) rather than falsely marking as learned
+    // Mark as needs review (Box 0) or record incorrect review
     if (!mounted) return;
-    context.read<DailyWordsBloc>().add(DailyWordMarkedReviewLater(word));
+    final service = di.sl<DailyWordsService>();
+    if (service.isWordLearned(word.id)) {
+      context.read<DailyWordsBloc>().add(
+        DailyWordReviewed(wordId: word.id, correct: false),
+      );
+    } else {
+      context.read<DailyWordsBloc>().add(DailyWordMarkedReviewLater(word));
+    }
 
     _slideTween.end = const Offset(-1.5, 0); // Slide left for review later
     await _slideController.forward();

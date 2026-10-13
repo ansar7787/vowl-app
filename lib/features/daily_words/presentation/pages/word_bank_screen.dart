@@ -11,6 +11,8 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
 import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
@@ -1198,18 +1200,70 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
                     SizedBox(height: 20.h),
 
-                    // Close button
+                    // Practice / Test for Mastery button
                     SizedBox(
                       width: double.infinity,
                       height: 48.h,
-                      child: ElevatedButton(
+                      child: ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.indigo500,
+                          backgroundColor: progress.box >= 3
+                              ? AppColors.emerald500
+                              : (progress.box == 1
+                                  ? AppColors.blue500
+                                  : AppColors.amber500),
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16.r),
                           ),
                           elevation: 0,
+                        ),
+                        onPressed: () {
+                          Navigator.of(sheetContext).pop();
+                          _showWordPracticeDialog(
+                            context,
+                            progress,
+                            wordDetail?.definition ?? '',
+                          );
+                        },
+                        icon: Icon(
+                          progress.box >= 3
+                              ? Icons.workspace_premium_rounded
+                              : (progress.box >= 2
+                                  ? Icons.emoji_events_rounded
+                                  : Icons.school_rounded),
+                          size: 18.r,
+                        ),
+                        label: Text(
+                          progress.box >= 3
+                              ? 'Practice Mastered Word'
+                              : (progress.box == 2
+                                  ? 'Test for Mastery (Box 3)'
+                                  : (progress.box == 1
+                                      ? 'Review & Advance (Box 2)'
+                                      : 'Practice Word (Box 1)')),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
+
+                    // Close button
+                    SizedBox(
+                      width: double.infinity,
+                      height: 48.h,
+                      child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: isDark ? Colors.white70 : AppColors.slate600,
+                          side: BorderSide(
+                            color: isDark ? Colors.white24 : AppColors.slate300,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
                         ),
                         onPressed: () => Navigator.of(sheetContext).pop(),
                         child: Text(
@@ -1236,6 +1290,109 @@ class _WordBankScreenState extends State<WordBankScreen> {
         _isOpeningDetail = false;
       }
     }
+  }
+
+  Future<void> _showWordPracticeDialog(
+    BuildContext context,
+    WordProgress progress,
+    String definition,
+  ) async {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final sound = di.sl<SoundService>();
+
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (modalContext) {
+        return Container(
+          decoration: BoxDecoration(
+            color: isDark ? AppColors.slate900 : Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+          ),
+          padding: EdgeInsets.fromLTRB(
+            24.w,
+            16.h,
+            24.w,
+            MediaQuery.of(modalContext).viewInsets.bottom + 24.h,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Container(
+                  width: 40.w,
+                  height: 4.h,
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white24 : AppColors.slate300,
+                    borderRadius: BorderRadius.circular(2.r),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h),
+              Row(
+                children: [
+                  Icon(
+                    Icons.school_rounded,
+                    color: AppColors.indigo500,
+                    size: 22.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    'Practice Recall · ${progress.word}',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w700,
+                      color: Theme.of(modalContext).colorScheme.onSurface,
+                    ),
+                  ),
+                ],
+              ),
+              if (definition.isNotEmpty) ...[
+                SizedBox(height: 10.h),
+                Container(
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : AppColors.slate100,
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Text(
+                    definition,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontStyle: FontStyle.italic,
+                      color: isDark ? Colors.white70 : AppColors.slate600,
+                    ),
+                  ),
+                ),
+              ],
+              SizedBox(height: 16.h),
+              TypeToConfirmOverlay(
+                expectedText: progress.word,
+                displayText: progress.word,
+                primaryColor: AppColors.indigo500,
+                isPositioned: false,
+                allowSkip: true,
+                onConfirmed: () {
+                  Navigator.of(modalContext).pop();
+                  _haptics.success();
+                  sound.playCorrect();
+                  context.read<DailyWordsBloc>().add(
+                    DailyWordReviewed(wordId: progress.wordId, correct: true),
+                  );
+                },
+                onSkipped: () => Navigator.of(modalContext).pop(),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   Widget _buildMasteryBadge(int box, bool isDark) {

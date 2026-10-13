@@ -436,6 +436,7 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     await _service.recordReview(event.wordId, correct: event.correct);
     emit(
       state.copyWith(
+        wordBankEntries: _service.wordBankEntries,
         reviewQueue: _service.wordsForReview,
         masteryStats: _service.masteryStats,
       ),
