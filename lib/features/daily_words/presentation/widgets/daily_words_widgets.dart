@@ -454,7 +454,7 @@ class _TranslateButton extends StatelessWidget {
           onTap: isTranslated || isTranslating ? null : onTap,
           customBorder: const CircleBorder(),
           child: AnimatedContainer(
-            duration: const Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 200),
             width: 48.r,
             height: 48.r,
             decoration: BoxDecoration(
@@ -472,7 +472,7 @@ class _TranslateButton extends StatelessWidget {
             ),
             child: Center(
               child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 200),
                 transitionBuilder: (child, animation) => ScaleTransition(
                   scale: Tween<double>(begin: 0.8, end: 1.0).animate(animation),
                   child: FadeTransition(opacity: animation, child: child),

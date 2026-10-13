@@ -68,31 +68,31 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   void initState() {
     super.initState();
     _flipController = AnimationController(
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 280),
       vsync: this,
     );
     _flipAnimation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _flipController, curve: Curves.easeInOutCubic),
+      CurvedAnimation(parent: _flipController, curve: Curves.easeInOutQuad),
     );
 
     _slideController = AnimationController(
-      duration: const Duration(milliseconds: 550),
+      duration: const Duration(milliseconds: 260),
       vsync: this,
     );
     _slideTween = Tween<Offset>(begin: Offset.zero, end: const Offset(1.5, 0));
     _slideAnimation = _slideTween.animate(
-      CurvedAnimation(parent: _slideController, curve: Curves.easeOutCubic),
+      CurvedAnimation(parent: _slideController, curve: Curves.easeInQuad),
     );
 
     _entranceController = AnimationController(
-      duration: const Duration(milliseconds: 450),
+      duration: const Duration(milliseconds: 240),
       vsync: this,
     );
     _entranceAnimation =
         Tween<Offset>(begin: const Offset(-1.0, 0), end: Offset.zero).animate(
           CurvedAnimation(
             parent: _entranceController,
-            curve: Curves.easeOutCubic,
+            curve: Curves.easeOutQuad,
           ),
         );
     _entranceController.value = 1.0; // Start at final position
@@ -396,13 +396,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _haptics.selection();
     _pendingTyping.value = true;
 
-    // Auto-scroll to bottom to show the TypeToConfirmOverlay
-    Future.delayed(const Duration(milliseconds: 250), () {
+    // Auto-scroll immediately to bottom to show the TypeToConfirmOverlay
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted && _cardScrollController.hasClients) {
         _cardScrollController.animateTo(
           _cardScrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 600),
-          curve: Curves.easeOutCubic,
+          duration: const Duration(milliseconds: 260),
+          curve: Curves.easeOutQuad,
         );
       }
     });
@@ -1034,19 +1034,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   valueListenable: _pendingTyping,
                   builder: (context, isPendingTyping, _) {
                     return AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      switchInCurve: Curves.easeOutCubic,
-                      switchOutCurve: Curves.easeInCubic,
+                      duration: const Duration(milliseconds: 180),
+                      switchInCurve: Curves.easeOutQuad,
+                      switchOutCurve: Curves.easeInQuad,
                       transitionBuilder: (child, animation) {
                         return FadeTransition(
                           opacity: animation,
-                          child: ScaleTransition(
-                            scale: Tween<double>(
-                              begin: 0.95,
-                              end: 1.0,
-                            ).animate(animation),
-                            child: child,
-                          ),
+                          child: child,
                         );
                       },
                       child: !_isFlipped.value
