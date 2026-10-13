@@ -1,57 +1,53 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/dynamic_jigsaw_wrapper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/services/daily_challenge_service.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/services/daily_challenge_service.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color059669 = Color(0xFF059669);
-}
+import 'package:vowl/features/daily_challenges/word_snap/domain/models/word_snap_puzzle.dart';
+import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_completed_view.dart';
+import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_hint_card.dart';
+import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_target_card.dart';
+import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_top_bar.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// Word Snap Screen — Daily Challenge (10/10 Production Rewrite)
+// Word Snap Screen — Daily Challenge (10/10 Production Architecture)
 //
-// Architecture:
-//   ┌─────────────────────────────────────────┐
-//   │  Top Bar (Back • "Word Snap" • Streak)  │
-//   ├─────────────────────────────────────────┤
-//   │  Target Word Card (Shows the word!)     │
-//   ├─────────────────────────────────────────┤
-//   │  Collapsible Hint Card (💡)             │
-//   ├─────────────────────────────────────────┤
-//   │  DynamicJigsawWrapper (INLINE)          │
-//   │  (Targeting the DEFINITION, not word)   │
-//   └─────────────────────────────────────────┘
+// Architecture & Mechanics:
+//   ┌────────────────────────────────────────────────────────┐
+//   │  WordSnapTopBar (Back • Centered Title • Streak)       │
+//   ├────────────────────────────────────────────────────────┤
+//   │  WordSnapTargetCard (Adaptive Typography • TTS Audio)  │
+//   ├────────────────────────────────────────────────────────┤
+//   │  WordSnapHintCard (Tiered Anchor Clues • Audio • Def)  │
+//   ├────────────────────────────────────────────────────────┤
+//   │  DynamicJigsawWrapper (Inline • Sanitized Sentence)    │
+//   └────────────────────────────────────────────────────────┘
 //
-// Key decisions:
-//   • The original Jigsaw was passed the single 'word', creating a broken 1-tile game.
-//     It is now passed the 'question' (definition), making it a true sentence builder!
-//   • Target word is prominently displayed above the puzzle.
-//   • Jigsaw panel is inline (not Positioned overlay) — no content occlusion.
-//   • Uses Theme.of(context) for all surface colors — no hardcoded values.
-//   • Daily completion persisted via SharedPreferences (date-stamped key).
-//   • bonusCoins: 0 on wrapper — single reward path via _grantRewards only.
-//   • Primary color: Pink (0xFFEC4899) — matches tools_strip identity.
+// Key Improvements:
+//   • WordSnapPuzzle model sanitizes Webster 1913 definitions, removing
+//     bibliographic citations, brackets, quotes, and OCR spacing defects.
+//   • Extracts cohesive 4–10 word phrase for mobile jigsaw assembly.
+//   • Zero-spoiler progressive hint system with starting anchor & TTS.
+//   • Adaptive target typography preventing RenderFlex overflow on narrow screens.
+//   • Full practice mode enabling replay for memory consolidation without exploits.
+//   • Error recovery with onRestore life rescue callback.
+//   • Daily completion persistence via date-stamped SharedPreferences key.
 // ═══════════════════════════════════════════════════════════════════════════════
 
 /// Persistence key prefix for daily challenge completion tracking.
 const _kCompletionKeyPrefix = 'word_snap_completed_';
 
-/// The fixed brand colour for this game screen — matches tools_strip pink.
+/// Brand color for the Word Snap feature matching tools_strip vibrant pink.
 const _kPrimaryColor = IllustrationColors.vibrantPink;
 
 class WordSnapScreen extends StatefulWidget {
@@ -67,13 +63,14 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<Map<String, dynamic>?> _currentPuzzle = ValueNotifier(
-    null,
-  );
+  final ValueNotifier<WordSnapPuzzle?> _currentPuzzle = ValueNotifier(null);
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool> _isHintExpanded = ValueNotifier(false);
   final ValueNotifier<bool> _hasError = ValueNotifier(false);
   final ValueNotifier<bool> _alreadyCompleted = ValueNotifier(false);
+  final ValueNotifier<bool> _isPracticeMode = ValueNotifier(false);
+
+  int _sessionCounter = 0;
 
   @override
   void initState() {
@@ -88,6 +85,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     _isHintExpanded.dispose();
     _hasError.dispose();
     _alreadyCompleted.dispose();
+    _isPracticeMode.dispose();
     super.dispose();
   }
 
@@ -96,25 +94,22 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
 
   Future<void> _loadDailyPuzzle() async {
     try {
-      // Check if already completed today
       final prefs = await SharedPreferences.getInstance();
-      if (prefs.getBool(_todayKey) == true) {
-        if (mounted) {
-          _alreadyCompleted.value = true;
-          // Still load the puzzle so we can show what they solved
-          final puzzle = await DailyChallengeService.getTodayWordSnap();
-          _currentPuzzle.value = puzzle;
-        }
+      final isCompleted = prefs.getBool(_todayKey) == true;
+
+      final rawPuzzle = await DailyChallengeService.getTodayWordSnap();
+      if (!mounted) return;
+
+      if (rawPuzzle == null) {
+        _hasError.value = true;
         return;
       }
 
-      final puzzle = await DailyChallengeService.getTodayWordSnap();
-      if (mounted) {
-        if (puzzle == null) {
-          _hasError.value = true;
-        } else {
-          _currentPuzzle.value = puzzle;
-        }
+      final puzzle = WordSnapPuzzle.fromMap(rawPuzzle);
+      _currentPuzzle.value = puzzle;
+
+      if (isCompleted) {
+        _alreadyCompleted.value = true;
       }
     } catch (_) {
       if (mounted) _hasError.value = true;
@@ -127,13 +122,23 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
   }
 
   void _onFail() {
-    if (_isAnswered.value) return; // Prevent double firing
+    if (_isAnswered.value) return;
     _hapticService.error();
     _soundService.playWrong();
     _isAnswered.value = true;
 
     if (mounted) {
-      GameDialogHelper.showGameOver(context);
+      GameDialogHelper.showGameOver(
+        context,
+        onRestore: () {
+          if (mounted) {
+            setState(() {
+              _sessionCounter++;
+              _isAnswered.value = false;
+            });
+          }
+        },
+      );
     }
   }
 
@@ -142,14 +147,38 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     _hapticService.success();
     _soundService.playCorrect();
     _isAnswered.value = true;
-    _markCompleted();
 
+    if (_isPracticeMode.value) {
+      if (mounted) {
+        GameDialogHelper.showCompletion(
+          context,
+          xp: 15,
+          coins: 0,
+          title: context.tr(
+            'vocabulary.practice_complete',
+            fallback: 'Practice Complete!',
+          ),
+          description: context.tr(
+            'vocabulary.practice_complete_desc',
+            fallback: 'Well done! Keep practicing to strengthen your vocabulary.',
+          ),
+          enableDoubleUp: false,
+        );
+      }
+      return;
+    }
+
+    _alreadyCompleted.value = true;
+    _markCompleted();
     if (mounted) _grantRewards();
   }
 
   void _onBypassed() {
     _isAnswered.value = true;
-    _markCompleted();
+    if (!_isPracticeMode.value) {
+      _alreadyCompleted.value = true;
+      _markCompleted();
+    }
 
     GameDialogHelper.showCompletion(
       context,
@@ -157,18 +186,17 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       coins: 0,
       title: context.tr(
         'home.challenge_bypassed',
-        fallback: 'CHALLENGE BYPASSED',
+        fallback: 'Word Skipped',
       ),
       description: context.tr(
         'home.challenge_bypassed_desc',
-        fallback: 'You bypassed today\'s challenge.',
+        fallback: 'You skipped this word. You can practice more anytime.',
       ),
       enableDoubleUp: false,
     );
   }
 
   void _grantRewards() {
-    // Single reward path — the ONLY place coins are credited.
     di.sl<UpdateUserCoins>().call(
       const UpdateUserCoinsParams(
         amountChange: 10,
@@ -183,349 +211,185 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       coins: 10,
       title: context.tr(
         'vocabulary.word_snap_master',
-        fallback: 'WORD SNAP MASTER!',
+        fallback: 'Puzzle Solved!',
       ),
       enableDoubleUp: true,
     );
   }
 
+  Future<void> _startPracticeMode() async {
+    _hapticService.light();
+    try {
+      final rawMap = await DailyChallengeService.getRandomWordSnap();
+      if (!mounted) return;
+
+      if (rawMap != null) {
+        setState(() {
+          _sessionCounter++;
+          _isPracticeMode.value = true;
+          _alreadyCompleted.value = false;
+          _isAnswered.value = false;
+          _isHintExpanded.value = false;
+          _currentPuzzle.value = WordSnapPuzzle.fromMap(rawMap);
+        });
+      }
+    } catch (_) {
+      if (mounted) _hasError.value = true;
+    }
+  }
+
+  void _exitPracticeMode() {
+    _isPracticeMode.value = false;
+    _isAnswered.value = false;
+    _isHintExpanded.value = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final user = context.watch<AuthBloc>().state.user;
+    final streak = user?.currentStreak ?? 0;
+
     return ListenableBuilder(
       listenable: Listenable.merge([
         _currentPuzzle,
         _isAnswered,
         _hasError,
         _alreadyCompleted,
+        _isPracticeMode,
       ]),
       builder: (context, _) {
+        final puzzle = _currentPuzzle.value;
+        final isCompleted = _alreadyCompleted.value;
+        final isPractice = _isPracticeMode.value;
+
         return Scaffold(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           body: SafeArea(
             child: _hasError.value
-                ? _buildErrorState(isDark)
-                : _alreadyCompleted.value
-                ? _buildCompletedState(isDark)
-                : _currentPuzzle.value == null
+                ? _buildErrorState(streak)
+                : ((isCompleted && !isPractice) || _isAnswered.value)
+                ? WordSnapCompletedView(
+                    puzzle: puzzle,
+                    streak: streak,
+                    primaryColor: _kPrimaryColor,
+                    soundService: _soundService,
+                    hapticService: _hapticService,
+                    onPracticeAgain: _startPracticeMode,
+                    isPracticeMode: isPractice,
+                  )
+                : puzzle == null
                 ? const GameShimmerLoading(primaryColor: _kPrimaryColor)
-                : _buildGameContent(isDark),
+                : _buildGameContent(puzzle, streak, isDark, isPractice),
           ),
         );
       },
     );
   }
 
-  // ─── Top Bar ─────────────────────────────────────────────────────────
+  // ─── Main Game Content ───────────────────────────────────────────────
 
-  Widget _buildTopBar(bool isDark) {
-    final user = context.watch<AuthBloc>().state.user;
-    final streak = user?.currentStreak ?? 0;
+  Widget _buildGameContent(
+    WordSnapPuzzle puzzle,
+    int streak,
+    bool isDark,
+    bool isPractice,
+  ) {
+    return Column(
+      children: [
+        WordSnapTopBar(streak: streak),
 
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-      child: Row(
-        children: [
-          // Back button — clear, accessible, standard placement
-          IconButton(
-            onPressed: () => context.pop(),
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: Theme.of(context).colorScheme.onSurface,
-              size: 24.r,
-            ),
-            tooltip: context.tr('common.back', fallback: 'Back'),
-          ),
-
-          // Title — centered via Expanded
-          Expanded(
-            child: Text(
-              context.tr('home.tools_word_snap', fallback: 'Word Snap'),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w800,
-                color: Theme.of(context).colorScheme.onSurface,
-                letterSpacing: -0.3,
+        // Practice Mode Banner
+        if (isPractice)
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+            decoration: BoxDecoration(
+              color: _kPrimaryColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(
+                color: _kPrimaryColor.withValues(alpha: 0.25),
               ),
             ),
-          ),
-
-          // Streak badge
-          if (streak > 0)
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [AppColors.amber500, AppColors.red500],
-                ),
-                borderRadius: BorderRadius.circular(20.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.amber500.withValues(alpha: 0.3),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text('🔥', style: TextStyle(fontSize: 12.sp)),
-                  SizedBox(width: 4.w),
-                  Text(
-                    '$streak',
+            child: Row(
+              children: [
+                Icon(Icons.school_rounded, color: _kPrimaryColor, size: 16.r),
+                SizedBox(width: 8.w),
+                Expanded(
+                  child: Text(
+                    context.tr('vocabulary.practice_mode', fallback: 'Practice Mode'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      color: _kPrimaryColor,
                     ),
                   ),
-                ],
-              ),
-            )
-          else
-            SizedBox(width: 48.w), // Balance spacing when no streak
-        ],
-      ),
-    );
-  }
-
-  // ─── Target Word Card ────────────────────────────────────────────────
-
-  Widget _buildTargetWordCard(bool isDark) {
-    final word =
-        (_currentPuzzle.value?['word'] as String?)?.toUpperCase() ?? '';
-    final length = word.replaceAll(' ', '').length;
-
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-      decoration: BoxDecoration(
-        color: _kPrimaryColor.withValues(alpha: isDark ? 0.12 : 0.06),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: _kPrimaryColor.withValues(alpha: 0.15),
-          width: 1,
-        ),
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.extension_rounded, color: _kPrimaryColor, size: 18.r),
-              SizedBox(width: 8.w),
-              Text(
-                context.tr('home.daily_challenge', fallback: 'DAILY CHALLENGE'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w800,
-                  color: _kPrimaryColor,
-                  letterSpacing: 1.5,
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            word,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 32.sp,
-              fontWeight: FontWeight.w900,
-              color: Theme.of(context).colorScheme.onSurface,
-              letterSpacing: 3,
-            ),
-          ),
-          SizedBox(height: 8.h),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-            decoration: BoxDecoration(
-              color: _kPrimaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-            child: Text(
-              '$length ${context.tr('home.letters', fallback: 'letters')}',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w700,
-                color: _kPrimaryColor,
-              ),
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: -0.1, duration: 400.ms);
-  }
-
-  // ─── Collapsible Hint Card ───────────────────────────────────────────
-
-  Widget _buildHintCard(bool isDark) {
-    // We show the definition as a hint, since the puzzle itself scrambles the definition.
-    final definition = _currentPuzzle.value?['question'] as String? ?? '';
-    if (definition.isEmpty) return const SizedBox.shrink();
-
-    return ValueListenableBuilder<bool>(
-          valueListenable: _isHintExpanded,
-          builder: (context, isExpanded, _) {
-            return GestureDetector(
-              onTap: () {
-                _hapticService.light();
-                _isHintExpanded.value = !_isHintExpanded.value;
-              },
-              child: AnimatedContainer(
-                duration: 300.ms,
-                curve: Curves.easeInOut,
-                width: double.infinity,
-                padding: EdgeInsets.all(16.r),
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.05)
-                      : Colors.white,
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(
-                    color: _kPrimaryColor.withValues(
-                      alpha: isExpanded ? 0.4 : 0.15,
-                    ),
-                    width: isExpanded ? 1.5 : 1,
-                  ),
-                  boxShadow: isExpanded
-                      ? [
-                          BoxShadow(
-                            color: _kPrimaryColor.withValues(alpha: 0.08),
-                            blurRadius: 16,
-                            offset: const Offset(0, 4),
-                          ),
-                        ]
-                      : [],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Header row — always visible
-                    Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(6.r),
-                          decoration: BoxDecoration(
-                            color: const Color(
-                              0xFFF59E0B,
-                            ).withValues(alpha: 0.12),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Text('💡', style: TextStyle(fontSize: 14.sp)),
-                        ),
-                        SizedBox(width: 10.w),
-                        Expanded(
-                          child: Text(
-                            isExpanded
-                                ? context.tr('games.hint', fallback: 'HINT')
-                                : context.tr(
-                                    'games.tap_for_hint',
-                                    fallback: 'Tap for a hint',
-                                  ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isExpanded
-                                  ? _kPrimaryColor
-                                  : (isDark ? Colors.white60 : Colors.black45),
-                              letterSpacing: isExpanded ? 1.5 : 0.5,
-                            ),
-                          ),
-                        ),
-                        AnimatedRotation(
-                          turns: isExpanded ? 0.5 : 0,
-                          duration: 300.ms,
-                          child: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: isDark ? Colors.white38 : Colors.black38,
-                            size: 20.r,
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    // Definition text — shown when expanded
-                    AnimatedCrossFade(
-                      firstChild: const SizedBox.shrink(),
-                      secondChild: Padding(
-                        padding: EdgeInsets.only(top: 12.h),
-                        child: Text(
-                          definition,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w500,
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.85)
-                                : Colors.black87,
-                            height: 1.5,
-                          ),
-                        ),
+                GestureDetector(
+                  onTap: _exitPracticeMode,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                    child: Text(
+                      context.tr('common.exit', fallback: 'Exit'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w800,
+                        color: _kPrimaryColor,
                       ),
-                      crossFadeState: isExpanded
-                          ? CrossFadeState.showSecond
-                          : CrossFadeState.showFirst,
-                      duration: 300.ms,
-                      sizeCurve: Curves.easeInOut,
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            );
-          },
-        )
-        .animate()
-        .fadeIn(duration: 400.ms, delay: 100.ms)
-        .slideY(begin: 0.05, duration: 400.ms);
-  }
-
-  // ─── Main Game Content ───────────────────────────────────────────────
-
-  Widget _buildGameContent(bool isDark) {
-    return Column(
-      children: [
-        _buildTopBar(isDark),
+              ],
+            ),
+          ),
 
         // Scrollable content
         Expanded(
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(
+              horizontal: 20.w,
+            ).copyWith(
+              bottom: MediaQuery.of(context).padding.bottom + 24.h,
+            ),
             child: Column(
               children: [
                 SizedBox(height: 8.h),
 
-                // Word info card
-                _buildTargetWordCard(isDark),
+                // Target word card
+                WordSnapTargetCard(
+                  puzzle: puzzle,
+                  primaryColor: _kPrimaryColor,
+                  soundService: _soundService,
+                  hapticService: _hapticService,
+                ),
                 SizedBox(height: 16.h),
 
-                // Collapsible hint
-                _buildHintCard(isDark),
+                // Progressive Hint card
+                WordSnapHintCard(
+                  puzzle: puzzle,
+                  isExpandedNotifier: _isHintExpanded,
+                  primaryColor: _kPrimaryColor,
+                  soundService: _soundService,
+                  hapticService: _hapticService,
+                ),
                 SizedBox(height: 24.h),
 
-                // Inline jigsaw game — NOT positioned overlay.
-                // CRITICAL FIX: We pass the definition ('question') to the Jigsaw wrapper,
-                // making it a true sentence-building game. The original code erroneously
-                // passed the single 'word', creating a broken 1-tile puzzle.
+                // Inline Jigsaw Assembly Engine
                 if (!_isAnswered.value)
                   DynamicJigsawWrapper(
-                    expectedText: _currentPuzzle.value!['question']!,
+                    key: ValueKey('snap_${puzzle.id}_${isPractice}_$_sessionCounter'),
+                    expectedText: puzzle.playableSentence,
                     primaryColor: _kPrimaryColor,
                     onConfirmed: _onSuccess,
                     onBypassed: _onBypassed,
                     onSkipped: _onFail,
                     bonusCoins: 0,
                     isPositioned: false,
-                    allowSkip: true,
+                    allowSkip: !isPractice,
                   ),
 
                 SizedBox(height: 32.h),
@@ -539,10 +403,13 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
 
   // ─── Error State ─────────────────────────────────────────────────────
 
-  Widget _buildErrorState(bool isDark) {
+  Widget _buildErrorState(int streak) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     return Column(
       children: [
-        _buildTopBar(isDark),
+        WordSnapTopBar(streak: streak),
         Expanded(
           child: Center(
             child: Padding(
@@ -573,7 +440,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w700,
-                      color: Theme.of(context).colorScheme.onSurface,
+                      color: theme.colorScheme.onSurface,
                     ),
                   ),
                   SizedBox(height: 8.h),
@@ -618,208 +485,6 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                         borderRadius: BorderRadius.circular(16.r),
                       ),
                       elevation: 0,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  // ─── Already Completed State ─────────────────────────────────────────
-
-  Widget _buildCompletedState(bool isDark) {
-    final user = context.watch<AuthBloc>().state.user;
-    final streak = user?.currentStreak ?? 0;
-    final word =
-        (_currentPuzzle.value?['word'] as String?)?.toUpperCase() ?? '';
-
-    return Column(
-      children: [
-        _buildTopBar(isDark),
-        Expanded(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32.w),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // Success icon
-                  Container(
-                    padding: EdgeInsets.all(24.r),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          AppColors.emerald500,
-                          _LocalPalette.color059669,
-                        ],
-                      ),
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors.emerald500.withValues(alpha: 0.3),
-                          blurRadius: 20,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    child: Icon(
-                      Icons.check_rounded,
-                      color: Colors.white,
-                      size: 40.r,
-                    ),
-                  ),
-                  SizedBox(height: 24.h),
-
-                  Text(
-                    context.tr(
-                      'home.already_completed_title',
-                      fallback: 'Challenge Complete!',
-                    ),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Theme.of(context).colorScheme.onSurface,
-                    ),
-                  ),
-                  SizedBox(height: 8.h),
-
-                  // Show the word they solved
-                  if (word.isNotEmpty) ...[
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 12.h),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20.w,
-                        vertical: 10.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: _kPrimaryColor.withValues(alpha: 0.08),
-                        borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(
-                          color: _kPrimaryColor.withValues(alpha: 0.2),
-                          width: 1,
-                        ),
-                      ),
-                      child: Text(
-                        word,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.w900,
-                          color: _kPrimaryColor,
-                          letterSpacing: 3,
-                        ),
-                      ),
-                    ),
-                  ],
-
-                  Text(
-                    context.tr(
-                      'home.come_back_tomorrow',
-                      fallback: 'Come back tomorrow for a new challenge!',
-                    ),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white54 : Colors.black45,
-                      height: 1.4,
-                    ),
-                  ),
-
-                  // Streak card
-                  if (streak > 0) ...[
-                    SizedBox(height: 32.h),
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.all(20.r),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            AppColors.amber500.withValues(alpha: 0.12),
-                            AppColors.red500.withValues(alpha: 0.08),
-                          ],
-                        ),
-                        borderRadius: BorderRadius.circular(20.r),
-                        border: Border.all(
-                          color: AppColors.amber500.withValues(alpha: 0.2),
-                          width: 1,
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('🔥', style: TextStyle(fontSize: 28.sp)),
-                          SizedBox(width: 12.w),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '$streak ${context.tr('home.day_streak', fallback: 'Day Streak')}',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: isDark
-                                      ? Colors.white
-                                      : AppColors.slate900,
-                                ),
-                              ),
-                              Text(
-                                context.tr(
-                                  'home.keep_it_going',
-                                  fallback: 'Keep it going!',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: isDark
-                                      ? Colors.white54
-                                      : Colors.black45,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-
-                  SizedBox(height: 32.h),
-
-                  // Return button
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () => context.pop(),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: _kPrimaryColor,
-                        foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: 16.h),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                        ),
-                        elevation: 0,
-                      ),
-                      child: Text(
-                        context.tr('common.go_back', fallback: 'Go Back'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
                     ),
                   ),
                 ],
