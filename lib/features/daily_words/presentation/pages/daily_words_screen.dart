@@ -787,7 +787,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                 child: Row(
                   children: [
                     Semantics(
@@ -942,8 +942,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 24.w,
-                    vertical: 20.h,
+                    horizontal: 14.w,
+                    vertical: 12.h,
                   ),
                   child: SlideTransition(
                     position: _slideAnimation,
@@ -1029,7 +1029,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 20.h),
+                padding: EdgeInsets.fromLTRB(14.w, 0, 14.w, 16.h),
                 child: ValueListenableBuilder<bool>(
                   valueListenable: _pendingTyping,
                   builder: (context, isPendingTyping, _) {
@@ -1131,7 +1131,7 @@ class _DailyWordsProgressBar extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Row(
         children: [
           Expanded(

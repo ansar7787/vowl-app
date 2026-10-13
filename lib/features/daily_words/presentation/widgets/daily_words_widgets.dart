@@ -37,7 +37,7 @@ class WordCardFront extends StatelessWidget {
     return Semantics(
       label: '${word.word}, ${word.partOfSpeech}. Tap card or button to see definition.',
       child: GlassTile(
-        padding: EdgeInsets.all(20.r),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         child: Center(
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
@@ -216,7 +216,7 @@ class WordCardBack extends StatelessWidget {
       controller: scrollController,
       physics: const BouncingScrollPhysics(),
       child: Padding(
-        padding: EdgeInsets.all(22.r),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -252,12 +252,12 @@ class WordCardBack extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 16.h),
+                  SizedBox(height: 12.h),
                   Divider(
                     color: isDark ? Colors.white12 : Colors.black12,
                     height: 1,
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 14.h),
                   // Definition section
                   SectionLabel(
                     label: context.tr(
@@ -291,7 +291,7 @@ class WordCardBack extends StatelessWidget {
                       ),
                     ),
                   ],
-                  SizedBox(height: 22.h),
+                  SizedBox(height: 16.h),
                   // Example section with TTS button
                   Row(
                     children: [
@@ -342,7 +342,10 @@ class WordCardBack extends StatelessWidget {
                   SizedBox(height: 8.h),
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.all(14.r),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 12.h,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.indigo500.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(16.r),
@@ -384,7 +387,7 @@ class WordCardBack extends StatelessWidget {
                     ),
                   ),
                   if (showTypeToConfirm) ...[
-                    SizedBox(height: 24.h),
+                    SizedBox(height: 16.h),
                     TypeToConfirmOverlay(
                       expectedText: word.word,
                       displayText: word.definition,
@@ -400,7 +403,7 @@ class WordCardBack extends StatelessWidget {
                           : 40.h,
                     ),
                   ] else ...[
-                    SizedBox(height: 36.h),
+                    SizedBox(height: 20.h),
                   ],
                 ],
               ),
@@ -416,9 +419,9 @@ class WordCardBack extends StatelessWidget {
             ? RawScrollbar(
                 controller: scrollController,
                 thumbColor: isDark ? Colors.white30 : Colors.black26,
-                radius: Radius.circular(8.r),
-                thickness: 6.w,
-                padding: EdgeInsets.all(6.r),
+                radius: Radius.circular(4.r),
+                thickness: 3.w,
+                padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 6.h),
                 child: scrollChild,
               )
             : scrollChild,
