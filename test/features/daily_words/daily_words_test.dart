@@ -362,5 +362,28 @@ void main() {
       expect(find.text('Top 2,000'), findsOneWidget);
       expect(find.text('Intermediate (B1)'), findsOneWidget);
     });
+
+    testWidgets('renders WordCardBack with definition, example and safe scroll handling', (tester) async {
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(393, 852),
+          builder: (context, child) => MaterialApp(
+            home: Scaffold(
+              body: WordCardBack(
+                word: sampleWord1,
+                isDark: false,
+                onSpeak: () {},
+                onTranslate: () {},
+                isTranslating: false,
+              ),
+            ),
+          ),
+        ),
+      );
+
+      expect(find.text('resilient'), findsOneWidget);
+      expect(find.text('Able to quickly recover from difficulties.'), findsOneWidget);
+      expect(find.text('"She is remarkably resilient in difficult situations."'), findsOneWidget);
+    });
   });
 }

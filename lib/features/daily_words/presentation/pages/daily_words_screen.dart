@@ -659,11 +659,17 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
     return BlocBuilder<DailyWordsBloc, DailyWordsState>(
       builder: (context, state) {
-        final canDirectPop = state.isSessionDone || state.currentIndex == 0;
+        final canDirectPop =
+            (state.isSessionDone || state.currentIndex == 0) &&
+            !_pendingTyping.value;
         return PopScope(
           canPop: canDirectPop,
           onPopInvokedWithResult: (didPop, result) {
             if (didPop) return;
+            if (_pendingTyping.value) {
+              _pendingTyping.value = false;
+              return;
+            }
             _confirmExitSession(state);
           },
           child: Scaffold(
@@ -790,6 +796,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       child: GestureDetector(
                         onTap: () {
                           di.sl<HapticService>().light();
+                          if (_pendingTyping.value) {
+                            _pendingTyping.value = false;
+                            return;
+                          }
                           if (state.isSessionDone || state.currentIndex == 0) {
                             context.pop();
                           } else {

@@ -212,24 +212,14 @@ class WordCardBack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      label: '${word.word} card back: definition and example. Tap card or button to flip back.',
-      child: GlassTile(
-        padding: EdgeInsets.zero,
-        child: RawScrollbar(
-          controller: scrollController,
-          thumbColor: isDark ? Colors.white30 : Colors.black26,
-          radius: Radius.circular(8.r),
-          thickness: 6.w,
-          padding: EdgeInsets.all(6.r),
-          child: SingleChildScrollView(
-            controller: scrollController,
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: EdgeInsets.all(22.r),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+    final scrollChild = SingleChildScrollView(
+      controller: scrollController,
+      physics: const BouncingScrollPhysics(),
+      child: Padding(
+        padding: EdgeInsets.all(22.r),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
                   SizedBox(height: 6.h),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -415,8 +405,23 @@ class WordCardBack extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ),
+          );
+
+    return Semantics(
+      label:
+          '${word.word} card back: definition and example. Tap card or button to flip back.',
+      child: GlassTile(
+        padding: EdgeInsets.zero,
+        child: scrollController != null
+            ? RawScrollbar(
+                controller: scrollController,
+                thumbColor: isDark ? Colors.white30 : Colors.black26,
+                radius: Radius.circular(8.r),
+                thickness: 6.w,
+                padding: EdgeInsets.all(6.r),
+                child: scrollChild,
+              )
+            : scrollChild,
       ),
     );
   }
