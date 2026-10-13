@@ -51,6 +51,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   final ValueNotifier<bool> _isFlipped = ValueNotifier(false);
   final ValueNotifier<bool> _isAnimating = ValueNotifier(false);
   final ValueNotifier<bool> _showFlipHint = ValueNotifier(true);
+  final ValueNotifier<bool> _pendingTyping = ValueNotifier(false);
+  final ScrollController _cardScrollController = ScrollController();
 
   // Session Access State
   final ValueNotifier<bool> _hasUnlockedFullSession = ValueNotifier(false);
@@ -115,6 +117,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _isFlipped.dispose();
     _isAnimating.dispose();
     _showFlipHint.dispose();
+    _pendingTyping.dispose();
+    _cardScrollController.dispose();
     _hasUnlockedFullSession.dispose();
     _translationUnlocked.dispose();
     _isTranslating.dispose();
@@ -128,6 +132,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     if (_isAnimating.value) return;
     _haptics.light();
     _showFlipHint.value = false;
+    _pendingTyping.value = false;
     _isFlipped.value = !_isFlipped.value;
     if (_isFlipped.value) {
       _flipController.forward();
@@ -373,8 +378,39 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     return completer.future;
   }
 
+  Future<void> _initiateGotItConfirmation(DailyWord word) async {
+    if (_isAnimating.value || _pendingTyping.value) return;
+    final state = context.read<DailyWordsBloc>().state;
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+
+    // GATING LOGIC: If they are on the 5th word (index 4) and haven't unlocked the rest
+    if (!isPremium &&
+        state.currentIndex == 4 &&
+        !_hasUnlockedFullSession.value) {
+      final unlocked = await _showHalfwayMonetizationGate();
+      if (!unlocked) return; // User chose not to watch ad, stay on word 5
+
+      _hasUnlockedFullSession.value = true;
+    }
+
+    _haptics.selection();
+    _pendingTyping.value = true;
+
+    // Auto-scroll to bottom to show the TypeToConfirmOverlay
+    Future.delayed(const Duration(milliseconds: 250), () {
+      if (mounted && _cardScrollController.hasClients) {
+        _cardScrollController.animateTo(
+          _cardScrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
+  }
+
   Future<void> _executeGotIt(DailyWord word) async {
     if (_isAnimating.value) return;
+    _pendingTyping.value = false;
     final state = context.read<DailyWordsBloc>().state;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
@@ -399,6 +435,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     await _slideController.forward();
     if (!mounted) return;
 
+    if (_cardScrollController.hasClients) {
+      _cardScrollController.jumpTo(0);
+    }
     _slideController.reset();
     _flipController.reset();
     _isFlipped.value = false;
@@ -421,6 +460,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   Future<void> _markNeedsReviewAndNext(DailyWord word) async {
     if (_isAnimating.value) return;
+    _pendingTyping.value = false;
     final state = context.read<DailyWordsBloc>().state;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
@@ -443,6 +483,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     await _slideController.forward();
     if (!mounted) return;
 
+    if (_cardScrollController.hasClients) {
+      _cardScrollController.jumpTo(0);
+    }
     _slideController.reset();
     _flipController.reset();
     _isFlipped.value = false;
@@ -464,6 +507,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   Future<void> _navigatePrevious() async {
     if (_isAnimating.value) return;
+    _pendingTyping.value = false;
     final bloc = context.read<DailyWordsBloc>();
     if (!bloc.state.canGoPrevious) return;
 
@@ -474,6 +518,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     await _slideController.forward();
     if (!mounted) return;
 
+    if (_cardScrollController.hasClients) {
+      _cardScrollController.jumpTo(0);
+    }
     _slideController.reset();
     _flipController.reset();
     _isFlipped.value = false;
@@ -893,9 +940,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     child: SlideTransition(
                       position: _entranceAnimation,
                       child: GestureDetector(
-                        onTap: _toggleFlip,
+                        onTap: _pendingTyping.value ? null : _toggleFlip,
                         onHorizontalDragEnd: (details) {
-                          if (_isAnimating.value) return;
+                          if (_isAnimating.value || _pendingTyping.value) return;
                           final velocity = details.primaryVelocity ?? 0.0;
                           if (!_isFlipped.value) {
                             // Loophole protection: Card must be flipped first to see the definition.
@@ -909,12 +956,15 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                             // Swiped left -> Review Later
                             _markNeedsReviewAndNext(word);
                           } else if (velocity > 300) {
-                            // Swiped right -> Got it!
-                            _executeGotIt(word);
+                            // Swiped right -> Got it! triggers type-to-confirm game mechanism
+                            _initiateGotItConfirmation(word);
                           }
                         },
                         child: AnimatedBuilder(
-                          animation: _flipAnimation,
+                          animation: Listenable.merge([
+                            _flipAnimation,
+                            _pendingTyping,
+                          ]),
                           builder: (context, child) {
                             final angle = _flipAnimation.value * 3.14159;
                             final showBack = _flipAnimation.value > 0.5;
@@ -941,6 +991,12 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                             _translatedDefinition.value,
                                         translatedExample:
                                             _translatedExample.value,
+                                        showTypeToConfirm: _pendingTyping.value,
+                                        scrollController: _cardScrollController,
+                                        onTypingConfirmed: () =>
+                                            _executeGotIt(word),
+                                        onTypingSkipped: () =>
+                                            _executeGotIt(word),
                                       ),
                                     )
                                   : WordCardFront(
@@ -964,65 +1020,77 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 20.h),
-                child: AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 300),
-                  switchInCurve: Curves.easeOutCubic,
-                  switchOutCurve: Curves.easeInCubic,
-                  transitionBuilder: (child, animation) {
-                    return FadeTransition(
-                      opacity: animation,
-                      child: ScaleTransition(
-                        scale: Tween<double>(
-                          begin: 0.95,
-                          end: 1.0,
-                        ).animate(animation),
-                        child: child,
-                      ),
+                child: ValueListenableBuilder<bool>(
+                  valueListenable: _pendingTyping,
+                  builder: (context, isPendingTyping, _) {
+                    return AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      switchInCurve: Curves.easeOutCubic,
+                      switchOutCurve: Curves.easeInCubic,
+                      transitionBuilder: (child, animation) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: ScaleTransition(
+                            scale: Tween<double>(
+                              begin: 0.95,
+                              end: 1.0,
+                            ).animate(animation),
+                            child: child,
+                          ),
+                        );
+                      },
+                      child: !_isFlipped.value
+                          ? ActionButton(
+                              key: const ValueKey('flip_btn'),
+                              label: context.tr(
+                                'daily_words.show_definition',
+                                fallback: 'Show Definition',
+                              ),
+                              icon: Icons.visibility_rounded,
+                              color: AppColors.indigo500,
+                              isDark: isDark,
+                              onTap: _toggleFlip,
+                            )
+                          : isPendingTyping
+                              ? const SizedBox.shrink(
+                                  key: ValueKey('typing_active'),
+                                )
+                              : Row(
+                                  key: const ValueKey('actions_row'),
+                                  children: [
+                                    Expanded(
+                                      child: ActionButton(
+                                        key: const ValueKey('skip_btn'),
+                                        label: context.tr(
+                                          'daily_words.skip',
+                                          fallback: 'Review Later',
+                                        ),
+                                        icon: Icons.replay_rounded,
+                                        color: AppColors.amber500,
+                                        isDark: isDark,
+                                        onTap: () =>
+                                            _markNeedsReviewAndNext(word),
+                                      ),
+                                    ),
+                                    SizedBox(width: 12.w),
+                                    Expanded(
+                                      child: ActionButton(
+                                        key: const ValueKey('learned_btn'),
+                                        label: context.tr(
+                                          'daily_words.learned',
+                                          fallback: 'Got it!',
+                                        ),
+                                        icon: Icons.verified_rounded,
+                                        color: AppColors.emerald500,
+                                        isDark: isDark,
+                                        onTap: () =>
+                                            _initiateGotItConfirmation(word),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                     );
                   },
-                  child: !_isFlipped.value
-                      ? ActionButton(
-                          key: const ValueKey('flip_btn'),
-                          label: context.tr(
-                            'daily_words.show_definition',
-                            fallback: 'Show Definition',
-                          ),
-                          icon: Icons.visibility_rounded,
-                          color: AppColors.indigo500,
-                          isDark: isDark,
-                          onTap: _toggleFlip,
-                        )
-                      : Row(
-                          children: [
-                            Expanded(
-                              child: ActionButton(
-                                key: const ValueKey('skip_btn'),
-                                label: context.tr(
-                                  'daily_words.skip',
-                                  fallback: 'Review Later',
-                                ),
-                                icon: Icons.replay_rounded,
-                                color: AppColors.amber500,
-                                isDark: isDark,
-                                onTap: () => _markNeedsReviewAndNext(word),
-                              ),
-                            ),
-                            SizedBox(width: 12.w),
-                            Expanded(
-                              child: ActionButton(
-                                key: const ValueKey('learned_btn'),
-                                label: context.tr(
-                                  'daily_words.learned',
-                                  fallback: 'Got it!',
-                                ),
-                                icon: Icons.verified_rounded,
-                                color: AppColors.emerald500,
-                                isDark: isDark,
-                                onTap: () => _executeGotIt(word),
-                              ),
-                            ),
-                          ],
-                        ),
                 ),
               ),
             ],

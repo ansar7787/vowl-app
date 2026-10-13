@@ -6,6 +6,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class WordCardFront extends StatelessWidget {
   final DailyWord word;
@@ -188,6 +189,10 @@ class WordCardBack extends StatelessWidget {
   final bool isTranslating;
   final String? translatedDefinition;
   final String? translatedExample;
+  final bool showTypeToConfirm;
+  final ScrollController? scrollController;
+  final VoidCallback? onTypingConfirmed;
+  final VoidCallback? onTypingSkipped;
 
   const WordCardBack({
     super.key,
@@ -199,6 +204,10 @@ class WordCardBack extends StatelessWidget {
     required this.isTranslating,
     this.translatedDefinition,
     this.translatedExample,
+    this.showTypeToConfirm = false,
+    this.scrollController,
+    this.onTypingConfirmed,
+    this.onTypingSkipped,
   });
 
   @override
@@ -208,11 +217,13 @@ class WordCardBack extends StatelessWidget {
       child: GlassTile(
         padding: EdgeInsets.zero,
         child: RawScrollbar(
+          controller: scrollController,
           thumbColor: isDark ? Colors.white30 : Colors.black26,
           radius: Radius.circular(8.r),
           thickness: 6.w,
           padding: EdgeInsets.all(6.r),
           child: SingleChildScrollView(
+            controller: scrollController,
             physics: const BouncingScrollPhysics(),
             child: Padding(
               padding: EdgeInsets.all(22.r),
@@ -382,7 +393,25 @@ class WordCardBack extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 36.h),
+                  if (showTypeToConfirm) ...[
+                    SizedBox(height: 24.h),
+                    TypeToConfirmOverlay(
+                      expectedText: word.word,
+                      displayText: word.definition,
+                      primaryColor: AppColors.emerald500,
+                      isPositioned: false,
+                      allowSkip: true,
+                      onConfirmed: onTypingConfirmed ?? () {},
+                      onSkipped: onTypingSkipped ?? () {},
+                    ),
+                    SizedBox(
+                      height: MediaQuery.viewInsetsOf(context).bottom > 0
+                          ? MediaQuery.viewInsetsOf(context).bottom + 40.h
+                          : 40.h,
+                    ),
+                  ] else ...[
+                    SizedBox(height: 36.h),
+                  ],
                 ],
               ),
             ),
