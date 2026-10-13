@@ -48,6 +48,10 @@ class KidsQuestModel extends KidsQuest {
         if (json['subtype'] != null && !meta.containsKey('subtype')) {
           meta['subtype'] = json['subtype'];
         }
+        if (json['interactionType'] != null &&
+            !meta.containsKey('interactionType')) {
+          meta['interactionType'] = json['interactionType'];
+        }
         return meta.isNotEmpty ? meta : null;
       }(),
       painter: json['painter'] as String?,

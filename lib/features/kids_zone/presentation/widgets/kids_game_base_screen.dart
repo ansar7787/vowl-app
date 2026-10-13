@@ -75,7 +75,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         _completionDialogShown = false;
-        _showBriefing.value = widget.level == 1;
+        _showBriefing.value = widget.level == 1 || widget.level == 100;
 
         context.read<KidsBloc>().add(
           FetchKidsQuests(widget.gameType, widget.level),

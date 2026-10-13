@@ -1842,17 +1842,18 @@ class GameInstructionService {
         );
       case 'time':
         return const GameBriefing(
-          title: "Tick Tock!",
+          title: "Telling Time",
           icon: Icons.access_time_rounded,
           objective:
-              "Tick tock! Look at the time on the chalkboard, and strap the matching digital clock onto the smartwatch.",
+              "Look at the clock or listen to the daily clue, then pick the matching time or part of the day.",
           rules: [
-            "Read the chalkboard time",
-            "Find the matching digital clock",
-            "Strap it to the watch",
+            "Look at the clock hands and read the clue",
+            "Tap an answer or drag it right to the clock",
+            "Tap the speaker anytime to hear the clue again",
           ],
-          actionText: "Check Time",
-          tip: "PRO TIP: Remember, 12:00 can be noon or midnight! ⏰",
+          actionText: "Let's Play",
+          tip:
+              "Helpful tip: The short hand shows the hour, and the long hand shows the minutes! ⏰",
         );
       case 'day_night':
         return const GameBriefing(
