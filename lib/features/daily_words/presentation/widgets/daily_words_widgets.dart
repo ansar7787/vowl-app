@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -842,6 +843,8 @@ class SessionCompleteView extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 16.h),
+              NextDayCountdownTimer(isDark: isDark),
               SizedBox(height: 20.h),
               // Stats row
               Row(
@@ -1285,3 +1288,92 @@ class _FlipHintState extends State<_FlipHint>
     );
   }
 }
+
+class NextDayCountdownTimer extends StatefulWidget {
+  final bool isDark;
+  const NextDayCountdownTimer({super.key, required this.isDark});
+
+  @override
+  State<NextDayCountdownTimer> createState() => _NextDayCountdownTimerState();
+}
+
+class _NextDayCountdownTimerState extends State<NextDayCountdownTimer> {
+  Timer? _timer;
+  late Duration _remaining;
+
+  @override
+  void initState() {
+    super.initState();
+    _updateRemaining();
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (mounted) {
+        setState(_updateRemaining);
+      }
+    });
+  }
+
+  void _updateRemaining() {
+    final now = DateTime.now();
+    final tomorrow = DateTime(now.year, now.month, now.day + 1);
+    _remaining = tomorrow.difference(now);
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final hours = _remaining.inHours.toString().padLeft(2, '0');
+    final minutes = (_remaining.inMinutes % 60).toString().padLeft(2, '0');
+    final seconds = (_remaining.inSeconds % 60).toString().padLeft(2, '0');
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+      decoration: BoxDecoration(
+        color: widget.isDark
+            ? Colors.white.withValues(alpha: 0.05)
+            : AppColors.slate100,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: widget.isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : AppColors.slate200,
+        ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.hourglass_top_rounded,
+            size: 16.r,
+            color: AppColors.indigo500,
+          ),
+          SizedBox(width: 8.w),
+          Text(
+            context.tr('daily_words.next_unlock', fallback: 'Next words unlock in: '),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w500,
+              color: widget.isDark ? Colors.white70 : AppColors.slate600,
+            ),
+          ),
+          Text(
+            '$hours:$minutes:$seconds',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 0.8,
+              color: AppColors.indigo500,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+

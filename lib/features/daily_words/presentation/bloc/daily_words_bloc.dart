@@ -240,6 +240,27 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
         return;
       }
 
+      if (_service.isTodayCompleted) {
+        emit(
+          state.copyWith(
+            status: DailyWordsStatus.sessionComplete,
+            wordSet: wordSet,
+            currentIndex: wordSet.words.length,
+            streak: _service.streak,
+            longestStreak: _service.longestStreak,
+            totalWordsLearned: _service.totalWordsLearned,
+            currentDay: _service.completedDay > 0
+                ? _service.completedDay
+                : _service.currentDay,
+            reviewQueue: _service.wordsForReview,
+            masteryStats: _service.masteryStats,
+            learnedThisSession: wordSet.words.map((w) => w.id).toSet(),
+            errorMessage: null,
+          ),
+        );
+        return;
+      }
+
       // O(1) hash map lookup per word instead of repeated O(N log N) sorting
       int startingIndex = 0;
       for (int i = 0; i < wordSet.words.length; i++) {
