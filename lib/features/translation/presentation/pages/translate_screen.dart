@@ -1,23 +1,27 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_mlkit_translation/google_mlkit_translation.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/premium_lock_card.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
 import 'package:vowl/features/translation/presentation/widgets/language_manager_sheet.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/presentation/widgets/premium_lock_card.dart';
 
 class TranslateScreen extends StatefulWidget {
   const TranslateScreen({super.key});
@@ -31,13 +35,23 @@ class _TranslateScreenState extends State<TranslateScreen> {
   final FocusNode _focusNode = FocusNode();
   final ScrollController _scrollController = ScrollController();
   final HapticService _haptics = di.sl<HapticService>();
+  final TtsService _tts = di.sl<TtsService>();
+  final SpeechService _speech = di.sl<SpeechService>();
+
   final ValueNotifier<bool> _isFocused = ValueNotifier(false);
+  final ValueNotifier<bool> _isSourceSpeaking = ValueNotifier(false);
+  final ValueNotifier<bool> _isTargetSpeaking = ValueNotifier(false);
+  final ValueNotifier<bool> _isListening = ValueNotifier(false);
+
+  double _swapTurns = 0.0;
   Timer? _debounce;
+  static const int _maxCharacterLimit = 600;
 
   @override
   void initState() {
     super.initState();
     context.read<TranslationBloc>().add(TranslationInitRequested());
+
     _focusNode.addListener(() {
       _isFocused.value = _focusNode.hasFocus;
     });
@@ -46,16 +60,21 @@ class _TranslateScreenState extends State<TranslateScreen> {
   @override
   void dispose() {
     _debounce?.cancel();
+    _tts.stop();
+    _speech.stop();
     _inputController.dispose();
     _focusNode.dispose();
     _scrollController.dispose();
     _isFocused.dispose();
+    _isSourceSpeaking.dispose();
+    _isTargetSpeaking.dispose();
+    _isListening.dispose();
     super.dispose();
   }
 
   void _onInputChanged(String text) {
     if (_debounce?.isActive ?? false) _debounce!.cancel();
-    _debounce = Timer(const Duration(milliseconds: 500), () {
+    _debounce = Timer(const Duration(milliseconds: 450), () {
       if (!mounted) return;
       final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
       context.read<TranslationBloc>().add(
@@ -64,22 +83,55 @@ class _TranslateScreenState extends State<TranslateScreen> {
     });
   }
 
-  void _showLanguagePicker(BuildContext context, bool isDark) {
+  void _triggerImmediateTranslation() {
+    if (_debounce?.isActive ?? false) _debounce!.cancel();
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    context.read<TranslationBloc>().add(
+      TranslationTextChanged(
+        _inputController.text,
+        isPremium: isPremium,
+        immediate: true,
+      ),
+    );
+    _haptics.light();
+  }
+
+  void _showLanguagePicker(BuildContext context, bool isDark, {required bool isSource}) {
     _haptics.selection();
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      barrierColor: Colors.black.withValues(alpha: 0.55),
       isScrollControlled: true,
+      useSafeArea: true,
       builder: (ctx) {
         final blocState = context.read<TranslationBloc>().state;
+        final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
         return _LanguagePickerSheet(
           isDark: isDark,
-          currentLanguage: blocState.currentTargetLanguage,
+          isSource: isSource,
+          currentLanguage: isSource
+              ? blocState.currentSourceLanguage
+              : blocState.currentTargetLanguage,
           downloadedLanguages: blocState.downloadedLanguages,
           onSelected: (lang) {
-            context.read<TranslationBloc>().add(
-              TranslationLanguageChanged(lang),
-            );
+            if (isSource) {
+              if (lang == blocState.currentTargetLanguage) {
+                _onSwapTapped(isPremium);
+              } else {
+                context.read<TranslationBloc>().add(
+                  TranslationSourceLanguageChanged(lang, isPremium: isPremium),
+                );
+              }
+            } else {
+              if (lang == blocState.currentSourceLanguage) {
+                _onSwapTapped(isPremium);
+              } else {
+                context.read<TranslationBloc>().add(
+                  TranslationLanguageChanged(lang, isPremium: isPremium),
+                );
+              }
+            }
             Navigator.pop(ctx);
           },
         );
@@ -92,11 +144,159 @@ class _TranslateScreenState extends State<TranslateScreen> {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      barrierColor: Colors.black.withValues(alpha: 0.55),
       isScrollControlled: true,
+      useSafeArea: true,
       builder: (ctx) => BlocProvider.value(
         value: context.read<TranslationBloc>(),
         child: LanguageManagerSheet(isDark: isDark),
       ),
+    );
+  }
+
+  Future<void> _speakText({required String text, required String languageName, required bool isSource}) async {
+    final notifier = isSource ? _isSourceSpeaking : _isTargetSpeaking;
+    if (notifier.value) {
+      await _tts.stop();
+      notifier.value = false;
+      return;
+    }
+
+    if (text.trim().isEmpty) return;
+
+    _haptics.light();
+    notifier.value = true;
+
+    try {
+      final targetObj = TranslationService.supportedLanguages[languageName];
+      final bcp = targetObj?.bcpCode ?? 'en-US';
+      await _tts.speak(text, locale: bcp);
+    } catch (_) {
+      // Ignored gracefully
+    } finally {
+      if (mounted) {
+        notifier.value = false;
+      }
+    }
+  }
+
+  Future<void> _toggleVoiceDictation(String sourceLanguage) async {
+    if (_isListening.value) {
+      await _speech.stop();
+      _isListening.value = false;
+      _haptics.light();
+      return;
+    }
+
+    _haptics.selection();
+    try {
+      final hasPerm = await _speech.initializeStt();
+      if (!hasPerm) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                context.tr(
+                  'translation.mic_permission_required',
+                  fallback: 'Microphone permission is required for voice input.',
+                ),
+              ),
+              behavior: SnackBarBehavior.floating,
+            ),
+          );
+        }
+        return;
+      }
+
+      _isListening.value = true;
+      final langObj = TranslationService.supportedLanguages[sourceLanguage];
+      final localeId = langObj?.bcpCode ?? 'en-US';
+
+      await _speech.listen(
+        localeId: localeId,
+        onResult: (words, isFinal) {
+          if (words.isNotEmpty && mounted) {
+            final phrase = words.join(' ');
+            _inputController.text = phrase;
+            _inputController.selection = TextSelection.collapsed(offset: phrase.length);
+            _onInputChanged(phrase);
+          }
+        },
+        onDone: () {
+          if (mounted) _isListening.value = false;
+        },
+      );
+    } catch (_) {
+      if (mounted) _isListening.value = false;
+    }
+  }
+
+  void _onSwapTapped(bool isPremium) {
+    _haptics.selection();
+    _focusNode.unfocus();
+    setState(() {
+      _swapTurns += 0.5;
+    });
+    final bloc = context.read<TranslationBloc>();
+    final currentTranslated = bloc.state.translatedText;
+    _inputController.text = currentTranslated;
+    _inputController.selection = TextSelection.collapsed(
+      offset: currentTranslated.length,
+    );
+    bloc.add(
+      TranslationSwapLanguages(isPremium: isPremium),
+    );
+  }
+
+  bool _hasUserActivity(TranslationState state) {
+    return _inputController.text.trim().isNotEmpty ||
+        state.sourceText.trim().isNotEmpty ||
+        state.translatedText.trim().isNotEmpty ||
+        _isListening.value ||
+        _isSourceSpeaking.value ||
+        _isTargetSpeaking.value;
+  }
+
+  void _popSafely(BuildContext context) {
+    final nav = Navigator.of(context);
+    if (nav.canPop()) {
+      nav.pop();
+    } else {
+      try {
+        if (context.canPop()) {
+          context.pop();
+        } else {
+          context.go('/');
+        }
+      } catch (_) {}
+    }
+  }
+
+  void _handleExit(BuildContext context, TranslationState state) {
+    FocusScope.of(context).unfocus();
+    if (!_hasUserActivity(state)) {
+      _haptics.light();
+      _popSafely(context);
+      return;
+    }
+
+    _haptics.light();
+    GameDialogHelper.showExitConfirmation(
+      context,
+      title: context.tr(
+        'translation.quit_title',
+        fallback: 'QUIT TRANSLATION?',
+      ),
+      description: context.tr(
+        'translation.quit_desc',
+        fallback:
+            'Your current translation will be lost. Are you sure you want to leave?',
+      ),
+      onQuit: () {
+        _tts.stop();
+        _speech.stop();
+        _popSafely(context);
+      },
     );
   }
 
@@ -105,198 +305,442 @@ class _TranslateScreenState extends State<TranslateScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
 
-    return Scaffold(
-      backgroundColor: isDark ? AppColors.slate900 : Colors.white,
-      body: Stack(
-        children: [
-          const MeshGradientBackground(showLetters: false),
-          SafeArea(
-            child: Column(
-              children: [
-                _buildHeader(context, isDark),
-                Expanded(
-                  child: Scrollbar(
-                    controller: _scrollController,
-                    thumbVisibility: false,
-                    radius: Radius.circular(8.r),
-                    child: SingleChildScrollView(
-                      controller: _scrollController,
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      physics: const BouncingScrollPhysics(),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          SizedBox(height: 16.h),
-                          _buildLanguageSelector(context, isDark, isPremium)
-                              .animate()
-                              .fadeIn(duration: 400.ms, curve: Curves.easeOut)
-                              .slideY(
-                                begin: 0.1,
-                                end: 0,
-                                curve: Curves.easeOut,
-                              ),
-                          SizedBox(height: 16.h),
-                          _buildInputArea(context, isDark, isPremium)
-                              .animate(delay: 100.ms)
-                              .fadeIn(duration: 400.ms, curve: Curves.easeOut)
-                              .slideY(
-                                begin: 0.1,
-                                end: 0,
-                                curve: Curves.easeOut,
-                              ),
-                          SizedBox(height: 16.h),
-                          BlocBuilder<TranslationBloc, TranslationState>(
-                                builder: (context, state) {
-                                  if (!isPremium && state.isLimitReached) {
-                                    return PremiumLockCard(
-                                      onPremiumTap: () =>
-                                          context.push('/premium'),
-                                      onTap: () {
-                                        di.sl<AdService>().showRewardedAd(
-                                          context: context,
-                                          isPremium: false,
-                                          onUserEarnedReward: (_) {
-                                            context.read<TranslationBloc>().add(
-                                              TranslationAdWatched(),
-                                            );
-                                          },
-                                          onDismissed: () {},
-                                        );
-                                      },
-                                    );
-                                  }
-                                  return _buildOutputArea(context, isDark);
-                                },
-                              )
-                              .animate(delay: 200.ms)
-                              .fadeIn(duration: 400.ms, curve: Curves.easeOut)
-                              .slideY(
-                                begin: 0.1,
-                                end: 0,
-                                curve: Curves.easeOut,
-                              ),
-                          SizedBox(
-                            height:
-                                MediaQuery.of(context).padding.bottom + 24.h,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHeader(BuildContext context, bool isDark) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 16.h),
-      child: Row(
-        children: [
-          IconButton(
-            onPressed: () => context.pop(),
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
-          ),
-          SizedBox(width: 8.w),
-          Expanded(
-            child: AutoSizeText(
-              context.tr('translation.title', fallback: 'Translate'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w900,
-                color: Theme.of(context).colorScheme.onSurface,
-              ),
-              maxLines: 1,
-            ),
-          ),
-          IconButton(
-            onPressed: () => _showLanguageManager(context, isDark),
-            icon: Icon(
-              Icons.settings_rounded,
-              color: isDark ? Colors.white70 : AppColors.slate500,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildLanguageSelector(
-    BuildContext context,
-    bool isDark,
-    bool isPremium,
-  ) {
-    return BlocBuilder<TranslationBloc, TranslationState>(
+    return BlocConsumer<TranslationBloc, TranslationState>(
+      listener: (context, state) {
+        // Sync input controller when swap happens or external reset occurs
+        if (state.sourceText != _inputController.text && !_focusNode.hasFocus) {
+          _inputController.text = state.sourceText;
+          _inputController.selection = TextSelection.collapsed(
+            offset: state.sourceText.length,
+          );
+        }
+      },
       builder: (context, state) {
-        final lang =
-            state.currentTargetLanguage ??
-            context.tr(
-              'translation.select_target_language',
-              fallback: 'Select Language',
-            );
-        return GestureDetector(
-          onTap: () => _showLanguagePicker(context, isDark),
-          child: GlassTile(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: AppColors.indigo500.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.language_rounded,
-                    color: AppColors.indigo500,
-                    size: 24.r,
-                  ),
-                ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+        return ListenableBuilder(
+          listenable: Listenable.merge([
+            _inputController,
+            _isListening,
+            _isSourceSpeaking,
+            _isTargetSpeaking,
+          ]),
+          builder: (context, _) {
+            final hasActivity = _hasUserActivity(state);
+
+            return PopScope(
+              canPop: !hasActivity,
+              onPopInvokedWithResult: (didPop, result) {
+                if (didPop) return;
+                _handleExit(context, state);
+              },
+              child: GestureDetector(
+                onTap: () => FocusScope.of(context).unfocus(),
+                behavior: HitTestBehavior.translucent,
+                child: Scaffold(
+                  backgroundColor: isDark ? AppColors.slate900 : Colors.white,
+                  body: Stack(
                     children: [
-                      Text(
-                        context.tr(
-                          'translation.english_arrow',
-                          fallback: 'English →',
+                      const MeshGradientBackground(showLetters: false),
+                      SafeArea(
+                        child: Column(
+                          children: [
+                            _buildHeader(context, isDark, isPremium, state),
+                            Expanded(
+                              child: Scrollbar(
+                                controller: _scrollController,
+                                thumbVisibility: false,
+                                radius: Radius.circular(8.r),
+                                child: SingleChildScrollView(
+                                  controller: _scrollController,
+                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                  physics: const BouncingScrollPhysics(),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    children: [
+                                      SizedBox(height: 12.h),
+                                      _buildLanguageSelectorBar(context, isDark, isPremium)
+                                          .animate()
+                                          .fadeIn(duration: 350.ms, curve: Curves.easeOut)
+                                          .slideY(begin: 0.08, end: 0, curve: Curves.easeOut),
+                                      SizedBox(height: 16.h),
+                                      _buildInputArea(context, isDark, isPremium)
+                                          .animate(delay: 80.ms)
+                                          .fadeIn(duration: 350.ms, curve: Curves.easeOut)
+                                          .slideY(begin: 0.08, end: 0, curve: Curves.easeOut),
+                                      SizedBox(height: 16.h),
+                                      BlocBuilder<TranslationBloc, TranslationState>(
+                                        builder: (context, state) {
+                                          if (!isPremium && state.isLimitReached) {
+                                            return PremiumLockCard(
+                                              onPremiumTap: () => context.push('/premium'),
+                                              onTap: () {
+                                                di.sl<AdService>().showRewardedAd(
+                                                  context: context,
+                                                  isPremium: false,
+                                                  onUserEarnedReward: (_) {
+                                                    context.read<TranslationBloc>().add(
+                                                      TranslationAdWatched(),
+                                                    );
+                                                  },
+                                                  onDismissed: () {},
+                                                );
+                                              },
+                                            );
+                                          }
+                                          return _buildOutputArea(context, isDark, isPremium);
+                                        },
+                                      )
+                                          .animate(delay: 150.ms)
+                                          .fadeIn(duration: 350.ms, curve: Curves.easeOut)
+                                          .slideY(begin: 0.08, end: 0, curve: Curves.easeOut),
+                                      SizedBox(
+                                        height: MediaQuery.of(context).padding.bottom + 32.h,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isDark ? Colors.white54 : AppColors.slate400,
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      AutoSizeText(
-                        lang,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Theme.of(context).colorScheme.onSurface,
-                        ),
-                        maxLines: 1,
                       ),
                     ],
                   ),
                 ),
-                Icon(
-                  Icons.keyboard_arrow_down_rounded,
-                  color: isDark ? Colors.white54 : AppColors.slate400,
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  Widget _buildHeader(
+    BuildContext context,
+    bool isDark,
+    bool isPremium,
+    TranslationState state,
+  ) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(16.w, 12.h, 16.w, 8.h),
+      child: Row(
+        children: [
+          Semantics(
+            button: true,
+            label: context.tr('common.back', fallback: 'Back'),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () => _handleExit(context, state),
+                borderRadius: BorderRadius.circular(14.r),
+                child: Container(
+                  width: 42.r,
+                  height: 42.r,
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100,
+                    borderRadius: BorderRadius.circular(14.r),
+                    border: Border.all(
+                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      width: 1,
+                    ),
+                  ),
+                  alignment: Alignment.center,
+                  child: Icon(
+                    Directionality.of(context) == TextDirection.rtl
+                        ? Icons.arrow_forward_ios_rounded
+                        : Icons.arrow_back_ios_new_rounded,
+                    size: 18.r,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(width: 12.w),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                AutoSizeText(
+                  context.tr('translation.title', fallback: 'Translate'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: -0.2,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                  maxLines: 1,
+                ),
+                Text(
+                  context.tr('translation.offline_ready_badge', fallback: '50+ languages • Works offline'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark ? Colors.white54 : AppColors.slate500,
+                  ),
                 ),
               ],
             ),
+          ),
+          BlocBuilder<TranslationBloc, TranslationState>(
+            builder: (context, state) {
+              if (isPremium) {
+                return Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                  decoration: BoxDecoration(
+                    color: AppColors.amber500.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(12.r),
+                    border: Border.all(color: AppColors.amber500.withValues(alpha: 0.25)),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.workspace_premium_rounded, color: AppColors.amber500, size: 14.r),
+                      SizedBox(width: 4.w),
+                      Text(
+                        'PRO',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.amber500,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }
+              return Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                decoration: BoxDecoration(
+                  color: AppColors.indigo500.withValues(alpha: 0.08),
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(color: AppColors.indigo500.withValues(alpha: 0.18)),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.bolt_rounded, color: AppColors.amber500, size: 14.r),
+                    SizedBox(width: 3.w),
+                    Text(
+                      '${state.freeTranslationsRemaining} free',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w700,
+                        color: isDark ? Colors.white70 : AppColors.slate700,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+          SizedBox(width: 8.w),
+          Semantics(
+            button: true,
+            label: context.tr('translation.downloaded_packs', fallback: 'Language Packs'),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () => _showLanguageManager(context, isDark),
+                borderRadius: BorderRadius.circular(14.r),
+                child: Container(
+                  width: 42.r,
+                  height: 42.r,
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100,
+                    borderRadius: BorderRadius.circular(14.r),
+                    border: Border.all(
+                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      width: 1,
+                    ),
+                  ),
+                  alignment: Alignment.center,
+                  child: Icon(
+                    Icons.tune_rounded,
+                    size: 20.r,
+                    color: isDark ? Colors.white70 : AppColors.slate600,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLanguageSelectorBar(BuildContext context, bool isDark, bool isPremium) {
+    return BlocBuilder<TranslationBloc, TranslationState>(
+      builder: (context, state) {
+        final source = state.currentSourceLanguage;
+        final target = state.currentTargetLanguage ??
+            context.tr('translation.select_target_language', fallback: 'Select Language');
+
+        final isTargetReady = state.downloadedLanguages.contains(target);
+        final isSourceReady = state.downloadedLanguages.contains(source) || source == 'English';
+
+        return GlassTile(
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+          child: Row(
+            children: [
+              // Source Pill
+              Expanded(
+                child: InkWell(
+                  onTap: () => _showLanguagePicker(context, isDark, isSource: true),
+                  borderRadius: BorderRadius.circular(16.r),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate100,
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: isDark ? Colors.white12 : AppColors.slate200,
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              context.tr('translation.from', fallback: 'FROM'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.indigo500,
+                                letterSpacing: 0.6,
+                              ),
+                            ),
+                            if (isSourceReady) ...[
+                              SizedBox(width: 4.w),
+                              Icon(Icons.check_circle_rounded, size: 11.r, color: AppColors.emerald500),
+                            ],
+                          ],
+                        ),
+                        SizedBox(height: 2.h),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: AutoSizeText(
+                                source,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: Theme.of(context).colorScheme.onSurface,
+                                ),
+                                maxLines: 1,
+                              ),
+                            ),
+                            Icon(Icons.expand_more_rounded, size: 16.r, color: isDark ? Colors.white38 : AppColors.slate400),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+              // Swap Button
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: AnimatedRotation(
+                  turns: _swapTurns,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOutCubic,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => _onSwapTapped(isPremium),
+                      borderRadius: BorderRadius.circular(24.r),
+                      child: Container(
+                        padding: EdgeInsets.all(10.r),
+                        decoration: BoxDecoration(
+                          color: AppColors.indigo500.withValues(alpha: 0.12),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: AppColors.indigo500.withValues(alpha: 0.25),
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.swap_horiz_rounded,
+                          size: 20.r,
+                          color: AppColors.indigo500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Target Pill
+              Expanded(
+                child: InkWell(
+                  onTap: () => _showLanguagePicker(context, isDark, isSource: false),
+                  borderRadius: BorderRadius.circular(16.r),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate100,
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: isDark ? Colors.white12 : AppColors.slate200,
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              context.tr('translation.to', fallback: 'TO'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.emerald500,
+                                letterSpacing: 0.6,
+                              ),
+                            ),
+                            if (isTargetReady) ...[
+                              SizedBox(width: 4.w),
+                              Icon(Icons.check_circle_rounded, size: 11.r, color: AppColors.emerald500),
+                            ],
+                          ],
+                        ),
+                        SizedBox(height: 2.h),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: AutoSizeText(
+                                target,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: Theme.of(context).colorScheme.onSurface,
+                                ),
+                                maxLines: 1,
+                              ),
+                            ),
+                            Icon(Icons.expand_more_rounded, size: 16.r, color: isDark ? Colors.white38 : AppColors.slate400),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         );
       },
@@ -310,334 +754,450 @@ class _TranslateScreenState extends State<TranslateScreen> {
       child: ValueListenableBuilder<bool>(
         valueListenable: _isFocused,
         builder: (context, focused, child) => GlassTile(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+          padding: EdgeInsets.fromLTRB(16.w, 14.h, 16.w, 14.h),
           borderColor: focused
               ? AppColors.indigo500.withValues(alpha: 0.5)
-              : null,
-          borderWidth: focused ? 2.0 : null,
+              : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200.withValues(alpha: 0.8)),
+          borderWidth: 1.2,
           child: child!,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: BlocBuilder<TranslationBloc, TranslationState>(
+          builder: (context, state) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Top control row
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      context.tr(
-                        'translation.english_caps',
-                        fallback: 'ENGLISH',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w800,
-                        color: AppColors.indigo500,
-                        letterSpacing: 1.5,
-                      ),
-                    ),
-                    if (!isPremium) ...[
-                      SizedBox(width: 12.w),
-                      BlocBuilder<TranslationBloc, TranslationState>(
-                        builder: (context, state) {
-                          return Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 8.w,
-                              vertical: 4.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: const Color(
-                                0xFFF59E0B,
-                              ).withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(12.r),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.bolt_rounded,
-                                  color: AppColors.amber500,
-                                  size: 12.r,
-                                ),
-                                SizedBox(width: 4.w),
-                                Text(
-                                  '${state.freeTranslationsRemaining} LEFT',
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: AppColors.amber500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                      ),
-                    ],
-                  ],
-                ),
-                Row(
-                  children: [
-                    if (_inputController.text.isEmpty)
-                      GestureDetector(
-                        onTap: () async {
-                          final data = await Clipboard.getData('text/plain');
-                          if (data != null &&
-                              (data.text?.isNotEmpty ?? false)) {
-                            _inputController.text = data.text!;
-                            _inputController.selection =
-                                TextSelection.collapsed(
-                                  offset: data.text!.length,
-                                );
-                            _onInputChanged(data.text!);
-                            _haptics.light();
-                          }
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12.w,
-                            vertical: 6.h,
-                          ),
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
                           decoration: BoxDecoration(
-                            color: isDark ? Colors.white10 : AppColors.slate100,
-                            borderRadius: BorderRadius.circular(16.r),
+                            color: AppColors.indigo500.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(6.r),
                           ),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.paste_rounded,
-                                color: isDark
-                                    ? Colors.white70
-                                    : AppColors.slate500,
-                                size: 14.r,
-                              ),
-                              SizedBox(width: 4.w),
+                          child: Text(
+                            state.currentSourceLanguage.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.indigo500,
+                              letterSpacing: 0.8,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    ValueListenableBuilder<TextEditingValue>(
+                      valueListenable: _inputController,
+                      builder: (context, value, _) {
+                        final isEmpty = value.text.isEmpty;
+                        return Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (!isEmpty) ...[
                               Text(
-                                context.tr('common.paste', fallback: 'Paste'),
+                                '${value.text.length}/$_maxCharacterLimit',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark
-                                      ? Colors.white70
-                                      : AppColors.slate500,
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: value.text.length > _maxCharacterLimit
+                                      ? AppColors.red500
+                                      : (isDark ? Colors.white38 : AppColors.slate400),
+                                ),
+                              ),
+                              SizedBox(width: 8.w),
+                              ValueListenableBuilder<bool>(
+                                valueListenable: _isSourceSpeaking,
+                                builder: (context, speaking, _) {
+                                  return IconButton(
+                                    visualDensity: VisualDensity.compact,
+                                    padding: EdgeInsets.zero,
+                                    constraints: BoxConstraints(minWidth: 32.r, minHeight: 32.r),
+                                    tooltip: 'Listen to input',
+                                    onPressed: () => _speakText(
+                                      text: value.text,
+                                      languageName: state.currentSourceLanguage,
+                                      isSource: true,
+                                    ),
+                                    icon: Icon(
+                                      speaking ? Icons.volume_up_rounded : Icons.volume_down_rounded,
+                                      color: speaking ? AppColors.indigo500 : (isDark ? Colors.white60 : AppColors.slate500),
+                                      size: 18.r,
+                                    ),
+                                  );
+                                },
+                              ),
+                              SizedBox(width: 4.w),
+                              InkWell(
+                                onTap: () {
+                                  _inputController.clear();
+                                  context.read<TranslationBloc>().add(
+                                    TranslationTextChanged('', isPremium: isPremium),
+                                  );
+                                  _haptics.light();
+                                },
+                                borderRadius: BorderRadius.circular(16.r),
+                                child: Container(
+                                  padding: EdgeInsets.all(4.r),
+                                  decoration: BoxDecoration(
+                                    color: isDark ? Colors.white10 : AppColors.slate100,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.close_rounded,
+                                    color: isDark ? Colors.white54 : AppColors.slate500,
+                                    size: 14.r,
+                                  ),
                                 ),
                               ),
                             ],
-                          ),
-                        ),
-                      ).animate().fadeIn(duration: 200.ms),
-                    if (_inputController.text.isNotEmpty)
-                      GestureDetector(
-                        onTap: () {
-                          _inputController.clear();
-                          context.read<TranslationBloc>().add(
-                            TranslationTextChanged('', isPremium: isPremium),
-                          );
-                          _haptics.light();
-                        },
-                        child: Container(
-                          padding: EdgeInsets.all(4.r),
-                          decoration: BoxDecoration(
-                            color: isDark ? Colors.white10 : AppColors.slate100,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.close_rounded,
-                            color: isDark ? Colors.white54 : AppColors.slate500,
-                            size: 16.r,
-                          ),
-                        ),
-                      ).animate().scale(
-                        duration: 200.ms,
-                        curve: Curves.easeOutCubic,
-                      ),
+                            if (isEmpty) ...[
+                              ValueListenableBuilder<bool>(
+                                valueListenable: _isListening,
+                                builder: (context, listening, _) {
+                                  return InkWell(
+                                    onTap: () => _toggleVoiceDictation(state.currentSourceLanguage),
+                                    borderRadius: BorderRadius.circular(16.r),
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 8.w),
+                                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                                      decoration: BoxDecoration(
+                                        color: listening
+                                            ? AppColors.red500.withValues(alpha: 0.15)
+                                            : (isDark ? Colors.white10 : AppColors.slate100),
+                                        borderRadius: BorderRadius.circular(16.r),
+                                        border: listening
+                                            ? Border.all(color: AppColors.red500)
+                                            : null,
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            listening ? Icons.mic_rounded : Icons.mic_none_rounded,
+                                            color: listening
+                                                ? AppColors.red500
+                                                : (isDark ? Colors.white70 : AppColors.slate600),
+                                            size: 14.r,
+                                          ),
+                                          SizedBox(width: 4.w),
+                                          Text(
+                                            listening ? 'Listening...' : 'Voice',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w500,
+                                              color: listening
+                                                  ? AppColors.red500
+                                                  : (isDark ? Colors.white70 : AppColors.slate600),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              InkWell(
+                                onTap: () async {
+                                  final data = await Clipboard.getData('text/plain');
+                                  if (data != null && (data.text?.isNotEmpty ?? false)) {
+                                    _inputController.text = data.text!;
+                                    _inputController.selection = TextSelection.collapsed(
+                                      offset: data.text!.length,
+                                    );
+                                    _onInputChanged(data.text!);
+                                    _haptics.light();
+                                  }
+                                },
+                                borderRadius: BorderRadius.circular(16.r),
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                                  decoration: BoxDecoration(
+                                    color: isDark ? Colors.white10 : AppColors.slate100,
+                                    borderRadius: BorderRadius.circular(16.r),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        Icons.paste_rounded,
+                                        color: isDark ? Colors.white70 : AppColors.slate600,
+                                        size: 14.r,
+                                      ),
+                                      SizedBox(width: 4.w),
+                                      Text(
+                                        context.tr('common.paste', fallback: 'Paste'),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w500,
+                                          color: isDark ? Colors.white70 : AppColors.slate600,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ],
+                        );
+                      },
+                    ),
                   ],
                 ),
+                SizedBox(height: 10.h),
+                TextField(
+                  controller: _inputController,
+                  focusNode: _focusNode,
+                  onChanged: _onInputChanged,
+                  textInputAction: TextInputAction.done,
+                  onSubmitted: (_) => _triggerImmediateTranslation(),
+                  maxLines: null,
+                  minLines: 3,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                    color: Theme.of(context).colorScheme.onSurface,
+                    height: 1.45,
+                  ),
+                  decoration: InputDecoration(
+                    hintText: context.tr(
+                      'translation.type_to_translate',
+                      fallback: 'Type to translate...',
+                    ),
+                    hintStyle: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w400,
+                      color: isDark ? Colors.white38 : AppColors.slate400,
+                    ),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 4.w),
+                  ),
+                ),
+                ValueListenableBuilder<TextEditingValue>(
+                  valueListenable: _inputController,
+                  builder: (context, value, _) {
+                    if (value.text.trim().isEmpty) return const SizedBox.shrink();
+                    return Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 4.h),
+                        child: TextButton.icon(
+                          onPressed: _triggerImmediateTranslation,
+                          style: TextButton.styleFrom(
+                            visualDensity: VisualDensity.compact,
+                            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                            backgroundColor: AppColors.indigo500.withValues(alpha: 0.1),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+                          ),
+                          icon: Icon(Icons.arrow_forward_rounded, size: 14.r, color: AppColors.indigo500),
+                          label: Text(
+                            context.tr('common.translate', fallback: 'Translate'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.indigo500,
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ],
-            ),
-            SizedBox(height: 12.h),
-            TextField(
-              controller: _inputController,
-              focusNode: _focusNode,
-              onChanged: _onInputChanged,
-              maxLines: null, // Allows infinite expansion
-              minLines: 3,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w500,
-                color: Theme.of(context).colorScheme.onSurface,
-                height: 1.4,
-              ),
-              decoration: InputDecoration(
-                hintText: context.tr(
-                  'translation.type_to_translate',
-                  fallback: 'Type something to translate...',
-                ),
-                hintStyle: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w500,
-                  color: isDark ? Colors.white38 : AppColors.slate400,
-                ),
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.symmetric(
-                  vertical: 12.h,
-                  horizontal: 8.w,
-                ),
-              ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );
   }
 
-  Widget _buildOutputArea(BuildContext context, bool isDark) {
+  Widget _buildOutputArea(BuildContext context, bool isDark, bool isPremium) {
     return BlocBuilder<TranslationBloc, TranslationState>(
       builder: (context, state) {
+        final targetLang = state.currentTargetLanguage ?? 'Spanish';
+
         return GlassTile(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-          borderColor: AppColors.emerald500.withValues(alpha: 0.3),
-          borderWidth: 2,
+          padding: EdgeInsets.fromLTRB(16.w, 14.h, 16.w, 14.h),
+          borderColor: isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : AppColors.slate200.withValues(alpha: 0.8),
+          borderWidth: 1.0,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    state.currentTargetLanguage?.toUpperCase() ??
-                        context.tr(
-                          'translation.translation_caps',
-                          fallback: 'TRANSLATION',
-                        ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
-                      color: AppColors.emerald500,
-                      letterSpacing: 1.5,
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                    decoration: BoxDecoration(
+                      color: AppColors.emerald500.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(6.r),
+                    ),
+                    child: Text(
+                      targetLang.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.emerald500,
+                        letterSpacing: 0.8,
+                      ),
                     ),
                   ),
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       if (state.isTranslating)
                         Padding(
-                          padding: EdgeInsets.only(right: 12.w),
-                          child: RepaintBoundary(
-                            child:
-                                Text(
-                                      context.tr(
-                                        'translation.translating',
-                                        fallback: 'Translating...',
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color: const Color(
-                                          0xFF10B981,
-                                        ).withValues(alpha: 0.8),
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                    )
-                                    .animate(
-                                      onPlay: (controller) =>
-                                          controller.repeat(),
-                                    )
-                                    .shimmer(duration: 1.seconds),
-                          ),
+                          padding: EdgeInsets.only(right: 8.w),
+                          child: Text(
+                            context.tr('translation.translating', fallback: 'Translating...'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.emerald500,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 900.ms),
                         ),
-                      if (state.isModelDownloading)
-                        SizedBox(
-                          width: 14.r,
-                          height: 14.r,
-                          child: const CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: AppColors.emerald500,
-                          ),
-                        ),
-                      if (state.translatedText.isNotEmpty &&
-                          !state.isTranslating)
-                        GestureDetector(
-                          onTap: () {
-                            Clipboard.setData(
-                              ClipboardData(text: state.translatedText),
+                      if (state.translatedText.isNotEmpty && !state.isTranslating) ...[
+                        ValueListenableBuilder<bool>(
+                          valueListenable: _isTargetSpeaking,
+                          builder: (context, speaking, _) {
+                            return IconButton(
+                              visualDensity: VisualDensity.compact,
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(minWidth: 32.r, minHeight: 32.r),
+                              tooltip: 'Listen to translation',
+                              onPressed: () => _speakText(
+                                text: state.translatedText,
+                                languageName: targetLang,
+                                isSource: false,
+                              ),
+                              icon: Icon(
+                                speaking ? Icons.volume_up_rounded : Icons.volume_down_rounded,
+                                color: speaking ? AppColors.emerald500 : (isDark ? Colors.white60 : AppColors.slate500),
+                                size: 18.r,
+                              ),
                             );
+                          },
+                        ),
+                        SizedBox(width: 4.w),
+                        InkWell(
+                          onTap: () {
+                            Clipboard.setData(ClipboardData(text: state.translatedText));
                             _haptics.success();
                             ScaffoldMessenger.of(context)
                               ..clearSnackBars()
                               ..showSnackBar(
                                 SnackBar(
                                   content: Text(
-                                    context.tr(
-                                      'common.copied',
-                                      fallback: 'Copied to clipboard',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                    context.tr('common.copied', fallback: 'Copied to clipboard'),
+                                    style: const TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
                                   ),
                                   behavior: SnackBarBehavior.floating,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12.r),
-                                  ),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
                                   duration: const Duration(seconds: 2),
                                 ),
                               );
                           },
+                          borderRadius: BorderRadius.circular(16.r),
                           child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 12.w,
-                              vertical: 6.h,
-                            ),
+                            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                             decoration: BoxDecoration(
-                              color: const Color(
-                                0xFF10B981,
-                              ).withValues(alpha: 0.1),
+                              color: AppColors.emerald500.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(16.r),
                             ),
                             child: Row(
                               children: [
-                                Icon(
-                                  Icons.copy_rounded,
-                                  color: AppColors.emerald500,
-                                  size: 14.r,
-                                ),
+                                Icon(Icons.copy_rounded, color: AppColors.emerald500, size: 14.r),
                                 SizedBox(width: 4.w),
                                 Text(
                                   context.tr('common.copy', fallback: 'Copy'),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 12.sp,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w600,
                                     color: AppColors.emerald500,
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                        ).animate().fadeIn(duration: 200.ms),
+                        ),
+                      ],
                     ],
                   ),
                 ],
               ),
               SizedBox(height: 12.h),
+
+              // Content Body
               if (state.errorMessage != null && state.errorMessage!.isNotEmpty)
-                Text(
-                  context.tr(
-                    state.errorMessage!,
-                    fallback: state.errorMessage!,
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    color: AppColors.red500.withValues(alpha: 0.08),
+                    borderRadius: BorderRadius.circular(12.r),
+                    border: Border.all(color: AppColors.red500.withValues(alpha: 0.2)),
                   ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: AppColors.red500,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.error_outline_rounded, size: 16.r, color: AppColors.red500),
+                          SizedBox(width: 6.w),
+                          Expanded(
+                            child: Text(
+                              context.tr(state.errorMessage!, fallback: state.errorMessage!),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                color: AppColors.red500,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 8.h),
+                      TextButton.icon(
+                        onPressed: () {
+                          _haptics.light();
+                          context.read<TranslationBloc>().add(
+                            TranslationRetryRequested(isPremium: isPremium),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          visualDensity: VisualDensity.compact,
+                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                        ),
+                        icon: Icon(Icons.refresh_rounded, size: 14.r, color: AppColors.red500),
+                        label: Text(
+                          context.tr('common.retry', fallback: 'Retry'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.red500,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 )
               else if (state.isModelDownloading)
@@ -647,42 +1207,41 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     Text(
                       context.tr(
                         'translation.downloading_pack',
-                        fallback:
-                            'Downloading offline language pack (~30MB)...',
+                        fallback: 'Downloading language pack...',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        color: isDark ? Colors.white70 : AppColors.slate500,
-                        fontStyle: FontStyle.italic,
+                        fontSize: 13.sp,
+                        color: isDark ? Colors.white70 : AppColors.slate600,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                     SizedBox(height: 8.h),
-                    LinearProgressIndicator(
-                      backgroundColor: isDark
-                          ? Colors.white10
-                          : AppColors.slate200,
-                      valueColor: const AlwaysStoppedAnimation<Color>(
-                        AppColors.emerald500,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(4.r),
+                      child: LinearProgressIndicator(
+                        backgroundColor: isDark ? Colors.white10 : AppColors.slate200,
+                        valueColor: const AlwaysStoppedAnimation<Color>(AppColors.emerald500),
+                        minHeight: 4.h,
                       ),
                     ),
                   ],
                 )
               else
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  padding: EdgeInsets.symmetric(horizontal: 4.w),
                   child: SelectableText(
                     state.translatedText.isEmpty
                         ? context.tr(
                             'translation.translation_placeholder',
-                            fallback: 'Translation will appear here.',
+                            fallback: 'Translation will appear here',
                           )
                         : state.translatedText,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w500,
-                      height: 1.4,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w400,
+                      height: 1.45,
                       color: state.translatedText.isEmpty
                           ? (isDark ? Colors.white38 : AppColors.slate400)
                           : (Theme.of(context).colorScheme.onSurface),
@@ -699,12 +1258,14 @@ class _TranslateScreenState extends State<TranslateScreen> {
 
 class _LanguagePickerSheet extends StatefulWidget {
   final bool isDark;
+  final bool isSource;
   final Function(String) onSelected;
   final String? currentLanguage;
   final List<String> downloadedLanguages;
 
   const _LanguagePickerSheet({
     required this.isDark,
+    required this.isSource,
     required this.onSelected,
     this.currentLanguage,
     this.downloadedLanguages = const [],
@@ -749,218 +1310,355 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
   @override
   Widget build(BuildContext context) {
     final isDark = widget.isDark;
+    final readyList = widget.downloadedLanguages
+        .where((lang) => _filteredLanguages.contains(lang))
+        .toList();
 
     return Container(
-      height: MediaQuery.of(context).size.height * 0.75,
+      height: MediaQuery.of(context).size.height * 0.82,
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
+            blurRadius: 28,
+            offset: const Offset(0, -8),
+          ),
+        ],
       ),
-      child: Column(
-        children: [
-          SizedBox(height: 12.h),
-          Container(
-            width: 40.w,
-            height: 4.h,
-            decoration: BoxDecoration(
-              color: isDark ? Colors.white24 : AppColors.slate300,
-              borderRadius: BorderRadius.circular(2.r),
-            ),
-          ),
-          SizedBox(height: 20.h),
-          Text(
-            context.tr(
-              'translation.select_target_language',
-              fallback: 'Select Target Language',
-            ),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w800,
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
-          ),
-          SizedBox(height: 16.h),
-          // Search bar
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.06)
-                    : AppColors.slate100,
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: isDark ? Colors.white12 : AppColors.slate200,
+      child: SafeArea(
+        top: false,
+        child: Column(
+          children: [
+            SizedBox(height: 12.h),
+            // Smooth grab handle
+            Center(
+              child: Container(
+                width: 44.w,
+                height: 4.5.h,
+                decoration: BoxDecoration(
+                  color: isDark ? Colors.white24 : AppColors.slate300,
+                  borderRadius: BorderRadius.circular(3.r),
                 ),
               ),
+            ),
+            SizedBox(height: 16.h),
+            // Header title row with close button
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.search_rounded,
-                    color: isDark ? Colors.white38 : AppColors.slate400,
-                    size: 20.r,
-                  ),
-                  SizedBox(width: 8.w),
                   Expanded(
-                    child: TextField(
-                      controller: _searchController,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        color: Theme.of(context).colorScheme.onSurface,
-                      ),
-                      decoration: InputDecoration(
-                        hintText: context.tr(
-                          'common.search',
-                          fallback: 'Search',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.isSource
+                              ? context.tr('translation.select_source_language', fallback: 'Select Source Language')
+                              : context.tr('translation.select_target_language', fallback: 'Select Target Language'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Theme.of(context).colorScheme.onSurface,
+                          ),
                         ),
-                        hintStyle: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          color: isDark ? Colors.white38 : AppColors.slate400,
+                        SizedBox(height: 2.h),
+                        Text(
+                          widget.isSource
+                              ? context.tr('translation.select_source_desc', fallback: 'Translate from')
+                              : context.tr('translation.select_target_desc', fallback: 'Translate to'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark ? Colors.white54 : AppColors.slate500,
+                          ),
                         ),
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(vertical: 14.h),
+                      ],
+                    ),
+                  ),
+                  Semantics(
+                    button: true,
+                    label: context.tr('common.close', fallback: 'Close'),
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () {
+                          di.sl<HapticService>().light();
+                          Navigator.pop(context);
+                        },
+                        borderRadius: BorderRadius.circular(20.r),
+                        child: Container(
+                          padding: EdgeInsets.all(8.r),
+                          decoration: BoxDecoration(
+                            color: isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.close_rounded,
+                            size: 18.r,
+                            color: isDark ? Colors.white60 : AppColors.slate600,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                  if (_searchController.text.isNotEmpty)
-                    GestureDetector(
-                      onTap: () => _searchController.clear(),
-                      child: Icon(
-                        Icons.close_rounded,
-                        color: isDark ? Colors.white38 : AppColors.slate400,
-                        size: 18.r,
-                      ),
-                    ),
                 ],
               ),
             ),
-          ),
-          SizedBox(height: 12.h),
-          Expanded(
-            child: _filteredLanguages.isEmpty
-                ? Center(
-                    child: Text(
-                      context.tr(
-                        'language_picker.no_results',
-                        fallback: 'No results found',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        color: isDark ? Colors.white38 : AppColors.slate400,
-                      ),
-                    ),
-                  )
-                : ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    itemCount: _filteredLanguages.length,
-                    itemBuilder: (context, index) {
-                      final lang = _filteredLanguages[index];
-                      final isActive = lang == widget.currentLanguage;
-                      final isDownloaded = widget.downloadedLanguages.contains(
-                        lang,
-                      );
-
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: 4.h),
-                        child: Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            onTap: () => widget.onSelected(lang),
-                            borderRadius: BorderRadius.circular(16.r),
-                            splashColor: const Color(
-                              0xFF6366F1,
-                            ).withValues(alpha: 0.08),
-                            highlightColor: Colors.transparent,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 16.w,
-                                vertical: 14.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: isActive
-                                    ? const Color(
-                                        0xFF6366F1,
-                                      ).withValues(alpha: isDark ? 0.15 : 0.08)
-                                    : Colors.transparent,
-                                borderRadius: BorderRadius.circular(16.r),
-                                border: isActive
-                                    ? Border.all(
-                                        color: const Color(
-                                          0xFF6366F1,
-                                        ).withValues(alpha: 0.3),
-                                      )
-                                    : null,
-                              ),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      lang,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 16.sp,
-                                        fontWeight: isActive
-                                            ? FontWeight.w700
-                                            : FontWeight.w500,
-                                        color: isActive
-                                            ? AppColors.indigo500
-                                            : (isDark
-                                                  ? Colors.white
-                                                  : AppColors.slate800),
-                                      ),
-                                    ),
-                                  ),
-                                  if (isDownloaded)
-                                    Container(
-                                      margin: EdgeInsets.only(right: 8.w),
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 8.w,
-                                        vertical: 3.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: const Color(
-                                          0xFF10B981,
-                                        ).withValues(alpha: 0.1),
-                                        borderRadius: BorderRadius.circular(
-                                          8.r,
-                                        ),
-                                      ),
-                                      child: Text(
-                                        context.tr(
-                                          'common.ready',
-                                          fallback: 'READY',
-                                        ),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 9.sp,
-                                          fontWeight: FontWeight.w800,
-                                          color: AppColors.emerald500,
-                                          letterSpacing: 0.5,
-                                        ),
-                                      ),
-                                    ),
-                                  if (isActive)
-                                    Icon(
-                                      Icons.check_circle_rounded,
-                                      color: AppColors.indigo500,
-                                      size: 20.r,
-                                    ),
-                                ],
-                              ),
-                            ),
-                          ),
+            SizedBox(height: 16.h),
+            // Unified Single Search Field (Zero double-background, full-width touch access)
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: TextField(
+                controller: _searchController,
+                cursorColor: AppColors.indigo500,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+                decoration: InputDecoration(
+                  isDense: true,
+                  filled: true,
+                  fillColor: isDark
+                      ? Colors.white.withValues(alpha: 0.07)
+                      : AppColors.slate100,
+                  hintText: context.tr(
+                    'common.search',
+                    fallback: 'Search languages...',
+                  ),
+                  hintStyle: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    color: isDark ? Colors.white38 : AppColors.slate400,
+                  ),
+                  prefixIcon: Icon(
+                    Icons.search_rounded,
+                    color: isDark ? Colors.white54 : AppColors.slate500,
+                    size: 20.r,
+                  ),
+                  prefixIconConstraints: BoxConstraints(
+                    minWidth: 44.w,
+                    minHeight: 44.h,
+                  ),
+                  suffixIcon: ValueListenableBuilder<TextEditingValue>(
+                    valueListenable: _searchController,
+                    builder: (context, val, _) {
+                      if (val.text.isEmpty) return const SizedBox.shrink();
+                      return IconButton(
+                        tooltip: context.tr('common.clear', fallback: 'Clear'),
+                        icon: Icon(
+                          Icons.cancel_rounded,
+                          color: isDark ? Colors.white38 : AppColors.slate400,
+                          size: 18.r,
                         ),
+                        onPressed: () {
+                          _searchController.clear();
+                          _onSearchChanged();
+                        },
                       );
                     },
                   ),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: BorderSide(
+                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      width: 1.0,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: BorderSide(
+                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      width: 1.0,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: const BorderSide(
+                      color: AppColors.indigo500,
+                      width: 1.8,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 12.h),
+            Expanded(
+              child: _filteredLanguages.isEmpty
+                  ? Center(
+                      child: Text(
+                        context.tr(
+                          'language_picker.no_results',
+                          fallback: 'No results found',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 15.sp,
+                          color: isDark ? Colors.white38 : AppColors.slate400,
+                        ),
+                      ),
+                    )
+                  : CustomScrollView(
+                      physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                      slivers: [
+                        // Pinned Downloaded Section
+                        if (readyList.isNotEmpty && _searchController.text.isEmpty) ...[
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 8.h),
+                              child: Text(
+                                context.tr(
+                                  'translation.downloaded_ready',
+                                  fallback: 'Downloaded',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.emerald500,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            sliver: SliverList(
+                              delegate: SliverChildBuilderDelegate(
+                                (context, index) {
+                                  final lang = readyList[index];
+                                  final isActive = lang == widget.currentLanguage;
+                                  return _buildLanguageRow(lang, isActive, true, isDark);
+                                },
+                                childCount: readyList.length,
+                              ),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 8.h),
+                              child: Text(
+                                context.tr(
+                                  'translation.all_languages',
+                                  fallback: 'All languages',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: isDark ? Colors.white54 : AppColors.slate400,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+
+                        // All Languages List
+                        SliverPadding(
+                          padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 24.h),
+                          sliver: SliverList(
+                            delegate: SliverChildBuilderDelegate(
+                              (context, index) {
+                                final lang = _filteredLanguages[index];
+                                final isActive = lang == widget.currentLanguage;
+                                final isDownloaded = widget.downloadedLanguages.contains(lang);
+                                return _buildLanguageRow(lang, isActive, isDownloaded, isDark);
+                              },
+                              childCount: _filteredLanguages.length,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLanguageRow(String lang, bool isActive, bool isDownloaded, bool isDark) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 6.h),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () {
+            di.sl<HapticService>().selection();
+            widget.onSelected(lang);
+          },
+          borderRadius: BorderRadius.circular(16.r),
+          splashColor: const Color(0xFF6366F1).withValues(alpha: 0.1),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 13.h),
+            decoration: BoxDecoration(
+              color: isActive
+                  ? const Color(0xFF6366F1).withValues(alpha: isDark ? 0.15 : 0.08)
+                  : (isDark ? Colors.white.withValues(alpha: 0.03) : AppColors.slate50),
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(
+                color: isActive
+                    ? const Color(0xFF6366F1).withValues(alpha: 0.4)
+                    : (isDark ? Colors.white.withValues(alpha: 0.06) : AppColors.slate200.withValues(alpha: 0.6)),
+                width: isActive ? 1.5 : 1.0,
+              ),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    lang,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
+                      color: isActive
+                          ? AppColors.indigo500
+                          : (isDark ? Colors.white : AppColors.slate800),
+                    ),
+                  ),
+                ),
+                if (isDownloaded)
+                  Container(
+                    margin: EdgeInsets.only(right: 8.w),
+                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF10B981).withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: Text(
+                      context.tr('common.ready', fallback: 'Offline'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.emerald500,
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                  ),
+                if (isActive)
+                  Icon(
+                    Icons.check_circle_rounded,
+                    color: AppColors.indigo500,
+                    size: 20.r,
+                  ),
+              ],
+            ),
           ),
-        ],
+        ),
       ),
     );
   }

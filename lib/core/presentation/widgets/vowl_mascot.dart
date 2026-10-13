@@ -85,7 +85,7 @@ class VowlMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final tokens = Theme.of(context).extension<AppColorTokens>();
     // HIGH FIX: BlocSelector rebuilds ONLY when mascot-relevant user data
     // changes. Previously BlocBuilder rebuilt on every AuthState change.
     return BlocSelector<AuthBloc, AuthState, _MascotUserData>(
@@ -123,7 +123,7 @@ class VowlMascot extends StatelessWidget {
           auraColor = switch (effectiveMascotId) {
             'owly' => Colors.brown[300]!,
             'foxie' => Colors.orangeAccent,
-            'dino' => tokens.gameCorrect,
+            'dino' => tokens?.gameCorrect ?? AppColors.emerald500,
             'mascot_unicorn' => _LocalPalette.colorf472b6,
             'mascot_robot' => _LocalPalette.color60a5fa,
             'mascot_lion' => AppColors.amber400,

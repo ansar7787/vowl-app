@@ -147,7 +147,7 @@ class TranslationBottomSheet extends StatelessWidget {
                     borderColor: AppColors.emerald500.withValues(alpha: 0.3),
                     child: SizedBox(
                       width: double.infinity,
-                      child: _buildResultContent(state, isDark),
+                      child: _buildResultContent(context, state, isDark),
                     ),
                   ),
                 ],
@@ -159,7 +159,11 @@ class TranslationBottomSheet extends StatelessWidget {
     );
   }
 
-  Widget _buildResultContent(TranslationState state, bool isDark) {
+  Widget _buildResultContent(
+    BuildContext context,
+    TranslationState state,
+    bool isDark,
+  ) {
     if (state.status == TranslationStatus.loading || state.isModelDownloading) {
       return Center(
         child: Padding(
@@ -171,7 +175,7 @@ class TranslationBottomSheet extends StatelessWidget {
 
     if (state.errorMessage != null && state.errorMessage!.isNotEmpty) {
       return Text(
-        state.errorMessage!,
+        context.tr(state.errorMessage!, fallback: state.errorMessage!),
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
