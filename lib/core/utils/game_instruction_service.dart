@@ -34,28 +34,43 @@ class GameInstructionService {
     String? fallbackTitle, {
     int level = 1,
   }) {
-    final baseBriefing = _getBaseBriefing(type, fallbackTitle);
+    final baseBriefing = _getBaseBriefing(type, fallbackTitle, level: level);
 
     final baseKey =
         type?.name ??
         fallbackTitle?.toLowerCase().replaceAll(' ', '_') ??
         "default";
+    final isLevel100 = level == 100;
+    final prefix = isLevel100 ? 'instructions.$baseKey.level_100' : 'instructions.$baseKey';
+
     final title = context.tr(
-      'instructions.$baseKey.title',
-      fallback: baseBriefing.title,
+      '$prefix.title',
+      fallback: context.tr(
+        'instructions.$baseKey.title',
+        fallback: baseBriefing.title,
+      ),
     );
     final objective = context.tr(
-      'instructions.$baseKey.objective',
-      fallback: baseBriefing.objective,
+      '$prefix.objective',
+      fallback: context.tr(
+        'instructions.$baseKey.objective',
+        fallback: baseBriefing.objective,
+      ),
     );
     final actionText = context.tr(
-      'instructions.$baseKey.actionText',
-      fallback: baseBriefing.actionText,
+      '$prefix.actionText',
+      fallback: context.tr(
+        'instructions.$baseKey.actionText',
+        fallback: baseBriefing.actionText,
+      ),
     );
 
     final rawTip = context.tr(
-      'instructions.$baseKey.tip',
-      fallback: baseBriefing.tip,
+      '$prefix.tip',
+      fallback: context.tr(
+        'instructions.$baseKey.tip',
+        fallback: baseBriefing.tip,
+      ),
     );
     final tip = rawTip;
 
@@ -64,8 +79,11 @@ class GameInstructionService {
         .entries
         .map(
           (e) => context.tr(
-            'instructions.$baseKey.rule_${e.key}',
-            fallback: e.value,
+            '$prefix.rule_${e.key}',
+            fallback: context.tr(
+              'instructions.$baseKey.rule_${e.key}',
+              fallback: e.value,
+            ),
           ),
         )
         .toList();
@@ -82,11 +100,12 @@ class GameInstructionService {
 
   static GameBriefing _getBaseBriefing(
     GameSubtype? type,
-    String? fallbackTitle,
-  ) {
+    String? fallbackTitle, {
+    int level = 1,
+  }) {
     if (type == null) {
       if (fallbackTitle != null) {
-        final kidsBriefing = _getKidsBriefing(fallbackTitle);
+        final kidsBriefing = _getKidsBriefing(fallbackTitle, level: level);
         if (kidsBriefing != null) return kidsBriefing;
       }
       return getDefaultBriefing(fallbackTitle ?? "Quest");
@@ -1527,7 +1546,7 @@ class GameInstructionService {
     ),
   };
 
-  static GameBriefing? _getKidsBriefing(String category) {
+  static GameBriefing? _getKidsBriefing(String category, {int level = 1}) {
     switch (category.toLowerCase()) {
       case 'alphabet':
         return const GameBriefing(
@@ -1693,19 +1712,35 @@ class GameInstructionService {
               "Tip: Tap the speaker icon on any stone to hear how the word is pronounced before choosing.",
         );
       case 'transport':
+        if (level == 100) {
+          return const GameBriefing(
+            title: "Century Traveler! 🏆",
+            icon: Icons.emoji_events_rounded,
+            objective:
+                "Congratulations on reaching Level 100! You've learned so many ways we travel around our world. Let's solve this milestone travel challenge together!",
+            rules: [
+              "Read or listen to the milestone clue on the sign",
+              "Tap or drag the matching vehicle to answer",
+              "Celebrate 100 levels of travel vocabulary!",
+            ],
+            actionText: "Start Level 100",
+            tip:
+                "Tip: You know vehicles that travel by land, sea, and air. Trust your skills and enjoy this special milestone!",
+          );
+        }
         return const GameBriefing(
           title: "Zoom Zoom!",
           icon: Icons.directions_car_rounded,
           objective:
-              "Beep beep! Let's manage the city traffic. Read the directions on the asphalt, and guide the correct vehicle to the intersection.",
+              "Explore vehicles and ways to travel! Read or listen to the clue on the highway sign, then choose the matching vehicle.",
           rules: [
-            "Read the travel clues",
-            "Spot the right vehicle",
-            "Guide it to the road",
+            "Read or listen to the clue on the highway sign",
+            "Tap or drag the matching vehicle to answer",
+            "Tap any card's speaker to hear the word pronounced",
           ],
           actionText: "Start Engine",
           tip:
-              "PRO TIP: Think about whether it goes on land, in the water, or in the sky! 🚗",
+              "Tip: Think about where each vehicle travels—on the road, in the water, or in the air!",
         );
       case 'emotions':
         return const GameBriefing(
