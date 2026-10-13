@@ -39,6 +39,10 @@ class _WordBankScreenState extends State<WordBankScreen> {
   Timer? _debounceTimer;
   late WordBankFilter _currentFilter;
 
+  // Multi-touch / double-tap prevention locks
+  bool _isOpeningDetail = false;
+  DateTime? _lastTtsTime;
+
   @override
   void initState() {
     super.initState();
@@ -85,6 +89,17 @@ class _WordBankScreenState extends State<WordBankScreen> {
     });
   }
 
+  void _playTts(String text) {
+    final now = DateTime.now();
+    if (_lastTtsTime != null &&
+        now.difference(_lastTtsTime!).inMilliseconds < 500) {
+      return;
+    }
+    _lastTtsTime = now;
+    _haptics.selection();
+    di.sl<TtsService>().speak(text);
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -94,26 +109,18 @@ class _WordBankScreenState extends State<WordBankScreen> {
         children: [
           const MeshGradientBackground(showLetters: false),
           SafeArea(
-            child: Column(
-              children: [
-                _buildHeader(context, isDark),
-                _buildSearchBar(context, isDark),
-                Expanded(
-                  child: BlocBuilder<DailyWordsBloc, DailyWordsState>(
-                    builder: (context, state) {
-                      if (state.status == DailyWordsStatus.loading) {
-                        return const Center(child: CircularProgressIndicator());
-                      }
+            child: BlocBuilder<DailyWordsBloc, DailyWordsState>(
+              builder: (context, state) {
+                if (state.status == DailyWordsStatus.loading) {
+                  return const Center(child: CircularProgressIndicator());
+                }
 
-                      return _buildContent(
-                        state.wordBankEntries,
-                        state.masteryStats,
-                        isDark,
-                      );
-                    },
-                  ),
-                ),
-              ],
+                return _buildSliverContent(
+                  allWords: state.wordBankEntries,
+                  stats: state.masteryStats,
+                  isDark: isDark,
+                );
+              },
             ),
           ),
         ],
@@ -121,56 +128,102 @@ class _WordBankScreenState extends State<WordBankScreen> {
     );
   }
 
-  Widget _buildHeader(BuildContext context, bool isDark) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 14.h, 20.w, 14.h),
-      child: Row(
-        children: [
-          Semantics(
-            label: 'Back',
-            button: true,
-            child: GestureDetector(
-              onTap: () {
-                _haptics.light();
-                context.pop();
-              },
-              child: Container(
-                padding: EdgeInsets.all(8.r),
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.1)
-                      : Colors.black.withValues(alpha: 0.05),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                  size: 20.r,
-                  color: Theme.of(context).colorScheme.onSurface,
-                ),
+  Widget _buildSliverContent({
+    required List<WordProgress> allWords,
+    required Map<String, int> stats,
+    required bool isDark,
+  }) {
+    final service = di.sl<DailyWordsService>();
+    final query = _searchController.text.trim().toLowerCase();
+
+    // Segment words into categories with Leitner logic
+    final todayWords =
+        allWords.where((w) => service.isWordLearnedToday(w.wordId)).toList();
+    final learningWords = allWords.where((w) => w.box == 1).toList();
+    final reviewingWords =
+        allWords.where((w) => w.box == 0 || w.box == 2).toList();
+    final masteredWords = allWords.where((w) => w.box >= 3).toList();
+
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        _buildSliverAppBar(context, isDark),
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildSearchBar(context, isDark),
+              _buildMasteryStats(stats, isDark),
+              _buildFilterTabs(
+                totalCount: allWords.length,
+                todayCount: todayWords.length,
+                learningCount: learningWords.length,
+                reviewingCount: reviewingWords.length,
+                masteredCount: masteredWords.length,
+                isDark: isDark,
               ),
-            ),
+              SizedBox(height: 8.h),
+            ],
           ),
-          SizedBox(width: 14.w),
-          Expanded(
-            child: AutoSizeText(
-              context.tr('word_bank.title', fallback: 'Word Bank'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 22.sp,
-                fontWeight: FontWeight.w700,
-                color: Theme.of(context).colorScheme.onSurface,
-              ),
-              maxLines: 1,
-            ),
+        ),
+        ..._buildSliverWordSections(
+          allWords: allWords,
+          todayWords: todayWords,
+          learningWords: learningWords,
+          reviewingWords: reviewingWords,
+          masteredWords: masteredWords,
+          query: query,
+          isDark: isDark,
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(height: 32.h),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSliverAppBar(BuildContext context, bool isDark) {
+    return SliverAppBar(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      pinned: true,
+      centerTitle: true,
+      leading: IconButton(
+        icon: Container(
+          padding: EdgeInsets.all(8.r),
+          decoration: BoxDecoration(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.black.withValues(alpha: 0.05),
+            shape: BoxShape.circle,
           ),
-        ],
+          child: Icon(
+            Icons.arrow_back_ios_new_rounded,
+            size: 18.r,
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
+        onPressed: () {
+          _haptics.light();
+          context.pop();
+        },
+      ),
+      title: AutoSizeText(
+        context.tr('word_bank.title', fallback: 'Word Bank'),
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 22.sp,
+          fontWeight: FontWeight.w700,
+          color: Theme.of(context).colorScheme.onSurface,
+        ),
+        maxLines: 1,
       ),
     );
   }
 
   Widget _buildSearchBar(BuildContext context, bool isDark) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
       child: Container(
         decoration: BoxDecoration(
           color: isDark ? AppColors.slate800 : Colors.white,
@@ -240,52 +293,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
     );
   }
 
-  Widget _buildContent(
-    List<WordProgress> allWords,
-    Map<String, int> stats,
-    bool isDark,
-  ) {
-    final service = di.sl<DailyWordsService>();
-    final query = _searchController.text.trim().toLowerCase();
-
-    // Segment words into categories with Leitner logic
-    final todayWords =
-        allWords.where((w) => service.isWordLearnedToday(w.wordId)).toList();
-    final learningWords = allWords.where((w) => w.box == 1).toList();
-    final reviewingWords =
-        allWords.where((w) => w.box == 0 || w.box == 2).toList();
-    final masteredWords = allWords.where((w) => w.box >= 3).toList();
-
-    return Column(
-      children: [
-        _buildMasteryStats(stats, isDark),
-        _buildFilterTabs(
-          totalCount: allWords.length,
-          todayCount: todayWords.length,
-          learningCount: learningWords.length,
-          reviewingCount: reviewingWords.length,
-          masteredCount: masteredWords.length,
-          isDark: isDark,
-        ),
-        SizedBox(height: 6.h),
-        Expanded(
-          child: _buildFilteredList(
-            allWords: allWords,
-            todayWords: todayWords,
-            learningWords: learningWords,
-            reviewingWords: reviewingWords,
-            masteredWords: masteredWords,
-            query: query,
-            isDark: isDark,
-          ),
-        ),
-      ],
-    );
-  }
-
   Widget _buildMasteryStats(Map<String, int> stats, bool isDark) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 14.h, 20.w, 6.h),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 6.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -513,7 +523,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
     );
   }
 
-  Widget _buildFilteredList({
+  List<Widget> _buildSliverWordSections({
     required List<WordProgress> allWords,
     required List<WordProgress> todayWords,
     required List<WordProgress> learningWords,
@@ -544,165 +554,275 @@ class _WordBankScreenState extends State<WordBankScreen> {
       final matches =
           pool.where((w) => w.word.toLowerCase().contains(query)).toList();
       if (matches.isEmpty) {
-        return _buildEmptyState(
-          context,
-          isDark,
-          customMessage: 'No words found matching "$query"',
-        );
+        return [
+          SliverToBoxAdapter(
+            child: _buildEmptyState(
+              context,
+              isDark,
+              customMessage: 'No words found matching "$query"',
+            ),
+          ),
+        ];
       }
-      return ListView.builder(
-        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
-        physics: const BouncingScrollPhysics(),
-        itemCount: matches.length,
-        itemBuilder: (context, index) => _buildWordCard(matches[index], isDark),
-      );
+      return [
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => _buildWordCard(matches[index], isDark),
+              childCount: matches.length,
+            ),
+          ),
+        ),
+      ];
     }
 
     if (_currentFilter == WordBankFilter.today) {
       if (todayWords.isEmpty) {
-        return _buildEmptyState(
-          context,
-          isDark,
-          customMessage: 'No words completed today yet.',
-          icon: Icons.bolt_rounded,
-        );
-      }
-      return ListView(
-        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
-        physics: const BouncingScrollPhysics(),
-        children: [
-          _buildSectionHeader(
-            title: "Today's Words",
-            count: todayWords.length,
-            color: AppColors.indigo500,
-            icon: Icons.bolt_rounded,
-            isDark: isDark,
+        return [
+          SliverToBoxAdapter(
+            child: _buildEmptyState(
+              context,
+              isDark,
+              customMessage: 'No words completed today yet.',
+              icon: Icons.bolt_rounded,
+            ),
           ),
-          ...todayWords.map((w) => _buildWordCard(w, isDark)),
-        ],
-      );
+        ];
+      }
+      return [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: _buildSectionHeader(
+              title: "Today's Words",
+              count: todayWords.length,
+              color: AppColors.indigo500,
+              icon: Icons.bolt_rounded,
+              isDark: isDark,
+            ),
+          ),
+        ),
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => _buildWordCard(todayWords[index], isDark),
+              childCount: todayWords.length,
+            ),
+          ),
+        ),
+      ];
     }
 
     if (_currentFilter == WordBankFilter.learning) {
       if (learningWords.isEmpty) {
-        return _buildEmptyState(
-          context,
-          isDark,
-          customMessage: 'No words currently in learning.',
-          icon: Icons.school_rounded,
-        );
-      }
-      return ListView(
-        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
-        physics: const BouncingScrollPhysics(),
-        children: [
-          _buildSectionHeader(
-            title: 'Learning',
-            count: learningWords.length,
-            color: AppColors.blue500,
-            icon: Icons.school_rounded,
-            isDark: isDark,
+        return [
+          SliverToBoxAdapter(
+            child: _buildEmptyState(
+              context,
+              isDark,
+              customMessage: 'No words currently in learning.',
+              icon: Icons.school_rounded,
+            ),
           ),
-          ...learningWords.map((w) => _buildWordCard(w, isDark)),
-        ],
-      );
+        ];
+      }
+      return [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: _buildSectionHeader(
+              title: 'Learning',
+              count: learningWords.length,
+              color: AppColors.blue500,
+              icon: Icons.school_rounded,
+              isDark: isDark,
+            ),
+          ),
+        ),
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => _buildWordCard(learningWords[index], isDark),
+              childCount: learningWords.length,
+            ),
+          ),
+        ),
+      ];
     }
 
     if (_currentFilter == WordBankFilter.reviewing) {
       if (reviewingWords.isEmpty) {
-        return _buildEmptyState(
-          context,
-          isDark,
-          customMessage: 'No words pending review right now.',
-          icon: Icons.loop_rounded,
-        );
-      }
-      return ListView(
-        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
-        physics: const BouncingScrollPhysics(),
-        children: [
-          _buildSectionHeader(
-            title: 'Reviewing',
-            count: reviewingWords.length,
-            color: AppColors.amber500,
-            icon: Icons.loop_rounded,
-            isDark: isDark,
+        return [
+          SliverToBoxAdapter(
+            child: _buildEmptyState(
+              context,
+              isDark,
+              customMessage: 'No words pending review right now.',
+              icon: Icons.loop_rounded,
+            ),
           ),
-          ...reviewingWords.map((w) => _buildWordCard(w, isDark)),
-        ],
-      );
+        ];
+      }
+      return [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: _buildSectionHeader(
+              title: 'Reviewing',
+              count: reviewingWords.length,
+              color: AppColors.amber500,
+              icon: Icons.loop_rounded,
+              isDark: isDark,
+            ),
+          ),
+        ),
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => _buildWordCard(reviewingWords[index], isDark),
+              childCount: reviewingWords.length,
+            ),
+          ),
+        ),
+      ];
     }
 
     if (_currentFilter == WordBankFilter.mastered) {
       if (masteredWords.isEmpty) {
-        return _buildEmptyState(
-          context,
-          isDark,
-          customMessage: 'No words mastered yet. Keep practicing!',
-          icon: Icons.workspace_premium_rounded,
-        );
-      }
-      return ListView(
-        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
-        physics: const BouncingScrollPhysics(),
-        children: [
-          _buildSectionHeader(
-            title: 'Mastered',
-            count: masteredWords.length,
-            color: AppColors.emerald500,
-            icon: Icons.workspace_premium_rounded,
-            isDark: isDark,
+        return [
+          SliverToBoxAdapter(
+            child: _buildEmptyState(
+              context,
+              isDark,
+              customMessage: 'No words mastered yet. Keep practicing!',
+              icon: Icons.workspace_premium_rounded,
+            ),
           ),
-          ...masteredWords.map((w) => _buildWordCard(w, isDark)),
-        ],
-      );
+        ];
+      }
+      return [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: _buildSectionHeader(
+              title: 'Mastered',
+              count: masteredWords.length,
+              color: AppColors.emerald500,
+              icon: Icons.workspace_premium_rounded,
+              isDark: isDark,
+            ),
+          ),
+        ),
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => _buildWordCard(masteredWords[index], isDark),
+              childCount: masteredWords.length,
+            ),
+          ),
+        ),
+      ];
     }
 
     // Default: WordBankFilter.all -> Sections for Learning, Reviewing, Mastered!
     if (allWords.isEmpty) {
-      return _buildEmptyState(context, isDark);
+      return [
+        SliverToBoxAdapter(child: _buildEmptyState(context, isDark)),
+      ];
     }
 
-    final children = <Widget>[];
+    final slivers = <Widget>[];
 
     if (learningWords.isNotEmpty) {
-      children.add(_buildSectionHeader(
-        title: 'Learning',
-        count: learningWords.length,
-        color: AppColors.blue500,
-        icon: Icons.school_rounded,
-        isDark: isDark,
-      ));
-      children.addAll(learningWords.map((w) => _buildWordCard(w, isDark)));
+      slivers.add(
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: _buildSectionHeader(
+              title: 'Learning',
+              count: learningWords.length,
+              color: AppColors.blue500,
+              icon: Icons.school_rounded,
+              isDark: isDark,
+            ),
+          ),
+        ),
+      );
+      slivers.add(
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => _buildWordCard(learningWords[index], isDark),
+              childCount: learningWords.length,
+            ),
+          ),
+        ),
+      );
     }
 
     if (reviewingWords.isNotEmpty) {
-      children.add(_buildSectionHeader(
-        title: 'Reviewing',
-        count: reviewingWords.length,
-        color: AppColors.amber500,
-        icon: Icons.loop_rounded,
-        isDark: isDark,
-      ));
-      children.addAll(reviewingWords.map((w) => _buildWordCard(w, isDark)));
+      slivers.add(
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: _buildSectionHeader(
+              title: 'Reviewing',
+              count: reviewingWords.length,
+              color: AppColors.amber500,
+              icon: Icons.loop_rounded,
+              isDark: isDark,
+            ),
+          ),
+        ),
+      );
+      slivers.add(
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => _buildWordCard(reviewingWords[index], isDark),
+              childCount: reviewingWords.length,
+            ),
+          ),
+        ),
+      );
     }
 
     if (masteredWords.isNotEmpty) {
-      children.add(_buildSectionHeader(
-        title: 'Mastered',
-        count: masteredWords.length,
-        color: AppColors.emerald500,
-        icon: Icons.workspace_premium_rounded,
-        isDark: isDark,
-      ));
-      children.addAll(masteredWords.map((w) => _buildWordCard(w, isDark)));
+      slivers.add(
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: _buildSectionHeader(
+              title: 'Mastered',
+              count: masteredWords.length,
+              color: AppColors.emerald500,
+              icon: Icons.workspace_premium_rounded,
+              isDark: isDark,
+            ),
+          ),
+        ),
+      );
+      slivers.add(
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => _buildWordCard(masteredWords[index], isDark),
+              childCount: masteredWords.length,
+            ),
+          ),
+        ),
+      );
     }
 
-    return ListView(
-      padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 24.h),
-      physics: const BouncingScrollPhysics(),
-      children: children,
-    );
+    return slivers;
   }
 
   Widget _buildSectionHeader({
@@ -794,10 +914,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                   ),
                 ),
                 IconButton(
-                  onPressed: () {
-                    _haptics.selection();
-                    di.sl<TtsService>().speak(word.word);
-                  },
+                  onPressed: () => _playTts(word.word),
                   icon: Icon(
                     Icons.volume_up_rounded,
                     size: 20.r,
@@ -820,168 +937,148 @@ class _WordBankScreenState extends State<WordBankScreen> {
     WordProgress progress,
     bool isDark,
   ) async {
+    // Prevent double-touch / rapid taps from opening multiple bottom sheets
+    if (_isOpeningDetail) return;
+    _isOpeningDetail = true;
     _haptics.selection();
-    final service = di.sl<DailyWordsService>();
-    final wordDetail = await service.getWordDetails(progress.wordId);
 
-    if (!context.mounted) return;
+    try {
+      final service = di.sl<DailyWordsService>();
+      final wordDetail = await service.getWordDetails(progress.wordId);
 
-    showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (sheetContext) {
-        return Container(
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(sheetContext).size.height * 0.75,
-          ),
-          decoration: BoxDecoration(
-            color: isDark ? AppColors.slate900 : Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.25),
-                blurRadius: 24,
-                offset: const Offset(0, -4),
-              ),
-            ],
-          ),
-          child: SafeArea(
-            top: false,
-            child: SingleChildScrollView(
-              padding: EdgeInsets.fromLTRB(24.w, 14.h, 24.w, 24.h),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // Handle pill
-                  Center(
-                    child: Container(
-                      width: 40.w,
-                      height: 4.h,
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white24 : AppColors.slate300,
-                        borderRadius: BorderRadius.circular(2.r),
+      if (!context.mounted) return;
+
+      await showModalBottomSheet<void>(
+        context: context,
+        isScrollControlled: true,
+        enableDrag: true,
+        isDismissible: true,
+        backgroundColor: Colors.transparent,
+        builder: (sheetContext) {
+          return Container(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(sheetContext).size.height * 0.8,
+            ),
+            decoration: BoxDecoration(
+              color: isDark ? AppColors.slate900 : Colors.white,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.25),
+                  blurRadius: 24,
+                  offset: const Offset(0, -4),
+                ),
+              ],
+            ),
+            child: SafeArea(
+              top: false,
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                padding: EdgeInsets.fromLTRB(24.w, 14.h, 24.w, 24.h),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // Handle pill
+                    Center(
+                      child: Container(
+                        width: 40.w,
+                        height: 4.h,
+                        decoration: BoxDecoration(
+                          color: isDark ? Colors.white24 : AppColors.slate300,
+                          borderRadius: BorderRadius.circular(2.r),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 20.h),
+                    SizedBox(height: 20.h),
 
-                  // Header with word, phonetic, and TTS button
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              progress.word,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 26.sp,
-                                fontWeight: FontWeight.w800,
-                                color:
-                                    Theme.of(sheetContext).colorScheme.onSurface,
-                              ),
-                            ),
-                            if (wordDetail?.phonetic.isNotEmpty ?? false) ...[
-                              SizedBox(height: 4.h),
+                    // Header with word, phonetic, and TTS button
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
                               Text(
-                                wordDetail!.phonetic,
+                                progress.word,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 15.sp,
-                                  color: isDark
-                                      ? Colors.white60
-                                      : AppColors.slate500,
+                                  fontSize: 26.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: Theme.of(sheetContext)
+                                      .colorScheme
+                                      .onSurface,
                                 ),
                               ),
+                              if (wordDetail?.phonetic.isNotEmpty ?? false) ...[
+                                SizedBox(height: 4.h),
+                                Text(
+                                  wordDetail!.phonetic,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    color: isDark
+                                        ? Colors.white60
+                                        : AppColors.slate500,
+                                  ),
+                                ),
+                              ],
                             ],
-                          ],
+                          ),
                         ),
-                      ),
-                      IconButton.filled(
-                        style: IconButton.styleFrom(
-                          backgroundColor: AppColors.indigo500,
-                          foregroundColor: Colors.white,
+                        IconButton.filled(
+                          style: IconButton.styleFrom(
+                            backgroundColor: AppColors.indigo500,
+                            foregroundColor: Colors.white,
+                          ),
+                          onPressed: () => _playTts(progress.word),
+                          icon: Icon(Icons.volume_up_rounded, size: 22.r),
+                          tooltip: 'Listen to pronunciation',
                         ),
-                        onPressed: () {
-                          _haptics.selection();
-                          di.sl<TtsService>().speak(progress.word);
-                        },
-                        icon: Icon(Icons.volume_up_rounded, size: 22.r),
-                        tooltip: 'Listen to pronunciation',
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 12.h),
+                      ],
+                    ),
+                    SizedBox(height: 12.h),
 
-                  // Tags row (Part of speech & Mastery Status)
-                  Wrap(
-                    spacing: 8.w,
-                    runSpacing: 8.h,
-                    children: [
-                      if (wordDetail?.partOfSpeech.isNotEmpty ?? false)
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 4.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppColors.indigo500.withValues(alpha: 0.12),
-                            borderRadius: BorderRadius.circular(8.r),
-                          ),
-                          child: Text(
-                            wordDetail!.partOfSpeech.toUpperCase(),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.indigo500,
-                              letterSpacing: 0.5,
+                    // Tags row (Part of speech & Mastery Status)
+                    Wrap(
+                      spacing: 8.w,
+                      runSpacing: 8.h,
+                      children: [
+                        if (wordDetail?.partOfSpeech.isNotEmpty ?? false)
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 4.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.indigo500.withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Text(
+                              wordDetail!.partOfSpeech.toUpperCase(),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.indigo500,
+                                letterSpacing: 0.5,
+                              ),
                             ),
                           ),
-                        ),
-                      _buildMasteryBadge(progress.box, isDark),
-                    ],
-                  ),
-                  SizedBox(height: 20.h),
-                  Divider(
-                    color: isDark ? Colors.white12 : AppColors.slate200,
-                    height: 1,
-                  ),
-                  SizedBox(height: 16.h),
-
-                  // Definition section
-                  Text(
-                    'DEFINITION',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 1.1,
-                      color: isDark ? Colors.white38 : AppColors.slate400,
+                        _buildMasteryBadge(progress.box, isDark),
+                      ],
                     ),
-                  ),
-                  SizedBox(height: 6.h),
-                  Text(
-                    wordDetail?.definition ??
-                        'Definition currently unavailable.',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      height: 1.45,
-                      fontWeight: FontWeight.w500,
-                      color: Theme.of(sheetContext).colorScheme.onSurface,
+                    SizedBox(height: 20.h),
+                    Divider(
+                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      height: 1,
                     ),
-                  ),
+                    SizedBox(height: 16.h),
 
-                  // Example section
-                  if (wordDetail?.example.isNotEmpty ?? false) ...[
-                    SizedBox(height: 18.h),
+                    // Definition section
                     Text(
-                      'EXAMPLE IN CONTEXT',
+                      'DEFINITION',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
@@ -990,123 +1087,155 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         color: isDark ? Colors.white38 : AppColors.slate400,
                       ),
                     ),
-                    SizedBox(height: 8.h),
-                    Container(
-                      padding: EdgeInsets.all(14.r),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : AppColors.slate100,
-                        borderRadius: BorderRadius.circular(14.r),
-                        border: Border.all(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.08)
-                              : AppColors.slate200,
+                    SizedBox(height: 6.h),
+                    Text(
+                      wordDetail?.definition ??
+                          'Definition currently unavailable.',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        height: 1.45,
+                        fontWeight: FontWeight.w500,
+                        color: Theme.of(sheetContext).colorScheme.onSurface,
+                      ),
+                    ),
+
+                    // Example section
+                    if (wordDetail?.example.isNotEmpty ?? false) ...[
+                      SizedBox(height: 18.h),
+                      Text(
+                        'EXAMPLE IN CONTEXT',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.1,
+                          color: isDark ? Colors.white38 : AppColors.slate400,
                         ),
                       ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              '"${wordDetail!.example}"',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                height: 1.4,
-                                fontStyle: FontStyle.italic,
-                                color: Theme.of(sheetContext)
-                                    .colorScheme
-                                    .onSurface,
+                      SizedBox(height: 8.h),
+                      Container(
+                        padding: EdgeInsets.all(14.r),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.05)
+                              : AppColors.slate100,
+                          borderRadius: BorderRadius.circular(14.r),
+                          border: Border.all(
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.08)
+                                : AppColors.slate200,
+                          ),
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                '"${wordDetail!.example}"',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  height: 1.4,
+                                  fontStyle: FontStyle.italic,
+                                  color: Theme.of(sheetContext)
+                                      .colorScheme
+                                      .onSurface,
+                                ),
                               ),
                             ),
+                            SizedBox(width: 8.w),
+                            GestureDetector(
+                              onTap: () => _playTts(wordDetail.example),
+                              child: Icon(
+                                Icons.volume_up_outlined,
+                                size: 18.r,
+                                color: AppColors.indigo500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+
+                    SizedBox(height: 20.h),
+
+                    // Spaced repetition info
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 10.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isDark ? AppColors.slate800 : AppColors.slate50,
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Learned: ${progress.learnedDate}',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              color:
+                                  isDark ? Colors.white54 : AppColors.slate500,
+                            ),
                           ),
-                          SizedBox(width: 8.w),
-                          GestureDetector(
-                            onTap: () {
-                              _haptics.selection();
-                              di.sl<TtsService>().speak(wordDetail.example);
-                            },
-                            child: Icon(
-                              Icons.volume_up_outlined,
-                              size: 18.r,
-                              color: AppColors.indigo500,
+                          Text(
+                            'Reviews: ${progress.reviewCount}',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              color:
+                                  isDark ? Colors.white70 : AppColors.slate700,
                             ),
                           ),
                         ],
                       ),
                     ),
+
+                    SizedBox(height: 20.h),
+
+                    // Close button
+                    SizedBox(
+                      width: double.infinity,
+                      height: 48.h,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.indigo500,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
+                          elevation: 0,
+                        ),
+                        onPressed: () => Navigator.of(sheetContext).pop(),
+                        child: Text(
+                          'Close',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
-
-                  SizedBox(height: 20.h),
-
-                  // Spaced repetition info
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 14.w,
-                      vertical: 10.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: isDark ? AppColors.slate800 : AppColors.slate50,
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Learned: ${progress.learnedDate}',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            color: isDark ? Colors.white54 : AppColors.slate500,
-                          ),
-                        ),
-                        Text(
-                          'Reviews: ${progress.reviewCount}',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            color: isDark ? Colors.white70 : AppColors.slate700,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  SizedBox(height: 20.h),
-
-                  // Close button
-                  SizedBox(
-                    width: double.infinity,
-                    height: 48.h,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.indigo500,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                        ),
-                        elevation: 0,
-                      ),
-                      onPressed: () => Navigator.of(sheetContext).pop(),
-                      child: Text(
-                        'Close',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
-          ),
-        );
-      },
-    );
+          );
+        },
+      );
+    } catch (e) {
+      debugPrint('Error opening word detail sheet: $e');
+    } finally {
+      if (mounted) {
+        _isOpeningDetail = false;
+      }
+    }
   }
 
   Widget _buildMasteryBadge(int box, bool isDark) {
