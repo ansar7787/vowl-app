@@ -1,577 +1,637 @@
 {
-    "gameType": "connectedSpeech",
-    "batchIndex": 9,
-    "levels": "81-90",
-    "quests": [
-        {
-            "id": "ACC_CONNECTEDSPEECH_L81_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "aroma of",
-            "textToSpeak": "aroma of",
-            "options": [
-                "Linking (/r/ links naturally)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Both \"aroma\" and \"of\" end and begin with vowel sounds. Listen for an extra consonant sound that sneaks in between them.",
-            "explanation": "This is intrusion: a sound appears between two vowels even though it isn't written anywhere. In \"aroma of\", an intrusive /r/ bridges the gap, purely to avoid an awkward vowel collision.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "aroma of"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L81_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "find out",
-            "textToSpeak": "find out",
-            "options": [
-                "Linking (/d/ links to the vowel)",
-                "Elision (/d/ disappears)"
-            ],
-            "correctAnswer": "Linking (/d/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "\"find\" ends in a clear consonant sound, and \"out\" starts with a vowel. What happens to that consonant when you say them together naturally?",
-            "explanation": "When a word ending in a consonant meets a word starting with a vowel, the consonant shifts to open the next syllable instead of closing the first. In \"find out\", the final consonant of \"find\" links smoothly onto the vowel that begins \"out\".",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "find out"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L81_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "flat pack",
-            "textToSpeak": "flat pack",
-            "options": [
-                "Assimilation (/t/ becomes /k/)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 1,
-            "hint": "Between \"flat\" and \"pack\" sits a consonant under pressure to match its neighbor. What does it become?",
-            "explanation": "This pairing is a classic assimilation example: the /t/ ending \"flat\" adopts the bilabial quality of the sound in \"pack\", surfacing as /p/ in natural, connected speech.",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "flap pack"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L82_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "road block",
-            "textToSpeak": "road block",
-            "options": [
-                "Assimilation (/d/ becomes /b/)",
-                "Assimilation (/d/ becomes /g/)"
-            ],
-            "correctAnswer": "Assimilation (/d/ becomes /b/)",
-            "correctAnswerIndex": 0,
-            "hint": "This isn't a case of a sound vanishing from \"road\" — it's still there, just different. What does /d/ turn into before the bilabial sound in \"block\"?",
-            "explanation": "Notice that the /d/ ending \"road\" isn't deleted the way it would be in elision — it survives, just transformed into /b/ to match the bilabial sound beginning \"block\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "roab block"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L82_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "seven goals",
-            "textToSpeak": "seven goals",
-            "options": [
-                "Assimilation (/n/ becomes /m/)",
-                "Assimilation (/n/ becomes /ŋ/)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
-            "correctAnswerIndex": 1,
-            "hint": "The /n/ at the end of \"seven\" is about to meet a velar sound in \"goals\". Does it hold firm, or shift to match?",
-            "explanation": "Before a velar consonant, /n/ commonly shifts to match its place of articulation. In \"seven goals\", /n/ becomes /ŋ/ — the sound itself changes, it doesn't disappear.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "seven goals"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L82_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "true or false",
-            "textToSpeak": "true or false",
-            "options": [
-                "Intrusion (intrusive /w/)",
-                "Linking (/w/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"true or\" without a pause. Two vowel sounds are about to collide — what does English insert to smooth the transition?",
-            "explanation": "Because \"true\" ends in a vowel and \"or\" begins with one, English speakers instinctively insert /w/ between them. It's not in the spelling of either word — it's added on the fly to keep the speech flowing.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "true or false"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L83_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "summer afternoon",
-            "textToSpeak": "summer afternoon",
-            "options": [
-                "Intrusion (extra /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "This 'r' is real — it's written into \"summer\" — but often silent. Listen for it specifically at the boundary with \"afternoon\".",
-            "explanation": "Speakers keep the /r/ silent in \"summer\" only until a vowel gives it a reason to surface. \"afternoon\" provides exactly that vowel, so the /r/ links the phrase together.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "summer afternoon"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L83_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "for everyone",
-            "textToSpeak": "for everyone",
-            "options": [
-                "Intrusion (extra /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "Unlike a sound added from nowhere, the /r/ here is already part of \"for\"'s spelling. What triggers it to reappear before \"everyone\"?",
-            "explanation": "This linking /r/ is predictable from spelling alone: any r-final word behaves this way before a vowel, and \"for everyone\" is a clean example of it.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "for everyone"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L83_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "neighbor and",
-            "textToSpeak": "neighbor and",
-            "options": [
-                "Intrusion (extra /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "\"neighbor\" ends in a silent 'r' on its own. Say it together with \"and\" — does that silence hold, or break?",
-            "explanation": "Because \"neighbor\" ends in 'r', the connected-speech rule is simple: pronounce the /r/ whenever a vowel follows, as it does before \"and\". That's what makes this linking rather than intrusion.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "neighbor and"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L84_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "good game",
-            "textToSpeak": "good game",
-            "options": [
-                "Assimilation (/d/ becomes /g/)",
-                "Assimilation (/d/ becomes /b/)"
-            ],
-            "correctAnswer": "Assimilation (/d/ becomes /g/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"good game\" at natural speed. Listen right at the boundary — does the /d/ stay a /d/, or does it become something else?",
-            "explanation": "This is regressive assimilation: a sound changes to become more like the sound that follows it. Here, the /d/ ending \"good\" turns into /g/ because \"game\" begins with a velar consonant.",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "goog game"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L84_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "degree of",
-            "textToSpeak": "degree of",
-            "options": [
-                "Linking (/j/ links naturally)",
-                "Intrusion (intrusive /j/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 1,
-            "hint": "Check the spelling of \"degree\" before \"of\" — does it end in a letter that would predict a /j/ sound? If not, where's that /j/ actually coming from?",
-            "explanation": "Unlike linking, where the connecting sound is already written into the word, this /j/ in \"degree of\" comes from nowhere in the spelling. That's exactly what makes it intrusive rather than a genuine linking sound.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "degree of"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L84_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ready or not",
-            "textToSpeak": "ready or not",
-            "options": [
-                "Linking (/j/ links naturally)",
-                "Intrusion (intrusive /j/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 1,
-            "hint": "Vowel sounds rarely bump directly into each other in fluent English. What extra sound bridges \"ready\" and \"or\" here?",
-            "explanation": "Two vowel sounds meeting head-on is hard to say smoothly, so speakers add /j/ as a natural bridge. You'll hear it in \"ready or\", even though neither word's spelling contains it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "ready or not"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L85_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "hold your breath",
-            "textToSpeak": "hold your breath",
-            "options": [
-                "Coalescence (/d/ + /j/ becomes /tʃ/)",
-                "Coalescence (/d/ + /j/ becomes /dʒ/)"
-            ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Rather than pronouncing /d/ then /j/ separately, fluent speakers coalesce them. What do you actually hear in \"hold your\"?",
-            "explanation": "Notice that neither the original /d/ nor /j/ survives on its own — they combine into /dʒ/. That fusion is what makes \"hold your\" sound natural and fast.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "hold your breath"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L85_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "worked late",
-            "textToSpeak": "worked late",
-            "options": [
-                "Assimilation (/t/ becomes /p/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "In casual speech, does the final /t/ of \"worked\" get pronounced before \"late\", or does it just vanish?",
-            "explanation": "English speakers simplify clusters like this one by deleting a stop consonant rather than forcing it in. The /t/ in \"worked\" is the one that goes missing before \"late\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "worked la'e"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L85_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "trust your instincts",
-            "textToSpeak": "trust your instincts",
-            "options": [
-                "Coalescence (/t/ + /j/ becomes /dʒ/)",
-                "Coalescence (/t/ + /j/ becomes /tʃ/)"
-            ],
-            "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen at natural speed: does \"trust your\" keep two distinct consonant sounds at the boundary, or blend them into a new one?",
-            "explanation": "In relaxed, natural speech, /t/ and /j/ rarely stay separate at a word boundary like this one. They coalesce into /tʃ/, exactly as in \"trust your\".",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "trust your instincts"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L86_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "China and Japan",
-            "textToSpeak": "China and Japan",
-            "options": [
-                "Linking (/r/ links naturally)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "There's no /r/ anywhere in the spelling of \"China\". Yet something links it to the vowel that opens \"and\" — what is it?",
-            "explanation": "This inserted /r/ has no basis in spelling — it exists purely to smooth the vowel-to-vowel transition between \"China\" and \"and\". That's the hallmark of intrusion.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "China and Japan"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L86_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "play and learn",
-            "textToSpeak": "play and learn",
-            "options": [
-                "Intrusion (intrusive /j/)",
-                "Linking (/j/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen carefully between \"play\" and \"and\". An unwritten sound appears purely to ease the vowel-to-vowel transition. Which one?",
-            "explanation": "Native speakers automatically fill the gap between two vowel sounds with /j/, even when there's no letter to justify it. \"play and\" is a clear example of this intrusive sound.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "play and learn"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L86_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "review again",
-            "textToSpeak": "review again",
-            "options": [
-                "Linking (/w/ links naturally)",
-                "Intrusion (intrusive /w/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 1,
-            "hint": "This is a spelling trap: \"review\" looks like it should flow straight into \"again\", but a sound gets inserted that isn't written anywhere. Can you hear it?",
-            "explanation": "Since \"review\" doesn't end in a written consonant that could explain a /w/, the /w/ you hear before \"again\" is added by the speech system itself — an intrusive sound, not a spelled one.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "review again"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L87_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten cousins",
-            "textToSpeak": "ten cousins",
-            "options": [
-                "Assimilation (/n/ becomes /m/)",
-                "Assimilation (/n/ becomes /ŋ/)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
-            "correctAnswerIndex": 1,
-            "hint": "A velar consonant is coming up in \"cousins\". What does that do to the /n/ just before it in \"ten\"?",
-            "explanation": "Speakers save effort by letting /n/ anticipate the velar sound ahead. So in \"ten cousins\", /n/ is pronounced as /ŋ/ instead.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "ten cousins"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L87_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "there is",
-            "textToSpeak": "there is",
-            "options": [
-                "Intrusion (extra /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "Because \"there\" is spelled with a final 'r', a vowel right after it — like the one starting \"is\" — can bring that /r/ back into speech. Listen for it.",
-            "explanation": "The /r/ you hear between \"there\" and \"is\" isn't invented — it's the word's own final letter reactivated by the vowel that follows, which is the textbook definition of linking /r/.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "there is"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L87_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "bad grade",
-            "textToSpeak": "bad grade",
-            "options": [
-                "Assimilation (/d/ becomes /g/)",
-                "Assimilation (/d/ becomes /b/)"
-            ],
-            "correctAnswer": "Assimilation (/d/ becomes /g/)",
-            "correctAnswerIndex": 0,
-            "hint": "Notice how the mouth has to move from the /d/ ending \"bad\" to the velar sound that opens \"grade\". Does it really make that full move, or take a shortcut?",
-            "explanation": "Unlike elision, nothing is dropped here — the sound simply changes place. /d/ becomes /g/ in \"bad grade\" to match the velar consonant that follows.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "bad grage"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L88_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "cool off",
-            "textToSpeak": "cool off",
-            "options": [
-                "Linking (/l/ links to the vowel)",
-                "Elision (/l/ disappears)"
-            ],
-            "correctAnswer": "Linking (/l/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"cool off\" as one smooth unit, not two separate words. Where does the final consonant of \"cool\" end up?",
-            "explanation": "This is linking: the consonant isn't added, dropped, or changed — it simply moves to attach to the following vowel. That's exactly what happens between \"cool\" and \"off\".",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "cool off"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L88_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "should yell",
-            "textToSpeak": "should yell",
-            "options": [
-                "Coalescence (/d/ + /j/ becomes /dʒ/)",
-                "Coalescence (/d/ + /j/ becomes /tʃ/)"
-            ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
-            "correctAnswerIndex": 0,
-            "hint": "The /d/ in \"should\" and the /j/ starting \"yell\" don't survive as separate sounds in fast speech. What do they turn into together?",
-            "explanation": "This is why \"should yell\" doesn't sound like two crisp, separate words: the boundary consonant /d/ and the /j/ of \"yell\" merge into the single sound /dʒ/.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "should yell"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L88_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "doctor appointment",
-            "textToSpeak": "doctor appointment",
-            "options": [
-                "Linking (/r/ links to the vowel)",
-                "Intrusion (extra /r/)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "\"doctor\" already has a written 'r' at the end — normally silent before a pause, but what happens to it right before the vowel that opens \"appointment\"?",
-            "explanation": "\"doctor\" ends in a written 'r' that's silent in isolation (in non-rhotic pronunciation) but reappears whenever a vowel follows. Because \"appointment\" begins with a vowel, the /r/ resurfaces — this is linking /r/, not intrusion, since the letter is genuinely there in \"doctor\".",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "doctor appointment"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L89_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "your own",
-            "textToSpeak": "your own",
-            "options": [
-                "Linking (/r/ links to the vowel)",
-                "Intrusion (extra /r/)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"your own\" naturally. That final 'r' in \"your\", usually silent, resurfaces here — why, do you think?",
-            "explanation": "This is linking, not intrusion, because the 'r' is already written into \"your\". It stays silent before a pause or consonant but comes back to life right before the vowel that opens \"own\".",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "your own"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L89_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "put it on",
-            "textToSpeak": "put it on",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Linking (/t/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/t/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "The consonant at the end of \"put\" has a vowel waiting right after it in \"it\". Does it stay attached to \"put\", or slide onto the next syllable?",
-            "explanation": "Fluent English resyllabifies across word boundaries whenever a consonant meets a vowel. Here, the last sound of \"put\" glides directly into \"it\", making the phrase sound like one continuous unit.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "put it on"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L89_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "watch out",
-            "textToSpeak": "watch out",
-            "options": [
-                "Linking (/tʃ/ links to the vowel)",
-                "Elision (/tʃ/ disappears)"
-            ],
-            "correctAnswer": "Linking (/tʃ/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen to the boundary between \"watch\" and \"out\". A consonant and a vowel are meeting — what does fluent speech do with them?",
-            "explanation": "Rather than pausing between the consonant and the vowel, speakers connect them directly — the consonant essentially becomes the first sound of the next syllable. You hear this clearly in \"watch out\".",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "watch out"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L90_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "hang on",
-            "textToSpeak": "hang on",
-            "options": [
-                "Linking (/ŋ/ links to the vowel)",
-                "Elision (/ŋ/ disappears)"
-            ],
-            "correctAnswer": "Linking (/ŋ/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "In natural speech, a word-final consonant followed by a vowel often gets pulled into the next syllable. Does that happen between \"hang\" and \"on\"?",
-            "explanation": "This smooth consonant-to-vowel connection is what makes native speech sound joined-up rather than word-by-word. \"hang on\" links this way naturally.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "hang on"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L90_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "send flowers",
-            "textToSpeak": "send flowers",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /b/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Picture how a native speaker would say \"send flowers\" in a fast, everyday sentence. Is every single consonant still there?",
-            "explanation": "This is a textbook case of consonant-cluster elision: the /d/ between two consonants is dropped to keep speech fluent and effortless in \"send flowers\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "sen' flowers"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L90_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "select size",
-            "textToSpeak": "select size",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /m/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "The /t/ in \"select\" is trapped between two other consonants right before \"size\". What usually happens to a stop consonant stuck in that position?",
-            "explanation": "Rather than pronounce all three consonants back to back, speakers cut the /t/ from \"select\" entirely. The result flows straight from the first consonant into \"size\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "selec' size"
-        }
-    ]
+  "gameType": "connectedSpeech",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "ACC_CONNECTEDSPEECH_L81_Q1",
+      "instruction": "In “Ann gave a book to a friend”, which words are normally reduced in natural speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Ann gave a book to a friend",
+      "textToSpeak": "Ann gave a book to a friend",
+      "options": [
+        "The meaning words: “gave”, “book” and “friend”",
+        "Every word equally, because English has no stress",
+        "Only the first and the last word of the sentence",
+        "The small grammar words: “a”, “to” and “a”"
+      ],
+      "correctAnswer": "The small grammar words: “a”, “to” and “a”",
+      "correctAnswerIndex": 3,
+      "hint": "Clap the beats of the sentence at natural speed. Which words get a clap, and which get squeezed in between?",
+      "explanation": "In English, words that carry the main meaning (nouns, main verbs, adjectives) are stressed, while small grammar words such as articles and prepositions are normally unstressed and reduced. So the sentence is heard as “Ann GAVE uh BOOK tuh uh FRIEND”. Hearing the weak words as quiet is what lets you follow the whole sentence.",
+      "phoneticRule": "Content words usually carry stress and keep their full vowels; function words are unstressed in most contexts and typically use a weak form with a reduced vowel.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Ann gave uh book tuh uh friend"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L81_Q2",
+      "instruction": "In “Kim went to the market”, how is the word “to” usually pronounced?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Kim went to the market",
+      "textToSpeak": "Kim went to the market",
+      "options": [
+        "As /tuː/, with a long vowel, because every word has a full vowel",
+        "As /tə/, with a short, weak vowel because the word is unstressed",
+        "As /tɒ/, with a short stressed vowel",
+        "It is dropped completely, so “went the market” is heard"
+      ],
+      "correctAnswer": "As /tə/, with a short, weak vowel because the word is unstressed",
+      "correctAnswerIndex": 1,
+      "hint": "Say “went to the market” quickly and notice the vowel you use in the middle word.",
+      "explanation": "“To” is a function word and is not normally stressed, so its vowel is reduced to a schwa: “Kim went tuh the market”. The full vowel /tuː/ appears only when the word is stressed or at the end of a phrase.",
+      "phoneticRule": "Weak forms replace the full vowel of a function word with /ə/, and the full form is reserved for stressed or phrase-final positions.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Kim went tuh thuh market"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L81_Q3",
+      "instruction": "Which words in “Bring a chair to the table” are most likely to be reduced?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Bring a chair to the table",
+      "textToSpeak": "Bring a chair to the table",
+      "options": [
+        "“a”, “to” and “the”: the grammar words",
+        "“Bring”, “chair” and “table”: the meaning words",
+        "Only the word “to”",
+        "None of them: all words are reduced equally"
+      ],
+      "correctAnswer": "“a”, “to” and “the”: the grammar words",
+      "correctAnswerIndex": 0,
+      "hint": "Ask which words you would keep if you had to send the sentence as a very short text message.",
+      "explanation": "The words you would keep in a short message (bring, chair, table) are the content words, and they carry the stress. The others, a, to and the, are grammar words, and they are reduced: “Bring uh chair tuh thuh table”. The same test works for any sentence you hear.",
+      "phoneticRule": "A quick test for weak words is the telegram test: words that would be dropped from a telegram are usually function words that take weak forms.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Bring uh chair tuh thuh table"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L82_Q1",
+      "instruction": "You ask a waiter for something: “Ask for the menu.” Which spoken form of “for” is typical?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Ask for the menu",
+      "textToSpeak": "Ask for the menu",
+      "options": [
+        "“for”: a full /fɔː/ with a long vowel and strong stress",
+        "“fer-the”: the /f/ is lost and only a vowel is left",
+        "“fuh”: a weak /fə/ with a short vowel",
+        "“fore”: a long vowel with a strong /r/ sound"
+      ],
+      "correctAnswer": "“fuh”: a weak /fə/ with a short vowel",
+      "correctAnswerIndex": 2,
+      "hint": "Say “ask for the menu” as you would to a waiter, quickly and politely. Listen to the vowel in “for”.",
+      "explanation": "“For” is a preposition and is normally unstressed before a consonant, so it is reduced to /fə/: “Ask fuh the menu”. Its full form /fɔː/ is kept for stress or for the end of a clause. In the British model no /r/ is pronounced before a consonant; before a vowel, as in “for it”, a linking /r/ appears.",
+      "phoneticRule": "The preposition “for” has the weak form /fə/ before consonants and /fər/ before vowels, and the strong form /fɔː/ when stressed or phrase-final.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Ask fuh thuh menu"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L82_Q2",
+      "instruction": "In “a lot of money”, what typically happens to the word “of” in “Rent costs a lot of money”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Rent costs a lot of money",
+      "textToSpeak": "Rent costs a lot of money",
+      "options": [
+        "It stays a full /ɒv/, because “of” ends the idiom “a lot of”",
+        "It is reduced to /əv/, but the /v/ is released with a strong puff before “money”",
+        "It is reduced to a weak /ə/, and the /v/ may even be lost before “money”",
+        "It becomes /ɔːf/, with a stressed vowel to mark the quantity"
+      ],
+      "correctAnswer": "It is reduced to a weak /ə/, and the /v/ may even be lost before “money”",
+      "correctAnswerIndex": 2,
+      "hint": "Say “a lot of money” at conversation speed and listen for how much of “of” you really hear.",
+      "explanation": "“Of” is a weak function word, normally /əv/, and before a consonant it is often reduced to a bare /ə/: “a lot uh money”. This is the same reduction you met in “cup-a tea”. The full form /ɒv/ appears only when “of” is stressed, which is rare.",
+      "phoneticRule": "Weak “of” is typically /əv/, and before consonant-initial words its final /v/ is often lost, leaving only /ə/.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Rent costs uh lot uh money"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L82_Q3",
+      "instruction": "Which statement fits “at” in “Meet me at the station”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Meet me at the station",
+      "textToSpeak": "Meet me at the station",
+      "options": [
+        "“at” is said /æt/ with a strong vowel, because prepositions carry stress",
+        "“at” is said /ət/ with a short, weak vowel, as an unstressed preposition",
+        "“at” is dropped completely, so it sounds like “meet me the station”",
+        "“at” is said /ɑːt/ with a long vowel to mark the place of the meeting"
+      ],
+      "correctAnswer": "“at” is said /ət/ with a short, weak vowel, as an unstressed preposition",
+      "correctAnswerIndex": 1,
+      "hint": "Say “meet me at the station” quickly and listen for the vowel in the third word.",
+      "explanation": "“At” is a function word and is not normally stressed, so its vowel is reduced to /ə/: “Meet me uht the station”. The full form /æt/ appears when it is stressed or at the end of a clause, as in “What are you looking at?”. Hearing the weak /ət/ helps you notice that a preposition is there at all.",
+      "phoneticRule": "Prepositions such as “at” have a weak form /ət/ in ordinary connected speech and a strong form /æt/ only under stress or in final position.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Meet me uht the station"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L83_Q1",
+      "instruction": "In “Tea or coffee?”, how is “or” usually pronounced?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Tea or coffee",
+      "textToSpeak": "Tea or coffee",
+      "options": [
+        "As a weak /ə/, so it sounds like “tea-uh coffee”",
+        "As a full /ɔː/, because it joins two choices in a question",
+        "As /ɔːr/, with a strong /r/ before “coffee”",
+        "As /ɒ/, with a short stressed vowel before “coffee”"
+      ],
+      "correctAnswer": "As a weak /ə/, so it sounds like “tea-uh coffee”",
+      "correctAnswerIndex": 0,
+      "hint": "Say the question as a waiter would, quickly and lightly. How much vowel is left in the middle word?",
+      "explanation": "“Or” is a conjunction and is usually unstressed, so it is reduced to /ə/: “Tea uh coffee?”. The strong /ɔː/ is used for emphasis, such as “tea OR coffee, not both”. Listeners who expect a full “or” can miss the word in fast speech.",
+      "phoneticRule": "The conjunction “or” has the weak form /ə/ (or /ər/ before a vowel) in ordinary speech and the strong form /ɔː/ when stressed.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Tea uh coffee"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L83_Q2",
+      "instruction": "Which spoken form of “but” is typical in “A small but comfortable room”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "A small but comfortable room",
+      "textToSpeak": "A small but comfortable room",
+      "options": [
+        "/bʌt/ with a full vowel, because “but” introduces a contrast",
+        "/bʌ/ with a full vowel and the /t/ dropped",
+        "/bɒt/ with a rounded vowel and extra stress",
+        "“bət”: a weak form with a short /ə/ vowel"
+      ],
+      "correctAnswer": "“bət”: a weak form with a short /ə/ vowel",
+      "correctAnswerIndex": 3,
+      "hint": "Say the phrase aloud and listen to the middle word, comparing its length with “small” and “comfortable”.",
+      "explanation": "Even though “but” signals a contrast, it is not normally stressed. It is reduced to /bət/: “small buht comfortable”. The meaning words on either side carry the beat. Contrast is shown by the stress on those words more than by the strong form of “but”.",
+      "phoneticRule": "The conjunction “but” has the weak form /bət/; contrast is signalled by stress on the content words rather than by the strong form of “but”.",
+      "phenomenonType": "Weak",
+      "spokenForm": "A small buht comfortable room"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L83_Q3",
+      "instruction": "How are the two “as” words typically pronounced in “Call me as soon as you can”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Call me as soon as you can",
+      "textToSpeak": "Call me as soon as you can",
+      "options": [
+        "Both as a full /æz/, because “as” is part of a fixed phrase",
+        "The first as a weak /əz/, but the last as a full /æz/ because it begins the second half",
+        "Both as a weak /əz/, with a short vowel and a /z/ at the end",
+        "Both are dropped, leaving only “soon” between “me” and “you”"
+      ],
+      "correctAnswer": "Both as a weak /əz/, with a short vowel and a /z/ at the end",
+      "correctAnswerIndex": 2,
+      "hint": "Count the beats in “as soon as you can”. Which words fall on the beats?",
+      "explanation": "In “as soon as”, the two “as” words sit on either side of the stressed word “soon”, so both are unstressed: /əz suːn əz/. The full /æz/ is rare in this phrase. Learners who expect two strong “as” sounds often miss the phrase altogether.",
+      "phoneticRule": "In frames such as “as … as”, both instances of “as” are normally weak (/əz/), with stress falling on the word between them.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Call me uz soon uz you can"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L84_Q1",
+      "instruction": "In a quick “Ben can swim”, which clue tells you the speaker said “can” and not “can’t”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Ben can swim",
+      "textToSpeak": "Ben can swim",
+      "options": [
+        "“Can” has a full /æ/ vowel, while “can’t” has a weak /ə/ vowel and a silent final consonant",
+        "“Can” has a weak /kən/, while “can’t” keeps a full vowel and a final /nt/",
+        "“Can’t” is louder, so volume is the only clue",
+        "There is no difference in speech, so only context can help"
+      ],
+      "correctAnswer": "“Can” has a weak /kən/, while “can’t” keeps a full vowel and a final /nt/",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the vowel in the middle word and decide whether it sounds like a small “uh” or a full open vowel.",
+      "explanation": "In an ordinary statement, “can” is unstressed and has a weak vowel: /kən/. “Can’t” is stressed and keeps a full vowel, /kɑːnt/ in British English or /kænt/ in American English, so the two differ in vowel quality, stress and the final /t/. Listening to the vowel is more reliable than listening for the /t/ alone.",
+      "phoneticRule": "“Can” normally has the weak form /kən/ in affirmative sentences, whereas “can’t” keeps a full, stressed vowel; the vowel quality is the main cue.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Ben kuhn swim"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L84_Q2",
+      "instruction": "Why is “can” said /kæn/ in “Yes, I can”, but /kən/ in “I can come”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Yes, I can",
+      "textToSpeak": "Yes, I can",
+      "options": [
+        "At the end of a clause “can” is stressed and strong, while before another word it is weak",
+        "At the end of a sentence “can” becomes a completely different word with another meaning in English",
+        "Short answers are spoken slowly and carefully, so every word in them is strong",
+        "The /n/ is longer at the end of the sentence, so the vowel must also be full"
+      ],
+      "correctAnswer": "At the end of a clause “can” is stressed and strong, while before another word it is weak",
+      "correctAnswerIndex": 0,
+      "hint": "Compare the position of “can” in the two sentences: one is last, one has a verb after it.",
+      "explanation": "A word at the end of a clause carries the final stress, so function words such as “can” keep their strong form there: /kæn/. Before another word, “can” is unstressed and reduced: /kən/. The same word can therefore have two pronunciations, depending on its position.",
+      "phoneticRule": "Function words use their strong forms when stressed or in final position, and weak forms elsewhere; the position in the phrase selects the form.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Yes, I KAN"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L84_Q3",
+      "instruction": "On a call you hear a quick “Jo can come tonight”, with a short, weak “can”. What did the speaker most likely say?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Jo can come tonight",
+      "textToSpeak": "Jo can come tonight",
+      "options": [
+        "“Jo can’t come tonight”, because the /t/ is hard to hear",
+        "Either one: weak and strong forms sound the same in fast speech",
+        "“Jo couldn’t come tonight”, because the vowel is short",
+        "“Jo can come tonight”: a weak /kən/ signals the positive form of the verb"
+      ],
+      "correctAnswer": "“Jo can come tonight”: a weak /kən/ signals the positive form of the verb",
+      "correctAnswerIndex": 3,
+      "hint": "Remember the vowel clue: a weak “uh” in “can” points to one meaning, and a full open vowel to the other.",
+      "explanation": "A weak, short vowel /kən/ is the signature of the positive “can”. The negative “can’t” keeps a full vowel and is stressed, so a real “can’t” would sound clearly stronger. So the weak form tells you the speaker is saying “can”, even if the /t/ would be hard to hear anyway.",
+      "phoneticRule": "Weak /kən/ signals the affirmative; negative “can’t” is stressed with a full vowel, which makes the vowel the decisive listening cue.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Jo kuhn come tonight"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L85_Q1",
+      "instruction": "How is the word “do” usually pronounced in “Where do you work now?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Where do you work now",
+      "textToSpeak": "Where do you work now",
+      "options": [
+        "As /duː/, with a long, strong vowel, as in “Yes, I do”",
+        "As /dəʊ/, like the first note of a musical scale",
+        "As /dɒ/, with a short stressed vowel and a clear /d/",
+        "As a weak /də/, with a short unstressed vowel"
+      ],
+      "correctAnswer": "As a weak /də/, with a short unstressed vowel",
+      "correctAnswerIndex": 3,
+      "hint": "Say the question at conversation speed and listen to the vowel in the second word.",
+      "explanation": "Auxiliary “do” is unstressed in questions, so its vowel is reduced: /də/. The strong form /duː/ appears when it is stressed, as in “Yes, I DO”, or at the end of a clause. The reduction is why “Where do you work” can sound as if “do” has almost vanished.",
+      "phoneticRule": "Auxiliary “do” has the weak form /də/ (or /d/ before “you”) and the strong form /duː/ only when stressed or final.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Where duh you work now"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L85_Q2",
+      "instruction": "Which spoken form of “were” fits “Why were you late?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Why were you late",
+      "textToSpeak": "Why were you late",
+      "options": [
+        "/wɜː/: a long vowel with strong stress",
+        "/wɛə/: a diphthong, like the word “wear”",
+        "/wə/: a weak vowel and no /r/ sound in this phrase",
+        "/wiː/: a long vowel, like the word “we” itself"
+      ],
+      "correctAnswer": "/wə/: a weak vowel and no /r/ sound in this phrase",
+      "correctAnswerIndex": 2,
+      "hint": "Say “why were you late” quickly and notice how long the vowel in “were” lasts.",
+      "explanation": "“Were” is an unstressed verb here, so it is reduced to /wə/. The strong form /wɜː/ appears when “were” ends a clause, as in “That’s where they were”. In the British model no /r/ is pronounced, because “you” begins with a consonant sound.",
+      "phoneticRule": "The auxiliary or linking verb “were” has the weak form /wə/ before consonants and the strong form /wɜː/ only under stress or in final position.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Why wuh you late"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L85_Q3",
+      "instruction": "Which spoken form of “have” is typical in “Prices have gone up”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Prices have gone up",
+      "textToSpeak": "Prices have gone up",
+      "options": [
+        "/əv/: a weak form with no /h/ and a short vowel",
+        "/hæv/: a full form with a clear /h/",
+        "/hæf/: a voiceless /f/ because “gone” follows",
+        "/hev/: the vowel is stressed to show completion"
+      ],
+      "correctAnswer": "/əv/: a weak form with no /h/ and a short vowel",
+      "correctAnswerIndex": 0,
+      "hint": "Say the sentence the way a newsreader would, and listen to what remains of the word “have”.",
+      "explanation": "As an auxiliary, “have” is unstressed and is reduced to /əv/ or even /v/: “Prices uv gone up”. The strong form /hæv/ appears when “have” is a main verb or is stressed. This weak /əv/ is also the reason for the spelling mistake “should of”.",
+      "phoneticRule": "Auxiliary “have” loses its /h/ and its vowel quality in unstressed positions, giving /əv/ or /v/; as a main verb it keeps /hæv/.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Prices uv gone up"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L86_Q1",
+      "instruction": "In “Who are you waiting for?”, which small word keeps its strong form?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Who are you waiting for",
+      "textToSpeak": "Who are you waiting for",
+      "options": [
+        "“are”, because it is the verb of the question",
+        "“for”, because it ends the clause and takes final stress",
+        "“you”, because it is the pronoun that names the listener",
+        "“who”, because it opens the question and sets the topic"
+      ],
+      "correctAnswer": "“for”, because it ends the clause and takes final stress",
+      "correctAnswerIndex": 1,
+      "hint": "Find the last word of the question and ask what happens to a function word when nothing follows it.",
+      "explanation": "A function word at the end of a clause is not followed by anything, so it receives the final stress and takes its strong form: /fɔː/. In the same question “are” and “you” are weak: /ə/ and /jə/. So one sentence can contain several weak words and one strong function word.",
+      "phoneticRule": "Prepositions stranded at the end of a clause (as in wh-questions) keep their strong forms because they carry the final stress.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Who uh you waiting FOR"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L86_Q2",
+      "instruction": "Why is “to” said /tuː/ in “Ben doesn’t want to”, but /tə/ in “Ben wants to go”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Ben doesn’t want to",
+      "textToSpeak": "Ben doesn’t want to",
+      "options": [
+        "The word “to” changes its meaning when it comes at the end of a clause",
+        "At the end of a clause “to” carries stress and is strong; before a verb it is weak",
+        "Negative sentences use strong forms for every function word they contain, not only for “to”",
+        "The /t/ is released more strongly after “doesn’t”, which makes the vowel full"
+      ],
+      "correctAnswer": "At the end of a clause “to” carries stress and is strong; before a verb it is weak",
+      "correctAnswerIndex": 1,
+      "hint": "Compare what follows “to” in each sentence: a verb in one, nothing in the other.",
+      "explanation": "At the end of a clause “to” stands for a missing verb and carries the final stress, so it keeps its full vowel: /tuː/. In “wants to go”, “to” is followed by a verb and is unstressed: /tə/. Position and stress, not the meaning of the word, decide which form you hear.",
+      "phoneticRule": "A function word that is stressed because it is clause-final reverts to its strong form, whereas the same word before a following verb is weak.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Ben doesn’t want TOO"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L86_Q3",
+      "instruction": "A colleague says Jo wasn’t at the meeting. You reply, “Jo was there!” How is “was” pronounced?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Jo was there",
+      "textToSpeak": "Jo was there",
+      "options": [
+        "As a weak /wəz/, as in the neutral sentence “Jo was tired”",
+        "As /wɜːz/, with an /r/-coloured vowel like American “were”",
+        "As a strong /wɒz/, because it carries contrastive stress in the reply",
+        "As /wɒs/, with a voiceless final consonant to sound firm"
+      ],
+      "correctAnswer": "As a strong /wɒz/, because it carries contrastive stress in the reply",
+      "correctAnswerIndex": 2,
+      "hint": "You are correcting what your colleague said. Which word carries that correction?",
+      "explanation": "Emphasis restores a function word’s strong form. In “Jo WAS there”, the speaker stresses “was” to contradict a negative statement, so the vowel is full: /wɒz/. In neutral speech it would be weak: /wəz/. Listening for stress lets you tell neutral statements from corrections.",
+      "phoneticRule": "Contrastive stress converts a normally weak function word into a stressed word with its strong form.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Jo WOZ there"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L87_Q1",
+      "instruction": "How is “them” usually pronounced in “Show them the map”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Show them the map",
+      "textToSpeak": "Show them the map",
+      "options": [
+        "As a weak /ðəm/ or /əm/, with a short vowel, often without /ð/",
+        "As a full /ðem/ with a clear stressed vowel and a fully pronounced /ð/ at the start",
+        "As /ðiːm/, like the word “theme” with a long vowel",
+        "As /hem/, with an /h/ added at the start of the word"
+      ],
+      "correctAnswer": "As a weak /ðəm/ or /əm/, with a short vowel, often without /ð/",
+      "correctAnswerIndex": 0,
+      "hint": "Say “show them the map” quickly and listen to the vowel in “them”.",
+      "explanation": "“Them” is an unstressed pronoun and normally has a weak vowel: /ðəm/ or, in casual speech, just /əm/. The strong /ðem/ appears when the word is stressed, as in “not me, THEM”. Recognising “’em” helps you hear spoken English as more connected.",
+      "phoneticRule": "Unstressed object pronouns use weak forms with /ə/ and may lose their initial consonant in casual speech, as with “them” → /əm/.",
+      "phenomenonType": "H-Dropping",
+      "spokenForm": "Show ’em the map"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L87_Q2",
+      "instruction": "Which spoken form of “us” fits “Send us a message”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Send us a message",
+      "textToSpeak": "Send us a message",
+      "options": [
+        "“us” with a full /ʌs/ and clear stress on the pronoun itself",
+        "“uz” with a voiced /z/ at the end of the pronoun",
+        "“ass” with the vowel /æ/ and a hard /s/ at the end",
+        "“əs”: a weak /əs/ that links to “send”: “sen-dəs”"
+      ],
+      "correctAnswer": "“əs”: a weak /əs/ that links to “send”: “sen-dəs”",
+      "correctAnswerIndex": 3,
+      "hint": "Say “send us a message” as one smooth chunk and notice where the /d/ of “send” ends up.",
+      "explanation": "“Us” is an unstressed pronoun, so its vowel is weak: /əs/. Because it begins with a vowel, the /d/ of “send” links to it: “sen-dəs”. So the weak form and the linking work together to make the pronoun almost invisible.",
+      "phoneticRule": "The weak form /əs/ of “us” begins with a vowel, so a preceding consonant links onto it.",
+      "phenomenonType": "H-Dropping",
+      "spokenForm": "Sen-dus a message"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L87_Q3",
+      "instruction": "In a quick “Let them in”, a listener can mishear “him” and “them”. Which clue separates the two reduced forms?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Let them in",
+      "textToSpeak": "Let them in",
+      "options": [
+        "The final consonant: “him” ends in /n/",
+        "The vowel: “him” is /ɪm/, while “them” is /əm/",
+        "The first sound: “them” keeps a clear /ð/ in every phrase",
+        "There is no difference once the first sound is lost"
+      ],
+      "correctAnswer": "The vowel: “him” is /ɪm/, while “them” is /əm/",
+      "correctAnswerIndex": 1,
+      "hint": "Imagine both words with their first sound removed, and think about what is left that could still differ.",
+      "explanation": "In casual speech both pronouns can lose their first sound, leaving /ɪm/ for “him” and /əm/ for “them”. The two differ in the vowel: a short /ɪ/ in “him” and a schwa in “them”. Listening for that vowel, together with the context, helps you decide which pronoun was said.",
+      "phoneticRule": "When initial /h/ and /ð/ are both omitted, the pronouns “him” and “them” differ only in vowel quality (/ɪm/ versus /əm/).",
+      "phenomenonType": "H-Dropping",
+      "spokenForm": "Let ’em in"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L88_Q1",
+      "instruction": "In “He said he would help”, which /h/ is most likely to be dropped in casual speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "He said he would help",
+      "textToSpeak": "He said he would help",
+      "options": [
+        "The first /h/, at the start of the sentence",
+        "Both /h/ sounds equally",
+        "The second /h/, in the middle of the sentence, after another word",
+        "Neither: the /h/ of “he” is kept in every position"
+      ],
+      "correctAnswer": "The second /h/, in the middle of the sentence, after another word",
+      "correctAnswerIndex": 2,
+      "hint": "Think about where an unstressed word sits: after a word that carries stress, or at the very start of the sentence.",
+      "explanation": "Pronoun /h/ is lost mainly when the pronoun follows another word and is unstressed: “said ’e would”. At the start of a sentence the pronoun usually takes some stress and keeps its /h/: “He said…”. So the position decides.",
+      "phoneticRule": "In weak forms, /h/ is omitted in unstressed pronouns and auxiliaries that follow another word, but is normally retained at the beginning of an utterance.",
+      "phenomenonType": "H-Dropping",
+      "spokenForm": "He said ’e would help"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L88_Q2",
+      "instruction": "In “Guests have already left”, how is “have” most likely pronounced, compared with “Have you left?” at the start of a question?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Guests have already left",
+      "textToSpeak": "Guests have already left",
+      "options": [
+        "Mid-sentence it is /əv/ without /h/, while the question-initial one keeps its /h/",
+        "Both forms drop the /h/, because “have” is weak in every position",
+        "Both keep a clear /h/, because “have” is a content word",
+        "Mid-sentence it keeps its /h/ clearly, but the question-initial “have” drops its /h/ instead"
+      ],
+      "correctAnswer": "Mid-sentence it is /əv/ without /h/, while the question-initial one keeps its /h/",
+      "correctAnswerIndex": 0,
+      "hint": "Compare the position of “have” in the two sentences: after another word, or at the very start.",
+      "explanation": "After a stressed word, the auxiliary “have” is unstressed and loses its /h/: “Guests uv already left”. At the start of a question it is the first word of the utterance and usually keeps its /h/: “Have you left?”. Both are normal; the position decides.",
+      "phoneticRule": "Auxiliary “have” drops /h/ when it follows another word and is unstressed, and keeps /h/ at the start of an utterance.",
+      "phenomenonType": "H-Dropping",
+      "spokenForm": "Guests ’ve already left"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L88_Q3",
+      "instruction": "Which spoken form of “his” fits “Anna found his keys”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Anna found his keys",
+      "textToSpeak": "Anna found his keys",
+      "options": [
+        "“hiz”: a full /hɪz/ with a clear /h/ and a stressed vowel",
+        "“hiss”: the /z/ is devoiced into /s/ and the /h/ is kept",
+        "“ez”: a full vowel /e/ replaces the /ɪ/ of “his”, and the /h/ is dropped as well",
+        "“iz”: a weak /ɪz/ with no /h/, so the /d/ of “found” links to it"
+      ],
+      "correctAnswer": "“iz”: a weak /ɪz/ with no /h/, so the /d/ of “found” links to it",
+      "correctAnswerIndex": 3,
+      "hint": "Say “found his keys” as one chunk and listen to how the word “his” begins.",
+      "explanation": "“His” is an unstressed possessive, so it often loses its /h/ and its vowel is short: /ɪz/. Because it then begins with a vowel, the /d/ of “found” links onto it: “foun-diz keys”. So dropping /h/ and linking happen together.",
+      "phoneticRule": "Unstressed possessive “his” commonly drops /h/ after another word, and the resulting vowel-initial form takes the preceding consonant by linking.",
+      "phenomenonType": "H-Dropping",
+      "spokenForm": "Anna foun-diz keys"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L89_Q1",
+      "instruction": "How is “the” usually pronounced in “Catch the bus today”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Catch the bus today",
+      "textToSpeak": "Catch the bus today",
+      "options": [
+        "/ðiː/ with a long vowel, because “bus” is a stressed noun",
+        "/ðə/: a weak “thuh” before a consonant",
+        "/zə/ with a /z/ at the start",
+        "/ðʌ/ with a stressed short vowel"
+      ],
+      "correctAnswer": "/ðə/: a weak “thuh” before a consonant",
+      "correctAnswerIndex": 1,
+      "hint": "Look at the first sound of the word after “the”. Is it a consonant or a vowel?",
+      "explanation": "Before a consonant sound, “the” is normally /ðə/, with a weak vowel: “catch thuh bus”. Before a vowel sound it changes to /ði/, which you will hear in the next question. The form of “the” therefore depends on the first sound of the next word.",
+      "phoneticRule": "The definite article has the weak form /ðə/ before consonant sounds and /ði/ before vowel sounds, regardless of the spelling.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Catch thuh bus today"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L89_Q2",
+      "instruction": "Why is “the” in “Park outside the office” usually /ði/ rather than /ðə/?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Park outside the office",
+      "textToSpeak": "Park outside the office",
+      "options": [
+        "“Office” is a longer word than “bus”, so “the” needs a stronger vowel",
+        "The word “the” changes its meaning before nouns that name places or buildings",
+        "A vowel follows, so /ði/ keeps the two vowels apart, often with a small /j/ glide",
+        "/ðə/ cannot be pronounced before a vowel at all, because of a strict rule of English grammar"
+      ],
+      "correctAnswer": "A vowel follows, so /ði/ keeps the two vowels apart, often with a small /j/ glide",
+      "correctAnswerIndex": 2,
+      "hint": "Compare the first sound of “office” with the first sound of “bus” in the previous question.",
+      "explanation": "“Office” begins with a vowel sound, so “the” takes the form /ði/ to separate the two vowels: “thee office”, with a light /j/ glide as you learned in Stage 2. The change is about sound, not grammar, so it applies to “the egg”, “the hour” and “the answer” alike.",
+      "phoneticRule": "Before vowel-initial words “the” is /ði/, and the vowel + vowel boundary is typically bridged by a light /j/ glide.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Park outside thee-yoffice"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L89_Q3",
+      "instruction": "Which pronunciation of “the” fits “Pass me the eggs”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Pass me the eggs",
+      "textToSpeak": "Pass me the eggs",
+      "options": [
+        "/ði/, with a /j/ glide into “eggs”: “thee-yeggs”",
+        "/ðə/, the same weak form used before a consonant",
+        "/ðə/ with an /r/ link: “thuh-reggs”",
+        "/θiː/ with a voiceless first sound"
+      ],
+      "correctAnswer": "/ði/, with a /j/ glide into “eggs”: “thee-yeggs”",
+      "correctAnswerIndex": 0,
+      "hint": "Check the first sound of “eggs”, then recall which form of “the” goes with it.",
+      "explanation": "“Eggs” begins with a vowel sound, so “the” is /ði/: “Pass me thee-yeggs”. The glide /j/ often appears between the two vowels. If the next word were “pan”, you would hear the weak /ðə/ instead.",
+      "phoneticRule": "The choice between /ðə/ and /ði/ is decided by the following sound, and is stable across nouns of all kinds.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Pass me thee-yeggs"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L90_Q1",
+      "instruction": "At a shop counter an assistant says “Can I help you?” Which pronunciation of the first two words is typical?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Can I help you",
+      "textToSpeak": "Can I help you",
+      "options": [
+        "“kæn ai”: a full /kæn/ with strong stress and a pause after it",
+        "“kɑːnt ai”: the negative form, with a final /t/",
+        "“kɛn ai”: a half-strong vowel with a pause after it",
+        "“kənai”: a weak /kən/ that links to “I”, with a short unstressed vowel"
+      ],
+      "correctAnswer": "“kənai”: a weak /kən/ that links to “I”, with a short unstressed vowel",
+      "correctAnswerIndex": 3,
+      "hint": "Say the sentence as a busy assistant would, quickly and politely, and notice which of the first words carry the beat.",
+      "explanation": "In a polite offer, “can” is unstressed and reduced to /kən/, and it links to the vowel of “I”: “kuhn-ai help you”. The beats fall on “help” and the meaning of the offer. Listening for this pattern helps you understand service questions at normal speed.",
+      "phoneticRule": "In polite offers the modal “can” and the pronoun “I” are both unstressed, so “can” takes its weak form and links onto “I”.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Kuhn-ai help you"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L90_Q2",
+      "instruction": "Which words in “Pay for it at the till” are weak, and which are strong?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Pay for it at the till",
+      "textToSpeak": "Pay for it at the till",
+      "options": [
+        "All six words are strong, because each one is spoken separately and clearly",
+        "Only “for” and “the” are weak; “it” and “at” are strong",
+        "“for”, “it”, “at” and “the” are weak; “pay” and “till” are strong",
+        "“pay” and “till” are weak because they are short words"
+      ],
+      "correctAnswer": "“for”, “it”, “at” and “the” are weak; “pay” and “till” are strong",
+      "correctAnswerIndex": 2,
+      "hint": "Apply the telegram test: which words would you keep if you could send only two?",
+      "explanation": "“Pay” and “till” carry the meaning and take the stress. “For”, “it”, “at” and “the” are function words and are reduced: “Pay fuh-rit uht thuh till”. Notice that “for it” also takes a linking /r/ in the British model. Sorting words into strong and weak is the core skill of this stage.",
+      "phoneticRule": "In a short sentence the stressed words are the content words, and the remaining function words use their weak forms.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Pay fuh-rit uht thuh till"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L90_Q3",
+      "instruction": "Which version of “Is there a bank near here?” is the natural spoken form?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Is there a bank near here",
+      "textToSpeak": "Is there a bank near here",
+      "options": [
+        "Every word is said with a full vowel at the same strength",
+        "“there” is /ðə/ and “a” is /ə/, while “bank” and “here” are the stressed words",
+        "“bank” is weak and “there” is strong, because “there” points to a place",
+        "Only “is” is weak; every other word is stressed"
+      ],
+      "correctAnswer": "“there” is /ðə/ and “a” is /ə/, while “bank” and “here” are the stressed words",
+      "correctAnswerIndex": 1,
+      "hint": "Find the two content words and the two function words, then decide which should be louder.",
+      "explanation": "The content words “bank” and “here” carry the stress, while “there” and “a” are weak: /ðə/ and /ə/ (with a linking /r/ before a vowel when it follows “is”). Said this way the question flows at natural speed. Reading every word at full strength is slow and can make listeners lose the rhythm.",
+      "phoneticRule": "Natural questions place stress on content words and reduce function words such as “there” and “a”, which gives English its stress-timed rhythm.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Is thuh-ruh bank near here"
+    }
+  ]
 }

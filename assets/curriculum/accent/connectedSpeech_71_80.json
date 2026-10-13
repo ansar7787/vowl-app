@@ -1,577 +1,637 @@
 {
-    "gameType": "connectedSpeech",
-    "batchIndex": 8,
-    "levels": "71-80",
-    "quests": [
-        {
-            "id": "ACC_CONNECTEDSPEECH_L71_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "strict diet",
-            "textToSpeak": "strict diet",
-            "options": [
-                "Assimilation (/t/ becomes /g/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "A stop consonant squeezed between two other consonants rarely survives in fast speech. Listen for the /t/ in \"strict diet\" — is it there?",
-            "explanation": "Consonant clusters like this one are common at word boundaries in English, and the middle stop is almost always the casualty. The /t/ drops out of \"strict diet\" for exactly that reason.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "strict die'"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L71_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "agree about",
-            "textToSpeak": "agree about",
-            "options": [
-                "Intrusion (intrusive /j/)",
-                "Linking (/j/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 0,
-            "hint": "There's no /j/ anywhere in the spelling of \"agree\". Yet something links it to the vowel that opens \"about\" — what is it?",
-            "explanation": "This inserted /j/ has no basis in spelling — it exists purely to smooth the vowel-to-vowel transition between \"agree\" and \"about\". That's the hallmark of intrusion.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "agree about"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L71_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "that pen",
-            "textToSpeak": "that pen",
-            "options": [
-                "Assimilation (/t/ becomes /k/)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the consonant joining \"that\" to \"pen\". Is it still /t/, or has it changed shape to match what follows?",
-            "explanation": "When a word ending in /t/ meets a bilabial sound, the /t/ shifts to /p/ so both sounds are made in nearly the same place in the mouth. That's what happens in \"that pen\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "thap pen"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L72_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ground floor",
-            "textToSpeak": "ground floor",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /p/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"ground floor\" quickly. The consonants pile up right around the /d/ in \"ground\" — does it survive the crowd, or get squeezed out?",
-            "explanation": "When /d/ sits between two other consonants, English speakers routinely drop it to keep the rhythm smooth. In \"ground floor\", the /d/ disappears rather than being pronounced.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "groun' floor"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L72_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "great match",
-            "textToSpeak": "great match",
-            "options": [
-                "Assimilation (/t/ becomes /k/)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 1,
-            "hint": "In connected speech, the /t/ ending \"great\" often adapts to its neighbor. What does it turn into right before the bilabial sound in \"match\"?",
-            "explanation": "This is place assimilation: /t/ moves to a bilabial position to blend smoothly with what comes next, turning into /p/ in \"great match\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "great mapch"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L72_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "backyard party",
-            "textToSpeak": "backyard party",
-            "options": [
-                "Assimilation (/d/ becomes /b/)",
-                "Elision (/d/ disappears)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "There's a consonant cluster forming between \"backyard\" and \"party\". In natural speech, one sound in that cluster usually disappears. Which one?",
-            "explanation": "Three consonants in a row are hard to articulate cleanly, so speakers simplify by deleting the middle one. That's exactly what happens to the /d/ in \"backyard party\" — it's dropped, not just softened.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "backyar' party"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L73_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "hot bath",
-            "textToSpeak": "hot bath",
-            "options": [
-                "Assimilation (/t/ becomes /k/)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 1,
-            "hint": "Focus on the last sound of \"hot\". With a bilabial consonant starting \"bath\" right after it, what shift would make pronunciation easier?",
-            "explanation": "Rather than jump from the /t/ ending \"hot\" to a bilabial sound, the mouth compromises: /t/ becomes /p/, matching the bilabial consonant that opens \"bath\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "hot baph"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L73_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "taste good",
-            "textToSpeak": "taste good",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /m/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen for the /t/ at the end of \"taste\". With another consonant right before it and another right after (from \"good\"), can a speaker realistically hit all three cleanly?",
-            "explanation": "This is elision: a sound is removed entirely, not changed or weakened. Here, the /t/ at the end of \"taste\" disappears before the consonant that starts \"good\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "tas'e good"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L73_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "law and ethics",
-            "textToSpeak": "law and ethics",
-            "options": [
-                "Intrusion (intrusive /r/)",
-                "Linking (/r/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen carefully between \"law\" and \"and\". An unwritten sound appears purely to ease the vowel-to-vowel transition. Which one?",
-            "explanation": "Native speakers automatically fill the gap between two vowel sounds with /r/, even when there's no letter to justify it. \"law and\" is a clear example of this intrusive sound.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "law and ethics"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L74_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "bad meal",
-            "textToSpeak": "bad meal",
-            "options": [
-                "Assimilation (/d/ becomes /b/)",
-                "Assimilation (/d/ becomes /g/)"
-            ],
-            "correctAnswer": "Assimilation (/d/ becomes /b/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"bad meal\" quickly, the way you'd say it in conversation. Which consonant do you actually hear where /d/ used to be?",
-            "explanation": "In fluent speech, /d/ rarely stays /d/ before a bilabial sound — it assimilates to /b/, which is exactly what you hear in \"bad meal\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "bab meal"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L74_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "blue eyes",
-            "textToSpeak": "blue eyes",
-            "options": [
-                "Intrusion (intrusive /w/)",
-                "Linking (/w/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a spelling trap: \"blue\" looks like it should flow straight into \"eyes\", but a sound gets inserted that isn't written anywhere. Can you hear it?",
-            "explanation": "Since \"blue\" doesn't end in a written consonant that could explain a /w/, the /w/ you hear before \"eyes\" is added by the speech system itself — an intrusive sound, not a spelled one.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "blue eyes"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L74_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "today at noon",
-            "textToSpeak": "today at noon",
-            "options": [
-                "Intrusion (intrusive /j/)",
-                "Linking (/j/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 0,
-            "hint": "Two vowels back to back is awkward to say smoothly. What sound does natural speech add between \"today\" and \"at\" — despite it not appearing in either word's spelling?",
-            "explanation": "This is a purely phonetic addition: /j/ shows up between \"today\" and \"at\" only to ease pronunciation, with nothing in either word's spelling to account for it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "today at noon"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L75_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "yoga is",
-            "textToSpeak": "yoga is",
-            "options": [
-                "Linking (/r/ links naturally)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Nothing in \"yoga\"'s ending suggests a consonant at all. So the /r/ you might hear before \"is\" isn't really part of either word — where does it come from?",
-            "explanation": "Vowel hiatus (two vowels in a row) is uncomfortable in fluent English, so an intrusive /r/ fills the gap in \"yoga is\" — a sound created by the flow of speech, not by spelling.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "yoga is"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L75_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "across your route",
-            "textToSpeak": "across your route",
-            "options": [
-                "Coalescence (/s/ + /j/ becomes /ʃ/)",
-                "Coalescence (/s/ + /j/ becomes /ʒ/)"
-            ],
-            "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"across your\" quickly and casually. The /s/ and the /j/ in \"your\" don't stay separate — what do they merge into?",
-            "explanation": "Rather than two separate consonants, connected speech blends /s/ and /j/ into /ʃ/. That's why \"across your\" sounds like one smooth unit rather than two words bumping together.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "across your route"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L75_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "crew arrived",
-            "textToSpeak": "crew arrived",
-            "options": [
-                "Linking (/w/ links naturally)",
-                "Intrusion (intrusive /w/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 1,
-            "hint": "\"crew\" has no letter for /w/ anywhere at its end. So if you hear a /w/ before \"arrived\", where does it actually come from?",
-            "explanation": "English avoids putting two vowel sounds directly next to each other, so speakers insert a small linking sound to bridge them. Since \"crew\" has no /w/ in its spelling, this /w/ is intrusive — added purely for smoothness, not because it's really part of \"crew\" or \"arrived\".",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "crew arrived"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L76_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "pass your exam",
-            "textToSpeak": "pass your exam",
-            "options": [
-                "Coalescence (/s/ + /j/ becomes /ʒ/)",
-                "Coalescence (/s/ + /j/ becomes /ʃ/)"
-            ],
-            "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
-            "correctAnswerIndex": 1,
-            "hint": "There's a consonant collision at the boundary of \"pass\" and \"your\": /s/ meets /j/. Which single sound comes out the other side?",
-            "explanation": "Coalescence happens when neighboring sounds are so close in the mouth that they collapse into one. /s/ and /j/ become /ʃ/ in \"pass your\" — faster and easier to say than keeping the two sounds apart.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "pass your exam"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L76_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "say it",
-            "textToSpeak": "say it",
-            "options": [
-                "Intrusion (intrusive /j/)",
-                "Linking (/j/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 0,
-            "hint": "Both \"say\" and \"it\" end and begin with vowel sounds. Listen for an extra consonant sound that sneaks in between them.",
-            "explanation": "This is intrusion: a sound appears between two vowels even though it isn't written anywhere. In \"say it\", an intrusive /j/ bridges the gap, purely to avoid an awkward vowel collision.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "say it"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L76_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "you owe",
-            "textToSpeak": "you owe",
-            "options": [
-                "Linking (/w/ links naturally)",
-                "Intrusion (intrusive /w/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"you owe\" without a pause. Two vowel sounds are about to collide — what does English insert to smooth the transition?",
-            "explanation": "Because \"you\" ends in a vowel and \"owe\" begins with one, English speakers instinctively insert /w/ between them. It's not in the spelling of either word — it's added on the fly to keep the speech flowing.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "you owe"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L77_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "okay everyone",
-            "textToSpeak": "okay everyone",
-            "options": [
-                "Linking (/j/ links naturally)",
-                "Intrusion (intrusive /j/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 1,
-            "hint": "Check the spelling of \"okay\" before \"everyone\" — does it end in a letter that would predict a /j/ sound? If not, where's that /j/ actually coming from?",
-            "explanation": "Unlike linking, where the connecting sound is already written into the word, this /j/ in \"okay everyone\" comes from nowhere in the spelling. That's exactly what makes it intrusive rather than a genuine linking sound.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "okay everyone"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L77_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "face your fears",
-            "textToSpeak": "face your fears",
-            "options": [
-                "Coalescence (/s/ + /j/ becomes /ʒ/)",
-                "Coalescence (/s/ + /j/ becomes /ʃ/)"
-            ],
-            "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Two consonants become one here. Focus on where \"face\" ends and \"your\" begins — what's the resulting blended sound?",
-            "explanation": "This merge is extremely common wherever a word ending in /s/ meets a \"you\"-type word. In \"face your\", the result is /ʃ/, not /s/ followed by /j/.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "face your fears"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L77_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "understand fully",
-            "textToSpeak": "understand fully",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /k/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Try saying \"understand fully\" at a natural conversational pace, not word by word. What happens to the /d/ sound in the middle?",
-            "explanation": "Native speakers rarely pronounce every consonant in a heavy cluster. In \"understand fully\", the /d/ is left out completely, letting the surrounding consonants connect directly.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "understan' fully"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L78_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "camera angle",
-            "textToSpeak": "camera angle",
-            "options": [
-                "Intrusion (intrusive /r/)",
-                "Linking (/r/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 0,
-            "hint": "Vowel sounds rarely bump directly into each other in fluent English. What extra sound bridges \"camera\" and \"angle\" here?",
-            "explanation": "Two vowel sounds meeting head-on is hard to say smoothly, so speakers add /r/ as a natural bridge. You'll hear it in \"camera angle\", even though neither word's spelling contains it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "camera angle"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L78_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "three eggs",
-            "textToSpeak": "three eggs",
-            "options": [
-                "Linking (/j/ links naturally)",
-                "Intrusion (intrusive /j/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 1,
-            "hint": "There's no /j/ anywhere in the spelling of \"three\". Yet something links it to the vowel that opens \"eggs\" — what is it?",
-            "explanation": "This inserted /j/ has no basis in spelling — it exists purely to smooth the vowel-to-vowel transition between \"three\" and \"eggs\". That's the hallmark of intrusion.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "three eggs"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L78_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "very easy",
-            "textToSpeak": "very easy",
-            "options": [
-                "Intrusion (intrusive /j/)",
-                "Linking (/j/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen carefully between \"very\" and \"easy\". An unwritten sound appears purely to ease the vowel-to-vowel transition. Which one?",
-            "explanation": "Native speakers automatically fill the gap between two vowel sounds with /j/, even when there's no letter to justify it. \"very easy\" is a clear example of this intrusive sound.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "very easy"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L79_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "who else",
-            "textToSpeak": "who else",
-            "options": [
-                "Intrusion (intrusive /w/)",
-                "Linking (/w/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 0,
-            "hint": "This is a spelling trap: \"who\" looks like it should flow straight into \"else\", but a sound gets inserted that isn't written anywhere. Can you hear it?",
-            "explanation": "Since \"who\" doesn't end in a written consonant that could explain a /w/, the /w/ you hear before \"else\" is added by the speech system itself — an intrusive sound, not a spelled one.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "who else"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L79_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "free entry",
-            "textToSpeak": "free entry",
-            "options": [
-                "Linking (/j/ links naturally)",
-                "Intrusion (intrusive /j/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 1,
-            "hint": "Two vowels back to back is awkward to say smoothly. What sound does natural speech add between \"free\" and \"entry\" — despite it not appearing in either word's spelling?",
-            "explanation": "This is a purely phonetic addition: /j/ shows up between \"free\" and \"entry\" only to ease pronunciation, with nothing in either word's spelling to account for it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "free entry"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L79_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "go on",
-            "textToSpeak": "go on",
-            "options": [
-                "Linking (/w/ links naturally)",
-                "Intrusion (intrusive /w/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 1,
-            "hint": "Nothing in \"go\"'s ending suggests a consonant at all. So the /w/ you might hear before \"on\" isn't really part of either word — where does it come from?",
-            "explanation": "Vowel hiatus (two vowels in a row) is uncomfortable in fluent English, so an intrusive /w/ fills the gap in \"go on\" — a sound created by the flow of speech, not by spelling.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "go on"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L80_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "made calls",
-            "textToSpeak": "made calls",
-            "options": [
-                "Assimilation (/d/ becomes /b/)",
-                "Assimilation (/d/ becomes /g/)"
-            ],
-            "correctAnswer": "Assimilation (/d/ becomes /g/)",
-            "correctAnswerIndex": 1,
-            "hint": "The tongue is already anticipating \"calls\"'s velar sound before it even finishes \"made\". What happens to /d/ as a result?",
-            "explanation": "The change from /d/ to /g/ at the end of \"made\" happens because the following velar consonant in \"calls\" pulls the place of articulation to match. Nothing is lost here, just reshaped.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "mage calls"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L80_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "correct password",
-            "textToSpeak": "correct password",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /g/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Three consonants in a row is hard work for the mouth. Focus on the /t/ where \"correct\" meets \"password\" — does English keep it or drop it?",
-            "explanation": "Because /t/ is squeezed between two other consonants, it gets dropped in fluent speech. Say \"correct password\" aloud and you'll notice the /t/ just isn't there.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "correc' password"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L80_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "they are",
-            "textToSpeak": "they are",
-            "options": [
-                "Linking (/j/ links naturally)",
-                "Intrusion (intrusive /j/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 1,
-            "hint": "\"they\" has no letter for /j/ anywhere at its end. So if you hear a /j/ before \"are\", where does it actually come from?",
-            "explanation": "English avoids putting two vowel sounds directly next to each other, so speakers insert a small linking sound to bridge them. Since \"they\" has no /j/ in its spelling, this /j/ is intrusive — added purely for smoothness, not because it's really part of \"they\" or \"are\".",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "they are"
-        }
-    ]
+  "gameType": "connectedSpeech",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "id": "ACC_CONNECTEDSPEECH_L71_Q1",
+      "instruction": "Which spoken form of “exactly” is typical in “That’s exactly what I meant”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "That’s exactly what I meant",
+      "textToSpeak": "That’s exactly what I meant",
+      "options": [
+        "“exac-tly”: the /k/, /t/ and /l/ are all fully released in sequence",
+        "“exa-ktly”: the /k/ moves onto the next syllable and the /t/ is kept",
+        "“exac’ly”: the /t/ is left out between the /k/ and the /l/",
+        "“ex-ly”: both the /k/ and the /t/ are dropped"
+      ],
+      "correctAnswer": "“exac’ly”: the /t/ is left out between the /k/ and the /l/",
+      "correctAnswerIndex": 2,
+      "hint": "Say “exactly” slowly, then as you would in conversation. Count how many consonants you produce in a row after the vowel.",
+      "explanation": "“Exactly” contains the cluster /ktl/, which is hard to say quickly. The middle /t/ is the easiest sound to lose, so you often hear “exac’ly”. The /k/ and the /l/ stay, so the word is still recognisable. Three-consonant clusters are a classic place for elision.",
+      "phoneticRule": "In a sequence of three consonants, the middle stop is the usual casualty: /t/ is often omitted between /k/ and /l/ in words such as “exactly”.",
+      "phenomenonType": "Elision",
+      "spokenForm": "That’s exac’ly what I meant"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L71_Q2",
+      "instruction": "Which description fits “friendly” in “They’re very friendly people” when said quickly?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "They’re very friendly people",
+      "textToSpeak": "They’re very friendly people",
+      "options": [
+        "“frien’ly”: the /d/ is left out in the middle of the /ndl/ cluster",
+        "“fren-dly”: the /n/, /d/ and /l/ are all fully pronounced in a row",
+        "“fre-dly”: the /n/ is left out and the /d/ is kept",
+        "“frend-ly”: the /d/ moves onto the “ly” syllable"
+      ],
+      "correctAnswer": "“frien’ly”: the /d/ is left out in the middle of the /ndl/ cluster",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the middle of “friendly”: after the /n/, does a separate /d/ burst appear before the /l/?",
+      "explanation": "In /ndl/ the /d/ sits between a nasal and a /l/, made at almost the same place. That makes it very easy to skip, so “friendly” is often heard as “frien’ly”. The word is still clear because the /n/ and the /l/ remain.",
+      "phoneticRule": "The stop in a nasal + stop + /l/ cluster (as in /ndl/) is commonly omitted in casual speech, simplifying the cluster.",
+      "phenomenonType": "Elision",
+      "spokenForm": "They’re very frien’ly people"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L71_Q3",
+      "instruction": "Which sound is most likely to be missing in “next door” in “They live next door”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "They live next door",
+      "textToSpeak": "They live next door",
+      "options": [
+        "The /k/ before the /s/",
+        "The /s/ in the middle of the cluster",
+        "The /d/ at the start of “door”",
+        "The /t/ between the /s/ and the /d/ of “door”"
+      ],
+      "correctAnswer": "The /t/ between the /s/ and the /d/ of “door”",
+      "correctAnswerIndex": 3,
+      "hint": "Write the consonants at the boundary: /k/, /s/, /t/, then /d/, and decide which of them is the weakest link.",
+      "explanation": "Four consonants meet at “next door”. The /t/ is the stop wedged in the middle, and it is also made at the same place as the following /d/, so it is easily lost: “nex’ door”. The other consonants help to keep the two words distinct.",
+      "phoneticRule": "In a long cluster across a word boundary, an alveolar stop between a fricative and another alveolar is the sound most often omitted.",
+      "phenomenonType": "Elision",
+      "spokenForm": "They live nex’ door"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L72_Q1",
+      "instruction": "In “Sam missed lunch again”, which spoken form shows elision of the past-tense ending?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Sam missed lunch again",
+      "textToSpeak": "Sam missed lunch again",
+      "options": [
+        "“mist lunch”: the /t/ is released clearly into the /l/, so “missed” sounds like “mist”",
+        "“miss lunch”: the /t/ is often left out, so “missed” can sound like “miss”",
+        "“miss-t lunch”: the /t/ moves onto the start of “lunch”",
+        "“miss-id lunch”: the ending becomes a full syllable with a vowel"
+      ],
+      "correctAnswer": "“miss lunch”: the /t/ is often left out, so “missed” can sound like “miss”",
+      "correctAnswerIndex": 1,
+      "hint": "Say “missed lunch” and “miss lunch” one after the other, and notice how different they sound at conversation speed.",
+      "explanation": "The past-tense ending of “missed” is a /t/ after /s/. Before “lunch” it sits in a crowded cluster, so it is often omitted: “miss’ lunch”. The listener then relies on context, such as “yesterday” or “again”, to know the verb is past.",
+      "phoneticRule": "The regular past-tense ending /t/ after a voiceless consonant is vulnerable to omission before a following consonant, so tense may be signalled by context rather than by the ending.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Sam miss’ lunch again"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L72_Q2",
+      "instruction": "Why can “worked hard” sound like “work hard” in fast speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Ann worked hard today",
+      "textToSpeak": "Ann worked hard today",
+      "options": [
+        "Past-tense endings are silent in casual speech, so there is no difference at all between the two",
+        "The past-tense /t/ is easily lost between /k/ and /h/, so the forms can sound alike",
+        "The /k/ is dropped instead of the /t/, leaving something like “wor’ed”",
+        "The /h/ of “hard” moves back and replaces the /t/ of “worked”"
+      ],
+      "correctAnswer": "The past-tense /t/ is easily lost between /k/ and /h/, so the forms can sound alike",
+      "correctAnswerIndex": 1,
+      "hint": "Compare “work hard” and “worked hard”. What small sound is the only difference?",
+      "explanation": "The only difference between the two forms is a /t/, and that /t/ is squeezed between /k/ and /h/. It is easily lost, so listeners often rely on time words and context (“today”, “yesterday”) rather than on the ending itself. Knowing this prevents confusion between present and past in fast speech.",
+      "phoneticRule": "Regular past-tense endings /t/ and /d/ are frequently omitted after consonants before a following consonant, so tense is often signalled by context.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Ann work’ hard today"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L72_Q3",
+      "instruction": "Which spoken form of “stopped for” shows the same elision in “Dad stopped for petrol”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Dad stopped for petrol",
+      "textToSpeak": "Dad stopped for petrol",
+      "options": [
+        "“stopped for”, with a clear /t/ released into the /f/ of “for”",
+        "“stoppid for”: the ending becomes a full vowel and a /d/",
+        "“stob for”: the /t/ becomes a /b/ made at the lips",
+        "“stop’ for”: the past-tense /t/ is left out after the /p/ before “for”"
+      ],
+      "correctAnswer": "“stop’ for”: the past-tense /t/ is left out after the /p/ before “for”",
+      "correctAnswerIndex": 3,
+      "hint": "Look at what ends “stopped”: a /p/ followed by a /t/. Then notice that “for” begins with an /f/.",
+      "explanation": "“Stopped” ends in /pt/, and “for” begins with a consonant. The /t/ ending is therefore likely to be omitted, giving “stop’ for”. The same pattern applies to regular verbs whose stems end in a voiceless consonant, so it is a pattern worth learning, not a single case.",
+      "phoneticRule": "The pattern generalises to regular verbs with voiceless stems: the final /t/ of the past-tense ending is the part most likely to be omitted before a consonant.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Dad stop’ for petrol"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L73_Q1",
+      "instruction": "You leave a message: “Tell him I’ll call back.” Which spoken form of “tell him” is typical in fluent speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Tell him I’ll call back",
+      "textToSpeak": "Tell him I’ll call back",
+      "options": [
+        "“te-lim”: the /h/ of “him” is left out, and the /l/ links to the vowel",
+        "“tell … him”: a clear /h/ is pronounced after a short pause between the words",
+        "“tell-chim”: the /h/ turns into a “ch” sound when the words are joined",
+        "“te-im”: the /l/ is dropped instead of the /h/"
+      ],
+      "correctAnswer": "“te-lim”: the /h/ of “him” is left out, and the /l/ links to the vowel",
+      "correctAnswerIndex": 0,
+      "hint": "Say “tell him” quickly and notice what the last sound of “tell” seems to start.",
+      "explanation": "In casual speech the /h/ of weak pronouns such as “him” is often left out when the word follows another word. “Him” then begins with a vowel, so the /l/ of “tell” links to it: “te-lim”. This is how elision opens the door for the linking you studied earlier.",
+      "phoneticRule": "The /h/ of an unstressed pronoun is commonly omitted mid-sentence, which creates a vowel-initial word that the previous consonant can link to.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Te-lim I’ll call back"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L73_Q2",
+      "instruction": "Why does “her” in “Give her a ring” sound as if it has no /h/?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Give her a ring",
+      "textToSpeak": "Give her a ring",
+      "options": [
+        "The word “her” is replaced by the word “a” in casual speech, so no /h/ is expected",
+        "The /v/ of “give” is dropped and the /h/ of “her” is kept in its place",
+        "“Her” is unstressed, so its /h/ is easily lost and it links to the word before",
+        "“Her” is stressed in this phrase, which makes its first sound disappear"
+      ],
+      "correctAnswer": "“Her” is unstressed, so its /h/ is easily lost and it links to the word before",
+      "correctAnswerIndex": 2,
+      "hint": "Say “give her a ring” as one smooth chunk and notice where the /v/ ends up.",
+      "explanation": "Pronouns are normally unstressed, and an unstressed /h/ is often lost: “give-er”. The /v/ of “give” then links onto the vowel of “her”: “gi-ver”. A stressed “HER”, as in “give HER a ring, not him”, keeps its /h/.",
+      "phoneticRule": "Unstressed forms of pronouns lose /h/ readily, whereas stressed forms keep it; the stress pattern decides which form occurs.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Gi-ver a ring"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L73_Q3",
+      "instruction": "Which spoken form of “see his” in “Did you see his email?” shows the /h/ dropping and a link?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Did you see his email",
+      "textToSpeak": "Did you see his email",
+      "options": [
+        "“see … his email”: the /h/ is kept clearly after a short pause between the words",
+        "“see-yiz email”: the /h/ of “his” is left out and a /j/ glide links the vowels together",
+        "“see-sis email”: the /h/ turns into an /s/",
+        "“sees email”: the /h/ and the vowel are both dropped, leaving only a /z/"
+      ],
+      "correctAnswer": "“see-yiz email”: the /h/ of “his” is left out and a /j/ glide links the vowels together",
+      "correctAnswerIndex": 1,
+      "hint": "Remember the glide you learned for vowels like the one in “see”. What would join it to “his” once the /h/ is gone?",
+      "explanation": "When the /h/ of “his” is omitted, “see” ends in a vowel and “his” begins with one, so the glide /j/ links them: “see-yiz”. Two earlier ideas, elision and glide linking, are working together here.",
+      "phoneticRule": "Elision of /h/ in weak forms creates new vowel + vowel boundaries, which are then linked by glides as in other connected speech.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Did you see-yiz email"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L74_Q1",
+      "instruction": "Predict how “and” is usually said in “fish and chips” at normal speed.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "fish and chips",
+      "textToSpeak": "fish and chips",
+      "options": [
+        "A weak “and” with the /d/ clearly released before the /tʃ/ of “chips”",
+        "“And” with a long stressed vowel, to mark the items in the list",
+        "Just the /d/, with the /n/ and the vowel dropped",
+        "A weak /n/, with the vowel and the /d/ both gone: “fish ’n’ chips”"
+      ],
+      "correctAnswer": "A weak /n/, with the vowel and the /d/ both gone: “fish ’n’ chips”",
+      "correctAnswerIndex": 3,
+      "hint": "Listen for the small word between “fish” and “chips”, and count how many of its three sounds you actually hear.",
+      "explanation": "“And” is a weak, unstressed word. In fast speech its vowel and its /d/ are often lost, leaving only a short /n/ that joins the word before: “fish ’n’ chips”. Because only the /n/ remains, learners who listen for the full word “and” sometimes miss it entirely.",
+      "phoneticRule": "The function word “and” is typically reduced to a syllabic or very short /n/ between two content words, losing both its vowel and its final /d/.",
+      "phenomenonType": "Elision",
+      "spokenForm": "fish ’n’ chips"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L74_Q2",
+      "instruction": "Why is “and” so often reduced to /n/ in “salt and pepper”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "salt and pepper",
+      "textToSpeak": "salt and pepper",
+      "options": [
+        "“And” is weak and unstressed, so its vowel and /d/ are easily lost between stressed words",
+        "“And” is just an older spelling variant of the single-letter word “n”",
+        "The /d/ of “and” is replaced by the /p/ of “pepper” that follows it",
+        "Speakers dislike the sound /d/ before /p/, so they remove it whenever the next word begins with that sound"
+      ],
+      "correctAnswer": "“And” is weak and unstressed, so its vowel and /d/ are easily lost between stressed words",
+      "correctAnswerIndex": 0,
+      "hint": "Think about which words in “salt and pepper” carry the stress, and which one does not.",
+      "explanation": "In English, stress and weak forms work together: the words that carry the meaning (“salt” and “pepper”) are stressed, and the small word between them is reduced. That reduction can remove the vowel and the /d/ of “and”, leaving “salt ’n’ pepper”. The /p/ plays no part in it.",
+      "phoneticRule": "Reduction of function words follows stress: unstressed “and” between stressed content words loses its vowel and /d/ more readily than a stressed or phrase-final “and”.",
+      "phenomenonType": "Elision",
+      "spokenForm": "salt ’n’ pepper"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L74_Q3",
+      "instruction": "Apply the idea: which spoken form of “and” fits “rock and roll”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "rock and roll",
+      "textToSpeak": "rock and roll",
+      "options": [
+        "“rock ’n’ roll”: “and” is reduced to a short /n/ between the two stressed words",
+        "“rock and roll”, with a full /æ/ in “and” and a clearly released /d/",
+        "“rock-kand roll”: the /k/ of “rock” moves onto a fully pronounced “and”",
+        "“rock roll”: the word “and” is deleted completely, with no trace left"
+      ],
+      "correctAnswer": "“rock ’n’ roll”: “and” is reduced to a short /n/ between the two stressed words",
+      "correctAnswerIndex": 0,
+      "hint": "The title is famous in its reduced form. Say it the way it appears on posters and in song names.",
+      "explanation": "“Rock ’n’ roll” is such a common phrase that its reduced form is even written with apostrophes. The vowel and the /d/ of “and” are gone, and a short /n/ links the two stressed words. Seeing the reduced spelling in names helps you recognise the pattern in everyday speech.",
+      "phoneticRule": "Frequent fixed phrases often have their reduced forms lexicalised, which makes the reduced pronunciation of “and” more regular than in free combinations.",
+      "phenomenonType": "Elision",
+      "spokenForm": "rock ’n’ roll"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L75_Q1",
+      "instruction": "Say “family” in “My family lives nearby”. How many syllables do you often hear?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "My family lives nearby",
+      "textToSpeak": "My family lives nearby",
+      "options": [
+        "Three: every vowel is pronounced, even in casual speech",
+        "Four: speakers add an extra vowel before the /l/",
+        "Two: “fam’ly”, with the weak middle vowel left out",
+        "One: “fam”, with the rest of the word dropped"
+      ],
+      "correctAnswer": "Two: “fam’ly”, with the weak middle vowel left out",
+      "correctAnswerIndex": 2,
+      "hint": "Tap your finger once for each syllable you actually say when you speak at normal speed.",
+      "explanation": "“Family” has three written syllables, but the weak vowel between /m/ and /l/ is often omitted, so it sounds like “fam’ly”. The stressed first syllable and the last syllable stay clear. Hearing two syllables instead of three is normal and does not change the meaning.",
+      "phoneticRule": "Weak vowels between a nasal and /l/ in unstressed syllables are frequently omitted, shortening the word by one syllable.",
+      "phenomenonType": "Elision",
+      "spokenForm": "My fam’ly lives nearby"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L75_Q2",
+      "instruction": "Which syllable is most likely to be missing in “chocolate” in “Dark chocolate is healthier”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Dark chocolate is healthier",
+      "textToSpeak": "Dark chocolate is healthier",
+      "options": [
+        "The first syllable “choc”, so it sounds like “late”",
+        "The last syllable “late”, so it sounds like “choc-o”",
+        "The stressed vowel in “choc”, so it sounds like “ch-colate”",
+        "The weak middle syllable, so it sounds like “chock-lit”"
+      ],
+      "correctAnswer": "The weak middle syllable, so it sounds like “chock-lit”",
+      "correctAnswerIndex": 3,
+      "hint": "Say the word at normal speed. Which syllable is the quietest and shortest?",
+      "explanation": "“Chocolate” is written with three syllables, but the second one is weak and is often lost: “chock-lit”. The stressed first syllable and the final syllable remain, which is why the word is still easy to recognise. Many food words show the same shortening.",
+      "phoneticRule": "A weak syllable between a stressed syllable and the final syllable is a typical site of syllable elision in common words.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Dark chock’lit is healthier"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L75_Q3",
+      "instruction": "Apply the idea to “different” in “Try a different route.” Which spoken form is typical?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Try a different route",
+      "textToSpeak": "Try a different route",
+      "options": [
+        "“dif-fer-ent”: three syllables, each of them fully pronounced in casual speech",
+        "“diff’rent”: two syllables, with the weak vowel after the /f/ left out",
+        "“dif-ent”: the /r/ is dropped and the vowel is kept",
+        "“di-ferent”: the first /f/ is dropped"
+      ],
+      "correctAnswer": "“diff’rent”: two syllables, with the weak vowel after the /f/ left out",
+      "correctAnswerIndex": 1,
+      "hint": "Compare how many syllables are written with how many you say when you ask for directions quickly.",
+      "explanation": "“Different” loses the weak vowel after /f/ in casual speech and is often said as “diff’rent”. The /r/ stays, which keeps the word recognisable. Reductions like this are ordinary and appear in everyday speech and broadcasts.",
+      "phoneticRule": "Weak vowels before /r/ in unstressed syllables are often omitted, so the written syllable count overstates the spoken one.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Try a diff’rent route"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L76_Q1",
+      "instruction": "At a café you ask for “a cup of tea”. Which spoken form of “of” is typical before “tea”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "A cup of tea, please",
+      "textToSpeak": "A cup of tea, please",
+      "options": [
+        "“cup-a tea”: the /v/ is left out and “of” is reduced to a weak vowel",
+        "“cup-ov tea”: the /v/ is pronounced fully before the /t/ of “tea”, with no reduction",
+        "“cup-off tea”: the /v/ becomes an /f/",
+        "“cup tea”: the whole word “of” disappears"
+      ],
+      "correctAnswer": "“cup-a tea”: the /v/ is left out and “of” is reduced to a weak vowel",
+      "correctAnswerIndex": 0,
+      "hint": "Say “cup of tea” as quickly as you would at a counter. Listen for the last sound of “of”.",
+      "explanation": "“Of” is a weak word, and before a consonant its /v/ is often omitted, leaving only a weak vowel: “cup-a tea”. The sound is so short that it is easy to miss, but it is still there. Recognising it prevents you from thinking that the word “of” has gone altogether.",
+      "phoneticRule": "The /v/ of “of” is commonly omitted before a following consonant, leaving a weak vowel /ə/.",
+      "phenomenonType": "Elision",
+      "spokenForm": "A cup-a tea, please"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L76_Q2",
+      "instruction": "Why is “could have” often written wrongly as “could of”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "He could have told me",
+      "textToSpeak": "He could have told me",
+      "options": [
+        "Because “of” and “have” mean the same in English",
+        "Because the /v/ is pronounced twice in the phrase, which makes it look like the word “of” on the page",
+        "The reduced spoken form /kʊdə/ has lost its /v/, so it sounds like “could uh”",
+        "Because “have” is replaced by “of” in fast speech"
+      ],
+      "correctAnswer": "The reduced spoken form /kʊdə/ has lost its /v/, so it sounds like “could uh”",
+      "correctAnswerIndex": 2,
+      "hint": "Say “could have” in a fast, relaxed way and listen to the sound where “have” should be.",
+      "explanation": "In casual speech “could have” is reduced to /kʊdə/: the /h/ and the /v/ of “have” are both lost, and a weak vowel is left. That weak vowel sounds like the reduced form of “of”, so some writers wrongly spell “could of”. The grammar needs “have”, whatever the pronunciation.",
+      "phoneticRule": "Reduced “have” (/əv/ or /ə/) sounds the same as reduced “of”, which is the source of the common spelling error “could of”.",
+      "phenomenonType": "Elision",
+      "spokenForm": "He coulda told me"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L76_Q3",
+      "instruction": "Which spoken form of “most of the time” fits “It happens most of the time”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "It happens most of the time",
+      "textToSpeak": "It happens most of the time",
+      "options": [
+        "“mos’ of the time”: the /t/ is left out and the /v/ is kept",
+        "“mo-stov the time”: the /t/ links onto “of” and the /v/ is fully pronounced",
+        "“mo-sta the time”: the /t/ links onto “of”, and the /v/ is left out",
+        "“mo’ the time”: the /s/, the /t/ and “of” all disappear"
+      ],
+      "correctAnswer": "“mo-sta the time”: the /t/ links onto “of”, and the /v/ is left out",
+      "correctAnswerIndex": 2,
+      "hint": "Two different processes meet here: one sound links forward, and one sound is lost. Decide which is which.",
+      "explanation": "The /t/ of “most” is followed by the vowel of “of”, so it links onto it. The /v/ of “of” is followed by the consonant /ð/, so it is often lost. You therefore hear “mo-sta the time”, with a link and an omission in the same chunk.",
+      "phoneticRule": "In “of” + consonant sequences, the preceding consonant may link to the vowel of “of” while the /v/ itself is omitted.",
+      "phenomenonType": "Elision",
+      "spokenForm": "It happens mo-sta the time"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L77_Q1",
+      "instruction": "In a team chat you hear “Send the next batch tomorrow.” Which sound is likely missing in “next batch”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Send the next batch tomorrow",
+      "textToSpeak": "Send the next batch tomorrow",
+      "options": [
+        "The /k/ at the start of the cluster",
+        "The /t/ between the /s/ and the /b/",
+        "The /b/ at the start of “batch”",
+        "The /s/ before the /t/"
+      ],
+      "correctAnswer": "The /t/ between the /s/ and the /b/",
+      "correctAnswerIndex": 1,
+      "hint": "At the boundary the consonants are /k/, /s/, /t/ and then /b/. Which is the stop wedged in the middle?",
+      "explanation": "Four consonants meet at “next batch”. The /t/ is the weak stop in the middle, so it is often omitted: “nex’ batch”. The /s/ and the /b/ remain, so the listener can still tell the words apart. Workplace messages are said quickly, so this reduced form is typical.",
+      "phoneticRule": "In /kst/ + consonant sequences the /t/ is most often omitted, while the fricative and the following consonant remain.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Send the nex’ batch tomorrow"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L77_Q2",
+      "instruction": "Which two /t/ sounds are most likely to be omitted in “Kim tested the first plan last week”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Kim tested the first plan last week",
+      "textToSpeak": "Kim tested the first plan last week",
+      "options": [
+        "The /t/ at the start of “tested” and the /t/ of “first”",
+        "The /t/ at the start of “tested” and the /t/ of “last”",
+        "The /t/ in the middle of “tested” and the /t/ of “first”",
+        "The /t/ of “first” and the /t/ of “last”"
+      ],
+      "correctAnswer": "The /t/ of “first” and the /t/ of “last”",
+      "correctAnswerIndex": 3,
+      "hint": "Only a /t/ that ends a word, sits after /s/ and is followed by a consonant is at risk. Find two of them.",
+      "explanation": "“First” ends in /st/ before the /p/ of “plan”, and “last” ends in /st/ before the /w/ of “week”. Both /t/ sounds sit in crowded clusters and are often omitted: “firs’ plan las’ week”. The /t/ at the start of “tested” and the one in its middle are in positions that need to be pronounced.",
+      "phoneticRule": "Word-final /t/ after /s/ before a consonant is the principal elision site; word-initial and pre-vocalic /t/ are normally kept.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Kim tested the firs’ plan las’ week"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L77_Q3",
+      "instruction": "A client says “It’s our biggest risk now.” Which spoken form of “biggest risk” is typical?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "It’s our biggest risk now",
+      "textToSpeak": "It’s our biggest risk now",
+      "options": [
+        "“biggis’ risk”: the /t/ is omitted after the /s/ and before the /r/ of “risk”",
+        "“bigges-trisk”: the /t/ moves onto “risk” and the /s/ is kept apart",
+        "“biggest … risk”: the /t/ is released with a clear puff of air",
+        "“bigger risk”: the /s/ and /t/ are both replaced by an /r/"
+      ],
+      "correctAnswer": "“biggis’ risk”: the /t/ is omitted after the /s/ and before the /r/ of “risk”",
+      "correctAnswerIndex": 0,
+      "hint": "Write the consonants at the boundary: /s/, /t/, then /r/. Decide which sound is most likely to be missing.",
+      "explanation": "“Biggest” ends in /st/, and “risk” begins with /r/. The /t/ is wedged between /s/ and /r/, so it is often left out: “biggis’ risk”. Business talk uses many superlatives such as “biggest”, “best” and “highest”, so the pattern is worth recognising.",
+      "phoneticRule": "Superlative endings in /st/ commonly lose the /t/ before a consonant, as in “biggest risk” and similar phrases.",
+      "phenomenonType": "Elision",
+      "spokenForm": "It’s our biggis’ risk now"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L78_Q1",
+      "instruction": "A learner says every sound in “Please spell your last name” clearly in an interview. Is that a problem?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Please spell your last name",
+      "textToSpeak": "Please spell your last name",
+      "options": [
+        "Yes: the /t/ must be dropped in fast speech, or the speech will sound foreign to the interviewer",
+        "Yes: a fully pronounced /t/ makes the sentence ungrammatical and unnatural",
+        "No, but only if the learner also writes the sentence down with the /t/ omitted",
+        "No: a clearly pronounced /t/ is acceptable; omission is an option, not a requirement"
+      ],
+      "correctAnswer": "No: a clearly pronounced /t/ is acceptable; omission is an option, not a requirement",
+      "correctAnswerIndex": 3,
+      "hint": "Ask whether elision is a rule that every speaker must follow, or a tendency that depends on speed and style.",
+      "explanation": "Elision is a tendency of fast, relaxed speech. Pronouncing the /t/ clearly in “last name” is natural, especially in an interview, and listeners understand it easily. What the learner needs is to recognise the omitted version when others say it, not to copy it all the time.",
+      "phoneticRule": "Elision is optional and style-dependent; full forms remain acceptable in careful and formal speech, so recognition matters more than production.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Please spell your las’ name"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L78_Q2",
+      "instruction": "A student writes “Mum miss the las bus” because that is how it sounds. What is the best advice?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Mum missed the last bus",
+      "textToSpeak": "Mum missed the last bus",
+      "options": [
+        "Write exactly what you hear, because English spelling is supposed to follow pronunciation letter by letter",
+        "Spelling follows the full written forms, so keep “missed” and “last” even if speech omits the /t/",
+        "Use the reduced forms in formal reports, because they are more natural and match speech",
+        "Remove every /t/ in writing, since speech has already lost them in this phrase"
+      ],
+      "correctAnswer": "Spelling follows the full written forms, so keep “missed” and “last” even if speech omits the /t/",
+      "correctAnswerIndex": 1,
+      "hint": "Think about what a reader needs, compared with what a listener needs.",
+      "explanation": "Speech and spelling work on different systems. A listener hears “miss’” and “las’” and uses context to understand; a reader needs the full forms to see tense and word identity. So write “missed” and “last”, and keep the reductions for pronunciation.",
+      "phoneticRule": "Spelling represents word identity and grammar, not the connected-speech realisation, so elision does not change how words are written.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Mum miss’ the las’ bus"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L78_Q3",
+      "instruction": "At a formal presentation you say “Our first question is price.” Which delivery of “first question” is the safest choice?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Our first question is price",
+      "textToSpeak": "Our first question is price",
+      "options": [
+        "Omit the /t/ as often as possible, because omission sounds more fluent and professional to every listener",
+        "Pronounce every word with long pauses between them so that nothing is reduced",
+        "Either form is acceptable, but a clear /t/ at a natural pace is the safest in formal speech",
+        "Replace the /t/ with a throat stop to sound casual and relaxed in front of the audience"
+      ],
+      "correctAnswer": "Either form is acceptable, but a clear /t/ at a natural pace is the safest in formal speech",
+      "correctAnswerIndex": 2,
+      "hint": "Think about audience and context: a formal talk, listeners who need to follow every point.",
+      "explanation": "In formal speech both the reduced and the full forms are possible, but a clear /t/ at a natural pace does not risk confusion. Over-slow delivery with long pauses sounds stiff, and deliberate casual reductions can sound out of place. So choose clarity first, and let natural linking happen on its own.",
+      "phoneticRule": "Register affects the degree of reduction: formal speech tends to retain more segments, but it still uses linking and natural rhythm.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Our firs’ question is price"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L79_Q1",
+      "instruction": "Predict which sound may go missing in “hand luggage” at an airport check-in.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Any hand luggage",
+      "textToSpeak": "Any hand luggage",
+      "options": [
+        "The /d/ at the end of “hand”",
+        "The /n/ in the middle of “hand”",
+        "The /l/ at the start of “luggage”",
+        "The /g/ in the middle of “luggage”"
+      ],
+      "correctAnswer": "The /d/ at the end of “hand”",
+      "correctAnswerIndex": 0,
+      "hint": "Look at the cluster that ends “hand”: decide which of its two sounds is the stop, and what comes next.",
+      "explanation": "“Hand” ends in /nd/ and “luggage” begins with /l/, so the /d/ is wedged between a nasal and another consonant. It is the sound most likely to be omitted: “han’ luggage”. Airport staff say this phrase quickly many times a day, so the reduced form is very common.",
+      "phoneticRule": "Word-final /nd/ before a consonant tends to lose the /d/, keeping the nasal that signals the word.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Any han’ luggage"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L79_Q2",
+      "instruction": "Which spoken form of “direct” fits “Book a direct flight tonight”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Book a direct flight tonight",
+      "textToSpeak": "Book a direct flight tonight",
+      "options": [
+        "“direct flight”: the /t/ is released with a puff of air before the /f/",
+        "“direc’ flight”: the /t/ is omitted between the /k/ and the /f/",
+        "“direc-tflight”: the /t/ moves onto “flight”",
+        "“dire flight”: the /k/ and /t/ are both omitted"
+      ],
+      "correctAnswer": "“direc’ flight”: the /t/ is omitted between the /k/ and the /f/",
+      "correctAnswerIndex": 1,
+      "hint": "Say “direct flight” at the pace of a booking call. Notice whether you stop the air for a /t/ before the /f/ begins.",
+      "explanation": "“Direct” ends in /kt/ and “flight” begins with /f/, so the /t/ is again between other consonants. It is often omitted: “direc’ flight”. The /k/ remains, which keeps “direct” distinct from “dire”. Travel bookings contain many phrases like this.",
+      "phoneticRule": "The /kt/ cluster loses its /t/ before a consonant in travel and business vocabulary just as readily as in everyday words.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Book a direc’ flight tonight"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L79_Q3",
+      "instruction": "Which statement explains the missing sound in “Read the most recent message”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Read the most recent message",
+      "textToSpeak": "Read the most recent message",
+      "options": [
+        "The /m/ of “most” is dropped because the word “recent” follows it",
+        "The /s/ is dropped and the /t/ is kept, so it sounds like “mot recent”",
+        "The /r/ of “recent” moves back onto “most”",
+        "The /t/ sits between /s/ and /r/ and is often omitted, giving “mos’ recent”"
+      ],
+      "correctAnswer": "The /t/ sits between /s/ and /r/ and is often omitted, giving “mos’ recent”",
+      "correctAnswerIndex": 3,
+      "hint": "Write the consonants where the two words meet: /s/, /t/ and /r/. Which is the weakest of the three?",
+      "explanation": "“Most” ends in /st/, and “recent” begins with /r/. The /t/ is the stop wedged in the middle, so it is often omitted: “mos’ recent”. The prediction rule you have practised, looking for /t/ or /d/ between two other consonants, works for a new phrase just as well.",
+      "phoneticRule": "Prediction rule: scan for a word-final /t/ or /d/ that follows another consonant and precedes a consonant; that sound is the likely omission.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Read the mos’ recent message"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L80_Q1",
+      "instruction": "Which statement is accurate for the /t/ sounds in “Mum asked about the next bus”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Mum asked about the next bus",
+      "textToSpeak": "Mum asked about the next bus",
+      "options": [
+        "The /t/ of “asked” is omitted before “about”, and the /t/ of “next” links onto “bus”",
+        "Both /t/ sounds are omitted",
+        "The /t/ of “next” is omitted before “bus”, while the /t/ of “asked” links onto the vowel of “about”",
+        "Neither /t/ is affected, because each one is followed by a clear boundary between words"
+      ],
+      "correctAnswer": "The /t/ of “next” is omitted before “bus”, while the /t/ of “asked” links onto the vowel of “about”",
+      "correctAnswerIndex": 2,
+      "hint": "For each /t/, check what sound follows it: a vowel or a consonant.",
+      "explanation": "The /t/ of “asked” is followed by the vowel of “about”, so it links: “ask-ta-bout”. The /t/ of “next” is followed by the consonant /b/, so it is often omitted: “nex’ bus”. One sentence shows both outcomes, chosen by the following sound.",
+      "phoneticRule": "The next sound selects the outcome for a word-final /t/: a vowel gives linking, a consonant makes elision possible.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Mum ask-ta-bout the nex’ bus"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L80_Q2",
+      "instruction": "Which pair of reductions is heard in “Cheese and crackers, mostly”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Cheese and crackers, mostly",
+      "textToSpeak": "Cheese and crackers, mostly",
+      "options": [
+        "“And” is reduced to /n/, and the /t/ of “mostly” is omitted",
+        "“And” is deleted entirely, and the /t/ of “mostly” moves onto “ly”",
+        "The /s/ of “cheese” is omitted, and “crackers” loses its first syllable",
+        "Only “and” is reduced; “mostly” keeps all its sounds"
+      ],
+      "correctAnswer": "“And” is reduced to /n/, and the /t/ of “mostly” is omitted",
+      "correctAnswerIndex": 0,
+      "hint": "Check each reduction in turn: one affects a small word, the other a cluster inside a word.",
+      "explanation": "“And” between two content words is reduced to a short /n/. In “mostly”, the /t/ is wedged between /s/ and /l/ and is often omitted: “mos’ly”. So the same phrase shows a weak-word reduction and a cluster simplification.",
+      "phoneticRule": "Function-word reduction and consonant-cluster simplification are separate processes, and both can occur within a single short phrase.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Cheese ’n’ crackers, mos’ly"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L80_Q3",
+      "instruction": "Which spoken form fits “The last train might have gone” in fast speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "The last train might have gone",
+      "textToSpeak": "The last train might have gone",
+      "options": [
+        "“The last train might have gone”, with every sound clearly released, as in slow and careful speech",
+        "“The las’ train might-a gone”: the /t/ of “last” is omitted and the /v/ of “have” is lost",
+        "“The las-ttrain might have gone”: the /t/ moves onto “train”",
+        "“The last train migh’ have gone”: the /t/ of “might” is omitted and the rest is clear"
+      ],
+      "correctAnswer": "“The las’ train might-a gone”: the /t/ of “last” is omitted and the /v/ of “have” is lost",
+      "correctAnswerIndex": 1,
+      "hint": "Look for one /t/ before a consonant and one small word whose /v/ may disappear.",
+      "explanation": "“Last” ends in /st/ before the /t/ of “train”, so its /t/ is often omitted, and “have” is reduced to a weak vowel after “might”: “The las’ train might-a gone”. Combining both gives the typical fast form. Note that the written form is still “might have”.",
+      "phoneticRule": "Several reductions can occur in one sentence; each is driven by its own context: cluster simplification for /t/ and weak-form reduction for “have”.",
+      "phenomenonType": "Elision",
+      "spokenForm": "The las’ train might-a gone"
+    }
+  ]
 }

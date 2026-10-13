@@ -1,577 +1,637 @@
 {
-    "gameType": "connectedSpeech",
-    "batchIndex": 12,
-    "levels": "111-120",
-    "quests": [
-        {
-            "id": "ACC_CONNECTEDSPEECH_L111_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "praise your effort",
-            "textToSpeak": "praise your effort",
-            "options": [
-                "Coalescence (/z/ + /j/ becomes /ʃ/)",
-                "Coalescence (/z/ + /j/ becomes /ʒ/)"
-            ],
-            "correctAnswer": "Coalescence (/z/ + /j/ becomes /ʒ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen at natural speed: does \"praise your\" keep two distinct consonant sounds at the boundary, or blend them into a new one?",
-            "explanation": "In relaxed, natural speech, /z/ and /j/ rarely stay separate at a word boundary like this one. They coalesce into /ʒ/, exactly as in \"praise your\".",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "praise your effort"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L111_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "answer it",
-            "textToSpeak": "answer it",
-            "options": [
-                "Linking (/r/ links to the vowel)",
-                "Intrusion (extra /r/)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "The 'r' in \"answer\" isn't always pronounced. Does the vowel at the start of \"it\" bring it back to life?",
-            "explanation": "Because the letter 'r' genuinely exists at the end of \"answer\", its reappearance before the vowel in \"it\" is called linking /r/ — a real, spelled sound resurfacing, unlike intrusive /r/, which comes from nowhere in the spelling.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "answer it"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L111_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ask for help",
-            "textToSpeak": "ask for help",
-            "options": [
-                "Weak Form (/ɔː/ reduces to /ə/)",
-                "Elision (/ɔː/ disappears completely)"
-            ],
-            "correctAnswer": "Weak Form (/ɔː/ reduces to /ə/)",
-            "correctAnswerIndex": 0,
-            "hint": "\"for\" isn't the stressed word in \"ask for help\". What usually happens to an unstressed function word's vowel in fast speech?",
-            "explanation": "This is a weak form: \"for\" keeps its full vowel /ɔː/ only when stressed or said alone. In natural speech like \"ask for help\", it reduces to schwa because it carries no sentence stress.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
-            "phenomenonType": "Weak",
-            "spokenForm": "ask for help"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L112_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "fish and chips",
-            "textToSpeak": "fish and chips",
-            "options": [
-                "Elision (/æ/ disappears completely)",
-                "Weak Form (/æ/ reduces to /ə/)"
-            ],
-            "correctAnswer": "Weak Form (/æ/ reduces to /ə/)",
-            "correctAnswerIndex": 1,
-            "hint": "Try stressing every word in \"fish and chips\" equally — it sounds stiff and unnatural, right? Which word loses its full vowel to fix that?",
-            "explanation": "English sentence rhythm relies on this kind of reduction — content words stay strong, function words like \"and\" go weak. That's why /æ/ becomes schwa in \"fish and chips\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
-            "phenomenonType": "Weak",
-            "spokenForm": "fish and chips"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L112_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "new arrival",
-            "textToSpeak": "new arrival",
-            "options": [
-                "Linking (/w/ links naturally)",
-                "Intrusion (intrusive /w/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 1,
-            "hint": "Two vowels back to back is awkward to say smoothly. What sound does natural speech add between \"new\" and \"arrival\" — despite it not appearing in either word's spelling?",
-            "explanation": "This is a purely phonetic addition: /w/ shows up between \"new\" and \"arrival\" only to ease pronunciation, with nothing in either word's spelling to account for it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "new arrival"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L112_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "almost ready",
-            "textToSpeak": "almost ready",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /b/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen for the /t/ at the end of \"almost\". With another consonant right before it and another right after (from \"ready\"), can a speaker realistically hit all three cleanly?",
-            "explanation": "This is elision: a sound is removed entirely, not changed or weakened. Here, the /t/ at the end of \"almost\" disappears before the consonant that starts \"ready\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "almos' ready"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L113_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "light bulb",
-            "textToSpeak": "light bulb",
-            "options": [
-                "Assimilation (/t/ becomes /p/)",
-                "Assimilation (/t/ becomes /k/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 0,
-            "hint": "The tongue is already anticipating \"bulb\"'s bilabial sound before it even finishes \"light\". What happens to /t/ as a result?",
-            "explanation": "The change from /t/ to /p/ at the end of \"light\" happens because the following bilabial consonant in \"bulb\" pulls the place of articulation to match. Nothing is lost here, just reshaped.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "lighp bulb"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L113_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten boxes",
-            "textToSpeak": "ten boxes",
-            "options": [
-                "Assimilation (/n/ becomes /ŋ/)",
-                "Assimilation (/n/ becomes /m/)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /m/)",
-            "correctAnswerIndex": 1,
-            "hint": "Between \"ten\" and \"boxes\" sits a consonant under pressure to match its neighbor. What does it become?",
-            "explanation": "This pairing is a classic assimilation example: the /n/ ending \"ten\" adopts the bilabial quality of the sound in \"boxes\", surfacing as /m/ in natural, connected speech.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "tem boxes"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L113_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "wait, but I",
-            "textToSpeak": "wait, but I",
-            "options": [
-                "Weak Form (/ʌ/ reduces to /ə/)",
-                "Elision (/ʌ/ disappears completely)"
-            ],
-            "correctAnswer": "Weak Form (/ʌ/ reduces to /ə/)",
-            "correctAnswerIndex": 0,
-            "hint": "Function words like \"but\" rarely keep their dictionary pronunciation in natural sentences. Listen for what its vowel becomes in \"wait, but I\".",
-            "explanation": "Because \"but\" isn't emphasized in \"wait, but I\", its vowel weakens from the full /ʌ/ to a fast, neutral schwa sound. This happens to almost every unstressed function word in fluent English.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
-            "phenomenonType": "Weak",
-            "spokenForm": "wait, but I"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L114_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "we must go",
-            "textToSpeak": "we must go",
-            "options": [
-                "Elision (/ʌ/ disappears completely)",
-                "Weak Form (/ʌ/ reduces to /ə/)"
-            ],
-            "correctAnswer": "Weak Form (/ʌ/ reduces to /ə/)",
-            "correctAnswerIndex": 1,
-            "hint": "In \"we must go\", one word carries no stress at all. Focus on \"must\" — what happens to its vowel as a result?",
-            "explanation": "Weak forms like this one are what make native speech sound smooth rather than choppy. \"must\" trades its citation vowel /ʌ/ for schwa whenever it's unstressed, as it is in \"we must go\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
-            "phenomenonType": "Weak",
-            "spokenForm": "we must go"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L114_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "mother and father",
-            "textToSpeak": "mother and father",
-            "options": [
-                "Linking (/r/ links to the vowel)",
-                "Intrusion (extra /r/)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "This 'r' is real — it's written into \"mother\" — but often silent. Listen for it specifically at the boundary with \"and\".",
-            "explanation": "Speakers keep the /r/ silent in \"mother\" only until a vowel gives it a reason to surface. \"and\" provides exactly that vowel, so the /r/ links the phrase together.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "mother and father"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L114_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "warm up",
-            "textToSpeak": "warm up",
-            "options": [
-                "Linking (/m/ links to the vowel)",
-                "Elision (/m/ disappears)"
-            ],
-            "correctAnswer": "Linking (/m/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "Say the phrase at normal speed. Does the final consonant of \"warm\" stay cleanly inside \"warm\", or does it glide forward into \"up\"?",
-            "explanation": "This kind of linking happens constantly in natural English: a final consonant reaches across the word boundary to join the next vowel, connecting \"warm\" and \"up\" into one flowing phrase.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "warm up"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L115_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "send yourself",
-            "textToSpeak": "send yourself",
-            "options": [
-                "Coalescence (/d/ + /j/ becomes /tʃ/)",
-                "Coalescence (/d/ + /j/ becomes /dʒ/)"
-            ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
-            "correctAnswerIndex": 1,
-            "hint": "The /d/ in \"send\" and the /j/ starting \"yourself\" don't survive as separate sounds in fast speech. What do they turn into together?",
-            "explanation": "This is why \"send yourself\" doesn't sound like two crisp, separate words: the boundary consonant /d/ and the /j/ of \"yourself\" merge into the single sound /dʒ/.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "send yourself"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L115_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "they have gone",
-            "textToSpeak": "they have gone",
-            "options": [
-                "Elision (/æ/ disappears completely)",
-                "Weak Form (/æ/ reduces to /ə/)"
-            ],
-            "correctAnswer": "Weak Form (/æ/ reduces to /ə/)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"they have gone\" quickly, the way you would in real conversation. Does \"have\" sound the same as when you say it alone?",
-            "explanation": "Say \"have\" on its own and you get the full vowel /æ/. Say it inside \"they have gone\" at natural speed, and it reduces to schwa — the standard weak form.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
-            "phenomenonType": "Weak",
-            "spokenForm": "they have gone"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L115_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "what time are we",
-            "textToSpeak": "what time are we",
-            "options": [
-                "Weak Form (/ɑː/ reduces to /ə/)",
-                "Elision (/ɑː/ disappears completely)"
-            ],
-            "correctAnswer": "Weak Form (/ɑː/ reduces to /ə/)",
-            "correctAnswerIndex": 0,
-            "hint": "\"are\" said by itself has a full, clear vowel. Said inside \"what time are we\" at natural speed, does that vowel survive?",
-            "explanation": "This reduction isn't sloppy speech — it's a predictable, rule-governed feature of English. Unstressed \"are\" reduces from /ɑː/ to schwa in virtually every natural sentence, including \"what time are we\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
-            "phenomenonType": "Weak",
-            "spokenForm": "what time are we"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L116_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "can you hear me",
-            "textToSpeak": "can you hear me",
-            "options": [
-                "Weak Form (/æ/ reduces to /ə/)",
-                "Elision (/æ/ disappears completely)"
-            ],
-            "correctAnswer": "Weak Form (/æ/ reduces to /ə/)",
-            "correctAnswerIndex": 0,
-            "hint": "Content words — nouns, verbs, adjectives — usually keep their full vowels; function words like \"can\" often don't. What happens to it in \"can you hear me\"?",
-            "explanation": "Stress timing in English means unstressed words get compressed. \"can\" loses its full /æ/ vowel and reduces to schwa here, keeping \"can you hear me\" flowing at a natural rhythm.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
-            "phenomenonType": "Weak",
-            "spokenForm": "can you hear me"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L116_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "cup of tea",
-            "textToSpeak": "cup of tea",
-            "options": [
-                "Weak Form (/ɒ/ reduces to /ə/)",
-                "Elision (/ɒ/ disappears completely)"
-            ],
-            "correctAnswer": "Weak Form (/ɒ/ reduces to /ə/)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen for the schwa. Somewhere in \"cup of tea\", a full vowel gets flattened into that quick, neutral \"uh\" sound — which word is it?",
-            "explanation": "Native listeners expect this weak form; a fully stressed /ɒ/ on \"of\" in \"cup of tea\" would actually sound unnatural or overly formal. The relaxed schwa is the normal, expected pronunciation.",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
-            "phenomenonType": "Weak",
-            "spokenForm": "cup of tea"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L116_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "save some money",
-            "textToSpeak": "save some money",
-            "options": [
-                "Elision (/ʌ/ disappears completely)",
-                "Weak Form (/ʌ/ reduces to /ə/)"
-            ],
-            "correctAnswer": "Weak Form (/ʌ/ reduces to /ə/)",
-            "correctAnswerIndex": 1,
-            "hint": "\"some\" is grammatically necessary but rarely emphasized. What does that lack of stress do to its vowel in \"save some money\"?",
-            "explanation": "This is one of the most common patterns in spoken English: function words reduce, content words don't. \"some\" follows that rule exactly, shrinking from /ʌ/ to schwa in \"save some money\".",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
-            "phenomenonType": "Weak",
-            "spokenForm": "save some money"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L117_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "partner and I",
-            "textToSpeak": "partner and I",
-            "options": [
-                "Intrusion (extra /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "Unlike a sound added from nowhere, the /r/ here is already part of \"partner\"'s spelling. What triggers it to reappear before \"and\"?",
-            "explanation": "This linking /r/ is predictable from spelling alone: any r-final word behaves this way before a vowel, and \"partner and\" is a clean example of it.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "partner and I"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L117_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten countries",
-            "textToSpeak": "ten countries",
-            "options": [
-                "Assimilation (/n/ becomes /m/)",
-                "Assimilation (/n/ becomes /ŋ/)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
-            "correctAnswerIndex": 1,
-            "hint": "This isn't a case of a sound vanishing from \"ten\" — it's still there, just different. What does /n/ turn into before the velar sound in \"countries\"?",
-            "explanation": "Notice that the /n/ ending \"ten\" isn't deleted the way it would be in elision — it survives, just transformed into /ŋ/ to match the velar sound beginning \"countries\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "ten countries"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L117_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "he was late",
-            "textToSpeak": "he was late",
-            "options": [
-                "Elision (/ɒ/ disappears completely)",
-                "Weak Form (/ɒ/ reduces to /ə/)"
-            ],
-            "correctAnswer": "Weak Form (/ɒ/ reduces to /ə/)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"he was late\" at a natural conversational pace. Does \"was\" keep its full vowel sound, or shrink to a quick \"uh\"?",
-            "explanation": "Unstressed function words like \"was\" almost always reduce their vowel to schwa /ə/ in connected speech. Its full form is /ɒ/, but in \"he was late\" it shrinks to something much quicker and quieter.",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
-            "phenomenonType": "Weak",
-            "spokenForm": "he was late"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L118_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "extra information",
-            "textToSpeak": "extra information",
-            "options": [
-                "Linking (/r/ links naturally)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Nothing in \"extra\"'s ending suggests a consonant at all. So the /r/ you might hear before \"information\" isn't really part of either word — where does it come from?",
-            "explanation": "Vowel hiatus (two vowels in a row) is uncomfortable in fluent English, so an intrusive /r/ fills the gap in \"extra information\" — a sound created by the flow of speech, not by spelling.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "extra information"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L118_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "waiting for the bus",
-            "textToSpeak": "waiting for the bus",
-            "options": [
-                "Elision (/ɔː/ disappears completely)",
-                "Weak Form (/ɔː/ reduces to /ə/)"
-            ],
-            "correctAnswer": "Weak Form (/ɔː/ reduces to /ə/)",
-            "correctAnswerIndex": 1,
-            "hint": "\"for\" isn't the stressed word in \"waiting for the bus\". What usually happens to an unstressed function word's vowel in fast speech?",
-            "explanation": "This is a weak form: \"for\" keeps its full vowel /ɔː/ only when stressed or said alone. In natural speech like \"waiting for the bus\", it reduces to schwa because it carries no sentence stress.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
-            "phenomenonType": "Weak",
-            "spokenForm": "waiting for the bus"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L118_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "grand finale",
-            "textToSpeak": "grand finale",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /m/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Try saying \"grand finale\" at a natural conversational pace, not word by word. What happens to the /d/ sound in the middle?",
-            "explanation": "Native speakers rarely pronounce every consonant in a heavy cluster. In \"grand finale\", the /d/ is left out completely, letting the surrounding consonants connect directly.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "gran' finale"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L119_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "net cost",
-            "textToSpeak": "net cost",
-            "options": [
-                "Assimilation (/t/ becomes /p/)",
-                "Assimilation (/t/ becomes /k/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /k/)",
-            "correctAnswerIndex": 1,
-            "hint": "The /t/ at the end of \"net\" is about to meet a velar sound in \"cost\". Does it hold firm, or shift to match?",
-            "explanation": "Before a velar consonant, /t/ commonly shifts to match its place of articulation. In \"net cost\", /t/ becomes /k/ — the sound itself changes, it doesn't disappear.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "net cosk"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L119_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "soft drink",
-            "textToSpeak": "soft drink",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /k/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Three consonants in a row is hard work for the mouth. Focus on the /t/ where \"soft\" meets \"drink\" — does English keep it or drop it?",
-            "explanation": "Because /t/ is squeezed between two other consonants, it gets dropped in fluent speech. Say \"soft drink\" aloud and you'll notice the /t/ just isn't there.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "sof' drink"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L119_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "Asia and Europe",
-            "textToSpeak": "Asia and Europe",
-            "options": [
-                "Intrusion (intrusive /r/)",
-                "Linking (/r/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 0,
-            "hint": "\"Asia\" has no letter for /r/ anywhere at its end. So if you hear a /r/ before \"and\", where does it actually come from?",
-            "explanation": "English avoids putting two vowel sounds directly next to each other, so speakers insert a small linking sound to bridge them. Since \"Asia\" has no /r/ in its spelling, this /r/ is intrusive — added purely for smoothness, not because it's really part of \"Asia\" or \"and\".",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "Asia and Europe"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L120_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "schema of",
-            "textToSpeak": "schema of",
-            "options": [
-                "Intrusion (intrusive /r/)",
-                "Linking (/r/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 0,
-            "hint": "Both \"schema\" and \"of\" end and begin with vowel sounds. Listen for an extra consonant sound that sneaks in between them.",
-            "explanation": "This is intrusion: a sound appears between two vowels even though it isn't written anywhere. In \"schema of\", an intrusive /r/ bridges the gap, purely to avoid an awkward vowel collision.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "schema of"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L120_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "this yard",
-            "textToSpeak": "this yard",
-            "options": [
-                "Coalescence (/s/ + /j/ becomes /ʒ/)",
-                "Coalescence (/s/ + /j/ becomes /ʃ/)"
-            ],
-            "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
-            "correctAnswerIndex": 1,
-            "hint": "This is a sound-merging boundary. What new consonant replaces /s/ + /j/ when you say \"this yard\" naturally?",
-            "explanation": "Coalescence is a genuine sound change, not just fast talking — /s/ plus /j/ reliably becomes /ʃ/ in phrases like \"this yard\" across natural English speech.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "this yard"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L120_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "see other",
-            "textToSpeak": "see other",
-            "options": [
-                "Intrusion (intrusive /j/)",
-                "Linking (/j/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"see other\" without a pause. Two vowel sounds are about to collide — what does English insert to smooth the transition?",
-            "explanation": "Because \"see\" ends in a vowel and \"other\" begins with one, English speakers instinctively insert /j/ between them. It's not in the spelling of either word — it's added on the fly to keep the speech flowing.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "see other"
-        }
-    ]
+  "gameType": "connectedSpeech",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "ACC_CONNECTEDSPEECH_L111_Q1",
+      "instruction": "On a voicemail you hear “Hi Mia, did you get my message?” Which spoken form of “did you get” is typical?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Hi Mia, did you get my message",
+      "textToSpeak": "Hi Mia, did you get my message",
+      "options": [
+        "“di-ja get”: a /dʒ/ blend replaces the /d/ and the /j/",
+        "“did you get”: three strong words with a clear /j/",
+        "“di-ya get”: the /d/ is dropped before the weak “you”",
+        "“di-cha get”: the blend is /tʃ/ because “get” follows"
+      ],
+      "correctAnswer": "“di-ja get”: a /dʒ/ blend replaces the /d/ and the /j/",
+      "correctAnswerIndex": 0,
+      "hint": "Say the first half of the sentence at voicemail speed, and listen to what happens between “did” and “you”.",
+      "explanation": "On the phone people speak quickly, and “did you” is one of the first things to fuse: the /d/ and the /j/ become /dʒ/, and “you” is weak. So you hear “di-ja get”. The /t/ of “get” is a separate sound and plays no part in the blend. Knowing this helps you understand voicemails that sound like “dija”.",
+      "phoneticRule": "Fast, phone-style delivery encourages blending of /d/ + /j/, and the following word does not affect the result.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Hi Mia, di-ja get my message"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L111_Q2",
+      "instruction": "Why does “text you” sound like “teks-chu” in “Jack will text you later”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Jack will text you later",
+      "textToSpeak": "Jack will text you later",
+      "options": [
+        "The /s/ and the /j/ blend into /ʃ/, and the /t/ is lost from the cluster",
+        "The /k/ and /s/ blend together into a new sound with the /j/ following",
+        "The /t/ is lost and the /j/ is kept clear: “teks-you”",
+        "The final /t/ meets the /j/ of “you” and they blend into /tʃ/ after the /s/"
+      ],
+      "correctAnswer": "The final /t/ meets the /j/ of “you” and they blend into /tʃ/ after the /s/",
+      "correctAnswerIndex": 3,
+      "hint": "Find the last sound of “text” and the first sound of “you”. Which of the four blends could they form?",
+      "explanation": "“Text” ends in /kst/, and the last sound is /t/. That /t/ meets /j/, so the pair blends into /tʃ/: “teks-chu”. The /s/ before it stays as it is. Words that end in a cluster follow the same rule as single consonants: only the last sound enters the blend.",
+      "phoneticRule": "In a final consonant cluster, only the last sound blends with a following /j/; the earlier consonants stay.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Jack will teks-chu later"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L111_Q3",
+      "instruction": "Which spoken form of “missed your” fits “Sorry, I missed your call”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Sorry, I missed your call",
+      "textToSpeak": "Sorry, I missed your call",
+      "options": [
+        "“miss-tyour”: both sounds are kept apart, with a clear /j/",
+        "“mis-chyer”: the /t/ and a weak “your” blend into /tʃ/",
+        "“mis-jyer”: the /t/ and /j/ blend into /dʒ/",
+        "“mis-yer”: the /t/ is dropped and the /j/ is kept"
+      ],
+      "correctAnswer": "“mis-chyer”: the /t/ and a weak “your” blend into /tʃ/",
+      "correctAnswerIndex": 1,
+      "hint": "The past-tense ending of “missed” is a /t/. Predict its blend with the /j/ of “your”.",
+      "explanation": "The ending of “missed” is /t/, and “your” begins with /j/, so the pair blends into /tʃ/: “mis-chyer”. This is a good reminder that past-tense endings take part in the blends. On a call, hearing “mis-chyer” should bring “missed your” to mind.",
+      "phoneticRule": "Past-tense /t/ and /d/ endings blend with a following /j/ just as lexical /t/ and /d/ do.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Sorry, I mis-chyer call"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L112_Q1",
+      "instruction": "At a theatre you hear “Find your seat, please.” Which spoken form of “find your” fits?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Find your seat, please",
+      "textToSpeak": "Find your seat, please",
+      "options": [
+        "“find-your”: both words are strong with a clear /j/",
+        "“fine-chyer”: the blend is /tʃ/ after the /n/",
+        "“fine-jyer”: the /d/ and a weak “your” blend into /dʒ/",
+        "“fine-yer”: the /d/ is dropped and the /j/ is kept"
+      ],
+      "correctAnswer": "“fine-jyer”: the /d/ and a weak “your” blend into /dʒ/",
+      "correctAnswerIndex": 2,
+      "hint": "Say the instruction as an usher would, quickly and kindly. Listen to the sound between “find” and “your”.",
+      "explanation": "“Find” ends in the cluster /nd/, and the last sound, /d/, meets the /j/ of “your”. They blend into /dʒ/: “fine-jyer”. The /n/ stays. Instructions like this one use the blend almost every time they are spoken at normal speed.",
+      "phoneticRule": "Instructions with an imperative verb ending in /d/ followed by “your” are a common place for /d/ + /j/ to blend.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Fine-jyer seat, please"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L112_Q2",
+      "instruction": "In “Raise your hand if you agree”, which sound does the /z/ of “raise” become before “your”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Raise your hand if you agree",
+      "textToSpeak": "Raise your hand if you agree",
+      "options": [
+        "/dʒ/, as in “jam”: “ray-jyer” instead",
+        "/ʃ/, as in “shoe”: “ray-shyer” instead",
+        "/ʒ/, as in “vision”: “ray-zhyer”",
+        "/z/ is unchanged and a clear /j/ follows"
+      ],
+      "correctAnswer": "/ʒ/, as in “vision”: “ray-zhyer”",
+      "correctAnswerIndex": 2,
+      "hint": "The /z/ is voiced. Pick a blend that keeps that buzz and is a smooth fricative.",
+      "explanation": "“Raise” ends in /z/ and “your” begins with /j/, so the result is /ʒ/: “ray-zhyer”. The second “you” in the sentence, in “if you”, does not blend because “if” ends in /f/, which is not one of the four triggers. So the sentence contains exactly one blend.",
+      "phoneticRule": "Only /t/, /d/, /s/ and /z/ blend with /j/; other consonants, such as /f/, leave the /j/ unchanged.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Ray-zhyer hand if you agree"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L112_Q3",
+      "instruction": "Apply the pattern to “lost your” in “Lost your keys again?” Which spoken form fits?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Lost your keys again",
+      "textToSpeak": "Lost your keys again",
+      "options": [
+        "“los-chyer”: the /t/ and a weak “your” blend into /tʃ/",
+        "“lost-your”: both words are strong and separate",
+        "“los-shyer”: the /t/ is lost and the /s/ and /j/ blend into /ʃ/",
+        "“los-jyer”: the /t/ and /j/ blend into /dʒ/"
+      ],
+      "correctAnswer": "“los-chyer”: the /t/ and a weak “your” blend into /tʃ/",
+      "correctAnswerIndex": 0,
+      "hint": "Isolate the final /t/ of “lost” and recall what a /t/ becomes before /j/.",
+      "explanation": "“Lost” ends in /st/, and the last sound, /t/, blends with /j/ into /tʃ/: “los-chyer”. A sympathetic question like this is usually said quickly, so the blend is very likely. If you only listened for a clear “lost your”, you could miss it.",
+      "phoneticRule": "The same last-sound rule applies to /st/ clusters: the /t/ blends, and the /s/ is retained.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Los-chyer keys again"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L113_Q1",
+      "instruction": "Which processes are heard in “So what do you want?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "So what do you want",
+      "textToSpeak": "So what do you want",
+      "options": [
+        "A strong “do” and a clear separate /j/ before “you”",
+        "A weak “do” whose /d/ blends with “you” into /dʒ/, plus weak “you”",
+        "Elision of the /d/ and a /j/ glide linking “do” to “you”",
+        "Assimilation of the /d/ to the /w/ of “what”, and a strong, fully pronounced “you”"
+      ],
+      "correctAnswer": "A weak “do” whose /d/ blends with “you” into /dʒ/, plus weak “you”",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the three small words in the middle of the question and decide how many of them are strong.",
+      "explanation": "“What do you want” is stressed on “what” and “want”. The three words between them are weak, and the /d/ of “do” blends with the /j/ of “you” into /dʒ/. You hear something like “wot-dja want”. This is the classic fast form of the question, built from a weak “do”, a blend and a weak “you”.",
+      "phoneticRule": "A weak auxiliary “do” followed by weak “you” forms a single quick unit in which /d/ + /j/ gives /dʒ/.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "So wot-dja want"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L113_Q2",
+      "instruction": "Which two blends are heard in “Carl, did you lose your keys?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Carl, did you lose your keys",
+      "textToSpeak": "Carl, did you lose your keys",
+      "options": [
+        "/tʃ/ in “did you” and /ʒ/ in “lose your”",
+        "/dʒ/ in “did you” and /ʃ/ in “lose your”",
+        "/ʒ/ in “did you” and /dʒ/ in “lose your”",
+        "/dʒ/ in “did you” and /ʒ/ in “lose your”"
+      ],
+      "correctAnswer": "/dʒ/ in “did you” and /ʒ/ in “lose your”",
+      "correctAnswerIndex": 3,
+      "hint": "Work out each junction separately: the last sound of the first word decides the blend.",
+      "explanation": "“Did” ends in voiced /d/ and “lose” ends in voiced /z/. A voiced stop blends to /dʒ/, and a voiced fricative blends to /ʒ/. So you hear “di-ja loo-zhyer”. Two different blends can therefore appear in the same question, and each is chosen by its own first sound.",
+      "phoneticRule": "Each junction in a sentence is evaluated separately, so a stop-plus-/j/ and a fricative-plus-/j/ give different results.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Carl, di-ja loo-zhyer keys"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L113_Q3",
+      "instruction": "Why does “can you” in “Omar, can you help me?” not blend into a “ch” or “j” sound like “did you” does?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Omar, can you help me",
+      "textToSpeak": "Omar, can you help me",
+      "options": [
+        "“can” is stressed, which blocks every blend",
+        "The /n/ is voiced, and voiced sounds do not blend with /j/",
+        "The /n/ is a nasal, not a stop or fricative, so the /j/ stays separate",
+        "“you” is too weak to cause a blend after “can”"
+      ],
+      "correctAnswer": "The /n/ is a nasal, not a stop or fricative, so the /j/ stays separate",
+      "correctAnswerIndex": 2,
+      "hint": "Recall the four sounds that blend with /j/ and check whether /n/ is one of them.",
+      "explanation": "Only /t/, /d/, /s/ and /z/ blend with /j/ in this way. /n/ is a nasal, so “can you” is said with a clear /j/, often as “kin-yoo”. That means you can tell “did you” (blend) from “can you” (no blend) by listening for the “j” sound.",
+      "phoneticRule": "Coalescence is limited to the alveolar stops and fricatives /t d s z/; nasals and liquids keep a separate /j/.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Omar, kin-yoo help me"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L114_Q1",
+      "instruction": "Compare “did he” in “Hugo, did he call?” with “did you”. What happens at “did he”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Hugo, did he call",
+      "textToSpeak": "Hugo, did he call",
+      "options": [
+        "The /h/ is dropped and the /d/ links onto the vowel: “di-dee”, no blend",
+        "The /d/ and the /h/ blend together into a /dʒ/ sound",
+        "The /d/ is dropped completely before the weak “he”, leaving only “di” and a vowel behind",
+        "The /d/ and the vowel of “he” blend together into /dʒ/"
+      ],
+      "correctAnswer": "The /h/ is dropped and the /d/ links onto the vowel: “di-dee”, no blend",
+      "correctAnswerIndex": 0,
+      "hint": "A blend needs a /j/. Check what sound begins “he” once the /h/ is dropped.",
+      "explanation": "When the /h/ of “he” is dropped, the word begins with a vowel, not a /j/. So there is nothing to blend with, and the /d/ simply links onto the vowel: “di-dee”. The blend /dʒ/ belongs to “did you”, not to “did he”. Telling the two apart is a useful listening skill.",
+      "phoneticRule": "Dropping /h/ produces a vowel-initial word that triggers linking, not coalescence, because coalescence requires a following /j/.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Hugo, di-dee call"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L114_Q2",
+      "instruction": "In “Priya, did you miss her call?”, which junction blends and which only links?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Priya, did you miss her call",
+      "textToSpeak": "Priya, did you miss her call",
+      "options": [
+        "Both blend: /dʒ/ in “did you” and /ʃ/ in “miss her”",
+        "“did you” blends into /dʒ/, while “miss her” only links the /s/ onto “her”",
+        "“miss her” blends into /ʃ/ and “did you” only links the /d/ onto the next word",
+        "Neither: both junctions keep their separate sounds"
+      ],
+      "correctAnswer": "“did you” blends into /dʒ/, while “miss her” only links the /s/ onto “her”",
+      "correctAnswerIndex": 1,
+      "hint": "Check the first sound of each second word: is it /j/ or a vowel?",
+      "explanation": "“You” begins with /j/, so “did you” blends. “Her”, with its /h/ dropped, begins with a vowel, so “miss her” only links the /s/ onto it: “mi-ser”. The same sentence thus contains one blend and one link. Both are normal.",
+      "phoneticRule": "The first sound of the second word decides the process: /j/ gives coalescence, and a vowel gives linking.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Priya, di-ja mi-ser call"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L114_Q3",
+      "instruction": "Which spoken form of “let her” fits “Carl will let her go”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Carl will let her go",
+      "textToSpeak": "Carl will let her go",
+      "options": [
+        "“le-chər”: the /t/ and /h/ blend into /tʃ/",
+        "“let-her”: both sounds fully pronounced, with a pause between the two words",
+        "“le-ər”: the /t/ and /h/ are both dropped",
+        "“le-tər”: the /h/ is dropped and the /t/ links onto “her”, with no blend"
+      ],
+      "correctAnswer": "“le-tər”: the /h/ is dropped and the /t/ links onto “her”, with no blend",
+      "correctAnswerIndex": 3,
+      "hint": "Compare “let her” with “let you”, and decide which of them has a /j/ to trigger a blend.",
+      "explanation": "“Her” loses its /h/ and begins with a vowel, so the /t/ of “let” links onto it: “le-tər”. A blend into /tʃ/ would require a /j/, as in “let you”. So “let her” and “let you” sound different, and the difference tells you which pronoun was said.",
+      "phoneticRule": "“Let her” (a link) and “let you” (a blend) differ by one sound; the /tʃ/ is a cue that the pronoun was “you”.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Carl will le-ter go"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L115_Q1",
+      "instruction": "In a formal interview you say, “Sir, would you repeat that?” Which delivery is acceptable?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Sir, would you repeat that",
+      "textToSpeak": "Sir, would you repeat that",
+      "options": [
+        "Only “wou-ja” is acceptable, because blends are required in English",
+        "Only the clear “would you” is acceptable, because blends are considered impolite",
+        "Neither is acceptable in an interview; the phrase must be avoided",
+        "Both “wou-ja” and a clear “would you” are acceptable in careful speech"
+      ],
+      "correctAnswer": "Both “wou-ja” and a clear “would you” are acceptable in careful speech",
+      "correctAnswerIndex": 3,
+      "hint": "Ask whether connected speech is a rule or a tendency that depends on style.",
+      "explanation": "Blending is typical of fast, relaxed speech, but it is not compulsory. In a formal setting, a speaker may keep the /d/ and /j/ apart, and a listener will understand perfectly. For you as a listener, the key is to recognise both versions of the same phrase.",
+      "phoneticRule": "Coalescence is optional and style-dependent: careful speech may preserve the original sounds without sounding incorrect.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Sir, wou-ja repeat that"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L115_Q2",
+      "instruction": "Two speakers say “Could you pass me the salt?” One says “cou-ja”, the other says “could you” clearly. Which statement is accurate?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Mia, could you pass me the salt",
+      "textToSpeak": "Mia, could you pass me the salt",
+      "options": [
+        "The second speaker is more careful; the blend is normal fast speech, not an error",
+        "The first speaker is wrong, because the blend changes the meaning of the word",
+        "The second speaker is wrong, because English requires the blend in every phrase",
+        "Both speakers are wrong, because every sound should be kept fully separate in good speech"
+      ],
+      "correctAnswer": "The second speaker is more careful; the blend is normal fast speech, not an error",
+      "correctAnswerIndex": 0,
+      "hint": "Think of the blend as a speed-and-style choice rather than a correctness rule.",
+      "explanation": "Both versions are normal; they differ in style. The blend is a natural result of fast speech, and the clear version is a natural result of careful speech. Neither is an error. Treating the blend as a mistake would make everyday speech sound wrong, which is not the case.",
+      "phoneticRule": "Blended and unblended forms are variants of the same phrase; neither is a mistake, and the choice reflects speed and formality.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Mia, cou-ja pass me the salt"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L115_Q3",
+      "instruction": "Someone says “Won’t YOU listen to me?” with strong stress on “you”. What happens to the blend?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Won’t you listen to me",
+      "textToSpeak": "Won’t you listen to me",
+      "options": [
+        "The blend is more likely, because stressed words are louder and clearer",
+        "The /t/ is dropped completely, so “won’t” loses its final sound",
+        "The stressed “you” keeps a clear /j/ and the blend is less likely",
+        "The blend becomes /ʃ/ because the vowel of “you” is longer"
+      ],
+      "correctAnswer": "The stressed “you” keeps a clear /j/ and the blend is less likely",
+      "correctAnswerIndex": 2,
+      "hint": "Remember that blends are helped by weak /jə/. What changes when “you” is stressed?",
+      "explanation": "A stressed “you” has a full vowel, /juː/, and a clear /j/, so the junction with /t/ tends to stay separate: “wohnt YOU”. The blend is much more typical when “you” is weak. Listening for stress therefore tells you whether to expect a blend.",
+      "phoneticRule": "Stress on “you” restores its full form and reduces the likelihood of coalescence, which is favoured by the weak form /jə/.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Wohnt YOU listen to me"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L116_Q1",
+      "instruction": "Someone sneezes and you say “Bless you.” Which spoken form fits?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Bless you, that was loud",
+      "textToSpeak": "Bless you, that was loud",
+      "options": [
+        "“bless-you”: both sounds are separate",
+        "“bleh-shoo”: the /s/ and /j/ blend into /ʃ/",
+        "“bleh-choo”: they blend into /tʃ/, like a sneeze",
+        "“bleh-zhoo”: they blend into /ʒ/"
+      ],
+      "correctAnswer": "“bleh-shoo”: the /s/ and /j/ blend into /ʃ/",
+      "correctAnswerIndex": 1,
+      "hint": "A sneeze is “achoo”, but this blend is a different one. Check the last sound of “bless”.",
+      "explanation": "“Bless” ends in /s/, so with /j/ the result is /ʃ/: “bleh-shoo”. The “ch” of a sneeze, “a-choo”, is /tʃ/, which would need a /t/. This is a small reminder that each blend is tied to its first sound.",
+      "phoneticRule": "The blend /ʃ/ in “bless you” follows from /s/ + /j/; /tʃ/ would require a /t/ before the /j/.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Bleh-shoo, that was loud"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L116_Q2",
+      "instruction": "Someone bumps into you and says “Excuse you!” What happens where “excuse” and “you” meet?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Excuse you, I was first",
+      "textToSpeak": "Excuse you, I was first",
+      "options": [
+        "The /z/ and /j/ blend into the voiceless /ʃ/: “ex-cue-shoo”",
+        "The /z/ and /j/ blend into the stop /dʒ/: “ex-cue-joo”",
+        "The /z/ and /j/ blend into /ʒ/: “ex-cue-zhoo”",
+        "The two sounds stay separate and are both pronounced: “ex-cuse-you”"
+      ],
+      "correctAnswer": "The /z/ and /j/ blend into /ʒ/: “ex-cue-zhoo”",
+      "correctAnswerIndex": 2,
+      "hint": "“Excuse” in this phrase ends in a voiced /z/. Choose the blend that keeps the voicing.",
+      "explanation": "As a verb, “excuse” ends in /z/, so with /j/ it becomes /ʒ/: “ex-cue-zhoo”. The noun “an excuse” ends in /s/, but the exclamation uses the verb. The voiced /ʒ/ makes the phrase sound sharper, which suits its sarcastic use.",
+      "phoneticRule": "The verb “excuse” ends in /z/ (the noun in /s/), so the voicing of the blend depends on which word it is.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Ex-cue-zhoo, I was first"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L116_Q3",
+      "instruction": "Which spoken form of “frightened you” fits “Oh no, I frightened you”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Oh no, I frightened you",
+      "textToSpeak": "Oh no, I frightened you",
+      "options": [
+        "“fry-tnd-you”: both sounds are kept apart",
+        "“fry-tnd-cha”: they blend into /tʃ/",
+        "“fry-tn-ya”: the /d/ is dropped and the /j/ is kept",
+        "“fry-tnd-ja”: the final /d/ and /j/ blend into /dʒ/"
+      ],
+      "correctAnswer": "“fry-tnd-ja”: the final /d/ and /j/ blend into /dʒ/",
+      "correctAnswerIndex": 3,
+      "hint": "Notice that “frightened” ends with a /d/ sound, then decide what a /d/ becomes before /j/.",
+      "explanation": "“Frightened” ends in /d/, so “frightened you” blends the /d/ and /j/ into /dʒ/: “fry-tnd-ja”. Reactions and apologies are said quickly, so recognising the blend helps you understand what the speaker did. The pattern is the same as in “did you” and “told you”.",
+      "phoneticRule": "Regular past-tense /d/ endings in apologies and explanations blend with “you” in the same way as other /d/ + /j/ sequences.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Oh no, I fry-tnd-ja"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L117_Q1",
+      "instruction": "Predict the blend in “surprise you” in “Zoe, did that surprise you?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Zoe, did that surprise you",
+      "textToSpeak": "Zoe, did that surprise you",
+      "options": [
+        "/ʒ/, because “surprise” ends in the voiced fricative /z/",
+        "/ʃ/, because “surprise” ends in a voiceless fricative",
+        "/dʒ/, because the final sound of “surprise” is a voiced stop",
+        "/tʃ/, because the final sound of “surprise” is a voiceless stop"
+      ],
+      "correctAnswer": "/ʒ/, because “surprise” ends in the voiced fricative /z/",
+      "correctAnswerIndex": 0,
+      "hint": "Name the last sound of “surprise” and its two features, then match them to the blend.",
+      "explanation": "“Surprise” ends in /z/, a voiced fricative. Voiced fricative + /j/ gives the voiced fricative /ʒ/: “sur-prai-zhoo”. The two-feature test from earlier levels works for a new word, even if you have not heard the phrase before.",
+      "phoneticRule": "Applying the two-feature test (manner and voicing) predicts the blend for any word ending in /t d s z/.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Zoe, did that sur-prai-zhoo"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L117_Q2",
+      "instruction": "Predict the blend in “race you” in “Race you to the car!”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Race you to the car",
+      "textToSpeak": "Race you to the car",
+      "options": [
+        "/ʒ/, because “race” ends in a voiced fricative",
+        "/dʒ/, because “race” ends in a voiced stop",
+        "/tʃ/, because “race” ends in a voiceless stop",
+        "/ʃ/, because “race” ends in the voiceless fricative /s/"
+      ],
+      "correctAnswer": "/ʃ/, because “race” ends in the voiceless fricative /s/",
+      "correctAnswerIndex": 3,
+      "hint": "Use the same test: manner and voicing of the first sound.",
+      "explanation": "“Race” ends in /s/, a voiceless fricative. With /j/ it blends to the voiceless /ʃ/: “ray-shoo”. A playful challenge like this is said quickly, so the blend is very likely. If you had expected a /ʒ/, remember that voicing is copied, and /s/ is voiceless.",
+      "phoneticRule": "A voiceless fricative gives a voiceless blend (/ʃ/), and a voiced fricative gives a voiced blend (/ʒ/).",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Ray-shoo tuh the car"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L117_Q3",
+      "instruction": "Predict the blend in “thought you” in “Thought you knew that”.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Thought you knew that",
+      "textToSpeak": "Thought you knew that",
+      "options": [
+        "/dʒ/, because “thought” ends in a voiced stop",
+        "/tʃ/, because “thought” ends in the voiceless stop /t/",
+        "/ʃ/, because “thought” ends in a voiceless fricative",
+        "/ʒ/, because “thought” ends in a voiced fricative"
+      ],
+      "correctAnswer": "/tʃ/, because “thought” ends in the voiceless stop /t/",
+      "correctAnswerIndex": 1,
+      "hint": "Apply the test to the final /t/ of “thought”: stop or fricative, voiced or voiceless?",
+      "explanation": "“Thought” ends in /t/, a voiceless stop. A voiceless stop + /j/ gives /tʃ/: “thaw-choo”. The spelling “ough” is irrelevant; only the final sound counts. Phrases like this are very common in everyday speech.",
+      "phoneticRule": "The blend is predicted from the final sound, not the spelling: words ending in /t/ give /tʃ/ even when the spelling is irregular.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Thaw-choo knew that"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L118_Q1",
+      "instruction": "Which spoken form of “get you” fits “Let me get you a coffee”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Let me get you a coffee",
+      "textToSpeak": "Let me get you a coffee",
+      "options": [
+        "“get-you”: both sounds are fully pronounced",
+        "“ge-joo”: the blend is /dʒ/",
+        "“ge-choo”: the /t/ and /j/ blend into /tʃ/",
+        "“ge-shoo”: the blend is /ʃ/"
+      ],
+      "correctAnswer": "“ge-choo”: the /t/ and /j/ blend into /tʃ/",
+      "correctAnswerIndex": 2,
+      "hint": "Think of the offer as friendly and quick. Say “get you” and listen for a “ch”.",
+      "explanation": "“Get” ends in /t/ and “you” begins with /j/, so the pair blends into /tʃ/: “ge-choo”. Offers like this are said quickly in cafés and homes, so the blend is typical. The pronoun is the trigger, and “you” is also the object of “get” here.",
+      "phoneticRule": "Object “you” after a verb ending in /t/ is a typical blending context: verb + you gives /tʃ/ at normal speed.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Let me ge-choo a coffee"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L118_Q2",
+      "instruction": "In “Allow me to tell you”, why does “tell you” not blend into a new sound?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Allow me to tell you",
+      "textToSpeak": "Allow me to tell you",
+      "options": [
+        "The /l/ is a lateral, not /t/, /d/, /s/ or /z/, so the /j/ stays a glide",
+        "“tell” is a verb, and verbs cannot blend with a following pronoun",
+        "The /l/ is voiced, so it blends into /ʒ/ before “you”",
+        "The pronoun “you” is stressed after “tell”, and stress blocks every blend in English"
+      ],
+      "correctAnswer": "The /l/ is a lateral, not /t/, /d/, /s/ or /z/, so the /j/ stays a glide",
+      "correctAnswerIndex": 0,
+      "hint": "Think about which kinds of consonant can blend with /j/, and where /l/ fits.",
+      "explanation": "Only /t/, /d/, /s/ and /z/ blend with /j/. The /l/ at the end of “tell” is a lateral, so “tell you” keeps a separate /j/: “tel-yoo”. Hearing a clear /j/ is therefore a clue that the first word did not end in one of the four triggers.",
+      "phoneticRule": "The blend rule is specific: laterals, nasals and liquids do not blend with /j/, so a clear /j/ signals a non-trigger consonant.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Allow me tuh tel-yoo"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L118_Q3",
+      "instruction": "Which spoken form of “hurt you” fits “Nothing will hurt you here”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Nothing will hurt you here",
+      "textToSpeak": "Nothing will hurt you here",
+      "options": [
+        "“hurt-you”: both sounds are separate",
+        "“hur-choo”: the /t/ and /j/ blend into /tʃ/",
+        "“hur-joo”: the blend is /dʒ/",
+        "“hur-shoo”: the blend is /ʃ/"
+      ],
+      "correctAnswer": "“hur-choo”: the /t/ and /j/ blend into /tʃ/",
+      "correctAnswerIndex": 1,
+      "hint": "A reassuring sentence is usually spoken softly and quickly. Predict the blend from the last sound of “hurt”.",
+      "explanation": "“Hurt” ends in /t/, so “hurt you” blends into /tʃ/: “hur-choo”. In British English the /r/ is silent before the consonant, so the vowel is the long /ɜː/ with no /r/. The same blend appears in “get you” and “thought you”.",
+      "phoneticRule": "The blend rule does not depend on the preceding vowel or on a silent /r/; only the final consonant counts.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Nothing will hur-choo here"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L119_Q1",
+      "instruction": "Which two blends are heard in “Nina, did you miss your bus?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Nina, did you miss your bus",
+      "textToSpeak": "Nina, did you miss your bus",
+      "options": [
+        "/tʃ/ in “did you” and also /ʃ/ in “miss your”",
+        "/dʒ/ in “did you” and also /ʒ/ in “miss your”",
+        "Only “did you” blends; “miss your” keeps a clear /j/",
+        "/dʒ/ in “did you” and /ʃ/ in “miss your”"
+      ],
+      "correctAnswer": "/dʒ/ in “did you” and /ʃ/ in “miss your”",
+      "correctAnswerIndex": 3,
+      "hint": "Check the first sound of each blend separately.",
+      "explanation": "“Did” ends in the voiced stop /d/, so “did you” gives /dʒ/. “Miss” ends in the voiceless fricative /s/, so “miss your” gives /ʃ/. So the sentence is heard as “di-ja mi-shyer bus”. Two different results in one question show how the system works.",
+      "phoneticRule": "Each blend in a sentence follows from its own first sound, so one sentence can combine /dʒ/ and /ʃ/.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Nina, di-ja mi-shyer bus"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L119_Q2",
+      "instruction": "Which spoken form of “was your” fits “Hugo, was your train late?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Hugo, was your train late",
+      "textToSpeak": "Hugo, was your train late",
+      "options": [
+        "“woz-your”: both words are strong and separate",
+        "“wo-jyer”: they blend into /dʒ/",
+        "“wo-zhyer”: the /z/ and a weak “your” blend into /ʒ/",
+        "“wo-shyer”: they blend into /ʃ/"
+      ],
+      "correctAnswer": "“wo-zhyer”: the /z/ and a weak “your” blend into /ʒ/",
+      "correctAnswerIndex": 2,
+      "hint": "The first word ends in a voiced fricative. Predict the blend before reading the options.",
+      "explanation": "“Was” ends in /z/, so with weak “your” it blends into /ʒ/: “wo-zhyer”. The same applies to “is your” and “does your”. Questions about someone’s belongings, such as trains and phones, make heavy use of this pattern.",
+      "phoneticRule": "Auxiliary and linking verbs ending in /z/ blend with “your”, so questions about possession often contain /ʒ/.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Hugo, wo-zhyer train late"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L119_Q3",
+      "instruction": "In “Zoe, did you see your boss?”, which junction does not blend?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Zoe, did you see your boss",
+      "textToSpeak": "Zoe, did you see your boss",
+      "options": [
+        "“see your”: “see” ends in a vowel, so only a glide appears",
+        "“did you”, because “did” is unstressed",
+        "Both blend: “did you” into /dʒ/ and “see your” into /ʒ/ as well",
+        "“did you”, because it is a question"
+      ],
+      "correctAnswer": "“see your”: “see” ends in a vowel, so only a glide appears",
+      "correctAnswerIndex": 0,
+      "hint": "Check whether each first word ends in one of the four triggers: /t/, /d/, /s/ or /z/.",
+      "explanation": "“Did you” blends because “did” ends in /d/. “See your” does not, because “see” ends in a vowel; the /j/ is simply linked with a glide: “see-yer”. So one question can contain a blend and an ordinary link.",
+      "phoneticRule": "Words ending in vowels do not trigger coalescence; they link with a glide before /j/-initial words.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Zoe, di-ja see yer boss"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L120_Q1",
+      "instruction": "Which result fits the blend in “Omar, had you met her before?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Omar, had you met her before",
+      "textToSpeak": "Omar, had you met her before",
+      "options": [
+        "/tʃ/: “had” ends in a voiceless stop sound",
+        "/dʒ/: “had” ends in the voiced stop /d/",
+        "/ʃ/: “had” ends in a voiceless fricative",
+        "/ʒ/: “had” ends in a voiced fricative sound"
+      ],
+      "correctAnswer": "/dʒ/: “had” ends in the voiced stop /d/",
+      "correctAnswerIndex": 1,
+      "hint": "Identify the final consonant of “had”, then apply the two-feature test.",
+      "explanation": "“Had” ends in /d/, a voiced stop, so the blend is /dʒ/: “ha-joo”. The rest of the sentence has no /j/ trigger. Recognising the blend, then naming the first sound, is the skill this stage trains.",
+      "phoneticRule": "To identify a blend, name the first sound of the pair and apply the manner and voicing rule.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Omar, ha-joo met her before"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L120_Q2",
+      "instruction": "Compare “hit you” in “Kate, who hit you?” with “hid you”. How do the two blends differ?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Kate, who hit you",
+      "textToSpeak": "Kate, who hit you",
+      "options": [
+        "They give the same blend, because the vowel in both words is the same short vowel /ɪ/",
+        "“hit you” gives /dʒ/ and “hid you” gives /tʃ/, the other way round",
+        "Neither blends, because both words are short and strongly stressed",
+        "“hit you” gives voiceless /tʃ/ and “hid you” gives voiced /dʒ/; only voicing differs"
+      ],
+      "correctAnswer": "“hit you” gives voiceless /tʃ/ and “hid you” gives voiced /dʒ/; only voicing differs",
+      "correctAnswerIndex": 3,
+      "hint": "Compare the last sounds of “hit” and “hid”. What single feature differs?",
+      "explanation": "“Hit” ends in voiceless /t/ and “hid” in voiced /d/. The blend copies that voicing: /tʃ/ for “hit you” and /dʒ/ for “hid you”. The vowel does not affect it. This is the same voicing rule you used for /s/ and /z/.",
+      "phoneticRule": "A minimal pair differing only in voicing at the end of the first word produces blends that differ only in voicing.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Kate, who hi-choo"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L120_Q3",
+      "instruction": "Which results fit “miss your” and “won’t you” in “Priya, you’ll miss your flight, won’t you?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Priya, you’ll miss your flight, won’t you",
+      "textToSpeak": "Priya, you’ll miss your flight, won’t you",
+      "options": [
+        "/tʃ/ in “miss your” and /ʃ/ in “won’t you”",
+        "/ʃ/ in “miss your” and /dʒ/ in “won’t you”",
+        "/ʃ/ in “miss your” and /tʃ/ in “won’t you”",
+        "/ʒ/ in “miss your” and /tʃ/ in “won’t you”"
+      ],
+      "correctAnswer": "/ʃ/ in “miss your” and /tʃ/ in “won’t you”",
+      "correctAnswerIndex": 2,
+      "hint": "Take each junction in turn: name the final sound of “miss” and of “won’t”.",
+      "explanation": "“Miss” ends in voiceless /s/, giving /ʃ/. “Won’t” ends in voiceless /t/, giving /tʃ/. Both blends are voiceless because both first sounds are voiceless. This stage-check sentence combines two different results from one rule.",
+      "phoneticRule": "Two voiceless triggers in one sentence give two voiceless blends, /ʃ/ and /tʃ/, according to their manner.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Priya, you’ll mi-shyer flight, wohn-choo"
+    }
+  ]
 }

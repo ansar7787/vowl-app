@@ -1,577 +1,637 @@
 {
-    "gameType": "connectedSpeech",
-    "batchIndex": 16,
-    "levels": "151-160",
-    "quests": [
-        {
-            "id": "ACC_CONNECTEDSPEECH_L151_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "big gift",
-            "textToSpeak": "big gift",
-            "options": [
-                "Elision (one /g/ disappears)",
-                "Gemination (the two /g/ sounds merge into one)"
-            ],
-            "correctAnswer": "Gemination (the two /g/ sounds merge into one)",
-            "correctAnswerIndex": 1,
-            "hint": "\"big\" ends and \"gift\" begins with the exact same /g/ sound. Do you really hear it twice in natural speech, or just once?",
-            "explanation": "When the same consonant ends one word and begins the next, speakers don't pronounce it twice — they merge the two into a single, slightly longer sound. That's gemination, and it's exactly what happens with /g/ in \"big gift\".",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "big gift"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L151_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "sofa and chair",
-            "textToSpeak": "sofa and chair",
-            "options": [
-                "Linking (/r/ links naturally)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Check the spelling of \"sofa\" before \"and\" — does it end in a letter that would predict a /r/ sound? If not, where's that /r/ actually coming from?",
-            "explanation": "Unlike linking, where the connecting sound is already written into the word, this /r/ in \"sofa and\" comes from nowhere in the spelling. That's exactly what makes it intrusive rather than a genuine linking sound.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "sofa and chair"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L151_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "could pay",
-            "textToSpeak": "could pay",
-            "options": [
-                "Assimilation (/d/ becomes /b/)",
-                "Assimilation (/d/ becomes /g/)"
-            ],
-            "correctAnswer": "Assimilation (/d/ becomes /b/)",
-            "correctAnswerIndex": 0,
-            "hint": "The tongue is already anticipating \"pay\"'s bilabial sound before it even finishes \"could\". What happens to /d/ as a result?",
-            "explanation": "The change from /d/ to /b/ at the end of \"could\" happens because the following bilabial consonant in \"pay\" pulls the place of articulation to match. Nothing is lost here, just reshaped.",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "coulb pay"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L152_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "none of us",
-            "textToSpeak": "none of us",
-            "options": [
-                "Weak Form (/ɒ/ reduces to /ə/)",
-                "Elision (/ɒ/ disappears completely)"
-            ],
-            "correctAnswer": "Weak Form (/ɒ/ reduces to /ə/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"none of us\" quickly, the way you would in real conversation. Does \"of\" sound the same as when you say it alone?",
-            "explanation": "Say \"of\" on its own and you get the full vowel /ɒ/. Say it inside \"none of us\" at natural speed, and it reduces to schwa — the standard weak form.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
-            "phenomenonType": "Weak",
-            "spokenForm": "none of us"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L152_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "best of luck",
-            "textToSpeak": "best of luck",
-            "options": [
-                "Weak Form (/ɒ/ reduces to /ə/)",
-                "Elision (/ɒ/ disappears completely)"
-            ],
-            "correctAnswer": "Weak Form (/ɒ/ reduces to /ə/)",
-            "correctAnswerIndex": 0,
-            "hint": "\"of\" said by itself has a full, clear vowel. Said inside \"best of luck\" at natural speed, does that vowel survive?",
-            "explanation": "This reduction isn't sloppy speech — it's a predictable, rule-governed feature of English. Unstressed \"of\" reduces from /ɒ/ to schwa in virtually every natural sentence, including \"best of luck\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
-            "phenomenonType": "Weak",
-            "spokenForm": "best of luck"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L152_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "need to go",
-            "textToSpeak": "need to go",
-            "options": [
-                "Weak Form (only the vowel reduces to schwa)",
-                "Contraction (\"need to go\" reduces to \"needa go\")"
-            ],
-            "correctAnswer": "Contraction (\"need to go\" reduces to \"needa go\")",
-            "correctAnswerIndex": 1,
-            "hint": "\"need to go\" has a well-known casual shortcut, common in relaxed speech and texting alike. Do you know it?",
-            "explanation": "This kind of contraction happens when a phrase is used so often that speakers shortcut it entirely. \"need to go\" turns into \"needa go\", a fixed informal form rather than a one-off pronunciation shift.",
-            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\".",
-            "phenomenonType": "Contraction",
-            "spokenForm": "need to go"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L153_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "shouldn't you",
-            "textToSpeak": "shouldn't you",
-            "options": [
-                "Coalescence (/t/ + /j/ becomes /dʒ/)",
-                "Coalescence (/t/ + /j/ becomes /tʃ/)"
-            ],
-            "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Rather than pronouncing /t/ then /j/ separately, fluent speakers coalesce them. What do you actually hear in \"shouldn't you\"?",
-            "explanation": "Notice that neither the original /t/ nor /j/ survives on its own — they combine into /tʃ/. That fusion is what makes \"shouldn't you\" sound natural and fast.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "shouldn't you"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L153_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "waiter is",
-            "textToSpeak": "waiter is",
-            "options": [
-                "Intrusion (extra /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "The 'r' in \"waiter\" isn't always pronounced. Does the vowel at the start of \"is\" bring it back to life?",
-            "explanation": "Because the letter 'r' genuinely exists at the end of \"waiter\", its reappearance before the vowel in \"is\" is called linking /r/ — a real, spelled sound resurfacing, unlike intrusive /r/, which comes from nowhere in the spelling.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "waiter is"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L153_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "gold medal",
-            "textToSpeak": "gold medal",
-            "options": [
-                "Assimilation (/d/ becomes /b/)",
-                "Elision (/d/ disappears)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"gold\" alone, then \"medal\" alone — both consonants are clear. Now blend them at speed. What happens to the /d/ in between?",
-            "explanation": "Notice that nothing replaces the /d/ — it isn't weakened or swapped for another sound, it's simply omitted. That full deletion is what separates elision from assimilation in \"gold medal\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "gold me'al"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L154_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "should have",
-            "textToSpeak": "should have",
-            "options": [
-                "Contraction (\"should have\" reduces to \"should've\")",
-                "Weak Form (only the vowel reduces to schwa)"
-            ],
-            "correctAnswer": "Contraction (\"should have\" reduces to \"should've\")",
-            "correctAnswerIndex": 0,
-            "hint": "Native speakers rarely spell this out fully when talking fast. What informal contraction replaces \"should have\"?",
-            "explanation": "\"should've\" isn't sloppy speech — it's the expected, natural pronunciation of \"should have\" in casual English, similar to how \"do not\" becomes \"don't\" in writing.",
-            "phoneticRule": "Extremely frequent word combinations develop their own fixed informal shortcut, used constantly in casual speech even though it's avoided in formal writing.",
-            "phenomenonType": "Contraction",
-            "spokenForm": "should have"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L154_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "away on",
-            "textToSpeak": "away on",
-            "options": [
-                "Linking (/j/ links naturally)",
-                "Intrusion (intrusive /j/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 1,
-            "hint": "Vowel sounds rarely bump directly into each other in fluent English. What extra sound bridges \"away\" and \"on\" here?",
-            "explanation": "Two vowel sounds meeting head-on is hard to say smoothly, so speakers add /j/ as a natural bridge. You'll hear it in \"away on\", even though neither word's spelling contains it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "away on"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L154_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "blue ink",
-            "textToSpeak": "blue ink",
-            "options": [
-                "Intrusion (intrusive /w/)",
-                "Linking (/w/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 0,
-            "hint": "There's no /w/ anywhere in the spelling of \"blue\". Yet something links it to the vowel that opens \"ink\" — what is it?",
-            "explanation": "This inserted /w/ has no basis in spelling — it exists purely to smooth the vowel-to-vowel transition between \"blue\" and \"ink\". That's the hallmark of intrusion.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "blue ink"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L155_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "clean it up",
-            "textToSpeak": "clean it up",
-            "options": [
-                "Elision (/p/ disappears)",
-                "Linking (/p/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/p/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "\"clean\" ends in a consonant; \"it\" begins with a vowel. Try saying them together quickly — which word does that consonant sound like it belongs to now?",
-            "explanation": "No sound is created or lost here — the final consonant of \"clean\" simply carries over to open the vowel in \"it\", which is the essence of linking in connected speech.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "clean it up"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L155_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "great time",
-            "textToSpeak": "great time",
-            "options": [
-                "Gemination (the two /t/ sounds merge into one)",
-                "Elision (one /t/ disappears)"
-            ],
-            "correctAnswer": "Gemination (the two /t/ sounds merge into one)",
-            "correctAnswerIndex": 0,
-            "hint": "Two identical /t/ sounds meet right at the boundary of \"great\" and \"time\". Listen closely — one sound, or two separate ones?",
-            "explanation": "This is gemination, not deletion: the /t/ isn't dropped, it's simply held for one longer articulation instead of being repeated. \"great time\" sounds like one smooth /t/, not two separate ones.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "great time"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L155_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "world record",
-            "textToSpeak": "world record",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /m/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "A stop consonant squeezed between two other consonants rarely survives in fast speech. Listen for the /d/ in \"world record\" — is it there?",
-            "explanation": "Consonant clusters like this one are common at word boundaries in English, and the middle stop is almost always the casualty. The /d/ drops out of \"world record\" for exactly that reason.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "world recor'"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L156_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "fresh sheets",
-            "textToSpeak": "fresh sheets",
-            "options": [
-                "Elision (one /ʃ/ disappears)",
-                "Gemination (the two /ʃ/ sounds merge into one)"
-            ],
-            "correctAnswer": "Gemination (the two /ʃ/ sounds merge into one)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"fresh sheets\" together at a normal pace. Does the /ʃ/ get pronounced twice, back to back, or does it blend into a single, slightly longer sound?",
-            "explanation": "Pronouncing the same consonant twice in a row takes extra effort for no real gain in clarity, so English merges them. The double /ʃ/ in \"fresh sheets\" becomes a single lengthened sound.",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "fresh sheets"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L156_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "better off",
-            "textToSpeak": "better off",
-            "options": [
-                "Intrusion (extra /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "This 'r' is real — it's written into \"better\" — but often silent. Listen for it specifically at the boundary with \"off\".",
-            "explanation": "Speakers keep the /r/ silent in \"better\" only until a vowel gives it a reason to surface. \"off\" provides exactly that vowel, so the /r/ links the phrase together.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "better off"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L156_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "calm moment",
-            "textToSpeak": "calm moment",
-            "options": [
-                "Gemination (the two /m/ sounds merge into one)",
-                "Elision (one /m/ disappears)"
-            ],
-            "correctAnswer": "Gemination (the two /m/ sounds merge into one)",
-            "correctAnswerIndex": 0,
-            "hint": "\"calm\" and \"moment\" share the same boundary sound: /m/. What does a fluent speaker actually do with two identical consonants in a row?",
-            "explanation": "Rather than a quick /m/-/m/ repetition, fluent speakers produce one continuous /m/ across the word boundary in \"calm moment\" — that's gemination.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "calm moment"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L157_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "about you",
-            "textToSpeak": "about you",
-            "options": [
-                "Coalescence (/t/ + /j/ becomes /tʃ/)",
-                "Coalescence (/t/ + /j/ becomes /dʒ/)"
-            ],
-            "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen at natural speed: does \"about you\" keep two distinct consonant sounds at the boundary, or blend them into a new one?",
-            "explanation": "In relaxed, natural speech, /t/ and /j/ rarely stay separate at a word boundary like this one. They coalesce into /tʃ/, exactly as in \"about you\".",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "about you"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L157_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "some money",
-            "textToSpeak": "some money",
-            "options": [
-                "Gemination (the two /m/ sounds merge into one)",
-                "Elision (one /m/ disappears)"
-            ],
-            "correctAnswer": "Gemination (the two /m/ sounds merge into one)",
-            "correctAnswerIndex": 0,
-            "hint": "In \"some money\", this isn't a case of one sound changing into another — it's the same /m/ on both sides. What happens when identical sounds collide?",
-            "explanation": "Two identical consonants meeting at a word boundary typically fuse into one longer articulation rather than being pronounced separately. You'll hear this clearly in \"some money\".",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "some money"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L157_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "kind of",
-            "textToSpeak": "kind of",
-            "options": [
-                "Contraction (\"kind of\" reduces to \"kinda\")",
-                "Weak Form (only the vowel reduces to schwa)"
-            ],
-            "correctAnswer": "Contraction (\"kind of\" reduces to \"kinda\")",
-            "correctAnswerIndex": 0,
-            "hint": "Think about how \"kind of\" sounds in a casual conversation rather than a formal speech. What's the reduced, everyday form?",
-            "explanation": "Because \"kind of\" is so frequent in spoken English, it has its own dedicated reduced form: \"kinda\". Recognizing shortcuts like this is essential for understanding fast, natural conversation.",
-            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\".",
-            "phenomenonType": "Contraction",
-            "spokenForm": "kind of"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L158_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten beds",
-            "textToSpeak": "ten beds",
-            "options": [
-                "Assimilation (/n/ becomes /ŋ/)",
-                "Assimilation (/n/ becomes /m/)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /m/)",
-            "correctAnswerIndex": 1,
-            "hint": "Between \"ten\" and \"beds\" sits a consonant under pressure to match its neighbor. What does it become?",
-            "explanation": "This pairing is a classic assimilation example: the /n/ ending \"ten\" adopts the bilabial quality of the sound in \"beds\", surfacing as /m/ in natural, connected speech.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "tem beds"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L158_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "don't know",
-            "textToSpeak": "don't know",
-            "options": [
-                "Weak Form (only the vowel reduces to schwa)",
-                "Contraction (\"don't know\" reduces to \"dunno\")"
-            ],
-            "correctAnswer": "Contraction (\"don't know\" reduces to \"dunno\")",
-            "correctAnswerIndex": 1,
-            "hint": "In fast, informal speech, \"don't know\" often collapses into a much shorter form. Can you say the casual version out loud?",
-            "explanation": "\"don't know\" is used so frequently in casual speech that it has collapsed into its own recognized informal form: \"dunno\". This goes beyond a simple weak form — the words fuse into a new spoken (and often written) shortcut.",
-            "phoneticRule": "Extremely frequent word combinations develop their own fixed informal shortcut, used constantly in casual speech even though it's avoided in formal writing.",
-            "phenomenonType": "Contraction",
-            "spokenForm": "don't know"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L158_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "going to win",
-            "textToSpeak": "going to win",
-            "options": [
-                "Weak Form (only the vowel reduces to schwa)",
-                "Contraction (\"going to win\" reduces to \"gonna win\")"
-            ],
-            "correctAnswer": "Contraction (\"going to win\" reduces to \"gonna win\")",
-            "correctAnswerIndex": 1,
-            "hint": "This exact combination is so common that English speakers have a dedicated shortcut for it. What does \"going to win\" become in relaxed conversation?",
-            "explanation": "This is a lexicalized contraction: \"going to win\" is reduced all the way down to \"gonna win\" in relaxed, everyday speech. It's extremely common in spoken English, though it's generally avoided in formal writing.",
-            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\".",
-            "phenomenonType": "Contraction",
-            "spokenForm": "going to win"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L159_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "good year",
-            "textToSpeak": "good year",
-            "options": [
-                "Coalescence (/d/ + /j/ becomes /tʃ/)",
-                "Coalescence (/d/ + /j/ becomes /dʒ/)"
-            ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
-            "correctAnswerIndex": 1,
-            "hint": "The /d/ in \"good\" and the /j/ starting \"year\" don't survive as separate sounds in fast speech. What do they turn into together?",
-            "explanation": "This is why \"good year\" doesn't sound like two crisp, separate words: the boundary consonant /d/ and the /j/ of \"year\" merge into the single sound /dʒ/.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "good year"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L159_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "want to",
-            "textToSpeak": "want to",
-            "options": [
-                "Weak Form (only the vowel reduces to schwa)",
-                "Contraction (\"want to\" reduces to \"wanna\")"
-            ],
-            "correctAnswer": "Contraction (\"want to\" reduces to \"wanna\")",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"want to\" the way a native speaker would in a quick, casual chat — not word by word. What comes out?",
-            "explanation": "Frequent phrases like this one develop their own casual shortcut over time. \"want to\" becomes \"wanna\" — a fixed, informal form recognized by virtually every native speaker.",
-            "phoneticRule": "Extremely frequent word combinations develop their own fixed informal shortcut, used constantly in casual speech even though it's avoided in formal writing.",
-            "phenomenonType": "Contraction",
-            "spokenForm": "want to"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L159_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "kind of tired",
-            "textToSpeak": "kind of tired",
-            "options": [
-                "Weak Form (only the vowel reduces to schwa)",
-                "Contraction (\"kind of tired\" reduces to \"kinda tired\")"
-            ],
-            "correctAnswer": "Contraction (\"kind of tired\" reduces to \"kinda tired\")",
-            "correctAnswerIndex": 1,
-            "hint": "This isn't just a weak form — the words actually blend into a brand-new informal spelling and sound. What's that reduced form of \"kind of tired\"?",
-            "explanation": "Unlike a simple stress reduction, this phrase actually merges into a new informal word: \"kinda tired\". You'll hear \"kind of tired\" pronounced this way constantly in casual conversation.",
-            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\".",
-            "phenomenonType": "Contraction",
-            "spokenForm": "kind of tired"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L160_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "error appeared",
-            "textToSpeak": "error appeared",
-            "options": [
-                "Linking (/r/ links to the vowel)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "Unlike a sound added from nowhere, the /r/ here is already part of \"error\"'s spelling. What triggers it to reappear before \"appeared\"?",
-            "explanation": "This linking /r/ is predictable from spelling alone: any r-final word behaves this way before a vowel, and \"error appeared\" is a clean example of it.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "error appeared"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L160_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "look at it",
-            "textToSpeak": "look at it",
-            "options": [
-                "Elision (/k/ disappears)",
-                "Linking (/k/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/k/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "This is a classic resyllabification moment. What happens to the last sound of \"look\" once the vowel of \"at\" is right there waiting?",
-            "explanation": "Because a vowel immediately follows, the closing consonant of \"look\" doesn't stay put — it links forward into \"at\", exactly as fluent speakers naturally do.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "look at it"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L160_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "hot tea",
-            "textToSpeak": "hot tea",
-            "options": [
-                "Elision (one /t/ disappears)",
-                "Gemination (the two /t/ sounds merge into one)"
-            ],
-            "correctAnswer": "Gemination (the two /t/ sounds merge into one)",
-            "correctAnswerIndex": 1,
-            "hint": "Try pronouncing \"hot\" and \"tea\" as two fully separate /t/ sounds. Now say them fast and naturally — what changes?",
-            "explanation": "This is a case of avoiding needless repetition — instead of two short /t/ sounds, English produces one held /t/ across \"hot\" and \"tea\", saving effort while staying clear.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "hot tea"
-        }
-    ]
+  "gameType": "connectedSpeech",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "ACC_CONNECTEDSPEECH_L151_Q1",
+      "instruction": "Which three features are heard in “Abel, I’m going to ask her about it”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Abel, I’m going to ask her about it",
+      "textToSpeak": "Abel, I’m going to ask her about it",
+      "options": [
+        "A contraction, a /dʒ/ blend and gemination, with no linking at all",
+        "Elision of a /t/, assimilation of an /n/ and an intrusive /r/ in the line, with nothing linked",
+        "A weak “to”, a /ʃ/ blend and a /j/ glide, but no dropped /h/",
+        "A reduction (“gonna”), a dropped /h/ with a link (“ask her”), and a linking /t/"
+      ],
+      "correctAnswer": "A reduction (“gonna”), a dropped /h/ with a link (“ask her”), and a linking /t/",
+      "correctAnswerIndex": 3,
+      "hint": "Take the line from left to right and ask what each boundary triggers.",
+      "explanation": "“Going to” is reduced to the informal “gonna”. “Her” loses its /h/ and the /k/ of “ask” links onto it: “as-ker”. “About it” has a /t/ before a vowel, so it links: “abou-tit”. Three different features sit in one short line, and each is decided by its own boundary.",
+      "phoneticRule": "A single line can combine informal reduction, /h/ dropping with linking, and consonant-to-vowel linking, each triggered by its own neighbouring sounds.",
+      "phenomenonType": "Linking",
+      "spokenForm": "Abel, I’m gonna as-ker about it"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L151_Q2",
+      "instruction": "Which feature is not heard in “Bruno, get your coat and put it on”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Bruno, get your coat and put it on",
+      "textToSpeak": "Bruno, get your coat and put it on",
+      "options": [
+        "Gemination, because no two identical consonants meet at a boundary",
+        "A /tʃ/ blend in “get your”, because /t/ meets /j/",
+        "A reduced “and” after “coat”, because it is unstressed",
+        "Linking in “put it on”, because consonants meet vowels"
+      ],
+      "correctAnswer": "Gemination, because no two identical consonants meet at a boundary",
+      "correctAnswerIndex": 0,
+      "hint": "Check each boundary for the process it could trigger, and find the one that has no trigger.",
+      "explanation": "“Get your” has /t/ + /j/, so it blends into /tʃ/. “Coat and” has a reduced “and”, /n/. “Put it on” has two consonants before vowels, so it links. But no pair of identical consonants meets anywhere, so there is no gemination. Knowing what is absent is as useful as knowing what is present.",
+      "phoneticRule": "Each feature needs its own trigger: gemination requires two identical consonants at a boundary, and none occurs in this line.",
+      "phenomenonType": "Linking",
+      "spokenForm": "Bruno, ge-chyer coa-tn pu-ti-ton"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L151_Q3",
+      "instruction": "Which spoken form fits “Cora, I’ll tell him I’m on my way”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Cora, I’ll tell him I’m on my way",
+      "textToSpeak": "Cora, I’ll tell him I’m on my way",
+      "options": [
+        "“tell … him”, two strong words with a pause, and “on my way” unchanged in normal speech here",
+        "“tel-chim”, with the /h/ turned into /tʃ/, and “om my way” as well",
+        "“te-lim” with a dropped /h/ and a linked /l/, and “om my way” with /n/ shifting to /m/",
+        "“te-lim”, but “on” becomes “ong” before “my” in the same breath"
+      ],
+      "correctAnswer": "“te-lim” with a dropped /h/ and a linked /l/, and “om my way” with /n/ shifting to /m/",
+      "correctAnswerIndex": 2,
+      "hint": "Look at the pronoun first, then at the nasal before “my”.",
+      "explanation": "“Him” is unstressed after “tell”, so it loses its /h/ and the /l/ links onto it: “te-lim”. In “on my way”, the /n/ sits before the lip sound /m/, so it can shift to [m]: “om my way”. Two earlier stages meet in one sentence.",
+      "phoneticRule": "A dropped /h/ with linking and place assimilation can co-occur in one sentence, one at each boundary.",
+      "phenomenonType": "Linking",
+      "spokenForm": "Cora, I’ll te-lim I’m om my way"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L152_Q1",
+      "instruction": "Which boundary shows assimilation and which shows elision in “Freya, it’s ten past six already”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Freya, it’s ten past six already",
+      "textToSpeak": "Freya, it’s ten past six already",
+      "options": [
+        "“ten past” shows elision of the /n/; “past six” shows assimilation of the /t/",
+        "Both boundaries show assimilation of a nasal to the lips",
+        "Both boundaries show elision of a /t/ before a consonant",
+        "“ten past”: assimilation (/n/ to [m]); “past six”: elision of the /t/"
+      ],
+      "correctAnswer": "“ten past”: assimilation (/n/ to [m]); “past six”: elision of the /t/",
+      "correctAnswerIndex": 3,
+      "hint": "Look at what follows each word-final consonant, and whether the sound changes or disappears.",
+      "explanation": "“Ten” ends in /n/ before the lip sound /p/, so the /n/ shifts to [m]: assimilation. “Past” ends in /st/ before /s/, so the /t/ is often omitted: elision. The same phrase contains one change of place and one omission. Naming each correctly is the point of this level.",
+      "phoneticRule": "Assimilation changes a segment's place to match a neighbour, while elision removes a segment from a crowded cluster; both can occur in one phrase.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "Freya, it’s tem pas six already"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L152_Q2",
+      "instruction": "In “Greta, the best plan was a great plan”, how do the /t/ sounds in “best plan” and “great plan” differ?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Greta, the best plan was a great plan",
+      "textToSpeak": "Greta, the best plan was a great plan",
+      "options": [
+        "Both /t/ sounds are omitted, because both come before /p/",
+        "Both /t/ sounds shift to /p/, because both come before /p/",
+        "“best plan”: the /t/ is often omitted (after /s/); “great plan”: it shifts toward /p/",
+        "In “best plan” it shifts to /p/ after the /s/; in “great plan” it is omitted after the vowel"
+      ],
+      "correctAnswer": "“best plan”: the /t/ is often omitted (after /s/); “great plan”: it shifts toward /p/",
+      "correctAnswerIndex": 2,
+      "hint": "Compare the sound before each /t/: a consonant in one, a vowel in the other.",
+      "explanation": "After /s/ the /t/ sits in a crowded cluster and is often omitted: “bes’ plan”. After a vowel the /t/ is not crowded, so instead of disappearing it takes the lip place of the following /p/: “grayp plan”. The same next sound gives two different outcomes because the preceding sound differs.",
+      "phoneticRule": "The same following consonant can trigger different processes depending on the sound before the /t/: omission after /s/, assimilation after a vowel.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "Greta, the bes’ plan was a grayp plan"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L152_Q3",
+      "instruction": "Which spoken form fits “Iris, the old man left a green bag”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Iris, the old man left a green bag",
+      "textToSpeak": "Iris, the old man left a green bag",
+      "options": [
+        "“ol’ man left a greem bag”: the /d/ is omitted and the /n/ shifts to /m/",
+        "“old man left a green bag”: every sound is clearly kept",
+        "“ol’ nan left a greeng bag”: the /d/ is omitted and the /m/ shifts to /n/",
+        "“ob man left a greeng bag”: the /d/ becomes /b/ and the /n/ shifts to /ŋ/"
+      ],
+      "correctAnswer": "“ol’ man left a greem bag”: the /d/ is omitted and the /n/ shifts to /m/",
+      "correctAnswerIndex": 0,
+      "hint": "Find the /d/ before a consonant and the nasal before a lip sound.",
+      "explanation": "The /d/ of “old” sits between /l/ and /m/, so it is often omitted: “ol’ man”. The /n/ of “green” sits before the lip sound /b/, so it can shift to [m]: “greem bag”. One omission and one change of place appear in the same sentence. Telling them apart prevents mixing the two ideas.",
+      "phoneticRule": "Elision applies to a stop in a crowded cluster, and place assimilation applies to a nasal before a bilabial; both can occur within one sentence.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "Iris, the ol’ man left a greem bag"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L153_Q1",
+      "instruction": "What is the difference between the weak “you” in “see you” and in “meet you” in “Kiran, see you at eight”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Kiran, see you at eight",
+      "textToSpeak": "Kiran, see you at eight",
+      "options": [
+        "In both, the weak /jə/ blends with the previous sound into a new consonant sound in fast speech",
+        "In “see you” the weak /jə/ takes only a glide; in “meet you” it blends with the /t/ into /tʃ/",
+        "In neither is “you” weak, because it is always stressed",
+        "In “see you” it blends into /ʒ/, but in “meet you” it does not blend"
+      ],
+      "correctAnswer": "In “see you” the weak /jə/ takes only a glide; in “meet you” it blends with the /t/ into /tʃ/",
+      "correctAnswerIndex": 1,
+      "hint": "Compare the final sounds of “see” and “meet” and decide which can join the weak “you”.",
+      "explanation": "The weak /jə/ is the same in both phrases, but what happens next depends on the sound before it. After a vowel (“see”) it takes only a glide: “see-yuh”. After /t/ (“meet”) it blends: “mee-chuh”. So a weak “you” is a necessary condition for a blend, but not a sufficient one.",
+      "phoneticRule": "A weak “you” triggers coalescence only after /t d s z/; after vowels it merely takes a glide.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Kiran, see-yuh at eight"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L153_Q2",
+      "instruction": "Why does the /k/ at the end of “ask” not blend with “you” in “Mina, I’ll ask you later”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Mina, I’ll ask you later",
+      "textToSpeak": "Mina, I’ll ask you later",
+      "options": [
+        "The /s/ before the /k/ blocks the blend in this cluster",
+        "“you” is too weak to cause a blend after any consonant",
+        "Only /t/, /d/, /s/ and /z/ blend with /j/; /k/ is not one of them",
+        "A /k/ blends with /j/ into /tʃ/ in fast speech"
+      ],
+      "correctAnswer": "Only /t/, /d/, /s/ and /z/ blend with /j/; /k/ is not one of them",
+      "correctAnswerIndex": 2,
+      "hint": "Think about where in the mouth /k/ is made, compared with /t d s z/.",
+      "explanation": "Coalescence involves the alveolar stops and fricatives /t d s z/, which are made at the same place as the front of the tongue moves toward /j/. The velar /k/ is made at the back, so it stays separate: “as-kyuh”. So a weak “you” after /k/ keeps a clear /j/.",
+      "phoneticRule": "Coalescence is limited to the alveolar consonants /t d s z/; velar consonants such as /k/ and /g/ keep a separate /j/.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Mina, I’ll as-kyuh later"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L153_Q3",
+      "instruction": "Which junction has a weak /jə/ but no blend in “Nico, I’ll see you and miss you”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Nico, I’ll see you and miss you",
+      "textToSpeak": "Nico, I’ll see you and miss you",
+      "options": [
+        "“miss you”: “miss” ends in /s/, so there is a glide only",
+        "Both junctions blend, because “you” is weak in both",
+        "Neither junction has a weak /jə/, because both are stressed and said with a full vowel",
+        "“see you”: “see” ends in a vowel, so the weak /jə/ takes only a glide"
+      ],
+      "correctAnswer": "“see you”: “see” ends in a vowel, so the weak /jə/ takes only a glide",
+      "correctAnswerIndex": 3,
+      "hint": "One first word ends in a vowel, the other in a consonant that can blend.",
+      "explanation": "“See” ends in a vowel, so the weak “you” takes only a glide: “see-yuh”. “Miss” ends in /s/, so it blends into /ʃ/: “mi-shoo”. The same weak /jə/ follows both words, but only the second junction produces a blend. The first-word sound makes the difference.",
+      "phoneticRule": "The weak /jə/ blends only when preceded by /t d s z/; after a vowel it is linked with a glide.",
+      "phenomenonType": "Coalescence",
+      "spokenForm": "Nico, I’ll see-yuh and mi-shoo"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L154_Q1",
+      "instruction": "In “Odile, the idea of going far away”, which /r/ is linking and which is intrusive?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Odile, the idea of going far away",
+      "textToSpeak": "Odile, the idea of going far away",
+      "options": [
+        "“idea of” has a linking /r/, and “far away” has an intrusive /r/, as the spelling shows",
+        "“far away”: a linking /r/ (spelled “r”); “idea of”: an intrusive /r/ (no “r” spelled)",
+        "Both are linking /r/ sounds, because both words end in vowels",
+        "Both are intrusive /r/ sounds, because neither is stressed"
+      ],
+      "correctAnswer": "“far away”: a linking /r/ (spelled “r”); “idea of”: an intrusive /r/ (no “r” spelled)",
+      "correctAnswerIndex": 1,
+      "hint": "Check the spelling of each word before the vowel-initial word.",
+      "explanation": "“Far” is spelled with a final “r”, so the /r/ before “away” is a linking /r/. “Idea” has no “r” in its spelling, so an /r/ before “of” is intrusive. Both sounds are produced in the same way; the difference is in the spelling. Intrusive /r/ is accent-dependent, and recognising it is the priority.",
+      "phoneticRule": "A linking /r/ corresponds to a spelled “r”, whereas an intrusive /r/ appears without one, but both are pronounced identically in non-rhotic accents.",
+      "phenomenonType": "Intrusion",
+      "spokenForm": "Odile, the idea-rof going far-raway"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L154_Q2",
+      "instruction": "Which boundaries in “Pablo, the law and the idea are clear” can have an intrusive /r/?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Pablo, the law and the idea are clear",
+      "textToSpeak": "Pablo, the law and the idea are clear",
+      "options": [
+        "“the law” and “the idea”, because “the” precedes both",
+        "“and the”, because “and” ends in /d/",
+        "“law and” and “idea are”, because /ɔː/ and /ə/ precede vowels",
+        "None, because no spelled “r” appears"
+      ],
+      "correctAnswer": "“law and” and “idea are”, because /ɔː/ and /ə/ precede vowels",
+      "correctAnswerIndex": 2,
+      "hint": "Look for words that end in /ɔː/ or /ə/ and are followed by a vowel.",
+      "explanation": "“Law” ends in /ɔː/ and “and” begins with a vowel, and “idea” ends in /ə/ with “are” beginning with a vowel. Both are typical sites for an intrusive /r/ in non-rhotic accents. “The law” and “the idea” have a consonant or a different structure before the noun, so no /r/ occurs. Production is optional.",
+      "phoneticRule": "Intrusive /r/ occurs after word-final /ə/, /ɑː/ and /ɔː/ before a vowel-initial word in non-rhotic accents.",
+      "phenomenonType": "Intrusion",
+      "spokenForm": "Pablo, the law-rand the idea-rare clear"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L154_Q3",
+      "instruction": "Which /r/ sounds are linking and which are intrusive in “Quinn, there is a banana and a pear”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Quinn, there is a banana and a pear",
+      "textToSpeak": "Quinn, there is a banana and a pear",
+      "options": [
+        "A linking /r/ in “there is”, and an intrusive /r/ in “banana and”",
+        "An intrusive /r/ in “there is”, and a linking /r/ in “banana and”",
+        "A linking /r/ in both, because both are in the same sentence",
+        "No /r/ in either, in a non-rhotic accent"
+      ],
+      "correctAnswer": "A linking /r/ in “there is”, and an intrusive /r/ in “banana and”",
+      "correctAnswerIndex": 0,
+      "hint": "Compare the spelling of “there” and “banana” before the vowel-initial words.",
+      "explanation": "“There” ends in a spelled “r”, so “there is” has a linking /r/. “Banana” ends in /ə/ with no “r” in the spelling, so “banana and” may have an intrusive /r/. In a rhotic accent the first /r/ is pronounced in every position and the second is absent. The distinction depends on both spelling and accent.",
+      "phoneticRule": "Linking /r/ is present in both rhotic and non-rhotic accents, whereas intrusive /r/ occurs only in non-rhotic accents that use it.",
+      "phenomenonType": "Intrusion",
+      "spokenForm": "Quinn, there-riz a banana-rand a pear"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L155_Q1",
+      "instruction": "Compare “Rafi, drink warm milk” and “Rafi, drink warm cocoa”. Which has a held consonant?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Rafi, drink warm milk",
+      "textToSpeak": "Rafi, drink warm milk",
+      "options": [
+        "“warm cocoa”, where /m/ and /k/ merge into one",
+        "Both, because /m/ is held before any consonant",
+        "“warm milk”, where two /m/ sounds meet and are held as one",
+        "Neither, because gemination needs a vowel between the sounds"
+      ],
+      "correctAnswer": "“warm milk”, where two /m/ sounds meet and are held as one",
+      "correctAnswerIndex": 2,
+      "hint": "Look for the pair of identical consonants at a boundary.",
+      "explanation": "In “warm milk” the lips close for the first /m/ and stay closed for the second, giving one longer /m/. In “warm cocoa” the /m/ and /k/ are different sounds and do not merge. Gemination requires two identical consonants side by side. That is how you recognise a held consonant.",
+      "phoneticRule": "A held (geminate) consonant arises only when two identical consonants meet across a boundary.",
+      "phenomenonType": "Gemination",
+      "spokenForm": "Rafi, drink warm-mmilk"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L155_Q2",
+      "instruction": "A listener hears one long /k/ in “dark kitchen”. What distinguishes this from elision of a /k/?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Umar, the dark kitchen is open",
+      "textToSpeak": "Umar, the dark kitchen is open",
+      "options": [
+        "The /k/ is longer than a single /k/, because both sounds still contribute to it",
+        "The /k/ is shorter than normal, because one /k/ has been removed",
+        "The /k/ is replaced by a /g/ that lasts longer",
+        "The /k/ is the same length as a single /k/, so it cannot be told apart by ear from a single /k/ in any recording"
+      ],
+      "correctAnswer": "The /k/ is longer than a single /k/, because both sounds still contribute to it",
+      "correctAnswerIndex": 0,
+      "hint": "Think about how long the consonant lasts compared with a single /k/.",
+      "explanation": "With gemination the closure is held through the time of both consonants, so you hear one /k/ that is clearly longer than a single one. With elision of one /k/, you would hear a normal-length /k/. The length is therefore the cue. In practice the difference is subtle, but it is audible to a trained ear.",
+      "phoneticRule": "Geminates are distinguished from single consonants by duration; a held consonant is longer than one produced after elision.",
+      "phenomenonType": "Gemination",
+      "spokenForm": "Umar, the dar-kkitchen is open"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L155_Q3",
+      "instruction": "Which spoken form of “wet towel” fits “Una, use a wet towel”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Una, use a wet towel",
+      "textToSpeak": "Una, use a wet towel",
+      "options": [
+        "A normal short /t/: “we-towel”, as if one /t/ had been removed from the phrase",
+        "Two clear /t/ sounds separated by a short vowel",
+        "A /d/ replaces the first /t/ and the second /t/ is kept",
+        "One longer /t/: “we-ttowel”, because both /t/ sounds are held as one"
+      ],
+      "correctAnswer": "One longer /t/: “we-ttowel”, because both /t/ sounds are held as one",
+      "correctAnswerIndex": 3,
+      "hint": "The two /t/ sounds are identical. How long is the closure you hold?",
+      "explanation": "“Wet” ends in /t/ and “towel” begins with /t/, so the tongue holds one closure and releases once: a longer /t/, “we-ttowel”. A single normal /t/ would suggest that one was omitted. Two clear releases would suggest a careful, separated delivery. The held /t/ is the typical middle path.",
+      "phoneticRule": "Gemination of /t/ across a boundary yields a single lengthened /t/ with one release.",
+      "phenomenonType": "Gemination",
+      "spokenForm": "Una, use a we-ttowel"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L156_Q1",
+      "instruction": "What is the difference between “I’ll” and “I will” with a weak “will” in “Vikram, I’ll tell you”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Vikram, I’ll tell you",
+      "textToSpeak": "Vikram, I’ll tell you",
+      "options": [
+        "“I’ll” and “I will” sound identical in speech",
+        "“I’ll” is one syllable, /aɪl/; “I will” with a weak /wɪl/ has two syllables",
+        "“I will” is contracted to /aɪl/ whenever it is said at a fast conversational speed",
+        "“I’ll” has a stressed /ɪ/ vowel before the /l/"
+      ],
+      "correctAnswer": "“I’ll” is one syllable, /aɪl/; “I will” with a weak /wɪl/ has two syllables",
+      "correctAnswerIndex": 1,
+      "hint": "Count the syllables in each version when spoken aloud.",
+      "explanation": "A contraction fuses the pronoun and the auxiliary into one syllable, /aɪl/. A weak form keeps two words, with the second reduced to /wɪl/ or /wəl/. So a full “I will” with weak “will” still has two syllables, while “I’ll” has one. The two are close, but the syllable count separates them.",
+      "phoneticRule": "A contraction merges two words into one syllable, whereas a weak form reduces a word's vowel but keeps it as a separate syllable.",
+      "phenomenonType": "Contraction",
+      "spokenForm": "Vikram, I’ll tel-yuh"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L156_Q2",
+      "instruction": "Which of these is a standard contraction and which an informal reduction in “Willa, you’ve got to try this”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Willa, you’ve got to try this",
+      "textToSpeak": "Willa, you’ve got to try this",
+      "options": [
+        "“you’ve” is an informal reduction; “got to” becoming “gotta” is a standard contraction",
+        "“you’ve” is a standard contraction; “got to” becoming “gotta” is an informal reduction",
+        "Both are standard contractions found in formal writing",
+        "Both are informal reductions that should be avoided in speech"
+      ],
+      "correctAnswer": "“you’ve” is a standard contraction; “got to” becoming “gotta” is an informal reduction",
+      "correctAnswerIndex": 1,
+      "hint": "Think about which form you could write in an ordinary email and which only in a casual message.",
+      "explanation": "“You’ve” is a standard contraction of “you have”, accepted in many written contexts. “Gotta” is the informal spoken form of “got to” and belongs mainly to speech and casual writing. Both involve reduction, but they differ in register. Recognising both is part of understanding casual speech.",
+      "phoneticRule": "Standard contractions are widely accepted, whereas informal reductions such as “gotta” are limited to casual speech and writing.",
+      "phenomenonType": "Contraction",
+      "spokenForm": "Willa, you’ve gotta try this"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L156_Q3",
+      "instruction": "In “Yan, she’s been waiting”, what does “’s” stand for?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Yan, she’s been waiting",
+      "textToSpeak": "Yan, she’s been waiting",
+      "options": [
+        "“Has”, because “been” is a past participle",
+        "“Is”, because “waiting” follows",
+        "“Was”, because the sentence is in the past",
+        "“Does”, because “been” is a verb"
+      ],
+      "correctAnswer": "“Has”, because “been” is a past participle",
+      "correctAnswerIndex": 0,
+      "hint": "Look at the verb form that comes straight after the contraction.",
+      "explanation": "The contracted /z/ can stand for “is” or “has”. Because “been” is a past participle, the sentence needs “has”: “she has been waiting”. The sound /ʃiːz/ is the same in both cases. So, as with “’d”, grammar decides what the contraction stands for.",
+      "phoneticRule": "Contracted ’s is ambiguous between “is” and “has”; the form of the following verb disambiguates it.",
+      "phenomenonType": "Contraction",
+      "spokenForm": "Yan, sheez been waiting"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L157_Q1",
+      "instruction": "Which features hide “did you” in “Zeke, what did you do with the keys?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Zeke, what did you do with the keys",
+      "textToSpeak": "Zeke, what did you do with the keys",
+      "options": [
+        "A /tʃ/ blend in “what did”, and a strong “with”",
+        "Elision of the /d/ in “did”, and a strong “you”",
+        "Assimilation of the /t/ in “what”, and a /j/ glide",
+        "A /dʒ/ blend in “did you”, and weak forms in “with the”"
+      ],
+      "correctAnswer": "A /dʒ/ blend in “did you”, and weak forms in “with the”",
+      "correctAnswerIndex": 3,
+      "hint": "Say the question fast and listen to what happens to “did you” and to the small words near the end.",
+      "explanation": "“Did you” blends into /dʒ/, so it sounds like “dija”. “With the” is weak: /wɪð ðə/. The stressed words are “what”, “do” and “keys”. Because the blend and the weak forms are all quiet, the middle of the question is easy to lose. Listening for the stressed words helps you decode the rest.",
+      "phoneticRule": "In a fast question, coalescence and weak forms hide function words so that only the stressed words stay prominent.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Zeke, wot di-ja do with the keys"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L157_Q2",
+      "instruction": "Which features are hidden in “Abel, how long have you been waiting here?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Abel, how long have you been waiting here",
+      "textToSpeak": "Abel, how long have you been waiting here",
+      "options": [
+        "A /dʒ/ blend in “have you”, and a strong “been”",
+        "A weak “have” (/əv/), a weak “you” (/jə/) and a weak “been” (/bɪn/)",
+        "Elision of the /v/ in “have”, and a /j/ glide",
+        "A linking /r/ in “long have”, a /ʃ/ blend, and a strong “you” in the question"
+      ],
+      "correctAnswer": "A weak “have” (/əv/), a weak “you” (/jə/) and a weak “been” (/bɪn/)",
+      "correctAnswerIndex": 1,
+      "hint": "Pick out the small words after “long” and say how strong each one is.",
+      "explanation": "“Have”, “you” and “been” are all function words in this question, so each takes a weak form: /əv/, /jə/ and /bɪn/. “Have you” does not blend, because /v/ is not one of the four triggers. The stressed words are “long” and “waiting”. So the hidden features are three weak forms in a row.",
+      "phoneticRule": "A run of auxiliary, pronoun and participle is typically weak, producing an unstressed stretch between stressed words.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Abel, how long uv-yuh bin waiting here"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L157_Q3",
+      "instruction": "Which spoken form fits “Cora, are you going to be there at nine?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Cora, are you going to be there at nine",
+      "textToSpeak": "Cora, are you going to be there at nine",
+      "options": [
+        "“are you going to be there at nine”: every word with a full vowel and no linking",
+        "“ar-ya gonta be there at nine”: the /t/ of “to” is kept",
+        "“are-chu going to be there at nine”: a /tʃ/ blend after “are”",
+        "“ar-ya gonna be there at nine”: weak “are you”, “gonna”, and a weak “at”"
+      ],
+      "correctAnswer": "“ar-ya gonna be there at nine”: weak “are you”, “gonna”, and a weak “at”",
+      "correctAnswerIndex": 3,
+      "hint": "Find the three function-word stretches and decide which of them is weak.",
+      "explanation": "“Are you” is weak: /ə jə/, with no blend because “are” ends in a vowel. “Going to” is often “gonna”. “At” is weak: /ət/. Stressed words are “there” and “nine”. So the question is easy to say but hard to hear if you expect full forms.",
+      "phoneticRule": "Weak forms and the informal “gonna” combine in questions about plans, leaving only the key words stressed.",
+      "phenomenonType": "Weak",
+      "spokenForm": "Cora, ar-ya gonna be there at nine"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L158_Q1",
+      "instruction": "Which sentence matches the fast “Nico, wot-dja wanna do nex’ week?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Nico, what do you want to do next week",
+      "textToSpeak": "Nico, what do you want to do next week",
+      "options": [
+        "“Nico, what did you want to do next week?”",
+        "“Nico, what do you want to do last week?”",
+        "“Nico, what do you want to do next week?”",
+        "“Nico, why do you want to do next week?”"
+      ],
+      "correctAnswer": "“Nico, what do you want to do next week?”",
+      "correctAnswerIndex": 2,
+      "hint": "Decode the stressed words first, then match the reduced stretches to grammar and context.",
+      "explanation": "“Wot-dja” can stand for “what do you”, “wanna” stands for “want to”, and “nex’ week” has an omitted /t/. The past-tense “did” does not fit the future time reference “next week”. So grammar and context decide between “do” and “did” when the sound is ambiguous.",
+      "phoneticRule": "Decoding fast speech combines sound cues with grammar and context, especially where blends make two words sound alike.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Nico, wot-dja wanna do nex’ week"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L158_Q2",
+      "instruction": "Which sentence matches the fast “Tariq, I dunno if they’re gonna come”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Tariq, I don’t know if they’re going to come",
+      "textToSpeak": "Tariq, I don’t know if they’re going to come",
+      "options": [
+        "“Tariq, I do know if they’re going to come”",
+        "“Tariq, I don’t know if they were going to come”",
+        "“Tariq, I didn’t know if they’re going to come”",
+        "“Tariq, I don’t know if they’re going to come”"
+      ],
+      "correctAnswer": "“Tariq, I don’t know if they’re going to come”",
+      "correctAnswerIndex": 3,
+      "hint": "Match “dunno” and “gonna” to their standard sources, then check the tense of the rest.",
+      "explanation": "“Dunno” stands for “don’t know”, “gonna” for “going to”, and “they’re” is a contraction of “they are”. The other options change the negative, the tense or both. A listener must therefore keep track of both the reductions and the grammar. This is what understanding fast speech means.",
+      "phoneticRule": "Informal reductions map to standard phrases, and the surrounding tense and polarity must remain consistent with the reduced form.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Tariq, I dunno if they’re gonna come"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L158_Q3",
+      "instruction": "In a fast “Una, the next bus left at nine”, which /t/ is most likely to be omitted?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Una, the next bus left at nine",
+      "textToSpeak": "Una, the next bus left at nine",
+      "options": [
+        "The /t/ of “left”, before the vowel of “at”",
+        "The /t/ of “next”, before the consonant /b/",
+        "The /t/ of “at”, before “nine”",
+        "The /b/ of “bus”, at the start of the word"
+      ],
+      "correctAnswer": "The /t/ of “next”, before the consonant /b/",
+      "correctAnswerIndex": 1,
+      "hint": "Which /t/ is followed by a consonant, and which is followed by a vowel?",
+      "explanation": "“Next” ends in /kst/ before the consonant /b/, so its /t/ is often omitted: “nex’ bus”. “Left” ends in /ft/ before the vowel of “at”, so its /t/ links onto it. So only one /t/ is a good candidate for omission. Applying the rule boundary by boundary gives the answer.",
+      "phoneticRule": "Omission is a candidate only where a word-final /t/ is followed by a consonant, not where it is followed by a vowel.",
+      "phenomenonType": "Elision",
+      "spokenForm": "Una, the nex’ bus lef-tat nine"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L159_Q1",
+      "instruction": "At a café you say, “Excuse me, could I get a cup of tea?” Which delivery is the most natural?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Excuse me, could I get a cup of tea",
+      "textToSpeak": "Excuse me, could I get a cup of tea",
+      "options": [
+        "Linked and reduced: “cou-dai ge-ta cup-a tea”, with beats on “get” and “tea”",
+        "Word by word, with a pause after each word and a full vowel on every one of them",
+        "Reduced but unlinked, with every small word dropped",
+        "Fully linked but with strong “of” and “a” in every case"
+      ],
+      "correctAnswer": "Linked and reduced: “cou-dai ge-ta cup-a tea”, with beats on “get” and “tea”",
+      "correctAnswerIndex": 0,
+      "hint": "Imagine a friendly request at a busy counter. Which words carry the beats?",
+      "explanation": "The natural delivery links “could I” (“cou-dai”), “get a” (“ge-ta”) and “cup of” (“cup-a”), and reduces the small words. The stressed words are “get” and “tea”, with a lighter beat on “could”. A word-by-word delivery is clear but stiff, and dropping the small words changes the grammar.",
+      "phoneticRule": "A natural request links consonants onto vowel-initial small words and reduces them, while the content words carry the beats.",
+      "phenomenonType": "Linking",
+      "spokenForm": "Excuse me, cou-dai ge-ta cup-a tea"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L159_Q2",
+      "instruction": "Why does a fast “Rafi, could you tell me where the station is?” have fewer beats than written words?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Rafi, could you tell me where the station is",
+      "textToSpeak": "Rafi, could you tell me where the station is",
+      "options": [
+        "The speaker drops half of the words to save time on a busy platform",
+        "Every word is shortened equally, so no word carries a beat in the question",
+        "The beats fall on the small words, which are the loudest in the sentence",
+        "Only content words carry beats; small words are blended and squeezed"
+      ],
+      "correctAnswer": "Only content words carry beats; small words are blended and squeezed",
+      "correctAnswerIndex": 3,
+      "hint": "Imagine the question said at speed, and listen for how many real beats you hear.",
+      "explanation": "The stressed words are “tell”, “where” and “station”. “Could you” blends into “cou-ja”, “me” and “the” are squeezed, and “is” is weak. So a ten-word question may have only three or four beats. Hearing the beats first lets you decode the rest from context.",
+      "phoneticRule": "In a long question the number of beats is determined by the content words, so the small words add little to the length.",
+      "phenomenonType": "Linking",
+      "spokenForm": "Rafi, cou-ja tell me where the station is"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L159_Q3",
+      "instruction": "Which spoken form fits “Selma, I’ll pick it up on my way”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Selma, I’ll pick it up on my way",
+      "textToSpeak": "Selma, I’ll pick it up on my way",
+      "options": [
+        "“pi-ki-tup om my way”: linked, with the /n/ shifting to /m/",
+        "“pick it up on my way”: five separated words",
+        "“pi-kit-up on my way”: with only the first link",
+        "“pi-ki-tup-ong my way”: with the /n/ shifting to /ŋ/"
+      ],
+      "correctAnswer": "“pi-ki-tup om my way”: linked, with the /n/ shifting to /m/",
+      "correctAnswerIndex": 0,
+      "hint": "Mark the consonant + vowel links first, then check the nasal before “my”.",
+      "explanation": "“Pick it up” links as “pi-ki-tup” (the /k/ onto “it” and the /t/ onto “up”). The /n/ of “on” sits before /m/, so it shifts to [m]: “om my way”. The sentence is therefore a mixture of linking and assimilation. A natural delivery uses both without effort.",
+      "phoneticRule": "Phrasal-verb chunks link consonants onto following vowels, and a following nasal-plus-lip-sound boundary assimilates.",
+      "phenomenonType": "Linking",
+      "spokenForm": "Selma, I’ll pi-ki-tup om my way"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L160_Q1",
+      "instruction": "Which analysis fits “Tariq, bet you ten pounds I got it”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Tariq, bet you ten pounds I got it",
+      "textToSpeak": "Tariq, bet you ten pounds I got it",
+      "options": [
+        "A /dʒ/ blend, elision of the /n/ and a /j/ glide",
+        "A /tʃ/ blend, gemination in “ten pounds” and an intrusive /r/",
+        "A /tʃ/ blend (“bet you”), assimilation of /n/ to [m] (“ten pounds”), linking (“got it”)",
+        "Elision of the /t/ in “bet you”, assimilation of the /p/ in “pounds” and linking in “got it”"
+      ],
+      "correctAnswer": "A /tʃ/ blend (“bet you”), assimilation of /n/ to [m] (“ten pounds”), linking (“got it”)",
+      "correctAnswerIndex": 2,
+      "hint": "Take each boundary in turn: /t/ + /j/, /n/ + /p/, and a consonant + vowel.",
+      "explanation": "“Bet you” has /t/ + /j/, so it blends into /tʃ/. “Ten pounds” has /n/ before the lip sound /p/, so the /n/ shifts to [m]. “Got it” has a /t/ before a vowel, so it links. Each boundary is therefore handled by a different process. That is the skill of the final analysis.",
+      "phoneticRule": "Each boundary in a complex phrase is analysed independently: /t/ + /j/ gives coalescence, a nasal before a lip sound gives assimilation, and a consonant before a vowel gives linking.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "Tariq, be-choo tem pounds I go-tit"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L160_Q2",
+      "instruction": "Which analysis fits “Yan, did he say you’ve got to go?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Yan, did he say you’ve got to go",
+      "textToSpeak": "Yan, did he say you’ve got to go",
+      "options": [
+        "A /dʒ/ blend in “did he”, and a strong “got to”",
+        "A dropped /h/ with a link (“did he”), and the informal “gotta” (“got to”)",
+        "Assimilation in “did he”, and gemination in “say you’ve”",
+        "Elision of the /d/ in “did”, and a /tʃ/ blend in “got to”"
+      ],
+      "correctAnswer": "A dropped /h/ with a link (“did he”), and the informal “gotta” (“got to”)",
+      "correctAnswerIndex": 1,
+      "hint": "Check whether “he” could trigger a blend, then look at “got to”.",
+      "explanation": "“He” loses its /h/ after “did”, so the /d/ links onto it: “di-dee”. There is no /j/, so no blend occurs. “Got to” is reduced to “gotta”, an informal form. The sentence thus combines /h/ dropping with linking and an informal reduction.",
+      "phoneticRule": "A pronoun that loses its /h/ triggers linking rather than coalescence, because it has no /j/; informal reductions are independent of it.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "Yan, di-dee say you’ve gotta go"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L160_Q3",
+      "instruction": "Which analysis fits “Quinn, I can’t meet you, my best friend is ill”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Quinn, I can’t meet you, my best friend is ill",
+      "textToSpeak": "Quinn, I can’t meet you, my best friend is ill",
+      "options": [
+        "Elision (“can’t meet”), assimilation (“meet you”), and linking (“best friend”)",
+        "Assimilation (“can’t meet”), coalescence (“meet you”), and elision (“best friend”)",
+        "Assimilation (“can’t meet”), linking (“meet you”), and gemination (“best friend”)",
+        "Coalescence (“can’t meet”), assimilation (“meet you”), and elision (“best friend”)"
+      ],
+      "correctAnswer": "Assimilation (“can’t meet”), coalescence (“meet you”), and elision (“best friend”)",
+      "correctAnswerIndex": 1,
+      "hint": "Name the next sound at each of the three boundaries and decide what process it triggers.",
+      "explanation": "“Can’t meet” has /n/ + /m/ with a weak /t/, so the nasal is assimilated: “caam meet”. “Meet you” has /t/ + /j/, so it blends into /tʃ/. “Best friend” has a /t/ between /s/ and /f/, which is often omitted. Three processes appear in one sentence, each determined by its own neighbouring sounds.",
+      "phoneticRule": "A complex phrase may combine assimilation, coalescence and elision, each triggered by a different neighbouring sound.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "Quinn, I caam mee-choo, my bes’ friend is ill"
+    }
+  ]
 }

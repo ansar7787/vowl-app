@@ -1,577 +1,607 @@
 {
-    "gameType": "connectedSpeech",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
-        {
-            "id": "ACC_CONNECTEDSPEECH_L11_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "not married",
-            "textToSpeak": "not married",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 1,
-            "hint": "Notice how the mouth has to move from the /t/ ending \"not\" to the bilabial sound that opens \"married\". Does it really make that full move, or take a shortcut?",
-            "explanation": "Unlike elision, nothing is dropped here — the sound simply changes place. /t/ becomes /p/ in \"not married\" to match the bilabial consonant that follows.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "nop married"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L11_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "recommend doctor",
-            "textToSpeak": "recommend doctor",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /b/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen for the /d/ at the end of \"recommend\". With another consonant right before it and another right after (from \"doctor\"), can a speaker realistically hit all three cleanly?",
-            "explanation": "This is elision: a sound is removed entirely, not changed or weakened. Here, the /d/ at the end of \"recommend\" disappears before the consonant that starts \"doctor\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "recommend 'octor"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L11_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "hot meals",
-            "textToSpeak": "hot meals",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the consonant joining \"hot\" to \"meals\". Is it still /t/, or has it changed shape to match what follows?",
-            "explanation": "When a word ending in /t/ meets a bilabial sound, the /t/ shifts to /p/ so both sounds are made in nearly the same place in the mouth. That's what happens in \"hot meals\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "hop meals"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L12_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "expand business",
-            "textToSpeak": "expand business",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /m/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Try saying \"expand business\" at a natural conversational pace, not word by word. What happens to the /d/ sound in the middle?",
-            "explanation": "Native speakers rarely pronounce every consonant in a heavy cluster. In \"expand business\", the /d/ is left out completely, letting the surrounding consonants connect directly.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "expan' business"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L12_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "bread basket",
-            "textToSpeak": "bread basket",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /b/)"
-            ],
-            "correctAnswer": "Assimilation (/d/ becomes /b/)",
-            "correctAnswerIndex": 1,
-            "hint": "In connected speech, the /d/ ending \"bread\" often adapts to its neighbor. What does it turn into right before the bilabial sound in \"basket\"?",
-            "explanation": "This is place assimilation: /d/ moves to a bilabial position to blend smoothly with what comes next, turning into /b/ in \"bread basket\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "breab basket"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L12_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "loud music",
-            "textToSpeak": "loud music",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /b/)"
-            ],
-            "correctAnswer": "Assimilation (/d/ becomes /b/)",
-            "correctAnswerIndex": 1,
-            "hint": "Focus on the last sound of \"loud\". With a bilabial consonant starting \"music\" right after it, what shift would make pronunciation easier?",
-            "explanation": "Rather than jump from the /d/ ending \"loud\" to a bilabial sound, the mouth compromises: /d/ becomes /b/, matching the bilabial consonant that opens \"music\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "loub music"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L13_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "contest winner",
-            "textToSpeak": "contest winner",
-            "options": [
-                "Assimilation (/t/ becomes /k/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "Three consonants in a row is hard work for the mouth. Focus on the /t/ where \"contest\" meets \"winner\" — does English keep it or drop it?",
-            "explanation": "Because /t/ is squeezed between two other consonants, it gets dropped in fluent speech. Say \"contest winner\" aloud and you'll notice the /t/ just isn't there.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "contes' winner"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L13_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten clients",
-            "textToSpeak": "ten clients",
-            "options": [
-                "Elision (/n/ disappears)",
-                "Assimilation (/n/ becomes /ŋ/)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"ten clients\" quickly, the way you'd say it in conversation. Which consonant do you actually hear where /n/ used to be?",
-            "explanation": "In fluent speech, /n/ rarely stays /n/ before a velar sound — it assimilates to /ŋ/, which is exactly what you hear in \"ten clients\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "ten clients"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L13_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "trust me",
-            "textToSpeak": "trust me",
-            "options": [
-                "Assimilation (/t/ becomes /g/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "In casual speech, does the final /t/ of \"trust\" get pronounced before \"me\", or does it just vanish?",
-            "explanation": "English speakers simplify clusters like this one by deleting a stop consonant rather than forcing it in. The /t/ in \"trust\" is the one that goes missing before \"me\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "trus' me"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L14_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "packed lunch",
-            "textToSpeak": "packed lunch",
-            "options": [
-                "Assimilation (/t/ becomes /p/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "Picture how a native speaker would say \"packed lunch\" in a fast, everyday sentence. Is every single consonant still there?",
-            "explanation": "This is a textbook case of consonant-cluster elision: the /t/ between two consonants is dropped to keep speech fluent and effortless in \"packed lunch\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "packed lunch"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L14_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "right bag",
-            "textToSpeak": "right bag",
-            "options": [
-                "Assimilation (/t/ becomes /p/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 0,
-            "hint": "The tongue is already anticipating \"bag\"'s bilabial sound before it even finishes \"right\". What happens to /t/ as a result?",
-            "explanation": "The change from /t/ to /p/ at the end of \"right\" happens because the following bilabial consonant in \"bag\" pulls the place of articulation to match. Nothing is lost here, just reshaped.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "righp bag"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L14_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "world tour",
-            "textToSpeak": "world tour",
-            "options": [
-                "Assimilation (/d/ becomes /b/)",
-                "Elision (/d/ disappears)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "The /d/ in \"world\" is trapped between two other consonants right before \"tour\". What usually happens to a stop consonant stuck in that position?",
-            "explanation": "Rather than pronounce all three consonants back to back, speakers cut the /d/ from \"world\" entirely. The result flows straight from the first consonant into \"tour\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "worl' tour"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L15_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "seven months",
-            "textToSpeak": "seven months",
-            "options": [
-                "Elision (/n/ disappears)",
-                "Assimilation (/n/ becomes /m/)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /m/)",
-            "correctAnswerIndex": 1,
-            "hint": "Between \"seven\" and \"months\" sits a consonant under pressure to match its neighbor. What does it become?",
-            "explanation": "This pairing is a classic assimilation example: the /n/ ending \"seven\" adopts the bilabial quality of the sound in \"months\", surfacing as /m/ in natural, connected speech.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "seven momths"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L15_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten guests",
-            "textToSpeak": "ten guests",
-            "options": [
-                "Elision (/n/ disappears)",
-                "Assimilation (/n/ becomes /ŋ/)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
-            "correctAnswerIndex": 1,
-            "hint": "This isn't a case of a sound vanishing from \"ten\" — it's still there, just different. What does /n/ turn into before the velar sound in \"guests\"?",
-            "explanation": "Notice that the /n/ ending \"ten\" isn't deleted the way it would be in elision — it survives, just transformed into /ŋ/ to match the velar sound beginning \"guests\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "ten guests"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L15_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "must pay",
-            "textToSpeak": "must pay",
-            "options": [
-                "Assimilation (/t/ becomes /p/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 0,
-            "hint": "The /t/ at the end of \"must\" is about to meet a bilabial sound in \"pay\". Does it hold firm, or shift to match?",
-            "explanation": "Before a bilabial consonant, /t/ commonly shifts to match its place of articulation. In \"must pay\", /t/ becomes /p/ — the sound itself changes, it doesn't disappear.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "musp pay"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L16_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "good meal",
-            "textToSpeak": "good meal",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /b/)"
-            ],
-            "correctAnswer": "Assimilation (/d/ becomes /b/)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"good meal\" at natural speed. Listen right at the boundary — does the /d/ stay a /d/, or does it become something else?",
-            "explanation": "This is regressive assimilation: a sound changes to become more like the sound that follows it. Here, the /d/ ending \"good\" turns into /b/ because \"meal\" begins with a bilabial consonant.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "goob meal"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L16_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "hot coffee",
-            "textToSpeak": "hot coffee",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /k/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /k/)",
-            "correctAnswerIndex": 1,
-            "hint": "A velar consonant is coming up in \"coffee\". What does that do to the /t/ just before it in \"hot\"?",
-            "explanation": "Speakers save effort by letting /t/ anticipate the velar sound ahead. So in \"hot coffee\", /t/ is pronounced as /k/ instead.",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "hok coffee"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L16_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "cold call",
-            "textToSpeak": "cold call",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /m/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely at the boundary of \"cold\" and \"call\" — count the consonants stacking up. Does the /d/ still make it into the sentence?",
-            "explanation": "In fast, connected speech, a /d/ wedged between consonants almost always disappears. That's what you'll hear in \"cold call\" — the /d/ goes silent.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "col' call"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L17_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "light coat",
-            "textToSpeak": "light coat",
-            "options": [
-                "Assimilation (/t/ becomes /k/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /k/)",
-            "correctAnswerIndex": 0,
-            "hint": "Notice how the mouth has to move from the /t/ ending \"light\" to the velar sound that opens \"coat\". Does it really make that full move, or take a shortcut?",
-            "explanation": "Unlike elision, nothing is dropped here — the sound simply changes place. /t/ becomes /k/ in \"light coat\" to match the velar consonant that follows.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "light coak"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L17_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "quiet mood",
-            "textToSpeak": "quiet mood",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the consonant joining \"quiet\" to \"mood\". Is it still /t/, or has it changed shape to match what follows?",
-            "explanation": "When a word ending in /t/ meets a bilabial sound, the /t/ shifts to /p/ so both sounds are made in nearly the same place in the mouth. That's what happens in \"quiet mood\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "quiep mood"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L17_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "hit pause",
-            "textToSpeak": "hit pause",
-            "options": [
-                "Assimilation (/t/ becomes /p/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 0,
-            "hint": "In connected speech, the /t/ ending \"hit\" often adapts to its neighbor. What does it turn into right before the bilabial sound in \"pause\"?",
-            "explanation": "This is place assimilation: /t/ moves to a bilabial position to blend smoothly with what comes next, turning into /p/ in \"hit pause\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "hip pause"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L18_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "old news",
-            "textToSpeak": "old news",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /k/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"old news\" naturally, without pausing between the words. Is the /d/ audible, or does it disappear into the next consonant?",
-            "explanation": "Elision removes a sound completely rather than merely blending it. Here the /d/ vanishes from \"old\" so the phrase moves directly into \"news\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "ol' news"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L18_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "correct list",
-            "textToSpeak": "correct list",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /g/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "This pair, \"correct list\", creates a tricky consonant sequence. Which sound do fluent speakers simplify away — and is it really gone, or just quieter?",
-            "explanation": "Speakers naturally avoid three consonants in a row, so the /t/ is dropped rather than forced through. That's why \"correct list\" sounds smoother without it.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "correct lis'"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L18_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "next level",
-            "textToSpeak": "next level",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Fluent speech avoids awkward consonant pile-ups. Where exactly does that simplification happen in \"next level\"?",
-            "explanation": "This cluster is simplified by deleting the /t/ altogether — not weakening it, not shifting it, just leaving it out — which is the defining feature of elision in \"next level\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "nex' level"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L19_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "quite busy",
-            "textToSpeak": "quite busy",
-            "options": [
-                "Assimilation (/t/ becomes /p/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sound of \"quite\". With a bilabial consonant starting \"busy\" right after it, what shift would make pronunciation easier?",
-            "explanation": "Rather than jump from the /t/ ending \"quite\" to a bilabial sound, the mouth compromises: /t/ becomes /p/, matching the bilabial consonant that opens \"busy\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "quipe busy"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L19_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "count down",
-            "textToSpeak": "count down",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /b/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"count\" alone, then \"down\" alone — both consonants are clear. Now blend them at speed. What happens to the /t/ in between?",
-            "explanation": "Notice that nothing replaces the /t/ — it isn't weakened or swapped for another sound, it's simply omitted. That full deletion is what separates elision from assimilation in \"count down\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "coun' down"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L19_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "post code",
-            "textToSpeak": "post code",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /m/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "A stop consonant squeezed between two other consonants rarely survives in fast speech. Listen for the /t/ in \"post code\" — is it there?",
-            "explanation": "Consonant clusters like this one are common at word boundaries in English, and the middle stop is almost always the casualty. The /t/ drops out of \"post code\" for exactly that reason.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "pos' code"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L20_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "waste money",
-            "textToSpeak": "waste money",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /k/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"waste money\" quickly. The consonants pile up right around the /t/ in \"waste\" — does it survive the crowd, or get squeezed out?",
-            "explanation": "When /t/ sits between two other consonants, English speakers routinely drop it to keep the rhythm smooth. In \"waste money\", the /t/ disappears rather than being pronounced.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "was'e money"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L20_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "green bag",
-            "textToSpeak": "green bag",
-            "options": [
-                "Assimilation (/n/ becomes /m/)",
-                "Elision (/n/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /m/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"green bag\" quickly, the way you'd say it in conversation. Which consonant do you actually hear where /n/ used to be?",
-            "explanation": "In fluent speech, /n/ rarely stays /n/ before a bilabial sound — it assimilates to /m/, which is exactly what you hear in \"green bag\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "greem bag"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L20_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "shift schedule",
-            "textToSpeak": "shift schedule",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /g/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "There's a consonant cluster forming between \"shift\" and \"schedule\". In natural speech, one sound in that cluster usually disappears. Which one?",
-            "explanation": "Three consonants in a row are hard to articulate cleanly, so speakers simplify by deleting the middle one. That's exactly what happens to the /t/ in \"shift schedule\" — it's dropped, not just softened.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "shif' schedule"
-        }
-    ]
+  "gameType": "connectedSpeech",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "ACC_CONNECTEDSPEECH_L11_Q1",
+      "instruction": "You stop a busy colleague with a polite request. Choose the most natural spoken form of the opening “could I ask”.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "could I ask",
+      "textToSpeak": "could I ask",
+      "options": [
+        "“coud … I ask”: “could” closes with a stop and “I” starts fresh",
+        "“cou-ai ask”: the /d/ disappears so the two vowels touch",
+        "“cou-dai ask”: the /d/ of “could” is heard at the start of “I”"
+      ],
+      "correctAnswer": "“cou-dai ask”: the /d/ of “could” is heard at the start of “I”",
+      "correctAnswerIndex": 2,
+      "hint": "Say it softly and quickly, as you would to someone at a desk. Notice what happens between the first two words.",
+      "explanation": "“Could” ends in /d/ and “I” starts with a vowel sound, so the /d/ usually attaches to “I”: “cou-dai”. Polite requests are often said quickly, so this small shift is common at the start of questions. Knowing it helps you hear “could I” as two familiar words rather than one strange chunk.",
+      "phoneticRule": "A word-final /d/ is commonly heard as the beginning of a following vowel-initial word, so “could I” often sounds like “cou-dai”.",
+      "phenomenonType": "Linking",
+      "spokenForm": "cou-dai ask"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L11_Q2",
+      "instruction": "Why does the offer “need a hand” sound like “nee-da hand”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "need a hand",
+      "textToSpeak": "need a hand",
+      "options": [
+        "The /d/ closing “need” meets a vowel and is heard as the start of “a”",
+        "The weak word “a” is dropped, so the /d/ ends up touching “hand”",
+        "Speakers pause briefly after “need” so the /d/ can be released fully before “a”"
+      ],
+      "correctAnswer": "The /d/ closing “need” meets a vowel and is heard as the start of “a”",
+      "correctAnswerIndex": 0,
+      "hint": "Say the phrase at the pace of a quick offer to a colleague. Listen for which sound begins the beat that contains “a”.",
+      "explanation": "The /d/ that finishes “need” is followed by the weak vowel of “a”, so it is heard on that vowel: “nee-da hand”. The word “a” is still there; it just sounds like the end of a linked syllable. This makes offers of help easier to catch when they are said in a rush.",
+      "phoneticRule": "Linking does not depend on stress: the consonant re-attaches to the following vowel whether that vowel is stressed or weak.",
+      "phenomenonType": "Linking",
+      "spokenForm": "nee-da hand"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L11_Q3",
+      "instruction": "Choose the version of “wait a second” that fits a quick spoken request.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "wait a second",
+      "textToSpeak": "wait a second",
+      "options": [
+        "“wait … a second”, with a stop after the /t/ before “a”",
+        "“way-ta second”, with the /t/ starting the syllable of “a”",
+        "“way-a second”, with the /t/ omitted before the vowel"
+      ],
+      "correctAnswer": "“way-ta second”, with the /t/ starting the syllable of “a”",
+      "correctAnswerIndex": 1,
+      "hint": "Focus on the two sounds that meet after “way”. Which one starts the next beat when you speed up?",
+      "explanation": "The /t/ that closes “wait” attaches to the weak vowel of “a”, giving “way-ta second”. Because “a” is so short, it is easy to lose in fast speech. Noticing the link helps you catch it.",
+      "phoneticRule": "A short unstressed article beginning with a vowel commonly receives the preceding consonant, so the article seems to merge into the previous word.",
+      "phenomenonType": "Linking",
+      "spokenForm": "way-ta second"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L12_Q1",
+      "instruction": "Say “in April” at normal speed. What is happening at the boundary between the two words?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "in April",
+      "textToSpeak": "in April",
+      "options": [
+        "The two words are separated by a small pause so that “April” starts clearly",
+        "The /n/ of “in” is heard at the start of “April”: “i-napril”",
+        "The /n/ is left out, so only “i” and “April” remain"
+      ],
+      "correctAnswer": "The /n/ of “in” is heard at the start of “April”: “i-napril”",
+      "correctAnswerIndex": 1,
+      "hint": "Try it inside “My birthday is in April.” Notice which word seems to start with an /n/.",
+      "explanation": "“In” ends with the nasal consonant /n/, and “April” begins with a vowel, so the /n/ is heard at the start of the second word: “i-napril”. Nasals link smoothly because the voice keeps running. Recognising this helps you hear month names after “in” without searching for an extra word.",
+      "phoneticRule": "Nasal consonants such as /n/ link to a following vowel like other consonants, and their continuous voicing makes the join smooth.",
+      "phenomenonType": "Linking",
+      "spokenForm": "i-napril"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L12_Q2",
+      "instruction": "Choose the explanation that best fits how “from a” sounds inside “from a friend”.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "from a friend",
+      "textToSpeak": "from a friend",
+      "options": [
+        "The /m/ is left out because “a” is too short to take a consonant",
+        "“From” and “a” are separated by a pause so the /m/ can be released clearly",
+        "The /m/ ending “from” is heard at the start of “a”: “fruh-ma friend”"
+      ],
+      "correctAnswer": "The /m/ ending “from” is heard at the start of “a”: “fruh-ma friend”",
+      "correctAnswerIndex": 2,
+      "hint": "Say “from a friend” quickly and count the beats. Notice what the closed lips of the /m/ lead into.",
+      "explanation": "The /m/ that closes “from” meets the weak vowel of “a”, so you hear “fruh-ma friend”. Nasal sounds are voiced, so the join is often easy to hear. Small words such as “from” and “a” are quiet in speech, which is why spotting the link helps you find them.",
+      "phoneticRule": "A word-final /m/ links to a following vowel like other nasals, and prepositions such as “from” often appear in this environment.",
+      "phenomenonType": "Linking",
+      "spokenForm": "fruh-ma friend"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L12_Q3",
+      "instruction": "Apply the pattern to “on a Sunday”. Which spoken chunking sounds right?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "on a Sunday",
+      "textToSpeak": "on a Sunday",
+      "options": [
+        "“o-na Sunday”, with the /n/ moving onto “a”",
+        "“on … a Sunday”, with a stop after “on”",
+        "“o-ma Sunday”, with the /n/ changing into an /m/ before “a”"
+      ],
+      "correctAnswer": "“o-na Sunday”, with the /n/ moving onto “a”",
+      "correctAnswerIndex": 0,
+      "hint": "The word “on” ends in a nasal and “a” is almost a bare vowel. Think about what the nasal does at speed.",
+      "explanation": "The /n/ at the end of “on” attaches to “a”, giving “o-na Sunday”. The /n/ stays an /n/ and does not change into another nasal. It is a very common way of giving days and times, so you will hear this shape in plans and invitations.",
+      "phoneticRule": "The same pattern works with any nasal followed by a vowel, so the listening strategy carries over from /n/ to /m/ without change.",
+      "phenomenonType": "Linking",
+      "spokenForm": "o-na Sunday"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L13_Q1",
+      "instruction": "Before you listen, predict: which sound is heard at the start of “us” in “call us”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "call us",
+      "textToSpeak": "call us",
+      "options": [
+        "The /l/ from the end of “call”",
+        "The /k/ from the start of “call”",
+        "A brief /w/ that connects the two vowels"
+      ],
+      "correctAnswer": "The /l/ from the end of “call”",
+      "correctAnswerIndex": 0,
+      "hint": "Think about the last sound of “call” and the first sound of “us”. When the words are said without a stop, the mouth is already in position for one of them.",
+      "explanation": "The /l/ at the end of “call” attaches to “us”, giving “caw-lus”. Because /l/ is a smooth, continuous sound, the join can be so gentle that “us” seems to begin with a soft /l/. Predicting this makes short requests such as “call us” easier to catch.",
+      "phoneticRule": "In many accents, word-final /l/ is ‘dark’ before a pause but sounds lighter when it links to a following vowel.",
+      "phenomenonType": "Linking",
+      "spokenForm": "caw-lus"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L13_Q2",
+      "instruction": "At a petrol station you hear “Fill it up.” Which explanation matches the chunking “fi-li-tup”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "fill it up",
+      "textToSpeak": "fill it up",
+      "options": [
+        "“It” is reduced so far that only the /l/ and /p/ remain audible",
+        "The /l/ of “fill” is dropped and “it” starts the second beat cleanly",
+        "The /l/ of “fill” attaches to “it”, and the /t/ of “it” attaches to “up”"
+      ],
+      "correctAnswer": "The /l/ of “fill” attaches to “it”, and the /t/ of “it” attaches to “up”",
+      "correctAnswerIndex": 2,
+      "hint": "Tap out the beats in a fast “Fill it up”. Look at which consonants start the second and third beats.",
+      "explanation": "Both boundaries fit the same rule: a word-final consonant followed by a vowel. The /l/ from “fill” and the /t/ from “it” each start a new beat, giving “fi-li-tup”. That is why the phrase is three quick beats for three words.",
+      "phoneticRule": "Linking is checked boundary by boundary: /l/ + vowel and /t/ + vowel are separate environments that can occur in the same short chunk.",
+      "phenomenonType": "Linking",
+      "spokenForm": "fi-li-tup"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L13_Q3",
+      "instruction": "Apply the /l/ pattern to “feel awful”. Which spoken form fits?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "feel awful",
+      "textToSpeak": "feel awful",
+      "options": [
+        "“feel … awful”, with the /l/ held back before a stop",
+        "“fee-awful”, with the /l/ dropped before the vowel",
+        "“fee-lawful”, with the /l/ starting “awful”"
+      ],
+      "correctAnswer": "“fee-lawful”, with the /l/ starting “awful”",
+      "correctAnswerIndex": 2,
+      "hint": "Say the phrase as if you are telling a friend how you slept. Notice what sits between the two vowels.",
+      "explanation": "“Feel” ends in /l/ and “awful” starts with a vowel, so the /l/ moves across: “fee-lawful”. The result is one smooth chunk that carries the feeling. Similar shapes appear in “tell it”, “call in” and “all of”.",
+      "phoneticRule": "When a word-final /l/ meets a vowel, listeners hear a single syllable boundary just before the vowel, so the vowel-initial word seems to start with /l/.",
+      "phenomenonType": "Linking",
+      "spokenForm": "fee-lawful"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L14_Q1",
+      "instruction": "Two children are arguing in the next room and you hear “Stop it!” Choose the spoken form that fits.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "stop it",
+      "textToSpeak": "stop it",
+      "options": [
+        "“stop … it”, with the /p/ closing the first word before a stop of air",
+        "“sto-pit”, with the /p/ heard at the start of “it”",
+        "“sto-it”, with the /p/ left out because “it” already begins with a vowel"
+      ],
+      "correctAnswer": "“sto-pit”, with the /p/ heard at the start of “it”",
+      "correctAnswerIndex": 1,
+      "hint": "Imagine it shouted from another room. Ask which word gets the burst of air that ends the /p/.",
+      "explanation": "A plosive such as /p/ is released into the vowel that follows it. In “stop it”, that vowel belongs to “it”, so the /p/ is heard at its start: “sto-pit”. Short commands are said quickly, so the link is worth recognising.",
+      "phoneticRule": "A word-final plosive is commonly released into a following vowel, which makes it sound like the first consonant of the next word.",
+      "phenomenonType": "Linking",
+      "spokenForm": "sto-pit"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L14_Q2",
+      "instruction": "Choose the explanation that fits “job interview” said at conversational speed.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "job interview",
+      "textToSpeak": "job interview",
+      "options": [
+        "The /b/ of “job” is heard at the start of “interview”, so the second word seems to begin with a /b/",
+        "“Job” loses its /b/ so that “interview” can start cleanly",
+        "The /b/ is weakened into a /p/ before the vowel, so it sounds like “jo-pinterview”"
+      ],
+      "correctAnswer": "The /b/ of “job” is heard at the start of “interview”, so the second word seems to begin with a /b/",
+      "correctAnswerIndex": 0,
+      "hint": "Say the phrase as if you are checking in at reception. Notice what your lips do just before “interview” starts.",
+      "explanation": "“Job” ends in /b/ and “interview” starts with a vowel, so the /b/ moves onto it: “jo-binterview”. The consonant keeps its voiced quality, so it does not turn into /p/. Long words that begin with a vowel are easy to mishear unless you expect this link.",
+      "phoneticRule": "Voiced plosives such as /b/ keep their voicing when they link to a following vowel; linking changes the syllable boundary, not the identity of the consonant.",
+      "phenomenonType": "Linking",
+      "spokenForm": "jo-binterview"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L14_Q3",
+      "instruction": "Apply the same idea: which spoken form fits “wake up” in “Time to wake up!”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "wake up",
+      "textToSpeak": "wake up",
+      "options": [
+        "“way-up”, with the /k/ removed so the vowels join",
+        "“way-kup”, with the /k/ starting “up”",
+        "“wake … up”, with a stop of air after the /k/"
+      ],
+      "correctAnswer": "“way-kup”, with the /k/ starting “up”",
+      "correctAnswerIndex": 1,
+      "hint": "Think of an alarm-clock reminder said fast. The /k/ ends the first word; where does its release land?",
+      "explanation": "The /k/ at the end of “wake” is released into “up”, giving “way-kup”. Phrasal verbs with “up”, “on”, “off” and “out” are very common, so this shape will appear often.",
+      "phoneticRule": "Voiceless plosives (/p t k/) link with a following vowel in the same way as /b d g/; only the voicing quality differs.",
+      "phenomenonType": "Linking",
+      "spokenForm": "way-kup"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L15_Q1",
+      "instruction": "Which spoken form is the most natural version of “give up” in “Don’t give up!”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "give up",
+      "textToSpeak": "give up",
+      "options": [
+        "“give … up”, with the /v/ held before a stop",
+        "“gi-up”, with the /v/ left out",
+        "“gi-vup”, with the /v/ starting “up”"
+      ],
+      "correctAnswer": "“gi-vup”, with the /v/ starting “up”",
+      "correctAnswerIndex": 2,
+      "hint": "Say it as encouragement, with energy and speed. Notice which sound is still buzzing when “up” begins.",
+      "explanation": "The /v/ that ends “give” is voiced and continuous, so it flows straight into “up”: “gi-vup”. Because the buzz carries on, the link can be easier to hear than after a stop like /p/. It is a useful chunk in everyday encouragement.",
+      "phoneticRule": "Voiced fricatives such as /v/ keep their voicing when they link to a following vowel, so the join is heard as a buzz at the start of the next word.",
+      "phenomenonType": "Linking",
+      "spokenForm": "gi-vup"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L15_Q2",
+      "instruction": "In “brush it off”, which two sounds are heard at the start of “it” and “off”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "brush it off",
+      "textToSpeak": "brush it off",
+      "options": [
+        "/b/ from “brush”, then /ʃ/",
+        "/ʃ/ from “brush”, then /t/ from “it”",
+        "/ʃ/ from “brush”, then /f/ from “off”"
+      ],
+      "correctAnswer": "/ʃ/ from “brush”, then /t/ from “it”",
+      "correctAnswerIndex": 1,
+      "hint": "Say the phrase at the speed of a friend’s quick advice, and listen for the sounds that end the first two words.",
+      "explanation": "The “sh” sound ending “brush” links to “it”, and the /t/ ending “it” links to “off”: “bru-shi-toff”. Each word ends in a consonant and the next starts with a vowel, so both boundaries follow the same pattern. You will hear a similar chain in short pieces of advice like this one.",
+      "phoneticRule": "The fricative /ʃ/ links to a following vowel, and the same chunk can contain a second link from the following stop.",
+      "phenomenonType": "Linking",
+      "spokenForm": "bru-shi-toff"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L15_Q3",
+      "instruction": "Use the pattern for “laugh at me”. Which chunking is right?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "laugh at me",
+      "textToSpeak": "laugh at me",
+      "options": [
+        "“la-fat me”, with the /f/ starting “at”",
+        "“laugh … at me”, with a stop after the /f/",
+        "“la-vat me”, with the /f/ voiced into a /v/"
+      ],
+      "correctAnswer": "“la-fat me”, with the /f/ starting “at”",
+      "correctAnswerIndex": 0,
+      "hint": "Say “Don’t laugh at me” quickly. Listen for a soft, airy sound just before “at”.",
+      "explanation": "“Laugh” ends with /f/, and “at” starts with a vowel, so the /f/ starts the next syllable: “la-fat me”. The /f/ stays voiceless, so it does not become /v/. There is no link before “me”, because “at” ends in a consonant and “me” begins with one.",
+      "phoneticRule": "Linking does not change the voicing of a fricative: /f/ stays voiceless and /v/ stays voiced.",
+      "phenomenonType": "Linking",
+      "spokenForm": "la-fat me"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L16_Q1",
+      "instruction": "Which consonant is heard at the start of “out” in a quick “find out”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "find out",
+      "textToSpeak": "find out",
+      "options": [
+        "The /d/ that ends “find”",
+        "The /n/ that comes just before the /d/",
+        "Both /n/ and /d/ move together onto “out”"
+      ],
+      "correctAnswer": "The /d/ that ends “find”",
+      "correctAnswerIndex": 0,
+      "hint": "Say “Did you find out?” and listen for the last sound of “find” and what it touches.",
+      "explanation": "“Find” ends in the cluster /nd/. When “out” follows, the /d/ is heard at its start: “fine-dout”. The /n/ stays with the first word because /nd/ is not a normal way for English words to begin. Knowing which part travels helps you predict the break.",
+      "phoneticRule": "In a final cluster such as /nd/ that cannot begin an English word, only the last consonant re-attaches to a following vowel.",
+      "phenomenonType": "Linking",
+      "spokenForm": "fine-dout"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L16_Q2",
+      "instruction": "Compare “first aid” with “find out”. Which description fits “first aid”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "first aid",
+      "textToSpeak": "first aid",
+      "options": [
+        "The /t/ is dropped, because clusters are simplified when a word ends in /st/",
+        "The /t/ is kept; it is heard at the start of “aid”, often together with the /s/: “fur-staid”",
+        "The /s/ is dropped and only the /t/ starts “aid”"
+      ],
+      "correctAnswer": "The /t/ is kept; it is heard at the start of “aid”, often together with the /s/: “fur-staid”",
+      "correctAnswerIndex": 1,
+      "hint": "Ask yourself which consonant sequences can begin an English word, then check whether “st” is one of them.",
+      "explanation": "“St” is a normal way to begin English words (stop, start), so both sounds can move onto “aid”: “fur-staid”. Some speakers shift only the /t/. Either way the /t/ is heard, because a vowel follows; dropping it is more typical before a consonant, which you will study later.",
+      "phoneticRule": "Clusters that can begin English words, such as /st/, /sk/ and /sp/, may re-attach as a whole to a following vowel-initial word, while other clusters release only their final consonant.",
+      "phenomenonType": "Linking",
+      "spokenForm": "fur-staid"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L16_Q3",
+      "instruction": "Apply both ideas to “just in time”. Which spoken form fits?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "just in time",
+      "textToSpeak": "just in time",
+      "options": [
+        "“jus … in time”, with a stop after the /t/",
+        "“ju-in time”, with the whole cluster dropped",
+        "“ju-stin time”, with /st/ starting “in”"
+      ],
+      "correctAnswer": "“ju-stin time”, with /st/ starting “in”",
+      "correctAnswerIndex": 2,
+      "hint": "The first word ends in /st/, the same cluster as before. Say “just in time” quickly and note where the hissing sound falls.",
+      "explanation": "“Just” ends in /st/ and “in” starts with a vowel, so the cluster can shift onto “in”: “ju-stin time”. You can hear the same shape in “first aid”. Listening for a vowel after a final cluster helps you avoid mishearing “stin” as part of a new word.",
+      "phoneticRule": "A cluster's ability to re-attach depends on whether it forms a possible word beginning; /st/ does, so “just in” can be heard as “ju-stin”.",
+      "phenomenonType": "Linking",
+      "spokenForm": "ju-stin time"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L17_Q1",
+      "instruction": "Someone says “Good night” at the door. Does the linking pattern from earlier levels apply between the words?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "good night",
+      "textToSpeak": "good night",
+      "options": [
+        "Yes: the /d/ of “good” attaches to “night” to form “goo-dnight”",
+        "Yes: the /t/ at the end of “night” attaches back to “good”",
+        "No: “night” begins with a consonant, so there is no vowel for the /d/ to attach to"
+      ],
+      "correctAnswer": "No: “night” begins with a consonant, so there is no vowel for the /d/ to attach to",
+      "correctAnswerIndex": 2,
+      "hint": "Check what kind of sound begins the second word. The earlier pattern needs one particular kind of sound there.",
+      "explanation": "Consonant-to-vowel linking needs a vowel sound after the final consonant. “Night” begins with /n/, so “good night” is a consonant-to-consonant boundary: the /d/ ends its word and the /n/ begins the next. Other changes are possible in fast speech, but they are a different topic from this link.",
+      "phoneticRule": "Consonant-to-vowel linking requires a vowel sound after the word-final consonant; a consonant + consonant boundary is not linked in this sense.",
+      "phenomenonType": "Linking",
+      "spokenForm": "good-night"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L17_Q2",
+      "instruction": "In “book a table”, how many boundaries have a consonant-to-vowel link?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "book a table",
+      "textToSpeak": "book a table",
+      "options": [
+        "One: the /k/ of “book” attaches to “a”; “a table” has no such link",
+        "Two: both “book a” and “a table” link",
+        "None: “book” ends in a stop, and stops cannot link"
+      ],
+      "correctAnswer": "One: the /k/ of “book” attaches to “a”; “a table” has no such link",
+      "correctAnswerIndex": 0,
+      "hint": "For each boundary, check the last sound of the first word and the first sound of the second. Which boundary has a consonant followed by a vowel?",
+      "explanation": "Only the first boundary fits: “book” ends in /k/ and “a” is a vowel, giving “boo-ka”. Between “a” and “table”, a vowel meets the consonant /t/, so there is nothing to link. Checking each boundary separately keeps you from expecting a link everywhere.",
+      "phoneticRule": "Each word boundary must be checked separately: only consonant + vowel boundaries show consonant-to-vowel linking.",
+      "phenomenonType": "Linking",
+      "spokenForm": "boo-ka table"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L17_Q3",
+      "instruction": "You hear “Same time next week?” Which comment about the boundary in “next week” is accurate?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "next week",
+      "textToSpeak": "next week",
+      "options": [
+        "It is a consonant + consonant boundary, so the earlier linking pattern does not apply",
+        "The /t/ moves onto “week” to give “nek-stweek”",
+        "“Week” starts with a vowel sound in fast speech, which lets the /t/ link"
+      ],
+      "correctAnswer": "It is a consonant + consonant boundary, so the earlier linking pattern does not apply",
+      "correctAnswerIndex": 0,
+      "hint": "Think about how the first sound of “week” is made. Do your lips and tongue block or narrow the airflow?",
+      "explanation": "“Week” begins with /w/, a consonant sound, even though it behaves a little like a vowel. So the words meet consonant to consonant, and the earlier linking pattern does not apply. Later levels show what does happen at boundaries like this one.",
+      "phoneticRule": "The glides /w/ and /j/ count as consonants for consonant-to-vowel linking, so a word beginning with either of them does not receive a linked consonant.",
+      "phenomenonType": "Linking",
+      "spokenForm": "next-week"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L18_Q1",
+      "instruction": "Choose the description that fits “have a shower” said as part of a morning routine.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "have a shower",
+      "textToSpeak": "have a shower",
+      "options": [
+        "Each word starts with its own clean beginning: “have / a / shower”",
+        "The /v/ of “have” is heard at the start of “a”: “ha-va shower”",
+        "The weak “a” attaches to “shower”: “have ashower”"
+      ],
+      "correctAnswer": "The /v/ of “have” is heard at the start of “a”: “ha-va shower”",
+      "correctAnswerIndex": 1,
+      "hint": "Start with the last sound of “have”. Then decide which word the tiny vowel that follows is closer to.",
+      "explanation": "“Have” ends in /v/ and “a” is a weak vowel, so the /v/ links to it: “ha-va shower”. The small word “a” therefore sounds like the end of “ha-va”, not the beginning of “shower”. This helps you hear routine phrases as three words even at speed.",
+      "phoneticRule": "The link forms an onset for the weak vowel of the article, so the article is heard as the second half of the linked syllable rather than as part of the following noun.",
+      "phenomenonType": "Linking",
+      "spokenForm": "ha-va shower"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L18_Q2",
+      "instruction": "Which explanation fits the way “get up at seven” is chunked in fast speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "get up at seven",
+      "textToSpeak": "get up at seven",
+      "options": [
+        "Only the first boundary links; “up at” stays separate because “at” is a small word",
+        "The /t/ and /p/ are both removed, so “get”, “up” and “at” slide together as vowels",
+        "The /t/ of “get” attaches to “up”, and the /p/ of “up” attaches to “at”: “ge-tu-pat seven”"
+      ],
+      "correctAnswer": "The /t/ of “get” attaches to “up”, and the /p/ of “up” attaches to “at”: “ge-tu-pat seven”",
+      "correctAnswerIndex": 2,
+      "hint": "Underline each word that ends in a consonant and is followed by a vowel-initial word. Then say the phrase and see if your underlines match the joins you hear.",
+      "explanation": "Two boundaries qualify: /t/ + “up” and /p/ + “at”. Both consonants start the next beat, giving “ge-tu-pat seven”. Time phrases such as this are common in daily-routine talk, and “pat” can sound like a separate word if you do not expect the link.",
+      "phoneticRule": "In a phrase with several short vowel-initial words, each qualifying boundary links independently, producing a chain of shifted syllable edges.",
+      "phenomenonType": "Linking",
+      "spokenForm": "ge-tu-pat seven"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L18_Q3",
+      "instruction": "Choose the spoken form of “work out at eight” you would expect in a quick chat about your week.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "work out at eight",
+      "textToSpeak": "work out at eight",
+      "options": [
+        "“work … out … at eight”, with a small stop before each vowel-initial word",
+        "“wur-kou-tat eight”, with /k/ and /t/ each starting the next beat",
+        "“wur-ou-at eight”, with the /k/ and /t/ dropped so the vowels touch"
+      ],
+      "correctAnswer": "“wur-kou-tat eight”, with /k/ and /t/ each starting the next beat",
+      "correctAnswerIndex": 1,
+      "hint": "Mark two consonant-to-vowel boundaries in the phrase and check where each consonant lands.",
+      "explanation": "The /k/ that ends “work” joins “out”, and the /t/ that ends “out” joins “at”: “wur-kou-tat eight”. The logic is the same as in earlier levels, applied across four words. Practising with routines helps you recognise the pattern when people talk about their day.",
+      "phoneticRule": "Consonant-to-vowel linking extends to longer chunks without changing its logic; only the number of qualifying boundaries increases.",
+      "phenomenonType": "Linking",
+      "spokenForm": "wur-kou-tat eight"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L19_Q1",
+      "instruction": "Predict how the start of “Will it rain later?” will sound. Which chunking is most likely?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "will it rain",
+      "textToSpeak": "will it rain",
+      "options": [
+        "“wi-lit rain”, with the /l/ starting “it”",
+        "“will … it rain”, with a break before “it”",
+        "“wi-it rain”, with the /l/ dropped so the vowels join"
+      ],
+      "correctAnswer": "“wi-lit rain”, with the /l/ starting “it”",
+      "correctAnswerIndex": 0,
+      "hint": "Predict first, then say it the way you would ask a friend about the weather. Notice which word the /l/ seems to join.",
+      "explanation": "The /l/ at the end of “will” attaches to “it”, so the opening of the question sounds like “wi-lit rain”. Question openers with “will”, “would” or “can” are short and quick, so the shifted edges are easy to miss. Predicting them trains you to hear the whole question.",
+      "phoneticRule": "Because auxiliaries and pronouns sit side by side at the start of a question, the auxiliary's final consonant often shifts onto the pronoun, so the question stem is heard as one quick chunk.",
+      "phenomenonType": "Linking",
+      "spokenForm": "wi-lit rain"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L19_Q2",
+      "instruction": "Choose the best explanation for how “have I” sounds at the start of “Have I told you?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "have I told",
+      "textToSpeak": "have I told",
+      "options": [
+        "The /v/ is dropped and “have” becomes “ha”, so two vowels meet",
+        "The /v/ stays with “have”, and “I” gets a short break before it",
+        "The /v/ is heard at the start of “I”, giving “ha-vai”"
+      ],
+      "correctAnswer": "The /v/ is heard at the start of “I”, giving “ha-vai”",
+      "correctAnswerIndex": 2,
+      "hint": "Say the first two words alone, quickly, as if they were one word. Which consonant do you think begins the second syllable?",
+      "explanation": "“Have” ends in /v/, and “I” is a vowel sound, so the /v/ moves across: “ha-vai”. “Have I” can then sound like a single word, which is why some learners cannot pick out the pronoun. Listening for the link helps you separate the two.",
+      "phoneticRule": "The pronoun “I” starts with a vowel sound, so it readily receives the final consonant of a preceding auxiliary, as in “have I”, “did I” and “can I”.",
+      "phenomenonType": "Linking",
+      "spokenForm": "ha-vai told"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L19_Q3",
+      "instruction": "A teacher asks the room, “Can anyone help?” Which chunking fits the words “can anyone help”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "can anyone help",
+      "textToSpeak": "can anyone help",
+      "options": [
+        "“can … anyone help”, with a break before “anyone”",
+        "“kuh-nen-ee-wun help”, with the /n/ starting “anyone”",
+        "“kuh-ee-wun help”, with the /n/ dropped after the weak vowel"
+      ],
+      "correctAnswer": "“kuh-nen-ee-wun help”, with the /n/ starting “anyone”",
+      "correctAnswerIndex": 1,
+      "hint": "Say it as if you are calling out to a room of people. Where does the /n/ sit relative to the word “anyone”?",
+      "explanation": "The weak word “can” ends in /n/, and “anyone” starts with a vowel, so the /n/ moves onto it: “kuh-nen-ee-wun help”. Group questions often start this way, so the shape is worth recognising. The word “can” is also weak here, which is a topic for a later stage.",
+      "phoneticRule": "Questions beginning with “can” followed by a vowel-initial subject show the same n-linking pattern as other auxiliary + pronoun sequences.",
+      "phenomenonType": "Linking",
+      "spokenForm": "kuh-nen-ee-wun help"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L20_Q1",
+      "instruction": "Which pair of words in “It’s an old photo” is NOT linked by a consonant-to-vowel connection?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "It’s an old photo",
+      "textToSpeak": "It’s an old photo",
+      "options": [
+        "“old photo”",
+        "“It’s an”",
+        "“an old”"
+      ],
+      "correctAnswer": "“old photo”",
+      "correctAnswerIndex": 0,
+      "hint": "Test each pair: does the first word end in a consonant sound, and does the second start with a vowel sound? One pair fails the test.",
+      "explanation": "“It’s an” links /s/ to “an” (“it-san”), and “an old” links /n/ to “old” (“a-nold”). “Old photo” is /d/ + /f/, consonant to consonant, so no such link happens. Sorting boundaries like this is what makes fast speech feel less mysterious.",
+      "phoneticRule": "A boundary shows consonant-to-vowel linking only when the first word ends in a consonant sound and the second begins with a vowel sound; both conditions must hold.",
+      "phenomenonType": "Linking",
+      "spokenForm": "it-sa-nold photo"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L20_Q2",
+      "instruction": "Your teacher says “Hand it in on Monday.” Which version matches fluent speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Hand it in on Monday",
+      "textToSpeak": "Hand it in on Monday",
+      "options": [
+        "“hand … it … in … on Monday”, each word clearly separated",
+        "“han-di-ti-non Monday”, with three consonants shifting forward",
+        "“han-dit in on Monday”, with only the /d/ moving forward"
+      ],
+      "correctAnswer": "“han-di-ti-non Monday”, with three consonants shifting forward",
+      "correctAnswerIndex": 1,
+      "hint": "Find every place where a word-final consonant meets a vowel-initial word, and mark them all before you choose.",
+      "explanation": "Three boundaries qualify: /d/ + “it”, /t/ + “in”, and /n/ + “on”. Each consonant starts the next syllable, so the words form one smooth chain before “Monday”. A long chain like this is easier to decode when you read it boundary by boundary.",
+      "phoneticRule": "Long chunks are decoded by working through boundaries in order: every consonant + vowel boundary contributes a shifted syllable edge, and consonant + consonant boundaries do not.",
+      "phenomenonType": "Linking",
+      "spokenForm": "han-di-ti-non Monday"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L20_Q3",
+      "instruction": "At a hotel you hear “Check in at the desk.” Which statement is accurate?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "check in at the desk",
+      "textToSpeak": "check in at the desk",
+      "options": [
+        "Every boundary in the phrase links because the words are said quickly",
+        "Only the boundary between “in” and “at” links, since “check in” is a single verb",
+        "“Check in” and “in at” link, but “at the” and “the desk” do not"
+      ],
+      "correctAnswer": "“Check in” and “in at” link, but “at the” and “the desk” do not",
+      "correctAnswerIndex": 2,
+      "hint": "Go boundary by boundary and ask whether a consonant meets a vowel. Ignore how quickly the phrase is said.",
+      "explanation": "“Check” ends in /k/ and “in” starts with a vowel, so you hear “che-kin”. “In” ends in /n/ and “at” starts with a vowel, so you hear “i-nat”. “At the” is consonant-to-consonant and “the desk” is vowel-to-consonant, so neither shows this link. Speed does not create links where the sounds do not allow them.",
+      "phoneticRule": "Speed does not create links: a link needs a consonant + vowel boundary, and boundaries without that combination are unaffected by this pattern.",
+      "phenomenonType": "Linking",
+      "spokenForm": "che-ki-nat the desk"
+    }
+  ]
 }

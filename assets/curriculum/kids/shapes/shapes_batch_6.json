@@ -6,54 +6,54 @@
                 "id": "KIDS_SHAPES_L51_Q1",
                 "gameType": "shapes",
                 "level": 51,
-                "instruction": "Which shape has 4 corners and exactly two pairs of matching sides?",
-                "correctAnswer": "Rectangle",
+                "instruction": "Which shape has two pairs of parallel sides?",
+                "correctAnswer": "Rhombus",
                 "options": [
-                    "Square",
-                    "Rectangle",
-                    "Triangle"
+                    "Trapezoid",
+                    "Triangle",
+                    "Rhombus"
                 ],
-                "hint": "Look for the shape where the sides come in two matching pairs, not all four equal.",
-                "emoji": "🟦",
-                "explanation": "A rectangle has exactly two pairs of matching sides: two long and two short.",
-                "funFact": "A rectangle always has two pairs of equal sides, even a very long, thin one.",
-                "subtype": "sides_and_corners",
+                "hint": "Look for a shape where both pairs of opposite sides run side by side.",
+                "emoji": "🛤️",
+                "explanation": "In a rhombus, each side is parallel to the side across from it, so there are two pairs. A trapezoid has just one pair and a triangle has none.",
+                "funFact": "A four-sided shape with two pairs of parallel sides is called a parallelogram.",
+                "subtype": "shape_attributes",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L51_Q2",
                 "gameType": "shapes",
                 "level": 51,
-                "instruction": "Which shape has 3 straight sides that always add up to a closed shape?",
-                "correctAnswer": "Triangle",
+                "instruction": "How many pairs of parallel sides does a regular hexagon have?",
+                "correctAnswer": "3",
                 "options": [
-                    "Circle",
-                    "Triangle",
-                    "Rectangle"
+                    "2",
+                    "3",
+                    "6"
                 ],
-                "hint": "Look for the shape formed by connecting just three points together.",
-                "emoji": "🔺",
-                "explanation": "Connecting any 3 points with straight lines always makes a closed triangle.",
-                "funFact": "A triangle is the simplest shape you can make using only straight lines.",
-                "subtype": "sides_and_corners",
+                "hint": "Each side of a regular hexagon runs alongside the side directly across from it.",
+                "emoji": "🏁",
+                "explanation": "A regular hexagon has six sides, and each one is parallel to the side directly across from it. Six sides in pairs make three pairs.",
+                "funFact": "A stop sign, which is a regular octagon, has four pairs of parallel sides.",
+                "subtype": "shape_attributes",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L51_Q3",
                 "gameType": "shapes",
                 "level": 51,
-                "instruction": "Which shape has no corners but looks stretched compared to a perfectly round shape?",
-                "correctAnswer": "Oval",
+                "instruction": "Which shape has no parallel sides at all?",
+                "correctAnswer": "Triangle",
                 "options": [
-                    "Diamond",
-                    "Oval",
-                    "Circle"
+                    "Triangle",
+                    "Rectangle",
+                    "Regular hexagon"
                 ],
-                "hint": "Look for the shape that curves all around but isn't perfectly round.",
-                "emoji": "🥚",
-                "explanation": "An oval curves all around with no corners, but it's stretched, unlike a perfectly round circle.",
-                "funFact": "Many eggs and footballs are shaped like ovals instead of perfect circles.",
-                "subtype": "sides_and_corners",
+                "hint": "Parallel sides never meet. Check whether any two sides could be stretched forever without crossing.",
+                "emoji": "🧭",
+                "explanation": "If you stretch any two sides of a triangle, they cross at a corner, so no two sides are parallel. A rectangle has two pairs and a regular hexagon has three.",
+                "funFact": "Lines that are not parallel will cross each other somewhere if they are extended far enough.",
+                "subtype": "shape_attributes",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -65,54 +65,54 @@
                 "id": "KIDS_SHAPES_L52_Q1",
                 "gameType": "shapes",
                 "level": 52,
-                "instruction": "Which shape has 4 sides, and cutting it exactly corner to corner makes two matching triangles?",
-                "correctAnswer": "Square",
+                "instruction": "In a diagram, one circle holds shapes with four sides and another circle holds shapes with all sides equal. Where does a rectangle with two long sides and two short sides go?",
+                "correctAnswer": "Only in the four-sides circle",
                 "options": [
-                    "Circle",
-                    "Square",
-                    "Rectangle"
+                    "Only in the equal-sides circle",
+                    "In the overlap of both circles",
+                    "Only in the four-sides circle"
                 ],
-                "hint": "Look for the shape where a diagonal line splits it into two equal triangle halves.",
-                "emoji": "🟩",
-                "explanation": "Cutting a square from corner to corner always makes two matching triangles.",
-                "funFact": "This diagonal cut works because all four sides of a square are equal.",
-                "subtype": "sides_and_corners",
+                "hint": "Check the rectangle against each rule, one at a time.",
+                "emoji": "🗳️",
+                "explanation": "The rectangle has four sides, so it fits the first circle. Its sides are not all equal, so it does not fit the second circle.",
+                "funFact": "Venn diagrams are named after John Venn, an English mathematician who used them in the 1880s.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L52_Q2",
                 "gameType": "shapes",
                 "level": 52,
-                "instruction": "Which shape has the same width no matter which direction you measure across it?",
-                "correctAnswer": "Circle",
+                "instruction": "Four shapes are listed: square, rhombus, rectangle, and kite. The rule is four equal sides and four square corners. How many of these shapes follow the rule?",
+                "correctAnswer": "1",
                 "options": [
-                    "Oval",
-                    "Rectangle",
-                    "Circle"
+                    "1",
+                    "2",
+                    "3"
                 ],
-                "hint": "Look for the shape where every measurement across the middle comes out the same.",
-                "emoji": "🔵",
-                "explanation": "A circle measures the same width across the middle no matter which direction you check.",
-                "funFact": "This equal-width property is unique to circles among common shapes.",
-                "subtype": "sides_and_corners",
+                "hint": "A shape has to pass both parts of the rule.",
+                "emoji": "🧪",
+                "explanation": "Only the square has four equal sides and four square corners. A rhombus can lean, a rectangle can have long and short sides, and a kite has two different pairs of sides.",
+                "funFact": "Venn diagrams can have three overlapping circles as well as two.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L52_Q3",
                 "gameType": "shapes",
                 "level": 52,
-                "instruction": "Which shape has 4 equal sides but its corners are not at the top-left, top-right, bottom-left, and bottom-right?",
-                "correctAnswer": "Diamond",
+                "instruction": "A diagram has one circle for shapes with four sides and one circle for shapes with a curved edge. Which shape would sit outside both circles?",
+                "correctAnswer": "Pentagon",
                 "options": [
                     "Square",
-                    "Diamond",
-                    "Rectangle"
+                    "Semicircle",
+                    "Pentagon"
                 ],
-                "hint": "Look for the shape whose corners point straight up, down, left, and right instead.",
-                "emoji": "💎",
-                "explanation": "A diamond's 4 equal sides meet at corners pointing up, down, left, and right, not at the usual box corners.",
-                "funFact": "Turning a square 45 degrees is exactly how you create a diamond shape.",
-                "subtype": "sides_and_corners",
+                "hint": "Find a shape that fails both rules.",
+                "emoji": "🧳",
+                "explanation": "A pentagon has five sides and no curved edge, so it fits neither circle. A square fits the first circle and a semicircle fits the second.",
+                "funFact": "The box around the circles in a Venn diagram stands for everything being sorted, including shapes that fit neither circle.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -124,54 +124,54 @@
                 "id": "KIDS_SHAPES_L53_Q1",
                 "gameType": "shapes",
                 "level": 53,
-                "instruction": "Which shape could be cut in half the short way to make two small squares?",
-                "correctAnswer": "Rectangle",
+                "instruction": "In a guessing game, the clues are only straight sides, an odd number of sides, and more than three sides. Which shape is it?",
+                "correctAnswer": "Pentagon",
                 "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Square"
+                    "Hexagon",
+                    "Pentagon",
+                    "Rectangle"
                 ],
-                "hint": "Look for the shape that is exactly twice as long as it is wide.",
-                "emoji": "🟦",
-                "explanation": "Some rectangles are exactly twice as long as they are wide, so cutting them in half makes two squares.",
-                "funFact": "Not every rectangle splits into squares — it depends on its exact length and width.",
-                "subtype": "sides_and_corners",
+                "hint": "Use the clues one at a time to remove choices.",
+                "emoji": "🕹️",
+                "explanation": "A hexagon and a rectangle have an even number of sides. A pentagon has five, which is odd and more than three.",
+                "funFact": "Guessing games with yes-or-no clues are a good way to practice sorting by properties.",
+                "subtype": "shape_attributes",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L53_Q2",
                 "gameType": "shapes",
                 "level": 53,
-                "instruction": "Which shape has corners that always add up to the same total amount of turning?",
-                "correctAnswer": "Triangle",
+                "instruction": "The clues are four sides and exactly one pair of parallel sides. Which shape is it?",
+                "correctAnswer": "Trapezoid",
                 "options": [
-                    "Triangle",
+                    "Trapezoid",
                     "Rectangle",
-                    "Square"
+                    "Rhombus"
                 ],
-                "hint": "Look for the shape with the fewest corners, where the angles always total the same amount.",
-                "emoji": "🔺",
-                "explanation": "The three corners of any triangle always add up to the same total amount, no matter its size.",
-                "funFact": "This special rule about triangle corners is one of the first rules of shapes ever discovered.",
-                "subtype": "sides_and_corners",
+                "hint": "Count the pairs of parallel sides in each choice.",
+                "emoji": "🪄",
+                "explanation": "A rectangle and a rhombus both have two pairs of parallel sides. A trapezoid has only one pair.",
+                "funFact": "The two parallel sides of a trapezoid are called its bases.",
+                "subtype": "shape_attributes",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L53_Q3",
                 "gameType": "shapes",
                 "level": 53,
-                "instruction": "Which shape is a rectangle, but with the extra rule that all sides must match?",
-                "correctAnswer": "Square",
+                "instruction": "Which fact helps you tell a rhombus apart from a kite?",
+                "correctAnswer": "A rhombus has all four sides equal",
                 "options": [
-                    "Diamond",
-                    "Square",
-                    "Rectangle"
+                    "A rhombus has four sides",
+                    "A rhombus has four corners",
+                    "A rhombus has all four sides equal"
                 ],
-                "hint": "Look for the shape that fits the rectangle family, but is extra balanced.",
-                "emoji": "🟩",
-                "explanation": "A square is actually a special rectangle where every side happens to be equal.",
-                "funFact": "That means every square is a rectangle, but not every rectangle is a square!",
-                "subtype": "sides_and_corners",
+                "hint": "Look for a fact that is true for a rhombus but not for an ordinary kite.",
+                "emoji": "🧶",
+                "explanation": "Both shapes have four sides and four corners. Only the rhombus must have all four sides equal, while a kite has two different pairs.",
+                "funFact": "The two lines joining opposite corners of a kite cross at a square corner.",
+                "subtype": "shape_comparison",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -183,54 +183,54 @@
                 "id": "KIDS_SHAPES_L54_Q1",
                 "gameType": "shapes",
                 "level": 54,
-                "instruction": "Which shape is sometimes called a stretched circle by young learners?",
-                "correctAnswer": "Oval",
+                "instruction": "Mia drew three four-sided shapes. A has four equal sides and square corners. B has four equal sides and leaning corners. C has two long and two short sides with square corners. Which two are both rectangles?",
+                "correctAnswer": "A and C",
                 "options": [
-                    "Oval",
-                    "Circle",
-                    "Rectangle"
+                    "A and B",
+                    "A and C",
+                    "B and C"
                 ],
-                "hint": "Look for the shape that keeps the smooth curve of a circle but not the roundness.",
-                "emoji": "🥚",
-                "explanation": "An oval keeps the smooth curved edge of a circle, but stretches it longer in one direction.",
-                "funFact": "Ovals have no corners at all, just like their circle cousin.",
-                "subtype": "sides_and_corners",
+                "hint": "A rectangle needs four square corners.",
+                "emoji": "🧑‍🎨",
+                "explanation": "A and C both have four square corners, so both are rectangles, and A is a special rectangle with equal sides. B has leaning corners, so it is not a rectangle.",
+                "funFact": "Mathematicians sort shapes into families so they can prove facts about many shapes at once.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L54_Q2",
                 "gameType": "shapes",
                 "level": 54,
-                "instruction": "Which shape has zero straight sides and zero corners, making it the roundest shape of all?",
-                "correctAnswer": "Circle",
+                "instruction": "Which pair always looks exactly alike except for size?",
+                "correctAnswer": "Two squares",
                 "options": [
-                    "Oval",
-                    "Circle",
-                    "Diamond"
+                    "Two rectangles",
+                    "Two rhombuses",
+                    "Two squares"
                 ],
-                "hint": "Look for the shape that is round on every single point of its edge.",
-                "emoji": "🔵",
-                "explanation": "A circle has zero straight sides and zero corners, making it perfectly round all over.",
-                "funFact": "Wheels are shaped like circles so they roll smoothly without any bumps.",
-                "subtype": "sides_and_corners",
+                "hint": "Think about whether making one bigger or smaller could ever turn it into the other.",
+                "emoji": "🖨️",
+                "explanation": "Every square has four equal sides and square corners, so a bigger square is just a smaller one scaled up. Rectangles can be long or squat, and rhombuses can lean by different amounts.",
+                "funFact": "A photocopier can enlarge a square and it stays a square.",
+                "subtype": "shape_comparison",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L54_Q3",
                 "gameType": "shapes",
                 "level": 54,
-                "instruction": "Which shape shares its 4 equal sides with a square, but stands on a corner instead of a flat edge?",
-                "correctAnswer": "Diamond",
+                "instruction": "A triangle, a square, a pentagon, and a hexagon are sorted by whether they have an even or odd number of sides. How many have an even number of sides?",
+                "correctAnswer": "2",
                 "options": [
-                    "Rectangle",
-                    "Square",
-                    "Diamond"
+                    "1",
+                    "2",
+                    "3"
                 ],
-                "hint": "Look for the shape that seems tipped over compared to a plain box shape.",
-                "emoji": "💎",
-                "explanation": "A diamond has 4 equal sides like a square, but it balances on a corner instead of a flat edge.",
-                "funFact": "If you spin a square by 45 degrees, it turns into a diamond shape.",
-                "subtype": "sides_and_corners",
+                "hint": "Write the number of sides for each shape first.",
+                "emoji": "🔟",
+                "explanation": "The square has 4 sides and the hexagon has 6, which are both even. The triangle has 3 and the pentagon has 5, which are odd.",
+                "funFact": "Even numbers always end in 0, 2, 4, 6, or 8.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -242,54 +242,54 @@
                 "id": "KIDS_SHAPES_L55_Q1",
                 "gameType": "shapes",
                 "level": 55,
-                "instruction": "Which shape needs the fewest straight lines to close up completely?",
-                "correctAnswer": "Triangle",
+                "instruction": "A woodworker has a rectangular piece, an L-shaped piece, and a triangular piece. Which piece has the most corners?",
+                "correctAnswer": "The L-shaped piece",
                 "options": [
-                    "Square",
-                    "Rectangle",
-                    "Triangle"
+                    "The L-shaped piece",
+                    "The rectangular piece",
+                    "The triangular piece"
                 ],
-                "hint": "Look for the shape you cannot remove even a single side from.",
-                "emoji": "🔺",
-                "explanation": "A triangle needs only 3 straight lines to close up completely.",
-                "funFact": "Two straight lines can never close up into a shape — you always need at least three.",
-                "subtype": "sides_and_corners",
+                "hint": "Walk around each outline and count every turn.",
+                "emoji": "🪚",
+                "explanation": "The L-shaped outline has six corners, the rectangle has four, and the triangle has three.",
+                "funFact": "Many kitchens use L-shaped counters so two walls can share one work space.",
+                "subtype": "shape_application",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L55_Q2",
                 "gameType": "shapes",
                 "level": 55,
-                "instruction": "Which shape has 4 right-angle corners, just like a square, but a different side pattern?",
-                "correctAnswer": "Rectangle",
+                "instruction": "A tile maker cuts a regular hexagon, a square, and a triangle. Which tile has the most pairs of parallel sides?",
+                "correctAnswer": "Regular hexagon",
                 "options": [
                     "Square",
                     "Triangle",
-                    "Rectangle"
+                    "Regular hexagon"
                 ],
-                "hint": "Look for the shape with the same square corners as a square, but longer on two sides.",
-                "emoji": "🟦",
-                "explanation": "A rectangle shares square corners with a square, but its sides are two different lengths instead of all equal.",
-                "funFact": "Both squares and rectangles always have four perfect right-angle corners.",
-                "subtype": "sides_and_corners",
+                "hint": "Count the pairs of sides that face each other and run side by side.",
+                "emoji": "🏬",
+                "explanation": "A regular hexagon has three pairs of parallel sides, a square has two, and a triangle has none.",
+                "funFact": "Triangles, squares, and hexagons are the only regular shapes that can cover a floor by themselves with no gaps.",
+                "subtype": "shape_application",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L55_Q3",
                 "gameType": "shapes",
                 "level": 55,
-                "instruction": "Which shape has 4 equal sides and would fit perfectly inside a picture frame that is just as tall as it is wide?",
-                "correctAnswer": "Square",
+                "instruction": "A craft store has two bins: Bin 1 for shapes with only straight sides and Bin 2 for shapes with at least one curved edge. Which bin does a semicircle go in?",
+                "correctAnswer": "Bin 2",
                 "options": [
-                    "Oval",
-                    "Rectangle",
-                    "Square"
+                    "Bin 2",
+                    "Bin 1",
+                    "Neither bin"
                 ],
-                "hint": "Look for the shape that would perfectly fill a frame shaped exactly like a box.",
-                "emoji": "🟩",
-                "explanation": "A square fits perfectly in a frame that is equally tall and wide, since all its sides match.",
-                "funFact": "A square always has the same height and width, no matter how big it is.",
-                "subtype": "sides_and_corners",
+                "hint": "Check whether a semicircle has any curved edge at all.",
+                "emoji": "🧰",
+                "explanation": "A semicircle has one curved edge and one straight edge. Because it has at least one curve, it goes in Bin 2.",
+                "funFact": "A semicircle is exactly half of a circle, cut along a straight line through the center.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -301,54 +301,54 @@
                 "id": "KIDS_SHAPES_L56_Q1",
                 "gameType": "shapes",
                 "level": 56,
-                "instruction": "Which shape has a center point that is exactly the same distance from every edge point?",
-                "correctAnswer": "Circle",
+                "instruction": "Which statement about a trapezoid and a rectangle is true?",
+                "correctAnswer": "A rectangle has two pairs of parallel sides; a trapezoid has one",
                 "options": [
-                    "Oval",
-                    "Square",
-                    "Circle"
+                    "Both have exactly one pair of parallel sides",
+                    "A rectangle has two pairs of parallel sides; a trapezoid has one",
+                    "A trapezoid has more sides than a rectangle"
                 ],
-                "hint": "Look for the shape where the middle point never gets closer or farther from the edge.",
-                "emoji": "🔵",
-                "explanation": "A circle's center is always the exact same distance from every point on its edge.",
-                "funFact": "This equal-distance rule is the actual definition mathematicians use for a circle.",
-                "subtype": "sides_and_corners",
+                "hint": "Count the pairs of parallel sides in each shape.",
+                "emoji": "🛋️",
+                "explanation": "A rectangle has two pairs of parallel sides, while a trapezoid has just one pair. Both shapes have four sides.",
+                "funFact": "Many lampshades have sides shaped like trapezoids.",
+                "subtype": "shape_comparison",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L56_Q2",
                 "gameType": "shapes",
                 "level": 56,
-                "instruction": "Which shape has two different curved measurements, one longer than the other?",
-                "correctAnswer": "Oval",
+                "instruction": "A group contains a square, a rectangle, a rhombus, a kite, and a trapezoid. What is the best name for the whole group?",
+                "correctAnswer": "Quadrilaterals",
                 "options": [
-                    "Oval",
-                    "Circle",
-                    "Diamond"
+                    "Quadrilaterals",
+                    "Triangles",
+                    "Pentagons"
                 ],
-                "hint": "Look for the shape that is a bit wider going one way than the other.",
-                "emoji": "🥚",
-                "explanation": "An oval has one longer curved measurement and one shorter one, unlike a perfectly even circle.",
-                "funFact": "Ovals can be gently stretched circles, wider one way than the other.",
-                "subtype": "sides_and_corners",
+                "hint": "Count the sides on every shape in the group.",
+                "emoji": "🗞️",
+                "explanation": "All five shapes have four sides, and four-sided shapes are called quadrilaterals.",
+                "funFact": "A quadrangle on a school campus is a four-sided courtyard.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L56_Q3",
                 "gameType": "shapes",
                 "level": 56,
-                "instruction": "Which shape can be made by folding a square exactly in half along its corner-to-corner line?",
-                "correctAnswer": "Triangle",
+                "instruction": "Which group contains only polygons that are not quadrilaterals?",
+                "correctAnswer": "Triangle, pentagon, hexagon",
                 "options": [
-                    "Rectangle",
-                    "Square",
-                    "Triangle"
+                    "Square, rectangle, kite",
+                    "Rhombus, trapezoid, square",
+                    "Triangle, pentagon, hexagon"
                 ],
-                "hint": "Look for the shape you get from cutting a square along its diagonal.",
-                "emoji": "🔺",
-                "explanation": "Folding or cutting a square along its diagonal line always makes two triangle halves.",
-                "funFact": "This is a handy trick — a square can always be split into two matching triangles.",
-                "subtype": "sides_and_corners",
+                "hint": "Quadrilaterals have four sides. Avoid any group that includes a four-sided shape.",
+                "emoji": "🌐",
+                "explanation": "A triangle, a pentagon, and a hexagon are polygons with three, five, and six sides. The other groups are all four-sided.",
+                "funFact": "A polygon with twelve sides is called a dodecagon.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -360,54 +360,54 @@
                 "id": "KIDS_SHAPES_L57_Q1",
                 "gameType": "shapes",
                 "level": 57,
-                "instruction": "Which shape has 4 equal sides and its widest point exactly in the center, left to right?",
-                "correctAnswer": "Diamond",
+                "instruction": "A box holds 2 triangles, 3 squares, 1 pentagon, and 2 circles. How many of the shapes have only straight sides?",
+                "correctAnswer": "6",
                 "options": [
-                    "Diamond",
-                    "Square",
-                    "Rectangle"
+                    "6",
+                    "7",
+                    "8"
                 ],
-                "hint": "Look for the shape that bulges out the most right in the middle.",
-                "emoji": "💎",
-                "explanation": "A diamond is widest exactly in the middle, between its top point and bottom point.",
-                "funFact": "This wide-middle look is what makes diamond shapes so easy to spot.",
-                "subtype": "sides_and_corners",
+                "hint": "Leave out the shapes with curved edges, then count the rest.",
+                "emoji": "🥡",
+                "explanation": "The 2 triangles, 3 squares, and 1 pentagon have only straight sides, which makes 6. The 2 circles are curved.",
+                "funFact": "Counting items by kind is the first step in making a tally chart or a bar chart.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L57_Q2",
                 "gameType": "shapes",
                 "level": 57,
-                "instruction": "Which shape has 4 sides, 4 corners, and could be described as the most balanced 4-sided shape?",
-                "correctAnswer": "Square",
+                "instruction": "A teacher sorts shapes into two groups. The curved group has a circle, an oval, and a crescent. The straight group has a triangle, a square, a hexagon, and a kite. Which group is bigger, and by how many?",
+                "correctAnswer": "Straight group, by 1",
                 "options": [
-                    "Square",
-                    "Diamond",
-                    "Rectangle"
+                    "Curved group, by 1",
+                    "They are the same size",
+                    "Straight group, by 1"
                 ],
-                "hint": "Look for the shape with no side longer or shorter than any other.",
-                "emoji": "🟩",
-                "explanation": "A square is the most balanced 4-sided shape because every side and angle matches.",
-                "funFact": "Because it's so balanced, a square is used in games like tic-tac-toe grids.",
-                "subtype": "sides_and_corners",
+                "hint": "Count the shapes in each group, then compare.",
+                "emoji": "🤼",
+                "explanation": "The straight group has 4 shapes and the curved group has 3, so the straight group is bigger by 1.",
+                "funFact": "Man-made objects like windows, doors, and books mostly have straight edges.",
+                "subtype": "shape_comparison",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L57_Q3",
                 "gameType": "shapes",
                 "level": 57,
-                "instruction": "Which shape has 4 sides and 4 corners, but is not as balanced as a square?",
-                "correctAnswer": "Rectangle",
+                "instruction": "Ten shapes are on a shelf: 6 have four sides, 3 have three sides, and 1 has five sides. How many do not have four sides?",
+                "correctAnswer": "4",
                 "options": [
-                    "Square",
-                    "Triangle",
-                    "Rectangle"
+                    "3",
+                    "4",
+                    "6"
                 ],
-                "hint": "Look for the shape where two sides are clearly longer than the other two.",
-                "emoji": "🟦",
-                "explanation": "A rectangle has 4 corners like a square, but its sides come in two unequal lengths.",
-                "funFact": "A rectangle can be stretched very long and thin while still keeping its four right angles.",
-                "subtype": "sides_and_corners",
+                "hint": "Add up the shapes that are not four-sided.",
+                "emoji": "🧷",
+                "explanation": "The 3 three-sided shapes and the 1 five-sided shape are not four-sided, and 3 + 1 = 4. You could also take 6 away from 10.",
+                "funFact": "Taking a part away from a total, like 10 − 6, is a quick way to count what is left over.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -419,54 +419,54 @@
                 "id": "KIDS_SHAPES_L58_Q1",
                 "gameType": "shapes",
                 "level": 58,
-                "instruction": "Which shape has no flat parts anywhere, making it impossible to stack neatly in a pile?",
-                "correctAnswer": "Circle",
+                "instruction": "Tom says all shapes with four sides have two pairs of parallel sides. Which shape proves him wrong?",
+                "correctAnswer": "Trapezoid",
                 "options": [
-                    "Square",
-                    "Circle",
-                    "Rectangle"
+                    "Rhombus",
+                    "Rectangle",
+                    "Trapezoid"
                 ],
-                "hint": "Look for the shape that would roll away instead of stacking flat.",
-                "emoji": "🔵",
-                "explanation": "A circle has no flat sides, so round objects tend to roll instead of stack neatly.",
-                "funFact": "That's why coins are stacked flat side down, not rolled on their round edge.",
-                "subtype": "sides_and_corners",
+                "hint": "Find a four-sided shape that has fewer than two pairs.",
+                "emoji": "🙄",
+                "explanation": "A trapezoid has four sides but only one pair of parallel sides. A rhombus and a rectangle each have two pairs.",
+                "funFact": "Showing one example that breaks a rule is enough to prove the rule wrong.",
+                "subtype": "shape_comparison",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L58_Q2",
                 "gameType": "shapes",
                 "level": 58,
-                "instruction": "Which shape, when you add up its three corners, always gives the same total no matter its size?",
-                "correctAnswer": "Triangle",
+                "instruction": "Nora says a shape with curved edges cannot have corners. Which shape proves her wrong?",
+                "correctAnswer": "Heart",
                 "options": [
-                    "Triangle",
+                    "Heart",
                     "Circle",
-                    "Square"
+                    "Oval"
                 ],
-                "hint": "Look for the shape with 3 corners and a very famous rule about their total.",
-                "emoji": "🔺",
-                "explanation": "No matter how a triangle is shaped, its three corners always add up to the same fixed total.",
-                "funFact": "This is one of the very first rules children learn about triangles in geometry.",
-                "subtype": "sides_and_corners",
+                "hint": "Find a shape that has a curved edge and also a corner.",
+                "emoji": "🫀",
+                "explanation": "A heart has curved edges and also corners at its dip and its point. A circle and an oval have no corners, so they fit Nora's rule.",
+                "funFact": "Scientists test ideas the same way, by looking for one case that breaks the rule.",
+                "subtype": "shape_comparison",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L58_Q3",
                 "gameType": "shapes",
                 "level": 58,
-                "instruction": "Which shape looks like an egg lying on its side, with no corners at all?",
-                "correctAnswer": "Oval",
+                "instruction": "Ravi says: The bigger a shape is, the more corners it has. Which pair proves him wrong?",
+                "correctAnswer": "A huge square and a small hexagon",
                 "options": [
-                    "Circle",
-                    "Square",
-                    "Oval"
+                    "A small triangle and a huge pentagon",
+                    "A huge square and a small hexagon",
+                    "A small hexagon and a huge octagon"
                 ],
-                "hint": "Look for the shape that curves smoothly but isn't perfectly round like a ball.",
-                "emoji": "🥚",
-                "explanation": "An oval looks like an egg on its side, curving smoothly with no corners at all.",
-                "funFact": "Egg shapes are ovals, though real eggs are usually a little more pointed on one end.",
-                "subtype": "sides_and_corners",
+                "hint": "Look for the pair where the bigger shape has fewer corners.",
+                "emoji": "🦒",
+                "explanation": "The huge square has 4 corners, but the small hexagon has 6, so the bigger shape has fewer. In the other pairs the bigger shape has more.",
+                "funFact": "A shape's number of corners depends on its form, not on its size.",
+                "subtype": "shape_comparison",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -478,54 +478,54 @@
                 "id": "KIDS_SHAPES_L59_Q1",
                 "gameType": "shapes",
                 "level": 59,
-                "instruction": "Which shape has 4 equal sides, making every single side interchangeable with any other?",
-                "correctAnswer": "Square",
+                "instruction": "A sorting tree asks two questions: Does the shape have a curved edge? Does it have four sides? How would a hexagon answer?",
+                "correctAnswer": "No to both questions",
                 "options": [
-                    "Square",
-                    "Rectangle",
-                    "Diamond"
+                    "Yes to both questions",
+                    "No to both questions",
+                    "Yes to the first, no to the second"
                 ],
-                "hint": "Look for the shape where you could swap any two sides and nothing would change.",
-                "emoji": "🟩",
-                "explanation": "Because all 4 sides of a square are equal, you could swap them and the shape would look the same.",
-                "funFact": "This kind of matching is a big reason squares feel so neat and tidy.",
-                "subtype": "sides_and_corners",
+                "hint": "Think about the edges of a hexagon, then count its sides.",
+                "emoji": "🌳",
+                "explanation": "A hexagon has only straight sides, so the first answer is no. It has six sides, not four, so the second answer is no.",
+                "funFact": "Computers and doctors use yes-or-no sorting trees like this to make decisions.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L59_Q2",
                 "gameType": "shapes",
                 "level": 59,
-                "instruction": "Which shape has 4 equal sides and points that line up like the top, bottom, left, and right of a compass?",
-                "correctAnswer": "Diamond",
+                "instruction": "A different sorting tree asks: Is it a polygon? If yes, does it have more than five sides? Which shape ends up as a polygon with more than five sides?",
+                "correctAnswer": "Octagon",
                 "options": [
-                    "Star",
-                    "Diamond",
-                    "Square"
+                    "Pentagon",
+                    "Semicircle",
+                    "Octagon"
                 ],
-                "hint": "Look for the shape whose four points spread out like north, south, east, and west.",
-                "emoji": "💎",
-                "explanation": "A diamond's four points spread out like the directions on a compass: up, down, left, and right.",
-                "funFact": "This four-point layout is what makes diamonds a favorite shape for kites.",
-                "subtype": "sides_and_corners",
+                "hint": "Both answers have to be yes.",
+                "emoji": "🧬",
+                "explanation": "An octagon is a polygon with eight sides. A pentagon has exactly five, not more, and a semicircle is not a polygon because it has a curved edge.",
+                "funFact": "Yes-or-no questions can split any group of shapes into smaller and smaller groups.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L59_Q3",
                 "gameType": "shapes",
                 "level": 59,
-                "instruction": "Which shape has 4 corners, and if you double one pair of sides you could reshape it into a square?",
-                "correctAnswer": "Rectangle",
+                "instruction": "A kite and a trapezoid are both in a pile of four-sided shapes. A worker moves every shape with a pair of parallel sides into a new pile. Which shape stays behind if the kite is an ordinary one?",
+                "correctAnswer": "The kite",
                 "options": [
-                    "Square",
-                    "Rectangle",
-                    "Triangle"
+                    "The kite",
+                    "The trapezoid",
+                    "Neither shape"
                 ],
-                "hint": "Look for the shape that would become a perfect square if its short sides grew to match the long ones.",
-                "emoji": "🟦",
-                "explanation": "If a rectangle's shorter sides grew to match its longer sides, it would become a square.",
-                "funFact": "This shows how closely rectangles and squares are related in the shape family.",
-                "subtype": "sides_and_corners",
+                "hint": "Check which of the two has a pair of sides that run side by side.",
+                "emoji": "🏮",
+                "explanation": "A trapezoid has one pair of parallel sides, so it moves to the new pile. An ordinary kite has no parallel sides, so it stays behind.",
+                "funFact": "People have flown kites for over two thousand years.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -537,54 +537,54 @@
                 "id": "KIDS_SHAPES_L60_Q1",
                 "gameType": "shapes",
                 "level": 60,
-                "instruction": "Which shape has 3 sides and 3 corners, the smallest count of any straight-sided shape here?",
-                "correctAnswer": "Triangle",
+                "instruction": "Which group has shapes that all have four sides and at least one pair of parallel sides?",
+                "correctAnswer": "Square, rhombus, trapezoid",
                 "options": [
-                    "Rectangle",
-                    "Diamond",
-                    "Triangle"
+                    "Rectangle, kite, trapezoid",
+                    "Square, rhombus, trapezoid",
+                    "Triangle, square, rhombus"
                 ],
-                "hint": "Look for the shape with the fewest sides among all the choices.",
-                "emoji": "🔺",
-                "explanation": "A triangle's 3 sides and 3 corners make it the simplest straight-sided shape in this game.",
-                "funFact": "Every other straight-sided shape you'll meet has more sides than a triangle.",
-                "subtype": "sides_and_corners",
+                "hint": "A shape must pass both rules, so check each one in a group.",
+                "emoji": "🏆",
+                "explanation": "A square, a rhombus, and a trapezoid each have four sides and parallel sides. An ordinary kite has no parallel sides, and a triangle has only three sides.",
+                "funFact": "The word trapezoid comes from a Greek word meaning table.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L60_Q2",
                 "gameType": "shapes",
                 "level": 60,
-                "instruction": "Which shape has an edge that never turns sharply, only curves gently the whole way around?",
-                "correctAnswer": "Circle",
+                "instruction": "Eli sorted four shapes. Group A has a square, a rectangle, and a kite. Group B has a triangle and a hexagon. He says Group A is shapes with four equal sides. What did he get wrong?",
+                "correctAnswer": "A rectangle and a kite do not always have four equal sides",
                 "options": [
-                    "Circle",
-                    "Oval",
-                    "Diamond"
+                    "A rectangle and a kite do not always have four equal sides",
+                    "The groups should be swapped",
+                    "Nothing; his rule is right"
                 ],
-                "hint": "Look for the shape with absolutely no corners anywhere.",
-                "emoji": "🔵",
-                "explanation": "A circle's edge curves gently the whole way around with no sharp turns anywhere.",
-                "funFact": "This total smoothness is what makes circles roll so perfectly.",
-                "subtype": "sides_and_corners",
+                "hint": "Test his rule on each shape in Group A, not just the first one.",
+                "emoji": "🔬",
+                "explanation": "A square has four equal sides, but a rectangle can have long and short sides and a kite has two different pairs. A better rule for Group A is that every shape has four sides.",
+                "funFact": "Careful sorters check every item against the rule, not just the first one.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L60_Q3",
                 "gameType": "shapes",
                 "level": 60,
-                "instruction": "Which shape has 4 right-angle corners and two pairs of equal sides that are not all the same?",
-                "correctAnswer": "Rectangle",
+                "instruction": "Which shape could belong to all three groups: four sides, parallel sides, and all sides equal?",
+                "correctAnswer": "Rhombus",
                 "options": [
-                    "Square",
-                    "Rectangle",
-                    "Diamond"
+                    "Trapezoid",
+                    "Rhombus",
+                    "Kite"
                 ],
-                "hint": "Look for the shape shaped like a stretched square, longer on two sides.",
-                "emoji": "🟦",
-                "explanation": "A rectangle has 4 right-angle corners, with two pairs of equal sides that are not all four the same.",
-                "funFact": "You'll find rectangles everywhere — doors, books, phones, and windows.",
-                "subtype": "sides_and_corners",
+                "hint": "Remember which four-sided shapes always have equal sides.",
+                "emoji": "🎖️",
+                "explanation": "A rhombus has four sides, two pairs of parallel sides, and four equal sides. A trapezoid does not have equal sides, and an ordinary kite has no parallel sides.",
+                "funFact": "Rhombus patterns on tiles can make a floor look like stacked cubes.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             }
         ]

@@ -6,54 +6,54 @@
                 "id": "KIDS_SHAPES_L71_Q1",
                 "gameType": "shapes",
                 "level": 71,
-                "instruction": "Which shape has 5 sides and 5 corners, right between a square and a hexagon in side count?",
-                "correctAnswer": "Pentagon",
+                "instruction": "A square has a dot on its top left corner. It makes a quarter turn clockwise. Where is the dot now?",
+                "correctAnswer": "Top right",
                 "options": [
-                    "Pentagon",
-                    "Square",
-                    "Hexagon"
+                    "Bottom left",
+                    "Top right",
+                    "Bottom right"
                 ],
-                "hint": "This shape has one more side than a square, and one fewer than a hexagon.",
-                "emoji": "🏠",
-                "explanation": "A pentagon's 5 sides sit exactly between a square's 4 and a hexagon's 6.",
-                "funFact": "Lining up shapes by side count goes: triangle, square, pentagon, hexagon, octagon.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Follow the dot a quarter of the way around, in the direction clock hands move.",
+                "emoji": "🔴",
+                "explanation": "Turning clockwise carries the top left corner to the top right corner, so the dot ends up there.",
+                "funFact": "Following a marked corner is the easiest way to track what a turn has done to a shape.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L71_Q2",
                 "gameType": "shapes",
                 "level": 71,
-                "instruction": "Which shape has more sides than any other shape you've learned in this game so far?",
-                "correctAnswer": "Octagon",
+                "instruction": "A square has a dot on its top left corner. It is flipped left to right, and then given a half turn. Where is the dot now?",
+                "correctAnswer": "Bottom left",
                 "options": [
-                    "Hexagon",
-                    "Octagon",
-                    "Pentagon"
+                    "Top right",
+                    "Bottom right",
+                    "Bottom left"
                 ],
-                "hint": "Think of the shape used for stop signs, with the highest side count yet.",
-                "emoji": "🛑",
-                "explanation": "With 8 sides, an octagon has more straight sides than any shape learned so far.",
-                "funFact": "If a shape had even more sides, it would start to look almost round, like a circle.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Do the moves one at a time and follow the dot after each one.",
+                "emoji": "🔵",
+                "explanation": "The flip sends the dot from the top left to the top right. The half turn then sends it to the opposite corner, the bottom left.",
+                "funFact": "Two moves in a row can give the same result as one different move.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L71_Q3",
                 "gameType": "shapes",
                 "level": 71,
-                "instruction": "Which shape has 4 equal sides but a different corner arrangement than a typical square?",
-                "correctAnswer": "Diamond",
+                "instruction": "A rectangle is 8 cm wide and 3 cm tall, with a flag on its bottom right corner. It makes a quarter turn counterclockwise. What is true now?",
+                "correctAnswer": "It is 3 cm wide and 8 cm tall, with the flag at the top right",
                 "options": [
-                    "Pentagon",
-                    "Diamond",
-                    "Square"
+                    "It is 8 cm wide and 3 cm tall, with the flag at the top right",
+                    "It is 3 cm wide and 8 cm tall, with the flag at the top right",
+                    "It is 3 cm wide and 8 cm tall, with the flag at the bottom left"
                 ],
-                "hint": "Look for the shape whose top and bottom corners point instead of lying flat.",
-                "emoji": "💎",
-                "explanation": "A diamond has 4 equal sides just like a square, but arranged so its corners point instead of lying flat.",
-                "funFact": "Some card games use the diamond shape as one of their four playing card suits.",
-                "subtype": "more_sides_and_curves",
+                "hint": "A quarter turn swaps wide and tall. Then follow the flag against the direction of clock hands.",
+                "emoji": "🏴",
+                "explanation": "A quarter turn swaps the width and the height. Turning counterclockwise carries the bottom right corner up to the top right.",
+                "funFact": "Surveyors place flags at the corners of a plot of land to mark its edges.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -65,54 +65,54 @@
                 "id": "KIDS_SHAPES_L72_Q1",
                 "gameType": "shapes",
                 "level": 72,
-                "instruction": "Which shape matches the cross-section of a new, unsharpened pencil?",
-                "correctAnswer": "Hexagon",
+                "instruction": "Which letter does not look the same when held up to a mirror on its right side?",
+                "correctAnswer": "R",
                 "options": [
-                    "Hexagon",
-                    "Octagon",
-                    "Pentagon"
+                    "R",
+                    "H",
+                    "A"
                 ],
-                "hint": "Think of a shape with 6 flat sides running the length of the pencil.",
-                "emoji": "✏️",
-                "explanation": "Many pencils have a 6-sided cross-section, just like a hexagon.",
-                "funFact": "Hexagon pencils are less likely to roll off a slanted desk than round ones.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Imagine the letter's right half swapping places with its left half.",
+                "emoji": "🚑",
+                "explanation": "H and A are balanced, so their two halves match and the mirror image looks the same. R has a bump and a leg on one side only, so its mirror image looks different.",
+                "funFact": "Some ambulances print the word AMBULANCE backwards on the front so drivers can read it in their mirrors.",
+                "subtype": "reflection",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L72_Q2",
                 "gameType": "shapes",
                 "level": 72,
-                "instruction": "Which shape has 4 equal sides and sits flat on one full side, unlike a diamond?",
-                "correctAnswer": "Square",
+                "instruction": "A banner says WOW. It is given a half turn. What does it read now?",
+                "correctAnswer": "MOM",
                 "options": [
-                    "Diamond",
-                    "Square",
-                    "Pentagon"
+                    "MOM",
+                    "WOW",
+                    "MOW"
                 ],
-                "hint": "Look for the shape that rests on a flat bottom edge, not a pointed corner.",
-                "emoji": "🟩",
-                "explanation": "A square rests flat on one whole side, while a diamond balances on a single point.",
-                "funFact": "A square and a diamond can actually be the exact same shape, just turned differently.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Turn each letter upside down, and remember that the order of the letters also reverses.",
+                "emoji": "🎏",
+                "explanation": "Upside down, W looks like M and O looks like O. The half turn also reverses the order, so WOW reads MOM.",
+                "funFact": "The word NOON reads the same upside down because each of its letters looks unchanged.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L72_Q3",
                 "gameType": "shapes",
                 "level": 72,
-                "instruction": "Which shape can be drawn by combining a square with a triangle sitting right on top of it?",
-                "correctAnswer": "Pentagon",
+                "instruction": "Which word looks the same in a mirror?",
+                "correctAnswer": "TOOT",
                 "options": [
-                    "Square",
-                    "Pentagon",
-                    "Triangle"
+                    "DOOR",
+                    "BOOT",
+                    "TOOT"
                 ],
-                "hint": "Think of a house outline: a square base topped by a pointed roof, drawn as one shape.",
-                "emoji": "🏠",
-                "explanation": "A square topped by a triangle roof combines into one 5-sided pentagon outline.",
-                "funFact": "Artists often draw simple houses this way because it naturally forms a pentagon.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Check that each letter looks the same in a mirror, and that the word reads the same backward.",
+                "emoji": "📣",
+                "explanation": "T and O look the same in a mirror, and TOOT reads the same backward, so its mirror image is unchanged. D and B look different in a mirror.",
+                "funFact": "Words that read the same backward are called palindromes, like noon and level.",
+                "subtype": "reflection",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -124,54 +124,54 @@
                 "id": "KIDS_SHAPES_L73_Q1",
                 "gameType": "shapes",
                 "level": 73,
-                "instruction": "Which shape has 8 sides, each one shorter than the sides of a big square drawn the same width?",
-                "correctAnswer": "Octagon",
+                "instruction": "A rectangle has two long sides and two short sides. After how many quarter turns does it first look exactly the same as at the start?",
+                "correctAnswer": "2",
                 "options": [
-                    "Hexagon",
-                    "Square",
-                    "Octagon"
+                    "1",
+                    "2",
+                    "4"
                 ],
-                "hint": "Think of a square with each corner sliced off to add four extra sides.",
-                "emoji": "🛑",
-                "explanation": "Slicing each corner off a square adds four new sides, turning it into an 8-sided octagon.",
-                "funFact": "You can turn a square into an octagon just by snipping each corner at an angle.",
-                "subtype": "more_sides_and_curves",
+                "hint": "After one quarter turn, a wide rectangle becomes tall.",
+                "emoji": "🔃",
+                "explanation": "One quarter turn changes the rectangle from wide to tall, so it looks different. After two quarter turns, which is a half turn, it looks the same again.",
+                "funFact": "The number of times a shape matches itself in one full turn is called its order of rotation.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L73_Q2",
                 "gameType": "shapes",
                 "level": 73,
-                "instruction": "Which shape do you get by slicing just two corners off a square, adding two new sides?",
-                "correctAnswer": "Hexagon",
+                "instruction": "A triangle with three equal sides is turned until it looks the same as at the start, without going all the way around. How much of a full turn is that?",
+                "correctAnswer": "One third of a full turn",
                 "options": [
-                    "Pentagon",
-                    "Octagon",
-                    "Hexagon"
+                    "A quarter of a full turn",
+                    "One third of a full turn",
+                    "Half of a full turn"
                 ],
-                "hint": "A square has 4 sides — slicing two corners adds two more.",
-                "emoji": "🐝",
-                "explanation": "Adding two new sides to a square's 4 sides makes 6 sides total, just like a hexagon.",
-                "funFact": "Playing with corner cuts is a fun way to see how polygons are related to each other.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Each corner has to move into the next corner's place.",
+                "emoji": "🌬️",
+                "explanation": "Each corner moves into the next corner's place after one third of a full turn, so the triangle looks the same. A quarter turn or a half turn leaves a corner pointing the wrong way.",
+                "funFact": "A fan with three blades looks the same after a third of a turn.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L73_Q3",
                 "gameType": "shapes",
                 "level": 73,
-                "instruction": "Which shape do you get by slicing just one corner off a square, adding one new side?",
-                "correctAnswer": "Pentagon",
+                "instruction": "A shape looks the same after a quarter turn, a half turn, and a three-quarter turn. Which shape could it be?",
+                "correctAnswer": "Square",
                 "options": [
-                    "Hexagon",
                     "Square",
-                    "Pentagon"
+                    "Long rectangle",
+                    "Equal-sided triangle"
                 ],
-                "hint": "A square has 4 sides — slicing one corner adds just one more.",
-                "emoji": "🏠",
-                "explanation": "Adding one new side to a square's 4 sides makes 5 sides total, just like a pentagon.",
-                "funFact": "This corner-slicing trick shows exactly how a pentagon relates to a square.",
-                "subtype": "more_sides_and_curves",
+                "hint": "It must look the same after every quarter turn, not just some of them.",
+                "emoji": "🪛",
+                "explanation": "A square has four matching sides and corners, so it matches itself after every quarter turn. A long rectangle matches only after a half turn, and a triangle matches after none of them.",
+                "funFact": "A circle matches itself after any turn at all.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -183,54 +183,54 @@
                 "id": "KIDS_SHAPES_L74_Q1",
                 "gameType": "shapes",
                 "level": 74,
-                "instruction": "Which shape has no corners to slice off, no matter how you try?",
+                "instruction": "A coin lies flat, then is tilted so that, from where you stand, it looks like an oval. What shape is the coin itself?",
                 "correctAnswer": "Circle",
                 "options": [
-                    "Hexagon",
-                    "Octagon",
+                    "Oval",
+                    "Semicircle",
                     "Circle"
                 ],
-                "hint": "Look for the one shape that never had any corners to begin with.",
-                "emoji": "🔵",
-                "explanation": "A circle never has corners to slice, since its whole edge is one smooth curve.",
-                "funFact": "This is exactly why circles are considered the roundest and smoothest shape of all.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Tilting changes how a shape looks from where you stand, not what it is.",
+                "emoji": "💰",
+                "explanation": "The coin's edge does not change when it tilts. It only looks like an oval because of the angle you view it from, but the coin is still a circle.",
+                "funFact": "Artists learn to draw circles as ovals to show them from an angle.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L74_Q2",
                 "gameType": "shapes",
                 "level": 74,
-                "instruction": "Which shape has 3 sides, the fewest of any shape that could be turned into a pentagon by adding sides?",
-                "correctAnswer": "Triangle",
+                "instruction": "A rectangular door swings open, and from near the wall it looks narrower and narrower. What shape is the door itself?",
+                "correctAnswer": "Rectangle",
                 "options": [
-                    "Pentagon",
-                    "Square",
-                    "Triangle"
+                    "Trapezoid",
+                    "Triangle",
+                    "Rectangle"
                 ],
-                "hint": "You would need to add 2 sides to this shape to reach a pentagon's 5.",
-                "emoji": "🔺",
-                "explanation": "Adding 2 sides to a triangle's 3 sides makes 5 total, matching a pentagon.",
-                "funFact": "Triangles are the starting point for building up to almost every other straight-sided shape.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Does the door itself bend or shrink when it swings?",
+                "emoji": "👁️",
+                "explanation": "The door does not change as it swings. It only looks narrower from your position, and it is still a rectangle.",
+                "funFact": "Your brain keeps track of an object's real shape even when it looks different from different angles. This is called shape constancy.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L74_Q3",
                 "gameType": "shapes",
                 "level": 74,
-                "instruction": "Which shape needs exactly 5 more sides than a triangle to be complete?",
-                "correctAnswer": "Octagon",
+                "instruction": "Standing between two straight railway rails, you see them seem to meet far away. Are the rails still parallel?",
+                "correctAnswer": "Yes, they only look like they meet",
                 "options": [
-                    "Pentagon",
-                    "Octagon",
-                    "Hexagon"
+                    "No, they really meet",
+                    "Yes, they only look like they meet",
+                    "Only the nearer parts are parallel"
                 ],
-                "hint": "A triangle has 3 sides — this shape needs 5 more to reach its full count.",
-                "emoji": "🛑",
-                "explanation": "Adding 5 sides to a triangle's 3 sides makes 8 total, matching an octagon.",
-                "funFact": "Counting up from a triangle, you pass through square, pentagon, hexagon, and heptagon before reaching octagon.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Think about whether trains could run on rails that really met.",
+                "emoji": "🚆",
+                "explanation": "Rails stay the same distance apart all along. Distant objects look smaller, so the gap seems to shrink, but the rails are parallel.",
+                "funFact": "Artists use this effect, called perspective, to make flat drawings look deep.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -242,54 +242,54 @@
                 "id": "KIDS_SHAPES_L75_Q1",
                 "gameType": "shapes",
                 "level": 75,
-                "instruction": "Which shape has a smooth curved edge, but unlike a circle, is clearly longer in one direction?",
-                "correctAnswer": "Oval",
+                "instruction": "A house shape is a square with a triangle on top. It is given a half turn. Which shape is on top now?",
+                "correctAnswer": "The square",
                 "options": [
-                    "Oval",
-                    "Circle",
-                    "Hexagon"
+                    "The triangle",
+                    "Neither one",
+                    "The square"
                 ],
-                "hint": "Look for the shape that curves like a circle but looks a bit stretched.",
-                "emoji": "🥚",
-                "explanation": "An oval curves smoothly like a circle, but stretches longer in one direction.",
-                "funFact": "Ovals appear anywhere a circle looks gently squeezed or pulled longer.",
-                "subtype": "more_sides_and_curves",
+                "hint": "A half turn swaps top and bottom.",
+                "emoji": "🏘️",
+                "explanation": "Before the turn the triangle is on top. A half turn puts it at the bottom, so the square is now on top.",
+                "funFact": "Turning a drawing upside down can help you notice the shapes in it.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L75_Q2",
                 "gameType": "shapes",
                 "level": 75,
-                "instruction": "Which shape matches the pattern often seen painted on the ground near a garden path?",
-                "correctAnswer": "Hexagon",
+                "instruction": "An ice cream drawing has a triangle cone at the bottom and a circle scoop on top. It makes a quarter turn clockwise. Where is the scoop now?",
+                "correctAnswer": "On the right",
                 "options": [
-                    "Hexagon",
-                    "Square",
-                    "Pentagon"
+                    "On the right",
+                    "On the left",
+                    "At the bottom"
                 ],
-                "hint": "Think of a shape with 6 sides, like the pattern on a honeycomb.",
-                "emoji": "🍯",
-                "explanation": "Honeycomb-style hexagon patterns are a popular design for garden paths and tiles.",
-                "funFact": "Hexagon tiles fit together with no wasted space, just like real honeycomb.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Clockwise carries the top of a shape toward the right.",
+                "emoji": "🍦",
+                "explanation": "A quarter turn clockwise sends the top to the right, so the scoop is on the right side and the cone points left.",
+                "funFact": "Seen from the side a cone looks like a triangle, and seen from above it looks like a circle.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L75_Q3",
                 "gameType": "shapes",
                 "level": 75,
-                "instruction": "Which shape has 5 sides, the same number of points as a classic star shape?",
-                "correctAnswer": "Pentagon",
+                "instruction": "A row of shapes reads circle, square, triangle from left to right. The row is flipped left to right. What is the new order?",
+                "correctAnswer": "Triangle, square, circle",
                 "options": [
-                    "Pentagon",
-                    "Square",
-                    "Hexagon"
+                    "Triangle, square, circle",
+                    "Circle, square, triangle",
+                    "Square, circle, triangle"
                 ],
-                "hint": "Count the points on a star — this shape has the same number of sides.",
-                "emoji": "🏠",
-                "explanation": "A pentagon has 5 sides, matching the 5 points of a classic star.",
-                "funFact": "If you connect the 5 outer points of a star with straight lines, you can draw a pentagon inside it.",
-                "subtype": "more_sides_and_curves",
+                "hint": "A left to right flip reverses the whole row.",
+                "emoji": "🎴",
+                "explanation": "Flipping left to right swaps the two ends and keeps the middle, so the order becomes triangle, square, circle.",
+                "funFact": "A mirror reverses the order of anything laid out from left to right.",
+                "subtype": "reflection",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -301,54 +301,54 @@
                 "id": "KIDS_SHAPES_L76_Q1",
                 "gameType": "shapes",
                 "level": 76,
-                "instruction": "Which shape, if you added just 1 side, would become a pentagon?",
-                "correctAnswer": "Square",
+                "instruction": "A triangle has sides of 5 cm, 5 cm, and 8 cm. Which triangle is the same size and shape, just turned?",
+                "correctAnswer": "Sides of 5 cm, 8 cm, and 5 cm",
                 "options": [
-                    "Square",
-                    "Triangle",
-                    "Pentagon"
+                    "Sides of 6 cm, 6 cm, and 8 cm",
+                    "Sides of 5 cm, 5 cm, and 9 cm",
+                    "Sides of 5 cm, 8 cm, and 5 cm"
                 ],
-                "hint": "Think of the 4-sided shape that is just one side short of a pentagon.",
-                "emoji": "🟩",
-                "explanation": "Adding just 1 side to a square's 4 sides makes 5, turning it into a pentagon.",
-                "funFact": "This is a handy way to remember that a pentagon has one more side than a square.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Turning changes the order you read the sides in, not their lengths.",
+                "emoji": "⚙️",
+                "explanation": "The triangle with sides 5, 8, and 5 has the same set of lengths, so it is the same triangle with the sides read in a different order. The other triangles have different side lengths.",
+                "funFact": "Three side lengths are enough to fix the exact shape of a triangle.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L76_Q2",
                 "gameType": "shapes",
                 "level": 76,
-                "instruction": "Which shape, if you removed 2 sides, would become a hexagon?",
-                "correctAnswer": "Octagon",
+                "instruction": "A rectangle is 12 cm wide and 5 cm tall. It makes a quarter turn, and then another quarter turn the same way. How wide is it now?",
+                "correctAnswer": "12 cm",
                 "options": [
-                    "Hexagon",
-                    "Octagon",
-                    "Pentagon"
+                    "5 cm",
+                    "12 cm",
+                    "17 cm"
                 ],
-                "hint": "Think of the 8-sided shape that has exactly 2 more sides than a hexagon.",
-                "emoji": "🛑",
-                "explanation": "Removing 2 sides from an octagon's 8 sides leaves 6, turning it into a hexagon.",
-                "funFact": "This kind of side-counting helps you see how all the polygons connect to each other.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Two quarter turns make a half turn. What does a half turn do to wide and tall?",
+                "emoji": "🔂",
+                "explanation": "The first quarter turn makes it 5 cm wide and 12 cm tall. The second turns it back, so it is 12 cm wide again.",
+                "funFact": "Two quarter turns in the same direction always add up to a half turn.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L76_Q3",
                 "gameType": "shapes",
                 "level": 76,
-                "instruction": "Which shape, even though it has 4 equal sides like a square, is never described as sitting flat on an edge?",
-                "correctAnswer": "Diamond",
+                "instruction": "Eli traces a hexagon and cuts out a copy. The copy fits back into the outline after being turned one sixth of a full turn. What does this tell you about the hexagon?",
+                "correctAnswer": "All six sides and corners are equal",
                 "options": [
-                    "Square",
-                    "Diamond",
-                    "Pentagon"
+                    "It has four equal sides",
+                    "It has curved corners",
+                    "All six sides and corners are equal"
                 ],
-                "hint": "Look for the shape that always seems to be balancing on a corner instead.",
-                "emoji": "💎",
-                "explanation": "A diamond always appears balancing on a corner, unlike a square which sits flat on an edge.",
-                "funFact": "This is really just a square, drawn turned on its point instead of its side.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Every corner has to move into the next corner's place.",
+                "emoji": "🌼",
+                "explanation": "To fit back after a sixth of a turn, each side and corner must match the next one, so all six sides and corners are equal. This is a regular hexagon.",
+                "funFact": "Honeycomb cells repeat this pattern because each cell can be turned a sixth of a turn and still fit.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -360,54 +360,54 @@
                 "id": "KIDS_SHAPES_L77_Q1",
                 "gameType": "shapes",
                 "level": 77,
-                "instruction": "Which shape appears both in honeycomb cells and on the flat faces of some pencils?",
-                "correctAnswer": "Hexagon",
+                "instruction": "The letter F is changed so that it looks like a backwards F. Which move did this?",
+                "correctAnswer": "A flip",
                 "options": [
-                    "Hexagon",
-                    "Octagon",
-                    "Pentagon"
+                    "A flip",
+                    "A half turn",
+                    "A slide"
                 ],
-                "hint": "Think of the 6-sided shape shared by bees and pencil makers.",
-                "emoji": "🐝",
-                "explanation": "Both honeycomb cells and many pencils use the 6-sided hexagon shape.",
-                "funFact": "Hexagons show up in nature and in everyday objects because they fit together so efficiently.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Think about which move reverses left and right, like a mirror.",
+                "emoji": "🔙",
+                "explanation": "A flip works like a mirror, so it changes F into a backwards F. A half turn would put the arms at the bottom instead, and a slide would not change the letter at all.",
+                "funFact": "Leonardo da Vinci wrote many of his notes in mirror writing.",
+                "subtype": "reflection",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L77_Q2",
                 "gameType": "shapes",
                 "level": 77,
-                "instruction": "Which shape appears on both stop signs and some gazebo buildings?",
-                "correctAnswer": "Octagon",
+                "instruction": "The letter L makes a quarter turn clockwise. Which description is correct?",
+                "correctAnswer": "A long bar across the top with a short leg going down on the left",
                 "options": [
-                    "Octagon",
-                    "Square",
-                    "Hexagon"
+                    "A long bar across the bottom with a short leg going up on the right",
+                    "A long bar across the top with a short leg going down on the left",
+                    "A long bar down the left side with a short foot going left"
                 ],
-                "hint": "Think of the 8-sided shape shared by road signs and garden buildings.",
-                "emoji": "🏛️",
-                "explanation": "Both stop signs and some gazebos use the 8-sided octagon shape.",
-                "funFact": "An octagon's many flat sides make it useful for both signs and small buildings.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Follow the corner of the L, then the long bar, then the short foot.",
+                "emoji": "🎹",
+                "explanation": "The corner of the L moves from the bottom left to the top left. The long part, which pointed up, now points right, and the short foot, which pointed right, now points down.",
+                "funFact": "L-shaped brackets hold two boards together at a square corner.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L77_Q3",
                 "gameType": "shapes",
                 "level": 77,
-                "instruction": "Which shape appears on both home plate and some simple house drawings?",
-                "correctAnswer": "Pentagon",
+                "instruction": "Which move leaves the letter H looking exactly the same?",
+                "correctAnswer": "A half turn",
                 "options": [
-                    "Hexagon",
-                    "Pentagon",
-                    "Square"
+                    "A half turn",
+                    "A quarter turn",
+                    "A quarter turn followed by a flip"
                 ],
-                "hint": "Think of the 5-sided shape shared by a baseball field and a house outline.",
-                "emoji": "🏠",
-                "explanation": "Both home plate and simple house drawings use the 5-sided pentagon shape.",
-                "funFact": "Noticing the same shape in different places is a great way to remember it.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Picture H lying on its side after a quarter turn. Does it still look like an H?",
+                "emoji": "🏨",
+                "explanation": "H looks the same upside down, so a half turn leaves it unchanged. After a quarter turn it lies on its side, and a flip does not stand it back up.",
+                "funFact": "H is one of the letters that looks the same after a half turn, along with I, N, O, S, X, and Z.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -419,54 +419,54 @@
                 "id": "KIDS_SHAPES_L78_Q1",
                 "gameType": "shapes",
                 "level": 78,
-                "instruction": "Which shape has points instead of plain corners, setting it apart from a hexagon or pentagon?",
-                "correctAnswer": "Star",
+                "instruction": "A pointer faces east. It makes a quarter turn clockwise, and then a half turn counterclockwise. Which way does it face now?",
+                "correctAnswer": "North",
                 "options": [
-                    "Pentagon",
-                    "Star",
-                    "Hexagon"
+                    "North",
+                    "South",
+                    "West"
                 ],
-                "hint": "Look for the shape with sharp spikes poking outward, not a smooth polygon edge.",
-                "emoji": "⭐",
-                "explanation": "A star has sharp points poking outward, unlike the plain corners of a hexagon or pentagon.",
-                "funFact": "A star shape is actually made from two overlapping triangles in some classic designs.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Do each turn one at a time and write down the direction after each.",
+                "emoji": "🌍",
+                "explanation": "A quarter turn clockwise from east points south. A half turn from south points north.",
+                "funFact": "A half turn changes any direction into its opposite, so south becomes north.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L78_Q2",
                 "gameType": "shapes",
                 "level": 78,
-                "instruction": "Which shape has 4 sides and 4 corners, but would need 4 MORE sides to become an octagon?",
-                "correctAnswer": "Rectangle",
+                "instruction": "A wide rectangle has a circle on its left end. It is flipped left to right and then makes a quarter turn counterclockwise. Where is the circle now?",
+                "correctAnswer": "At the top",
                 "options": [
-                    "Square",
-                    "Rectangle",
-                    "Octagon"
+                    "At the bottom",
+                    "On the left",
+                    "At the top"
                 ],
-                "hint": "An octagon has 8 sides — this shape has exactly half that many.",
-                "emoji": "🟦",
-                "explanation": "A rectangle's 4 sides are exactly half of an octagon's 8 sides.",
-                "funFact": "Doubling the sides of a 4-sided shape is one way to imagine building an octagon.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Follow the circle through the flip first, then through the turn.",
+                "emoji": "🎮",
+                "explanation": "The flip moves the circle from the left end to the right end. A quarter turn counterclockwise then carries the right end up to the top.",
+                "funFact": "Tracking one marked point through several moves is how game designers move characters on a screen.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L78_Q3",
                 "gameType": "shapes",
                 "level": 78,
-                "instruction": "Which shape has no sides to count at all, making every side-counting question about it a trick question?",
-                "correctAnswer": "Circle",
+                "instruction": "A number 6 is given a half turn. Which number does it look like?",
+                "correctAnswer": "9",
                 "options": [
-                    "Hexagon",
-                    "Octagon",
-                    "Circle"
+                    "6",
+                    "9",
+                    "8"
                 ],
-                "hint": "Look for the shape that is one continuous curve with nothing to count.",
-                "emoji": "🔵",
-                "explanation": "A circle has no straight sides at all, so there is nothing to count — its edge is one smooth curve.",
-                "funFact": "Mathematicians describe a circle's edge with a special curved measurement instead of counting sides.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Picture the loop at the bottom of the 6 moving to the top.",
+                "emoji": "🏢",
+                "explanation": "A half turn moves the loop from the bottom to the top and the tail from the top to the bottom, which makes a 9.",
+                "funFact": "Because 6 and 9 turn into each other, house numbers like these often get an underline so people read them correctly.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -478,54 +478,54 @@
                 "id": "KIDS_SHAPES_L79_Q1",
                 "gameType": "shapes",
                 "level": 79,
-                "instruction": "Which shape sits between a square and a hexagon if you line up shapes by their number of sides?",
-                "correctAnswer": "Pentagon",
+                "instruction": "A worker wants to check whether a metal plate lying at an angle is a rectangle. Which measurements do not depend on how the plate is turned?",
+                "correctAnswer": "The lengths of its sides and the size of its corners",
                 "options": [
-                    "Pentagon",
-                    "Square",
-                    "Hexagon"
+                    "How high its top corner sits",
+                    "Which side faces the door",
+                    "The lengths of its sides and the size of its corners"
                 ],
-                "hint": "This shape has one more side than 4, and one fewer than 6.",
-                "emoji": "🏠",
-                "explanation": "A pentagon's 5 sides place it right between a square's 4 and a hexagon's 6.",
-                "funFact": "Lining shapes up by side count is a great way to see how they're all connected.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Pick the facts that stay the same whichever way the plate is turned.",
+                "emoji": "🏭",
+                "explanation": "Turning a plate does not change its side lengths or its corners. How high a corner sits and which side faces a direction both change when it is turned.",
+                "funFact": "Factories use these unchanging measurements to check that parts are the right shape however they are placed.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L79_Q2",
                 "gameType": "shapes",
                 "level": 79,
-                "instruction": "Which shape sits between a pentagon and an octagon if you count up by sides, two at a time?",
-                "correctAnswer": "Hexagon",
+                "instruction": "A triangle with three equal sides is drawn pointing up, pointing down, and lying with a corner pointing sideways. How many different triangles are there?",
+                "correctAnswer": "1",
                 "options": [
-                    "Hexagon",
-                    "Pentagon",
-                    "Octagon"
+                    "1",
+                    "2",
+                    "3"
                 ],
-                "hint": "This shape has one more side than a pentagon, and two fewer than an octagon.",
-                "emoji": "🐝",
-                "explanation": "A hexagon's 6 sides sit between a pentagon's 5 and an octagon's 8.",
-                "funFact": "Between hexagon and octagon there's actually one more shape you haven't met yet, called a heptagon, with 7 sides.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Count different shapes, not different positions.",
+                "emoji": "♾️",
+                "explanation": "All three drawings show the same triangle in different positions. Turning does not make a new triangle.",
+                "funFact": "A single triangle can be drawn in endlessly many positions on a page.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L79_Q3",
                 "gameType": "shapes",
                 "level": 79,
-                "instruction": "Which shape has the most sides of every shape you have learned in this game so far?",
-                "correctAnswer": "Octagon",
+                "instruction": "Which description identifies a shape no matter how it is turned?",
+                "correctAnswer": "Four equal sides and four square corners",
                 "options": [
-                    "Pentagon",
-                    "Hexagon",
-                    "Octagon"
+                    "The top side is flat",
+                    "Four equal sides and four square corners",
+                    "The left corner is sharp"
                 ],
-                "hint": "Think of the shape used for stop signs — it has more sides than any other shape here.",
-                "emoji": "🛑",
-                "explanation": "With 8 sides, an octagon has more sides than any other shape introduced so far in this game.",
-                "funFact": "As shapes gain more and more sides, they start to look rounder, closer to a circle.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Choose a description that does not mention up, down, left, or right.",
+                "emoji": "🪪",
+                "explanation": "Sides and corners stay the same under any turn, but words like top and left depend on how the shape is placed.",
+                "funFact": "Directions like left and right depend on where you stand, but a shape's sides and corners do not.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -537,54 +537,54 @@
                 "id": "KIDS_SHAPES_L80_Q1",
                 "gameType": "shapes",
                 "level": 80,
-                "instruction": "Which shape, alongside squares and hexagons, is one of only three regular shapes that tile a floor with zero gaps?",
-                "correctAnswer": "Triangle",
+                "instruction": "The corners of a triangle are labeled A, B, and C in clockwise order. Its mirror image is drawn. Going clockwise around the mirror image, in what order do the letters appear?",
+                "correctAnswer": "A, C, B",
                 "options": [
-                    "Octagon",
-                    "Triangle",
-                    "Pentagon"
+                    "A, B, C",
+                    "A, C, B",
+                    "B, C, A"
                 ],
-                "hint": "This shape has just 3 sides, the fewest of the three floor-tiling shapes.",
-                "emoji": "🔺",
-                "explanation": "Triangles, squares, and hexagons are the only three regular shapes that tile a floor perfectly, with zero gaps.",
-                "funFact": "Even though pentagons and octagons are nice shapes, they cannot tile a floor alone without gaps.",
-                "subtype": "more_sides_and_curves",
+                "hint": "A mirror reverses the direction you read around a shape.",
+                "emoji": "🤚",
+                "explanation": "A mirror image reverses direction, so going clockwise around it reads the letters in the opposite order: A, C, B. The orders A, B, C and B, C, A are the same as the original.",
+                "funFact": "Left-handed scissors are made as mirror images of regular scissors.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L80_Q2",
                 "gameType": "shapes",
                 "level": 80,
-                "instruction": "Which shape, like a circle, has zero corners, but is not perfectly round?",
-                "correctAnswer": "Oval",
+                "instruction": "A triangle with three equal sides points up and has a dot on its top corner. It makes one third of a full turn clockwise. Where is the dot now?",
+                "correctAnswer": "At the bottom right corner",
                 "options": [
-                    "Oval",
-                    "Circle",
-                    "Hexagon"
+                    "At the bottom left corner",
+                    "At the top corner",
+                    "At the bottom right corner"
                 ],
-                "hint": "Look for the shape that curves smoothly but looks a little stretched compared to a circle.",
-                "emoji": "🥚",
-                "explanation": "An oval has zero corners just like a circle, but it is stretched instead of perfectly round.",
-                "funFact": "You could think of an oval as a circle's stretched-out cousin.",
-                "subtype": "more_sides_and_curves",
+                "hint": "A third of a turn moves each corner to the next corner around.",
+                "emoji": "🧿",
+                "explanation": "A third of a turn clockwise moves the top corner to the bottom right corner, and the triangle looks the same as before except for the dot.",
+                "funFact": "Because the triangle looks the same after a third of a turn, only the dot shows that it moved.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L80_Q3",
                 "gameType": "shapes",
                 "level": 80,
-                "instruction": "Which shape do you get if you keep slicing corners off a hexagon until it has 8 sides?",
-                "correctAnswer": "Octagon",
+                "instruction": "Which pair of shapes would not fit exactly on top of each other, even after turning and flipping?",
+                "correctAnswer": "Two squares with 5 cm and 6 cm sides",
                 "options": [
-                    "Pentagon",
-                    "Hexagon",
-                    "Octagon"
+                    "Two squares with 5 cm and 6 cm sides",
+                    "Two triangles with sides of 3, 4, 5 cm and 5, 4, 3 cm",
+                    "Two 2 cm by 7 cm rectangles"
                 ],
-                "hint": "A hexagon has 6 sides — slicing corners can add just enough to reach 8.",
-                "emoji": "🛑",
-                "explanation": "Slicing corners off a hexagon to add 2 more sides gives you an 8-sided octagon.",
-                "funFact": "This corner-slicing pattern is a fun way to build up from triangle all the way to octagon.",
-                "subtype": "more_sides_and_curves",
+                "hint": "Turning and flipping cannot change side lengths.",
+                "emoji": "🥠",
+                "explanation": "A 5 cm square and a 6 cm square have different side lengths, so no turn or flip can make them match. The other pairs have the same lengths.",
+                "funFact": "Cookie cutters make shapes that match exactly because each cutter has a fixed outline.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             }
         ]

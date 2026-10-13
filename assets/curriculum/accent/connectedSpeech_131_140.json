@@ -1,577 +1,637 @@
 {
-    "gameType": "connectedSpeech",
-    "batchIndex": 14,
-    "levels": "131-140",
-    "quests": [
-        {
-            "id": "ACC_CONNECTEDSPEECH_L131_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "wide desk",
-            "textToSpeak": "wide desk",
-            "options": [
-                "Elision (one /d/ disappears)",
-                "Gemination (the two /d/ sounds merge into one)"
-            ],
-            "correctAnswer": "Gemination (the two /d/ sounds merge into one)",
-            "correctAnswerIndex": 1,
-            "hint": "\"wide\" and \"desk\" share the same boundary sound: /d/. What does a fluent speaker actually do with two identical consonants in a row?",
-            "explanation": "Rather than a quick /d/-/d/ repetition, fluent speakers produce one continuous /d/ across the word boundary in \"wide desk\" — that's gemination.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "wide desk"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L131_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "where were you",
-            "textToSpeak": "where were you",
-            "options": [
-                "Elision (/ɜː/ disappears completely)",
-                "Weak Form (/ɜː/ reduces to /ə/)"
-            ],
-            "correctAnswer": "Weak Form (/ɜː/ reduces to /ə/)",
-            "correctAnswerIndex": 1,
-            "hint": "Content words — nouns, verbs, adjectives — usually keep their full vowels; function words like \"were\" often don't. What happens to it in \"where were you\"?",
-            "explanation": "Stress timing in English means unstressed words get compressed. \"were\" loses its full /ɜː/ vowel and reduces to schwa here, keeping \"where were you\" flowing at a natural rhythm.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
-            "phenomenonType": "Weak",
-            "spokenForm": "where were you"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L131_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "as yet",
-            "textToSpeak": "as yet",
-            "options": [
-                "Coalescence (/z/ + /j/ becomes /ʒ/)",
-                "Coalescence (/z/ + /j/ becomes /ʃ/)"
-            ],
-            "correctAnswer": "Coalescence (/z/ + /j/ becomes /ʒ/)",
-            "correctAnswerIndex": 0,
-            "hint": "There's a consonant collision at the boundary of \"as\" and \"yet\": /z/ meets /j/. Which single sound comes out the other side?",
-            "explanation": "Coalescence happens when neighboring sounds are so close in the mouth that they collapse into one. /z/ and /j/ become /ʒ/ in \"as yet\" — faster and easier to say than keeping the two sounds apart.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "as yet"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L132_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "good doctor",
-            "textToSpeak": "good doctor",
-            "options": [
-                "Gemination (the two /d/ sounds merge into one)",
-                "Elision (one /d/ disappears)"
-            ],
-            "correctAnswer": "Gemination (the two /d/ sounds merge into one)",
-            "correctAnswerIndex": 0,
-            "hint": "In \"good doctor\", this isn't a case of one sound changing into another — it's the same /d/ on both sides. What happens when identical sounds collide?",
-            "explanation": "Two identical consonants meeting at a word boundary typically fuse into one longer articulation rather than being pronounced separately. You'll hear this clearly in \"good doctor\".",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "good doctor"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L132_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "a cup of coffee",
-            "textToSpeak": "a cup of coffee",
-            "options": [
-                "Elision (/eɪ/ disappears completely)",
-                "Weak Form (/eɪ/ reduces to /ə/)"
-            ],
-            "correctAnswer": "Weak Form (/eɪ/ reduces to /ə/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the schwa. Somewhere in \"a cup of coffee\", a full vowel gets flattened into that quick, neutral \"uh\" sound — which word is it?",
-            "explanation": "Native listeners expect this weak form; a fully stressed /eɪ/ on \"a\" in \"a cup of coffee\" would actually sound unnatural or overly formal. The relaxed schwa is the normal, expected pronunciation.",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
-            "phenomenonType": "Weak",
-            "spokenForm": "a cup of coffee"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L132_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "do it",
-            "textToSpeak": "do it",
-            "options": [
-                "Linking (/w/ links naturally)",
-                "Intrusion (intrusive /w/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen carefully between \"do\" and \"it\". An unwritten sound appears purely to ease the vowel-to-vowel transition. Which one?",
-            "explanation": "Native speakers automatically fill the gap between two vowel sounds with /w/, even when there's no letter to justify it. \"do it\" is a clear example of this intrusive sound.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "do it"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L133_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "nice city",
-            "textToSpeak": "nice city",
-            "options": [
-                "Elision (one /s/ disappears)",
-                "Gemination (the two /s/ sounds merge into one)"
-            ],
-            "correctAnswer": "Gemination (the two /s/ sounds merge into one)",
-            "correctAnswerIndex": 1,
-            "hint": "Try pronouncing \"nice\" and \"city\" as two fully separate /s/ sounds. Now say them fast and naturally — what changes?",
-            "explanation": "This is a case of avoiding needless repetition — instead of two short /s/ sounds, English produces one held /s/ across \"nice\" and \"city\", saving effort while staying clear.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "nice city"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L133_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "which chapter",
-            "textToSpeak": "which chapter",
-            "options": [
-                "Elision (one /tʃ/ disappears)",
-                "Gemination (the two /tʃ/ sounds merge into one)"
-            ],
-            "correctAnswer": "Gemination (the two /tʃ/ sounds merge into one)",
-            "correctAnswerIndex": 1,
-            "hint": "The /tʃ/ that ends \"which\" is the same /tʃ/ that starts \"chapter\". Does English double it, or merge it into one?",
-            "explanation": "Because \"which\" and \"chapter\" share the same final and initial sound, the boundary doesn't have two /tʃ/ articulations — it has one slightly extended one. That's gemination in action.",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "which chapter"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L133_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "switch off",
-            "textToSpeak": "switch off",
-            "options": [
-                "Elision (/tʃ/ disappears)",
-                "Linking (/tʃ/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/tʃ/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"switch off\" as one smooth unit, not two separate words. Where does the final consonant of \"switch\" end up?",
-            "explanation": "This is linking: the consonant isn't added, dropped, or changed — it simply moves to attach to the following vowel. That's exactly what happens between \"switch\" and \"off\".",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "switch off"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L134_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "key issue",
-            "textToSpeak": "key issue",
-            "options": [
-                "Linking (/j/ links naturally)",
-                "Intrusion (intrusive /j/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 1,
-            "hint": "This is a spelling trap: \"key\" looks like it should flow straight into \"issue\", but a sound gets inserted that isn't written anywhere. Can you hear it?",
-            "explanation": "Since \"key\" doesn't end in a written consonant that could explain a /j/, the /j/ you hear before \"issue\" is added by the speech system itself — an intrusive sound, not a spelled one.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "key issue"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L134_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "great cake",
-            "textToSpeak": "great cake",
-            "options": [
-                "Assimilation (/t/ becomes /k/)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /k/)",
-            "correctAnswerIndex": 0,
-            "hint": "In connected speech, the /t/ ending \"great\" often adapts to its neighbor. What does it turn into right before the velar sound in \"cake\"?",
-            "explanation": "This is place assimilation: /t/ moves to a velar position to blend smoothly with what comes next, turning into /k/ in \"great cake\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "greak cake"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L134_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "world class",
-            "textToSpeak": "world class",
-            "options": [
-                "Assimilation (/d/ becomes /p/)",
-                "Elision (/d/ disappears)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "Picture how a native speaker would say \"world class\" in a fast, everyday sentence. Is every single consonant still there?",
-            "explanation": "This is a textbook case of consonant-cluster elision: the /d/ between two consonants is dropped to keep speech fluent and effortless in \"world class\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "worl' class"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L135_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten nurses",
-            "textToSpeak": "ten nurses",
-            "options": [
-                "Gemination (the two /n/ sounds merge into one)",
-                "Elision (one /n/ disappears)"
-            ],
-            "correctAnswer": "Gemination (the two /n/ sounds merge into one)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen for a doubled or lengthened /n/ at the seam between \"ten\" and \"nurses\" — not two short ones back to back.",
-            "explanation": "Native speakers merge repeated identical consonants into a single sound rather than doubling up. In \"ten nurses\", the /n/ is pronounced once, just held a touch longer.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "ten nurses"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L135_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "a bag of rice",
-            "textToSpeak": "a bag of rice",
-            "options": [
-                "Elision (/ɒ/ disappears completely)",
-                "Weak Form (/ɒ/ reduces to /ə/)"
-            ],
-            "correctAnswer": "Weak Form (/ɒ/ reduces to /ə/)",
-            "correctAnswerIndex": 1,
-            "hint": "\"a\" is grammatically necessary but rarely emphasized. What does that lack of stress do to its vowel in \"a bag of rice\"?",
-            "explanation": "This is one of the most common patterns in spoken English: function words reduce, content words don't. \"a\" follows that rule exactly, shrinking from /ɒ/ to schwa in \"a bag of rice\".",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
-            "phenomenonType": "Weak",
-            "spokenForm": "a bag of rice"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L135_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "menu order",
-            "textToSpeak": "menu order",
-            "options": [
-                "Linking (/w/ links naturally)",
-                "Intrusion (intrusive /w/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /w/)",
-            "correctAnswerIndex": 1,
-            "hint": "Two vowels back to back is awkward to say smoothly. What sound does natural speech add between \"menu\" and \"order\" — despite it not appearing in either word's spelling?",
-            "explanation": "This is a purely phonetic addition: /w/ shows up between \"menu\" and \"order\" only to ease pronunciation, with nothing in either word's spelling to account for it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "menu order"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L136_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "which child",
-            "textToSpeak": "which child",
-            "options": [
-                "Elision (one /tʃ/ disappears)",
-                "Gemination (the two /tʃ/ sounds merge into one)"
-            ],
-            "correctAnswer": "Gemination (the two /tʃ/ sounds merge into one)",
-            "correctAnswerIndex": 1,
-            "hint": "\"which\" ends and \"child\" begins with the exact same /tʃ/ sound. Do you really hear it twice in natural speech, or just once?",
-            "explanation": "When the same consonant ends one word and begins the next, speakers don't pronounce it twice — they merge the two into a single, slightly longer sound. That's gemination, and it's exactly what happens with /tʃ/ in \"which child\".",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "which child"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L136_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "test day",
-            "textToSpeak": "test day",
-            "options": [
-                "Assimilation (/t/ becomes /b/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "The /t/ in \"test\" is trapped between two other consonants right before \"day\". What usually happens to a stop consonant stuck in that position?",
-            "explanation": "Rather than pronounce all three consonants back to back, speakers cut the /t/ from \"test\" entirely. The result flows straight from the first consonant into \"day\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "tes' day"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L136_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "going to rain",
-            "textToSpeak": "going to rain",
-            "options": [
-                "Weak Form (/uː/ reduces to /ə/)",
-                "Elision (/uː/ disappears completely)"
-            ],
-            "correctAnswer": "Weak Form (/uː/ reduces to /ə/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"going to rain\" at a natural conversational pace. Does \"to\" keep its full vowel sound, or shrink to a quick \"uh\"?",
-            "explanation": "Unstressed function words like \"to\" almost always reduce their vowel to schwa /ə/ in connected speech. Its full form is /uː/, but in \"going to rain\" it shrinks to something much quicker and quieter.",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
-            "phenomenonType": "Weak",
-            "spokenForm": "going to rain"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L137_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "fast train",
-            "textToSpeak": "fast train",
-            "options": [
-                "Assimilation (/t/ becomes /m/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely at the boundary of \"fast\" and \"train\" — count the consonants stacking up. Does the /t/ still make it into the sentence?",
-            "explanation": "In fast, connected speech, a /t/ wedged between consonants almost always disappears. That's what you'll hear in \"fast train\" — the /t/ goes silent.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "fast 'rain"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L137_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "give it a try",
-            "textToSpeak": "give it a try",
-            "options": [
-                "Linking (/v/ links to the vowel)",
-                "Elision (/v/ disappears)"
-            ],
-            "correctAnswer": "Linking (/v/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "The consonant at the end of \"give\" has a vowel waiting right after it in \"it\". Does it stay attached to \"give\", or slide onto the next syllable?",
-            "explanation": "Fluent English resyllabifies across word boundaries whenever a consonant meets a vowel. Here, the last sound of \"give\" glides directly into \"it\", making the phrase sound like one continuous unit.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "give it a try"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L137_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "flower arrangement",
-            "textToSpeak": "flower arrangement",
-            "options": [
-                "Linking (/r/ links to the vowel)",
-                "Intrusion (extra /r/)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "Because \"flower\" is spelled with a final 'r', a vowel right after it — like the one starting \"arrangement\" — can bring that /r/ back into speech. Listen for it.",
-            "explanation": "The /r/ you hear between \"flower\" and \"arrangement\" isn't invented — it's the word's own final letter reactivated by the vowel that follows, which is the textbook definition of linking /r/.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "flower arrangement"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L138_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "near every",
-            "textToSpeak": "near every",
-            "options": [
-                "Intrusion (extra /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "\"near\" already has a written 'r' at the end — normally silent before a pause, but what happens to it right before the vowel that opens \"every\"?",
-            "explanation": "\"near\" ends in a written 'r' that's silent in isolation (in non-rhotic pronunciation) but reappears whenever a vowel follows. Because \"every\" begins with a vowel, the /r/ resurfaces — this is linking /r/, not intrusion, since the letter is genuinely there in \"near\".",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "near every"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L138_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "fact check",
-            "textToSpeak": "fact check",
-            "options": [
-                "Assimilation (/t/ becomes /k/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"fact check\" naturally, without pausing between the words. Is the /t/ audible, or does it disappear into the next consonant?",
-            "explanation": "Elision removes a sound completely rather than merely blending it. Here the /t/ vanishes from \"fact\" so the phrase moves directly into \"check\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "fac' check"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L138_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "log in",
-            "textToSpeak": "log in",
-            "options": [
-                "Linking (/g/ links to the vowel)",
-                "Elision (/g/ disappears)"
-            ],
-            "correctAnswer": "Linking (/g/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen to the boundary between \"log\" and \"in\". A consonant and a vowel are meeting — what does fluent speech do with them?",
-            "explanation": "Rather than pausing between the consonant and the vowel, speakers connect them directly — the consonant essentially becomes the first sound of the next syllable. You hear this clearly in \"log in\".",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "log in"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L139_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "good dog",
-            "textToSpeak": "good dog",
-            "options": [
-                "Elision (one /d/ disappears)",
-                "Gemination (the two /d/ sounds merge into one)"
-            ],
-            "correctAnswer": "Gemination (the two /d/ sounds merge into one)",
-            "correctAnswerIndex": 1,
-            "hint": "Two identical /d/ sounds meet right at the boundary of \"good\" and \"dog\". Listen closely — one sound, or two separate ones?",
-            "explanation": "This is gemination, not deletion: the /d/ isn't dropped, it's simply held for one longer articulation instead of being repeated. \"good dog\" sounds like one smooth /d/, not two separate ones.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "good dog"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L139_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "saw it",
-            "textToSpeak": "saw it",
-            "options": [
-                "Linking (/r/ links naturally)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Nothing in \"saw\"'s ending suggests a consonant at all. So the /r/ you might hear before \"it\" isn't really part of either word — where does it come from?",
-            "explanation": "Vowel hiatus (two vowels in a row) is uncomfortable in fluent English, so an intrusive /r/ fills the gap in \"saw it\" — a sound created by the flow of speech, not by spelling.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "saw it"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L139_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "nine nephews",
-            "textToSpeak": "nine nephews",
-            "options": [
-                "Gemination (the two /n/ sounds merge into one)",
-                "Elision (one /n/ disappears)"
-            ],
-            "correctAnswer": "Gemination (the two /n/ sounds merge into one)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"nine nephews\" together at a normal pace. Does the /n/ get pronounced twice, back to back, or does it blend into a single, slightly longer sound?",
-            "explanation": "Pronouncing the same consonant twice in a row takes extra effort for no real gain in clarity, so English merges them. The double /n/ in \"nine nephews\" becomes a single lengthened sound.",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "nine nephews"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L140_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "see everyone",
-            "textToSpeak": "see everyone",
-            "options": [
-                "Intrusion (intrusive /j/)",
-                "Linking (/j/ links naturally)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /j/)",
-            "correctAnswerIndex": 0,
-            "hint": "\"see\" has no letter for /j/ anywhere at its end. So if you hear a /j/ before \"everyone\", where does it actually come from?",
-            "explanation": "English avoids putting two vowel sounds directly next to each other, so speakers insert a small linking sound to bridge them. Since \"see\" has no /j/ in its spelling, this /j/ is intrusive — added purely for smoothness, not because it's really part of \"see\" or \"everyone\".",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "see everyone"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L140_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "big goal",
-            "textToSpeak": "big goal",
-            "options": [
-                "Gemination (the two /g/ sounds merge into one)",
-                "Elision (one /g/ disappears)"
-            ],
-            "correctAnswer": "Gemination (the two /g/ sounds merge into one)",
-            "correctAnswerIndex": 0,
-            "hint": "\"big\" and \"goal\" share the same boundary sound: /g/. What does a fluent speaker actually do with two identical consonants in a row?",
-            "explanation": "Rather than a quick /g/-/g/ repetition, fluent speakers produce one continuous /g/ across the word boundary in \"big goal\" — that's gemination.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
-            "phenomenonType": "Gemination",
-            "spokenForm": "big goal"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L140_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "officer asked",
-            "textToSpeak": "officer asked",
-            "options": [
-                "Linking (/r/ links to the vowel)",
-                "Intrusion (extra /r/)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"officer asked\" naturally. That final 'r' in \"officer\", usually silent, resurfaces here — why, do you think?",
-            "explanation": "This is linking, not intrusion, because the 'r' is already written into \"officer\". It stays silent before a pause or consonant but comes back to life right before the vowel that opens \"asked\".",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "officer asked"
-        }
-    ]
+  "gameType": "connectedSpeech",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "ACC_CONNECTEDSPEECH_L131_Q1",
+      "instruction": "In “Maya bought some bread yesterday”, which words carry the main beats?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Maya bought some bread yesterday",
+      "textToSpeak": "Maya bought some bread yesterday",
+      "options": [
+        "“Maya”, “bought”, “bread” and “yesterday”: the content words",
+        "“Maya”, “some” and “yesterday”: the first and last words plus “some”",
+        "Every word equally, one beat each",
+        "Only “bought” and “some”: the verb and its small neighbour"
+      ],
+      "correctAnswer": "“Maya”, “bought”, “bread” and “yesterday”: the content words",
+      "correctAnswerIndex": 0,
+      "hint": "Tap the rhythm of the sentence as you say it. Which words make you tap, and which fall between the taps?",
+      "explanation": "English rhythm tends to place the main beats on the words that carry the meaning: names, main verbs, nouns and adverbs. The small words, such as “some”, fall quietly between them. So the sentence is heard as “MAya BOUGHT some BREAD YESterday”.",
+      "phoneticRule": "Content words typically carry the stressed beats of a sentence, while function words fill the gaps between beats.",
+      "phenomenonType": "Weak",
+      "spokenForm": "MAya BOUGHT sum BREAD YESterday"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L131_Q2",
+      "instruction": "English rhythm tends to place stressed syllables at roughly even intervals. What does that mean for the small words in “Zane sent a text to the team”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Zane sent a text to the team",
+      "textToSpeak": "Zane sent a text to the team",
+      "options": [
+        "They are stretched so that every word in the sentence takes exactly the same time",
+        "They are dropped completely, so only the content words remain in the speech",
+        "They are stressed too, to keep the beats even across the whole sentence",
+        "They are squeezed into the gaps between stressed words and become short and weak in speech"
+      ],
+      "correctAnswer": "They are squeezed into the gaps between stressed words and become short and weak in speech",
+      "correctAnswerIndex": 3,
+      "hint": "Count the stressed words, then notice how little time is left for the words between them.",
+      "explanation": "Roughly speaking, the time between beats stays similar, so the small words between “sent”, “text” and “team” are crammed into short gaps. They become brief and weak: “ZANE SENT uh TEXT tuh thuh TEAM”. This is a tendency, not a strict rule, but it explains why small words seem to vanish.",
+      "phoneticRule": "English is described as stress-timed: stressed syllables tend to recur at roughly regular intervals, so the unstressed syllables between them are compressed.",
+      "phenomenonType": "Weak",
+      "spokenForm": "ZANE SENT uh TEXT tuh thuh TEAM"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L131_Q3",
+      "instruction": "Which words fall between the beats in “Ivan found a note on the desk”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Ivan found a note on the desk",
+      "textToSpeak": "Ivan found a note on the desk",
+      "options": [
+        "“found”, “note” and “desk”, which are the least important words",
+        "“a”, “on” and “the”, which are squeezed between the beats",
+        "“Ivan” and “found”, which are the first two words",
+        "None: all words are equally squeezed"
+      ],
+      "correctAnswer": "“a”, “on” and “the”, which are squeezed between the beats",
+      "correctAnswerIndex": 1,
+      "hint": "Find the words that carry the information, then see what is left.",
+      "explanation": "The beats fall on “Ivan”, “found”, “note” and “desk”. The three small words, “a”, “on” and “the”, are squeezed between them and are pronounced weakly: /ə/, /ɒn/ and /ðə/. The same method works for any sentence.",
+      "phoneticRule": "Identifying the stressed content words leaves the function words that are compressed between the beats.",
+      "phenomenonType": "Weak",
+      "spokenForm": "IVan FOUND uh NOTE on thuh DESK"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L132_Q1",
+      "instruction": "Which sentence takes about the same time to say naturally as “Cats sit on mats”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Cats sit on mats",
+      "textToSpeak": "Cats sit on mats",
+      "options": [
+        "“Cats sit on mats, and dogs sit on rugs”, with six stressed words",
+        "“The cats are sitting on the mats”, with three stressed words",
+        "“The big black cats sat on the mats”, with five stressed words",
+        "“Cats sit”, with two stressed words"
+      ],
+      "correctAnswer": "“The cats are sitting on the mats”, with three stressed words",
+      "correctAnswerIndex": 1,
+      "hint": "Count the stressed words in each sentence rather than the number of syllables.",
+      "explanation": "Because the beats tend to come at even intervals, the number of stressed words matters more than the number of syllables. “Cats sit on mats” and “The cats are sitting on the mats” both have three beats, so the longer sentence squeezes its extra small words into the gaps. The other options have more or fewer beats.",
+      "phoneticRule": "Sentence duration in English depends mainly on the number of stressed syllables, not on the total number of syllables.",
+      "phenomenonType": "Weak",
+      "spokenForm": "CATS SIT un MATS"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L132_Q2",
+      "instruction": "“Nora wants to buy a hat” and “Nora wants to buy hats” take almost the same time to say. Why?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Nora wants to buy a hat",
+      "textToSpeak": "Nora wants to buy a hat",
+      "options": [
+        "The speaker talks faster on every word of the longer sentence to catch up",
+        "The extra word is dropped in speech, so the sentences are identical",
+        "Spoken English gives every word one beat, so the lengths match exactly",
+        "The extra word “a” is unstressed, so it is squeezed between two beats"
+      ],
+      "correctAnswer": "The extra word “a” is unstressed, so it is squeezed between two beats",
+      "correctAnswerIndex": 3,
+      "hint": "Look at the one word that the longer sentence adds, and decide whether it takes a beat.",
+      "explanation": "Both sentences have the same stressed words (Nora, wants, buy, hat or hats), and the extra word in the longer one is unstressed. It shares the time between the beats, so the longer sentence needs almost no extra time. The effect is a tendency, not an exact measure.",
+      "phoneticRule": "Adding an unstressed function word to a sentence adds little time because it is compressed within the interval between stressed syllables.",
+      "phenomenonType": "Weak",
+      "spokenForm": "NOra WANTS tuh BUY uh HAT"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L132_Q3",
+      "instruction": "Which pattern describes the rhythm of “Rita bought bread and milk”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Rita bought bread and milk",
+      "textToSpeak": "Rita bought bread and milk",
+      "options": [
+        "Five beats, with “and” stressed like all the other content words",
+        "Four beats: Rita, bought, bread and milk, with “and” squeezed in",
+        "Two beats: only the first word and the last word are stressed",
+        "Six beats, one for each syllable of the whole sentence"
+      ],
+      "correctAnswer": "Four beats: Rita, bought, bread and milk, with “and” squeezed in",
+      "correctAnswerIndex": 1,
+      "hint": "Tap the beats on the words you would underline, and see how “and” fits between taps.",
+      "explanation": "“Rita”, “bought”, “bread” and “milk” are the meaning words and take the beats. “And” is reduced to a short /n/ and fits into the gap between “bread” and “milk”. Hearing four beats and one squeezed word is the typical pattern in lists.",
+      "phoneticRule": "In lists, content words carry the beats and the conjunction “and” is compressed into the interval between them.",
+      "phenomenonType": "Weak",
+      "spokenForm": "RIta BOUGHT BREAD n MILK"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L133_Q1",
+      "instruction": "Which rhythm pattern fits “Drop me a line”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Drop me a line",
+      "textToSpeak": "Drop me a line",
+      "options": [
+        "DROP ME A LINE: four equal beats, one for each word",
+        "drop ME a line: the main beat falls on “me”",
+        "DROP me a LINE: two beats, with “me a” squeezed in between them",
+        "DROP me A LINE: three beats, with “a” and “line” both stressed"
+      ],
+      "correctAnswer": "DROP me a LINE: two beats, with “me a” squeezed in between them",
+      "correctAnswerIndex": 2,
+      "hint": "Say the phrase as a quick request and tap the beats.",
+      "explanation": "“Drop me a line” has two content words, “drop” and “line”, so it has two beats. The words “me a” are squeezed between them: “DROP muh uh LINE”. A learner who gives all four words the same weight sounds slow and may hide the key words.",
+      "phoneticRule": "Short requests have one beat per content word, with pronouns and articles squeezed between them.",
+      "phenomenonType": "Weak",
+      "spokenForm": "DROP muh uh LINE"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L133_Q2",
+      "instruction": "In “Olga, pass me a pen”, how many beats are there, and where do they fall?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Olga, pass me a pen",
+      "textToSpeak": "Olga, pass me a pen",
+      "options": [
+        "Five beats, one for each of the five words in the sentence",
+        "Two beats on pass and pen only, with no beat on the name",
+        "Three beats on Olga, pass and pen, with “me a” squeezed",
+        "Four beats on Olga, pass, me and pen, with “a” squeezed"
+      ],
+      "correctAnswer": "Three beats on Olga, pass and pen, with “me a” squeezed",
+      "correctAnswerIndex": 2,
+      "hint": "Count the words you would stress if you were asking quickly across a table.",
+      "explanation": "A name, the verb and the noun carry the beats: “OLga, PASS muh uh PEN”. “Me” and “a” are small and are squeezed into the gap after “pass”. The sentence is therefore three beats long, and it takes about as long as other three-beat sentences.",
+      "phoneticRule": "A vocative name counts as a beat, and the pronoun and article that follow a verb are compressed.",
+      "phenomenonType": "Weak",
+      "spokenForm": "OLga, PASS muh uh PEN"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L133_Q3",
+      "instruction": "Which pattern fits “Keep me posted”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Keep me posted",
+      "textToSpeak": "Keep me posted",
+      "options": [
+        "KEEP ME POSTED: three even beats, one for each word",
+        "KEEP me POSTed: two beats, with “me” squeezed in the gap",
+        "keep ME POSTed: the main beat falls on “me” and “posted”",
+        "KEEP me posted: the last word is squeezed"
+      ],
+      "correctAnswer": "KEEP me POSTed: two beats, with “me” squeezed in the gap",
+      "correctAnswerIndex": 1,
+      "hint": "Say it the way you would end a conversation, and notice which two words carry the weight.",
+      "explanation": "“Keep” and “posted” carry the meaning, so they take the beats, and the pronoun “me” is squeezed between them: “KEEP mi POSTed”. The rhythm of the phrase is two beats, however short or long the words in between are.",
+      "phoneticRule": "A pronoun between a verb and its complement is typically unstressed and compressed between the two beats.",
+      "phenomenonType": "Weak",
+      "spokenForm": "KEEP mi POSTed"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L134_Q1",
+      "instruction": "Which words carry the beats in “Maya, what time are you free?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Maya, what time are you free",
+      "textToSpeak": "Maya, what time are you free",
+      "options": [
+        "“Maya”, “what” and “you”: the shortest words",
+        "Every word equally, with no squeezed words at all",
+        "Only “what” and “free”: the first and last question words",
+        "“Maya”, “time” and “free”; the other words are squeezed"
+      ],
+      "correctAnswer": "“Maya”, “time” and “free”; the other words are squeezed",
+      "correctAnswerIndex": 3,
+      "hint": "Think about which words the listener needs to catch: the time and the person, not the small grammar words.",
+      "explanation": "In a neutral question the stress falls on “time” and “free”, and on the vocative “Maya”. The words “what”, “are” and “you” are squeezed between: “MAya, wot TIME uh yuh FREE”. Hearing the beats first makes it easier to catch the question even when the small words blur.",
+      "phoneticRule": "In wh-questions, the stress falls on the content words, while the wh-word and following function words are weak or squeezed.",
+      "phenomenonType": "Weak",
+      "spokenForm": "MAya, wot TIME uh yuh FREE"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L134_Q2",
+      "instruction": "Why do “is” and “the” almost vanish in “Farid, where’s the nearest station?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Farid, where’s the nearest station",
+      "textToSpeak": "Farid, where’s the nearest station",
+      "options": [
+        "They are stressed to keep the rhythm even",
+        "They are unstressed words squeezed between the beats on “nearest” and “station”",
+        "They are replaced by weak vowels only in very careful speech, and kept strong otherwise",
+        "They are dropped because the question is short"
+      ],
+      "correctAnswer": "They are unstressed words squeezed between the beats on “nearest” and “station”",
+      "correctAnswerIndex": 1,
+      "hint": "Find the stressed words in the question and look at what is left between them.",
+      "explanation": "“Nearest” and “station” carry the beats. “Where’s the” is the stretch in front of them, and it is compressed: “wheres thuh”. The contraction “where’s” also makes the stretch shorter. So the speaker can say the long sentence at the same pace as a short one.",
+      "phoneticRule": "Contracted and unstressed function words are compressed into the intervals between stressed syllables, so long questions do not necessarily take longer.",
+      "phenomenonType": "Weak",
+      "spokenForm": "FArid, wheres thuh NEArest STAtion"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L134_Q3",
+      "instruction": "Which question matches the quick rhythm “ROsa, how-LONG-iz-thuh-FILM”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Rosa, how long is the film",
+      "textToSpeak": "Rosa, how long is the film",
+      "options": [
+        "“Rosa, how long was the film?”",
+        "“Rosa, how long is a film?”",
+        "“Rosa, how long are the films?”",
+        "“Rosa, how long is the film?”"
+      ],
+      "correctAnswer": "“Rosa, how long is the film?”",
+      "correctAnswerIndex": 3,
+      "hint": "Listen to the small words between the stressed ones: is, the, a, was, are.",
+      "explanation": "The stressed words are the same in every option, so the small words must be decoded: “iz” is “is” and “thuh” is “the”. “Was” would be /wəz/ and “a” would be /ə/. Using the beats as an anchor and then filling in the small words is a good decoding strategy.",
+      "phoneticRule": "Decoding fast speech: locate the stressed beats first, then identify the weak words by their reduced vowels and consonants.",
+      "phenomenonType": "Weak",
+      "spokenForm": "ROsa, how LONG iz thuh FILM"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L135_Q1",
+      "instruction": "Compare “Anya sent him a letter” with “Anya sent HIM a letter”. What changes in the second?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Anya sent him a letter",
+      "textToSpeak": "Anya sent him a letter",
+      "options": [
+        "“sent” is reduced to /sənt/, because it comes before “HIM”",
+        "Nothing changes: stress does not affect the form of pronouns in speech",
+        "“letter” loses its stress, because “him” takes all of it",
+        "“him” is stressed, so it keeps a full vowel and /h/: /hɪm/, not /ɪm/"
+      ],
+      "correctAnswer": "“him” is stressed, so it keeps a full vowel and /h/: /hɪm/, not /ɪm/",
+      "correctAnswerIndex": 3,
+      "hint": "Ask which word the speaker wants you to notice in the second sentence.",
+      "explanation": "Stress changes which words are reduced. In the neutral sentence, “him” is weak and often loses its /h/: /ɪm/. When the speaker stresses it, to show it was him and not someone else, it keeps its /h/ and full vowel: /hɪm/. The words around it stay the same.",
+      "phoneticRule": "Contrastive stress converts a weak pronoun into a strong form, so the same words can have different reductions depending on focus.",
+      "phenomenonType": "Weak",
+      "spokenForm": "ANya SENT im uh LETter"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L135_Q2",
+      "instruction": "In “Ravi walked to the station, not from it”, which form of “to” is likely?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Ravi walked to the station, not from it",
+      "textToSpeak": "Ravi walked to the station, not from it",
+      "options": [
+        "/tə/, because prepositions take weak forms even when contrasted",
+        "/tʊ/ before “the”, as before a vowel sound such as “eat”",
+        "/tuː/, a full vowel, because “to” is contrasted with “from”",
+        "/də/ with a voiced /t/, as in a casual tap"
+      ],
+      "correctAnswer": "/tuː/, a full vowel, because “to” is contrasted with “from”",
+      "correctAnswerIndex": 2,
+      "hint": "Ask whether “to” is part of the background or the point of the sentence.",
+      "explanation": "Normally “to” is weak, /tə/. Here the speaker contrasts “to” with “from”, so “to” is stressed and returns to its strong form /tuː/. The surrounding words keep their usual reductions.",
+      "phoneticRule": "Stress on a preposition in a contrast restores its strong form, even though the weak form is the default.",
+      "phenomenonType": "Weak",
+      "spokenForm": "RAvi WALKED TOO the STAtion, not FROM it"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L135_Q3",
+      "instruction": "Someone asks, “Did Leo or Jake call?” You answer, “Leo called.” Which word carries the main beat?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Leo called, not Jake",
+      "textToSpeak": "Leo called, not Jake",
+      "options": [
+        "“Leo”, because it is the new information",
+        "“called”, because verbs take the main stress",
+        "Both words equally",
+        "Neither: the answer is reduced"
+      ],
+      "correctAnswer": "“Leo”, because it is the new information",
+      "correctAnswerIndex": 0,
+      "hint": "The question already contains “call”. Which part of the answer is new?",
+      "explanation": "The new information is who called, so “Leo” takes the main beat, and “called” is given less prominence because the question already mentioned it. This shows that stress follows information, not word class.",
+      "phoneticRule": "Stress falls on the new or contrasted information; given information is typically de-accented.",
+      "phenomenonType": "Weak",
+      "spokenForm": "LEo CAWLD, not JAKE"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L136_Q1",
+      "instruction": "Which description fits “black coffee” in “Order a black coffee”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Order a black coffee",
+      "textToSpeak": "Order a black coffee",
+      "options": [
+        "One longer /k/: the closure is held, then released once",
+        "Two separate /k/ sounds, each released clearly",
+        "The /k/ is dropped completely, so only “bla-offee” remains",
+        "The /k/ becomes a /g/ in the middle"
+      ],
+      "correctAnswer": "One longer /k/: the closure is held, then released once",
+      "correctAnswerIndex": 0,
+      "hint": "Say “black coffee” and notice what your tongue does between the two /k/ sounds.",
+      "explanation": "“Black” ends in /k/ and “coffee” begins with /k/. Instead of making two separate stops, speakers hold one closure and release it once, so you hear a single, slightly longer /k/. This is gemination. The two words are still both present; the boundary is simply less obvious.",
+      "phoneticRule": "Gemination: when two identical consonants meet across a word boundary, they are usually realised as one longer consonant with a single release.",
+      "phenomenonType": "Gemination",
+      "spokenForm": "Order a blak-koffee"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L136_Q2",
+      "instruction": "Which sound is lengthened in “some more” in “Add some more sugar”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Add some more sugar",
+      "textToSpeak": "Add some more sugar",
+      "options": [
+        "The vowel /ʌ/ of “some”, which is held for a longer time",
+        "The /s/ at the start of “some”, which is held for longer",
+        "The /m/: the lips stay closed for one longer /m/",
+        "The vowel /ɔː/ of “more”, which becomes much longer"
+      ],
+      "correctAnswer": "The /m/: the lips stay closed for one longer /m/",
+      "correctAnswerIndex": 2,
+      "hint": "Both words meet at the same lip sound. What happens to your lips between the two?",
+      "explanation": "“Some” ends in /m/ and “more” begins with /m/. The lips stay closed, and the nasal is held a little longer: /sʌmːɔː/. You do not hear a separate /m/ for each word, so “some more” can sound like “sumore”.",
+      "phoneticRule": "Identical nasals across a boundary merge into a single lengthened nasal, so the closure is not released between them.",
+      "phenomenonType": "Gemination",
+      "spokenForm": "Add summ-more sugar"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L136_Q3",
+      "instruction": "Which spoken form of “ten numbers” fits “Pick ten numbers”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Pick ten numbers",
+      "textToSpeak": "Pick ten numbers",
+      "options": [
+        "Two /n/ sounds separated by a short vowel",
+        "One longer /n/: “te-nnumbers”",
+        "The /n/ is dropped: “te-umbers”",
+        "The first /n/ becomes /m/"
+      ],
+      "correctAnswer": "One longer /n/: “te-nnumbers”",
+      "correctAnswerIndex": 1,
+      "hint": "Both words meet at an /n/; notice whether your tongue leaves the ridge between them.",
+      "explanation": "“Ten” ends in /n/ and “numbers” begins with /n/, so the tongue stays on the ridge and the nasal is held a little longer: “te-nnumbers”. A listener who expects two clear /n/ sounds may find it hard to hear the boundary at first.",
+      "phoneticRule": "Gemination applies to all identical consonants, and the held nasal is typically longer than a single nasal.",
+      "phenomenonType": "Gemination",
+      "spokenForm": "Pick te-nnumbers"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L137_Q1",
+      "instruction": "What is heard where “bus” and “stop” meet in “Nora lives near the bus stop”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Nora lives near the bus stop",
+      "textToSpeak": "Nora lives near the bus stop",
+      "options": [
+        "Two separate /s/ sounds with a pause between them",
+        "The /s/ of “bus” is dropped completely",
+        "The /s/ becomes a /z/ before “stop”",
+        "One longer /s/: the hiss is held before the /t/ starts"
+      ],
+      "correctAnswer": "One longer /s/: the hiss is held before the /t/ starts",
+      "correctAnswerIndex": 3,
+      "hint": "Both words contribute an /s/ at the boundary. Do you hear one hiss or two?",
+      "explanation": "“Bus” ends in /s/ and “stop” begins with /s/ plus /t/. The hiss is held as one longer /s/ before the /t/ starts: “bus-sstop”. The words are not run together beyond recognition; the held /s/ is itself a clue that two /s/ sounds meet.",
+      "phoneticRule": "A word-final fricative followed by an identical word-initial fricative is realised as a single lengthened fricative.",
+      "phenomenonType": "Gemination",
+      "spokenForm": "Nora lives near the bus-sstop"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L137_Q2",
+      "instruction": "Why does the /t/ in “that time” sound longer than a normal /t/ in “Remember that time we got lost”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Remember that time we got lost",
+      "textToSpeak": "Remember that time we got lost",
+      "options": [
+        "The /t/ is voiced, so it lasts longer than a voiceless /t/",
+        "“that” is stressed, which doubles every sound",
+        "Two identical /t/ sounds meet: one closure, one release",
+        "A vowel is inserted between the two /t/ sounds"
+      ],
+      "correctAnswer": "Two identical /t/ sounds meet: one closure, one release",
+      "correctAnswerIndex": 2,
+      "hint": "Count how many separate releases of air you can feel in “that time”.",
+      "explanation": "“That” ends in /t/ and “time” begins with /t/. The tongue closes once, holds the closure, and releases once, so you hear one long /t/. This is why “that time” does not sound like two /t/ sounds. Many learners insert a break instead, which sounds heavier.",
+      "phoneticRule": "Identical stops across a boundary are realised with one held closure and a single release, so the closure is lengthened.",
+      "phenomenonType": "Gemination",
+      "spokenForm": "Remember tha-ttime we got lost"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L137_Q3",
+      "instruction": "Which spoken form of “big game” fits “Big game tonight”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Big game tonight",
+      "textToSpeak": "Big game tonight",
+      "options": [
+        "“big … game”: two separate /g/ sounds with a pause",
+        "“bi-ame”: the /g/ is dropped",
+        "“bi-kgame”: the first /g/ becomes /k/",
+        "“bi-ggame”: one longer /g/ with a single release"
+      ],
+      "correctAnswer": "“bi-ggame”: one longer /g/ with a single release",
+      "correctAnswerIndex": 3,
+      "hint": "Say “big game” fast and notice how many times your tongue releases the /g/.",
+      "explanation": "“Big” ends in /g/ and “game” begins with /g/. The back of the tongue stays up for a moment longer and releases once: “bi-ggame”. The same pattern applies to /b b/, /d d/, /p p/ and others across word boundaries.",
+      "phoneticRule": "Gemination applies to voiced stops as well as voiceless stops: the closure is held and released once.",
+      "phenomenonType": "Gemination",
+      "spokenForm": "Bi-ggame tonight"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L138_Q1",
+      "instruction": "Which beats and links are heard in “Mia, wait for it at the door”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Mia, wait for it at the door",
+      "textToSpeak": "Mia, wait for it at the door",
+      "options": [
+        "Three beats (Mia, wait, door); “for it at the” is squeezed and linked",
+        "Seven even beats, one per word, with no squeezed words and no links",
+        "Five beats, with “for” and “at” stressed as prepositions normally are",
+        "Two beats, with all small words dropped from the sentence completely"
+      ],
+      "correctAnswer": "Three beats (Mia, wait, door); “for it at the” is squeezed and linked",
+      "correctAnswerIndex": 0,
+      "hint": "Find the stressed words first, then look for consonant-vowel boundaries among the small words.",
+      "explanation": "The beats fall on “Mia”, “wait” and “door”. Between “wait” and “door”, the small words “for it at the” are compressed and linked: a linking /r/ after “for” and the /t/ of “it” onto “at”. So rhythm and linking work together to make the sentence flow.",
+      "phoneticRule": "In a longer chunk, rhythm compresses the function words and linking joins them, so the two features occur at the same time.",
+      "phenomenonType": "Linking",
+      "spokenForm": "MIa, WAIT fuh-ri-tat thuh DOOR"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L138_Q2",
+      "instruction": "Which words are linked and which are stressed in “Dana, pick it up and go home”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Dana, pick it up and go home",
+      "textToSpeak": "Dana, pick it up and go home",
+      "options": [
+        "Stressed: it, up and and; nothing is linked",
+        "Stressed: every word; links only at the end",
+        "Stressed: pick, go and home; linked: “pick-it-up”; “and” reduced to /n/ in between",
+        "Stressed: pick and home; links only between go and home, and nowhere else"
+      ],
+      "correctAnswer": "Stressed: pick, go and home; linked: “pick-it-up”; “and” reduced to /n/ in between",
+      "correctAnswerIndex": 2,
+      "hint": "Content words carry the beats; the other words fall between them and link.",
+      "explanation": "“Pick”, “go” and “home” are the content words, so they carry the beats. “It up and” falls between “pick” and “go”: the /k/ links to “it” and the /t/ to “up”, and “and” is reduced to /n/. So the first half sounds like one chunk, “pi-ki-tup-n”.",
+      "phoneticRule": "Phrasal verbs with “it” link into one chunk, and the following “and” is reduced, so the stretch before the next beat is compact.",
+      "phenomenonType": "Linking",
+      "spokenForm": "DAna, PI-ki-tup-n GO HOME"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L138_Q3",
+      "instruction": "Which description fits “Rita, write it up and send it”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Rita, write it up and send it",
+      "textToSpeak": "Rita, write it up and send it",
+      "options": [
+        "Beats on Rita, write and send; “it up and” and “it” are squeezed and linked",
+        "Beats on every word, with no squeezed words and no linking between any of them",
+        "Beats on it, up and it, with “write” squeezed between the weak words",
+        "Two beats only, with the small words dropped and nothing linked"
+      ],
+      "correctAnswer": "Beats on Rita, write and send; “it up and” and “it” are squeezed and linked",
+      "correctAnswerIndex": 0,
+      "hint": "Find the three stressed words, then check which consonants link to vowels.",
+      "explanation": "The beats fall on “Rita”, “write” and “send”. The /t/ of “write” links to “it” and the /t/ of “it” links to “up”, “and” is reduced, and the final “it” links to “send” with its /d/: “sen-dit”. So rhythm and linking together give a smooth chain.",
+      "phoneticRule": "The chain of weak words around a stressed verb is both compressed and linked, so the verb phrase sounds like a single unit.",
+      "phenomenonType": "Linking",
+      "spokenForm": "RIta, RAI-ti-tup-n SEN-dit"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L139_Q1",
+      "instruction": "A learner says “Dina wants to go to the shop” with a full vowel and equal stress on every word. What is the likely effect on listeners?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Dina wants to go to the shop",
+      "textToSpeak": "Dina wants to go to the shop",
+      "options": [
+        "It sounds more natural, because every word is clear",
+        "It makes the sentence ungrammatical",
+        "It has no effect on listeners at all, because they hear each word separately and clearly",
+        "The rhythm is lost, so the sentence sounds stiff and the key words are harder to find"
+      ],
+      "correctAnswer": "The rhythm is lost, so the sentence sounds stiff and the key words are harder to find",
+      "correctAnswerIndex": 3,
+      "hint": "Think about how listeners decide which words matter when everything has the same weight.",
+      "explanation": "Listeners use stress to find the key words. When every word has the same weight, the beats disappear and the sentence sounds slow and mechanical. It is not wrong, but it is harder to follow and tiring to listen to. Using weak forms is part of being clear, not less clear.",
+      "phoneticRule": "Equal stress on all words removes the rhythmic cues that listeners use to locate content words, reducing intelligibility and naturalness.",
+      "phenomenonType": "Weak",
+      "spokenForm": "DIna WANTS tuh GO tuh thuh SHOP"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L139_Q2",
+      "instruction": "Which spoken version of “Gina is going to the shop” keeps natural rhythm?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Gina is going to the shop",
+      "textToSpeak": "Gina is going to the shop",
+      "options": [
+        "“GI-NA IS GO-ING TO THE SHOP”: every syllable stressed equally, like a list of syllables",
+        "“GIna is GOing to the SHOP”: beats on the content words, small words squeezed",
+        "“Gina GOING SHOP”: all small words removed",
+        "“GINA is going TO THE SHOP”: stress on the function words"
+      ],
+      "correctAnswer": "“GIna is GOing to the SHOP”: beats on the content words, small words squeezed",
+      "correctAnswerIndex": 1,
+      "hint": "Choose the version that has strong content words and light small words.",
+      "explanation": "The natural version has beats on “Gina”, “going” and “shop”, and the small words “is”, “to” and “the” are squeezed. Removing small words changes the grammar, and stressing them hides the meaning. The goal is balance: strong content words, quiet function words.",
+      "phoneticRule": "Natural rhythm keeps all the words but gives the content words prominence and compresses the function words.",
+      "phenomenonType": "Weak",
+      "spokenForm": "GIna iz GOing tuh thuh SHOP"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L139_Q3",
+      "instruction": "How can you practise English rhythm with the sentence “Lena wants some tea and toast”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Lena wants some tea and toast",
+      "textToSpeak": "Lena wants some tea and toast",
+      "options": [
+        "Say each word separately with a long pause between each of them",
+        "Tap the beats on the content words (Lena, wants, tea, toast) and fit the others between the taps",
+        "Say all the words at exactly the same length and the same loudness",
+        "Whisper the content words and shout the small words, so that the small words become the beats"
+      ],
+      "correctAnswer": "Tap the beats on the content words (Lena, wants, tea, toast) and fit the others between the taps",
+      "correctAnswerIndex": 1,
+      "hint": "Rhythm practice should make the content words stand out and the small words fit between them.",
+      "explanation": "Tapping the beats on the content words gives you a steady pulse, and you fit the small words between the taps. After a few repetitions you speed up. This trains you to hear the same pattern in other people’s speech and to produce it yourself.",
+      "phoneticRule": "Beat-tapping practice with content-word stress builds the stress-timed pattern by treating function words as fillers between beats.",
+      "phenomenonType": "Weak",
+      "spokenForm": "LEna WANTS sum TEA n TOAST"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L140_Q1",
+      "instruction": "Which words compress most in “Yara forgot to bring the tickets”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Yara forgot to bring the tickets",
+      "textToSpeak": "Yara forgot to bring the tickets",
+      "options": [
+        "“to” and “the”, squeezed between the beats on “forgot”, “bring” and “tickets”",
+        "“forgot” and “tickets”, which are the longest words",
+        "“Yara” and “bring”, because they are short",
+        "No word, because every word is stressed equally in any formal sentence of English"
+      ],
+      "correctAnswer": "“to” and “the”, squeezed between the beats on “forgot”, “bring” and “tickets”",
+      "correctAnswerIndex": 0,
+      "hint": "Apply the rhythm test: which words carry the meaning, and which are only joiners?",
+      "explanation": "The beats fall on “Yara”, “forgot”, “bring” and “tickets”. The two small words “to” and “the” are squeezed into the gaps and weakened: /tə/ and /ðə/. Length does not decide compression; function is the deciding factor.",
+      "phoneticRule": "Compression depends on grammatical function, not word length: function words compress, and content words keep their beats.",
+      "phenomenonType": "Weak",
+      "spokenForm": "YAra forGOT tuh BRING thuh TICkets"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L140_Q2",
+      "instruction": "Which pattern fits “Jonah, where did you put the keys?”",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Jonah, where did you put the keys",
+      "textToSpeak": "Jonah, where did you put the keys",
+      "options": [
+        "Beats on every word, so “did you” and “the” are fully and separately pronounced",
+        "Beats on Jonah and keys only, with all other words dropped",
+        "Beats on where, put and keys; “did you” (often blended) and “the” are squeezed between them",
+        "Beats on did, you and the, with the other words squeezed"
+      ],
+      "correctAnswer": "Beats on where, put and keys; “did you” (often blended) and “the” are squeezed between them",
+      "correctAnswerIndex": 2,
+      "hint": "Combine the rhythm rule with the coalescence rule from earlier.",
+      "explanation": "The stressed words are “where”, “put” and “keys”. The words “did you” and “the” are weak, and “did you” typically blends into /dʒə/. This question therefore combines rhythm, weak forms and coalescence in one fast stretch.",
+      "phoneticRule": "A single question can combine stress-timed rhythm, weak forms and blending, each at its own boundary.",
+      "phenomenonType": "Weak",
+      "spokenForm": "JOnah, WHERE d’ya PUT thuh KEYS"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L140_Q3",
+      "instruction": "Which description fits the rhythm of “Noah, I don’t know what to do”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Noah, I don’t know what to do",
+      "textToSpeak": "Noah, I don’t know what to do",
+      "options": [
+        "Beats on Noah, know and do; “I”, “don’t” and “what to” squeezed",
+        "Beats on every word equally, with no squeezed words",
+        "Beats on I, what and to, with “know” and “do” squeezed",
+        "No beats, because the sentence is too short to have a rhythm"
+      ],
+      "correctAnswer": "Beats on Noah, know and do; “I”, “don’t” and “what to” squeezed",
+      "correctAnswerIndex": 0,
+      "hint": "Combine the rhythm rule with the contraction rule for “don’t know”.",
+      "explanation": "“Noah”, “know” and “do” carry the beats, and the sentence is spoken as “NOah, I dunNO wot tuh DO”. “Don’t” is reduced to “dun”, and “what to” is squeezed. This stage-check sentence combines rhythm with a contraction.",
+      "phoneticRule": "In a realistic sentence, rhythm decides where the beats fall, and the contraction and weak forms compress everything between them.",
+      "phenomenonType": "Weak",
+      "spokenForm": "NOah, I dunNO wot tuh DO"
+    }
+  ]
 }

@@ -1,577 +1,607 @@
 {
-    "gameType": "connectedSpeech",
-    "batchIndex": 5,
-    "levels": "41-50",
-    "quests": [
-        {
-            "id": "ACC_CONNECTEDSPEECH_L41_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "around your block",
-            "textToSpeak": "around your block",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Coalescence (/d/ + /j/ becomes /dʒ/)"
-            ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
-            "correctAnswerIndex": 1,
-            "hint": "\"around\" ends in /d/ and \"your\" begins with a /j/ sound. What single new consonant do the two combine into?",
-            "explanation": "When /d/ meets /j/ across a word boundary, the two often fuse into a single new consonant. In \"around your\", /d/ + /j/ becomes /dʒ/ — a completely different sound from either original.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "around your block"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L41_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "last call",
-            "textToSpeak": "last call",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely at the boundary of \"last\" and \"call\" — count the consonants stacking up. Does the /t/ still make it into the sentence?",
-            "explanation": "In fast, connected speech, a /t/ wedged between consonants almost always disappears. That's what you'll hear in \"last call\" — the /t/ goes silent.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "las' call"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L41_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "attend your class",
-            "textToSpeak": "attend your class",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Coalescence (/d/ + /j/ becomes /dʒ/)"
-            ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Instead of hearing /d/ and /j/ separately between \"attend\" and \"your\", listen for one fused sound. What is it?",
-            "explanation": "This is coalescent assimilation: two adjacent sounds merge into a third sound that resembles neither one alone. Here, /d/ and /j/ combine into /dʒ/ in \"attend your\".",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "attend your class"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L42_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "seven cups",
-            "textToSpeak": "seven cups",
-            "options": [
-                "Assimilation (/n/ becomes /ŋ/)",
-                "Elision (/n/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sound of \"seven\". With a velar consonant starting \"cups\" right after it, what shift would make pronunciation easier?",
-            "explanation": "Rather than jump from the /n/ ending \"seven\" to a velar sound, the mouth compromises: /n/ becomes /ŋ/, matching the velar consonant that opens \"cups\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "seven cups"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L42_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "gift card",
-            "textToSpeak": "gift card",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /b/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"gift card\" naturally, without pausing between the words. Is the /t/ audible, or does it disappear into the next consonant?",
-            "explanation": "Elision removes a sound completely rather than merely blending it. Here the /t/ vanishes from \"gift\" so the phrase moves directly into \"card\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "gif' card"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L42_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "data entry",
-            "textToSpeak": "data entry",
-            "options": [
-                "Elision (the vowel disappears)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "\"data\" has no letter for /r/ anywhere at its end. So if you hear a /r/ before \"entry\", where does it actually come from?",
-            "explanation": "English avoids putting two vowel sounds directly next to each other, so speakers insert a small linking sound to bridge them. Since \"data\" has no /r/ in its spelling, this /r/ is intrusive — added purely for smoothness, not because it's really part of \"data\" or \"entry\".",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "data entry"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L43_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "round trip",
-            "textToSpeak": "round trip",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /m/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "This pair, \"round trip\", creates a tricky consonant sequence. Which sound do fluent speakers simplify away — and is it really gone, or just quieter?",
-            "explanation": "Speakers naturally avoid three consonants in a row, so the /d/ is dropped rather than forced through. That's why \"round trip\" sounds smoother without it.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "roun' trip"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L43_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "comma and a",
-            "textToSpeak": "comma and a",
-            "options": [
-                "Elision (the vowel disappears)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Both \"comma\" and \"and\" end and begin with vowel sounds. Listen for an extra consonant sound that sneaks in between them.",
-            "explanation": "This is intrusion: a sound appears between two vowels even though it isn't written anywhere. In \"comma and\", an intrusive /r/ bridges the gap, purely to avoid an awkward vowel collision.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "comma and a"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L43_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten kilos",
-            "textToSpeak": "ten kilos",
-            "options": [
-                "Assimilation (/n/ becomes /ŋ/)",
-                "Elision (/n/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"ten kilos\" quickly, the way you'd say it in conversation. Which consonant do you actually hear where /n/ used to be?",
-            "explanation": "In fluent speech, /n/ rarely stays /n/ before a velar sound — it assimilates to /ŋ/, which is exactly what you hear in \"ten kilos\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "ten kilos"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L44_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "act fast",
-            "textToSpeak": "act fast",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /k/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Fluent speech avoids awkward consonant pile-ups. Where exactly does that simplification happen in \"act fast\"?",
-            "explanation": "This cluster is simplified by deleting the /t/ altogether — not weakening it, not shifting it, just leaving it out — which is the defining feature of elision in \"act fast\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "act fas'"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L44_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten passengers",
-            "textToSpeak": "ten passengers",
-            "options": [
-                "Assimilation (/n/ becomes /m/)",
-                "Elision (/n/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /m/)",
-            "correctAnswerIndex": 0,
-            "hint": "The tongue is already anticipating \"passengers\"'s bilabial sound before it even finishes \"ten\". What happens to /n/ as a result?",
-            "explanation": "The change from /n/ to /m/ at the end of \"ten\" happens because the following bilabial consonant in \"passengers\" pulls the place of articulation to match. Nothing is lost here, just reshaped.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "ten passemgers"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L44_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "left behind",
-            "textToSpeak": "left behind",
-            "options": [
-                "Assimilation (/t/ becomes /g/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"left\" alone, then \"behind\" alone — both consonants are clear. Now blend them at speed. What happens to the /t/ in between?",
-            "explanation": "Notice that nothing replaces the /t/ — it isn't weakened or swapped for another sound, it's simply omitted. That full deletion is what separates elision from assimilation in \"left behind\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "lef' behind"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L45_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "drama unfolds",
-            "textToSpeak": "drama unfolds",
-            "options": [
-                "Elision (the vowel disappears)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"drama unfolds\" without a pause. Two vowel sounds are about to collide — what does English insert to smooth the transition?",
-            "explanation": "Because \"drama\" ends in a vowel and \"unfolds\" begins with one, English speakers instinctively insert /r/ between them. It's not in the spelling of either word — it's added on the fly to keep the speech flowing.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "drama unfolds"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L45_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "not bad",
-            "textToSpeak": "not bad",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /p/)",
-            "correctAnswerIndex": 1,
-            "hint": "Between \"not\" and \"bad\" sits a consonant under pressure to match its neighbor. What does it become?",
-            "explanation": "This pairing is a classic assimilation example: the /t/ ending \"not\" adopts the bilabial quality of the sound in \"bad\", surfacing as /p/ in natural, connected speech.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "nop bad"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L45_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "before everyone",
-            "textToSpeak": "before everyone",
-            "options": [
-                "Intrusion (intrusive /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "\"before\" already has a written 'r' at the end — normally silent before a pause, but what happens to it right before the vowel that opens \"everyone\"?",
-            "explanation": "\"before\" ends in a written 'r' that's silent in isolation (in non-rhotic pronunciation) but reappears whenever a vowel follows. Because \"everyone\" begins with a vowel, the /r/ resurfaces — this is linking /r/, not intrusion, since the letter is genuinely there in \"before\".",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
-            "phenomenonType": "Linking",
-            "spokenForm": "before everyone"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L46_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "organize your schedule",
-            "textToSpeak": "organize your schedule",
-            "options": [
-                "Coalescence (/z/ + /j/ becomes /ʒ/)",
-                "Elision (/z/ disappears)"
-            ],
-            "correctAnswer": "Coalescence (/z/ + /j/ becomes /ʒ/)",
-            "correctAnswerIndex": 0,
-            "hint": "Say \"organize your\" quickly and casually. The /z/ and the /j/ in \"your\" don't stay separate — what do they merge into?",
-            "explanation": "Rather than two separate consonants, connected speech blends /z/ and /j/ into /ʒ/. That's why \"organize your\" sounds like one smooth unit rather than two words bumping together.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "organize your schedule"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L46_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "camera or phone",
-            "textToSpeak": "camera or phone",
-            "options": [
-                "Elision (the vowel disappears)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Check the spelling of \"camera\" before \"or\" — does it end in a letter that would predict a /r/ sound? If not, where's that /r/ actually coming from?",
-            "explanation": "Unlike linking, where the connecting sound is already written into the word, this /r/ in \"camera or\" comes from nowhere in the spelling. That's exactly what makes it intrusive rather than a genuine linking sound.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "camera or phone"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L46_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "ten branches",
-            "textToSpeak": "ten branches",
-            "options": [
-                "Assimilation (/n/ becomes /m/)",
-                "Elision (/n/ disappears)"
-            ],
-            "correctAnswer": "Assimilation (/n/ becomes /m/)",
-            "correctAnswerIndex": 0,
-            "hint": "This isn't a case of a sound vanishing from \"ten\" — it's still there, just different. What does /n/ turn into before the bilabial sound in \"branches\"?",
-            "explanation": "Notice that the /n/ ending \"ten\" isn't deleted the way it would be in elision — it survives, just transformed into /m/ to match the bilabial sound beginning \"branches\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "ten bramches"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L47_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "wild guess",
-            "textToSpeak": "wild guess",
-            "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /p/)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "A stop consonant squeezed between two other consonants rarely survives in fast speech. Listen for the /d/ in \"wild guess\" — is it there?",
-            "explanation": "Consonant clusters like this one are common at word boundaries in English, and the middle stop is almost always the casualty. The /d/ drops out of \"wild guess\" for exactly that reason.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
-            "phenomenonType": "Elision",
-            "spokenForm": "wil' guess"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L47_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "spend time",
-            "textToSpeak": "spend time",
-            "options": [
-                "Assimilation (/d/ becomes /b/)",
-                "Elision (/d/ disappears)"
-            ],
-            "correctAnswer": "Elision (/d/ disappears)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"spend time\" quickly. The consonants pile up right around the /d/ in \"spend\" — does it survive the crowd, or get squeezed out?",
-            "explanation": "When /d/ sits between two other consonants, English speakers routinely drop it to keep the rhythm smooth. In \"spend time\", the /d/ disappears rather than being pronounced.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
-            "phenomenonType": "Elision",
-            "spokenForm": "spen' time"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L47_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "banana ice cream",
-            "textToSpeak": "banana ice cream",
-            "options": [
-                "Elision (the vowel disappears)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Vowel sounds rarely bump directly into each other in fluent English. What extra sound bridges \"banana\" and \"ice\" here?",
-            "explanation": "Two vowel sounds meeting head-on is hard to say smoothly, so speakers add /r/ as a natural bridge. You'll hear it in \"banana ice\", even though neither word's spelling contains it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "banana ice cream"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L48_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "find your way",
-            "textToSpeak": "find your way",
-            "options": [
-                "Coalescence (/d/ + /j/ becomes /dʒ/)",
-                "Elision (/d/ disappears)"
-            ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
-            "correctAnswerIndex": 0,
-            "hint": "There's a consonant collision at the boundary of \"find\" and \"your\": /d/ meets /j/. Which single sound comes out the other side?",
-            "explanation": "Coalescence happens when neighboring sounds are so close in the mouth that they collapse into one. /d/ and /j/ become /dʒ/ in \"find your\" — faster and easier to say than keeping the two sounds apart.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "find your way"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L48_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "amaze your friends",
-            "textToSpeak": "amaze your friends",
-            "options": [
-                "Elision (/z/ disappears)",
-                "Coalescence (/z/ + /j/ becomes /ʒ/)"
-            ],
-            "correctAnswer": "Coalescence (/z/ + /j/ becomes /ʒ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Two consonants become one here. Focus on where \"amaze\" ends and \"your\" begins — what's the resulting blended sound?",
-            "explanation": "This merge is extremely common wherever a word ending in /z/ meets a \"you\"-type word. In \"amaze your\", the result is /ʒ/, not /z/ followed by /j/.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "amaze your friends"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L48_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "discuss your plan",
-            "textToSpeak": "discuss your plan",
-            "options": [
-                "Coalescence (/s/ + /j/ becomes /ʃ/)",
-                "Elision (/s/ disappears)"
-            ],
-            "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
-            "correctAnswerIndex": 0,
-            "hint": "Rather than pronouncing /s/ then /j/ separately, fluent speakers coalesce them. What do you actually hear in \"discuss your\"?",
-            "explanation": "Notice that neither the original /s/ nor /j/ survives on its own — they combine into /ʃ/. That fusion is what makes \"discuss your\" sound natural and fast.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "discuss your plan"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L49_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "won't you",
-            "textToSpeak": "won't you",
-            "options": [
-                "Coalescence (/t/ + /j/ becomes /tʃ/)",
-                "Elision (/t/ disappears)"
-            ],
-            "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen at natural speed: does \"won't you\" keep two distinct consonant sounds at the boundary, or blend them into a new one?",
-            "explanation": "In relaxed, natural speech, /t/ and /j/ rarely stay separate at a word boundary like this one. They coalesce into /tʃ/, exactly as in \"won't you\".",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
-            "phenomenonType": "Coalescence",
-            "spokenForm": "won't you"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L49_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "four o'clock",
-            "textToSpeak": "four o'clock",
-            "options": [
-                "Intrusion (intrusive /r/)",
-                "Linking (/r/ links to the vowel)"
-            ],
-            "correctAnswer": "Linking (/r/ links to the vowel)",
-            "correctAnswerIndex": 1,
-            "hint": "Say \"four o'clock\" naturally. That final 'r' in \"four\", usually silent, resurfaces here — why, do you think?",
-            "explanation": "This is linking, not intrusion, because the 'r' is already written into \"four\". It stays silent before a pause or consonant but comes back to life right before the vowel that opens \"o'clock\".",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
-            "phenomenonType": "Linking",
-            "spokenForm": "four o'clock"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L49_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "that car",
-            "textToSpeak": "that car",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /k/)"
-            ],
-            "correctAnswer": "Assimilation (/t/ becomes /k/)",
-            "correctAnswerIndex": 1,
-            "hint": "The /t/ at the end of \"that\" is about to meet a velar sound in \"car\". Does it hold firm, or shift to match?",
-            "explanation": "Before a velar consonant, /t/ commonly shifts to match its place of articulation. In \"that car\", /t/ becomes /k/ — the sound itself changes, it doesn't disappear.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
-            "phenomenonType": "Assimilation",
-            "spokenForm": "thak car"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L50_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "draw a picture",
-            "textToSpeak": "draw a picture",
-            "options": [
-                "Elision (the vowel disappears)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "There's no /r/ anywhere in the spelling of \"draw\". Yet something links it to the vowel that opens \"a\" — what is it?",
-            "explanation": "This inserted /r/ has no basis in spelling — it exists purely to smooth the vowel-to-vowel transition between \"draw\" and \"a\". That's the hallmark of intrusion.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "draw a picture"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L50_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "first class",
-            "textToSpeak": "first class",
-            "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /m/)"
-            ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "There's a consonant cluster forming between \"first\" and \"class\". In natural speech, one sound in that cluster usually disappears. Which one?",
-            "explanation": "Three consonants in a row are hard to articulate cleanly, so speakers simplify by deleting the middle one. That's exactly what happens to the /t/ in \"first class\" — it's dropped, not just softened.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
-            "phenomenonType": "Elision",
-            "spokenForm": "firs' class"
-        },
-        {
-            "id": "ACC_CONNECTEDSPEECH_L50_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
-            "subtype": "connectedSpeech",
-            "interactionType": "speaking",
-            "word": "agenda ahead",
-            "textToSpeak": "agenda ahead",
-            "options": [
-                "Elision (the vowel disappears)",
-                "Intrusion (intrusive /r/)"
-            ],
-            "correctAnswer": "Intrusion (intrusive /r/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen carefully between \"agenda\" and \"ahead\". An unwritten sound appears purely to ease the vowel-to-vowel transition. Which one?",
-            "explanation": "Native speakers automatically fill the gap between two vowel sounds with /r/, even when there's no letter to justify it. \"agenda ahead\" is a clear example of this intrusive sound.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
-            "phenomenonType": "Intrusion",
-            "spokenForm": "agenda ahead"
-        }
-    ]
+  "gameType": "connectedSpeech",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "ACC_CONNECTEDSPEECH_L41_Q1",
+      "instruction": "Say “ten pounds” quickly, as if pricing something. What often happens to the /n/ of “ten”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "ten pounds",
+      "textToSpeak": "ten pounds",
+      "options": [
+        "It stays a tongue-tip /n/, because it is the last sound of the word and so is fixed",
+        "It often shifts towards /m/, because the lips are getting ready for the /p/",
+        "It disappears completely before the /p/, so “ten” sounds like “te pounds”"
+      ],
+      "correctAnswer": "It often shifts towards /m/, because the lips are getting ready for the /p/",
+      "correctAnswerIndex": 1,
+      "hint": "Say “ten pounds” slowly, then fast. Notice what your lips do before the /p/ begins.",
+      "explanation": "In fast speech your mouth starts preparing for the next sound before it finishes the current one. The tongue tip would normally close for /n/, but the lips are already preparing for /p/, so “ten pounds” often sounds like “tem pounds”. This kind of change is called assimilation: a sound becomes more like its neighbour.",
+      "phoneticRule": "In assimilation, a word-final sound takes on a feature of the following sound (here, the place of articulation), so an alveolar /n/ before a bilabial /p/ is often pronounced as bilabial [m].",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "tem pounds"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L41_Q2",
+      "instruction": "Why does “lean back” often sound like “leem back” in casual speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "lean back",
+      "textToSpeak": "lean back",
+      "options": [
+        "The lips prepare for the /b/, so the nasal is made at the lips, not the tongue tip",
+        "The speaker adds an /m/ by mistake, because “back” is a very common word in English",
+        "The /b/ of “back” moves back onto “lean”, so the phrase is heard as “leemb ack”"
+      ],
+      "correctAnswer": "The lips prepare for the /b/, so the nasal is made at the lips, not the tongue tip",
+      "correctAnswerIndex": 0,
+      "hint": "Think about where in your mouth the /n/ is made compared with the /b/. Which articulator is about to move?",
+      "explanation": "/n/ is normally made with the tongue tip against the ridge behind the upper teeth, while /b/ is made with the lips. In fast speech the mouth moves ahead to the lips, so the nasal becomes [m]: “leem back”. The change happens because of the next sound, not because of a mistake.",
+      "phoneticRule": "Alveolar nasals assimilate in place to a following bilabial consonant: /n/ becomes [m] before /p/, /b/ and /m/, an anticipatory change typical of casual speech.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "leem back"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L41_Q3",
+      "instruction": "You are running late and text, “I’m on my way.” Which version of “on my way” shows the change?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "on my way",
+      "textToSpeak": "on my way",
+      "options": [
+        "“on my way”, with a clear tongue-tip /n/ before the /m/",
+        "“ong my way”, with the nasal moved to the back of the mouth",
+        "“om my way”, with the nasal made at the lips before the /m/"
+      ],
+      "correctAnswer": "“om my way”, with the nasal made at the lips before the /m/",
+      "correctAnswerIndex": 2,
+      "hint": "Look at the first sound of “my”. Which part of the mouth makes it, and how might the nasal before it adapt?",
+      "explanation": "/m/ is made with the lips, so the /n/ of “on” can shift to the lips: “om my way”. The two nasals then blend into one slightly longer /m/. It is a very common phrase in messages and phone calls.",
+      "phoneticRule": "When the changed sound and the following sound become the same consonant, the boundary can sound like a single lengthened consonant.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "om my way"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L42_Q1",
+      "instruction": "You ask a friend, “Have you seen Mary?” Which version of “seen Mary” shows the change often heard in casual speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "seen Mary",
+      "textToSpeak": "seen Mary",
+      "options": [
+        "“seem Mary”, with the nasal made at the lips",
+        "“seen Mary”, with a clear tongue-tip /n/",
+        "“seeng Mary”, with the nasal made at the back of the mouth"
+      ],
+      "correctAnswer": "“seem Mary”, with the nasal made at the lips",
+      "correctAnswerIndex": 0,
+      "hint": "Say “seen Mary” quickly and notice which part of your mouth is ready for the /m/ while the nasal is still sounding.",
+      "explanation": "The /m/ starts with the lips closing, so in quick speech the nasal before it is often made at the lips too: “seem Mary”. The vowel stays the same and only the nasal changes. Recognising this stops you from hearing an unfamiliar word instead of “seen”.",
+      "phoneticRule": "The change targets the word-final nasal only; the vowel before it and the consonant after it keep their normal quality.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "seem Mary"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L42_Q2",
+      "instruction": "In “join me”, which sound changes, and which sound causes the change?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "join me",
+      "textToSpeak": "join me",
+      "options": [
+        "The /m/ of “me” changes into /n/ because of the /n/ of “join”",
+        "The vowel of “join” changes because of the /m/",
+        "The /n/ of “join” changes to /m/ because of the /m/ of “me”"
+      ],
+      "correctAnswer": "The /n/ of “join” changes to /m/ because of the /m/ of “me”",
+      "correctAnswerIndex": 2,
+      "hint": "Ask which sound comes first in time. The change usually happens to that earlier sound.",
+      "explanation": "The change works backwards in time: the earlier sound adapts to the later one. So the /n/ at the end of “join” becomes [m] before the /m/ of “me”: “joym me”. The /m/ of “me” stays as it is. Knowing the direction makes it easier to predict where changes occur.",
+      "phoneticRule": "Assimilation of place is typically regressive: the word-final alveolar takes the place of articulation of the following consonant, and the following consonant remains unchanged.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "joym me"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L42_Q3",
+      "instruction": "You ask a colleague, “Do you have a plan B?” Which version of “plan B” shows the change?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "plan B",
+      "textToSpeak": "plan B",
+      "options": [
+        "“plang B”, with the nasal made at the back of the mouth",
+        "“plan B”, with the tongue-tip /n/ kept clear",
+        "“plam B”, with the nasal made at the lips, not the tip"
+      ],
+      "correctAnswer": "“plam B”, with the nasal made at the lips, not the tip",
+      "correctAnswerIndex": 2,
+      "hint": "The letter B stands for a /b/ sound. Decide which place in the mouth makes it, then adapt the nasal.",
+      "explanation": "The /b/ in “B” is made with the lips, so the /n/ of “plan” often shifts to [m]: “plam B”. It works with a single letter name just as with a full word, because only the following sound matters.",
+      "phoneticRule": "The trigger can be any word beginning with a bilabial, including single-letter names such as B or P; what matters is the sound, not the word type.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "plam B"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L43_Q1",
+      "instruction": "Say “phone call” at conversation speed. What often happens to the /n/ at the end of “phone”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "phone call",
+      "textToSpeak": "phone call",
+      "options": [
+        "It becomes /m/, because the lips start to get ready for the beginning of “call”",
+        "It often becomes [ŋ], the “ng” sound, as the tongue moves back in readiness for the /k/",
+        "It stays exactly the same, because a word-final sound is fixed in place and cannot change"
+      ],
+      "correctAnswer": "It often becomes [ŋ], the “ng” sound, as the tongue moves back in readiness for the /k/",
+      "correctAnswerIndex": 1,
+      "hint": "Say “phone call” slowly, then quickly. Notice where the back of your tongue is heading for the /k/.",
+      "explanation": "/k/ is made at the back of the mouth, where the back of the tongue touches the soft palate. In quick speech the tongue can move there early, so the /n/ becomes [ŋ], the “ng” sound: “fohng call”. The words are still “phone call”; only the position of the nasal has changed.",
+      "phoneticRule": "Before a velar stop (/k/ or /g/), an alveolar /n/ is commonly realised as velar [ŋ] in casual speech.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "fohng call"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L43_Q2",
+      "instruction": "Choose the explanation that fits “green card” sounding like “greeng card”.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "green card",
+      "textToSpeak": "green card",
+      "options": [
+        "A letter “g” is added in speech because “card” begins with a hard “c” sound",
+        "The tongue moves back for /k/, so the nasal shifts to [ŋ] a little early",
+        "The /k/ of “card” moves back onto “green”, so the phrase is heard as “greenk ard”"
+      ],
+      "correctAnswer": "The tongue moves back for /k/, so the nasal shifts to [ŋ] a little early",
+      "correctAnswerIndex": 1,
+      "hint": "Say “ing”, then say “green” before a /k/, and compare where your tongue is at the end of the nasal.",
+      "explanation": "No letter is added; the “ng” sound is [ŋ], made with the back of the tongue raised. Because /k/ needs that same tongue position, the nasal in “green” often shifts there early. The spelling stays “green card”, but the sound is closer to “greeng card”.",
+      "phoneticRule": "The change is phonetic, not orthographic: the nasal takes the velar place of the following /k/ or /g/ without any change to the spelling or the identity of the words.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "greeng card"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L43_Q3",
+      "instruction": "Which version of “one game” shows the change often heard before a /g/?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "one game",
+      "textToSpeak": "one game",
+      "options": [
+        "“wung game”, with the nasal made at the back of the mouth",
+        "“wum game”, with the nasal made at the lips before the /g/",
+        "“wun game”, with the tongue-tip closure kept clear and unchanged"
+      ],
+      "correctAnswer": "“wung game”, with the nasal made at the back of the mouth",
+      "correctAnswerIndex": 0,
+      "hint": "Compare the first sound of “game” with the /k/ from the earlier examples. Which place in the mouth do they share?",
+      "explanation": "/g/ is made at the back of the mouth, like /k/, so the /n/ of “one” often shifts to [ŋ] before it: “wung game”. It is the same pattern as “phone call”; only the following consonant differs.",
+      "phoneticRule": "Both velar stops, /k/ and /g/, trigger the same shift of /n/ to [ŋ], because they share the same place of articulation.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "wung game"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L44_Q1",
+      "instruction": "Predict which version of “that man” shows the change often heard in casual speech.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "that man",
+      "textToSpeak": "that man",
+      "options": [
+        "“thak man”, with the /t/ made at the back of the mouth",
+        "“that man”, with a clear tongue-tip /t/ released before the /m/",
+        "“thap man”, with the /t/ made at the lips before the /m/"
+      ],
+      "correctAnswer": "“thap man”, with the /t/ made at the lips before the /m/",
+      "correctAnswerIndex": 2,
+      "hint": "Look at the first sound of “man” and decide where in the mouth it is made, then ask which sound before it could copy that place.",
+      "explanation": "/m/ is made with the lips, so the /t/ before it can move to the lips as well: [p]. The result sounds like “thap man”. The /t/ stays voiceless and still stops the airflow; only its place changes. Some speakers use a brief throat stop for /t/ instead, and the lip closure of the following sound is what you hear then.",
+      "phoneticRule": "Before a bilabial consonant, the alveolar stop /t/ can be realised as bilabial [p], keeping its voicelessness and stop quality.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "thap man"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L44_Q2",
+      "instruction": "In “great party”, what happens to the /t/ when the phrase is said quickly and casually?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "great party",
+      "textToSpeak": "great party",
+      "options": [
+        "It can become a /p/ sound, made at the lips, before the /p/ of “party”",
+        "It can become a /k/ sound, made at the back of the mouth, before the /p/ of “party”",
+        "It becomes a /d/, because the next word’s vowel is voiced"
+      ],
+      "correctAnswer": "It can become a /p/ sound, made at the lips, before the /p/ of “party”",
+      "correctAnswerIndex": 0,
+      "hint": "Notice that “party” begins with a lip sound, and think about what your tongue tip does when the lips are about to close.",
+      "explanation": "The /p/ of “party” is made with the lips, so the /t/ before it can move to the lips. Because both sounds are then identical, they merge into one longer /p/: “grayp party”. Recognising this prevents you from searching for a word like “grape”.",
+      "phoneticRule": "When the assimilated sound matches the following consonant exactly, the two can merge into a single lengthened consonant, which is why the boundary can seem to disappear.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "grayp party"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L44_Q3",
+      "instruction": "Apply the change to “meet Mum” in “Come and meet Mum.” Which version shows it?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "meet Mum",
+      "textToSpeak": "meet Mum",
+      "options": [
+        "“meek Mum”, with the /t/ made at the back of the mouth",
+        "“meep Mum”, with the /t/ made at the lips",
+        "“mee Mum”, with the /t/ left out entirely"
+      ],
+      "correctAnswer": "“meep Mum”, with the /t/ made at the lips",
+      "correctAnswerIndex": 1,
+      "hint": "Repeat “meet” before “Mum” and notice which sound your lips are about to make.",
+      "explanation": "The /m/ of “Mum” starts with lip closure, so the /t/ of “meet” often moves to the lips: “meep Mum”. It is the same pattern as “that man”; the following consonant is unaffected.",
+      "phoneticRule": "All three bilabial consonants (/p/, /b/ and /m/) trigger the shift equally, so the choice of trigger does not change the pattern.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "meep Mum"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L45_Q1",
+      "instruction": "Which change is often heard in “red bus” in fast, casual speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "red bus",
+      "textToSpeak": "red bus",
+      "options": [
+        "The /d/ becomes /k/, made at the back of the mouth",
+        "The /b/ of “bus” becomes /d/ to match the /d/ of “red”",
+        "The /d/ becomes /b/, made at the lips, not the tongue"
+      ],
+      "correctAnswer": "The /d/ becomes /b/, made at the lips, not the tongue",
+      "correctAnswerIndex": 2,
+      "hint": "Say “red bus” quickly and notice what your lips do before the /b/ starts.",
+      "explanation": "The /d/ at the end of “red” is made with the tongue tip, but /b/ starts with the lips. In casual speech the /d/ often shifts to the lips as [b], so it sounds like “reb bus”, with a slightly long /b/. The /b/ of “bus” is not affected.",
+      "phoneticRule": "The voiced alveolar stop /d/ can be realised as bilabial [b] before /p/, /b/ or /m/, keeping its voicing.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "reb bus"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L45_Q2",
+      "instruction": "Compare the change in “ten pounds” with the change in “bad back”. What do the two changes have in common?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "bad back",
+      "textToSpeak": "bad back",
+      "options": [
+        "Both involve a nasal consonant moving to the lips before a lip sound",
+        "Both involve a tongue-tip sound moving to the lips because a lip sound follows",
+        "Both involve the first sound of the second word changing to match the first word"
+      ],
+      "correctAnswer": "Both involve a tongue-tip sound moving to the lips because a lip sound follows",
+      "correctAnswerIndex": 1,
+      "hint": "Identify which sound changes in each phrase, and which sound causes the change.",
+      "explanation": "In both phrases, a tongue-tip consonant at the end of the first word (the /n/ of “ten” and the /d/ of “bad”) moves to the lips because the next word starts with a lip consonant. The trigger stays the same; only the affected sound differs. This is what makes the pattern predictable.",
+      "phoneticRule": "The pattern is general: the alveolar consonants /t/, /d/ and /n/ can take the place of a following bilabial, and the following consonant stays unchanged.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "/bæb bæk/"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L45_Q3",
+      "instruction": "Which version of “could be” shows the change in casual speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "could be",
+      "textToSpeak": "could be",
+      "options": [
+        "/kʊb bi/, with the /d/ made at the lips",
+        "/kʊd bi/, with a clear tongue-tip /d/",
+        "/kʊɡ bi/, with the /d/ made at the back of the mouth"
+      ],
+      "correctAnswer": "/kʊb bi/, with the /d/ made at the lips",
+      "correctAnswerIndex": 0,
+      "hint": "The word “be” starts with /b/. Decide which place in the mouth it shares with the changing sound.",
+      "explanation": "/b/ is a lip sound, so the /d/ of “could” can shift to the lips: /kʊb bi/. Because both are then /b/, the two merge into one slightly longer /b/. It is a common change in phrases such as “could be” and “would be”.",
+      "phoneticRule": "Modal verbs ending in /d/ (could, would, should) frequently show this change before bilabials, as in “could be” or “would pay”.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "/kʊb bi/"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L46_Q1",
+      "instruction": "You order “hot coffee” at a café. Which version shows the change often heard in casual speech?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "hot coffee",
+      "textToSpeak": "hot coffee",
+      "options": [
+        "“hok coffee”, with the /t/ made at the back of the mouth",
+        "“hop coffee”, with the /t/ made at the lips before the /k/",
+        "“hot coffee”, with the tongue-tip /t/ released clearly"
+      ],
+      "correctAnswer": "“hok coffee”, with the /t/ made at the back of the mouth",
+      "correctAnswerIndex": 0,
+      "hint": "The next word begins with a /k/; feel where the back of your tongue rises when you say it.",
+      "explanation": "/k/ is made at the back of the mouth, so the /t/ of “hot” can move there too: [k]. The two /k/ sounds then blend into one slightly longer /k/: “hok coffee”. This is a common everyday realisation when ordering drinks.",
+      "phoneticRule": "Before a velar stop, alveolar /t/ and /d/ can be realised as velar [k] and [g], sharing the place of the following consonant.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "hok coffee"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L46_Q2",
+      "instruction": "In “bad cold”, which sound is changed by the /k/ that follows?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "bad cold",
+      "textToSpeak": "bad cold",
+      "options": [
+        "The /b/ at the start of “bad”",
+        "The /l/ in the middle of “cold”",
+        "The /d/ ending the word “bad”"
+      ],
+      "correctAnswer": "The /d/ ending the word “bad”",
+      "correctAnswerIndex": 2,
+      "hint": "Only a sound at the edge of the first word can change here. Which sound is that?",
+      "explanation": "The /d/ closes “bad” and sits right before /k/, so it can adapt to the back-of-mouth place of /k/ and be heard as [g]: /bæɡ kəʊld/. The /b/ is too far away to be affected, and the /k/ in “cold” stays as it is.",
+      "phoneticRule": "Only the word-final alveolar consonant assimilates; consonants inside the word and the trigger consonant are not affected.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "/bæɡ kəʊld/"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L46_Q3",
+      "instruction": "You tell a friend, “I’m not going.” Which version of “not going” shows the change?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "not going",
+      "textToSpeak": "not going",
+      "options": [
+        "“nok going”, with the /t/ made at the back of the mouth",
+        "“nop going”, with the /t/ made at the lips",
+        "“nod going”, with the /t/ fully voiced into a /d/ before the /g/"
+      ],
+      "correctAnswer": "“nok going”, with the /t/ made at the back of the mouth",
+      "correctAnswerIndex": 0,
+      "hint": "Say “not going” in a hurry, then check which sound of “going” your tongue is preparing for.",
+      "explanation": "/g/ is a back-of-the-mouth sound, so the /t/ of “not” can shift to the back: [k]. The /t/ stays voiceless, so you typically hear /k/ rather than /g/, followed by the /g/ of “going”. It is very common with negatives such as “not going”.",
+      "phoneticRule": "Voiceless /t/ typically keeps its voicelessness when it takes velar place, so it is realised as [k] rather than [g] before /g/.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "nok going"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L47_Q1",
+      "instruction": "A learner says “plan my day” with a clear /n/ every time. Another says “plam my day”. Which statement is fair?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "plan my day",
+      "textToSpeak": "plan my day",
+      "options": [
+        "The clear /n/ is wrong, because English requires the change whenever an /m/ follows",
+        "Both are acceptable: the change is common but optional, and depends on speed and style",
+        "The changed version is wrong, because the spelling has an “n” and speech should match the spelling"
+      ],
+      "correctAnswer": "Both are acceptable: the change is common but optional, and depends on speed and style",
+      "correctAnswerIndex": 1,
+      "hint": "Think about how the same speaker may say a phrase differently in careful and in casual situations.",
+      "explanation": "Assimilation is a tendency, not a rule that every speaker must apply. In careful or slow speech the /n/ may stay clear; in casual speech it often shifts to [m]. Both are normal, and the change can also be partial, with a sound somewhere between [n] and [m]. For listening, the aim is to recognise the change, not to expect it.",
+      "phoneticRule": "Assimilation is variable: it depends on speech rate, formality and the speaker, and the result can be partial (an intermediate articulation) rather than a complete change.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "plam my day"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L47_Q2",
+      "instruction": "A listener hears the /t/ in “that boy” as halfway between a /t/ and a /p/. What is happening?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "that boy",
+      "textToSpeak": "that boy",
+      "options": [
+        "The speaker is mispronouncing the word and should repeat it more slowly and carefully next time",
+        "The /t/ has been replaced by a full /p/ in every case, so the listener misheard it",
+        "The change is partial: the lips have begun to close, but the tongue tip is still involved"
+      ],
+      "correctAnswer": "The change is partial: the lips have begun to close, but the tongue tip is still involved",
+      "correctAnswerIndex": 2,
+      "hint": "Consider that the mouth moves gradually, not in sudden jumps.",
+      "explanation": "The tongue tip and the lips can overlap in time, so the /t/ may be only partly changed. What you hear can sit between [t] and [p], especially at moderate speed. This is normal variation, not an error.",
+      "phoneticRule": "Gradient assimilation involves overlapping articulatory gestures, so a listener may hear an intermediate sound rather than a clean category change.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "thap boy"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L47_Q3",
+      "instruction": "You say, “I would buy it.” Which version of “would buy” is a normal casual variant showing assimilation?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "would buy",
+      "textToSpeak": "would buy",
+      "options": [
+        "/wʊt baɪ/, with the /d/ devoiced into a /t/",
+        "/wʊb baɪ/, with the /d/ made at the lips instead",
+        "/wʊɡ baɪ/, with the /d/ made at the back of the mouth"
+      ],
+      "correctAnswer": "/wʊb baɪ/, with the /d/ made at the lips instead",
+      "correctAnswerIndex": 1,
+      "hint": "Ask which sound in the phrase asks for lip closure, and whether the /d/ could move to that place.",
+      "explanation": "The /b/ of “buy” involves lip closure, so the /d/ of “would” can shift to the lips and merge with it: /wʊb baɪ/. It is a common casual variant, not a required form. A clear /d/ is still perfectly acceptable, especially in careful speech.",
+      "phoneticRule": "Assimilated forms are optional variants: both the assimilated and the citation form are acceptable, and the choice reflects style rather than correctness.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "/wʊb baɪ/"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L48_Q1",
+      "instruction": "In casual speech “green paint” often sounds like “greem paint”. Which sound causes the change without changing itself?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "green paint",
+      "textToSpeak": "green paint",
+      "options": [
+        "The /p/ at the very start of “paint”",
+        "The long vowel /iː/ inside the word “green”",
+        "The /n/ at the very end of the word “green”"
+      ],
+      "correctAnswer": "The /p/ at the very start of “paint”",
+      "correctAnswerIndex": 0,
+      "hint": "The changing sound adapts to a neighbour. Ask which neighbour is doing the pulling.",
+      "explanation": "In assimilation, the earlier sound adapts to the later one. The /p/ at the start of “paint” is the trigger, and it stays as it is, while the /n/ at the end of “green” moves to the lips. So the word that follows is not changed by the word before it.",
+      "phoneticRule": "The trigger of assimilation is unchanged; only the earlier, word-final alveolar shifts its place of articulation.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "greem paint"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L48_Q2",
+      "instruction": "In “this bag”, does the /s/ take the lip place of the /b/, the way /n/ does in “ten pounds”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "this bag",
+      "textToSpeak": "this bag",
+      "options": [
+        "Yes: it becomes /f/, because /f/ is the lip sound closest to an /s/ in English",
+        "No: /s/ usually keeps its place before a lip sound, so the /s/ stays clear",
+        "Yes: it becomes /b/ and merges with the /b/ at the start of “bag”"
+      ],
+      "correctAnswer": "No: /s/ usually keeps its place before a lip sound, so the /s/ stays clear",
+      "correctAnswerIndex": 1,
+      "hint": "Recall which consonants were involved in every example so far: /n/, /t/ and /d/. Is /s/ one of them?",
+      "explanation": "The place shift you have studied mainly affects /t/, /d/ and /n/ at the end of a word. The /s/ in “this” does not usually move to the lips before /b/. Applying the pattern to every consonant would lead you to expect changes that do not typically happen.",
+      "phoneticRule": "Place assimilation of this kind is characteristic of the alveolar stops and nasal (/t/, /d/, /n/); other alveolars such as /s/ and /z/ are not usually affected by bilabial or velar neighbours in the same way.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "this-bag"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L48_Q3",
+      "instruction": "You ask a friend, “Have you seen Dan?” What happens to the /n/ of “seen” before the /d/ of “Dan”?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "seen Dan",
+      "textToSpeak": "seen Dan",
+      "options": [
+        "It becomes /m/, made at the lips, to match the first sound of “Dan”",
+        "It becomes [ŋ], made at the back of the mouth, to match the first sound of “Dan”",
+        "It stays a tongue-tip /n/, because /d/ is made at the same place as /n/"
+      ],
+      "correctAnswer": "It stays a tongue-tip /n/, because /d/ is made at the same place as /n/",
+      "correctAnswerIndex": 2,
+      "hint": "Compare where /n/ and /d/ are made in the mouth.",
+      "explanation": "/n/ and /d/ are both made with the tongue tip touching the ridge behind the upper teeth. There is no difference in place for the /n/ to adopt, so “seen Dan” keeps its tongue-tip /n/. Assimilation needs a difference in place between the two neighbouring sounds.",
+      "phoneticRule": "Place assimilation requires a mismatch in place: an alveolar followed by another alveolar has no place change to make.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "seen-Dan"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L49_Q1",
+      "instruction": "Which word boundary in “Please turn back at the bridge” shows assimilation?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Please turn back at the bridge",
+      "textToSpeak": "Please turn back at the bridge",
+      "options": [
+        "“Please turn”, where the /z/ changes its place to match /t/",
+        "“back at”, where the /k/ links to the vowel of “at”",
+        "“turn back”, where the /n/ moves to the lips before /b/"
+      ],
+      "correctAnswer": "“turn back”, where the /n/ moves to the lips before /b/",
+      "correctAnswerIndex": 2,
+      "hint": "Check each boundary and ask whether a consonant changes its place or simply moves to the next word.",
+      "explanation": "At “turn back” the /n/ can shift to [m] because /b/ follows: “turm back”. The boundary “back at” is linking, not assimilation, because the /k/ stays a /k/ and simply joins “at”. Telling the two apart shows whether a sound has changed or only moved.",
+      "phoneticRule": "In a sentence, assimilation is identified by a changed articulation of a word-final consonant, whereas linking only relocates an unchanged consonant to the next syllable.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "Please turm back at the bridge"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L49_Q2",
+      "instruction": "In a shop you say, “Take that bag upstairs.” Which spoken version of “that bag” shows the change?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "Take that bag upstairs",
+      "textToSpeak": "Take that bag upstairs",
+      "options": [
+        "“thap bag”, with the /t/ made at the lips before the /b/",
+        "“thak bag”, with the /t/ made at the back of the mouth",
+        "“that bag”, with a fully released tongue-tip /t/ and a small pause"
+      ],
+      "correctAnswer": "“thap bag”, with the /t/ made at the lips before the /b/",
+      "correctAnswerIndex": 0,
+      "hint": "The word after “that” starts with a lip sound; think about which place the /t/ might borrow.",
+      "explanation": "The /b/ of “bag” is made with the lips, so the /t/ of “that” can shift to the lips: “thap bag”. The rest of the sentence is unaffected, which is why you can spot the change by looking only at the boundary that involves a tongue-tip consonant before a lip or back sound.",
+      "phoneticRule": "In a full sentence, the assimilation site is found by scanning for word-final /t/, /d/ or /n/ followed by a bilabial or velar consonant.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "take thap bag upstairs"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L49_Q3",
+      "instruction": "In “We should be at home”, one boundary shows assimilation and another shows a glide link. Which pair is correct?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "We should be at home",
+      "textToSpeak": "We should be at home",
+      "options": [
+        "Assimilation at “be at”, and a glide at “should be”",
+        "Assimilation at “should be”, and a glide at “be at”",
+        "Assimilation at “at home”, and a glide at “We should”"
+      ],
+      "correctAnswer": "Assimilation at “should be”, and a glide at “be at”",
+      "correctAnswerIndex": 1,
+      "hint": "One boundary has a tongue-tip consonant before a lip sound. Another has a vowel before a vowel.",
+      "explanation": "“Should be” has a /d/ before /b/, so the /d/ can shift to the lips. “Be at” has a vowel followed by a vowel, so a light /j/ glide appears. So the same short sentence can contain a changed sound and an inserted glide, and each has a different cause.",
+      "phoneticRule": "Assimilation and glide insertion are triggered by different boundary types: a consonant before a consonant of a different place, versus a vowel before a vowel.",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "/wi ʃʊb bi jæt həʊm/"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L50_Q1",
+      "instruction": "In “gone missing”, the /n/ often sounds like an /m/. Which description of the change is correct?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "gone missing",
+      "textToSpeak": "gone missing",
+      "options": [
+        "The /m/ of “missing” changes because of the /n/ of “gone” before it",
+        "The /n/ of “gone” changes because of the /m/ of “missing” that follows",
+        "The /g/ of “gone” changes because of the /n/ that comes straight after it"
+      ],
+      "correctAnswer": "The /n/ of “gone” changes because of the /m/ of “missing” that follows",
+      "correctAnswerIndex": 1,
+      "hint": "Ask which sound comes first, and which one is doing the influencing.",
+      "explanation": "The final /n/ of “gone” shifts to [m] under the influence of the /m/ that starts “missing”: “gom missing”. The influence runs backwards: the following sound is the trigger and the preceding sound is the one that changes.",
+      "phoneticRule": "In place assimilation the triggering consonant is the later sound and the changing consonant is the earlier word-final alveolar (regressive assimilation).",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "gom missing"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L50_Q2",
+      "instruction": "You are packing for a holiday. Predict which version of “sun cream” shows assimilation.",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "sun cream",
+      "textToSpeak": "sun cream",
+      "options": [
+        "“sum cream”, with the nasal made at the lips",
+        "“sun cream”, with the /n/ made with the tongue tip as usual",
+        "“sung cream”, with the nasal made at the back of the mouth"
+      ],
+      "correctAnswer": "“sung cream”, with the nasal made at the back of the mouth",
+      "correctAnswerIndex": 2,
+      "hint": "Identify the place in the mouth of the /k/ that follows, then match the nasal to it.",
+      "explanation": "/k/ is made at the back of the mouth, so the /n/ of “sun” can shift to [ŋ]: “sung cream”. Using the place of the trigger, you can predict this without having heard it. The word is still “sun”; only its final sound has moved.",
+      "phoneticRule": "Predicting assimilation is a two-step check: find the place of articulation of the following consonant, then match the word-final alveolar to it (lips for /p b m/, back of the mouth for /k g/).",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "sung cream"
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L50_Q3",
+      "instruction": "Compare “ten apples” with “ten pounds”. What is the key difference between the two?",
+      "subtype": "connectedSpeech",
+      "interactionType": "speaking",
+      "word": "ten apples",
+      "textToSpeak": "ten apples",
+      "options": [
+        "In “ten apples” the /n/ stays an /n/ and moves on; in “ten pounds” the /n/ itself changes",
+        "Both are linking, because both first words end in /n/ and another sound follows",
+        "Both are assimilation, because a consonant or a vowel follows the /n/ in both"
+      ],
+      "correctAnswer": "In “ten apples” the /n/ stays an /n/ and moves on; in “ten pounds” the /n/ itself changes",
+      "correctAnswerIndex": 0,
+      "hint": "Ask whether the /n/ keeps its identity or takes on a new place of articulation in each phrase.",
+      "explanation": "In “ten apples”, a vowel follows, so the /n/ simply moves onto “apples” and is still an /n/: this is linking. In “ten pounds”, a lip consonant follows, so the /n/ itself changes place to [m]: this is assimilation. Telling these apart shows whether a sound has moved or changed.",
+      "phoneticRule": "Linking changes only which syllable a consonant belongs to, whereas assimilation changes the consonant's own articulation (its place or voicing).",
+      "phenomenonType": "Assimilation",
+      "spokenForm": "te-napples"
+    }
+  ]
 }
