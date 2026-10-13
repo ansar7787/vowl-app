@@ -1183,12 +1183,21 @@
     },
     "verbs": {
       "title": "Action Time!",
-      "objective": "Get ready for the big game! Look at the jumbotron scoreboard, and throw the correct action-word sports ball into the stadium.",
-      "rule_0": "Read the action word",
-      "rule_1": "Find the matching ball",
-      "rule_2": "Throw it in the stadium",
-      "actionText": "Get Active",
-      "tip": "PRO TIP: A verb is something you can DO, like jump or run!"
+      "objective": "Read or listen to the action story on the scoreboard, then find the sports ball with the matching action word.",
+      "rule_0": "Read or listen to the story clue on the scoreboard",
+      "rule_1": "Tap your answer or drag the ball into the stadium",
+      "rule_2": "Tap any speaker icon to hear the action words spoken aloud",
+      "actionText": "Play Ball!",
+      "tip": "Tip: A verb is an action word that tells what someone is doing, like run, jump, or play.",
+      "level_100": {
+        "title": "Action Champion! 🏆",
+        "objective": "Congratulations on reaching Level 100! You've learned so many action words for what people and animals do. Let's score this milestone action challenge together!",
+        "rule_0": "Read or listen to the story clue on the scoreboard",
+        "rule_1": "Tap or throw the matching sports ball into the stadium",
+        "rule_2": "Celebrate 100 levels of action words!",
+        "actionText": "Play Level 100",
+        "tip": "Tip: Action words tell what someone is doing, like jump, throw, cook, or swim. You're an action champion!"
+      }
     },
     "prepositions": {
       "title": "Where Is It?",
@@ -1288,7 +1297,8 @@
     "paste": "Paste",
     "copy": "Copy",
     "copied": "Copied to clipboard",
-    "ready": "READY"
+    "ready": "READY",
+    "listen": "Listen"
   },
   "age_gate": {
     "title": "Before we begin",
@@ -2267,7 +2277,11 @@
     "kids_school_prompt": "Tap an answer or drag it to the board",
     "kids_school_drag": "Tap an answer or drag it onto the desk",
     "kids_time_drag": "Tap an answer or drag it to the clock! ⏰",
-    "kids_verbs_drag": "Drag the sports ball to the scoreboard!",
+    "kids_verbs_drag": "Tap the matching ball or drag it to the scoreboard",
+    "kids_verbs_drop_target": "Tap a ball, or drag it into the goal",
+    "kids_verbs_drop_hover": "Drop here to score!",
+    "kids_verbs_story": "Action Story",
+    "kids_verbs_goal": "Goal!",
     "kids_weather_drag": "Drag the weather cloud to the sky!",
     "audioSentenceOrder_instruction": "Listen and snap the words in order.",
     "soundImageMatch": {
@@ -2563,7 +2577,13 @@
     "school_beat_3": "Halfway to 100! Fifty levels done, and your classroom vocabulary is growing stronger and clearer every day.",
     "school_beat_4": "One hundred levels completed! Amazing work! You know all about classroom routines, school helpers, and learning together.",
     "school_beat_5": "Two hundred levels completed! Incredible achievement! You have mastered all school and classroom vocabulary in English!",
-    "verbs": "Jump, run, and play! Let's find all the action words in the yard!",
+    "verbs": "Welcome to the stadium! Run, jump, and play as we discover action words for everything we do every day! ⚽",
+    "verbs_beat_0": "Welcome to the stadium! Run, jump, and play as we discover action words for everything we do every day! ⚽",
+    "verbs_beat_1": "Great job on your first 10 levels! You're already spotting action words like run, catch, and jump so easily! 🏃",
+    "verbs_beat_2": "Twenty levels complete! Look at you go—you know what animals, players, and friends are doing in every story! 🎾",
+    "verbs_beat_3": "Halfway to 100! Fifty levels done, and your action-word vocabulary is growing stronger and clearer every day! 🏀",
+    "verbs_beat_4": "One hundred levels completed! Amazing achievement! You know action words for playing, cooking, working, and resting! 🏆",
+    "verbs_beat_5": "Two hundred levels completed! Incredible work! You have mastered all action verbs and can describe anything someone is doing! 🌟",
     "routine": "Welcome to Daily Routines! From waking up in the morning to cozy bedtime, let's learn how we spend our day together.",
     "routine_beat_0": "Welcome to Daily Routines! From waking up in the morning to cozy bedtime, let's learn how we spend our day together.",
     "routine_beat_1": "Great job on your first 10 levels! You're already recognizing morning, afternoon, and evening routines so easily.",
