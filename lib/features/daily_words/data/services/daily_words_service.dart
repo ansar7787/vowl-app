@@ -14,8 +14,8 @@ import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 class DailyWordsService {
   // ── Constants ───────────────────────────────────────────────────────────────
 
-  /// Total number of day files available in the corpus.
-  static const int totalDays = 1000;
+  /// Total number of day files available in the corpus (75 files x 10 days = 750 days).
+  static const int totalDays = 750;
 
   /// Maximum words per day for free users.
   static const int freeWordLimit = 5;
@@ -36,6 +36,7 @@ class DailyWordsService {
 
   // ── Cached state ────────────────────────────────────────────────────────────
 
+  bool _isInitialized = false;
   int _currentDay = 1;
   int _streak = 0;
   int _longestStreak = 0;
@@ -46,12 +47,29 @@ class DailyWordsService {
 
   // ── Public getters ──────────────────────────────────────────────────────────
 
+  bool get isInitialized => _isInitialized;
   int get currentDay => _currentDay;
+
+  /// Clamped/wrapped day guaranteed to fall in the range 1..[totalDays].
+  static int calculateEffectiveDay(int day) => ((day - 1) % totalDays) + 1;
+
+  int get effectiveDay => calculateEffectiveDay(_currentDay);
+
   int get streak => _streak;
   int get longestStreak => _longestStreak;
   int get totalWordsLearned => _totalWordsLearned;
   int get wordBankSize => _wordBank.length;
   DailyWordSet? get todaysWords => _cachedWordSet;
+
+  /// Returns whether a word exists in the Word Bank and has been learned (Box >= 1).
+  /// O(1) hash map lookup.
+  bool isWordLearned(String wordId) {
+    final entry = _wordBank[wordId];
+    return entry != null && entry.box > 0;
+  }
+
+  /// Returns whether a word has any entry in the Word Bank (even Box 0 / Needs Review).
+  bool hasWordEntry(String wordId) => _wordBank.containsKey(wordId);
 
   /// All words in the user's Word Bank, sorted by most-recently-learned first.
   List<WordProgress> get wordBankEntries {
@@ -74,6 +92,7 @@ class DailyWordsService {
 
   /// Loads persisted state from SharedPreferences. Call once at app start.
   Future<void> init() async {
+    if (_isInitialized) return;
     try {
       final prefs = await SharedPreferences.getInstance();
       _currentDay = prefs.getInt(_keyCurrentDay) ?? 1;
@@ -96,6 +115,7 @@ class DailyWordsService {
 
       // Handle daily rollover
       await _checkDailyRollover();
+      _isInitialized = true;
     } catch (e) {
       if (kDebugMode) {
         debugPrint('DailyWordsService: init failed: $e');
@@ -111,15 +131,26 @@ class DailyWordsService {
 
     if (_lastOpenDate.isNotEmpty) {
       // Check if yesterday was the last open date (streak continues)
+      // Calendar-day comparison avoids 24h duration edge cases.
       final lastDate = DateTime.tryParse(_lastOpenDate);
       final todayDate = DateTime.now();
       if (lastDate != null) {
-        final diff = todayDate.difference(lastDate).inDays;
+        final lastCalendarDay = DateTime(
+          lastDate.year,
+          lastDate.month,
+          lastDate.day,
+        );
+        final todayCalendarDay = DateTime(
+          todayDate.year,
+          todayDate.month,
+          todayDate.day,
+        );
+        final diff = todayCalendarDay.difference(lastCalendarDay).inDays;
         if (diff == 1) {
-          // Consecutive day — increment streak
+          // Consecutive calendar day — increment streak
           _streak++;
         } else if (diff > 1) {
-          // Streak broken
+          // One or more days missed — reset streak
           _streak = 1;
         }
       }
@@ -144,8 +175,8 @@ class DailyWordsService {
   /// The [isPremium] flag controls whether the user gets 5 or 10 words.
   Future<DailyWordSet?> loadTodaysWords({bool isPremium = false}) async {
     try {
-      // Ensure day is within bounds
-      final day = _currentDay.clamp(1, totalDays);
+      // Ensure day is safely wrapped within available curriculum batches (1..totalDays)
+      final day = effectiveDay;
       // Calculate batch range (10 days per file)
       // Day 1-10 -> batch 1 (001_010)
       // Day 11-20 -> batch 2 (011_020)
@@ -191,11 +222,13 @@ class DailyWordsService {
 
   // ── Word completion ─────────────────────────────────────────────────────────
 
-  /// Marks a word as "learned" and adds it to the Word Bank.
+  /// Marks a word as "learned" (Box 1) and adds it to the Word Bank.
   ///
-  /// If the word already exists in the bank, this is a no-op.
+  /// If the word was previously marked for review (Box 0), it advances to Box 1
+  /// and increments [totalWordsLearned].
   Future<void> markWordLearned(DailyWord word) async {
-    if (_wordBank.containsKey(word.id)) return;
+    final existing = _wordBank[word.id];
+    if (existing != null && existing.box > 0) return;
 
     final today = _todayString();
     final nextReview = _calculateNextReview(
@@ -203,17 +236,48 @@ class DailyWordsService {
       1,
     ); // Box 1 = review tomorrow
 
+    final isNewLearn = existing == null || existing.box == 0;
     _wordBank[word.id] = WordProgress(
       wordId: word.id,
       word: word.word,
-      learnedDate: today,
-      reviewCount: 0,
+      learnedDate: (existing != null && existing.learnedDate.isNotEmpty)
+          ? existing.learnedDate
+          : today,
+      reviewCount: existing?.reviewCount ?? 0,
       box: 1,
       nextReviewDate: nextReview,
+      lastScore: 1,
+    );
+
+    if (isNewLearn) {
+      _totalWordsLearned++;
+    }
+    await _persist();
+  }
+
+  /// Records a word as needing review (Box 0) when user skips or taps "Review Later".
+  ///
+  /// Keeps progression without falsely incrementing [totalWordsLearned].
+  Future<void> markWordNeedsReview(DailyWord word) async {
+    final existing = _wordBank[word.id];
+    if (existing != null && existing.box > 0) {
+      // Word was previously learned in an earlier session; preserve mastery
+      return;
+    }
+
+    final today = _todayString();
+    _wordBank[word.id] = WordProgress(
+      wordId: word.id,
+      word: word.word,
+      learnedDate: (existing != null && existing.learnedDate.isNotEmpty)
+          ? existing.learnedDate
+          : today,
+      reviewCount: existing?.reviewCount ?? 0,
+      box: 0, // Box 0 = Needs Review
+      nextReviewDate: today,
       lastScore: 0,
     );
 
-    _totalWordsLearned++;
     await _persist();
   }
 
@@ -248,10 +312,9 @@ class DailyWordsService {
   }
 
   /// Completes today's learning session and advances to the next day.
+  /// Unbounded progression seamlessly enters multi-year mastery cycles (e.g. Day 751 = Cycle 2, Lesson 1).
   Future<void> completeDailySession() async {
-    if (_currentDay < totalDays) {
-      _currentDay++;
-    }
+    _currentDay++;
     await _persist();
   }
 
@@ -322,6 +385,7 @@ class DailyWordsService {
 
   /// Resets all daily words progress. Called on account deletion / logout.
   Future<void> reset() async {
+    _isInitialized = false;
     _currentDay = 1;
     _streak = 0;
     _longestStreak = 0;

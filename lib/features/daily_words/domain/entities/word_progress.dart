@@ -79,5 +79,13 @@ class WordProgress extends Equatable {
   }
 
   @override
-  List<Object?> get props => [wordId, box, reviewCount, nextReviewDate];
+  List<Object?> get props => [
+    wordId,
+    word,
+    learnedDate,
+    box,
+    reviewCount,
+    nextReviewDate,
+    lastScore,
+  ];
 }

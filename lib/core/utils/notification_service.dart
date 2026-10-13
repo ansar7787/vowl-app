@@ -709,7 +709,10 @@ class NotificationService {
   /// SCHEDULES DAILY WORDS REMINDER
   ///
   /// Timing: 9:00 AM local time — morning routine.
-  Future<void> scheduleDailyWordsReminder() async {
+  Future<void> scheduleDailyWordsReminder({
+    List<String>? dueWords,
+    int? streak,
+  }) async {
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
       await _localNotifications.cancel(id: dailyWordsReminderNotificationId);
@@ -768,16 +771,58 @@ class NotificationService {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }
 
-    await _localNotifications.zonedSchedule(
-      id: dailyWordsReminderNotificationId,
-      title: _t(
+    final String title;
+    final String body;
+
+    if (dueWords != null && dueWords.isNotEmpty) {
+      title = _t(
+        'notifications.daily_words_review_title',
+        fallback: 'Spaced Repetition Review 📚',
+      );
+      if (dueWords.length == 1) {
+        body = _t(
+          'notifications.daily_words_single_due',
+          args: [dueWords.first],
+          fallback:
+              '"${dueWords.first}" is ready for spaced review today! Keep your memory sharp.',
+        );
+      } else {
+        final sample = dueWords.take(2).join(', ');
+        final remaining = dueWords.length - 2;
+        body = _t(
+          'notifications.daily_words_multiple_due',
+          args: [sample, remaining.toString()],
+          fallback: remaining > 0
+              ? '$sample, and $remaining more words are ready for spaced review today!'
+              : '$sample are ready for spaced review today!',
+        );
+      }
+    } else if (streak != null && streak > 0) {
+      title = _t(
+        'notifications.daily_words_streak_title',
+        args: [streak.toString()],
+        fallback: 'Keep your $streak-day streak going! 🔥',
+      );
+      body = _t(
+        'notifications.daily_words_streak_body',
+        fallback: 'Your daily words are waiting. Only takes 2 minutes!',
+      );
+    } else {
+      title = _t(
         'notifications.daily_words_title',
         fallback: 'Your 10 words are ready! 📚',
-      ),
-      body: _t(
+      );
+      body = _t(
         'notifications.daily_words_body',
-        fallback: 'Only takes 2 minutes. Tap to unlock today\'s vocabulary.',
-      ),
+        fallback:
+            'Only takes 2 minutes. Tap to unlock today\'s vocabulary.',
+      );
+    }
+
+    await _localNotifications.zonedSchedule(
+      id: dailyWordsReminderNotificationId,
+      title: title,
+      body: body,
       scheduledDate: scheduledDate,
       notificationDetails: platformDetails,
       androidScheduleMode: useExact
@@ -788,7 +833,9 @@ class NotificationService {
     );
 
     if (kDebugMode) {
-      debugPrint('Scheduled daily words reminder for 9:00 AM local time');
+      debugPrint(
+        'Scheduled daily words reminder for 9:00 AM local time (due: ${dueWords?.length ?? 0}, streak: $streak)',
+      );
     }
   }
 

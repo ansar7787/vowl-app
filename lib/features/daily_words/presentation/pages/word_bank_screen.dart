@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
@@ -24,6 +26,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
   final TextEditingController _searchController = TextEditingController();
   final HapticService _haptics = di.sl<HapticService>();
   bool _isPremium = false;
+  Timer? _debounceTimer;
 
   @override
   void initState() {
@@ -40,18 +43,23 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
   @override
   void dispose() {
+    _debounceTimer?.cancel();
     _searchController.removeListener(_onSearchChanged);
     _searchController.dispose();
     super.dispose();
   }
 
   void _onSearchChanged() {
-    context.read<DailyWordsBloc>().add(
-      WordBankLoadRequested(
-        query: _searchController.text.trim(),
-        isPremium: _isPremium,
-      ),
-    );
+    _debounceTimer?.cancel();
+    _debounceTimer = Timer(const Duration(milliseconds: 300), () {
+      if (!mounted) return;
+      context.read<DailyWordsBloc>().add(
+        WordBankLoadRequested(
+          query: _searchController.text.trim(),
+          isPremium: _isPremium,
+        ),
+      );
+    });
   }
 
   @override
@@ -114,8 +122,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
               context.tr('word_bank.title', fallback: 'Word Bank'),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w700,
                 color: Theme.of(context).colorScheme.onSurface,
               ),
               maxLines: 1,
@@ -231,6 +239,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
           child: GlassTile(
             padding: EdgeInsets.all(16.r),
             usePremiumStyle: false,
+            blur: 0,
             child: Row(
               children: [
                 Expanded(
@@ -241,18 +250,19 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         word.word,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w800,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w700,
                           color: Theme.of(context).colorScheme.onSurface,
                         ),
                         maxLines: 1,
                       ),
                       SizedBox(height: 4.h),
                       AutoSizeText(
-                        'Learned: ${word.learnedDate}',
+                        'Learned on ${word.learnedDate}',
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
                           color: isDark ? Colors.white54 : AppColors.slate500,
                         ),
                         maxLines: 1,
@@ -260,6 +270,19 @@ class _WordBankScreenState extends State<WordBankScreen> {
                     ],
                   ),
                 ),
+                IconButton(
+                  onPressed: () {
+                    _haptics.selection();
+                    di.sl<TtsService>().speak(word.word);
+                  },
+                  icon: Icon(
+                    Icons.volume_up_rounded,
+                    size: 20.r,
+                    color: AppColors.indigo500,
+                  ),
+                  tooltip: 'Listen to ${word.word}',
+                ),
+                SizedBox(width: 4.w),
                 _buildMasteryBadge(word.box, isDark),
               ],
             ),
@@ -303,8 +326,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
             label,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w800,
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w600,
               color: color,
             ),
           ),
@@ -373,8 +396,8 @@ class _StatIndicator extends StatelessWidget {
           '$count',
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 24.sp,
-            fontWeight: FontWeight.w900,
+            fontSize: 22.sp,
+            fontWeight: FontWeight.w700,
             color: Theme.of(context).colorScheme.onSurface,
           ),
         ),
@@ -389,8 +412,8 @@ class _StatIndicator extends StatelessWidget {
             label.toUpperCase(),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w800,
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w600,
               color: color,
             ),
           ),
