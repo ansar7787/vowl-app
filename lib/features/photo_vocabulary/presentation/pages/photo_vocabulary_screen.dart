@@ -1,13 +1,15 @@
-import 'package:vowl/core/theme/app_colors.dart';
+import 'dart:async';
 import 'dart:io';
 import 'dart:convert';
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -19,11 +21,9 @@ import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/features/photo_vocabulary/utils/photo_vocabulary_dictionary.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
-
 import 'package:vowl/features/photo_vocabulary/presentation/widgets/photo_bounty_target.dart';
 import 'package:vowl/features/photo_vocabulary/presentation/widgets/photo_empty_state.dart';
 import 'package:vowl/features/photo_vocabulary/presentation/widgets/photo_result_chip.dart';
@@ -69,6 +69,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   String _currentBountyVal = '';
   bool _bountyFoundVal = false;
   bool _bountiesLoadedVal = false;
+  int _dailyBountyCountVal = 0;
+  static const int _dailyBountyLimit = 3;
+  Set<String> _savedWords = {};
 
   void _updateState() {
     if (mounted) setState(() {});
@@ -102,13 +105,45 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       if (jsonList.isNotEmpty) {
         _bountyOptions = jsonList.cast<String>();
       }
-    } catch (e) {
-      // Keep fallback
+    } catch (_) {
+      // Retain fallback options
     }
+
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final today = DateTime.now().toIso8601String().substring(0, 10);
+      final lastDate = prefs.getString('photo_bounty_date') ?? '';
+      if (lastDate == today) {
+        _dailyBountyCountVal = prefs.getInt('photo_bounty_count') ?? 0;
+      } else {
+        _dailyBountyCountVal = 0;
+        await prefs.setString('photo_bounty_date', today);
+        await prefs.setInt('photo_bounty_count', 0);
+      }
+      final savedList = prefs.getStringList('photo_vocab_saved_words') ?? [];
+      _savedWords = savedList.toSet();
+    } catch (_) {}
+
     if (mounted) {
       _currentBountyVal =
           _bountyOptions[Random().nextInt(_bountyOptions.length)];
       _bountiesLoadedVal = true;
+      _updateState();
+    }
+  }
+
+  void _onShuffleBounty() {
+    if (_bountyOptions.length <= 1) return;
+    try {
+      di.sl<HapticService>().selection();
+      di.sl<SoundService>().playClick();
+    } catch (_) {}
+
+    final available = _bountyOptions
+        .where((b) => b.toLowerCase() != _currentBountyVal.toLowerCase())
+        .toList();
+    if (available.isNotEmpty) {
+      _currentBountyVal = available[Random().nextInt(available.length)];
       _updateState();
     }
   }
@@ -120,10 +155,79 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     super.dispose();
   }
 
-  Future<void> _pickAndLabelImage(ImageSource source) async {
-    final XFile? image = await _picker.pickImage(source: source);
-    if (image == null) return;
+  Future<void> _toggleSaveWord(String word) async {
+    try {
+      di.sl<HapticService>().selection();
+      di.sl<SoundService>().playClick();
+    } catch (_) {}
 
+    final key = word.trim().toLowerCase();
+    final willSave = !_savedWords.contains(key);
+
+    if (willSave) {
+      _savedWords.add(key);
+    } else {
+      _savedWords.remove(key);
+    }
+    _updateState();
+
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setStringList('photo_vocab_saved_words', _savedWords.toList());
+    } catch (_) {}
+
+    if (mounted) {
+      CustomSnackBar.show(
+        context: context,
+        message: willSave
+            ? context.tr(
+                'vocabulary.word_saved_to_notebook',
+                args: [word],
+                fallback: 'Added "$word" to your Vocab Notebook! ⭐',
+              )
+            : context.tr(
+                'vocabulary.word_removed_from_notebook',
+                args: [word],
+                fallback: 'Removed "$word" from your Vocab Notebook',
+              ),
+        type: willSave
+            ? CustomSnackBarType.success
+            : CustomSnackBarType.info,
+      );
+    }
+  }
+
+  Future<void> _pickAndLabelImage(ImageSource source) async {
+    XFile? image;
+    try {
+      image = await _picker.pickImage(source: source);
+    } on PlatformException {
+      if (mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'vocabulary.camera_permission_error',
+            fallback: 'Camera or photo permission denied. Please grant access in settings.',
+          ),
+          type: CustomSnackBarType.error,
+        );
+      }
+      return;
+    } catch (_) {
+      if (mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'vocabulary.image_pick_error',
+            fallback: 'Unable to select photo. Please try again.',
+          ),
+          type: CustomSnackBarType.error,
+        );
+      }
+      return;
+    }
+
+    if (image == null) return;
     if (!mounted) return;
 
     // Trigger Monetization Gate before processing
@@ -142,7 +246,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
         'vocabulary.photo_vocab_ad',
         fallback: 'Watch Ad to Analyze',
       ),
-      onSuccess: () => _processImage(image.path),
+      onSuccess: () => _processImage(image!.path),
     );
   }
 
@@ -158,18 +262,14 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
 
     try {
       final allLabels = await di.sl<ImageLabelingService>().labelImage(path);
-      // Filter out low-confidence "junk" guesses to prevent user frustration
+      // Filter out low-confidence guesses to prevent noisy false positives
       final confidentLabels = allLabels
           .where((l) => l.confidence >= 0.65)
           .toList();
 
       bool found = false;
-      final bountyWords = _currentBountyVal.toLowerCase().split(' ');
-      for (var l in confidentLabels) {
-        final labelLower = l.label.toLowerCase();
-        // Exact full match OR any word exactly matches
-        if (labelLower == _currentBountyVal.toLowerCase() ||
-            bountyWords.any((w) => labelLower.split(' ').contains(w))) {
+      for (final l in confidentLabels) {
+        if (PhotoVocabularyDictionary.isBountyMatch(_currentBountyVal, l.label)) {
           found = true;
           break;
         }
@@ -180,8 +280,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       if (found) {
         _bountyFoundVal = true;
         _confettiController.play();
-        di.sl<HapticService>().heavy();
-        di.sl<SoundService>().playCorrect();
+        try {
+          di.sl<HapticService>().heavy();
+          di.sl<SoundService>().playCorrect();
+        } catch (_) {}
 
         try {
           final prefs = await SharedPreferences.getInstance();
@@ -194,8 +296,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
             await prefs.setString('photo_bounty_date', today);
           }
 
-          if (count < 3) {
-            await prefs.setInt('photo_bounty_count', count + 1);
+          if (count < _dailyBountyLimit) {
+            count++;
+            _dailyBountyCountVal = count;
+            await prefs.setInt('photo_bounty_count', count);
             int total = prefs.getInt('photo_total_bounties') ?? 0;
             total++;
             await prefs.setInt('photo_total_bounties', total);
@@ -210,6 +314,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
             );
           } else {
             limitReached = true;
+            _dailyBountyCountVal = count;
           }
         } catch (_) {}
       }
@@ -229,7 +334,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   )
                 : context.tr(
                     'vocabulary.bounty_found',
-                    fallback: 'Bounty Found! +5 XP & 5 Coins!',
+                    fallback: 'Bounty Found! +5 XP & 10 Coins!',
                   ),
             type: limitReached
                 ? CustomSnackBarType.info
@@ -237,7 +342,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           );
         }
       }
-    } catch (e) {
+    } catch (_) {
       if (mounted) {
         _isProcessingVal = false;
         _hasErrorVal = true;
@@ -332,16 +437,20 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   }
 
   void _playPronunciation(String text) {
-    di.sl<SoundService>().playTts(text, speed: 0.4, locale: 'en-US');
+    try {
+      di.sl<SoundService>().playTts(text, speed: 0.45, locale: 'en-US');
+    } catch (_) {}
   }
 
   void _resetForNewPhoto() {
     _imagePathVal = null;
     _labelsVal = null;
+    _isProcessingVal = false;
+    _hasErrorVal = false;
     _translationsVal = {};
     _isTranslatingVal = {};
-    _currentBountyVal = _bountyOptions[Random().nextInt(_bountyOptions.length)];
     _bountyFoundVal = false;
+    _currentBountyVal = _bountyOptions[Random().nextInt(_bountyOptions.length)];
     _updateState();
   }
 
@@ -380,15 +489,21 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
         body: Stack(
           fit: StackFit.expand,
           children: [
-            // 1. Background Layer (Image or Gradient)
+            // 1. Background Layer (Downsampled Image or Gradient)
             if (_imagePathVal != null)
-              Image.file(File(_imagePathVal!), fit: BoxFit.cover)
+              Image(
+                image: ResizeImage(
+                  FileImage(File(_imagePathVal!)),
+                  width: 1080,
+                ),
+                fit: BoxFit.cover,
+              )
             else
               const MeshGradientBackground(showLetters: false),
 
-            // 2. Dark Overlay for better contrast when image is present
+            // 2. Overlay for contrast
             if (_imagePathVal != null)
-              Container(color: Colors.black.withValues(alpha: 0.5))
+              Container(color: Colors.black.withValues(alpha: 0.55))
             else
               Container(
                 color: isDark
@@ -396,10 +511,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                     : Colors.white.withValues(alpha: 0.3),
               ),
 
-            // 3. Cinematic Laser Scanner (only when processing)
+            // 3. Cinematic Laser Scanner (only when analyzing)
             if (_isProcessingVal) _buildLaserScanner(),
 
-            // 4. UI Layer
+            // 4. Scrollable UI Layer
             CustomScrollView(
               physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics(),
@@ -410,6 +525,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   child: PhotoBountyTarget(
                     currentBounty: _currentBountyVal,
                     bountyFound: _bountyFoundVal,
+                    dailyCount: _dailyBountyCountVal,
+                    dailyLimit: _dailyBountyLimit,
+                    onShuffle: _onShuffleBounty,
                   ),
                 ),
                 if (_imagePathVal == null)
@@ -426,11 +544,12 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   _buildSliverResults(isDark),
                 ],
 
-                // Bottom padding for the floating retake button
+                // Safe bottom padding for floating retake button
                 SliverToBoxAdapter(child: SizedBox(height: 120.h)),
               ],
             ),
 
+            // Confetti Celebration
             Align(
               alignment: Alignment.topCenter,
               child: ConfettiWidget(
@@ -449,6 +568,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
               ),
             ),
 
+            // Floating Retake Bar
             if (_imagePathVal != null && !_isProcessingVal)
               Positioned(
                 bottom: 0,
@@ -533,10 +653,51 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
         ),
       ),
       centerTitle: true,
+      actions: [
+        if (_savedWords.isNotEmpty)
+          Padding(
+            padding: EdgeInsets.only(right: 16.w),
+            child: Center(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.amber.shade400.withValues(alpha: 0.15)
+                      : Colors.amber.shade600.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(
+                    color: isDark ? Colors.amber.shade400 : Colors.amber.shade600,
+                    width: 1.w,
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.star_rounded,
+                      color: isDark ? Colors.amber.shade300 : AppColors.amber500,
+                      size: 14.r,
+                    ),
+                    SizedBox(width: 4.w),
+                    Text(
+                      '${_savedWords.length}',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.amber.shade300 : AppColors.amber500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 
-  /// Summary header showing objects detected count after a successful scan.
+  /// Summary header showing detected count after scan.
   Widget _buildPhotoSummary(bool isDark) {
     return SliverToBoxAdapter(
       child: Padding(
@@ -597,14 +758,14 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     if (_hasErrorVal) {
       return SliverToBoxAdapter(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
           child: Center(
             child: Container(
-              padding: EdgeInsets.all(32.r),
+              padding: EdgeInsets.all(28.r),
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.black.withValues(alpha: 0.6)
-                    : Colors.white.withValues(alpha: 0.85),
+                    : Colors.white.withValues(alpha: 0.88),
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
                   color: isDark
@@ -618,9 +779,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   Icon(
                     LucideIcons.alertTriangle,
                     color: isDark
-                        ? AppColors.gameIncorrect.withValues(alpha: 0.2)
+                        ? AppColors.gameIncorrect.withValues(alpha: 0.8)
                         : AppColors.gameIncorrect,
-                    size: 48.r,
+                    size: 46.r,
                   ),
                   SizedBox(height: 16.h),
                   Text(
@@ -630,7 +791,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                     ),
                     style: TextStyle(
                       color: isDark ? Colors.white : Colors.black87,
-                      fontSize: 20.sp,
+                      fontSize: 19.sp,
                       fontFamily: 'Outfit',
                       fontWeight: FontWeight.w800,
                     ),
@@ -644,14 +805,14 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                           'We couldn\'t analyze this image. Try again with a clearer photo.',
                     ),
                     style: TextStyle(
-                      color: isDark ? Colors.white54 : Colors.black54,
-                      fontSize: 14.sp,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                      fontSize: 13.5.sp,
                       fontFamily: 'Outfit',
                       fontWeight: FontWeight.w500,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 24.h),
+                  SizedBox(height: 20.h),
                   ScaleButton(
                     onTap: () {
                       _imagePathVal = null;
@@ -662,16 +823,14 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                     child: Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 24.w,
-                        vertical: 14.h,
+                        vertical: 13.h,
                       ),
                       decoration: BoxDecoration(
                         color: AppColors.teal500,
                         borderRadius: BorderRadius.circular(16.r),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(
-                              0xFF14B8A6,
-                            ).withValues(alpha: 0.4),
+                            color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
                             blurRadius: 12,
                             offset: const Offset(0, 4),
                           ),
@@ -683,7 +842,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                           Icon(
                             LucideIcons.camera,
                             color: Colors.white,
-                            size: 20.r,
+                            size: 19.r,
                           ),
                           SizedBox(width: 10.w),
                           Text(
@@ -693,7 +852,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 16.sp,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
                             ),
@@ -717,14 +876,14 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     if (_labelsVal!.isEmpty) {
       return SliverToBoxAdapter(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
           child: Center(
             child: Container(
-              padding: EdgeInsets.all(32.r),
+              padding: EdgeInsets.all(28.r),
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.black.withValues(alpha: 0.6)
-                    : Colors.white.withValues(alpha: 0.85),
+                    : Colors.white.withValues(alpha: 0.88),
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
                   color: isDark
@@ -738,7 +897,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   Icon(
                     LucideIcons.searchX,
                     color: isDark ? Colors.white54 : Colors.black38,
-                    size: 48.r,
+                    size: 46.r,
                   ),
                   SizedBox(height: 16.h),
                   Text(
@@ -748,14 +907,13 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                     ),
                     style: TextStyle(
                       color: isDark ? Colors.white : Colors.black87,
-                      fontSize: 20.sp,
+                      fontSize: 19.sp,
                       fontFamily: 'Outfit',
                       fontWeight: FontWeight.w800,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 20.h),
-                  // Actionable tips
+                  SizedBox(height: 18.h),
                   _buildTip(
                     isDark,
                     icon: LucideIcons.sun,
@@ -782,27 +940,25 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                       fallback: 'Avoid blurry photos',
                     ),
                   ),
-                  SizedBox(height: 24.h),
-                  // Inline retry button
+                  SizedBox(height: 22.h),
                   ScaleButton(
                     onTap: () {
                       _imagePathVal = null;
                       _labelsVal = null;
+                      _hasErrorVal = false;
                       _updateState();
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 24.w,
-                        vertical: 14.h,
+                        vertical: 13.h,
                       ),
                       decoration: BoxDecoration(
                         color: AppColors.teal500,
                         borderRadius: BorderRadius.circular(16.r),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(
-                              0xFF14B8A6,
-                            ).withValues(alpha: 0.4),
+                            color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
                             blurRadius: 12,
                             offset: const Offset(0, 4),
                           ),
@@ -814,7 +970,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                           Icon(
                             LucideIcons.camera,
                             color: Colors.white,
-                            size: 20.r,
+                            size: 19.r,
                           ),
                           SizedBox(width: 10.w),
                           Text(
@@ -824,7 +980,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 16.sp,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
                             ),
@@ -842,18 +998,27 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     }
 
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
       sliver: SliverList(
         delegate: SliverChildBuilderDelegate((context, index) {
+          final label = _labelsVal![index];
+          final isBounty = PhotoVocabularyDictionary.isBountyMatch(
+            _currentBountyVal,
+            label.label,
+          );
+
           return Padding(
             padding: EdgeInsets.only(bottom: 16.h),
             child: PhotoResultChip(
-              label: _labelsVal![index],
+              label: label,
               index: index,
+              isBountyTarget: isBounty,
+              isSaved: _savedWords.contains(label.label.trim().toLowerCase()),
               translatedText: _translationsVal[index],
               isTranslating: _isTranslatingVal[index] ?? false,
               onTranslate: _translateLabel,
               onPlayPronunciation: _playPronunciation,
+              onToggleSave: _toggleSaveWord,
             ),
           );
         }, childCount: _labelsVal!.length),
@@ -869,15 +1034,17 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(icon, size: 16.r, color: isDark ? Colors.white38 : Colors.black38),
-        SizedBox(width: 10.w),
-        Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w500,
-            color: isDark ? Colors.white54 : Colors.black54,
+        Icon(icon, size: 15.r, color: isDark ? Colors.white38 : Colors.black38),
+        SizedBox(width: 8.w),
+        Flexible(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.5.sp,
+              fontWeight: FontWeight.w500,
+              color: isDark ? Colors.white60 : Colors.black54,
+            ),
           ),
         ),
       ],
@@ -885,69 +1052,71 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   }
 
   Widget _buildRetakeBar() {
-    return Padding(
-      padding: EdgeInsets.all(24.w),
-      child: ScaleButton(
-        onTap: () {
-          if (_translationsVal.isNotEmpty) {
-            GameDialogHelper.showExitConfirmation(
-              context,
-              title: context.tr(
-                'vocabulary.retake_title',
-                fallback: 'RETAKE PHOTO?',
-              ),
-              description: context.tr(
-                'vocabulary.retake_desc',
-                fallback: 'Your translations will be lost. Are you sure?',
-              ),
-              onQuit: () => _resetForNewPhoto(),
-            );
-          } else {
-            _resetForNewPhoto();
-          }
-        },
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(100.r),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 20.h),
-              decoration: BoxDecoration(
-                color: AppColors.teal500,
-                borderRadius: BorderRadius.circular(100.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.teal500.withValues(alpha: 0.4),
-                    blurRadius: 15,
-                    offset: const Offset(0, 5),
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(LucideIcons.camera, color: Colors.white, size: 22.r),
-                  SizedBox(width: 12.w),
-                  Text(
-                    context.tr(
-                      'vocabulary.retake',
-                      fallback: 'Take Another Photo',
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+        child: ScaleButton(
+          onTap: () {
+            if (_translationsVal.isNotEmpty) {
+              GameDialogHelper.showExitConfirmation(
+                context,
+                title: context.tr(
+                  'vocabulary.retake_title',
+                  fallback: 'RETAKE PHOTO?',
+                ),
+                description: context.tr(
+                  'vocabulary.retake_desc',
+                  fallback: 'Your current photo and translations will be cleared.',
+                ),
+                onQuit: () => _resetForNewPhoto(),
+              );
+            } else {
+              _resetForNewPhoto();
+            }
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(100.r),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 17.h),
+                decoration: BoxDecoration(
+                  color: AppColors.teal500,
+                  borderRadius: BorderRadius.circular(100.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.teal500.withValues(alpha: 0.4),
+                      blurRadius: 15,
+                      offset: const Offset(0, 5),
                     ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white,
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(LucideIcons.camera, color: Colors.white, size: 21.r),
+                    SizedBox(width: 10.w),
+                    Text(
+                      context.tr(
+                        'vocabulary.retake',
+                        fallback: 'Take Another Photo',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
         ),
       ),
-    ).animate().fadeIn().slideY(begin: 0.5);
+    ).animate().fadeIn().slideY(begin: 0.4);
   }
 
   Widget _buildLaserScanner() {
@@ -955,163 +1124,135 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       child: Stack(
         fit: StackFit.expand,
         children: [
-          // Darker overlay while scanning for dramatic effect
-          Container(color: Colors.black.withValues(alpha: 0.4)),
-          // HUD Reticle (Corners)
+          // Dark overlay while scanning for dramatic laser contrast
+          Container(color: Colors.black.withValues(alpha: 0.45)),
+          // HUD Reticle Corners
           Center(
-            child:
-                Container(
-                      width: 280.w,
-                      height: 280.w,
+            child: Container(
+              width: 270.w,
+              height: 270.w,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: AppColors.teal500.withValues(alpha: 0.3),
+                  width: 1.w,
+                ),
+              ),
+              child: Stack(
+                children: [
+                  // Top Left Corner
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    child: Container(
+                      width: 36.w,
+                      height: 36.w,
                       decoration: BoxDecoration(
-                        border: Border.all(
-                          color: AppColors.teal500.withValues(alpha: 0.3),
-                          width: 1.w,
+                        border: Border(
+                          top: BorderSide(
+                            color: AppColors.teal500,
+                            width: 3.5.w,
+                          ),
+                          left: BorderSide(
+                            color: AppColors.teal500,
+                            width: 3.5.w,
+                          ),
                         ),
                       ),
-                      child: Stack(
-                        children: [
-                          // Top Left Corner
-                          Positioned(
-                            top: 0,
-                            left: 0,
-                            child: Container(
-                              width: 40.w,
-                              height: 40.w,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  top: BorderSide(
-                                    color: AppColors.teal500,
-                                    width: 4.w,
-                                  ),
-                                  left: BorderSide(
-                                    color: AppColors.teal500,
-                                    width: 4.w,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          // Top Right Corner
-                          Positioned(
-                            top: 0,
-                            right: 0,
-                            child: Container(
-                              width: 40.w,
-                              height: 40.w,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  top: BorderSide(
-                                    color: AppColors.teal500,
-                                    width: 4.w,
-                                  ),
-                                  right: BorderSide(
-                                    color: AppColors.teal500,
-                                    width: 4.w,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          // Bottom Left Corner
-                          Positioned(
-                            bottom: 0,
-                            left: 0,
-                            child: Container(
-                              width: 40.w,
-                              height: 40.w,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: AppColors.teal500,
-                                    width: 4.w,
-                                  ),
-                                  left: BorderSide(
-                                    color: AppColors.teal500,
-                                    width: 4.w,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          // Bottom Right Corner
-                          Positioned(
-                            bottom: 0,
-                            right: 0,
-                            child: Container(
-                              width: 40.w,
-                              height: 40.w,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: AppColors.teal500,
-                                    width: 4.w,
-                                  ),
-                                  right: BorderSide(
-                                    color: AppColors.teal500,
-                                    width: 4.w,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          // "ANALYZING..." Text & Icon
-                          Center(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                      Icons.camera_alt_rounded,
-                                      color: const Color(
-                                        0xFF14B8A6,
-                                      ).withValues(alpha: 0.8),
-                                      size: 48.r,
-                                    )
-                                    .animate(
-                                      onPlay: (controller) =>
-                                          controller.repeat(),
-                                    )
-                                    .shimmer(
-                                      duration: 1.seconds,
-                                      color: Colors.white,
-                                    ),
-                                SizedBox(height: 16.h),
-                                Text(
-                                      context
-                                          .tr(
-                                            'vocabulary.analyzing',
-                                            fallback: 'ANALYZING...',
-                                          )
-                                          .toUpperCase(),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontWeight: FontWeight.w900,
-                                        fontSize: 16.sp,
-                                        color: AppColors.teal500,
-                                        letterSpacing: 4.0,
-                                      ),
-                                    )
-                                    .animate(
-                                      onPlay: (controller) =>
-                                          controller.repeat(reverse: true),
-                                    )
-                                    .fade(duration: 500.ms),
-                                _AnimatedScannerText(),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                    .animate(
-                      onPlay: (controller) => controller.repeat(reverse: true),
-                    )
-                    .scaleXY(
-                      begin: 0.98,
-                      end: 1.02,
-                      duration: 1.seconds,
-                      curve: Curves.easeInOut,
                     ),
+                  ),
+                  // Top Right Corner
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Container(
+                      width: 36.w,
+                      height: 36.w,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          top: BorderSide(
+                            color: AppColors.teal500,
+                            width: 3.5.w,
+                          ),
+                          right: BorderSide(
+                            color: AppColors.teal500,
+                            width: 3.5.w,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Bottom Left Corner
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    child: Container(
+                      width: 36.w,
+                      height: 36.w,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: AppColors.teal500,
+                            width: 3.5.w,
+                          ),
+                          left: BorderSide(
+                            color: AppColors.teal500,
+                            width: 3.5.w,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Bottom Right Corner
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      width: 36.w,
+                      height: 36.w,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: AppColors.teal500,
+                            width: 3.5.w,
+                          ),
+                          right: BorderSide(
+                            color: AppColors.teal500,
+                            width: 3.5.w,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Scanner Center HUD
+                  Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.camera_alt_rounded,
+                          color: const Color(0xFF14B8A6).withValues(alpha: 0.9),
+                          size: 46.r,
+                        )
+                        .animate(onPlay: (c) => c.repeat())
+                        .shimmer(
+                          duration: 1.seconds,
+                          color: Colors.white,
+                        ),
+                        SizedBox(height: 16.h),
+                        const _AnimatedScannerText(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .scaleXY(
+              begin: 0.98,
+              end: 1.02,
+              duration: 1.seconds,
+              curve: Curves.easeInOut,
+            ),
           ),
 
           // Moving Laser Line
@@ -1155,6 +1296,8 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
 }
 
 class _AnimatedScannerText extends StatefulWidget {
+  const _AnimatedScannerText();
+
   @override
   State<_AnimatedScannerText> createState() => _AnimatedScannerTextState();
 }
@@ -1162,41 +1305,44 @@ class _AnimatedScannerText extends StatefulWidget {
 class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
   static const _steps = [
     'SCANNING OBJECTS...',
+    'DETECTING LABELS...',
     'MATCHING VOCABULARY...',
-    'ANALYZING...',
   ];
   int _currentStep = 0;
+  Timer? _cycleTimer;
 
   @override
   void initState() {
     super.initState();
-    _cycle();
-  }
-
-  void _cycle() async {
-    while (mounted) {
-      await Future.delayed(const Duration(milliseconds: 1200));
+    _cycleTimer = Timer.periodic(const Duration(milliseconds: 1400), (_) {
       if (mounted) {
         setState(() {
           _currentStep = (_currentStep + 1) % _steps.length;
         });
       }
-    }
+    });
+  }
+
+  @override
+  void dispose() {
+    _cycleTimer?.cancel();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 350),
       child: Text(
         _steps[_currentStep],
         key: ValueKey(_currentStep),
+        textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
           fontWeight: FontWeight.w900,
-          fontSize: 16.sp,
+          fontSize: 14.sp,
           color: AppColors.teal500,
-          letterSpacing: 4.0,
+          letterSpacing: 3.0,
         ),
       ),
     );
