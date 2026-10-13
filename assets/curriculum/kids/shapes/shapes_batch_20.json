@@ -6,54 +6,54 @@
                 "id": "KIDS_SHAPES_L191_Q1",
                 "gameType": "shapes",
                 "level": 191,
-                "instruction": "Which 2D shape do you get if you look straight down at the flat top of a cylinder, the flat base of a cone, AND the widest cross-section of a sphere, all at once?",
-                "correctAnswer": "Circle",
+                "instruction": "A shape has more than four sides, all its sides are equal, all its corners are equal, and it has 6 lines of symmetry. Which shape is it?",
+                "correctAnswer": "Regular hexagon",
                 "options": [
-                    "Oval",
-                    "Square",
-                    "Circle"
+                    "Regular pentagon",
+                    "Regular hexagon",
+                    "Regular octagon"
                 ],
-                "hint": "All three of these solid shapes share the very same flat 2D shape somewhere on their surface.",
-                "emoji": "🔵",
-                "explanation": "A cylinder's flat top, a cone's flat base, and a sphere's widest slice are all circles.",
-                "funFact": "The circle is the one flat shape that connects three very different solid shapes.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "A regular shape has as many lines of symmetry as it has sides.",
+                "emoji": "🚜",
+                "explanation": "A regular polygon has one line of symmetry for each side, so 6 lines means 6 sides. A regular pentagon has 5 lines and a regular octagon has 8.",
+                "funFact": "The sides of a regular hexagon are exactly as long as the distance from its center to a corner.",
+                "subtype": "shape_attributes",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L191_Q2",
                 "gameType": "shapes",
                 "level": 191,
-                "instruction": "Which shape matches a stop sign, having exactly as many lines of symmetry as it has sides — 8 of each?",
-                "correctAnswer": "Octagon",
+                "instruction": "A triangle and another shape are put side by side, not touching. Together they have 9 corners. What is the other shape?",
+                "correctAnswer": "Hexagon",
                 "options": [
-                    "Octagon",
                     "Pentagon",
-                    "Hexagon"
+                    "Hexagon",
+                    "Square"
                 ],
-                "hint": "For a regular shape, the lines of symmetry always equal the number of sides — think of the stop-sign shape.",
-                "emoji": "🛑",
-                "explanation": "A stop sign is an octagon, with exactly 8 sides and 8 lines of symmetry.",
-                "funFact": "An octagon's symmetry and its side count are simply two ways of describing the same balanced shape.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "A triangle has 3 corners. How many are left over?",
+                "emoji": "🌉",
+                "explanation": "A triangle has 3 corners, so the other shape has 9 − 3 = 6 corners, which is a hexagon. A pentagon would give 8 corners in all and a square would give 7.",
+                "funFact": "Counting corners is a quick way to name a shape that has straight sides.",
+                "subtype": "shape_comparison",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L191_Q3",
                 "gameType": "shapes",
                 "level": 191,
-                "instruction": "Which shape is the simplest possible polygon, has the fewest lines of symmetry among the regular polygons in this game, and is also used to build both pyramids and hexagons?",
-                "correctAnswer": "Triangle",
+                "instruction": "A four-sided shape has exactly one pair of parallel sides and exactly one line of symmetry. Which shape is it?",
+                "correctAnswer": "A trapezoid whose slanted sides are equal",
                 "options": [
-                    "Triangle",
-                    "Pentagon",
-                    "Square"
+                    "A rectangle",
+                    "A leaning parallelogram",
+                    "A trapezoid whose slanted sides are equal"
                 ],
-                "hint": "Think of the 3-sided shape that shows up as a building block for so many other shapes.",
-                "emoji": "🔺",
-                "explanation": "A triangle is the simplest polygon, has only 3 lines of symmetry among regular polygons, and helps build both pyramids and hexagons.",
-                "funFact": "Triangles are often called the building blocks of geometry because so many other shapes can be made from them.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Count the lines of symmetry of each choice: only one has exactly one.",
+                "emoji": "🍎",
+                "explanation": "A trapezoid with equal slanted sides has one pair of parallel sides and folds down the middle, so it has one line of symmetry. A rectangle has 2 lines and 2 pairs of parallel sides, and a leaning parallelogram has no lines.",
+                "funFact": "A trapezoid with equal slanted sides is called an isosceles trapezoid.",
+                "subtype": "shape_attributes",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -65,54 +65,54 @@
                 "id": "KIDS_SHAPES_L192_Q1",
                 "gameType": "shapes",
                 "level": 192,
-                "instruction": "Which solid shape do you get by stretching a cube longer in just one direction, without changing the other two?",
-                "correctAnswer": "Rectangular Prism",
+                "instruction": "Four shapes are listed with their lines of symmetry: a rectangle (2), a triangle with three equal sides (3), a square (4), and a regular hexagon (6). Which list puts them in order from fewest lines to most lines?",
+                "correctAnswer": "Rectangle, triangle, square, hexagon",
                 "options": [
-                    "Rectangular Prism",
-                    "Pyramid",
-                    "Cube"
+                    "Rectangle, triangle, square, hexagon",
+                    "Triangle, rectangle, square, hexagon",
+                    "Rectangle, square, triangle, hexagon"
                 ],
-                "hint": "Think of the solid shape that is a cube's stretched-out relative.",
-                "emoji": "📦",
-                "explanation": "Stretching a cube longer in just one direction turns it into a rectangular prism.",
-                "funFact": "This is the same relationship a square has with a rectangle, but one dimension higher, in 3D.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Put the numbers 2, 3, 4, and 6 in order, then match each one to its shape.",
+                "emoji": "🍐",
+                "explanation": "The order 2, 3, 4, 6 matches rectangle, triangle, square, hexagon.",
+                "funFact": "A regular hexagon has the most lines of symmetry of these four.",
+                "subtype": "symmetry",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L192_Q2",
                 "gameType": "shapes",
                 "level": 192,
-                "instruction": "Which shape shares a square's 4 equal sides and 4 lines of symmetry, but is traditionally drawn balancing on a single bottom point?",
-                "correctAnswer": "Diamond",
+                "instruction": "A group of shapes all have an even number of sides and at least one pair of parallel sides. Which group fits?",
+                "correctAnswer": "Square, rectangle, regular hexagon",
                 "options": [
-                    "Square",
-                    "Diamond",
-                    "Star"
+                    "Triangle, square, hexagon",
+                    "Square, rectangle, regular hexagon",
+                    "Square, pentagon, octagon"
                 ],
-                "hint": "Think back to the shape that is really just a square, tipped over to stand on its corner.",
-                "emoji": "💎",
-                "explanation": "A diamond shares a square's 4 equal sides and 4 lines of symmetry, but is drawn balancing on one point instead of a flat edge.",
-                "funFact": "Every property a square has, a diamond has too — only the way it's drawn is different.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Check every shape in a group against both rules.",
+                "emoji": "🍋",
+                "explanation": "A square, a rectangle, and a regular hexagon each have an even number of sides and parallel sides. A triangle has 3 sides and a pentagon has 5, which are odd.",
+                "funFact": "A regular hexagon has three pairs of parallel sides.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L192_Q3",
                 "gameType": "shapes",
                 "level": 192,
-                "instruction": "Which solid shape is the only one in this whole game with zero flat faces, zero straight edges, and zero sharp corners?",
-                "correctAnswer": "Sphere",
+                "instruction": "A cone, a hemisphere, and a cylinder are on a table. Which one has a different number of flat faces from the other two?",
+                "correctAnswer": "The cylinder",
                 "options": [
-                    "Cone",
-                    "Sphere",
-                    "Cylinder"
+                    "The cylinder",
+                    "The cone",
+                    "The hemisphere"
                 ],
-                "hint": "Think of the roundest, smoothest solid shape you've learned, with nothing flat or pointed anywhere.",
-                "emoji": "🏀",
-                "explanation": "A sphere is the only solid shape here with zero flat faces, zero edges, and zero corners.",
-                "funFact": "Every other solid shape in this game has at least one flat face or one sharp point.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Compare the number of flat faces on the three solids, one at a time.",
+                "emoji": "🍌",
+                "explanation": "A cone and a hemisphere each have 1 flat face, but a cylinder has 2.",
+                "funFact": "A cylinder is the only one of these that can stand on either end.",
+                "subtype": "shape_classification",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -124,54 +124,54 @@
                 "id": "KIDS_SHAPES_L193_Q1",
                 "gameType": "shapes",
                 "level": 193,
-                "instruction": "Home plate, a classic house outline, and the shape hidden at the center of a 5-pointed star all share which shape?",
-                "correctAnswer": "Pentagon",
+                "instruction": "A right triangle has a dot at its square corner, which is at the bottom left. The triangle is flipped left to right like a mirror, and then turned a quarter turn clockwise. Where is the dot now?",
+                "correctAnswer": "Bottom left",
                 "options": [
-                    "Square",
-                    "Hexagon",
-                    "Pentagon"
+                    "Top right",
+                    "Top left",
+                    "Bottom left"
                 ],
-                "hint": "Think of the 5-sided shape that connects a baseball field, a house drawing, and a star all at once.",
-                "emoji": "🏠",
-                "explanation": "Home plate, a house outline, and the hidden center of a star are all shaped like a pentagon.",
-                "funFact": "Once you learn to spot a pentagon, you'll notice it hiding in more places than you'd expect.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Follow the dot through the flip first, then through the turn.",
+                "emoji": "🍉",
+                "explanation": "The flip moves the dot from the bottom left to the bottom right. A quarter turn clockwise then carries the bottom right corner to the bottom left.",
+                "funFact": "Two moves can bring a mark back to where it began even though the shape now faces a different way.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L193_Q2",
                 "gameType": "shapes",
                 "level": 193,
-                "instruction": "Which solid shape has 8 corners where exactly 3 square faces meet, 12 equal edges, and 6 equal square faces, all at the same time?",
-                "correctAnswer": "Cube",
+                "instruction": "A regular pentagon is turned until it looks exactly like it did before, without going all the way around. Which turn could it be?",
+                "correctAnswer": "One fifth of a full turn",
                 "options": [
-                    "Rectangular Prism",
-                    "Pyramid",
-                    "Cube"
+                    "A quarter of a full turn",
+                    "One third of a full turn",
+                    "One fifth of a full turn"
                 ],
-                "hint": "Think of the single most balanced solid shape you've learned, with every measurement matching.",
-                "emoji": "🎲",
-                "explanation": "A cube has all of these properties at once: 8 corners, 12 equal edges, and 6 equal square faces.",
-                "funFact": "No other solid shape in this game matches a cube's perfect balance in every single measurement.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "A regular pentagon has 5 equal sides and 5 equal corners.",
+                "emoji": "🍇",
+                "explanation": "A regular pentagon has 5 matching corners, so turning it one fifth of a full turn moves each corner onto the next. A quarter turn or a third of a turn would not line up.",
+                "funFact": "One fifth of a full turn is 72 degrees.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L193_Q3",
                 "gameType": "shapes",
                 "level": 193,
-                "instruction": "Which shape can tile a floor with zero gaps, has 6 lines of symmetry, and matches both honeycomb cells and some pencil edges?",
-                "correctAnswer": "Hexagon",
+                "instruction": "An arrow points up. It is turned a quarter turn clockwise, seven times in a row. Which way does it point at the end?",
+                "correctAnswer": "Left",
                 "options": [
-                    "Square",
-                    "Hexagon",
-                    "Pentagon"
+                    "Right",
+                    "Left",
+                    "Down"
                 ],
-                "hint": "Think of the 6-sided shape that connects bees, pencils, and perfect floor tiling all at once.",
-                "emoji": "🐝",
-                "explanation": "A hexagon fits all three clues: it tiles with no gaps, has 6 lines of symmetry, and matches honeycomb and pencil shapes.",
-                "funFact": "Very few shapes can claim all three of these properties together.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Four quarter turns make a full turn, so only the leftover turns matter.",
+                "emoji": "🫐",
+                "explanation": "Four turns bring the arrow back to up, leaving 3 more quarter turns: right, then down, then left.",
+                "funFact": "Counting leftover turns after full circles is the same idea as telling time on a clock.",
+                "subtype": "rotation",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -183,54 +183,54 @@
                 "id": "KIDS_SHAPES_L194_Q1",
                 "gameType": "shapes",
                 "level": 194,
-                "instruction": "Which solid shape has exactly 1 corner, exactly 1 curved edge, exactly 1 flat face, and exactly 1 curved surface?",
-                "correctAnswer": "Cone",
+                "instruction": "A rectangle is 7 cm long and 3 cm wide. A 3 cm by 3 cm square is cut off one end. How far is it all the way around the rectangle that is left?",
+                "correctAnswer": "14 cm",
                 "options": [
-                    "Cone",
-                    "Pyramid",
-                    "Cylinder"
+                    "10 cm",
+                    "14 cm",
+                    "20 cm"
                 ],
-                "hint": "Think of the solid shape with the smallest possible count of everything — just one of each part.",
-                "emoji": "🍦",
-                "explanation": "A cone has exactly one of each: one corner, one curved edge, one flat face, and one curved surface.",
-                "funFact": "No other solid shape in this game has such a simple, matching count of just one for every feature.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Work out the length of what is left, then go all the way around it.",
+                "emoji": "🍒",
+                "explanation": "The piece left is 4 cm long and 3 cm wide, so the distance around is 4 + 3 + 4 + 3 = 14 cm. The original rectangle's 20 cm is too long.",
+                "funFact": "Cutting a square off the end of a rectangle always leaves another rectangle.",
+                "subtype": "decomposition",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L194_Q2",
                 "gameType": "shapes",
                 "level": 194,
-                "instruction": "Which shape, when you fold it corner to corner, always creates two identical right triangles, no matter which of its two corner-to-corner lines you choose?",
-                "correctAnswer": "Square",
+                "instruction": "A rectangle is 8 cm long and 6 cm tall. It is cut along one diagonal into two triangles. How long is the cut?",
+                "correctAnswer": "10 cm",
                 "options": [
-                    "Square",
-                    "Diamond",
-                    "Rectangle"
+                    "10 cm",
+                    "12 cm",
+                    "14 cm"
                 ],
-                "hint": "Think of the shape where both diagonal folds always create perfectly matching triangle halves.",
-                "emoji": "🟩",
-                "explanation": "A square's 4 equal sides mean that either diagonal fold always creates two identical right triangles.",
-                "funFact": "A plain rectangle's diagonal fold also makes two triangles, but they only match perfectly like this in a square.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Each triangle has a square corner with sides of 6 cm and 8 cm, like a bigger 3, 4, 5 triangle.",
+                "emoji": "🥭",
+                "explanation": "The cut is the longest side of a right triangle with sides of 6 cm and 8 cm. That is double a 3, 4, 5 triangle, so the cut is 10 cm. Adding 6 + 8 = 14 would be too long.",
+                "funFact": "Any triangle with sides in the ratio 3 to 4 to 5 has a square corner.",
+                "subtype": "decomposition",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L194_Q3",
                 "gameType": "shapes",
                 "level": 194,
-                "instruction": "Which shape do you get by slicing all 4 corners off a square, then checking that you now have 8 total sides?",
-                "correctAnswer": "Octagon",
+                "instruction": "A regular hexagon is split into 6 equal triangles that meet at its center. Each triangle has three equal sides of 3 cm. How far is it all the way around the hexagon?",
+                "correctAnswer": "18 cm",
                 "options": [
-                    "Pentagon",
-                    "Octagon",
-                    "Hexagon"
+                    "6 cm",
+                    "12 cm",
+                    "18 cm"
                 ],
-                "hint": "A square has 4 sides — slicing off all 4 corners adds exactly 4 more.",
-                "emoji": "🛑",
-                "explanation": "Slicing all 4 corners off a square adds 4 new sides to its original 4, giving 8 total sides, just like an octagon.",
-                "funFact": "This corner-slicing trick is a hands-on way to see exactly where an octagon's extra sides come from.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "The outside of the hexagon is made from one side of each triangle.",
+                "emoji": "🍍",
+                "explanation": "The hexagon has 6 sides, and each is 3 cm long, so the distance around is 6 × 3 = 18 cm. The sides that meet at the center are inside the hexagon.",
+                "funFact": "In a regular hexagon, the distance from the center to any corner equals the length of a side.",
+                "subtype": "decomposition",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -242,54 +242,54 @@
                 "id": "KIDS_SHAPES_L195_Q1",
                 "gameType": "shapes",
                 "level": 195,
-                "instruction": "Which shape is hiding inside a slice of pizza, a folded sandwich corner, AND half of a diagonally cut square, all three at once?",
-                "correctAnswer": "Triangle",
+                "instruction": "A pattern repeats square, circle, circle, triangle. Which shape is the 26th?",
+                "correctAnswer": "Circle",
                 "options": [
                     "Square",
-                    "Rectangle",
+                    "Circle",
                     "Triangle"
                 ],
-                "hint": "Think of the 3-sided shape shared by a pizza slice, a sandwich corner, and half a square.",
-                "emoji": "🍕",
-                "explanation": "A pizza slice, a folded sandwich corner, and half of a diagonally cut square are all triangles.",
-                "funFact": "The same simple 3-sided shape connects food, folding, and geometry all at once.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "The unit has 4 shapes. Divide 26 by 4 and look at the remainder.",
+                "emoji": "🥥",
+                "explanation": "24 shapes make 6 full units, so the 25th shape is the square that starts a new unit and the 26th is the first circle.",
+                "funFact": "Remainders tell you where in the unit a far-off shape falls.",
+                "subtype": "patterns",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L195_Q2",
                 "gameType": "shapes",
                 "level": 195,
-                "instruction": "Which solid shape would look identical in a photograph no matter which direction the camera pointed at it?",
-                "correctAnswer": "Sphere",
+                "instruction": "A banner has 9 shapes from left to right, and it is symmetrical: the left half is a mirror image of the right half. The first four shapes are triangle, circle, square, circle. Which shape is the 6th?",
+                "correctAnswer": "Circle",
                 "options": [
-                    "Sphere",
-                    "Cube",
-                    "Cylinder"
+                    "Square",
+                    "Triangle",
+                    "Circle"
                 ],
-                "hint": "Think of the one solid shape with a surface that never changes no matter the viewing angle.",
-                "emoji": "🏀",
-                "explanation": "A sphere looks exactly the same from every possible camera angle, since its surface never changes shape.",
-                "funFact": "Even a cylinder or cube would look different from different angles, but a sphere never does.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "In a symmetrical row, the 6th shape matches the 4th, counting from the other end.",
+                "emoji": "🥝",
+                "explanation": "The 5th shape is in the middle. The 6th shape is the mirror of the 4th, which is a circle.",
+                "funFact": "Reading a symmetrical row from the right gives the same order as reading it from the left.",
+                "subtype": "patterns",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L195_Q3",
                 "gameType": "shapes",
                 "level": 195,
-                "instruction": "Which shape has 5 lines of symmetry, 5 equal sides, and connects a baseball field's home plate to a school crossing sign?",
-                "correctAnswer": "Pentagon",
+                "instruction": "A design looks the same after a turn of one fifth of a full turn and has 5 lines of symmetry. Which shape could it be?",
+                "correctAnswer": "Regular pentagon",
                 "options": [
-                    "Hexagon",
-                    "Square",
-                    "Pentagon"
+                    "Regular pentagon",
+                    "Regular hexagon",
+                    "Square"
                 ],
-                "hint": "Think of the 5-sided shape shared by a sports field marking and a road safety sign.",
-                "emoji": "🚸",
-                "explanation": "A pentagon connects all three clues: 5 lines of symmetry, 5 equal sides, home plate, and school crossing signs.",
-                "funFact": "Real-world designers often reuse the same simple shapes for very different purposes.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Count the number of equal sides that would give 5 matching turns.",
+                "emoji": "🍅",
+                "explanation": "A regular pentagon has 5 lines of symmetry and matches itself after a turn of one fifth. A regular hexagon has 6 lines and a square has 4.",
+                "funFact": "A five-pointed star shares these symmetries with the regular pentagon.",
+                "subtype": "symmetry",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -301,54 +301,54 @@
                 "id": "KIDS_SHAPES_L196_Q1",
                 "gameType": "shapes",
                 "level": 196,
-                "instruction": "Which solid shape do a cereal box, a book, and a brick all share, even though none of them are perfect cubes?",
-                "correctAnswer": "Rectangular Prism",
+                "instruction": "For solids with flat faces, faces plus vertices minus edges equals 2. A solid has 9 faces and 14 vertices. How many edges does it have?",
+                "correctAnswer": "21",
                 "options": [
-                    "Rectangular Prism",
-                    "Pyramid",
-                    "Cube"
+                    "19",
+                    "21",
+                    "23"
                 ],
-                "hint": "Think of the box-shaped solid that doesn't require every side to be equal, unlike a cube.",
-                "emoji": "📦",
-                "explanation": "A cereal box, a book, and a brick are all rectangular prisms, since their sides don't need to be equal like a cube's.",
-                "funFact": "Only a very specific rectangular prism, with every side matching, would count as a cube.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Rearrange the rule: edges equals faces plus vertices minus 2.",
+                "emoji": "🥑",
+                "explanation": "Edges = 9 + 14 − 2 = 21. This is the number of edges of a prism whose ends have 7 sides.",
+                "funFact": "Euler's rule holds for every solid that has only flat faces and no holes.",
+                "subtype": "solid_properties",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L196_Q2",
                 "gameType": "shapes",
                 "level": 196,
-                "instruction": "Which shape has exactly 2 more sides than a pentagon and exactly 2 fewer sides than an octagon?",
-                "correctAnswer": "Hexagon",
+                "instruction": "A triangular prism is sliced with a flat cut parallel to its triangular ends. What shape is the cut surface?",
+                "correctAnswer": "Triangle",
                 "options": [
-                    "Octagon",
-                    "Pentagon",
-                    "Hexagon"
+                    "Rectangle",
+                    "Circle",
+                    "Triangle"
                 ],
-                "hint": "Start from a pentagon's 5 sides and count forward by 2.",
-                "emoji": "🐝",
-                "explanation": "A hexagon's 6 sides sit exactly 2 more than a pentagon's 5 and 2 fewer than an octagon's 8.",
-                "funFact": "This kind of side-counting shows exactly how neighboring polygons relate to each other.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "A slice parallel to an end is a copy of that end.",
+                "emoji": "🥦",
+                "explanation": "A prism has the same cross-section all along its length, so a slice parallel to the ends is a triangle the same size as the ends.",
+                "funFact": "Because every slice looks the same, a prism is said to have a constant cross-section.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L196_Q3",
                 "gameType": "shapes",
                 "level": 196,
-                "instruction": "Which solid shape, when you trace just one of its faces, always gives you the same flat shape as tracing any of its other 5 faces?",
-                "correctAnswer": "Cube",
+                "instruction": "A cone and a cylinder have the same circular base. Which has more flat faces, and by how many?",
+                "correctAnswer": "The cylinder, by 1",
                 "options": [
-                    "Rectangular Prism",
-                    "Cube",
-                    "Sphere"
+                    "The cone, by 1",
+                    "The cylinder, by 1",
+                    "They have the same number"
                 ],
-                "hint": "Think of the solid shape where every single face is identical, unlike a rectangular prism.",
-                "emoji": "🎲",
-                "explanation": "Every face of a cube is an identical square, so tracing any one of its 6 faces always gives the same result.",
-                "funFact": "A rectangular prism might have different-shaped faces, but a cube's faces are always exactly the same.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Count the flat faces of each solid.",
+                "emoji": "🌽",
+                "explanation": "A cylinder has 2 flat faces and a cone has 1, so the cylinder has 1 more.",
+                "funFact": "A cone's second end is a single point instead of a flat face.",
+                "subtype": "solid_properties",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -360,54 +360,54 @@
                 "id": "KIDS_SHAPES_L197_Q1",
                 "gameType": "shapes",
                 "level": 197,
-                "instruction": "Which shape has 5 points, 5 lines of symmetry, and a hidden pentagon at its very center?",
-                "correctAnswer": "Star",
+                "instruction": "A cube has a star on its top face and a moon on the face that is facing you. It rolls forward, away from you, a quarter turn, and then rolls to the left a quarter turn. Where are the star and the moon now?",
+                "correctAnswer": "The star is on the back face, and the moon is on the left face",
                 "options": [
-                    "Pentagon",
-                    "Star",
-                    "Diamond"
+                    "The star is on the back face, and the moon is on the left face",
+                    "The star is on the back face, and the moon is on the right face",
+                    "The star is on the bottom face, and the moon is on the left face"
                 ],
-                "hint": "Think of the pointy shape that shares its symmetry count with a pentagon, since one hides inside the other.",
-                "emoji": "⭐",
-                "explanation": "A star has 5 points, 5 lines of symmetry, and a pentagon hiding right at its center.",
-                "funFact": "You've now learned how closely a star and a pentagon are related to each other.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Track each mark through the first roll, then through the second.",
+                "emoji": "🥔",
+                "explanation": "Rolling forward puts the star on the back and the moon on top. Rolling left leaves the back face in place and carries the top face to the left, so the star is on the back and the moon is on the left.",
+                "funFact": "Following two marks at once is a good test of tracking two different faces.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L197_Q2",
                 "gameType": "shapes",
                 "level": 197,
-                "instruction": "Which solid shape has 2 flat circle faces, 2 curved edges, zero corners, and one curved surface connecting the top to the bottom?",
-                "correctAnswer": "Cylinder",
+                "instruction": "On a standard dice, opposite faces add up to 7. You see 3 on top, 2 in front, and 1 on the right. The dice rolls to the right, one quarter turn. Which number is on top now?",
+                "correctAnswer": "6",
                 "options": [
-                    "Sphere",
-                    "Cone",
-                    "Cylinder"
+                    "4",
+                    "5",
+                    "6"
                 ],
-                "hint": "Think of the tube-like solid shape with round ends but no sharp points anywhere.",
-                "emoji": "🥫",
-                "explanation": "A cylinder has exactly 2 flat circle faces, 2 curved edges, zero corners, and one curved connecting surface.",
-                "funFact": "Counting up all these features is a thorough way to be completely sure a shape is a cylinder.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Rolling right lifts the face that was on the left.",
+                "emoji": "🥐",
+                "explanation": "The face on the left is opposite the 1 on the right, so it shows 7 − 1 = 6. Rolling right lifts that face to the top.",
+                "funFact": "The face that was on top, the 3, ends up on the right.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L197_Q3",
                 "gameType": "shapes",
                 "level": 197,
-                "instruction": "Which shape is a rectangle, a rhombus, AND the only regular quadrilateral, all names describing the very same shape?",
-                "correctAnswer": "Square",
+                "instruction": "A 4 by 4 by 4 cube is painted on the outside and cut into 64 small cubes. How many small cubes have exactly 2 painted faces?",
+                "correctAnswer": "24",
                 "options": [
-                    "Diamond",
-                    "Rectangle",
-                    "Square"
+                    "12",
+                    "16",
+                    "24"
                 ],
-                "hint": "Think of the one 4-sided shape balanced enough to earn all three of these names at once.",
-                "emoji": "🟩",
-                "explanation": "A square fits all three descriptions: it's a special rectangle, a special rhombus, and the only regular quadrilateral.",
-                "funFact": "Shapes can sometimes belong to more than one family at the same time, just like a square does.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "These cubes sit along the edges but not at the corners.",
+                "emoji": "🥨",
+                "explanation": "A cube has 12 edges, and each edge has 2 small cubes between its two corner cubes, so 12 × 2 = 24.",
+                "funFact": "The 8 corner cubes have 3 painted faces, and the 8 inner cubes have none.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -419,54 +419,54 @@
                 "id": "KIDS_SHAPES_L198_Q1",
                 "gameType": "shapes",
                 "level": 198,
-                "instruction": "Which solid shape has a polygon base, triangle faces leaning inward, and narrows to exactly one single top point, unlike a prism?",
-                "correctAnswer": "Pyramid",
+                "instruction": "A bakery sells a cake in a box shaped like a hexagonal prism. How many flat faces does the box have?",
+                "correctAnswer": "8",
                 "options": [
-                    "Pyramid",
-                    "Cone",
-                    "Rectangular Prism"
+                    "8",
+                    "12",
+                    "18"
                 ],
-                "hint": "Think of the solid shape whose sides always lean inward toward one peak, unlike a straight-sided prism.",
-                "emoji": "🗻",
-                "explanation": "Unlike a prism, whose sides go straight up, a pyramid's triangle faces lean inward to meet at one single peak.",
-                "funFact": "This inward lean is exactly what gives every pyramid its pointed, triangular silhouette.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Count the two hexagon ends, then one rectangle for each side.",
+                "emoji": "🌭",
+                "explanation": "The box has 2 hexagon ends and 6 rectangular sides, which makes 8 faces. The numbers 12 and 18 are its vertices and edges.",
+                "funFact": "Hexagonal boxes can be packed side by side with no gaps between them.",
+                "subtype": "shape_application",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L198_Q2",
                 "gameType": "shapes",
                 "level": 198,
-                "instruction": "Which shape ranks highest in side count, corner count, AND lines of symmetry among every 2D shape you've studied in this entire game?",
-                "correctAnswer": "Octagon",
+                "instruction": "A garden is a regular pentagon with sides 3 m long. How much fencing goes all the way around it?",
+                "correctAnswer": "15 m",
                 "options": [
-                    "Pentagon",
-                    "Hexagon",
-                    "Octagon"
+                    "9 m",
+                    "12 m",
+                    "15 m"
                 ],
-                "hint": "Think of the many-sided shape used for stop signs, which beats every other named polygon here.",
-                "emoji": "🛑",
-                "explanation": "With 8 sides, 8 corners, and 8 lines of symmetry, the octagon ranks highest among all the named polygons in this game.",
-                "funFact": "Only a circle, with its infinite symmetry, ultimately beats an octagon — but a circle has no sides or corners to count at all.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "A regular pentagon has 5 equal sides.",
+                "emoji": "🥗",
+                "explanation": "All 5 sides are 3 m long, so the fencing is 5 × 3 = 15 m.",
+                "funFact": "Counting the sides first is the key to finding the distance around any regular shape.",
+                "subtype": "shape_application",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L198_Q3",
                 "gameType": "shapes",
                 "level": 198,
-                "instruction": "Which shape has no sides, no corners, and infinite lines of symmetry, making it the single most balanced shape in this entire game?",
-                "correctAnswer": "Circle",
+                "instruction": "A butterfly pendant is perfectly symmetrical, with a line of symmetry down its middle. The left wing has 3 gems, and there are no gems on the line itself. How many gems are on the whole pendant?",
+                "correctAnswer": "6",
                 "options": [
-                    "Octagon",
-                    "Circle",
-                    "Sphere"
+                    "3",
+                    "6",
+                    "9"
                 ],
-                "hint": "Think of the one shape that beats every polygon, no matter how many sides that polygon has.",
-                "emoji": "🔵",
-                "explanation": "A circle has no sides, no corners, and infinite lines of symmetry, making it the most balanced shape you've studied.",
-                "funFact": "You've now completed a journey from a simple circle all the way to a full understanding of shapes, sides, solids, and symmetry.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Every gem on one side has a matching gem on the other side.",
+                "emoji": "🍝",
+                "explanation": "Each of the 3 gems on the left has a mirror partner on the right, so there are 3 + 3 = 6 gems.",
+                "funFact": "Symmetry means each part on one side has a matching part on the other.",
+                "subtype": "symmetry",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -478,54 +478,54 @@
                 "id": "KIDS_SHAPES_L199_Q1",
                 "gameType": "shapes",
                 "level": 199,
-                "instruction": "Which solid shape has infinite lines of symmetry running through its center, just like a circle does in 2D?",
-                "correctAnswer": "Sphere",
+                "instruction": "A box is a cuboid 4 units long, 3 units wide, and 2 units tall. How many solid cubes that are 2 units on every edge can fit inside the box?",
+                "correctAnswer": "2",
                 "options": [
-                    "Sphere",
-                    "Cylinder",
-                    "Cube"
+                    "3",
+                    "6",
+                    "2"
                 ],
-                "hint": "Think of the solid, 3D version of a circle's endless symmetry.",
-                "emoji": "🏀",
-                "explanation": "A sphere has infinite lines of symmetry running through its center, just like a circle does in two dimensions.",
-                "funFact": "This makes a sphere the 3D version of a circle's perfectly balanced symmetry.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Check how many cubes fit along the length and along the width before thinking about the volume.",
+                "emoji": "🍛",
+                "explanation": "Two 2-unit cubes fit along the 4-unit length, but only one fits across the 3-unit width. The height of 2 allows one layer, so 2 × 1 × 1 = 2 cubes. Working from the volume, 24 ÷ 8 = 3, does not work because the cubes cannot be cut.",
+                "funFact": "Packing problems often have fewer answers than the volume suggests, because the pieces cannot be cut.",
+                "subtype": "spatial_reasoning",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L199_Q2",
                 "gameType": "shapes",
                 "level": 199,
-                "instruction": "Which shape can combine with itself to build a square, a diamond, a hexagon, and even a pyramid, more than any other shape in this game?",
-                "correctAnswer": "Triangle",
+                "instruction": "A flat pattern is made of 1 hexagon and 6 triangles. When it is folded into a solid, how many vertices does the solid have?",
+                "correctAnswer": "7",
                 "options": [
-                    "Square",
-                    "Triangle",
-                    "Diamond"
+                    "7",
+                    "12",
+                    "14"
                 ],
-                "hint": "Think of the simplest possible polygon, used again and again to build so many other shapes.",
-                "emoji": "🔺",
-                "explanation": "A triangle can combine with itself to build a square, a diamond, a hexagon, and a pyramid — more than any other shape here.",
-                "funFact": "This is exactly why triangles are often called the true building blocks of geometry.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Name the solid first, then count its corners.",
+                "emoji": "🍣",
+                "explanation": "The pattern folds into a hexagonal pyramid. The hexagon has 6 corners and the triangles meet at one more point on top, so there are 7 vertices.",
+                "funFact": "A hexagonal pyramid has 7 faces and 12 edges as well.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L199_Q3",
                 "gameType": "shapes",
                 "level": 199,
-                "instruction": "Which solid shape is the meeting point of a square (its face), a rectangular prism (its family), and perfect 3D balance (its defining trait)?",
-                "correctAnswer": "Cube",
+                "instruction": "A solid looks like a hexagon from above and a rectangle from the side. It has 8 faces. Which solid is it?",
+                "correctAnswer": "Hexagonal prism",
                 "options": [
-                    "Cube",
-                    "Rectangular Prism",
-                    "Sphere"
+                    "Hexagonal prism",
+                    "Hexagonal pyramid",
+                    "Cylinder"
                 ],
-                "hint": "Think of the solid shape whose every face is a square, and whose every measurement matches perfectly.",
-                "emoji": "🎲",
-                "explanation": "A cube's faces are squares, it belongs to the rectangular prism family, and its perfect balance defines it.",
-                "funFact": "Very few shapes connect this many ideas from across the whole game the way a cube does.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Count the faces of each choice, and think about the side view.",
+                "emoji": "🥟",
+                "explanation": "A hexagonal prism has 2 hexagon ends and 6 rectangles, which is 8 faces, and its side view is a rectangle. A hexagonal pyramid has 7 faces, and a cylinder is a circle from above.",
+                "funFact": "Seen from above, a hexagonal prism looks just like its hexagon end.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             }
         ]
@@ -537,54 +537,54 @@
                 "id": "KIDS_SHAPES_L200_Q1",
                 "gameType": "shapes",
                 "level": 200,
-                "instruction": "After everything you've learned about sides, corners, solids, and symmetry, which single shape still stands alone with no sides, no corners, and endless symmetry?",
-                "correctAnswer": "Circle",
+                "instruction": "Which pair of solids has the same number of vertices?",
+                "correctAnswer": "A triangular prism and a pyramid with a pentagon base",
                 "options": [
-                    "Sphere",
-                    "Circle",
-                    "Octagon"
+                    "A cube and a hexagonal pyramid",
+                    "A triangular prism and a pyramid with a pentagon base",
+                    "A cuboid and a square pyramid"
                 ],
-                "hint": "Think all the way back to one of the very first shapes you ever learned in this game.",
-                "emoji": "🔵",
-                "explanation": "After every lesson in this game, the circle still stands alone: no sides, no corners, and endless symmetry.",
-                "funFact": "Congratulations on completing a full journey through shapes, from the simplest circle to the most advanced reasoning!",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Work out the vertices of each solid, then compare the pairs.",
+                "emoji": "🍤",
+                "explanation": "A triangular prism has 6 vertices, and a pentagon-base pyramid has 5 + 1 = 6. A cube has 8 and a hexagonal pyramid has 7, and a cuboid has 8 and a square pyramid has 5.",
+                "funFact": "There is a solid with flat faces for every number of vertices from 4 upward.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L200_Q2",
                 "gameType": "shapes",
                 "level": 200,
-                "instruction": "Which solid shape ties together a flat polygon base, triangle faces, ancient monuments, and a single meeting point at the top?",
-                "correctAnswer": "Pyramid",
+                "instruction": "Mia says: If a shape looks the same after a half turn, it must have a line of symmetry. Which shape shows she is wrong?",
+                "correctAnswer": "A leaning parallelogram with two long and two short sides",
                 "options": [
-                    "Cube",
-                    "Pyramid",
-                    "Cone"
+                    "A leaning parallelogram with two long and two short sides",
+                    "A rectangle",
+                    "A square"
                 ],
-                "hint": "Think of the solid shape whose every triangle face rises to meet at exactly one peak.",
-                "emoji": "🗻",
-                "explanation": "A pyramid ties all of these together: a flat base, triangle faces, ancient monuments, and one peak where every face meets.",
-                "funFact": "You've now mastered how a pyramid connects flat 2D triangles into one complete solid shape.",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Find a shape that has turn symmetry but cannot be folded to match.",
+                "emoji": "🥮",
+                "explanation": "A leaning parallelogram looks the same after a half turn but cannot be folded so its halves match. A rectangle and a square have both kinds of symmetry.",
+                "funFact": "Turn symmetry and line symmetry are different ideas, and some shapes have only one of them.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             },
             {
                 "id": "KIDS_SHAPES_L200_Q3",
                 "gameType": "shapes",
                 "level": 200,
-                "instruction": "As a final challenge: which shape has 6 sides, 6 corners, 6 lines of symmetry, tiles perfectly with no gaps, and is built from 6 triangles at once?",
-                "correctAnswer": "Hexagon",
+                "instruction": "Which description is true for a cube but not for every cuboid?",
+                "correctAnswer": "All six faces are squares",
                 "options": [
-                    "Hexagon",
-                    "Octagon",
-                    "Pentagon"
+                    "All six faces are squares",
+                    "It has 12 edges",
+                    "It has 8 vertices"
                 ],
-                "hint": "Think of the honeycomb-inspired shape that ties together sides, symmetry, tiling, and triangles all in one.",
-                "emoji": "🐝",
-                "explanation": "A hexagon ties together every one of these clues: 6 sides, 6 corners, 6 lines of symmetry, perfect tiling, and 6 triangle wedges.",
-                "funFact": "You've reached the end of the Shapes journey — congratulations on mastering every shape from circle to hexagon and beyond!",
-                "subtype": "advanced_shape_reasoning",
+                "hint": "Check each description against a long, thin cuboid.",
+                "emoji": "🍡",
+                "explanation": "Every cuboid has 12 edges and 8 vertices, but only a cube must have all six faces as squares.",
+                "funFact": "A cube is the cuboid whose length, width, and height are all equal.",
+                "subtype": "mixed_mastery",
                 "interactionType": "multiple_choice"
             }
         ]
