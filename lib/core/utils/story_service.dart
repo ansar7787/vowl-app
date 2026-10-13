@@ -266,12 +266,12 @@ class StoryServiceImpl implements StoryService {
       "You've mastered the chalkboard! From simple lines to complete sentences, your writing shines with confidence. 📜",
     ],
     'weather': [
-      "Sun or rain! Let's learn about the beautiful sky today! ☀️",
-      "Cloud Chaser! You know exactly what the sky is telling us! ☁️",
-      "The Storm is passed! You're a hero of the seasons! 🌈",
-      "A perfect forecast! You understand the rhythm of nature! 🌩️",
-      "100 levels of weather! You are the Master of the Elements! 🌪️",
-      "Sky Guardian! You control the sunshine and the rain! 🌦️",
+      "Welcome to the Weather Window! Look outside and let's explore sunshine, rain, wind, and clouds together. ☀️",
+      "Ten weather clues solved! You're getting so good at telling what kind of day it is outside. 🌤️",
+      "Twenty weather levels explored! Rain or shine, you always know what to wear and how the sky changes. 🌈",
+      "Fifty weather challenges completed! From gentle morning breezes to stormy skies, you understand how nature works. ⛅",
+      "One hundred weather levels completed! You can read the sky like a true weather expert. What an amazing achievement! 🏆",
+      "Two hundred weather adventures finished! You've mastered all kinds of seasons, temperatures, and sky clues. You should be so proud! 🌟",
     ],
     'professions': [
       "Welcome to our neighborhood! Let's explore all the amazing jobs and helpers who take care of our community! 🏘️",
