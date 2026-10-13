@@ -10,10 +10,12 @@ class TranslationService {
   factory TranslationService() => _instance;
   TranslationService._internal();
 
+  static const String _kSourceLangKey = 'translation_source_lang';
   static const String _kTargetLangKey = 'translation_target_lang';
 
   final _modelManager = OnDeviceTranslatorModelManager();
   OnDeviceTranslator? _translator;
+  TranslateLanguage? _currentSourceLanguage;
   TranslateLanguage? _currentTargetLanguage;
 
   /// The list of major supported native languages to show in the UI selector.
@@ -78,6 +80,24 @@ class TranslationService {
     'Welsh': TranslateLanguage.welsh,
   };
 
+  TranslateLanguage? _resolveLanguage(String? bcpCode) {
+    if (bcpCode == null) return null;
+    try {
+      return TranslateLanguage.values.firstWhere(
+        (lang) => lang.bcpCode == bcpCode,
+      );
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<void> _ensureModelDownloadedInternal(String bcpCode) async {
+    final isDownloaded = await _modelManager.isModelDownloaded(bcpCode);
+    if (!isDownloaded) {
+      await _modelManager.downloadModel(bcpCode);
+    }
+  }
+
   /// Returns true if the user has previously selected and downloaded a target language.
   Future<bool> isLanguageConfigured() async {
     final prefs = await SharedPreferences.getInstance();
@@ -101,7 +121,6 @@ class TranslationService {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_kTargetLangKey, target.bcpCode);
 
-    // If they changed the language, dispose the old translator
     if (_currentTargetLanguage != target) {
       await _translator?.close();
       _translator = null;
@@ -109,93 +128,124 @@ class TranslationService {
 
     _currentTargetLanguage = target;
 
-    // Ensure English base model is downloaded
-    final isEnDownloaded = await _modelManager.isModelDownloaded(
-      TranslateLanguage.english.bcpCode,
-    );
-    if (!isEnDownloaded) {
-      await _modelManager.downloadModel(TranslateLanguage.english.bcpCode);
-    }
-
-    // Trigger download for target language
-    final isTargetDownloaded = await _modelManager.isModelDownloaded(
-      target.bcpCode,
-    );
-    if (!isTargetDownloaded) {
-      await _modelManager.downloadModel(target.bcpCode);
-    }
+    await Future.wait([
+      _ensureModelDownloadedInternal(TranslateLanguage.english.bcpCode),
+      _ensureModelDownloadedInternal(target.bcpCode),
+    ]);
   }
 
-  /// Translates the given English text to the user's saved target language.
-  ///
-  /// Automatically downloads the model if it hasn't finished yet.
-  Future<String> translate(String englishText) async {
-    if (englishText.isEmpty) return englishText;
-
+  /// Sets the user's source language.
+  Future<void> setSourceLanguage(TranslateLanguage source) async {
     final prefs = await SharedPreferences.getInstance();
-    final bcpCode = prefs.getString(_kTargetLangKey);
-    if (bcpCode == null) {
-      throw Exception('Target language not set');
+    await prefs.setString(_kSourceLangKey, source.bcpCode);
+
+    if (_currentSourceLanguage != source) {
+      await _translator?.close();
+      _translator = null;
     }
 
-    final target = TranslateLanguage.values.firstWhere(
-      (lang) => lang.bcpCode == bcpCode,
-      orElse: () => TranslateLanguage.spanish,
-    );
+    _currentSourceLanguage = source;
 
-    // Initialize translator if needed
-    if (_translator == null || _currentTargetLanguage != target) {
+    await Future.wait([
+      _ensureModelDownloadedInternal(TranslateLanguage.english.bcpCode),
+      _ensureModelDownloadedInternal(source.bcpCode),
+    ]);
+  }
+
+  /// Sets both source and target languages simultaneously.
+  Future<void> setLanguages({
+    required TranslateLanguage source,
+    required TranslateLanguage target,
+  }) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_kSourceLangKey, source.bcpCode);
+    await prefs.setString(_kTargetLangKey, target.bcpCode);
+
+    if (_currentSourceLanguage != source || _currentTargetLanguage != target) {
+      await _translator?.close();
+      _translator = null;
+    }
+
+    _currentSourceLanguage = source;
+    _currentTargetLanguage = target;
+
+    await Future.wait([
+      _ensureModelDownloadedInternal(TranslateLanguage.english.bcpCode),
+      _ensureModelDownloadedInternal(source.bcpCode),
+      _ensureModelDownloadedInternal(target.bcpCode),
+    ]);
+  }
+
+  /// Translates the given text between source and target languages.
+  ///
+  /// Automatically downloads models if not yet ready on device.
+  Future<String> translate(
+    String text, {
+    TranslateLanguage? sourceLanguage,
+    TranslateLanguage? targetLanguage,
+  }) async {
+    if (text.isEmpty) return text;
+
+    final prefs = await SharedPreferences.getInstance();
+    final source = sourceLanguage ??
+        _resolveLanguage(prefs.getString(_kSourceLangKey)) ??
+        TranslateLanguage.english;
+
+    final target = targetLanguage ??
+        _resolveLanguage(prefs.getString(_kTargetLangKey)) ??
+        TranslateLanguage.spanish;
+
+    if (source == target) return text;
+
+    // Initialize or recreate translator if needed
+    if (_translator == null ||
+        _currentSourceLanguage != source ||
+        _currentTargetLanguage != target) {
+      await _translator?.close();
       _translator = OnDeviceTranslator(
-        sourceLanguage: TranslateLanguage.english,
+        sourceLanguage: source,
         targetLanguage: target,
       );
+      _currentSourceLanguage = source;
       _currentTargetLanguage = target;
     }
 
     // Ensure models are fully downloaded before translating
-    final isEnDownloaded = await _modelManager.isModelDownloaded(
-      TranslateLanguage.english.bcpCode,
-    );
-    if (!isEnDownloaded) {
-      await _modelManager.downloadModel(TranslateLanguage.english.bcpCode);
-    }
-    final isDownloaded = await _modelManager.isModelDownloaded(target.bcpCode);
-    if (!isDownloaded) {
-      await _modelManager.downloadModel(target.bcpCode);
-    }
+    await Future.wait([
+      _ensureModelDownloadedInternal(source.bcpCode),
+      _ensureModelDownloadedInternal(target.bcpCode),
+      if (source != TranslateLanguage.english &&
+          target != TranslateLanguage.english)
+        _ensureModelDownloadedInternal(TranslateLanguage.english.bcpCode),
+    ]);
 
     try {
-      var result = await _translator!.translateText(englishText);
-      // ML Kit bug: sometimes first translation after initialization silently fails
-      // and returns the english text because native models are still warming up.
-      if (result == englishText && target != TranslateLanguage.english) {
+      var result = await _translator!.translateText(text);
+      if (result == text && source != target) {
         await Future.delayed(const Duration(milliseconds: 600));
-        result = await _translator!.translateText(englishText);
+        result = await _translator!.translateText(text);
       }
       return result;
     } catch (e) {
-      // Native engine might have been killed by OS memory pressure.
-      // Re-initialize and retry once.
       await _translator?.close();
       _translator = OnDeviceTranslator(
-        sourceLanguage: TranslateLanguage.english,
+        sourceLanguage: source,
         targetLanguage: target,
       );
+      _currentSourceLanguage = source;
       _currentTargetLanguage = target;
 
       try {
-        var result2 = await _translator!.translateText(englishText);
-        if (result2 == englishText && target != TranslateLanguage.english) {
+        var result2 = await _translator!.translateText(text);
+        if (result2 == text && source != target) {
           await Future.delayed(const Duration(milliseconds: 600));
-          result2 = await _translator!.translateText(englishText);
+          result2 = await _translator!.translateText(text);
         }
         return result2;
       } catch (e2) {
-        // If it STILL fails, the downloaded model is likely corrupted on disk.
-        // Delete it so the app is forced to redownload a clean copy next time.
         await _modelManager.deleteModel(target.bcpCode);
         throw Exception(
-          "Corrupted model deleted. Please try translating again to redownload.",
+          'Model error encountered. Corrupted model reset. Please try again to reload.',
         );
       }
     }
@@ -206,16 +256,22 @@ class TranslationService {
     final prefs = await SharedPreferences.getInstance();
     final bcpCode = prefs.getString(_kTargetLangKey);
     if (bcpCode == null) return;
-    final isEnDownloaded = await _modelManager.isModelDownloaded(
-      TranslateLanguage.english.bcpCode,
-    );
-    if (!isEnDownloaded) {
-      await _modelManager.downloadModel(TranslateLanguage.english.bcpCode);
+    await Future.wait([
+      _ensureModelDownloadedInternal(TranslateLanguage.english.bcpCode),
+      _ensureModelDownloadedInternal(bcpCode),
+    ]);
+  }
+
+  /// Returns the display name of the currently configured source language.
+  Future<String> getConfiguredSourceLanguageName() async {
+    final prefs = await SharedPreferences.getInstance();
+    final bcpCode = prefs.getString(_kSourceLangKey);
+    if (bcpCode == null) return 'English';
+
+    for (final entry in supportedLanguages.entries) {
+      if (entry.value.bcpCode == bcpCode) return entry.key;
     }
-    final isDownloaded = await _modelManager.isModelDownloaded(bcpCode);
-    if (!isDownloaded) {
-      await _modelManager.downloadModel(bcpCode);
-    }
+    return 'English';
   }
 
   /// Returns the display name of the currently configured target language,
@@ -232,14 +288,18 @@ class TranslationService {
   }
 
   /// Returns a list of language names that are currently downloaded on the device.
+  ///
+  /// Executed in parallel with Future.wait for maximum speed.
   Future<List<String>> getDownloadedLanguageNames() async {
-    final downloaded = <String>[];
-    for (final entry in supportedLanguages.entries) {
-      if (await _modelManager.isModelDownloaded(entry.value.bcpCode)) {
-        downloaded.add(entry.key);
-      }
-    }
-    return downloaded;
+    final results = await Future.wait(
+      supportedLanguages.entries.map((entry) async {
+        final isDownloaded = await _modelManager.isModelDownloaded(
+          entry.value.bcpCode,
+        );
+        return isDownloaded ? entry.key : null;
+      }),
+    );
+    return results.whereType<String>().toList();
   }
 
   /// Deletes the ML model for a specific language to free up storage space.
@@ -247,7 +307,8 @@ class TranslationService {
     final target = supportedLanguages[languageName];
     if (target != null) {
       await _modelManager.deleteModel(target.bcpCode);
-      if (_currentTargetLanguage == target) {
+      if (_currentTargetLanguage == target ||
+          _currentSourceLanguage == target) {
         await _translator?.close();
         _translator = null;
       }

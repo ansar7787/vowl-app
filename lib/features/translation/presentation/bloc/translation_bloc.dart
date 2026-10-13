@@ -18,16 +18,43 @@ class TranslationInitRequested extends TranslationEvent {}
 class TranslationTextChanged extends TranslationEvent {
   final String text;
   final bool isPremium;
-  const TranslationTextChanged(this.text, {this.isPremium = false});
+  final bool immediate;
+  const TranslationTextChanged(
+    this.text, {
+    this.isPremium = false,
+    this.immediate = false,
+  });
   @override
-  List<Object?> get props => [text, isPremium];
+  List<Object?> get props => [text, isPremium, immediate];
 }
 
 class TranslationLanguageChanged extends TranslationEvent {
   final String targetLanguageName;
-  const TranslationLanguageChanged(this.targetLanguageName);
+  final bool isPremium;
+  const TranslationLanguageChanged(
+    this.targetLanguageName, {
+    this.isPremium = false,
+  });
   @override
-  List<Object?> get props => [targetLanguageName];
+  List<Object?> get props => [targetLanguageName, isPremium];
+}
+
+class TranslationSourceLanguageChanged extends TranslationEvent {
+  final String sourceLanguageName;
+  final bool isPremium;
+  const TranslationSourceLanguageChanged(
+    this.sourceLanguageName, {
+    this.isPremium = false,
+  });
+  @override
+  List<Object?> get props => [sourceLanguageName, isPremium];
+}
+
+class TranslationSwapLanguages extends TranslationEvent {
+  final bool isPremium;
+  const TranslationSwapLanguages({this.isPremium = false});
+  @override
+  List<Object?> get props => [isPremium];
 }
 
 class TranslationModelDeleted extends TranslationEvent {
@@ -39,6 +66,13 @@ class TranslationModelDeleted extends TranslationEvent {
 
 class TranslationAdWatched extends TranslationEvent {}
 
+class TranslationRetryRequested extends TranslationEvent {
+  final bool isPremium;
+  const TranslationRetryRequested({this.isPremium = false});
+  @override
+  List<Object?> get props => [isPremium];
+}
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // STATE
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -49,6 +83,7 @@ class TranslationState extends Equatable {
   final TranslationStatus status;
   final String sourceText;
   final String translatedText;
+  final String currentSourceLanguage;
   final String? currentTargetLanguage;
   final List<String> downloadedLanguages;
   final bool isModelDownloading;
@@ -61,6 +96,7 @@ class TranslationState extends Equatable {
     this.status = TranslationStatus.initial,
     this.sourceText = '',
     this.translatedText = '',
+    this.currentSourceLanguage = 'English',
     this.currentTargetLanguage,
     this.downloadedLanguages = const [],
     this.isModelDownloading = false,
@@ -74,6 +110,7 @@ class TranslationState extends Equatable {
     TranslationStatus? status,
     String? sourceText,
     String? translatedText,
+    String? currentSourceLanguage,
     String? currentTargetLanguage,
     List<String>? downloadedLanguages,
     bool? isModelDownloading,
@@ -86,6 +123,8 @@ class TranslationState extends Equatable {
       status: status ?? this.status,
       sourceText: sourceText ?? this.sourceText,
       translatedText: translatedText ?? this.translatedText,
+      currentSourceLanguage:
+          currentSourceLanguage ?? this.currentSourceLanguage,
       currentTargetLanguage:
           currentTargetLanguage ?? this.currentTargetLanguage,
       downloadedLanguages: downloadedLanguages ?? this.downloadedLanguages,
@@ -103,6 +142,7 @@ class TranslationState extends Equatable {
     status,
     sourceText,
     translatedText,
+    currentSourceLanguage,
     currentTargetLanguage,
     downloadedLanguages,
     isModelDownloading,
@@ -120,6 +160,7 @@ class TranslationState extends Equatable {
 class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
   final TranslationService _service;
   DateTime? _lastTokenDeductionTime;
+  int _requestId = 0;
 
   TranslationBloc({required TranslationService service})
     : _service = service,
@@ -127,8 +168,11 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     on<TranslationInitRequested>(_onInitRequested);
     on<TranslationTextChanged>(_onTextChanged);
     on<TranslationLanguageChanged>(_onLanguageChanged);
+    on<TranslationSourceLanguageChanged>(_onSourceLanguageChanged);
+    on<TranslationSwapLanguages>(_onSwapLanguages);
     on<TranslationModelDeleted>(_onModelDeleted);
     on<TranslationAdWatched>(_onAdWatched);
+    on<TranslationRetryRequested>(_onRetryRequested);
   }
 
   Future<void> _onInitRequested(
@@ -137,7 +181,8 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
   ) async {
     emit(state.copyWith(status: TranslationStatus.loading));
     try {
-      final currentLang = await _service.getConfiguredLanguageName();
+      final sourceLang = await _service.getConfiguredSourceLanguageName();
+      final currentTargetLang = await _service.getConfiguredLanguageName();
       final downloaded = await _service.getDownloadedLanguageNames();
 
       final prefs = await SharedPreferences.getInstance();
@@ -172,7 +217,8 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       emit(
         state.copyWith(
           status: TranslationStatus.loaded,
-          currentTargetLanguage: currentLang,
+          currentSourceLanguage: sourceLang,
+          currentTargetLanguage: currentTargetLang ?? 'Spanish',
           downloadedLanguages: downloaded,
           freeTranslationsRemaining: freeRemaining,
         ),
@@ -192,41 +238,52 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     Emitter<TranslationState> emit,
   ) async {
     final text = event.text.trim();
-
-    final now = DateTime.now();
-    bool isFreshTranslation = false;
-
-    if (text.isNotEmpty) {
-      if (_lastTokenDeductionTime == null ||
-          now.difference(_lastTokenDeductionTime!) >
-              const Duration(seconds: 20)) {
-        isFreshTranslation = true;
-      }
-    }
-
-    emit(state.copyWith(sourceText: text, errorMessage: null));
+    _requestId++;
+    final currentId = _requestId;
 
     if (text.isEmpty) {
       emit(
         state.copyWith(
+          sourceText: '',
           translatedText: '',
           isLimitReached: false,
           isTranslating: false,
+          errorMessage: null,
         ),
       );
       _lastTokenDeductionTime = null;
       return;
     }
 
+    // Require at least 2 characters to trigger translation to avoid burning tokens on initial keystrokes
+    if (text.length < 2) {
+      emit(state.copyWith(sourceText: text, isTranslating: false, errorMessage: null));
+      return;
+    }
+
+    final now = DateTime.now();
+    bool isFreshTranslation = false;
+
+    if (_lastTokenDeductionTime == null ||
+        now.difference(_lastTokenDeductionTime!) >
+            const Duration(seconds: 25)) {
+      isFreshTranslation = true;
+    }
+
     if (!event.isPremium &&
         state.freeTranslationsRemaining <= 0 &&
         isFreshTranslation) {
-      emit(state.copyWith(isLimitReached: true));
+      emit(state.copyWith(sourceText: text, isLimitReached: true, isTranslating: false));
       return;
     }
 
     if (state.currentTargetLanguage == null) {
-      emit(state.copyWith(errorMessage: 'translation.error_select_target'));
+      emit(state.copyWith(sourceText: text, errorMessage: 'translation.error_select_target', isTranslating: false));
+      return;
+    }
+
+    if (state.currentSourceLanguage == state.currentTargetLanguage) {
+      emit(state.copyWith(sourceText: text, translatedText: text, isTranslating: false));
       return;
     }
 
@@ -234,13 +291,32 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       final isDownloaded = state.downloadedLanguages.contains(
         state.currentTargetLanguage,
       );
-      if (!isDownloaded) {
-        emit(state.copyWith(isModelDownloading: true));
+
+      emit(
+        state.copyWith(
+          sourceText: text,
+          isTranslating: true,
+          isModelDownloading: !isDownloaded,
+          errorMessage: null,
+        ),
+      );
+
+      final sourceLang =
+          TranslationService.supportedLanguages[state.currentSourceLanguage];
+      final targetLang =
+          TranslationService.supportedLanguages[state.currentTargetLanguage];
+
+      final result = await _service.translate(
+        text,
+        sourceLanguage: sourceLang,
+        targetLanguage: targetLang,
+      );
+
+      // Discard stale responses if a newer request was dispatched
+      if (currentId != _requestId) {
+        return;
       }
 
-      emit(state.copyWith(isTranslating: true));
-
-      final result = await _service.translate(text);
       final newDownloaded = await _service.getDownloadedLanguageNames();
 
       final int newRemaining = event.isPremium
@@ -268,6 +344,8 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
         ),
       );
     } catch (e) {
+      if (currentId != _requestId) return;
+
       emit(
         state.copyWith(
           isModelDownloading: false,
@@ -301,13 +379,100 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
         );
 
         if (state.sourceText.isNotEmpty) {
-          add(TranslationTextChanged(state.sourceText));
+          add(
+            TranslationTextChanged(
+              state.sourceText,
+              isPremium: event.isPremium,
+              immediate: true,
+            ),
+          );
         }
       } catch (e) {
         emit(
           state.copyWith(
             isModelDownloading: false,
             errorMessage: 'translation.error_download_model',
+          ),
+        );
+      }
+    }
+  }
+
+  Future<void> _onSourceLanguageChanged(
+    TranslationSourceLanguageChanged event,
+    Emitter<TranslationState> emit,
+  ) async {
+    final lang = event.sourceLanguageName;
+    if (lang == state.currentSourceLanguage) return;
+
+    emit(state.copyWith(currentSourceLanguage: lang, errorMessage: null));
+
+    final source = TranslationService.supportedLanguages[lang];
+    if (source != null) {
+      emit(state.copyWith(isModelDownloading: true));
+      try {
+        await _service.setSourceLanguage(source);
+        final newDownloaded = await _service.getDownloadedLanguageNames();
+        emit(
+          state.copyWith(
+            isModelDownloading: false,
+            downloadedLanguages: newDownloaded,
+          ),
+        );
+
+        if (state.sourceText.isNotEmpty) {
+          add(
+            TranslationTextChanged(
+              state.sourceText,
+              isPremium: event.isPremium,
+              immediate: true,
+            ),
+          );
+        }
+      } catch (e) {
+        emit(
+          state.copyWith(
+            isModelDownloading: false,
+            errorMessage: 'translation.error_download_model',
+          ),
+        );
+      }
+    }
+  }
+
+  Future<void> _onSwapLanguages(
+    TranslationSwapLanguages event,
+    Emitter<TranslationState> emit,
+  ) async {
+    final oldSource = state.currentSourceLanguage;
+    final oldTarget = state.currentTargetLanguage;
+    if (oldTarget == null) return;
+
+    final newSource = oldTarget;
+    final newTarget = oldSource;
+    final newSourceText = state.translatedText;
+    final newTranslatedText = state.sourceText;
+
+    emit(
+      state.copyWith(
+        currentSourceLanguage: newSource,
+        currentTargetLanguage: newTarget,
+        sourceText: newSourceText,
+        translatedText: newTranslatedText,
+        errorMessage: null,
+      ),
+    );
+
+    final sourceObj = TranslationService.supportedLanguages[newSource];
+    final targetObj = TranslationService.supportedLanguages[newTarget];
+    if (sourceObj != null && targetObj != null) {
+      await _service.setLanguages(source: sourceObj, target: targetObj);
+      if (newSourceText.isNotEmpty) {
+        add(
+          TranslationTextChanged(
+            newSourceText,
+            isPremium: event.isPremium,
+            immediate: true,
           ),
         );
       }
@@ -322,16 +487,16 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       await _service.deleteLanguageModel(event.targetLanguageName);
       final newDownloaded = await _service.getDownloadedLanguageNames();
 
-      String? currentLang = state.currentTargetLanguage;
-      if (currentLang == event.targetLanguageName) {
-        currentLang = null;
+      String? currentTarget = state.currentTargetLanguage;
+      if (currentTarget == event.targetLanguageName) {
+        currentTarget = null;
         emit(state.copyWith(translatedText: ''));
       }
 
       emit(
         state.copyWith(
           downloadedLanguages: newDownloaded,
-          currentTargetLanguage: currentLang,
+          currentTargetLanguage: currentTarget,
           errorMessage: null,
         ),
       );
@@ -355,7 +520,24 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       ),
     );
     if (state.sourceText.isNotEmpty) {
-      add(TranslationTextChanged(state.sourceText));
+      add(TranslationTextChanged(state.sourceText, immediate: true));
+    }
+  }
+
+  Future<void> _onRetryRequested(
+    TranslationRetryRequested event,
+    Emitter<TranslationState> emit,
+  ) async {
+    if (state.sourceText.isNotEmpty) {
+      add(
+        TranslationTextChanged(
+          state.sourceText,
+          isPremium: event.isPremium,
+          immediate: true,
+        ),
+      );
+    } else {
+      add(TranslationInitRequested());
     }
   }
 }
