@@ -933,7 +933,7 @@ class SessionCompleteView extends StatelessWidget {
                               Text(
                                 context.tr(
                                   'daily_words.premium_cta_title',
-                                  fallback: 'Learn Without Limits',
+                                  fallback: 'Learn Without Ads',
                                 ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
@@ -949,7 +949,7 @@ class SessionCompleteView extends StatelessWidget {
                                 context.tr(
                                   'daily_words.premium_cta_desc',
                                   fallback:
-                                      'Unlock all 10 words daily, ad-free',
+                                      'Unlock daily 10 words ad-free',
                                 ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
