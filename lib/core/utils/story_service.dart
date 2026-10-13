@@ -347,12 +347,12 @@ class StoryServiceImpl implements StoryService {
       "Two hundred levels completed! Incredible achievement! You have mastered all school and classroom vocabulary in English!",
     ],
     'verbs': [
-      "Jump, run, and play! Let's find all the action words in the yard! 🏃",
-      "Action Hero! You're moving fast and learning even faster! ⚡",
-      "The Energy Level is high! You've mastered the art of doing! 🤸",
-      "A whirlwind of action! You're the star of every active game! 🎾",
-      "100 verbs mastered! You're the champion of the Action Arena! 🏆",
-      "Master of Motion! You can do anything with your action words! 🚀",
+      "Welcome to the stadium! Run, jump, and play as we discover action words for everything we do every day! ⚽",
+      "Great job on your first 10 levels! You're already spotting action words like run, catch, and jump so easily! 🏃",
+      "Twenty levels complete! Look at you go—you know what animals, players, and friends are doing in every story! 🎾",
+      "Halfway to 100! Fifty levels done, and your action-word vocabulary is growing stronger and clearer every day! 🏀",
+      "One hundred levels completed! Amazing achievement! You know action words for playing, cooking, working, and resting! 🏆",
+      "Two hundred levels completed! Incredible work! You have mastered all action verbs and can describe anything someone is doing! 🌟",
     ],
     'routine': [
       "Welcome to Daily Routines! From waking up in the morning to cozy bedtime, let's learn how we spend our day together.",

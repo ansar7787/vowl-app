@@ -1802,18 +1802,35 @@ class GameInstructionService {
               "Tip: Tap any card's speaker to hear how the word sounds before choosing.",
         );
       case 'verbs':
+        if (level == 100) {
+          return const GameBriefing(
+            title: "Action Champion! 🏆",
+            icon: Icons.emoji_events_rounded,
+            objective:
+                "Congratulations on reaching Level 100! You've learned so many action words for what people and animals do. Let's score this milestone action challenge together!",
+            rules: [
+              "Read or listen to the story clue on the scoreboard",
+              "Tap or throw the matching sports ball into the stadium",
+              "Celebrate 100 levels of action words!",
+            ],
+            actionText: "Play Level 100",
+            tip:
+                "Tip: Action words tell what someone is doing, like jump, throw, cook, or swim. You're an action champion!",
+          );
+        }
         return const GameBriefing(
           title: "Action Time!",
           icon: Icons.directions_run_rounded,
           objective:
-              "Get ready for the big game! Look at the jumbotron scoreboard, and throw the correct action-word sports ball into the stadium.",
+              "Read or listen to the story clue on the scoreboard, then find the sports ball with the matching action word.",
           rules: [
-            "Read the action word",
-            "Find the matching ball",
-            "Throw it in the stadium",
+            "Read or listen to the story clue on the scoreboard",
+            "Tap your answer or drag the ball into the stadium",
+            "Tap any speaker icon to hear the action words spoken aloud",
           ],
-          actionText: "Get Active",
-          tip: "PRO TIP: A verb is something you can DO, like jump or run! 🏃",
+          actionText: "Play Ball!",
+          tip:
+              "Tip: A verb is an action word that tells what someone is doing, like run, jump, or play.",
         );
       case 'prepositions':
         return const GameBriefing(
