@@ -1924,17 +1924,18 @@ class GameInstructionService {
         );
       case 'weather':
         return const GameBriefing(
-          title: "Sky Explorer",
-          icon: Icons.cloud_rounded,
+          title: "Weather Window",
+          icon: Icons.wb_sunny_rounded,
           objective:
-              "Let's become a meteorologist! Read the weather report on the billboard, and float the correct cloud into the sky.",
+              "Look outside the window and read the clue, then tap or drag the matching weather to solve it!",
           rules: [
-            "Read the weather report",
-            "Find the matching cloud",
-            "Float it into the sky",
+            "Read or listen to the weather clue",
+            "Find the weather that matches",
+            "Drag it to the window or tap to choose",
           ],
-          actionText: "Check Sky",
-          tip: "PRO TIP: Think about what you wear when it rains or snows! ☁️",
+          actionText: "Let's Play",
+          tip:
+              "Tip: Picture what you see outside, or tap the speaker to hear the clue read aloud! ☀️",
         );
       case 'professions':
         return const GameBriefing(
