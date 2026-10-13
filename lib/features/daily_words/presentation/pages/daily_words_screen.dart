@@ -380,18 +380,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   Future<void> _initiateGotItConfirmation(DailyWord word) async {
     if (_isAnimating.value || _pendingTyping.value) return;
-    final state = context.read<DailyWordsBloc>().state;
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-
-    // GATING LOGIC: If they are on the 5th word (index 4) and haven't unlocked the rest
-    if (!isPremium &&
-        state.currentIndex == 4 &&
-        !_hasUnlockedFullSession.value) {
-      final unlocked = await _showHalfwayMonetizationGate();
-      if (!unlocked) return; // User chose not to watch ad, stay on word 5
-
-      _hasUnlockedFullSession.value = true;
-    }
 
     _haptics.selection();
     _pendingTyping.value = true;
@@ -673,6 +661,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
             _confirmExitSession(state);
           },
           child: Scaffold(
+            resizeToAvoidBottomInset: false,
             backgroundColor: isDark ? AppColors.slate900 : Colors.white,
             body: Stack(
               children: [
@@ -951,25 +940,28 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       position: _entranceAnimation,
                       child: GestureDetector(
                         onTap: _pendingTyping.value ? null : _toggleFlip,
-                        onHorizontalDragEnd: (details) {
-                          if (_isAnimating.value || _pendingTyping.value) return;
-                          final velocity = details.primaryVelocity ?? 0.0;
-                          if (!_isFlipped.value) {
-                            // Loophole protection: Card must be flipped first to see the definition.
-                            // Swiping while front is visible flips the card so the learner sees the definition!
-                            if (velocity.abs() > 300) {
-                              _toggleFlip();
-                            }
-                            return;
-                          }
-                          if (velocity < -300) {
-                            // Swiped left -> Review Later
-                            _markNeedsReviewAndNext(word);
-                          } else if (velocity > 300) {
-                            // Swiped right -> Got it! triggers type-to-confirm game mechanism
-                            _initiateGotItConfirmation(word);
-                          }
-                        },
+                        onHorizontalDragEnd:
+                            (_pendingTyping.value || _isAnimating.value)
+                                ? null
+                                : (details) {
+                                    final velocity =
+                                        details.primaryVelocity ?? 0.0;
+                                    if (!_isFlipped.value) {
+                                      // Loophole protection: Card must be flipped first to see the definition.
+                                      // Swiping while front is visible flips the card so the learner sees the definition!
+                                      if (velocity.abs() > 300) {
+                                        _toggleFlip();
+                                      }
+                                      return;
+                                    }
+                                    if (velocity < -300) {
+                                      // Swiped left -> Review Later
+                                      _markNeedsReviewAndNext(word);
+                                    } else if (velocity > 300) {
+                                      // Swiped right -> Got it! triggers type-to-confirm game mechanism
+                                      _initiateGotItConfirmation(word);
+                                    }
+                                  },
                         child: AnimatedBuilder(
                           animation: Listenable.merge([
                             _flipAnimation,

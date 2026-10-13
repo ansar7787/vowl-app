@@ -390,7 +390,7 @@ class WordCardBack extends StatelessWidget {
                     SizedBox(height: 16.h),
                     TypeToConfirmOverlay(
                       expectedText: word.word,
-                      displayText: word.definition,
+                      displayText: word.word,
                       primaryColor: AppColors.emerald500,
                       isPositioned: false,
                       allowSkip: true,
