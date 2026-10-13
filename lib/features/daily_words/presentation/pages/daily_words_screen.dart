@@ -646,7 +646,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return BlocBuilder<DailyWordsBloc, DailyWordsState>(
+    return BlocConsumer<DailyWordsBloc, DailyWordsState>(
+      listenWhen: (prev, current) =>
+          prev.status != current.status &&
+          current.status == DailyWordsStatus.sessionComplete,
+      listener: (context, state) {
+        _sound.playLevelComplete();
+      },
       builder: (context, state) {
         final canDirectPop =
             (state.isSessionDone || state.currentIndex == 0) &&
