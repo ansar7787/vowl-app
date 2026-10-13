@@ -387,12 +387,12 @@ class StoryServiceImpl implements StoryService {
       "Two hundred levels completed! Incredible achievement! You can sound out syllables, chunks, and new words all on your own!",
     ],
     'time': [
-      "Tick-tock! Can you help me find the big clock in the tower? 🕰️",
-      "Time Traveler! You're learning the secrets of seconds and hours! ⏳",
-      "The Future is bright! You handle every moment with wisdom! 🚀",
-      "Master of the Calendar! You know exactly when the magic happens! 📅",
-      "100 levels of time! You are the Eternal Guardian of the Clock! 🛡️",
-      "Time Lord! You have mastered the past, present, and future! 🌌",
+      "Welcome to Time! Look at the clock, listen to daily clues, and let's explore hours, minutes, and schedules together! ⏰",
+      "Great job on your first 10 levels! You're already getting so good at telling morning, afternoon, and night apart. 🌅",
+      "Look at you go! Twenty levels complete, and you can read o'clock times and follow the clock hands with ease! 🔔",
+      "Halfway to 100! Fifty levels done, and you're reading half past, quarter hours, and daily schedules with confidence! ⏳",
+      "One hundred levels completed! Amazing achievement! You can read clocks, solve timetables, and count hours like a true champion! 🏆",
+      "Two hundred levels completed! Fantastic work! You have completely mastered telling time and daily schedules in English! 🌟",
     ],
     'opposites': [
       "Welcome to Opposites! Hot and cold, big and small—let's discover all the word pairs together!",
