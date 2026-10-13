@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 class _LocalPalette {
   _LocalPalette._();
   static const Color color0d9488 = Color(0xFF0D9488);
+  static const Color color2dd4bf = Color(0xFF2DD4BF);
 }
 
 class PhotoEmptyState extends StatelessWidget {
@@ -98,6 +99,7 @@ class PhotoEmptyState extends StatelessWidget {
               child: Container(
                 height: 180.r,
                 width: 180.r,
+                clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
@@ -107,6 +109,7 @@ class PhotoEmptyState extends StatelessWidget {
                 ),
                 child: Stack(
                   alignment: Alignment.center,
+                  clipBehavior: Clip.hardEdge,
                   children: [
                     // Pulsing ring
                     Container(
@@ -148,19 +151,38 @@ class PhotoEmptyState extends StatelessWidget {
               ),
             ),
             SizedBox(height: 24.h),
-            Text(
-              context
-                  .tr('vocabulary.system_standby', fallback: 'SYSTEM STANDBY')
-                  .toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 13.sp,
-                fontWeight: FontWeight.w900,
-                color: AppColors.teal500,
-                letterSpacing: 3.5,
+            // Exploration Badge
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                color: AppColors.teal500.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(100.r),
+                border: Border.all(
+                  color: AppColors.teal500.withValues(alpha: 0.35),
+                  width: 1.w,
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(LucideIcons.sparkles, size: 12.r, color: AppColors.teal500),
+                  SizedBox(width: 6.w),
+                  Text(
+                    context
+                        .tr('vocabulary.explore_objects', fallback: 'EXPLORE OBJECTS')
+                        .toUpperCase(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.5.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? _LocalPalette.color2dd4bf : AppColors.teal500,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 8.h),
+            SizedBox(height: 10.h),
             Text(
               context.tr(
                 'vocabulary.photo_vocab_title',
@@ -168,21 +190,21 @@ class PhotoEmptyState extends StatelessWidget {
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 28.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 24.sp,
+                fontWeight: FontWeight.w800,
                 color: textColor,
-                letterSpacing: -0.5,
+                letterSpacing: -0.3,
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 8.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Text(
                 context.tr(
                   'vocabulary.photo_vocab_desc',
                   fallback:
-                      'Snap a photo and let our AI engine instantly identify objects in your environment.',
+                      'Take a photo of everyday objects around you to learn their names, pronunciations, and meanings.',
                 ),
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -190,18 +212,29 @@ class PhotoEmptyState extends StatelessWidget {
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: isDark ? Colors.white70 : Colors.black54,
-                  height: 1.4,
+                  height: 1.35,
                 ),
               ),
             ),
-            SizedBox(height: 36.h),
+            SizedBox(height: 18.h),
+            // Scenario Pills
             Wrap(
               alignment: WrapAlignment.center,
-              spacing: 20.w,
-              runSpacing: 16.h,
+              spacing: 8.w,
+              runSpacing: 8.h,
               children: [
-                cameraBtn,
-                galleryBtn,
+                _buildContextPill(isDark, '🪑 Home & Furniture'),
+                _buildContextPill(isDark, '🍎 Kitchen & Food'),
+                _buildContextPill(isDark, '🎒 School & Toys'),
+              ],
+            ),
+            SizedBox(height: 28.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(child: cameraBtn),
+                SizedBox(width: 14.w),
+                Expanded(child: galleryBtn),
               ],
             ),
           ],
@@ -214,6 +247,33 @@ class PhotoEmptyState extends StatelessWidget {
     }
 
     return content;
+  }
+
+  Widget _buildContextPill(bool isDark, String label) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+      decoration: BoxDecoration(
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.06)
+            : Colors.black.withValues(alpha: 0.04),
+        borderRadius: BorderRadius.circular(10.r),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.12)
+              : Colors.black.withValues(alpha: 0.08),
+          width: 1.w,
+        ),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 11.5.sp,
+          fontWeight: FontWeight.w600,
+          color: isDark ? Colors.white70 : Colors.black87,
+        ),
+      ),
+    );
   }
 
   Widget _buildGlassAction(
@@ -230,30 +290,29 @@ class PhotoEmptyState extends StatelessWidget {
       child: ScaleButton(
         onTap: onTap,
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(32.r),
+          borderRadius: BorderRadius.circular(20.r),
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+            filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
             child: Container(
-              constraints: BoxConstraints(minWidth: 130.w),
-              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 14.h),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    AppColors.teal500.withValues(alpha: 0.15),
-                    _LocalPalette.color0d9488.withValues(alpha: 0.05),
+                    AppColors.teal500.withValues(alpha: 0.2),
+                    _LocalPalette.color0d9488.withValues(alpha: 0.06),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
-                borderRadius: BorderRadius.circular(32.r),
+                borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(
                   color: AppColors.teal500.withValues(alpha: 0.4),
                   width: 1.5.w,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.teal500.withValues(alpha: 0.1),
-                    blurRadius: 18,
+                    color: AppColors.teal500.withValues(alpha: 0.12),
+                    blurRadius: 16,
                     offset: const Offset(0, 6),
                   ),
                 ],
@@ -261,14 +320,14 @@ class PhotoEmptyState extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(icon, color: AppColors.teal500, size: 32.r),
+                  Icon(icon, color: AppColors.teal500, size: 30.r),
                   SizedBox(height: 10.h),
                   Text(
                     label,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 15.sp,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w700,
                       color: isDark ? Colors.white : AppColors.slate900,
                     ),
                   ),
@@ -277,9 +336,9 @@ class PhotoEmptyState extends StatelessWidget {
                     subtitle,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 11.sp,
+                      fontSize: 11.5.sp,
                       fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white54 : Colors.black45,
+                      color: isDark ? Colors.white60 : Colors.black54,
                     ),
                   ),
                 ],

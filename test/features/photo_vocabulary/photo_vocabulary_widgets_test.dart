@@ -61,6 +61,21 @@ void main() {
       expect(shuffleFinder, findsOneWidget);
       await tester.tap(shuffleFinder);
       expect(shuffled, isTrue);
+
+      // Verify tapping (i) button opens explanation dialog
+      final infoFinder = find.byIcon(Icons.info_outline_rounded);
+      expect(infoFinder, findsOneWidget);
+      await tester.tap(infoFinder);
+      await tester.pumpAndSettle();
+
+      expect(find.text('HOW OBJECT BOUNTIES WORK'), findsOneWidget);
+      expect(find.text('GOT IT!'), findsOneWidget);
+
+      final closeFinder = find.byIcon(Icons.close_rounded);
+      expect(closeFinder, findsOneWidget);
+      await tester.tap(closeFinder);
+      await tester.pumpAndSettle();
+      expect(find.text('HOW OBJECT BOUNTIES WORK'), findsNothing);
     });
 
     testWidgets('PhotoResultChip renders word, IPA, definition, example without clipping',

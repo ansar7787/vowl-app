@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'dart:convert';
 import 'dart:math';
@@ -25,6 +26,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/scan_and_learn/presentation/widgets/scan_bounty_target.dart';
 import 'package:vowl/features/scan_and_learn/presentation/widgets/scan_empty_state.dart';
 import 'package:vowl/features/scan_and_learn/presentation/widgets/scan_result_block.dart';
+import 'package:vowl/features/scan_and_learn/utils/scan_vocabulary_dictionary.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:vowl/core/utils/widgets/translation_download_dialog.dart';
 import 'package:confetti/confetti.dart';
@@ -68,6 +70,8 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   String _currentBountyVal = '';
   bool _bountyFoundVal = false;
   bool _bountiesLoadedVal = false;
+  int _dailyBountyCount = 0;
+  Set<String> _savedSnippets = {};
 
   late final AnimationController _scannerController;
   late ConfettiController _confettiController;
@@ -97,14 +101,47 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       if (jsonList.isNotEmpty) {
         _bountyOptions = jsonList.cast<String>();
       }
-    } catch (e) {
-      // Keep fallback
+    } catch (_) {
+      // Keep fallback list
     }
+
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final today = DateTime.now().toIso8601String().substring(0, 10);
+      final lastDate = prefs.getString('scan_bounty_date') ?? '';
+      if (lastDate == today) {
+        _dailyBountyCount = prefs.getInt('scan_bounty_count') ?? 0;
+      } else {
+        _dailyBountyCount = 0;
+        await prefs.setString('scan_bounty_date', today);
+        await prefs.setInt('scan_bounty_count', 0);
+      }
+      final savedList = prefs.getStringList('scan_saved_snippets') ?? [];
+      _savedSnippets = savedList.toSet();
+    } catch (_) {}
+
     if (mounted) {
       setState(() {
         _currentBountyVal =
             _bountyOptions[Random().nextInt(_bountyOptions.length)];
         _bountiesLoadedVal = true;
+      });
+    }
+  }
+
+  void _onShuffleBounty() {
+    if (_bountyOptions.length <= 1) return;
+    try {
+      di.sl<HapticService>().selection();
+      di.sl<SoundService>().playClick();
+    } catch (_) {}
+
+    final available = _bountyOptions
+        .where((b) => b.toLowerCase() != _currentBountyVal.toLowerCase())
+        .toList();
+    if (available.isNotEmpty) {
+      setState(() {
+        _currentBountyVal = available[Random().nextInt(available.length)];
       });
     }
   }
@@ -116,10 +153,78 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     super.dispose();
   }
 
-  Future<void> _pickAndScanImage(ImageSource source) async {
-    final XFile? image = await _picker.pickImage(source: source);
-    if (image == null) return;
+  Future<void> _toggleSaveSnippet(String text) async {
+    try {
+      di.sl<HapticService>().selection();
+      di.sl<SoundService>().playClick();
+    } catch (_) {}
 
+    final key = text.trim();
+    final willSave = !_savedSnippets.contains(key);
+
+    setState(() {
+      if (willSave) {
+        _savedSnippets.add(key);
+      } else {
+        _savedSnippets.remove(key);
+      }
+    });
+
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setStringList('scan_saved_snippets', _savedSnippets.toList());
+    } catch (_) {}
+
+    if (mounted) {
+      CustomSnackBar.show(
+        context: context,
+        message: willSave
+            ? context.tr(
+                'vocabulary.snippet_saved_to_notebook',
+                fallback: 'Saved sign text to your Vocab Notebook! ⭐',
+              )
+            : context.tr(
+                'vocabulary.snippet_removed_from_notebook',
+                fallback: 'Removed from Vocab Notebook',
+              ),
+        type: willSave
+            ? CustomSnackBarType.success
+            : CustomSnackBarType.info,
+      );
+    }
+  }
+
+  Future<void> _pickAndScanImage(ImageSource source) async {
+    XFile? image;
+    try {
+      image = await _picker.pickImage(source: source);
+    } on PlatformException {
+      if (mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'vocabulary.camera_permission_error',
+            fallback: 'Camera or photo permission denied. Please grant access in settings.',
+          ),
+          type: CustomSnackBarType.error,
+        );
+      }
+      return;
+    } catch (_) {
+      if (mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'translation.processing_error',
+            fallback: 'Could not access camera or gallery. Please try again.',
+          ),
+          type: CustomSnackBarType.error,
+        );
+      }
+      return;
+    }
+
+    if (image == null) return;
     if (!mounted) return;
 
     // Trigger Monetization Gate before processing
@@ -132,13 +237,13 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       ),
       featureSubtitle: context.tr(
         'translation.scan_learn_desc',
-        fallback: 'Extract and translate text from images instantly.',
+        fallback: 'Extract and translate real-world signs and text instantly.',
       ),
       adButtonLabel: context.tr(
         'translation.scan_learn_ad',
         fallback: 'Watch Ad to Scan',
       ),
-      onSuccess: () => _processImage(image.path),
+      onSuccess: () => _processImage(image!.path),
     );
   }
 
@@ -171,8 +276,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
 
     bool found = false;
     if (recognized != null) {
-      found = recognized.text.toLowerCase().contains(
-        _currentBountyVal.toLowerCase(),
+      found = ScanVocabularyDictionary.isBountyMatch(
+        _currentBountyVal,
+        recognized.text,
       );
     }
 
@@ -196,7 +302,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
         }
 
         if (count < 3) {
-          await prefs.setInt('scan_bounty_count', count + 1);
+          count++;
+          await prefs.setInt('scan_bounty_count', count);
+          _dailyBountyCount = count;
           int total = prefs.getInt('scan_total_bounties') ?? 0;
           total++;
           await prefs.setInt('scan_total_bounties', total);
@@ -227,11 +335,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           message: limitReached
               ? context.tr(
                   'vocabulary.bounty_limit',
-                  fallback: 'Word Found! (Daily limit of 3 reached)',
+                  fallback: 'Sign Found! (Daily limit of 3 reached)',
                 )
               : context.tr(
                   'vocabulary.bounty_found',
-                  fallback: 'Word Found! +5 XP & 5 Coins!',
+                  fallback: 'Sign Found! +5 XP & 10 Coins!',
                 ),
           type: limitReached
               ? CustomSnackBarType.info
@@ -331,7 +439,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   }
 
   void _playPronunciation(String text) {
-    di.sl<SoundService>().playTts(text, speed: 0.4, locale: 'en-US');
+    di.sl<SoundService>().playTts(text, speed: 0.45, locale: 'en-US');
   }
 
   @override
@@ -369,15 +477,21 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
         body: Stack(
           fit: StackFit.expand,
           children: [
-            // 1. Background Layer (Image or Gradient)
+            // 1. Background Layer (Downsampled Image to avoid OOM, or Mesh Gradient)
             if (_imagePathVal != null)
-              Image.file(File(_imagePathVal!), fit: BoxFit.cover)
+              Image(
+                image: ResizeImage(
+                  FileImage(File(_imagePathVal!)),
+                  width: 1024,
+                ),
+                fit: BoxFit.cover,
+              )
             else
               const MeshGradientBackground(showLetters: false),
 
-            // 2. Dark Overlay for better contrast when image is present
+            // 2. Dark Overlay for high contrast readable text
             if (_imagePathVal != null)
-              Container(color: Colors.black.withValues(alpha: 0.5))
+              Container(color: Colors.black.withValues(alpha: 0.55))
             else
               Container(
                 color: isDark
@@ -385,20 +499,26 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                     : Colors.white.withValues(alpha: 0.3),
               ),
 
-            // 3. Cinematic Laser Scanner (only when processing)
+            // 3. Document Laser Scanner Reticle (only while processing)
             if (_isProcessingVal) _buildLaserScanner(),
 
             // 4. UI Layer
-            CustomScrollView(
-              physics: const BouncingScrollPhysics(
-                parent: AlwaysScrollableScrollPhysics(),
-              ),
+            Scrollbar(
+              radius: Radius.circular(8.r),
+              thickness: 4.w,
+              interactive: true,
+              child: CustomScrollView(
+                physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics(),
+                ),
               slivers: [
                 _buildSliverAppBar(context, isDark),
                 SliverToBoxAdapter(
                   child: ScanBountyTarget(
                     currentBounty: _currentBountyVal,
                     bountyFound: _bountyFoundVal,
+                    dailyCount: _dailyBountyCount,
+                    onShuffle: _onShuffleBounty,
                   ),
                 ),
                 if (_imagePathVal == null)
@@ -419,6 +539,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                 SliverToBoxAdapter(child: SizedBox(height: 120.h)),
               ],
             ),
+          ),
 
             Align(
               alignment: Alignment.topCenter,
@@ -507,16 +628,30 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           );
         },
       ),
-      title: Text(
-        context.tr('translation.scan_learn_title', fallback: 'Scan & Learn'),
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 22.sp,
-          fontWeight: FontWeight.w900,
-          color: _imagePathVal != null || isDark
-              ? Colors.white
-              : Colors.black87,
-        ),
+      title: Column(
+        children: [
+          Text(
+            context.tr('translation.scan_learn_title', fallback: 'Scan & Learn'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w800,
+              color: _imagePathVal != null || isDark
+                  ? Colors.white
+                  : Colors.black87,
+            ),
+          ),
+          Text(
+            context.tr('translation.scan_learn_subtitle', fallback: 'Sign & Document Reader'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w600,
+              color: AppColors.indigo500,
+              letterSpacing: 0.8,
+            ),
+          ),
+        ],
       ),
       centerTitle: true,
     );
@@ -532,7 +667,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
 
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16.r),
           child: BackdropFilter(
@@ -564,7 +699,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                       'translation.scan_summary',
                       args: [blocks.length.toString(), totalWords.toString()],
                       fallback:
-                          '${blocks.length} blocks · $totalWords words detected',
+                          '${blocks.length} sections · $totalWords words extracted',
                     ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -591,7 +726,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     if (_hasErrorVal) {
       return SliverToBoxAdapter(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
           child: Center(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(24.r),
@@ -639,7 +774,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                         context.tr(
                           'translation.processing_error_desc',
                           fallback:
-                              'We couldn\'t process this image. Try again with clearer text.',
+                              'We couldn\'t process this image. Try again with clearer printed text.',
                         ),
                         style: TextStyle(
                           color: isDark ? Colors.white54 : Colors.black54,
@@ -719,7 +854,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     if (_recognizedTextVal!.blocks.isEmpty) {
       return SliverToBoxAdapter(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
           child: Center(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(24.r),
@@ -750,7 +885,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                       Text(
                         context.tr(
                           'translation.no_text_found',
-                          fallback: 'No text found',
+                          fallback: 'No text detected',
                         ),
                         style: TextStyle(
                           color: isDark ? Colors.white : Colors.black87,
@@ -767,7 +902,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                         icon: LucideIcons.type,
                         text: context.tr(
                           'translation.tip_clear_text',
-                          fallback: 'Use printed text, not handwriting',
+                          fallback: 'Use printed signs or book text, not handwriting',
                         ),
                       ),
                       SizedBox(height: 8.h),
@@ -776,7 +911,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                         icon: LucideIcons.sun,
                         text: context.tr(
                           'translation.tip_lighting',
-                          fallback: 'Try better lighting',
+                          fallback: 'Ensure good lighting with no camera glare',
                         ),
                       ),
                       SizedBox(height: 8.h),
@@ -785,7 +920,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                         icon: LucideIcons.focus,
                         text: context.tr(
                           'translation.tip_blur',
-                          fallback: 'Avoid blurry photos',
+                          fallback: 'Hold still to avoid blurry focus',
                         ),
                       ),
                       SizedBox(height: 24.h),
@@ -851,16 +986,27 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     }
 
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       sliver: SliverList(
         delegate: SliverChildBuilderDelegate((context, index) {
+          final block = _recognizedTextVal!.blocks[index];
+          final containsBounty = ScanVocabularyDictionary.isBountyMatch(
+            _currentBountyVal,
+            block.text,
+          );
+          final isSaved = _savedSnippets.contains(block.text.trim());
+
           return Padding(
             padding: EdgeInsets.only(bottom: 16.h),
             child: ScanResultBlock(
-              block: _recognizedTextVal!.blocks[index],
+              block: block,
               index: index,
               translatedText: _translationsVal[index],
               isTranslating: _isTranslatingVal[index] ?? false,
+              containsBounty: containsBounty,
+              bountyWord: _currentBountyVal,
+              isSaved: isSaved,
+              onToggleSave: _toggleSaveSnippet,
               onTranslate: _translateBlock,
               onPlayPronunciation: _playPronunciation,
             ),
@@ -880,13 +1026,15 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       children: [
         Icon(icon, size: 16.r, color: isDark ? Colors.white38 : Colors.black38),
         SizedBox(width: 10.w),
-        Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w500,
-            color: isDark ? Colors.white54 : Colors.black54,
+        Flexible(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.5.sp,
+              fontWeight: FontWeight.w500,
+              color: isDark ? Colors.white54 : Colors.black54,
+            ),
           ),
         ),
       ],
@@ -895,7 +1043,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
 
   Widget _buildRetakeBar() {
     return Padding(
-      padding: EdgeInsets.all(24.w),
+      padding: EdgeInsets.all(20.w),
       child: ScaleButton(
         onTap: () {
           if (_translationsVal.isNotEmpty) {
@@ -942,7 +1090,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
             filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 20.h),
+              padding: EdgeInsets.symmetric(vertical: 18.h),
               decoration: BoxDecoration(
                 color: AppColors.indigo500,
                 borderRadius: BorderRadius.circular(100.r),
@@ -962,11 +1110,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                   Text(
                     context.tr(
                       'translation.retake',
-                      fallback: 'Scan Another Page',
+                      fallback: 'Scan Another Sign or Page',
                     ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 18.sp,
+                      fontSize: 17.sp,
                       fontWeight: FontWeight.w800,
                       color: Colors.white,
                     ),
@@ -985,176 +1133,177 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       child: Stack(
         fit: StackFit.expand,
         children: [
-          // Darker overlay while scanning for dramatic effect
-          Container(color: Colors.black.withValues(alpha: 0.4)),
-          // HUD Reticle (Corners)
+          // Darker overlay while scanning for high-contrast focus
+          Container(color: Colors.black.withValues(alpha: 0.55)),
+          // HUD Reticle Viewfinder with Confined Scanning Laser
           Center(
-            child:
-                Container(
-                      width: 280.w,
-                      height: 280.w,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: AppColors.indigo500.withValues(alpha: 0.3),
-                          width: 1.w,
+            child: Container(
+              width: 280.w,
+              height: 280.w,
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: AppColors.indigo500.withValues(alpha: 0.35),
+                  width: 1.5.w,
+                ),
+                color: Colors.black.withValues(alpha: 0.2),
+              ),
+              child: Stack(
+                clipBehavior: Clip.hardEdge,
+                children: [
+                  // Moving Laser Scanning Line - CONFINED INSIDE SCAN BOX
+                  RepaintBoundary(
+                    child: AnimatedBuilder(
+                      animation: _scannerController,
+                      builder: (context, child) {
+                        return Align(
+                          alignment: Alignment(
+                            0,
+                            -1.0 + (_scannerController.value * 2.0),
+                          ),
+                          child: child,
+                        );
+                      },
+                      child: Container(
+                        height: 3.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              AppColors.indigo500.withValues(alpha: 0.0),
+                              AppColors.indigo500,
+                              Colors.white,
+                              AppColors.indigo500,
+                              AppColors.indigo500.withValues(alpha: 0.0),
+                            ],
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.indigo500,
+                              blurRadius: 12,
+                              spreadRadius: 3,
+                            ),
+                            BoxShadow(
+                              color: Colors.white.withValues(alpha: 0.8),
+                              blurRadius: 6,
+                              spreadRadius: 1,
+                            ),
+                          ],
                         ),
                       ),
-                      child: Stack(
-                        children: [
-                          // Top Left Corner
-                          Positioned(
-                            top: 0,
-                            left: 0,
-                            child: Container(
-                              width: 40.w,
-                              height: 40.w,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  top: BorderSide(
-                                    color: AppColors.indigo500,
-                                    width: 4.w,
-                                  ),
-                                  left: BorderSide(
-                                    color: AppColors.indigo500,
-                                    width: 4.w,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          // Top Right Corner
-                          Positioned(
-                            top: 0,
-                            right: 0,
-                            child: Container(
-                              width: 40.w,
-                              height: 40.w,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  top: BorderSide(
-                                    color: AppColors.indigo500,
-                                    width: 4.w,
-                                  ),
-                                  right: BorderSide(
-                                    color: AppColors.indigo500,
-                                    width: 4.w,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          // Bottom Left Corner
-                          Positioned(
-                            bottom: 0,
-                            left: 0,
-                            child: Container(
-                              width: 40.w,
-                              height: 40.w,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: AppColors.indigo500,
-                                    width: 4.w,
-                                  ),
-                                  left: BorderSide(
-                                    color: AppColors.indigo500,
-                                    width: 4.w,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          // Bottom Right Corner
-                          Positioned(
-                            bottom: 0,
-                            right: 0,
-                            child: Container(
-                              width: 40.w,
-                              height: 40.w,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: AppColors.indigo500,
-                                    width: 4.w,
-                                  ),
-                                  right: BorderSide(
-                                    color: AppColors.indigo500,
-                                    width: 4.w,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          // "ANALYZING..." Text & Icon
-                          Center(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                      Icons.document_scanner_rounded,
-                                      color: const Color(
-                                        0xFF6366F1,
-                                      ).withValues(alpha: 0.8),
-                                      size: 48.r,
-                                    )
-                                    .animate(
-                                      onPlay: (controller) =>
-                                          controller.repeat(),
-                                    )
-                                    .shimmer(
-                                      duration: 1.seconds,
-                                      color: Colors.white,
-                                    ),
-                                SizedBox(height: 16.h),
-                                const _AnimatedScannerText(),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                    .animate(
-                      onPlay: (controller) => controller.repeat(reverse: true),
-                    )
-                    .scaleXY(
-                      begin: 0.98,
-                      end: 1.02,
-                      duration: 1.seconds,
-                      curve: Curves.easeInOut,
                     ),
-          ),
-
-          // Moving Laser Line
-          RepaintBoundary(
-            child: AnimatedBuilder(
-              animation: _scannerController,
-              builder: (context, child) {
-                return Align(
-                  alignment: Alignment(
-                    0,
-                    -1.0 + (_scannerController.value * 2.0),
                   ),
-                  child: child,
-                );
-              },
-              child: Container(
-                height: 3.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.indigo500,
-                      blurRadius: 10,
-                      spreadRadius: 2,
+
+                  // Top Left Corner
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    child: Container(
+                      width: 40.w,
+                      height: 40.w,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          top: BorderSide(
+                            color: AppColors.indigo500,
+                            width: 4.w,
+                          ),
+                          left: BorderSide(
+                            color: AppColors.indigo500,
+                            width: 4.w,
+                          ),
+                        ),
+                      ),
                     ),
-                    BoxShadow(
-                      color: AppColors.indigo500.withValues(alpha: 0.5),
-                      blurRadius: 30,
-                      spreadRadius: 10,
+                  ),
+                  // Top Right Corner
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Container(
+                      width: 40.w,
+                      height: 40.w,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          top: BorderSide(
+                            color: AppColors.indigo500,
+                            width: 4.w,
+                          ),
+                          right: BorderSide(
+                            color: AppColors.indigo500,
+                            width: 4.w,
+                          ),
+                        ),
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                  // Bottom Left Corner
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    child: Container(
+                      width: 40.w,
+                      height: 40.w,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: AppColors.indigo500,
+                            width: 4.w,
+                          ),
+                          left: BorderSide(
+                            color: AppColors.indigo500,
+                            width: 4.w,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Bottom Right Corner
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      width: 40.w,
+                      height: 40.w,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: AppColors.indigo500,
+                            width: 4.w,
+                          ),
+                          right: BorderSide(
+                            color: AppColors.indigo500,
+                            width: 4.w,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Center HUD Icon & Animated Text
+                  Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.document_scanner_rounded,
+                          color: const Color(
+                            0xFF6366F1,
+                          ).withValues(alpha: 0.9),
+                          size: 48.r,
+                        )
+                            .animate(
+                              onPlay: (controller) => controller.repeat(),
+                            )
+                            .shimmer(
+                              duration: 1.seconds,
+                              color: Colors.white,
+                            ),
+                        SizedBox(height: 16.h),
+                        const _AnimatedScannerText(),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -1164,7 +1313,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   }
 }
 
-/// Animated text that cycles through scan stages for visual feedback.
+/// Animated text that cycles through OCR scan stages with a cancellable timer to prevent memory leaks.
 class _AnimatedScannerText extends StatefulWidget {
   const _AnimatedScannerText();
 
@@ -1174,27 +1323,29 @@ class _AnimatedScannerText extends StatefulWidget {
 
 class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
   static const _steps = [
-    'DETECTING TEXT...',
-    'EXTRACTING WORDS...',
-    'PROCESSING...',
+    'READING WORDS...',
+    'FINDING SIGNS...',
+    'TRANSLATING TEXT...',
   ];
   int _currentStep = 0;
+  Timer? _timer;
 
   @override
   void initState() {
     super.initState();
-    _cycle();
-  }
-
-  void _cycle() async {
-    while (mounted) {
-      await Future.delayed(const Duration(milliseconds: 1200));
+    _timer = Timer.periodic(const Duration(milliseconds: 1200), (timer) {
       if (mounted) {
         setState(() {
           _currentStep = (_currentStep + 1) % _steps.length;
         });
       }
-    }
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -1206,10 +1357,10 @@ class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
         key: ValueKey(_currentStep),
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
           fontSize: 16.sp,
           color: AppColors.indigo500,
-          letterSpacing: 4.0,
+          letterSpacing: 2.0,
         ),
       ),
     );
