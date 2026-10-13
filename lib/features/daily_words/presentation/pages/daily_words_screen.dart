@@ -20,6 +20,7 @@ import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:vowl/core/utils/widgets/translation_download_sheet.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
 import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
 import 'package:vowl/features/daily_words/presentation/widgets/daily_words_widgets.dart';
@@ -55,8 +56,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   final ValueNotifier<bool> _pendingTyping = ValueNotifier(false);
   final ScrollController _cardScrollController = ScrollController();
 
-  // Session Access State
-  final ValueNotifier<bool> _hasUnlockedFullSession = ValueNotifier(false);
+  // Progressive Monetization Gating: Words 1-5 free (index 0-4).
+  // Gate 1 (Word 5 finish) unlocks words 6 & 7 (up to index 6).
+  // Gate 2 (Word 7 finish) unlocks words 8 & 9 (up to index 8).
+  // Gate 3 (Word 9 finish) unlocks word 10 (index 9).
+  final ValueNotifier<int> _unlockedUpToIndex = ValueNotifier(4);
 
   // Translation Session State
   final ValueNotifier<bool> _translationUnlocked = ValueNotifier(false);
@@ -100,7 +104,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
     _translationUnlocked.value = isPremium;
-    _hasUnlockedFullSession.value = isPremium;
+    final isTodayDone = di.sl<DailyWordsService>().isTodayCompleted;
+    _unlockedUpToIndex.value = (isPremium || isTodayDone) ? 9 : 4;
 
     context.read<DailyWordsBloc>().add(
       DailyWordsLoadRequested(isPremium: isPremium),
@@ -120,7 +125,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _showFlipHint.dispose();
     _pendingTyping.dispose();
     _cardScrollController.dispose();
-    _hasUnlockedFullSession.dispose();
+    _unlockedUpToIndex.dispose();
     _translationUnlocked.dispose();
     _isTranslating.dispose();
     _translatedWord.dispose();
@@ -142,10 +147,75 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     }
   }
 
-  Future<bool> _showHalfwayMonetizationGate() async {
+  Future<bool> _showMonetizationGate({required int gateStep}) async {
     final completer = Completer<bool>();
 
-    await showModalBottomSheet(
+    final String title;
+    final String desc;
+    final String buttonText;
+    final String progressText;
+    final IconData icon;
+    final Color accentColor;
+
+    switch (gateStep) {
+      case 1:
+        title = context.tr(
+          'daily_words.gate1_title',
+          fallback: 'Halfway There! 🔥',
+        );
+        desc = context.tr(
+          'daily_words.gate1_desc',
+          fallback:
+              'You completed 5 words! Watch a short ad to unlock words 6 and 7, or upgrade to Premium for ad-free learning.',
+        );
+        buttonText = context.tr(
+          'daily_words.gate1_btn',
+          fallback: 'Watch Ad · Unlock Words 6 & 7',
+        );
+        progressText = '5 / 10 Words Complete · 50%';
+        icon = Icons.local_fire_department_rounded;
+        accentColor = AppColors.amber500;
+        break;
+      case 2:
+        title = context.tr(
+          'daily_words.gate2_title',
+          fallback: 'Keep Going! ⚡',
+        );
+        desc = context.tr(
+          'daily_words.gate2_desc',
+          fallback:
+              'You mastered 7 words today! Watch a short ad to unlock words 8 and 9, or upgrade to Premium for ad-free learning.',
+        );
+        buttonText = context.tr(
+          'daily_words.gate2_btn',
+          fallback: 'Watch Ad · Unlock Words 8 & 9',
+        );
+        progressText = '7 / 10 Words Complete · 70%';
+        icon = Icons.trending_up_rounded;
+        accentColor = AppColors.indigo500;
+        break;
+      case 3:
+      default:
+        title = context.tr(
+          'daily_words.gate3_title',
+          fallback: 'Final Word Ahead! 🏆',
+        );
+        desc = context.tr(
+          'daily_words.gate3_desc',
+          fallback:
+              'Only 1 word left to finish today\'s lesson and claim your streak trophy! Watch a short ad to unlock Word 10.',
+        );
+        buttonText = context.tr(
+          'daily_words.gate3_btn',
+          fallback: 'Watch Ad · Unlock Final Word',
+        );
+        progressText = '9 / 10 Words Complete · 90%';
+        icon = Icons.emoji_events_rounded;
+        accentColor = AppColors.emerald500;
+        break;
+    }
+
+    await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
@@ -172,28 +242,51 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 Container(
                   padding: EdgeInsets.all(20.r),
                   decoration: BoxDecoration(
-                    color: AppColors.amber500.withValues(alpha: 0.1),
+                    color: accentColor.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.amber500.withValues(alpha: 0.2),
+                        color: accentColor.withValues(alpha: 0.2),
                         blurRadius: 30,
                         spreadRadius: 5,
                       ),
                     ],
                   ),
                   child: Icon(
-                    Icons.local_fire_department_rounded,
-                    color: AppColors.amber500,
+                    icon,
+                    color: accentColor,
                     size: 56.r,
                   ),
                 ),
-                SizedBox(height: 24.h),
-                Text(
-                  context.tr(
-                    'daily_words.halfway_title',
-                    fallback: 'Halfway there!',
+                SizedBox(height: 18.h),
+                // Progress Pill
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 5.h,
                   ),
+                  decoration: BoxDecoration(
+                    color: accentColor.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(
+                      color: accentColor.withValues(alpha: 0.3),
+                      width: 1,
+                    ),
+                  ),
+                  child: Text(
+                    progressText,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w700,
+                      color: accentColor,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  title,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
@@ -206,11 +299,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Text(
-                    context.tr(
-                      'daily_words.halfway_desc',
-                      fallback:
-                          'You have completed 5 words! Watch a short ad to continue with the remaining 5 words, or upgrade to Premium for uninterrupted learning.',
-                    ),
+                    desc,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -221,7 +310,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     ),
                   ),
                 ),
-                SizedBox(height: 36.h),
+                SizedBox(height: 32.h),
                 // Watch Ad Button (Primary)
                 Container(
                   width: double.infinity,
@@ -246,10 +335,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     child: InkWell(
                       borderRadius: BorderRadius.circular(20.r),
                       onTap: () {
-                        // FIX: Do NOT pop the modal immediately!
-                        // Popping it triggers the bottom sheet's .then() callback which prematurely completes the
-                        // future with `false`, breaking the Zeigarnik gate flow.
-                        // We must wait for the ad to finish before popping.
                         final adService = di.sl<AdService>();
                         adService.showRewardedAd(
                           context: context,
@@ -265,7 +350,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                               completer.complete(false);
                             }
                             if (context.mounted) {
-                              // Only close the bottom sheet after the ad is completely dismissed
                               context.pop();
                             }
                           },
@@ -281,10 +365,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                           ),
                           SizedBox(width: 10.w),
                           Text(
-                            context.tr(
-                              'daily_words.watch_ad',
-                              fallback: 'Watch Ad to Continue',
-                            ),
+                            buttonText,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,
@@ -331,7 +412,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                           Text(
                             context.tr(
                               'daily_words.go_premium',
-                              fallback: 'Upgrade to Premium',
+                              fallback: 'Learn Without Ads · Go Premium',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -403,14 +484,21 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     final state = context.read<DailyWordsBloc>().state;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
-    // GATING LOGIC: If they are on the 5th word (index 4) and haven't unlocked the rest
-    if (!isPremium &&
-        state.currentIndex == 4 &&
-        !_hasUnlockedFullSession.value) {
-      final unlocked = await _showHalfwayMonetizationGate();
-      if (!unlocked) return; // User chose not to watch ad, stay on word 5
-
-      _hasUnlockedFullSession.value = true;
+    // PROGRESSIVE MONETIZATION GATING: 5th, 7th, and 9th word gates for free users
+    if (!isPremium) {
+      if (state.currentIndex == 4 && _unlockedUpToIndex.value < 6) {
+        final unlocked = await _showMonetizationGate(gateStep: 1);
+        if (!unlocked) return; // Stay on word 5
+        _unlockedUpToIndex.value = 6;
+      } else if (state.currentIndex == 6 && _unlockedUpToIndex.value < 8) {
+        final unlocked = await _showMonetizationGate(gateStep: 2);
+        if (!unlocked) return; // Stay on word 7
+        _unlockedUpToIndex.value = 8;
+      } else if (state.currentIndex == 8 && _unlockedUpToIndex.value < 9) {
+        final unlocked = await _showMonetizationGate(gateStep: 3);
+        if (!unlocked) return; // Stay on word 9
+        _unlockedUpToIndex.value = 9;
+      }
     }
 
     _isAnimating.value = true;
@@ -453,12 +541,21 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     final state = context.read<DailyWordsBloc>().state;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
-    if (!isPremium &&
-        state.currentIndex == 4 &&
-        !_hasUnlockedFullSession.value) {
-      final unlocked = await _showHalfwayMonetizationGate();
-      if (!unlocked) return;
-      _hasUnlockedFullSession.value = true;
+    // PROGRESSIVE MONETIZATION GATING: 5th, 7th, and 9th word gates for free users
+    if (!isPremium) {
+      if (state.currentIndex == 4 && _unlockedUpToIndex.value < 6) {
+        final unlocked = await _showMonetizationGate(gateStep: 1);
+        if (!unlocked) return;
+        _unlockedUpToIndex.value = 6;
+      } else if (state.currentIndex == 6 && _unlockedUpToIndex.value < 8) {
+        final unlocked = await _showMonetizationGate(gateStep: 2);
+        if (!unlocked) return;
+        _unlockedUpToIndex.value = 8;
+      } else if (state.currentIndex == 8 && _unlockedUpToIndex.value < 9) {
+        final unlocked = await _showMonetizationGate(gateStep: 3);
+        if (!unlocked) return;
+        _unlockedUpToIndex.value = 9;
+      }
     }
 
     _isAnimating.value = true;
@@ -700,6 +797,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                           wordsForReview: state.reviewedThisSession.length,
                           isPremium: authUser?.isPremium ?? false,
                           onReviewAgain: () {
+                            _unlockedUpToIndex.value = 9;
                             context
                                 .read<DailyWordsBloc>()
                                 .add(const DailySessionRestartRequested());
