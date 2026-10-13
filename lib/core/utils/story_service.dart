@@ -435,12 +435,12 @@ class StoryServiceImpl implements StoryService {
       "Gourmet Legend! You've tasted all the wisdom in the world! 🍷",
     ],
     'transport': [
-      "Vroom vroom! Let's jump into the fast red car and start our engines! 🚗",
-      "To the sky! You're flying the big blue airplane above the fluffy clouds! ✈️",
-      "Choo choo! The friendship train is leaving the station. All aboard, friend! 🚂",
-      "3, 2, 1... Blast off! You're going to visit the moon in a shiny silver rocket! 🚀",
-      "100 levels of travel! You've seen every corner of our beautiful world! 🌍",
-      "Master Explorer! You've traveled through the land, the sea, and the stars! 🛸",
+      "Welcome traveler! Let's start our journey and discover all the wonderful ways people travel on land, sea, and in the air! 🚗",
+      "To the sky! You're flying above the clouds and spotting vehicles from all around the world! ✈️",
+      "All aboard! You're riding trains, buses, and ferries with confidence and curiosity! 🚆",
+      "Halfway to 100! You know so many amazing vehicles that help people travel and explore every day! 🚢",
+      "One hundred levels of travel! You've mastered words for vehicles on the road, across oceans, and up in the sky! 🌟",
+      "Master Traveler! You have completed every travel journey and learned all the transport words in English! 🏆",
     ],
     'bodyparts': [
       "Head, shoulders, knees, and toes! Let's learn the names of our body parts! 🧒",
