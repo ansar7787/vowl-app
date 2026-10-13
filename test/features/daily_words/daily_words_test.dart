@@ -182,6 +182,11 @@ void main() {
       await cycleService.completeDailySession();
       expect(cycleService.currentDay, 751);
       expect(cycleService.effectiveDay, 1); // Wraps to lesson 1 of cycle 2
+
+      // Replaying today's words on the same calendar day must not advance day again
+      await cycleService.completeDailySession();
+      expect(cycleService.currentDay, 751);
+      expect(cycleService.isTodayCompleted, isTrue);
     });
 
     test('resolves calendar streak across consecutive calendar days', () async {

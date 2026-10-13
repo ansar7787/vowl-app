@@ -448,6 +448,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
   ) async {
     // Ensure service is initialized if opened directly from WordBank route
     await _service.init();
+    if (_service.todaysWords == null) {
+      await _service.loadTodaysWords(isPremium: event.isPremium);
+    }
     final results = _service.searchWordBank(
       event.query,
       isPremium: event.isPremium,

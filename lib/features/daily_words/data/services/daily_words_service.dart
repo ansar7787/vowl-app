@@ -92,7 +92,8 @@ class DailyWordsService {
   bool isWordLearnedToday(String wordId) {
     final entry = _wordBank[wordId];
     if (entry != null && entry.learnedDate == _todayString()) return true;
-    if (_cachedWordSet != null &&
+    if (isTodayCompleted &&
+        _cachedWordSet != null &&
         _cachedWordSet!.words.any((w) => w.id == wordId)) {
       return true;
     }
@@ -104,7 +105,8 @@ class DailyWordsService {
     final today = _todayString();
     final entries = _wordBank.values.where((wp) {
       if (wp.learnedDate == today) return true;
-      if (_cachedWordSet != null &&
+      if (isTodayCompleted &&
+          _cachedWordSet != null &&
           _cachedWordSet!.words.any((w) => w.id == wp.wordId)) {
         return true;
       }
@@ -214,7 +216,9 @@ class DailyWordsService {
     final targetDay = isTodayCompleted && _completedDay > 0
         ? _completedDay
         : _currentDay;
-    return loadWordsForDay(targetDay, isPremium: isPremium);
+    final wordSet = await loadWordsForDay(targetDay, isPremium: isPremium);
+    _cachedWordSet = wordSet;
+    return wordSet;
   }
 
   /// Loads words for any specific curriculum day.
@@ -250,7 +254,6 @@ class DailyWordsService {
         words: data.words,
       );
 
-      _cachedWordSet = wordSet;
       return wordSet;
     } catch (e) {
       if (kDebugMode) {
@@ -355,6 +358,11 @@ class DailyWordsService {
   /// Unbounded progression seamlessly enters multi-year mastery cycles (e.g. Day 751 = Cycle 2, Lesson 1).
   Future<void> completeDailySession() async {
     final today = _todayString();
+    if (_lastCompletedDate == today) {
+      // Already completed today! This is a replay session.
+      // Do not increment _currentDay again or overwrite _completedDay.
+      return;
+    }
     _lastCompletedDate = today;
     _completedDay = _currentDay;
     _currentDay++;
@@ -369,7 +377,7 @@ class DailyWordsService {
   /// are searchable.
   List<WordProgress> searchWordBank(
     String query, {
-    int limit = 50,
+    int limit = 1000,
     bool isPremium = false,
   }) {
     if (query.isEmpty) {
@@ -377,7 +385,7 @@ class DailyWordsService {
       if (!isPremium && entries.length > 50) {
         return entries.sublist(0, 50);
       }
-      return entries.take(limit).toList();
+      return entries.length > limit ? entries.sublist(0, limit) : entries;
     }
 
     final lowerQuery = query.toLowerCase();
