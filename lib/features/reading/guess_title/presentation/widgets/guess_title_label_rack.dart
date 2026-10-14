@@ -10,6 +10,8 @@ class GuessTitleLabelRack extends StatelessWidget {
   final String? selectedTitle;
   final bool isAnswered;
 
+  final ValueChanged<String>? onSelect;
+
   const GuessTitleLabelRack({
     super.key,
     required this.labels,
@@ -18,6 +20,7 @@ class GuessTitleLabelRack extends StatelessWidget {
     required this.isDark,
     required this.selectedTitle,
     required this.isAnswered,
+    this.onSelect,
   });
 
   @override
@@ -60,12 +63,16 @@ class GuessTitleLabelRack extends StatelessWidget {
             opacity: 0.4,
             child: _buildLabelCard(label, color, isDark),
           ),
-          child: _buildLabelCard(
-            label,
-            color,
-            isDark,
-            isAnswered: isAnswered,
-            isCorrectOption: isCorrectOption,
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: isAnswered ? null : () => onSelect?.call(label),
+            child: _buildLabelCard(
+              label,
+              color,
+              isDark,
+              isAnswered: isAnswered,
+              isCorrectOption: isCorrectOption,
+            ),
           ),
         );
       }),
