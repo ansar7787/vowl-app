@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ReadingInferenceFoggyMirror extends StatelessWidget {
   final String passage;
@@ -26,6 +27,7 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onPanUpdate: (details) => onRub(details.localPosition),
+      onTapDown: (details) => onRub(details.localPosition),
       child: Stack(
         children: [
           // Clear Passage Text
@@ -78,7 +80,13 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
                           size: 48.r,
                           color: isDark ? Colors.white70 : Colors.black54,
                         )
-                        .animate(onPlay: (c) => c.repeat())
+                        .animate(
+                          onPlay: (c) {
+                            if (!VowlMotion.shouldReduceMotion(context)) {
+                              c.repeat();
+                            }
+                          },
+                        )
                         .moveX(
                           begin: -40.w,
                           end: 40.w,
@@ -107,7 +115,13 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
                           color: Colors.amber.withValues(alpha: 0.35),
                           size: 80.r,
                         )
-                        .animate(onPlay: (c) => c.repeat())
+                        .animate(
+                          onPlay: (c) {
+                            if (!VowlMotion.shouldReduceMotion(context)) {
+                              c.repeat();
+                            }
+                          },
+                        )
                         .shimmer(duration: 2.seconds),
               ),
             ),
