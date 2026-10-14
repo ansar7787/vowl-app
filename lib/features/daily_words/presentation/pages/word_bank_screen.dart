@@ -1236,11 +1236,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         label: Text(
                           progress.box >= 3
                               ? 'Practice Mastered Word'
-                              : (progress.box == 2
-                                  ? 'Test for Mastery (Box 3)'
-                                  : (progress.box == 1
-                                      ? 'Review & Advance (Box 2)'
-                                      : 'Practice Word (Box 1)')),
+                              : 'Test for Mastery',
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 15.sp,
@@ -1305,90 +1301,103 @@ class _WordBankScreenState extends State<WordBankScreen> {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (modalContext) {
-        return Container(
-          decoration: BoxDecoration(
-            color: isDark ? AppColors.slate900 : Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
-          ),
-          padding: EdgeInsets.fromLTRB(
-            24.w,
-            16.h,
-            24.w,
-            MediaQuery.of(modalContext).viewInsets.bottom + 24.h,
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Container(
-                  width: 40.w,
-                  height: 4.h,
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white24 : AppColors.slate300,
-                    borderRadius: BorderRadius.circular(2.r),
-                  ),
+        final bottomInset = MediaQuery.of(modalContext).viewInsets.bottom;
+        return Padding(
+          padding: EdgeInsets.only(bottom: bottomInset),
+          child: Container(
+            decoration: BoxDecoration(
+              color: isDark ? AppColors.slate900 : Colors.white,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+            ),
+            child: SafeArea(
+              top: false,
+              child: SingleChildScrollView(
+                physics: const ClampingScrollPhysics(),
+                padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 24.h),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 40.w,
+                        height: 4.h,
+                        decoration: BoxDecoration(
+                          color: isDark ? Colors.white24 : AppColors.slate300,
+                          borderRadius: BorderRadius.circular(2.r),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 16.h),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.workspace_premium_rounded,
+                          color: AppColors.emerald500,
+                          size: 22.r,
+                        ),
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          child: AutoSizeText(
+                            'Test for Mastery · ${progress.word}',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w700,
+                              color: Theme.of(modalContext).colorScheme.onSurface,
+                            ),
+                            maxLines: 1,
+                          ),
+                        ),
+                      ],
+                    ),
+                    if (definition.isNotEmpty) ...[
+                      SizedBox(height: 10.h),
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.all(12.r),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.05)
+                              : AppColors.slate100,
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        child: Text(
+                          definition,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontStyle: FontStyle.italic,
+                            color: isDark ? Colors.white70 : AppColors.slate600,
+                          ),
+                        ),
+                      ),
+                    ],
+                    SizedBox(height: 16.h),
+                    TypeToConfirmOverlay(
+                      expectedText: progress.word,
+                      displayText: progress.word,
+                      primaryColor: AppColors.indigo500,
+                      isPositioned: false,
+                      allowSkip: false,
+                      onConfirmed: () {
+                        Navigator.of(modalContext).pop();
+                        _haptics.success();
+                        sound.playCorrect();
+                        context.read<DailyWordsBloc>().add(
+                          DailyWordReviewed(
+                            wordId: progress.wordId,
+                            correct: true,
+                            promoteToMastered: true,
+                          ),
+                        );
+                      },
+                      onSkipped: () => Navigator.of(modalContext).pop(),
+                    ),
+                  ],
                 ),
               ),
-              SizedBox(height: 16.h),
-              Row(
-                children: [
-                  Icon(
-                    Icons.school_rounded,
-                    color: AppColors.indigo500,
-                    size: 22.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Text(
-                    'Practice Recall · ${progress.word}',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w700,
-                      color: Theme.of(modalContext).colorScheme.onSurface,
-                    ),
-                  ),
-                ],
-              ),
-              if (definition.isNotEmpty) ...[
-                SizedBox(height: 10.h),
-                Container(
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : AppColors.slate100,
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: Text(
-                    definition,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontStyle: FontStyle.italic,
-                      color: isDark ? Colors.white70 : AppColors.slate600,
-                    ),
-                  ),
-                ),
-              ],
-              SizedBox(height: 16.h),
-              TypeToConfirmOverlay(
-                expectedText: progress.word,
-                displayText: progress.word,
-                primaryColor: AppColors.indigo500,
-                isPositioned: false,
-                allowSkip: true,
-                onConfirmed: () {
-                  Navigator.of(modalContext).pop();
-                  _haptics.success();
-                  sound.playCorrect();
-                  context.read<DailyWordsBloc>().add(
-                    DailyWordReviewed(wordId: progress.wordId, correct: true),
-                  );
-                },
-                onSkipped: () => Navigator.of(modalContext).pop(),
-              ),
-            ],
+            ),
           ),
         );
       },

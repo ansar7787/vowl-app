@@ -495,7 +495,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     });
   }
 
-  Future<void> _executeGotIt(DailyWord word) async {
+  Future<void> _executeGotIt(DailyWord word, {bool mastered = false}) async {
     if (_isAnimating.value) return;
     _pendingTyping.value = false;
     final state = context.read<DailyWordsBloc>().state;
@@ -526,10 +526,16 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     final service = di.sl<DailyWordsService>();
     if (service.isWordLearned(word.id)) {
       context.read<DailyWordsBloc>().add(
-        DailyWordReviewed(wordId: word.id, correct: true),
+        DailyWordReviewed(
+          wordId: word.id,
+          correct: true,
+          promoteToMastered: mastered,
+        ),
       );
     } else {
-      context.read<DailyWordsBloc>().add(DailyWordMarkedLearned(word));
+      context.read<DailyWordsBloc>().add(
+        DailyWordMarkedLearned(word, mastered: mastered),
+      );
     }
 
     _slideTween.end = const Offset(1.5, 0);
@@ -1149,9 +1155,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                         showTypeToConfirm: _pendingTyping.value,
                                         scrollController: _cardScrollController,
                                         onTypingConfirmed: () =>
-                                            _executeGotIt(word),
+                                            _executeGotIt(word, mastered: true),
                                         onTypingSkipped: () =>
-                                            _executeGotIt(word),
+                                            _executeGotIt(word, mastered: false),
                                       ),
                                     )
                                   : WordCardFront(

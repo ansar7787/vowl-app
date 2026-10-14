@@ -28,9 +28,10 @@ class DailyWordsLoadRequested extends DailyWordsEvent {
 /// User taps "I know this word" or swipes to mark a word as learned.
 class DailyWordMarkedLearned extends DailyWordsEvent {
   final DailyWord word;
-  const DailyWordMarkedLearned(this.word);
+  final bool mastered;
+  const DailyWordMarkedLearned(this.word, {this.mastered = false});
   @override
-  List<Object?> get props => [word];
+  List<Object?> get props => [word, mastered];
 }
 
 /// User taps "Review Later" or skips a word.
@@ -65,9 +66,14 @@ class DailySessionRestartRequested extends DailyWordsEvent {
 class DailyWordReviewed extends DailyWordsEvent {
   final String wordId;
   final bool correct;
-  const DailyWordReviewed({required this.wordId, required this.correct});
+  final bool promoteToMastered;
+  const DailyWordReviewed({
+    required this.wordId,
+    required this.correct,
+    this.promoteToMastered = false,
+  });
   @override
-  List<Object?> get props => [wordId, correct];
+  List<Object?> get props => [wordId, correct, promoteToMastered];
 }
 
 /// Loads the Word Bank / review queue.
@@ -334,7 +340,7 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     DailyWordMarkedLearned event,
     Emitter<DailyWordsState> emit,
   ) async {
-    await _service.markWordLearned(event.word);
+    await _service.markWordLearned(event.word, mastered: event.mastered);
     final updatedLearned = Set<String>.from(state.learnedThisSession)
       ..add(event.word.id);
 
@@ -441,7 +447,11 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     DailyWordReviewed event,
     Emitter<DailyWordsState> emit,
   ) async {
-    await _service.recordReview(event.wordId, correct: event.correct);
+    await _service.recordReview(
+      event.wordId,
+      correct: event.correct,
+      promoteToMastered: event.promoteToMastered,
+    );
     emit(
       state.copyWith(
         wordBankEntries: _service.wordBankEntries,

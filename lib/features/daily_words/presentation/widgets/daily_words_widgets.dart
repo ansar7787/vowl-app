@@ -773,7 +773,7 @@ class SessionCompleteView extends StatelessWidget {
               Text(
                 context.tr(
                   'daily_words.session_complete',
-                  fallback: 'Lesson Complete!',
+                  fallback: 'Lesson Completed!',
                 ),
                 style: TextStyle(
                   fontFamily: 'Outfit',

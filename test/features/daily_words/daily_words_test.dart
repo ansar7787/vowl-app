@@ -273,6 +273,29 @@ void main() {
       expect(service.isWordLearnedToday('non_existent_word'), isFalse);
       expect(service.todayWords.length, 2);
     });
+
+    test('markWordLearned with mastered: true directly marks word in Box 3 Mastered', () async {
+      await service.markWordLearned(sampleWord1, mastered: true);
+      expect(service.isWordLearned(sampleWord1.id), isTrue);
+      expect(service.masteryStats['mastered'], 1);
+      expect(service.masteryStats['learning'], 0);
+
+      final entry = service.wordBankEntries.firstWhere((w) => w.wordId == sampleWord1.id);
+      expect(entry.box, 3);
+    });
+
+    test('recordReview with promoteToMastered: true immediately sets Box 3', () async {
+      await service.markWordLearned(sampleWord1, mastered: false); // Box 1 Learning
+      expect(service.masteryStats['learning'], 1);
+      expect(service.masteryStats['mastered'], 0);
+
+      await service.recordReview(sampleWord1.id, correct: true, promoteToMastered: true);
+      expect(service.masteryStats['mastered'], 1);
+      expect(service.masteryStats['learning'], 0);
+
+      final entry = service.wordBankEntries.firstWhere((w) => w.wordId == sampleWord1.id);
+      expect(entry.box, 3);
+    });
   });
 
   group('DailyWordsBloc State Transitions', () {

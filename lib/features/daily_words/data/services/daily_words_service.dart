@@ -265,19 +265,20 @@ class DailyWordsService {
 
   // ── Word completion ─────────────────────────────────────────────────────────
 
-  /// Marks a word as "learned" (Box 1) and adds it to the Word Bank.
+  /// Marks a word as learned (Box 1) or mastered (Box 3) and adds it to the Word Bank.
   ///
-  /// If the word was previously marked for review (Box 0), it advances to Box 1
-  /// and increments [totalWordsLearned].
-  Future<void> markWordLearned(DailyWord word) async {
+  /// If [mastered] is true (e.g. user passed Phase 2 Type-to-Confirm test),
+  /// the word is directly placed into Box 3 (Mastered).
+  /// If [mastered] is false (e.g. user skipped the typing test), it enters Box 1 (Learning).
+  Future<void> markWordLearned(DailyWord word, {bool mastered = false}) async {
     final existing = _wordBank[word.id];
-    if (existing != null && existing.box > 0) return;
+    final targetBox = mastered ? 3 : 1;
+    if (existing != null && existing.box >= targetBox) return;
 
     final today = _todayString();
-    final nextReview = _calculateNextReview(
-      today,
-      1,
-    ); // Box 1 = review tomorrow
+    final nextReview = targetBox >= 3
+        ? '' // Mastered — recall verified!
+        : _calculateNextReview(today, 1); // Box 1 = review tomorrow
 
     final isNewLearn = existing == null || existing.box == 0;
     _wordBank[word.id] = WordProgress(
@@ -286,10 +287,10 @@ class DailyWordsService {
       learnedDate: (existing != null && existing.learnedDate.isNotEmpty)
           ? existing.learnedDate
           : today,
-      reviewCount: existing?.reviewCount ?? 0,
-      box: 1,
+      reviewCount: (existing?.reviewCount ?? 0) + (mastered ? 1 : 0),
+      box: targetBox,
       nextReviewDate: nextReview,
-      lastScore: 1,
+      lastScore: mastered ? 3 : 1,
     );
 
     if (isNewLearn) {
@@ -326,23 +327,31 @@ class DailyWordsService {
 
   /// Records a review result for a word in the spaced-repetition system.
   ///
+  /// If [promoteToMastered] is true (e.g. user successfully passed "Test for Mastery" in Word Bank),
+  /// the word is promoted directly to Box 3 (Mastered).
   /// If [correct] is true, the word advances to the next Leitner box.
   /// If false, it drops back to box 1 for immediate re-learning.
-  Future<void> recordReview(String wordId, {required bool correct}) async {
+  Future<void> recordReview(
+    String wordId, {
+    required bool correct,
+    bool promoteToMastered = false,
+  }) async {
     final existing = _wordBank[wordId];
     if (existing == null) return;
 
     final today = _todayString();
     int newBox;
-    if (correct) {
+    if (promoteToMastered && correct) {
+      newBox = 3; // Promoted straight to Mastered!
+    } else if (correct) {
       newBox = (existing.box + 1).clamp(0, _leitnerIntervals.length - 1);
     } else {
       newBox = 1; // Drop back to box 1
     }
 
-    final nextReview = newBox < _leitnerIntervals.length
-        ? _calculateNextReview(today, _leitnerIntervals[newBox])
-        : ''; // Mastered — no more reviews needed
+    final nextReview = newBox >= 3
+        ? '' // Mastered — no more reviews needed
+        : _calculateNextReview(today, _leitnerIntervals[newBox]);
 
     _wordBank[wordId] = existing.copyWith(
       box: newBox,
