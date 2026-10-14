@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -274,7 +275,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
           children: [
             Builder(
               builder: (context) {
-                final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                final reduceMotion = VowlMotion.shouldReduceMotion(context);
                 Widget iconContainer = Container(
                   padding: EdgeInsets.all(10.r),
                   decoration: BoxDecoration(
@@ -611,64 +612,67 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                               borderRadius: BorderRadius.circular(20.r),
                             ),
                             child: Center(
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  AutoSizeText(
-                                    ContextSentenceStrings.submitButton(
-                                      context,
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.white,
-                                      letterSpacing: 2,
-                                    ),
-                                  ),
-                                  if (canEarnCoins) ...[
-                                    SizedBox(width: 8.w),
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 6.w,
-                                        vertical: 2.h,
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    AutoSizeText(
+                                      ContextSentenceStrings.submitButton(
+                                        context,
                                       ),
-                                      decoration: BoxDecoration(
-                                        color: Colors.amberAccent.withValues(
-                                          alpha: 0.2,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                    if (canEarnCoins) ...[
+                                      SizedBox(width: 8.w),
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 6.w,
+                                          vertical: 2.h,
                                         ),
-                                        borderRadius: BorderRadius.circular(
-                                          8.r,
-                                        ),
-                                        border: Border.all(
+                                        decoration: BoxDecoration(
                                           color: Colors.amberAccent.withValues(
-                                            alpha: 0.5,
+                                            alpha: 0.2,
                                           ),
-                                        ),
-                                      ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          AutoSizeText(
-                                            '+${widget.bonusCoins}',
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 12.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color: Colors.amberAccent,
+                                          borderRadius: BorderRadius.circular(
+                                            8.r,
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.amberAccent.withValues(
+                                              alpha: 0.5,
                                             ),
                                           ),
-                                          SizedBox(width: 4.w),
-                                          Icon(
-                                            Icons.monetization_on_rounded,
-                                            size: 14.r,
-                                            color: Colors.amberAccent,
-                                          ),
-                                        ],
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            AutoSizeText(
+                                              '+${widget.bonusCoins}',
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 12.sp,
+                                                fontWeight: FontWeight.w900,
+                                                color: Colors.amberAccent,
+                                              ),
+                                            ),
+                                            SizedBox(width: 4.w),
+                                            Icon(
+                                              Icons.monetization_on_rounded,
+                                              size: 14.r,
+                                              color: Colors.amberAccent,
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ],
-                                ],
+                                ),
                               ),
                             ),
                           ),
