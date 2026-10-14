@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class PinchHintAnimation extends StatelessWidget {
   final Color color;
@@ -9,6 +10,8 @@ class PinchHintAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return IgnorePointer(
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -31,7 +34,11 @@ class PinchHintAnimation extends StatelessWidget {
                   size: 24.r,
                 ),
               )
-              .animate(onPlay: (controller) => controller.repeat())
+              .animate(
+                onPlay: (controller) {
+                  if (!reduceMotion) controller.repeat();
+                },
+              )
               .fadeIn(duration: 400.ms)
               .moveX(
                 begin: -80.w,
@@ -60,7 +67,11 @@ class PinchHintAnimation extends StatelessWidget {
                 ),
                 child: Icon(Icons.arrow_back_rounded, color: color, size: 24.r),
               )
-              .animate(onPlay: (controller) => controller.repeat())
+              .animate(
+                onPlay: (controller) {
+                  if (!reduceMotion) controller.repeat();
+                },
+              )
               .fadeIn(duration: 400.ms)
               .moveX(
                 begin: 80.w,
