@@ -2,6 +2,7 @@
 
 > [!IMPORTANT]
 > **Executive Summary & Brutal Audit**:
+>
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **69 files**
 > - **Total Passing Tests**: **479 / 479 Tests Passing (100% Green)**
@@ -13,6 +14,7 @@
 ## 🎯 Verification Quality Standards (No Blind / Fake Testing)
 
 Every game test suite MUST rigorously satisfy:
+
 1. **Dual Interaction**: Both instant tap-to-answer AND drag-and-drop mechanics.
 2. **Audio Scaffolding**: Dedicated audio replay buttons invoking Text-to-Speech (`SoundService.playTts`) for both question and passage.
 3. **Small Screen Layout Safety (320dp)**: Verified at `320 x 568` with zero `RenderFlex` overflow errors.
@@ -25,7 +27,7 @@ Every game test suite MUST rigorously satisfy:
 ## 📊 High-Level Category Status Summary
 
 | # | Section / Category | Total Screens/Items | Completed | Remaining | Current Status |
-|---|--------------------|:-------------------:|:---------:|:---------:|:--------------:|
+| --- | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 3 | 0 | 3 | 🔴 0% Tested (3 screens) |
 | **3** | **Kids Zone** | 31 | 23 | 8 | 🟡 74% Complete (6 Hubs + 2 Layouts remaining) |
@@ -50,6 +52,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 1: AUTHENTICATION & ACCOUNTS (100% COMPLETE)
+
 - [x] **1.1** `signup_cubit_test.dart` (Unit Test) — ✅ `[DONE - 15/15 tests passing]`
   - Validates full name, email format, password strength, terms acceptance, and registration state transitions.
 - [x] **1.2** `forgot_password_cubit_test.dart` (Unit Test) — ✅ `[DONE - 8/8 tests passing]`
@@ -78,6 +81,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 2: GAMES HUB & ROUTING (PENDING)
+
 - [ ] **2.1** `game_routes_test.dart` (Unit/Routing Test) — 🔴 `[PENDING]`
   - Test routing to all 100+ `GameSubtype` enum values with proper parameter passing.
 - [ ] **2.2** `games_screen_test.dart` (Widget Test) — 🔴 `[PENDING]`
@@ -88,6 +92,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 3: KIDS ZONE (74% COMPLETE)
+
 - [x] **3.1** `kids_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 6/6 tests passing]`
 - [x] **3.2** `kids_clothing_layout_test.dart` (Widget Test) — ✅ `[DONE - 12/12 tests passing]`
   - Baseline fixed: Dual interaction, TTS audio, 320dp small screen zero-overflow.
@@ -128,6 +133,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 4: READING CATEGORY (12 GAMES)
+
 - [x] **4.1** `reading_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **4.2** `read_and_answer_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 8/8 tests passing]`
   - Validates initial rendering, question TTS, passage TTS, tap-to-answer correct path (BLoC + success haptics), tap-to-answer incorrect path (BLoC + wrong sound + error haptics), drag-and-drop buoy drop onto anchor card, evidence phase trigger, long story adaptability, 320dp small screen safety.
@@ -146,6 +152,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 5: ACCENT TRAINING CATEGORY (12 GAMES)
+
 - [x] **5.1** `accent_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [ ] **5.2** `connected_speech_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **5.3** `consonant_clarity_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
@@ -163,6 +170,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 6: GRAMMAR QUESTS CATEGORY (19 GAMES)
+
 - [x] **6.1** `grammar_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **6.2** `grammar_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
 - [ ] **6.3** `article_insertion_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
@@ -188,6 +196,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 7: LISTENING CATEGORY (10 GAMES)
+
 - [x] **7.1** `listening_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **7.2** `listening_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
 - [ ] **7.3** `ambient_id_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
@@ -204,6 +213,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 8: ROLEPLAY CATEGORY (10 GAMES)
+
 - [x] **8.1** `roleplay_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **8.2** `roleplay_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
 - [ ] **8.3** `branching_dialogue_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
@@ -220,6 +230,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 9: SPEAKING CATEGORY (10 GAMES)
+
 - [x] **9.1** `speaking_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [ ] **9.2** `daily_expression_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **9.3** `dialogue_roleplay_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
@@ -235,6 +246,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 10: VOCABULARY CATEGORY (12 GAMES)
+
 - [x] **10.1** `vocabulary_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **10.2** `vocabulary_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
 - [ ] **10.3** `academic_word_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
@@ -253,6 +265,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 11: WRITING CATEGORY (11 GAMES)
+
 - [x] **11.1** `writing_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [ ] **11.2** `complete_sentence_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **11.3** `correction_writing_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
@@ -269,6 +282,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 12: ELITE MASTERY CATEGORY (4 GAMES)
+
 - [x] **12.1** `elite_mastery_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [ ] **12.2** `accent_shadowing_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **12.3** `idiom_match_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
@@ -278,6 +292,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 13: DAILY CHALLENGES & SPECIAL MICRO-GAMES (100% COMPLETE)
+
 - [x] **13.1** `word_challenges_screen_test.dart` (Widget Test) — ✅ `[DONE - 3/3 tests passing]`
 - [x] **13.2** `word_mixer_puzzle_test.dart` (Unit Test) — ✅ `[DONE - 6/6 tests passing]`
 - [x] **13.3** `word_mixer_widgets_test.dart` (Widget Test) — ✅ `[DONE - 3/3 tests passing]`
@@ -293,6 +308,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 14: HOME, SHELL & NAVIGATION (0 / 6 COMPLETE)
+
 - [ ] **14.1** `home_screen_test.dart` (Widget Test) — 🔴 `[PENDING]`
 - [ ] **14.2** `main_wrapper_test.dart` (Shell Navigation Test) — 🔴 `[PENDING]`
 - [ ] **14.3** `category_games_page_test.dart` (Widget Test) — 🔴 `[PENDING]`
@@ -303,6 +319,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 15: PROFILE, PROGRESS & TROPHIES (0 / 7 COMPLETE)
+
 - [ ] **15.1** `profile_screen_test.dart` (Profile Hub Test) — 🔴 `[PENDING]`
 - [ ] **15.2** `adventure_level_screen_test.dart` (Adventure Level Test) — 🔴 `[PENDING]`
 - [ ] **15.3** `adventure_xp_screen_test.dart` (XP Rewards Test) — 🔴 `[PENDING]`
@@ -314,6 +331,7 @@ Every game test suite MUST rigorously satisfy:
 ---
 
 ### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (1 / 6 COMPLETE)
+
 - [x] **16.1** `tts_voice_selection_bottom_sheet_test.dart` (Widget Test) — ✅ `[DONE - 3/3 tests passing]`
 - [ ] **16.2** `leaderboard_screen_test.dart` (Leaderboard Widget Test) — 🔴 `[PENDING]`
 - [ ] **16.3** `daily_words_screen_test.dart` (Daily Words Flow Test) — 🔴 `[PENDING]`
