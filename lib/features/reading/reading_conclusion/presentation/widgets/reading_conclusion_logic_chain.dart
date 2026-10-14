@@ -52,14 +52,16 @@ class ReadingConclusionLogicChain extends StatelessWidget {
                 size: 24.r,
               ),
               SizedBox(width: 8.w),
-              Text(
-                "LOGICAL DEDUCTION",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w800,
-                  color: primaryColor,
-                  letterSpacing: 1.2,
+              Expanded(
+                child: Text(
+                  "LOGICAL DEDUCTION",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w800,
+                    color: primaryColor,
+                    letterSpacing: 1.2,
+                  ),
                 ),
               ),
             ],
