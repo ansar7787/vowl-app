@@ -533,20 +533,6 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     required bool isEquipped,
   }) {
     final itemColor = item['color'] as Color;
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    Widget iconWidget = Text(
-      item['icon'] as String,
-      style: TextStyle(fontSize: 40.sp),
-    );
-    if (!reduceMotion) {
-      iconWidget = iconWidget
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.1, 1.1),
-            duration: 2.seconds,
-          );
-    }
     return ScaleButton(
       onTap: () => _handleItemAction(context, item, isOwned, isEquipped),
       child: Container(
@@ -567,7 +553,23 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            iconWidget,
+            (() {
+              final reduceMotion = VowlMotion.shouldReduceMotion(context);
+              Widget iconWidget = Text(
+                item['icon'] as String,
+                style: TextStyle(fontSize: 40.sp),
+              );
+              if (!reduceMotion) {
+                iconWidget = iconWidget
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(1.1, 1.1),
+                      duration: 2.seconds,
+                    );
+              }
+              return iconWidget;
+            })(),
             SizedBox(height: 12.h),
             Text(
               item['name'] as String,
@@ -709,16 +711,14 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (sheetContext) {
-        return SafeArea(
-          child: SingleChildScrollView(
-            child: Container(
-              padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
-              decoration: BoxDecoration(
-                color: isDark ? AppColors.slate800 : Colors.white,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-                border: Border.all(color: itemColor, width: 3.w),
-              ),
-              child: Column(
+        return Container(
+          padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
+          decoration: BoxDecoration(
+            color: isDark ? AppColors.slate800 : Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+            border: Border.all(color: itemColor, width: 3.w),
+          ),
+          child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               // Drag handle
@@ -854,12 +854,10 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               ),
             ],
           ),
-        ),
-      ),
+        );
+      },
     );
-  },
-);
-}
+  }
 
   void _executePurchase(
     BuildContext context,
@@ -894,88 +892,88 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
   }
 
   Widget _buildWatchAndEarn(BuildContext context, bool isDark) {
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         final isPremium = state.user?.isPremium ?? false;
+        final reduceMotion = VowlMotion.shouldReduceMotion(context);
         Widget button = ScaleButton(
-              onTap: () {
-                di.sl<AdService>().showRewardedAd(
-                  context: context,
-                  isPremium: isPremium,
-                  childSafe: true,
-                  onUserEarnedReward: (reward) {
-                    di.sl<SoundService>().playCorrect();
-                    context.read<EconomyBloc>().add(
-                      const EconomyAddKidsCoinsRequested(10),
-                    );
-                    _showModernNotification(
-                      context,
-                      "AWARDED 10 KIDS COINS! ⭐✨",
-                    );
-                  },
-                  onDismissed: () {},
+          onTap: () {
+            di.sl<AdService>().showRewardedAd(
+              context: context,
+              isPremium: isPremium,
+              childSafe: true,
+              onUserEarnedReward: (reward) {
+                di.sl<SoundService>().playCorrect();
+                context.read<EconomyBloc>().add(
+                  const EconomyAddKidsCoinsRequested(10),
+                );
+                _showModernNotification(
+                  context,
+                  "AWARDED 10 KIDS COINS! \u2B50\u2728",
                 );
               },
-              child: Container(
-                padding: EdgeInsets.all(24.r),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [AppColors.red500, _LocalPalette.color991b1b],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(32.r),
-                ),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.play_circle_fill_rounded,
-                      color: Colors.white,
-                      size: 32,
-                    ),
-                    SizedBox(width: 20.w),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            context.tr(
-                              'games.watch_and_earn',
-                              fallback: 'WATCH & EARN',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white70,
-                              letterSpacing: 2,
-                            ),
-                          ),
-                          Text(
-                            context.tr(
-                              'games.get_10_coins',
-                              fallback: 'Get 10 Coins',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Colors.white,
-                      size: 16,
-                    ),
-                  ],
-                ),
-              ),
+              onDismissed: () {},
             );
+          },
+          child: Container(
+            padding: EdgeInsets.all(24.r),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [AppColors.red500, _LocalPalette.color991b1b],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(32.r),
+            ),
+            child: Row(
+              children: [
+                const Icon(
+                  Icons.play_circle_fill_rounded,
+                  color: Colors.white,
+                  size: 32,
+                ),
+                SizedBox(width: 20.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        context.tr(
+                          'games.watch_and_earn',
+                          fallback: 'WATCH & EARN',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white70,
+                          letterSpacing: 2,
+                        ),
+                      ),
+                      Text(
+                        context.tr(
+                          'games.get_10_coins',
+                          fallback: 'Get 10 Coins',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Colors.white,
+                  size: 16,
+                ),
+              ],
+            ),
+          ),
+        );
         if (!reduceMotion) {
           button = button
               .animate(onPlay: (c) => c.repeat(reverse: true))
