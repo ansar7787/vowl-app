@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -316,7 +317,11 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                                     ),
                                   )
                                   .animate(
-                                    onPlay: (c) => c.repeat(reverse: true),
+                                    onPlay: (c) {
+                                      if (!VowlMotion.shouldReduceMotion(context)) {
+                                        c.repeat(reverse: true);
+                                      }
+                                    },
                                   )
                                   .moveY(
                                     begin: 0,
