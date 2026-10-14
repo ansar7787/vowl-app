@@ -54,9 +54,21 @@ class KidsRoomTopBar extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          import_indicator.KidsRoomMoodIndicator(user: user),
+          Flexible(
+            flex: 3,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: import_indicator.KidsRoomMoodIndicator(user: user),
+            ),
+          ),
           const Spacer(),
-          _buildCurrencyBadge(context),
+          Flexible(
+            flex: 2,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: _buildCurrencyBadge(context),
+            ),
+          ),
         ],
       ),
     );

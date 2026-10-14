@@ -710,15 +710,16 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                               : null,
                         ),
                         // Premium Shimmer Overlay
-                        IgnorePointer(
-                          ignoring: !_isInitializing.value,
-                          child: AnimatedOpacity(
-                            opacity: _isInitializing.value ? 1.0 : 0.0,
-                            duration: const Duration(milliseconds: 400),
-                            curve: Curves.easeInOut,
-                            child: _buildShimmerScreen(bgColor),
+                        if (_isInitializing.value)
+                          IgnorePointer(
+                            ignoring: false,
+                            child: AnimatedOpacity(
+                              opacity: _isInitializing.value ? 1.0 : 0.0,
+                              duration: const Duration(milliseconds: 400),
+                              curve: Curves.easeInOut,
+                              child: _buildShimmerScreen(bgColor),
+                            ),
                           ),
-                        ),
                       ],
                     ),
                   );
@@ -892,7 +893,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             // The Theme-Specific Nest underneath the mascot
                             Positioned(
                               bottom: -5.h,
-                              child: _buildThemeNest(user.kidsRoomTheme),
+                              child: _buildThemeNest(
+                                user.kidsRoomTheme,
+                                reduceMotion,
+                              ),
                             ),
 
                             VowlMascot(
@@ -1104,31 +1108,35 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     );
   }
 
-  Widget _buildThemeNest(String theme) {
+  Widget _buildThemeNest(String theme, [bool reduceMotion = false]) {
     switch (theme) {
       case 'space':
         // Glowing anti-gravity neon ring
-        return Container(
-              width: 140.r,
-              height: 35.r,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.elliptical(70.r, 17.5.r)),
-                border: Border.all(color: Colors.cyanAccent, width: 3.w),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.cyanAccent.withValues(alpha: 0.6),
-                    blurRadius: 15,
-                    spreadRadius: 2,
-                  ),
-                ],
+        Widget ring = Container(
+          width: 140.r,
+          height: 35.r,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.elliptical(70.r, 17.5.r)),
+            border: Border.all(color: Colors.cyanAccent, width: 3.w),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.cyanAccent.withValues(alpha: 0.6),
+                blurRadius: 15,
+                spreadRadius: 2,
               ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scale(
-              begin: const Offset(0.95, 0.95),
-              end: const Offset(1.05, 1.05),
-              duration: 1.5.seconds,
-            );
+            ],
+          ),
+        );
+        if (!reduceMotion) {
+          ring = ring
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(0.95, 0.95),
+                end: const Offset(1.05, 1.05),
+                duration: 1.5.seconds,
+              );
+        }
+        return ring;
       case 'ocean':
         // Glowing coral/bubble pad
         return Container(
@@ -1149,32 +1157,36 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         );
       case 'sweet':
         // Pink cotton candy cloud
-        return Container(
-              width: 160.r,
-              height: 55.r,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.elliptical(80.r, 27.5.r)),
-                color: Colors.pinkAccent.withValues(alpha: 0.3),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.pinkAccent.withValues(alpha: 0.4),
-                    blurRadius: 20,
-                    spreadRadius: 10,
-                  ),
-                ],
+        Widget cloud = Container(
+          width: 160.r,
+          height: 55.r,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.elliptical(80.r, 27.5.r)),
+            color: Colors.pinkAccent.withValues(alpha: 0.3),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.pinkAccent.withValues(alpha: 0.4),
+                blurRadius: 20,
+                spreadRadius: 10,
               ),
-              child: Center(
-                child: Text(
-                  "☁️",
-                  style: TextStyle(
-                    fontSize: 40.sp,
-                    color: Colors.pink.withValues(alpha: 0.8),
-                  ),
-                ),
+            ],
+          ),
+          child: Center(
+            child: Text(
+              "☁️",
+              style: TextStyle(
+                fontSize: 40.sp,
+                color: Colors.pink.withValues(alpha: 0.8),
               ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .moveY(begin: -3, end: 3, duration: 2.seconds);
+            ),
+          ),
+        );
+        if (!reduceMotion) {
+          cloud = cloud
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveY(begin: -3, end: 3, duration: 2.seconds);
+        }
+        return cloud;
       case 'nature':
       default:
         // Leafy wooden nest

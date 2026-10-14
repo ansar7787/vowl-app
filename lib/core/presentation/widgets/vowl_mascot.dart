@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -97,7 +98,7 @@ class VowlMascot extends StatelessWidget {
         kidsAccessory: s.user?.kidsEquippedAccessory,
       ),
       builder: (context, userData) {
-        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+        final reduceMotion = VowlMotion.shouldReduceMotion(context);
         final effectiveMascotId =
             mascotId ??
             (isKidsMode

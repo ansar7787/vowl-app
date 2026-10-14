@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,7 +48,7 @@ class KidsRoomMoodIndicator extends StatelessWidget {
               // Mood Emoji
               Builder(
                 builder: (context) {
-                  final reduceMotion = MediaQuery.disableAnimationsOf(context);
+                  final reduceMotion = VowlMotion.shouldReduceMotion(context);
                   Widget emoji = Text(
                     moodData.emoji,
                     style: TextStyle(fontSize: 20.sp),
@@ -95,7 +96,7 @@ class KidsRoomMoodIndicator extends StatelessWidget {
                   children: [
                     Builder(
                       builder: (context) {
-                        final reduceMotion = MediaQuery.disableAnimationsOf(
+                        final reduceMotion = VowlMotion.shouldReduceMotion(
                           context,
                         );
                         Widget fire = Icon(
