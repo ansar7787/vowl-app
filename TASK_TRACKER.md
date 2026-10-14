@@ -46,7 +46,7 @@ Every game test suite MUST rigorously satisfy:
 | --- | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 5 | 5 | 0 | 🟢 100% Complete (58 tests) |
-| **3** | **Kids Zone** | 35 | 24 | 11 | 🟡 69% Complete (24/35 items done) |
+| **3** | **Kids Zone** | 35 | 25 | 10 | 🟡 71% Complete (25/35 items done) |
 | **4** | **Reading Category** | 13 | 2 | 11 | 🟡 1 Game + BLoC Done (11 games remaining) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
 | **6** | **Grammar Category** | 20 | 2 | 18 | ⚠️ BLoC + Model only (19 games remaining) |
@@ -138,7 +138,8 @@ Every game test suite MUST rigorously satisfy:
 - [x] **3.22** `handwriting_content_alignment_test.dart` (Unit Test) — ✅ `[DONE - 6/6 tests passing]`
 - [x] **3.24** `kids_colors_layout_test.dart` (Widget Test) — ✅ `[DONE - 12/12 tests passing]`
   - Validates art studio easel canvas, instructions, emoji, paint tubes with drop icons and colored paint, object cards, TTS question replay, option pronunciation, tap-to-answer correct/incorrect paths with haptics, drag-and-drop mechanics to easel canvas, answered state interaction locks, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
-- [ ] **3.25** `kids_day_night_layout_test.dart` (Widget Test) — 🔴 `[PENDING]`
+- [x] **3.25** `kids_day_night_layout_test.dart` (Widget Test) — ✅ `[DONE - 12/12 tests passing]`
+  - Validates sky observatory telescope view, decorative stars, prompt banner, celestial cards with sun/moon icons, TTS question replay, option pronunciation, tap-to-answer correct/incorrect paths with haptics, drag-and-drop mechanics to observatory view, answered state interaction locks, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
 - [ ] **3.26** `kids_emotions_layout_test.dart` (Widget Test) — 🔴 `[PENDING]`
 - [ ] **3.27** `kids_family_layout_test.dart` (Widget Test) — 🔴 `[PENDING]`
 - [ ] **3.28** `kids_food_layout_test.dart` (Widget Test) — 🔴 `[PENDING]`
