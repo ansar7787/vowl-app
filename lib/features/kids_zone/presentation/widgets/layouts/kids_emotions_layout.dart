@@ -1,15 +1,17 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -25,7 +27,7 @@ class _LocalPalette {
 /// Puppet Theater Theme for Emotions Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
-class KidsEmotionsLayout extends StatelessWidget {
+class KidsEmotionsLayout extends StatefulWidget {
   final int level;
   final String title;
   final Color primaryColor;
@@ -38,96 +40,200 @@ class KidsEmotionsLayout extends StatelessWidget {
   });
 
   @override
+  State<KidsEmotionsLayout> createState() => _KidsEmotionsLayoutState();
+}
+
+class _KidsEmotionsLayoutState extends State<KidsEmotionsLayout> {
+  String? _selectedOption;
+  int _lastAnsweredQuestIndex = -1;
+
+  void _handleOptionSubmit(
+    BuildContext context,
+    KidsLoaded state,
+    String option,
+  ) {
+    if (state.answerStatus.isAnswered) return;
+
+    setState(() {
+      _selectedOption = option;
+      _lastAnsweredQuestIndex = state.currentIndex;
+    });
+
+    final quest = state.currentQuest;
+    final isCorrect = (option.trim() == quest.correctAnswer?.trim());
+
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl<AppLogger>().debug(
+        'Submitting emotions option "$option" for quest "${quest.id}" (correct: $isCorrect)',
+        tag: 'KidsEmotionsLayout',
+      );
+    }
+
+    if (!isCorrect) {
+      final parts = option.trim().split(' ');
+      if (parts.length > 1 && parts.last.runes.any((r) => r > 127)) {
+        parts.removeLast();
+      }
+      final textToSpeak = parts.join(' ');
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().speak(textToSpeak);
+      }
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().error();
+      }
+    } else {
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().success();
+      }
+    }
+
+    context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+  }
+
+  void _playOptionAudio(String text) {
+    final parts = text.trim().split(' ');
+    if (parts.length > 1 && parts.last.runes.any((r) => r > 127)) {
+      parts.removeLast();
+    }
+    final textToSpeak = parts.join(' ');
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl<AppLogger>().debug(
+        'Pronouncing emotion option "$textToSpeak"',
+        tag: 'KidsEmotionsLayout',
+      );
+    }
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl<KidsTTSService>().speak(textToSpeak, force: true);
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl<HapticService>().selection();
+    }
+  }
+
+  void _replayQuestionAudio(dynamic quest) {
+    final instruction = InstructionHelper.getInstruction(quest);
+    if (instruction.isNotEmpty) {
+      if (di.sl.isRegistered<AppLogger>()) {
+        di.sl<AppLogger>().debug(
+          'Replaying instruction audio for quest "${quest.id}"',
+          tag: 'KidsEmotionsLayout',
+        );
+      }
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().speak(instruction, force: true);
+      }
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().selection();
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return KidsGameBaseScreen(
-      title: title,
+      title: widget.title,
       gameType: 'emotions',
-      level: level,
-      primaryColor: primaryColor,
+      level: widget.level,
+      primaryColor: widget.primaryColor,
       backgroundColors: const [],
       buildGameUI: (context, state, onHintTap) {
         final quest = state.currentQuest;
+        final options = quest.options?.map((e) => e.toString()).toList() ?? [];
 
-        return Column(
-          children: [
-            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
-            // The Theater Stage
-            Expanded(
-              flex: 5,
-              child: Center(child: _buildTheaterStage(context, state, quest)),
-            ),
-            SizedBox(height: 24.h),
-            KidsFittedText(
-              state.answerStatus == AnswerStatus.correct
-                  ? context.tr('games.kids_emotions_done', fallback: 'Correct!')
-                  : context.tr(
-                      'games.kids_emotions_drag',
-                      fallback: 'Match the feeling to the stage.',
-                    ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w500,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white.withValues(alpha: 0.8)
-                    : Colors.black.withValues(alpha: 0.6),
-              ),
-              maxLines: 2,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 16.h),
-            // The Theater Masks (Options)
-            Flexible(
-              flex: 5,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  // Wooden Stage Floor
-                  Container(
-                    height: 40.h,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: _LocalPalette.color92400e, // Wooden stage
-                      border: Border(
-                        top: BorderSide(
-                          color: KidsColors.warmAmber,
-                          width: 6.h,
+        if (state.currentIndex != _lastAnsweredQuestIndex) {
+          _selectedOption = null;
+        }
+
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            final availableWidth = constraints.maxWidth;
+            final isNarrow = availableWidth < 360;
+
+            final stageWidth = (availableWidth * 0.90).clamp(240.0, 340.0).w;
+            final stageHeight = 185.h;
+
+            return Center(
+              child: SizedBox(
+                width: availableWidth,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(
+                        height: KidsGameBaseScreen.mascotClearanceHeight + 6.h,
+                      ),
+
+                      // The Puppet Theater Stage
+                      Center(
+                        child: _buildTheaterStage(
+                          context,
+                          state,
+                          quest,
+                          width: stageWidth,
+                          height: stageHeight,
                         ),
                       ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      bottom: 20.h,
-                      left: 16.w,
-                      right: 16.w,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (
-                        index,
-                      ) {
-                        final option = quest.options![index];
-                        return Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4.w),
-                            child: _buildTheaterMaskOption(
-                              context,
-                              state,
-                              option,
-                              quest.correctAnswer == option,
-                              index,
+
+                      SizedBox(height: 12.h),
+
+                      // Prompt banner with dual interaction hint
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.theater_comedy_rounded,
+                              size: 16.r,
+                              color: Theme.of(context).brightness ==
+                                      Brightness.dark
+                                  ? Colors.white70
+                                  : _LocalPalette.color92400e,
                             ),
-                          ),
-                        );
-                      }),
-                    ),
+                            SizedBox(width: 6.w),
+                            Flexible(
+                              child: KidsFittedText(
+                                state.answerStatus == AnswerStatus.correct
+                                    ? context.tr(
+                                        'games.kids_emotions_done',
+                                        fallback: 'Bravo! Correct emotion!',
+                                      )
+                                    : context.tr(
+                                        'games.kids_emotions_drag',
+                                        fallback:
+                                            'Tap or drag the feeling mask onto the stage!',
+                                      ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isNarrow ? 12.5.sp : 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.white.withValues(alpha: 0.85)
+                                      : Colors.black.withValues(alpha: 0.75),
+                                ),
+                                maxLines: 2,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: 16.h),
+
+                      // The Theater Masks (Options) with Wooden Stage Floor
+                      _buildStageOptionsFloor(context, state, quest, options),
+
+                      SizedBox(height: 20.h),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+            );
+          },
         );
       },
     );
@@ -136,172 +242,243 @@ class KidsEmotionsLayout extends StatelessWidget {
   Widget _buildTheaterStage(
     BuildContext context,
     KidsLoaded state,
-    dynamic quest,
-  ) {
+    dynamic quest, {
+    required double width,
+    required double height,
+  }) {
     return DragTarget<String>(
+      key: const Key('kids_emotions_theater_stage_target'),
       onAcceptWithDetails: (details) {
-        final text = details.data;
-        final isCorrect = (text == quest.correctAnswer);
-        if (!isCorrect) {
-          final parts = text.trim().split(' ');
-          if (parts.length > 1 && parts.last.runes.any((r) => r > 127)) {
-            parts.removeLast();
-          }
-          final textToSpeak = parts.join(' ');
-          di.sl<KidsTTSService>().speak(textToSpeak);
-        }
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+        _handleOptionSubmit(context, state, details.data);
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return InkWell(
-          onTap: state.answerStatus.isAnswered
-              ? null
-              : () {
-                  if (InstructionHelper.getInstruction(quest).isNotEmpty) {
-                    di.sl<KidsTTSService>().speak(
-                      InstructionHelper.getInstruction(quest),
-                    );
-                  }
-                },
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              // The Stage background
-              Container(
-                constraints: BoxConstraints(maxWidth: 320.w, maxHeight: 240.h),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: isHovering
-                      ? AppColors.slate700
-                      : AppColors.slate800, // Dark backstage
-                  borderRadius: BorderRadius.circular(8.r),
-                  border: Border.all(
-                    color: isHovering ? AppColors.amber600 : AppColors.amber900,
-                    width: 8.r,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(
-                        alpha: isHovering ? 0.5 : 0.3,
+
+        return Material(
+          color: Colors.transparent,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(16.r),
+            onTap: state.answerStatus.isAnswered
+                ? null
+                : () => _replayQuestionAudio(quest),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Backstage Container
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 250),
+                  width: width,
+                  height: height,
+                  decoration: BoxDecoration(
+                    color: isHovering ? AppColors.slate700 : AppColors.slate800,
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color:
+                          isHovering ? AppColors.amber500 : AppColors.amber900,
+                      width: isHovering ? 6.r : 4.r,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(
+                          alpha: isHovering ? 0.5 : 0.3,
+                        ),
+                        blurRadius: isHovering ? 25 : 15,
+                        offset: const Offset(0, 8),
                       ),
-                      blurRadius: isHovering ? 25 : 15,
-                      offset: const Offset(0, 8),
+                    ],
+                  ),
+                  child: Center(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 40.w),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 10.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(18.r),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 4),
+                            blurRadius: 6,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (quest.emoji != null &&
+                              state.answerStatus == AnswerStatus.correct)
+                            Text(
+                              quest.emoji!,
+                              style: TextStyle(fontSize: 52.sp),
+                            )
+                          else
+                            KidsFittedText(
+                              quest.question ?? '?',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 32.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black87,
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                            ),
+                        ],
+                      ),
                     ),
-                  ],
+                  ),
                 ),
-                child: Center(
+
+                // Left Red Velvet Curtain
+                Positioned(
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
                   child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 24.w,
-                      vertical: 12.h,
-                    ),
+                    width: 36.w,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20.r),
+                      color: _LocalPalette.color9f1239,
+                      borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(14.r),
+                      ),
+                      border: Border(
+                        right: BorderSide(
+                          color: AppColors.rose700,
+                          width: 4.w,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                // Right Red Velvet Curtain
+                Positioned(
+                  right: 0,
+                  top: 0,
+                  bottom: 0,
+                  child: Container(
+                    width: 36.w,
+                    decoration: BoxDecoration(
+                      color: _LocalPalette.color9f1239,
+                      borderRadius: BorderRadius.horizontal(
+                        right: Radius.circular(14.r),
+                      ),
+                      border: Border(
+                        left: BorderSide(
+                          color: AppColors.rose700,
+                          width: 4.w,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                // Top Curtain Valance
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: 28.h,
+                    decoration: BoxDecoration(
+                      color: _LocalPalette.colorbe123c,
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(14.r),
+                      ),
                       boxShadow: const [
                         BoxShadow(
-                          color: Colors.black26,
-                          offset: Offset(0, 4),
+                          color: Colors.black38,
+                          offset: Offset(0, 3),
                           blurRadius: 4,
                         ),
                       ],
                     ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            if (quest.emoji != null &&
-                                state.answerStatus == AnswerStatus.correct)
-                              Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 64.sp),
-                              ),
-                            if (state.answerStatus != AnswerStatus.correct)
-                              KidsFittedText(
-                                quest.question ?? "?",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 48.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black.withValues(alpha: 0.5),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                          ],
+                  ),
+                ),
+
+                // Audio Replay Button
+                Positioned(
+                  top: 8.h,
+                  right: 8.w,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      key: const Key('kids_emotions_replay_audio_button'),
+                      onTap: () => _replayQuestionAudio(quest),
+                      borderRadius: BorderRadius.circular(16.r),
+                      child: Container(
+                        padding: EdgeInsets.all(6.r),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.5),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: KidsColors.warmAmber,
+                            width: 1.5,
+                          ),
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              // Red Velvet Curtains (Left)
-              Positioned(
-                left: 0,
-                top: 0,
-                bottom: 0,
-                child: Container(
-                  width: 40.w,
-                  decoration: BoxDecoration(
-                    color: _LocalPalette.color9f1239, // Velvet red
-                    borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(4.r),
-                    ),
-                    border: Border(
-                      right: BorderSide(
-                        color: AppColors.rose700,
-                        width: 4.w,
-                      ), // Curtain fold highlight
-                    ),
-                  ),
-                ),
-              ),
-              // Red Velvet Curtains (Right)
-              Positioned(
-                right: 0,
-                top: 0,
-                bottom: 0,
-                child: Container(
-                  width: 40.w,
-                  decoration: BoxDecoration(
-                    color: _LocalPalette.color9f1239,
-                    borderRadius: BorderRadius.horizontal(
-                      right: Radius.circular(4.r),
-                    ),
-                    border: Border(
-                      left: BorderSide(color: AppColors.rose700, width: 4.w),
-                    ),
-                  ),
-                ),
-              ),
-              // Stage Valance (Top curtain)
-              Positioned(
-                top: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: 30.h,
-                  decoration: BoxDecoration(
-                    color: _LocalPalette.colorbe123c,
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(4.r),
-                    ),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black45,
-                        offset: Offset(0, 4),
-                        blurRadius: 4,
+                        child: Icon(
+                          Icons.volume_up_rounded,
+                          color: Colors.white,
+                          size: 18.r,
+                        ),
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
+    );
+  }
+
+  Widget _buildStageOptionsFloor(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+    List<String> options,
+  ) {
+    return Container(
+      decoration: BoxDecoration(
+        color: _LocalPalette.color92400e,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: KidsColors.warmAmber,
+          width: 4.h,
+        ),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black26,
+            offset: Offset(0, 4),
+            blurRadius: 8,
+          ),
+        ],
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: List.generate(options.length, (index) {
+          final option = options[index];
+          final isCorrect = (option == quest.correctAnswer);
+          return Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              child: _buildTheaterMaskOption(
+                context,
+                state,
+                option,
+                isCorrect,
+                index,
+              ),
+            ),
+          );
+        }),
+      ),
     );
   }
 
@@ -312,14 +489,11 @@ class KidsEmotionsLayout extends StatelessWidget {
     bool isCorrect,
     int index,
   ) {
-    // Alternate between "comedy" (yellow) and "tragedy" (blue) base colors for flair
     final isComedy = index % 2 == 0;
-    final color = isComedy
-        ? _LocalPalette.colorfde047
-        : _LocalPalette.color7dd3fc;
-    final shadowColor = isComedy
-        ? _LocalPalette.colorca8a04
-        : _LocalPalette.color0284c7;
+    final color =
+        isComedy ? _LocalPalette.colorfde047 : _LocalPalette.color7dd3fc;
+    final shadowColor =
+        isComedy ? _LocalPalette.colorca8a04 : _LocalPalette.color0284c7;
 
     final parts = text.trim().split(' ');
     String wordPart = text;
@@ -329,72 +503,122 @@ class KidsEmotionsLayout extends StatelessWidget {
       wordPart = parts.join(' ');
     }
 
-    final maskWidget = GestureDetector(
-      onTap: state.answerStatus.isAnswered
-          ? null
-          : () {
-              if (!isCorrect) {
-                final p = text.trim().split(' ');
-                if (p.length > 1 && p.last.runes.any((r) => r > 127)) {
-                  p.removeLast();
-                }
-                final textToSpeak = p.join(' ');
-                di.sl<KidsTTSService>().speak(textToSpeak);
-              }
-              context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-            },
-      child: Container(
-        constraints: BoxConstraints(minHeight: 85.h),
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.r),
-            topRight: Radius.circular(20.r),
-            bottomLeft: Radius.circular(40.r),
-            bottomRight: Radius.circular(40.r),
-          ), // Mask shape
-          border: Border.all(color: Colors.white, width: 2),
-          boxShadow: [
-            BoxShadow(color: shadowColor, offset: const Offset(0, 6)),
-          ],
+    final isSelected = (_selectedOption == text);
+
+    final maskWidget = Material(
+      color: Colors.transparent,
+      child: InkWell(
+        key: Key('kids_emotions_option_$index'),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20.r),
+          topRight: Radius.circular(20.r),
+          bottomLeft: Radius.circular(36.r),
+          bottomRight: Radius.circular(36.r),
         ),
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                KidsFittedText(
-                  wordPart,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.slate800,
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                ),
-                if (emojiPart.isNotEmpty)
-                  Padding(
-                    padding: EdgeInsets.only(top: 4.h),
-                    child: Text(emojiPart, style: TextStyle(fontSize: 22.sp)),
-                  ),
-              ],
+        onTap: state.answerStatus.isAnswered
+            ? null
+            : () => _handleOptionSubmit(context, state, text),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          constraints: BoxConstraints(minHeight: 92.h),
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.r),
+              topRight: Radius.circular(20.r),
+              bottomLeft: Radius.circular(36.r),
+              bottomRight: Radius.circular(36.r),
             ),
+            border: Border.all(
+              color: isSelected ? KidsColors.warmAmber : Colors.white,
+              width: isSelected ? 3.5 : 2,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: shadowColor,
+                offset: Offset(0, isSelected ? 3 : 5),
+                blurRadius: isSelected ? 2 : 0,
+              ),
+            ],
+          ),
+          child: Stack(
+            children: [
+              // Speaker icon for audio pronunciation
+              Positioned(
+                top: 4.h,
+                right: 4.w,
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    key: Key('kids_emotions_pronounce_$index'),
+                    borderRadius: BorderRadius.circular(12.r),
+                    onTap: () => _playOptionAudio(text),
+                    child: Padding(
+                      padding: EdgeInsets.all(2.r),
+                      child: Icon(
+                        Icons.volume_up_rounded,
+                        size: 15.r,
+                        color: AppColors.slate700.withValues(alpha: 0.7),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Mask Body with text & emoji
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 4.w,
+                    vertical: 8.h,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      KidsFittedText(
+                        wordPart,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.slate900,
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                      ),
+                      if (emojiPart.isNotEmpty)
+                        Padding(
+                          padding: EdgeInsets.only(top: 2.h),
+                          child: Text(
+                            emojiPart,
+                            style: TextStyle(fontSize: 20.sp),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
     );
 
+    if (state.answerStatus.isAnswered) {
+      return maskWidget;
+    }
+
     return Draggable<String>(
       data: text,
       feedback: Material(
         color: Colors.transparent,
-        child: Transform.scale(
-          scale: 1.05,
-          child: Opacity(opacity: 0.9, child: maskWidget),
+        child: SizedBox(
+          width: 75.w,
+          child: Transform.scale(
+            scale: 1.05,
+            child: Opacity(opacity: 0.9, child: maskWidget),
+          ),
         ),
       ),
       childWhenDragging: Opacity(opacity: 0.3, child: maskWidget),
