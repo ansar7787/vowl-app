@@ -972,18 +972,22 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                             ),
                                                       ),
                                                       SizedBox(width: 12.w),
-                                                      Text(
-                                                        context.tr(
-                                                          'store.loading_ad',
-                                                          fallback:
-                                                              "Loading...",
-                                                        ),
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 16.sp,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                          color: Colors.white70,
+                                                      Flexible(
+                                                        child: Text(
+                                                          context.tr(
+                                                            'store.loading_ad',
+                                                            fallback:
+                                                                "Loading...",
+                                                          ),
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: 16.sp,
+                                                            fontWeight:
+                                                                FontWeight.w800,
+                                                            color: Colors.white70,
+                                                          ),
+                                                          maxLines: 1,
+                                                          overflow: TextOverflow.ellipsis,
                                                         ),
                                                       ),
                                                     ],
@@ -1001,18 +1005,22 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                         size: 28.sp,
                                                       ),
                                                       SizedBox(width: 12.w),
-                                                      Text(
-                                                        context.tr(
-                                                          'store.daily_limit_reached',
-                                                          fallback:
-                                                              "Daily Limit Reached",
-                                                        ),
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 15.sp,
-                                                          fontWeight:
-                                                              FontWeight.w900,
-                                                          color: Colors.white70,
+                                                      Flexible(
+                                                        child: Text(
+                                                          context.tr(
+                                                            'store.daily_limit_reached',
+                                                            fallback:
+                                                                "Daily Limit Reached",
+                                                          ),
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: 15.sp,
+                                                            fontWeight:
+                                                                FontWeight.w900,
+                                                            color: Colors.white70,
+                                                          ),
+                                                          maxLines: 1,
+                                                          overflow: TextOverflow.ellipsis,
                                                         ),
                                                       ),
                                                     ],
@@ -1032,24 +1040,28 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                         size: 28.sp,
                                                       ),
                                                       SizedBox(width: 12.w),
-                                                      Text(
-                                                        isPremium
-                                                            ? context.tr(
-                                                                'store.claim_magic_stars',
-                                                                fallback:
-                                                                    "Claim +2 Free Magic Stars",
-                                                              )
-                                                            : context.tr(
-                                                                'store.watch_ad_magic_stars',
-                                                                fallback:
-                                                                    "Watch Ad for +2 Magic Stars",
-                                                              ),
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 15.sp,
-                                                          fontWeight:
-                                                              FontWeight.w900,
-                                                          color: Colors.white,
+                                                      Flexible(
+                                                        child: Text(
+                                                          isPremium
+                                                              ? context.tr(
+                                                                  'store.claim_magic_stars',
+                                                                  fallback:
+                                                                      "Claim +2 Free Magic Stars",
+                                                                )
+                                                              : context.tr(
+                                                                  'store.watch_ad_magic_stars',
+                                                                  fallback:
+                                                                      "Watch Ad for +2 Magic Stars",
+                                                                ),
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: 15.sp,
+                                                            fontWeight:
+                                                                FontWeight.w900,
+                                                            color: Colors.white,
+                                                          ),
+                                                          maxLines: 1,
+                                                          overflow: TextOverflow.ellipsis,
                                                         ),
                                                       ),
                                                     ],
