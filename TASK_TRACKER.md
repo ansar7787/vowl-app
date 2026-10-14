@@ -45,7 +45,7 @@ Every game test suite MUST rigorously satisfy:
 | # | Section / Category | Total Screens/Items | Completed | Remaining | Current Status |
 | --- | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
-| **2** | **Games Hub & Routing** | 5 | 1 | 4 | 🟡 20% Complete (1/5 items done) |
+| **2** | **Games Hub & Routing** | 5 | 2 | 3 | 🟡 40% Complete (2/5 items done) |
 | **3** | **Kids Zone** | 31 | 23 | 8 | 🟡 74% Complete (6 Hubs + 2 Layouts remaining) |
 | **4** | **Reading Category** | 13 | 2 | 11 | 🟡 1 Game + BLoC Done (11 games remaining) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
@@ -96,12 +96,12 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 2: GAMES HUB & ROUTING (20% COMPLETE)
+### SECTION 2: GAMES HUB & ROUTING (40% COMPLETE)
 
 - [x] **2.1** `game_routes_test.dart` (Unit/Routing Test) — ✅ `[DONE - 25/25 tests passing]`
   - Validates 7 standard route paths, query parameter parsing across all 9 categories, subtype aliases, case-insensitivity, category and subtype fallback routing, missing/invalid level fallbacks, and authenticated/unauthenticated quest sequence routing.
-- [ ] **2.2** `games_screen_test.dart` (Widget Test) — 🔴 `[PENDING]`
-  - Test category grid rendering, search bar filtering, and quick game launch cards.
+- [x] **2.2** `games_screen_test.dart` (Widget Test) — ✅ `[DONE - 10/10 tests passing]`
+  - Validates Quest Hub app bar, Shimmer loading placeholder on unauthenticated user, Hero Mastery Dashboard calculations and stat pills (XP, Streak, Levels Cleared, Core Games), BeginnerDiscoveryCard gating for adult vs kidsModeOnly users, Kids Zone shelf with balloon badge, Kids Zone See All navigation to `/kids-zone`, adult category shelves rendering (Speaking, Listening, Reading, Writing, Elite Mastery with gold badge and crown emoji), See All routing to `/category-games?category=speaking`, dark mode visual cleanliness, and small screen 320dp width zero-overflow layout safety.
 - [ ] **2.3** `kids_category_shelf_test.dart` (Widget Test) — 🔴 `[PENDING]`
   - Test Kids Zone shelf rendering, horizontal scrolling, and child category cards.
 - [ ] **2.4** `modern_category_map_test.dart` (Universal Category Map & Progression Test) — 🔴 `[PENDING]`
