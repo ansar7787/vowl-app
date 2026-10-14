@@ -46,7 +46,7 @@ Every game test suite MUST rigorously satisfy:
 | --- | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 5 | 5 | 0 | 🟢 100% Complete (58 tests) |
-| **3** | **Kids Zone** | 35 | 30 | 5 | 🟡 86% Complete (30/35 items done) |
+| **3** | **Kids Zone** | 35 | 31 | 4 | 🟡 89% Complete (31/35 items done) |
 | **4** | **Reading Category** | 13 | 2 | 11 | 🟡 1 Game + BLoC Done (11 games remaining) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
 | **6** | **Grammar Category** | 20 | 2 | 18 | ⚠️ BLoC + Model only (19 games remaining) |
@@ -150,7 +150,8 @@ Every game test suite MUST rigorously satisfy:
   - Validates fruit stand striped awning, wooden signboard, wicker baskets, TTS question instruction replay, individual fruit name pronunciation, tap-to-answer correct/incorrect paths with haptics, drag-and-drop mechanics to fruit stand, answered state interaction locks, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
 - [x] **3.30** `kids_zone_screen_test.dart` (Hub Screen Test) — ✅ `[DONE - 13/13 tests passing]`
   - Validates slim app bar, coins badge, key shop button, mascot greeting header, kids global progress card (cleared levels, streak, rank), KidsMagicChest daily reward, smart mix widget, category grid slivers, shimmer loading on unauthenticated state, quick menu navigation (Album -> `/kids-stickers`, Room -> `/kids-room`, Shop -> `kids-boutique`, Buddies -> `/kids-mascot`), back/settings gating based on `AgeGateService`, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
-- [ ] **3.31** `kids_level_map_test.dart` (Level Map Navigation Test) — 🔴 `[PENDING]`
+- [x] **3.31** `kids_level_map_test.dart` (Level Map Navigation Test) — ✅ `[DONE - 11/11 tests passing]`
+  - Validates chunky map header, sticker icon, category quest title, coins mini-pill, Star Vault FAB (gameplay + magic stars counter), Golden Keys FAB, level progression nodes (completed level 1, active playable level 2, locked upper levels), tap-to-answer/replay on completed level 1, active level 2 navigation to `/kids-alphabet` with level 2 extra, sequence lock warning snackbar on locked nodes, back button navigation to `/home`, Star Vault bottom sheet opening, Key Shop bottom sheet modal opening, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
 - [ ] **3.32** `kids_room_screen_test.dart` (Pet Care / Interactive Room Test) — 🔴 `[PENDING]`
 - [ ] **3.33** `buddy_boutique_screen_test.dart` (Wardrobe / Dressing Room Test) — 🔴 `[PENDING]`
 - [ ] **3.34** `mascot_selection_screen_test.dart` (Mascot Selection Screen Test) — 🔴 `[PENDING]`
