@@ -280,8 +280,8 @@ void main() {
       expect(find.text('Step 1 of 4'), findsOneWidget);
       expect(tester.takeException(), isNull);
 
-      // Tap Next / Continue
-      await tester.tap(find.text('Continue'));
+      // Tap Next
+      await tester.tap(find.text('Next'));
       await tester.pumpAndSettle();
 
       expect(find.text('AI Vision & 50+ Languages'), findsOneWidget);

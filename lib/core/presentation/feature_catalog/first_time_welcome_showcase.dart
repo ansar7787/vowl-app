@@ -273,8 +273,9 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
         child: Container(
+          width: double.infinity,
           constraints: BoxConstraints(
-            maxWidth: 520.w,
+            maxWidth: 540.w,
             maxHeight: MediaQuery.of(context).size.height * 0.88,
           ),
           decoration: BoxDecoration(
@@ -657,6 +658,10 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                                 _pageController.page != null
                             ? _pageController.page!
                             : _currentPage.toDouble();
+                        final Color inactiveColor = isDark
+                            ? Colors.white24
+                            : Colors.black12;
+
                         return Semantics(
                           label:
                               'Step ${_currentPage + 1} of ${_slides.length}',
@@ -669,21 +674,18 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                                 1.0,
                               );
                               final double width = 8.w + (18.w * factor);
+                              final Color dotColor = Color.lerp(
+                                inactiveColor,
+                                _slides[i].accentColor,
+                                factor,
+                              )!;
+
                               return Container(
                                 margin: EdgeInsets.symmetric(horizontal: 3.5.w),
                                 width: width,
                                 height: 6.h,
                                 decoration: BoxDecoration(
-                                  gradient: factor > 0.15
-                                      ? LinearGradient(
-                                          colors: slide.gradientColors,
-                                        )
-                                      : null,
-                                  color: factor > 0.15
-                                      ? null
-                                      : (isDark
-                                            ? Colors.white24
-                                            : Colors.black12),
+                                  color: dotColor,
                                   borderRadius: BorderRadius.circular(4.r),
                                 ),
                               );
@@ -703,8 +705,8 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                               fallback: 'Start Exploring',
                             )
                           : context.tr(
-                              'welcome_showcase.continue_step',
-                              fallback: 'Continue',
+                              'welcome_showcase.next_step',
+                              fallback: 'Next',
                             ),
                       child: ScaleButton(
                         onTap: _nextPage,
@@ -737,8 +739,8 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                                       fallback: 'Start Exploring',
                                     )
                                   : context.tr(
-                                      'welcome_showcase.continue_step',
-                                      fallback: 'Continue',
+                                      'welcome_showcase.next_step',
+                                      fallback: 'Next',
                                     ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',

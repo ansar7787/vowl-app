@@ -132,6 +132,7 @@ class _FeatureDirectoryBottomSheetState
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
         child: Container(
+          width: double.infinity,
           constraints: BoxConstraints(
             maxWidth: 540.w,
             maxHeight: mediaQuery.size.height * 0.90,
