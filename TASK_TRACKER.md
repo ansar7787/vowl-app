@@ -5,8 +5,8 @@
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **70 files**
-> - **Total Passing Tests**: **578 / 578 Tests Passing (100% Green)**
-> - **Completed Test Suites**: **37 files** (Auth 12, Games Hub 1, Kids 22, Reading 11, Daily Challenges 5, Photo Vocab 2, Scan & Learn 2, Translation 2, Core 7)
+> - **Total Passing Tests**: **591 / 591 Tests Passing (100% Green)**
+> - **Completed Test Suites**: **38 files** (Auth 12, Games Hub 1, Kids 22, Reading 12, Daily Challenges 5, Photo Vocab 2, Scan & Learn 2, Translation 2, Core 7)
 > - **Remaining Game Screens & Hubs to Test**: **99+ screens** across 12 game categories, hubs, and shell routes.
 
 ---
@@ -186,7 +186,8 @@ Every game test suite MUST rigorously satisfy:
   - Validates initial layout rendering instruction, dual terminal columns, and laser canvas, tapping left key activating it with selection haptic, tapping active key deselecting it, tapping another key switching active selection, tapping right value with active key establishing match pair, tapping matched right value without active key unpairing it, completing all pairs correctly dispatching SubmitAnswer(true) with success audio/haptic, completing all pairs with errors dispatching SubmitAnswer(false) with error feedback and "Try Again", interaction lockout preventing changes once answered, continue button dispatching NextQuestion, hint button dispatching ReadingHintUsed, GameShimmerLoading placeholder when uninitialized, Level 1 GameBriefingLayer overlay display & dismissal on action, dark theme mode styling, and small screen 320dp zero-overflow layout safety.
 - [x] **4.11** `sentence_order_reading_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 16/16 tests passing]`
   - Validates initial layout rendering instruction, chronological stone slabs with drag handles & index badges, and lock capstone button, transition words highlighting via dynamic regex matching, tap-to-select stone slab with visual accent and selection haptics, tap-to-deselect active slab, tap-to-swap two stone slabs with instant position interchange and selection haptic, reorderable list onReorder shifting item sequence, submitting initial scrambled order dispatching SubmitAnswer(false) with error audio/heavy haptic, arranging slabs into correct sequence and locking capstone dispatching SubmitAnswer(true) with success audio/heavy haptic, answered state interaction lockout preventing tap selection/swap and reordering, answered state hiding lock capstone and revealing continue button, continue button dispatching NextQuestion, hint button in header dispatching ReadingHintUsed, GameShimmerLoading placeholder when uninitialized, Level 1 Structure Architect briefing overlay display & dismissal on "REBUILD FLOW", dark theme styling, and small screen 320dp zero-overflow layout safety.
-- [ ] **4.12** `skimming_scanning_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **4.12** `skimming_scanning_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 13/13 tests passing]`
+  - Validates initial layout rendering instruction, target badge, and passage terminal, tapping target word dispatching SubmitAnswer(true) with success audio/haptics, tapping non-target word dispatching SubmitAnswer(false) with error audio/haptics and "Try Again", interaction lockout preventing subsequent taps once answered, answered state revealing continue button and hiding interaction prompt, continue button dispatching NextQuestion, hint button dispatching ReadingHintUsed, auto-scroll timer tracking and safe disposal, GameShimmerLoading placeholder when uninitialized, Level 1 Cyber Scanner briefing overlay display & dismissal on "COMMENCE SCAN", dark theme styling, and small screen 320dp zero-overflow layout safety.
 - [ ] **4.13** `true_false_reading_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 
 ---
