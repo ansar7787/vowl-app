@@ -172,197 +172,213 @@ class _FeatureDirectoryBottomSheetState
               ),
               SizedBox(height: 14.h),
 
-              // Sheet Header
+              // Sheet Header: Top Row with Title & Actions, Subtitle underneath
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 18.w),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Text(
                             context.tr(
                               'feature_catalog.title',
                               fallback: 'Explore All Features',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 18.sp,
+                              fontSize: 18.5.sp,
                               fontWeight: FontWeight.w700,
                               color: Theme.of(context).colorScheme.onSurface,
+                              letterSpacing: -0.2,
                             ),
-                            softWrap: true,
                           ),
-                          SizedBox(height: 2.h),
-                          Text(
-                            context.tr(
-                              'feature_catalog.subtitle',
-                              fallback:
-                                  'Find any game, tool, or practice lab in Vowl',
+                        ),
+                        SizedBox(width: 8.w),
+                        // Tour Pill
+                        GestureDetector(
+                          onTap: _openWelcomeTour,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 6.h,
                             ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.5.sp,
-                              height: 1.3,
+                            decoration: BoxDecoration(
+                              color: AppColors.indigo500.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(16.r),
+                              border: Border.all(
+                                color: AppColors.indigo500.withValues(
+                                  alpha: 0.2,
+                                ),
+                                width: 0.8,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  LucideIcons.sparkles,
+                                  size: 13.r,
+                                  color: AppColors.indigo500,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  context.tr(
+                                    'feature_catalog.tour_pill',
+                                    fallback: 'Tour',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.5.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.indigo500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 6.w),
+                        // Close Button
+                        IconButton(
+                          onPressed: () {
+                            if (!_isLaunching) {
+                              Navigator.of(context).pop();
+                            }
+                          },
+                          icon: Container(
+                            width: 30.r,
+                            height: 30.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
                               color: isDark
-                                  ? Colors.white70
-                                  : AppColors.slate600,
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : Colors.black.withValues(alpha: 0.05),
                             ),
-                            softWrap: true,
+                            child: Icon(
+                              Icons.close_rounded,
+                              size: 16.r,
+                              color: isDark ? Colors.white70 : Colors.black54,
+                            ),
                           ),
-                        ],
-                      ),
+                          padding: EdgeInsets.zero,
+                          constraints: BoxConstraints(
+                            minWidth: 40.r,
+                            minHeight: 40.r,
+                          ),
+                          tooltip: context.tr(
+                            'common.close',
+                            fallback: 'Close',
+                          ),
+                        ),
+                      ],
                     ),
-                    SizedBox(width: 8.w),
-                    // Tour Pill
-                    GestureDetector(
-                      onTap: _openWelcomeTour,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 6.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: AppColors.indigo500.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(16.r),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              LucideIcons.sparkles,
-                              size: 13.r,
-                              color: AppColors.indigo500,
-                            ),
-                            SizedBox(width: 4.w),
-                            Text(
-                              context.tr(
-                                'feature_catalog.tour_pill',
-                                fallback: 'Tour',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.5.sp,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.indigo500,
-                              ),
-                            ),
-                          ],
-                        ),
+                    SizedBox(height: 4.h),
+                    Text(
+                      context.tr(
+                        'feature_catalog.subtitle',
+                        fallback:
+                            'Find any game, tool, or practice lab in Vowl',
                       ),
-                    ),
-                    SizedBox(width: 8.w),
-                    // Close Button
-                    IconButton(
-                      onPressed: () {
-                        if (!_isLaunching) {
-                          Navigator.of(context).pop();
-                        }
-                      },
-                      icon: Container(
-                        width: 30.r,
-                        height: 30.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.08)
-                              : Colors.black.withValues(alpha: 0.05),
-                        ),
-                        child: Icon(
-                          Icons.close_rounded,
-                          size: 16.r,
-                          color: isDark ? Colors.white70 : Colors.black54,
-                        ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.5.sp,
+                        height: 1.35,
+                        color: isDark ? Colors.white60 : AppColors.slate500,
                       ),
-                      padding: EdgeInsets.zero,
-                      constraints: BoxConstraints(
-                        minWidth: 40.r,
-                        minHeight: 40.r,
-                      ),
-                      tooltip: context.tr('common.close', fallback: 'Close'),
+                      softWrap: true,
                     ),
                   ],
                 ),
               ),
               SizedBox(height: 14.h),
 
-              // Search Bar
+              // Single Unified Search Field matching Translate language screen
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 18.w),
-                child: Container(
-                  height: 44.h,
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? const Color(0xFF1E2130)
-                        : const Color(0xFFF1F5F9),
-                    borderRadius: BorderRadius.circular(14.r),
-                    border: Border.all(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : const Color(0xFFE2E8F0),
-                    ),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: TextField(
+                  controller: _searchController,
+                  onChanged: _onSearchChanged,
+                  cursorColor: AppColors.indigo500,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.5.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 14.w),
-                  child: Row(
-                    children: [
-                      Icon(
-                        LucideIcons.search,
-                        size: 17.r,
-                        color: isDark ? Colors.white54 : AppColors.slate400,
-                      ),
-                      SizedBox(width: 10.w),
-                      Expanded(
-                        child: TextField(
-                          controller: _searchController,
-                          onChanged: _onSearchChanged,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.5.sp,
-                            color: Theme.of(context).colorScheme.onSurface,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    filled: true,
+                    fillColor: isDark
+                        ? Colors.white.withValues(alpha: 0.07)
+                        : AppColors.slate100,
+                    hintText: context.tr(
+                      'feature_catalog.search_hint',
+                      fallback: 'Search features and games...',
+                    ),
+                    hintStyle: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.5.sp,
+                      fontWeight: FontWeight.w400,
+                      color: isDark ? Colors.white38 : AppColors.slate400,
+                    ),
+                    prefixIcon: Icon(
+                      Icons.search_rounded,
+                      color: isDark ? Colors.white54 : AppColors.slate500,
+                      size: 20.r,
+                    ),
+                    prefixIconConstraints: BoxConstraints(
+                      minWidth: 44.w,
+                      minHeight: 44.h,
+                    ),
+                    suffixIcon: ValueListenableBuilder<TextEditingValue>(
+                      valueListenable: _searchController,
+                      builder: (context, val, _) {
+                        if (val.text.isEmpty) return const SizedBox.shrink();
+                        return IconButton(
+                          tooltip: context.tr(
+                            'common.clear',
+                            fallback: 'Clear',
                           ),
-                          decoration: InputDecoration(
-                            hintText: context.tr(
-                              'feature_catalog.search_hint',
-                              fallback: 'Search features and games...',
-                            ),
-                            hintStyle: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              color: isDark
-                                  ? Colors.white38
-                                  : AppColors.slate400,
-                            ),
-                            border: InputBorder.none,
-                            isDense: true,
-                            contentPadding: EdgeInsets.zero,
+                          icon: Icon(
+                            Icons.close_rounded,
+                            color: isDark ? Colors.white38 : AppColors.slate400,
+                            size: 18.r,
                           ),
-                        ),
-                      ),
-                      if (_searchQuery.isNotEmpty)
-                        GestureDetector(
-                          onTap: () {
+                          onPressed: () {
                             _searchController.clear();
                             _onSearchChanged('');
                           },
-                          child: Container(
-                            width: 22.r,
-                            height: 22.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.12)
-                                  : Colors.black.withValues(alpha: 0.08),
-                            ),
-                            child: Icon(
-                              Icons.close_rounded,
-                              size: 13.r,
-                              color: isDark ? Colors.white70 : Colors.black54,
-                            ),
-                          ),
-                        ),
-                    ],
+                        );
+                      },
+                    ),
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 12.h,
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16.r),
+                      borderSide: BorderSide(
+                        color: isDark ? Colors.white12 : AppColors.slate200,
+                        width: 1.0,
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16.r),
+                      borderSide: BorderSide(
+                        color: isDark ? Colors.white12 : AppColors.slate200,
+                        width: 1.0,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16.r),
+                      borderSide: const BorderSide(
+                        color: AppColors.indigo500,
+                        width: 1.5,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -372,7 +388,7 @@ class _FeatureDirectoryBottomSheetState
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 18.w),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Row(
                   children: [
                     _buildFilterChip(
@@ -510,7 +526,7 @@ class _FeatureDirectoryBottomSheetState
                         keyboardDismissBehavior:
                             ScrollViewKeyboardDismissBehavior.onDrag,
                         physics: const BouncingScrollPhysics(),
-                        padding: EdgeInsets.fromLTRB(18.w, 4.h, 18.w, 16.h),
+                        padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 16.h),
                         itemCount: features.length,
                         separatorBuilder: (_, _) => SizedBox(height: 8.h),
                         itemBuilder: (context, index) {
@@ -615,6 +631,7 @@ class _FeatureDirectoryBottomSheetState
           onTap: () => _launchFeature(item),
           borderRadius: BorderRadius.circular(16.r),
           child: Container(
+            constraints: BoxConstraints(minHeight: 74.h),
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
             decoration: BoxDecoration(
               color: isDark
@@ -623,7 +640,7 @@ class _FeatureDirectoryBottomSheetState
                         : const Color(0xFF1A1C26))
                   : (item.isHighlight
                         ? item.accentColor.withValues(alpha: 0.04)
-                        : const Color(0xFFF8FAFC)),
+                        : Colors.white),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: item.isHighlight
@@ -631,11 +648,11 @@ class _FeatureDirectoryBottomSheetState
                     : (isDark
                           ? Colors.white.withValues(alpha: 0.06)
                           : const Color(0xFFE2E8F0)),
-                width: item.isHighlight ? 1.2 : 1.0,
+                width: 1.0,
               ),
             ),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // Icon container with accent tint
                 Container(
@@ -644,12 +661,10 @@ class _FeatureDirectoryBottomSheetState
                   decoration: BoxDecoration(
                     color: item.accentColor.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(12.r),
-                    border: item.isHighlight
-                        ? Border.all(
-                            color: item.accentColor.withValues(alpha: 0.3),
-                            width: 1.0,
-                          )
-                        : null,
+                    border: Border.all(
+                      color: item.accentColor.withValues(alpha: 0.2),
+                      width: 1.0,
+                    ),
                   ),
                   child: Icon(item.icon, size: 20.r, color: item.accentColor),
                 ),
@@ -659,6 +674,7 @@ class _FeatureDirectoryBottomSheetState
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Row(
@@ -685,13 +701,7 @@ class _FeatureDirectoryBottomSheetState
                               ),
                               decoration: BoxDecoration(
                                 color: item.accentColor.withValues(alpha: 0.12),
-                                borderRadius: BorderRadius.circular(4.r),
-                                border: Border.all(
-                                  color: item.accentColor.withValues(
-                                    alpha: 0.2,
-                                  ),
-                                  width: 0.5,
-                                ),
+                                borderRadius: BorderRadius.circular(6.r),
                               ),
                               child: Text(
                                 item.badge!,
@@ -700,29 +710,6 @@ class _FeatureDirectoryBottomSheetState
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w600,
                                   color: item.accentColor,
-                                ),
-                              ),
-                            ),
-                          ],
-                          if (item.isHighlight && item.badge == null) ...[
-                            SizedBox(width: 6.w),
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 6.w,
-                                vertical: 2.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: item.accentColor.withValues(alpha: 0.12),
-                                borderRadius: BorderRadius.circular(4.r),
-                              ),
-                              child: Text(
-                                'FEATURED',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 8.5.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: item.accentColor,
-                                  letterSpacing: 0.5,
                                 ),
                               ),
                             ),
@@ -743,27 +730,13 @@ class _FeatureDirectoryBottomSheetState
                     ],
                   ),
                 ),
-                SizedBox(width: 8.w),
+                SizedBox(width: 10.w),
 
-                // Launch chevron with touch area
-                Container(
-                  width: 28.r,
-                  height: 28.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: item.isHighlight
-                        ? item.accentColor.withValues(alpha: 0.1)
-                        : (isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.04)),
-                  ),
-                  child: Icon(
-                    LucideIcons.chevronRight,
-                    size: 15.r,
-                    color: item.isHighlight
-                        ? item.accentColor
-                        : (isDark ? Colors.white54 : Colors.black45),
-                  ),
+                // Launch chevron
+                Icon(
+                  LucideIcons.chevronRight,
+                  size: 18.r,
+                  color: isDark ? Colors.white38 : AppColors.slate400,
                 ),
               ],
             ),
