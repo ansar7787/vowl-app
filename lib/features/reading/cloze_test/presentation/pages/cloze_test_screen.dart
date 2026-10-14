@@ -206,7 +206,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                                     height:
                                         (_pendingDockedOption.value != null &&
                                             !isAnsweredNotifier.value)
-                                        ? 380.h
+                                        ? 24.h
                                         : 60.h,
                                   ),
                                 ],
