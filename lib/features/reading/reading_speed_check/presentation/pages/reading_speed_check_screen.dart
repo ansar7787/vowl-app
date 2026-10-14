@@ -63,13 +63,20 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
     super.dispose();
   }
 
-  final _timerKey = GlobalKey<SpeedChallengeTimerState>();
-
   @override
   void initState() {
     super.initState();
-    timerKey = _timerKey;
     initReadingGame();
+    final bloc = context.read<ReadingBloc>();
+    if (bloc.state is ReadingLoaded) {
+      final state = bloc.state as ReadingLoaded;
+      final limit = state.currentQuest.timeLimit ?? 30;
+      _timeLimit.value = limit;
+      _timerValue.value = limit;
+      if (state.answerStatus.isAnswered) {
+        _isRevealed.value = true;
+      }
+    }
   }
 
   @override
@@ -80,6 +87,9 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
       if (_timeLimit.value != limit) {
         _timeLimit.value = limit;
       }
+      if (state.answerStatus.isAnswered) {
+        _isRevealed.value = true;
+      }
     }
     super.onReadingStateChanged(context, state);
   }
@@ -87,7 +97,6 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
   void _onDoneReadingTap() {
     if (isAnsweredNotifier.value || _isRevealed.value) return;
     hapticService.selection();
-    _timerKey.currentState?.stop();
     _isRevealed.value = true;
   }
 
@@ -99,7 +108,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
   }
 
   void _onTimerTick(int remaining) {
-    if (!mounted) return;
+    if (!mounted || _isRevealed.value) return;
     _timerValue.value = remaining;
   }
 
@@ -184,16 +193,22 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                   Stack(
                                     alignment: Alignment.center,
                                     children: [
-                                      SizedBox(
-                                        width: double.infinity,
-                                        child: Center(
-                                          child: ReadingSpeedInstruction(
-                                            primaryColor: theme.primaryColor,
-                                            isRevealed: _isRevealed.value,
-                                            instruction:
-                                                InstructionHelper.getInstruction(
-                                                  quest,
-                                                ),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal:
+                                              _isRevealed.value ? 0 : 40.w,
+                                        ),
+                                        child: SizedBox(
+                                          width: double.infinity,
+                                          child: Center(
+                                            child: ReadingSpeedInstruction(
+                                              primaryColor: theme.primaryColor,
+                                              isRevealed: _isRevealed.value,
+                                              instruction:
+                                                  InstructionHelper.getInstruction(
+                                                    quest,
+                                                  ),
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -256,7 +271,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                               bottom: 24.h,
                                             ),
                                             child: SpeedChallengeTimer(
-                                              key: _timerKey,
+                                              key: const ValueKey('speed_challenge_timer'),
                                               durationSeconds: _timeLimit.value,
                                               primaryColor: theme.primaryColor,
                                               onTimeUp: _onTimeUp,

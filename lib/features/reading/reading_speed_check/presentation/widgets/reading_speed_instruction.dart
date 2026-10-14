@@ -29,10 +29,10 @@ class ReadingSpeedInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              instruction?.toUpperCase() ??
-                  (isRevealed
-                      ? "ANSWER THE COMPREHENSION QUESTION"
-                      : "READ QUICKLY AND TAP STOP WHEN DONE"),
+              isRevealed
+                  ? "ANSWER THE COMPREHENSION QUESTION"
+                  : (instruction?.toUpperCase() ??
+                      "READ QUICKLY AND TAP STOP WHEN DONE"),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',

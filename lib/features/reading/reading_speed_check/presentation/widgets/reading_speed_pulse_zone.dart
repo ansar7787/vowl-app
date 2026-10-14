@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ReadingSpeedPulseZone extends StatelessWidget {
   final String passage;
@@ -87,36 +88,54 @@ class ReadingSpeedPulseZone extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.stop_circle_rounded, color: color, size: 36.r),
-                    SizedBox(height: 4.h),
-                    Text(
-                      "$_liveWpm",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: isDark ? Colors.white : color,
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.bold,
+                child: Center(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Padding(
+                      padding: EdgeInsets.all(8.r),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.stop_circle_rounded,
+                            color: color,
+                            size: 36.r,
+                          ),
+                          SizedBox(height: 4.h),
+                          Text(
+                            "$_liveWpm",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: isDark ? Colors.white : color,
+                              fontSize: 22.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            "WPM",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: isDark
+                                  ? Colors.white70
+                                  : color.withValues(alpha: 0.7),
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    Text(
-                      "WPM",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: isDark
-                            ? Colors.white70
-                            : color.withValues(alpha: 0.7),
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .animate(
+              onPlay: (c) {
+                if (!VowlMotion.shouldReduceMotion(context)) {
+                  c.repeat(reverse: true);
+                }
+              },
+            )
             .scaleXY(end: 1.05, duration: 800.ms),
 
         SizedBox(height: 24.h),
