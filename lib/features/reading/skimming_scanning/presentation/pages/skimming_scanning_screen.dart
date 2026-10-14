@@ -15,6 +15,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_target_badge.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_terminal.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SkimmingScanningScreen extends StatefulWidget {
   final int level;
@@ -46,6 +47,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
   late ScrollController _mainScrollController;
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
+  Timer? _autoScrollTimer;
 
   @override
   void initState() {
@@ -57,8 +59,10 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
   }
 
   void _startAutoScroll() {
-    Future.delayed(const Duration(milliseconds: 1500), () {
+    _autoScrollTimer?.cancel();
+    _autoScrollTimer = Timer(const Duration(milliseconds: 1500), () {
       if (!mounted || isAnsweredNotifier.value) return;
+      if (VowlMotion.shouldReduceMotion(context)) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -72,17 +76,29 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
   void _submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     _timerKey.currentState?.stop();
+    _autoScrollTimer?.cancel();
     submitCorrectAnswer();
   }
 
   void _submitIncorrectAnswer(ReadingQuest quest, [String? word]) {
     if (isAnsweredNotifier.value) return;
     _timerKey.currentState?.stop();
+    _autoScrollTimer?.cancel();
     submitWrongAnswer(quest: quest, userAnswer: word ?? '[Time up]');
   }
 
   @override
+  void onQuestionReset() {
+    _autoScrollTimer?.cancel();
+    _lastQuestId = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
+  }
+
+  @override
   void dispose() {
+    _autoScrollTimer?.cancel();
     _scrollController.dispose();
     _mainScrollController.dispose();
     disposeReadingGame();
@@ -220,6 +236,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
+                                        mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Icon(
                                             Icons.touch_app,
@@ -227,14 +244,18 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                             size: 16.r,
                                           ),
                                           SizedBox(width: 6.w),
-                                          Text(
-                                            "Tap the target in the text below",
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              color: Colors.grey,
-                                              fontSize: 12.sp,
-                                              fontWeight: FontWeight.bold,
-                                              letterSpacing: 1,
+                                          Flexible(
+                                            child: Text(
+                                              "Tap the target in the text below",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                color: Colors.grey,
+                                                fontSize: 12.sp,
+                                                fontWeight: FontWeight.bold,
+                                                letterSpacing: 0.5,
+                                              ),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
                                             ),
                                           ),
                                         ],
