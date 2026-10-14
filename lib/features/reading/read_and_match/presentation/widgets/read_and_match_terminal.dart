@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ReadAndMatchTerminal extends StatelessWidget {
   final String text;
@@ -72,7 +73,11 @@ class ReadAndMatchTerminal extends StatelessWidget {
               )
               .animate(
                 target: shouldPulse ? 1 : 0,
-                onPlay: (controller) => controller.repeat(reverse: true),
+                onPlay: (controller) {
+                  if (!VowlMotion.shouldReduceMotion(context)) {
+                    controller.repeat(reverse: true);
+                  }
+                },
               )
               .scaleXY(
                 begin: 1.0,

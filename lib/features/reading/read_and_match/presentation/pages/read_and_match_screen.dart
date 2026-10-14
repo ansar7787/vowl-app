@@ -311,6 +311,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                                             vertical: 8.h,
                                                           ),
                                                       child: ReadAndMatchTerminal(
+                                                        key: _getKeyFor(k),
                                                         text: k,
                                                         isSource: true,
                                                         color: getColorForKey(
@@ -336,7 +337,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                                   .toList(),
                                             ),
                                           ),
-                                          SizedBox(width: 40.w),
+                                          SizedBox(width: 24.w),
                                           // Right Values Column
                                           Expanded(
                                             flex: 3,
@@ -351,6 +352,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                                             vertical: 8.h,
                                                           ),
                                                       child: ReadAndMatchTerminal(
+                                                        key: _getKeyFor(v),
                                                         text: v,
                                                         isSource: false,
                                                         color: getColorForValue(
