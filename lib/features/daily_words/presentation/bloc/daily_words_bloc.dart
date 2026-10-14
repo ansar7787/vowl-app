@@ -28,7 +28,16 @@ class DailyWordsLoadRequested extends DailyWordsEvent {
 /// User taps "I know this word" or swipes to mark a word as learned.
 class DailyWordMarkedLearned extends DailyWordsEvent {
   final DailyWord word;
-  const DailyWordMarkedLearned(this.word);
+  final bool mastered;
+  const DailyWordMarkedLearned(this.word, {this.mastered = false});
+  @override
+  List<Object?> get props => [word, mastered];
+}
+
+/// User taps "Review Later" or skips a word.
+class DailyWordMarkedReviewLater extends DailyWordsEvent {
+  final DailyWord word;
+  const DailyWordMarkedReviewLater(this.word);
   @override
   List<Object?> get props => [word];
 }
@@ -38,18 +47,33 @@ class DailyWordNextRequested extends DailyWordsEvent {
   const DailyWordNextRequested();
 }
 
+/// User navigates back to the previous word in today's set.
+class DailyWordPreviousRequested extends DailyWordsEvent {
+  const DailyWordPreviousRequested();
+}
+
 /// User completes the entire daily set.
 class DailySessionCompleted extends DailyWordsEvent {
   const DailySessionCompleted();
+}
+
+/// User restarts / reviews today's session from the completion screen.
+class DailySessionRestartRequested extends DailyWordsEvent {
+  const DailySessionRestartRequested();
 }
 
 /// User reviews a word from the spaced-repetition queue.
 class DailyWordReviewed extends DailyWordsEvent {
   final String wordId;
   final bool correct;
-  const DailyWordReviewed({required this.wordId, required this.correct});
+  final bool promoteToMastered;
+  const DailyWordReviewed({
+    required this.wordId,
+    required this.correct,
+    this.promoteToMastered = false,
+  });
   @override
-  List<Object?> get props => [wordId, correct];
+  List<Object?> get props => [wordId, correct, promoteToMastered];
 }
 
 /// Loads the Word Bank / review queue.
@@ -85,6 +109,7 @@ class DailyWordsState extends Equatable {
   final Map<String, int> masteryStats;
   final String? errorMessage;
   final Set<String> learnedThisSession;
+  final Set<String> reviewedThisSession;
 
   const DailyWordsState({
     this.status = DailyWordsStatus.initial,
@@ -99,6 +124,7 @@ class DailyWordsState extends Equatable {
     this.masteryStats = const {},
     this.errorMessage,
     this.learnedThisSession = const {},
+    this.reviewedThisSession = const {},
   });
 
   /// The currently displayed word, or null if out of bounds.
@@ -111,9 +137,18 @@ class DailyWordsState extends Equatable {
   /// Total words in today's set.
   int get totalWords => wordSet?.words.length ?? 0;
 
+  /// Whether the user can navigate back to the previous word in the session.
+  bool get canGoPrevious => currentIndex > 0 && status == DailyWordsStatus.loaded;
+
   /// Whether the user has gone through all today's words.
   bool get isSessionDone =>
       wordSet != null && currentIndex >= wordSet!.words.length;
+
+  /// Clamped/wrapped day (1..750) for asset resolution.
+  int get effectiveDay => ((currentDay - 1) % 750) + 1;
+
+  /// Multi-year mastery cycle (Cycle 1 for days 1..750, Cycle 2 for 751..1500, etc.).
+  int get cycle => ((currentDay - 1) ~/ 750) + 1;
 
   DailyWordsState copyWith({
     DailyWordsStatus? status,
@@ -128,6 +163,7 @@ class DailyWordsState extends Equatable {
     Map<String, int>? masteryStats,
     String? errorMessage,
     Set<String>? learnedThisSession,
+    Set<String>? reviewedThisSession,
   }) {
     return DailyWordsState(
       status: status ?? this.status,
@@ -142,6 +178,7 @@ class DailyWordsState extends Equatable {
       masteryStats: masteryStats ?? this.masteryStats,
       errorMessage: errorMessage ?? this.errorMessage,
       learnedThisSession: learnedThisSession ?? this.learnedThisSession,
+      reviewedThisSession: reviewedThisSession ?? this.reviewedThisSession,
     );
   }
 
@@ -159,6 +196,7 @@ class DailyWordsState extends Equatable {
     masteryStats,
     errorMessage,
     learnedThisSession,
+    reviewedThisSession,
   ];
 }
 
@@ -174,8 +212,11 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       super(const DailyWordsState()) {
     on<DailyWordsLoadRequested>(_onLoadRequested);
     on<DailyWordMarkedLearned>(_onWordMarkedLearned);
+    on<DailyWordMarkedReviewLater>(_onWordMarkedReviewLater);
     on<DailyWordNextRequested>(_onNextRequested);
+    on<DailyWordPreviousRequested>(_onPreviousRequested);
     on<DailySessionCompleted>(_onSessionCompleted);
+    on<DailySessionRestartRequested>(_onSessionRestartRequested);
     on<DailyWordReviewed>(_onWordReviewed);
     on<WordBankLoadRequested>(_onWordBankLoadRequested);
     on<DailyWordsResetRequested>(_onResetRequested);
@@ -205,13 +246,32 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
         return;
       }
 
+      if (_service.isTodayCompleted) {
+        emit(
+          state.copyWith(
+            status: DailyWordsStatus.sessionComplete,
+            wordSet: wordSet,
+            currentIndex: wordSet.words.length,
+            streak: _service.streak,
+            longestStreak: _service.longestStreak,
+            totalWordsLearned: _service.totalWordsLearned,
+            currentDay: _service.completedDay > 0
+                ? _service.completedDay
+                : _service.currentDay,
+            reviewQueue: _service.wordsForReview,
+            masteryStats: _service.masteryStats,
+            learnedThisSession: wordSet.words.map((w) => w.id).toSet(),
+            errorMessage: null,
+          ),
+        );
+        return;
+      }
+
+      // O(1) hash map lookup per word instead of repeated O(N log N) sorting
       int startingIndex = 0;
       for (int i = 0; i < wordSet.words.length; i++) {
         final id = wordSet.words[i].id;
-        final alreadyLearned = _service.wordBankEntries.any(
-          (wp) => wp.wordId == id,
-        );
-        if (alreadyLearned) {
+        if (_service.hasWordEntry(id)) {
           startingIndex = i + 1;
         } else {
           break;
@@ -227,7 +287,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
             streak: _service.streak,
             longestStreak: _service.longestStreak,
             totalWordsLearned: _service.totalWordsLearned,
-            currentDay: _service.currentDay,
+            currentDay: _service.completedDay > 0
+                ? _service.completedDay
+                : _service.currentDay,
             reviewQueue: _service.wordsForReview,
             masteryStats: _service.masteryStats,
             learnedThisSession: const {},
@@ -235,6 +297,17 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
           ),
         );
         return;
+      }
+
+      try {
+        final dueWordsList =
+            _service.wordsForReview.map((w) => w.word).toList();
+        await di.sl<NotificationService>().scheduleDailyWordsReminder(
+          dueWords: dueWordsList,
+          streak: _service.streak,
+        );
+      } catch (e) {
+        if (kDebugMode) debugPrint('Failed to schedule reminder on load: $e');
       }
 
       emit(
@@ -267,7 +340,7 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     DailyWordMarkedLearned event,
     Emitter<DailyWordsState> emit,
   ) async {
-    await _service.markWordLearned(event.word);
+    await _service.markWordLearned(event.word, mastered: event.mastered);
     final updatedLearned = Set<String>.from(state.learnedThisSession)
       ..add(event.word.id);
 
@@ -275,7 +348,26 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       state.copyWith(
         totalWordsLearned: _service.totalWordsLearned,
         masteryStats: _service.masteryStats,
+        wordBankEntries: _service.wordBankEntries,
         learnedThisSession: updatedLearned,
+      ),
+    );
+  }
+
+  Future<void> _onWordMarkedReviewLater(
+    DailyWordMarkedReviewLater event,
+    Emitter<DailyWordsState> emit,
+  ) async {
+    await _service.markWordNeedsReview(event.word);
+    final updatedReviewed = Set<String>.from(state.reviewedThisSession)
+      ..add(event.word.id);
+
+    emit(
+      state.copyWith(
+        masteryStats: _service.masteryStats,
+        wordBankEntries: _service.wordBankEntries,
+        reviewQueue: _service.wordsForReview,
+        reviewedThisSession: updatedReviewed,
       ),
     );
   }
@@ -289,7 +381,12 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       // Session complete
       await _service.completeDailySession();
       try {
-        await di.sl<NotificationService>().scheduleDailyWordsReminder();
+        final dueWordsList =
+            _service.wordsForReview.map((w) => w.word).toList();
+        await di.sl<NotificationService>().scheduleDailyWordsReminder(
+          dueWords: dueWordsList,
+          streak: _service.streak,
+        );
       } catch (e) {
         if (kDebugMode) debugPrint('Failed to schedule reminder: $e');
       }
@@ -298,11 +395,22 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
         state.copyWith(
           status: DailyWordsStatus.sessionComplete,
           currentIndex: nextIndex,
-          currentDay: _service.currentDay,
+          currentDay: _service.completedDay > 0
+              ? _service.completedDay
+              : _service.currentDay,
         ),
       );
     } else {
       emit(state.copyWith(currentIndex: nextIndex));
+    }
+  }
+
+  void _onPreviousRequested(
+    DailyWordPreviousRequested event,
+    Emitter<DailyWordsState> emit,
+  ) {
+    if (state.currentIndex > 0) {
+      emit(state.copyWith(currentIndex: state.currentIndex - 1));
     }
   }
 
@@ -314,7 +422,23 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     emit(
       state.copyWith(
         status: DailyWordsStatus.sessionComplete,
-        currentDay: _service.currentDay,
+        currentDay: _service.completedDay > 0
+            ? _service.completedDay
+            : _service.currentDay,
+      ),
+    );
+  }
+
+  void _onSessionRestartRequested(
+    DailySessionRestartRequested event,
+    Emitter<DailyWordsState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        status: DailyWordsStatus.loaded,
+        currentIndex: 0,
+        learnedThisSession: const {},
+        reviewedThisSession: const {},
       ),
     );
   }
@@ -323,9 +447,14 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     DailyWordReviewed event,
     Emitter<DailyWordsState> emit,
   ) async {
-    await _service.recordReview(event.wordId, correct: event.correct);
+    await _service.recordReview(
+      event.wordId,
+      correct: event.correct,
+      promoteToMastered: event.promoteToMastered,
+    );
     emit(
       state.copyWith(
+        wordBankEntries: _service.wordBankEntries,
         reviewQueue: _service.wordsForReview,
         masteryStats: _service.masteryStats,
       ),
@@ -336,6 +465,11 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     WordBankLoadRequested event,
     Emitter<DailyWordsState> emit,
   ) async {
+    // Ensure service is initialized if opened directly from WordBank route
+    await _service.init();
+    if (_service.todaysWords == null) {
+      await _service.loadTodaysWords(isPremium: event.isPremium);
+    }
     final results = _service.searchWordBank(
       event.query,
       isPremium: event.isPremium,

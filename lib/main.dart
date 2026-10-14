@@ -36,6 +36,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
+import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
 
 import 'firebase_options.dart';
 
@@ -261,6 +262,19 @@ Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
   await runSafe(
     'RemoteConfigService',
     () => di.sl<RemoteConfigService>().init(),
+  );
+  await runSafe(
+    'DailyWordsReminder',
+    () async {
+      final dailyWordsService = di.sl<DailyWordsService>();
+      await dailyWordsService.init();
+      final dueWords =
+          dailyWordsService.wordsForReview.map((w) => w.word).toList();
+      await di.sl<NotificationService>().scheduleDailyWordsReminder(
+        dueWords: dueWords,
+        streak: dailyWordsService.streak,
+      );
+    },
   );
   // NotificationService is now initialized in main() before runApp() to
   // ensure pendingDeepLink is set before the router's first redirect.

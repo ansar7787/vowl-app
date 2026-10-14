@@ -50,7 +50,16 @@ class DailyWord extends Equatable {
   };
 
   @override
-  List<Object?> get props => [id, word, frequencyRank];
+  List<Object?> get props => [
+    id,
+    word,
+    phonetic,
+    partOfSpeech,
+    definition,
+    example,
+    difficulty,
+    frequencyRank,
+  ];
 }
 
 /// Metadata for a single day's word set.
