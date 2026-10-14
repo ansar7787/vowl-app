@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SkimmingScanningTargetBadge extends StatelessWidget {
   final String item;
@@ -15,7 +16,7 @@ class SkimmingScanningTargetBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(30.r),
@@ -31,7 +32,11 @@ class SkimmingScanningTargetBadge extends StatelessWidget {
             Icons.radar_rounded,
             color: color,
             size: 24.r,
-          ).animate(onPlay: (c) => c.repeat()).shimmer(),
+          ).animate(onPlay: (c) {
+            if (!VowlMotion.shouldReduceMotion(context)) {
+              c.repeat();
+            }
+          }).shimmer(),
           SizedBox(width: 12.w),
           Flexible(
             child: Text(

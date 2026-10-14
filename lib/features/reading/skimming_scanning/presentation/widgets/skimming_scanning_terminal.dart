@@ -100,7 +100,7 @@ class SkimmingScanningTerminal extends StatelessWidget {
                   final bool isTapped = isAnswered && isCorrectTarget;
 
                   return GestureDetector(
-                    onTap: () => onTapWord(clean, isCorrectTarget),
+                    onTap: isAnswered ? null : () => onTapWord(clean, isCorrectTarget),
                     child: AnimatedContainer(
                       duration: 300.milliseconds,
                       padding: EdgeInsets.symmetric(
