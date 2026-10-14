@@ -8,6 +8,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class _ShowcaseHighlight {
   final IconData icon;
@@ -55,7 +56,17 @@ class FirstTimeWelcomeShowcase extends StatefulWidget {
     try {
       final prefs = await SharedPreferences.getInstance();
       final hasSeen = prefs.getBool(prefsKeyHasSeenShowcase) ?? false;
-      if (!hasSeen && context.mounted) {
+      if (hasSeen) return;
+
+      if (context.mounted) {
+        // If existing user with progress, do not show beginner tour
+        if (di.sl.isRegistered<AuthBloc>()) {
+          final user = di.sl<AuthBloc>().state.user;
+          if (user != null && user.totalLevelsCompleted > 0) {
+            await prefs.setBool(prefsKeyHasSeenShowcase, true);
+            return;
+          }
+        }
         // Allow initial screen transition & daily reward check to settle smoothly
         await Future.delayed(const Duration(milliseconds: 600));
         if (context.mounted) {
@@ -70,6 +81,7 @@ class FirstTimeWelcomeShowcase extends StatefulWidget {
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      useRootNavigator: true,
       backgroundColor: Colors.transparent,
       isDismissible: true,
       enableDrag: true,
@@ -262,6 +274,7 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
         filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
         child: Container(
           constraints: BoxConstraints(
+            maxWidth: 520.w,
             maxHeight: MediaQuery.of(context).size.height * 0.88,
           ),
           decoration: BoxDecoration(
@@ -287,114 +300,116 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
               ),
             ],
           ),
-          padding: EdgeInsets.only(
-            left: 20.w,
-            right: 20.w,
-            top: 12.h,
-            bottom: bottomInset + 16.h,
-          ),
+          padding: EdgeInsets.only(top: 12.h, bottom: bottomInset + 16.h),
           child: Column(
             children: [
               // ── Top Drag Handle ──────────────────────────────────────────
-              Center(
-                child: Container(
-                  width: 38.w,
-                  height: 4.h,
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.22)
-                        : Colors.black.withValues(alpha: 0.16),
-                    borderRadius: BorderRadius.circular(2.r),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Center(
+                  child: Container(
+                    width: 38.w,
+                    height: 4.h,
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.22)
+                          : Colors.black.withValues(alpha: 0.16),
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
                   ),
                 ),
               ),
               SizedBox(height: 14.h),
 
               // ── Header Navigation Bar (Step Pill & Skip) ─────────────────
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // Step Indicator Pill
-                  Semantics(
-                    label: context.tr(
-                      'welcome_showcase.step_indicator',
-                      fallback: 'Step ${_currentPage + 1} of ${_slides.length}',
-                      args: ['${_currentPage + 1}', '${_slides.length}'],
-                    ),
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 250),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 11.w,
-                        vertical: 5.h,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // Step Indicator Pill
+                    Semantics(
+                      label: context.tr(
+                        'welcome_showcase.step_indicator',
+                        fallback:
+                            'Step ${_currentPage + 1} of ${_slides.length}',
+                        args: ['${_currentPage + 1}', '${_slides.length}'],
                       ),
-                      decoration: BoxDecoration(
-                        color: slide.accentColor.withValues(alpha: 0.14),
-                        borderRadius: BorderRadius.circular(20.r),
-                        border: Border.all(
-                          color: slide.accentColor.withValues(alpha: 0.3),
-                          width: 1,
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 11.w,
+                          vertical: 5.h,
                         ),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            LucideIcons.sparkles,
-                            size: 11.5.r,
-                            color: slide.accentColor,
+                        decoration: BoxDecoration(
+                          color: slide.accentColor.withValues(alpha: 0.14),
+                          borderRadius: BorderRadius.circular(20.r),
+                          border: Border.all(
+                            color: slide.accentColor.withValues(alpha: 0.3),
+                            width: 1,
                           ),
-                          SizedBox(width: 5.w),
-                          Text(
-                            context.tr(
-                              'welcome_showcase.step_indicator',
-                              fallback:
-                                  'Step ${_currentPage + 1} of ${_slides.length}',
-                              args: [
-                                '${_currentPage + 1}',
-                                '${_slides.length}',
-                              ],
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 0.4,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              LucideIcons.sparkles,
+                              size: 11.5.r,
                               color: slide.accentColor,
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 5.w),
+                            Text(
+                              context.tr(
+                                'welcome_showcase.step_indicator',
+                                fallback:
+                                    'Step ${_currentPage + 1} of ${_slides.length}',
+                                args: [
+                                  '${_currentPage + 1}',
+                                  '${_slides.length}',
+                                ],
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 0.4,
+                                color: slide.accentColor,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
 
-                  // Skip Button
-                  Semantics(
-                    button: true,
-                    label: context.tr(
-                      'welcome_showcase.skip',
-                      fallback: 'Skip',
-                    ),
-                    child: TextButton(
-                      onPressed: _completeShowcase,
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 12.w,
-                          vertical: 8.h,
-                        ),
-                        minimumSize: Size(48.w, 48.h),
+                    // Skip Button
+                    Semantics(
+                      button: true,
+                      label: context.tr(
+                        'welcome_showcase.skip',
+                        fallback: 'Skip',
                       ),
-                      child: Text(
-                        context.tr('welcome_showcase.skip', fallback: 'Skip'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w600,
-                          color: isDark ? Colors.white54 : Colors.black45,
+                      child: TextButton(
+                        onPressed: _completeShowcase,
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 8.h,
+                          ),
+                          minimumSize: Size(48.w, 48.h),
+                        ),
+                        child: Text(
+                          context.tr('welcome_showcase.skip', fallback: 'Skip'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark ? Colors.white54 : Colors.black45,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: 12.h),
 
@@ -412,51 +427,42 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                     final item = _slides[index];
                     return SingleChildScrollView(
                       physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           SizedBox(height: 4.h),
 
-                          // ── Hero 3D Badge / Portal ─────────────────────────
+                          // ── Modern Hero Badge (Zero Shadow, Liquid Accent Tint) ──
                           Container(
-                            width: 84.r,
-                            height: 84.r,
+                            width: 72.r,
+                            height: 72.r,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               gradient: LinearGradient(
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
-                                colors: item.gradientColors,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: item.accentColor.withValues(
-                                    alpha: 0.38,
+                                colors: [
+                                  item.accentColor.withValues(
+                                    alpha: isDark ? 0.22 : 0.14,
                                   ),
-                                  blurRadius: 24.r,
-                                  offset: Offset(0, 6.h),
+                                  item.accentColor.withValues(
+                                    alpha: isDark ? 0.10 : 0.05,
+                                  ),
+                                ],
+                              ),
+                              border: Border.all(
+                                color: item.accentColor.withValues(
+                                  alpha: isDark ? 0.35 : 0.22,
                                 ),
-                              ],
+                                width: 1.5,
+                              ),
                             ),
                             child: Center(
-                              child: Container(
-                                width: 70.r,
-                                height: 70.r,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.white.withValues(alpha: 0.16),
-                                  border: Border.all(
-                                    color: Colors.white.withValues(alpha: 0.35),
-                                    width: 1.5,
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    item.heroIcon,
-                                    size: 34.r,
-                                    color: Colors.white,
-                                  ),
-                                ),
+                              child: Icon(
+                                item.heroIcon,
+                                size: 32.r,
+                                color: item.accentColor,
                               ),
                             ),
                           ),
@@ -637,76 +643,94 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
               SizedBox(height: 12.h),
 
               // ── Bottom Step Indicator & Primary CTA ──────────────────────
-              Row(
-                children: [
-                  // Modern Capsule Indicators
-                  Semantics(
-                    label: 'Page ${_currentPage + 1} of ${_slides.length}',
-                    child: Row(
-                      children: List.generate(
-                        _slides.length,
-                        (i) => AnimatedContainer(
-                          duration: const Duration(milliseconds: 240),
-                          curve: Curves.easeOutCubic,
-                          margin: EdgeInsets.only(right: 6.w),
-                          width: _currentPage == i ? 24.w : 6.w,
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                            gradient: _currentPage == i
-                                ? LinearGradient(colors: slide.gradientColors)
-                                : null,
-                            color: _currentPage == i
-                                ? null
-                                : (isDark ? Colors.white24 : Colors.black12),
-                            borderRadius: BorderRadius.circular(4.r),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // Smooth, continuous real-time reactive page indicator
+                    AnimatedBuilder(
+                      animation: _pageController,
+                      builder: (context, _) {
+                        final double page =
+                            _pageController.hasClients &&
+                                _pageController.page != null
+                            ? _pageController.page!
+                            : _currentPage.toDouble();
+                        return Semantics(
+                          label:
+                              'Step ${_currentPage + 1} of ${_slides.length}',
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: List.generate(_slides.length, (i) {
+                              final double distance = (page - i).abs();
+                              final double factor = (1.0 - distance).clamp(
+                                0.0,
+                                1.0,
+                              );
+                              final double width = 8.w + (18.w * factor);
+                              return Container(
+                                margin: EdgeInsets.symmetric(horizontal: 3.5.w),
+                                width: width,
+                                height: 6.h,
+                                decoration: BoxDecoration(
+                                  gradient: factor > 0.15
+                                      ? LinearGradient(
+                                          colors: slide.gradientColors,
+                                        )
+                                      : null,
+                                  color: factor > 0.15
+                                      ? null
+                                      : (isDark
+                                            ? Colors.white24
+                                            : Colors.black12),
+                                  borderRadius: BorderRadius.circular(4.r),
+                                ),
+                              );
+                            }),
                           ),
-                        ),
-                      ),
+                        );
+                      },
                     ),
-                  ),
-                  const Spacer(),
+                    SizedBox(height: 16.h),
 
-                  // Primary CTA Button
-                  Semantics(
-                    button: true,
-                    label: _currentPage == _slides.length - 1
-                        ? context.tr(
-                            'welcome_showcase.start_exploring',
-                            fallback: 'Start Exploring',
-                          )
-                        : context.tr(
-                            'welcome_showcase.continue_step',
-                            fallback: 'Continue',
-                          ),
-                    child: ScaleButton(
-                      onTap: _nextPage,
-                      child: Container(
-                        constraints: BoxConstraints(
-                          minHeight: 48.h,
-                          minWidth: 48.w,
-                        ),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 22.w,
-                          vertical: 12.h,
-                        ),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: slide.gradientColors,
-                          ),
-                          borderRadius: BorderRadius.circular(16.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: slide.accentColor.withValues(alpha: 0.35),
-                              blurRadius: 14.r,
-                              offset: Offset(0, 3.h),
+                    // Modern 2026 Prominent Full-Width Tactile CTA
+                    Semantics(
+                      button: true,
+                      label: _currentPage == _slides.length - 1
+                          ? context.tr(
+                              'welcome_showcase.start_exploring',
+                              fallback: 'Start Exploring',
+                            )
+                          : context.tr(
+                              'welcome_showcase.continue_step',
+                              fallback: 'Continue',
                             ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
+                      child: ScaleButton(
+                        onTap: _nextPage,
+                        child: Container(
+                          width: double.infinity,
+                          constraints: BoxConstraints(minHeight: 52.h),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: slide.gradientColors,
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
+                            borderRadius: BorderRadius.circular(18.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: slide.accentColor.withValues(
+                                  alpha: 0.35,
+                                ),
+                                blurRadius: 18.r,
+                                offset: Offset(0, 4.h),
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
                               _currentPage == _slides.length - 1
                                   ? context.tr(
                                       'welcome_showcase.start_exploring',
@@ -718,26 +742,18 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                                     ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
                                 letterSpacing: 0.3,
                               ),
                             ),
-                            SizedBox(width: 6.w),
-                            Icon(
-                              _currentPage == _slides.length - 1
-                                  ? LucideIcons.sparkles
-                                  : LucideIcons.arrowRight,
-                              size: 15.r,
-                              color: Colors.white,
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),

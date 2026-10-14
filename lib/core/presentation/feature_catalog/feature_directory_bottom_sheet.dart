@@ -19,6 +19,7 @@ class FeatureDirectoryBottomSheet extends StatefulWidget {
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      useRootNavigator: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => const FeatureDirectoryBottomSheet(),
     );
@@ -110,7 +111,7 @@ class _FeatureDirectoryBottomSheetState
     if (_isLaunching) return;
     _isLaunching = true;
     di.sl<HapticService>().selection();
-    final nav = Navigator.of(context);
+    final nav = Navigator.of(context, rootNavigator: true);
     final rootContext = nav.context;
     nav.pop();
     if (rootContext.mounted) {
@@ -131,7 +132,10 @@ class _FeatureDirectoryBottomSheetState
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
         child: Container(
-          constraints: BoxConstraints(maxHeight: mediaQuery.size.height * 0.90),
+          constraints: BoxConstraints(
+            maxWidth: 540.w,
+            maxHeight: mediaQuery.size.height * 0.90,
+          ),
           decoration: BoxDecoration(
             color: isDark
                 ? const Color(0xFF13141C).withValues(alpha: 0.96)
@@ -146,10 +150,8 @@ class _FeatureDirectoryBottomSheetState
             ),
           ),
           padding: EdgeInsets.only(
-            left: 20.w,
-            right: 20.w,
-            top: 14.h,
-            bottom: bottomInset + viewInsetsBottom + 16.h,
+            top: 12.h,
+            bottom: bottomInset + viewInsetsBottom + 12.h,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -168,166 +170,200 @@ class _FeatureDirectoryBottomSheetState
                   ),
                 ),
               ),
-              SizedBox(height: 16.h),
+              SizedBox(height: 14.h),
 
               // Sheet Header
-              Row(
-                children: [
-                  Container(
-                    width: 38.r,
-                    height: 38.r,
-                    decoration: BoxDecoration(
-                      color: AppColors.indigo500.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                    child: Icon(
-                      LucideIcons.compass,
-                      color: AppColors.indigo500,
-                      size: 20.r,
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          context.tr(
-                            'feature_catalog.title',
-                            fallback: 'Explore All Features',
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 18.w),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            context.tr(
+                              'feature_catalog.title',
+                              fallback: 'Explore All Features',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w700,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                            softWrap: true,
                           ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w700,
-                            color: Theme.of(context).colorScheme.onSurface,
+                          SizedBox(height: 2.h),
+                          Text(
+                            context.tr(
+                              'feature_catalog.subtitle',
+                              fallback:
+                                  'Find any game, tool, or practice lab in Vowl',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.5.sp,
+                              height: 1.3,
+                              color: isDark
+                                  ? Colors.white70
+                                  : AppColors.slate600,
+                            ),
+                            softWrap: true,
                           ),
-                          softWrap: true,
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+                    // Tour Pill
+                    GestureDetector(
+                      onTap: _openWelcomeTour,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 6.h,
                         ),
-                        SizedBox(height: 2.h),
-                        Text(
-                          context.tr(
-                            'feature_catalog.subtitle',
-                            fallback:
-                                'Browse 100+ games, camera tools, boutique, and practice labs',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.5.sp,
-                            height: 1.35,
-                            color: isDark ? Colors.white70 : AppColors.slate600,
-                          ),
-                          softWrap: true,
+                        decoration: BoxDecoration(
+                          color: AppColors.indigo500.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(16.r),
                         ),
-                      ],
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              LucideIcons.sparkles,
+                              size: 13.r,
+                              color: AppColors.indigo500,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              context.tr(
+                                'feature_catalog.tour_pill',
+                                fallback: 'Tour',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.5.sp,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.indigo500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 8.w),
-                  IconButton(
-                    onPressed: _openWelcomeTour,
-                    icon: Icon(
-                      LucideIcons.playCircle,
-                      size: 20.r,
-                      color: AppColors.indigo500,
+                    SizedBox(width: 8.w),
+                    // Close Button
+                    IconButton(
+                      onPressed: () {
+                        if (!_isLaunching) {
+                          Navigator.of(context).pop();
+                        }
+                      },
+                      icon: Container(
+                        width: 30.r,
+                        height: 30.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : Colors.black.withValues(alpha: 0.05),
+                        ),
+                        child: Icon(
+                          Icons.close_rounded,
+                          size: 16.r,
+                          color: isDark ? Colors.white70 : Colors.black54,
+                        ),
+                      ),
+                      padding: EdgeInsets.zero,
+                      constraints: BoxConstraints(
+                        minWidth: 40.r,
+                        minHeight: 40.r,
+                      ),
+                      tooltip: context.tr('common.close', fallback: 'Close'),
                     ),
-                    padding: EdgeInsets.zero,
-                    constraints: BoxConstraints(
-                      minWidth: 48.r,
-                      minHeight: 48.r,
-                    ),
-                    tooltip: context.tr(
-                      'feature_catalog.take_tour',
-                      fallback: 'Take Welcome Tour',
-                    ),
-                  ),
-                  SizedBox(width: 4.w),
-                  IconButton(
-                    onPressed: () {
-                      if (!_isLaunching) {
-                        Navigator.of(context).pop();
-                      }
-                    },
-                    icon: Icon(
-                      Icons.close_rounded,
-                      size: 20.r,
-                      color: isDark ? Colors.white54 : Colors.black45,
-                    ),
-                    padding: EdgeInsets.zero,
-                    constraints: BoxConstraints(
-                      minWidth: 48.r,
-                      minHeight: 48.r,
-                    ),
-                    tooltip: context.tr('common.close', fallback: 'Close'),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: 14.h),
 
               // Search Bar
-              Container(
-                height: 42.h,
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.06)
-                      : Colors.black.withValues(alpha: 0.04),
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 18.w),
+                child: Container(
+                  height: 44.h,
+                  decoration: BoxDecoration(
                     color: isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : Colors.black.withValues(alpha: 0.06),
+                        ? const Color(0xFF1E2130)
+                        : const Color(0xFFF1F5F9),
+                    borderRadius: BorderRadius.circular(14.r),
+                    border: Border.all(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : const Color(0xFFE2E8F0),
+                    ),
                   ),
-                ),
-                padding: EdgeInsets.symmetric(horizontal: 12.w),
-                child: Row(
-                  children: [
-                    Icon(
-                      LucideIcons.search,
-                      size: 16.r,
-                      color: isDark ? Colors.white54 : Colors.black45,
-                    ),
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: TextField(
-                        controller: _searchController,
-                        onChanged: _onSearchChanged,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.5.sp,
-                          color: Theme.of(context).colorScheme.onSurface,
-                        ),
-                        decoration: InputDecoration(
-                          hintText: context.tr(
-                            'feature_catalog.search_hint',
-                            fallback:
-                                'Search 100+ games, camera, boutique, kids...',
-                          ),
-                          hintStyle: TextStyle(
+                  padding: EdgeInsets.symmetric(horizontal: 14.w),
+                  child: Row(
+                    children: [
+                      Icon(
+                        LucideIcons.search,
+                        size: 17.r,
+                        color: isDark ? Colors.white54 : AppColors.slate400,
+                      ),
+                      SizedBox(width: 10.w),
+                      Expanded(
+                        child: TextField(
+                          controller: _searchController,
+                          onChanged: _onSearchChanged,
+                          style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 12.5.sp,
-                            color: isDark ? Colors.white38 : Colors.black38,
+                            fontSize: 13.5.sp,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
-                          border: InputBorder.none,
-                          isDense: true,
-                          contentPadding: EdgeInsets.zero,
-                        ),
-                      ),
-                    ),
-                    if (_searchQuery.isNotEmpty)
-                      GestureDetector(
-                        onTap: () {
-                          _searchController.clear();
-                          _onSearchChanged('');
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.all(4.r),
-                          child: Icon(
-                            Icons.close_rounded,
-                            size: 16.r,
-                            color: isDark ? Colors.white54 : Colors.black45,
+                          decoration: InputDecoration(
+                            hintText: context.tr(
+                              'feature_catalog.search_hint',
+                              fallback: 'Search features and games...',
+                            ),
+                            hintStyle: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              color: isDark
+                                  ? Colors.white38
+                                  : AppColors.slate400,
+                            ),
+                            border: InputBorder.none,
+                            isDense: true,
+                            contentPadding: EdgeInsets.zero,
                           ),
                         ),
                       ),
-                  ],
+                      if (_searchQuery.isNotEmpty)
+                        GestureDetector(
+                          onTap: () {
+                            _searchController.clear();
+                            _onSearchChanged('');
+                          },
+                          child: Container(
+                            width: 22.r,
+                            height: 22.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.12)
+                                  : Colors.black.withValues(alpha: 0.08),
+                            ),
+                            child: Icon(
+                              Icons.close_rounded,
+                              size: 13.r,
+                              color: isDark ? Colors.white70 : Colors.black54,
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 12.h),
@@ -336,6 +372,7 @@ class _FeatureDirectoryBottomSheetState
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 18.w),
                 child: Row(
                   children: [
                     _buildFilterChip(
@@ -358,7 +395,7 @@ class _FeatureDirectoryBottomSheetState
                   ],
                 ),
               ),
-              SizedBox(height: 12.h),
+              SizedBox(height: 10.h),
 
               // List of Feature Cards or Empty State
               Expanded(
@@ -473,6 +510,7 @@ class _FeatureDirectoryBottomSheetState
                         keyboardDismissBehavior:
                             ScrollViewKeyboardDismissBehavior.onDrag,
                         physics: const BouncingScrollPhysics(),
+                        padding: EdgeInsets.fromLTRB(18.w, 4.h, 18.w, 16.h),
                         itemCount: features.length,
                         separatorBuilder: (_, _) => SizedBox(height: 8.h),
                         itemBuilder: (context, index) {
@@ -508,23 +546,22 @@ class _FeatureDirectoryBottomSheetState
               di.sl<HapticService>().light();
               onTap();
             },
-            borderRadius: BorderRadius.circular(20.r),
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 180),
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+            borderRadius: BorderRadius.circular(18.r),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 7.h),
               decoration: BoxDecoration(
                 color: isSelected
                     ? AppColors.indigo500
                     : (isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.04)),
-                borderRadius: BorderRadius.circular(20.r),
+                          ? const Color(0xFF1E2130)
+                          : const Color(0xFFF1F5F9)),
+                borderRadius: BorderRadius.circular(18.r),
                 border: Border.all(
                   color: isSelected
                       ? AppColors.indigo500
                       : (isDark
-                            ? Colors.white.withValues(alpha: 0.08)
-                            : Colors.black.withValues(alpha: 0.06)),
+                            ? Colors.white.withValues(alpha: 0.06)
+                            : const Color(0xFFE2E8F0)),
                 ),
               ),
               child: Row(
@@ -533,10 +570,10 @@ class _FeatureDirectoryBottomSheetState
                   if (icon != null) ...[
                     Icon(
                       icon,
-                      size: 12.r,
+                      size: 13.r,
                       color: isSelected
                           ? Colors.white
-                          : (isDark ? Colors.white70 : Colors.black54),
+                          : (isDark ? Colors.white70 : AppColors.slate600),
                     ),
                     SizedBox(width: 5.w),
                   ],
@@ -544,13 +581,13 @@ class _FeatureDirectoryBottomSheetState
                     label,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 11.5.sp,
+                      fontSize: 12.sp,
                       fontWeight: isSelected
                           ? FontWeight.w600
                           : FontWeight.w500,
                       color: isSelected
                           ? Colors.white
-                          : (isDark ? Colors.white70 : Colors.black87),
+                          : (isDark ? Colors.white70 : AppColors.slate700),
                     ),
                   ),
                 ],
@@ -577,8 +614,7 @@ class _FeatureDirectoryBottomSheetState
         child: InkWell(
           onTap: () => _launchFeature(item),
           borderRadius: BorderRadius.circular(16.r),
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
+          child: Container(
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
             decoration: BoxDecoration(
               color: isDark
@@ -586,7 +622,7 @@ class _FeatureDirectoryBottomSheetState
                         ? item.accentColor.withValues(alpha: 0.08)
                         : const Color(0xFF1A1C26))
                   : (item.isHighlight
-                        ? item.accentColor.withValues(alpha: 0.05)
+                        ? item.accentColor.withValues(alpha: 0.04)
                         : const Color(0xFFF8FAFC)),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
@@ -594,7 +630,7 @@ class _FeatureDirectoryBottomSheetState
                     ? item.accentColor.withValues(alpha: isDark ? 0.35 : 0.25)
                     : (isDark
                           ? Colors.white.withValues(alpha: 0.06)
-                          : Colors.black.withValues(alpha: 0.05)),
+                          : const Color(0xFFE2E8F0)),
                 width: item.isHighlight ? 1.2 : 1.0,
               ),
             ),

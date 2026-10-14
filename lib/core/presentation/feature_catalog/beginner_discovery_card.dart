@@ -61,7 +61,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
     _DiscoveryQuest(
       key: 'first_game',
       title: 'Complete 1 Lesson',
-      subtitle: 'Play any quest from the 100+ Games curriculum',
+      subtitle: 'Play any game from the 100+ curriculum',
       icon: LucideIcons.gamepad2,
       route: AppRouter.gamesRoute,
       actionLabel: 'Play',
@@ -70,7 +70,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
     _DiscoveryQuest(
       key: 'photo_vocab',
       title: 'Try Camera AI in Photo Vocab',
-      subtitle: 'Point your camera to discover everyday English words',
+      subtitle: 'Discover English words around you',
       icon: LucideIcons.camera,
       route: AppRouter.photoVocabularyRoute,
       actionLabel: 'Try',
@@ -79,7 +79,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
     _DiscoveryQuest(
       key: 'translate',
       title: 'Test 50+ Offline Languages',
-      subtitle: 'Translate sentences without needing internet access',
+      subtitle: 'Translate words without Wi-Fi',
       icon: LucideIcons.languages,
       route: AppRouter.translateRoute,
       actionLabel: 'Translate',
@@ -88,7 +88,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
     _DiscoveryQuest(
       key: 'boutique',
       title: 'Visit Buddy Boutique & Pet',
-      subtitle: 'Explore outfits, skins, and accessories for your mascot',
+      subtitle: 'Style your mascot with fun outfits',
       icon: LucideIcons.sparkles,
       route: AppRouter.vowlMascotRoute,
       actionLabel: 'Visit',
@@ -97,7 +97,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
     _DiscoveryQuest(
       key: 'reports',
       title: 'Check Learning Report & Errors',
-      subtitle: 'Review accuracy stats and previously missed questions',
+      subtitle: 'Track accuracy and missed questions',
       icon: LucideIcons.barChart2,
       route: AppRouter.progressDashboardRoute,
       actionLabel: 'View',
@@ -614,8 +614,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                                   ? (isDark ? Colors.white38 : Colors.black38)
                                   : Theme.of(context).colorScheme.onSurface,
                             ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                            softWrap: true,
                           ),
                           SizedBox(height: 2.h),
                           Text(
@@ -628,8 +627,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                                   ? Colors.white70
                                   : AppColors.slate600,
                             ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                            softWrap: true,
                           ),
                         ],
                       ),
