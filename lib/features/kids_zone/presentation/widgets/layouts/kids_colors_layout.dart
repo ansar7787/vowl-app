@@ -1,15 +1,18 @@
-import 'package:vowl/core/theme/illustration_colors.dart';
-import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/domain/entities/kids_quest.dart';
+import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -39,12 +42,18 @@ class _LocalPalette {
   static const Color color0f52ba = Color(0xFF0F52BA);
   static const Color color9966cc = Color(0xFF9966CC);
   static const Color colorffc87c = Color(0xFFFFC87C);
+
+  // Status colors
+  static const Color successBg = Color(0xFFDCFCE7);
+  static const Color successBorder = Color(0xFF16A34A);
+  static const Color errorBg = Color(0xFFFEE2E2);
+  static const Color errorBorder = Color(0xFFDC2626);
 }
 
-/// Art Studio Theme for Colors Game
-/// Space Complexity: O(1)
-/// Time Complexity: O(N) where N is the number of options (max 4)
-class KidsColorsLayout extends StatelessWidget {
+/// Art Studio Theme for Kids Colors Game
+/// Supports DUAL INTERACTION (tap-to-answer + drag-and-drop),
+/// TTS audio replay, zero 320dp small-screen overflow, and tactile haptics.
+class KidsColorsLayout extends StatefulWidget {
   final int level;
   final String title;
   final Color primaryColor;
@@ -57,218 +66,493 @@ class KidsColorsLayout extends StatelessWidget {
   });
 
   @override
+  State<KidsColorsLayout> createState() => _KidsColorsLayoutState();
+}
+
+class _KidsColorsLayoutState extends State<KidsColorsLayout> {
+  String? _selectedOption;
+  int _lastAnsweredQuestIndex = -1;
+
+  void _handleOptionSubmit(
+    BuildContext context,
+    KidsLoaded state,
+    String option,
+  ) {
+    if (state.answerStatus.isAnswered) return;
+
+    setState(() {
+      _selectedOption = option;
+      _lastAnsweredQuestIndex = state.currentIndex;
+    });
+
+    final quest = state.currentQuest;
+    final isCorrect = (option.trim() == quest.correctAnswer?.trim());
+
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl<AppLogger>().debug(
+        'Submitting option "$option" for quest "${quest.id}" (correct: $isCorrect)',
+        tag: 'KidsColorsLayout',
+      );
+    }
+
+    if (!isCorrect) {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().speak(option);
+      }
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().error();
+      }
+    } else {
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().success();
+      }
+    }
+
+    context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+  }
+
+  void _playOptionAudio(String text) {
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl<AppLogger>().debug(
+        'Pronouncing color option "$text"',
+        tag: 'KidsColorsLayout',
+      );
+    }
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl<KidsTTSService>().speak(text, force: true);
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl<HapticService>().selection();
+    }
+  }
+
+  void _replayQuestionAudio(dynamic quest) {
+    final instruction = InstructionHelper.getInstruction(quest);
+    if (instruction.isNotEmpty) {
+      if (di.sl.isRegistered<AppLogger>()) {
+        di.sl<AppLogger>().debug(
+          'Replaying instruction audio for quest "${quest.id}"',
+          tag: 'KidsColorsLayout',
+        );
+      }
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().speak(instruction, force: true);
+      }
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().selection();
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return KidsGameBaseScreen(
-      title: title,
+      title: widget.title,
       gameType: 'colors',
-      level: level,
-      primaryColor: primaryColor,
+      level: widget.level,
+      primaryColor: widget.primaryColor,
       backgroundColors: const [],
       buildGameUI: (context, state, onHintTap) {
         final quest = state.currentQuest;
         final options = quest.options?.map((e) => e.toString()).toList() ?? [];
         final isColorQuest = options.every(_isColorOption);
 
-        return Column(
-          children: [
-            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
-            // The Artist Easel
-            Expanded(
-              flex: 5,
-              child: Center(child: _buildEasel(context, state, quest)),
-            ),
+        if (state.currentIndex != _lastAnsweredQuestIndex) {
+          _selectedOption = null;
+        }
 
-            SizedBox(height: 24.h),
-            KidsFittedText(
-              isColorQuest
-                  ? context.tr(
-                      'games.kids_colors_drag',
-                      fallback: 'Drag the correct color to the canvas!',
-                    )
-                  : context.tr(
-                      'games.kids_colors_drag_object',
-                      fallback: 'Drag the correct item to the easel!',
-                    ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w500,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white.withValues(alpha: 0.9)
-                    : Colors.black.withValues(alpha: 0.7),
-              ),
-              maxLines: 2,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 16.h),
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            final availableWidth = constraints.maxWidth;
+            final isNarrow = availableWidth < 360;
 
-            // Options
-            Flexible(
-              flex: 4,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(options.length, (index) {
-                    final option = options[index];
-                    return Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 6.w),
-                        child: LayoutBuilder(
-                          builder: (context, constraints) {
-                            return isColorQuest
-                                ? _buildPaintTube(
-                                    context,
-                                    state,
-                                    option,
-                                    quest.correctAnswer == option,
-                                    constraints.maxWidth,
-                                  )
-                                : _buildObjectCard(
-                                    context,
-                                    state,
-                                    option,
-                                    quest.correctAnswer == option,
-                                    constraints.maxWidth,
-                                  );
-                          },
+            final easelWidth = (availableWidth * 0.86).clamp(220.0, 310.0).w;
+            final easelHeight = 170.h;
+
+            return Center(
+              child: SizedBox(
+                width: availableWidth,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(
+                        height: KidsGameBaseScreen.mascotClearanceHeight + 6.h,
+                      ),
+
+                      // The Artist Easel
+                      Center(
+                        child: _buildEasel(
+                          context,
+                          state,
+                          quest,
+                          width: easelWidth,
+                          height: easelHeight,
                         ),
                       ),
-                    );
-                  }),
+
+                      SizedBox(height: 10.h),
+
+                      // Prompt banner with visual dual-interaction hint
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.touch_app_rounded,
+                              size: 15.r,
+                              color: Theme.of(context).brightness ==
+                                      Brightness.dark
+                                  ? Colors.white70
+                                  : _LocalPalette.color92400e,
+                            ),
+                            SizedBox(width: 5.w),
+                            Flexible(
+                              child: KidsFittedText(
+                                isColorQuest
+                                    ? context.tr(
+                                        'games.kids_colors_drag',
+                                        fallback:
+                                            'Tap or drag the correct color to the canvas!',
+                                      )
+                                    : context.tr(
+                                        'games.kids_colors_drag_object',
+                                        fallback:
+                                            'Tap or drag the correct item to the easel!',
+                                      ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isNarrow ? 12.5.sp : 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.white.withValues(alpha: 0.9)
+                                      : Colors.black.withValues(alpha: 0.75),
+                                ),
+                                maxLines: 2,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: 10.h),
+
+                      // Options Container (adaptive single row or multi-tier)
+                      _buildOptionsArea(
+                        context,
+                        state,
+                        quest,
+                        options,
+                        isColorQuest: isColorQuest,
+                        isNarrow: isNarrow,
+                        availableWidth: availableWidth,
+                      ),
+
+                      SizedBox(height: 16.h),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 16.h),
-          ],
+            );
+          },
         );
       },
     );
   }
 
-  Widget _buildEasel(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildOptionsArea(
+    BuildContext context,
+    KidsLoaded state,
+    KidsQuest quest,
+    List<String> options, {
+    required bool isColorQuest,
+    required bool isNarrow,
+    required double availableWidth,
+  }) {
+    if (options.isEmpty) return const SizedBox.shrink();
+
+    // If 4 options on narrow screen, split into 2 rows of 2
+    if (options.length == 4 && isNarrow) {
+      final row1 = options.sublist(0, 2);
+      final row2 = options.sublist(2, 4);
+
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: row1
+                .map(
+                  (opt) => Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 3.w,
+                        vertical: 3.h,
+                      ),
+                      child: _buildOptionItem(
+                        context,
+                        state,
+                        quest,
+                        opt,
+                        isColorQuest: isColorQuest,
+                        maxWidth: (availableWidth - 36.w) / 2,
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+          Row(
+            children: row2
+                .map(
+                  (opt) => Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 3.w,
+                        vertical: 3.h,
+                      ),
+                      child: _buildOptionItem(
+                        context,
+                        state,
+                        quest,
+                        opt,
+                        isColorQuest: isColorQuest,
+                        maxWidth: (availableWidth - 36.w) / 2,
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+        ],
+      );
+    }
+
+    // Default single row
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(options.length, (index) {
+        final option = options[index];
+        final itemWidth =
+            (availableWidth - 28.w - (options.length * 6.w)) / options.length;
+
+        return Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 3.w),
+            child: _buildOptionItem(
+              context,
+              state,
+              quest,
+              option,
+              isColorQuest: isColorQuest,
+              maxWidth: itemWidth,
+            ),
+          ),
+        );
+      }),
+    );
+  }
+
+  Widget _buildOptionItem(
+    BuildContext context,
+    KidsLoaded state,
+    KidsQuest quest,
+    String option, {
+    required bool isColorQuest,
+    required double maxWidth,
+  }) {
+    final isCorrect = (quest.correctAnswer?.trim() == option.trim());
+
+    return isColorQuest
+        ? _buildPaintTube(
+            context,
+            state,
+            option,
+            isCorrect,
+            maxWidth,
+          )
+        : _buildObjectCard(
+            context,
+            state,
+            option,
+            isCorrect,
+            maxWidth,
+          );
+  }
+
+  Widget _buildEasel(
+    BuildContext context,
+    KidsLoaded state,
+    KidsQuest quest, {
+    required double width,
+    required double height,
+  }) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
-        final text = details.data;
-        final isCorrect = (text == quest.correctAnswer);
-        if (!isCorrect) {
-          di.sl<KidsTTSService>().speak(text);
-        }
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+        _handleOptionSubmit(context, state, details.data);
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
+        final isAnswered = state.answerStatus.isAnswered;
+        final isCorrectAnswer = (_selectedOption == quest.correctAnswer) ||
+            (state.answerStatus == AnswerStatus.correct);
+
+        Color canvasBg = Colors.white;
+        Color borderColor = _LocalPalette.colord4d4d8;
+        if (isHovering) {
+          canvasBg = _LocalPalette.colorfde047;
+          borderColor = _LocalPalette.coloreab308;
+        } else if (isAnswered) {
+          if (isCorrectAnswer) {
+            canvasBg = _LocalPalette.successBg;
+            borderColor = _LocalPalette.successBorder;
+          } else {
+            canvasBg = _LocalPalette.errorBg;
+            borderColor = _LocalPalette.errorBorder;
+          }
+        }
+
         return Stack(
           alignment: Alignment.center,
           children: [
             // Wooden back legs of the easel
             Positioned(
-              top: -20.h,
+              top: -14.h,
               child: Container(
-                width: 140.w,
-                height: 250.h,
+                width: 120.w,
+                height: height + 40.h,
                 decoration: BoxDecoration(
                   border: Border(
                     left: BorderSide(
                       color: _LocalPalette.color92400e,
-                      width: 12.w,
+                      width: 10.w,
                     ),
                     right: BorderSide(
                       color: _LocalPalette.color92400e,
-                      width: 12.w,
+                      width: 10.w,
                     ),
                   ),
                 ),
               ),
             ),
+
             // The Canvas
-            InkWell(
-              onTap: state.answerStatus.isAnswered
-                  ? null
-                  : () {
-                      if (InstructionHelper.getInstruction(quest).isNotEmpty) {
-                        di.sl<KidsTTSService>().speak(
-                          InstructionHelper.getInstruction(quest),
-                        );
-                      }
-                    },
-              child: Container(
-                width: 280.w,
-                height: 200.h,
-                decoration: BoxDecoration(
-                  color: isHovering
-                      ? _LocalPalette.colorfde047
-                      : Colors.white, // Highlight canvas on hover
-                  borderRadius: BorderRadius.circular(4.r),
-                  border: Border.all(
-                    color: isHovering
-                        ? _LocalPalette.coloreab308
-                        : _LocalPalette.colord4d4d8,
-                    width: isHovering ? 4 : 2,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(
-                        alpha: isHovering ? 0.3 : 0.1,
-                      ),
-                      blurRadius: isHovering ? 20 : 10,
-                      offset: const Offset(0, 8),
-                    ),
-                  ],
+            Container(
+              width: width,
+              height: height,
+              decoration: BoxDecoration(
+                color: canvasBg,
+                borderRadius: BorderRadius.circular(8.r),
+                border: Border.all(
+                  color: borderColor,
+                  width: isHovering || isAnswered ? 3.w : 2.w,
                 ),
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      if (quest.question != null &&
-                          quest.question != "?" &&
-                          quest.question!.isNotEmpty)
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 8.h),
-                          child: KidsFittedText(
-                            quest.question!,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w600,
-                              color: _LocalPalette.color3f3f46,
-                            ),
-                            maxLines: 2,
-                            textAlign: TextAlign.center,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(
+                      alpha: isHovering ? 0.25 : 0.1,
+                    ),
+                    blurRadius: isHovering ? 18 : 10,
+                    offset: const Offset(0, 6),
+                  ),
+                ],
+              ),
+              child: Stack(
+                children: [
+                  // Audio Replay Button (Top Right)
+                  Positioned(
+                    top: 6.r,
+                    right: 6.r,
+                    child: Semantics(
+                      label: 'Listen to instruction',
+                      button: true,
+                      child: InkWell(
+                        key: const ValueKey('colors_audio_replay_btn'),
+                        onTap: () => _replayQuestionAudio(quest),
+                        borderRadius: BorderRadius.circular(16.r),
+                        child: Container(
+                          padding: EdgeInsets.all(5.r),
+                          decoration: BoxDecoration(
+                            color: _LocalPalette.color92400e
+                                .withValues(alpha: 0.1),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.volume_up_rounded,
+                            size: 18.r,
+                            color: _LocalPalette.color92400e,
                           ),
                         ),
-                      if (quest.emoji != null)
-                        state.answerStatus == AnswerStatus.correct
-                            ? Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 100.sp),
-                              )
-                            : ColorFiltered(
-                                colorFilter: const ColorFilter.mode(
-                                  _LocalPalette.color9ca3af,
-                                  BlendMode.srcIn,
-                                ),
-                                child: Text(
-                                  quest.emoji!,
-                                  style: TextStyle(fontSize: 100.sp),
-                                ),
-                              ), // Enlarge emoji, hide question text
-                    ],
+                      ),
+                    ),
                   ),
-                ),
+
+                  // Center Content (Question + Visuals)
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 6.h,
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (quest.question != null &&
+                              quest.question != '?' &&
+                              quest.question!.isNotEmpty)
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 4.h),
+                              child: KidsFittedText(
+                                quest.question!,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: _LocalPalette.color3f3f46,
+                                ),
+                                maxLines: 2,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          if (quest.emoji != null && quest.emoji!.isNotEmpty)
+                            isAnswered && isCorrectAnswer
+                                ? Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 60.sp),
+                                  )
+                                : ColorFiltered(
+                                    colorFilter: const ColorFilter.mode(
+                                      _LocalPalette.color9ca3af,
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 60.sp),
+                                    ),
+                                  ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
+
             // Wooden tray at the bottom of the canvas
             Positioned(
               bottom: 0,
               child: Container(
-                width: 300.w,
-                height: 20.h,
+                width: width + 20.w,
+                height: 14.h,
                 decoration: BoxDecoration(
                   color: KidsColors.warmAmber,
                   borderRadius: BorderRadius.circular(4.r),
                   boxShadow: const [
-                    BoxShadow(color: Colors.black26, offset: Offset(0, 4)),
+                    BoxShadow(color: Colors.black26, offset: Offset(0, 3)),
                   ],
                 ),
               ),
@@ -283,13 +567,12 @@ class KidsColorsLayout extends StatelessWidget {
     final hasSpace = text.trim().contains(' ');
     final textStyle = TextStyle(
       fontFamily: 'Outfit',
-      fontSize: 16.sp,
-      fontWeight: FontWeight.w600,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w700,
       color: _LocalPalette.color3f3f46,
     );
 
     if (!hasSpace) {
-      // Single word: Force one line, let FittedBox scale it down properly without breaking characters.
       return FittedBox(
         fit: BoxFit.scaleDown,
         child: Text(
@@ -302,7 +585,6 @@ class KidsColorsLayout extends StatelessWidget {
         ),
       );
     } else {
-      // Multi-word: Allow wrapping to 2 lines using KidsFittedText.
       return KidsFittedText(
         text,
         style: textStyle,
@@ -319,36 +601,96 @@ class KidsColorsLayout extends StatelessWidget {
     bool isCorrect,
     double maxWidth,
   ) {
-    Color tubeColor = _getColorFromName(text, primaryColor);
+    final isAnswered = state.answerStatus.isAnswered;
+    final isSelected = (_selectedOption == text);
+    Color tubeColor = _getColorFromName(text, widget.primaryColor);
+
+    Color cardBg = Colors.white;
+    Color borderColor = _LocalPalette.colore4e4e7;
+    if (isAnswered) {
+      if (isSelected) {
+        if (isCorrect) {
+          cardBg = _LocalPalette.successBg;
+          borderColor = _LocalPalette.successBorder;
+        } else {
+          cardBg = _LocalPalette.errorBg;
+          borderColor = _LocalPalette.errorBorder;
+        }
+      } else if (isCorrect) {
+        cardBg = _LocalPalette.successBg;
+        borderColor = _LocalPalette.successBorder;
+      }
+    }
 
     final tubeWidget = Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(Icons.water_drop_rounded, color: tubeColor, size: 28.r),
+        Icon(Icons.water_drop_rounded, color: tubeColor, size: 22.r),
         Container(
-          height: 90.h,
+          height: 80.h,
           width: maxWidth,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: cardBg,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(8.r),
               topRight: Radius.circular(8.r),
-              bottomLeft: Radius.circular(20.r),
-              bottomRight: Radius.circular(20.r),
+              bottomLeft: Radius.circular(16.r),
+              bottomRight: Radius.circular(16.r),
             ),
-            border: Border.all(color: _LocalPalette.colore4e4e7, width: 2),
+            border: Border.all(
+              color: borderColor,
+              width: isSelected ? 2.5.w : 2.w,
+            ),
             boxShadow: [
-              BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.08),
+                offset: Offset(0, 4.h),
+                blurRadius: 4,
+              ),
             ],
           ),
-          child: Column(
+          child: Stack(
             children: [
-              Container(height: 30.h, width: double.infinity, color: tubeColor),
-              Expanded(
-                child: Center(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 4.w),
-                    child: _buildOptionText(text),
+              Column(
+                children: [
+                  Container(
+                    height: 24.h,
+                    width: double.infinity,
+                    color: tubeColor,
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 3.w),
+                        child: _buildOptionText(text),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              // Small speaker button in top corner
+              Positioned(
+                top: 2.r,
+                right: 2.r,
+                child: Semantics(
+                  label: 'Pronounce $text',
+                  button: true,
+                  child: InkWell(
+                    key: ValueKey('colors_speaker_$text'),
+                    onTap: () => _playOptionAudio(text),
+                    child: Container(
+                      padding: EdgeInsets.all(2.r),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.8),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.volume_up_rounded,
+                        size: 12.r,
+                        color: _LocalPalette.color3f3f46,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -356,8 +698,8 @@ class KidsColorsLayout extends StatelessWidget {
           ),
         ),
         Container(
-          height: 12.h,
-          width: maxWidth * 0.4,
+          height: 9.h,
+          width: maxWidth * 0.45,
           decoration: BoxDecoration(
             color: _LocalPalette.color52525b,
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(4.r)),
@@ -366,8 +708,27 @@ class KidsColorsLayout extends StatelessWidget {
       ],
     );
 
+    // Interactive card wrapping tap-to-answer
+    final interactiveCard = Semantics(
+      label: 'Color option $text',
+      button: true,
+      enabled: !isAnswered,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          key: ValueKey('colors_option_$text'),
+          borderRadius: BorderRadius.circular(16.r),
+          onTap: isAnswered
+              ? null
+              : () => _handleOptionSubmit(context, state, text),
+          child: tubeWidget,
+        ),
+      ),
+    );
+
     return Draggable<String>(
       data: text,
+      maxSimultaneousDrags: isAnswered ? 0 : 1,
       feedback: Material(
         color: Colors.transparent,
         child: SizedBox(
@@ -378,8 +739,8 @@ class KidsColorsLayout extends StatelessWidget {
           ),
         ),
       ),
-      childWhenDragging: Opacity(opacity: 0.3, child: tubeWidget),
-      child: tubeWidget,
+      childWhenDragging: Opacity(opacity: 0.25, child: tubeWidget),
+      child: interactiveCard,
     );
   }
 
@@ -390,25 +751,101 @@ class KidsColorsLayout extends StatelessWidget {
     bool isCorrect,
     double maxWidth,
   ) {
+    final isAnswered = state.answerStatus.isAnswered;
+    final isSelected = (_selectedOption == text);
+
+    Color cardBg = Colors.white;
+    Color borderColor = _LocalPalette.colord4d4d8;
+    if (isAnswered) {
+      if (isSelected) {
+        if (isCorrect) {
+          cardBg = _LocalPalette.successBg;
+          borderColor = _LocalPalette.successBorder;
+        } else {
+          cardBg = _LocalPalette.errorBg;
+          borderColor = _LocalPalette.errorBorder;
+        }
+      } else if (isCorrect) {
+        cardBg = _LocalPalette.successBg;
+        borderColor = _LocalPalette.successBorder;
+      }
+    }
+
     final cardWidget = Container(
       width: maxWidth,
-      height: 110.h,
+      height: 90.h,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: cardBg,
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: _LocalPalette.colord4d4d8, width: 2),
-        boxShadow: [BoxShadow(color: Colors.black12, offset: Offset(0, 6.h))],
+        border: Border.all(
+          color: borderColor,
+          width: isSelected ? 2.5.w : 2.w,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.08),
+            offset: Offset(0, 4.h),
+            blurRadius: 4,
+          ),
+        ],
       ),
-      child: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 4.w),
-          child: _buildOptionText(text),
+      child: Stack(
+        children: [
+          Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5.w),
+              child: _buildOptionText(text),
+            ),
+          ),
+          // Small speaker button in top corner
+          Positioned(
+            top: 4.r,
+            right: 4.r,
+            child: Semantics(
+              label: 'Pronounce $text',
+              button: true,
+              child: InkWell(
+                key: ValueKey('colors_speaker_$text'),
+                onTap: () => _playOptionAudio(text),
+                child: Container(
+                  padding: EdgeInsets.all(2.r),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.06),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.volume_up_rounded,
+                    size: 13.r,
+                    color: _LocalPalette.color3f3f46,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+
+    final interactiveCard = Semantics(
+      label: 'Object option $text',
+      button: true,
+      enabled: !isAnswered,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          key: ValueKey('colors_option_$text'),
+          borderRadius: BorderRadius.circular(12.r),
+          onTap: isAnswered
+              ? null
+              : () => _handleOptionSubmit(context, state, text),
+          child: cardWidget,
         ),
       ),
     );
 
     return Draggable<String>(
       data: text,
+      maxSimultaneousDrags: isAnswered ? 0 : 1,
       feedback: Material(
         color: Colors.transparent,
         child: SizedBox(
@@ -419,8 +856,8 @@ class KidsColorsLayout extends StatelessWidget {
           ),
         ),
       ),
-      childWhenDragging: Opacity(opacity: 0.3, child: cardWidget),
-      child: cardWidget,
+      childWhenDragging: Opacity(opacity: 0.25, child: cardWidget),
+      child: interactiveCard,
     );
   }
 
@@ -437,7 +874,12 @@ class KidsColorsLayout extends StatelessWidget {
         lower.contains('white') ||
         lower.contains('brown') ||
         lower.contains('gray') ||
-        lower.contains('grey');
+        lower.contains('grey') ||
+        lower.contains('teal') ||
+        lower.contains('cyan') ||
+        lower.contains('indigo') ||
+        lower.contains('gold') ||
+        lower.contains('silver');
   }
 
   Color _getColorFromName(String name, Color fallback) {
@@ -588,7 +1030,7 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('white') ||
         lower.contains('snow') ||
         lower.contains('pearl')) {
-      return _LocalPalette.colore4e4e7; // Off-white for visibility on canvas
+      return _LocalPalette.colore4e4e7;
     }
     if (lower.contains('brown')) {
       return Colors.brown;
