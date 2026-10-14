@@ -93,7 +93,7 @@ class WordMixerInfoCard extends StatelessWidget {
                           child: Text(
                             isPracticeMode
                                 ? context.tr('home.practice_round', fallback: 'Practice Round')
-                                : context.tr('home.daily_challenge', fallback: 'Daily Challenge'),
+                                : context.tr('home.daily_challenge', fallback: 'DAILY CHALLENGE'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.5.sp,
@@ -198,7 +198,7 @@ class WordMixerInfoCard extends StatelessWidget {
                   child: Text(
                     context.tr(
                       'home.unscramble_word',
-                      fallback: 'Unscramble the letters to find the word',
+                      fallback: 'Unscramble the letters to form the word',
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(

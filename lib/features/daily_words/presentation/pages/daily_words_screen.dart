@@ -173,7 +173,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       case 1:
         title = context.tr(
           'daily_words.gate1_title',
-          fallback: 'Halfway There! 🔥',
+          fallback: 'Halfway There!',
         );
         desc = context.tr(
           'daily_words.gate1_desc',
@@ -191,7 +191,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       case 2:
         title = context.tr(
           'daily_words.gate2_title',
-          fallback: 'Keep Going! ⚡',
+          fallback: 'Keep Going!',
         );
         desc = context.tr(
           'daily_words.gate2_desc',
@@ -210,7 +210,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       default:
         title = context.tr(
           'daily_words.gate3_title',
-          fallback: 'Final Word Ahead! 🏆',
+          fallback: 'Final Word Ahead!',
         );
         desc = context.tr(
           'daily_words.gate3_desc',
@@ -429,7 +429,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                           Text(
                             context.tr(
                               'daily_words.go_premium',
-                              fallback: 'Learn Without Ads · Go Premium',
+                              fallback: 'Unlock Premium',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -456,7 +456,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   child: Text(
                     context.tr(
                       'daily_words.maybe_later',
-                      fallback: 'Finish for Today',
+                      fallback: 'Maybe Later',
                     ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -752,7 +752,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
             content: Text(
               context.tr(
                 'translation.downloading',
-                fallback: 'Translation model downloading... Please wait.',
+                fallback: 'Downloading language model... Please wait.',
               ),
             ),
           ),

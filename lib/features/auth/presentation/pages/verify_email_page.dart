@@ -157,7 +157,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
           _showSnackBar(
             context.tr(
               'auth.email_verification_sent',
-              fallback: 'Email verification sent!',
+              fallback: 'Verification link sent! Take a quick peek in your inbox.',
             ),
             CustomSnackBarType.success,
           );

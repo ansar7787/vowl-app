@@ -57,7 +57,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
             KidsFittedText(
               context.tr(
                 'games.kids_body_parts_drag',
-                fallback: 'Place the correct band-aid on the X-Ray.',
+                fallback: 'Drag the band-aid to the x-ray!',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',

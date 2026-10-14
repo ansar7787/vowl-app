@@ -51,7 +51,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
   Widget build(BuildContext context) {
     return Semantics(
       label:
-          '${context.tr('hint', fallback: 'Hint')}: ${widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest)}. ${context.tr('instructions.flashcards.tap_to_reveal', fallback: 'Tap to reveal')}',
+          '${context.tr('games.hint', fallback: 'Hint')}: ${widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest)}. ${context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP TO REVEAL')}',
       child: Container(
         width: widget.width,
         height: widget.height,

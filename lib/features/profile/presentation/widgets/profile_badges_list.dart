@@ -70,7 +70,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                   Text(
                     context.tr(
                       'profile.hall_of_fame_vacant',
-                      fallback: 'Your Legacy Awaits!',
+                      fallback: 'HALL OF FAME VACANT',
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(

@@ -215,7 +215,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
         CustomSnackBar.show(
           context: context,
           message: context.tr(
-            'translation.processing_error',
+            'translation.camera_access_error',
             fallback: 'Could not access camera or gallery. Please try again.',
           ),
           type: CustomSnackBarType.error,
@@ -237,7 +237,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       ),
       featureSubtitle: context.tr(
         'translation.scan_learn_desc',
-        fallback: 'Extract and translate real-world signs and text instantly.',
+        fallback: 'Extract and translate text from images instantly.',
       ),
       adButtonLabel: context.tr(
         'translation.scan_learn_ad',
@@ -335,11 +335,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           message: limitReached
               ? context.tr(
                   'vocabulary.bounty_limit',
-                  fallback: 'Sign Found! (Daily limit of 3 reached)',
+                  fallback: 'Bounty Found! (Daily limit of 3 reached)',
                 )
               : context.tr(
                   'vocabulary.bounty_found',
-                  fallback: 'Sign Found! +5 XP & 10 Coins!',
+                  fallback: 'Bounty Found! +5 XP & 10 Coins!',
                 ),
           type: limitReached
               ? CustomSnackBarType.info
@@ -373,11 +373,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       featureIcon: Icons.g_translate_rounded,
       featureTitle: context.tr(
         'vocabulary.translate_title',
-        fallback: 'Translate Text',
+        fallback: 'Translate Word',
       ),
       featureSubtitle: context.tr(
         'vocabulary.translate_desc',
-        fallback: 'Instantly translate this text to your native language.',
+        fallback: 'Instantly translate this word to your native language.',
       ),
       adButtonLabel: context.tr(
         'vocabulary.translate_ad',
@@ -1110,7 +1110,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                   Text(
                     context.tr(
                       'translation.retake',
-                      fallback: 'Scan Another Sign or Page',
+                      fallback: 'Scan Another Page',
                     ),
                     style: TextStyle(
                       fontFamily: 'Outfit',

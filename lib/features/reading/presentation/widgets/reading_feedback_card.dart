@@ -67,8 +67,8 @@ class ReadingFeedbackCard extends StatelessWidget {
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
 
   String _title(BuildContext context) => _success
-      ? context.tr('games.excellent', fallback: 'Excellent!')
-      : context.tr('games.not_quite', fallback: 'Not Quite');
+      ? context.tr('games.excellent', fallback: 'EXCELLENT!')
+      : context.tr('games.not_quite', fallback: 'NOT QUITE!');
 
   String _buttonText(BuildContext context) {
     if (_success) {
@@ -78,7 +78,7 @@ class ReadingFeedbackCard extends StatelessWidget {
     }
     if (isFinalFailure) {
       return lives == 0
-          ? context.tr('games.see_results', fallback: 'See Results')
+          ? context.tr('games.see_results', fallback: 'SEE RESULTS')
           : context
                 .tr('common.continue_text', fallback: 'Continue')
                 .toUpperCase();
@@ -109,7 +109,7 @@ class ReadingFeedbackCard extends StatelessWidget {
     if (_success) {
       return context.tr(
         'games.semantic_correct_continue',
-        fallback: 'Correct. Tap to continue.',
+        fallback: 'Correct! Tap to continue.',
       );
     }
     if (_showExplanation) {
@@ -587,7 +587,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                         child: Text(
                           context.tr(
                             'games.explanation_caps',
-                            fallback: 'EXPLANATION',
+                            fallback: 'EXPLANATION:',
                           ),
                           style: TextStyle(
                             fontFamily: 'Outfit',

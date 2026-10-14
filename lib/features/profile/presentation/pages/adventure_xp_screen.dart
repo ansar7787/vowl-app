@@ -43,7 +43,7 @@ class AdventureXPScreen extends StatelessWidget {
           if (isError) {
             displayMessage = context.tr(
               'adventure.insufficient_coins',
-              fallback: 'Not enough coins!',
+              fallback: 'Insufficient Vowl Coins!',
             );
           } else if (rawMessage.startsWith('Exception: ') ||
               rawMessage.startsWith('ServerFailure: ')) {
@@ -53,7 +53,7 @@ class AdventureXPScreen extends StatelessWidget {
             );
             displayMessage = context.tr(
               'adventure.generic_error',
-              fallback: 'Something went wrong.',
+              fallback: 'Something went wrong. Please try again.',
             );
           } else {
             displayMessage = rawMessage;

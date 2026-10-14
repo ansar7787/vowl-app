@@ -94,7 +94,7 @@ class _DialectDrillHologramConsoleState
                         SizedBox(width: 8.w),
                         Text(
                           context
-                              .tr('games.play_audio', fallback: 'PLAY AUDIO')
+                              .tr('games.play_audio', fallback: 'Play audio')
                               .toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',

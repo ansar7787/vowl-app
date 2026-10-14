@@ -101,7 +101,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                             Text(
                               context.tr(
                                 'language_picker.title',
-                                fallback: 'Language',
+                                fallback: 'Choose Language',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -115,7 +115,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                             Text(
                               context.tr(
                                 'language_picker.subtitle',
-                                fallback: 'Choose your interface language',
+                                fallback: 'Select the language for the app interface. Game content will remain in English.',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',

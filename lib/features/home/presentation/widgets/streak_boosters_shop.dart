@@ -79,7 +79,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           } else if (msg == 'progression.double_xp_activated') {
             name = context.tr(
               'adventure.double_xp',
-              fallback: 'Double XP Boost',
+              fallback: 'Double XP',
             );
           }
 
@@ -264,7 +264,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           _buildShopItem(
             context,
             title: context
-                .tr('adventure.double_xp', fallback: 'DOUBLE XP BOOST')
+                .tr('adventure.double_xp', fallback: 'Double XP')
                 .toUpperCase(),
             subtitle: context.tr(
               'streak.double_xp_subtitle',
@@ -280,7 +280,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               context,
               name: context.tr(
                 'adventure.double_xp',
-                fallback: 'Double XP Boost',
+                fallback: 'Double XP',
               ),
               cost: 300,
               currentCoins: user.coins,
@@ -431,7 +431,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                           ),
                         ),
                         child: Text(
-                          context.tr('common.cancel', fallback: 'Cancel'),
+                          context.tr('common.cancel', fallback: 'CANCEL'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 14.sp,

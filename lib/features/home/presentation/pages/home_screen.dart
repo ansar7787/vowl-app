@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
       final repo = di.sl<LeaderboardRepository>();
       final result = await repo.getTopUsers(limit: 100);
 
-      // CRITICAL: this is an async gap â€” the widget may have been disposed
+      // CRITICAL: this is an async gap — the widget may have been disposed
       // (e.g. the user logged out / navigated away) while the request was
       // in flight. Reading `context` or calling `setState` past this point
       // without checking `mounted` first risks
@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
         }
       });
     } catch (e) {
-      // Leaderboard rank is a "nice to have" enhancement on this screen â€”
+      // Leaderboard rank is a "nice to have" enhancement on this screen —
       // never let it crash or block the home feed. Keep a debug-only trace
       // so a real regression doesn't go unnoticed during development.
       if (kDebugMode) {
@@ -213,16 +213,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     controller: di.sl<ScrollController>(instanceName: 'home'),
                     physics: const BouncingScrollPhysics(),
                     slivers: [
-                      // â”€â”€ Top Safe Area â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                      // ---------------- Top Safe Area ----------------
                       SliverToBoxAdapter(
                         child: SizedBox(
                           height: MediaQuery.of(context).padding.top + 16.h,
                         ),
                       ),
 
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       // 1. HERO HEADER (Identity & XP)
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -233,18 +233,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       // 1.5 INLINE NOTIFICATION (Conditional)
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       SliverToBoxAdapter(
                         child: InlineNotificationCard(
                           streak: user.currentStreak,
                         ),
                       ),
 
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-                      // 2. PRIMARY CTA â€” "Continue Learning"
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
+                      // 2. PRIMARY CTA — "Continue Learning"
+                      // --------------------------------------------------
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -257,9 +257,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       // 3. UNIFIED STATS ROW (Streak | Coins | Badges | Level)
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -280,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -290,7 +290,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               HomeSectionHeader(
                                 title: context.tr(
                                   'home.quest_arena_title',
-                                  fallback: 'Your Progress',
+                                  fallback: 'Quest Arena',
                                 ),
                                 subtitle: context.tr(
                                   'home.quest_arena_subtitle',
@@ -311,9 +311,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       // 5. PROGRESS CARD (Total levels + Rank)
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -334,9 +334,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       // 6. EXPLORE & TOOLS (Horizontal strip)
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       HomeSliverSectionHeader(
                         title: context.tr(
                           'home.tools_title',
@@ -352,17 +352,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const SliverToBoxAdapter(child: ToolsStrip()),
 
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       // 7. DISCOVERY HUB (Quest Recommendations)
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       HomeSliverSectionHeader(
                         title: context.tr(
                           'home.discovery_hub_title',
-                          fallback: 'Recommended for You',
+                          fallback: 'Discovery Hub',
                         ),
                         subtitle: context.tr(
                           'home.discovery_hub_subtitle',
-                          fallback: 'Listen and learn new topics',
+                          fallback: 'curated quest sequences',
                         ),
                         categoryColor: IllustrationColors.brightBlue,
                       ),
@@ -374,9 +374,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       // 8. DAILY WISDOM
-                      // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+                      // --------------------------------------------------
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverList(

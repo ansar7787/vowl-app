@@ -66,7 +66,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       default:
         return context.tr(
           'home.discovery_default_title',
-          fallback: 'Quest Sequence',
+          fallback: 'Themed Quest',
         );
     }
   }
@@ -124,7 +124,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     } else {
       GameDialogHelper.showPremiumSnackBar(
         context,
-        context.tr('quest_sequence.part_cancelled', fallback: 'Part Cancelled'),
+        context.tr('quest_sequence.part_cancelled', fallback: 'Quest part cancelled. You can try again or exit.'),
         icon: Icons.info_outline_rounded,
         color: Colors.orange,
       );
@@ -138,7 +138,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       coins: 0,
       title: context.tr(
         'quest_sequence.completed_title',
-        fallback: 'Sequence Completed!',
+        fallback: 'QUEST COMPLETED!',
       ),
       description: context.tr(
         'quest_sequence.completed_description',
@@ -147,7 +147,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       ),
       buttonText: context.tr(
         'quest_sequence.finish_button',
-        fallback: 'Finish',
+        fallback: 'FINISH',
       ),
       popResult: true,
     );
@@ -354,10 +354,10 @@ class _QuestCard extends StatelessWidget {
           SizedBox(height: 24.h),
           Text(
             isFinished
-                ? context.tr('quest_sequence.card_summary', fallback: 'Summary')
+                ? context.tr('quest_sequence.card_summary', fallback: 'SUMMARY')
                 : context.tr(
                     'quest_sequence.card_up_next',
-                    fallback: 'Up Next',
+                    fallback: 'UP NEXT',
                   ),
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -372,7 +372,7 @@ class _QuestCard extends StatelessWidget {
             isFinished
                 ? context.tr(
                     'quest_sequence.all_parts_done',
-                    fallback: 'All Done',
+                    fallback: 'All parts completed!',
                   )
                 // BUG FIX: `quest.instruction` holds a *localization key*
                 // (e.g. 'quest_sequences.strengthen_weak_spots'), not
@@ -422,7 +422,7 @@ class _QuestCard extends StatelessWidget {
                       ? context
                             .tr(
                               'quest_sequence.finish_button',
-                              fallback: 'Finish',
+                              fallback: 'FINISH',
                             )
                             .toUpperCase()
                       : context.tr(

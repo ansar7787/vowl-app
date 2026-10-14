@@ -215,7 +215,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
       args: [(index + 1).toString()],
     );
     if (isCorrect == true) {
-      return '$position $sentence. ${context.tr('games.semantic_correct_suffix', fallback: 'Correct')}';
+      return '$position $sentence. ${context.tr('games.semantic_correct_suffix', fallback: 'Correct answer')}';
     } else if (isCorrect == false) {
       return '$position $sentence. ${context.tr('games.semantic_incorrect_suffix', fallback: 'Incorrect')}';
     }

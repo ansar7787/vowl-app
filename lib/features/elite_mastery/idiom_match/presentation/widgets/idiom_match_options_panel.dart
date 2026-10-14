@@ -145,7 +145,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
     bool isWrong,
   ) {
     if (isCorrect) {
-      return '$option. ${context.tr('games.semantic_correct_suffix', fallback: 'Correct')}';
+      return '$option. ${context.tr('games.semantic_correct_suffix', fallback: 'Correct answer')}';
     }
     if (isWrong) {
       return '$option. ${context.tr('games.semantic_incorrect_suffix', fallback: 'Incorrect')}';

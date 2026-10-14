@@ -202,7 +202,7 @@ class StoryDialogueBox extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(32.w, 0, 32.w, 32.h),
       child: Semantics(
         button: true,
-        label: context.tr('story.start_journey', fallback: 'Start Journey'),
+        label: context.tr('story.start_journey', fallback: 'START JOURNEY'),
         child: ScaleButton(
           onTap: onDismiss,
           child: Container(
@@ -230,7 +230,7 @@ class StoryDialogueBox extends StatelessWidget {
             child: Center(
               child: Text(
                 context
-                    .tr('story.start_journey', fallback: 'Start Journey')
+                    .tr('story.start_journey', fallback: 'START JOURNEY')
                     .toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',

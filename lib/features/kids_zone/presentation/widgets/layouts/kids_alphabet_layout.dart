@@ -70,7 +70,7 @@ class KidsAlphabetLayout extends StatelessWidget {
               child: KidsFittedText(
                 context.tr(
                   'games.kids_alphabet_drag',
-                  fallback: 'Tap or drag the block to the chalkboard 👆',
+                  fallback: 'Drag the block to the chalkboard!',
                 ),
                 style: TextStyle(
                   fontFamily: 'Outfit',

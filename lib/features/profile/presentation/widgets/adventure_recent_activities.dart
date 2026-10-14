@@ -205,7 +205,7 @@ class AdventureRecentActivities extends StatelessWidget {
   /// [DateTime], and null without throwing.
   String _formatRelativeTime(BuildContext context, dynamic timestamp) {
     if (timestamp == null) {
-      return context.tr('adventure.time_now', fallback: 'Just now');
+      return context.tr('adventure.time_now', fallback: 'Now');
     }
 
     DateTime? dt;
@@ -222,7 +222,7 @@ class AdventureRecentActivities extends StatelessWidget {
     }
 
     if (dt == null) {
-      return context.tr('adventure.time_now', fallback: 'Just now');
+      return context.tr('adventure.time_now', fallback: 'Now');
     }
 
     final diff = DateTime.now().difference(dt);
@@ -247,6 +247,6 @@ class AdventureRecentActivities extends StatelessWidget {
         fallback: '${diff.inMinutes}m ago',
       );
     }
-    return context.tr('adventure.time_now', fallback: 'Just now');
+    return context.tr('adventure.time_now', fallback: 'Now');
   }
 }

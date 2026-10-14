@@ -643,7 +643,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                                                 context.tr(
                                                                   'games.kids_tap_wake',
                                                                   fallback:
-                                                                      'Tap to wake',
+                                                                      'TAP TO WAKE UP',
                                                                 ),
                                                                 style: TextStyle(
                                                                   fontFamily:
@@ -1250,7 +1250,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         context,
         context.tr(
           'kids_zone.not_enough_coins_hint',
-          fallback: 'Keep playing to earn more coins! 🎮',
+          fallback: 'Keep playing to earn more coins!',
         ),
         isError: true,
       );
@@ -1297,7 +1297,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             context,
             context.tr(
               'kids_zone.not_enough_coins_hint',
-              fallback: 'Keep playing to earn more coins! 🎮',
+              fallback: 'Keep playing to earn more coins!',
             ),
             isError: true,
           );

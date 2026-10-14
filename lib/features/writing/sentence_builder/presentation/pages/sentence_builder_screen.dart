@@ -460,7 +460,7 @@ class _SentenceBuilderBody extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// _SubmitButton â€” extracted for clarity and Semantics isolation
+// _SubmitButton — extracted for clarity and Semantics isolation
 // ---------------------------------------------------------------------------
 class _SubmitButton extends StatelessWidget {
   final dynamic theme;

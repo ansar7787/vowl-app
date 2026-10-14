@@ -140,7 +140,7 @@ class WordSnapHintCard extends StatelessWidget {
                             children: [
                               Text(
                                 isExpanded
-                                    ? context.tr('games.hint', fallback: 'Hint & Clue')
+                                    ? context.tr('games.hint', fallback: 'Hint')
                                     : context.tr(
                                         'games.tap_for_hint',
                                         fallback: 'Need help? Tap for a hint',

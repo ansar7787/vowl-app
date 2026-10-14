@@ -300,7 +300,7 @@ class WordCardBack extends StatelessWidget {
                       SectionLabel(
                         label: context.tr(
                           'daily_words.example',
-                          fallback: 'Example Sentence',
+                          fallback: 'Example',
                         ),
                       ),
                       const Spacer(),
@@ -1366,7 +1366,7 @@ class _NextDayCountdownTimerState extends State<NextDayCountdownTimer> {
           ),
           SizedBox(width: 8.w),
           Text(
-            context.tr('daily_words.next_unlock', fallback: 'Next words unlock in: '),
+            context.tr('daily_words.next_unlock', fallback: 'Next words unlock in:'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 13.sp,

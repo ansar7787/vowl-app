@@ -138,7 +138,7 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                                   ),
                                 ),
                                 child: Text(
-                                  "Swipe to wipe the bubbles! 🧽",
+                                  "Swipe to wipe the bubbles!",
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 20.sp,
@@ -255,7 +255,7 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                                   ),
                                   SizedBox(height: 16.h),
                                   Text(
-                                    "Sparkling! ✨",
+                                    "Sparkling!",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontSize: 22.sp,

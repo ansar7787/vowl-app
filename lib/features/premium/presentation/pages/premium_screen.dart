@@ -153,7 +153,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       _paymentSuccessVal = false;
       _errorMessageVal = context.tr(
         'premium.error_timeout',
-        fallback: 'Request timed out',
+        fallback: 'Payment request timed out. Please try again.',
       );
       _updateState();
     }
@@ -214,7 +214,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
         _paymentSuccessVal = false;
         _errorMessageVal = context.tr(
           'premium.error_upgrade_failed',
-          fallback: 'Upgrade Failed',
+          fallback: 'We couldn\'t activate your Pro access. Please contact support with your transaction ID.',
         );
         _updateState();
       }
@@ -233,7 +233,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       // fine to surface directly, with a localized fallback.
       _errorMessageVal =
           response.message ??
-          context.tr('premium.error_generic', fallback: 'An error occurred');
+          context.tr('premium.error_generic', fallback: 'Payment failed. Please try again.');
       _updateState();
     }
   }
@@ -264,7 +264,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     iap.onPurchaseRestored = null;
     iap.onPurchaseCanceled = null;
     // NOTE: Do NOT call _paymentService.dispose() here.
-    // PaymentService is a DI singleton â€” disposing it here would destroy
+    // PaymentService is a DI singleton -- disposing it here would destroy
     // the Razorpay instance for ALL other screens. Each widget's init()
     // already re-creates the Razorpay instance safely.
     super.dispose();
@@ -385,7 +385,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                                   Text(
                                     context.tr(
                                       'premium.verified_pro_badge',
-                                      fallback: 'Verified Pro',
+                                      fallback: 'VERIFIED PRO',
                                     ),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
@@ -443,11 +443,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
   /// feature bar and CTA button. That works only as long as the sum of the
   /// *fixed-size* children (hero text, 3 plan cards, feature bar, CTA
   /// button, secure-transaction label) is shorter than the available
-  /// screen height. On a small phone (e.g. 320Ã—568), at larger
-  /// accessibility text-scale factors (1.3xâ€“3x), or once strings are
+  /// screen height. On a small phone (e.g. 320×568), at larger
+  /// accessibility text-scale factors (1.3x–3x), or once strings are
   /// translated into a longer language (German, Indian regional scripts
   /// routinely run 30-50% longer than English), that sum can exceed the
-  /// screen height â€” and a `Column` containing `Expanded`/`Spacer`
+  /// screen height — and a `Column` containing `Expanded`/`Spacer`
   /// children cannot be made scrollable without changes, because flexible
   /// children require *bounded* height, which a scroll view's main axis
   /// does not provide. The previous structure would either throw a
@@ -456,7 +456,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   ///
   /// Fix: the layout now scrolls when content doesn't fit, and is
   /// perfectly centered (matching the original "stretch to fill" look)
-  /// when it does â€” the standard `LayoutBuilder` +
+  /// when it does — the standard `LayoutBuilder` +
   /// `ConstrainedBox(minHeight: ...)` + `Column(mainAxisSize: min,
   /// mainAxisAlignment: center)` idiom. The `Spacer()`s are replaced with
   /// fixed, screen-aware gaps (kept at roughly the same 1:1:1:2 ratio the
@@ -643,7 +643,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   child: Text(
                     context.tr(
                       'premium.processing_title',
-                      fallback: 'Processing...',
+                      fallback: 'Processing Payment...',
                     ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -657,7 +657,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 Text(
                   context.tr(
                     'premium.processing_subtitle',
-                    fallback: 'Please wait while we confirm your purchase.',
+                    fallback: 'Please wait while we process your request',
                   ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -674,7 +674,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     _updateState();
                   },
                   child: Text(
-                    context.tr('common.cancel', fallback: 'Cancel'),
+                    context.tr('common.cancel', fallback: 'CANCEL'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       color: Colors.white60,
@@ -1006,7 +1006,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       if (matchingProducts.isNotEmpty) {
         priceFormatted = matchingProducts.first.price;
       } else {
-        // Products not loaded yet â€” show Razorpay price as fallback
+        // Products not loaded yet — show Razorpay price as fallback
         priceFormatted = NumberFormat.simpleCurrency(
           locale: Localizations.localeOf(context).toString(),
           name: selectedPlan.currency,
@@ -1022,7 +1022,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     }
 
     final leftText = _isProcessingVal
-        ? context.tr('premium.cta_processing', fallback: 'Processing...')
+        ? context.tr('premium.cta_processing', fallback: 'PROCESSING...')
         : context.tr('premium.cta_continue', fallback: 'Continue');
 
     return Semantics(
@@ -1218,7 +1218,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 _paymentSuccessVal = false;
                 _errorMessageVal = context.tr(
                   'premium.error_upgrade_failed',
-                  fallback: 'Upgrade Failed',
+                  fallback: 'We couldn\'t activate your Pro access. Please contact support with your transaction ID.',
                 );
                 _updateState();
               }
@@ -1251,7 +1251,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
           _paymentCompletedVal = true;
           _paymentSuccessVal = false;
           _errorMessageVal = context.tr(
-            'premium.error_checkout_failed',
+            'premium.error_product_not_found',
             fallback: 'Product not found',
           );
           _updateState();
@@ -1303,7 +1303,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     return Text(
       context.tr(
         'premium.secure_transaction_tag',
-        fallback: 'Secure Transaction',
+        fallback: 'SECURE TRANSACTION • CANCEL ANYTIME',
       ),
       textAlign: TextAlign.center,
       style: TextStyle(

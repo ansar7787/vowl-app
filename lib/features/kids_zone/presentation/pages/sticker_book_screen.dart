@@ -770,7 +770,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
       color = Colors.amber;
       label = context.tr(
         'quest_archive.status_legendary',
-        fallback: 'Legendary',
+        fallback: 'LEGENDARY',
       );
     } else if (level >= 100) {
       color = Colors.orange;

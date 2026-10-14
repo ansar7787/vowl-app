@@ -322,7 +322,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                         icon: LucideIcons.wifi,
                         label: context.tr(
                           'connectivity.retry_button',
-                          fallback: 'RECONNECT',
+                          fallback: 'RETRY CONNECTION',
                         ),
                         gradient: [
                           Theme.of(context).colorScheme.primary,

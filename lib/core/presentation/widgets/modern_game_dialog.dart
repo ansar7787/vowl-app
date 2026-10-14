@@ -188,7 +188,7 @@ class ModernGameDialog extends StatelessWidget {
                             adButtonText ??
                             context.tr(
                               'games.triple_coins_button',
-                              fallback: 'Triple rewards',
+                              fallback: 'TRIPLE COINS',
                             ),
                         child: ScaleButton(
                           onTap: onAdAction!,
@@ -235,7 +235,7 @@ class ModernGameDialog extends StatelessWidget {
                                         adButtonText ??
                                             context.tr(
                                               'games.triple_coins_button',
-                                              fallback: 'TRIPLE REWARDS',
+                                              fallback: 'TRIPLE COINS',
                                             ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
@@ -310,7 +310,7 @@ class ModernGameDialog extends StatelessWidget {
                   button: true,
                   label:
                       secondaryButtonText ??
-                      context.tr('common.cancel', fallback: 'Cancel'),
+                      context.tr('common.cancel', fallback: 'CANCEL'),
                   child: TextButton(
                     onPressed: onSecondaryPressed,
                     style: TextButton.styleFrom(
@@ -323,7 +323,7 @@ class ModernGameDialog extends StatelessWidget {
                     child: Text(
                       secondaryButtonText ??
                           context
-                              .tr('common.cancel', fallback: 'Cancel')
+                              .tr('common.cancel', fallback: 'CANCEL')
                               .toUpperCase(),
                       style: TextStyle(
                         fontFamily: 'Outfit',

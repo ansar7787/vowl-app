@@ -29,7 +29,7 @@ class ProfileStickersProgress extends StatelessWidget {
       ),
       subtitle: context.tr(
         'profile.collection_progress',
-        fallback: 'Collection Progress',
+        fallback: 'COLLECTION PROGRESS',
       ),
       onTap: () => context.push(AppRouter.kidsStickerBookRoute),
       bottomContent: earnedStickers.isNotEmpty
@@ -46,7 +46,7 @@ class ProfileStickersProgress extends StatelessWidget {
                   return Semantics(
                     label: context.tr(
                       'profile.sticker_earned',
-                      fallback: 'Sticker Earned',
+                      fallback: 'Earned sticker',
                     ),
                     child: Container(
                       margin: EdgeInsets.only(right: 12.w),

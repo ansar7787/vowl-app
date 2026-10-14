@@ -121,7 +121,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                             Text(
                               context.tr(
                                 'kids_zone.learning_progress',
-                                fallback: 'Kids Learning Progress',
+                                fallback: 'KIDS LEARNING PROGRESS',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -190,7 +190,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                                 maxLines: 1,
                               ),
                               Text(
-                                context.tr('home.rank', fallback: 'Rank'),
+                                context.tr('home.rank', fallback: 'RANK'),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 7.sp,

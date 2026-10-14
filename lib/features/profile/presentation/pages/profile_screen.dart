@@ -527,7 +527,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       shadowColor: _LocalPalette.color4f46e5, // Darker Indigo for shadow
       title: context.tr(
         'profile.upgrade_to_premium',
-        fallback: 'Upgrade to Premium',
+        fallback: 'UPGRADE TO PREMIUM',
       ),
       subtitle: context.tr(
         'profile.upgrade_to_premium_subtitle',
@@ -610,7 +610,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             SizedBox(width: 10.w),
             Text(
-              context.tr('settings.sign_out', fallback: 'Sign Out'),
+              context.tr('settings.sign_out', fallback: 'SIGN OUT ACCOUNT'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 16.sp,
@@ -729,7 +729,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       subtitle: context.tr(
                         'profile.source_reality_subtitle',
-                        fallback: 'Use your device camera.',
+                        fallback: 'Camera',
                       ),
                       onTap: () {
                         Navigator.pop(context);
@@ -748,7 +748,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       subtitle: context.tr(
                         'profile.source_memory_subtitle',
-                        fallback: 'Choose from your photo library.',
+                        fallback: 'Gallery',
                       ),
                       onTap: () {
                         Navigator.pop(context);

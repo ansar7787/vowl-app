@@ -32,7 +32,7 @@ class ProfileBentoStats extends StatelessWidget {
         _BentoWideCard(
           title: context.tr(
             'profile.current_level_label',
-            fallback: 'Current Level',
+            fallback: 'CURRENT LEVEL',
           ),
           value: context.tr(
             'profile.level_value',
@@ -88,7 +88,7 @@ class ProfileBentoStats extends StatelessWidget {
         _BentoWideCard(
           title: context.tr(
             'profile.adventure_xp_label',
-            fallback: 'Adventure XP',
+            fallback: 'ADVENTURE XP',
           ),
           value: context.tr(
             'profile.total_experience',

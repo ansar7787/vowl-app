@@ -85,8 +85,8 @@ class GameFeedbackCard extends StatelessWidget {
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
 
     final title = success
-        ? context.tr('games.excellent', fallback: 'Excellent!')
-        : context.tr('games.not_quite', fallback: 'Not Quite');
+        ? context.tr('games.excellent', fallback: 'EXCELLENT!')
+        : context.tr('games.not_quite', fallback: 'NOT QUITE!');
 
     final buttonText = success
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
@@ -355,7 +355,7 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                       Text(
                         context.tr(
                           'games.explanation_caps',
-                          fallback: 'EXPLANATION',
+                          fallback: 'EXPLANATION:',
                         ),
                         style: TextStyle(
                           fontFamily: 'Outfit',

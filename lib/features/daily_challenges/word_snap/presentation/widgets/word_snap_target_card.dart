@@ -103,7 +103,7 @@ class WordSnapTargetCard extends StatelessWidget {
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            context.tr('home.daily_challenge', fallback: 'Daily Challenge'),
+                            context.tr('home.daily_challenge', fallback: 'DAILY CHALLENGE'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.5.sp,

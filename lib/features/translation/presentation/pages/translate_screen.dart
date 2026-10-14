@@ -612,7 +612,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
             button: true,
             label: context.tr(
               'translation.downloaded_packs',
-              fallback: 'Language Packs',
+              fallback: 'Downloaded Language Packs',
             ),
             child: Material(
               color: Colors.transparent,
@@ -659,7 +659,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
             state.currentTargetLanguage ??
             context.tr(
               'translation.select_target_language',
-              fallback: 'Select Language',
+              fallback: 'Select Target Language',
             );
 
         final isTargetReady = state.downloadedLanguages.contains(target);
@@ -1145,7 +1145,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                   decoration: InputDecoration(
                     hintText: context.tr(
                       'translation.type_to_translate',
-                      fallback: 'Type to translate...',
+                      fallback: 'Type something to translate...',
                     ),
                     hintStyle: TextStyle(
                       fontFamily: 'Outfit',
@@ -1455,7 +1455,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     Text(
                       context.tr(
                         'translation.downloading_pack',
-                        fallback: 'Downloading language pack...',
+                        fallback: 'Downloading offline language pack (~30MB)...',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -1486,7 +1486,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     state.translatedText.isEmpty
                         ? context.tr(
                             'translation.translation_placeholder',
-                            fallback: 'Translation will appear here',
+                            fallback: 'Translation will appear here.',
                           )
                         : state.translatedText,
                     style: TextStyle(

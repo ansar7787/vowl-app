@@ -296,7 +296,7 @@ class _LanguageSelectionBottomSheetState
                       : AppColors.slate100,
                   hintText: context.tr(
                     'common.search',
-                    fallback: 'Search languages...',
+                    fallback: 'Search',
                   ),
                   hintStyle: TextStyle(
                     fontFamily: 'Outfit',
@@ -543,7 +543,7 @@ class _LanguageSelectionBottomSheetState
                       borderRadius: BorderRadius.circular(8.r),
                     ),
                     child: Text(
-                      context.tr('common.ready', fallback: 'Offline'),
+                      context.tr('common.ready', fallback: 'READY'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,

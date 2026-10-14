@@ -97,7 +97,7 @@ class GameDialogHelper {
     );
     if (hasMultiplier && coins > 0) {
       coinDesc +=
-          '\n${context.tr('games.mastery_bonus_line', fallback: '✨ XP Level 100 Mastery: 2x Coin Bonus Applied!')}';
+          '\n${context.tr('games.mastery_bonus_line', fallback: 'XP Level 100 Mastery: 2x Coin Bonus Applied!')}';
     } else if (!hasMultiplier) {
       coinDesc +=
           '\n${context.tr('games.triple_coins_line', args: ['${coins * 3}'], fallback: 'Watch an ad to TRIPLE your COINS to ${coins * 3}!')}';
@@ -179,7 +179,7 @@ class GameDialogHelper {
                         context,
                         context.tr(
                           'games.ad_not_ready',
-                          fallback: 'Ad not ready yet, try again soon.',
+                          fallback: 'Ad not ready yet. Please try again in a few seconds!',
                         ),
                         icon: Icons.hourglass_empty_rounded,
                         color: Colors.orange,
@@ -212,7 +212,7 @@ class GameDialogHelper {
                             context,
                             context.tr(
                               'games.coins_tripled',
-                              fallback: 'Coins Tripled!',
+                              fallback: 'COINS TRIPLED!',
                             ),
                             icon: Icons.auto_awesome_rounded,
                             color: AppColors.emerald500,
@@ -330,7 +330,7 @@ class GameDialogHelper {
                       context,
                       context.tr(
                         'games.ad_not_ready',
-                        fallback: 'Ad not ready yet, try again soon.',
+                        fallback: 'Ad not ready yet. Please try again in a few seconds!',
                       ),
                       icon: Icons.hourglass_empty_rounded,
                       color: Colors.orange,
@@ -402,7 +402,7 @@ class GameDialogHelper {
         isSuccess: true,
         onButtonPressed: () => Navigator.of(dialogCtx).pop(),
         isExitConfirmation: true,
-        adButtonText: context.tr('games.kids_quit_button', fallback: 'Quit'),
+        adButtonText: context.tr('games.kids_quit_button', fallback: 'QUIT'),
         onAdAction: () {
           Navigator.of(dialogCtx).pop();
           onQuit();
@@ -426,7 +426,7 @@ class GameDialogHelper {
       builder: (dialogCtx) => ModernGameDialog(
         title: resolvedTitle,
         description: hint,
-        buttonText: context.tr('games.got_it', fallback: 'Got It!'),
+        buttonText: context.tr('games.got_it', fallback: 'GOT IT'),
         onButtonPressed: () => Navigator.of(dialogCtx).pop(),
       ),
     );
@@ -513,7 +513,7 @@ class GameDialogHelper {
               context,
               context.tr(
                 'games.ad_not_ready',
-                fallback: 'Ad not ready yet, try again soon.',
+                fallback: 'Ad not ready yet. Please try again in a few seconds!',
               ),
               icon: Icons.hourglass_empty_rounded,
               color: Colors.orange,
@@ -569,7 +569,7 @@ class GameDialogHelper {
       context: context,
       message: context.tr(
         'games.honesty_is_mastery',
-        fallback: 'HONESTY IS MASTERY 🛡️',
+        fallback: 'HONESTY IS MASTERY',
       ),
       type: CustomSnackBarType.warning,
     );

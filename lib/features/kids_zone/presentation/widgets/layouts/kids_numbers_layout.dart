@@ -594,7 +594,7 @@ class _ActionHintText extends StatelessWidget {
 
     final localizedText = context.tr(
       'games.kids_numbers_drag',
-      fallback: 'Tap a planet or drag it to the rocket! 🚀',
+      fallback: 'Tap a planet or drag it to the rocket!',
     );
 
     return Container(

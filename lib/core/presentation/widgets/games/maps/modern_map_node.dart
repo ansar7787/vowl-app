@@ -401,7 +401,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          context.tr('home.level_label', fallback: 'Level'),
+                          context.tr('home.level_label', fallback: 'LEVEL'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 8.sp,

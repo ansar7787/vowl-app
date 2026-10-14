@@ -118,7 +118,7 @@ class HintPurchaseDialog {
                         ),
                         child: Text(
                           context
-                              .tr('common.cancel', fallback: 'Cancel')
+                              .tr('common.cancel', fallback: 'CANCEL')
                               .toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',

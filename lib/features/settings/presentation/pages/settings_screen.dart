@@ -203,7 +203,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (context.mounted) {
         CustomSnackBar.show(
           context: context,
-          message: context.tr('settings.email_error', fallback: 'Email Error'),
+          message: context.tr('settings.email_error', fallback: 'Could not open your email app.'),
           type: CustomSnackBarType.error,
         );
       }
@@ -251,7 +251,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     try {
       // FIX (CRITICAL-2): Never call SharedPreferences.clear() from a
       // "clear cache" action. User preferences (notifications, sound, locale)
-      // are NOT cache â€” destroying them silently is a critical UX regression.
+      // are NOT cache — destroying them silently is a critical UX regression.
       //
       // True cache = in-memory image cache + temporary files on disk.
       imageCache.clear();
@@ -273,7 +273,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           context: context,
           message: context.tr(
             'settings.cache_cleared',
-            fallback: 'Cache Cleared',
+            fallback: 'App cache cleared successfully!',
           ),
           type: CustomSnackBarType.success,
         );
@@ -284,7 +284,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           context: context,
           message: context.tr(
             'settings.cache_clear_error',
-            fallback: 'Error clearing cache',
+            fallback: 'We couldn\'t clear the cache right now. Please try again.',
           ),
           type: CustomSnackBarType.error,
         );
@@ -707,7 +707,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               ),
               subtitle: context.tr(
                 'settings.sound_effects_subtitle',
-                fallback: 'App sounds and speech',
+                fallback: 'App audio and UI feedback',
               ),
               icon: Icons.volume_up_rounded,
               color: IllustrationColors.vibrantPink,
@@ -752,7 +752,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               ),
               subtitle: context.tr(
                 'settings.push_notifications_subtitle',
-                fallback: 'Daily reminders and alerts',
+                fallback: 'Stay updated with daily quests',
               ),
               icon: Icons.notifications_active_rounded,
               color: IllustrationColors.warmOrange,
@@ -987,7 +987,7 @@ class _SettingsDangerGroup extends StatelessWidget {
             SettingsTile(
               title: context.tr(
                 'settings.clear_cache',
-                fallback: 'Clear Cache',
+                fallback: 'Clear App Cache',
               ),
               icon: Icons.cleaning_services_rounded,
               color: _LocalPalette.coloreab308,

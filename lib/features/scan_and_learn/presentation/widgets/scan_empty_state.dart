@@ -246,9 +246,9 @@ class ScanEmptyState extends StatelessWidget {
             spacing: 8.w,
             runSpacing: 8.h,
             children: [
-              _buildContextPill(isDark, '🪧 Street Signs'),
-              _buildContextPill(isDark, '📜 Menus & Bills'),
-              _buildContextPill(isDark, '📖 Books & Labels'),
+              _buildContextPill(isDark, 'Street Signs'),
+              _buildContextPill(isDark, 'Menus & Bills'),
+              _buildContextPill(isDark, 'Books & Labels'),
             ],
           ),
           SizedBox(height: 28.h),

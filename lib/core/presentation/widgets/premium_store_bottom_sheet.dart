@@ -134,13 +134,13 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     iap.onPurchaseCanceled = null;
     _stateHash.dispose();
     // NOTE: Do NOT call _paymentService.dispose() here.
-    // PaymentService is a DI singleton â€” disposing it here would destroy
+    // PaymentService is a DI singleton -- disposing it here would destroy
     // the Razorpay instance for ALL other screens. Each widget's init()
     // already re-creates the Razorpay instance safely.
     super.dispose();
   }
 
-  // â”€â”€â”€ Payment Handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ---------------- Payment Handlers ----------------
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) async {
     final pack = _pendingPack;
@@ -230,7 +230,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     }
   }
 
-  // â”€â”€â”€ Purchase Flow â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ---------------- Purchase Flow ----------------
 
   Future<void> _onPackTap(CoinPack pack) async {
     if (_isProcessing) return;
@@ -313,7 +313,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         CustomSnackBar.show(
           context: context,
           message: context.tr(
-            'store.checkout_error',
+            'store.product_not_found',
             fallback: 'Product not found',
           ),
           type: CustomSnackBarType.error,
@@ -396,7 +396,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     return Color(int.tryParse(hexColor, radix: 16) ?? 0xFFFFC107);
   }
 
-  // â”€â”€â”€ Build â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ---------------- Build ----------------
 
   @override
   Widget build(BuildContext context) {
@@ -1112,7 +1112,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           builder: (context) {
                             // For Google Play, show the actual localized price
                             // from the product details (correct currency symbol).
-                            // For Razorpay (India), show â‚¹ price from Firestore.
+                            // For Razorpay (India), show ₹ price from Firestore.
                             String priceText;
                             if (_useGooglePlay) {
                               String productId;
@@ -1133,9 +1133,9 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                   ? match.first.price
                                   : (_useGooglePlay && match.isEmpty
                                         ? '...'
-                                        : 'â‚¹${pack.price.toInt()}');
+                                        : '₹${pack.price.toInt()}');
                             } else {
-                              priceText = 'â‚¹${pack.price.toInt()}';
+                              priceText = '₹${pack.price.toInt()}';
                             }
                             return Text(
                               priceText,

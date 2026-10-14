@@ -401,7 +401,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                           ? context.tr(
                               'beginner_discovery.reward_unlocked_subtitle',
                               fallback:
-                                  'All 5 done! Tap below to claim 150 Coins 🎉',
+                                  'All 5 missions done! Tap below to claim your coins',
                             )
                           : context.tr(
                               'beginner_discovery.progress_status',
@@ -804,7 +804,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
               container: true,
               label: context.tr(
                 'beginner_discovery.reward_claimed',
-                fallback: '150 Coins Claimed • All Quests Completed ✨',
+                fallback: '150 Coins Claimed',
               ),
               child: Container(
                 width: double.infinity,
@@ -831,8 +831,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                       child: Text(
                         context.tr(
                           'beginner_discovery.reward_claimed',
-                          fallback:
-                              '150 Coins Claimed • All Quests Completed ✨',
+                          fallback: '150 Coins Claimed',
                         ),
                         style: TextStyle(
                           fontFamily: 'Outfit',

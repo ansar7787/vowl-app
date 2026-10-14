@@ -908,7 +908,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   Text(
                     context.tr(
                       'vocabulary.no_objects',
-                      fallback: 'No objects recognized',
+                      fallback: 'No objects analyzed yet.',
                     ),
                     style: TextStyle(
                       color: isDark ? Colors.white : Colors.black87,

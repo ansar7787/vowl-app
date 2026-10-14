@@ -123,7 +123,7 @@ class _FullErrorScreen extends StatelessWidget {
     return Semantics(
       label: context.tr(
         'error.system_anomaly',
-        fallback: 'System Anomaly Detected',
+        fallback: 'SYSTEM ANOMALY',
       ),
       child: Scaffold(
         backgroundColor: AppColors.slate900,
@@ -158,7 +158,7 @@ class _FullErrorScreen extends StatelessWidget {
                       Text(
                         context.tr(
                           'error.system_anomaly',
-                          fallback: 'System Anomaly Detected',
+                          fallback: 'SYSTEM ANOMALY',
                         ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -199,7 +199,7 @@ class _FullErrorScreen extends StatelessWidget {
                         button: true,
                         label: context.tr(
                           'error.return_to_base',
-                          fallback: 'Return to Base',
+                          fallback: 'RETURN TO BASE',
                         ),
                         child: ScaleButton(
                           onTap: onRetry,
@@ -216,7 +216,7 @@ class _FullErrorScreen extends StatelessWidget {
                             child: Text(
                               context.tr(
                                 'error.return_to_base',
-                                fallback: 'Return to Base',
+                                fallback: 'RETURN TO BASE',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',

@@ -169,7 +169,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             _hasSpokenNudge = true;
             final nudgeMsg = context.tr(
               'games.kids_nudge',
-              fallback: 'Let\'s go!',
+              fallback: 'Focus! Use a hint if you need help saving your last life.',
             );
             Future.delayed(const Duration(milliseconds: 1200), () async {
               if (mounted) {
@@ -344,7 +344,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
               SizedBox(height: 32.h),
               Text(
-                context.tr('games.kids_error_title', fallback: 'Oops!'),
+                context.tr('games.kids_error_title', fallback: 'NICE TRY!'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 28.sp,
@@ -356,7 +356,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               Text(
                 context.tr(
                   'games.kids_error_body',
-                  fallback: 'Something went wrong.',
+                  fallback: 'This level is taking a nap.\nCheck back soon!',
                 ),
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -403,7 +403,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                           Text(
                             context.tr(
                               'games.try_again',
-                              fallback: 'Try again',
+                              fallback: 'Try Again',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',

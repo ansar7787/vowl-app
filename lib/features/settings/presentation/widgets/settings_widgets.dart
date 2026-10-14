@@ -331,7 +331,7 @@ class SettingsLogoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: context.tr('settings.sign_out', fallback: 'Sign Out'),
+      label: context.tr('settings.sign_out', fallback: 'SIGN OUT ACCOUNT'),
       button: true,
       child: Container(
         width: double.infinity,
@@ -391,7 +391,7 @@ class SettingsLogoutButton extends StatelessWidget {
                           child: AutoSizeText(
                             context.tr(
                               'settings.sign_out',
-                              fallback: 'Sign Out',
+                              fallback: 'SIGN OUT ACCOUNT',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -441,8 +441,8 @@ class SettingsProfileSection extends StatelessWidget {
       label:
           '${currentUser.displayName ?? context.tr('settings.explorer', fallback: 'Explorer')}. '
           '${currentUser.email}. '
-          '${currentUser.isPremium ? context.tr('settings.premium_quester', fallback: 'Premium Quester') : context.tr('settings.free_account', fallback: 'Free Account')}. '
-          '${context.tr("settings.tap_to_edit_profile")}',
+          '${currentUser.isPremium ? context.tr('settings.premium_quester', fallback: 'PREMIUM QUESTER') : context.tr('settings.free_account', fallback: 'FREE ACCOUNT')}. '
+          '${context.tr("settings.tap_to_edit_profile", fallback: "Tap to edit profile")}',
       button: true,
       child: GlassTile(
         padding: EdgeInsets.all(24.r),
@@ -604,11 +604,11 @@ class SettingsProfileSection extends StatelessWidget {
                                 currentUser.isPremium
                                     ? context.tr(
                                         'settings.premium_quester',
-                                        fallback: 'Premium Quester',
+                                        fallback: 'PREMIUM QUESTER',
                                       )
                                     : context.tr(
                                         'settings.free_account',
-                                        fallback: 'Free Account',
+                                        fallback: 'FREE ACCOUNT',
                                       ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',

@@ -21,6 +21,7 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/story_service.dart';
+import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_transport_layout.dart';
 
 class MockKidsBloc extends MockBloc<KidsEvent, KidsState> implements KidsBloc {}
@@ -36,6 +37,8 @@ class MockHapticService extends Mock implements HapticService {}
 class MockAppLogger extends Mock implements AppLogger {}
 
 class MockLocaleService extends Mock implements LocaleService {}
+
+class MockTranslationService extends Mock implements TranslationService {}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -139,12 +142,19 @@ void main() {
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<TranslationService>()) di.sl.unregister<TranslationService>();
+
+    final mockTranslationService = MockTranslationService();
+    when(() => mockTranslationService.isLanguageConfigured()).thenAnswer((_) async => true);
+    when(() => mockTranslationService.getConfiguredLanguageName()).thenAnswer((_) async => 'Spanish');
+    when(() => mockTranslationService.getConfiguredSourceLanguageName()).thenAnswer((_) async => 'English');
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<AppLogger>(mockLogger);
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
+    di.sl.registerSingleton<TranslationService>(mockTranslationService);
   });
 
   Future<void> pumpTransportLayout(
@@ -375,11 +385,11 @@ void main() {
       when(() => mockKidsBloc.stream).thenAnswer((_) => const Stream<KidsState>.empty());
 
       // Tapping option should not submit again
-      await tester.tap(find.text('Car').last, warnIfMissed: false);
+      await tester.tap(find.text('Car').first, warnIfMissed: false);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 100));
 
-      verifyNever(() => mockKidsBloc.add(any()));
+      verifyNever(() => mockKidsBloc.add(any(that: isA<SubmitKidsAnswer>())));
     });
 
     testWidgets('renders without overflow on narrow 320dp screen',
@@ -465,14 +475,14 @@ void main() {
               // Level 1: Welcome beat
               final beat1 = storyService.getStoryBeat(context, 'transport', 1);
               expect(beat1, isNotNull);
-              expect(beat1!.title, 'New Quest');
+              expect(beat1!.title, 'NEW QUEST');
               expect(beat1.text, contains('Welcome traveler!'));
               expect(beat1.text, contains('land, sea, and in the air!'));
 
               // Level 100: Grand milestone beat
               final beat100 = storyService.getStoryBeat(context, 'transport', 100);
               expect(beat100, isNotNull);
-              expect(beat100!.title, 'Adventure Log');
+              expect(beat100!.title, 'ADVENTURE LOG');
               expect(beat100.text, contains('One hundred levels of travel!'));
               expect(beat100.text, contains('road, across oceans, and up in the sky!'));
 

@@ -455,7 +455,7 @@ class AdventureLevelScreen extends StatelessWidget {
         ),
         'desc': context.tr(
           'adventure.perk_streak_protection_desc',
-          fallback: 'Keep your streak alive even if you miss a day!',
+          fallback: 'No reset on missed days',
         ),
         'level': 50,
         'icon': Icons.security_rounded,
@@ -465,11 +465,11 @@ class AdventureLevelScreen extends StatelessWidget {
       {
         'title': context.tr(
           'adventure.perk_coin_multiplier_title',
-          fallback: 'Coin Multiplier',
+          fallback: '2x Coin Multiplier',
         ),
         'desc': context.tr(
           'adventure.perk_coin_multiplier_desc',
-          fallback: 'Earn bonus coins on every quest.',
+          fallback: 'Double rewards per quest',
         ),
         'level': 100,
         'icon': Icons.stars_rounded,
@@ -483,7 +483,7 @@ class AdventureLevelScreen extends StatelessWidget {
         ),
         'desc': context.tr(
           'adventure.perk_avatar_aura_desc',
-          fallback: 'Unlock a special glowing aura for your profile.',
+          fallback: 'Holographic status glow',
         ),
         'level': 200,
         'icon': Icons.auto_awesome_rounded,
@@ -500,7 +500,7 @@ class AdventureLevelScreen extends StatelessWidget {
           child: Text(
             context.tr(
               'adventure.level_mastery_perks_header',
-              fallback: 'Mastery Perks',
+              fallback: 'LEVEL MASTERY PERKS',
             ),
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -562,11 +562,11 @@ class AdventureLevelScreen extends StatelessWidget {
                             isActive
                                 ? context.tr(
                                     'adventure.perk_status_active',
-                                    fallback: 'Active',
+                                    fallback: 'ACTIVE',
                                   )
                                 : context.tr(
                                     'adventure.perk_status_locked',
-                                    fallback: 'Locked',
+                                    fallback: 'LOCKED',
                                   ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -643,7 +643,7 @@ class AdventureLevelScreen extends StatelessWidget {
         Text(
           context.tr(
             'adventure.upcoming_milestones_header',
-            fallback: 'Upcoming Milestones',
+            fallback: 'UPCOMING MILESTONES',
           ),
           style: TextStyle(
             fontFamily: 'Outfit',
@@ -955,11 +955,11 @@ class AdventureLevelScreen extends StatelessWidget {
       titleBuilder: (amount) => amount > 5
           ? context.tr(
               'adventure.hint_pack_grand_master',
-              fallback: 'Grandmaster Hints',
+              fallback: 'GRAND MASTER PACK',
             )
           : context.tr(
               'adventure.hint_pack_strategic',
-              fallback: 'Strategic Hints',
+              fallback: 'STRATEGIC HINT PACK',
             ),
       bodyBuilder: (cost, amount) => context.tr(
         'adventure.hint_pack_exchange_body',

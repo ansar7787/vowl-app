@@ -66,18 +66,18 @@ class _VowlyAuthCompanionState extends State<VowlyAuthCompanion> {
       if (widget.isSignup) {
         return context.tr(
           'auth_companion.email_focus_signup',
-          fallback: 'Your best email',
+          fallback: 'Choose your email!',
         );
       }
       if (widget.isForgotPassword) {
         return context.tr(
           'auth_companion.email_focus_forgot',
-          fallback: 'Where should we send it?',
+          fallback: 'Where to send it?',
         );
       }
       return context.tr(
         'auth_companion.email_focus_signin',
-        fallback: 'Welcome back!',
+        fallback: 'Time to sign in!',
       );
     }
 
@@ -86,11 +86,11 @@ class _VowlyAuthCompanionState extends State<VowlyAuthCompanion> {
       return widget.nameValue.isEmpty
           ? context.tr(
               'auth_companion.name_focus_empty',
-              fallback: "What's your name?",
+              fallback: 'Hello! What\'s your name?',
             )
           : context.tr(
               'auth_companion.name_focus_filled',
-              fallback: 'Great name!',
+              fallback: 'What a great name!',
             );
     }
 
@@ -98,7 +98,7 @@ class _VowlyAuthCompanionState extends State<VowlyAuthCompanion> {
     if (widget.isSignup) {
       return context.tr(
         'auth_companion.default_signup',
-        fallback: 'Create your account to get started.',
+        fallback: 'Begin your learning adventure.',
       );
     }
     if (widget.isForgotPassword) {
@@ -109,7 +109,7 @@ class _VowlyAuthCompanionState extends State<VowlyAuthCompanion> {
     }
     return context.tr(
       'auth_companion.default_login',
-      fallback: 'Welcome back. Ready to learn?',
+      fallback: 'Ready to continue your journey?',
     );
   }
 

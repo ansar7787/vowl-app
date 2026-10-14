@@ -87,7 +87,7 @@ class ModernFeatureBar extends StatelessWidget {
                 icon: LucideIcons.scan,
                 title: context.tr(
                   'premium.feature_scan_learn',
-                  fallback: 'Scan & Learn Documents',
+                  fallback: 'Scan & Learn',
                 ),
                 color: AppColors.indigo500,
               ),
@@ -96,7 +96,7 @@ class ModernFeatureBar extends StatelessWidget {
                 icon: LucideIcons.sparkles,
                 title: context.tr(
                   'premium.feature_translations',
-                  fallback: 'Offline AI Translations',
+                  fallback: 'Instant AI Translations',
                 ),
                 color: AppColors.rose500,
               ),
@@ -114,7 +114,7 @@ class ModernFeatureBar extends StatelessWidget {
                 icon: LucideIcons.shieldCheck,
                 title: context.tr(
                   'premium.feature_zero_ads',
-                  fallback: 'No Ads (100% Ad-Free)',
+                  fallback: 'ZERO ADS',
                 ),
                 color: AppColors.emerald500,
               ),
@@ -123,7 +123,7 @@ class ModernFeatureBar extends StatelessWidget {
                 icon: LucideIcons.zap,
                 title: context.tr(
                   'premium.feature_2x_speed',
-                  fallback: 'Enhanced Learning Tools',
+                  fallback: '2X SPEED',
                 ),
                 color: AppColors.amber500,
               ),
@@ -141,7 +141,7 @@ class ModernFeatureBar extends StatelessWidget {
                 icon: LucideIcons.unlock,
                 title: context.tr(
                   'premium.feature_unlimited_levels',
-                  fallback: 'Unlock All Difficulty Vaults',
+                  fallback: 'UNLIMITED PROGRESS',
                 ),
                 color: _LocalPalette.color06b6d4,
               ),
@@ -177,7 +177,7 @@ class ModernFeatureBar extends StatelessWidget {
                 icon: LucideIcons.award,
                 title: context.tr(
                   'premium.feature_vip_badges',
-                  fallback: 'Exclusive VIP Badges',
+                  fallback: 'VIP BADGES',
                 ),
                 color: _LocalPalette.coloreab308,
                 isLast: true,

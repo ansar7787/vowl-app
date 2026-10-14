@@ -277,7 +277,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     if (_isCompletingLevel) return;
     _isCompletingLevel = true;
 
-    // 1. Instant UI feedback â€” emitted immediately to prevent double-taps on the
+    // 1. Instant UI feedback — emitted immediately to prevent double-taps on the
     // "Continue" button and eliminate UI delays.
     emit(
       WritingGameComplete(
@@ -289,7 +289,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
       ),
     );
 
-    // 2. Background persistence â€” Fire-and-forget.
+    // 2. Background persistence — Fire-and-forget.
     // By the time the user taps "OK" on the completion dialog (which takes
     // 2-3s for animation), this will be finished, and AuthRefreshUser will
     // read the committed data.

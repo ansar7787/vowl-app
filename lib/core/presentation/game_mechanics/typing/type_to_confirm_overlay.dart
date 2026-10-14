@@ -394,7 +394,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                             ),
                             SizedBox(height: 12.h),
                             Text(
-                              'PERFECT! 🎯',
+                              'PERFECT!',
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 18.sp,

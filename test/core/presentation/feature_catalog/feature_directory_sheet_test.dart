@@ -257,7 +257,7 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(
-          find.text('150 Coins Claimed • All Quests Completed ✨'),
+          find.text('150 Coins Claimed'),
           findsOneWidget,
         );
       },

@@ -315,7 +315,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                           description: context.tr(
                                             'store.got_key_desc',
                                             fallback:
-                                                'You got a Golden Key! 🗝️',
+                                                'You got a Golden Key!',
                                           ),
                                           buttonText: context.tr(
                                             'store.awesome',
@@ -570,7 +570,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                                 description: context.tr(
                                                   'store.got_key_desc',
                                                   fallback:
-                                                      'You got a Golden Key! 🗝️',
+                                                      'You got a Golden Key!',
                                                 ),
                                                 buttonText: context.tr(
                                                   'store.awesome',
@@ -667,21 +667,21 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                           _isLoadingLimits
                                               ? context.tr(
                                                   'store.loading_ad',
-                                                  fallback: 'Loading...',
+                                                  fallback: 'Loading Ad...',
                                                 )
                                               : _remainingClaims <= 0
                                               ? context.tr(
                                                   'store.out_of_ads_today',
-                                                  fallback: "Out of Ads",
+                                                  fallback: 'Out of Ads Today',
                                                 )
                                               : isPremium
                                               ? context.tr(
                                                   'store.claim_free_key',
-                                                  fallback: 'Claim 1 Free',
+                                                  fallback: 'Claim Free Key',
                                                 )
                                               : context.tr(
                                                   'store.watch_ad_key',
-                                                  fallback: 'Watch Ad',
+                                                  fallback: 'Watch Ad for Key',
                                                 ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',

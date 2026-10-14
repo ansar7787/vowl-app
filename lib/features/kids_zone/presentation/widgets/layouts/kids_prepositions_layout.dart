@@ -809,11 +809,11 @@ class _KidsPrepositionsLayoutState extends State<KidsPrepositionsLayout> {
 
     if (isAnswered) {
       if (isCorrect) {
-        text = context.tr('games.correct', fallback: 'Correct! Well done.');
+        text = context.tr('games.correct', fallback: 'Correct!');
         icon = Icons.check_circle_rounded;
         color = _PrepositionsPalette.successBorder;
       } else if (isIncorrect) {
-        text = context.tr('games.try_again', fallback: 'Not quite. Try again.');
+        text = context.tr('games.try_again', fallback: 'Try Again');
         icon = Icons.refresh_rounded;
         color = _PrepositionsPalette.errorBorder;
       } else {
@@ -831,7 +831,7 @@ class _KidsPrepositionsLayoutState extends State<KidsPrepositionsLayout> {
     } else {
       text = context.tr(
         'games.kids_prepositions_drag',
-        fallback: 'Choose the word that fits.',
+        fallback: 'Choose the word that completes the sentence.',
       );
       icon = Icons.touch_app_rounded;
       color = Colors.white.withValues(alpha: 0.9);

@@ -218,7 +218,7 @@ void main() {
 
       // Verify Output Area
       expect(find.text('SPANISH'), findsOneWidget);
-      expect(find.text('Translation will appear here'), findsOneWidget);
+      expect(find.text('Translation will appear here.'), findsOneWidget);
     });
 
     testWidgets('typing in TextField shows character count and clear button', (tester) async {
@@ -323,7 +323,7 @@ void main() {
       // Exit confirmation dialog appears with KEEP PLAYING and Quit actions
       expect(find.byType(ModernGameDialog), findsOneWidget);
       expect(find.text('KEEP PLAYING'), findsOneWidget);
-      expect(find.text('Quit'), findsOneWidget);
+      expect(find.text('QUIT'), findsOneWidget);
 
       // Dismiss dialog cleanly to cancel repeating animations before test teardown
       await tester.tap(find.text('KEEP PLAYING'));

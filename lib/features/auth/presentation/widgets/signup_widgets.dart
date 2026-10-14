@@ -252,7 +252,7 @@ class SignUpPasswordInput extends StatelessWidget {
                   context: context,
                   contrastColor: contrastColor,
                   hint: context.tr(
-                    'auth.password_hint_text',
+                    'auth.password_create_hint_text',
                     fallback: 'Create a password',
                   ),
                   prefixIcon: Icons.lock_outlined,

@@ -126,7 +126,7 @@ class _GameSkipBypassButtonState extends State<GameSkipBypassButton> {
       return Semantics(
         button: true,
         label: outOfAttempts
-            ? context.tr('game.continue_button', fallback: 'Continue')
+            ? context.tr('game.continue_button', fallback: 'CONTINUE')
             : context.tr(
                 'game.skip_and_watch_ad',
                 fallback: 'Skip and watch an ad',

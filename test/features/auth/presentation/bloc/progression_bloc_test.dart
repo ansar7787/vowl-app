@@ -113,10 +113,21 @@ void main() {
       act: (bloc) => bloc.add(const ProgressionActivateDoubleXPRequested(100)),
       expect: () => [
         isA<ProgressionState>().having(
-          (s) => s.message,
-          'message',
-          'progression.double_xp_activated',
+          (s) => s.isLoading,
+          'isLoading',
+          true,
         ),
+        isA<ProgressionState>()
+            .having(
+              (s) => s.message,
+              'message',
+              'progression.double_xp_activated',
+            )
+            .having(
+              (s) => s.isLoading,
+              'isLoading',
+              false,
+            ),
       ],
       verify: (_) {
         verify(() => mockActivateDoubleXP(any())).called(1);

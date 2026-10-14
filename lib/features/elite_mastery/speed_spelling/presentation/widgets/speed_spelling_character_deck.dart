@@ -40,7 +40,7 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
                 )
               : context.tr(
                   'games.semantic_letter_tile_used',
-                  fallback: 'Used Letter Tile',
+                  fallback: 'Letter tile, already used',
                 ),
           excludeSemantics: true,
           child: ScaleButton(

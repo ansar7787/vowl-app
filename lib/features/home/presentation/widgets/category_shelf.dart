@@ -249,7 +249,7 @@ class _GameEntryCard extends StatelessWidget {
         child: FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            context.tr('quest_archive.new_badge', fallback: 'New'),
+            context.tr('quest_archive.new_badge', fallback: 'NEW'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 8.sp,

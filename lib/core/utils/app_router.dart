@@ -309,7 +309,10 @@ class _RouterErrorPage extends StatelessWidget {
                     ),
                     SizedBox(height: 24.h),
                     Text(
-                      localeService.tr('router.error.no_route_defined'),
+                      localeService.tr(
+                        'router.error.no_route_defined',
+                        fallback: 'No route defined',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 20.sp,
@@ -334,7 +337,10 @@ class _RouterErrorPage extends StatelessWidget {
                       onPressed: () => context.go(AppRouter.homeRoute),
                       icon: const Icon(Icons.home_rounded),
                       label: Text(
-                        localeService.tr('router.error.go_home'),
+                        localeService.tr(
+                          'router.error.go_home',
+                          fallback: 'Go Home',
+                        ),
                         style: const TextStyle(
                           fontFamily: 'Outfit',
                           fontWeight: FontWeight.w700,

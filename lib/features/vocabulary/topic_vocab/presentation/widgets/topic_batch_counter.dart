@@ -28,7 +28,7 @@ class TopicBatchCounter extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "${context.tr('instructions.topicVocab.words_in_batch')}: $count / $total",
+            "${context.tr('instructions.topicVocab.words_in_batch', fallback: 'BATCH PROGRESS')}: $count / $total",
             style: TextStyle(
               fontFamily: 'Outfit',
               color: color.withValues(alpha: 0.8),

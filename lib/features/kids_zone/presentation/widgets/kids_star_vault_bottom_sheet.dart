@@ -197,14 +197,14 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         builder: (ctx) => ModernGameDialog(
           title: context.tr(
             'store.daily_limit_reached',
-            fallback: 'DAILY LIMIT REACHED',
+            fallback: 'Daily Limit Reached',
           ),
           description: context.tr(
             'store.daily_limit_desc',
             fallback:
                 'You have claimed all your free stars for today! Come back tomorrow or visit the Premium Store for unlimited access.',
           ),
-          buttonText: context.tr('common.got_it', fallback: 'GOT IT'),
+          buttonText: context.tr('common.got_it', fallback: 'GOT IT!'),
           isSuccess: false,
           onButtonPressed: () => Navigator.of(ctx).pop(),
           customIcon: Icon(

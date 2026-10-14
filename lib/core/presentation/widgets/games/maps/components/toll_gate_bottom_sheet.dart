@@ -166,11 +166,11 @@ class TollGateBottomSheet {
                                   context: parentContext,
                                   builder: (ctx) => ModernGameDialog(
                                     title: context.tr(
-                                      'store.purchase_failed_title',
-                                      fallback: 'PURCHASE FAILED',
+                                      'toll_gate.unlock_failed_title',
+                                      fallback: 'UNLOCK FAILED',
                                     ),
                                     description: context.tr(
-                                      'store.purchase_failed_desc',
+                                      'toll_gate.unlock_failed_desc',
                                       fallback:
                                           'Something went wrong and your key was not spent. Please try again.',
                                     ),

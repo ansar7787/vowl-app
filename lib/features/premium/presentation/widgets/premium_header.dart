@@ -93,7 +93,7 @@ class PremiumHeader extends StatelessWidget {
                         child: Text(
                           context.tr(
                             'premium.verified_pro_badge',
-                            fallback: 'Verified Pro',
+                            fallback: 'VERIFIED PRO',
                           ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,

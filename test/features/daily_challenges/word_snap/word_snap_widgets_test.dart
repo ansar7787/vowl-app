@@ -110,7 +110,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(isExpandedNotifier.value, isTrue);
-      expect(find.text('Hint & Clue'), findsOneWidget);
+      expect(find.text('Hint'), findsOneWidget);
       expect(find.textContaining('Starts with "Pertaining"'), findsOneWidget);
       expect(
         find.textContaining('Pertaining to, or resembling, the zebra'),

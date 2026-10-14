@@ -134,7 +134,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
         coins: 0,
         title: context.tr('home.practice_complete', fallback: 'Practice Complete!'),
         description: context.tr(
-          'home.practice_complete_desc',
+          'word_mixer.practice_complete_desc',
           fallback: 'Great job unscrambling this bonus word!',
         ),
         enableDoubleUp: false,
@@ -162,7 +162,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
       coins: 10,
       title: context.tr(
         'home.word_mixer_master',
-        fallback: 'Puzzle Solved!',
+        fallback: 'WORD MIXER MASTER!',
       ),
       enableDoubleUp: true,
     );
@@ -355,7 +355,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
                   Text(
                     context.tr(
                       'home.puzzle_load_failed',
-                      fallback: 'Couldn\'t load puzzle',
+                      fallback: 'Couldn\'t load today\'s puzzle',
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -389,7 +389,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
                     },
                     icon: const Icon(Icons.refresh_rounded),
                     label: Text(
-                      context.tr('common.retry', fallback: 'Try Again'),
+                      context.tr('common.retry', fallback: 'Retry'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,

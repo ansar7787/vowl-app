@@ -131,7 +131,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
       (widget.message ??
               context.tr(
                 'loading.synchronizing_title',
-                fallback: 'Synchronizing...',
+                fallback: 'SYNCHRONIZING',
               ))
           .toUpperCase(),
       style: TextStyle(
@@ -237,7 +237,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
             liveRegion: true,
             label: context.tr(
               'loading.synchronizing_title',
-              fallback: 'Synchronizing...',
+              fallback: 'SYNCHRONIZING',
             ),
             child: AbsorbPointer(child: content),
           ),

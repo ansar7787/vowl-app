@@ -345,7 +345,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        context.tr('games.kids_coins', fallback: 'Kids Coins'),
+                        context.tr('games.kids_coins', fallback: 'KIDS COINS'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
@@ -661,7 +661,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         context: context,
         message: context.tr(
           'kids_zone.not_enough_coins_hint',
-          fallback: 'Keep playing to earn more coins! \uD83C\uDFAE',
+          fallback: 'Keep playing to earn more coins!',
         ),
         type: CustomSnackBarType.warning,
       );
@@ -914,7 +914,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                           Text(
                             context.tr(
                               'games.watch_and_earn',
-                              fallback: 'Watch & Earn',
+                              fallback: 'WATCH & EARN',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',

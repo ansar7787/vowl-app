@@ -461,7 +461,7 @@ class _AppShell extends StatelessWidget {
                   isLoading: authState.status == AuthStatus.loggingOut,
                   message: context.tr(
                     'loading_overlay.securing_data',
-                    fallback: 'Securing Data...',
+                    fallback: 'Securing your quest data',
                   ),
                   child: Container(
                     color: Theme.of(context).scaffoldBackgroundColor,

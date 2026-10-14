@@ -74,7 +74,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
     return Semantics(
       label: context.tr(
         'common.mission_briefing',
-        fallback: 'Mission Briefing',
+        fallback: 'MISSION BRIEFING',
       ),
       child: Material(
         color: Colors.transparent,
@@ -202,7 +202,10 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                   // Category label
                                   Text(
                                     context
-                                        .tr('common.mission_briefing')
+                                        .tr(
+                                          'common.mission_briefing',
+                                          fallback: 'MISSION BRIEFING',
+                                        )
                                         .toUpperCase(),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',

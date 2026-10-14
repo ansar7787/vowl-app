@@ -546,7 +546,7 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
               ),
               child: Center(
                 child: Text(
-                  context.tr('game.submit_button', fallback: 'CHECK ANSWER'),
+                  context.tr('game.check_answer', fallback: 'CHECK ANSWER'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 15.sp,

@@ -54,7 +54,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
             button: true,
             label: context.tr(
               'games.semantic_listen_example',
-              fallback: 'Listen to Example',
+              fallback: 'Play pronunciation example',
             ),
             excludeSemantics: true,
             child: GestureDetector(

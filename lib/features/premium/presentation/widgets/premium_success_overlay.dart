@@ -50,7 +50,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                   liveRegion: true,
                   label: context.tr(
                     'premium.success_title',
-                    fallback: 'Welcome to Premium!',
+                    fallback: 'UPGRADE SUCCESSFUL',
                   ),
                   child:
                       Container(
@@ -100,7 +100,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                   child: Text(
                     context.tr(
                       'premium.success_title',
-                      fallback: 'Welcome to Premium!',
+                      fallback: 'UPGRADE SUCCESSFUL',
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -150,7 +150,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                         Text(
                           context.tr(
                             'premium.transaction_id_label',
-                            fallback: 'TRANSACTION ID',
+                            fallback: 'Transaction ID',
                           ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -180,7 +180,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                   button: true,
                   label: context.tr(
                     'premium.begin_adventure_button',
-                    fallback: 'Begin Adventure',
+                    fallback: 'BEGIN ADVENTURE',
                   ),
                   child: ScaleButton(
                     onTap: onBeginAdventure,
@@ -210,7 +210,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                           context
                               .tr(
                                 'premium.begin_adventure_button',
-                                fallback: 'Begin Adventure',
+                                fallback: 'BEGIN ADVENTURE',
                               )
                               .toUpperCase(),
                           textAlign: TextAlign.center,

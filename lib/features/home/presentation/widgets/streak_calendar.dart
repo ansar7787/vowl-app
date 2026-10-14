@@ -121,7 +121,7 @@ class StreakCalendar extends StatelessWidget {
             child: Text(
               context.tr(
                 'streak.heatmap_description',
-                fallback: 'Earn XP to light your daily flame.',
+                fallback: 'Complete a quest and earn XP to light your daily flame.',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',

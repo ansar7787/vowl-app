@@ -1008,7 +1008,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                                   Text(
                                                     context.tr(
                                                       'store.loading_ad',
-                                                      fallback: 'Loading...',
+                                                      fallback: 'Loading Ad...',
                                                     ),
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
