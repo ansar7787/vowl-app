@@ -1,18 +1,20 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/utils/locale_service.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/features/photo_vocabulary/utils/photo_vocabulary_dictionary.dart';
 
 class _LocalPalette {
   _LocalPalette._();
   static const Color color2dd4bf = Color(0xFF2DD4BF);
+  static const Color color0d9488 = Color(0xFF0D9488);
 }
 
 class PhotoBountyTarget extends StatelessWidget {
@@ -35,23 +37,43 @@ class PhotoBountyTarget extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final textColor = Theme.of(context).colorScheme.onSurface;
-    final subtitleColor = isDark
-        ? Colors.amber.shade300
-        : Colors.amber.shade700;
+    final dictionaryEntry = PhotoVocabularyDictionary.getEntry(currentBounty);
 
-    final unfoundBgColor = isDark
-        ? Colors.white.withValues(alpha: 0.1)
-        : Colors.black.withValues(alpha: 0.05);
-    final unfoundBorderColor = isDark
-        ? Colors.white.withValues(alpha: 0.2)
-        : Colors.black.withValues(alpha: 0.15);
+    final progressCount = dailyLimit > 0 ? dailyCount.clamp(0, dailyLimit) : dailyCount;
 
-    final foundBgColor = isDark
-        ? AppColors.teal500.withValues(alpha: 0.3)
-        : AppColors.teal500.withValues(alpha: 0.15);
-    final foundBorderColor = isDark
-        ? _LocalPalette.color2dd4bf
-        : AppColors.teal500;
+    final cardBgGradient = bountyFound
+        ? LinearGradient(
+            colors: isDark
+                ? [
+                    AppColors.teal500.withValues(alpha: 0.2),
+                    const Color(0xFF064E3B).withValues(alpha: 0.35),
+                  ]
+                : [
+                    const Color(0xFFF0FDF4),
+                    const Color(0xFFDCFCE7).withValues(alpha: 0.7),
+                  ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          )
+        : LinearGradient(
+            colors: isDark
+                ? [
+                    const Color(0xFF042F2E).withValues(alpha: 0.45),
+                    const Color(0xFF0F172A).withValues(alpha: 0.78),
+                  ]
+                : [
+                    Colors.white,
+                    const Color(0xFFF8FAFC),
+                  ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          );
+
+    final cardBorderColor = bountyFound
+        ? AppColors.emerald500.withValues(alpha: isDark ? 0.55 : 0.4)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.12)
+            : AppColors.teal500.withValues(alpha: 0.2));
 
     final semanticMessage = bountyFound
         ? 'Daily Bounty found! Target: $currentBounty.'
@@ -63,52 +85,192 @@ class PhotoBountyTarget extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(20.r),
+          borderRadius: BorderRadius.circular(24.r),
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+              padding: EdgeInsets.all(18.r),
               decoration: BoxDecoration(
-                color: bountyFound ? foundBgColor : unfoundBgColor,
-                borderRadius: BorderRadius.circular(20.r),
+                gradient: cardBgGradient,
+                borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
-                  color: bountyFound ? foundBorderColor : unfoundBorderColor,
-                  width: 1.5,
+                  color: cardBorderColor,
+                  width: 1.5.w,
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: (bountyFound ? AppColors.emerald500 : AppColors.teal500)
+                        .withValues(alpha: isDark ? 0.22 : 0.07),
+                    blurRadius: 20,
+                    offset: const Offset(0, 6),
+                  ),
+                ],
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // ── 1. Top Header Row: Category Badge + Daily Goal Pill ────
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // Target Icon / Verified Icon
-                      Container(
-                        padding: EdgeInsets.all(8.r),
-                        decoration: BoxDecoration(
-                          color: bountyFound
-                              ? AppColors.teal500.withValues(alpha: 0.2)
-                              : (isDark
-                                  ? Colors.amber.shade400.withValues(alpha: 0.15)
-                                  : Colors.amber.shade600.withValues(alpha: 0.15)),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          bountyFound
-                              ? Icons.verified_rounded
-                              : Icons.center_focus_strong_rounded,
-                          color: bountyFound
-                              ? AppColors.teal500
-                              : (isDark
-                                  ? Colors.amber.shade400
-                                  : Colors.amber.shade600),
-                          size: 22.r,
+                      // Category / Bounty Tag (Never ellipsized)
+                      Flexible(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.5.h),
+                          decoration: BoxDecoration(
+                            color: bountyFound
+                                ? AppColors.emerald500.withValues(alpha: 0.15)
+                                : (isDark
+                                    ? Colors.white.withValues(alpha: 0.08)
+                                    : AppColors.teal500.withValues(alpha: 0.1)),
+                            borderRadius: BorderRadius.circular(10.r),
+                            border: Border.all(
+                              color: bountyFound
+                                  ? AppColors.emerald500.withValues(alpha: 0.3)
+                                  : (isDark
+                                      ? Colors.white.withValues(alpha: 0.12)
+                                      : AppColors.teal500.withValues(alpha: 0.2)),
+                              width: 1.w,
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                bountyFound
+                                    ? Icons.verified_rounded
+                                    : Icons.photo_camera_rounded,
+                                size: 13.r,
+                                color: bountyFound
+                                    ? AppColors.emerald500
+                                    : (isDark ? _LocalPalette.color2dd4bf : _LocalPalette.color0d9488),
+                              ),
+                              SizedBox(width: 5.w),
+                              Flexible(
+                                child: Text(
+                                  dictionaryEntry.cefr != null && dictionaryEntry.cefr!.isNotEmpty
+                                      ? 'OBJECT HUNT • ${dictionaryEntry.cefr}'
+                                      : 'DAILY OBJECT HUNT',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 0.3,
+                                    color: bountyFound
+                                        ? AppColors.emerald500
+                                        : (isDark ? _LocalPalette.color2dd4bf : _LocalPalette.color0d9488),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
+
+                      SizedBox(width: 8.w),
+
+                      // Daily Goal Indicator Pill: "Today: $dailyCount/$dailyLimit found"
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.h),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.black.withValues(alpha: 0.25)
+                              : AppColors.slate100,
+                          borderRadius: BorderRadius.circular(10.r),
+                          border: Border.all(
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.08)
+                                : AppColors.slate200,
+                            width: 1.w,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: List.generate(dailyLimit.clamp(1, 5), (index) {
+                                final completed = index < progressCount;
+                                return Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 1.w),
+                                  child: Icon(
+                                    completed ? Icons.star_rounded : Icons.star_outline_rounded,
+                                    size: 13.r,
+                                    color: completed
+                                        ? (isDark ? Colors.amber.shade300 : AppColors.amber500)
+                                        : (isDark ? Colors.white30 : AppColors.slate300),
+                                  ),
+                                );
+                              }),
+                            ),
+                            SizedBox(width: 5.w),
+                            Text(
+                              context.tr(
+                                'vocabulary.daily_progress',
+                                args: ['$dailyCount', '$dailyLimit'],
+                                fallback: 'Today: $dailyCount/$dailyLimit found',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w800,
+                                color: progressCount >= dailyLimit
+                                    ? (isDark ? Colors.amber.shade300 : AppColors.amber500)
+                                    : (isDark ? Colors.white70 : AppColors.slate600),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: 14.h),
+
+                  // ── 2. Hero Target Object Row ──────────────────────────────
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Object Plaque Icon Container
+                      Container(
+                        width: 44.r,
+                        height: 44.r,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: bountyFound
+                                ? [AppColors.emerald500, const Color(0xFF059669)]
+                                : (isDark
+                                    ? [AppColors.teal500, const Color(0xFF0F766E)]
+                                    : [const Color(0xFF14B8A6), _LocalPalette.color0d9488]),
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(14.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: (bountyFound ? AppColors.emerald500 : AppColors.teal500)
+                                  .withValues(alpha: 0.3),
+                              blurRadius: 10,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Icon(
+                            bountyFound
+                                ? Icons.task_alt_rounded
+                                : Icons.center_focus_strong_rounded,
+                            color: Colors.white,
+                            size: 22.r,
+                          ),
+                        ),
+                      ),
+
                       SizedBox(width: 12.w),
 
-                      // Title & Subtitle without ellipsis truncation
+                      // Target Object Text & Description (Never truncated, full text display)
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,137 +283,189 @@ class PhotoBountyTarget extends StatelessWidget {
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w700,
+                                fontSize: 16.5.sp,
+                                fontWeight: FontWeight.w800,
                                 color: textColor,
                                 height: 1.25,
                               ),
                             ),
-                            SizedBox(height: 3.h),
+                            SizedBox(height: 4.h),
                             Text(
                               bountyFound
                                   ? context.tr(
                                       'vocabulary.bounty_completed',
                                       fallback: 'Object found! +5 XP & 10 Coins earned 🎉',
                                     )
-                                  : context.tr(
-                                      'vocabulary.find_bounty_desc',
-                                      fallback:
-                                          'Find this object to earn +5 XP & 10 Coins',
-                                    ),
+                                  : (dictionaryEntry.definition.isNotEmpty
+                                      ? dictionaryEntry.definition
+                                      : context.tr(
+                                          'vocabulary.find_bounty_desc',
+                                          fallback: 'Find this object to earn +5 XP & 10 Coins',
+                                        )),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w500,
                                 color: bountyFound
-                                    ? AppColors.teal500
-                                    : subtitleColor,
+                                    ? (isDark ? AppColors.emerald400 : AppColors.emerald600)
+                                    : (isDark ? Colors.white70 : AppColors.slate600),
+                                height: 1.3,
                               ),
                             ),
                           ],
                         ),
                       ),
 
-                      // Shuffle / Skip Button (only when uncompleted)
-                      if (!bountyFound && onShuffle != null) ...[
-                        SizedBox(width: 8.w),
-                        Semantics(
-                          label: 'Shuffle bounty target',
-                          button: true,
-                          child: ScaleButton(
-                            onTap: onShuffle,
-                            child: Container(
-                              padding: EdgeInsets.all(8.r),
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.08)
-                                    : Colors.black.withValues(alpha: 0.05),
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: isDark
-                                      ? Colors.white.withValues(alpha: 0.15)
-                                      : Colors.black.withValues(alpha: 0.1),
+                      SizedBox(width: 8.w),
+
+                      // Symmetrical Action Buttons (Shuffle + Info)
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (!bountyFound && onShuffle != null) ...[
+                            Semantics(
+                              label: 'Shuffle bounty target',
+                              button: true,
+                              child: ScaleButton(
+                                onTap: onShuffle,
+                                child: Container(
+                                  width: 36.r,
+                                  height: 36.r,
+                                  decoration: BoxDecoration(
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.08)
+                                        : Colors.white,
+                                    borderRadius: BorderRadius.circular(11.r),
+                                    border: Border.all(
+                                      color: isDark
+                                          ? Colors.white.withValues(alpha: 0.12)
+                                          : AppColors.slate200,
+                                      width: 1.w,
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+                                        blurRadius: 6,
+                                        offset: const Offset(0, 2),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Icon(
+                                    LucideIcons.shuffle,
+                                    size: 16.r,
+                                    color: isDark ? _LocalPalette.color2dd4bf : _LocalPalette.color0d9488,
+                                  ),
                                 ),
                               ),
-                              child: Icon(
-                                LucideIcons.shuffle,
-                                size: 16.r,
-                                color: isDark ? Colors.white70 : Colors.black87,
+                            ),
+                            SizedBox(width: 6.w),
+                          ],
+
+                          Semantics(
+                            label: 'How object bounties work',
+                            button: true,
+                            child: ScaleButton(
+                              onTap: () => _showBountyInfo(context),
+                              child: Container(
+                                width: 36.r,
+                                height: 36.r,
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.08)
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(11.r),
+                                  border: Border.all(
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.12)
+                                        : AppColors.slate200,
+                                    width: 1.w,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+                                      blurRadius: 6,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  Icons.info_outline_rounded,
+                                  size: 17.r,
+                                  color: isDark ? Colors.white70 : AppColors.slate600,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                    ],
+                  ),
 
-                      // Interactive Info Button
-                      SizedBox(width: 6.w),
-                      Semantics(
-                        label: 'How object bounties work',
-                        button: true,
-                        child: ScaleButton(
-                          onTap: () => _showBountyInfo(context),
-                          child: Container(
-                            padding: EdgeInsets.all(7.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.08)
-                                  : Colors.black.withValues(alpha: 0.05),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.15)
-                                    : Colors.black.withValues(alpha: 0.1),
-                                width: 1.w,
-                              ),
-                            ),
+                  // ── 3. Educational Context Tip (Clue / Example, Never ellipsized) ──
+                  if (!bountyFound && (dictionaryEntry.example.isNotEmpty || dictionaryEntry.grammarTip.isNotEmpty)) ...[
+                    SizedBox(height: 10.h),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 7.h),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.04)
+                            : AppColors.teal500.withValues(alpha: 0.04),
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.06)
+                              : AppColors.teal500.withValues(alpha: 0.1),
+                          width: 1.w,
+                        ),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(top: 1.5.h),
                             child: Icon(
-                              Icons.info_outline_rounded,
-                              size: 16.r,
-                              color: isDark ? Colors.white70 : Colors.black87,
+                              Icons.lightbulb_outline_rounded,
+                              size: 14.r,
+                              color: isDark ? Colors.amber.shade300 : AppColors.amber600,
                             ),
                           ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  // Daily Progress Indicator Bar
-                  SizedBox(height: 10.h),
-                  Row(
-                    children: [
-                      Text(
-                        context.tr(
-                          'vocabulary.daily_progress',
-                          args: ['$dailyCount', '$dailyLimit'],
-                          fallback: 'Today: $dailyCount/$dailyLimit found',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isDark ? Colors.white54 : Colors.black45,
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Expanded(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(4.r),
-                          child: LinearProgressIndicator(
-                            value: dailyLimit > 0
-                                ? (dailyCount / dailyLimit).clamp(0.0, 1.0)
-                                : 0.0,
-                            minHeight: 5.h,
-                            backgroundColor: isDark
-                                ? Colors.white.withValues(alpha: 0.1)
-                                : Colors.black.withValues(alpha: 0.08),
-                            color: dailyCount >= dailyLimit
-                                ? AppColors.emerald500
-                                : AppColors.teal500,
+                          SizedBox(width: 7.w),
+                          Expanded(
+                            child: Text(
+                              dictionaryEntry.example.isNotEmpty
+                                  ? 'Example: "${dictionaryEntry.example}"'
+                                  : dictionaryEntry.grammarTip,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.5.sp,
+                                fontWeight: FontWeight.w500,
+                                color: isDark ? Colors.white60 : AppColors.slate600,
+                                height: 1.35,
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
+
+                  // ── 4. Sleek Progress Indicator Bar ───────────────────────
+                  if (dailyLimit > 0) ...[
+                    SizedBox(height: 10.h),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(4.r),
+                      child: LinearProgressIndicator(
+                        value: (dailyCount / dailyLimit).clamp(0.0, 1.0),
+                        minHeight: 4.h,
+                        backgroundColor: isDark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppColors.teal500.withValues(alpha: 0.08),
+                        color: dailyCount >= dailyLimit
+                            ? AppColors.emerald500
+                            : AppColors.teal500,
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
@@ -259,11 +473,11 @@ class PhotoBountyTarget extends StatelessWidget {
         ),
       ),
     )
-    .animate(target: bountyFound ? 1 : 0)
-    .shimmer(
-      duration: 1.seconds,
-      color: isDark ? Colors.white54 : Colors.black12,
-    );
+        .animate(target: bountyFound ? 1 : 0)
+        .shimmer(
+          duration: 1.seconds,
+          color: isDark ? Colors.white54 : Colors.black12,
+        );
   }
 
   void _showBountyInfo(BuildContext context) {

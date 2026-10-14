@@ -80,7 +80,7 @@ void main() {
     });
 
     test('Smart fallback generates valid entry for unknown arbitrary sign', () {
-      final entry = ScanVocabularyDictionary.getEntry('Subway');
+      final entry = ScanVocabularyDictionary.getEntry('Unknown Sign');
       expect(entry.meaning, contains('Real-world printed text'));
       expect(entry.signCategory, equals('Scanned Printed Sign'));
       expect(entry.realWorldTip, contains('context'));

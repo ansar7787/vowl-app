@@ -40,6 +40,7 @@ void main() {
   Widget wrapWithScreenUtil(Widget child) {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
+      minTextAdapt: true,
       builder: (context, _) => MaterialApp(
         home: Scaffold(body: child),
       ),

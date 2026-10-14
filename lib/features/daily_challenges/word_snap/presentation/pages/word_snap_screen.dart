@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vowl/core/presentation/game_mechanics/arranging/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/services/daily_challenge_service.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
@@ -14,40 +16,16 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_challenges/word_snap/domain/models/word_snap_puzzle.dart';
+import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_assembly_card.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_completed_view.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_hint_card.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_target_card.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/widgets/word_snap_top_bar.dart';
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// Word Snap Screen — Daily Challenge (10/10 Production Architecture)
-//
-// Architecture & Mechanics:
-//   ┌────────────────────────────────────────────────────────┐
-//   │  WordSnapTopBar (Back • Centered Title • Streak)       │
-//   ├────────────────────────────────────────────────────────┤
-//   │  WordSnapTargetCard (Adaptive Typography • TTS Audio)  │
-//   ├────────────────────────────────────────────────────────┤
-//   │  WordSnapHintCard (Tiered Anchor Clues • Audio • Def)  │
-//   ├────────────────────────────────────────────────────────┤
-//   │  DynamicJigsawWrapper (Inline • Sanitized Sentence)    │
-//   └────────────────────────────────────────────────────────┘
-//
-// Key Improvements:
-//   • WordSnapPuzzle model sanitizes Webster 1913 definitions, removing
-//     bibliographic citations, brackets, quotes, and OCR spacing defects.
-//   • Extracts cohesive 4–10 word phrase for mobile jigsaw assembly.
-//   • Zero-spoiler progressive hint system with starting anchor & TTS.
-//   • Adaptive target typography preventing RenderFlex overflow on narrow screens.
-//   • Full practice mode enabling replay for memory consolidation without exploits.
-//   • Error recovery with onRestore life rescue callback.
-//   • Daily completion persistence via date-stamped SharedPreferences key.
-// ═══════════════════════════════════════════════════════════════════════════════
-
 /// Persistence key prefix for daily challenge completion tracking.
 const _kCompletionKeyPrefix = 'word_snap_completed_';
 
-/// Brand color for the Word Snap feature matching tools_strip vibrant pink.
+/// Brand primary color for Word Snap matching tools_strip vibrant pink.
 const _kPrimaryColor = IllustrationColors.vibrantPink;
 
 class WordSnapScreen extends StatefulWidget {
@@ -69,6 +47,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
   final ValueNotifier<bool> _hasError = ValueNotifier(false);
   final ValueNotifier<bool> _alreadyCompleted = ValueNotifier(false);
   final ValueNotifier<bool> _isPracticeMode = ValueNotifier(false);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
 
   int _sessionCounter = 0;
 
@@ -86,6 +65,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     _hasError.dispose();
     _alreadyCompleted.dispose();
     _isPracticeMode.dispose();
+    _showConfetti.dispose();
     super.dispose();
   }
 
@@ -121,34 +101,12 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     await prefs.setBool(_todayKey, true);
   }
 
-  void _onFail() {
-    if (_isAnswered.value) return;
-    _hapticService.error();
-    _soundService.playWrong();
-    _isAnswered.value = true;
-
-    if (mounted) {
-      GameDialogHelper.showGameOver(
-        context,
-        onRestore: () {
-          if (mounted) {
-            setState(() {
-              _sessionCounter++;
-              _isAnswered.value = false;
-            });
-          }
-        },
-      );
-    }
-  }
-
   void _onSuccess() {
     if (_isAnswered.value) return;
-    _hapticService.success();
-    _soundService.playCorrect();
-    _isAnswered.value = true;
+    _showConfetti.value = true;
 
     if (_isPracticeMode.value) {
+      _isAnswered.value = true;
       if (mounted) {
         GameDialogHelper.showCompletion(
           context,
@@ -170,30 +128,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
 
     _alreadyCompleted.value = true;
     _markCompleted();
-    if (mounted) _grantRewards();
-  }
-
-  void _onBypassed() {
-    _isAnswered.value = true;
-    if (!_isPracticeMode.value) {
-      _alreadyCompleted.value = true;
-      _markCompleted();
-    }
-
-    GameDialogHelper.showCompletion(
-      context,
-      xp: 10,
-      coins: 0,
-      title: context.tr(
-        'home.challenge_bypassed',
-        fallback: 'Word Skipped',
-      ),
-      description: context.tr(
-        'home.challenge_bypassed_desc',
-        fallback: 'You skipped this word. You can practice more anytime.',
-      ),
-      enableDoubleUp: false,
-    );
+    _grantRewards();
   }
 
   void _grantRewards() {
@@ -230,6 +165,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
           _alreadyCompleted.value = false;
           _isAnswered.value = false;
           _isHintExpanded.value = false;
+          _showConfetti.value = false;
           _currentPuzzle.value = WordSnapPuzzle.fromMap(rawMap);
         });
       }
@@ -242,6 +178,24 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     _isPracticeMode.value = false;
     _isAnswered.value = false;
     _isHintExpanded.value = false;
+    _showConfetti.value = false;
+  }
+
+  void _handleExitConfirmation() {
+    final isCompleted = _alreadyCompleted.value;
+    final isPractice = _isPracticeMode.value;
+
+    // If game has already finished or in error state, allow immediate pop
+    if ((isCompleted && !isPractice) || _hasError.value || _isAnswered.value) {
+      context.pop();
+      return;
+    }
+
+    // Active gameplay: prompt standardized exit confirmation
+    GameDialogHelper.showExitConfirmation(
+      context,
+      onQuit: () => context.pop(),
+    );
   }
 
   @override
@@ -250,158 +204,176 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     final user = context.watch<AuthBloc>().state.user;
     final streak = user?.currentStreak ?? 0;
 
-    return ListenableBuilder(
-      listenable: Listenable.merge([
-        _currentPuzzle,
-        _isAnswered,
-        _hasError,
-        _alreadyCompleted,
-        _isPracticeMode,
-      ]),
-      builder: (context, _) {
-        final puzzle = _currentPuzzle.value;
-        final isCompleted = _alreadyCompleted.value;
-        final isPractice = _isPracticeMode.value;
-
-        return Scaffold(
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          body: SafeArea(
-            child: _hasError.value
-                ? _buildErrorState(streak)
-                : ((isCompleted && !isPractice) || _isAnswered.value)
-                ? WordSnapCompletedView(
-                    puzzle: puzzle,
-                    streak: streak,
-                    primaryColor: _kPrimaryColor,
-                    soundService: _soundService,
-                    hapticService: _hapticService,
-                    onPracticeAgain: _startPracticeMode,
-                    isPracticeMode: isPractice,
-                  )
-                : puzzle == null
-                ? const GameShimmerLoading(primaryColor: _kPrimaryColor)
-                : _buildGameContent(puzzle, streak, isDark, isPractice),
-          ),
-        );
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        _handleExitConfirmation();
       },
+      child: ListenableBuilder(
+        listenable: Listenable.merge([
+          _currentPuzzle,
+          _isAnswered,
+          _hasError,
+          _alreadyCompleted,
+          _isPracticeMode,
+          _showConfetti,
+        ]),
+        builder: (context, _) {
+          final puzzle = _currentPuzzle.value;
+          final isCompleted = _alreadyCompleted.value;
+          final isPractice = _isPracticeMode.value;
+          final showConfetti = _showConfetti.value;
+
+          return Scaffold(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            body: SafeArea(
+              child: Stack(
+                children: [
+                  _hasError.value
+                      ? _buildErrorState(streak)
+                      : ((isCompleted && !isPractice) || _isAnswered.value)
+                          ? WordSnapCompletedView(
+                              puzzle: puzzle,
+                              streak: streak,
+                              primaryColor: _kPrimaryColor,
+                              soundService: _soundService,
+                              hapticService: _hapticService,
+                              onPracticeAgain: _startPracticeMode,
+                              isPracticeMode: isPractice,
+                            )
+                          : puzzle == null
+                              ? const GameShimmerLoading(primaryColor: _kPrimaryColor)
+                              : _buildSliverGameContent(puzzle, streak, isDark, isPractice),
+
+                  // Celebratory Confetti Burst Overlay
+                  if (showConfetti)
+                    const Positioned.fill(
+                      child: IgnorePointer(
+                        child: GameConfetti(shouldPop: true),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 
-  // ─── Main Game Content ───────────────────────────────────────────────
+  // ─── High-Performance Sliver Game Content ──────────────────────────────
 
-  Widget _buildGameContent(
+  Widget _buildSliverGameContent(
     WordSnapPuzzle puzzle,
     int streak,
     bool isDark,
     bool isPractice,
   ) {
-    return Column(
-      children: [
-        WordSnapTopBar(streak: streak),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        // 1. Top Navigation Bar
+        SliverToBoxAdapter(
+          child: WordSnapTopBar(
+            streak: streak,
+            onBackPressed: _handleExitConfirmation,
+          ),
+        ),
 
-        // Practice Mode Banner
+        // 2. Practice Mode Banner (if active)
         if (isPractice)
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
-            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: _kPrimaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(12.r),
-              border: Border.all(
-                color: _kPrimaryColor.withValues(alpha: 0.25),
-              ),
-            ),
-            child: Row(
-              children: [
-                Icon(Icons.school_rounded, color: _kPrimaryColor, size: 16.r),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: Text(
-                    context.tr('vocabulary.practice_mode', fallback: 'Practice Mode'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w700,
-                      color: _kPrimaryColor,
-                    ),
-                  ),
+          SliverToBoxAdapter(
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+              decoration: BoxDecoration(
+                color: _kPrimaryColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: _kPrimaryColor.withValues(alpha: 0.25),
                 ),
-                GestureDetector(
-                  onTap: _exitPracticeMode,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.school_rounded, color: _kPrimaryColor, size: 16.r),
+                  SizedBox(width: 8.w),
+                  Expanded(
                     child: Text(
-                      context.tr('common.exit', fallback: 'Exit'),
+                      context.tr('vocabulary.practice_mode', fallback: 'Practice Mode'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w800,
+                        fontSize: 12.5.sp,
+                        fontWeight: FontWeight.w700,
                         color: _kPrimaryColor,
                       ),
                     ),
                   ),
-                ),
-              ],
+                  ScaleButton(
+                    onTap: _exitPracticeMode,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                      child: Text(
+                        context.tr('common.exit', fallback: 'Exit'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w800,
+                          color: _kPrimaryColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
 
-        // Scrollable content
-        Expanded(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.symmetric(
-              horizontal: 20.w,
-            ).copyWith(
-              bottom: MediaQuery.of(context).padding.bottom + 24.h,
-            ),
-            child: Column(
-              children: [
-                SizedBox(height: 8.h),
+        // 3. Main Gameplay Cards in SliverList with smooth padding
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w).copyWith(
+            top: 6.h,
+            bottom: MediaQuery.of(context).padding.bottom + 32.h,
+          ),
+          sliver: SliverList(
+            delegate: SliverChildListDelegate([
+              // Target Word Card
+              WordSnapTargetCard(
+                puzzle: puzzle,
+                primaryColor: _kPrimaryColor,
+                soundService: _soundService,
+                hapticService: _hapticService,
+              ),
+              SizedBox(height: 14.h),
 
-                // Target word card
-                WordSnapTargetCard(
-                  puzzle: puzzle,
-                  primaryColor: _kPrimaryColor,
-                  soundService: _soundService,
-                  hapticService: _hapticService,
-                ),
-                SizedBox(height: 16.h),
+              // Progressive Hint Card
+              WordSnapHintCard(
+                puzzle: puzzle,
+                isExpandedNotifier: _isHintExpanded,
+                primaryColor: _kPrimaryColor,
+                soundService: _soundService,
+                hapticService: _hapticService,
+              ),
+              SizedBox(height: 18.h),
 
-                // Progressive Hint card
-                WordSnapHintCard(
-                  puzzle: puzzle,
-                  isExpandedNotifier: _isHintExpanded,
-                  primaryColor: _kPrimaryColor,
-                  soundService: _soundService,
-                  hapticService: _hapticService,
-                ),
-                SizedBox(height: 24.h),
-
-                // Inline Jigsaw Assembly Engine
-                if (!_isAnswered.value)
-                  DynamicJigsawWrapper(
-                    key: ValueKey('snap_${puzzle.id}_${isPractice}_$_sessionCounter'),
-                    expectedText: puzzle.playableSentence,
-                    primaryColor: _kPrimaryColor,
-                    onConfirmed: _onSuccess,
-                    onBypassed: _onBypassed,
-                    onSkipped: _onFail,
-                    bonusCoins: 0,
-                    isPositioned: false,
-                    allowSkip: !isPractice,
-                  ),
-
-                SizedBox(height: 32.h),
-              ],
-            ),
+              // Bespoke Sentence Assembly Card (No Skip button, non-punitive)
+              WordSnapAssemblyCard(
+                key: ValueKey('snap_${puzzle.id}_${isPractice}_$_sessionCounter'),
+                puzzle: puzzle,
+                primaryColor: _kPrimaryColor,
+                onSuccess: _onSuccess,
+                soundService: _soundService,
+                hapticService: _hapticService,
+                isAnswered: _isAnswered.value,
+              ),
+            ]),
           ),
         ),
       ],
     );
   }
 
-  // ─── Error State ─────────────────────────────────────────────────────
+  // ─── Error State ────────────────────────────────────────────────────────
 
   Widget _buildErrorState(int streak) {
     final theme = Theme.of(context);
@@ -409,7 +381,10 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
 
     return Column(
       children: [
-        WordSnapTopBar(streak: streak),
+        WordSnapTopBar(
+          streak: streak,
+          onBackPressed: () => context.pop(),
+        ),
         Expanded(
           child: Center(
             child: Padding(

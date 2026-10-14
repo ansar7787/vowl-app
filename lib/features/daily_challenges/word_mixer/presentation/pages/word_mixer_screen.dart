@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vowl/core/presentation/game_mechanics/arranging/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/services/daily_challenge_service.dart';
@@ -12,12 +12,14 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/domain/models/word_mixer_puzzle.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_completed_view.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_hint_card.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_info_card.dart';
+import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_spelling_card.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_top_bar.dart';
 
 /// Persistence key prefix for daily challenge completion tracking.
@@ -43,8 +45,8 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
   final ValueNotifier<bool> _hasError = ValueNotifier(false);
   final ValueNotifier<bool> _alreadyCompleted = ValueNotifier(false);
   final ValueNotifier<bool> _isPracticeMode = ValueNotifier(false);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
 
-  // Key to force-reset DynamicAnagramWrapper upon life restoration or practice restart
   int _sessionCounter = 0;
 
   @override
@@ -61,6 +63,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     _hasError.dispose();
     _alreadyCompleted.dispose();
     _isPracticeMode.dispose();
+    _showConfetti.dispose();
     super.dispose();
   }
 
@@ -104,6 +107,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
           _alreadyCompleted.value = false;
           _isAnswered.value = false;
           _isHintExpanded.value = false;
+          _showConfetti.value = false;
           _currentPuzzle.value = WordMixerPuzzle.fromMap(rawMap);
         });
       }
@@ -119,12 +123,11 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
 
   void _onSuccess() {
     if (_isAnswered.value) return;
-    _hapticService.success();
-    _soundService.playCorrect();
+    _showConfetti.value = true;
     _isAnswered.value = true;
 
     if (_isPracticeMode.value) {
-      // Practice mode reward
+      // Practice mode reward dialog
       GameDialogHelper.showCompletion(
         context,
         xp: 20,
@@ -144,31 +147,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     }
   }
 
-  void _onBypassed() {
-    _isAnswered.value = true;
-    if (!_isPracticeMode.value) {
-      _alreadyCompleted.value = true;
-      _markCompleted();
-    }
-
-    GameDialogHelper.showCompletion(
-      context,
-      xp: 10,
-      coins: 0,
-      title: context.tr(
-        'home.challenge_bypassed',
-        fallback: 'Word Skipped',
-      ),
-      description: context.tr(
-        'home.challenge_bypassed_desc',
-        fallback: 'You skipped this word. You can practice more anytime.',
-      ),
-      enableDoubleUp: false,
-    );
-  }
-
   void _grantRewards() {
-    // Single reward path — credit coins once and show dialog
     di.sl<UpdateUserCoins>().call(
       const UpdateUserCoinsParams(
         amountChange: 10,
@@ -189,28 +168,19 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     );
   }
 
-  void _onFail() {
-    _hapticService.error();
-    _soundService.playWrong();
+  void _handleExitConfirmation() {
+    final isCompleted = _alreadyCompleted.value;
+    final isPractice = _isPracticeMode.value;
 
-    // Show Game Over dialog with ad-rescue restoration to prevent board freeze bug
-    GameDialogHelper.showGameOver(
+    if ((isCompleted && !isPractice) || _hasError.value || _isAnswered.value || _currentPuzzle.value == null) {
+      context.pop();
+      return;
+    }
+
+    GameDialogHelper.showExitConfirmation(
       context,
-      title: context.tr('home.out_of_attempts', fallback: 'Out of Attempts!'),
-      description: context.tr(
-        'home.out_of_attempts_desc',
-        fallback: 'Watch an ad or try again to unscramble this word.',
-      ),
-      onRestore: _restoreBoardAfterAd,
+      onQuit: () => context.pop(),
     );
-  }
-
-  void _restoreBoardAfterAd() {
-    if (!mounted) return;
-    setState(() {
-      _sessionCounter++;
-      _isAnswered.value = false;
-    });
   }
 
   @override
@@ -219,52 +189,57 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     final user = context.watch<AuthBloc>().state.user;
     final streak = user?.currentStreak ?? 0;
 
-    return ListenableBuilder(
-      listenable: Listenable.merge([
-        _currentPuzzle,
-        _isAnswered,
-        _hasError,
-        _alreadyCompleted,
-        _isPracticeMode,
-      ]),
-      builder: (context, _) {
-        return Scaffold(
-          backgroundColor: theme.scaffoldBackgroundColor,
-          body: SafeArea(
-            child: _hasError.value
-                ? _buildErrorState()
-                : (_alreadyCompleted.value || _isAnswered.value)
-                    ? Column(
-                        children: [
-                          WordMixerTopBar(
-                            onBackPressed: () => context.pop(),
-                            streak: streak,
-                            isPracticeMode: _isPracticeMode.value,
-                          ),
-                          Expanded(
-                            child: WordMixerCompletedView(
-                              puzzle: _currentPuzzle.value,
-                              streak: streak,
-                              onGoBack: () => context.pop(),
-                              onPracticeMore: _startPracticeMode,
-                              primaryColor: _kPrimaryColor,
-                              isPracticeMode: _isPracticeMode.value,
-                            ),
-                          ),
-                        ],
-                      )
-                    : _currentPuzzle.value == null
-                        ? const GameShimmerLoading(primaryColor: _kPrimaryColor)
-                        : _buildGameContent(streak),
-          ),
-        );
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        _handleExitConfirmation();
       },
+      child: ListenableBuilder(
+        listenable: Listenable.merge([
+          _currentPuzzle,
+          _isAnswered,
+          _hasError,
+          _alreadyCompleted,
+          _isPracticeMode,
+          _showConfetti,
+        ]),
+        builder: (context, _) {
+          final puzzle = _currentPuzzle.value;
+          final isCompleted = _alreadyCompleted.value;
+          final isPractice = _isPracticeMode.value;
+          final showConfetti = _showConfetti.value;
+
+          return Scaffold(
+            backgroundColor: theme.scaffoldBackgroundColor,
+            body: SafeArea(
+              child: Stack(
+                children: [
+                  _hasError.value
+                      ? _buildErrorState()
+                      : ((isCompleted && !isPractice) || _isAnswered.value)
+                          ? _buildCompletedState(streak)
+                          : puzzle == null
+                              ? const GameShimmerLoading(primaryColor: _kPrimaryColor)
+                              : _buildGameContent(streak),
+
+                  // Celebratory Confetti Burst Overlay
+                  if (showConfetti)
+                    const Positioned.fill(
+                      child: IgnorePointer(
+                        child: GameConfetti(shouldPop: true),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 
-  Widget _buildGameContent(int streak) {
-    final puzzle = _currentPuzzle.value!;
-
+  Widget _buildCompletedState(int streak) {
     return Column(
       children: [
         WordMixerTopBar(
@@ -273,51 +248,74 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
           isPracticeMode: _isPracticeMode.value,
         ),
         Expanded(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: Column(
-              children: [
-                SizedBox(height: 8.h),
+          child: WordMixerCompletedView(
+            puzzle: _currentPuzzle.value,
+            streak: streak,
+            onGoBack: () => context.pop(),
+            onPracticeMore: _startPracticeMode,
+            primaryColor: _kPrimaryColor,
+            isPracticeMode: _isPracticeMode.value,
+          ),
+        ),
+      ],
+    );
+  }
 
-                // Word info banner
-                WordMixerInfoCard(
+  Widget _buildGameContent(int streak) {
+    final puzzle = _currentPuzzle.value!;
+
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+      slivers: [
+        // ── Sticky/Top Bar ──────────────────────────────────────────────────
+        SliverToBoxAdapter(
+          child: WordMixerTopBar(
+            onBackPressed: _handleExitConfirmation,
+            streak: streak,
+            isPracticeMode: _isPracticeMode.value,
+          ),
+        ),
+
+        // ── Main Game Content ───────────────────────────────────────────────
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          sliver: SliverList(
+            delegate: SliverChildListDelegate([
+              SizedBox(height: 8.h),
+
+              // 1. Mystery Target Word Card
+              WordMixerInfoCard(
+                puzzle: puzzle,
+                isPracticeMode: _isPracticeMode.value,
+                primaryColor: _kPrimaryColor,
+              ),
+
+              SizedBox(height: 16.h),
+
+              // 2. Collapsible Anti-leak Clue Card with Rewarded Ad / Premium Unlock
+              WordMixerHintCard(
+                puzzle: puzzle,
+                isExpanded: _isHintExpanded,
+                primaryColor: _kPrimaryColor,
+                hapticService: _hapticService,
+                ttsService: di.sl.isRegistered<TtsService>() ? di.sl<TtsService>() : null,
+              ),
+
+              SizedBox(height: 20.h),
+
+              // 3. Bespoke Interactive Spelling Board (Submit only, no skip)
+              if (!_isAnswered.value)
+                WordMixerSpellingCard(
+                  key: ValueKey('mixer_${puzzle.id}_$_sessionCounter'),
                   puzzle: puzzle,
-                  isPracticeMode: _isPracticeMode.value,
                   primaryColor: _kPrimaryColor,
+                  onSuccess: _onSuccess,
+                  soundService: _soundService,
+                  hapticService: _hapticService,
                 ),
-                SizedBox(height: 16.h),
 
-                // Collapsible anti-leak hint card with TTS
-                WordMixerHintCard(
-                  puzzle: puzzle,
-                  isExpanded: _isHintExpanded,
-                  primaryColor: _kPrimaryColor,
-                ),
-                SizedBox(height: 24.h),
-
-                // Inline interactive anagram board with keyed instance for clean resets
-                if (!_isAnswered.value)
-                  DynamicAnagramWrapper(
-                    key: ValueKey('anagram_${puzzle.id}_$_sessionCounter'),
-                    expectedText: puzzle.word,
-                    primaryColor: _kPrimaryColor,
-                    onConfirmed: _onSuccess,
-                    onBypassed: _onBypassed,
-                    onFailed: _onFail,
-                    bonusCoins: 0,
-                    title: context.tr('home.spell_it', fallback: 'Spell the Word'),
-                    subtitle: context.tr(
-                      'home.spell_it_subtitle',
-                      fallback: 'Tap the letters in the correct order to form the word.',
-                    ),
-                    isPositioned: false,
-                    allowSkip: true,
-                  ),
-
-                SizedBox(height: 32.h),
-              ],
-            ),
+              SizedBox(height: 32.h),
+            ]),
           ),
         ),
       ],

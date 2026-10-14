@@ -3,7 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-/// Top bar for Word Mixer with back navigation, localized title, and streak counter.
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+
+/// Top bar for Word Mixer with modern 2026 tactile back navigation, localized title, and streak counter.
 class WordMixerTopBar extends StatelessWidget {
   final VoidCallback onBackPressed;
   final int streak;
@@ -22,25 +26,47 @@ class WordMixerTopBar extends StatelessWidget {
     final isDark = theme.brightness == Brightness.dark;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: Row(
         children: [
-          // Accessible back button
+          // Modern tactile back button
           Semantics(
             button: true,
             label: context.tr('common.back', fallback: 'Back'),
-            child: Material(
-              color: Colors.transparent,
-              borderRadius: BorderRadius.circular(12.r),
-              child: InkWell(
-                onTap: onBackPressed,
-                borderRadius: BorderRadius.circular(12.r),
-                child: Padding(
-                  padding: EdgeInsets.all(8.r),
+            child: ScaleButton(
+              onTap: () {
+                try {
+                  di.sl<HapticService>().light();
+                } catch (_) {}
+                onBackPressed();
+              },
+              child: Container(
+                width: 44.r,
+                height: 44.r,
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : Colors.white,
+                  borderRadius: BorderRadius.circular(14.r),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.12)
+                        : AppColors.slate200,
+                    width: 1.w,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+                      blurRadius: 8,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Center(
                   child: Icon(
                     Icons.arrow_back_rounded,
                     color: theme.colorScheme.onSurface,
-                    size: 24.r,
+                    size: 20.r,
                   ),
                 ),
               ),
@@ -60,7 +86,7 @@ class WordMixerTopBar extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                     color: theme.colorScheme.onSurface,
                     letterSpacing: -0.3,
                   ),
@@ -106,7 +132,7 @@ class WordMixerTopBar extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       color: Colors.white,
                     ),
                   ),
