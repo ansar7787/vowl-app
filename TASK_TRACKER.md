@@ -5,9 +5,9 @@
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **70 files**
-> - **Total Passing Tests**: **591 / 591 Tests Passing (100% Green)**
-> - **Completed Test Suites**: **38 files** (Auth 12, Games Hub 1, Kids 22, Reading 12, Daily Challenges 5, Photo Vocab 2, Scan & Learn 2, Translation 2, Core 7)
-> - **Remaining Game Screens & Hubs to Test**: **99+ screens** across 12 game categories, hubs, and shell routes.
+> - **Total Passing Tests**: **608 / 608 Tests Passing (100% Green)**
+> - **Completed Test Suites**: **39 files** (Auth 12, Games Hub 1, Kids 22, Reading 13, Daily Challenges 5, Photo Vocab 2, Scan & Learn 2, Translation 2, Core 7)
+> - **Remaining Game Screens & Hubs to Test**: **87+ screens** across 12 game categories, hubs, and shell routes.
 
 ---
 
@@ -47,7 +47,7 @@ Every game test suite MUST rigorously satisfy:
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 5 | 5 | 0 | 🟢 100% Complete (58 tests) |
 | **3** | **Kids Zone** | 35 | 35 | 0 | 🟢 100% Complete (35/35 items done) |
-| **4** | **Reading Category** | 13 | 11 | 2 | 🟡 10 Games + BLoC Done (2 games remaining) |
+| **4** | **Reading Category** | 13 | 13 | 0 | 🟢 100% Complete (163 tests) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
 | **6** | **Grammar Category** | 20 | 2 | 18 | ⚠️ BLoC + Model only (19 games remaining) |
 | **7** | **Listening Category** | 11 | 2 | 9 | ⚠️ BLoC + Model only (10 games remaining) |
@@ -188,7 +188,8 @@ Every game test suite MUST rigorously satisfy:
   - Validates initial layout rendering instruction, chronological stone slabs with drag handles & index badges, and lock capstone button, transition words highlighting via dynamic regex matching, tap-to-select stone slab with visual accent and selection haptics, tap-to-deselect active slab, tap-to-swap two stone slabs with instant position interchange and selection haptic, reorderable list onReorder shifting item sequence, submitting initial scrambled order dispatching SubmitAnswer(false) with error audio/heavy haptic, arranging slabs into correct sequence and locking capstone dispatching SubmitAnswer(true) with success audio/heavy haptic, answered state interaction lockout preventing tap selection/swap and reordering, answered state hiding lock capstone and revealing continue button, continue button dispatching NextQuestion, hint button in header dispatching ReadingHintUsed, GameShimmerLoading placeholder when uninitialized, Level 1 Structure Architect briefing overlay display & dismissal on "REBUILD FLOW", dark theme styling, and small screen 320dp zero-overflow layout safety.
 - [x] **4.12** `skimming_scanning_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 13/13 tests passing]`
   - Validates initial layout rendering instruction, target badge, and passage terminal, tapping target word dispatching SubmitAnswer(true) with success audio/haptics, tapping non-target word dispatching SubmitAnswer(false) with error audio/haptics and "Try Again", interaction lockout preventing subsequent taps once answered, answered state revealing continue button and hiding interaction prompt, continue button dispatching NextQuestion, hint button dispatching ReadingHintUsed, auto-scroll timer tracking and safe disposal, GameShimmerLoading placeholder when uninitialized, Level 1 Cyber Scanner briefing overlay display & dismissal on "COMMENCE SCAN", dark theme styling, and small screen 320dp zero-overflow layout safety.
-- [ ] **4.13** `true_false_reading_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **4.13** `true_false_reading_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 17/17 tests passing]`
+  - Validates initial layout rendering instruction, passage, statement, and pulsing hint arrows, dedicated audio replay buttons invoking TTS for passage and statement, tap-to-answer TRUE and FALSE slots with selection/success/error audio & haptics and BLoC submission, coin drag-and-drop mechanics to TRUE/FALSE with timed drag gestures & velocity flick support, insufficient drag spring back without answer submission, multi-step evidence highlight flow revealing EvidenceHighlightWrapper on supporting evidence quests and rewarding bonus coins upon completion, answered state interaction lockout preventing duplicate submissions, continue button dispatching NextQuestion, hint button dispatching ReadingHintUsed, GameShimmerLoading placeholder when uninitialized, Level 1 Truth Evaluator briefing overlay display & dismissal on action, state reset on question transitions, dark theme mode contrast, and small screen 320dp zero-overflow layout safety.
 
 ---
 
