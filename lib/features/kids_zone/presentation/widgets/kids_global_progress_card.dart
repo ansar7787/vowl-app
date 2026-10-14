@@ -222,7 +222,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                                       ),
                                     ),
                                   )
-                                  .animate(onPlay: (c) => c.repeat())
+                                  .animate()
                                   .shimmer(
                                     duration: 1500.ms,
                                     color: const Color(
@@ -328,39 +328,48 @@ class KidsGlobalProgressCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.local_fire_department_rounded,
-                            color: Colors.orange.shade600,
-                            size: 18.sp,
-                          ),
-                          SizedBox(width: 6.w),
-                          Text(
-                            context.tr(
-                              'kids_zone.streak_count',
-                              fallback: '${user.currentStreak} Day Streak!',
-                              args: ['${user.currentStreak}'],
+                      Flexible(
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.local_fire_department_rounded,
+                              color: Colors.orange.shade600,
+                              size: 18.sp,
                             ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.orange.shade700,
+                            SizedBox(width: 4.w),
+                            Flexible(
+                              child: Text(
+                                context.tr(
+                                  'kids_zone.streak_count',
+                                  fallback: '${user.currentStreak} Day Streak!',
+                                  args: ['${user.currentStreak}'],
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.orange.shade700,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
+                      SizedBox(width: 4.w),
                       Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: List.generate(7, (index) {
                           final activeCount = user.currentStreak == 0
                               ? 0
                               : ((user.currentStreak - 1) % 7) + 1;
                           final isActive = index < activeCount;
                           return Container(
-                            margin: EdgeInsets.only(left: 4.w),
-                            width: 16.w,
-                            height: 16.w,
+                            margin: EdgeInsets.only(left: 3.w),
+                            width: 14.w,
+                            height: 14.w,
                             decoration: BoxDecoration(
                               gradient: isActive
                                   ? LinearGradient(
