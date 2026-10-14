@@ -34,44 +34,64 @@ class ScanBountyTarget extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final textColor = Theme.of(context).colorScheme.onSurface;
-    final primaryIndigo = AppColors.indigo500;
     final dictionaryEntry = ScanVocabularyDictionary.getEntry(currentBounty);
 
-    final unfoundBgColor = isDark
-        ? Colors.white.withValues(alpha: 0.1)
-        : Colors.black.withValues(alpha: 0.05);
-    final unfoundBorderColor = isDark
-        ? Colors.white.withValues(alpha: 0.2)
-        : Colors.black.withValues(alpha: 0.15);
-
-    final foundBgColor = isDark
-        ? primaryIndigo.withValues(alpha: 0.3)
-        : primaryIndigo.withValues(alpha: 0.15);
-    final foundBorderColor = isDark
-        ? _LocalPalette.color818cf8
-        : primaryIndigo;
-
     final progressCount = dailyCount.clamp(0, 3);
+
+    final cardBgGradient = bountyFound
+        ? LinearGradient(
+            colors: isDark
+                ? [
+                    AppColors.emerald500.withValues(alpha: 0.2),
+                    const Color(0xFF064E3B).withValues(alpha: 0.35),
+                  ]
+                : [
+                    const Color(0xFFF0FDF4),
+                    const Color(0xFFDCFCE7).withValues(alpha: 0.7),
+                  ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          )
+        : LinearGradient(
+            colors: isDark
+                ? [
+                    const Color(0xFF1E1B4B).withValues(alpha: 0.55),
+                    const Color(0xFF0F172A).withValues(alpha: 0.78),
+                  ]
+                : [
+                    Colors.white,
+                    const Color(0xFFF8FAFC),
+                  ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          );
+
+    final cardBorderColor = bountyFound
+        ? AppColors.emerald500.withValues(alpha: isDark ? 0.55 : 0.4)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.12)
+            : AppColors.indigo500.withValues(alpha: 0.2));
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(22.r),
+        borderRadius: BorderRadius.circular(24.r),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+          filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+            padding: EdgeInsets.all(18.r),
             decoration: BoxDecoration(
-              color: bountyFound ? foundBgColor : unfoundBgColor,
-              borderRadius: BorderRadius.circular(22.r),
+              gradient: cardBgGradient,
+              borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
-                color: bountyFound ? foundBorderColor : unfoundBorderColor,
+                color: cardBorderColor,
                 width: 1.5.w,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: primaryIndigo.withValues(alpha: bountyFound ? 0.2 : 0.05),
-                  blurRadius: 16,
+                  color: (bountyFound ? AppColors.emerald500 : AppColors.indigo500)
+                      .withValues(alpha: isDark ? 0.22 : 0.07),
+                  blurRadius: 20,
                   offset: const Offset(0, 6),
                 ),
               ],
@@ -80,17 +100,28 @@ class ScanBountyTarget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Top Row: Category Pill & Daily Stars Progress
+                // ── 1. Top Header Row: Category Badge + Star Tracker ─────────
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    // Full Category Badge (NEVER ELLIPSIZED)
                     Flexible(
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.5.h),
                         decoration: BoxDecoration(
-                          color: primaryIndigo.withValues(alpha: 0.18),
-                          borderRadius: BorderRadius.circular(8.r),
+                          color: bountyFound
+                              ? AppColors.emerald500.withValues(alpha: 0.15)
+                              : (isDark
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : AppColors.indigo500.withValues(alpha: 0.1)),
+                          borderRadius: BorderRadius.circular(10.r),
                           border: Border.all(
-                            color: primaryIndigo.withValues(alpha: 0.35),
+                            color: bountyFound
+                                ? AppColors.emerald500.withValues(alpha: 0.3)
+                                : (isDark
+                                    ? Colors.white.withValues(alpha: 0.12)
+                                    : AppColors.indigo500.withValues(alpha: 0.2)),
                             width: 1.w,
                           ),
                         ),
@@ -98,22 +129,26 @@ class ScanBountyTarget extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Icon(
-                              Icons.signpost_rounded,
-                              size: 11.r,
-                              color: isDark ? _LocalPalette.color818cf8 : primaryIndigo,
+                              bountyFound
+                                  ? Icons.verified_rounded
+                                  : Icons.signpost_rounded,
+                              size: 13.r,
+                              color: bountyFound
+                                  ? AppColors.emerald500
+                                  : (isDark ? _LocalPalette.color818cf8 : AppColors.indigo600),
                             ),
-                            SizedBox(width: 4.w),
+                            SizedBox(width: 5.w),
                             Flexible(
                               child: Text(
-                                dictionaryEntry.signCategory.toUpperCase(),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
+                                dictionaryEntry.signCategory,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
+                                  fontSize: 11.5.sp,
                                   fontWeight: FontWeight.w700,
-                                  letterSpacing: 0.6,
-                                  color: isDark ? _LocalPalette.color818cf8 : primaryIndigo,
+                                  letterSpacing: 0.3,
+                                  color: bountyFound
+                                      ? AppColors.emerald500
+                                      : (isDark ? _LocalPalette.color818cf8 : AppColors.indigo600),
                                 ),
                               ),
                             ),
@@ -121,169 +156,272 @@ class ScanBountyTarget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Spacer(),
-                    // Daily 3-Star Goal Indicator
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: List.generate(3, (index) {
-                        final completed = index < progressCount;
-                        return Padding(
-                          padding: EdgeInsets.only(left: 3.w),
-                          child: Icon(
-                            completed ? Icons.star_rounded : Icons.star_outline_rounded,
-                            size: 15.r,
-                            color: completed
-                                ? (isDark ? Colors.amber.shade300 : AppColors.amber500)
-                                : (isDark ? Colors.white30 : Colors.black26),
+
+                    SizedBox(width: 10.w),
+
+                    // Daily 3-Star Goal Indicator Pill
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.h),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.black.withValues(alpha: 0.25)
+                            : AppColors.slate100,
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : AppColors.slate200,
+                          width: 1.w,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: List.generate(3, (index) {
+                              final completed = index < progressCount;
+                              return Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 1.w),
+                                child: Icon(
+                                  completed ? Icons.star_rounded : Icons.star_outline_rounded,
+                                  size: 14.r,
+                                  color: completed
+                                      ? (isDark ? Colors.amber.shade300 : AppColors.amber500)
+                                      : (isDark ? Colors.white30 : AppColors.slate300),
+                                ),
+                              );
+                            }),
                           ),
-                        );
-                      }),
-                    ),
-                    SizedBox(width: 6.w),
-                    Text(
-                      '$progressCount/3',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w800,
-                        color: progressCount >= 3
-                            ? (isDark ? Colors.amber.shade300 : AppColors.amber500)
-                            : (isDark ? Colors.white60 : Colors.black54),
+                          SizedBox(width: 5.w),
+                          Text(
+                            '$progressCount/3',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w800,
+                              color: progressCount >= 3
+                                  ? (isDark ? Colors.amber.shade300 : AppColors.amber500)
+                                  : (isDark ? Colors.white70 : AppColors.slate600),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 10.h),
 
-                // Main Content Row: Sign Icon, Word with No Ellipsis, Shuffle & Info
+                SizedBox(height: 14.h),
+
+                // ── 2. Hero Word & Actions Row ───────────────────────────────
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Sign Plaque Icon Container
                     Container(
-                      padding: EdgeInsets.all(10.r),
+                      width: 44.r,
+                      height: 44.r,
                       decoration: BoxDecoration(
-                        color: bountyFound
-                            ? primaryIndigo.withValues(alpha: 0.25)
-                            : (isDark
-                                ? Colors.white.withValues(alpha: 0.08)
-                                : Colors.black.withValues(alpha: 0.05)),
-                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                          colors: bountyFound
+                              ? [AppColors.emerald500, const Color(0xFF059669)]
+                              : (isDark
+                                  ? [AppColors.indigo500, const Color(0xFF4338CA)]
+                                  : [const Color(0xFF6366F1), AppColors.indigo500]),
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(14.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: (bountyFound ? AppColors.emerald500 : AppColors.indigo500)
+                                .withValues(alpha: 0.3),
+                            blurRadius: 10,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
-                      child: Icon(
-                        bountyFound
-                            ? Icons.verified_rounded
-                            : Icons.document_scanner_rounded,
-                        color: bountyFound
-                            ? primaryIndigo
-                            : (isDark ? Colors.amber.shade400 : Colors.amber.shade600),
-                        size: 22.r,
+                      child: Center(
+                        child: Icon(
+                          bountyFound
+                              ? Icons.task_alt_rounded
+                              : Icons.document_scanner_rounded,
+                          color: Colors.white,
+                          size: 22.r,
+                        ),
                       ),
                     ),
+
                     SizedBox(width: 12.w),
+
+                    // Target Sign Text (Never truncated, full text display)
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: [
-                              Flexible(
-                                child: Text(
-                                  context.tr(
-                                    'translation.scan_word',
-                                    args: [currentBounty],
-                                    fallback: 'Scan Sign: "$currentBounty"',
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: textColor,
-                                    height: 1.2,
-                                  ),
-                                ),
-                              ),
-                            ],
+                          Text(
+                            context.tr(
+                              'translation.scan_word',
+                              args: [currentBounty],
+                              fallback: 'Scan Sign: "$currentBounty"',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 17.sp,
+                              fontWeight: FontWeight.w800,
+                              color: textColor,
+                              height: 1.2,
+                            ),
                           ),
-                          SizedBox(height: 3.h),
+                          SizedBox(height: 4.h),
                           Text(
                             bountyFound
                                 ? context.tr('vocabulary.bounty_completed', fallback: 'Sign found! Reward unlocked 🎉')
                                 : dictionaryEntry.meaning,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 12.sp,
+                              fontSize: 12.5.sp,
                               fontWeight: FontWeight.w500,
-                              color: isDark ? Colors.white70 : Colors.black54,
-                              height: 1.25,
+                              color: bountyFound
+                                  ? (isDark ? AppColors.emerald400 : AppColors.emerald600)
+                                  : (isDark ? Colors.white70 : AppColors.slate600),
+                              height: 1.3,
                             ),
                           ),
                         ],
                       ),
                     ),
 
-                    // Interactive Target Shuffle Button
-                    if (!bountyFound && onShuffle != null) ...[
-                      SizedBox(width: 6.w),
-                      Semantics(
-                        label: 'Change target sign word',
-                        button: true,
-                        child: ScaleButton(
-                          onTap: onShuffle,
-                          child: Container(
-                            padding: EdgeInsets.all(8.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.08)
-                                  : Colors.black.withValues(alpha: 0.05),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.15)
-                                    : Colors.black.withValues(alpha: 0.1),
-                                width: 1.w,
+                    SizedBox(width: 8.w),
+
+                    // Symmetrical Action Buttons (Shuffle + Info)
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (!bountyFound && onShuffle != null) ...[
+                          Semantics(
+                            label: 'Change target sign word',
+                            button: true,
+                            child: ScaleButton(
+                              onTap: onShuffle,
+                              child: Container(
+                                width: 36.r,
+                                height: 36.r,
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.08)
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(11.r),
+                                  border: Border.all(
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.12)
+                                        : AppColors.slate200,
+                                    width: 1.w,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+                                      blurRadius: 6,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  LucideIcons.shuffle,
+                                  size: 16.r,
+                                  color: isDark ? _LocalPalette.color818cf8 : AppColors.indigo600,
+                                ),
                               ),
                             ),
-                            child: Icon(
-                              LucideIcons.shuffle,
-                              size: 16.r,
-                              color: isDark ? _LocalPalette.color818cf8 : primaryIndigo,
-                            ),
                           ),
-                        ),
-                      ),
-                    ],
+                          SizedBox(width: 6.w),
+                        ],
 
-                    // Interactive Info Button
-                    SizedBox(width: 6.w),
-                    Semantics(
-                      label: 'How sign bounties work',
-                      button: true,
-                      child: ScaleButton(
-                        onTap: () => _showBountyInfo(context),
-                        child: Container(
-                          padding: EdgeInsets.all(7.r),
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.08)
-                                : Colors.black.withValues(alpha: 0.05),
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.15)
-                                  : Colors.black.withValues(alpha: 0.1),
-                              width: 1.w,
+                        Semantics(
+                          label: 'How sign bounties work',
+                          button: true,
+                          child: ScaleButton(
+                            onTap: () => _showBountyInfo(context),
+                            child: Container(
+                              width: 36.r,
+                              height: 36.r,
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.08)
+                                    : Colors.white,
+                                borderRadius: BorderRadius.circular(11.r),
+                                border: Border.all(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.12)
+                                      : AppColors.slate200,
+                                  width: 1.w,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ],
+                              ),
+                              child: Icon(
+                                Icons.info_outline_rounded,
+                                size: 17.r,
+                                color: isDark ? Colors.white70 : AppColors.slate600,
+                              ),
                             ),
                           ),
-                          child: Icon(
-                            Icons.info_outline_rounded,
-                            size: 16.r,
-                            color: isDark ? Colors.white70 : Colors.black87,
-                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ],
                 ),
+
+                // ── 3. Real-World Spotting Tip (Educational context) ──────────
+                if (!bountyFound && dictionaryEntry.realWorldTip.isNotEmpty) ...[
+                  SizedBox(height: 10.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 7.h),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.04)
+                          : AppColors.indigo500.withValues(alpha: 0.04),
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.06)
+                            : AppColors.indigo500.withValues(alpha: 0.1),
+                        width: 1.w,
+                      ),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(top: 1.5.h),
+                          child: Icon(
+                            Icons.lightbulb_outline_rounded,
+                            size: 14.r,
+                            color: isDark ? Colors.amber.shade300 : AppColors.amber600,
+                          ),
+                        ),
+                        SizedBox(width: 7.w),
+                        Expanded(
+                          child: Text(
+                            dictionaryEntry.realWorldTip,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.5.sp,
+                              fontWeight: FontWeight.w500,
+                              color: isDark ? Colors.white60 : AppColors.slate600,
+                              height: 1.35,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

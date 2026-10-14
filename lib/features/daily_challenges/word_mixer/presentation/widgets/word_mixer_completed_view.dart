@@ -33,8 +33,10 @@ class WordMixerCompletedView extends StatelessWidget {
 
   void _speakWord(String word) {
     if (word.isEmpty) return;
-    (hapticService ?? di.sl<HapticService>()).light();
-    (ttsService ?? di.sl<TtsService>()).speak(word);
+    try {
+      (hapticService ?? (di.sl.isRegistered<HapticService>() ? di.sl<HapticService>() : null))?.light();
+      (ttsService ?? (di.sl.isRegistered<TtsService>() ? di.sl<TtsService>() : null))?.speak(word);
+    } catch (_) {}
   }
 
   @override
@@ -329,24 +331,30 @@ class WordMixerCompletedView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
-                            '$streak ${context.tr('home.day_streak', fallback: 'Day Streak')}',
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark ? Colors.white : AppColors.slate900,
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              '$streak ${context.tr('home.day_streak', fallback: 'Day Streak')}',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700,
+                                color: isDark ? Colors.white : AppColors.slate900,
+                              ),
                             ),
                           ),
-                          Text(
-                            context.tr('home.keep_it_going', fallback: 'Keep your daily streak alive!'),
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w400,
-                              color: isDark ? Colors.white54 : Colors.black45,
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              context.tr('home.keep_it_going', fallback: 'Keep your daily streak alive!'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
+                                color: isDark ? Colors.white54 : Colors.black45,
+                              ),
                             ),
                           ),
                         ],

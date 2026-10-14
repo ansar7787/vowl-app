@@ -4,29 +4,40 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/domain/models/word_mixer_puzzle.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_completed_view.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_hint_card.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_info_card.dart';
+import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_spelling_card.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/widgets/word_mixer_top_bar.dart';
 
 class MockTtsService extends Mock implements TtsService {}
 
 class MockHapticService extends Mock implements HapticService {}
 
+class MockSoundService extends Mock implements SoundService {}
+
 void main() {
   late MockTtsService mockTtsService;
   late MockHapticService mockHapticService;
+  late MockSoundService mockSoundService;
   late WordMixerPuzzle samplePuzzle;
 
   setUp(() {
     mockTtsService = MockTtsService();
     mockHapticService = MockHapticService();
+    mockSoundService = MockSoundService();
 
     when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
+    when(() => mockHapticService.selection()).thenAnswer((_) async {});
+    when(() => mockHapticService.success()).thenAnswer((_) async {});
+    when(() => mockHapticService.error()).thenAnswer((_) async {});
+    when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
+    when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
 
     samplePuzzle = WordMixerPuzzle.fromMap({
       'id': 1,
@@ -39,6 +50,7 @@ void main() {
   Widget wrapWithScreenUtil(Widget child) {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
+      minTextAdapt: true,
       builder: (context, _) => MaterialApp(
         home: Scaffold(body: child),
       ),
@@ -241,6 +253,44 @@ void main() {
 
       expect(find.text('Practice Complete!'), findsOneWidget);
       expect(find.text('Great job! Keep practicing to build your vocabulary.'), findsOneWidget);
+    });
+  });
+
+  group('WordMixerSpellingCard Tests', () {
+    testWidgets('renders letter bank, allows placing and clearing tiles, and submits answer', (tester) async {
+      await tester.binding.setSurfaceSize(const Size(390, 844));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+
+      bool successCalled = false;
+
+      await tester.pumpWidget(
+        wrapWithScreenUtil(
+          WordMixerSpellingCard(
+            puzzle: samplePuzzle,
+            primaryColor: IllustrationColors.richPurple,
+            onSuccess: () => successCalled = true,
+            soundService: mockSoundService,
+            hapticService: mockHapticService,
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Spell the Word'), findsOneWidget);
+      expect(find.text('0/7 letters placed'), findsOneWidget);
+      expect(find.text('CHECK ANSWER'), findsOneWidget);
+
+      // Verify Clear button is present
+      expect(find.text('Clear'), findsOneWidget);
+
+      // Verify letters from OCTOPUS exist in the bank
+      expect(find.text('O'), findsWidgets); // OCTOPUS has two O's
+      expect(find.text('C'), findsOneWidget);
+      expect(find.text('T'), findsOneWidget);
+      expect(find.text('P'), findsOneWidget);
+      expect(find.text('U'), findsOneWidget);
+      expect(find.text('S'), findsOneWidget);
+      expect(successCalled, isFalse);
     });
   });
 }
