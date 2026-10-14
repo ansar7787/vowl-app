@@ -7,6 +7,11 @@ import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 mixin ReadingGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
   void initReadingGame() {
+    final state = context.read<ReadingBloc>().state;
+    if (state is ReadingLoaded && state.answerStatus.isAnswered) {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = state.answerStatus.asBoolOrNull;
+    }
     context.read<ReadingBloc>().add(
       FetchReadingQuests(gameType: gameType, level: level),
     );

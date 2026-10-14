@@ -171,6 +171,19 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                                               selectedTitle: selectedTitle,
                                               isAnswered:
                                                   isAnsweredNotifier.value,
+                                              onSelect: (title) {
+                                                _selectedTitle.value = title;
+                                                final isCorrect =
+                                                    title.trim().toLowerCase() ==
+                                                    (quest.correctAnswer ?? "")
+                                                        .trim()
+                                                        .toLowerCase();
+                                                _submitFinalAnswer(
+                                                  isCorrect,
+                                                  quest,
+                                                  title,
+                                                );
+                                              },
                                             ),
                                         ],
                                       );
@@ -236,13 +249,15 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                 size: 24.sp,
               ),
               SizedBox(width: 8.w),
-              Text(
-                'Why this title?',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w700,
-                  color: primaryColor,
+              Expanded(
+                child: Text(
+                  'Why this title?',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w700,
+                    color: primaryColor,
+                  ),
                 ),
               ),
             ],
