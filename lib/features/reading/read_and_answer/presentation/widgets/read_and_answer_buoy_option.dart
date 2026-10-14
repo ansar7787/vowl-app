@@ -105,6 +105,71 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
         ? Duration.zero
         : const Duration(milliseconds: 200);
 
+    Widget buildCard({bool isDraggingFeedback = false}) {
+      return AnimatedContainer(
+        duration: animDuration,
+        padding: EdgeInsets.symmetric(
+          horizontal: isDraggingFeedback ? 16.w : 20.w,
+          vertical: isDraggingFeedback ? 14.h : 18.h,
+        ),
+        decoration: BoxDecoration(
+          color: isDraggingFeedback
+              ? (isDark ? const Color(0xFF1E293B) : Colors.white)
+              : cardBg,
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: isDraggingFeedback ? color : borderCol,
+            width: isDraggingFeedback ? 2.5 : 2,
+          ),
+          boxShadow: (isSelected && !isAnswered) || isDraggingFeedback
+              ? [
+                  BoxShadow(
+                    color: color.withValues(alpha: isDraggingFeedback ? 0.35 : 0.15),
+                    blurRadius: isDraggingFeedback ? 18 : 10,
+                    offset: Offset(0, isDraggingFeedback ? 6 : 4),
+                  ),
+                ]
+              : [
+                  BoxShadow(
+                    color: isDark
+                        ? Colors.black.withValues(alpha: 0.1)
+                        : Colors.black.withValues(alpha: 0.02),
+                    blurRadius: 5,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+        ),
+        child: Row(
+          mainAxisSize: isDraggingFeedback ? MainAxisSize.min : MainAxisSize.max,
+          children: [
+            AnimatedSwitcher(
+              duration: animDuration,
+              child: ExcludeSemantics(
+                child: Icon(
+                  iconData,
+                  color: isDraggingFeedback ? color : iconCol,
+                  size: 22.r,
+                  key: ValueKey<IconData>(iconData),
+                ),
+              ),
+            ),
+            SizedBox(width: 14.w),
+            Flexible(
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                  color: isDark ? Colors.white : AppColors.slate800,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Padding(
       padding: EdgeInsets.only(bottom: 14.h),
       child: Semantics(
@@ -112,66 +177,28 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
         button: !isAnswered, // Not interactive once answered
         selected: isSelected,
         enabled: !isAnswered,
-        // excludeSemantics prevents the child Row/Icon/Text from producing
-        // duplicate announcements — the wrapper label covers everything.
         excludeSemantics: true,
-        child: ScaleButton(
-          onTap: onTap,
-          child: AnimatedContainer(
-            duration: animDuration,
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
-            decoration: BoxDecoration(
-              color: cardBg,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: borderCol, width: 2),
-              boxShadow: isSelected && !isAnswered
-                  ? [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.15),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
-                      ),
-                    ]
-                  : [
-                      BoxShadow(
-                        color: isDark
-                            ? Colors.black.withValues(alpha: 0.1)
-                            : Colors.black.withValues(alpha: 0.02),
-                        blurRadius: 5,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
+        child: Draggable<int>(
+          key: ValueKey('read_and_answer_option_$index'),
+          data: index,
+          maxSimultaneousDrags: isAnswered ? 0 : 1,
+          feedback: Material(
+            color: Colors.transparent,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width * 0.85,
+              ),
+              child: buildCard(isDraggingFeedback: true),
             ),
-            child: Row(
-              children: [
-                AnimatedSwitcher(
-                  duration: animDuration,
-                  // ExcludeSemantics: icon is decorative; label above covers state.
-                  child: ExcludeSemantics(
-                    child: Icon(
-                      iconData,
-                      color: iconCol,
-                      size: 22.r,
-                      key: ValueKey<IconData>(iconData),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 14.w),
-                Expanded(
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: isSelected
-                          ? FontWeight.w700
-                          : FontWeight.w500,
-                      color: isDark ? Colors.white : AppColors.slate800,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          ),
+          childWhenDragging: Opacity(
+            opacity: 0.25,
+            child: buildCard(),
+          ),
+          child: ScaleButton(
+            key: ValueKey('read_and_answer_option_tap_$index'),
+            onTap: isAnswered ? () {} : onTap,
+            child: buildCard(),
           ),
         ),
       ),
