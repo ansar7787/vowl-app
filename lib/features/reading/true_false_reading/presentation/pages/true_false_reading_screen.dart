@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -44,11 +45,14 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
 
   final ValueNotifier<bool?> _pendingAnswer = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _pendingAnswer.dispose();
     _scrollController.dispose();
+    soundService.stopTts();
     disposeReadingGame();
     super.dispose();
   }
@@ -61,7 +65,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
           !isAnsweredNotifier.value &&
           mounted &&
           _scrollController.hasClients) {
-        Future.delayed(const Duration(milliseconds: 300), () {
+        _scrollTimer?.cancel();
+        _scrollTimer = Timer(const Duration(milliseconds: 300), () {
           if (mounted &&
               _scrollController.hasClients &&
               !isAnsweredNotifier.value) {
@@ -91,6 +96,14 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
       _submitFinalAnswer(false, quest, true);
     } else {
       _pendingAnswer.value = isTrue;
+      final passage = quest.passage ?? "";
+      final evidenceStr = (quest.evidenceLine ?? "").trim();
+      final hasExactMatch = evidenceStr.isNotEmpty &&
+          passage.toLowerCase().contains(evidenceStr.toLowerCase());
+
+      if (!hasExactMatch) {
+        _submitFinalAnswer(true, quest);
+      }
     }
   }
 
@@ -121,6 +134,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
+    soundService.stopTts();
     _pendingAnswer.value = null;
     if (_scrollController.hasClients) {
       _scrollController.jumpTo(0.0);
@@ -187,12 +202,16 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                     passage: quest.passage ?? "",
                                     color: theme.primaryColor,
                                     isDark: isDark,
+                                    onPlayAudio: () => soundService
+                                        .playTts(quest.passage ?? ""),
                                   ),
                                   SizedBox(height: 32.h),
                                   TrueFalseReadingStatement(
                                     statement: quest.question ?? "",
                                     color: theme.primaryColor,
                                     isDark: isDark,
+                                    onPlayAudio: () => soundService
+                                        .playTts(quest.question ?? ""),
                                   ),
                                 ],
                               ),

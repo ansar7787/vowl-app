@@ -156,6 +156,7 @@ class _TrueFalseReadingCoinZoneState extends State<TrueFalseReadingCoinZone> {
                   });
                 },
                 child: Container(
+                  key: const ValueKey('truth_coin'),
                   width: 100.r,
                   height: 100.r,
                   decoration: BoxDecoration(
@@ -200,33 +201,46 @@ class _TrueFalseReadingCoinZoneState extends State<TrueFalseReadingCoinZone> {
   }
 
   Widget _buildSlot(String label, Color color, bool isDark) {
+    final bool isTrue = label == "TRUE";
     bool isTargeted =
-        (_coinX > 0 && label == "TRUE") || (_coinX < 0 && label == "FALSE");
-    return Opacity(
-      opacity: isTargeted ? 1.0 : (isDark ? 0.3 : 0.15),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: isDark ? 0.1 : 0.05),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: isTargeted
-                ? color
-                : color.withValues(alpha: isDark ? 0.4 : 0.2),
-            width: 2,
+        (_coinX > 0 && isTrue) || (_coinX < 0 && !isTrue);
+    return GestureDetector(
+      key: ValueKey('slot_$label'),
+      onTap: () {
+        if (widget.isDisabled) return;
+        _hapticService.selection();
+        setState(() {
+          _coinX = isTrue ? 120.w : -120.w;
+          _coinY = 0.0;
+        });
+        widget.onAnswerSelected(isTrue);
+      },
+      child: Opacity(
+        opacity: isTargeted ? 1.0 : (isDark ? 0.3 : 0.15),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: isDark ? 0.1 : 0.05),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: isTargeted
+                  ? color
+                  : color.withValues(alpha: isDark ? 0.4 : 0.2),
+              width: 2,
+            ),
           ),
-        ),
-        child: RotatedBox(
-          quarterTurns: 3,
-          child: Text(
-            label,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
-              letterSpacing: 2,
+          child: RotatedBox(
+            quarterTurns: 3,
+            child: Text(
+              label,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+                letterSpacing: 2,
+              ),
             ),
           ),
         ),
