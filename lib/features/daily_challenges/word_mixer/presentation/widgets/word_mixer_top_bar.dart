@@ -24,6 +24,10 @@ class WordMixerTopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+    final backIcon = isRtl
+        ? Icons.arrow_forward_ios_rounded
+        : Icons.arrow_back_ios_new_rounded;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
@@ -63,10 +67,16 @@ class WordMixerTopBar extends StatelessWidget {
                   ],
                 ),
                 child: Center(
-                  child: Icon(
-                    Icons.arrow_back_rounded,
-                    color: theme.colorScheme.onSurface,
-                    size: 20.r,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      right: isRtl ? 0 : 2.w,
+                      left: isRtl ? 2.w : 0,
+                    ),
+                    child: Icon(
+                      backIcon,
+                      color: theme.colorScheme.onSurface,
+                      size: 18.r,
+                    ),
                   ),
                 ),
               ),

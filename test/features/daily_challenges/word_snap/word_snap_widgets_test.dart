@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -42,6 +43,7 @@ void main() {
       designSize: const Size(390, 844),
       minTextAdapt: true,
       builder: (context, _) => MaterialApp(
+        theme: AppTheme.lightTheme,
         home: Scaffold(body: child),
       ),
     );
@@ -197,7 +199,7 @@ void main() {
 
       expect(find.text('Word Snap'), findsOneWidget);
       expect(find.text('12'), findsOneWidget);
-      expect(find.byIcon(Icons.arrow_back_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
     });
   });
 }
