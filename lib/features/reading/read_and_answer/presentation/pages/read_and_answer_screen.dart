@@ -48,6 +48,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
 
   @override
   void dispose() {
+    soundService.stopTts();
     _showEvidenceStep.removeListener(_scrollToBottom);
     _pendingSelectedIndex.dispose();
     _showEvidenceStep.dispose();
@@ -133,8 +134,15 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
 
   @override
   void onQuestionReset() {
+    soundService.stopTts();
     _pendingSelectedIndex.value = null;
     _showEvidenceStep.value = false;
+  }
+
+  void _playTts(String text) {
+    if (text.isNotEmpty) {
+      soundService.playTts(text);
+    }
   }
 
   Widget _buildReadTimeBadge(
@@ -266,15 +274,42 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                   ),
                                   SizedBox(height: 16.h),
                                   ReadAndAnswerAnchorPoint(
+                                    key: const ValueKey('read_and_answer_anchor_point'),
                                     question: quest.question ?? '',
                                     color: theme.primaryColor,
                                     isDark: isDark,
+                                    isAnswered: isAnsweredNotifier.value ||
+                                        _pendingSelectedIndex.value != null,
+                                    onPlayAudio: () =>
+                                        _playTts(quest.question ?? ''),
+                                    onOptionDropped: (index) {
+                                      if (quest.options != null &&
+                                          index < quest.options!.length) {
+                                        final isOptionCorrect =
+                                            index == quest.correctAnswerIndex ||
+                                            quest.options![index]
+                                                    .trim()
+                                                    .toLowerCase() ==
+                                                (quest.correctAnswer
+                                                        ?.trim()
+                                                        .toLowerCase() ??
+                                                    '');
+                                        _onOptionTap(
+                                          index,
+                                          isOptionCorrect,
+                                          quest,
+                                          displayPassage,
+                                        );
+                                      }
+                                    },
                                   ),
                                   SizedBox(height: 24.h),
                                   ReadAndAnswerFloatingPassage(
+                                    key: const ValueKey('read_and_answer_floating_passage'),
                                     text: displayPassage,
                                     color: theme.primaryColor,
                                     isDark: isDark,
+                                    onPlayAudio: () => _playTts(displayPassage),
                                   ),
                                   SizedBox(height: 24.h),
                                   if (quest.options != null)
@@ -288,6 +323,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                                   '');
 
                                       return ReadAndAnswerBuoyOption(
+                                        key: ValueKey('read_and_answer_buoy_${e.key}'),
                                         index: e.key,
                                         text: e.value,
                                         isCorrectOption: isOptionCorrect,
