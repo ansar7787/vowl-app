@@ -15,12 +15,28 @@
 
 Every game test suite MUST rigorously satisfy:
 
-1. **Dual Interaction**: Both instant tap-to-answer AND drag-and-drop mechanics.
-2. **Audio Scaffolding**: Dedicated audio replay buttons invoking Text-to-Speech (`SoundService.playTts`) for both question and passage.
-3. **Small Screen Layout Safety (320dp)**: Verified at `320 x 568` with zero `RenderFlex` overflow errors.
-4. **BLoC & State Flow**: Dispatches `SubmitAnswer(true)` on correct path and `SubmitAnswer(false)` on incorrect path.
-5. **Sensory Feedback**: Verifies selection haptics (`hapticService.selection()`), success haptics (`hapticService.success()`), error haptics (`hapticService.error()`), and SFX (`soundService.playWrong()`, `soundService.playCorrect()`).
-6. **Curriculum Immutability**: All JSON files in `assets/curriculum/` remain **100% byte-for-byte untouched**.
+1. **Authentic Game Mechanics (Never Blindly Assume Drag & Drop)**:
+   - **Arranging / Sorting / Cloze / Buoy**: Dual interaction (both instant tap-to-answer AND drag-and-drop mechanics where applicable).
+   - **Speech / Pronunciation / Repeat**: Microphone speech-to-text input, waveform visualization, and real-time audio playback.
+   - **Handwriting**: Freeform canvas stroke drawing, stroke reset, path gesture evaluation.
+   - **Flashcards / Matching / Memory**: Card flip animations, tile selection, and memory pair reveal.
+   - **Text / Multiple Choice / True-False**: Single/multi-option tap selection, validation feedback, and clear submit states.
+   - **Writing / Essay / Sentence**: Text input/insertion, token reordering, and submission.
+2. **Two Master Level Maps Progression**:
+   - **Modern Category Map (Main 100+ Games)**: Sequential level unlocking (Level 1 -> 2 -> 3), star rating awards (1-3 stars), active pulsating current level ring, and locked status for future levels.
+   - **Kids Level Map (25 Kids Games)**: Child-friendly thematic progression, milestone badges, and interactive navigation.
+3. **Offline & Online Firestore Resilience**:
+   - **Offline Mode**: Automatic local persistence via SQLite/SharedPreferences cache. Free users respect the 3-level offline grace quota (`OfflinePlayGateService`). Premium users bypass quotas with unlimited offline play (`NetworkInfo.setPremiumOverride`).
+   - **Online Sync**: Unsynced offline progress, stars, and XP atomically update to Firebase Firestore upon reconnection with zero data loss or state corruption.
+4. **Zero Real-Money Leakage & Secure Economy**:
+   - **In-App Purchases (Google Play)**: Strictly validated via backend Cloud Function (`validateIAPReceipt`) before delivery.
+   - **Razorpay (India Gateway)**: Server-side order generation and signature verification before coins/premium are granted.
+   - **Economy Blocs**: Zero client-side tampering; coin balances, hint deductions, and reward grants must be atomic.
+5. **Audio Scaffolding**: Dedicated audio replay buttons invoking Text-to-Speech (`SoundService.playTts`) for both question and passage.
+6. **Small Screen Layout Safety (320dp)**: Verified at `320 x 568` with zero `RenderFlex` overflow errors across all devices.
+7. **BLoC & State Flow**: Dispatches `SubmitAnswer(true)` on correct path and `SubmitAnswer(false)` on incorrect path.
+8. **Sensory Feedback**: Verifies selection haptics (`hapticService.selection()`), success haptics (`hapticService.success()`), error haptics (`hapticService.error()`), and SFX (`soundService.playWrong()`, `soundService.playCorrect()`).
+9. **Curriculum Immutability**: All JSON files in `assets/curriculum/` remain **100% byte-for-byte untouched**.
 
 ---
 
@@ -43,7 +59,7 @@ Every game test suite MUST rigorously satisfy:
 | **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete |
 | **14** | **Home, Shell & Navigation** | 6 | 0 | 6 | 🔴 0% Tested (6 screens) |
 | **15** | **Profile, Progress & Trophies** | 7 | 0 | 7 | 🔴 0% Tested (7 screens) |
-| **16** | **Leaderboard, Settings, Paywall, Splash** | 6 | 1 | 5 | ⚠️ 1 Sheet tested (5 screens remaining) |
+| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 1 | 7 | ⚠️ 1 Sheet tested (7 items remaining) |
 
 ---
 
@@ -334,7 +350,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (1 / 6 COMPLETE)
+### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (1 / 8 COMPLETE)
 
 - [x] **16.1** `tts_voice_selection_bottom_sheet_test.dart` (Widget Test) — ✅ `[DONE - 3/3 tests passing]`
 - [ ] **16.2** `leaderboard_screen_test.dart` (Leaderboard Widget Test) — 🔴 `[PENDING]`
@@ -342,3 +358,7 @@ Every game test suite MUST rigorously satisfy:
 - [ ] **16.4** `settings_screen_test.dart` (Settings Widget Test) — 🔴 `[PENDING]`
 - [ ] **16.5** `premium_screen_test.dart` (Paywall Store Widget Test) — 🔴 `[PENDING]`
 - [ ] **16.6** `splash_page_test.dart` (Startup & Routing Test) — 🔴 `[PENDING]`
+- [ ] **16.7** `in_app_purchase_service_test.dart` (Google Play Billing & Cloud Function Receipt Verification — Zero Money Leakage) — 🔴 `[PENDING]`
+  - Validates `validateIAPReceipt` backend verification, consumable coin packs, subscription time-limited grants, and anti-fraud receipt handling.
+- [ ] **16.8** `payment_service_test.dart` (Razorpay Server Order & Signature Verification — Zero Money Leakage) — 🔴 `[PENDING]`
+  - Validates server order creation, webhook/signature verification, payment success coin credit, and failure/cancel state handling.
