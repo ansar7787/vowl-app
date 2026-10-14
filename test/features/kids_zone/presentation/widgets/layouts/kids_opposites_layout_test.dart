@@ -401,7 +401,7 @@ void main() {
       expect(celebratoryEmoji, findsOneWidget);
 
       // Matched indicator
-      expect(find.text('Matched'), findsOneWidget);
+      expect(find.text('Matched!'), findsOneWidget);
     });
 
     testWidgets('50/50 lifeline dissolves first distractor when hint is used', (tester) async {

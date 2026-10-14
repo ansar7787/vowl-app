@@ -111,7 +111,7 @@ class SettingsDialogs {
                 Text(
                   context.tr(
                     'settings_dialogs.sign_out_title',
-                    fallback: 'Sign Out',
+                    fallback: 'Sign Out?',
                   ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -153,7 +153,7 @@ class SettingsDialogs {
                 _SecondaryTextButton(
                   label: context.tr(
                     'settings_dialogs.sign_out_cancel',
-                    fallback: 'Cancel',
+                    fallback: 'CANCEL',
                   ),
                   isDark: isDark,
                   onPressed: () => Navigator.pop(dialogContext),
@@ -334,7 +334,7 @@ class SettingsDialogs {
                   // FIX (HIGH-2): Was hardcoded 'We will send a password...'
                   context.tr(
                     'settings_dialogs.reset_password_body',
-                    fallback: 'We will send a reset link to your email.',
+                    fallback: 'We will send a password recovery email to:\n{}',
                     args: [email],
                   ),
                   textAlign: TextAlign.center,
@@ -349,7 +349,7 @@ class SettingsDialogs {
                 _PrimaryButton(
                   label: context.tr(
                     'settings_dialogs.send_link',
-                    fallback: 'Send Link',
+                    fallback: 'Send Link Now',
                   ),
                   color: Colors.blue,
                   onPressed: () {
@@ -373,7 +373,7 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 12.h),
                 _SecondaryTextButton(
-                  label: context.tr('common.cancel', fallback: 'Cancel'),
+                  label: context.tr('common.cancel', fallback: 'CANCEL'),
                   isDark: isDark,
                   onPressed: () => Navigator.pop(ctx),
                 ),
@@ -420,7 +420,7 @@ class SettingsDialogs {
                 Text(
                   context.tr(
                     'settings_dialogs.delete_account_title',
-                    fallback: 'Delete Account',
+                    fallback: 'Delete Account?',
                   ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -460,7 +460,7 @@ class SettingsDialogs {
                 _SecondaryTextButton(
                   label: context.tr(
                     'settings_dialogs.keep_account',
-                    fallback: 'Keep Account',
+                    fallback: 'Keep My Account',
                   ),
                   isDark: isDark,
                   onPressed: () => Navigator.pop(dialogContext),
@@ -591,7 +591,7 @@ class SettingsDialogs {
                   // FIX (HIGH-2): Was hardcoded 'Got it!'
                   label: context.tr(
                     'settings_dialogs.got_it',
-                    fallback: 'Got It',
+                    fallback: 'Got it',
                   ),
                   color: Colors.blue,
                   onPressed: () => Navigator.pop(ctx),
@@ -1067,7 +1067,7 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
                   Text(
                     context.tr(
                       'settings_dialogs.type_delete',
-                      fallback: 'Type DELETE to confirm',
+                      fallback: 'Type "DELETE" below to confirm account removal.',
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(

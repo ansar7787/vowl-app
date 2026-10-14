@@ -226,11 +226,11 @@ class _HatchingPageState extends State<HatchingPage> {
         label: currentStage < 2
             ? context.tr(
                 'hatching.egg_semantics',
-                fallback: 'A mysterious glowing egg',
+                fallback: 'An egg is hatching',
               )
             : context.tr(
                 'hatching.mascot_semantics',
-                fallback: 'Your new learning companion',
+                fallback: 'Mascot hatched',
               ),
         button: currentStage < 2,
         child: Stack(
@@ -438,7 +438,7 @@ class _HatchingPageState extends State<HatchingPage> {
           alignment: Alignment.center,
           child: Text(
             // FIX (HIGH-2): Localised CTA button text.
-            context.tr('hatching.enter_world', fallback: 'Enter World'),
+            context.tr('hatching.enter_world', fallback: 'Start Learning!'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 18.sp,

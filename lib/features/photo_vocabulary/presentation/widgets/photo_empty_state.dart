@@ -223,9 +223,9 @@ class PhotoEmptyState extends StatelessWidget {
               spacing: 8.w,
               runSpacing: 8.h,
               children: [
-                _buildContextPill(isDark, '🪑 Home & Furniture'),
-                _buildContextPill(isDark, '🍎 Kitchen & Food'),
-                _buildContextPill(isDark, '🎒 School & Toys'),
+                _buildContextPill(isDark, 'Home & Furniture'),
+                _buildContextPill(isDark, 'Kitchen & Food'),
+                _buildContextPill(isDark, 'School & Toys'),
               ],
             ),
             SizedBox(height: 28.h),

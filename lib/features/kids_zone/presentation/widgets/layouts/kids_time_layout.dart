@@ -425,7 +425,7 @@ class _KidsTimeLayoutState extends State<KidsTimeLayout> {
                           context.tr(
                             'games.kids_time_prompt',
                             fallback:
-                                'Tap an answer or drag it to the clock! ⏰',
+                                'Tap an answer or drag it to the clock!',
                           ),
                           style: TextStyle(
                             fontFamily: 'Outfit',

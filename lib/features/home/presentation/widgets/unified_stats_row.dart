@@ -29,7 +29,7 @@ class UnifiedStatsRow extends StatelessWidget {
         Expanded(
           child: _buildStatTile(
             context,
-            label: context.tr('home.streak', fallback: 'Streak'),
+            label: context.tr('home.streak', fallback: 'STREAK'),
             value: '${user.currentStreak}',
             icon: Icons.local_fire_department_rounded,
             color: IllustrationColors.warmOrange,
@@ -41,7 +41,7 @@ class UnifiedStatsRow extends StatelessWidget {
         Expanded(
           child: _buildStatTile(
             context,
-            label: context.tr('home.coins', fallback: 'Coins'),
+            label: context.tr('home.coins', fallback: 'COINS'),
             value: _formatNumber(user.coins),
             icon: Icons.paid_rounded,
             color: AppColors.emerald500,
@@ -53,7 +53,7 @@ class UnifiedStatsRow extends StatelessWidget {
         Expanded(
           child: _buildStatTile(
             context,
-            label: context.tr('home.badges', fallback: 'Badges'),
+            label: context.tr('home.badges', fallback: 'BADGES'),
             value: '${user.badges.length}',
             icon: Icons.emoji_events_rounded,
             color: AppColors.amber500,

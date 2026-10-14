@@ -152,9 +152,9 @@ class _SignUpViewState extends State<SignUpView> {
             }
           },
         ),
-        // Added for parity with LoginPage's equivalent listener â€” AuthBloc
+        // Added for parity with LoginPage's equivalent listener — AuthBloc
         // can independently emit a message (e.g. the new
-        // AuthStreamErrorOccurred â†’ 'auth.stream_error' path), and this
+        // AuthStreamErrorOccurred → 'auth.stream_error' path), and this
         // page previously had no way to surface that while the user was
         // still on the sign-up screen.
         BlocListener<AuthBloc, AuthState>(
@@ -473,7 +473,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                             TextSpan(
                                                                               text: context.tr(
                                                                                 'auth.i_agree_to',
-                                                                                fallback: 'I agree to the ',
+                                                                                fallback: 'I agree to the',
                                                                               ),
                                                                               style: TextStyle(
                                                                                 fontFamily: 'Outfit',
@@ -517,7 +517,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                             TextSpan(
                                                                               text: context.tr(
                                                                                 'auth.and',
-                                                                                fallback: ' and ',
+                                                                                fallback: 'and',
                                                                               ),
                                                                               style: TextStyle(
                                                                                 fontFamily: 'Outfit',

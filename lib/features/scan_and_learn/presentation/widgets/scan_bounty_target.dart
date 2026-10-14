@@ -276,7 +276,7 @@ class ScanBountyTarget extends StatelessWidget {
                           SizedBox(height: 4.h),
                           Text(
                             bountyFound
-                                ? context.tr('vocabulary.bounty_completed', fallback: 'Sign found! Reward unlocked 🎉')
+                                ? context.tr('vocabulary.scan_bounty_completed', fallback: 'Sign found! Reward unlocked')
                                 : dictionaryEntry.meaning,
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -481,7 +481,7 @@ class ScanBountyTarget extends StatelessWidget {
             title: context.tr('translation.info_step4_title', fallback: 'Change Sign'),
             description: context.tr(
               'translation.info_step4_desc',
-              fallback: 'Can\'t find this sign right now? Tap the shuffle button (🔀) to hunt for a different word.',
+              fallback: 'Can\'t find this sign right now? Tap the shuffle button to hunt for a different word.',
             ),
           ),
         ],

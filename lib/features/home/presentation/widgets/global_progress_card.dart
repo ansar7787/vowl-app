@@ -106,7 +106,7 @@ class GlobalProgressCard extends StatelessWidget {
                             Text(
                               context.tr(
                                 'home.quest_journey',
-                                fallback: 'Quest Journey',
+                                fallback: 'QUEST JOURNEY',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -175,7 +175,7 @@ class GlobalProgressCard extends StatelessWidget {
                                 maxLines: 1,
                               ),
                               Text(
-                                context.tr('home.rank', fallback: 'Rank'),
+                                context.tr('home.rank', fallback: 'RANK'),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 7.sp,
@@ -216,7 +216,7 @@ class GlobalProgressCard extends StatelessWidget {
                                 maxLines: 1,
                               ),
                               Text(
-                                context.tr('home.rank', fallback: 'Rank'),
+                                context.tr('home.rank', fallback: 'RANK'),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 7.sp,

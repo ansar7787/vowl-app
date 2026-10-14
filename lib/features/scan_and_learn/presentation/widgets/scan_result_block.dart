@@ -139,7 +139,7 @@ class ScanResultBlock extends StatelessWidget {
         context: context,
         message: context.tr(
           'common.copied_to_clipboard',
-          fallback: 'Copied scanned text to clipboard! 📋',
+          fallback: 'Copied scanned text to clipboard!',
         ),
         type: CustomSnackBarType.success,
       );

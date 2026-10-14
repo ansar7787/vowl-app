@@ -55,7 +55,7 @@ class KidsFamilyLayout extends StatelessWidget {
             KidsFittedText(
               context.tr(
                 'games.kids_family_drag',
-                fallback: 'Drag or tap the photo.',
+                fallback: 'Drag the photo to the frame!',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',

@@ -27,20 +27,20 @@ class KidsZoneHomeHeader extends StatelessWidget {
     String defaultGreeting;
     if (hour < 12) {
       greetingKey = 'kids_zone.good_morning';
-      defaultGreeting = 'Good Morning! ☀️';
+      defaultGreeting = 'Good Morning!';
     } else if (hour < 17) {
       greetingKey = 'kids_zone.good_afternoon';
-      defaultGreeting = 'Good Afternoon! 🌤️';
+      defaultGreeting = 'Good Afternoon!';
     } else {
       greetingKey = 'kids_zone.good_evening';
-      defaultGreeting = 'Good Evening! 🌙';
+      defaultGreeting = 'Good Evening!';
     }
 
     final displayName = childName != null && childName!.isNotEmpty
         ? childName!
         : context.tr(
             'kids_zone.little_explorer',
-            fallback: 'Little Explorer 🌟',
+            fallback: 'Little Explorer',
           );
 
     return SliverToBoxAdapter(

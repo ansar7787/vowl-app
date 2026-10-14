@@ -4,7 +4,7 @@ const admin = require('firebase-admin');
 const crypto = require('crypto');
 admin.initializeApp();
 
-// â”€â”€â”€ SECURITY: Rate Limiting Helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --------------------------------------------------
 // Prevents abuse by limiting payment verification calls per user.
 const RATE_LIMIT_COOLDOWN_MS = 10000; // 10 seconds between payment calls
 
@@ -27,7 +27,7 @@ async function checkRateLimit(db, uid, operationType) {
   await rateLimitRef.set({ [operationType]: now }, { merge: true });
 }
 
-// â”€â”€â”€ SECURITY: Razorpay Credential Validator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --------------------------------------------------
 // Hard-fails if Razorpay keys are not configured. Never silently bypass.
 function requireRazorpayKeys() {
   const keyId = process.env.RAZORPAY_KEY_ID;
@@ -46,7 +46,7 @@ function requireRazorpayKeys() {
   return { keyId, secret };
 }
 
-// â”€â”€â”€ SECURITY: Razorpay API Verification â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --------------------------------------------------
 // Fetches payment details from Razorpay and validates status + amount.
 async function verifyRazorpayPayment(
   keyId,
@@ -88,10 +88,10 @@ async function verifyRazorpayPayment(
     throw new HttpsError('permission-denied', 'Payment not successful.');
   }
 
-  // Verify payment amount (prevents â‚¹1-for-premium attacks)
+  // Verify payment amount (prevents ₹1-for-premium attacks)
   if (expectedAmountPaise && paymentData.amount < expectedAmountPaise) {
     console.warn(
-      `Payment ${paymentId} amount mismatch. Expected â‰¥${expectedAmountPaise}, got ${paymentData.amount}`,
+      `Payment ${paymentId} amount mismatch. Expected >=${expectedAmountPaise}, got ${paymentData.amount}`,
     );
     throw new HttpsError('permission-denied', 'Payment amount mismatch.');
   }
@@ -99,7 +99,7 @@ async function verifyRazorpayPayment(
   return paymentData;
 }
 
-// â”€â”€â”€ SECURITY: Razorpay Signature Verification â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --------------------------------------------------
 // Verifies HMAC-SHA256 signature to prevent payment replay attacks.
 function verifyRazorpaySignature(orderId, paymentId, signature, secret) {
   if (!orderId || !signature) {
@@ -125,7 +125,7 @@ function verifyRazorpaySignature(orderId, paymentId, signature, secret) {
   }
 }
 
-// â”€â”€â”€ SERVER-SIDE ORDER CREATION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --------------------------------------------------
 // Creates a Razorpay order with the correct amount locked server-side.
 // This prevents amount-tampering attacks where a client modifies the
 // checkout amount before the SDK opens.
@@ -144,7 +144,7 @@ exports.createOrder = onCall(async (request) => {
 
   const db = admin.firestore();
 
-  // 2. Rate Limiting â€” prevent order-spam
+  // 2. Rate Limiting — prevent order-spam
   await checkRateLimit(db, uid, 'lastOrderCreate');
 
   // 3. Fetch item from Firestore to get the real price
@@ -259,7 +259,7 @@ exports.createOrder = onCall(async (request) => {
   };
 });
 
-// â”€â”€â”€ PAYMENT VERIFICATION (Server-Side Only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --------------------------------------------------
 // Called from the Flutter app after Razorpay success callback.
 // Verifies the payment via Razorpay API before granting premium status.
 exports.verifyPayment = onCall(async (request) => {
@@ -277,10 +277,10 @@ exports.verifyPayment = onCall(async (request) => {
 
   const db = admin.firestore();
 
-  // 2. Rate Limiting â€” prevent abuse/DDoS
+  // 2. Rate Limiting — prevent abuse/DDoS
   await checkRateLimit(db, uid, 'lastPremiumVerify');
 
-  // 3. Validate plan duration â€” only allow real subscription plans
+  // 3. Validate plan duration — only allow real subscription plans
   const days = typeof durationDays === 'number' ? durationDays : 0;
 
   // Fetch the matching subscription plan from Firestore to get the expected price
@@ -374,7 +374,7 @@ exports.verifyPayment = onCall(async (request) => {
   return { success: true, expiryDate: expiryDate.toISOString() };
 });
 
-// â”€â”€â”€ COIN PURCHASE VERIFICATION (Server-Side Only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --------------------------------------------------
 // Called from the Flutter app after Razorpay success callback.
 // Verifies the payment via Razorpay API and grants items securely.
 exports.verifyCoinPurchase = onCall(async (request) => {
@@ -391,7 +391,7 @@ exports.verifyCoinPurchase = onCall(async (request) => {
 
   const db = admin.firestore();
 
-  // 1. Rate Limiting â€” prevent abuse/DDoS
+  // 1. Rate Limiting — prevent abuse/DDoS
   await checkRateLimit(db, uid, 'lastCoinVerify');
 
   // 2. Fetch the pack from the database to know how much it costs and what it gives
@@ -414,7 +414,7 @@ exports.verifyCoinPurchase = onCall(async (request) => {
   const expectedAmountPaise = Math.round(packData.price * 100);
   const expectedCurrency = packData.currency || 'INR';
 
-  // 3. Verify Razorpay Payment (Zero Trust â€” hard-fail if keys missing)
+  // 3. Verify Razorpay Payment (Zero Trust — hard-fail if keys missing)
   const { keyId, secret } = requireRazorpayKeys();
 
   try {
@@ -506,7 +506,7 @@ exports.verifyCoinPurchase = onCall(async (request) => {
   return { success: true, coinsGranted, keysGranted };
 });
 
-// â”€â”€â”€ PREMIUM EXPIRY CHECKER (Runs Daily) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --------------------------------------------------
 // Automatically revokes premium when the subscription expires.
 exports.checkPremiumExpiry = onSchedule('0 3 * * *', async (event) => {
   const db = admin.firestore();
@@ -607,7 +607,7 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
 });
 
 // ðŸ”¥ STREAK-AT-RISK REMINDER (v2)
-// Runs daily at 8:00 PM â€” nudges users who haven't logged in today
+// Runs daily at 8:00 PM — nudges users who haven't logged in today
 exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
   const db = admin.firestore();
 
@@ -694,7 +694,7 @@ exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
   }
 });
 
-// â”€â”€â”€ LEADERBOARD CACHE UPDATER (Runs Every 4 Hours) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --------------------------------------------------
 // Calculates top 50 users server-side to prevent Cache Stampedes on mobile clients.
 exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
   const db = admin.firestore();
@@ -831,7 +831,7 @@ exports.validateIAPReceipt = onCall(async (request) => {
     }
 
     if (grantType === 'coins') {
-      // â”€â”€â”€ COIN PURCHASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+      // --------------------------------------------------
       // Map IAP product IDs to coin pack IDs in Firestore
       const productToPackMap = {
         vowl_coins_100: 'starter_pack',
@@ -924,7 +924,7 @@ exports.validateIAPReceipt = onCall(async (request) => {
       );
       return { success: true, coinsGranted, keysGranted };
     } else {
-      // â”€â”€â”€ PREMIUM PURCHASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+      // --------------------------------------------------
       const validPremiumProducts = ['vowl_premium_weekly', 'vowl_premium_monthly', 'vowl_premium_yearly'];
       if (!validPremiumProducts.includes(productId)) {
         throw new HttpsError('invalid-argument', 'Invalid premium product ID');

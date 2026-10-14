@@ -52,7 +52,7 @@ class MinimalPairsMouthDiagram extends StatelessWidget {
                 Text(
                   context.tr(
                     'games.mouth_position_caps',
-                    fallback: "MOUTH & TONGUE",
+                    fallback: 'MOUTH POSITION',
                   ),
                   style: TextStyle(
                     fontFamily: 'Outfit',

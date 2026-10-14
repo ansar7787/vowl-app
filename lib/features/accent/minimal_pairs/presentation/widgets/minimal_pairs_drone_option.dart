@@ -44,7 +44,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
     }
 
     final String semanticLabel = isAnswered && isSelected
-        ? "$word, ${correct ? context.tr('games.correct', fallback: 'Correct') : context.tr('games.incorrect', fallback: 'Incorrect')}"
+        ? "$word, ${correct ? context.tr('games.correct', fallback: 'Correct!') : context.tr('games.incorrect', fallback: 'Incorrect!')}"
         : word;
 
     return Semantics(

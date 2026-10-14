@@ -102,7 +102,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                       border: Border.all(color: Colors.green.shade500),
                     ),
                     child: Text(
-                      "Claimed ✅ Come back tomorrow!",
+                      "Claimed · Come back tomorrow!",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,

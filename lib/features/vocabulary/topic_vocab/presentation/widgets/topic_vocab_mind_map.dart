@@ -35,7 +35,10 @@ class TopicVocabMindMap extends StatelessWidget {
                   Icon(Icons.hub_rounded, color: color, size: 20.r),
                   SizedBox(width: 8.w),
                   AutoSizeText(
-                    context.tr('instructions.topicVocab.topic_dictionary'),
+                    context.tr(
+                      'instructions.topicVocab.topic_dictionary',
+                      fallback: 'TOPIC DICTIONARY',
+                    ),
                     maxLines: 1,
                     style: TextStyle(
                       fontFamily: 'Outfit',

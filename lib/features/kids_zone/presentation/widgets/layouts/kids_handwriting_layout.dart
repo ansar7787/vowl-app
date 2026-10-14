@@ -99,7 +99,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
         ),
         featureSubtitle: context.tr(
           'kids_zone.handwriting_desc',
-          fallback: 'Practice your handwriting!',
+          fallback: 'Practice your handwriting on the chalkboard!',
         ),
         adButtonLabel: context.tr(
           'kids_zone.handwriting_ad',
@@ -440,7 +440,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                                       : Text(
                                           context.tr(
                                             'common.check',
-                                            fallback: 'Check My Answer!',
+                                            fallback: 'Check',
                                           ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',

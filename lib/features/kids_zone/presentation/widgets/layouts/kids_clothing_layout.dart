@@ -65,7 +65,7 @@ class KidsClothingLayout extends StatelessWidget {
             KidsFittedText(
               context.tr(
                 'games.kids_clothing_drag',
-                fallback: 'Drag the clothing tag to the closet! ✨',
+                fallback: 'Drag the clothing tag to the closet!',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',

@@ -364,7 +364,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                   )
                 : context.tr(
                     'kids_zone.sticker_won',
-                    fallback: "STICKER WON! ✨",
+                    fallback: 'STICKER WON!',
                   ),
             style: TextStyle(
               fontFamily: 'Outfit',

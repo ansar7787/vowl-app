@@ -59,8 +59,8 @@ class EliteFeedbackCard extends StatelessWidget {
   Color get _shadowColor => _success ? AppColors.emerald500 : AppColors.rose700;
 
   String _title(BuildContext context) => _success
-      ? context.tr('games.excellent', fallback: 'Excellent!')
-      : context.tr('games.not_quite', fallback: 'Not Quite');
+      ? context.tr('games.excellent', fallback: 'EXCELLENT!')
+      : context.tr('games.not_quite', fallback: 'NOT QUITE!');
 
   IconData get _icon =>
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
@@ -73,7 +73,7 @@ class EliteFeedbackCard extends StatelessWidget {
     }
     if (state.isFinalFailure) {
       return state.livesRemaining == 0
-          ? context.tr('games.see_results', fallback: 'See Results')
+          ? context.tr('games.see_results', fallback: 'SEE RESULTS')
           : context
                 .tr('common.continue_text', fallback: 'Continue')
                 .toUpperCase();
@@ -337,7 +337,7 @@ class EliteFeedbackCard extends StatelessWidget {
       buffer.write(
         context.tr(
           'games.semantic_correct_continue',
-          fallback: 'Correct. Tap to continue.',
+          fallback: 'Correct! Tap to continue.',
         ),
       );
     } else if (correctAnswerText != null) {

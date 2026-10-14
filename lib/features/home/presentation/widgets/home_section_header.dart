@@ -97,7 +97,7 @@ class HomeSectionHeader extends StatelessWidget {
           Semantics(
             button: true,
             label:
-                '${context.tr('common.see_all', fallback: 'See All')} $resolvedTitle',
+                '${context.tr('common.see_all', fallback: 'SEE ALL')} $resolvedTitle',
             child: ScaleButton(
               onTap: onSeeAll,
               child: Container(
@@ -120,7 +120,7 @@ class HomeSectionHeader extends StatelessWidget {
                   ),
                   child: ExcludeSemantics(
                     child: Text(
-                      context.tr('common.see_all', fallback: 'See All'),
+                      context.tr('common.see_all', fallback: 'SEE ALL'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,

@@ -823,7 +823,7 @@ class ContextSentenceStrings {
   );
   static String successMessage(BuildContext context) => context.tr(
     'game.sentence_builder.success_message',
-    fallback: 'Great sentence! 🎯',
+    fallback: 'Great sentence!',
   );
 
   static String skipButton(BuildContext context) =>
@@ -837,7 +837,7 @@ class ContextSentenceStrings {
     fallback: 'Prove your mastery using the target word.',
   );
   static String examplePrefix(BuildContext context) =>
-      context.tr('game.sentence_builder.example_prefix', fallback: 'Example: ');
+      context.tr('game.sentence_builder.example_prefix', fallback: 'Example:');
   static String hintText(BuildContext context) => context.tr(
     'game.sentence_builder.hint_text',
     fallback: 'Type your sentence here...',
@@ -860,6 +860,6 @@ class ContextSentenceStrings {
   );
   static String masteryProven(BuildContext context) => context.tr(
     'game.sentence_builder.mastery_proven',
-    fallback: 'MASTERY PROVEN! 🎯',
+    fallback: 'MASTERY PROVEN!',
   );
 }

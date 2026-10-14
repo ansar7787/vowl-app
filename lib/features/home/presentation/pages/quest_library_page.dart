@@ -116,30 +116,30 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   /// Returns the next rank label the user should aim for.
   String _getNextStatus(BuildContext context, double progress) {
     if (progress <= 0.0) {
-      return context.tr('quest_archive.status_explorer', fallback: 'Explorer');
+      return context.tr('quest_archive.status_explorer', fallback: 'EXPLORER');
     }
     if (progress < 0.15) {
       return context.tr(
         'quest_archive.status_adventurer',
-        fallback: 'Adventurer',
+        fallback: 'ADVENTURER',
       );
     }
     if (progress < 0.35) {
-      return context.tr('quest_archive.status_champion', fallback: 'Champion');
+      return context.tr('quest_archive.status_champion', fallback: 'CHAMPION');
     }
     if (progress < 0.55) {
       return context.tr(
         'quest_archive.status_conqueror',
-        fallback: 'Conqueror',
+        fallback: 'CONQUEROR',
       );
     }
     if (progress < 0.80) {
       return context.tr(
         'quest_archive.status_grandmaster',
-        fallback: 'Grandmaster',
+        fallback: 'GRANDMASTER',
       );
     }
-    return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
+    return context.tr('quest_archive.status_legendary', fallback: 'LEGENDARY');
   }
 
   /// Category progress for section headers in the grouped "all" view.
@@ -413,7 +413,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         child: Text(
                           context.tr(
                             'quest_archive.title',
-                            fallback: 'Quest Library',
+                            fallback: 'QUEST ARCHIVE',
                           ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -492,7 +492,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                             child: Text(
                               context.tr(
                                 'quest_archive.global_progress',
-                                fallback: 'Global Progress',
+                                fallback: 'GLOBAL ARCHIVE PROGRESS',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -595,7 +595,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           Icons.stars_rounded,
                           context.tr(
                             'quest_archive.status',
-                            fallback: 'Status',
+                            fallback: 'STATUS',
                           ),
                           _getGlobalStatus(context, progress),
                           AppColors.blue500,
@@ -632,33 +632,33 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
   String _getGlobalStatus(BuildContext context, double progress) {
     if (progress <= 0.0) {
-      return context.tr('quest_archive.status_initiate', fallback: 'Initiate');
+      return context.tr('quest_archive.status_initiate', fallback: 'INITIATE');
     }
     if (progress < 0.15) {
-      return context.tr('quest_archive.status_explorer', fallback: 'Explorer');
+      return context.tr('quest_archive.status_explorer', fallback: 'EXPLORER');
     }
     if (progress < 0.35) {
       return context.tr(
         'quest_archive.status_adventurer',
-        fallback: 'Adventurer',
+        fallback: 'ADVENTURER',
       );
     }
     if (progress < 0.55) {
-      return context.tr('quest_archive.status_champion', fallback: 'Champion');
+      return context.tr('quest_archive.status_champion', fallback: 'CHAMPION');
     }
     if (progress < 0.80) {
       return context.tr(
         'quest_archive.status_conqueror',
-        fallback: 'Conqueror',
+        fallback: 'CONQUEROR',
       );
     }
     if (progress < 0.99) {
       return context.tr(
         'quest_archive.status_grandmaster',
-        fallback: 'Grandmaster',
+        fallback: 'GRANDMASTER',
       );
     }
-    return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
+    return context.tr('quest_archive.status_legendary', fallback: 'LEGENDARY');
   }
 
   Widget _buildStatMini(
@@ -812,7 +812,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
           Color activeColor = _getCategoryChipColor(cat);
           final label = context
-              .tr('categories.${cat.toLowerCase()}')
+              .tr('categories.${cat.toLowerCase()}', fallback: cat)
               .toUpperCase();
 
           return Padding(
@@ -893,6 +893,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final progressPercent = (progress * 100).toInt();
     final catLabel = context.tr(
       'categories.${category == QuestType.eliteMastery ? 'elite' : category.name}',
+      fallback: category == QuestType.eliteMastery ? 'Elite' : category.name,
     );
 
     return Padding(
@@ -1337,6 +1338,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                                   child: Text(
                                     context.tr(
                                       'categories.${subtype.category.name.toLowerCase()}',
+                                      fallback: subtype.category.name,
                                     ),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',

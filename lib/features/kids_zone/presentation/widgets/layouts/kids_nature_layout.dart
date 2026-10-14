@@ -661,7 +661,7 @@ class _SignInterior extends StatelessWidget {
             ),
             SizedBox(height: 4.h),
             Text(
-              context.tr('games.kids_drop_here', fallback: 'Drop here'),
+              context.tr('games.kids_drop_here', fallback: 'DROP HERE!'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.5.sp,

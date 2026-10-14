@@ -250,7 +250,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                   _ActionItem(
                                     title: context.tr(
                                       'adventure.title',
-                                      fallback: 'Adventure Details',
+                                      fallback: 'Adventure Store',
                                     ),
                                     subtitle:
                                         'Buy Masteries, Scroll of Wisdom & more',
@@ -710,7 +710,7 @@ class VowlCoinsScreen extends StatelessWidget {
       (
         name: context.tr(
           'economy.hints_amount',
-          fallback: '5 Hints',
+          fallback: '{0} Hints',
           args: ['5'],
         ),
         hints: _hintsPerPack,
@@ -722,7 +722,7 @@ class VowlCoinsScreen extends StatelessWidget {
       (
         name: context.tr(
           'economy.hints_amount',
-          fallback: '10 Hints',
+          fallback: '{0} Hints',
           args: ['10'],
         ),
         hints: _bulkHintAmount,
@@ -1189,7 +1189,7 @@ class VowlCoinsScreen extends StatelessWidget {
       case 'coin_history.begginer_quest_reward':
         return context.tr(
           'coin_history.beginner_quest_reward',
-          fallback: 'Beginner Discovery Quests Reward 🎯',
+          fallback: 'Beginner Discovery Quests Reward',
         );
       case 'coin_history.quest_reward':
         return context.tr(
@@ -1200,7 +1200,7 @@ class VowlCoinsScreen extends StatelessWidget {
       case 'coin_history.ad_triple_reward':
         return context.tr(
           'coin_history.ad_triple_reward',
-          fallback: 'Ad Triple Reward 🎬',
+          fallback: 'Ad Triple Reward',
         );
       case 'coin_history.earned_coins':
         return context.tr(
@@ -1215,77 +1215,77 @@ class VowlCoinsScreen extends StatelessWidget {
       case 'coin_history.repaired_streak':
         return context.tr(
           'coin_history.repaired_streak',
-          fallback: 'Repaired Streak 🔥',
+          fallback: 'Repaired Streak',
         );
       case 'coin_history.purchased_streak_freeze':
         return context.tr(
           'coin_history.purchased_streak_freeze',
-          fallback: 'Streak Freeze ❄️',
+          fallback: 'Streak Freeze',
         );
       case 'coin_history.purchased_double_xp':
         return context.tr(
           'coin_history.purchased_double_xp',
-          fallback: 'Double XP Boost ⚡',
+          fallback: 'Double XP Boost',
         );
       case 'coin_history.purchased_permanent_xp_boost':
         return context.tr(
           'coin_history.purchased_permanent_xp_boost',
-          fallback: 'Permanent XP Boost 🚀',
+          fallback: 'Permanent XP Boost',
         );
       case 'coin_history.streak_milestone_reward':
         return context.tr(
           'coin_history.streak_milestone_reward',
           args: [milestone],
           fallback:
-              'Streak Milestone${milestone.isNotEmpty ? ' ($milestone🔥)' : ''} 🏆',
+              'Streak Milestone${milestone.isNotEmpty ? ' ($milestone)' : ''}',
         );
       case 'coin_history.level_milestone_reward':
         return context.tr(
           'coin_history.level_milestone_reward',
           args: [milestone],
           fallback:
-              'Level Milestone${milestone.isNotEmpty ? ' (Lv.$milestone)' : ''} 🏆',
+              'Level Milestone${milestone.isNotEmpty ? ' (Lv.$milestone)' : ''}',
         );
       case 'coin_history.ad_reward':
-        return context.tr('coin_history.ad_reward', fallback: 'Ad Reward 🎬');
+        return context.tr('coin_history.ad_reward', fallback: 'Ad Reward');
       case 'coin_history.daily_gift':
-        return context.tr('coin_history.daily_gift', fallback: 'Daily Gift 🎁');
+        return context.tr('coin_history.daily_gift', fallback: 'Daily Gift');
       case 'coin_history.vip_gift':
-        return context.tr('coin_history.vip_gift', fallback: 'VIP Gift ⭐');
+        return context.tr('coin_history.vip_gift', fallback: 'VIP Gift');
       case 'coin_history.spin_reward':
         return context.tr(
           'coin_history.spin_reward',
-          fallback: 'Spin Reward 🎰',
+          fallback: 'Spin Reward',
         );
       case 'coin_history.daily_chest':
         return context.tr(
           'coin_history.daily_chest',
-          fallback: 'Daily Chest 🎁',
+          fallback: 'Daily Chest',
         );
       case 'coin_history.speaking_bonus':
         return context.tr(
           'coin_history.speaking_bonus',
-          fallback: 'Speaking Bonus 🎤',
+          fallback: 'Speaking Bonus',
         );
       case 'coin_history.purchased_mascot':
         return context.tr(
           'coin_history.purchased_mascot',
-          fallback: 'Purchased Mascot 🦉',
+          fallback: 'Purchased Mascot',
         );
       case 'coin_history.purchased_accessory':
         return context.tr(
           'coin_history.purchased_accessory',
-          fallback: 'Purchased Accessory ✨',
+          fallback: 'Purchased Accessory',
         );
       case 'coin_history.purchased_golden_key':
         return context.tr(
           'coin_history.purchased_golden_key',
-          fallback: 'Purchased Golden Key 🔑',
+          fallback: 'Purchased Golden Key',
         );
       case 'coin_history.purchased_coin_pack':
         return context.tr(
           'coin_history.purchased_coin_pack',
-          fallback: 'Purchased Coin Pack 💎',
+          fallback: 'Purchased Coin Pack',
         );
       default:
         // Legacy raw-English entries or unknown keys — display as-is.

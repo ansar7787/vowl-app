@@ -246,7 +246,7 @@ class _StreakScreenState extends State<StreakScreen> {
                     Text(
                       context.tr(
                         'streak.daily_streak_title',
-                        fallback: 'Daily Streak',
+                        fallback: 'DAILY STREAK',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',

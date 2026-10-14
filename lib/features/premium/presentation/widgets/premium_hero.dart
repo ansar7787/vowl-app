@@ -85,7 +85,7 @@ class PremiumHero extends StatelessWidget {
                 end: Alignment.bottomRight,
               ).createShader(bounds),
               child: Text(
-                context.tr('premium.hero_title', fallback: 'Unlock Everything'),
+                context.tr('premium.hero_title', fallback: 'Unlimited Growth.'),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -106,7 +106,7 @@ class PremiumHero extends StatelessWidget {
         Text(
               context.tr(
                 'premium.hero_subtitle',
-                fallback: 'Reach your full potential with Vowl Premium.',
+                fallback: 'Master English with Premium features',
               ),
               textAlign: TextAlign.center,
               style: TextStyle(

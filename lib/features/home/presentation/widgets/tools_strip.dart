@@ -156,8 +156,7 @@ class ToolsStrip extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ...tools.asMap().entries.map((entry) {
-                final isDark =
-                    Theme.of(context).brightness == Brightness.dark;
+                final isDark = Theme.of(context).brightness == Brightness.dark;
                 final index = entry.key;
                 final tool = entry.value;
 
@@ -369,16 +368,18 @@ class _FeaturedToolCard extends StatelessWidget {
                         SizedBox(height: 14.h),
 
                         // Title
-                        Text(
-                          def.title,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            letterSpacing: -0.3,
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            def.title,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                              letterSpacing: -0.3,
+                            ),
                           ),
                         ),
                         SizedBox(height: 4.h),
@@ -508,15 +509,17 @@ class _CompactToolCard extends StatelessWidget {
                       SizedBox(height: 16.h),
 
                       // ── Title ──────────────────────────────────────
-                      Text(
-                        def.title,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Theme.of(context).colorScheme.onSurface,
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          def.title,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Theme.of(context).colorScheme.onSurface,
+                          ),
                         ),
                       ),
                       SizedBox(height: 4.h),
@@ -575,7 +578,10 @@ class _ExploreAllCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: 'Explore all 50+ features and tools',
+      label: context.tr(
+        'home.tools_explore_all_label',
+        fallback: 'Explore all 50+ features and tools',
+      ),
       child: ScaleButton(
         onTap: () {
           di.sl<HapticService>().selection();
@@ -587,72 +593,90 @@ class _ExploreAllCard extends StatelessWidget {
               blur: 0,
               showShadow: false,
               borderRadius: BorderRadius.circular(24.r),
-              borderColor: AppColors.indigo500.withValues(alpha: isDark ? 0.35 : 0.25),
+              borderColor: AppColors.indigo500.withValues(
+                alpha: isDark ? 0.35 : 0.25,
+              ),
               padding: EdgeInsets.all(16.r),
               child: SizedBox(
                 width: width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: AppColors.indigo500.withValues(alpha: 0.15),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    LucideIcons.compass,
-                    color: AppColors.indigo500,
-                    size: 20.r,
-                  ),
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  'Explore All',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
-                ),
-                SizedBox(height: 4.h),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 8.w,
-                    vertical: 3.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.indigo500.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(8.r),
-                    border: Border.all(
-                      color: AppColors.indigo500.withValues(alpha: 0.2),
-                      width: 0.5,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10.r),
+                      decoration: BoxDecoration(
+                        color: AppColors.indigo500.withValues(alpha: 0.15),
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.indigo500.withValues(alpha: 0.15),
+                            blurRadius: 8,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        LucideIcons.compass,
+                        color: AppColors.indigo500,
+                        size: 20.r,
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    '50+ TOOLS',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.indigo500,
-                      letterSpacing: 0.8,
+                    SizedBox(height: 16.h),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        context.tr(
+                          'home.tools_explore_all',
+                          fallback: 'Explore All',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      ),
                     ),
-                  ),
+                    SizedBox(height: 4.h),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 3.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.indigo500.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(8.r),
+                        border: Border.all(
+                          color: AppColors.indigo500.withValues(alpha: 0.2),
+                          width: 0.5,
+                        ),
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          context.tr(
+                            'home.tools_explore_count',
+                            fallback: '50+ TOOLS',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.indigo500,
+                            letterSpacing: 0.8,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),
       ),
-    ),
-  ),
-);
+    );
   }
 }
-

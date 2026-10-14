@@ -109,7 +109,7 @@ class WordSnapCompletedView extends StatelessWidget {
                         )
                       : context.tr(
                           'home.come_back_tomorrow',
-                          fallback: 'You solved today\'s puzzle. Come back tomorrow for a new word!',
+                          fallback: 'Come back tomorrow for a new challenge!',
                         ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -359,7 +359,7 @@ class WordSnapCompletedView extends StatelessWidget {
                               Text(
                                 context.tr(
                                   'home.keep_it_going',
-                                  fallback: 'Keep your daily streak alive!',
+                                  fallback: 'Keep it going!',
                                 ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',

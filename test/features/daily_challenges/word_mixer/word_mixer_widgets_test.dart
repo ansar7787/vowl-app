@@ -122,7 +122,7 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.text('Daily Challenge'), findsOneWidget);
+      expect(find.text('DAILY CHALLENGE'), findsOneWidget);
       expect(find.text('HARD'), findsOneWidget); // 7 letters is Hard
       expect(find.text('7 letters'), findsOneWidget);
     });
@@ -148,14 +148,14 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.text('Tap to reveal definition clue'), findsOneWidget);
+      expect(find.text('Tap for hint'), findsOneWidget);
 
       // Tap header to expand
-      await tester.tap(find.text('Tap to reveal definition clue'));
+      await tester.tap(find.text('Tap for hint'));
       await tester.pumpAndSettle();
 
       expect(isExpanded.value, isTrue);
-      expect(find.text('Hint & Definition'), findsOneWidget);
+      expect(find.text('HINT'), findsOneWidget);
       expect(
         find.textContaining('A marine cephalopod having eight fleshy arms'),
         findsOneWidget,
@@ -224,7 +224,7 @@ void main() {
       expect(practiceTapped, isTrue);
 
       // Tap Back to Home button
-      final returnBtn = find.text('Back to Home');
+      final returnBtn = find.text('GO BACK');
       expect(returnBtn, findsOneWidget);
       await tester.ensureVisible(returnBtn);
       await tester.pumpAndSettle();
@@ -278,7 +278,7 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.text('Spell the Word'), findsOneWidget);
+      expect(find.text('SPELL IT!'), findsOneWidget);
       expect(find.text('0/7 letters placed'), findsOneWidget);
       expect(find.text('CHECK ANSWER'), findsOneWidget);
 

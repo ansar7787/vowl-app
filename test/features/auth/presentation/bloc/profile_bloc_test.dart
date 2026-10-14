@@ -115,10 +115,21 @@ void main() {
           bloc.add(const ProfileUpdateDisplayNameRequested('New Name')),
       expect: () => [
         isA<ProfileState>().having(
-          (s) => s.message,
-          'message',
-          'profile.display_name_updated',
+          (s) => s.isLoading,
+          'isLoading',
+          true,
         ),
+        isA<ProfileState>()
+            .having(
+              (s) => s.message,
+              'message',
+              'profile.display_name_updated',
+            )
+            .having(
+              (s) => s.isLoading,
+              'isLoading',
+              false,
+            ),
       ],
       verify: (_) {
         verify(() => mockUpdateDisplayName('New Name')).called(1);

@@ -24,7 +24,7 @@ class LeaderboardHeader extends StatelessWidget {
       // FIX (HIGH-5): Screen readers now announce the leaderboard title,
       // subtitle, and when it was last updated in a single label.
       label:
-          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank')}. ${context.tr('leaderboard.updated_at', fallback: 'Updated {0}', args: [timeAgo])}',
+          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank globally!')}. ${context.tr('leaderboard.updated_at', fallback: 'Updated {0}', args: [timeAgo])}',
       header: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

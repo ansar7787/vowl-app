@@ -108,7 +108,7 @@ class WordMixerCompletedView extends StatelessWidget {
                     )
                   : context.tr(
                       'home.come_back_tomorrow',
-                      fallback: 'You solved today\'s word. Come back tomorrow for a new challenge!',
+                      fallback: 'Come back tomorrow for a new challenge!',
                     ),
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -162,7 +162,7 @@ class WordMixerCompletedView extends StatelessWidget {
                             color: primaryColor,
                             size: 22.r,
                           ),
-                          tooltip: context.tr('common.listen', fallback: 'Pronounce'),
+                          tooltip: context.tr('common.listen', fallback: 'Listen'),
                         ),
                       ],
                     ),
@@ -348,7 +348,7 @@ class WordMixerCompletedView extends StatelessWidget {
                             fit: BoxFit.scaleDown,
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              context.tr('home.keep_it_going', fallback: 'Keep your daily streak alive!'),
+                              context.tr('home.keep_it_going', fallback: 'Keep it going!'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
@@ -411,7 +411,7 @@ class WordMixerCompletedView extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  context.tr('common.go_back', fallback: 'Back to Home'),
+                  context.tr('common.go_back', fallback: 'GO BACK'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 15.sp,

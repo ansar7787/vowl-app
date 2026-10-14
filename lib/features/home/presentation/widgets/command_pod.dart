@@ -519,7 +519,7 @@ class CommandPod extends StatelessWidget {
             Expanded(
               child: _buildMiniStatTile(
                 context,
-                context.tr('home.badges', fallback: 'Badges'),
+                context.tr('home.badges', fallback: 'BADGES'),
                 '${user.badges.length}',
                 Icons.emoji_events_rounded,
                 AppColors.amber500,
@@ -530,7 +530,7 @@ class CommandPod extends StatelessWidget {
             Expanded(
               child: _buildMiniStatTile(
                 context,
-                context.tr('home.level_label', fallback: 'Lvl'),
+                context.tr('home.level_label', fallback: 'LEVEL'),
                 '${user.level}',
                 Icons.star_rounded,
                 AppColors.blue500,
@@ -541,7 +541,7 @@ class CommandPod extends StatelessWidget {
             Expanded(
               child: _buildMiniStatTile(
                 context,
-                context.tr('home.total_xp', fallback: 'Total XP'),
+                context.tr('home.total_xp', fallback: 'TOTAL XP'),
                 _formatXp(user.totalExp),
                 Icons.bolt_rounded,
                 IllustrationColors.richPurple,

@@ -453,7 +453,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                                 child: Text(
                                   context.tr(
                                     'category_games.overall_mastery',
-                                    fallback: 'Overall Mastery',
+                                    fallback: 'OVERALL MASTERY',
                                   ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
@@ -558,7 +558,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                             icon: Icons.bolt_rounded,
                             label: context.tr(
                               'category_games.power',
-                              fallback: 'Power',
+                              fallback: 'POWER',
                             ),
                             value:
                                 '${clearedLevels * 10} ${context.tr('common.xp_suffix', fallback: 'XP')}',
@@ -572,7 +572,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                               icon: Icons.sports_esports_rounded,
                               label: context.tr(
                                 'category_games.games',
-                                fallback: 'Games',
+                                fallback: 'GAMES',
                               ),
                               value: '${games.length}',
                               color: displayColor,
@@ -585,7 +585,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                             alignment: AlignmentDirectional.centerEnd,
                             child: _buildStatMini(
                               icon: Icons.stars_rounded,
-                              label: context.tr('home.rank', fallback: 'Rank'),
+                              label: context.tr('home.rank', fallback: 'RANK'),
                               value: rankText,
                               color: displayColor,
                               isDark: isDark,
@@ -873,7 +873,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         child: FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            context.tr('quest_archive.new_badge', fallback: 'New'),
+            context.tr('quest_archive.new_badge', fallback: 'NEW'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,
@@ -1051,13 +1051,13 @@ class _CategoryGamesLogic {
 
   static String getRank(BuildContext context, double progress) {
     if (progress <= 0.0) {
-      return context.tr('category_games.rank_beginner', fallback: 'Beginner');
+      return context.tr('category_games.rank_beginner', fallback: 'BEGINNER');
     }
     if (progress < 0.15) {
-      return context.tr('category_games.rank_novice', fallback: 'Novice');
+      return context.tr('category_games.rank_novice', fallback: 'NOVICE');
     }
     if (progress < 0.35) {
-      return context.tr('category_games.rank_scholar', fallback: 'Scholar');
+      return context.tr('category_games.rank_scholar', fallback: 'SCHOLAR');
     }
     if (progress < 0.55) {
       return context
@@ -1065,14 +1065,14 @@ class _CategoryGamesLogic {
           .toUpperCase();
     }
     if (progress < 0.80) {
-      return context.tr('category_games.rank_virtuoso', fallback: 'Virtuoso');
+      return context.tr('category_games.rank_virtuoso', fallback: 'VIRTUOSO');
     }
     if (progress < 0.99) {
       return context.tr(
         'quest_archive.status_grandmaster',
-        fallback: 'Grandmaster',
+        fallback: 'GRANDMASTER',
       );
     }
-    return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
+    return context.tr('quest_archive.status_legendary', fallback: 'LEGENDARY');
   }
 }

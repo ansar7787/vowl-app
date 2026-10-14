@@ -129,7 +129,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                         );
                         widget.showNotification(
                           context,
-                          "🎁 Hooray! You earned $amount coins! 🪙",
+                          "Hooray! You earned $amount coins!",
                         );
                         di.sl<SoundService>().playCorrect();
                       }

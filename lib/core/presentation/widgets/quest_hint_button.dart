@@ -45,14 +45,14 @@ class QuestHintButton extends StatelessWidget {
       if (hintText != null) {
         final isDynamic = HintUtility.isGenericHint(hintText);
         final displayText = isDynamic
-            ? context.tr('hint.pro_tip_generic', fallback: 'Pro Tip')
+            ? context.tr('hint.pro_tip_generic', fallback: 'PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth.')
             : hintText!;
 
         di.sl<TtsService>().speak(
           isDynamic
               ? context.tr(
                   'hint.pro_tip_tts',
-                  fallback: 'Listen carefully to the pronunciation.',
+                  fallback: 'Pro tip: Look for context clues.',
                 )
               : hintText!,
         );

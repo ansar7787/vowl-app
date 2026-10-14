@@ -569,7 +569,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                           AutoSizeText(
                                             context.tr(
                                               'game.evidence_found',
-                                              fallback: 'EVIDENCE FOUND! 🎯',
+                                              fallback: 'EVIDENCE FOUND!',
                                             ),
                                             maxLines: 1,
                                             minFontSize: 8,

@@ -247,7 +247,7 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                             ),
                             SizedBox(height: 20.h),
                             Text(
-                              "You collected ${_score.value} Kids Coins! 🪙",
+                              "You collected ${_score.value} Kids Coins!",
                               style: TextStyle(
                                 fontSize: 20.sp,
                                 fontWeight: FontWeight.w600,

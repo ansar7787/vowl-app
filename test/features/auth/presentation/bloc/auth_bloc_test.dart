@@ -14,6 +14,9 @@ import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
 import 'package:vowl/features/auth/domain/usecases/send_email_verification.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/notification_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MockGetUserStream extends Mock implements GetUserStream {}
 
@@ -30,6 +33,8 @@ class MockGetCurrentUser extends Mock implements GetCurrentUser {}
 class MockSendEmailVerification extends Mock implements SendEmailVerification {}
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
+
+class MockNotificationService extends Mock implements NotificationService {}
 
 class FakeNoParams extends Fake implements NoParams {}
 
@@ -48,6 +53,7 @@ void main() {
   late MockGetCurrentUser mockGetCurrentUser;
   late MockSendEmailVerification mockSendEmailVerification;
   late MockNetworkInfo mockNetworkInfo;
+  late MockNotificationService mockNotificationService;
   late StreamController<UserEntity?> userStreamController;
 
   final tUser = UserEntity(
@@ -57,8 +63,15 @@ void main() {
   );
 
   setUp(() {
+    SharedPreferences.setMockInitialValues({});
+    mockNotificationService = MockNotificationService();
+    when(() => mockNotificationService.cancelAllReminders()).thenAnswer((_) async {});
+    if (di.sl.isRegistered<NotificationService>()) {
+      di.sl.unregister<NotificationService>();
+    }
+    di.sl.registerLazySingleton<NotificationService>(() => mockNotificationService);
+
     mockNetworkInfo = MockNetworkInfo();
-    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     mockGetUserStream = MockGetUserStream();
     mockLogOut = MockLogOut();
@@ -89,6 +102,9 @@ void main() {
   });
 
   tearDown(() {
+    if (di.sl.isRegistered<NotificationService>()) {
+      di.sl.unregister<NotificationService>();
+    }
     userStreamController.close();
     bloc.close();
   });

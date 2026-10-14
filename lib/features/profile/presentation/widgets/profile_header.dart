@@ -187,11 +187,11 @@ class ProfileHeader extends StatelessWidget {
                       label: isPremium
                           ? context.tr(
                               'profile.edit_photo_premium',
-                              fallback: 'Edit Photo (Premium)',
+                              fallback: 'Edit premium profile photo',
                             )
                           : context.tr(
                               'profile.edit_photo',
-                              fallback: 'Edit Photo',
+                              fallback: 'Edit profile photo',
                             ),
                       child: ScaleButton(
                         onTap: () {
@@ -247,7 +247,7 @@ class ProfileHeader extends StatelessWidget {
                         user.displayName ??
                             context.tr(
                               'profile.default_name',
-                              fallback: 'Explorer',
+                              fallback: 'Hero In Training',
                             ),
                         maxLines: 1,
                         minFontSize: 18,
@@ -350,7 +350,7 @@ class ProfileHeader extends StatelessWidget {
                 AutoSizeText(
                   context.tr(
                     'profile.premium_member_badge',
-                    fallback: 'Premium Member',
+                    fallback: 'PREMIUM MEMBER',
                   ),
                   maxLines: 1,
                   minFontSize: 6,

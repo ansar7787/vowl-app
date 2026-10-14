@@ -69,7 +69,7 @@ class PremiumFailureOverlay extends StatelessWidget {
         end: Alignment.bottomRight,
       ).createShader(bounds),
       child: Text(
-        context.tr('premium.failure_title', fallback: 'Payment Failed'),
+        context.tr('premium.failure_title', fallback: 'TRANSACTION FAILED'),
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
@@ -123,11 +123,11 @@ class PremiumFailureOverlay extends StatelessWidget {
       errorMessage == null
           ? context.tr(
               'premium.failure_body_default',
-              fallback: 'We could not process your payment.',
+              fallback: 'The payment could not be completed. Please try again or use another payment method.',
             )
           : context.tr(
               'premium.failure_body_retry_hint',
-              fallback: 'Please check your connection and try again.',
+              fallback: 'Please try again or use another payment method.',
             ),
       textAlign: TextAlign.center,
       style: TextStyle(
@@ -232,7 +232,7 @@ class PremiumFailureOverlay extends StatelessWidget {
           flex: 2,
           child: Semantics(
             button: true,
-            label: context.tr('premium.retry_button', fallback: 'Retry'),
+            label: context.tr('premium.retry_button', fallback: 'RETRY'),
             child: ScaleButton(
               onTap: onRetry,
               child: Container(
@@ -254,7 +254,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                 ),
                 child: Text(
                   context
-                      .tr('premium.retry_button', fallback: 'Retry')
+                      .tr('premium.retry_button', fallback: 'RETRY')
                       .toUpperCase(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -306,7 +306,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                   liveRegion: true,
                   label: context.tr(
                     'premium.failure_title',
-                    fallback: 'Payment Failed',
+                    fallback: 'TRANSACTION FAILED',
                   ),
                   child: iconWidget,
                 ),

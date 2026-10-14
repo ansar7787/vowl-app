@@ -755,7 +755,7 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
                 ),
                 child: Text(
                   isCorrect
-                      ? context.tr('games.matched', fallback: 'Matched')
+                      ? context.tr('games.matched', fallback: 'Matched!')
                       : isHovering
                       ? context.tr('games.drop_now', fallback: 'Drop here')
                       : context.tr(

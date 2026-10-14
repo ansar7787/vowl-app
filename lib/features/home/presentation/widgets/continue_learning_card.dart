@@ -410,7 +410,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         Text(
           context.tr(
             'home.cl_levels_target',
-            fallback: '$_cleared → $target Levels 🎯',
+            fallback: '$_cleared → $target Levels',
             args: [_cleared.toString(), target.toString()],
           ),
           style: TextStyle(

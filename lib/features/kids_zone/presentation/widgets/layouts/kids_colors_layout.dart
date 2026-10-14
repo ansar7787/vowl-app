@@ -83,11 +83,11 @@ class KidsColorsLayout extends StatelessWidget {
               isColorQuest
                   ? context.tr(
                       'games.kids_colors_drag',
-                      fallback: 'Drag the correct color to the canvas.',
+                      fallback: 'Drag the correct color to the canvas!',
                     )
                   : context.tr(
                       'games.kids_colors_drag_object',
-                      fallback: 'Drag the correct answer to the canvas.',
+                      fallback: 'Drag the correct item to the easel!',
                     ),
               style: TextStyle(
                 fontFamily: 'Outfit',

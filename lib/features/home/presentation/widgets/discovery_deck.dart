@@ -55,7 +55,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
         title: context.tr('home.discovery_foryou_title', fallback: 'For You'),
         subtitle: context.tr(
           'home.discovery_foryou_subtitle',
-          fallback: 'Recommended Quests',
+          fallback: 'Smart recommendation based on your progress',
         ),
         icon: Icons.lightbulb_outline_rounded,
         color: AppColors.indigo500, // Indigo — unique
@@ -73,7 +73,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
         ),
         subtitle: context.tr(
           'home.discovery_dailyduo_subtitle',
-          fallback: 'Quick Practice',
+          fallback: 'Vocal warm-up followed by reading mastery',
         ),
         icon: Icons.auto_awesome_motion_rounded,
         color: _LocalPalette.color06b6d4, // Cyan — was duplicate indigo
@@ -91,7 +91,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
         ),
         subtitle: context.tr(
           'home.discovery_speedblitz_subtitle',
-          fallback: 'Beat the clock',
+          fallback: 'High-speed challenges to sharpen focus',
         ),
         icon: Icons.bolt_rounded,
         color: IllustrationColors.warmOrange,
@@ -106,7 +106,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
         ),
         subtitle: context.tr(
           'home.discovery_grammarpro_subtitle',
-          fallback: 'Master the rules',
+          fallback: 'Elite structural drills for sentence mastery',
         ),
         icon: Icons.verified_user_rounded,
         color: AppColors.emerald500,

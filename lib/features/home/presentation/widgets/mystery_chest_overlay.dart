@@ -360,12 +360,12 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       scale: _entranceScale.value,
       child: AutoSizeText(
         isOpen
-            ? context.tr('home.chest_claimed', fallback: 'Chest Claimed')
+            ? context.tr('home.chest_claimed', fallback: 'CLAIMED!')
             : (widget.isPremium
-                  ? context.tr('home.chest_vip_gift', fallback: 'VIP Gift')
+                  ? context.tr('home.chest_vip_gift', fallback: 'VIP DAILY GIFT')
                   : context.tr(
                       'home.chest_daily_mystery',
-                      fallback: 'Daily Mystery',
+                      fallback: 'DAILY MYSTERY',
                     )),
         style: TextStyle(
           fontFamily: 'Outfit',
@@ -393,13 +393,13 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       isOpen
           ? context.tr(
               'home.chest_treasure_unlocked',
-              fallback: 'Treasure Unlocked!',
+              fallback: 'TREASURE UNLOCKED',
             )
           : (widget.isPremium
-                ? context.tr('home.chest_pro_reward', fallback: 'Pro Reward')
+                ? context.tr('home.chest_pro_reward', fallback: 'YOUR EXCLUSIVE PRO REWARD')
                 : context.tr(
                     'home.chest_ready_to_open',
-                    fallback: 'Ready to open',
+                    fallback: 'READY TO OPEN?',
                   )),
       style: TextStyle(
         fontFamily: 'Outfit',
@@ -424,8 +424,8 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       button: true,
       enabled: !_hasTriggeredOpen,
       label: widget.isPremium
-          ? context.tr('home.chest_vip_gift', fallback: 'VIP Gift')
-          : context.tr('home.chest_daily_mystery', fallback: 'Daily Mystery'),
+          ? context.tr('home.chest_vip_gift', fallback: 'VIP DAILY GIFT')
+          : context.tr('home.chest_daily_mystery', fallback: 'DAILY MYSTERY'),
       child: GestureDetector(
         onTap: _hasTriggeredOpen ? null : widget.onOpen,
         child: SizedBox(
@@ -553,7 +553,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
                 height: 240.r,
                 semanticLabel: context.tr(
                   'home.chest_daily_mystery',
-                  fallback: 'Daily Mystery',
+                  fallback: 'DAILY MYSTERY',
                 ),
                 errorBuilder: (context, error, stackTrace) => Icon(
                   Icons.card_giftcard_rounded,
@@ -581,7 +581,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
             height: 280.r,
             semanticLabel: context.tr(
               'home.chest_daily_mystery',
-              fallback: 'Daily Mystery',
+              fallback: 'DAILY MYSTERY',
             ),
             errorBuilder: (context, error, stackTrace) => Icon(
               Icons.card_giftcard_rounded,
@@ -604,7 +604,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
         child: Semantics(
           label: context.tr(
             'home.chest_coins_collected_value',
-            fallback: 'Coins Collected',
+            fallback: 'COINS COLLECTED',
             args: ['${widget.rewardAmount}'],
           ),
           child: Container(
@@ -687,9 +687,9 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
           widget.isPremium
               ? context.tr(
                   'home.chest_tap_vip_loot',
-                  fallback: 'Tap for VIP Loot',
+                  fallback: 'TAP TO CLAIM VIP LOOT',
                 )
-              : context.tr('home.chest_tap_unveil', fallback: 'Tap to unveil'),
+              : context.tr('home.chest_tap_unveil', fallback: 'TAP TO UNVEIL'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 12.sp,

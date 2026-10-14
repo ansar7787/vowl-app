@@ -65,7 +65,7 @@ class KidsGameDialogs {
                           primaryColor: primaryColor,
                           title: context.tr(
                             'games.kids_level_up',
-                            fallback: 'Level Up!',
+                            fallback: 'LEVEL UP!',
                           ),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -214,7 +214,7 @@ class KidsGameDialogs {
                                       Text(
                                         context.tr(
                                           'games.kids_new_sticker',
-                                          fallback: 'New Sticker!',
+                                          fallback: 'NEW STICKER UNLOCKED!',
                                         ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
@@ -386,7 +386,7 @@ class KidsGameDialogs {
                 primaryColor: AppColors.indigo500, // Moody purple/indigo
                 title: context.tr(
                   'games.kids_game_over',
-                  fallback: 'Game Over',
+                  fallback: 'GAME OVER',
                 ),
                 ribbonColor: AppColors.gameIncorrect,
                 child: Column(
@@ -435,7 +435,7 @@ class KidsGameDialogs {
                     Text(
                       context.tr(
                         'games.kids_game_over_subtitle',
-                        fallback: 'Great effort!',
+                        fallback: 'Don\'t give up! You were so close!',
                       ),
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -453,7 +453,7 @@ class KidsGameDialogs {
                     Kids3DButton(
                       text: context.tr(
                         'games.kids_resume_game',
-                        fallback: 'Resume Game',
+                        fallback: 'RESUME GAME',
                       ),
                       color: const Color(
                         0xFF10B981,
@@ -478,7 +478,7 @@ class KidsGameDialogs {
                     Kids3DButton(
                       text: context.tr(
                         'games.kids_exit_to_map',
-                        fallback: 'Exit to Map',
+                        fallback: 'EXIT TO MAP',
                       ),
                       color: Colors.grey.shade600,
                       onTap: () {
@@ -550,7 +550,7 @@ class KidsGameDialogs {
                   SizedBox(height: 20.h),
 
                   Text(
-                    context.tr('games.kids_quit_title', fallback: 'Quit Game?'),
+                    context.tr('games.kids_quit_title', fallback: 'Leaving so soon?'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontWeight: FontWeight.w900,
@@ -564,7 +564,7 @@ class KidsGameDialogs {
                   Text(
                     context.tr(
                       'games.kids_quit_subtitle',
-                      fallback: 'Are you sure you want to quit?',
+                      fallback: 'Your progress in this level will be lost! Are you sure you want to quit?',
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -600,7 +600,10 @@ class KidsGameDialogs {
                             child: Center(
                               child: Text(
                                 context
-                                    .tr('games.kids_quit_button')
+                                    .tr(
+                                      'games.kids_quit_button',
+                                      fallback: 'QUIT',
+                                    )
                                     .toUpperCase(),
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
@@ -640,7 +643,7 @@ class KidsGameDialogs {
                                 context
                                     .tr(
                                       'games.kids_play_on',
-                                      fallback: 'Play On',
+                                      fallback: 'PLAY ON!',
                                     )
                                     .toUpperCase(),
                                 textAlign: TextAlign.center,

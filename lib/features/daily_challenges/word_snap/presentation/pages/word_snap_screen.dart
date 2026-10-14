@@ -146,7 +146,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       coins: 10,
       title: context.tr(
         'vocabulary.word_snap_master',
-        fallback: 'Puzzle Solved!',
+        fallback: 'WORD SNAP MASTER!',
       ),
       enableDoubleUp: true,
     );
@@ -442,7 +442,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                     },
                     icon: const Icon(Icons.refresh_rounded),
                     label: Text(
-                      context.tr('common.retry', fallback: 'Try Again'),
+                      context.tr('common.retry', fallback: 'Retry'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,

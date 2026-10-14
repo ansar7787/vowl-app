@@ -245,7 +245,7 @@ class PremiumPlanCard extends StatelessWidget {
                                         ),
                                       ),
                                       child: Text(
-                                        '${context.tr('premium.save', fallback: 'SAVE')} $savingsPercent%',
+                                        '${context.tr('premium.save', fallback: 'Save')} $savingsPercent%',
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           color: AppColors.emerald500,

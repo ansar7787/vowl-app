@@ -174,10 +174,10 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                             children: [
                               Text(
                                 expanded
-                                    ? context.tr('home.hint', fallback: 'Hint & Definition')
+                                    ? context.tr('home.hint', fallback: 'HINT')
                                     : context.tr(
                                         'home.tap_for_hint',
-                                        fallback: 'Tap to reveal definition clue',
+                                        fallback: 'Tap for hint',
                                       ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',

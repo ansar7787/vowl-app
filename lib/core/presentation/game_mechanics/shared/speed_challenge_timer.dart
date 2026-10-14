@@ -295,7 +295,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
                       borderRadius: BorderRadius.circular(12.r),
                     ),
                     child: AutoSizeText(
-                      '⚡ +${widget.bonusCoinsForSpeed} Speed Bonus',
+                      '+${widget.bonusCoinsForSpeed} Speed Bonus',
                       maxLines: 1,
                       minFontSize: 6,
                       style: TextStyle(

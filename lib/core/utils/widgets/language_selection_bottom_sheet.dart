@@ -1,33 +1,59 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'dart:async';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
-import 'package:google_mlkit_translation/google_mlkit_translation.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color1e1e2a = Color(0xFF1E1E2A);
-}
-
-/// A sleek 2026 glassmorphic bottom sheet for selecting the native translation language.
+/// Unified, high-performance bottom sheet for selecting translation languages across Vowl.
+///
+/// Features:
+/// - Pinned downloaded/offline models at the top for instant discovery.
+/// - Full 50+ language catalog sorted and filterable in real time.
+/// - Unified single-surface search bar with instant clear action.
+/// - Instant one-tap selection with haptic feedback.
+/// - Reusable for in-game hint translations, translation screen, photo vocab, and settings.
 class LanguageSelectionBottomSheet extends StatefulWidget {
-  const LanguageSelectionBottomSheet({super.key});
+  final bool isSource;
+  final String? currentLanguage;
+  final List<String>? downloadedLanguages;
+  final ValueChanged<String>? onSelected;
+  final String? title;
+  final String? subtitle;
 
-  static Future<void> show(BuildContext context) {
-    return showModalBottomSheet(
+  const LanguageSelectionBottomSheet({
+    super.key,
+    this.isSource = false,
+    this.currentLanguage,
+    this.downloadedLanguages,
+    this.onSelected,
+    this.title,
+    this.subtitle,
+  });
+
+  static Future<String?> show(
+    BuildContext context, {
+    bool isSource = false,
+    String? currentLanguage,
+    List<String>? downloadedLanguages,
+    ValueChanged<String>? onSelected,
+    String? title,
+    String? subtitle,
+  }) {
+    return showModalBottomSheet<String>(
       context: context,
       isScrollControlled: true,
+      useRootNavigator: true,
       backgroundColor: Colors.transparent,
-      builder: (ctx) => const LanguageSelectionBottomSheet(),
+      builder: (ctx) => LanguageSelectionBottomSheet(
+        isSource: isSource,
+        currentLanguage: currentLanguage,
+        downloadedLanguages: downloadedLanguages,
+        onSelected: onSelected,
+        title: title,
+        subtitle: subtitle,
+      ),
     );
   }
 
@@ -38,568 +64,208 @@ class LanguageSelectionBottomSheet extends StatefulWidget {
 
 class _LanguageSelectionBottomSheetState
     extends State<LanguageSelectionBottomSheet> {
-  final ValueNotifier<String?> _selectedLanguage = ValueNotifier(null);
-  final ValueNotifier<bool> _isLoading = ValueNotifier(false);
-  final ValueNotifier<int> _downloadProgress = ValueNotifier(0);
-  Timer? _progressTimer;
   final TextEditingController _searchController = TextEditingController();
-  final ValueNotifier<String> _searchQuery = ValueNotifier('');
+  List<String> _allLanguages = [];
+  List<String> _filteredLanguages = [];
+  List<String> _downloadedLanguages = [];
+  String? _activeLanguage;
+
+  @override
+  void initState() {
+    super.initState();
+    _allLanguages = TranslationService.supportedLanguages.keys.toList()..sort();
+    _filteredLanguages = List.from(_allLanguages);
+    _activeLanguage = widget.currentLanguage;
+    if (widget.downloadedLanguages != null) {
+      _downloadedLanguages = List.from(widget.downloadedLanguages!);
+    }
+    _searchController.addListener(_onSearchChanged);
+    _loadInitialMetadata();
+  }
+
+  Future<void> _loadInitialMetadata() async {
+    final translationService = di.sl<TranslationService>();
+
+    if (widget.currentLanguage == null) {
+      final configured = widget.isSource
+          ? await translationService.getConfiguredSourceLanguageName()
+          : await translationService.getConfiguredLanguageName();
+      if (mounted && configured != null) {
+        setState(() {
+          _activeLanguage = configured;
+        });
+      }
+    }
+
+    if (widget.downloadedLanguages == null) {
+      final downloaded = await translationService.getDownloadedLanguageNames();
+      if (mounted) {
+        setState(() {
+          _downloadedLanguages = downloaded;
+        });
+        return;
+      }
+    }
+  }
 
   @override
   void dispose() {
-    _progressTimer?.cancel();
     _searchController.dispose();
-    _selectedLanguage.dispose();
-    _isLoading.dispose();
-    _downloadProgress.dispose();
-    _searchQuery.dispose();
     super.dispose();
   }
 
-  void _startFakeProgress() {
-    _downloadProgress.value = 0;
-    _progressTimer?.cancel();
-    _progressTimer = Timer.periodic(const Duration(milliseconds: 150), (timer) {
-      if (!mounted) {
-        timer.cancel();
-        return;
-      }
-      if (_downloadProgress.value < 85) {
-        _downloadProgress.value += 2;
-      } else if (_downloadProgress.value < 95) {
-        if (timer.tick % 3 == 0) _downloadProgress.value += 1;
-      } else if (_downloadProgress.value < 99) {
-        if (timer.tick % 10 == 0) _downloadProgress.value += 1;
+  void _onSearchChanged() {
+    final query = _searchController.text.toLowerCase().trim();
+    setState(() {
+      if (query.isEmpty) {
+        _filteredLanguages = List.from(_allLanguages);
+      } else {
+        _filteredLanguages = _allLanguages
+            .where((lang) => lang.toLowerCase().contains(query))
+            .toList();
       }
     });
+  }
+
+  Future<void> _onLanguageSelected(String lang) async {
+    di.sl<HapticService>().selection();
+
+    if (widget.onSelected != null) {
+      widget.onSelected!(lang);
+    } else {
+      // Default: persist to TranslationService
+      final target = TranslationService.supportedLanguages[lang];
+      if (target != null) {
+        final translationService = di.sl<TranslationService>();
+        if (widget.isSource) {
+          await translationService.setSourceLanguage(target);
+        } else {
+          await translationService.setTargetLanguage(target);
+        }
+      }
+    }
+
+    if (mounted) {
+      Navigator.of(context).pop(lang);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final primaryIndigo = AppColors.indigo500;
+    final readyList = _downloadedLanguages
+        .where((lang) => _filteredLanguages.contains(lang))
+        .toList();
 
-    return ListenableBuilder(
-      listenable: Listenable.merge([
-        _selectedLanguage,
-        _isLoading,
-        _downloadProgress,
-        _searchQuery,
-      ]),
-      builder: (context, _) {
-        return ClipRRect(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-            child: Container(
-              padding: EdgeInsets.only(
-                left: 20.w,
-                right: 20.w,
-                top: 20.h,
-                bottom: MediaQuery.of(context).padding.bottom + 20.h,
-              ),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? AppColors.slate900.withValues(alpha: 0.85)
-                    : Colors.white.withValues(alpha: 0.9),
-                borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-                border: Border(
-                  top: BorderSide(
-                    color: Colors.white.withValues(alpha: 0.2),
-                    width: 1,
-                  ),
+    final defaultTitle = widget.isSource
+        ? context.tr(
+            'translation.select_source_language',
+            fallback: 'Select Source Language',
+          )
+        : context.tr(
+            'translation.select_target_language',
+            fallback: 'Select Target Language',
+          );
+
+    final defaultSubtitle = widget.isSource
+        ? context.tr(
+            'translation.select_source_desc',
+            fallback: 'Translate from',
+          )
+        : context.tr(
+            'translation.select_target_desc',
+            fallback: 'Translate to / used for in-game hints & explanations',
+          );
+
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.82,
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
+            blurRadius: 28,
+            offset: const Offset(0, -8),
+          ),
+        ],
+      ),
+      child: SafeArea(
+        top: false,
+        child: Column(
+          children: [
+            SizedBox(height: 12.h),
+            // Grab handle
+            Center(
+              child: Container(
+                width: 44.w,
+                height: 4.5.h,
+                decoration: BoxDecoration(
+                  color: isDark ? Colors.white24 : AppColors.slate300,
+                  borderRadius: BorderRadius.circular(3.r),
                 ),
               ),
-              constraints: BoxConstraints(
-                maxHeight: MediaQuery.of(context).size.height * 0.85,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
+            ),
+            SizedBox(height: 16.h),
+
+            // Header title row with close button
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Row(
                 children: [
-                  Center(
-                    child: Container(
-                      width: 48.w,
-                      height: 5.h,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.withValues(alpha: 0.3),
-                        borderRadius: BorderRadius.circular(2.5.r),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 24.h),
-
-                  // Premium Header
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(12.r),
-                        decoration: BoxDecoration(
-                          color: primaryIndigo.withValues(alpha: 0.15),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          LucideIcons.languages,
-                          color: primaryIndigo,
-                          size: 24.r,
-                        ),
-                      ),
-                      SizedBox(width: 16.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              context.tr(
-                                'translation.first_time_title',
-                                fallback: 'Translation Language',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 22.sp,
-                                fontWeight: FontWeight.w900,
-                                color: isDark ? Colors.white : Colors.black87,
-                                letterSpacing: -0.5,
-                              ),
-                            ),
-                            SizedBox(height: 4.h),
-                            Text(
-                              context.tr(
-                                'translation.language_selection_subtitle',
-                                fallback:
-                                    'We will translate in-game hints & explanations into this language.',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                color: isDark ? Colors.white60 : Colors.black54,
-                                height: 1.3,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 16.h),
-
-                  // Auto-Detect Feature Button
-                  ScaleButton(
-                    onTap: () =>
-                        _showAutoDetectDialog(context, isDark, primaryIndigo),
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(
-                        vertical: 14.h,
-                        horizontal: 16.w,
-                      ),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            primaryIndigo.withValues(alpha: 0.1),
-                            AppColors.violet500.withValues(alpha: 0.1),
-                          ],
-                        ),
-                        borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(
-                          color: primaryIndigo.withValues(alpha: 0.3),
-                        ),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.auto_awesome_rounded,
-                            color: primaryIndigo,
-                            size: 20.r,
-                          ),
-                          SizedBox(width: 12.w),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  context.tr(
-                                    'translation.auto_detect',
-                                    fallback: 'Auto-Detect Language',
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.bold,
-                                    color: isDark
-                                        ? Colors.white
-                                        : Colors.black87,
-                                  ),
-                                ),
-                                Text(
-                                  context.tr(
-                                    'translation.auto_detect_desc',
-                                    fallback:
-                                        'Type a sentence and we will find your language.',
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12.sp,
-                                    color: isDark
-                                        ? Colors.white60
-                                        : Colors.black54,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Icon(
-                            Icons.chevron_right_rounded,
-                            color: isDark ? Colors.white54 : Colors.black45,
-                            size: 24.r,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 12.h),
-
-                  // Search field
-                  Container(
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.black.withValues(alpha: 0.2)
-                          : Colors.black.withValues(alpha: 0.03),
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : Colors.black.withValues(alpha: 0.05),
-                      ),
-                    ),
-                    child: TextField(
-                      controller: _searchController,
-                      onChanged: (val) => _searchQuery.value = val,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 15.sp,
-                        color: isDark ? Colors.white : Colors.black87,
-                      ),
-                      decoration: InputDecoration(
-                        hintText: context.tr(
-                          'language_picker.search_hint',
-                          fallback: 'Search languages...',
-                        ),
-                        hintStyle: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          color: isDark ? Colors.white38 : Colors.black26,
-                        ),
-                        prefixIcon: Icon(
-                          LucideIcons.search,
-                          size: 18.r,
-                          color: isDark ? Colors.white38 : Colors.black26,
-                        ),
-                        suffixIcon: _searchQuery.value.isNotEmpty
-                            ? GestureDetector(
-                                onTap: () {
-                                  _searchController.clear();
-                                  _searchQuery.value = '';
-                                },
-                                child: Icon(
-                                  Icons.close_rounded,
-                                  size: 18.r,
-                                  color: isDark
-                                      ? Colors.white38
-                                      : Colors.black38,
-                                ),
-                              )
-                            : null,
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 14.h,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 12.h),
-
-                  // Language List
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.black.withValues(alpha: 0.2)
-                            : Colors.black.withValues(alpha: 0.02),
-                        borderRadius: BorderRadius.circular(24.r),
-                        border: Border.all(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.05),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.title ?? defaultTitle,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 18.5.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Theme.of(context).colorScheme.onSurface,
+                            letterSpacing: -0.2,
+                          ),
                         ),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(24.r),
-                        child: Builder(
-                          builder: (context) {
-                            final filteredEntries = TranslationService
-                                .supportedLanguages
-                                .entries
-                                .where(
-                                  (e) => e.key.toLowerCase().contains(
-                                    _searchQuery.value.toLowerCase(),
-                                  ),
-                                )
-                                .toList();
-
-                            if (filteredEntries.isEmpty) {
-                              return Center(
-                                child: Padding(
-                                  padding: EdgeInsets.all(32.r),
-                                  child: Text(
-                                    context.tr(
-                                      'language_picker.no_results',
-                                      fallback: 'No results found',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 14.sp,
-                                      color: isDark
-                                          ? Colors.white38
-                                          : Colors.black38,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-
-                            return ListView.separated(
-                              padding: EdgeInsets.all(16.r),
-                              itemCount: filteredEntries.length,
-                              separatorBuilder: (context, index) =>
-                                  SizedBox(height: 8.h),
-                              itemBuilder: (context, index) {
-                                final entry = filteredEntries[index];
-                                final isSelected =
-                                    _selectedLanguage.value == entry.key;
-
-                                return Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    onTap: () =>
-                                        _selectedLanguage.value = entry.key,
-                                    borderRadius: BorderRadius.circular(16.r),
-                                    child: Container(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: 14.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: isSelected
-                                            ? primaryIndigo.withValues(
-                                                alpha: 0.1,
-                                              )
-                                            : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(
-                                          16.r,
-                                        ),
-                                        border: Border.all(
-                                          color: isSelected
-                                              ? primaryIndigo.withValues(
-                                                  alpha: 0.5,
-                                                )
-                                              : Colors.transparent,
-                                          width: 1.5,
-                                        ),
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          Text(
-                                            entry.key,
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 16.sp,
-                                              fontWeight: isSelected
-                                                  ? FontWeight.w800
-                                                  : FontWeight.w600,
-                                              color: isSelected
-                                                  ? primaryIndigo
-                                                  : (isDark
-                                                        ? Colors.white70
-                                                        : Colors.black87),
-                                            ),
-                                          ),
-                                          const Spacer(),
-                                          if (isSelected)
-                                            Icon(
-                                              LucideIcons.checkCircle2,
-                                              color: primaryIndigo,
-                                              size: 22.r,
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
+                        SizedBox(height: 2.h),
+                        Text(
+                          widget.subtitle ?? defaultSubtitle,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.5.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark ? Colors.white54 : AppColors.slate500,
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
-                  SizedBox(height: 16.h),
-
-                  // Premium CTA Button
-                  SizedBox(
-                    width: double.infinity,
-                    child: Semantics(
-                      button: true,
-                      label: context.tr(
-                        'common.continue_text',
-                        fallback: 'Continue',
-                      ),
-                      child: ScaleButton(
-                        onTap:
-                            (_selectedLanguage.value == null ||
-                                _isLoading.value)
-                            ? () {}
-                            : () async {
-                                _isLoading.value = true;
-                                _startFakeProgress();
-                                final target =
-                                    TranslationService
-                                        .supportedLanguages[_selectedLanguage
-                                        .value]!;
-
-                                try {
-                                  await di
-                                      .sl<TranslationService>()
-                                      .setTargetLanguage(target);
-                                  _progressTimer?.cancel();
-                                  if (mounted) {
-                                    _downloadProgress.value = 100;
-                                  }
-                                  // Add a tiny delay so user can see 100%
-                                  await Future.delayed(
-                                    const Duration(milliseconds: 300),
-                                  );
-                                  if (context.mounted) Navigator.pop(context);
-                                } catch (e) {
-                                  if (mounted) _isLoading.value = false;
-                                  if (context.mounted) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          context.tr(
-                                            'translation.error',
-                                            fallback: 'Failed to set language',
-                                          ),
-                                        ),
-                                        backgroundColor: const Color(
-                                          0xFFF43F5E,
-                                        ),
-                                      ),
-                                    );
-                                  }
-                                }
-                              },
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 300),
-                          padding: EdgeInsets.symmetric(vertical: 16.h),
+                  Semantics(
+                    button: true,
+                    label: context.tr('common.close', fallback: 'Close'),
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () {
+                          di.sl<HapticService>().light();
+                          Navigator.pop(context);
+                        },
+                        borderRadius: BorderRadius.circular(20.r),
+                        child: Container(
+                          padding: EdgeInsets.all(8.r),
                           decoration: BoxDecoration(
-                            color: _selectedLanguage.value == null
-                                ? Colors.grey.withValues(alpha: 0.3)
-                                : primaryIndigo,
-                            borderRadius: BorderRadius.circular(20.r),
-                            boxShadow: _selectedLanguage.value != null
-                                ? [
-                                    BoxShadow(
-                                      color: primaryIndigo.withValues(
-                                        alpha: 0.4,
-                                      ),
-                                      blurRadius: 15,
-                                      offset: const Offset(0, 5),
-                                    ),
-                                  ]
-                                : [],
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.08)
+                                : AppColors.slate100,
+                            shape: BoxShape.circle,
                           ),
-                          child: Center(
-                            child: _isLoading.value
-                                ? Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          SizedBox(
-                                            width: 24.r,
-                                            height: 24.r,
-                                            child: Stack(
-                                              alignment: Alignment.center,
-                                              children: [
-                                                CircularProgressIndicator(
-                                                  value:
-                                                      _downloadProgress.value ==
-                                                          0
-                                                      ? null
-                                                      : _downloadProgress
-                                                                .value /
-                                                            100,
-                                                  color: Colors.white,
-                                                  backgroundColor: Colors.white
-                                                      .withValues(alpha: 0.2),
-                                                  strokeWidth: 2.5,
-                                                ),
-                                                Text(
-                                                  '${_downloadProgress.value}%',
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 8.sp,
-                                                    fontWeight: FontWeight.w900,
-                                                    color: Colors.white,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          SizedBox(width: 12.w),
-                                          Flexible(
-                                            child: Text(
-                                              context.tr(
-                                                'translation.downloading_short',
-                                                fallback: 'Downloading...',
-                                              ),
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 15.sp,
-                                                fontWeight: FontWeight.w900,
-                                                color: Colors.white,
-                                                letterSpacing: 1,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      )
-                                      .animate(onPlay: (c) => c.repeat())
-                                      .shimmer(
-                                        duration: 1500.ms,
-                                        color: Colors.white54,
-                                      )
-                                : Text(
-                                    context
-                                        .tr(
-                                          'common.continue_text',
-                                          fallback: 'Continue',
-                                        )
-                                        .toUpperCase(),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 15.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: _selectedLanguage.value == null
-                                          ? Colors.grey.withValues(alpha: 0.8)
-                                          : Colors.white,
-                                      letterSpacing: 1,
-                                    ),
-                                  ),
+                          child: Icon(
+                            Icons.close_rounded,
+                            size: 18.r,
+                            color: isDark ? Colors.white60 : AppColors.slate600,
                           ),
                         ),
                       ),
@@ -608,191 +274,296 @@ class _LanguageSelectionBottomSheetState
                 ],
               ),
             ),
-          ),
-        );
-      },
-    );
-  }
+            SizedBox(height: 16.h),
 
-  void _showAutoDetectDialog(
-    BuildContext context,
-    bool isDark,
-    Color primaryIndigo,
-  ) {
-    final TextEditingController typeController = TextEditingController();
-    bool isDetecting = false;
-
-    showDialog(
-      context: context,
-      builder: (dialogCtx) => StatefulBuilder(
-        builder: (ctx, setDialogState) => AlertDialog(
-          backgroundColor: isDark ? _LocalPalette.color1e1e2a : Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24.r),
-          ),
-          title: Row(
-            children: [
-              Icon(Icons.auto_awesome_rounded, color: primaryIndigo),
-              SizedBox(width: 8.w),
-              Expanded(
-                child: Text(
-                  context.tr(
-                    'translation.type_sentence',
-                    fallback: 'Type a Sentence',
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : Colors.black87,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                context.tr(
-                  'translation.type_sentence_desc',
-                  fallback:
-                      'Type a short sentence in your native language, and ML Kit will automatically detect it.',
-                ),
+            // Unified Single-Surface Search Field
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: TextField(
+                controller: _searchController,
+                cursorColor: AppColors.indigo500,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  color: isDark ? Colors.white70 : Colors.black54,
-                ),
-              ),
-              SizedBox(height: 16.h),
-              TextField(
-                controller: typeController,
-                autofocus: true,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: isDark ? Colors.white : Colors.black87,
+                  fontSize: 14.5.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 decoration: InputDecoration(
-                  hintText: 'e.g. Hola, ¿cómo estás?',
-                  hintStyle: TextStyle(
-                    color: isDark ? Colors.white38 : Colors.black38,
-                  ),
+                  isDense: true,
                   filled: true,
                   fillColor: isDark
-                      ? Colors.black26
-                      : Colors.black.withValues(alpha: 0.05),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
-                    borderSide: BorderSide.none,
+                      ? Colors.white.withValues(alpha: 0.07)
+                      : AppColors.slate100,
+                  hintText: context.tr(
+                    'common.search',
+                    fallback: 'Search',
                   ),
-                ),
-              ),
-              if (isDetecting) ...[
-                SizedBox(height: 16.h),
-                const VowlButtonSpinner(color: AppColors.indigo500),
-              ],
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(dialogCtx),
-              child: Text(
-                context.tr('common.cancel', fallback: 'Cancel'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: isDark ? Colors.white54 : Colors.black54,
+                  hintStyle: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.5.sp,
+                    fontWeight: FontWeight.w400,
+                    color: isDark ? Colors.white38 : AppColors.slate400,
+                  ),
+                  prefixIcon: Icon(
+                    Icons.search_rounded,
+                    color: isDark ? Colors.white54 : AppColors.slate500,
+                    size: 20.r,
+                  ),
+                  prefixIconConstraints: BoxConstraints(
+                    minWidth: 44.w,
+                    minHeight: 44.h,
+                  ),
+                  suffixIcon: ValueListenableBuilder<TextEditingValue>(
+                    valueListenable: _searchController,
+                    builder: (context, val, _) {
+                      if (val.text.isEmpty) return const SizedBox.shrink();
+                      return IconButton(
+                        tooltip: context.tr('common.clear', fallback: 'Clear'),
+                        icon: Icon(
+                          Icons.cancel_rounded,
+                          color: isDark ? Colors.white38 : AppColors.slate400,
+                          size: 18.r,
+                        ),
+                        onPressed: () {
+                          _searchController.clear();
+                        },
+                      );
+                    },
+                  ),
+                  contentPadding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 12.h,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: BorderSide(
+                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      width: 1.0,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: BorderSide(
+                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      width: 1.0,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: const BorderSide(
+                      color: AppColors.indigo500,
+                      width: 1.8,
+                    ),
+                  ),
                 ),
               ),
             ),
-            ElevatedButton(
-              onPressed: isDetecting
-                  ? null
-                  : () async {
-                      final text = typeController.text.trim();
-                      if (text.isEmpty) return;
+            SizedBox(height: 12.h),
 
-                      setDialogState(() => isDetecting = true);
-                      final bcpCode = await di
-                          .sl<LanguageIdService>()
-                          .identifyLanguage(text);
-
-                      if (!mounted) return;
-
-                      String? matchedLanguageName;
-                      if (bcpCode != 'und') {
-                        // Find the matching language in our supported list
-                        for (final entry
-                            in TranslationService.supportedLanguages.entries) {
-                          if (entry.value.bcpCode.startsWith(bcpCode) ||
-                              bcpCode.startsWith(entry.value.bcpCode)) {
-                            matchedLanguageName = entry.key;
-                            break;
-                          }
-                        }
-                      }
-
-                      if (!mounted) return;
-
-                      setDialogState(() => isDetecting = false);
-                      if (dialogCtx.mounted) {
-                        Navigator.pop(dialogCtx);
-                      }
-
-                      if (!mounted) return;
-                      if (matchedLanguageName != null) {
-                        _selectedLanguage.value = matchedLanguageName;
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Detected: $matchedLanguageName',
-                                style: const TextStyle(fontFamily: 'Outfit'),
+            // Content Area: Pinned Downloaded + All Languages List
+            Expanded(
+              child: _filteredLanguages.isEmpty
+                  ? Center(
+                      child: Text(
+                        context.tr(
+                          'language_picker.no_results',
+                          fallback: 'No results found',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 15.sp,
+                          color: isDark ? Colors.white38 : AppColors.slate400,
+                        ),
+                      ),
+                    )
+                  : CustomScrollView(
+                      physics: const BouncingScrollPhysics(
+                        parent: AlwaysScrollableScrollPhysics(),
+                      ),
+                      keyboardDismissBehavior:
+                          ScrollViewKeyboardDismissBehavior.onDrag,
+                      slivers: [
+                        // Pinned Downloaded Section
+                        if (readyList.isNotEmpty &&
+                            _searchController.text.isEmpty) ...[
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(
+                                20.w,
+                                4.h,
+                                20.w,
+                                8.h,
                               ),
-                              backgroundColor: primaryIndigo,
-                              behavior: SnackBarBehavior.floating,
-                            ),
-                          );
-                        }
-                      } else {
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
+                              child: Text(
                                 context.tr(
-                                  'translation.detect_failed',
-                                  fallback:
-                                      'Could not detect language confidently.',
+                                  'translation.downloaded_ready',
+                                  fallback: 'Downloaded',
                                 ),
-                                style: const TextStyle(fontFamily: 'Outfit'),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.emerald500,
+                                  letterSpacing: 0.5,
+                                ),
                               ),
-                              backgroundColor: AppColors.gameIncorrect,
-                              behavior: SnackBarBehavior.floating,
                             ),
-                          );
-                        }
-                      }
-                    },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: primaryIndigo,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-              ),
-              child: Text(
-                context.tr('translation.detect', fallback: 'Detect'),
-                style: const TextStyle(
-                  fontFamily: 'Outfit',
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+                          ),
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            sliver: SliverList(
+                              delegate: SliverChildBuilderDelegate((
+                                context,
+                                index,
+                              ) {
+                                final lang = readyList[index];
+                                final isActive = lang == _activeLanguage;
+                                return _buildLanguageRow(
+                                  lang,
+                                  isActive,
+                                  true,
+                                  isDark,
+                                );
+                              }, childCount: readyList.length),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(
+                                20.w,
+                                16.h,
+                                20.w,
+                                8.h,
+                              ),
+                              child: Text(
+                                context.tr(
+                                  'translation.all_languages',
+                                  fallback: 'All languages',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: isDark
+                                      ? Colors.white54
+                                      : AppColors.slate400,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+
+                        // All Languages List
+                        SliverPadding(
+                          padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 24.h),
+                          sliver: SliverList(
+                            delegate: SliverChildBuilderDelegate((
+                              context,
+                              index,
+                            ) {
+                              final lang = _filteredLanguages[index];
+                              final isActive = lang == _activeLanguage;
+                              final isDownloaded = _downloadedLanguages
+                                  .contains(lang);
+                              return _buildLanguageRow(
+                                lang,
+                                isActive,
+                                isDownloaded,
+                                isDark,
+                              );
+                            }, childCount: _filteredLanguages.length),
+                          ),
+                        ),
+                      ],
+                    ),
             ),
           ],
         ),
       ),
-    ).whenComplete(() {
-      typeController.dispose();
-    });
+    );
+  }
+
+  Widget _buildLanguageRow(
+    String lang,
+    bool isActive,
+    bool isDownloaded,
+    bool isDark,
+  ) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 6.h),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () => _onLanguageSelected(lang),
+          borderRadius: BorderRadius.circular(16.r),
+          splashColor: AppColors.indigo500.withValues(alpha: 0.1),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 13.h),
+            decoration: BoxDecoration(
+              color: isActive
+                  ? AppColors.indigo500.withValues(alpha: isDark ? 0.15 : 0.08)
+                  : (isDark
+                        ? Colors.white.withValues(alpha: 0.03)
+                        : AppColors.slate50),
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(
+                color: isActive
+                    ? AppColors.indigo500.withValues(alpha: 0.4)
+                    : (isDark
+                          ? Colors.white.withValues(alpha: 0.06)
+                          : AppColors.slate200.withValues(alpha: 0.6)),
+                width: isActive ? 1.5 : 1.0,
+              ),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    lang,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
+                      color: isActive
+                          ? AppColors.indigo500
+                          : (isDark ? Colors.white : AppColors.slate800),
+                    ),
+                  ),
+                ),
+                if (isDownloaded)
+                  Container(
+                    margin: EdgeInsets.only(right: 8.w),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.w,
+                      vertical: 3.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColors.emerald500.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: Text(
+                      context.tr('common.ready', fallback: 'READY'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.emerald500,
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                  ),
+                if (isActive)
+                  Icon(
+                    Icons.check_circle_rounded,
+                    color: AppColors.indigo500,
+                    size: 20.r,
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

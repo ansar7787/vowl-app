@@ -50,8 +50,8 @@ class AccentFeedbackCard extends StatelessWidget {
 
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success
-        ? context.tr('games.excellent', fallback: 'Excellent!')
-        : context.tr('games.not_quite', fallback: 'Not Quite');
+        ? context.tr('games.excellent', fallback: 'EXCELLENT!')
+        : context.tr('games.not_quite', fallback: 'NOT QUITE!');
 
     // Explanation is shown on correct answers and on the final failure attempt.
     final showExplanation = success || (!success && state.isFinalFailure);
@@ -65,7 +65,7 @@ class AccentFeedbackCard extends StatelessWidget {
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (state.isFinalFailure
               ? (lives == 0
-                    ? context.tr('games.see_results', fallback: 'See Results')
+                    ? context.tr('games.see_results', fallback: 'SEE RESULTS')
                     : context
                           .tr('common.continue_text', fallback: 'Continue')
                           .toUpperCase())
@@ -109,8 +109,8 @@ class AccentFeedbackCard extends StatelessWidget {
                 child: Semantics(
                   header: true,
                   label: success
-                      ? context.tr('games.correct', fallback: 'Correct')
-                      : context.tr('games.incorrect', fallback: 'Incorrect'),
+                      ? context.tr('games.correct', fallback: 'Correct!')
+                      : context.tr('games.incorrect', fallback: 'Incorrect!'),
                   child: ExcludeSemantics(
                     // Gradient-painted text is not readable by TalkBack/VoiceOver;
                     // the parent Semantics node carries the accessible label.
@@ -390,7 +390,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                         child: Text(
                           context.tr(
                             'games.explanation_caps',
-                            fallback: 'EXPLANATION',
+                            fallback: 'EXPLANATION:',
                           ),
                           style: TextStyle(
                             fontFamily: 'Outfit',

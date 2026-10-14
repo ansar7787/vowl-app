@@ -67,7 +67,7 @@ class KidsTollGateBottomSheet {
                     Text(
                       context.tr(
                         'games.magic_lock_title',
-                        fallback: 'Unlock 3 Magical Levels!',
+                        fallback: 'MAGIC LOCK!',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -140,11 +140,11 @@ class KidsTollGateBottomSheet {
                                   context: parentContext,
                                   builder: (ctx) => ModernGameDialog(
                                     title: context.tr(
-                                      'store.purchase_failed_title',
+                                      'toll_gate.unlock_failed_title',
                                       fallback: 'UNLOCK FAILED',
                                     ),
                                     description: context.tr(
-                                      'store.purchase_failed_desc',
+                                      'toll_gate.unlock_failed_desc',
                                       fallback:
                                           'Something went wrong and your key was not spent. Please try again.',
                                     ),
@@ -175,7 +175,7 @@ class KidsTollGateBottomSheet {
                                           title: 'GATE UNLOCKED!',
                                           description: context.tr(
                                             'games.magic_lock_success',
-                                            fallback: '3 Levels Unlocked! ✨',
+                                            fallback: 'Magic Lock Opened!',
                                           ),
                                           buttonText: 'AWESOME',
                                           isSuccess: true,

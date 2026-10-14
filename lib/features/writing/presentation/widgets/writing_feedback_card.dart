@@ -44,8 +44,8 @@ class WritingFeedbackCard extends StatelessWidget {
     final shadowColor = success ? AppColors.emerald500 : AppColors.rose700;
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success
-        ? context.tr('games.excellent', fallback: 'Excellent!')
-        : context.tr('games.not_quite', fallback: 'Not Quite');
+        ? context.tr('games.excellent', fallback: 'EXCELLENT!')
+        : context.tr('games.not_quite', fallback: 'NOT QUITE!');
 
     final showExplanation = success || isFinalFailure;
     final buttonText = success
@@ -239,7 +239,7 @@ class _ExplanationCard extends StatelessWidget {
                           child: Text(
                             context.tr(
                               'games.explanation_caps',
-                              fallback: 'EXPLANATION',
+                              fallback: 'EXPLANATION:',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',

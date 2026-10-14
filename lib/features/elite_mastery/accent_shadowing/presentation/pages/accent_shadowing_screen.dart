@@ -383,7 +383,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                   targetText ??
                                   context.tr(
                                     'games.target_text_fallback',
-                                    fallback: 'Target Text',
+                                    fallback: 'Listen and repeat the phrase.',
                                   ),
                               matchedIndices: _matchedIndices.value,
                               isDark: isDark,

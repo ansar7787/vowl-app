@@ -26,7 +26,7 @@ class EliteHintCard extends StatelessWidget {
     if (!isVisible) {
       return Semantics(
         button: true,
-        label: context.tr('games.need_a_hint', fallback: 'Need a hint?'),
+        label: context.tr('games.need_a_hint', fallback: 'NEED A HINT?'),
         excludeSemantics: true,
         child: ScaleButton(
           onTap: onShowHint,
@@ -57,7 +57,7 @@ class EliteHintCard extends StatelessWidget {
                     ),
                     SizedBox(width: 10.w),
                     Text(
-                      context.tr('games.need_a_hint', fallback: 'Need a hint?'),
+                      context.tr('games.need_a_hint', fallback: 'NEED A HINT?'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
@@ -86,12 +86,12 @@ class EliteHintCard extends StatelessWidget {
     // other case with no real hint text to show.
     final hasRealHint = hintText != null && hintText!.trim().isNotEmpty;
     final resolvedHint = HintUtility.isGenericHint(hintText)
-        ? context.tr('games.lifeline_activated', fallback: 'Lifeline Activated')
+        ? context.tr('games.lifeline_activated', fallback: 'LIFELINE ACTIVATED: Applying dynamic assistance. Eliminating unlikely options often reveals the truth.')
         : (hasRealHint
               ? hintText!
               : context.tr(
                   'games.hint_fallback_default',
-                  fallback: 'Use a hint for help.',
+                  fallback: 'Try looking for context clues in the structure!',
                 ));
 
     return Semantics(
@@ -99,7 +99,7 @@ class EliteHintCard extends StatelessWidget {
       // since this card can appear without the player re-focusing it.
       liveRegion: true,
       label:
-          '${context.tr('games.expert_hint', fallback: 'Expert Hint')}. $resolvedHint',
+          '${context.tr('games.expert_hint', fallback: 'EXPERT HINT')}. $resolvedHint',
       excludeSemantics: true,
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
@@ -113,7 +113,7 @@ class EliteHintCard extends StatelessWidget {
                 Icon(Icons.lightbulb_rounded, color: primaryColor, size: 24.r),
                 SizedBox(width: 12.w),
                 Text(
-                  context.tr('games.expert_hint', fallback: 'Expert Hint'),
+                  context.tr('games.expert_hint', fallback: 'EXPERT HINT'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,

@@ -293,8 +293,8 @@ class PhotoBountyTarget extends StatelessWidget {
                             Text(
                               bountyFound
                                   ? context.tr(
-                                      'vocabulary.bounty_completed',
-                                      fallback: 'Object found! +5 XP & 10 Coins earned 🎉',
+                                      'vocabulary.photo_bounty_completed',
+                                      fallback: 'Object found! +5 XP & 10 Coins earned',
                                     )
                                   : (dictionaryEntry.definition.isNotEmpty
                                       ? dictionaryEntry.definition
@@ -526,7 +526,7 @@ class PhotoBountyTarget extends StatelessWidget {
             title: context.tr('vocabulary.info_step4_title', fallback: 'Skip Anytime'),
             description: context.tr(
               'vocabulary.info_step4_desc',
-              fallback: 'Don\'t have the object near you? Tap the shuffle button (🔀) to get a new target.',
+              fallback: 'Don\'t have the object near you? Tap the shuffle button to get a new target.',
             ),
           ),
         ],

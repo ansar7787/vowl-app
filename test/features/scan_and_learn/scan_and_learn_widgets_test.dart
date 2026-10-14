@@ -95,7 +95,7 @@ void main() {
 
       expect(find.text('Scan & Learn'), findsOneWidget);
       expect(find.text('SIGN & TEXT READER'), findsOneWidget);
-      expect(find.text('🪧 Street Signs'), findsOneWidget);
+      expect(find.text('Street Signs'), findsOneWidget);
 
       final cameraFinder = find.text('Camera');
       expect(cameraFinder, findsOneWidget);

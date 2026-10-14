@@ -170,7 +170,7 @@ class AdventureStoreSection extends StatelessWidget {
                             ? context.tr('adventure.locked', fallback: 'locked')
                             : isCurrentlyActive
                             ? item['activeText']
-                            : '${item['cost']} ${context.tr('adventure.coins_label', fallback: 'coins')}'}',
+                            : '${item['cost']} ${context.tr('adventure.coins_label', fallback: 'Coins')}'}',
                     child: Opacity(
                       opacity: isLocked ? 0.6 : 1.0,
                       child: ScaleButton(
@@ -433,7 +433,7 @@ class AdventureStoreSection extends StatelessWidget {
                 Text(
                   context.tr(
                     'adventure.insufficient_coins',
-                    fallback: 'Not enough coins!',
+                    fallback: 'Insufficient Vowl Coins!',
                   ),
                   style: TextStyle(
                     fontFamily: 'Outfit',

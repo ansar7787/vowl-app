@@ -104,7 +104,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
     _nudgeTimer?.cancel();
     _nudgeTimer = Timer(_kNudgeDelay, () {
       if (!mounted) return;
-      _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Let\'s go!'));
+      _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Focus! Use a hint if you need help saving your last life.'));
       _hapticService.warning();
     });
   }

@@ -71,7 +71,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   children: [
                     Text(
                       isCorrect
-                          ? context.tr('games.correct', fallback: 'Correct')
+                          ? context.tr('games.correct', fallback: 'Correct!')
                           : context.tr(
                               'games.lets_review',
                               fallback: 'Let\'s Review',

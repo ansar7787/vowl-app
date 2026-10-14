@@ -232,6 +232,12 @@ void main() {
           () => mockUpdateUserRewards(any()),
         ).thenAnswer((_) async => throw Exception('Save Failed'));
         when(
+          () => mockUpdateCategoryStats(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockAwardBadge(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
           () => mockSoundService.playLevelComplete(),
         ).thenAnswer((_) async => {});
         when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});

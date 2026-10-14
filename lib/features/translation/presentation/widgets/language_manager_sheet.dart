@@ -56,7 +56,7 @@ class LanguageManagerSheet extends StatelessWidget {
                         Text(
                           context.tr(
                             'translation.downloaded_packs',
-                            fallback: 'Language packs',
+                            fallback: 'Downloaded Language Packs',
                           ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -137,7 +137,7 @@ class LanguageManagerSheet extends StatelessWidget {
                           Text(
                             context.tr(
                               'translation.no_packs_downloaded',
-                              fallback: 'No offline packs yet',
+                              fallback: 'No language packs downloaded yet.',
                             ),
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -293,7 +293,7 @@ class LanguageManagerSheet extends StatelessWidget {
               Navigator.pop(ctx);
             },
             child: Text(
-              context.tr('common.cancel', fallback: 'Cancel'),
+              context.tr('common.cancel', fallback: 'CANCEL'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontWeight: FontWeight.w600,

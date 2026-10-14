@@ -44,7 +44,7 @@ class FlashcardActionButtons extends StatelessWidget {
             Text(
               context.tr(
                 'instructions.flashcards.tap_to_reveal',
-                fallback: 'TAP CARD TO REVEAL',
+                fallback: 'TAP TO REVEAL',
               ),
               textAlign: TextAlign.center,
               style: TextStyle(

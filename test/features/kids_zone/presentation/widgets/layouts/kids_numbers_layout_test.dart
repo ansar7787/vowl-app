@@ -221,7 +221,7 @@ void main() {
 
       // Verify action hint subtitle and listen audio badge
       expect(
-        find.text('Tap a planet or drag it to the rocket! 🚀'),
+        find.text('Tap a planet or drag it to the rocket!'),
         findsOneWidget,
       );
       expect(find.text('Listen'), findsOneWidget);
@@ -423,14 +423,14 @@ void main() {
       // Level 1: Initial welcome to the space journey
       final beat1 = storyService.getStoryBeat(context, 'numbers', 1);
       expect(beat1, isNotNull);
-      expect(beat1!.title, equals('New Quest'));
+      expect(beat1!.title, equals('NEW QUEST'));
       expect(beat1.text, contains('Welcome aboard our little rocket!'));
       expect(beat1.mascotEmoji, equals('🔢'));
 
       // Level 100: Major milestone celebration
       final beat100 = storyService.getStoryBeat(context, 'numbers', 100);
       expect(beat100, isNotNull);
-      expect(beat100!.title, equals('Adventure Log'));
+      expect(beat100!.title, equals('ADVENTURE LOG'));
       expect(beat100.text, contains('One hundred missions finished!'));
       expect(beat100.mascotEmoji, equals('🔢'));
     });

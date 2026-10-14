@@ -38,7 +38,7 @@ class BranchingDialogueInstruction extends StatelessWidget {
         Text(
           context.tr(
             'games.branchingDialogue_instruction',
-            fallback: "Choose the best response.",
+            fallback: 'Drag the probe to choose your reply.',
           ),
           textAlign: TextAlign.center,
           style: TextStyle(

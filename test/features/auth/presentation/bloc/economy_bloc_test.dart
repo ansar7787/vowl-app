@@ -111,7 +111,10 @@ void main() {
         return bloc;
       },
       act: (bloc) => bloc.add(const EconomyAddCoinsRequested(100)),
-      expect: () => [],
+      expect: () => [
+        const EconomyState(isLoading: true),
+        const EconomyState(isLoading: false),
+      ],
       verify: (_) {
         verify(() => mockUpdateUserCoins(any())).called(1);
       },

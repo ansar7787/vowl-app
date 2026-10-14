@@ -235,7 +235,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             _buddyMessage = context.tr(
               'category_map.first_level_greeting',
               args: [mascotName],
-              fallback: "Hey! $mascotName here. Let's start Level 1! 🚀",
+              fallback: "Hey! $mascotName here. Let's start Level 1!",
             );
             _updateState();
             _buddyMessageTimer = Timer(const Duration(seconds: 5), () {

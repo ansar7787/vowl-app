@@ -214,7 +214,7 @@ class _AgeGateScreenState extends State<AgeGateScreen> {
         message: context.tr(
           'age_gate.adult_welcome_toast',
           fallback:
-              '🎉 Full Experience Unlocked! You have access to all courses and the Kids Zone. You can switch modes anytime in Settings.',
+              'Full Experience Unlocked! You have access to all courses and the Kids Zone. You can switch modes anytime in Settings.',
         ),
         type: CustomSnackBarType.success,
       );

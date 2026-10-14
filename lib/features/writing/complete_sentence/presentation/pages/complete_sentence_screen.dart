@@ -45,7 +45,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  // PERF FIX: theme cached â€” not recomputed on every build().
+  // PERF FIX: theme cached — not recomputed on every build().
   late dynamic _theme;
 
   final ValueNotifier<String?> _selectedProjectile = ValueNotifier(null);

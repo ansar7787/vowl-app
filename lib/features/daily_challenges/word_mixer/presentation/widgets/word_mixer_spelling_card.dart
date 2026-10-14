@@ -246,7 +246,7 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      context.tr('home.spell_it', fallback: 'Spell the Word'),
+                      context.tr('home.spell_it', fallback: 'SPELL IT!'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,

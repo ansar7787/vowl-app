@@ -185,7 +185,7 @@ class FlashcardGameBody extends StatelessWidget {
       builder: (context, flipped, child) {
         return Semantics(
           label:
-              '${quest.word ?? ""}. ${flipped ? context.tr('instructions.flashcards.definition_revealed', fallback: 'DEFINITION REVEALED') : context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP TO REVEAL')}',
+              '${quest.word ?? ""}. ${flipped ? context.tr('instructions.flashcards.definition_revealed', fallback: 'DID YOU GET IT RIGHT?') : context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP TO REVEAL')}',
           child: GestureDetector(
             onHorizontalDragUpdate: flipped ? onHorizontalDragUpdate : null,
             onHorizontalDragEnd: flipped
@@ -319,7 +319,7 @@ class _InstructionBanner extends StatelessWidget {
                   isFlipped
                       ? context.tr(
                           'instructions.flashcards.swipe_instruction',
-                          fallback: 'SWIPE LEFT OR RIGHT',
+                          fallback: 'SWIPE LEFT (AGAIN) OR RIGHT (GOT IT)',
                         )
                       : InstructionHelper.getInstruction(quest),
                   textAlign: TextAlign.center,

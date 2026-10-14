@@ -117,7 +117,7 @@ class _TrophyRoomView extends StatelessWidget {
         onPressed: () => context.canPop() ? context.pop() : context.go('/home'),
       ),
       title: Text(
-        context.tr('profile.trophy_room', fallback: 'Trophy Room'),
+        context.tr('profile.trophy_room', fallback: 'MY TROPHY ROOM'),
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 22.sp,
@@ -390,7 +390,7 @@ class _TrophyRoomView extends StatelessWidget {
               )
             : context.tr(
                 'profile.no_trophies',
-                fallback: 'No trophies unlocked yet.',
+                fallback: 'No trophies yet. Keep completing lessons and challenges to earn your first shiny badge!',
               );
 
         return Padding(
