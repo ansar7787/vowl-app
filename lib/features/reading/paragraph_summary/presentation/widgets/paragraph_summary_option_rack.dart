@@ -47,7 +47,7 @@ class ParagraphSummaryOptionRack extends StatelessWidget {
         return Padding(
           padding: EdgeInsets.only(bottom: 12.h),
           child: GestureDetector(
-            onTap: () => onTapOption(opt),
+            onTap: isAnswered ? null : () => onTapOption(opt),
             child: Container(
               width: double.infinity,
               padding: EdgeInsets.all(18.r),

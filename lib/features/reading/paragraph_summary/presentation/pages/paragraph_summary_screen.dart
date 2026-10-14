@@ -194,6 +194,14 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
                                   ),
                                   SizedBox(height: 24.h),
                                   GestureDetector(
+                                    onTap: () {
+                                      if (!_isDistilled.value &&
+                                          !isAnsweredNotifier.value) {
+                                        _hasPinchedOnce.value = true;
+                                        hapticService.heavy();
+                                        _isDistilled.value = true;
+                                      }
+                                    },
                                     onScaleStart: (_) => _onPinchStart(),
                                     onScaleUpdate: (details) =>
                                         _onPinchUpdate(details.scale),
