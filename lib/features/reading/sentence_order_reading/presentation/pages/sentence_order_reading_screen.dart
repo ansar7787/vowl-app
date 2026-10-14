@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
@@ -41,13 +42,16 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
+  String? _currentQuestId;
   final ValueNotifier<List<String>> _currentOrder = ValueNotifier([]);
+  final ValueNotifier<int?> _selectedSlabIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
   RegExp? _transitionRegex;
 
   @override
   void dispose() {
     _currentOrder.dispose();
+    _selectedSlabIndex.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
@@ -59,55 +63,59 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
     initReadingGame();
   }
 
+  void _initQuest(ReadingQuest quest) {
+    if (quest.id == _currentQuestId && _currentOrder.value.isNotEmpty) return;
+    _currentQuestId = quest.id;
+    _selectedSlabIndex.value = null;
+
+    if (quest.shuffledSentences != null) {
+      final list = List<String>.from(quest.shuffledSentences!);
+
+      if (quest.correctOrder != null && list.length > 1) {
+        final correctStrings = quest.correctOrder!
+            .map((idx) => quest.shuffledSentences![idx])
+            .toList();
+
+        bool isSame = true;
+        int attempts = 0;
+        // Shuffle until it's NOT the correct order to prevent free wins
+        while (isSame && attempts < 10) {
+          list.shuffle();
+          isSame = false;
+          for (int i = 0; i < list.length; i++) {
+            if (list[i] != correctStrings[i]) {
+              break;
+            }
+            if (i == list.length - 1) {
+              isSame = true; // All matched
+            }
+          }
+          attempts++;
+        }
+      } else {
+        list.shuffle();
+      }
+
+      _currentOrder.value = list;
+    }
+
+    if (quest.transitionWords != null && quest.transitionWords!.isNotEmpty) {
+      final sortedWords = List<String>.from(quest.transitionWords!)
+        ..sort((a, b) => b.length.compareTo(a.length));
+      final pattern = sortedWords
+          .map((e) => r'\b' + RegExp.escape(e) + r'(?!\w)')
+          .join('|');
+      _transitionRegex = RegExp('($pattern)', caseSensitive: false);
+    } else {
+      _transitionRegex = null;
+    }
+  }
+
   @override
   void onReadingStateChanged(BuildContext context, ReadingState state) {
     super.onReadingStateChanged(context, state);
     if (state is ReadingLoaded) {
-      if (_currentOrder.value.isEmpty) {
-        final quest = state.currentQuest;
-        if (quest.shuffledSentences != null) {
-          final list = List<String>.from(quest.shuffledSentences!);
-
-          if (quest.correctOrder != null && list.length > 1) {
-            final correctStrings = quest.correctOrder!
-                .map((idx) => quest.shuffledSentences![idx])
-                .toList();
-
-            bool isSame = true;
-            int attempts = 0;
-            // Shuffle until it's NOT the correct order to prevent free wins
-            while (isSame && attempts < 10) {
-              list.shuffle();
-              isSame = false;
-              for (int i = 0; i < list.length; i++) {
-                if (list[i] != correctStrings[i]) {
-                  break;
-                }
-                if (i == list.length - 1) {
-                  isSame = true; // All matched
-                }
-              }
-              attempts++;
-            }
-          } else {
-            list.shuffle();
-          }
-
-          _currentOrder.value = list;
-        }
-
-        if (quest.transitionWords != null &&
-            quest.transitionWords!.isNotEmpty) {
-          final sortedWords = List<String>.from(quest.transitionWords!)
-            ..sort((a, b) => b.length.compareTo(a.length));
-          final pattern = sortedWords
-              .map((e) => r'\b' + RegExp.escape(e) + r'(?!\w)')
-              .join('|');
-          _transitionRegex = RegExp('($pattern)', caseSensitive: false);
-        } else {
-          _transitionRegex = null;
-        }
-      }
+      _initQuest(state.currentQuest);
     }
   }
 
@@ -118,7 +126,28 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
     final item = current.removeAt(oldIndex);
     current.insert(newIndex, item);
     _currentOrder.value = current;
+    _selectedSlabIndex.value = null;
     hapticService.selection();
+  }
+
+  void _onSlabTap(int index) {
+    if (isAnsweredNotifier.value) return;
+    final selected = _selectedSlabIndex.value;
+    if (selected == null) {
+      _selectedSlabIndex.value = index;
+      hapticService.selection();
+    } else if (selected == index) {
+      _selectedSlabIndex.value = null;
+      hapticService.selection();
+    } else {
+      final list = List<String>.from(_currentOrder.value);
+      final temp = list[selected];
+      list[selected] = list[index];
+      list[index] = temp;
+      _currentOrder.value = list;
+      _selectedSlabIndex.value = null;
+      hapticService.selection();
+    }
   }
 
   void _submitAnswer(ReadingQuest quest) {
@@ -156,7 +185,9 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
 
   @override
   void onQuestionReset() {
+    _currentQuestId = null;
     _currentOrder.value = [];
+    _selectedSlabIndex.value = null;
     _transitionRegex = null;
   }
 
@@ -170,6 +201,9 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
       listener: onReadingStateChanged,
       builder: (context, state) {
         final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        if (quest != null) {
+          _initQuest(quest);
+        }
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -177,6 +211,7 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
             isCorrectNotifier,
             showConfettiNotifier,
             _currentOrder,
+            _selectedSlabIndex,
           ]),
           builder: (context, _) {
             return ReadingBaseLayout(
@@ -201,7 +236,7 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
@@ -217,7 +252,7 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
                           ),
                           if (quest.shuffledSentences != null)
                             SliverPadding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
                               sliver: SliverReorderableList(
                                 itemCount: _currentOrder.value.length,
                                 proxyDecorator: (child, index, animation) =>
@@ -228,25 +263,28 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
                                     ),
                                 onReorder: _onReorder,
                                 itemBuilder: (context, index) {
+                                  final itemText = _currentOrder.value[index];
+                                  final isSelected =
+                                      _selectedSlabIndex.value == index;
                                   return ReorderableDelayedDragStartListener(
                                     index: index,
-                                    key: ValueKey(_currentOrder.value[index]),
+                                    key: ValueKey(itemText),
                                     child: SentenceOrderReadingStoneSlab(
-                                      key: ValueKey(
-                                        'slab_${_currentOrder.value[index]}',
-                                      ),
-                                      text: _currentOrder.value[index],
+                                      key: ValueKey('slab_$itemText'),
+                                      text: itemText,
                                       index: index,
                                       color: theme.primaryColor,
                                       isDark: isDark,
                                       transitionRegex: _transitionRegex,
+                                      isSelected: isSelected,
+                                      onTap: () => _onSlabTap(index),
                                     ),
                                   );
                                 },
                               ),
                             ),
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
@@ -287,6 +325,9 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
   }
 
   Widget _buildProxy(Widget child, Animation<double> animation, Color color) {
+    if (VowlMotion.shouldReduceMotion(context)) {
+      return child;
+    }
     return AnimatedBuilder(
       animation: animation,
       builder: (context, child) {
