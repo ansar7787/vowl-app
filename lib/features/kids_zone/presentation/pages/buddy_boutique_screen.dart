@@ -18,6 +18,7 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -204,31 +205,34 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "BUDDY PASSPORT",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 3,
-                              color: isDark
-                                  ? Colors.blue[300]
-                                  : Colors.blue[700],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "BUDDY PASSPORT",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 3,
+                                color: isDark
+                                    ? Colors.blue[300]
+                                    : Colors.blue[700],
+                              ),
                             ),
-                          ),
-                          Text(
-                            "Holographic Identity",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w800,
-                              color: isDark ? Colors.white : AppColors.slate900,
+                            Text(
+                              "Holographic Identity",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w800,
+                                color: isDark ? Colors.white : AppColors.slate900,
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                       Icon(
                         Icons.fingerprint_rounded,
@@ -243,7 +247,12 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                     clipBehavior: Clip.none,
                     children: [
                       // Glow
-                      Container(
+                      Builder(
+                        builder: (context) {
+                          final reduceMotion = VowlMotion.shouldReduceMotion(
+                            context,
+                          );
+                          Widget glow = Container(
                             width: 140.r,
                             height: 140.r,
                             decoration: BoxDecoration(
@@ -255,13 +264,19 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                                 ],
                               ),
                             ),
-                          )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
-                          .scale(
-                            begin: const Offset(0.8, 0.8),
-                            end: const Offset(1.2, 1.2),
-                            duration: 2.seconds,
-                          ),
+                          );
+                          if (!reduceMotion) {
+                            glow = glow
+                                .animate(onPlay: (c) => c.repeat(reverse: true))
+                                .scale(
+                                  begin: const Offset(0.8, 0.8),
+                                  end: const Offset(1.2, 1.2),
+                                  duration: 2.seconds,
+                                );
+                          }
+                          return glow;
+                        },
+                      ),
 
                       // Mascot
                       VowlMascot(
@@ -518,6 +533,20 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     required bool isEquipped,
   }) {
     final itemColor = item['color'] as Color;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    Widget iconWidget = Text(
+      item['icon'] as String,
+      style: TextStyle(fontSize: 40.sp),
+    );
+    if (!reduceMotion) {
+      iconWidget = iconWidget
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.1, 1.1),
+            duration: 2.seconds,
+          );
+    }
     return ScaleButton(
       onTap: () => _handleItemAction(context, item, isOwned, isEquipped),
       child: Container(
@@ -538,13 +567,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(item['icon'] as String, style: TextStyle(fontSize: 40.sp))
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.1, 1.1),
-                  duration: 2.seconds,
-                ),
+            iconWidget,
             SizedBox(height: 12.h),
             Text(
               item['name'] as String,
@@ -686,14 +709,16 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (sheetContext) {
-        return Container(
-          padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
-          decoration: BoxDecoration(
-            color: isDark ? AppColors.slate800 : Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-            border: Border.all(color: itemColor, width: 3.w),
-          ),
-          child: Column(
+        return SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
+              decoration: BoxDecoration(
+                color: isDark ? AppColors.slate800 : Colors.white,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+                border: Border.all(color: itemColor, width: 3.w),
+              ),
+              child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               // Drag handle
@@ -829,10 +854,12 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               ),
             ],
           ),
-        );
-      },
+        ),
+      ),
     );
-  }
+  },
+);
+}
 
   void _executePurchase(
     BuildContext context,
@@ -867,10 +894,11 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
   }
 
   Widget _buildWatchAndEarn(BuildContext context, bool isDark) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         final isPremium = state.user?.isPremium ?? false;
-        return ScaleButton(
+        Widget button = ScaleButton(
               onTap: () {
                 di.sl<AdService>().showRewardedAd(
                   context: context,
@@ -947,9 +975,13 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                   ],
                 ),
               ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .shimmer(duration: 3.seconds, color: Colors.white24);
+            );
+        if (!reduceMotion) {
+          button = button
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .shimmer(duration: 3.seconds, color: Colors.white24);
+        }
+        return button;
       },
     );
   }

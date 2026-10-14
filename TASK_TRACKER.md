@@ -46,7 +46,7 @@ Every game test suite MUST rigorously satisfy:
 | --- | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 5 | 5 | 0 | 🟢 100% Complete (58 tests) |
-| **3** | **Kids Zone** | 35 | 32 | 3 | 🟡 91% Complete (32/35 items done) |
+| **3** | **Kids Zone** | 35 | 33 | 2 | 🟡 94% Complete (33/35 items done) |
 | **4** | **Reading Category** | 13 | 2 | 11 | 🟡 1 Game + BLoC Done (11 games remaining) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
 | **6** | **Grammar Category** | 20 | 2 | 18 | ⚠️ BLoC + Model only (19 games remaining) |
@@ -154,7 +154,8 @@ Every game test suite MUST rigorously satisfy:
   - Validates chunky map header, sticker icon, category quest title, coins mini-pill, Star Vault FAB (gameplay + magic stars counter), Golden Keys FAB, level progression nodes (completed level 1, active playable level 2, locked upper levels), tap-to-answer/replay on completed level 1, active level 2 navigation to `/kids-alphabet` with level 2 extra, sequence lock warning snackbar on locked nodes, back button navigation to `/home`, Star Vault bottom sheet opening, Key Shop bottom sheet modal opening, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
 - [x] **3.32** `kids_room_screen_test.dart` (Pet Care / Interactive Room Test) — ✅ `[DONE - 16/16 tests passing]`
   - Validates KidsRoomTopBar, daily care streak card, currency badge, interactive buddy mascot with mood speech bubble, hero nameplate with equipped sticker badge, action panel (DECOR, FEED, PLAY, CLEAN, SLEEP, TALK, THEME), daily care streak coin grant via ProfileBloc/EconomyBloc, food bottom sheet feeding & coin checks, furniture store browsing & purchasing, theme selection bottom sheet & theme switching, sleep toggle & tap-to-wake overlay, bubble-popping mini-game dialog & daily game limits, cleaning activity dialog & first-clean coin reward, back exit dialog with stay/exit actions, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
-- [ ] **3.33** `buddy_boutique_screen_test.dart` (Wardrobe / Dressing Room Test) — 🔴 `[PENDING]`
+- [x] **3.33** `buddy_boutique_screen_test.dart` (Wardrobe / Dressing Room Test) — ✅ `[DONE - 16/16 tests passing]`
+  - Validates Buddy Boutique app bar, holographic buddy passport preview with rank/streak/level badges, kids coins currency header, category tab switching ("All", "Clothes", "Toys", "Magic", "Buddies"), shop grid with owned/equipped status tags, unequipping active accessory via `ProfileEquipAccessoryRequested(null)`, equipping owned accessory via `ProfileEquipAccessoryRequested(id)`, equipping owned mascot via `ProfileUpdateMascotRequested(id)`, coin check warning when coins < price, purchase confirmation bottom sheet with item preview & price tag, modal dismissal via "Not Now", purchase execution via "Buy Now!" dispatching `ProfileBuyAccessoryRequested`, mascot purchase dispatching `ProfileUpdateMascotRequested`, Watch & Earn rewarded ad trigger via `AdService.showRewardedAd` awarding 10 kids coins, route popping via back button, dark mode theme rendering, and small screen 320dp width zero-overflow layout safety.
 - [ ] **3.34** `mascot_selection_screen_test.dart` (Mascot Selection Screen Test) — 🔴 `[PENDING]`
 - [ ] **3.35** `sticker_book_screen_test.dart` (Sticker Collection Viewer Test) — 🔴 `[PENDING]`
 
