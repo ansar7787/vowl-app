@@ -1,15 +1,18 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/instruction_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -21,7 +24,7 @@ class _LocalPalette {
 /// Chef's Kitchen Theme for Food Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
-class KidsFoodLayout extends StatelessWidget {
+class KidsFoodLayout extends StatefulWidget {
   final int level;
   final String title;
   final Color primaryColor;
@@ -34,266 +37,12 @@ class KidsFoodLayout extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return KidsGameBaseScreen(
-      title: title,
-      gameType: 'food',
-      level: level,
-      primaryColor: primaryColor,
-      backgroundColors: const [],
-      buildGameUI: (context, state, onHintTap) {
-        final quest = state.currentQuest;
+  State<KidsFoodLayout> createState() => _KidsFoodLayoutState();
+}
 
-        return Column(
-          children: [
-            SizedBox(height: KidsGameBaseScreen.mascotClearanceHeight),
-            // The Chef's Hat / Board
-            Expanded(
-              flex: 5,
-              child: Center(child: _buildKitchenBoard(context, state, quest)),
-            ),
-            SizedBox(height: 16.h),
-            KidsFittedText(
-              context.tr(
-                'games.kids_food_drag',
-                fallback: 'Drag the right food to the board!',
-              ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white.withValues(alpha: 0.9)
-                    : Colors.black.withValues(alpha: 0.7),
-              ),
-              maxLines: 2,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 16.h),
-            // Serving Platters (Options)
-            Flexible(
-              flex: 5,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  // Checkered Tablecloth
-                  Container(
-                    height: 50.h,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.red[600],
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(8.r),
-                      ),
-                    ),
-                    clipBehavior: Clip.hardEdge,
-                    child: SvgPicture.string(
-                      _checkeredTableclothSvg,
-                      fit: BoxFit.cover,
-                      alignment: Alignment.topCenter,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      bottom: 24.h,
-                      left: 12.w,
-                      right: 12.w,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (
-                        index,
-                      ) {
-                        final option = quest.options![index];
-                        return Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4.w),
-                            child: _buildServingPlatterOption(
-                              context,
-                              state,
-                              option,
-                              quest.correctAnswer == option,
-                            ),
-                          ),
-                        );
-                      }),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  Widget _buildKitchenBoard(
-    BuildContext context,
-    KidsLoaded state,
-    dynamic quest,
-  ) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final double boardWidth = constraints.maxWidth > 0
-            ? (constraints.maxWidth * 0.9).clamp(200.0, 400.0)
-            : 280.w;
-        final double boardHeight = constraints.maxHeight > 0
-            ? (constraints.maxHeight * 0.9).clamp(150.0, 220.0)
-            : 200.h;
-
-        return DragTarget<String>(
-          onWillAcceptWithDetails: (details) => !state.answerStatus.isAnswered,
-          onAcceptWithDetails: (details) {
-            _handleAnswer(context, state, quest, details.data);
-          },
-          builder: (context, candidateData, rejectedData) {
-            final isHovering = candidateData.isNotEmpty;
-            return InkWell(
-              onTap: state.answerStatus.isAnswered
-                  ? null
-                  : () {
-                      if (InstructionHelper.getInstruction(quest).isNotEmpty) {
-                        di.sl<KidsTTSService>().speak(
-                          InstructionHelper.getInstruction(quest),
-                        );
-                      }
-                    },
-              child: Stack(
-                alignment: Alignment.topCenter,
-                clipBehavior: Clip.none,
-                children: [
-                  // The White Kitchen Tile Board
-                  Container(
-                    width: boardWidth,
-                    height: boardHeight,
-                    decoration: BoxDecoration(
-                      color: isHovering
-                          ? _LocalPalette.colorfef2f2
-                          : Colors.white, // Light red tint on hover
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(
-                        color: isHovering
-                            ? AppColors.rose700
-                            : _LocalPalette.colord4d4d8,
-                        width: isHovering ? 6.r : 4.r,
-                      ), // Light grey tile border
-                      boxShadow: [
-                        BoxShadow(
-                          color: isHovering
-                              ? AppColors.rose700.withValues(alpha: 0.3)
-                              : Colors.black.withValues(alpha: 0.1),
-                          blurRadius: isHovering ? 20 : 10,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                if (quest.emoji != null &&
-                                    (quest.question == "?" ||
-                                        quest.question == null))
-                                  state.answerStatus == AnswerStatus.correct
-                                      ? Text(
-                                          quest.emoji!,
-                                          style: TextStyle(fontSize: 70.sp),
-                                        )
-                                      : ColorFiltered(
-                                          colorFilter: const ColorFilter.mode(
-                                            AppColors.slate300,
-                                            BlendMode.srcIn,
-                                          ),
-                                          child: Text(
-                                            quest.emoji!,
-                                            style: TextStyle(fontSize: 70.sp),
-                                          ),
-                                        ),
-                                if (state.answerStatus !=
-                                        AnswerStatus.correct ||
-                                    (quest.question != "?" &&
-                                        quest.question != null))
-                                  KidsFittedText(
-                                    quest.question ?? "?",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize:
-                                          (quest.question == "?" ||
-                                              quest.question == null)
-                                          ? 60.sp
-                                          : 24.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: AppColors.rose700.withValues(
-                                        alpha:
-                                            (quest.question == "?" ||
-                                                quest.question == null)
-                                            ? 0.7
-                                            : 1.0,
-                                      ),
-                                    ),
-                                    textAlign: TextAlign.center,
-                                    maxLines: 3,
-                                  ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  // A cute chef hat resting on top
-                  Positioned(
-                    top: -(boardHeight * 0.15).clamp(20.0, 40.0),
-                    child: Container(
-                      width: (boardWidth * 0.28).clamp(60.0, 90.0),
-                      height: (boardHeight * 0.2).clamp(30.0, 50.0),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(40.r),
-                        ),
-                        border: Border.all(
-                          color: _LocalPalette.colore4e4e7,
-                          width: 2,
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            width: 2.w,
-                            height: 20.h,
-                            color: _LocalPalette.colore4e4e7,
-                          ),
-                          Container(
-                            width: 2.w,
-                            height: 25.h,
-                            color: _LocalPalette.colore4e4e7,
-                          ),
-                          Container(
-                            width: 2.w,
-                            height: 20.h,
-                            color: _LocalPalette.colore4e4e7,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            );
-          },
-        );
-      },
-    );
-  }
+class _KidsFoodLayoutState extends State<KidsFoodLayout> {
+  String? _selectedOption;
+  int _lastAnsweredQuestIndex = -1;
 
   void _handleAnswer(
     BuildContext context,
@@ -302,13 +51,440 @@ class KidsFoodLayout extends StatelessWidget {
     String text,
   ) {
     if (state.answerStatus.isAnswered) return;
-    final isCorrect = (text == quest.correctAnswer);
-    final parts = text.trim().split(' ');
-    final cleanText = parts.length > 1
-        ? parts.sublist(0, parts.length - 1).join(' ')
-        : text;
-    di.sl<KidsTTSService>().speak(cleanText);
+
+    setState(() {
+      _selectedOption = text;
+      _lastAnsweredQuestIndex = state.currentIndex;
+    });
+
+    final isCorrect = (text.trim() == quest.correctAnswer?.trim());
+
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl<AppLogger>().debug(
+        'Submitting food option "$text" for quest "${quest.id}" (correct: $isCorrect)',
+        tag: 'KidsFoodLayout',
+      );
+    }
+
+    if (!isCorrect) {
+      final parts = text.trim().split(' ');
+      if (parts.length > 1 && parts.last.runes.any((r) => r > 127)) {
+        parts.removeLast();
+      }
+      final cleanText = parts.join(' ');
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().speak(cleanText);
+      }
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().error();
+      }
+    } else {
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().success();
+      }
+    }
+
     context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+  }
+
+  void _playOptionAudio(String text) {
+    final parts = text.trim().split(' ');
+    if (parts.length > 1 && parts.last.runes.any((r) => r > 127)) {
+      parts.removeLast();
+    }
+    final textToSpeak = parts.join(' ');
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl<AppLogger>().debug(
+        'Pronouncing food option "$textToSpeak"',
+        tag: 'KidsFoodLayout',
+      );
+    }
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl<KidsTTSService>().speak(textToSpeak, force: true);
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl<HapticService>().selection();
+    }
+  }
+
+  void _replayQuestionAudio(dynamic quest) {
+    final instruction = InstructionHelper.getInstruction(quest);
+    if (instruction.isNotEmpty) {
+      if (di.sl.isRegistered<AppLogger>()) {
+        di.sl<AppLogger>().debug(
+          'Replaying instruction audio for quest "${quest.id}"',
+          tag: 'KidsFoodLayout',
+        );
+      }
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().speak(instruction, force: true);
+      }
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().selection();
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return KidsGameBaseScreen(
+      title: widget.title,
+      gameType: 'food',
+      level: widget.level,
+      primaryColor: widget.primaryColor,
+      backgroundColors: const [],
+      buildGameUI: (context, state, onHintTap) {
+        final quest = state.currentQuest;
+        final options = quest.options?.map((e) => e.toString()).toList() ?? [];
+
+        if (state.currentIndex != _lastAnsweredQuestIndex) {
+          _selectedOption = null;
+        }
+
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            final availableWidth = constraints.maxWidth;
+            final isNarrow = availableWidth < 360;
+
+            final boardWidth = (availableWidth * 0.88).clamp(240.0, 320.0).w;
+            final boardHeight = 185.h;
+
+            return Center(
+              child: SizedBox(
+                width: availableWidth,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(
+                        height: KidsGameBaseScreen.mascotClearanceHeight + 14.h,
+                      ),
+
+                      // The Chef's Kitchen Tile Board
+                      Center(
+                        child: _buildKitchenBoard(
+                          context,
+                          state,
+                          quest,
+                          width: boardWidth,
+                          height: boardHeight,
+                        ),
+                      ),
+
+                      SizedBox(height: 14.h),
+
+                      // Prompt banner with dual interaction hint
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.restaurant_rounded,
+                              size: 16.r,
+                              color: Theme.of(context).brightness ==
+                                      Brightness.dark
+                                  ? Colors.white70
+                                  : AppColors.rose700,
+                            ),
+                            SizedBox(width: 6.w),
+                            Flexible(
+                              child: KidsFittedText(
+                                state.answerStatus == AnswerStatus.correct
+                                    ? context.tr(
+                                        'games.kids_food_done',
+                                        fallback: 'Delicious! Order served correctly!',
+                                      )
+                                    : context.tr(
+                                        'games.kids_food_drag',
+                                        fallback:
+                                            'Tap or drag the right food platter to the kitchen board!',
+                                      ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isNarrow ? 12.5.sp : 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.white.withValues(alpha: 0.85)
+                                      : Colors.black.withValues(alpha: 0.75),
+                                ),
+                                maxLines: 2,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: 16.h),
+
+                      // Checkered Tablecloth & Serving Platters
+                      _buildTableclothAndPlatters(
+                        context,
+                        state,
+                        quest,
+                        options,
+                        availableWidth,
+                      ),
+
+                      SizedBox(height: 20.h),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  Widget _buildKitchenBoard(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest, {
+    required double width,
+    required double height,
+  }) {
+    return DragTarget<String>(
+      key: const Key('kids_food_board_target'),
+      onWillAcceptWithDetails: (details) => !state.answerStatus.isAnswered,
+      onAcceptWithDetails: (details) {
+        _handleAnswer(context, state, quest, details.data);
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+
+        return Material(
+          color: Colors.transparent,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(16.r),
+            onTap: state.answerStatus.isAnswered
+                ? null
+                : () => _replayQuestionAudio(quest),
+            child: Stack(
+              alignment: Alignment.topCenter,
+              clipBehavior: Clip.none,
+              children: [
+                // The White Kitchen Tile Board
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  width: width,
+                  height: height,
+                  decoration: BoxDecoration(
+                    color: isHovering ? _LocalPalette.colorfef2f2 : Colors.white,
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: isHovering
+                          ? AppColors.rose700
+                          : _LocalPalette.colord4d4d8,
+                      width: isHovering ? 5.r : 3.r,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: isHovering
+                            ? AppColors.rose700.withValues(alpha: 0.3)
+                            : Colors.black.withValues(alpha: 0.1),
+                        blurRadius: isHovering ? 20 : 10,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 12.h,
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (quest.emoji != null &&
+                              (quest.question == '?' ||
+                                  quest.question == null))
+                            state.answerStatus == AnswerStatus.correct
+                                ? Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 60.sp),
+                                  )
+                                : ColorFiltered(
+                                    colorFilter: const ColorFilter.mode(
+                                      AppColors.slate300,
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 60.sp),
+                                    ),
+                                  ),
+                          if (state.answerStatus != AnswerStatus.correct ||
+                              (quest.question != '?' &&
+                                  quest.question != null))
+                            KidsFittedText(
+                              quest.question ?? '?',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize:
+                                    (quest.question == '?' ||
+                                            quest.question == null)
+                                        ? 48.sp
+                                        : 20.sp,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.rose700.withValues(
+                                  alpha: (quest.question == '?' ||
+                                          quest.question == null)
+                                      ? 0.7
+                                      : 1.0,
+                                ),
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 3,
+                            ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                // Chef Hat on top
+                Positioned(
+                  top: -24.h,
+                  child: Container(
+                    width: 72.w,
+                    height: 32.h,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(30.r),
+                      ),
+                      border: Border.all(
+                        color: _LocalPalette.colore4e4e7,
+                        width: 2,
+                      ),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(0, -2),
+                          blurRadius: 4,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: 2.w,
+                          height: 16.h,
+                          color: _LocalPalette.colore4e4e7,
+                        ),
+                        Container(
+                          width: 2.w,
+                          height: 20.h,
+                          color: _LocalPalette.colore4e4e7,
+                        ),
+                        Container(
+                          width: 2.w,
+                          height: 16.h,
+                          color: _LocalPalette.colore4e4e7,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                // Replay Audio Button
+                Positioned(
+                  top: 8.h,
+                  right: 8.w,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      key: const Key('kids_food_replay_audio_button'),
+                      onTap: () => _replayQuestionAudio(quest),
+                      borderRadius: BorderRadius.circular(16.r),
+                      child: Container(
+                        padding: EdgeInsets.all(6.r),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.08),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: AppColors.rose700.withValues(alpha: 0.5),
+                            width: 1.5,
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.volume_up_rounded,
+                          color: AppColors.rose700,
+                          size: 18.r,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildTableclothAndPlatters(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+    List<String> options,
+    double availableWidth,
+  ) {
+    return Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        // Checkered Tablecloth Base
+        Container(
+          height: 48.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.red[600],
+            borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
+          ),
+          clipBehavior: Clip.hardEdge,
+          child: SvgPicture.string(
+            _checkeredTableclothSvg,
+            fit: BoxFit.cover,
+            alignment: Alignment.topCenter,
+          ),
+        ),
+
+        // Serving Platters
+        Padding(
+          padding: EdgeInsets.only(bottom: 12.h, left: 6.w, right: 6.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: List.generate(options.length, (index) {
+              final option = options[index];
+              final isCorrect = (option == quest.correctAnswer);
+              return Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 3.w),
+                  child: _buildServingPlatterOption(
+                    context,
+                    state,
+                    option,
+                    isCorrect,
+                    index,
+                    availableWidth / options.length,
+                  ),
+                ),
+              );
+            }),
+          ),
+        ),
+      ],
+    );
   }
 
   Widget _buildServingPlatterOption(
@@ -316,74 +492,125 @@ class KidsFoodLayout extends StatelessWidget {
     KidsLoaded state,
     String text,
     bool isCorrect,
+    int index,
+    double estimatedWidth,
   ) {
     final parts = text.trim().split(' ');
     String namePart = text;
     String emojiPart = '';
-    if (parts.length > 1) {
-      emojiPart = parts.last;
-      namePart = parts.sublist(0, parts.length - 1).join(' ');
+    if (parts.length > 1 && parts.last.runes.any((r) => r > 127)) {
+      emojiPart = parts.removeLast();
+      namePart = parts.join(' ');
     }
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final double optionWidth =
-            constraints.maxWidth.isFinite && constraints.maxWidth > 0
-                ? constraints.maxWidth
-                : 100.w;
+    final isSelected = (_selectedOption == text);
 
-        final platterWidget = SizedBox(
-          width: optionWidth,
+    final platterWidget = Material(
+      color: Colors.transparent,
+      child: InkWell(
+        key: Key('kids_food_option_$index'),
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(30.r),
+          bottom: Radius.circular(14.r),
+        ),
+        onTap: state.answerStatus.isAnswered
+            ? null
+            : () => _handleAnswer(context, state, state.currentQuest, text),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(30.r),
+              bottom: Radius.circular(14.r),
+            ),
+            border: Border.all(
+              color: isSelected ? KidsColors.warmAmber : Colors.transparent,
+              width: isSelected ? 3.0 : 0.0,
+            ),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               // The Cloche (Silver Dome)
               Container(
-                height: 50.h,
+                height: 44.h,
                 decoration: BoxDecoration(
-                  color: AppColors.slate200, // Silver
+                  color: AppColors.slate200,
                   borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(40.r)),
-                  border: Border.all(color: AppColors.slate400, width: 2),
+                      BorderRadius.vertical(top: Radius.circular(30.r)),
+                  border: Border.all(color: AppColors.slate400, width: 1.5),
                   gradient: const LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [Colors.white, AppColors.slate300],
                   ),
                 ),
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: Container(
-                    margin: EdgeInsets.only(top: 4.h),
-                    width: 15.w,
-                    height: 8.h,
-                    decoration: BoxDecoration(
-                      color: AppColors.slate400, // Dome handle
-                      borderRadius: BorderRadius.circular(4.r),
+                child: Stack(
+                  children: [
+                    // Dome handle
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 3.h),
+                        width: 14.w,
+                        height: 7.h,
+                        decoration: BoxDecoration(
+                          color: AppColors.slate400,
+                          borderRadius: BorderRadius.circular(4.r),
+                        ),
+                      ),
                     ),
-                  ),
+
+                    // Pronunciation Speaker Button
+                    Positioned(
+                      top: 2.h,
+                      right: 4.w,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          key: Key('kids_food_pronounce_$index'),
+                          borderRadius: BorderRadius.circular(12.r),
+                          onTap: () => _playOptionAudio(text),
+                          child: Padding(
+                            padding: EdgeInsets.all(2.r),
+                            child: Icon(
+                              Icons.volume_up_rounded,
+                              size: 14.r,
+                              color: AppColors.slate600,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
+
               // The Platter Base
               Container(
                 height: 60.h,
                 decoration: BoxDecoration(
-                  color: AppColors.slate100, // Light silver plate
+                  color: AppColors.slate100,
                   borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(16.r)),
-                  border: Border.all(color: AppColors.slate400, width: 2),
+                      BorderRadius.vertical(bottom: Radius.circular(14.r)),
+                  border: Border.all(color: AppColors.slate400, width: 1.5),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.3),
-                      offset: const Offset(0, 4),
+                      color: Colors.black.withValues(
+                        alpha: isSelected ? 0.35 : 0.2,
+                      ),
+                      offset: Offset(0, isSelected ? 2 : 4),
+                      blurRadius: isSelected ? 6 : 4,
                     ),
                   ],
                 ),
                 child: Center(
                   child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 4.w,
+                      vertical: 4.h,
+                    ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -391,18 +618,16 @@ class KidsFoodLayout extends StatelessWidget {
                         if (emojiPart.isNotEmpty)
                           Text(emojiPart, style: TextStyle(fontSize: 18.sp)),
                         Flexible(
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              namePart,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.slate900,
-                              ),
-                              textAlign: TextAlign.center,
+                          child: KidsFittedText(
+                            namePart,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.slate900,
                             ),
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
                           ),
                         ),
                       ],
@@ -412,32 +637,28 @@ class KidsFoodLayout extends StatelessWidget {
               ),
             ],
           ),
-        );
+        ),
+      ),
+    );
 
-        final draggable = Draggable<String>(
-          data: text,
-          maxSimultaneousDrags: state.answerStatus.isAnswered ? 0 : 1,
-          feedback: Material(
-            color: Colors.transparent,
-            child: SizedBox(
-              width: optionWidth,
-              child: Transform.scale(
-                scale: 1.05,
-                child: Opacity(opacity: 0.9, child: platterWidget),
-              ),
-            ),
+    if (state.answerStatus.isAnswered) {
+      return platterWidget;
+    }
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: SizedBox(
+          width: estimatedWidth.clamp(70.0, 110.0),
+          child: Transform.scale(
+            scale: 1.05,
+            child: Opacity(opacity: 0.9, child: platterWidget),
           ),
-          childWhenDragging: Opacity(opacity: 0.3, child: platterWidget),
-          child: platterWidget,
-        );
-
-        return GestureDetector(
-          onTap: state.answerStatus.isAnswered
-              ? null
-              : () => _handleAnswer(context, state, state.currentQuest, text),
-          child: draggable,
-        );
-      },
+        ),
+      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: platterWidget),
+      child: platterWidget,
     );
   }
 }
