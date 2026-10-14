@@ -33,37 +33,44 @@ class KidsRoomFoodSheet extends StatelessWidget {
           BoxShadow(color: Colors.pink.shade700, offset: Offset(0, -4.h)),
         ],
       ),
-      child: Container(
-        padding: EdgeInsets.all(24.r),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 60.w,
-              height: 6.h,
-              decoration: BoxDecoration(
-                color: Colors.pink.withValues(alpha: 0.5),
-                borderRadius: BorderRadius.circular(3.r),
-              ),
+      child: SafeArea(
+        top: false,
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(24.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 60.w,
+                  height: 6.h,
+                  decoration: BoxDecoration(
+                    color: Colors.pink.withValues(alpha: 0.5),
+                    borderRadius: BorderRadius.circular(3.r),
+                  ),
+                ),
+                SizedBox(height: 20.h),
+                Text(
+                  "YUMMY TREATS",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.pink.shade700,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+                SizedBox(height: 30.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: food
+                      .map((f) => Expanded(child: _buildFoodItem(context, f)))
+                      .toList(),
+                ),
+                SizedBox(height: 20.h),
+              ],
             ),
-            SizedBox(height: 20.h),
-            Text(
-              "YUMMY TREATS",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 22.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.pink.shade700,
-                letterSpacing: 1.2,
-              ),
-            ),
-            SizedBox(height: 30.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: food.map((f) => _buildFoodItem(context, f)).toList(),
-            ),
-            SizedBox(height: 20.h),
-          ],
+          ),
         ),
       ),
     );
@@ -135,6 +142,7 @@ class KidsRoomFoodSheet extends StatelessWidget {
   }) {
     showModalBottomSheet(
       context: context,
+      isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) =>
           KidsRoomFoodSheet(user: user, onFoodSelected: onFoodSelected),

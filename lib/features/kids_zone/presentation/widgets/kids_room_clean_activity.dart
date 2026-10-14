@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'dart:math';
@@ -117,7 +118,7 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                     child: Center(
                       child: Builder(
                         builder: (context) {
-                          final reduceMotion = MediaQuery.disableAnimationsOf(
+                          final reduceMotion = VowlMotion.shouldReduceMotion(
                             context,
                           );
                           Widget instructions = ClipRRect(

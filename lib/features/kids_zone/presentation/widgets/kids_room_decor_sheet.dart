@@ -29,12 +29,15 @@ class KidsRoomDecorSheet extends StatelessWidget {
           BoxShadow(color: Colors.amber.shade700, offset: Offset(0, -4.h)),
         ],
       ),
-      child: Container(
-        padding: EdgeInsets.all(24.r),
-        child: DefaultTabController(
-          length: 2,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+      child: SafeArea(
+        top: false,
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(24.r),
+            child: DefaultTabController(
+              length: 2,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 width: 60.w,
@@ -84,8 +87,10 @@ class KidsRoomDecorSheet extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
+    ),
+  ),
+);
+}
 
   Widget _buildStoreGrid(BuildContext context, String category) {
     final items = furnitureStore[category]!;
@@ -125,45 +130,51 @@ class KidsRoomDecorSheet extends StatelessWidget {
                 ),
               ],
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(item['icon'] as String, style: TextStyle(fontSize: 32.sp)),
-                SizedBox(height: 6.h),
-                Text(
-                  item['name'] as String,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Theme.of(context).brightness == Brightness.dark
-                        ? Colors.white70
-                        : Colors.black87,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    item['icon'] as String,
+                    style: TextStyle(fontSize: 32.sp),
                   ),
-                ),
-                if (!isOwned) ...[
-                  SizedBox(height: 4.h),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        "${item['price']} ",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w900,
+                  SizedBox(height: 6.h),
+                  Text(
+                    item['name'] as String,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white70
+                          : Colors.black87,
+                    ),
+                  ),
+                  if (!isOwned) ...[
+                    SizedBox(height: 4.h),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "${item['price']} ",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.amber.shade700,
+                          ),
+                        ),
+                        Icon(
+                          Icons.monetization_on_rounded,
+                          size: 14.sp,
                           color: Colors.amber.shade700,
                         ),
-                      ),
-                      Icon(
-                        Icons.monetization_on_rounded,
-                        size: 14.sp,
-                        color: Colors.amber.shade700,
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                  ],
                 ],
-              ],
+              ),
             ),
           ),
         );
@@ -179,6 +190,7 @@ class KidsRoomDecorSheet extends StatelessWidget {
   }) {
     showModalBottomSheet(
       context: context,
+      isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) => KidsRoomDecorSheet(
         user: user,

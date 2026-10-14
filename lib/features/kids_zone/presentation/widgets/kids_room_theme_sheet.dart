@@ -36,37 +36,43 @@ class KidsRoomThemeSheet extends StatelessWidget {
           BoxShadow(color: Colors.teal.shade700, offset: Offset(0, -4.h)),
         ],
       ),
-      child: Container(
-        padding: EdgeInsets.all(24.r),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 60.w,
-              height: 6.h,
-              decoration: BoxDecoration(
-                color: Colors.teal.withValues(alpha: 0.5),
-                borderRadius: BorderRadius.circular(3.r),
-              ),
+      child: SafeArea(
+        top: false,
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(24.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 60.w,
+                  height: 6.h,
+                  decoration: BoxDecoration(
+                    color: Colors.teal.withValues(alpha: 0.5),
+                    borderRadius: BorderRadius.circular(3.r),
+                  ),
+                ),
+                SizedBox(height: 20.h),
+                Text(
+                  "MAGIC THEMES",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.teal.shade700,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+                SizedBox(height: 30.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children:
+                      themes.map((t) => _buildThemeItem(context, t)).toList(),
+                ),
+                SizedBox(height: 20.h),
+              ],
             ),
-            SizedBox(height: 20.h),
-            Text(
-              "MAGIC THEMES",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 22.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.teal.shade700,
-                letterSpacing: 1.2,
-              ),
-            ),
-            SizedBox(height: 30.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: themes.map((t) => _buildThemeItem(context, t)).toList(),
-            ),
-            SizedBox(height: 20.h),
-          ],
+          ),
         ),
       ),
     );
@@ -132,6 +138,7 @@ class KidsRoomThemeSheet extends StatelessWidget {
   }) {
     showModalBottomSheet(
       context: context,
+      isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) => KidsRoomThemeSheet(
         user: user,
