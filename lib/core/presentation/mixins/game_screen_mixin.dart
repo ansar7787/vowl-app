@@ -83,11 +83,15 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
 
     if (isNewQuestion || isRetry || livesChanged) {
       lastProcessedIndex = currentIndex;
-      isAnsweredNotifier.value = false;
-      timerKey?.currentState?.start();
-      isCorrectNotifier.value = null;
-      isFirstStagePassedNotifier.value = false;
-      onQuestionReset();
+      isAnsweredNotifier.value = isAnswered;
+      if (!isAnswered) {
+        timerKey?.currentState?.start();
+        isCorrectNotifier.value = null;
+        isFirstStagePassedNotifier.value = false;
+        onQuestionReset();
+      } else {
+        isCorrectNotifier.value = isCorrect;
+      }
     } else if (isAnswered && !isAnsweredNotifier.value) {
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = isCorrect;

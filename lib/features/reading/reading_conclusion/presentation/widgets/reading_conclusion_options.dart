@@ -1,8 +1,6 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class ReadingConclusionOptions extends StatelessWidget {
   final List<String> options;
@@ -51,7 +49,6 @@ class ReadingConclusionOptions extends StatelessWidget {
           tokens: tokens,
           onTap: () {
             if (!isAnswered) {
-              di.sl<HapticService>().selection();
               onOptionTap(index, optionText);
             }
           },
