@@ -15,6 +15,7 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -241,7 +242,13 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                           ],
                         ),
                       )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .animate(
+                        onPlay: (c) {
+                          if (!VowlMotion.shouldReduceMotion(context)) {
+                            c.repeat(reverse: true);
+                          }
+                        },
+                      )
                       .scale(
                         begin: const Offset(1, 1),
                         end: const Offset(1.05, 1.05),
@@ -641,7 +648,13 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                                     : null,
                               ),
                             )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .animate(
+                              onPlay: (c) {
+                                if (!VowlMotion.shouldReduceMotion(context)) {
+                                  c.repeat(reverse: true);
+                                }
+                              },
+                            )
                             .scale(
                               begin: const Offset(1, 1),
                               end: level == 200
