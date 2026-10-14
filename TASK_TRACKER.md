@@ -46,7 +46,7 @@ Every game test suite MUST rigorously satisfy:
 | --- | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 5 | 5 | 0 | 🟢 100% Complete (58 tests) |
-| **3** | **Kids Zone** | 35 | 28 | 7 | 🟡 80% Complete (28/35 items done) |
+| **3** | **Kids Zone** | 35 | 29 | 6 | 🟡 83% Complete (29/35 items done) |
 | **4** | **Reading Category** | 13 | 2 | 11 | 🟡 1 Game + BLoC Done (11 games remaining) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
 | **6** | **Grammar Category** | 20 | 2 | 18 | ⚠️ BLoC + Model only (19 games remaining) |
@@ -146,7 +146,8 @@ Every game test suite MUST rigorously satisfy:
   - Validates living room ornate framed painting, mantlepiece, polaroid photo cards, TTS question instruction replay, individual family word pronunciation, tap-to-answer correct/incorrect paths with haptics, drag-and-drop mechanics to framed painting, answered state interaction locks, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
 - [x] **3.28** `kids_food_layout_test.dart` (Widget Test) — ✅ `[DONE - 13/13 tests passing]`
   - Validates kitchen tile board, chef hat, checkered tablecloth, cloche serving platters, TTS question instruction replay, individual food name pronunciation, tap-to-answer correct/incorrect paths with haptics, drag-and-drop mechanics to kitchen board, answered state interaction locks, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
-- [ ] **3.29** `kids_fruits_layout_test.dart` (Widget Test) — 🔴 `[PENDING]`
+- [x] **3.29** `kids_fruits_layout_test.dart` (Widget Test) — ✅ `[DONE - 13/13 tests passing]`
+  - Validates fruit stand striped awning, wooden signboard, wicker baskets, TTS question instruction replay, individual fruit name pronunciation, tap-to-answer correct/incorrect paths with haptics, drag-and-drop mechanics to fruit stand, answered state interaction locks, dark mode contrast, and small screen 320dp width zero-overflow layout safety.
 - [ ] **3.30** `kids_zone_screen_test.dart` (Hub Screen Test) — 🔴 `[PENDING]`
 - [ ] **3.31** `kids_level_map_test.dart` (Level Map Navigation Test) — 🔴 `[PENDING]`
 - [ ] **3.32** `kids_room_screen_test.dart` (Pet Care / Interactive Room Test) — 🔴 `[PENDING]`
