@@ -234,7 +234,8 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                               child: Padding(
                                 padding: EdgeInsets.only(top: 24.h),
                                 child: ContextSentenceBuilder(
-                                  targetKeyword: quest.word ?? '',
+                                  targetKeyword:
+                                      quest.targetWord ?? quest.word ?? '',
                                   primaryColor: theme.primaryColor,
                                   onConfirmed: _onSentenceBuilderComplete,
                                   onSkipped: _onSentenceBuilderComplete,

@@ -47,7 +47,7 @@ Every game test suite MUST rigorously satisfy:
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 5 | 5 | 0 | 🟢 100% Complete (58 tests) |
 | **3** | **Kids Zone** | 35 | 35 | 0 | 🟢 100% Complete (35/35 items done) |
-| **4** | **Reading Category** | 13 | 2 | 11 | 🟡 1 Game + BLoC Done (11 games remaining) |
+| **4** | **Reading Category** | 13 | 3 | 10 | 🟡 2 Games + BLoC Done (10 games remaining) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
 | **6** | **Grammar Category** | 20 | 2 | 18 | ⚠️ BLoC + Model only (19 games remaining) |
 | **7** | **Listening Category** | 11 | 2 | 9 | ⚠️ BLoC + Model only (10 games remaining) |
@@ -168,7 +168,8 @@ Every game test suite MUST rigorously satisfy:
 - [x] **4.1** `reading_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **4.2** `read_and_answer_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 8/8 tests passing]`
   - Validates initial rendering, question TTS, passage TTS, tap-to-answer correct path (BLoC + success haptics), tap-to-answer incorrect path (BLoC + wrong sound + error haptics), drag-and-drop buoy drop onto anchor card, evidence phase trigger, long story adaptability, 320dp small screen safety.
-- [ ] **4.3** `find_word_meaning_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **4.3** `find_word_meaning_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 11/11 tests passing]`
+  - Validates initial rendering of instruction, target meaning, and passage words, correct target word tap triggering success feedback and revealing ContextSentenceBuilder, skipping SentenceBuilder dispatching SubmitAnswer(true), submitting constructed sentence with target word dispatching SubmitAnswer(true) and awarding bonus coins, incorrect word tap triggering wrong sound/haptic and SubmitAnswer(false), subsequent word taps locked out after answer initiated, hint button dispatching ReadingHintUsed, GameShimmerLoading placeholder when uninitialized, Level 1 GameBriefingLayer overlay display & dismissal, dark theme mode styling, and small screen 320dp width zero-overflow layout safety.
 - [ ] **4.4** `cloze_test_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **4.5** `guess_title_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **4.6** `paragraph_summary_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
