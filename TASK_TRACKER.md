@@ -45,7 +45,7 @@ Every game test suite MUST rigorously satisfy:
 | # | Section / Category | Total Screens/Items | Completed | Remaining | Current Status |
 | --- | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
-| **2** | **Games Hub & Routing** | 5 | 3 | 2 | 🟡 60% Complete (3/5 items done) |
+| **2** | **Games Hub & Routing** | 5 | 4 | 1 | 🟡 80% Complete (4/5 items done) |
 | **3** | **Kids Zone** | 31 | 23 | 8 | 🟡 74% Complete (6 Hubs + 2 Layouts remaining) |
 | **4** | **Reading Category** | 13 | 2 | 11 | 🟡 1 Game + BLoC Done (11 games remaining) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
@@ -96,7 +96,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 2: GAMES HUB & ROUTING (60% COMPLETE)
+### SECTION 2: GAMES HUB & ROUTING (80% COMPLETE)
 
 - [x] **2.1** `game_routes_test.dart` (Unit/Routing Test) — ✅ `[DONE - 25/25 tests passing]`
   - Validates 7 standard route paths, query parameter parsing across all 9 categories, subtype aliases, case-insensitivity, category and subtype fallback routing, missing/invalid level fallbacks, and authenticated/unauthenticated quest sequence routing.
@@ -104,8 +104,8 @@ Every game test suite MUST rigorously satisfy:
   - Validates Quest Hub app bar, Shimmer loading placeholder on unauthenticated user, Hero Mastery Dashboard calculations and stat pills (XP, Streak, Levels Cleared, Core Games), BeginnerDiscoveryCard gating for adult vs kidsModeOnly users, Kids Zone shelf with balloon badge, Kids Zone See All navigation to `/kids-zone`, adult category shelves rendering (Speaking, Listening, Reading, Writing, Elite Mastery with gold badge and crown emoji), See All routing to `/category-games?category=speaking`, dark mode visual cleanliness, and small screen 320dp width zero-overflow layout safety.
 - [x] **2.3** `kids_category_shelf_test.dart` (Widget Test) — ✅ `[DONE - 8/8 tests passing]`
   - Validates horizontal ListView shelf rendering, 2026 spatial physics transform tilt/scale/opacity, NEW badge indicator for level 1 / 0 cleared, level number & circular progress ring for in-progress games, golden checkmark badge for mastered categories (200 levels), tap-to-navigate to `/kids/map/:gameType` with title and color payload, dark mode visual cleanliness, and compact mobile screen 320dp width zero-overflow layout safety.
-- [ ] **2.4** `modern_category_map_test.dart` (Universal Category Map & Progression Test) — 🔴 `[PENDING]`
-  - Validates category level nodes, progressive level unlocking, completed stars, locked state, and node tap navigation.
+- [x] **2.4** `modern_category_map_test.dart` (Universal Category Map & Progression Test) — ✅ `[DONE - 7/7 tests passing]`
+  - Validates map structure, GlassMapHeader and CustomScrollView, AssetQuestService preloadBatch for active level, level node progression states (completed levels, earned stars, glowing playable current level), unlocked node tap routing to `/game?category=...&gameType=...&level=...`, back button navigation, dark mode visual cleanliness, and compact 320dp width zero-overflow layout safety.
 - [ ] **2.5** `offline_play_gate_service_test.dart` (Offline Play Gate & Quota Unit Test) — 🔴 `[PENDING]`
   - Validates offline level count, 3-level grace quota for free users, rewarded ad bonus plays, reconnect reset, and persistence.
 
