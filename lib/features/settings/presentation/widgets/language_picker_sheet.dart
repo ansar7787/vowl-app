@@ -1,14 +1,14 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 
-/// Premium language picker bottom sheet for the Settings screen.
+/// Unified, modern language picker bottom sheet for the Settings screen.
 ///
-/// Displays all supported languages in a scrollable sheet with search,
-/// flags, native names, and a prominent active-language indicator.
+/// Displays all supported app UI languages in a clean, scrollable sheet with real-time
+/// search, emoji flags, native names, and active-language highlight.
 class LanguagePickerSheet extends StatefulWidget {
   const LanguagePickerSheet({super.key});
 
@@ -16,6 +16,7 @@ class LanguagePickerSheet extends StatefulWidget {
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      useRootNavigator: true,
       backgroundColor: Colors.transparent,
       builder: (_) => const LanguagePickerSheet(),
     );
@@ -27,10 +28,6 @@ class LanguagePickerSheet extends StatefulWidget {
 
 class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
   final TextEditingController _searchController = TextEditingController();
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   void dispose() {
@@ -58,204 +55,249 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
           }).toList();
         }
 
-        return Padding(
+        return Container(
+          height: MediaQuery.of(context).size.height * 0.82,
           padding: EdgeInsets.only(
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.85,
-            decoration: BoxDecoration(
-              color: isDark ? AppColors.slate900 : Colors.white,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-              border: Border(
-                top: BorderSide(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.1)
-                      : Colors.black.withValues(alpha: 0.05),
-                  width: 1,
-                ),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surface,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
+                blurRadius: 28,
+                offset: const Offset(0, -8),
               ),
-            ),
+            ],
+          ),
+          child: SafeArea(
+            top: false,
             child: Column(
-              mainAxisSize: MainAxisSize.min,
               children: [
-                // Handle bar
+                SizedBox(height: 12.h),
+                // Grab handle
                 Center(
                   child: Container(
-                    margin: EdgeInsets.only(top: 12.h),
-                    width: 40.w,
-                    height: 4.h,
+                    width: 44.w,
+                    height: 4.5.h,
                     decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.2)
-                          : Colors.black.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(2.r),
+                      color: isDark ? Colors.white24 : AppColors.slate300,
+                      borderRadius: BorderRadius.circular(3.r),
                     ),
                   ),
                 ),
+                SizedBox(height: 16.h),
 
-                // Title + subtitle
+                // Header title row with close button
                 Padding(
-                  padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 4.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  child: Row(
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.translate_rounded,
-                            color: AppColors.blue500,
-                            size: 24.r,
-                          ),
-                          SizedBox(width: 12.w),
-                          Expanded(
-                            child: Text(
-                              localeService.tr('language_picker.title'),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              context.tr(
+                                'language_picker.title',
+                                fallback: 'Language',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 22.sp,
-                                fontWeight: FontWeight.w900,
-                                color: isDark
-                                    ? Colors.white
-                                    : AppColors.slate900,
+                                fontSize: 18.5.sp,
+                                fontWeight: FontWeight.w700,
+                                color: Theme.of(context).colorScheme.onSurface,
+                                letterSpacing: -0.2,
                               ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
+                            ),
+                            SizedBox(height: 2.h),
+                            Text(
+                              context.tr(
+                                'language_picker.subtitle',
+                                fallback: 'Choose your interface language',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.5.sp,
+                                fontWeight: FontWeight.w500,
+                                color: isDark
+                                    ? Colors.white54
+                                    : AppColors.slate500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Semantics(
+                        button: true,
+                        label: context.tr('common.close', fallback: 'Close'),
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: () {
+                              di.sl<HapticService>().light();
+                              Navigator.pop(context);
+                            },
+                            borderRadius: BorderRadius.circular(20.r),
+                            child: Container(
+                              padding: EdgeInsets.all(8.r),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.08)
+                                    : AppColors.slate100,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.close_rounded,
+                                size: 18.r,
+                                color: isDark
+                                    ? Colors.white60
+                                    : AppColors.slate600,
+                              ),
                             ),
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 8.h),
-                      Text(
-                        localeService.tr('language_picker.subtitle'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w500,
-                          color: isDark ? Colors.white54 : Colors.black54,
-                          height: 1.4,
                         ),
                       ),
                     ],
                   ),
                 ),
+                SizedBox(height: 16.h),
 
-                // Search field
+                // Unified Single-Surface Search Field
                 Padding(
-                  padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 16.h),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: TextField(
                     controller: _searchController,
+                    cursorColor: AppColors.indigo500,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 18.sp,
+                      fontSize: 14.5.sp,
                       fontWeight: FontWeight.w500,
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
                     decoration: InputDecoration(
-                      hintText: localeService.tr('language_picker.search_hint'),
+                      isDense: true,
+                      filled: true,
+                      fillColor: isDark
+                          ? Colors.white.withValues(alpha: 0.07)
+                          : AppColors.slate100,
+                      hintText: context.tr(
+                        'language_picker.search_hint',
+                        fallback: 'Search languages...',
+                      ),
                       hintStyle: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white38 : Colors.black38,
+                        fontSize: 13.5.sp,
+                        fontWeight: FontWeight.w400,
+                        color: isDark ? Colors.white38 : AppColors.slate400,
                       ),
                       prefixIcon: Icon(
                         Icons.search_rounded,
-                        color: isDark ? Colors.white54 : Colors.black54,
-                        size: 22.r,
+                        color: isDark ? Colors.white54 : AppColors.slate500,
+                        size: 20.r,
+                      ),
+                      prefixIconConstraints: BoxConstraints(
+                        minWidth: 44.w,
+                        minHeight: 44.h,
                       ),
                       suffixIcon: query.isNotEmpty
                           ? IconButton(
-                              icon: Icon(Icons.close_rounded, size: 20.r),
-                              color: isDark ? Colors.white54 : Colors.black54,
-                              onPressed: () => _searchController.clear(),
+                              tooltip: context.tr(
+                                'common.clear',
+                                fallback: 'Clear',
+                              ),
+                              icon: Icon(
+                                Icons.cancel_rounded,
+                                color: isDark
+                                    ? Colors.white38
+                                    : AppColors.slate400,
+                                size: 18.r,
+                              ),
+                              onPressed: () {
+                                _searchController.clear();
+                              },
                             )
                           : null,
-                      filled: true,
-                      fillColor: isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : AppColors.slate100,
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 12.h,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.r),
-                        borderSide: BorderSide.none,
+                        borderSide: BorderSide(
+                          color: isDark ? Colors.white12 : AppColors.slate200,
+                          width: 1.0,
+                        ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.r),
-                        borderSide: BorderSide.none,
+                        borderSide: BorderSide(
+                          color: isDark ? Colors.white12 : AppColors.slate200,
+                          width: 1.0,
+                        ),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.r),
-                        borderSide: BorderSide(
-                          color: AppColors.blue500.withValues(alpha: 0.5),
-                          width: 2,
+                        borderSide: const BorderSide(
+                          color: AppColors.indigo500,
+                          width: 1.8,
                         ),
-                      ),
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 20.h,
-                        horizontal: 20.w,
                       ),
                     ),
                   ),
                 ),
+                SizedBox(height: 12.h),
 
                 // Language list
                 Expanded(
                   child: filteredLocales.isEmpty
-                      ? Padding(
-                          padding: EdgeInsets.only(top: 32.h, bottom: 64.h),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.search_off_rounded,
-                                size: 48.r,
-                                color: isDark ? Colors.white24 : Colors.black26,
-                              ),
-                              SizedBox(height: 16.h),
-                              Text(
-                                // FIX (HIGH-2): Localised via l10n system.
-                                localeService.tr('language_picker.no_results'),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark
-                                      ? Colors.white54
-                                      : Colors.black54,
-                                ),
-                              ),
-                            ],
+                      ? Center(
+                          child: Text(
+                            context.tr(
+                              'language_picker.no_results',
+                              fallback: 'No results found',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 15.sp,
+                              color: isDark
+                                  ? Colors.white38
+                                  : AppColors.slate400,
+                            ),
                           ),
                         )
                       : ListView.builder(
-                          padding: EdgeInsets.fromLTRB(24.w, 8.h, 24.w, 32.h),
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
+                          ),
+                          keyboardDismissBehavior:
+                              ScrollViewKeyboardDismissBehavior.onDrag,
+                          padding: EdgeInsets.fromLTRB(16.w, 4.h, 16.w, 24.h),
                           itemCount: filteredLocales.length,
                           itemBuilder: (context, index) {
                             final localeInfo = filteredLocales[index];
                             final isActive =
                                 localeInfo.locale.languageCode == currentCode;
 
-                            return Padding(
-                              padding: EdgeInsets.only(bottom: 8.h),
-                              child: _LanguageTile(
-                                localeInfo: localeInfo,
-                                isActive: isActive,
-                                isDark: isDark,
-                                onTap: () async {
-                                  di.sl<HapticService>().selection();
-                                  if (context.mounted) {
-                                    Navigator.pop(context);
-                                  }
-                                  // Allow bottom sheet close animation to finish
-                                  // before triggering app-wide locale rebuild.
-                                  await Future.delayed(
-                                    const Duration(milliseconds: 300),
-                                  );
-                                  await localeService.setLocale(
-                                    localeInfo.locale,
-                                  );
-                                },
-                              ),
+                            return _LanguageTile(
+                              localeInfo: localeInfo,
+                              isActive: isActive,
+                              isDark: isDark,
+                              onTap: () async {
+                                di.sl<HapticService>().selection();
+                                if (context.mounted) {
+                                  Navigator.pop(context);
+                                }
+                                // Allow bottom sheet close animation to finish
+                                // before triggering app-wide locale rebuild.
+                                await Future.delayed(
+                                  const Duration(milliseconds: 300),
+                                );
+                                await localeService.setLocale(
+                                  localeInfo.locale,
+                                );
+                              },
                             );
                           },
                         ),
@@ -284,46 +326,47 @@ class _LanguageTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      label:
-          '${localeInfo.name} — ${localeInfo.nativeName}${isActive ? " — currently selected" : ""}',
-      button: true,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          color: isActive
-              ? AppColors.blue500.withValues(alpha: 0.05)
-              : (isDark
-                    ? Colors.white.withValues(alpha: 0.02)
-                    : AppColors.slate50),
-          border: Border.all(
-            color: isActive
-                ? AppColors.blue500
-                : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : Colors.black.withValues(alpha: 0.05)),
-            width: 1.5,
-          ),
-        ),
+    return Padding(
+      padding: EdgeInsets.only(bottom: 6.h),
+      child: Semantics(
+        label:
+            '${localeInfo.name} — ${localeInfo.nativeName}${isActive ? " — currently selected" : ""}',
+        button: true,
         child: Material(
-          color: isActive
-              ? AppColors.blue500.withValues(alpha: 0.1)
-              : Colors.transparent,
-          borderRadius: BorderRadius.circular(18.r),
+          color: Colors.transparent,
           child: InkWell(
             onTap: onTap,
-            borderRadius: BorderRadius.circular(18.r),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+            borderRadius: BorderRadius.circular(16.r),
+            splashColor: AppColors.indigo500.withValues(alpha: 0.1),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 13.h),
+              decoration: BoxDecoration(
+                color: isActive
+                    ? AppColors.indigo500.withValues(
+                        alpha: isDark ? 0.15 : 0.08,
+                      )
+                    : (isDark
+                          ? Colors.white.withValues(alpha: 0.03)
+                          : AppColors.slate50),
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: isActive
+                      ? AppColors.indigo500.withValues(alpha: 0.4)
+                      : (isDark
+                            ? Colors.white.withValues(alpha: 0.06)
+                            : AppColors.slate200.withValues(alpha: 0.6)),
+                  width: isActive ? 1.5 : 1.0,
+                ),
+              ),
               child: Row(
                 children: [
                   ExcludeSemantics(
                     child: Text(
                       localeInfo.flag,
-                      style: TextStyle(fontSize: 28.sp),
+                      style: TextStyle(fontSize: 24.sp),
                     ),
                   ),
-                  SizedBox(width: 16.w),
+                  SizedBox(width: 14.w),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -332,40 +375,37 @@ class _LanguageTile extends StatelessWidget {
                           localeInfo.name,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 16.sp,
+                            fontSize: 15.sp,
                             fontWeight: isActive
-                                ? FontWeight.w900
-                                : FontWeight.w700,
+                                ? FontWeight.w600
+                                : FontWeight.w400,
                             color: isActive
-                                ? AppColors.blue500
-                                : (Theme.of(context).colorScheme.onSurface),
+                                ? AppColors.indigo500
+                                : (isDark ? Colors.white : AppColors.slate800),
                           ),
                         ),
-                        if (localeInfo.name != localeInfo.nativeName)
+                        if (localeInfo.name != localeInfo.nativeName) ...[
+                          SizedBox(height: 1.h),
                           Text(
                             localeInfo.nativeName,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
-                              color: isDark ? Colors.white38 : Colors.black38,
+                              fontWeight: FontWeight.w400,
+                              color: isDark
+                                  ? Colors.white38
+                                  : AppColors.slate400,
                             ),
                           ),
+                        ],
                       ],
                     ),
                   ),
                   if (isActive)
-                    Container(
-                      padding: EdgeInsets.all(6.r),
-                      decoration: const BoxDecoration(
-                        color: AppColors.blue500,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.check_rounded,
-                        color: Colors.white,
-                        size: 14.r,
-                      ),
+                    Icon(
+                      Icons.check_circle_rounded,
+                      color: AppColors.indigo500,
+                      size: 20.r,
                     ),
                 ],
               ),

@@ -19,6 +19,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
 import 'package:vowl/features/translation/presentation/widgets/language_manager_sheet.dart';
@@ -96,45 +97,39 @@ class _TranslateScreenState extends State<TranslateScreen> {
     _haptics.light();
   }
 
-  void _showLanguagePicker(BuildContext context, bool isDark, {required bool isSource}) {
-    _haptics.selection();
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      barrierColor: Colors.black.withValues(alpha: 0.55),
-      isScrollControlled: true,
-      useSafeArea: true,
-      builder: (ctx) {
-        final blocState = context.read<TranslationBloc>().state;
-        final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-        return _LanguagePickerSheet(
-          isDark: isDark,
-          isSource: isSource,
-          currentLanguage: isSource
-              ? blocState.currentSourceLanguage
-              : blocState.currentTargetLanguage,
-          downloadedLanguages: blocState.downloadedLanguages,
-          onSelected: (lang) {
-            if (isSource) {
-              if (lang == blocState.currentTargetLanguage) {
-                _onSwapTapped(isPremium);
-              } else {
-                context.read<TranslationBloc>().add(
-                  TranslationSourceLanguageChanged(lang, isPremium: isPremium),
-                );
-              }
-            } else {
-              if (lang == blocState.currentSourceLanguage) {
-                _onSwapTapped(isPremium);
-              } else {
-                context.read<TranslationBloc>().add(
-                  TranslationLanguageChanged(lang, isPremium: isPremium),
-                );
-              }
-            }
-            Navigator.pop(ctx);
-          },
-        );
+  void _showLanguagePicker(
+    BuildContext context,
+    bool isDark, {
+    required bool isSource,
+  }) {
+    final blocState = context.read<TranslationBloc>().state;
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+
+    LanguageSelectionBottomSheet.show(
+      context,
+      isSource: isSource,
+      currentLanguage: isSource
+          ? blocState.currentSourceLanguage
+          : blocState.currentTargetLanguage,
+      downloadedLanguages: blocState.downloadedLanguages,
+      onSelected: (lang) {
+        if (isSource) {
+          if (lang == blocState.currentTargetLanguage) {
+            _onSwapTapped(isPremium);
+          } else {
+            context.read<TranslationBloc>().add(
+              TranslationSourceLanguageChanged(lang, isPremium: isPremium),
+            );
+          }
+        } else {
+          if (lang == blocState.currentSourceLanguage) {
+            _onSwapTapped(isPremium);
+          } else {
+            context.read<TranslationBloc>().add(
+              TranslationLanguageChanged(lang, isPremium: isPremium),
+            );
+          }
+        }
       },
     );
   }
@@ -154,7 +149,11 @@ class _TranslateScreenState extends State<TranslateScreen> {
     );
   }
 
-  Future<void> _speakText({required String text, required String languageName, required bool isSource}) async {
+  Future<void> _speakText({
+    required String text,
+    required String languageName,
+    required bool isSource,
+  }) async {
     final notifier = isSource ? _isSourceSpeaking : _isTargetSpeaking;
     if (notifier.value) {
       await _tts.stop();
@@ -198,7 +197,8 @@ class _TranslateScreenState extends State<TranslateScreen> {
               content: Text(
                 context.tr(
                   'translation.mic_permission_required',
-                  fallback: 'Microphone permission is required for voice input.',
+                  fallback:
+                      'Microphone permission is required for voice input.',
                 ),
               ),
               behavior: SnackBarBehavior.floating,
@@ -218,7 +218,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
           if (words.isNotEmpty && mounted) {
             final phrase = words.join(' ');
             _inputController.text = phrase;
-            _inputController.selection = TextSelection.collapsed(offset: phrase.length);
+            _inputController.selection = TextSelection.collapsed(
+              offset: phrase.length,
+            );
             _onInputChanged(phrase);
           }
         },
@@ -243,9 +245,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
     _inputController.selection = TextSelection.collapsed(
       offset: currentTranslated.length,
     );
-    bloc.add(
-      TranslationSwapLanguages(isPremium: isPremium),
-    );
+    bloc.add(TranslationSwapLanguages(isPremium: isPremium));
   }
 
   bool _hasUserActivity(TranslationState state) {
@@ -351,49 +351,98 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                 radius: Radius.circular(8.r),
                                 child: SingleChildScrollView(
                                   controller: _scrollController,
-                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                  ),
                                   physics: const BouncingScrollPhysics(),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
                                     children: [
                                       SizedBox(height: 12.h),
-                                      _buildLanguageSelectorBar(context, isDark, isPremium)
+                                      _buildLanguageSelectorBar(
+                                            context,
+                                            isDark,
+                                            isPremium,
+                                          )
                                           .animate()
-                                          .fadeIn(duration: 350.ms, curve: Curves.easeOut)
-                                          .slideY(begin: 0.08, end: 0, curve: Curves.easeOut),
+                                          .fadeIn(
+                                            duration: 350.ms,
+                                            curve: Curves.easeOut,
+                                          )
+                                          .slideY(
+                                            begin: 0.08,
+                                            end: 0,
+                                            curve: Curves.easeOut,
+                                          ),
                                       SizedBox(height: 16.h),
-                                      _buildInputArea(context, isDark, isPremium)
+                                      _buildInputArea(
+                                            context,
+                                            isDark,
+                                            isPremium,
+                                          )
                                           .animate(delay: 80.ms)
-                                          .fadeIn(duration: 350.ms, curve: Curves.easeOut)
-                                          .slideY(begin: 0.08, end: 0, curve: Curves.easeOut),
+                                          .fadeIn(
+                                            duration: 350.ms,
+                                            curve: Curves.easeOut,
+                                          )
+                                          .slideY(
+                                            begin: 0.08,
+                                            end: 0,
+                                            curve: Curves.easeOut,
+                                          ),
                                       SizedBox(height: 16.h),
-                                      BlocBuilder<TranslationBloc, TranslationState>(
-                                        builder: (context, state) {
-                                          if (!isPremium && state.isLimitReached) {
-                                            return PremiumLockCard(
-                                              onPremiumTap: () => context.push('/premium'),
-                                              onTap: () {
-                                                di.sl<AdService>().showRewardedAd(
-                                                  context: context,
-                                                  isPremium: false,
-                                                  onUserEarnedReward: (_) {
-                                                    context.read<TranslationBloc>().add(
-                                                      TranslationAdWatched(),
+                                      BlocBuilder<
+                                            TranslationBloc,
+                                            TranslationState
+                                          >(
+                                            builder: (context, state) {
+                                              if (!isPremium &&
+                                                  state.isLimitReached) {
+                                                return PremiumLockCard(
+                                                  onPremiumTap: () =>
+                                                      context.push('/premium'),
+                                                  onTap: () {
+                                                    di.sl<AdService>().showRewardedAd(
+                                                      context: context,
+                                                      isPremium: false,
+                                                      onUserEarnedReward: (_) {
+                                                        context
+                                                            .read<
+                                                              TranslationBloc
+                                                            >()
+                                                            .add(
+                                                              TranslationAdWatched(),
+                                                            );
+                                                      },
+                                                      onDismissed: () {},
                                                     );
                                                   },
-                                                  onDismissed: () {},
                                                 );
-                                              },
-                                            );
-                                          }
-                                          return _buildOutputArea(context, isDark, isPremium);
-                                        },
-                                      )
+                                              }
+                                              return _buildOutputArea(
+                                                context,
+                                                isDark,
+                                                isPremium,
+                                              );
+                                            },
+                                          )
                                           .animate(delay: 150.ms)
-                                          .fadeIn(duration: 350.ms, curve: Curves.easeOut)
-                                          .slideY(begin: 0.08, end: 0, curve: Curves.easeOut),
+                                          .fadeIn(
+                                            duration: 350.ms,
+                                            curve: Curves.easeOut,
+                                          )
+                                          .slideY(
+                                            begin: 0.08,
+                                            end: 0,
+                                            curve: Curves.easeOut,
+                                          ),
                                       SizedBox(
-                                        height: MediaQuery.of(context).padding.bottom + 32.h,
+                                        height:
+                                            MediaQuery.of(
+                                              context,
+                                            ).padding.bottom +
+                                            32.h,
                                       ),
                                     ],
                                   ),
@@ -475,7 +524,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                   maxLines: 1,
                 ),
                 Text(
-                  context.tr('translation.offline_ready_badge', fallback: '50+ languages • Works offline'),
+                  context.tr(
+                    'translation.offline_ready_badge',
+                    fallback: '50+ languages • Works offline',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
@@ -490,16 +542,25 @@ class _TranslateScreenState extends State<TranslateScreen> {
             builder: (context, state) {
               if (isPremium) {
                 return Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.h,
+                  ),
                   decoration: BoxDecoration(
                     color: AppColors.amber500.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(color: AppColors.amber500.withValues(alpha: 0.25)),
+                    border: Border.all(
+                      color: AppColors.amber500.withValues(alpha: 0.25),
+                    ),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.workspace_premium_rounded, color: AppColors.amber500, size: 14.r),
+                      Icon(
+                        Icons.workspace_premium_rounded,
+                        color: AppColors.amber500,
+                        size: 14.r,
+                      ),
                       SizedBox(width: 4.w),
                       Text(
                         'PRO',
@@ -519,12 +580,18 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 decoration: BoxDecoration(
                   color: AppColors.indigo500.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(color: AppColors.indigo500.withValues(alpha: 0.18)),
+                  border: Border.all(
+                    color: AppColors.indigo500.withValues(alpha: 0.18),
+                  ),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.bolt_rounded, color: AppColors.amber500, size: 14.r),
+                    Icon(
+                      Icons.bolt_rounded,
+                      color: AppColors.amber500,
+                      size: 14.r,
+                    ),
                     SizedBox(width: 3.w),
                     Text(
                       '${state.freeTranslationsRemaining} free',
@@ -543,7 +610,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
           SizedBox(width: 8.w),
           Semantics(
             button: true,
-            label: context.tr('translation.downloaded_packs', fallback: 'Language Packs'),
+            label: context.tr(
+              'translation.downloaded_packs',
+              fallback: 'Language Packs',
+            ),
             child: Material(
               color: Colors.transparent,
               child: InkWell(
@@ -577,15 +647,24 @@ class _TranslateScreenState extends State<TranslateScreen> {
     );
   }
 
-  Widget _buildLanguageSelectorBar(BuildContext context, bool isDark, bool isPremium) {
+  Widget _buildLanguageSelectorBar(
+    BuildContext context,
+    bool isDark,
+    bool isPremium,
+  ) {
     return BlocBuilder<TranslationBloc, TranslationState>(
       builder: (context, state) {
         final source = state.currentSourceLanguage;
-        final target = state.currentTargetLanguage ??
-            context.tr('translation.select_target_language', fallback: 'Select Language');
+        final target =
+            state.currentTargetLanguage ??
+            context.tr(
+              'translation.select_target_language',
+              fallback: 'Select Language',
+            );
 
         final isTargetReady = state.downloadedLanguages.contains(target);
-        final isSourceReady = state.downloadedLanguages.contains(source) || source == 'English';
+        final isSourceReady =
+            state.downloadedLanguages.contains(source) || source == 'English';
 
         return GlassTile(
           padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
@@ -594,12 +673,18 @@ class _TranslateScreenState extends State<TranslateScreen> {
               // Source Pill
               Expanded(
                 child: InkWell(
-                  onTap: () => _showLanguagePicker(context, isDark, isSource: true),
+                  onTap: () =>
+                      _showLanguagePicker(context, isDark, isSource: true),
                   borderRadius: BorderRadius.circular(16.r),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 8.h,
+                    ),
                     decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate100,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : AppColors.slate100,
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
                         color: isDark ? Colors.white12 : AppColors.slate200,
@@ -622,7 +707,11 @@ class _TranslateScreenState extends State<TranslateScreen> {
                             ),
                             if (isSourceReady) ...[
                               SizedBox(width: 4.w),
-                              Icon(Icons.check_circle_rounded, size: 11.r, color: AppColors.emerald500),
+                              Icon(
+                                Icons.check_circle_rounded,
+                                size: 11.r,
+                                color: AppColors.emerald500,
+                              ),
                             ],
                           ],
                         ),
@@ -636,12 +725,20 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                   fontFamily: 'Outfit',
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).colorScheme.onSurface,
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.onSurface,
                                 ),
                                 maxLines: 1,
                               ),
                             ),
-                            Icon(Icons.expand_more_rounded, size: 16.r, color: isDark ? Colors.white38 : AppColors.slate400),
+                            Icon(
+                              Icons.expand_more_rounded,
+                              size: 16.r,
+                              color: isDark
+                                  ? Colors.white38
+                                  : AppColors.slate400,
+                            ),
                           ],
                         ),
                       ],
@@ -685,12 +782,18 @@ class _TranslateScreenState extends State<TranslateScreen> {
               // Target Pill
               Expanded(
                 child: InkWell(
-                  onTap: () => _showLanguagePicker(context, isDark, isSource: false),
+                  onTap: () =>
+                      _showLanguagePicker(context, isDark, isSource: false),
                   borderRadius: BorderRadius.circular(16.r),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 8.h,
+                    ),
                     decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate100,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : AppColors.slate100,
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
                         color: isDark ? Colors.white12 : AppColors.slate200,
@@ -713,7 +816,11 @@ class _TranslateScreenState extends State<TranslateScreen> {
                             ),
                             if (isTargetReady) ...[
                               SizedBox(width: 4.w),
-                              Icon(Icons.check_circle_rounded, size: 11.r, color: AppColors.emerald500),
+                              Icon(
+                                Icons.check_circle_rounded,
+                                size: 11.r,
+                                color: AppColors.emerald500,
+                              ),
                             ],
                           ],
                         ),
@@ -727,12 +834,20 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                   fontFamily: 'Outfit',
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).colorScheme.onSurface,
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.onSurface,
                                 ),
                                 maxLines: 1,
                               ),
                             ),
-                            Icon(Icons.expand_more_rounded, size: 16.r, color: isDark ? Colors.white38 : AppColors.slate400),
+                            Icon(
+                              Icons.expand_more_rounded,
+                              size: 16.r,
+                              color: isDark
+                                  ? Colors.white38
+                                  : AppColors.slate400,
+                            ),
                           ],
                         ),
                       ],
@@ -757,7 +872,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
           padding: EdgeInsets.fromLTRB(16.w, 14.h, 16.w, 14.h),
           borderColor: focused
               ? AppColors.indigo500.withValues(alpha: 0.5)
-              : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200.withValues(alpha: 0.8)),
+              : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate200.withValues(alpha: 0.8)),
           borderWidth: 1.2,
           child: child!,
         ),
@@ -773,7 +890,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     Row(
                       children: [
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 3.h,
+                          ),
                           decoration: BoxDecoration(
                             color: AppColors.indigo500.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(6.r),
@@ -807,7 +927,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                   fontWeight: FontWeight.w500,
                                   color: value.text.length > _maxCharacterLimit
                                       ? AppColors.red500
-                                      : (isDark ? Colors.white38 : AppColors.slate400),
+                                      : (isDark
+                                            ? Colors.white38
+                                            : AppColors.slate400),
                                 ),
                               ),
                               SizedBox(width: 8.w),
@@ -817,7 +939,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                   return IconButton(
                                     visualDensity: VisualDensity.compact,
                                     padding: EdgeInsets.zero,
-                                    constraints: BoxConstraints(minWidth: 32.r, minHeight: 32.r),
+                                    constraints: BoxConstraints(
+                                      minWidth: 32.r,
+                                      minHeight: 32.r,
+                                    ),
                                     tooltip: 'Listen to input',
                                     onPressed: () => _speakText(
                                       text: value.text,
@@ -825,8 +950,14 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                       isSource: true,
                                     ),
                                     icon: Icon(
-                                      speaking ? Icons.volume_up_rounded : Icons.volume_down_rounded,
-                                      color: speaking ? AppColors.indigo500 : (isDark ? Colors.white60 : AppColors.slate500),
+                                      speaking
+                                          ? Icons.volume_up_rounded
+                                          : Icons.volume_down_rounded,
+                                      color: speaking
+                                          ? AppColors.indigo500
+                                          : (isDark
+                                                ? Colors.white60
+                                                : AppColors.slate500),
                                       size: 18.r,
                                     ),
                                   );
@@ -837,7 +968,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                 onTap: () {
                                   _inputController.clear();
                                   context.read<TranslationBloc>().add(
-                                    TranslationTextChanged('', isPremium: isPremium),
+                                    TranslationTextChanged(
+                                      '',
+                                      isPremium: isPremium,
+                                    ),
                                   );
                                   _haptics.light();
                                 },
@@ -845,12 +979,16 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                 child: Container(
                                   padding: EdgeInsets.all(4.r),
                                   decoration: BoxDecoration(
-                                    color: isDark ? Colors.white10 : AppColors.slate100,
+                                    color: isDark
+                                        ? Colors.white10
+                                        : AppColors.slate100,
                                     shape: BoxShape.circle,
                                   ),
                                   child: Icon(
                                     Icons.close_rounded,
-                                    color: isDark ? Colors.white54 : AppColors.slate500,
+                                    color: isDark
+                                        ? Colors.white54
+                                        : AppColors.slate500,
                                     size: 14.r,
                                   ),
                                 ),
@@ -861,40 +999,61 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                 valueListenable: _isListening,
                                 builder: (context, listening, _) {
                                   return InkWell(
-                                    onTap: () => _toggleVoiceDictation(state.currentSourceLanguage),
+                                    onTap: () => _toggleVoiceDictation(
+                                      state.currentSourceLanguage,
+                                    ),
                                     borderRadius: BorderRadius.circular(16.r),
                                     child: Container(
                                       margin: EdgeInsets.only(right: 8.w),
-                                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 10.w,
+                                        vertical: 5.h,
+                                      ),
                                       decoration: BoxDecoration(
                                         color: listening
-                                            ? AppColors.red500.withValues(alpha: 0.15)
-                                            : (isDark ? Colors.white10 : AppColors.slate100),
-                                        borderRadius: BorderRadius.circular(16.r),
+                                            ? AppColors.red500.withValues(
+                                                alpha: 0.15,
+                                              )
+                                            : (isDark
+                                                  ? Colors.white10
+                                                  : AppColors.slate100),
+                                        borderRadius: BorderRadius.circular(
+                                          16.r,
+                                        ),
                                         border: listening
-                                            ? Border.all(color: AppColors.red500)
+                                            ? Border.all(
+                                                color: AppColors.red500,
+                                              )
                                             : null,
                                       ),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Icon(
-                                            listening ? Icons.mic_rounded : Icons.mic_none_rounded,
+                                            listening
+                                                ? Icons.mic_rounded
+                                                : Icons.mic_none_rounded,
                                             color: listening
                                                 ? AppColors.red500
-                                                : (isDark ? Colors.white70 : AppColors.slate600),
+                                                : (isDark
+                                                      ? Colors.white70
+                                                      : AppColors.slate600),
                                             size: 14.r,
                                           ),
                                           SizedBox(width: 4.w),
                                           Text(
-                                            listening ? 'Listening...' : 'Voice',
+                                            listening
+                                                ? 'Listening...'
+                                                : 'Voice',
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 12.sp,
                                               fontWeight: FontWeight.w500,
                                               color: listening
                                                   ? AppColors.red500
-                                                  : (isDark ? Colors.white70 : AppColors.slate600),
+                                                  : (isDark
+                                                        ? Colors.white70
+                                                        : AppColors.slate600),
                                             ),
                                           ),
                                         ],
@@ -905,21 +1064,30 @@ class _TranslateScreenState extends State<TranslateScreen> {
                               ),
                               InkWell(
                                 onTap: () async {
-                                  final data = await Clipboard.getData('text/plain');
-                                  if (data != null && (data.text?.isNotEmpty ?? false)) {
+                                  final data = await Clipboard.getData(
+                                    'text/plain',
+                                  );
+                                  if (data != null &&
+                                      (data.text?.isNotEmpty ?? false)) {
                                     _inputController.text = data.text!;
-                                    _inputController.selection = TextSelection.collapsed(
-                                      offset: data.text!.length,
-                                    );
+                                    _inputController.selection =
+                                        TextSelection.collapsed(
+                                          offset: data.text!.length,
+                                        );
                                     _onInputChanged(data.text!);
                                     _haptics.light();
                                   }
                                 },
                                 borderRadius: BorderRadius.circular(16.r),
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 10.w,
+                                    vertical: 5.h,
+                                  ),
                                   decoration: BoxDecoration(
-                                    color: isDark ? Colors.white10 : AppColors.slate100,
+                                    color: isDark
+                                        ? Colors.white10
+                                        : AppColors.slate100,
                                     borderRadius: BorderRadius.circular(16.r),
                                   ),
                                   child: Row(
@@ -927,17 +1095,24 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                     children: [
                                       Icon(
                                         Icons.paste_rounded,
-                                        color: isDark ? Colors.white70 : AppColors.slate600,
+                                        color: isDark
+                                            ? Colors.white70
+                                            : AppColors.slate600,
                                         size: 14.r,
                                       ),
                                       SizedBox(width: 4.w),
                                       Text(
-                                        context.tr('common.paste', fallback: 'Paste'),
+                                        context.tr(
+                                          'common.paste',
+                                          fallback: 'Paste',
+                                        ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w500,
-                                          color: isDark ? Colors.white70 : AppColors.slate600,
+                                          color: isDark
+                                              ? Colors.white70
+                                              : AppColors.slate600,
                                         ),
                                       ),
                                     ],
@@ -979,13 +1154,18 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       color: isDark ? Colors.white38 : AppColors.slate400,
                     ),
                     border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 4.w),
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 8.h,
+                      horizontal: 4.w,
+                    ),
                   ),
                 ),
                 ValueListenableBuilder<TextEditingValue>(
                   valueListenable: _inputController,
                   builder: (context, value, _) {
-                    if (value.text.trim().isEmpty) return const SizedBox.shrink();
+                    if (value.text.trim().isEmpty) {
+                      return const SizedBox.shrink();
+                    }
                     return Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
@@ -994,13 +1174,27 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           onPressed: _triggerImmediateTranslation,
                           style: TextButton.styleFrom(
                             visualDensity: VisualDensity.compact,
-                            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                            backgroundColor: AppColors.indigo500.withValues(alpha: 0.1),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 4.h,
+                            ),
+                            backgroundColor: AppColors.indigo500.withValues(
+                              alpha: 0.1,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.r),
+                            ),
                           ),
-                          icon: Icon(Icons.arrow_forward_rounded, size: 14.r, color: AppColors.indigo500),
+                          icon: Icon(
+                            Icons.arrow_forward_rounded,
+                            size: 14.r,
+                            color: AppColors.indigo500,
+                          ),
                           label: Text(
-                            context.tr('common.translate', fallback: 'Translate'),
+                            context.tr(
+                              'common.translate',
+                              fallback: 'Translate',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 12.sp,
@@ -1039,7 +1233,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.w,
+                      vertical: 3.h,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.emerald500.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(6.r),
@@ -1061,25 +1258,35 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       if (state.isTranslating)
                         Padding(
                           padding: EdgeInsets.only(right: 8.w),
-                          child: Text(
-                            context.tr('translation.translating', fallback: 'Translating...'),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.emerald500,
-                              fontStyle: FontStyle.italic,
-                            ),
-                          ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 900.ms),
+                          child:
+                              Text(
+                                    context.tr(
+                                      'translation.translating',
+                                      fallback: 'Translating...',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color: AppColors.emerald500,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                  )
+                                  .animate(onPlay: (c) => c.repeat())
+                                  .shimmer(duration: 900.ms),
                         ),
-                      if (state.translatedText.isNotEmpty && !state.isTranslating) ...[
+                      if (state.translatedText.isNotEmpty &&
+                          !state.isTranslating) ...[
                         ValueListenableBuilder<bool>(
                           valueListenable: _isTargetSpeaking,
                           builder: (context, speaking, _) {
                             return IconButton(
                               visualDensity: VisualDensity.compact,
                               padding: EdgeInsets.zero,
-                              constraints: BoxConstraints(minWidth: 32.r, minHeight: 32.r),
+                              constraints: BoxConstraints(
+                                minWidth: 32.r,
+                                minHeight: 32.r,
+                              ),
                               tooltip: 'Listen to translation',
                               onPressed: () => _speakText(
                                 text: state.translatedText,
@@ -1087,8 +1294,14 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                 isSource: false,
                               ),
                               icon: Icon(
-                                speaking ? Icons.volume_up_rounded : Icons.volume_down_rounded,
-                                color: speaking ? AppColors.emerald500 : (isDark ? Colors.white60 : AppColors.slate500),
+                                speaking
+                                    ? Icons.volume_up_rounded
+                                    : Icons.volume_down_rounded,
+                                color: speaking
+                                    ? AppColors.emerald500
+                                    : (isDark
+                                          ? Colors.white60
+                                          : AppColors.slate500),
                                 size: 18.r,
                               ),
                             );
@@ -1097,32 +1310,51 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         SizedBox(width: 4.w),
                         InkWell(
                           onTap: () {
-                            Clipboard.setData(ClipboardData(text: state.translatedText));
+                            Clipboard.setData(
+                              ClipboardData(text: state.translatedText),
+                            );
                             _haptics.success();
                             ScaffoldMessenger.of(context)
                               ..clearSnackBars()
                               ..showSnackBar(
                                 SnackBar(
                                   content: Text(
-                                    context.tr('common.copied', fallback: 'Copied to clipboard'),
-                                    style: const TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
+                                    context.tr(
+                                      'common.copied',
+                                      fallback: 'Copied to clipboard',
+                                    ),
+                                    style: const TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                   behavior: SnackBarBehavior.floating,
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12.r),
+                                  ),
                                   duration: const Duration(seconds: 2),
                                 ),
                               );
                           },
                           borderRadius: BorderRadius.circular(16.r),
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 5.h,
+                            ),
                             decoration: BoxDecoration(
-                              color: AppColors.emerald500.withValues(alpha: 0.1),
+                              color: AppColors.emerald500.withValues(
+                                alpha: 0.1,
+                              ),
                               borderRadius: BorderRadius.circular(16.r),
                             ),
                             child: Row(
                               children: [
-                                Icon(Icons.copy_rounded, color: AppColors.emerald500, size: 14.r),
+                                Icon(
+                                  Icons.copy_rounded,
+                                  color: AppColors.emerald500,
+                                  size: 14.r,
+                                ),
                                 SizedBox(width: 4.w),
                                 Text(
                                   context.tr('common.copy', fallback: 'Copy'),
@@ -1152,18 +1384,27 @@ class _TranslateScreenState extends State<TranslateScreen> {
                   decoration: BoxDecoration(
                     color: AppColors.red500.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(color: AppColors.red500.withValues(alpha: 0.2)),
+                    border: Border.all(
+                      color: AppColors.red500.withValues(alpha: 0.2),
+                    ),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.error_outline_rounded, size: 16.r, color: AppColors.red500),
+                          Icon(
+                            Icons.error_outline_rounded,
+                            size: 16.r,
+                            color: AppColors.red500,
+                          ),
                           SizedBox(width: 6.w),
                           Expanded(
                             child: Text(
-                              context.tr(state.errorMessage!, fallback: state.errorMessage!),
+                              context.tr(
+                                state.errorMessage!,
+                                fallback: state.errorMessage!,
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 13.sp,
@@ -1184,9 +1425,16 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         },
                         style: TextButton.styleFrom(
                           visualDensity: VisualDensity.compact,
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 2.h,
+                          ),
                         ),
-                        icon: Icon(Icons.refresh_rounded, size: 14.r, color: AppColors.red500),
+                        icon: Icon(
+                          Icons.refresh_rounded,
+                          size: 14.r,
+                          color: AppColors.red500,
+                        ),
                         label: Text(
                           context.tr('common.retry', fallback: 'Retry'),
                           style: TextStyle(
@@ -1220,8 +1468,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(4.r),
                       child: LinearProgressIndicator(
-                        backgroundColor: isDark ? Colors.white10 : AppColors.slate200,
-                        valueColor: const AlwaysStoppedAnimation<Color>(AppColors.emerald500),
+                        backgroundColor: isDark
+                            ? Colors.white10
+                            : AppColors.slate200,
+                        valueColor: const AlwaysStoppedAnimation<Color>(
+                          AppColors.emerald500,
+                        ),
                         minHeight: 4.h,
                       ),
                     ),
@@ -1252,414 +1504,6 @@ class _TranslateScreenState extends State<TranslateScreen> {
           ),
         );
       },
-    );
-  }
-}
-
-class _LanguagePickerSheet extends StatefulWidget {
-  final bool isDark;
-  final bool isSource;
-  final Function(String) onSelected;
-  final String? currentLanguage;
-  final List<String> downloadedLanguages;
-
-  const _LanguagePickerSheet({
-    required this.isDark,
-    required this.isSource,
-    required this.onSelected,
-    this.currentLanguage,
-    this.downloadedLanguages = const [],
-  });
-
-  @override
-  State<_LanguagePickerSheet> createState() => _LanguagePickerSheetState();
-}
-
-class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
-  final TextEditingController _searchController = TextEditingController();
-  List<String> _filteredLanguages = [];
-  List<String> _allLanguages = [];
-
-  @override
-  void initState() {
-    super.initState();
-    _allLanguages = TranslationService.supportedLanguages.keys.toList()..sort();
-    _filteredLanguages = List.from(_allLanguages);
-    _searchController.addListener(_onSearchChanged);
-  }
-
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
-
-  void _onSearchChanged() {
-    final query = _searchController.text.toLowerCase().trim();
-    setState(() {
-      if (query.isEmpty) {
-        _filteredLanguages = List.from(_allLanguages);
-      } else {
-        _filteredLanguages = _allLanguages
-            .where((lang) => lang.toLowerCase().contains(query))
-            .toList();
-      }
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = widget.isDark;
-    final readyList = widget.downloadedLanguages
-        .where((lang) => _filteredLanguages.contains(lang))
-        .toList();
-
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.82,
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
-      ),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
-            blurRadius: 28,
-            offset: const Offset(0, -8),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        top: false,
-        child: Column(
-          children: [
-            SizedBox(height: 12.h),
-            // Smooth grab handle
-            Center(
-              child: Container(
-                width: 44.w,
-                height: 4.5.h,
-                decoration: BoxDecoration(
-                  color: isDark ? Colors.white24 : AppColors.slate300,
-                  borderRadius: BorderRadius.circular(3.r),
-                ),
-              ),
-            ),
-            SizedBox(height: 16.h),
-            // Header title row with close button
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.isSource
-                              ? context.tr('translation.select_source_language', fallback: 'Select Source Language')
-                              : context.tr('translation.select_target_language', fallback: 'Select Target Language'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w700,
-                            color: Theme.of(context).colorScheme.onSurface,
-                          ),
-                        ),
-                        SizedBox(height: 2.h),
-                        Text(
-                          widget.isSource
-                              ? context.tr('translation.select_source_desc', fallback: 'Translate from')
-                              : context.tr('translation.select_target_desc', fallback: 'Translate to'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
-                            color: isDark ? Colors.white54 : AppColors.slate500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Semantics(
-                    button: true,
-                    label: context.tr('common.close', fallback: 'Close'),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {
-                          di.sl<HapticService>().light();
-                          Navigator.pop(context);
-                        },
-                        borderRadius: BorderRadius.circular(20.r),
-                        child: Container(
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.close_rounded,
-                            size: 18.r,
-                            color: isDark ? Colors.white60 : AppColors.slate600,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 16.h),
-            // Unified Single Search Field (Zero double-background, full-width touch access)
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: TextField(
-                controller: _searchController,
-                cursorColor: AppColors.indigo500,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.onSurface,
-                ),
-                decoration: InputDecoration(
-                  isDense: true,
-                  filled: true,
-                  fillColor: isDark
-                      ? Colors.white.withValues(alpha: 0.07)
-                      : AppColors.slate100,
-                  hintText: context.tr(
-                    'common.search',
-                    fallback: 'Search languages...',
-                  ),
-                  hintStyle: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: isDark ? Colors.white38 : AppColors.slate400,
-                  ),
-                  prefixIcon: Icon(
-                    Icons.search_rounded,
-                    color: isDark ? Colors.white54 : AppColors.slate500,
-                    size: 20.r,
-                  ),
-                  prefixIconConstraints: BoxConstraints(
-                    minWidth: 44.w,
-                    minHeight: 44.h,
-                  ),
-                  suffixIcon: ValueListenableBuilder<TextEditingValue>(
-                    valueListenable: _searchController,
-                    builder: (context, val, _) {
-                      if (val.text.isEmpty) return const SizedBox.shrink();
-                      return IconButton(
-                        tooltip: context.tr('common.clear', fallback: 'Clear'),
-                        icon: Icon(
-                          Icons.cancel_rounded,
-                          color: isDark ? Colors.white38 : AppColors.slate400,
-                          size: 18.r,
-                        ),
-                        onPressed: () {
-                          _searchController.clear();
-                          _onSearchChanged();
-                        },
-                      );
-                    },
-                  ),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16.r),
-                    borderSide: BorderSide(
-                      color: isDark ? Colors.white12 : AppColors.slate200,
-                      width: 1.0,
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16.r),
-                    borderSide: BorderSide(
-                      color: isDark ? Colors.white12 : AppColors.slate200,
-                      width: 1.0,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16.r),
-                    borderSide: const BorderSide(
-                      color: AppColors.indigo500,
-                      width: 1.8,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 12.h),
-            Expanded(
-              child: _filteredLanguages.isEmpty
-                  ? Center(
-                      child: Text(
-                        context.tr(
-                          'language_picker.no_results',
-                          fallback: 'No results found',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 15.sp,
-                          color: isDark ? Colors.white38 : AppColors.slate400,
-                        ),
-                      ),
-                    )
-                  : CustomScrollView(
-                      physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-                      slivers: [
-                        // Pinned Downloaded Section
-                        if (readyList.isNotEmpty && _searchController.text.isEmpty) ...[
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 8.h),
-                              child: Text(
-                                context.tr(
-                                  'translation.downloaded_ready',
-                                  fallback: 'Downloaded',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.emerald500,
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            sliver: SliverList(
-                              delegate: SliverChildBuilderDelegate(
-                                (context, index) {
-                                  final lang = readyList[index];
-                                  final isActive = lang == widget.currentLanguage;
-                                  return _buildLanguageRow(lang, isActive, true, isDark);
-                                },
-                                childCount: readyList.length,
-                              ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 8.h),
-                              child: Text(
-                                context.tr(
-                                  'translation.all_languages',
-                                  fallback: 'All languages',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark ? Colors.white54 : AppColors.slate400,
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-
-                        // All Languages List
-                        SliverPadding(
-                          padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 24.h),
-                          sliver: SliverList(
-                            delegate: SliverChildBuilderDelegate(
-                              (context, index) {
-                                final lang = _filteredLanguages[index];
-                                final isActive = lang == widget.currentLanguage;
-                                final isDownloaded = widget.downloadedLanguages.contains(lang);
-                                return _buildLanguageRow(lang, isActive, isDownloaded, isDark);
-                              },
-                              childCount: _filteredLanguages.length,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildLanguageRow(String lang, bool isActive, bool isDownloaded, bool isDark) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 6.h),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: () {
-            di.sl<HapticService>().selection();
-            widget.onSelected(lang);
-          },
-          borderRadius: BorderRadius.circular(16.r),
-          splashColor: const Color(0xFF6366F1).withValues(alpha: 0.1),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 13.h),
-            decoration: BoxDecoration(
-              color: isActive
-                  ? const Color(0xFF6366F1).withValues(alpha: isDark ? 0.15 : 0.08)
-                  : (isDark ? Colors.white.withValues(alpha: 0.03) : AppColors.slate50),
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(
-                color: isActive
-                    ? const Color(0xFF6366F1).withValues(alpha: 0.4)
-                    : (isDark ? Colors.white.withValues(alpha: 0.06) : AppColors.slate200.withValues(alpha: 0.6)),
-                width: isActive ? 1.5 : 1.0,
-              ),
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    lang,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
-                      color: isActive
-                          ? AppColors.indigo500
-                          : (isDark ? Colors.white : AppColors.slate800),
-                    ),
-                  ),
-                ),
-                if (isDownloaded)
-                  Container(
-                    margin: EdgeInsets.only(right: 8.w),
-                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF10B981).withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(8.r),
-                    ),
-                    child: Text(
-                      context.tr('common.ready', fallback: 'Offline'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.emerald500,
-                        letterSpacing: 0.3,
-                      ),
-                    ),
-                  ),
-                if (isActive)
-                  Icon(
-                    Icons.check_circle_rounded,
-                    color: AppColors.indigo500,
-                    size: 20.r,
-                  ),
-              ],
-            ),
-          ),
-        ),
-      ),
     );
   }
 }
