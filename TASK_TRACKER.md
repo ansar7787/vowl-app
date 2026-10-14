@@ -4,10 +4,10 @@
 > **Executive Summary & Brutal Audit**:
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
-> - **Total Test Files in `test/`**: **69 files**
-> - **Total Passing Tests**: **479 / 479 Tests Passing (100% Green)**
-> - **Completed Test Suites**: **31 files** (Auth 12, Kids 22, Reading 2, Daily Challenges 5, Photo Vocab 2, Scan & Learn 2, Translation 2, Core 7)
-> - **Remaining Game Screens & Hubs to Test**: **105+ screens** across 12 game categories, hubs, and shell routes.
+> - **Total Test Files in `test/`**: **70 files**
+> - **Total Passing Tests**: **504 / 504 Tests Passing (100% Green)**
+> - **Completed Test Suites**: **32 files** (Auth 12, Games Hub 1, Kids 22, Reading 2, Daily Challenges 5, Photo Vocab 2, Scan & Learn 2, Translation 2, Core 7)
+> - **Remaining Game Screens & Hubs to Test**: **104+ screens** across 12 game categories, hubs, and shell routes.
 
 ---
 
@@ -29,7 +29,7 @@ Every game test suite MUST rigorously satisfy:
 | # | Section / Category | Total Screens/Items | Completed | Remaining | Current Status |
 | --- | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
-| **2** | **Games Hub & Routing** | 3 | 0 | 3 | 🔴 0% Tested (3 screens) |
+| **2** | **Games Hub & Routing** | 5 | 1 | 4 | 🟡 20% Complete (1/5 items done) |
 | **3** | **Kids Zone** | 31 | 23 | 8 | 🟡 74% Complete (6 Hubs + 2 Layouts remaining) |
 | **4** | **Reading Category** | 13 | 2 | 11 | 🟡 1 Game + BLoC Done (11 games remaining) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
@@ -80,14 +80,18 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 2: GAMES HUB & ROUTING (PENDING)
+### SECTION 2: GAMES HUB & ROUTING (20% COMPLETE)
 
-- [ ] **2.1** `game_routes_test.dart` (Unit/Routing Test) — 🔴 `[PENDING]`
-  - Test routing to all 100+ `GameSubtype` enum values with proper parameter passing.
+- [x] **2.1** `game_routes_test.dart` (Unit/Routing Test) — ✅ `[DONE - 25/25 tests passing]`
+  - Validates 7 standard route paths, query parameter parsing across all 9 categories, subtype aliases, case-insensitivity, category and subtype fallback routing, missing/invalid level fallbacks, and authenticated/unauthenticated quest sequence routing.
 - [ ] **2.2** `games_screen_test.dart` (Widget Test) — 🔴 `[PENDING]`
   - Test category grid rendering, search bar filtering, and quick game launch cards.
 - [ ] **2.3** `kids_category_shelf_test.dart` (Widget Test) — 🔴 `[PENDING]`
   - Test Kids Zone shelf rendering, horizontal scrolling, and child category cards.
+- [ ] **2.4** `modern_category_map_test.dart` (Universal Category Map & Progression Test) — 🔴 `[PENDING]`
+  - Validates category level nodes, progressive level unlocking, completed stars, locked state, and node tap navigation.
+- [ ] **2.5** `offline_play_gate_service_test.dart` (Offline Play Gate & Quota Unit Test) — 🔴 `[PENDING]`
+  - Validates offline level count, 3-level grace quota for free users, rewarded ad bonus plays, reconnect reset, and persistence.
 
 ---
 
