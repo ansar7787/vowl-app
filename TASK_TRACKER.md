@@ -5,9 +5,9 @@
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **70 files**
-> - **Total Passing Tests**: **516 / 516 Tests Passing (100% Green)**
-> - **Completed Test Suites**: **33 files** (Auth 12, Games Hub 1, Kids 22, Reading 7, Daily Challenges 5, Photo Vocab 2, Scan & Learn 2, Translation 2, Core 7)
-> - **Remaining Game Screens & Hubs to Test**: **103+ screens** across 12 game categories, hubs, and shell routes.
+> - **Total Passing Tests**: **531 / 531 Tests Passing (100% Green)**
+> - **Completed Test Suites**: **34 files** (Auth 12, Games Hub 1, Kids 22, Reading 8, Daily Challenges 5, Photo Vocab 2, Scan & Learn 2, Translation 2, Core 7)
+> - **Remaining Game Screens & Hubs to Test**: **102+ screens** across 12 game categories, hubs, and shell routes.
 
 ---
 
@@ -47,7 +47,7 @@ Every game test suite MUST rigorously satisfy:
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 5 | 5 | 0 | 🟢 100% Complete (58 tests) |
 | **3** | **Kids Zone** | 35 | 35 | 0 | 🟢 100% Complete (35/35 items done) |
-| **4** | **Reading Category** | 13 | 7 | 6 | 🟡 6 Games + BLoC Done (6 games remaining) |
+| **4** | **Reading Category** | 13 | 8 | 5 | 🟡 7 Games + BLoC Done (5 games remaining) |
 | **5** | **Accent Training** | 13 | 1 | 12 | ⚠️ BLoC only (12 games remaining) |
 | **6** | **Grammar Category** | 20 | 2 | 18 | ⚠️ BLoC + Model only (19 games remaining) |
 | **7** | **Listening Category** | 11 | 2 | 9 | ⚠️ BLoC + Model only (10 games remaining) |
@@ -178,7 +178,8 @@ Every game test suite MUST rigorously satisfy:
   - Validates initial rendering of instruction, passage tube, and pinch animation, tapping tube to distill passage into keywords and reveal option rack, pinch gesture on tube triggering distillation, selecting correct summary option dispatching SubmitAnswer(true) with success audio/haptics, selecting incorrect summary option dispatching SubmitAnswer(false) with error audio/haptics, interaction lockout preventing secondary taps after answer, post-answer state continue button dispatching NextQuestion, hint button dispatching ReadingHintUsed, GameShimmerLoading placeholder when uninitialized, Level 1 GameBriefingLayer overlay display & dismissal on "SUMMARIZE NOW", dark theme mode styling, and small screen 320dp width zero-overflow layout safety.
 - [x] **4.7** `reading_conclusion_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 12/12 tests passing]`
   - Validates initial rendering of instruction, passage container, and option cards without logic chain, selecting correct option dispatching SubmitAnswer(true) with success audio/haptics and revealing Logic Chain, selecting incorrect option dispatching SubmitAnswer(false) with error audio/haptics and revealing Logic Chain, interaction lockout preventing secondary taps after answer, post-answer continue button dispatching NextQuestion, hint button dispatching ReadingHintUsed, GameShimmerLoading placeholder when uninitialized, Level 1 GameBriefingLayer overlay display & dismissal on "PREDICT FINAL", dark theme mode styling, 320dp small screen layout safety with zero overflow, empty logic chain edge case handling, and multi-step logic chain parsing into distinct numbered deduction nodes.
-- [ ] **4.8** `reading_inference_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **4.8** `reading_inference_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 15/15 tests passing]`
+  - Validates initial rendering with instruction, foggy mirror, question, and auto-clear button, rubbing on foggy mirror progressively clearing fog and triggering haptic ticks, tapping Auto-Clear Fog setting clarity to 1.0, option disablement when clarity < 0.3, selecting correct option on direct quest (no clue words) dispatching SubmitAnswer(true) immediately, selecting correct option on quest with clue words revealing EvidenceHighlightWrapper and hiding option rack, highlighting evidence clue word in wrapper completing question and dispatching SubmitAnswer(true), selecting incorrect option dispatching SubmitAnswer(false) with error audio/haptics, interaction lockout preventing secondary taps after answer, post-answer continue button dispatching NextQuestion, hint button dispatching ReadingHintUsed, GameShimmerLoading placeholder when uninitialized, Level 1 GameBriefingLayer overlay display & dismissal on "DEDUCE SUBTEXT", dark theme mode styling, and 320dp small screen layout safety with zero overflow.
 - [ ] **4.9** `reading_speed_check_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **4.10** `read_and_match_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **4.11** `sentence_order_reading_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`

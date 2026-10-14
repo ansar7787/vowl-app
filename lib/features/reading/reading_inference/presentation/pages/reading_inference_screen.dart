@@ -215,6 +215,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                                         quest.clueWords ?? [],
                                                     primaryColor:
                                                         theme.primaryColor,
+                                                    requiredHighlights: 1,
                                                     onCorrectHighlight:
                                                         _onEvidenceFound,
                                                     instruction:
@@ -334,6 +335,10 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                       _evidenceFound,
                                     ]),
                                     builder: (context, _) {
+                                      if (_showEvidence.value ||
+                                          _evidenceFound.value) {
+                                        return const SizedBox.shrink();
+                                      }
                                       if (quest.options != null) {
                                         return ValueListenableBuilder<double>(
                                           valueListenable: _clarity,
