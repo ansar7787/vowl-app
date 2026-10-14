@@ -74,7 +74,45 @@ void main() {
   }
 
   group('FeatureDirectoryBottomSheet', () {
-    testWidgets('renders search, category filter, and feature cards without overflow', (
+    testWidgets(
+      'renders search, category filter, and feature cards without overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(390, 844);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
+
+        await tester.pumpWidget(
+          wrapWidget(const FeatureDirectoryBottomSheet()),
+        );
+        await tester.pumpAndSettle();
+
+        expect(find.text('Explore All Features'), findsOneWidget);
+        expect(find.text('100+ Games Hub'), findsOneWidget);
+        expect(find.text('Speaking & Speech Recognition'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        // Search for specific feature
+        await tester.enterText(find.byType(TextField), 'photo');
+        await tester.pumpAndSettle();
+
+        expect(find.text('Photo Vocab'), findsOneWidget);
+        expect(find.text('100+ Games Hub'), findsNothing);
+        expect(tester.takeException(), isNull);
+
+        // Search for offline translator
+        await tester.enterText(find.byType(TextField), 'offline');
+        await tester.pumpAndSettle();
+
+        expect(find.text('50+ Languages Offline Translator'), findsOneWidget);
+        expect(find.text('Photo Vocab'), findsNothing);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets('supports deep keyword search and category chip filtering', (
       tester,
     ) async {
       tester.view.physicalSize = const Size(390, 844);
@@ -87,25 +125,30 @@ void main() {
       await tester.pumpWidget(wrapWidget(const FeatureDirectoryBottomSheet()));
       await tester.pumpAndSettle();
 
-      expect(find.text('Explore All Features'), findsOneWidget);
-      expect(find.text('100+ Games Hub'), findsOneWidget);
-      expect(find.text('Speaking & Speech Recognition'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-
-      // Search for specific feature
-      await tester.enterText(find.byType(TextField), 'photo');
+      // Keyword search: "pronunciation" maps to Accent & Intonation Training
+      await tester.enterText(find.byType(TextField), 'pronunciation');
       await tester.pumpAndSettle();
 
-      expect(find.text('Photo Vocab'), findsOneWidget);
-      expect(find.text('100+ Games Hub'), findsNothing);
-      expect(tester.takeException(), isNull);
-
-      // Search for offline translator
-      await tester.enterText(find.byType(TextField), 'offline');
-      await tester.pumpAndSettle();
-
-      expect(find.text('50+ Languages Offline Translator'), findsOneWidget);
+      expect(find.text('Accent & Intonation Training'), findsOneWidget);
       expect(find.text('Photo Vocab'), findsNothing);
+
+      // Clear search via clear icon
+      await tester.tap(find.byIcon(Icons.close_rounded).last);
+      await tester.pumpAndSettle();
+
+      expect(find.text('100+ Games Hub'), findsOneWidget);
+
+      // Search with non-matching term to test empty state and Reset action
+      await tester.enterText(find.byType(TextField), 'unknownxyz123');
+      await tester.pumpAndSettle();
+
+      expect(find.text('Reset & Show All'), findsOneWidget);
+
+      // Tap Reset & Show All button
+      await tester.tap(find.text('Reset & Show All'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('100+ Games Hub'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -165,59 +208,60 @@ void main() {
       expect(find.text('Beginner Discovery Quests'), findsNothing);
     });
 
-    testWidgets('shows Claim 150 Coins button when all quests complete and triggers celebration', (
-      tester,
-    ) async {
-      SharedPreferences.setMockInitialValues({
-        'beginner_discovery_quest_first_game': true,
-        'beginner_discovery_quest_photo_vocab': true,
-        'beginner_discovery_quest_translate': true,
-        'beginner_discovery_quest_boutique': true,
-        'beginner_discovery_quest_reports': true,
-        'beginner_discovery_reward_claimed': false,
-      });
+    testWidgets(
+      'shows Claim 150 Coins button when all quests complete and triggers celebration',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'beginner_discovery_quest_first_game': true,
+          'beginner_discovery_quest_photo_vocab': true,
+          'beginner_discovery_quest_translate': true,
+          'beginner_discovery_quest_boutique': true,
+          'beginner_discovery_quest_reports': true,
+          'beginner_discovery_reward_claimed': false,
+        });
 
-      tester.view.physicalSize = const Size(390, 844);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(() {
-        tester.view.resetPhysicalSize();
-        tester.view.resetDevicePixelRatio();
-      });
+        tester.view.physicalSize = const Size(390, 844);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
 
-      await tester.pumpWidget(
-        wrapWidget(
-          const BeginnerDiscoveryCard(user: testUser),
-          scrollable: true,
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      expect(find.text('Claim 150 Coins Reward'), findsOneWidget);
-
-      await tester.tap(find.text('Claim 150 Coins Reward'));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      verify(
-        () => mockEconomyBloc.add(
-          const EconomyAddCoinsRequested(
-            150,
-            title: 'coin_history.beginner_quest_reward',
+        await tester.pumpWidget(
+          wrapWidget(
+            const BeginnerDiscoveryCard(user: testUser),
+            scrollable: true,
           ),
-        ),
-      ).called(1);
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('150 COINS CLAIMED!'), findsOneWidget);
-      expect(find.text('AWESOME'), findsOneWidget);
+        expect(find.text('Claim 150 Coins Reward'), findsOneWidget);
 
-      await tester.tap(find.text('AWESOME'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Claim 150 Coins Reward'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(
-        find.text('150 Coins Claimed • All Quests Completed ✨'),
-        findsOneWidget,
-      );
-    });
+        verify(
+          () => mockEconomyBloc.add(
+            const EconomyAddCoinsRequested(
+              150,
+              title: 'coin_history.beginner_quest_reward',
+            ),
+          ),
+        ).called(1);
+
+        expect(find.text('150 COINS CLAIMED!'), findsOneWidget);
+        expect(find.text('AWESOME'), findsOneWidget);
+
+        await tester.tap(find.text('AWESOME'));
+        await tester.pumpAndSettle();
+
+        expect(
+          find.text('150 Coins Claimed • All Quests Completed ✨'),
+          findsOneWidget,
+        );
+      },
+    );
   });
 
   group('FirstTimeWelcomeShowcase', () {
@@ -229,9 +273,7 @@ void main() {
         tester.view.resetDevicePixelRatio();
       });
 
-      await tester.pumpWidget(
-        wrapWidget(const FirstTimeWelcomeShowcase()),
-      );
+      await tester.pumpWidget(wrapWidget(const FirstTimeWelcomeShowcase()));
       await tester.pumpAndSettle();
 
       expect(find.text('100+ Games Across 9 Pillars'), findsOneWidget);
@@ -248,4 +290,3 @@ void main() {
     });
   });
 }
-

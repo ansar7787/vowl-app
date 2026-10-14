@@ -85,33 +85,36 @@ class FirstTimeWelcomeShowcase extends StatefulWidget {
 class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
+  bool _isCompleting = false;
 
   static const List<_ShowcaseSlide> _slides = [
     _ShowcaseSlide(
       title: '100+ Games Across 9 Pillars',
       subtitle:
-          'From real-time Speech Recognition to Grammar Precision and dynamic Roleplay simulations.',
+          'Practice speaking, master daily grammar, and build confidence through real-world conversation practice.',
       heroIcon: LucideIcons.gamepad2,
-      heroTag: '9 CORE PILLARS',
+      heroTag: '9 LEARNING PILLARS',
       gradientColors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
       accentColor: AppColors.indigo500,
       highlights: [
         _ShowcaseHighlight(
           icon: LucideIcons.mic,
-          title: 'Live Speech AI & Scoring',
-          subtitle: 'Real-time phoneme pronunciation and pitch feedback',
+          title: 'Live Speech Practice',
+          subtitle:
+              'Instant pronunciation guidance to help you speak clearly and naturally',
           tint: Color(0xFF6366F1),
         ),
         _ShowcaseHighlight(
           icon: LucideIcons.sparkles,
-          title: '19 Grammar Precision Drills',
-          subtitle: 'Master tenses, syntax puzzles and vocabulary',
+          title: '19 Grammar Practice Games',
+          subtitle: 'Master verb tenses, sentence puzzles, and vocabulary',
           tint: Color(0xFF8B5CF6),
         ),
         _ShowcaseHighlight(
           icon: LucideIcons.messageSquare,
-          title: 'Immersive Real-World Roleplay',
-          subtitle: 'Realistic conversational dialogues for jobs, travel & dining',
+          title: 'Everyday Conversations',
+          subtitle:
+              'Interactive dialogues for travel, dining, and daily situations',
           tint: Color(0xFFA855F7),
         ),
       ],
@@ -119,28 +122,31 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
     _ShowcaseSlide(
       title: 'AI Vision & 50+ Languages',
       subtitle:
-          'Point your camera at real-world objects or printed text, and translate seamlessly without internet.',
+          'Point your camera at objects or text around you, and translate words offline whenever you need.',
       heroIcon: LucideIcons.camera,
-      heroTag: 'ON-DEVICE VISION ML',
+      heroTag: 'CAMERA & OFFLINE TOOLS',
       gradientColors: [Color(0xFF0EA5E9), Color(0xFF2563EB)],
       accentColor: AppColors.blue500,
       highlights: [
         _ShowcaseHighlight(
           icon: LucideIcons.camera,
-          title: 'Photo Vocab AI',
-          subtitle: 'Instant real-world object recognition powered by vision ML',
+          title: 'Photo Vocab',
+          subtitle:
+              'Scan everyday objects to learn their English names instantly',
           tint: Color(0xFF0EA5E9),
         ),
         _ShowcaseHighlight(
           icon: LucideIcons.scan,
-          title: 'Scan & Learn OCR',
-          subtitle: 'Turn any book page or document into interactive study quests',
+          title: 'Scan & Learn',
+          subtitle:
+              'Turn book pages and printed text into interactive study lists',
           tint: Color(0xFF2563EB),
         ),
         _ShowcaseHighlight(
           icon: LucideIcons.languages,
           title: '50+ Languages Offline',
-          subtitle: 'Neural sentence translation engine with zero data required',
+          subtitle:
+              'Translate words and full sentences without needing internet',
           tint: Color(0xFF06B6D4),
         ),
       ],
@@ -148,28 +154,30 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
     _ShowcaseSlide(
       title: 'Buddy Boutique & Kids World',
       subtitle:
-          'Style your companion mascot, nurture your pet, and collect 100 stickers across 25 games.',
+          'Dress up your companion mascot, care for your pet, and collect colorful stickers as you learn.',
       heroIcon: LucideIcons.sparkles,
-      heroTag: 'MASCOT & PET CARE',
+      heroTag: 'MASCOT & KIDS ROOM',
       gradientColors: [Color(0xFFF43F5E), Color(0xFFFB923C)],
       accentColor: AppColors.rose500,
       highlights: [
         _ShowcaseHighlight(
           icon: LucideIcons.shirt,
-          title: 'Buddy Boutique & Outfits',
-          subtitle: 'Unlock skins, hats, glasses and animated accessories',
+          title: 'Buddy Boutique',
+          subtitle:
+              'Unlock cute outfits, hats, glasses, and accessories for your buddy',
           tint: Color(0xFFF43F5E),
         ),
         _ShowcaseHighlight(
           icon: LucideIcons.baby,
-          title: 'Kids Learning Room',
-          subtitle: 'Child-safe phonics drills, pet care & happiness boosters',
+          title: 'Kids Room',
+          subtitle:
+              'Gentle phonics games, pet care, and fun beginner activities',
           tint: Color(0xFFFB923C),
         ),
         _ShowcaseHighlight(
           icon: LucideIcons.penTool,
-          title: '100-Sticker Collector Album',
-          subtitle: 'Finger handwriting guide and collectible sticker milestones',
+          title: '100-Sticker Album',
+          subtitle: 'Learn letter handwriting and collect milestone stickers',
           tint: Color(0xFFF59E0B),
         ),
       ],
@@ -177,28 +185,31 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
     _ShowcaseSlide(
       title: 'Reports, Accents & Error Journal',
       subtitle:
-          'Track accuracy curves, conquer your mistakes with spaced recall, and tune your ear to world accents.',
+          'Track your weekly progress, review past mistakes at your own pace, and tune your ear to global accents.',
       heroIcon: LucideIcons.barChart2,
-      heroTag: 'PRECISION MASTERY',
+      heroTag: 'PROGRESS & ACCENTS',
       gradientColors: [Color(0xFF10B981), Color(0xFF0D9488)],
       accentColor: AppColors.emerald500,
       highlights: [
         _ShowcaseHighlight(
           icon: LucideIcons.barChart2,
           title: 'Weekly Learning Reports',
-          subtitle: 'In-depth accuracy radar and personal progress analytics',
+          subtitle:
+              'Clear charts showing your daily accuracy, streak, and study time',
           tint: Color(0xFF10B981),
         ),
         _ShowcaseHighlight(
           icon: LucideIcons.refreshCw,
-          title: 'Spaced Error Journal',
-          subtitle: 'Replay and master missed questions until 100% confidence',
+          title: 'Review Mistake Journal',
+          subtitle:
+              'Replay and practice words and questions you missed earlier',
           tint: Color(0xFF14B8A6),
         ),
         _ShowcaseHighlight(
           icon: LucideIcons.globe,
           title: '6 World Accents',
-          subtitle: 'Native American, British (IELTS), Australian & Indian accents',
+          subtitle:
+              'Practice listening to American, British, Australian, and Indian voices',
           tint: Color(0xFF059669),
         ),
       ],
@@ -206,6 +217,8 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
   ];
 
   Future<void> _completeShowcase() async {
+    if (_isCompleting) return;
+    _isCompleting = true;
     di.sl<HapticService>().light();
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -302,60 +315,82 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // Step Indicator Pill
-                  AnimatedContainer(
-                    duration: const Duration(milliseconds: 250),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 11.w,
-                      vertical: 5.h,
+                  Semantics(
+                    label: context.tr(
+                      'welcome_showcase.step_indicator',
+                      fallback: 'Step ${_currentPage + 1} of ${_slides.length}',
+                      args: ['${_currentPage + 1}', '${_slides.length}'],
                     ),
-                    decoration: BoxDecoration(
-                      color: slide.accentColor.withValues(alpha: 0.14),
-                      borderRadius: BorderRadius.circular(20.r),
-                      border: Border.all(
-                        color: slide.accentColor.withValues(alpha: 0.3),
-                        width: 1,
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 250),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 11.w,
+                        vertical: 5.h,
                       ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          LucideIcons.sparkles,
-                          size: 11.5.r,
-                          color: slide.accentColor,
+                      decoration: BoxDecoration(
+                        color: slide.accentColor.withValues(alpha: 0.14),
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(
+                          color: slide.accentColor.withValues(alpha: 0.3),
+                          width: 1,
                         ),
-                        SizedBox(width: 5.w),
-                        Text(
-                          'Step ${_currentPage + 1} of ${_slides.length}',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 0.4,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            LucideIcons.sparkles,
+                            size: 11.5.r,
                             color: slide.accentColor,
                           ),
-                        ),
-                      ],
+                          SizedBox(width: 5.w),
+                          Text(
+                            context.tr(
+                              'welcome_showcase.step_indicator',
+                              fallback:
+                                  'Step ${_currentPage + 1} of ${_slides.length}',
+                              args: [
+                                '${_currentPage + 1}',
+                                '${_slides.length}',
+                              ],
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 0.4,
+                              color: slide.accentColor,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
 
                   // Skip Button
-                  TextButton(
-                    onPressed: _completeShowcase,
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 4.h,
-                      ),
-                      minimumSize: Size(44.w, 30.h),
+                  Semantics(
+                    button: true,
+                    label: context.tr(
+                      'welcome_showcase.skip',
+                      fallback: 'Skip',
                     ),
-                    child: Text(
-                      context.tr('welcome_showcase.skip', fallback: 'Skip'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white54 : Colors.black45,
+                    child: TextButton(
+                      onPressed: _completeShowcase,
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
+                          vertical: 8.h,
+                        ),
+                        minimumSize: Size(48.w, 48.h),
+                      ),
+                      child: Text(
+                        context.tr('welcome_showcase.skip', fallback: 'Skip'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w600,
+                          color: isDark ? Colors.white54 : Colors.black45,
+                        ),
                       ),
                     ),
                   ),
@@ -441,9 +476,9 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                               item.heroTag,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 9.5.sp,
-                                fontWeight: FontWeight.w800,
-                                letterSpacing: 0.8,
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 0.6,
                                 color: item.accentColor,
                               ),
                             ),
@@ -454,10 +489,11 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                           Text(
                             item.title,
                             textAlign: TextAlign.center,
+                            softWrap: true,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 19.5.sp,
-                              fontWeight: FontWeight.w900,
+                              fontSize: 18.5.sp,
+                              fontWeight: FontWeight.w700,
                               letterSpacing: -0.2,
                               color: Theme.of(context).colorScheme.onSurface,
                             ),
@@ -466,15 +502,18 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
 
                           // Slide Subtitle
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 12.w),
+                            padding: EdgeInsets.symmetric(horizontal: 14.w),
                             child: Text(
                               item.subtitle,
                               textAlign: TextAlign.center,
+                              softWrap: true,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                height: 1.35,
-                                color: isDark ? Colors.white60 : Colors.black54,
+                                fontSize: 12.5.sp,
+                                height: 1.4,
+                                color: isDark
+                                    ? Colors.white70
+                                    : AppColors.slate600,
                               ),
                             ),
                           ),
@@ -482,105 +521,109 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
 
                           // ── 3 Bento Feature Highlight Cards ────────────────
                           ...item.highlights.map(
-                            (highlight) => Container(
-                              margin: EdgeInsets.only(bottom: 9.h),
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 12.w,
-                                vertical: 10.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? const Color(0xFF161928)
-                                    : Colors.white,
-                                borderRadius: BorderRadius.circular(16.r),
-                                border: Border.all(
-                                  color: isDark
-                                      ? Colors.white.withValues(alpha: 0.06)
-                                      : Colors.black.withValues(alpha: 0.05),
-                                  width: 1,
+                            (highlight) => Semantics(
+                              container: true,
+                              label:
+                                  '${highlight.title}: ${highlight.subtitle}',
+                              child: Container(
+                                margin: EdgeInsets.only(bottom: 9.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 14.w,
+                                  vertical: 11.h,
                                 ),
-                                boxShadow: [
-                                  if (!isDark)
-                                    BoxShadow(
-                                      color: Colors.black.withValues(
-                                        alpha: 0.03,
-                                      ),
-                                      blurRadius: 8.r,
-                                      offset: Offset(0, 2.h),
-                                    ),
-                                ],
-                              ),
-                              child: Row(
-                                children: [
-                                  // Squircle Icon
-                                  Container(
-                                    width: 36.r,
-                                    height: 36.r,
-                                    decoration: BoxDecoration(
-                                      color: highlight.tint.withValues(
-                                        alpha: 0.15,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        11.r,
-                                      ),
-                                    ),
-                                    child: Icon(
-                                      highlight.icon,
-                                      size: 17.5.r,
-                                      color: highlight.tint,
-                                    ),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? const Color(0xFF161928)
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.06)
+                                        : Colors.black.withValues(alpha: 0.05),
+                                    width: 1,
                                   ),
-                                  SizedBox(width: 12.w),
-
-                                  // Feature Title & Subtitle
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          highlight.title,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 12.5.sp,
-                                            fontWeight: FontWeight.w800,
-                                            color: Theme.of(
-                                              context,
-                                            ).colorScheme.onSurface,
-                                          ),
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
+                                  boxShadow: [
+                                    if (!isDark)
+                                      BoxShadow(
+                                        color: Colors.black.withValues(
+                                          alpha: 0.03,
                                         ),
-                                        SizedBox(height: 2.h),
-                                        Text(
-                                          highlight.subtitle,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 10.5.sp,
-                                            color: isDark
-                                                ? Colors.white54
-                                                : AppColors.slate500,
-                                          ),
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
+                                        blurRadius: 8.r,
+                                        offset: Offset(0, 2.h),
+                                      ),
+                                  ],
+                                ),
+                                child: Row(
+                                  children: [
+                                    // Squircle Icon
+                                    Container(
+                                      width: 38.r,
+                                      height: 38.r,
+                                      decoration: BoxDecoration(
+                                        color: highlight.tint.withValues(
+                                          alpha: 0.15,
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(width: 6.w),
-
-                                  // Trailing Accent Dot
-                                  Container(
-                                    width: 5.r,
-                                    height: 5.r,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: highlight.tint.withValues(
-                                        alpha: 0.7,
+                                        borderRadius: BorderRadius.circular(
+                                          11.r,
+                                        ),
+                                      ),
+                                      child: Icon(
+                                        highlight.icon,
+                                        size: 18.r,
+                                        color: highlight.tint,
                                       ),
                                     ),
-                                  ),
-                                ],
+                                    SizedBox(width: 12.w),
+
+                                    // Feature Title & Subtitle
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            highlight.title,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 13.5.sp,
+                                              fontWeight: FontWeight.w700,
+                                              color: Theme.of(
+                                                context,
+                                              ).colorScheme.onSurface,
+                                            ),
+                                            softWrap: true,
+                                          ),
+                                          SizedBox(height: 3.h),
+                                          Text(
+                                            highlight.subtitle,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 11.5.sp,
+                                              height: 1.35,
+                                              color: isDark
+                                                  ? Colors.white70
+                                                  : AppColors.slate600,
+                                            ),
+                                            softWrap: true,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 6.w),
+
+                                    // Trailing Accent Dot
+                                    Container(
+                                      width: 5.r,
+                                      height: 5.r,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: highlight.tint.withValues(
+                                          alpha: 0.7,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -597,23 +640,26 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
               Row(
                 children: [
                   // Modern Capsule Indicators
-                  Row(
-                    children: List.generate(
-                      _slides.length,
-                      (i) => AnimatedContainer(
-                        duration: const Duration(milliseconds: 240),
-                        curve: Curves.easeOutCubic,
-                        margin: EdgeInsets.only(right: 6.w),
-                        width: _currentPage == i ? 24.w : 6.w,
-                        height: 6.h,
-                        decoration: BoxDecoration(
-                          gradient: _currentPage == i
-                              ? LinearGradient(colors: slide.gradientColors)
-                              : null,
-                          color: _currentPage == i
-                              ? null
-                              : (isDark ? Colors.white24 : Colors.black12),
-                          borderRadius: BorderRadius.circular(4.r),
+                  Semantics(
+                    label: 'Page ${_currentPage + 1} of ${_slides.length}',
+                    child: Row(
+                      children: List.generate(
+                        _slides.length,
+                        (i) => AnimatedContainer(
+                          duration: const Duration(milliseconds: 240),
+                          curve: Curves.easeOutCubic,
+                          margin: EdgeInsets.only(right: 6.w),
+                          width: _currentPage == i ? 24.w : 6.w,
+                          height: 6.h,
+                          decoration: BoxDecoration(
+                            gradient: _currentPage == i
+                                ? LinearGradient(colors: slide.gradientColors)
+                                : null,
+                            color: _currentPage == i
+                                ? null
+                                : (isDark ? Colors.white24 : Colors.black12),
+                            borderRadius: BorderRadius.circular(4.r),
+                          ),
                         ),
                       ),
                     ),
@@ -621,49 +667,73 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                   const Spacer(),
 
                   // Primary CTA Button
-                  ScaleButton(
-                    onTap: _nextPage,
-                    child: Container(
-                      height: 46.h,
-                      padding: EdgeInsets.symmetric(horizontal: 22.w),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: slide.gradientColors,
+                  Semantics(
+                    button: true,
+                    label: _currentPage == _slides.length - 1
+                        ? context.tr(
+                            'welcome_showcase.start_exploring',
+                            fallback: 'Start Exploring',
+                          )
+                        : context.tr(
+                            'welcome_showcase.continue_step',
+                            fallback: 'Continue',
+                          ),
+                    child: ScaleButton(
+                      onTap: _nextPage,
+                      child: Container(
+                        constraints: BoxConstraints(
+                          minHeight: 48.h,
+                          minWidth: 48.w,
                         ),
-                        borderRadius: BorderRadius.circular(16.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: slide.accentColor.withValues(alpha: 0.35),
-                            blurRadius: 14.r,
-                            offset: Offset(0, 3.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 22.w,
+                          vertical: 12.h,
+                        ),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: slide.gradientColors,
                           ),
-                        ],
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            _currentPage == _slides.length - 1
-                                ? 'Start Exploring'
-                                : 'Continue',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.5.sp,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
-                              letterSpacing: 0.3,
+                          borderRadius: BorderRadius.circular(16.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: slide.accentColor.withValues(alpha: 0.35),
+                              blurRadius: 14.r,
+                              offset: Offset(0, 3.h),
                             ),
-                          ),
-                          SizedBox(width: 6.w),
-                          Icon(
-                            _currentPage == _slides.length - 1
-                                ? LucideIcons.sparkles
-                                : LucideIcons.arrowRight,
-                            size: 15.r,
-                            color: Colors.white,
-                          ),
-                        ],
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              _currentPage == _slides.length - 1
+                                  ? context.tr(
+                                      'welcome_showcase.start_exploring',
+                                      fallback: 'Start Exploring',
+                                    )
+                                  : context.tr(
+                                      'welcome_showcase.continue_step',
+                                      fallback: 'Continue',
+                                    ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 0.3,
+                              ),
+                            ),
+                            SizedBox(width: 6.w),
+                            Icon(
+                              _currentPage == _slides.length - 1
+                                  ? LucideIcons.sparkles
+                                  : LucideIcons.arrowRight,
+                              size: 15.r,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

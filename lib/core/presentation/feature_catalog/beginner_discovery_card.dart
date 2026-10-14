@@ -70,7 +70,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
     _DiscoveryQuest(
       key: 'photo_vocab',
       title: 'Try Camera AI in Photo Vocab',
-      subtitle: 'Identify real-world objects using on-device vision ML',
+      subtitle: 'Point your camera to discover everyday English words',
       icon: LucideIcons.camera,
       route: AppRouter.photoVocabularyRoute,
       actionLabel: 'Try',
@@ -167,9 +167,18 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
     } catch (_) {}
   }
 
+  bool _isNavigating = false;
+  bool _isDismissing = false;
+
   Future<void> _handleQuestTap(_DiscoveryQuest quest) async {
+    if (_isNavigating) return;
+    _isNavigating = true;
     di.sl<HapticService>().light();
-    await context.push(quest.route);
+    try {
+      await context.push(quest.route);
+    } finally {
+      _isNavigating = false;
+    }
 
     if (!mounted) return;
     await _saveQuestCompletion(quest.key);
@@ -240,9 +249,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                   onButtonPressed: () => Navigator.of(ctx).pop(),
                 ),
                 const Positioned.fill(
-                  child: IgnorePointer(
-                    child: GameConfetti(),
-                  ),
+                  child: IgnorePointer(child: GameConfetti()),
                 ),
               ],
             ),
@@ -255,6 +262,8 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
   }
 
   Future<void> _dismissCard() async {
+    if (_isDismissing) return;
+    _isDismissing = true;
     di.sl<HapticService>().light();
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -264,7 +273,9 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
           _isDismissed = true;
         });
       }
-    } catch (_) {}
+    } catch (_) {
+      _isDismissing = false;
+    }
   }
 
   @override
@@ -272,40 +283,41 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
     if (_isDismissed) return const SizedBox.shrink();
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final completedCount =
-        _quests.where((q) => _completedMap[q.key] == true).length;
+    final completedCount = _quests
+        .where((q) => _completedMap[q.key] == true)
+        .length;
     final progress = (completedCount / _quests.length).clamp(0.0, 1.0);
     final isAllDone = completedCount == _quests.length;
     final canClaim = isAllDone && !_rewardClaimed;
 
     return Container(
-      margin: EdgeInsets.only(bottom: 20.h),
-      padding: EdgeInsets.all(18.r),
+      margin: EdgeInsets.only(bottom: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 11.h),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: isDark
               ? (isAllDone && _rewardClaimed
-                  ? const [Color(0xFF13221C), Color(0xFF0F1713)]
-                  : canClaim
-                      ? const [Color(0xFF241A12), Color(0xFF17141C)]
-                      : const [Color(0xFF161928), Color(0xFF10121B)])
+                    ? const [Color(0xFF13221C), Color(0xFF0F1713)]
+                    : canClaim
+                    ? const [Color(0xFF241A12), Color(0xFF17141C)]
+                    : const [Color(0xFF161928), Color(0xFF10121B)])
               : (isAllDone && _rewardClaimed
-                  ? const [Color(0xFFF0FDF4), Color(0xFFE8F7EE)]
-                  : canClaim
-                      ? const [Color(0xFFFFFBEB), Color(0xFFFEF3C7)]
-                      : const [Colors.white, Color(0xFFF8FAFD)]),
+                    ? const [Color(0xFFF0FDF4), Color(0xFFE8F7EE)]
+                    : canClaim
+                    ? const [Color(0xFFFFFBEB), Color(0xFFFEF3C7)]
+                    : const [Colors.white, Color(0xFFF8FAFD)]),
         ),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isAllDone && _rewardClaimed
               ? AppColors.emerald500.withValues(alpha: 0.35)
               : canClaim
-                  ? AppColors.amber500.withValues(alpha: 0.45)
-                  : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.indigo500.withValues(alpha: 0.12)),
+              ? AppColors.amber500.withValues(alpha: 0.45)
+              : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.indigo500.withValues(alpha: 0.12)),
           width: 1.4,
         ),
         boxShadow: [
@@ -313,8 +325,8 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
             color: canClaim
                 ? AppColors.amber500.withValues(alpha: 0.12)
                 : (isAllDone
-                    ? AppColors.emerald500.withValues(alpha: 0.08)
-                    : Colors.black.withValues(alpha: isDark ? 0.3 : 0.04)),
+                      ? AppColors.emerald500.withValues(alpha: 0.08)
+                      : Colors.black.withValues(alpha: isDark ? 0.3 : 0.04)),
             blurRadius: 20.r,
             offset: Offset(0, 6.h),
           ),
@@ -336,21 +348,21 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                   color: isAllDone && _rewardClaimed
                       ? AppColors.emerald500.withValues(alpha: 0.15)
                       : canClaim
-                          ? AppColors.amber500.withValues(alpha: 0.18)
-                          : AppColors.indigo500.withValues(alpha: 0.15),
+                      ? AppColors.amber500.withValues(alpha: 0.18)
+                      : AppColors.indigo500.withValues(alpha: 0.15),
                 ),
                 child: Icon(
                   isAllDone && _rewardClaimed
                       ? LucideIcons.award
                       : canClaim
-                          ? LucideIcons.sparkles
-                          : LucideIcons.compass,
+                      ? LucideIcons.sparkles
+                      : LucideIcons.compass,
                   size: 20.r,
                   color: isAllDone && _rewardClaimed
                       ? AppColors.emerald500
                       : canClaim
-                          ? AppColors.amber500
-                          : AppColors.indigo500,
+                      ? AppColors.amber500
+                      : AppColors.indigo500,
                 ),
               ),
               SizedBox(width: 12.w),
@@ -373,48 +385,46 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w700,
                         color: Theme.of(context).colorScheme.onSurface,
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
                     ),
                     SizedBox(height: 2.h),
                     Text(
                       isAllDone && _rewardClaimed
                           ? context.tr(
                               'beginner_discovery.completed_subtitle',
-                              fallback:
-                                  '150 Coins claimed! You unlocked Vowl.',
+                              fallback: '150 Coins claimed! You unlocked Vowl.',
                             )
                           : canClaim
-                              ? context.tr(
-                                  'beginner_discovery.reward_unlocked_subtitle',
-                                  fallback:
-                                      'All 5 done! Tap below to claim 150 Coins 🎉',
-                                )
-                              : context.tr(
-                                  'beginner_discovery.progress_status',
-                                  args: ['$completedCount', '${_quests.length}'],
-                                  fallback:
-                                      '$completedCount of ${_quests.length} Completed',
-                                ),
+                          ? context.tr(
+                              'beginner_discovery.reward_unlocked_subtitle',
+                              fallback:
+                                  'All 5 done! Tap below to claim 150 Coins 🎉',
+                            )
+                          : context.tr(
+                              'beginner_discovery.progress_status',
+                              args: ['$completedCount', '${_quests.length}'],
+                              fallback:
+                                  '$completedCount of ${_quests.length} Completed',
+                            ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 11.sp,
+                        fontSize: 11.5.sp,
+                        height: 1.3,
                         color: canClaim
                             ? AppColors.amber500
                             : isAllDone && _rewardClaimed
-                                ? AppColors.emerald500
-                                : isDark
-                                    ? Colors.white60
-                                    : Colors.black54,
+                            ? AppColors.emerald500
+                            : isDark
+                            ? Colors.white70
+                            : AppColors.slate600,
                         fontWeight: canClaim || (isAllDone && _rewardClaimed)
-                            ? FontWeight.w700
+                            ? FontWeight.w600
                             : FontWeight.normal,
                       ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
                     ),
                   ],
                 ),
@@ -426,43 +436,46 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   if (!_rewardClaimed)
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 8.w,
-                        vertical: 4.h,
-                      ),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            AppColors.amber500.withValues(alpha: 0.2),
-                            const Color(0xFFD97706).withValues(alpha: 0.15),
-                          ],
+                    Semantics(
+                      label: 'Reward: 150 Coins',
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 8.w,
+                          vertical: 4.h,
                         ),
-                        borderRadius: BorderRadius.circular(14.r),
-                        border: Border.all(
-                          color: AppColors.amber500.withValues(alpha: 0.4),
-                          width: 1,
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.monetization_on_rounded,
-                            size: 13.r,
-                            color: AppColors.amber500,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              AppColors.amber500.withValues(alpha: 0.2),
+                              const Color(0xFFD97706).withValues(alpha: 0.15),
+                            ],
                           ),
-                          SizedBox(width: 4.w),
-                          Text(
-                            '+150',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.5.sp,
-                              fontWeight: FontWeight.w800,
+                          borderRadius: BorderRadius.circular(14.r),
+                          border: Border.all(
+                            color: AppColors.amber500.withValues(alpha: 0.4),
+                            width: 1,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.monetization_on_rounded,
+                              size: 13.r,
                               color: AppColors.amber500,
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 4.w),
+                            Text(
+                              '+150',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.5.sp,
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.amber500,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   SizedBox(width: 4.w),
@@ -474,17 +487,18 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                       color: isDark ? Colors.white38 : Colors.black38,
                     ),
                     padding: EdgeInsets.zero,
+                    visualDensity: VisualDensity.compact,
                     constraints: BoxConstraints(
-                      minWidth: 26.r,
-                      minHeight: 26.r,
+                      minWidth: 36.r,
+                      minHeight: 36.r,
                     ),
-                    tooltip: 'Dismiss',
+                    tooltip: context.tr('common.dismiss', fallback: 'Dismiss'),
                   ),
                 ],
               ),
             ],
           ),
-          SizedBox(height: 14.h),
+          SizedBox(height: 8.h),
 
           // ── Progress Bar & Percentage ─────────────────────────────────
           Row(
@@ -504,7 +518,10 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: isAllDone
-                                ? const [AppColors.emerald400, AppColors.emerald500]
+                                ? const [
+                                    AppColors.emerald400,
+                                    AppColors.emerald500,
+                                  ]
                                 : const [AppColors.amber400, Color(0xFFD97706)],
                           ),
                           borderRadius: BorderRadius.circular(10.r),
@@ -520,171 +537,188 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 11.5.sp,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w700,
                   color: isAllDone ? AppColors.emerald500 : AppColors.amber500,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 14.h),
+          SizedBox(height: 8.h),
 
           // ── Quests Mission Items ──────────────────────────────────────
           ..._quests.map((quest) {
             final isDone = _completedMap[quest.key] == true;
-            return Container(
-              margin: EdgeInsets.only(bottom: 9.h),
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 9.h),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? (isDone
-                        ? Colors.white.withValues(alpha: 0.02)
-                        : Colors.white.withValues(alpha: 0.04))
-                    : (isDone
-                        ? const Color(0xFFF8FAFC)
-                        : Colors.white),
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
+            return Semantics(
+              button: !isDone,
+              label:
+                  '${quest.title}. ${quest.subtitle}. ${isDone ? "Completed" : "Not completed"}',
+              hint: !isDone ? 'Tap to start quest' : null,
+              child: Container(
+                margin: EdgeInsets.only(bottom: 5.h),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12.w,
+                  vertical: 6.5.h,
+                ),
+                decoration: BoxDecoration(
                   color: isDark
                       ? (isDone
-                          ? Colors.white.withValues(alpha: 0.03)
-                          : Colors.white.withValues(alpha: 0.06))
-                      : (isDone
-                          ? Colors.black.withValues(alpha: 0.03)
-                          : Colors.black.withValues(alpha: 0.05)),
+                            ? Colors.white.withValues(alpha: 0.02)
+                            : Colors.white.withValues(alpha: 0.04))
+                      : (isDone ? const Color(0xFFF8FAFC) : Colors.white),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: isDark
+                        ? (isDone
+                              ? Colors.white.withValues(alpha: 0.03)
+                              : Colors.white.withValues(alpha: 0.06))
+                        : (isDone
+                              ? Colors.black.withValues(alpha: 0.03)
+                              : Colors.black.withValues(alpha: 0.05)),
+                  ),
                 ),
-              ),
-              child: Row(
-                children: [
-                  // Icon Squircle
-                  Container(
-                    width: 36.r,
-                    height: 36.r,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.r),
-                      color: isDone
-                          ? AppColors.emerald500.withValues(alpha: 0.15)
-                          : quest.themeColor.withValues(alpha: 0.15),
-                    ),
-                    child: Icon(
-                      isDone ? LucideIcons.check : quest.icon,
-                      size: 17.r,
-                      color: isDone ? AppColors.emerald500 : quest.themeColor,
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-
-                  // Texts
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          quest.title,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.5.sp,
-                            fontWeight: FontWeight.w700,
-                            decoration:
-                                isDone ? TextDecoration.lineThrough : null,
-                            color: isDone
-                                ? (isDark ? Colors.white38 : Colors.black38)
-                                : Theme.of(context).colorScheme.onSurface,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        SizedBox(height: 2.h),
-                        Text(
-                          quest.subtitle,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.5.sp,
-                            color: isDark ? Colors.white54 : AppColors.slate500,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-
-                  // Action Button or Done Badge
-                  if (!isDone)
-                    ScaleButton(
-                      onTap: () => _handleQuestTap(quest),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 13.w,
-                          vertical: 6.h,
-                        ),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [AppColors.indigo600, Color(0xFF4F46E5)],
-                          ),
-                          borderRadius: BorderRadius.circular(16.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.indigo500.withValues(alpha: 0.3),
-                              blurRadius: 8.r,
-                              offset: Offset(0, 2.h),
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              quest.actionLabel,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.5.sp,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(width: 3.w),
-                            Icon(
-                              LucideIcons.arrowRight,
-                              size: 11.r,
-                              color: Colors.white,
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
-                  else
+                child: Row(
+                  children: [
+                    // Icon Squircle
                     Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 9.w,
-                        vertical: 4.h,
-                      ),
+                      width: 36.r,
+                      height: 36.r,
                       decoration: BoxDecoration(
-                        color: AppColors.emerald500.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(12.r),
+                        color: isDone
+                            ? AppColors.emerald500.withValues(alpha: 0.15)
+                            : quest.themeColor.withValues(alpha: 0.15),
                       ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                      child: Icon(
+                        isDone ? LucideIcons.check : quest.icon,
+                        size: 17.r,
+                        color: isDone ? AppColors.emerald500 : quest.themeColor,
+                      ),
+                    ),
+                    SizedBox(width: 12.w),
+
+                    // Texts
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(
-                            LucideIcons.checkCheck,
-                            size: 13.r,
-                            color: AppColors.emerald500,
-                          ),
-                          SizedBox(width: 4.w),
                           Text(
-                            'Done',
+                            quest.title,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 10.5.sp,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.emerald500,
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w600,
+                              decoration: isDone
+                                  ? TextDecoration.lineThrough
+                                  : null,
+                              color: isDone
+                                  ? (isDark ? Colors.white38 : Colors.black38)
+                                  : Theme.of(context).colorScheme.onSurface,
                             ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          SizedBox(height: 2.h),
+                          Text(
+                            quest.subtitle,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.5.sp,
+                              height: 1.3,
+                              color: isDark
+                                  ? Colors.white70
+                                  : AppColors.slate600,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
                     ),
-                ],
+                    SizedBox(width: 8.w),
+
+                    // Action Button or Done Badge
+                    if (!isDone)
+                      ScaleButton(
+                        onTap: () => _handleQuestTap(quest),
+                        child: Container(
+                          constraints: BoxConstraints(minHeight: 36.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 13.w,
+                            vertical: 8.h,
+                          ),
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [AppColors.indigo600, Color(0xFF4F46E5)],
+                            ),
+                            borderRadius: BorderRadius.circular(16.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppColors.indigo500.withValues(
+                                  alpha: 0.3,
+                                ),
+                                blurRadius: 8.r,
+                                offset: Offset(0, 2.h),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                context.tr(
+                                  'beginner_quest.${quest.key}_action',
+                                  fallback: quest.actionLabel,
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.5.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(width: 3.w),
+                              Icon(
+                                LucideIcons.arrowRight,
+                                size: 11.r,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    else
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 9.w,
+                          vertical: 4.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.emerald500.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              LucideIcons.checkCheck,
+                              size: 13.r,
+                              color: AppColors.emerald500,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              context.tr('common.done', fallback: 'Done'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.5.sp,
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.emerald500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                  ],
+                ),
               ),
             );
           }),
@@ -692,64 +726,74 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
           // ── Interactive Claim Button (When 5/5 and Unclaimed) ───────────
           if (canClaim) ...[
             SizedBox(height: 8.h),
-            ScaleButton(
-              onTap: _claimReward,
-              child: Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+            Semantics(
+              button: true,
+              label: context.tr(
+                'beginner_discovery.claim_reward',
+                fallback: 'Claim 150 Coins Reward',
+              ),
+              child: ScaleButton(
+                onTap: _claimReward,
+                child: Container(
+                  width: double.infinity,
+                  constraints: BoxConstraints(minHeight: 48.h),
+                  padding: EdgeInsets.symmetric(
+                    vertical: 14.h,
+                    horizontal: 16.w,
                   ),
-                  borderRadius: BorderRadius.circular(18.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.amber500.withValues(alpha: 0.4),
-                      blurRadius: 16.r,
-                      offset: Offset(0, 4.h),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
                     ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(5.r),
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
+                    borderRadius: BorderRadius.circular(18.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.amber500.withValues(alpha: 0.4),
+                        blurRadius: 16.r,
+                        offset: Offset(0, 4.h),
                       ),
-                      child: Icon(
-                        Icons.monetization_on_rounded,
-                        color: const Color(0xFFD97706),
-                        size: 18.r,
-                      ),
-                    ),
-                    SizedBox(width: 10.w),
-                    Flexible(
-                      child: Text(
-                        context.tr(
-                          'beginner_discovery.claim_reward',
-                          fallback: 'Claim 150 Coins Reward',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w900,
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(5.r),
+                        decoration: const BoxDecoration(
                           color: Colors.white,
-                          letterSpacing: 0.3,
+                          shape: BoxShape.circle,
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                        child: Icon(
+                          Icons.monetization_on_rounded,
+                          color: const Color(0xFFD97706),
+                          size: 18.r,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 8.w),
-                    Icon(
-                      LucideIcons.sparkles,
-                      color: Colors.white,
-                      size: 16.r,
-                    ),
-                  ],
+                      SizedBox(width: 10.w),
+                      Flexible(
+                        child: Text(
+                          context.tr(
+                            'beginner_discovery.claim_reward',
+                            fallback: 'Claim 150 Coins Reward',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                            letterSpacing: 0.3,
+                          ),
+                          softWrap: true,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Icon(
+                        LucideIcons.sparkles,
+                        color: Colors.white,
+                        size: 16.r,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -758,44 +802,51 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
           // ── Claimed Trophy Banner (When Claimed & Done) ────────────────
           if (isAllDone && _rewardClaimed) ...[
             SizedBox(height: 8.h),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 14.w),
-              decoration: BoxDecoration(
-                color: AppColors.emerald500.withValues(
-                  alpha: isDark ? 0.12 : 0.08,
-                ),
-                borderRadius: BorderRadius.circular(14.r),
-                border: Border.all(
-                  color: AppColors.emerald500.withValues(alpha: 0.25),
-                ),
+            Semantics(
+              container: true,
+              label: context.tr(
+                'beginner_discovery.reward_claimed',
+                fallback: '150 Coins Claimed • All Quests Completed ✨',
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    LucideIcons.trophy,
-                    color: AppColors.emerald500,
-                    size: 16.r,
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 14.w),
+                decoration: BoxDecoration(
+                  color: AppColors.emerald500.withValues(
+                    alpha: isDark ? 0.12 : 0.08,
                   ),
-                  SizedBox(width: 8.w),
-                  Flexible(
-                    child: Text(
-                      context.tr(
-                        'beginner_discovery.reward_claimed',
-                        fallback: '150 Coins Claimed • All Quests Completed ✨',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.5.sp,
-                        fontWeight: FontWeight.w800,
-                        color: AppColors.emerald500,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                  borderRadius: BorderRadius.circular(14.r),
+                  border: Border.all(
+                    color: AppColors.emerald500.withValues(alpha: 0.25),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      LucideIcons.trophy,
+                      color: AppColors.emerald500,
+                      size: 16.r,
                     ),
-                  ),
-                ],
+                    SizedBox(width: 8.w),
+                    Flexible(
+                      child: Text(
+                        context.tr(
+                          'beginner_discovery.reward_claimed',
+                          fallback:
+                              '150 Coins Claimed • All Quests Completed ✨',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.5.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.emerald500,
+                        ),
+                        softWrap: true,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
@@ -803,57 +854,64 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard> {
           SizedBox(height: 12.h),
 
           // ── Bottom Feature Directory Link ──────────────────────────────
-          ScaleButton(
-            onTap: () {
-              di.sl<HapticService>().light();
-              FeatureDirectoryBottomSheet.show(context);
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 9.h, horizontal: 12.w),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.04)
-                    : AppColors.indigo500.withValues(alpha: 0.05),
-                borderRadius: BorderRadius.circular(14.r),
-                border: Border.all(
+          Semantics(
+            button: true,
+            label: context.tr(
+              'beginner_discovery.explore_directory',
+              fallback: 'Explore full directory of all 50+ features & games',
+            ),
+            child: ScaleButton(
+              onTap: () {
+                di.sl<HapticService>().light();
+                FeatureDirectoryBottomSheet.show(context);
+              },
+              child: Container(
+                constraints: BoxConstraints(minHeight: 48.h),
+                padding: EdgeInsets.symmetric(vertical: 9.h, horizontal: 12.w),
+                decoration: BoxDecoration(
                   color: isDark
-                      ? Colors.white.withValues(alpha: 0.06)
-                      : AppColors.indigo500.withValues(alpha: 0.1),
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : AppColors.indigo500.withValues(alpha: 0.05),
+                  borderRadius: BorderRadius.circular(14.r),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.06)
+                        : AppColors.indigo500.withValues(alpha: 0.1),
+                  ),
                 ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    LucideIcons.compass,
-                    size: 14.r,
-                    color: AppColors.indigo500,
-                  ),
-                  SizedBox(width: 8.w),
-                  Flexible(
-                    child: Text(
-                      context.tr(
-                        'beginner_discovery.explore_directory',
-                        fallback:
-                            'Explore full directory of all 50+ features & games',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.5.sp,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.indigo500,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      LucideIcons.compass,
+                      size: 14.r,
+                      color: AppColors.indigo500,
                     ),
-                  ),
-                  SizedBox(width: 6.w),
-                  Icon(
-                    LucideIcons.chevronRight,
-                    size: 14.r,
-                    color: AppColors.indigo500,
-                  ),
-                ],
+                    SizedBox(width: 8.w),
+                    Flexible(
+                      child: Text(
+                        context.tr(
+                          'beginner_discovery.explore_directory',
+                          fallback:
+                              'Explore full directory of all 50+ features & games',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.5.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.indigo500,
+                        ),
+                        softWrap: true,
+                      ),
+                    ),
+                    SizedBox(width: 6.w),
+                    Icon(
+                      LucideIcons.chevronRight,
+                      size: 14.r,
+                      color: AppColors.indigo500,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
