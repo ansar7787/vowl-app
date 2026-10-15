@@ -7,6 +7,7 @@ class ConjunctionsBrickSheet extends StatelessWidget {
   final Color primaryColor;
   final bool isDark;
   final bool isCompact;
+  final bool isAnswered;
   final Function(String)? onBrickTapped;
 
   const ConjunctionsBrickSheet({
@@ -16,6 +17,7 @@ class ConjunctionsBrickSheet extends StatelessWidget {
     required this.primaryColor,
     required this.isDark,
     this.isCompact = false,
+    this.isAnswered = false,
     this.onBrickTapped,
   });
 
@@ -31,11 +33,14 @@ class ConjunctionsBrickSheet extends StatelessWidget {
 
   Widget _buildBrick(String text) {
     final isPlaced = placedBrick == text;
+    final canInteract = !isPlaced && !isAnswered;
     return GestureDetector(
-      onTap: (!isPlaced && onBrickTapped != null)
+      key: ValueKey('conjunction_brick_$text'),
+      onTap: (canInteract && onBrickTapped != null)
           ? () => onBrickTapped!(text)
           : null,
       child: Draggable<String>(
+        maxSimultaneousDrags: canInteract ? 1 : 0,
         data: text,
         feedback: _buildTactileBrick(text, isDragging: true),
         childWhenDragging: Opacity(

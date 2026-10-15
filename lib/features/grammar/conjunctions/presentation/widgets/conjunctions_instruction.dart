@@ -13,7 +13,7 @@ class ConjunctionsInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(30.r),
@@ -23,15 +23,19 @@ class ConjunctionsInstruction extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text(
-            instruction.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          SizedBox(width: 8.w),
+          Flexible(
+            child: Text(
+              instruction.toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.0,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
