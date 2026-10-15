@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,9 +49,12 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
   final ValueNotifier<int> _selectedReflection = ValueNotifier(-1);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
+    isFirstStagePassedNotifier.removeListener(_onStagePassedScroll);
     _rotation.dispose();
     _selectedReflection.dispose();
     _scrollController.dispose();
@@ -58,8 +63,9 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -70,7 +76,8 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
   }
 
   void _onStagePassedScroll() {
-    Future.delayed(const Duration(milliseconds: 100), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -90,7 +97,12 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
   }
 
   void _onReflectionSelect(int index, int correctIndex, GameQuest quest) {
-    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    final grammarState = context.read<GrammarBloc>().state;
+    final isAlreadyAnswered = isAnsweredNotifier.value ||
+        isFirstStagePassedNotifier.value ||
+        (grammarState is GrammarLoaded &&
+            grammarState.answerStatus != AnswerStatus.unanswered);
+    if (isAlreadyAnswered) return;
     _selectedReflection.value = index;
 
     bool isCorrect = index == correctIndex;
@@ -124,13 +136,32 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
           : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          0.0,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   @override
   void onQuestionReset() {
     _rotation.value = 0.0;
-
     _selectedReflection.value = -1;
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          0.0,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   @override
@@ -180,26 +211,36 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
             _rotation,
           ]),
           builder: (context, _) {
+            final isAnswered = (isAnsweredNotifier.value &&
+                    (isCorrectNotifier.value != null ||
+                        !isFirstStagePassedNotifier.value)) ||
+                (state is GrammarLoaded &&
+                    state.answerStatus != AnswerStatus.unanswered);
+            final isCorrect = isCorrectNotifier.value ??
+                (state is GrammarLoaded &&
+                    state.answerStatus == AnswerStatus.correct);
+
             return GrammarBaseLayout(
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered:
-                  isAnsweredNotifier.value &&
-                  (isCorrectNotifier.value != null ||
-                      !isFirstStagePassedNotifier.value),
-              isCorrect: isCorrectNotifier.value,
+              isAnswered: isAnswered,
+              isCorrect: isCorrect,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
-              onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-              onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         final maxHeight = constraints.maxHeight;
                         final isCompact = maxHeight < 600;
+                        final shouldReduceMotion =
+                            VowlMotion.shouldReduceMotion(context);
+                        final isNarrow = constraints.maxWidth < 360;
 
                         return RawScrollbar(
                           controller: _scrollController,
@@ -226,11 +267,14 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                                   DirectIndirectSpeechInstruction(
                                                     primaryColor:
                                                         theme.primaryColor,
+                                                    instruction:
+                                                        quest.instruction,
                                                   ),
                                             ),
                                           )
                                         : DirectIndirectSpeechInstruction(
                                             primaryColor: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                     SizedBox(height: isCompact ? 12.h : 20.h),
                                     if (quest.grammarRule != null ||
@@ -240,6 +284,8 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                         quest,
                                         theme,
                                         isCompact,
+                                        shouldReduceMotion,
+                                        isNarrow,
                                       ),
                                       SizedBox(height: isCompact ? 12.h : 20.h),
                                     ],
@@ -267,6 +313,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                           theme.primaryColor,
                                           isDark,
                                           isCompact,
+                                          isNarrow,
                                         ),
                                       ),
                                     ),
@@ -326,9 +373,12 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
     GrammarQuest quest,
     ThemeResult theme,
     bool isCompact,
+    bool shouldReduceMotion,
+    bool isNarrow,
   ) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      key: const ValueKey('rule_and_changes_box'),
+      margin: EdgeInsets.symmetric(horizontal: isNarrow ? 12.w : 24.w),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: theme.primaryColor.withValues(alpha: 0.1),
@@ -357,7 +407,11 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: quest.changesList!.map((change) {
-                final parts = change.split('->');
+                final delimiter = change.contains('→')
+                    ? '→'
+                    : (change.contains('->') ? '->' : null);
+                final parts =
+                    delimiter != null ? change.split(delimiter) : <String>[];
                 if (parts.length != 2) {
                   return Padding(
                     padding: EdgeInsets.only(bottom: 4.h),
@@ -412,7 +466,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
             ),
         ],
       ),
-    ).animate().fadeIn(duration: 400.ms);
+    ).animate(target: shouldReduceMotion ? 0 : 1).fadeIn(duration: 400.ms);
   }
 
   Widget _buildReflectionChip(
@@ -423,6 +477,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
     Color primaryColor,
     bool isDark,
     bool isCompact,
+    bool isNarrow,
   ) {
     final isSelected = _selectedReflection.value == index;
     final isCorrect =
@@ -454,10 +509,11 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                     : Colors.white.withValues(alpha: 0.1)));
 
     return ScaleButton(
+      key: ValueKey('reflection_chip_$index'),
       onTap: () => _onReflectionSelect(index, correctIndex, quest),
       child: Container(
         width: double.infinity,
-        margin: EdgeInsets.symmetric(horizontal: 24.w),
+        margin: EdgeInsets.symmetric(horizontal: isNarrow ? 12.w : 24.w),
         child: GlassTile(
           padding: EdgeInsets.symmetric(
             horizontal: isCompact ? 16.w : 24.w,
