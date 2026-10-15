@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ConsonantClarityThroatIndicator extends StatelessWidget {
   final String voicing;
@@ -19,6 +20,23 @@ class ConsonantClarityThroatIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isVoiced = voicing.toLowerCase() == 'voiced';
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    Widget waveIcon = Icon(
+      Icons.graphic_eq_rounded,
+      color: isVoiced ? color : Colors.grey,
+      size: 28.r,
+    );
+
+    if (!reduceMotion && isVoiced) {
+      waveIcon = waveIcon
+          .animate(
+            onPlay: (c) {
+              c.repeat();
+            },
+          )
+          .shimmer(duration: 1.seconds);
+    }
 
     return Container(
       width: double.infinity,
@@ -45,17 +63,7 @@ class ConsonantClarityThroatIndicator extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Icon(
-                      Icons.graphic_eq_rounded,
-                      color: isVoiced ? color : Colors.grey,
-                      size: 28.r,
-                    )
-                    .animate(
-                      onPlay: (c) {
-                        if (isVoiced) c.repeat();
-                      },
-                    )
-                    .shimmer(duration: 1.seconds),
+                waveIcon,
                 if (!isVoiced)
                   Icon(
                     Icons.do_not_disturb_alt_rounded,

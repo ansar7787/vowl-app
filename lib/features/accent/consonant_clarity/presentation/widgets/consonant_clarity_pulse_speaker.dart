@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ConsonantClarityPulseSpeaker extends StatelessWidget {
   final String text;
@@ -17,7 +18,25 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    Widget speakerIcon = Icon(
+      Icons.graphic_eq_rounded,
+      color: color,
+      size: 32.r,
+    );
+
+    if (!reduceMotion) {
+      speakerIcon = speakerIcon
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.2, 1.2),
+          );
+    }
+
     return ScaleButton(
+      key: const ValueKey('consonant_clarity_speaker'),
       onTap: () => onPlayTts(text),
       child: Container(
         width: 100.r,
@@ -34,12 +53,7 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.graphic_eq_rounded, color: color, size: 32.r)
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.2, 1.2),
-                  ),
+              speakerIcon,
               SizedBox(height: 6.h),
               Text(
                 "HEAR\nCONSONANT",
