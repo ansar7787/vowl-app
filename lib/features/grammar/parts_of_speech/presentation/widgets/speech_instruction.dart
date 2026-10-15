@@ -5,16 +5,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// vortex.
 class SpeechInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const SpeechInstruction({super.key, required this.primaryColor});
+  const SpeechInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   static const _label = 'FLICK OR TAP TO ANSWER';
 
   @override
   Widget build(BuildContext context) {
+    final text = instruction ?? _label;
     return Semantics(
-      label: _label,
+      label: text,
       child: Container(
+        key: const ValueKey('speech_instruction'),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
@@ -26,14 +33,18 @@ class SpeechInstruction extends StatelessWidget {
           children: [
             Icon(Icons.cyclone_rounded, size: 14.r, color: primaryColor),
             SizedBox(width: 12.w),
-            Text(
-              _label,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: primaryColor,
-                letterSpacing: 1.5,
+            Flexible(
+              child: Text(
+                text,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w900,
+                  color: primaryColor,
+                  letterSpacing: 1.5,
+                ),
               ),
             ),
           ],

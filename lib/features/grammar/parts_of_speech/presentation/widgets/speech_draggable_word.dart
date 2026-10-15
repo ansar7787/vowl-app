@@ -29,6 +29,7 @@ class SpeechDraggableWord extends StatelessWidget {
     final maxWidth = isCompact ? 180.w : 240.w;
 
     return Semantics(
+      key: const ValueKey('speech_draggable_word'),
       label: 'Drag "$word" into the correct vortex, or tap it to select',
       child: AnimatedScale(
         scale: isSelected ? 1.15 : 1.0,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 
 /// Displays the sentence or question context for the current quest.
@@ -13,6 +14,7 @@ class SpeechContextCard extends StatelessWidget {
   final Color primaryColor;
   final bool isDark;
   final bool isCompact;
+  final double? horizontalMargin;
 
   const SpeechContextCard({
     super.key,
@@ -20,6 +22,7 @@ class SpeechContextCard extends StatelessWidget {
     required this.primaryColor,
     required this.isDark,
     this.isCompact = false,
+    this.horizontalMargin,
   });
 
   @override
@@ -33,88 +36,94 @@ class SpeechContextCard extends StatelessWidget {
 
     final mainFontSize = isCompact ? 15.sp : 18.sp;
     final questionFontSize = isCompact ? 13.sp : 15.sp;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    final cardContent = Container(
+      key: ValueKey(quest.hashCode),
+      padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
+      decoration: BoxDecoration(
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.05)
+            : Colors.black.withValues(alpha: 0.03),
+        borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.15),
+          width: 1.5,
+        ),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (isQuestionPresent)
+            Padding(
+              padding: EdgeInsets.only(
+                bottom: isSentencePresent ? 12.h : 0,
+              ),
+              child: Text(
+                questionText,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: questionFontSize,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                  height: 1.4,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          if (isSentencePresent)
+            _buildHighlightedSentence(
+              sentenceText,
+              targetWord,
+              mainFontSize,
+            ),
+          if (quest.transformations != null &&
+              quest.transformations!.isNotEmpty) ...[
+            SizedBox(height: 16.h),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8.w,
+              runSpacing: 8.h,
+              children: quest.transformations!
+                  .map(
+                    (word) => Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.w,
+                        vertical: 6.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: primaryColor.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(12.r),
+                        border: Border.all(
+                          color: primaryColor.withValues(alpha: 0.3),
+                        ),
+                      ),
+                      child: Text(
+                        word,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          color: primaryColor,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  )
+                  .toList(),
+            ),
+          ],
+        ],
+      ),
+    );
 
     return Semantics(
+      key: const ValueKey('speech_context_card'),
       label: 'Context: ${sentenceText ?? questionText}',
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Container(
-          key: ValueKey(quest.hashCode),
-          padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
-          decoration: BoxDecoration(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.05)
-                : Colors.black.withValues(alpha: 0.03),
-            borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-            border: Border.all(
-              color: primaryColor.withValues(alpha: 0.15),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (isQuestionPresent)
-                Padding(
-                  padding: EdgeInsets.only(
-                    bottom: isSentencePresent ? 12.h : 0,
-                  ),
-                  child: Text(
-                    questionText,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: questionFontSize,
-                      color: isDark ? Colors.white70 : Colors.black54,
-                      height: 1.4,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              if (isSentencePresent)
-                _buildHighlightedSentence(
-                  sentenceText,
-                  targetWord,
-                  mainFontSize,
-                ),
-              if (quest.transformations != null &&
-                  quest.transformations!.isNotEmpty) ...[
-                SizedBox(height: 16.h),
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  spacing: 8.w,
-                  runSpacing: 8.h,
-                  children: quest.transformations!
-                      .map(
-                        (word) => Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12.w,
-                            vertical: 6.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: primaryColor.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(12.r),
-                            border: Border.all(
-                              color: primaryColor.withValues(alpha: 0.3),
-                            ),
-                          ),
-                          child: Text(
-                            word,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              color: primaryColor,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      )
-                      .toList(),
-                ),
-              ],
-            ],
-          ),
-        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+        padding: EdgeInsets.symmetric(horizontal: horizontalMargin ?? 24.w),
+        child: reduceMotion
+            ? cardContent
+            : cardContent.animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
       ),
     );
   }
