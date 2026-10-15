@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
@@ -41,9 +42,19 @@ class DialectFeedbackPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final color = isCorrect ? tokens.gameCorrect : Colors.orangeAccent;
 
-    return GlassTile(
+    Widget iconWidget = Icon(
+      isCorrect ? Icons.check_circle_rounded : Icons.info_rounded,
+      color: color,
+      size: 32.r,
+    );
+    if (!reduceMotion) {
+      iconWidget = iconWidget.animate().scale(delay: 200.ms);
+    }
+
+    Widget content = GlassTile(
       padding: EdgeInsets.all(24.r),
       borderRadius: BorderRadius.circular(30.r),
       borderColor: color.withValues(alpha: 0.3),
@@ -58,11 +69,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   color: color.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(
-                  isCorrect ? Icons.check_circle_rounded : Icons.info_rounded,
-                  color: color,
-                  size: 32.r,
-                ).animate().scale(delay: 200.ms),
+                child: iconWidget,
               ),
               SizedBox(width: 16.w),
               Expanded(
@@ -126,8 +133,9 @@ class DialectFeedbackPanel extends StatelessWidget {
                 ),
                 SizedBox(height: 16.h),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Text(
                       "${context.tr('games.british', fallback: 'British')}: ",
@@ -152,8 +160,9 @@ class DialectFeedbackPanel extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 8.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Text(
                       "${context.tr('games.american', fallback: 'American')}: ",
@@ -199,6 +208,7 @@ class DialectFeedbackPanel extends StatelessWidget {
             children: [
               Expanded(
                 child: _buildAudioButton(
+                  key: const ValueKey('feedback_audio_british'),
                   title: context
                       .tr('games.british', fallback: 'British')
                       .toUpperCase(),
@@ -215,6 +225,7 @@ class DialectFeedbackPanel extends StatelessWidget {
               SizedBox(width: 16.w),
               Expanded(
                 child: _buildAudioButton(
+                  key: const ValueKey('feedback_audio_american'),
                   title: context
                       .tr('games.american', fallback: 'American')
                       .toUpperCase(),
@@ -258,10 +269,17 @@ class DialectFeedbackPanel extends StatelessWidget {
           ],
         ],
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1);
+    );
+
+    if (!reduceMotion) {
+      content = content.animate().fadeIn(duration: 400.ms).slideY(begin: 0.1);
+    }
+
+    return content;
   }
 
   Widget _buildAudioButton({
+    Key? key,
     required String title,
     required IconData icon,
     required String textToPlay,
@@ -271,6 +289,7 @@ class DialectFeedbackPanel extends StatelessWidget {
     required Color borderColor,
   }) {
     return ElevatedButton.icon(
+      key: key,
       onPressed: () => onPlayAudio(textToPlay, locale),
       icon: Icon(icon, size: 20.r, color: textColor),
       label: Text(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import 'package:vowl/core/theme/vowl_motion.dart';
+
 class DialectDrillRegionMap extends StatelessWidget {
   final String region;
   final Color color;
@@ -16,6 +18,7 @@ class DialectDrillRegionMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     IconData iconData = Icons.public;
     if (region.contains('United Kingdom')) {
       iconData = Icons.map_outlined;
@@ -23,7 +26,7 @@ class DialectDrillRegionMap extends StatelessWidget {
       iconData = Icons.map;
     }
 
-    return Container(
+    Widget card = Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: isDark
@@ -79,6 +82,12 @@ class DialectDrillRegionMap extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2);
+    );
+
+    if (!reduceMotion) {
+      card = card.animate().fadeIn(duration: 400.ms).slideY(begin: 0.2);
+    }
+
+    return card;
   }
 }
