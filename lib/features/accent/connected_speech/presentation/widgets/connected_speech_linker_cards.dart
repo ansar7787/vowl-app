@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ConnectedSpeechLinkerCards extends StatelessWidget {
   final List<String> options;
@@ -28,21 +29,34 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (options.isEmpty) return const SizedBox.shrink();
+
+    final bool reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    if (options.length == 1) {
+      return _buildLinkerCard(context, options[0], 0, reduceMotion);
+    }
+
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(child: _buildLinkerCard(options[0], 0)),
+            Expanded(child: _buildLinkerCard(context, options[0], 0, reduceMotion)),
             SizedBox(width: 16.w),
-            Expanded(child: _buildLinkerCard(options[1], 1)),
+            Expanded(child: _buildLinkerCard(context, options[1], 1, reduceMotion)),
           ],
         ),
       ],
     );
   }
 
-  Widget _buildLinkerCard(String text, int index) {
+  Widget _buildLinkerCard(
+    BuildContext context,
+    String text,
+    int index,
+    bool reduceMotion,
+  ) {
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
     final bool showResult = isAnswered && (isSelected || correct);
@@ -68,65 +82,77 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
       icon = Icons.link_rounded;
     }
 
-    return ScaleButton(
-          onTap: isAnswered ? null : () => onSubmitChoice(index, correctIndex),
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
-            curve: Curves.easeOutCubic,
-            constraints: BoxConstraints(minHeight: isCompact ? 80.h : 110.h),
-            padding: EdgeInsets.symmetric(
-              horizontal: 12.w,
-              vertical: isCompact ? 6.h : 12.h,
-            ),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(
-                color: borderColor,
-                width: isSelected ? 2.5 : 1.5,
-              ),
-              boxShadow: [
-                if (!isSelected)
-                  BoxShadow(
-                    color: isDark ? Colors.black26 : Colors.black12,
-                    offset: const Offset(0, 4),
-                    blurRadius: 8,
-                  ),
-                if (showResult)
-                  BoxShadow(
-                    color: borderColor.withValues(alpha: 0.3),
-                    blurRadius: 15,
-                    spreadRadius: 2,
-                  ),
-              ],
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  icon,
-                  color: textColor.withValues(alpha: 0.8),
-                  size: isCompact ? 18.r : 24.r,
-                ),
-                SizedBox(height: isCompact ? 4.h : 8.h),
-                Flexible(
-                  child: Text(
-                    text,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: isCompact ? 12.sp : 14.sp,
-                      fontWeight: FontWeight.w800,
-                      color: textColor,
-                      height: 1.2,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+    Widget card = Semantics(
+      button: true,
+      label: 'Option: $text',
+      selected: isSelected,
+      child: ScaleButton(
+        key: ValueKey('linker_card_$index'),
+        onTap: isAnswered ? null : () => onSubmitChoice(index, correctIndex),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeOutCubic,
+          constraints: BoxConstraints(minHeight: isCompact ? 80.h : 110.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: 12.w,
+            vertical: isCompact ? 6.h : 12.h,
           ),
-        )
+          decoration: BoxDecoration(
+            color: cardColor,
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: borderColor,
+              width: isSelected ? 2.5 : 1.5,
+            ),
+            boxShadow: [
+              if (!isSelected)
+                BoxShadow(
+                  color: isDark ? Colors.black26 : Colors.black12,
+                  offset: const Offset(0, 4),
+                  blurRadius: 8,
+                ),
+              if (showResult)
+                BoxShadow(
+                  color: borderColor.withValues(alpha: 0.3),
+                  blurRadius: 15,
+                  spreadRadius: 2,
+                ),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                icon,
+                color: textColor.withValues(alpha: 0.8),
+                size: isCompact ? 18.r : 24.r,
+              ),
+              SizedBox(height: isCompact ? 4.h : 8.h),
+              Flexible(
+                child: Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: isCompact ? 12.sp : 14.sp,
+                    fontWeight: FontWeight.w800,
+                    color: textColor,
+                    height: 1.2,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+
+    if (reduceMotion) {
+      return card;
+    }
+
+    return card
         .animate()
         .fadeIn(delay: (100 * index).ms)
         .slideX(begin: index == 0 ? -0.1 : 0.1);
