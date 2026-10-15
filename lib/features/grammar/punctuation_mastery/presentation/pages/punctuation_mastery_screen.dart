@@ -11,6 +11,7 @@ import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mi
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/widgets/punctuation_mastery_instruction.dart';
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/widgets/punctuation_sticker_sheet.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
@@ -90,6 +91,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
   }
 
   void _onStick(int index, String mark, bool isPrefix) {
+    final blocState = context.read<GrammarBloc>().state;
+    if (blocState is GrammarLoaded && blocState.answerStatus.isAnswered) return;
     if (isAnsweredNotifier.value || _pendingTyping.value) return;
     hapticService.selection();
     final notifier = isPrefix ? _prefixStickers : _suffixStickers;
@@ -98,6 +101,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
   }
 
   void _onRemoveStick(int index, bool isPrefix) {
+    final blocState = context.read<GrammarBloc>().state;
+    if (blocState is GrammarLoaded && blocState.answerStatus.isAnswered) return;
     if (isAnsweredNotifier.value || _pendingTyping.value) return;
     hapticService.selection();
     final notifier = isPrefix ? _prefixStickers : _suffixStickers;
@@ -124,6 +129,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
   }
 
   void _submitAnswer(GameQuest quest) {
+    final blocState = context.read<GrammarBloc>().state;
+    if (blocState is GrammarLoaded && blocState.answerStatus.isAnswered) return;
     if (isAnsweredNotifier.value || _pendingTyping.value) return;
 
     final words = (quest.sentence ?? "").split(" ");
@@ -167,15 +174,6 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
       _pendingTyping.value = true;
 
       // Auto-scroll to bottom to show the TypeToConfirmOverlay
-      Future.delayed(const Duration(milliseconds: 300), () {
-        if (_scrollController.hasClients) {
-          _scrollController.animateTo(
-            _scrollController.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.easeOutCubic,
-          );
-        }
-      });
     } else {
       hapticService.error();
       soundService.playWrong();
@@ -262,8 +260,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
               useScrolling: false,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
@@ -293,6 +290,12 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                 context,
                                               ).size.height;
                                               final isCompact = maxHeight < 700;
+                                              final isGameAnswered =
+                                                  isAnsweredNotifier.value ||
+                                                  (state is GrammarLoaded &&
+                                                      state
+                                                          .answerStatus
+                                                          .isAnswered);
 
                                               return Column(
                                                 children: [
@@ -326,6 +329,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                   if (quest.grammarRule !=
                                                       null) ...[
                                                     Container(
+                                                      key: const ValueKey(
+                                                        'grammar_rule_box',
+                                                      ),
                                                       padding:
                                                           EdgeInsets.symmetric(
                                                             horizontal: 16.w,
@@ -405,6 +411,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                               horizontal: 24.w,
                                                             ),
                                                         child: Container(
+                                                          key: const ValueKey(
+                                                            'punctuation_context_card',
+                                                          ),
                                                           width:
                                                               double.infinity,
                                                           padding:
@@ -464,8 +473,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                   ),
 
                                                   // Sticker Sheet
-                                                  if (!isAnsweredNotifier
-                                                          .value &&
+                                                  if (!isGameAnswered &&
                                                       !_pendingTyping.value)
                                                     PunctuationStickerSheet(
                                                       marks: marks,
@@ -473,11 +481,34 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                           theme.primaryColor,
                                                     ),
 
-                                                  const Spacer(),
+                                                  if (_pendingTyping.value &&
+                                                      !isGameAnswered &&
+                                                      cleanTargetSentence
+                                                          .isNotEmpty)
+                                                    Expanded(
+                                                      child: SingleChildScrollView(
+                                                        child: TypeToConfirmOverlay(
+                                                          expectedText:
+                                                              cleanTargetSentence,
+                                                          primaryColor: theme
+                                                              .primaryColor,
+                                                          onConfirmed: () =>
+                                                              _submitFinalAnswer(
+                                                                true,
+                                                              ),
+                                                          onSkipped: () =>
+                                                              _submitFinalAnswer(
+                                                                false,
+                                                              ),
+                                                          isPositioned: false,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  if (!_pendingTyping.value)
+                                                    const Spacer(),
 
                                                   // Submit Button
-                                                  if (!isAnsweredNotifier
-                                                          .value &&
+                                                  if (!isGameAnswered &&
                                                       !_pendingTyping.value)
                                                     Padding(
                                                       padding:
@@ -485,6 +516,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                                             horizontal: 24.w,
                                                           ),
                                                       child: ScaleButton(
+                                                        key: const ValueKey(
+                                                          'punctuation_check_answer_button',
+                                                        ),
                                                         onTap: () =>
                                                             _submitAnswer(
                                                               quest,
@@ -568,20 +602,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                       ],
                                     ),
                                   ),
-                                  if (_pendingTyping.value &&
-                                      !isAnsweredNotifier.value &&
-                                      cleanTargetSentence.isNotEmpty)
-                                    SliverToBoxAdapter(
-                                      child: TypeToConfirmOverlay(
-                                        expectedText: cleanTargetSentence,
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () =>
-                                            _submitFinalAnswer(true),
-                                        onSkipped: () =>
-                                            _submitFinalAnswer(false),
-                                        isPositioned: false,
-                                      ),
-                                    ),
+
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
@@ -657,6 +678,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
     final marks = notifier.value[slotIndex] ?? [];
 
     return DragTarget<String>(
+      key: ValueKey(
+        '${isPrefix ? "punctuation_prefix_slot" : "punctuation_suffix_slot"}_$slotIndex',
+      ),
       onAcceptWithDetails: (details) =>
           _onStick(slotIndex, details.data, isPrefix),
       builder: (context, candidateData, rejectedData) {
@@ -711,21 +735,27 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                       child: Center(
                         child: hasMarks
                             ? Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: marks
-                                    .map(
-                                      (m) => Text(
-                                        m,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: markFontSize,
-                                          fontWeight: FontWeight.w900,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    )
-                                    .toList(),
-                              ).animate().shimmer(duration: 2.seconds)
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: marks
+                                        .map(
+                                          (m) => Text(
+                                            m,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: markFontSize,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        )
+                                        .toList(),
+                                  )
+                                  .animate(
+                                    autoPlay: !VowlMotion.shouldReduceMotion(
+                                      context,
+                                    ),
+                                  )
+                                  .shimmer(duration: 2.seconds)
                             : (isHighlight
                                   ? Icon(
                                       Icons.add,
@@ -735,7 +765,10 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen>
                                   : null),
                       ),
                     )
-                    .animate(target: hasMarks ? 1 : 0)
+                    .animate(
+                      target: hasMarks ? 1 : 0,
+                      autoPlay: !VowlMotion.shouldReduceMotion(context),
+                    )
                     .scale(
                       duration: 300.ms,
                       curve: Curves.easeOutCubic,
