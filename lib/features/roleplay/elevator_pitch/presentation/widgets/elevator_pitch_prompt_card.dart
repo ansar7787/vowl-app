@@ -21,8 +21,8 @@ class ElevatorPitchPromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1.sw,
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
@@ -39,6 +39,7 @@ class ElevatorPitchPromptCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
+            key: const Key('elevator_pitch_card_icon'),
             padding: EdgeInsets.all(12.r),
             decoration: BoxDecoration(
               color: color.withValues(alpha: 0.1),
@@ -49,6 +50,7 @@ class ElevatorPitchPromptCard extends StatelessWidget {
           SizedBox(height: 16.h),
           Text(
             (instruction ?? "Elevator Pitch").toUpperCase(),
+            key: const Key('elevator_pitch_instruction_text'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 11.sp,
@@ -61,6 +63,7 @@ class ElevatorPitchPromptCard extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             prompt,
+            key: const Key('elevator_pitch_prompt_text'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
@@ -72,6 +75,7 @@ class ElevatorPitchPromptCard extends StatelessWidget {
           ),
           SizedBox(height: 24.h),
           Container(
+            key: const Key('elevator_pitch_timer_badge'),
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: color.withValues(alpha: 0.08),
@@ -82,13 +86,17 @@ class ElevatorPitchPromptCard extends StatelessWidget {
               children: [
                 Icon(Icons.timer_outlined, color: color, size: 16.r),
                 SizedBox(width: 8.w),
-                Text(
-                  "$timeLimit SECONDS LIMIT",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                    color: color,
+                Flexible(
+                  child: Text(
+                    "$timeLimit SECONDS LIMIT",
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                      color: color,
+                    ),
                   ),
                 ),
               ],

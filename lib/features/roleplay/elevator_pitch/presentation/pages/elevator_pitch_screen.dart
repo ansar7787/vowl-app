@@ -69,6 +69,13 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     initRoleplayGame();
   }
 
+  @override
+  void onQuestionReset() {
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
+  }
+
   void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
@@ -108,8 +115,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              onHint: () {
+                hapticService.selection();
+              },
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -125,6 +133,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                               delegate: SliverChildListDelegate([
                                 SizedBox(height: 16.h),
                                 ElevatorPitchPromptCard(
+                                  key: const Key('elevator_pitch_prompt_card'),
                                   instruction: InstructionHelper.getInstruction(
                                     quest,
                                   ),
@@ -136,6 +145,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                                 SizedBox(height: 24.h),
                                 if (!isAnsweredNotifier.value)
                                   ElevatorPitchRecorder(
+                                    key: const Key('elevator_pitch_recorder'),
                                     expectedText:
                                         quest.correctAnswer ??
                                         "Elevator Pitch Example",
