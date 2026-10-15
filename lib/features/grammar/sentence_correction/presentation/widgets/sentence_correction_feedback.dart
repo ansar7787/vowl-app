@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SentenceCorrectionFeedback extends StatelessWidget {
   final String correction;
@@ -44,7 +45,7 @@ class SentenceCorrectionFeedback extends StatelessWidget {
           "You missed the confirmation spelling! The exact repair is '$correction'.";
     }
 
-    return Container(
+    final feedback = Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w),
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
@@ -77,6 +78,12 @@ class SentenceCorrectionFeedback extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn().slideY(begin: 0.2, end: 0);
+    );
+
+    if (VowlMotion.shouldReduceMotion(context)) {
+      return feedback;
+    }
+
+    return feedback.animate().fadeIn().slideY(begin: 0.2, end: 0);
   }
 }

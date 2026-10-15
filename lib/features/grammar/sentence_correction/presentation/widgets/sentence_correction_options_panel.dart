@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SentenceCorrectionOptionsPanel extends StatelessWidget {
   final List<String> options;
@@ -27,7 +28,7 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final isOptionSelected = selectedOption != null;
 
-    return Padding(
+    final panel = Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Container(
         width: double.infinity,
@@ -151,6 +152,12 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
           ],
         ),
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
+    );
+
+    if (VowlMotion.shouldReduceMotion(context)) {
+      return panel;
+    }
+
+    return panel.animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
   }
 }

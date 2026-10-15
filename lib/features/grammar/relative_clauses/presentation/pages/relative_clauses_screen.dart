@@ -8,7 +8,9 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
+import 'dart:async';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/relative_clauses/presentation/widgets/relative_clauses_instruction.dart';
 import 'package:vowl/features/grammar/relative_clauses/presentation/widgets/relative_clauses_quantum_painter.dart';
@@ -46,9 +48,11 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
   late AnimationController _particleController;
+  Timer? _scrollTimer;
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _hookPoint.dispose();
     _targetFish.dispose();
     _pendingJigsaw.dispose();
@@ -81,7 +85,8 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
       _pendingJigsaw.value = true;
       _particleController.forward(from: 0.0);
 
-      Future.delayed(const Duration(milliseconds: 300), () {
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 300), () {
         if (_scrollController.hasClients) {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
@@ -118,6 +123,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _hookPoint.value = null;
 
     _targetFish.value = -1;
@@ -140,21 +146,6 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
         final fishOptions =
             quest?.options ?? ["WHO IS SMART", "WHICH IS RED", "THAT I LIKE"];
 
-        String cleanTargetSentence = "";
-        if (quest != null) {
-          final sentence = quest.question ?? "";
-          String fullSentence = sentence;
-          if (_targetFish.value != -1) {
-            fullSentence = sentence.replaceFirst(
-              RegExp(r'_{2,}'),
-              fishOptions[_targetFish.value],
-            );
-          }
-          cleanTargetSentence = fullSentence
-              .replaceAll(RegExp(r'\s+'), ' ')
-              .trim();
-        }
-
         return ListenableBuilder(
           listenable: Listenable.merge([
             isAnsweredNotifier,
@@ -164,6 +155,21 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
             _pendingJigsaw,
           ]),
           builder: (context, _) {
+            String cleanTargetSentence = "";
+            if (quest != null) {
+              final sentence = quest.question ?? "";
+              String fullSentence = sentence;
+              if (_targetFish.value != -1) {
+                fullSentence = sentence.replaceFirst(
+                  RegExp(r'_{2,}'),
+                  fishOptions[_targetFish.value],
+                );
+              }
+              cleanTargetSentence = fullSentence
+                  .replaceAll(RegExp(r'\s+'), ' ')
+                  .trim();
+            }
+
             return GrammarBaseLayout(
               disablePadding: true,
               gameType: widget.gameType,
@@ -240,6 +246,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
                                                 if (quest.clauseType !=
                                                     null) ...[
                                                   Container(
+                                                    key: const ValueKey('clause_box'),
                                                     padding:
                                                         EdgeInsets.symmetric(
                                                           horizontal: 16.w,
@@ -278,7 +285,9 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
                                                           ),
                                                         ),
                                                         SizedBox(height: 4.h),
-                                                        Row(
+                                                        FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.min,
                                                           children: [
@@ -358,6 +367,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
                                                             ),
                                                           ],
                                                         ),
+                                                      ),
                                                       ],
                                                     ),
                                                   ).animate().fadeIn(
@@ -372,71 +382,86 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
 
                                                 // Context Card
                                                 Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                    horizontal: 24.w,
-                                                  ),
-                                                  child: Container(
-                                                    width: double.infinity,
-                                                    padding: EdgeInsets.all(
-                                                      isCompact ? 14.r : 22.r,
-                                                    ),
-                                                    decoration: BoxDecoration(
-                                                      color: isDark
-                                                          ? Colors.white
-                                                                .withValues(
-                                                                  alpha: 0.05,
-                                                                )
-                                                          : Colors.black
-                                                                .withValues(
-                                                                  alpha: 0.03,
-                                                                ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                            isCompact
-                                                                ? 18.r
-                                                                : 28.r,
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 24.w,
                                                           ),
-                                                      border: Border.all(
-                                                        color: theme
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: 0.15,
-                                                            ),
-                                                        width: 1.5,
+                                                      child: Container(
+                                                        key: const ValueKey('relative_clauses_context_card'),
+                                                        width: double.infinity,
+                                                        padding: EdgeInsets.all(
+                                                          isCompact
+                                                              ? 14.r
+                                                              : 22.r,
+                                                        ),
+                                                        decoration: BoxDecoration(
+                                                          color: isDark
+                                                              ? Colors.white
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.05,
+                                                                    )
+                                                              : Colors.black
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.03,
+                                                                    ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                isCompact
+                                                                    ? 18.r
+                                                                    : 28.r,
+                                                              ),
+                                                          border: Border.all(
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.15,
+                                                                ),
+                                                            width: 1.5,
+                                                          ),
+                                                        ),
+                                                        child: Text(
+                                                          quest.question?.replaceFirst(
+                                                                RegExp(
+                                                                  r'_{2,}',
+                                                                ),
+                                                                (isAnsweredNotifier.value ||
+                                                                            _pendingJigsaw.value) &&
+                                                                        _targetFish.value !=
+                                                                            -1
+                                                                    ? fishOptions[_targetFish
+                                                                          .value]
+                                                                    : '_____',
+                                                              ) ??
+                                                              "The data ____",
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: isCompact
+                                                                ? 15.sp
+                                                                : 20.sp,
+                                                            color: isDark
+                                                                ? Colors.white
+                                                                : Colors
+                                                                      .black87,
+                                                            height: 1.5,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    child: Text(
-                                                      quest.question?.replaceFirst(
-                                                            RegExp(r'_{2,}'),
-                                                            (isAnsweredNotifier
-                                                                            .value ||
-                                                                        _pendingJigsaw
-                                                                            .value) &&
-                                                                    _targetFish
-                                                                            .value !=
-                                                                        -1
-                                                                ? fishOptions[_targetFish
-                                                                      .value]
-                                                                : '_____',
-                                                          ) ??
-                                                          "The data ____",
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: isCompact
-                                                            ? 15.sp
-                                                            : 20.sp,
-                                                        color: isDark
-                                                            ? Colors.white
-                                                            : Colors.black87,
-                                                        height: 1.5,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+                                                    )
+                                                    .animate(
+                                                      autoPlay:
+                                                          !VowlMotion.shouldReduceMotion(
+                                                            context,
+                                                          ),
+                                                    )
+                                                    .fadeIn(duration: 600.ms)
+                                                    .slideY(begin: 0.2, end: 0),
 
                                                 // Result
 
@@ -528,7 +553,29 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
         final hitRadius = isCompact ? 40.r : 55.r;
 
         return GestureDetector(
+          key: const ValueKey('relative_clauses_arena'),
+          behavior: HitTestBehavior.opaque,
+          onTapDown: (details) {
+            final blocState = context.read<GrammarBloc>().state;
+            if (blocState is GrammarLoaded &&
+                blocState.answerStatus.isAnswered) {
+              return;
+            }
+            if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
+            for (int i = 0; i < nodePoints.length; i++) {
+              if ((details.localPosition - nodePoints[i]).distance <
+                  hitRadius) {
+                _onCatch(i, correctIndex);
+                break;
+              }
+            }
+          },
           onTapUp: (details) {
+            final blocState = context.read<GrammarBloc>().state;
+            if (blocState is GrammarLoaded &&
+                blocState.answerStatus.isAnswered) {
+              return;
+            }
             if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
             for (int i = 0; i < nodePoints.length; i++) {
               if ((details.localPosition - nodePoints[i]).distance <
@@ -539,6 +586,11 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
             }
           },
           onPanUpdate: (details) {
+            final blocState = context.read<GrammarBloc>().state;
+            if (blocState is GrammarLoaded &&
+                blocState.answerStatus.isAnswered) {
+              return;
+            }
             if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
             _hookPoint.value = details.localPosition;
             if (details.localPosition.dy.toInt() % 10 == 0) {
