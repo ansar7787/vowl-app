@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_state.dart';
 
 class GrammarPeekingMascot extends StatelessWidget {
@@ -29,7 +30,7 @@ class GrammarPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final mascotState = MascotMessageHelper.getMascotState(
       isComplete: state is GrammarGameComplete,
       isGameOver: state is GrammarGameOver,
@@ -94,7 +95,7 @@ class _SpeechBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     Widget bubble = Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
