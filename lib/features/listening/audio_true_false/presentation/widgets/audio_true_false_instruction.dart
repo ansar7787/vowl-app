@@ -22,10 +22,14 @@ class AudioTrueFalseInstruction extends StatelessWidget {
     String mainText = instruction;
     String subText = '';
 
-    final match = RegExp(r'([.?!])\s+(.*)').firstMatch(instruction);
-    if (match != null) {
-      mainText = instruction.substring(0, match.start + 1);
-      subText = match.group(2) ?? '';
+    if (instruction.trim().isEmpty) {
+      mainText = 'IS THIS STATEMENT TRUE OR FALSE?';
+    } else {
+      final match = RegExp(r'([.?!])\s+(.*)').firstMatch(instruction);
+      if (match != null) {
+        mainText = instruction.substring(0, match.start + 1);
+        subText = match.group(2) ?? '';
+      }
     }
 
     return Column(
@@ -34,6 +38,7 @@ class AudioTrueFalseInstruction extends StatelessWidget {
           fit: BoxFit.scaleDown,
           child: Text(
             mainText,
+            key: const Key('audio_true_false_instruction_main'),
             textAlign: TextAlign.center,
             maxLines: 1,
             style: TextStyle(
@@ -50,6 +55,7 @@ class AudioTrueFalseInstruction extends StatelessWidget {
           SizedBox(height: 8.h),
           Text(
             subText,
+            key: const Key('audio_true_false_instruction_sub'),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
