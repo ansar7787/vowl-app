@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class WordReorderCheckButton extends StatelessWidget {
   final bool hasWords;
@@ -19,7 +20,10 @@ class WordReorderCheckButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaleButton(
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    final button = ScaleButton(
+      key: const ValueKey('word_check_button'),
       onTap: hasWords ? onCheck : null,
       child: Container(
         width: double.infinity,
@@ -59,6 +63,9 @@ class WordReorderCheckButton extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fadeIn(duration: 400.ms);
+    );
+
+    if (reduceMotion) return button;
+    return button.animate().fadeIn(duration: 400.ms);
   }
 }

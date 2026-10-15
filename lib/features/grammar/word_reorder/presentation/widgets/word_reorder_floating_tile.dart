@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class WordReorderFloatingTile extends StatelessWidget {
   final String word;
@@ -23,46 +24,52 @@ class WordReorderFloatingTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaleButton(
-          onTap: onTap,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: isHighlighted
-                  ? Colors.amber.withValues(alpha: isDark ? 0.15 : 0.1)
-                  : (isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.03)),
-              borderRadius: BorderRadius.circular(18.r),
-              border: Border.all(
-                color: isHighlighted
-                    ? Colors.amber
-                    : primaryColor.withValues(alpha: 0.2),
-                width: isHighlighted ? 2.5 : 1.5,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: isHighlighted
-                      ? Colors.amber.withValues(alpha: 0.3)
-                      : primaryColor.withValues(alpha: 0.05),
-                  blurRadius: isHighlighted ? 15 : 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Text(
-              word,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w700,
-                color: isHighlighted
-                    ? Colors.amber
-                    : (Theme.of(context).colorScheme.onSurface),
-              ),
-            ),
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    final button = ScaleButton(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: isHighlighted
+              ? Colors.amber.withValues(alpha: isDark ? 0.15 : 0.1)
+              : (isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.black.withValues(alpha: 0.03)),
+          borderRadius: BorderRadius.circular(18.r),
+          border: Border.all(
+            color: isHighlighted
+                ? Colors.amber
+                : primaryColor.withValues(alpha: 0.2),
+            width: isHighlighted ? 2.5 : 1.5,
           ),
-        )
+          boxShadow: [
+            BoxShadow(
+              color: isHighlighted
+                  ? Colors.amber.withValues(alpha: 0.3)
+              : primaryColor.withValues(alpha: 0.05),
+              blurRadius: isHighlighted ? 15 : 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Text(
+          word,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w700,
+            color: isHighlighted
+                ? Colors.amber
+                : (Theme.of(context).colorScheme.onSurface),
+          ),
+        ),
+      ),
+    );
+
+    if (reduceMotion) return button;
+
+    return button
         .animate(onPlay: (c) => c.repeat(reverse: true))
         .moveY(
           begin: -5,
