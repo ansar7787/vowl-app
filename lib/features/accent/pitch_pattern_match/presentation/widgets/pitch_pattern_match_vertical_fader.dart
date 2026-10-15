@@ -76,6 +76,7 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
     }
 
     return ScaleButton(
+      key: ValueKey('pitch_pattern_option_$index'),
       onTap: isAnswered ? null : () => onSubmitChoice(index, correctIndex),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
@@ -139,6 +140,7 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
           child: IgnorePointer(
             ignoring: isAnswered,
             child: Slider(
+              key: const ValueKey('pitch_pattern_slider'),
               value: sliderValue,
               onChanged: (v) => onSliderUpdate(v, correct),
             ),

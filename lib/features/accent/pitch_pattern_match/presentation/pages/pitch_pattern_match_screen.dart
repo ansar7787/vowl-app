@@ -44,6 +44,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
+  Timer? _scrollTimer;
   final ScrollController _scrollController = ScrollController();
   final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
@@ -61,6 +62,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _previewTimer?.cancel();
     _scrollController.dispose();
     _previewProgress.dispose();
@@ -72,8 +74,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -140,12 +143,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
+      final currentQuest = _lastQuest ?? quest;
       submitWrongAnswer(
-        quest: _lastQuest!,
+        quest: currentQuest,
         userAnswer: quest.options?[index] ?? '[Mistake]',
       );
     }
@@ -154,18 +154,12 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
   void _submitVerbalEvaluation(bool nailedIt, AccentQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '[Skipped speaking]');
+      final currentQuest = _lastQuest ?? quest;
+      submitWrongAnswer(quest: currentQuest, userAnswer: '[Skipped speaking]');
     }
   }
 
@@ -189,9 +183,11 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
-        final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest?
-            : _lastQuest;
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
+        final AccentQuest? quest =
+            (state is AccentLoaded) ? state.currentQuest : _lastQuest;
         final options = quest?.options ?? ["A", "B"];
         final pattern = quest?.pitchPatterns ?? [0, 1, 2, 1, 0];
         final mediaQuery = MediaQuery.of(context);
@@ -217,8 +213,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                 isCorrect: isCorrectNotifier.value,
                 showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
-                    context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                    context.read<AccentBloc>().add(const NextQuestion()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -304,52 +300,60 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                                     ),
                                                     SizedBox(height: gapPrompt),
 
-                                                    if (isAnsweredNotifier
-                                                            .value ||
-                                                        isFirstStagePassedNotifier
-                                                            .value) ...[
-                                                      ValueListenableBuilder<
-                                                        bool
-                                                      >(
-                                                        valueListenable:
-                                                            _isPreviewing,
-                                                        builder: (context, isPreviewing, _) {
-                                                          return ValueListenableBuilder<
-                                                            double
-                                                          >(
-                                                            valueListenable:
-                                                                _previewProgress,
-                                                            builder:
-                                                                (
-                                                                  context,
-                                                                  previewProgress,
-                                                                  _,
-                                                                ) {
-                                                                  return PitchPatternMatchMelodicCanvas(
-                                                                    pattern:
-                                                                        pattern,
-                                                                    color: theme
-                                                                        .primaryColor,
-                                                                    isDark:
-                                                                        isDark,
-                                                                    isPreviewing:
-                                                                        isPreviewing,
-                                                                    isAnswered:
-                                                                        isAnsweredNotifier
-                                                                            .value ||
-                                                                        isFirstStagePassedNotifier
-                                                                            .value,
-                                                                    previewProgress:
-                                                                        previewProgress,
-                                                                  );
-                                                                },
-                                                          );
-                                                        },
-                                                      ),
-                                                      SizedBox(
-                                                        height: gapSpeaker,
-                                                      ),
-                                                    ],
+                                                    ValueListenableBuilder<
+                                                      bool
+                                                    >(
+                                                      valueListenable:
+                                                          _isPreviewing,
+                                                      builder: (context, isPreviewing, _) {
+                                                        final showCanvas = isPreviewing ||
+                                                            isAnsweredNotifier.value ||
+                                                            isFirstStagePassedNotifier.value;
+                                                        if (!showCanvas) {
+                                                          return const SizedBox.shrink();
+                                                        }
+
+                                                        return Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          children: [
+                                                            ValueListenableBuilder<
+                                                              double
+                                                            >(
+                                                              valueListenable:
+                                                                  _previewProgress,
+                                                              builder:
+                                                                  (
+                                                                    context,
+                                                                    previewProgress,
+                                                                    _,
+                                                                  ) {
+                                                                    return PitchPatternMatchMelodicCanvas(
+                                                                      pattern:
+                                                                          pattern,
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      isDark:
+                                                                          isDark,
+                                                                      isPreviewing:
+                                                                          isPreviewing,
+                                                                      isAnswered:
+                                                                          isAnsweredNotifier
+                                                                              .value ||
+                                                                          isFirstStagePassedNotifier
+                                                                              .value,
+                                                                      previewProgress:
+                                                                          previewProgress,
+                                                                    );
+                                                                  },
+                                                            ),
+                                                            SizedBox(
+                                                              height: gapSpeaker,
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    ),
 
                                                     PitchPatternMatchPulseSpeaker(
                                                       text:
@@ -430,12 +434,21 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                         if (isFirstStagePassedNotifier.value &&
                                             !isAnsweredNotifier.value)
                                           SpeakToConfirmOverlay(
+                                            key: const ValueKey(
+                                              'pitch_pattern_speak_overlay',
+                                            ),
                                             expectedText:
                                                 quest.textToSpeak ??
                                                 quest.word ??
                                                 "",
                                             primaryColor: theme.primaryColor,
                                             isPositioned: false,
+                                            onBypassed: () {
+                                              _submitVerbalEvaluation(
+                                                true,
+                                                quest,
+                                              );
+                                            },
                                             onConfirmed: () {
                                               _submitVerbalEvaluation(
                                                 true,
