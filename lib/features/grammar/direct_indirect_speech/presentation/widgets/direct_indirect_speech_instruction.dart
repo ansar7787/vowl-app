@@ -3,15 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DirectIndirectSpeechInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
   const DirectIndirectSpeechInstruction({
     super.key,
     required this.primaryColor,
+    this.instruction,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(30.r),
@@ -36,14 +38,18 @@ class DirectIndirectSpeechInstruction extends StatelessWidget {
             color: primaryColor,
           ),
           SizedBox(width: 8.w),
-          Text(
-            "CHOOSE THE REPORTED SPEECH",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.2,
+          Flexible(
+            child: Text(
+              (instruction ?? "CHOOSE THE REPORTED SPEECH").toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.2,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],

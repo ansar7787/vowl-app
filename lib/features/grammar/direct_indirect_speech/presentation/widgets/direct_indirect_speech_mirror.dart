@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,10 +31,12 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
     final backColor = (isCorrect == false)
         ? tokens.gameIncorrect
         : tokens.gameCorrect;
+    final shouldReduceMotion = VowlMotion.shouldReduceMotion(context);
+    final isNarrow = MediaQuery.of(context).size.width < 360;
 
     return TweenAnimationBuilder(
       tween: Tween<double>(begin: 0, end: rotation),
-      duration: 1000.ms,
+      duration: shouldReduceMotion ? Duration.zero : 1000.ms,
       curve: Curves.elasticOut,
       builder: (context, double value, child) {
         final isFront = value < 1.57;
@@ -46,7 +49,8 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
           alignment: Alignment.center,
           child:
               Container(
-                    width: isCompact ? 290.w : 330.w,
+                    key: const ValueKey('speech_mirror'),
+                    width: isNarrow ? 270.w : (isCompact ? 290.w : 330.w),
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -157,7 +161,10 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
                       ),
                     ),
                   )
-                  .animate(key: ValueKey(isFront))
+                  .animate(
+                    key: ValueKey(isFront),
+                    target: shouldReduceMotion ? 0 : 1,
+                  )
                   .shimmer(duration: 2.seconds, color: Colors.white10),
         );
       },
