@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +46,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   final ValueNotifier<Offset> _ringOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
   late final AnimationController _springController;
   int _currentCorrectIndex = 0;
 
@@ -60,6 +63,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _springController.dispose();
     _ringOffset.dispose();
     _pendingTypeSubmit.dispose();
@@ -69,7 +73,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   }
 
   void _onConnect(int targetIndex, int correctIndex) {
-    if (isAnsweredNotifier.value || _pendingTypeSubmit.value) return;
+        if (isAnsweredNotifier.value || _pendingTypeSubmit.value) return;
 
     bool isCorrect = targetIndex == correctIndex;
 
@@ -88,7 +92,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
       soundService.playCorrect();
       _pendingTypeSubmit.value = true;
 
-      Future.delayed(const Duration(milliseconds: 100), () {
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 100), () {
         if (!mounted) return;
         if (_scrollController.hasClients) {
           _scrollController.animateTo(
@@ -125,6 +130,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _ringOffset.value = Offset.zero;
 
     _pendingTypeSubmit.value = false;
@@ -140,7 +146,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
       listener: onGrammarStateChanged,
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
-        if (quest != null) {
+                if (quest != null) {
           _currentCorrectIndex = quest.correctAnswerIndex ?? 0;
         }
         final options = quest?.options ?? ["Is", "Are"];
@@ -221,86 +227,94 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                                   ),
 
                                                   // Atmospheric Harmony Hub
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                          horizontal: 24.w,
-                                                        ),
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      padding: EdgeInsets.all(
-                                                        isCompact ? 14.r : 24.r,
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                        color: isDark
-                                                            ? Colors.white
-                                                                  .withValues(
-                                                                    alpha: 0.05,
-                                                                  )
-                                                            : Colors.black
-                                                                  .withValues(
-                                                                    alpha: 0.03,
-                                                                  ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              isCompact
-                                                                  ? 20.r
-                                                                  : 32.r,
+                                                  Builder(
+                                                    builder: (context) {
+                                                      final reduceMotion = VowlMotion.shouldReduceMotion(context);
+                                                      final hub = Padding(
+                                                        key: const ValueKey('sva_harmony_hub'),
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 24.w,
                                                             ),
-                                                        border: Border.all(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.2,
-                                                              ),
-                                                          width: 1.5,
-                                                        ),
-                                                        boxShadow: [
-                                                          BoxShadow(
-                                                            color: theme
-                                                                .primaryColor
-                                                                .withValues(
-                                                                  alpha: 0.05,
-                                                                ),
-                                                            blurRadius: 40,
-                                                            spreadRadius: 5,
+                                                        child: Container(
+                                                          width: double.infinity,
+                                                          padding: EdgeInsets.all(
+                                                            isCompact ? 14.r : 24.r,
                                                           ),
-                                                        ],
-                                                      ),
-                                                      child: Text(
-                                                        ((_pendingTypeSubmit
-                                                                        .value ||
-                                                                    isCorrectNotifier
-                                                                            .value ==
-                                                                        true) &&
-                                                                quest.correctAnswer !=
-                                                                    null)
-                                                            ? (quest.question ??
-                                                                      "")
-                                                                  .replaceAll(
-                                                                    '___',
-                                                                    quest
-                                                                        .correctAnswer!,
-                                                                  )
-                                                            : (quest.question ??
-                                                                  "Complete the agreement..."),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: isCompact
-                                                              ? 16.sp
-                                                              : 22.sp,
-                                                          color: isDark
-                                                              ? Colors.white
-                                                              : Colors.black87,
-                                                          height: 1.5,
-                                                          fontWeight:
-                                                              FontWeight.w600,
+                                                          decoration: BoxDecoration(
+                                                            color: isDark
+                                                                ? Colors.white
+                                                                      .withValues(
+                                                                        alpha: 0.05,
+                                                                      )
+                                                                : Colors.black
+                                                                      .withValues(
+                                                                        alpha: 0.03,
+                                                                      ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  isCompact
+                                                                      ? 20.r
+                                                                      : 32.r,
+                                                                ),
+                                                            border: Border.all(
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.2,
+                                                                  ),
+                                                              width: 1.5,
+                                                            ),
+                                                            boxShadow: [
+                                                              BoxShadow(
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha: 0.05,
+                                                                    ),
+                                                                blurRadius: 40,
+                                                                spreadRadius: 5,
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          child: Text(
+                                                            ((_pendingTypeSubmit
+                                                                            .value ||
+                                                                        isCorrectNotifier
+                                                                                .value ==
+                                                                            true) &&
+                                                                    quest.correctAnswer !=
+                                                                        null)
+                                                                ? (quest.question ??
+                                                                          "")
+                                                                      .replaceAll(
+                                                                        '___',
+                                                                        quest
+                                                                            .correctAnswer!,
+                                                                      )
+                                                                : (quest.question ??
+                                                                      "Complete the agreement..."),
+                                                            textAlign:
+                                                                TextAlign.center,
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: isCompact
+                                                                  ? 16.sp
+                                                                  : 22.sp,
+                                                              color: isDark
+                                                                  ? Colors.white
+                                                                  : Colors.black87,
+                                                              height: 1.5,
+                                                              fontWeight:
+                                                                  FontWeight.w600,
+                                                            ),
+                                                          ),
                                                         ),
-                                                      ),
-                                                    ),
-                                                  ).animate().fadeIn(duration: 800.ms).slideY(begin: 0.1, end: 0),
+                                                      );
+                                                      if (reduceMotion) return hub;
+                                                      return hub.animate().fadeIn(duration: 800.ms).slideY(begin: 0.1, end: 0);
+                                                    },
+                                                  ),
 
                                                   Expanded(
                                                     child: Padding(
@@ -346,46 +360,33 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                                           ),
 
                                                           // Verb Terminals
-                                                          GestureDetector(
-                                                            onTap: () => _onConnect(
-                                                              0,
-                                                              quest.correctAnswerIndex ??
-                                                                  0,
-                                                            ),
-                                                            child: _buildVerbTerminal(
-                                                              0,
-                                                              options[0],
-                                                              theme
-                                                                  .primaryColor,
-                                                              Alignment
-                                                                  .centerLeft,
-                                                              quest.correctAnswerIndex ??
-                                                                  0,
-                                                              isCompact,
-                                                            ),
+                                                          _buildVerbTerminal(
+                                                            context,
+                                                            0,
+                                                            options[0],
+                                                            theme.primaryColor,
+                                                            Alignment.centerLeft,
+                                                            quest.correctAnswerIndex ?? 0,
+                                                            isCompact,
+                                                            () => _onConnect(0, quest.correctAnswerIndex ?? 0),
                                                           ),
-                                                          GestureDetector(
-                                                            onTap: () => _onConnect(
-                                                              1,
-                                                              quest.correctAnswerIndex ??
-                                                                  0,
-                                                            ),
-                                                            child: _buildVerbTerminal(
-                                                              1,
-                                                              options[1],
-                                                              theme
-                                                                  .primaryColor,
-                                                              Alignment
-                                                                  .centerRight,
-                                                              quest.correctAnswerIndex ??
-                                                                  0,
-                                                              isCompact,
-                                                            ),
+                                                          _buildVerbTerminal(
+                                                            context,
+                                                            1,
+                                                            options[1],
+                                                            theme.primaryColor,
+                                                            Alignment.centerRight,
+                                                            quest.correctAnswerIndex ?? 0,
+                                                            isCompact,
+                                                            () => _onConnect(1, quest.correctAnswerIndex ?? 0),
                                                           ),
 
                                                           // The Quantum Core (Harmony Slider)
-                                                          GestureDetector(
-                                                            onPanUpdate:
+                                                          Builder(
+                                                            builder: (context) {
+                                                              final coreWidget = GestureDetector(
+                                                              behavior: HitTestBehavior.opaque,
+                                                            onHorizontalDragUpdate:
                                                                 isAnsweredNotifier
                                                                         .value ||
                                                                     _pendingTypeSubmit
@@ -420,7 +421,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                                                           0,
                                                                     );
                                                                   },
-                                                            onPanEnd:
+                                                            onHorizontalDragEnd:
                                                                 isAnsweredNotifier
                                                                         .value ||
                                                                     _pendingTypeSubmit
@@ -467,16 +468,22 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                                                     );
                                                                   },
                                                               child: _buildQuantumCore(
+                                                                context,
                                                                 theme
                                                                     .primaryColor,
                                                                 isCompact,
                                                               ),
                                                             ),
-                                                          ).animate().scale(
+                                                          );
+                                                          final reduceMotion = VowlMotion.shouldReduceMotion(context);
+                                                          if (reduceMotion) return coreWidget;
+                                                          return coreWidget.animate().scale(
                                                             duration: 400.ms,
                                                             curve: Curves
                                                                 .easeOutBack,
-                                                          ),
+                                                          );
+                                                        },
+                                                      ),
                                                         ],
                                                       ),
                                                     ),
@@ -499,6 +506,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
                                       child: TypeToConfirmOverlay(
+                                        key: const ValueKey('sva_type_overlay'),
                                         expectedText: cleanTargetSentence,
                                         displayText:
                                             "Type the complete sentence to lock in the rule",
@@ -550,13 +558,16 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   }
 
   Widget _buildVerbTerminal(
+    BuildContext context,
     int index,
     String verb,
     Color primaryColor,
     Alignment alignment,
     int correctIndex,
     bool isCompact,
+    VoidCallback onTap,
   ) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final isCorrect =
         (isAnsweredNotifier.value || _pendingTypeSubmit.value) &&
         isCorrectNotifier.value != false &&
@@ -567,49 +578,63 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
         index != correctIndex;
     final terminalSize = isCompact ? 80.r : 110.r;
 
+    final terminal = GestureDetector(
+      key: ValueKey('sva_terminal_$index'),
+      behavior: HitTestBehavior.opaque,
+      onTap: onTap,
+      child: Container(
+        width: terminalSize,
+        height: terminalSize,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: isCorrect
+              ? AppColors.gameCorrect.withValues(alpha: 0.1)
+              : (isWrong
+                    ? AppColors.gameIncorrect.withValues(alpha: 0.1)
+                    : Colors.transparent),
+          border: Border.all(
+            color: isCorrect
+                ? AppColors.gameCorrect
+                : (isWrong
+                      ? AppColors.gameIncorrect
+                      : primaryColor.withValues(alpha: 0.2)),
+            width: isCompact ? 2.r : 2.5.r,
+          ),
+        ),
+        child: Center(
+          child: Text(
+            verb.toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: isCompact ? 13.sp : 16.sp,
+              fontWeight: FontWeight.bold,
+              color: isCorrect
+                  ? AppColors.gameCorrect
+                  : (isWrong ? AppColors.gameIncorrect : primaryColor),
+            ),
+          ),
+        ),
+      ),
+    );
+
+    if (reduceMotion) {
+      return Align(
+        alignment: alignment,
+        child: terminal,
+      );
+    }
+
     return Align(
       alignment: alignment,
-      child:
-          Container(
-                width: terminalSize,
-                height: terminalSize,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isCorrect
-                      ? AppColors.gameCorrect.withValues(alpha: 0.1)
-                      : (isWrong
-                            ? AppColors.gameIncorrect.withValues(alpha: 0.1)
-                            : Colors.transparent),
-                  border: Border.all(
-                    color: isCorrect
-                        ? AppColors.gameCorrect
-                        : (isWrong
-                              ? AppColors.gameIncorrect
-                              : primaryColor.withValues(alpha: 0.2)),
-                    width: isCompact ? 2.r : 2.5.r,
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    verb.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: isCompact ? 13.sp : 16.sp,
-                      fontWeight: FontWeight.bold,
-                      color: isCorrect
-                          ? AppColors.gameCorrect
-                          : (isWrong ? AppColors.gameIncorrect : primaryColor),
-                    ),
-                  ),
-                ),
-              )
-              .animate(target: isCorrect ? 1 : 0)
-              .shimmer(duration: 1.seconds)
-              .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+      child: terminal
+          .animate(target: isCorrect ? 1 : 0)
+          .shimmer(duration: 1.seconds)
+          .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
     );
   }
 
-  Widget _buildQuantumCore(Color primaryColor, bool isCompact) {
+  Widget _buildQuantumCore(BuildContext context, Color primaryColor, bool isCompact) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final Color coreColor =
         (isAnsweredNotifier.value || _pendingTypeSubmit.value)
         ? (isCorrectNotifier.value != false
@@ -619,7 +644,17 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     final coreSize = isCompact ? 50.r : 70.r;
     final innerSize = isCompact ? 14.r : 20.r;
 
+    final innerDot = Container(
+      width: innerSize,
+      height: innerSize,
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.circle,
+      ),
+    );
+
     return Container(
+      key: const ValueKey('sva_quantum_core'),
       width: coreSize,
       height: coreSize,
       decoration: BoxDecoration(
@@ -634,14 +669,9 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
         ],
       ),
       child: Center(
-        child: Container(
-          width: innerSize,
-          height: innerSize,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.circle,
-          ),
-        ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.seconds),
+        child: reduceMotion
+            ? innerDot
+            : innerDot.animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.seconds),
       ),
     );
   }
