@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'audio_multiple_choice_satellite.dart';
 
 class AudioMultipleChoiceSpinner extends StatelessWidget {
@@ -37,9 +38,11 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     return GestureDetector(
       onPanUpdate: (details) => onSpin(details.delta.dx),
       child: Container(
+        key: const Key('audio_multiple_choice_spinner'),
         width: double.infinity,
         color: Colors.transparent, // Ensures the entire area is draggable
         child: Stack(
@@ -61,7 +64,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
             // Satellite Options
             ...List.generate(options.length, (index) {
               double angle =
-                  (index * (2 * 3.14159 / options.length)) + rotation;
+                  (index * (2 * math.pi / options.length)) + rotation;
               double radius = 115.r;
               return Align(
                 alignment: Alignment.center,
@@ -86,6 +89,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
 
             // Central Core (Listen Button)
             ScaleButton(
+              key: const Key('satellite_core_btn'),
               onTap: onTapCore,
               child: Container(
                 width: 80.r,
@@ -110,12 +114,18 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                   ],
                 ),
                 child: isCorrectState == true && emoji != null
-                    ? Center(
-                        child: Text(emoji!, style: TextStyle(fontSize: 36.r)),
-                      ).animate().scale(
-                        duration: 400.ms,
-                        curve: Curves.easeOutCubic,
-                      )
+                    ? (reduceMotion
+                        ? Center(
+                            child:
+                                Text(emoji!, style: TextStyle(fontSize: 36.r)),
+                          )
+                        : Center(
+                            child:
+                                Text(emoji!, style: TextStyle(fontSize: 36.r)),
+                          ).animate().scale(
+                            duration: 400.ms,
+                            curve: Curves.easeOutCubic,
+                          ))
                     : Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,

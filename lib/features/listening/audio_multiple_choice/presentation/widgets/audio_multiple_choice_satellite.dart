@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class AudioMultipleChoiceSatellite extends StatelessWidget {
   final int index;
@@ -33,6 +34,7 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
     final isSelected = selectedIndex == index;
     final isCorrect = isAnswered && index == correct && isCorrectState == true;
     final isWrong = isAnswered && isSelected && isCorrectState == false;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     Color getBgColor() {
       if (isCorrect) return tokens.gameCorrect;
@@ -57,55 +59,62 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
       return isDark ? Colors.white : color;
     }
 
-    return ScaleButton(
-          onTap: onTap,
-          child: AnimatedContainer(
-            duration: 300.ms,
-            curve: Curves.easeOutCubic,
-            constraints: BoxConstraints(
-              minWidth: isSelected ? 90.r : 80.r,
-              maxWidth: 130.r,
-              minHeight: isSelected ? 90.h : 80.h,
-              maxHeight: isSelected ? 90.h : 80.h,
-            ),
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: getBgColor(),
-              borderRadius: BorderRadius.circular(50.r),
-              border: Border.all(
-                color: getBorderColor(),
-                width: isSelected ? 4 : 2,
-              ),
-              boxShadow: isSelected
-                  ? [
-                      BoxShadow(
-                        color: getBgColor().withValues(alpha: 0.6),
-                        blurRadius: 20,
-                        offset: const Offset(0, 8),
-                      ),
-                    ]
-                  : [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.05),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-            ),
-            child: Text(
-              text,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isSelected ? 14.sp : 12.sp,
-                fontWeight: isSelected ? FontWeight.w900 : FontWeight.w700,
-                color: getTextColor(),
-                height: 1.1,
-              ),
-            ),
+    final button = ScaleButton(
+      key: Key('satellite_option_$index'),
+      onTap: isAnswered ? null : onTap,
+      child: AnimatedContainer(
+        duration: reduceMotion ? Duration.zero : 300.ms,
+        curve: Curves.easeOutCubic,
+        constraints: BoxConstraints(
+          minWidth: isSelected ? 90.r : 80.r,
+          maxWidth: 130.r,
+          minHeight: isSelected ? 90.h : 80.h,
+          maxHeight: isSelected ? 90.h : 80.h,
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: getBgColor(),
+          borderRadius: BorderRadius.circular(50.r),
+          border: Border.all(
+            color: getBorderColor(),
+            width: isSelected ? 4 : 2,
           ),
-        )
+          boxShadow: isSelected
+              ? [
+                  BoxShadow(
+                    color: getBgColor().withValues(alpha: 0.6),
+                    blurRadius: 20,
+                    offset: const Offset(0, 8),
+                  ),
+                ]
+              : [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+        ),
+        child: Text(
+          text,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: isSelected ? 14.sp : 12.sp,
+            fontWeight: isSelected ? FontWeight.w900 : FontWeight.w700,
+            color: getTextColor(),
+            height: 1.1,
+          ),
+        ),
+      ),
+    );
+
+    if (reduceMotion) {
+      return button;
+    }
+
+    return button
         .animate()
         .fadeIn(duration: 400.ms, delay: (100 * index).ms)
         .slideY(

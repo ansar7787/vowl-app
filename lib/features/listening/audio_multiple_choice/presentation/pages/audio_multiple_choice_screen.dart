@@ -9,6 +9,7 @@ import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
+import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_instruction.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_question.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_spinner.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
@@ -71,6 +72,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
     isFirstStagePassedNotifier.value = false;
     _selectedIndex.value = null;
     _rotation.value = 0.0;
+    timerKey?.currentState?.start();
   }
 
   void _submitAnswer(int index, int correct, GameQuest quest) {
@@ -82,11 +84,6 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
 
     if (isCorrect) {
       submitCorrectAnswer();
-      Future.delayed(const Duration(milliseconds: 200), () {
-        if (mounted) {
-          _scrollToBottom();
-        }
-      });
     } else {
       String userAnswerStr = _shuffledOptions.isNotEmpty
           ? _shuffledOptions[index]
@@ -95,19 +92,8 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
     }
   }
 
-  void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 100), () {
-      if (_scrollController.hasClients) {
-        _scrollController.animateTo(
-          _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.easeOutCubic,
-        );
-      }
-    });
-  }
-
   void _submitWrongAnswer(GameQuest quest) {
+    timerKey?.currentState?.stop();
     submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
   }
 
@@ -117,9 +103,12 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
+      listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
       buildWhen: (previous, current) =>
-          current is ListeningLoaded || current is ListeningGameOver,
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
@@ -162,7 +151,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () => dispatchNextQuestion(),
-              onHint: () => dispatchHintUsed(),
+              onHint: () => hapticService.selection(),
               useScrolling: false,
               disablePadding: true,
               child: quest == null
@@ -199,20 +188,24 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
                                               _submitWrongAnswer(quest),
                                         ),
                                       ),
-                                      Text(
-                                        quest.instruction,
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w600,
-                                          color: isDark
-                                              ? Colors.white70
-                                              : Colors.black54,
+                                      AudioMultipleChoiceInstruction(
+                                        key: const Key(
+                                          'audio_multiple_choice_instruction',
                                         ),
+                                        color: theme.primaryColor,
+                                        instruction: quest.instruction.isNotEmpty
+                                            ? quest.instruction
+                                            : context.tr(
+                                                'listening.games.audio_multiple_choice_instruction',
+                                                fallback:
+                                                    'LISTEN AND CHOOSE THE BEST MATCH',
+                                              ),
                                       ),
                                       SizedBox(height: 24.h),
                                       AudioMultipleChoiceQuestion(
+                                        key: const Key(
+                                          'audio_multiple_choice_question',
+                                        ),
                                         text: displayQuestion,
                                         isDark: isDark,
                                       ),
@@ -245,9 +238,9 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
                                           isCorrectState:
                                               isCorrectNotifier.value,
                                           onSpin: (delta) {
-                                            if (!isAnsweredNotifier.value) {
-                                              _rotation.value += delta * 0.01;
-                                            }
+                                             if (!isAnsweredNotifier.value) {
+                                               _rotation.value += delta * 0.01;
+                                             }
                                           },
                                           onSelectSatellite: (index) {
                                             _submitAnswer(
@@ -257,9 +250,16 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
                                             );
                                           },
                                           onTapCore: () {
-                                            soundService.playTts(
-                                              quest.textToSpeak ?? "",
-                                            );
+                                            final textToSpeak =
+                                                quest.textToSpeak ??
+                                                quest.prompt ??
+                                                quest.question ??
+                                                quest.sentence ??
+                                                quest.audioTranscript ??
+                                                '';
+                                            if (textToSpeak.isNotEmpty) {
+                                              soundService.playTts(textToSpeak);
+                                            }
                                             hapticService.selection();
                                           },
                                         );
