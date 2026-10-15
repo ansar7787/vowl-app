@@ -23,6 +23,33 @@ class ConflictResolverConflictCard extends StatelessWidget {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     Color emotionalColor = color;
 
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    Widget iconWidget = Container(
+      key: const Key('conflict_resolver_card_icon'),
+      padding: EdgeInsets.all(12.r),
+      decoration: BoxDecoration(
+        color: emotionalColor.withValues(alpha: 0.1),
+        shape: BoxShape.circle,
+      ),
+      child: Icon(
+        Icons.forum_rounded,
+        color: emotionalColor,
+        size: 24.r,
+      ),
+    );
+
+    if (!reduceMotion) {
+      iconWidget = iconWidget
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.1, 1.1),
+            duration: 2.seconds,
+            curve: Curves.easeInOut,
+          );
+    }
+
     return Container(
       width: 1.sw,
       padding: EdgeInsets.all(22.r),
@@ -44,28 +71,11 @@ class ConflictResolverConflictCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: emotionalColor.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.forum_rounded,
-                  color: emotionalColor,
-                  size: 24.r,
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.1, 1.1),
-                duration: 2.seconds,
-                curve: Curves.easeInOut,
-              ),
+          iconWidget,
           SizedBox(height: 16.h),
           Text(
             scene,
+            key: const Key('conflict_resolver_scene_text'),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -78,6 +88,7 @@ class ConflictResolverConflictCard extends StatelessWidget {
           SizedBox(height: 20.h),
           // Tension Meter
           Wrap(
+            key: const Key('conflict_resolver_tension_meter'),
             alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
             spacing: 12.w,
@@ -108,6 +119,7 @@ class ConflictResolverConflictCard extends StatelessWidget {
 
                     return Expanded(
                       child: Container(
+                        key: Key('conflict_resolver_tension_bar_$index'),
                         height: 4.h,
                         margin: EdgeInsets.symmetric(horizontal: 2.w),
                         decoration: BoxDecoration(
