@@ -3,11 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PronounResolutionInstruction extends StatelessWidget {
   final Color primaryColor;
-  const PronounResolutionInstruction({super.key, required this.primaryColor});
+  final String? instruction;
+
+  const PronounResolutionInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: const ValueKey('pronoun_resolution_instruction'),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
@@ -19,14 +26,17 @@ class PronounResolutionInstruction extends StatelessWidget {
         children: [
           Icon(Icons.gps_fixed_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "ALIGN THE GRAVITY WELL",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction ?? "ALIGN THE GRAVITY WELL",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
