@@ -19,7 +19,7 @@ class GourmetOrderBanquetHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1.sw,
+      width: double.infinity,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
@@ -37,12 +37,14 @@ class GourmetOrderBanquetHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Row(
+            key: const Key('gourmet_order_banquet_client_request_row'),
             children: [
               Icon(Icons.room_service_rounded, color: color, size: 16.r),
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
                   "CLIENT REQUEST",
+                  key: const Key('gourmet_order_banquet_client_request_label'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
@@ -57,6 +59,7 @@ class GourmetOrderBanquetHeader extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             prompt,
+            key: const Key('gourmet_order_banquet_prompt_text'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
@@ -85,6 +88,7 @@ class GourmetOrderBanquetHeader extends StatelessWidget {
                   Expanded(
                     child: Text(
                       instruction!,
+                      key: const Key('gourmet_order_banquet_instruction_text'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,

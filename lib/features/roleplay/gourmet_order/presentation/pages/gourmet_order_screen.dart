@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
@@ -51,9 +53,19 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
   final ValueNotifier<List<String>> _selectedItems = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 150), () {
+    _scrollTimer?.cancel();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion) {
+      if (_scrollController.hasClients) {
+        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      }
+      return;
+    }
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
       if (!mounted) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
@@ -84,7 +96,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_steamController.isAnimating) _steamController.stop();
       if (_pulseController.isAnimating) _pulseController.stop();
@@ -96,6 +109,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _steamController.dispose();
     _pulseController.dispose();
     _selectedItems.dispose();
@@ -184,18 +198,23 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   @override
   void onQuestionReset() {
     _selectedItems.value = [];
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
 
     return BlocConsumer<RoleplayBloc, RoleplayState>(
       listenWhen: roleplayListenWhen,
       listener: onRoleplayStateChanged,
       builder: (context, state) {
-        final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
+        final quest = (state is RoleplayLoaded) ? state.currentQuestOrNull : null;
         final options = quest?.options ?? [];
         final prices = quest?.menuPrices ?? [];
 
@@ -258,6 +277,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                           child: Column(
                                             children: [
                                               GourmetOrderBanquetHeader(
+                                                key: const Key('gourmet_order_banquet_header'),
                                                 prompt: quest.prompt ?? "",
                                                 instruction:
                                                     InstructionHelper.getInstruction(
@@ -272,6 +292,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
                                               // Floating Cloche Platter
                                               GourmetOrderTableSetting(
+                                                key: const Key('gourmet_order_table_setting'),
                                                 color: theme.primaryColor,
                                                 isDark: isDark,
                                                 isAnswered:
@@ -296,6 +317,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
                                               // Tray of plate choices
                                               GourmetOrderPlateTray(
+                                                key: const Key('gourmet_order_plate_tray'),
                                                 options: options,
                                                 prices: prices,
                                                 color: theme.primaryColor,
@@ -323,171 +345,184 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
                                               // Trigger Action Buttons
                                               if (!isAnsweredNotifier.value &&
+                                                  !isFirstStagePassedNotifier
+                                                      .value &&
                                                   _selectedItems
                                                       .value
                                                       .isNotEmpty)
-                                                Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment
-                                                          .stretch,
-                                                  children: [
-                                                    ScaleButton(
-                                                      onTap: () => _submitAnswer(
-                                                        quest.correctAnswer ??
-                                                            "",
-                                                        quest,
-                                                      ),
-                                                      child: Container(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              vertical:
-                                                                  isCompact
-                                                                  ? 12.h
-                                                                  : 14.h,
-                                                            ),
-                                                        decoration: BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                30.r,
-                                                              ),
-                                                          gradient: LinearGradient(
-                                                            colors: [
-                                                              theme
-                                                                  .primaryColor,
-                                                              theme.primaryColor
-                                                                  .withValues(
-                                                                    alpha: 0.8,
-                                                                  ),
-                                                            ],
+                                                Builder(
+                                                  builder: (context) {
+                                                    Widget buttons = Column(
+                                                      key: const Key('gourmet_order_action_buttons'),
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .stretch,
+                                                      children: [
+                                                        ScaleButton(
+                                                          key: const Key('gourmet_order_serve_button'),
+                                                          onTap: () => _submitAnswer(
+                                                            quest.correctAnswer ??
+                                                                "",
+                                                            quest,
                                                           ),
-                                                          boxShadow: [
-                                                            BoxShadow(
+                                                          child: Container(
+                                                            padding:
+                                                                EdgeInsets.symmetric(
+                                                                  vertical:
+                                                                      isCompact
+                                                                      ? 12.h
+                                                                      : 14.h,
+                                                                ),
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius.circular(
+                                                                    30.r,
+                                                                  ),
+                                                              gradient: LinearGradient(
+                                                                colors: [
+                                                                  theme
+                                                                      .primaryColor,
+                                                                  theme.primaryColor
+                                                                      .withValues(
+                                                                        alpha: 0.8,
+                                                                      ),
+                                                                ],
+                                                             ),
+                                                              boxShadow: [
+                                                                BoxShadow(
+                                                                  color: theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha: 0.35,
+                                                                      ),
+                                                                  blurRadius:
+                                                                      isCompact
+                                                                      ? 10
+                                                                      : 15,
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            child: Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Icon(
+                                                                  Icons
+                                                                      .restaurant_menu_rounded,
+                                                                  color:
+                                                                      Colors.white,
+                                                                  size: isCompact
+                                                                      ? 16.r
+                                                                      : 18.r,
+                                                                ),
+                                                                SizedBox(
+                                                                  width: 8.w,
+                                                                ),
+                                                                Text(
+                                                                  "SERVE PLATTER",
+                                                                  style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Outfit',
+                                                                    fontSize:
+                                                                        isCompact
+                                                                        ? 12.sp
+                                                                        : 14.sp,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    color: Colors
+                                                                        .white,
+                                                                    letterSpacing:
+                                                                        1.5,
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          height: isCompact
+                                                              ? 12.h
+                                                              : 16.h,
+                                                        ),
+                                                        ScaleButton(
+                                                          key: const Key('gourmet_order_clear_button'),
+                                                          onTap: _clearItems,
+                                                          child: Container(
+                                                            padding:
+                                                                EdgeInsets.symmetric(
+                                                                  vertical:
+                                                                      isCompact
+                                                                      ? 12.h
+                                                                      : 14.h,
+                                                                ),
+                                                            decoration: BoxDecoration(
                                                               color: theme
                                                                   .primaryColor
                                                                   .withValues(
-                                                                    alpha: 0.35,
+                                                                    alpha: 0.1,
                                                                   ),
-                                                              blurRadius:
-                                                                  isCompact
-                                                                  ? 10
-                                                                  : 15,
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        child: Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Icon(
-                                                              Icons
-                                                                  .restaurant_menu_rounded,
-                                                              color:
-                                                                  Colors.white,
-                                                              size: isCompact
-                                                                  ? 16.r
-                                                                  : 18.r,
-                                                            ),
-                                                            SizedBox(
-                                                              width: 8.w,
-                                                            ),
-                                                            Text(
-                                                              "SERVE PLATTER",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize:
-                                                                    isCompact
-                                                                    ? 12.sp
-                                                                    : 14.sp,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                color: Colors
-                                                                    .white,
-                                                                letterSpacing:
-                                                                    1.5,
+                                                              borderRadius:
+                                                                  BorderRadius.circular(
+                                                                    30.r,
+                                                                  ),
+                                                              border: Border.all(
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha: 0.3,
+                                                                    ),
                                                               ),
                                                             ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 16.h,
-                                                    ),
-                                                    ScaleButton(
-                                                      onTap: _clearItems,
-                                                      child: Container(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              vertical:
-                                                                  isCompact
-                                                                  ? 12.h
-                                                                  : 14.h,
-                                                            ),
-                                                        decoration: BoxDecoration(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.1,
-                                                              ),
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                30.r,
-                                                              ),
-                                                          border: Border.all(
-                                                            color: theme
-                                                                .primaryColor
-                                                                .withValues(
-                                                                  alpha: 0.3,
+                                                            child: Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Icon(
+                                                                  Icons
+                                                                      .refresh_rounded,
+                                                                  color: theme
+                                                                      .primaryColor,
+                                                                  size: isCompact
+                                                                      ? 16.r
+                                                                      : 18.r,
                                                                 ),
+                                                                SizedBox(
+                                                                  width: 8.w,
+                                                                ),
+                                                                Text(
+                                                                  "CLEAR PLATTER",
+                                                                  style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Outfit',
+                                                                    fontSize:
+                                                                        isCompact
+                                                                        ? 11.sp
+                                                                        : 13.sp,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    color: theme
+                                                                        .primaryColor,
+                                                                    letterSpacing:
+                                                                        1.0,
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           ),
                                                         ),
-                                                        child: Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Icon(
-                                                              Icons
-                                                                  .refresh_rounded,
-                                                              color: theme
-                                                                  .primaryColor,
-                                                              size: isCompact
-                                                                  ? 16.r
-                                                                  : 18.r,
-                                                            ),
-                                                            SizedBox(
-                                                              width: 8.w,
-                                                            ),
-                                                            Text(
-                                                              "CLEAR PLATTER",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize:
-                                                                    isCompact
-                                                                    ? 11.sp
-                                                                    : 13.sp,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                color: theme
-                                                                    .primaryColor,
-                                                                letterSpacing:
-                                                                    1.0,
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ).animate().fadeIn(
-                                                  duration: 300.ms,
+                                                      ],
+                                                    );
+                                                    if (!reduceMotion) {
+                                                      buttons = buttons.animate().fadeIn(
+                                                        duration: 300.ms,
+                                                      );
+                                                    }
+                                                    return buttons;
+                                                  },
                                                 ),
 
                                               // Explanations cards post-selection
@@ -505,6 +540,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                       !isAnsweredNotifier.value)
                                     SliverToBoxAdapter(
                                       child: SpeakToConfirmOverlay(
+                                        key: const Key('gourmet_order_speak_overlay'),
                                         expectedText:
                                             quest.correctAnswer ??
                                             _selectedItems.value.join(', '),

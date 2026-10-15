@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -34,8 +35,11 @@ class GourmetOrderPlateTray extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 1.sw,
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    Widget content = Container(
+      width: double.infinity,
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
@@ -50,6 +54,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
             children: [
               Text(
                 "BANQUET PLATE TRAY",
+                key: const Key('gourmet_order_plate_tray_title'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
@@ -60,6 +65,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
               ),
               Icon(
                 Icons.kitchen_rounded,
+                key: const Key('gourmet_order_plate_tray_icon'),
                 color: color.withValues(alpha: 0.5),
                 size: 16.r,
               ),
@@ -78,15 +84,22 @@ class GourmetOrderPlateTray extends StatelessWidget {
               (i) => _buildDraggablePlate(
                 options[i],
                 prices.length > i ? prices[i] : "\$3.50",
+                i,
               ),
             ),
           ),
         ],
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
+    );
+
+    if (!reduceMotion) {
+      content = content.animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
+    }
+
+    return content;
   }
 
-  Widget _buildDraggablePlate(String item, String price) {
+  Widget _buildDraggablePlate(String item, String price, int index) {
     final bool isSelected = selectedItems.contains(item);
 
     Color plateColor = color;
@@ -119,6 +132,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
         ),
       ),
       child: InkWell(
+        key: Key('gourmet_order_plate_$index'),
         onTap: () => onItemTapped(item),
         borderRadius: BorderRadius.circular(16.r),
         child: _buildPlateCore(
@@ -179,6 +193,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
                   children: [
                     Text(
                       item.toUpperCase(),
+                      key: Key('gourmet_order_plate_text_$item'),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -203,6 +218,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
                       ),
                       child: Text(
                         price,
+                        key: Key('gourmet_order_plate_price_$item'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
@@ -224,7 +240,12 @@ class GourmetOrderPlateTray extends StatelessWidget {
                       color: Colors.white,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(Icons.check_rounded, color: color, size: 10.r),
+                    child: Icon(
+                      Icons.check_rounded,
+                      key: Key('gourmet_order_plate_check_$item'),
+                      color: color,
+                      size: 10.r,
+                    ),
                   ),
                 ),
             ],
