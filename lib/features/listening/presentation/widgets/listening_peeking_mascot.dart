@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Animated mascot widget that peeks in from the top-left with a contextual
 /// speech bubble.
@@ -37,7 +38,7 @@ class ListeningPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final mascotState = MascotMessageHelper.getMascotState(
       isComplete: state is ListeningGameComplete,
       isGameOver: state is ListeningGameOver,
@@ -90,7 +91,7 @@ class _SpeechBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     Widget bubble = Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
@@ -136,7 +137,7 @@ class _MascotSprite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     Widget mascot = VowlMascot(
       state: mascotState,
       size: 45.r,

@@ -285,25 +285,28 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
 
                 // Speed bonus indicator
                 if (widget.showBonusLabel && widget.bonusCoinsForSpeed > 0)
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 2.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: barColor.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                    child: AutoSizeText(
-                      '+${widget.bonusCoinsForSpeed} Speed Bonus',
-                      maxLines: 1,
-                      minFontSize: 6,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.sp,
-                        fontWeight: FontWeight.w700,
-                        color: barColor,
-                        letterSpacing: 0.5,
+                  Flexible(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 2.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: barColor.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: AutoSizeText(
+                        '+${widget.bonusCoinsForSpeed} Speed Bonus',
+                        maxLines: 1,
+                        minFontSize: 6,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.w700,
+                          color: barColor,
+                          letterSpacing: 0.5,
+                        ),
                       ),
                     ),
                   ),

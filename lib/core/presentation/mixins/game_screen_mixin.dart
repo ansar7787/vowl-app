@@ -82,6 +82,9 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     final livesChanged = lastLives != null && livesRemaining > lastLives!;
 
     if (isNewQuestion || isRetry || livesChanged) {
+      if (isNewQuestion && timerKey != null) {
+        timerKey = GlobalKey<SpeedChallengeTimerState>();
+      }
       lastProcessedIndex = currentIndex;
       isAnsweredNotifier.value = isAnswered;
       if (!isAnswered) {
