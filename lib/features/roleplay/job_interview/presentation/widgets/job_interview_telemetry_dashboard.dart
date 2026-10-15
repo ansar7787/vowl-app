@@ -29,7 +29,8 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
     }
 
     return Container(
-      width: 1.sw,
+      key: const Key('job_interview_telemetry_dashboard'),
+      width: double.infinity,
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
@@ -38,18 +39,20 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
       ),
       child: Semantics(
         label:
-            "Professionalism level is at ${(mercuryLevel * 100).toInt()} percent",
+            "Professionalism level is at ${(mercuryLevel * 100).round()} percent",
         excludeSemantics: true,
         child: Row(
           children: [
             // Circular Fusion Reactor
             SizedBox(
+              key: const Key('job_interview_reactor_box'),
               width: 72.r,
               height: 72.r,
               child: AnimatedBuilder(
                 animation: reactorAnimation,
                 builder: (context, child) {
                   return CustomPaint(
+                    key: const Key('job_interview_reactor_painter'),
                     painter: ProfessionalismFusionPainter(
                       animationValue: reactorAnimation.value,
                       professionalismLevel: mercuryLevel,
@@ -66,6 +69,7 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
                 children: [
                   Text(
                     "PROFESSIONAL HARMONICS:",
+                    key: const Key('job_interview_telemetry_harmonics_label'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 9.sp,
@@ -76,7 +80,8 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    "${(mercuryLevel * 100).toInt()}% COMPATIBLE",
+                    "${(mercuryLevel * 100).round()}% COMPATIBLE",
+                    key: const Key('job_interview_telemetry_percentage_text'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
@@ -87,6 +92,7 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
                   SizedBox(height: 6.h),
                   // Horizontal tracking bar indicator
                   Container(
+                    key: const Key('job_interview_telemetry_progress_bar'),
                     height: 6.h,
                     decoration: BoxDecoration(
                       color: Colors.black.withValues(alpha: 0.15),

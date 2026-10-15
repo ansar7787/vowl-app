@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import 'package:vowl/core/theme/vowl_motion.dart';
+
 class _LocalPalette {
   _LocalPalette._();
   static const Color color07070f = Color(0xFF07070F);
@@ -42,8 +44,11 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
               ? Icons.sentiment_dissatisfied_rounded
               : Icons.business_center_rounded);
 
-    return Container(
-      width: 1.sw,
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    Widget content = Container(
+      key: const Key('job_interview_interviewer_panel'),
+      width: double.infinity,
       padding: EdgeInsets.all(22.r),
       decoration: BoxDecoration(
         color: isDark
@@ -64,12 +69,18 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
           Row(
             children: [
               Container(
+                key: const Key('job_interview_interviewer_icon_container'),
                 padding: EdgeInsets.all(8.r),
                 decoration: BoxDecoration(
                   color: activeColor.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(activeIcon, color: activeColor, size: 20.r),
+                child: Icon(
+                  activeIcon,
+                  key: const Key('job_interview_interviewer_icon'),
+                  color: activeColor,
+                  size: 20.r,
+                ),
               ),
               SizedBox(width: 12.w),
               Expanded(
@@ -80,6 +91,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                       reaction != null
                           ? reaction!.toUpperCase()
                           : "CHIEF EXECUTIVE V-407",
+                      key: const Key('job_interview_interviewer_title'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
@@ -92,6 +104,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                       reaction != null
                           ? "INTERVIEWER REACTION"
                           : "ACTIVE BIO-TRANSCEIVER",
+                      key: const Key('job_interview_interviewer_subtitle'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 7.sp,
@@ -105,6 +118,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
           ),
           SizedBox(height: 18.h),
           Container(
+            key: const Key('job_interview_interviewer_text_container'),
             width: double.infinity,
             padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
@@ -116,6 +130,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
             ),
             child: Text(
               text,
+              key: const Key('job_interview_interviewer_question_text'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -128,6 +143,9 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
+    );
+
+    if (reduceMotion) return content;
+    return content.animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
   }
 }

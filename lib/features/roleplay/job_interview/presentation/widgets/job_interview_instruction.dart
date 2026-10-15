@@ -13,6 +13,7 @@ class JobInterviewInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: const Key('job_interview_instruction_container'),
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
@@ -23,6 +24,7 @@ class JobInterviewInstruction extends StatelessWidget {
       child: Text(
         instruction ??
             "Choose the best answer to show off your professional skills.",
+        key: const Key('job_interview_instruction_text'),
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
