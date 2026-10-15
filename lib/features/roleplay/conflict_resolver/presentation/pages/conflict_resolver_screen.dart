@@ -15,6 +15,7 @@ import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_instruction.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_conflict_card.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_dial_console.dart';
@@ -52,6 +53,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   final ValueNotifier<double> _rotation = ValueNotifier(
     0.0,
   ); // Slider score level (0.0 to 1.0)
+  final ValueNotifier<bool> _isDraggingDial = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
   List<RoleplayQuest> _currentOptions = [];
 
@@ -92,7 +94,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_waveController.isAnimating) _waveController.stop();
     } else {
@@ -104,9 +108,19 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   void dispose() {
     _waveController.dispose();
     _rotation.dispose();
+    _isDraggingDial.dispose();
     _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
+  }
+
+  void _onDialDragStart(DragStartDetails details) {
+    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    _isDraggingDial.value = true;
+  }
+
+  void _onDialDragEnd(DragEndDetails details) {
+    _isDraggingDial.value = false;
   }
 
   // Realistic Physical dial rotation updater utilizing trigonometry
@@ -141,17 +155,19 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   void _stepLeft() {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     hapticService.selection();
+    final count = math.max(1, _currentOptions.length);
     int currentIndex = _focusedIndex ?? 0;
-    int nextIndex = (currentIndex - 1) % 4;
-    if (nextIndex < 0) nextIndex = 3;
+    int nextIndex = (currentIndex - 1) % count;
+    if (nextIndex < 0) nextIndex = count - 1;
     _rotation.value = 0.125 + (nextIndex * 0.25);
   }
 
   void _stepRight() {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     hapticService.selection();
+    final count = math.max(1, _currentOptions.length);
     int currentIndex = _focusedIndex ?? 0;
-    int nextIndex = (currentIndex + 1) % 4;
+    int nextIndex = (currentIndex + 1) % count;
     _rotation.value = 0.125 + (nextIndex * 0.25);
   }
 
@@ -159,9 +175,11 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     final focused = _focusedIndex;
-    if (focused == null ||
-        _currentOptions.isEmpty ||
-        focused >= _currentOptions.length) {
+    if (focused == null) {
+      hapticService.light();
+      return;
+    }
+    if (_currentOptions.isEmpty || focused >= _currentOptions.length) {
       return;
     }
 
@@ -214,8 +232,12 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
 
   @override
   void onQuestionReset() {
+    _isDraggingDial.value = false;
     _rotation.value = 0.0;
     _generateOptions();
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -228,6 +250,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
       listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
+        if (state is RoleplayLoaded && _currentOptions.isEmpty) {
+          _generateOptions();
+        }
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -235,6 +260,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
             isCorrectNotifier,
             showConfettiNotifier,
             _rotation,
+            _isDraggingDial,
             isFirstStagePassedNotifier,
           ]),
           builder: (context, _) {
@@ -251,8 +277,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              onHint: () {
+                hapticService.selection();
+              },
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -265,7 +292,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                           thickness: 4.w,
                           child: CustomScrollView(
                             controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
+                            physics: _isDraggingDial.value
+                                ? const NeverScrollableScrollPhysics()
+                                : const BouncingScrollPhysics(),
                             slivers: [
                               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverFillRemaining(
@@ -282,6 +311,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                       child: Column(
                                         children: [
                                           ConflictResolverInstruction(
+                                            key: const Key(
+                                              'conflict_resolver_instruction',
+                                            ),
                                             primaryColor: theme.primaryColor,
                                             instruction:
                                                 InstructionHelper.getInstruction(
@@ -292,6 +324,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                             height: isCompact ? 10.h : 16.h,
                                           ),
                                           ConflictResolverConflictCard(
+                                            key: const Key(
+                                              'conflict_resolver_conflict_card',
+                                            ),
                                             scene: quest.scene ?? "",
                                             escalationLevel:
                                                 quest.escalationLevel ?? 5,
@@ -304,11 +339,16 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
 
                                           // Circular audio dials
                                           ConflictResolverDialConsole(
+                                            key: const Key(
+                                              'conflict_resolver_dial_console',
+                                            ),
                                             color: theme.primaryColor,
                                             isDark: isDark,
                                             rotation: _rotation.value,
                                             waveAnimation: _waveController,
+                                            onDialDragStart: _onDialDragStart,
                                             onDialDragged: _onDialDragged,
+                                            onDialDragEnd: _onDialDragEnd,
                                             onStepLeft: _stepLeft,
                                             onStepRight: _stepRight,
                                             focusedText:
@@ -334,75 +374,85 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                           // Submit control button
                                           if (!isAnsweredNotifier.value &&
                                               !isFirstStagePassedNotifier.value)
-                                            ScaleButton(
-                                              onTap: () => _submitAnswer(quest),
-                                              child: Container(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 24.w,
-                                                  vertical: isCompact
-                                                      ? 10.h
-                                                      : 14.h,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                        30.r,
-                                                      ),
-                                                  gradient: LinearGradient(
-                                                    colors: [
-                                                      theme.primaryColor,
-                                                      theme.primaryColor
-                                                          .withValues(
-                                                            alpha: 0.8,
-                                                          ),
-                                                    ],
+                                            Builder(
+                                              builder: (context) {
+                                                Widget btn = ScaleButton(
+                                                  key: const Key(
+                                                    'conflict_resolver_confirm_button',
                                                   ),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: theme.primaryColor
-                                                          .withValues(
-                                                            alpha: 0.35,
+                                                  onTap: () => _submitAnswer(quest),
+                                                  child: Container(
+                                                    padding: EdgeInsets.symmetric(
+                                                      horizontal: 24.w,
+                                                      vertical: isCompact
+                                                          ? 10.h
+                                                          : 14.h,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            30.r,
                                                           ),
-                                                      blurRadius: isCompact
-                                                          ? 10
-                                                          : 15,
-                                                    ),
-                                                  ],
-                                                ),
-                                                child: Wrap(
-                                                  alignment:
-                                                      WrapAlignment.center,
-                                                  crossAxisAlignment:
-                                                      WrapCrossAlignment.center,
-                                                  spacing: 8.w,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.security_rounded,
-                                                      color: Colors.white,
-                                                      size: isCompact
-                                                          ? 16.r
-                                                          : 18.r,
-                                                    ),
-                                                    Text(
-                                                      "CONFIRM RESPONSE",
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: isCompact
-                                                            ? 12.sp
-                                                            : 14.sp,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        color: Colors.white,
-                                                        letterSpacing: 1.5,
+                                                      gradient: LinearGradient(
+                                                        colors: [
+                                                          theme.primaryColor,
+                                                          theme.primaryColor
+                                                              .withValues(
+                                                                alpha: 0.8,
+                                                              ),
+                                                        ],
                                                       ),
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                          color: theme.primaryColor
+                                                              .withValues(
+                                                                alpha: 0.35,
+                                                              ),
+                                                          blurRadius: isCompact
+                                                              ? 10
+                                                              : 15,
+                                                        ),
+                                                      ],
                                                     ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ).animate().fadeIn(
-                                              duration: 300.ms,
+                                                    child: Wrap(
+                                                      alignment:
+                                                          WrapAlignment.center,
+                                                      crossAxisAlignment:
+                                                          WrapCrossAlignment.center,
+                                                      spacing: 8.w,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.security_rounded,
+                                                          color: Colors.white,
+                                                          size: isCompact
+                                                              ? 16.r
+                                                              : 18.r,
+                                                        ),
+                                                        Text(
+                                                          "CONFIRM RESPONSE",
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: isCompact
+                                                                ? 12.sp
+                                                                : 14.sp,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            color: Colors.white,
+                                                            letterSpacing: 1.5,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                );
+
+                                                if (!MediaQuery.disableAnimationsOf(context)) {
+                                                  btn = btn.animate().fadeIn(duration: 300.ms);
+                                                }
+                                                return btn;
+                                              },
                                             ),
 
                                           // Post-answer review cards

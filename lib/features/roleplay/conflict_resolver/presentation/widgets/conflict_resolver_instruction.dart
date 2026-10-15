@@ -36,6 +36,7 @@ class ConflictResolverInstruction extends StatelessWidget {
             children: [
               Icon(
                 Icons.track_changes_rounded,
+                key: const Key('conflict_resolver_instruction_icon'),
                 color: primaryColor,
                 size: 16.r,
               ),
@@ -55,6 +56,7 @@ class ConflictResolverInstruction extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             instruction ?? "Choose the best response.",
+            key: const Key('conflict_resolver_instruction_text'),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',

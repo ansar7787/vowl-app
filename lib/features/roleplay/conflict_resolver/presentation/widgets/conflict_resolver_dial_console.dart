@@ -16,7 +16,9 @@ class ConflictResolverDialConsole extends StatelessWidget {
   final bool isDark;
   final double rotation;
   final Animation<double> waveAnimation;
+  final GestureDragStartCallback? onDialDragStart;
   final Function(DragUpdateDetails, Offset) onDialDragged;
+  final GestureDragEndCallback? onDialDragEnd;
   final VoidCallback? onStepLeft;
   final VoidCallback? onStepRight;
   final String? focusedText;
@@ -30,7 +32,9 @@ class ConflictResolverDialConsole extends StatelessWidget {
     required this.isDark,
     required this.rotation,
     required this.waveAnimation,
+    this.onDialDragStart,
     required this.onDialDragged,
+    this.onDialDragEnd,
     this.onStepLeft,
     this.onStepRight,
     this.focusedText,
@@ -75,15 +79,23 @@ class ConflictResolverDialConsole extends StatelessWidget {
       child: Column(
         children: [
           // Holographic Dial Board
-          GestureDetector(
-            onPanUpdate: (details) => onDialDragged(details, dialCenter),
-            child: Container(
-              width: dialDiameter,
-              height: dialDiameter,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.transparent,
-              ),
+          Semantics(
+            label: 'Response calibration dial',
+            button: true,
+            child: GestureDetector(
+              key: const Key('conflict_resolver_dial'),
+              behavior: HitTestBehavior.opaque,
+              onPanStart: onDialDragStart,
+              onPanUpdate: (details) => onDialDragged(details, dialCenter),
+              onPanEnd: onDialDragEnd,
+              onPanCancel: () => onDialDragEnd?.call(DragEndDetails()),
+              child: Container(
+                width: dialDiameter,
+                height: dialDiameter,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.transparent,
+                ),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -171,13 +183,15 @@ class ConflictResolverDialConsole extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 16.h),
+        ),
+        SizedBox(height: 16.h),
 
           // D-Pad Controls for Accessibility
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
+                key: const Key('conflict_resolver_step_left'),
                 onPressed: onStepLeft,
                 icon: Icon(
                   Icons.arrow_left_rounded,
@@ -191,6 +205,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
               ),
               SizedBox(width: 32.w),
               IconButton(
+                key: const Key('conflict_resolver_step_right'),
                 onPressed: onStepRight,
                 icon: Icon(
                   Icons.arrow_right_rounded,
@@ -211,7 +226,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
             duration: const Duration(milliseconds: 200),
             child: focusedText == null
                 ? Container(
-                    key: const ValueKey("static"),
+                    key: const Key('conflict_resolver_static_noise'),
                     constraints: BoxConstraints(minHeight: 80.h),
                     padding: EdgeInsets.symmetric(vertical: 12.h),
                     alignment: Alignment.center,
@@ -237,7 +252,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
                     ),
                   )
                 : Container(
-                    key: ValueKey(focusedText),
+                    key: const Key('conflict_resolver_focused_response'),
                     constraints: BoxConstraints(minHeight: 80.h),
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(
