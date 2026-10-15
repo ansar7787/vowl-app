@@ -91,29 +91,26 @@ class _WordLinkingScreenState extends State<WordLinkingScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final state = context.read<AccentBloc>().state;
+      final quest = (state is AccentLoaded) ? state.currentQuest : _lastQuest;
+      if (quest != null) {
+        submitWrongAnswer(quest: quest, userAnswer: '');
+      }
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final state = context.read<AccentBloc>().state;
+      final quest = (state is AccentLoaded) ? state.currentQuest : _lastQuest;
+      if (quest != null) {
+        submitWrongAnswer(quest: quest, userAnswer: '');
+      }
     }
   }
 
@@ -131,8 +128,11 @@ class _WordLinkingScreenState extends State<WordLinkingScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
         final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest?
+            ? state.currentQuest
             : _lastQuest;
         final words = quest?.words ?? [];
         final mediaQuery = MediaQuery.of(context);
@@ -158,7 +158,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen>
                 showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -173,31 +173,33 @@ class _WordLinkingScreenState extends State<WordLinkingScreen>
                           slivers: [
                             SliverFillRemaining(
                               hasScrollBody: false,
-                              child: IgnorePointer(
-                                ignoring: isFirstStagePassedNotifier.value,
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                    vertical: 16.h,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      WordLinkingInstruction(
-                                        color: theme.primaryColor,
-                                        instruction:
-                                            isFirstStagePassedNotifier.value
-                                            ? "Great job! Now record yourself saying the phrase."
-                                            : quest.instruction,
-                                      ),
-                                      SizedBox(height: 32.h),
-                                      WordLinkingPulseSpeaker(
-                                        text: quest.textToSpeak ?? "",
-                                        color: theme.primaryColor,
-                                        onPlayTts: _playTts,
-                                      ),
-                                      SizedBox(height: 48.h),
-                                      WordLinkingSentenceField(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 24.w,
+                                  vertical: 16.h,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    WordLinkingInstruction(
+                                      color: theme.primaryColor,
+                                      instruction:
+                                          isFirstStagePassedNotifier.value
+                                          ? "Great job! Now record yourself saying the phrase."
+                                          : quest.instruction,
+                                    ),
+                                    SizedBox(height: 32.h),
+                                    WordLinkingPulseSpeaker(
+                                      text: quest.textToSpeak ?? "",
+                                      color: theme.primaryColor,
+                                      onPlayTts: _playTts,
+                                    ),
+                                    SizedBox(height: 48.h),
+                                    IgnorePointer(
+                                      ignoring:
+                                          isAnsweredNotifier.value ||
+                                          isFirstStagePassedNotifier.value,
+                                      child: WordLinkingSentenceField(
                                         words: words,
                                         correctPair: quest.correctAnswer ?? "",
                                         linkingType: quest.linkingType,
@@ -210,8 +212,8 @@ class _WordLinkingScreenState extends State<WordLinkingScreen>
                                             _selectedNodeIndex.value,
                                         onNodeTap: _onNodeTap,
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),

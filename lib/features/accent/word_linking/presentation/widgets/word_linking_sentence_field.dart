@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class WordLinkingSentenceField extends StatefulWidget {
   final List<String> words;
@@ -65,6 +66,7 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
     }
 
     return Container(
+      key: const ValueKey('word_linking_sentence_field'),
       width: double.infinity,
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
@@ -127,6 +129,7 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
     bool isDark,
   ) {
     final bool isSelected = widget.selectedNodeIndex == index;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     String selectedPair = "${words[index]} ${words[index + 1]}";
     final bool correct =
@@ -145,109 +148,113 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
       nodeColor = color;
     }
 
-    return ScaleButton(
-      onTap: () => widget.onNodeTap(index, correctPair, words),
-      child:
-          Container(
-                width: 44.r,
-                height: 44.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isSelected || (widget.isAnswered && correct)
-                      ? nodeColor.withValues(alpha: 0.2)
-                      : isDark
-                      ? color.withValues(alpha: 0.15)
-                      : color.withValues(alpha: 0.08),
-                  border: Border.all(
-                    color: widget.isAnswered && !correct && !isSelected
-                        ? Colors.transparent
-                        : isSelected || widget.isAnswered
-                        ? nodeColor
-                        : color.withValues(alpha: 0.4),
-                    width: 2,
+    Widget nodeContent = Container(
+      width: 44.r,
+      height: 44.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isSelected || (widget.isAnswered && correct)
+            ? nodeColor.withValues(alpha: 0.2)
+            : isDark
+            ? color.withValues(alpha: 0.15)
+            : color.withValues(alpha: 0.08),
+        border: Border.all(
+          color: widget.isAnswered && !correct && !isSelected
+              ? Colors.transparent
+              : isSelected || widget.isAnswered
+              ? nodeColor
+              : color.withValues(alpha: 0.4),
+          width: 2,
+        ),
+        boxShadow: isSelected || (widget.isAnswered && correct)
+            ? [
+                BoxShadow(
+                  color: nodeColor.withValues(alpha: 0.4),
+                  blurRadius: 10,
+                ),
+              ]
+            : [],
+      ),
+      child: Center(
+        child: widget.isAnswered && correct
+            ? Stack(
+                clipBehavior: Clip.none,
+                alignment: Alignment.center,
+                children: [
+                  Icon(
+                    Icons.arrow_forward_rounded,
+                    size: 24.r,
+                    color: nodeColor,
                   ),
-                  boxShadow: isSelected || (widget.isAnswered && correct)
-                      ? [
-                          BoxShadow(
-                            color: nodeColor.withValues(alpha: 0.4),
-                            blurRadius: 10,
-                          ),
-                        ]
-                      : [],
-                ),
-                child: Center(
-                  child: widget.isAnswered && correct
-                      ? Stack(
-                          clipBehavior: Clip.none,
-                          alignment: Alignment.center,
-                          children: [
-                            Icon(
-                              Icons.arrow_forward_rounded,
-                              size: 24.r,
-                              color: nodeColor,
+                  if (widget.linkingType != null)
+                    Positioned(
+                      top: -24.h,
+                      child: Builder(
+                        builder: (context) {
+                          final badge = Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 4.h,
                             ),
-                            if (widget.linkingType != null)
-                              Positioned(
-                                top: -24.h,
-                                child:
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 8.w,
-                                        vertical: 4.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: nodeColor.withValues(
-                                          alpha: 0.15,
-                                        ),
-                                        borderRadius: BorderRadius.circular(
-                                          8.r,
-                                        ),
-                                        border: Border.all(
-                                          color: nodeColor.withValues(
-                                            alpha: 0.3,
-                                          ),
-                                        ),
-                                      ),
-                                      child: Text(
-                                        _formatLinkingType(widget.linkingType!),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 10.sp,
-                                          fontWeight: FontWeight.w800,
-                                          color: nodeColor,
-                                        ),
-                                      ),
-                                    ).animate().scale(
-                                      delay: 300.ms,
-                                      duration: 400.ms,
-                                      curve: Curves.easeOutCubic,
-                                    ),
+                            decoration: BoxDecoration(
+                              color: nodeColor.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(8.r),
+                              border: Border.all(
+                                color: nodeColor.withValues(alpha: 0.3),
                               ),
-                          ],
-                        )
-                      : Icon(
-                          isSelected || widget.isAnswered
-                              ? Icons.link_rounded
-                              : Icons.add_link_rounded,
-                          size: 22.r,
-                          color: nodeColor,
-                        ),
-                ),
+                            ),
+                            child: Text(
+                              _formatLinkingType(widget.linkingType!),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w800,
+                                color: nodeColor,
+                              ),
+                            ),
+                          );
+                          if (reduceMotion) return badge;
+                          return badge.animate().scale(
+                            delay: 300.ms,
+                            duration: 400.ms,
+                            curve: Curves.easeOutCubic,
+                          );
+                        },
+                      ),
+                    ),
+                ],
               )
-              .animate(
-                onPlay: (c) => c.repeat(reverse: true),
-                target: widget.isAnswered ? 0 : 1,
-              )
-              .shimmer(
-                duration: 2.seconds,
-                color: isDark ? Colors.white38 : color.withValues(alpha: 0.3),
-              )
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.1, 1.1),
-                duration: 1.seconds,
-                curve: Curves.easeInOut,
+            : Icon(
+                isSelected || widget.isAnswered
+                    ? Icons.link_rounded
+                    : Icons.add_link_rounded,
+                size: 22.r,
+                color: nodeColor,
               ),
+      ),
+    );
+
+    if (!reduceMotion && !widget.isAnswered) {
+      nodeContent = nodeContent
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .shimmer(
+            duration: 2.seconds,
+            color: isDark ? Colors.white38 : color.withValues(alpha: 0.3),
+          )
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.1, 1.1),
+            duration: 1.seconds,
+            curve: Curves.easeInOut,
+          );
+    }
+
+    return ScaleButton(
+      key: ValueKey('word_link_node_$index'),
+      onTap: widget.isAnswered
+          ? null
+          : () => widget.onNodeTap(index, correctPair, words),
+      child: nodeContent,
     );
   }
 

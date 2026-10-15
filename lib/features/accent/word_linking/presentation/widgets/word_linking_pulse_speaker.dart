@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class WordLinkingPulseSpeaker extends StatelessWidget {
   final String text;
@@ -17,7 +18,11 @@ class WordLinkingPulseSpeaker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final icon = Icon(Icons.graphic_eq_rounded, color: color, size: 32.r);
+
     return ScaleButton(
+      key: const ValueKey('word_linking_pulse_speaker_btn'),
       onTap: () => onPlayTts(text),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -34,12 +39,14 @@ class WordLinkingPulseSpeaker extends StatelessWidget {
               ],
             ),
             child: Center(
-              child: Icon(Icons.graphic_eq_rounded, color: color, size: 32.r)
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.2, 1.2),
-                  ),
+              child: reduceMotion
+                  ? icon
+                  : icon
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.2, 1.2),
+                        ),
             ),
           ),
           SizedBox(height: 12.h),
