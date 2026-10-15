@@ -258,6 +258,7 @@ class _SpeakingSelfEvaluationControlsState
                   valueListenable: _isRecording,
                   builder: (context, isRecording, _) {
                     return GestureDetector(
+                      key: const ValueKey('speaking_mic_btn'),
                       onTap: () {
                         if (isRecording) {
                           _stopRecording();

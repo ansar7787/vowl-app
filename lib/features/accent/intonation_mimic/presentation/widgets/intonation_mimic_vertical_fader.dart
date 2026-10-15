@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class IntonationMimicVerticalFader extends StatelessWidget {
   final List<String> options;
@@ -34,6 +35,8 @@ class IntonationMimicVerticalFader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -45,23 +48,30 @@ class IntonationMimicVerticalFader extends StatelessWidget {
                 options[topIndex],
                 topIndex,
                 Icons.arrow_upward_rounded,
+                reduceMotion,
               ),
               SizedBox(height: 12.h),
               _buildPitchOption(
                 options[bottomIndex],
                 bottomIndex,
                 Icons.arrow_downward_rounded,
+                reduceMotion,
               ),
             ],
           ),
         ),
         SizedBox(width: 32.w),
-        _buildVerticalSliderBar(correctIndex, color),
+        _buildVerticalSliderBar(correctIndex, color, reduceMotion),
       ],
     );
   }
 
-  Widget _buildPitchOption(String text, int index, IconData iconData) {
+  Widget _buildPitchOption(
+    String text,
+    int index,
+    IconData iconData,
+    bool reduceMotion,
+  ) {
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
     final bool showResult = isAnswered && isSelected;
@@ -84,7 +94,8 @@ class IntonationMimicVerticalFader extends StatelessWidget {
       textColor = color;
     }
 
-    return ScaleButton(
+    Widget optionCard = ScaleButton(
+      key: ValueKey('intonation_option_$index'),
       onTap: isAnswered ? null : () => onSubmitChoice(index, correctIndex),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
@@ -122,11 +133,24 @@ class IntonationMimicVerticalFader extends StatelessWidget {
           ],
         ),
       ),
-    ).animate().fadeIn(delay: (100 * index).ms).slideX(begin: -0.1);
+    );
+
+    if (!reduceMotion) {
+      optionCard = optionCard
+          .animate()
+          .fadeIn(delay: (100 * index).ms)
+          .slideX(begin: -0.1);
+    }
+
+    return optionCard;
   }
 
-  Widget _buildVerticalSliderBar(int correct, Color color) {
-    return Container(
+  Widget _buildVerticalSliderBar(
+    int correct,
+    Color color,
+    bool reduceMotion,
+  ) {
+    Widget sliderBar = Container(
       height: 140.h,
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.05),
@@ -154,6 +178,7 @@ class IntonationMimicVerticalFader extends StatelessWidget {
               increasedValue: options[topIndex],
               decreasedValue: options[bottomIndex],
               child: Slider(
+                key: const ValueKey('intonation_slider'),
                 value: sliderValue,
                 onChanged: (v) => onSliderUpdate(v, correct),
               ),
@@ -161,6 +186,15 @@ class IntonationMimicVerticalFader extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2);
+    );
+
+    if (!reduceMotion) {
+      sliderBar = sliderBar
+          .animate()
+          .fadeIn(delay: 200.ms)
+          .slideY(begin: 0.2);
+    }
+
+    return sliderBar;
   }
 }

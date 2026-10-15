@@ -51,6 +51,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   final ValueNotifier<double> _cartPosition = ValueNotifier(0.0);
   final ValueNotifier<bool> _isRiding = ValueNotifier(false);
   Timer? _rideTimer;
+  Timer? _scrollTimer;
 
   late final ScrollController _scrollController;
 
@@ -63,8 +64,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    _scrollTimer?.cancel();
     _rideTimer?.cancel();
+    _scrollController.dispose();
     _cartPosition.dispose();
     _isRiding.dispose();
     _selectedIndex.dispose();
@@ -74,8 +76,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -146,41 +149,42 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
     }
   }
 
   @override
   void onQuestionReset() {
     _sliderValue.value = 0.5;
-
     _selectedIndex.value = null;
-
     _cartPosition.value = 0.0;
-
     _isRiding.value = false;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -192,6 +196,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest
             : _lastQuest;
@@ -238,7 +245,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                 showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
