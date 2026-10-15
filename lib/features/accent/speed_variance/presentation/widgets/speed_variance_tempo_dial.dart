@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SpeedVarianceTempoDial extends StatelessWidget {
   final List<String> options;
@@ -49,9 +50,10 @@ class SpeedVarianceTempoDial extends StatelessWidget {
           ),
         ),
         SizedBox(height: 24.h),
-        _buildConnectedSpeechOrb(options[0], 0, correctIndex, color, isDark),
+        _buildConnectedSpeechOrb(context, options[0], 0, correctIndex, color, isDark),
         SizedBox(height: 12.h),
         _buildConnectedSpeechOrb(
+          context,
           options.length > 1 ? options[1] : '',
           1,
           correctIndex,
@@ -65,6 +67,8 @@ class SpeedVarianceTempoDial extends StatelessWidget {
   Widget _buildChromeDial(int correct, Color color, bool isDark) {
     return Center(
       child: GestureDetector(
+        key: const ValueKey('speed_variance_chrome_dial'),
+        behavior: HitTestBehavior.opaque,
         onPanUpdate: (details) => onDialRotate(details, correct),
         onPanEnd: (_) => onDialRelease(),
         child: Transform.rotate(
@@ -113,6 +117,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
   }
 
   Widget _buildConnectedSpeechOrb(
+    BuildContext context,
     String text,
     int index,
     int correctIndex,
@@ -151,89 +156,96 @@ class SpeedVarianceTempoDial extends StatelessWidget {
       );
     }
 
-    return ScaleButton(
-      onTap: () => onSubmitChoice(index, correctIndex),
-      child:
-          AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                decoration: BoxDecoration(
-                  color: orbColor,
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(
-                    color: isAnswered && isSelected
-                        ? textColor
-                        : color.withValues(alpha: isSelected ? 1.0 : 0.3),
-                    width: 3,
+    final shouldReduce = VowlMotion.shouldReduceMotion(context);
+    Widget orbContent = AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
+      alignment: Alignment.center,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      decoration: BoxDecoration(
+        color: orbColor,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: isAnswered && isSelected
+              ? textColor
+              : color.withValues(alpha: isSelected ? 1.0 : 0.3),
+          width: 3,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: isSelected
+                ? (correct
+                      ? AppColors.gameCorrect.withValues(alpha: 0.3)
+                      : color.withValues(alpha: 0.3))
+                : Colors.transparent,
+            blurRadius: 15,
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          if (index == 0) ...[
+            Icon(Icons.rotate_left, color: textColor, size: 28.r),
+            SizedBox(width: 16.w),
+          ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: index == 0
+                  ? CrossAxisAlignment.start
+                  : CrossAxisAlignment.end,
+              children: [
+                Text(
+                  title,
+                  textAlign: index == 0
+                      ? TextAlign.left
+                      : TextAlign.right,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.bold,
+                    color: textColor,
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: isSelected
-                          ? (correct
-                                ? AppColors.gameCorrect.withValues(alpha: 0.3)
-                                : color.withValues(alpha: 0.3))
-                          : Colors.transparent,
-                      blurRadius: 15,
-                    ),
-                  ],
                 ),
-                child: Row(
-                  children: [
-                    if (index == 0) ...[
-                      Icon(Icons.rotate_left, color: textColor, size: 28.r),
-                      SizedBox(width: 16.w),
-                    ],
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: index == 0
-                            ? CrossAxisAlignment.start
-                            : CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            title,
-                            textAlign: index == 0
-                                ? TextAlign.left
-                                : TextAlign.right,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
-                              color: textColor,
-                            ),
-                          ),
-                          if (description.isNotEmpty) ...[
-                            SizedBox(height: 6.h),
-                            Text(
-                              description,
-                              textAlign: index == 0
-                                  ? TextAlign.left
-                                  : TextAlign.right,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: descColor,
-                                height: 1.4,
-                              ),
-                            ),
-                          ],
-                        ],
-                      ),
+                if (description.isNotEmpty) ...[
+                  SizedBox(height: 6.h),
+                  Text(
+                    description,
+                    textAlign: index == 0
+                        ? TextAlign.left
+                        : TextAlign.right,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                      color: descColor,
+                      height: 1.4,
                     ),
-                    if (index == 1) ...[
-                      SizedBox(width: 16.w),
-                      Icon(Icons.rotate_right, color: textColor, size: 28.r),
-                    ],
-                  ],
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.02, 1.02),
-                duration: (2 + index).seconds,
-              ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+          if (index == 1) ...[
+            SizedBox(width: 16.w),
+            Icon(Icons.rotate_right, color: textColor, size: 28.r),
+          ],
+        ],
+      ),
+    );
+
+    if (!shouldReduce) {
+      orbContent = orbContent
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.02, 1.02),
+            duration: (2 + index).seconds,
+          );
+    }
+
+    return ScaleButton(
+      key: ValueKey('speed_variance_option_$index'),
+      onTap: () => onSubmitChoice(index, correctIndex),
+      child: orbContent,
     );
   }
 }

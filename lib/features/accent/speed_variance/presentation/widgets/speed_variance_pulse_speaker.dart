@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SpeedVariancePulseSpeaker extends StatelessWidget {
   final String text;
@@ -17,7 +18,19 @@ class SpeedVariancePulseSpeaker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final shouldReduce = VowlMotion.shouldReduceMotion(context);
+    Widget icon = Icon(Icons.graphic_eq_rounded, color: color, size: 28.r);
+    if (!shouldReduce) {
+      icon = icon
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.2, 1.2),
+          );
+    }
+
     return ScaleButton(
+      key: const ValueKey('speed_variance_pulse_speaker'),
       onTap: () => onPlayTts(text),
       child: Container(
         width: 80.r,
@@ -34,12 +47,7 @@ class SpeedVariancePulseSpeaker extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.graphic_eq_rounded, color: color, size: 28.r)
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.2, 1.2),
-                  ),
+              icon,
               SizedBox(height: 6.h),
               Text(
                 "HEAR\nSPEED",
