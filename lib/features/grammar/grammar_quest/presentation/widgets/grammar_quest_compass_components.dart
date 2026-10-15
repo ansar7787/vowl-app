@@ -2,6 +2,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_compass_ticks_painter.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_sentinel_needle_painter.dart';
 
@@ -244,7 +245,12 @@ class CompassPhotonNeedle extends StatelessWidget {
                               shape: BoxShape.circle,
                             ),
                           )
-                          .animate(onPlay: (c) => c.repeat())
+                          .animate(
+                            target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
+                            onPlay: (c) => VowlMotion.shouldReduceMotion(context)
+                                ? null
+                                : c.repeat(),
+                          )
                           .scale(
                             begin: const Offset(0.8, 0.8),
                             end: const Offset(1.2, 1.2),

@@ -56,13 +56,19 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
   }
 
   void _submitInitialAnswer(bool correct, GameQuest quest, int selectedIndex) {
-    if (isAnsweredNotifier.value) return;
+    if (isAnsweredNotifier.value || _pendingTypeSubmit.value) return;
+    final state = context.read<GrammarBloc>().state;
+    if (state is GrammarLoaded &&
+        state.answerStatus != AnswerStatus.unanswered) {
+      return;
+    }
+
     if (correct) {
       hapticService.success();
       soundService.playCorrect();
       _pendingTypeSubmit.value = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (_scrollController.hasClients) {
+        if (mounted && _scrollController.hasClients) {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
             duration: const Duration(milliseconds: 300),
@@ -112,7 +118,14 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
           } else {
             targetText = quest.correctAnswer ?? quest.sentence ?? "";
           }
-          fullSentence = (quest.question ?? "").replaceAll('___', targetText);
+          final baseSentence = quest.sentenceWithBlank ?? quest.question ?? "";
+          if (baseSentence.contains('___')) {
+            fullSentence = baseSentence.replaceAll('___', targetText);
+          } else if (quest.sentence != null && quest.sentence!.isNotEmpty) {
+            fullSentence = quest.sentence!;
+          } else {
+            fullSentence = baseSentence.isNotEmpty ? baseSentence : targetText;
+          }
         }
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -122,11 +135,18 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
             _pendingTypeSubmit,
           ]),
           builder: (context, _) {
+            final isAnswered = isAnsweredNotifier.value ||
+                (state is GrammarLoaded &&
+                    state.answerStatus != AnswerStatus.unanswered);
+            final isCorrect = isCorrectNotifier.value ??
+                (state is GrammarLoaded &&
+                    state.answerStatus == AnswerStatus.correct);
+
             return GrammarBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnsweredNotifier.value,
-              isCorrect: isCorrectNotifier.value,
+              isAnswered: isAnswered,
+              isCorrect: isCorrect,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
               useScrolling:
@@ -134,205 +154,240 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
               disablePadding: true,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          crossAxisMargin: 0,
-                          mainAxisMargin: 0,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 24.h),
-                                      GrammarQuestInstruction(
-                                        primaryColor: theme.primaryColor,
-                                      ),
-                                      SizedBox(height: 16.h),
-                                      if (quest.grammarRule != null)
-                                        Container(
-                                          margin: EdgeInsets.only(bottom: 24.h),
-                                          padding: EdgeInsets.all(16.r),
-                                          decoration: BoxDecoration(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(
-                                              16.r,
-                                            ),
-                                            border: Border.all(
-                                              color: theme.primaryColor
-                                                  .withValues(alpha: 0.3),
-                                            ),
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isNarrow = constraints.maxWidth < 360;
+                        final isCompact = constraints.maxHeight < 600;
+
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor:
+                                  theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              crossAxisMargin: 0,
+                              mainAxisMargin: 0,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverPadding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: isNarrow ? 12.w : 24.w,
+                                    ),
+                                    sliver: SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          SizedBox(height: 24.h),
+                                          GrammarQuestInstruction(
+                                            primaryColor: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                          SizedBox(height: 16.h),
+                                          if (quest.grammarRule != null)
+                                            Container(
+                                              key: const ValueKey(
+                                                'grammar_rule_box',
+                                              ),
+                                              margin:
+                                                  EdgeInsets.only(bottom: 24.h),
+                                              padding: EdgeInsets.all(16.r),
+                                              decoration: BoxDecoration(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.1),
+                                                borderRadius:
+                                                    BorderRadius.circular(16.r),
+                                                border: Border.all(
+                                                  color: theme.primaryColor
+                                                      .withValues(alpha: 0.3),
+                                                ),
+                                              ),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
                                                 children: [
-                                                  Icon(
-                                                    Icons.rule,
-                                                    color: theme.primaryColor,
-                                                    size: 16.sp,
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        Icons.rule,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        size: 16.sp,
+                                                      ),
+                                                      SizedBox(width: 8.w),
+                                                      Text(
+                                                        "GRAMMAR RULE",
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 12.sp,
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                          color:
+                                                              theme
+                                                                  .primaryColor,
+                                                          letterSpacing: 2,
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                  SizedBox(width: 8.w),
+                                                  SizedBox(height: 8.h),
                                                   Text(
-                                                    "GRAMMAR RULE",
+                                                    quest.grammarRule!,
+                                                    textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
-                                                      fontSize: 12.sp,
+                                                      fontSize: 16.sp,
                                                       fontWeight:
-                                                          FontWeight.w800,
-                                                      color: theme.primaryColor,
-                                                      letterSpacing: 2,
+                                                          FontWeight.w700,
+                                                      color:
+                                                          Theme.of(
+                                                                    context,
+                                                                  ).brightness ==
+                                                                  Brightness
+                                                                      .dark
+                                                              ? Colors.white
+                                                              : Colors.black87,
                                                     ),
                                                   ),
+                                                  if (quest.ruleExplanation !=
+                                                      null) ...[
+                                                    SizedBox(height: 8.h),
+                                                    Text(
+                                                      quest.ruleExplanation!,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 14.sp,
+                                                        color:
+                                                            Theme.of(
+                                                                      context,
+                                                                    ).brightness ==
+                                                                    Brightness
+                                                                        .dark
+                                                                ? Colors.white70
+                                                                : Colors
+                                                                    .black54,
+                                                        height: 1.4,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ],
                                               ),
-                                              SizedBox(height: 8.h),
-                                              Text(
-                                                quest.grammarRule!,
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 16.sp,
-                                                  fontWeight: FontWeight.w700,
-                                                  color:
-                                                      Theme.of(
-                                                            context,
-                                                          ).brightness ==
-                                                          Brightness.dark
-                                                      ? Colors.white
-                                                      : Colors.black87,
-                                                ),
+                                            ),
+                                          if (quest.sentenceWithBlank != null ||
+                                              quest.question != null)
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                bottom: 24.h,
                                               ),
-                                              if (quest.ruleExplanation !=
-                                                  null) ...[
-                                                SizedBox(height: 8.h),
-                                                Text(
-                                                  quest.ruleExplanation!,
-                                                  textAlign: TextAlign.center,
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 14.sp,
-                                                    color:
-                                                        Theme.of(
-                                                              context,
-                                                            ).brightness ==
-                                                            Brightness.dark
-                                                        ? Colors.white70
-                                                        : Colors.black54,
-                                                    height: 1.4,
-                                                  ),
-                                                ),
-                                              ],
-                                            ],
-                                          ),
-                                        ),
-                                      if (quest.question != null)
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                            bottom: 24.h,
-                                          ),
-                                          child: GrammarQuestSentence(
-                                            text:
-                                                (isAnsweredNotifier.value ||
-                                                    _pendingTypeSubmit.value)
-                                                ? fullSentence
-                                                : quest.question!,
+                                              child: GrammarQuestSentence(
+                                                text:
+                                                    (isAnsweredNotifier.value ||
+                                                            _pendingTypeSubmit
+                                                                .value)
+                                                        ? fullSentence
+                                                        : (quest.sentenceWithBlank ??
+                                                            quest.question!),
+                                                isDark:
+                                                    Theme.of(
+                                                          context,
+                                                        ).brightness ==
+                                                    Brightness.dark,
+                                                isCompact: isCompact,
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 0.w,
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          SizedBox(height: 16.h),
+                                          GrammarQuestCompass(
+                                            options: quest.options ?? [],
+                                            correctAnswerIndex:
+                                                quest.correctAnswerIndex ?? 0,
+                                            primaryColor: theme.primaryColor,
                                             isDark:
                                                 Theme.of(context).brightness ==
                                                 Brightness.dark,
+                                            isAnswered:
+                                                isAnsweredNotifier.value ||
+                                                _pendingTypeSubmit.value,
+                                            isCorrect: isCorrectNotifier.value,
+                                            isCompact: isCompact,
+                                            onQuadrantSelect: (index) {
+                                              bool isCorrect =
+                                                  index ==
+                                                  quest.correctAnswerIndex;
+                                              _submitInitialAnswer(
+                                                isCorrect,
+                                                quest,
+                                                index,
+                                              );
+                                            },
                                           ),
-                                        ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 0.w,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(height: 16.h),
-                                      GrammarQuestCompass(
-                                        options: quest.options ?? [],
-                                        correctAnswerIndex:
-                                            quest.correctAnswerIndex ?? 0,
-                                        primaryColor: theme.primaryColor,
-                                        isDark:
-                                            Theme.of(context).brightness ==
-                                            Brightness.dark,
-                                        isAnswered:
-                                            isAnsweredNotifier.value ||
-                                            _pendingTypeSubmit.value,
-                                        isCorrect: isCorrectNotifier.value,
-                                        onQuadrantSelect: (index) {
-                                          bool isCorrect =
-                                              index == quest.correctAnswerIndex;
-                                          _submitInitialAnswer(
-                                            isCorrect,
-                                            quest,
-                                            index,
-                                          );
-                                        },
+                                        ],
                                       ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              if (_pendingTypeSubmit.value &&
-                                  !isAnsweredNotifier.value &&
-                                  targetText.isNotEmpty)
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.only(top: 32.h),
-                                    child: TypeToConfirmOverlay(
-                                      expectedText: fullSentence,
-                                      primaryColor: theme.primaryColor,
-                                      onConfirmed: () =>
-                                          _submitFinalAnswer(true, quest),
-                                      onSkipped: () =>
-                                          _submitFinalAnswer(false, quest),
-                                      allowSkip: true,
-                                      isPositioned: false,
                                     ),
                                   ),
-                                ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height:
-                                      (_pendingTypeSubmit.value &&
-                                          !isAnsweredNotifier.value &&
-                                          targetText.isNotEmpty)
-                                      ? MediaQuery.of(
-                                              context,
-                                            ).viewInsets.bottom +
-                                            60.h
-                                      : 60.h,
-                                ),
+                                  if (_pendingTypeSubmit.value &&
+                                      !isAnsweredNotifier.value &&
+                                      targetText.isNotEmpty)
+                                    SliverToBoxAdapter(
+                                      child: Padding(
+                                        padding: EdgeInsets.only(top: 32.h),
+                                        child: TypeToConfirmOverlay(
+                                          expectedText: fullSentence,
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () => _submitFinalAnswer(
+                                            true,
+                                            quest,
+                                          ),
+                                          onSkipped: () => _submitFinalAnswer(
+                                            false,
+                                            quest,
+                                          ),
+                                          allowSkip: true,
+                                          isPositioned: false,
+                                        ),
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          (_pendingTypeSubmit.value &&
+                                                  !isAnsweredNotifier.value &&
+                                                  targetText.isNotEmpty)
+                                              ? MediaQuery.of(
+                                                      context,
+                                                    ).viewInsets.bottom +
+                                                  60.h
+                                              : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                        ),
-                      ],
+                            ),
+                          ],
+                        );
+                      },
                     ),
             );
           },

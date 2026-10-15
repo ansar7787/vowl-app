@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_compass_components.dart';
@@ -46,7 +47,21 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
     _bgRotationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 20),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (VowlMotion.shouldReduceMotion(context)) {
+      if (_bgRotationController.isAnimating) {
+        _bgRotationController.stop();
+      }
+    } else {
+      if (!_bgRotationController.isAnimating) {
+        _bgRotationController.repeat();
+      }
+    }
   }
 
   @override
@@ -129,6 +144,7 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
     final needleHeight = widget.isCompact ? 110.h : 170.h;
 
     return GestureDetector(
+      key: const ValueKey('grammar_quest_compass_gesture'),
       onTapUp: (details) => _handleTapUp(details, center),
       onPanUpdate: (details) => _handleDragUpdate(details, center),
       onPanEnd: (_) => _handleDragEnd(),
@@ -173,6 +189,7 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                                   .round() %
                               4);
                   return CompassQuadrant(
+                    key: ValueKey('compass_quadrant_$index'),
                     angle: angle,
                     optionText: optionText,
                     isSelected: isSelected,
