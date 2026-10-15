@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SyllableStressDrumConsole extends StatelessWidget {
   final List<String> syllables;
@@ -27,6 +28,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      key: const ValueKey('syllable_stress_drum_console'),
       spacing: 16.w,
       runSpacing: 16.h,
       alignment: WrapAlignment.center,
@@ -55,6 +57,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
     final bool isSelected = selectedIndex == index;
     final bool isCorrect = isAnswered && index == correct;
     final bool isWrong = isAnswered && isSelected && index != correct;
+    final bool reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     Color padColor = isCorrect
         ? AppColors.gameCorrect
@@ -65,11 +68,18 @@ class SyllableStressDrumConsole extends StatelessWidget {
       contentColor = AppColors.gameCorrect;
     }
 
+    final boltIcon = Icon(
+      Icons.bolt_rounded,
+      color: AppColors.gameCorrect,
+      size: 18.r,
+    );
+
     return Semantics(
       button: true,
       label: text,
       child: ScaleButton(
-        onTap: () => onPadTap(index, correct),
+        key: ValueKey('syllable_pad_$index'),
+        onTap: isAnswered ? () {} : () => onPadTap(index, correct),
         child: AnimatedContainer(
           duration: 150.milliseconds,
           width: 90.r,
@@ -119,11 +129,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
                 ),
                 if (index == correct && isAnswered) ...[
                   SizedBox(height: 4.h),
-                  Icon(
-                    Icons.bolt_rounded,
-                    color: AppColors.gameCorrect,
-                    size: 18.r,
-                  ).animate().scale(),
+                  reduceMotion ? boltIcon : boltIcon.animate().scale(),
                 ],
               ],
             ),

@@ -93,10 +93,13 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      submitWrongAnswer(
-        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
-        userAnswer: '',
-      );
+      final state = context.read<AccentBloc>().state;
+      if (state is AccentLoaded) {
+        submitWrongAnswer(
+          quest: state.currentQuest,
+          userAnswer: '',
+        );
+      }
     }
   }
 
@@ -114,10 +117,13 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      submitWrongAnswer(
-        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
-        userAnswer: '',
-      );
+      final state = context.read<AccentBloc>().state;
+      if (state is AccentLoaded) {
+        submitWrongAnswer(
+          quest: state.currentQuest,
+          userAnswer: '',
+        );
+      }
     }
   }
 
@@ -162,7 +168,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
                 showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -214,12 +220,10 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
                                   : const BouncingScrollPhysics(),
                               slivers: [
                                 SliverToBoxAdapter(
-                                  child: IgnorePointer(
-                                    ignoring: isFirstStagePassedNotifier.value,
-                                    child: ConstrainedBox(
-                                      constraints: BoxConstraints(
-                                        minHeight: constraints.maxHeight,
-                                      ),
+                                  child: ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      minHeight: constraints.maxHeight,
+                                    ),
                                       child: Column(
                                         children: [
                                           Padding(
@@ -403,7 +407,6 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
                                       ),
                                     ),
                                   ),
-                                ),
 
                                 if (isFirstStagePassedNotifier.value &&
                                     !isAnsweredNotifier.value)
