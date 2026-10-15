@@ -1,11 +1,12 @@
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
@@ -43,9 +44,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
-  final ValueNotifier<double> _dialRotation = ValueNotifier(
-    0.33,
-  ); // 0.0 to 1.0 mapping to 0.5x - 2.0x
+  final ValueNotifier<double> _dialRotation = ValueNotifier(0.33);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
@@ -80,6 +79,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
 
   void _submitFinalAnswer(GameQuest quest) {
     if (isAnsweredNotifier.value || _pendingSelectedIndex.value == null) return;
+    timerKey?.currentState?.stop();
 
     final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
@@ -99,18 +99,36 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
   }
 
   void _submitWrongAnswer(dynamic quest) {
+    if (isAnsweredNotifier.value) return;
+    timerKey?.currentState?.stop();
     if (quest is GameQuest) {
       submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
     }
   }
 
+  void _playAudio(ListeningQuest quest, double speed) {
+    final rawAudio = quest.textToSpeak ??
+        quest.prompt ??
+        quest.question ??
+        quest.sentence ??
+        quest.audioTranscript ??
+        "";
+    final text = rawAudio.trim();
+    if (text.isEmpty) return;
+    if (text.startsWith('http')) {
+      soundService.playUrl(text);
+    } else {
+      soundService.playTts(text, speed: speed, pauseMarkers: quest.pauseMarkers);
+    }
+    hapticService.selection();
+  }
+
   @override
   void onQuestionReset() {
     _dialRotation.value = 0.33;
-
     _selectedIndex.value = null;
-
     _pendingSelectedIndex.value = null;
+    timerKey?.currentState?.start();
   }
 
   @override
@@ -120,6 +138,10 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
     return BlocConsumer<ListeningBloc, ListeningState>(
       listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
+      buildWhen: (previous, current) =>
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
@@ -141,7 +163,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
               useScrolling: false,
               disablePadding: true,
               onContinue: dispatchNextQuestion,
-              onHint: dispatchHintUsed,
+              onHint: () => hapticService.selection(),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
@@ -169,18 +191,24 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
                                         padding: EdgeInsets.only(bottom: 16.h),
                                         child: SpeedChallengeTimer(
                                           key: timerKey,
-                                          durationSeconds: 15,
+                                          durationSeconds: 30,
                                           primaryColor: theme.primaryColor,
                                           onTimeUp: () =>
                                               _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       FastSpeechDecoderInstruction(
+                                        key: const Key(
+                                          'fast_speech_decoder_instruction',
+                                        ),
                                         color: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
+                                        instruction: context.tr(
+                                          'games.fastSpeechDecoder_instruction',
+                                          fallback:
+                                              quest.instruction.isNotEmpty
+                                                  ? quest.instruction
+                                                  : 'DECODE RAPID SPEECH',
+                                        ),
                                       ),
                                       SizedBox(height: 24.h),
                                       ValueListenableBuilder<double>(
@@ -190,24 +218,25 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
                                           return Column(
                                             children: [
                                               FastSpeechDecoderGauges(
+                                                key: const Key(
+                                                  'fast_speech_decoder_gauges',
+                                                ),
                                                 speed: speed * 2,
                                                 color: theme.primaryColor,
                                               ),
                                               SizedBox(height: 20.h),
                                               FastSpeechDecoderCore(
+                                                key: const Key(
+                                                  'fast_speech_decoder_core',
+                                                ),
                                                 textToSpeak:
                                                     quest.textToSpeak ?? "",
                                                 speed: speed,
                                                 color: theme.primaryColor,
                                                 rotation: rotation,
                                                 onRotate: _onRotate,
-                                                onTapTts: () {
-                                                  soundService.playTts(
-                                                    quest.textToSpeak ?? "",
-                                                    speed: speed,
-                                                  );
-                                                  hapticService.selection();
-                                                },
+                                                onTapTts: () =>
+                                                    _playAudio(quest, speed),
                                                 emoji: quest.emoji,
                                                 isCorrectState:
                                                     isCorrectNotifier.value,
@@ -220,30 +249,35 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
                                   ),
                                 ),
                               ),
-                              SliverFillRemaining(
-                                hasScrollBody: false,
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
+                                  vertical: 16.h,
+                                ),
+                                sliver: SliverToBoxAdapter(
                                   child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
                                       FastSpeechDecoderSteamVents(
+                                        key: const Key(
+                                          'fast_speech_decoder_steam_vents',
+                                        ),
                                         options: quest.options ?? [],
                                         correctAnswerIndex:
                                             quest.correctAnswerIndex ?? 0,
                                         color: theme.primaryColor,
                                         isAnswered: isAnsweredNotifier.value,
-                                        isCorrectState: isCorrectNotifier.value,
-                                        selectedIndex: _selectedIndex.value,
+                                        isCorrectState:
+                                            isCorrectNotifier.value,
+                                        selectedIndex:
+                                            _selectedIndex.value,
                                         onSubmitAnswer: (index) {
                                           if (isAnsweredNotifier.value ||
                                               _pendingSelectedIndex.value !=
                                                   null) {
                                             return;
                                           }
+                                          hapticService.selection();
                                           _pendingSelectedIndex.value = index;
                                           _submitFinalAnswer(quest);
                                         },
