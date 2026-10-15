@@ -49,6 +49,7 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
             children: [
               Expanded(
                 child: ScaleButton(
+                  key: const ValueKey('speed_toggle_natural'),
                   onTap: () => onChanged(true),
                   child: Center(
                     child: Row(
@@ -81,6 +82,7 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
               ),
               Expanded(
                 child: ScaleButton(
+                  key: const ValueKey('speed_toggle_clear'),
                   onTap: () => onChanged(false),
                   child: Center(
                     child: Row(

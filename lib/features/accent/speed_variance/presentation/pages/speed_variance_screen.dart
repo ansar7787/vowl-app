@@ -1,9 +1,11 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/mixins/accent_game_screen_mixin.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
@@ -43,6 +45,8 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
+  AccentQuest? _lastQuest;
 
   final ValueNotifier<double> _dialRotation = ValueNotifier(0.0);
   final ValueNotifier<bool> _isDragging = ValueNotifier(false);
@@ -60,6 +64,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _scrollController.dispose();
     _dialRotation.dispose();
     _isDragging.dispose();
@@ -70,8 +75,9 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -126,7 +132,17 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
       return;
     }
     _isDragging.value = false;
-    if (!isAnsweredNotifier.value) {
+    final currentQuest = _lastQuest ??
+        ((context.read<AccentBloc>().state is AccentLoaded)
+            ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+            : null);
+    final int correct = currentQuest?.correctAnswerIndex ?? 0;
+
+    if (_dialRotation.value < -0.3) {
+      _submitChoice(0, correct);
+    } else if (_dialRotation.value > 0.3) {
+      _submitChoice(1, correct);
+    } else if (!isAnsweredNotifier.value) {
       _dialRotation.value = 0.0;
     }
   }
@@ -143,45 +159,77 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
       hapticService.success();
       soundService.playCorrect();
       isFirstStagePassedNotifier.value = true;
+      _timerKey.currentState?.stop();
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       _timerKey.currentState?.stop();
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        final options = currentQuest.options ?? [];
+        submitWrongAnswer(
+          quest: currentQuest,
+          userAnswer: index < options.length ? options[index] : '',
+        );
+      } else {
+        hapticService.error();
+        soundService.playWrong();
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = false;
+        context.read<AccentBloc>().add(const SubmitAnswer(false));
+      }
       _scrollToBottom();
-      context.read<AccentBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _handleTimeExpired() {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = false;
-    soundService.playWrong();
+    final currentQuest = _lastQuest ??
+        ((context.read<AccentBloc>().state is AccentLoaded)
+            ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+            : null);
+    if (currentQuest != null) {
+      submitWrongAnswer(
+        quest: currentQuest,
+        userAnswer: '[Timeout]',
+      );
+    } else {
+      soundService.playWrong();
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
+      context.read<AccentBloc>().add(const SubmitAnswer(false));
+    }
     _scrollToBottom();
-    context.read<AccentBloc>().add(const SubmitAnswer(false));
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      _scrollToBottom();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
-      context.read<AccentBloc>().add(const SubmitAnswer(true));
-    } else {
-      hapticService.error();
-      soundService.playWrong();
+      submitCorrectAnswer();
       _scrollToBottom();
-      context.read<AccentBloc>().add(const SubmitAnswer(false));
+    } else {
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(
+          quest: currentQuest,
+          userAnswer: '',
+        );
+      } else {
+        hapticService.error();
+        soundService.playWrong();
+        isAnsweredNotifier.value = true;
+        isCorrectNotifier.value = false;
+        context.read<AccentBloc>().add(const SubmitAnswer(false));
+      }
+      _scrollToBottom();
     }
   }
 
@@ -205,7 +253,14 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
-        if (state is! AccentLoaded) {
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
+        final AccentQuest? quest = (state is AccentLoaded)
+            ? state.currentQuest
+            : _lastQuest;
+
+        if (quest == null) {
           return AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
@@ -215,7 +270,6 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
             child: GameShimmerLoading(primaryColor: theme.primaryColor),
           );
         }
-        final quest = state.currentQuest;
         final options = quest.options ?? [];
         if (options.length < 2) return const SizedBox();
 
@@ -225,26 +279,30 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: AccentBaseLayout(
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: isAnsweredNotifier.value,
-            isCorrect: isCorrectNotifier.value,
-            showConfetti: showConfettiNotifier.value,
-            onContinue: () =>
-                context.read<AccentBloc>().add(const NextQuestion()),
-            onHint: () =>
-                context.read<AccentBloc>().add(const AccentHintUsed()),
-            useScrolling: false,
-            child: ValueListenableBuilder<bool>(
-              valueListenable: isFirstStagePassedNotifier,
-              builder: (context, isFirstStagePassed, _) {
-                return ValueListenableBuilder<bool>(
-                  valueListenable: isAnsweredNotifier,
-                  builder: (context, isAnswered, _) {
-                    return LayoutBuilder(
-                      builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
+          child: ListenableBuilder(
+            listenable: Listenable.merge([
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
+              isFirstStagePassedNotifier,
+            ]),
+            builder: (context, _) {
+              return AccentBaseLayout(
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
+                showConfetti: showConfettiNotifier.value,
+                onContinue: () =>
+                    context.read<AccentBloc>().add(const NextQuestion()),
+                onHint: () {},
+                useScrolling: false,
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final bool isFirstStagePassed =
+                        isFirstStagePassedNotifier.value;
+                    final bool isAnswered = isAnsweredNotifier.value;
+                    final maxHeight = constraints.maxHeight;
                         final double estimatedContentHeight =
                             24.h + 90.h + 80.h + 140.h;
                         final remainingHeight =
@@ -282,13 +340,11 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
                             ),
                             slivers: [
                               SliverToBoxAdapter(
-                                child: IgnorePointer(
-                                  ignoring: isFirstStagePassed,
-                                  child: ConstrainedBox(
-                                    constraints: BoxConstraints(
-                                      minHeight: constraints.maxHeight,
-                                    ),
-                                    child: Column(
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minHeight: constraints.maxHeight,
+                                  ),
+                                  child: Column(
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.symmetric(
@@ -406,31 +462,33 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
                                                           _selectedIndex,
                                                         ]),
                                                     builder: (context, _) {
-                                                      return SpeedVarianceTempoDial(
-                                                        options: options,
-                                                        correctIndex:
-                                                            quest
-                                                                .correctAnswerIndex ??
-                                                            0,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        isAnswered:
-                                                            isAnswered ||
-                                                            isFirstStagePassed,
-                                                        isDragging:
-                                                            _isDragging.value,
-                                                        dialRotation:
-                                                            _dialRotation.value,
-                                                        selectedIndex:
-                                                            _selectedIndex
-                                                                .value,
-                                                        onDialRotate:
-                                                            _onDialRotate,
-                                                        onDialRelease:
-                                                            _onDialRelease,
-                                                        onSubmitChoice:
-                                                            _submitChoice,
+                                                      return IgnorePointer(
+                                                        ignoring:
+                                                            isFirstStagePassed ||
+                                                            isAnswered,
+                                                        child: SpeedVarianceTempoDial(
+                                                          options: options,
+                                                          correctIndex: quest
+                                                                  .correctAnswerIndex ??
+                                                              0,
+                                                          color: theme.primaryColor,
+                                                          isDark: isDark,
+                                                          isAnswered:
+                                                              isAnswered ||
+                                                              isFirstStagePassed,
+                                                          isDragging:
+                                                              _isDragging.value,
+                                                          dialRotation:
+                                                              _dialRotation.value,
+                                                          selectedIndex:
+                                                              _selectedIndex.value,
+                                                          onDialRotate:
+                                                              _onDialRotate,
+                                                          onDialRelease:
+                                                              _onDialRelease,
+                                                          onSubmitChoice:
+                                                              _submitChoice,
+                                                        ),
                                                       );
                                                     },
                                                   ),
@@ -444,13 +502,15 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
                                     ),
                                   ),
                                 ),
-                              ),
                               if (isFirstStagePassed && !isAnswered)
                                 SliverToBoxAdapter(
                                   child: Column(
                                     children: [
                                       SizedBox(height: 32.h),
                                       SpeakToConfirmOverlay(
+                                        key: const ValueKey(
+                                          'speak_to_confirm_overlay',
+                                        ),
                                         expectedText:
                                             quest.textToSpeak ??
                                             quest.word ??
@@ -470,14 +530,12 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
                           ),
                         );
                       },
-                    );
-                  },
-                );
-              },
-            ),
-          ),
+                    ),
+                  );
+                },
+              ),
+            );
+          },
         );
-      },
-    );
   }
 }
