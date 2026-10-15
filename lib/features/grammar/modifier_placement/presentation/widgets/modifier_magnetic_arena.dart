@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
@@ -31,8 +32,10 @@ class ModifierMagneticArena extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final hapticService = di.sl<HapticService>();
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return SingleChildScrollView(
+      key: const ValueKey('modifier_magnetic_arena'),
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: 24.w,
@@ -77,91 +80,112 @@ class ModifierMagneticArena extends StatelessWidget {
                       ? null
                       : (isCompact ? 30.r : 40.r);
 
-                  return Semantics(
-                    label: isOccupied
-                        ? "Slot occupied by $modifier"
-                        : "Empty slot to drop modifier",
-                    child:
-                        Container(
-                              width: slotWidth,
-                              height: slotHeight,
-                              decoration: BoxDecoration(
-                                color: isOccupied
-                                    ? primaryColor.withValues(alpha: 0.1)
-                                    : (isHighlight
-                                          ? primaryColor.withValues(alpha: 0.2)
-                                          : Colors.transparent),
-                                borderRadius: BorderRadius.circular(
-                                  isCompact ? 13.r : 18.r,
-                                ),
-                                border: Border.all(
-                                  color: isOccupied ? primaryColor : borderCol,
-                                  width: isHighlight || isOccupied ? 2 : 1.5,
-                                ),
-                              ),
-                              child: Center(
-                                widthFactor: 1.0,
-                                heightFactor: 1.0,
-                                child: isOccupied
-                                    ? GestureDetector(
-                                        onTap: () {
-                                          if (isAnswered) return;
-                                          hapticService.selection();
-                                          onSlotReset();
-                                        },
-                                        child:
-                                            Container(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: isCompact
-                                                    ? 6.w
-                                                    : 10.w,
-                                                vertical: isCompact ? 2.h : 4.h,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: primaryColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                      isCompact ? 8.r : 12.r,
-                                                    ),
-                                              ),
-                                              child: Text(
-                                                modifier,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: isCompact
-                                                      ? 10.sp
-                                                      : 14.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                  color: Colors.white,
+                  return GestureDetector(
+                    key: ValueKey('modifier_slot_$slotIndex'),
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () {
+                      if (isAnswered) return;
+                      hapticService.selection();
+                      onSlotAccepted(slotIndex);
+                    },
+                    child: Semantics(
+                      label: isOccupied
+                          ? "Slot occupied by $modifier"
+                          : "Empty slot to drop modifier",
+                      child: Container(
+                        width: slotWidth,
+                        height: slotHeight,
+                        decoration: BoxDecoration(
+                          color: isOccupied
+                              ? primaryColor.withValues(alpha: 0.1)
+                              : (isHighlight
+                                    ? primaryColor.withValues(alpha: 0.2)
+                                    : Colors.transparent),
+                          borderRadius: BorderRadius.circular(
+                            isCompact ? 13.r : 18.r,
+                          ),
+                          border: Border.all(
+                            color: isOccupied ? primaryColor : borderCol,
+                            width: isHighlight || isOccupied ? 2 : 1.5,
+                          ),
+                        ),
+                        child: Center(
+                          widthFactor: 1.0,
+                          heightFactor: 1.0,
+                          child: isOccupied
+                              ? GestureDetector(
+                                  key: ValueKey('modifier_occupied_chip_$slotIndex'),
+                                  onTap: () {
+                                    if (isAnswered) return;
+                                    hapticService.selection();
+                                    onSlotReset();
+                                  },
+                                  child: reduceMotion
+                                      ? Container(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: isCompact
+                                                ? 6.w
+                                                : 10.w,
+                                            vertical: isCompact ? 2.h : 4.h,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: primaryColor,
+                                            borderRadius:
+                                                BorderRadius.circular(
+                                                  isCompact ? 8.r : 12.r,
                                                 ),
-                                              ),
-                                            ).animate().shimmer(
-                                              duration: 2.seconds,
+                                          ),
+                                          child: Text(
+                                            modifier,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: isCompact
+                                                  ? 10.sp
+                                                  : 14.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.white,
                                             ),
+                                          ),
+                                        )
+                                      : Container(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: isCompact
+                                                ? 6.w
+                                                : 10.w,
+                                            vertical: isCompact ? 2.h : 4.h,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: primaryColor,
+                                            borderRadius:
+                                                BorderRadius.circular(
+                                                  isCompact ? 8.r : 12.r,
+                                                ),
+                                          ),
+                                          child: Text(
+                                            modifier,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: isCompact
+                                                  ? 10.sp
+                                                  : 14.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ).animate().shimmer(
+                                          duration: 2.seconds,
+                                        ),
+                                )
+                              : (isHighlight
+                                    ? Icon(
+                                        Icons.add,
+                                        color: primaryColor,
+                                        size: isCompact ? 12.r : 18.r,
                                       )
-                                    : (isHighlight
-                                          ? Icon(
-                                              Icons.add,
-                                              color: primaryColor,
-                                              size: isCompact ? 12.r : 18.r,
-                                            )
-                                          : null),
-                              ),
-                            )
-                            .animate(target: isHighlight ? 1 : 0)
-                            .scale(
-                              begin: const Offset(1, 1),
-                              end: const Offset(1.15, 1.15),
-                              duration: 200.ms,
-                              curve: Curves.easeOutCubic,
-                            )
-                            .animate(target: isOccupied ? 1 : 0)
-                            .scale(
-                              begin: const Offset(1, 1),
-                              end: const Offset(1.05, 1.05),
-                              duration: 300.ms,
-                              curve: Curves.easeOutCubic,
-                            ),
+                                    : null),
+                        ),
+                      ),
+                    ),
                   );
                 },
               );

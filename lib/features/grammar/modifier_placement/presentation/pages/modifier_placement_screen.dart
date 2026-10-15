@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +10,6 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/modifier_placement_instruction.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/modifier_magnetic_arena.dart';
@@ -46,9 +46,11 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ValueNotifier<String?> _assembledSentence = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _targetIndex.dispose();
     _pendingJigsaw.dispose();
     _assembledSentence.dispose();
@@ -71,6 +73,11 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
     if (isAnsweredNotifier.value ||
         _targetIndex.value == -1 ||
         _pendingJigsaw.value) {
+      return;
+    }
+    final state = context.read<GrammarBloc>().state;
+    if (state is GrammarLoaded &&
+        state.answerStatus != AnswerStatus.unanswered) {
       return;
     }
 
@@ -96,12 +103,13 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
       _assembledSentence.value = quest.correctAnswer;
       _pendingJigsaw.value = true;
 
-      WidgetsBinding.instance.addPostFrameCallback((_) {
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 150), () {
         if (!mounted) return;
         if (_scrollController.hasClients) {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 400),
             curve: Curves.easeOutCubic,
           );
         }
@@ -113,6 +121,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
   }
 
   void _submitFinalAnswer(bool correct, GameQuest quest) {
+    _scrollTimer?.cancel();
     _pendingJigsaw.value = false;
 
     if (correct) {
@@ -124,11 +133,60 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _targetIndex.value = -1;
-
     _pendingJigsaw.value = false;
-
     _assembledSentence.value = null;
+  }
+
+  Widget _buildGrammarRule(
+    String rule,
+    Color primaryColor,
+    double horizontalMargin,
+  ) {
+    return Container(
+      key: const ValueKey('grammar_rule_box'),
+      margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.lightbulb_outline, color: primaryColor, size: 16.sp),
+              SizedBox(width: 6.w),
+              Text(
+                "GRAMMAR RULE",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  color: primaryColor,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.2,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            rule,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.sp,
+              color: primaryColor.withValues(alpha: 0.8),
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -143,58 +201,83 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
         final quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
             : null;
+
+        if (quest == null) {
+          return GrammarBaseLayout(
+            disablePadding: true,
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: false,
+            isCorrect: false,
+            isFinalFailure: false,
+            showConfetti: false,
+            useScrolling: false,
+            onContinue: () {},
+            onHint: () {},
+            child: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
+
         String modifier = "";
         List<String> words = [];
-        if (quest != null) {
-          final sentence = quest.sentence ?? "";
-          // Match both single and double quotes for safety
-          final match = RegExp(
-            r'''modifier ['"]([^'"]+)['"]''',
-          ).firstMatch(sentence);
-          modifier = match?.group(1) ?? "";
+        final sentence = quest.sentence ?? "";
+        final match = RegExp(
+          r'''modifier ['"]([^'"]+)['"]''',
+        ).firstMatch(sentence);
+        modifier = match?.group(1) ?? "";
 
-          final answer = quest.correctAnswer ?? "";
-          if (modifier.isNotEmpty) {
-            final modRegex = RegExp(
-              RegExp.escape(modifier),
-              caseSensitive: false,
-            );
-            final answerMatch = modRegex.firstMatch(answer);
-            if (answerMatch != null) {
-              final prefix = answer.substring(0, answerMatch.start);
-              final suffix = answer.substring(answerMatch.end);
-              final combined = "$prefix $suffix";
-              words = combined.split(' ').where((w) {
-                final trimmed = w.trim();
-                return trimmed.isNotEmpty &&
-                    RegExp(r'[a-zA-Z0-9]').hasMatch(trimmed);
-              }).toList();
-            }
-          }
-
-          // ROBUST FALLBACK: If regex fails or modifier not found in correctAnswer,
-          // fall back to shuffledWords so the UI never soft-locks
-          if (modifier.isEmpty || words.isEmpty) {
-            final allWords = quest.shuffledWords ?? [];
-            if (allWords.isNotEmpty) {
-              modifier = allWords[0];
-              words = allWords.skip(1).toList();
-            }
+        final answer = quest.correctAnswer ?? "";
+        if (modifier.isNotEmpty) {
+          final modRegex = RegExp(
+            RegExp.escape(modifier),
+            caseSensitive: false,
+          );
+          final answerMatch = modRegex.firstMatch(answer);
+          if (answerMatch != null) {
+            final prefix = answer.substring(0, answerMatch.start);
+            final suffix = answer.substring(answerMatch.end);
+            final combined = "$prefix $suffix";
+            words = combined.split(' ').where((w) {
+              final trimmed = w.trim();
+              return trimmed.isNotEmpty &&
+                  RegExp(r'[a-zA-Z0-9]').hasMatch(trimmed);
+            }).toList();
           }
         }
 
-        if (modifier.isEmpty || words.isEmpty) return const SizedBox();
+        // Fallback to shuffledWords if regex/answer parsing fails
+        if (modifier.isEmpty || words.isEmpty) {
+          final allWords = quest.shuffledWords ?? [];
+          if (allWords.isNotEmpty) {
+            modifier = allWords[0];
+            words = allWords.skip(1).toList();
+          }
+        }
+
+        if (modifier.isEmpty || words.isEmpty) {
+          return GrammarBaseLayout(
+            disablePadding: true,
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: false,
+            isCorrect: false,
+            isFinalFailure: false,
+            showConfetti: false,
+            useScrolling: false,
+            onContinue: () {},
+            onHint: () {},
+            child: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
 
         String cleanTargetSentence = "";
-        if (quest != null) {
-          final sentence = quest.correctAnswer ?? quest.sentence ?? "";
-          if (sentence.isNotEmpty) {
-            cleanTargetSentence = sentence
-                .replaceAll('[', '')
-                .replaceAll(']', '');
-          } else if (_assembledSentence.value != null) {
-            cleanTargetSentence = _assembledSentence.value!;
-          }
+        final targetSent = quest.correctAnswer ?? quest.sentence ?? "";
+        if (targetSent.isNotEmpty) {
+          cleanTargetSentence = targetSent
+              .replaceAll('[', '')
+              .replaceAll(']', '');
+        } else if (_assembledSentence.value != null) {
+          cleanTargetSentence = _assembledSentence.value!;
         }
 
         return ListenableBuilder(
@@ -207,436 +290,407 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
             _assembledSentence,
           ]),
           builder: (context, _) {
+            final isAnswered = isAnsweredNotifier.value ||
+                (state is GrammarLoaded &&
+                    state.answerStatus != AnswerStatus.unanswered);
+            final isCorrect = (isCorrectNotifier.value == true) ||
+                (state is GrammarLoaded &&
+                    state.answerStatus == AnswerStatus.correct);
+
             return GrammarBaseLayout(
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnsweredNotifier.value,
-              isCorrect: isCorrectNotifier.value,
+              isAnswered: isAnswered,
+              isCorrect: isCorrect,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
-              useScrolling:
-                  false, // Stack needs finite space to anchor to bottom
+              useScrolling: false,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
-              child: quest == null
-                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : LayoutBuilder(
-                      builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              crossAxisMargin: 2,
-                              child: CustomScrollView(
-                                controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: true,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: Builder(
-                                            builder: (context) {
-                                              final maxHeight =
-                                                  constraints.maxHeight;
-                                              final isCompact = maxHeight < 580;
+              onHint: () {},
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final isNarrow = constraints.maxWidth < 360;
+                  final horizontalPadding = isNarrow ? 12.w : 24.w;
 
-                                              final double
-                                              estimatedContentHeight =
-                                                  (isCompact ? 30.h : 40.h) +
-                                                  (isCompact ? 50.h : 80.h) +
-                                                  (isCompact ? 100.h : 180.h) +
-                                                  (isCompact ? 40.h : 60.h) +
-                                                  (isCompact ? 40.h : 65.h) +
-                                                  40.h;
-                                              final remainingHeight =
-                                                  maxHeight -
-                                                  estimatedContentHeight;
+                  return Stack(
+                    children: [
+                      RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(
+                          alpha: 0.5,
+                        ),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        crossAxisMargin: 2,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverFillRemaining(
+                              hasScrollBody: true,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Builder(
+                                      builder: (context) {
+                                        final maxHeight =
+                                            constraints.maxHeight;
+                                        final isCompact = maxHeight < 580;
 
-                                              final double gapUnit =
-                                                  remainingHeight > 0
-                                                  ? remainingHeight / 5
-                                                  : 0;
-                                              final double gapTop =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(
-                                                      4.0,
-                                                      15.0,
-                                                    )
-                                                  : 4.0;
-                                              final double gapMiddle =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(
-                                                      6.0,
-                                                      20.0,
-                                                    )
-                                                  : 6.0;
-                                              final double gapBottom =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(
-                                                      10.0,
-                                                      30.0,
-                                                    )
-                                                  : 10.0;
+                                        final double estimatedContentHeight =
+                                            (isCompact ? 30.h : 40.h) +
+                                            (isCompact ? 50.h : 80.h) +
+                                            (isCompact ? 100.h : 180.h) +
+                                            (isCompact ? 40.h : 60.h) +
+                                            (isCompact ? 40.h : 65.h) +
+                                            40.h;
+                                        final remainingHeight =
+                                            maxHeight -
+                                            estimatedContentHeight;
 
-                                              return Column(
-                                                children: [
-                                                  SizedBox(height: gapTop),
-                                                  isCompact
-                                                      ? SizedBox(
-                                                          height: 25.h,
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: ModifierPlacementInstruction(
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                              instructionText:
-                                                                  quest
-                                                                      .instruction,
-                                                            ),
-                                                          ),
-                                                        )
-                                                      : ModifierPlacementInstruction(
-                                                          primaryColor: theme
-                                                              .primaryColor,
-                                                          instructionText:
-                                                              quest.instruction,
+                                        final double gapUnit =
+                                            remainingHeight > 0
+                                                ? remainingHeight / 5
+                                                : 0;
+                                        final double gapTop =
+                                            remainingHeight > 0
+                                                ? (gapUnit * 1).clamp(
+                                                    4.0,
+                                                    15.0,
+                                                  )
+                                                : 4.0;
+                                        final double gapMiddle =
+                                            remainingHeight > 0
+                                                ? (gapUnit * 1.5).clamp(
+                                                    6.0,
+                                                    20.0,
+                                                  )
+                                                : 6.0;
+                                        final double gapBottom =
+                                            remainingHeight > 0
+                                                ? (gapUnit * 2.5).clamp(
+                                                    10.0,
+                                                    30.0,
+                                                  )
+                                                : 10.0;
+
+                                        final ruleText = quest.grammarRule ??
+                                            quest.ruleExplanation;
+
+                                        return Column(
+                                          children: [
+                                            SizedBox(height: gapTop),
+                                            isCompact
+                                                ? SizedBox(
+                                                    height: 25.h,
+                                                    child: FittedBox(
+                                                      fit: BoxFit.scaleDown,
+                                                      child:
+                                                          ModifierPlacementInstruction(
+                                                        primaryColor:
+                                                            theme.primaryColor,
+                                                        instructionText:
+                                                            quest.instruction,
+                                                        horizontalMargin:
+                                                            horizontalPadding,
+                                                      ),
+                                                    ),
+                                                  )
+                                                : ModifierPlacementInstruction(
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    instructionText:
+                                                        quest.instruction,
+                                                    horizontalMargin:
+                                                        horizontalPadding,
+                                                  ),
+                                            SizedBox(height: gapMiddle),
+
+                                            if (ruleText != null &&
+                                                ruleText.isNotEmpty) ...[
+                                              _buildGrammarRule(
+                                                ruleText,
+                                                theme.primaryColor,
+                                                horizontalPadding,
+                                              ),
+                                              SizedBox(
+                                                height: isCompact
+                                                    ? 8.h
+                                                    : 14.h,
+                                              ),
+                                            ],
+
+                                            if (quest.modifierType !=
+                                                null) ...[
+                                              Container(
+                                                key: const ValueKey(
+                                                  'modifier_type_chip',
+                                                ),
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 16.w,
+                                                  vertical: 6.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: theme
+                                                      .primaryColor
+                                                      .withValues(
+                                                        alpha: 0.1,
+                                                      ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        12.r,
+                                                      ),
+                                                  border: Border.all(
+                                                    color: theme
+                                                        .primaryColor
+                                                        .withValues(
+                                                          alpha: 0.3,
                                                         ),
-                                                  SizedBox(height: gapMiddle),
+                                                  ),
+                                                ),
+                                                child: Text(
+                                                  "MODIFIER: ${quest.modifierType!.toUpperCase()}",
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 12.sp,
+                                                    color: theme.primaryColor,
+                                                    fontWeight: FontWeight.bold,
+                                                    letterSpacing: 1.2,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: isCompact
+                                                    ? 10.h
+                                                    : 16.h,
+                                              ),
+                                            ],
 
-                                                  if (quest.modifierType !=
-                                                      null) ...[
-                                                    Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 16.w,
-                                                            vertical: 6.h,
+                                            // Context Card
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: horizontalPadding,
+                                              ),
+                                              child: Container(
+                                                key: const ValueKey(
+                                                  'modifier_context_card',
+                                                ),
+                                                width: double.infinity,
+                                                padding: EdgeInsets.all(
+                                                  isCompact ? 14.r : 22.r,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: isDark
+                                                      ? Colors.white.withValues(
+                                                          alpha: 0.05,
+                                                        )
+                                                      : Colors.black.withValues(
+                                                          alpha: 0.03,
+                                                        ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        isCompact
+                                                            ? 18.r
+                                                            : 28.r,
+                                                      ),
+                                                  border: Border.all(
+                                                    color: theme.primaryColor
+                                                        .withValues(
+                                                          alpha: 0.15,
+                                                        ),
+                                                    width: 1.5,
+                                                  ),
+                                                ),
+                                                child: Text(
+                                                  quest.sentence ?? "",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: isCompact
+                                                        ? 14.sp
+                                                        : 18.sp,
+                                                    color: isDark
+                                                        ? Colors.white70
+                                                        : Colors.black87,
+                                                    height: 1.4,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+
+                                            // Magnetic Arena
+                                            Expanded(
+                                              child: Center(
+                                                child: ModifierMagneticArena(
+                                                  words: words,
+                                                  modifier: modifier,
+                                                  targetIndex:
+                                                      _targetIndex.value,
+                                                  isAnswered: isAnswered ||
+                                                      _pendingJigsaw.value,
+                                                  isDark: isDark,
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  onSlotAccepted: (idx) =>
+                                                      _targetIndex.value = idx,
+                                                  onSlotReset: () =>
+                                                      _targetIndex.value = -1,
+                                                  isCompact: isCompact,
+                                                ),
+                                              ),
+                                            ),
+
+                                            // Draggable Magnet
+                                            if (!isAnswered &&
+                                                !_pendingJigsaw.value &&
+                                                _targetIndex.value == -1)
+                                              Draggable<String>(
+                                                key: const ValueKey(
+                                                  'draggable_modifier_magnet',
+                                                ),
+                                                data: modifier,
+                                                feedback: _buildTactileMagnet(
+                                                  modifier,
+                                                  theme.primaryColor,
+                                                  isDragging: true,
+                                                  isCompact: isCompact,
+                                                ),
+                                                childWhenDragging: Opacity(
+                                                  opacity: 0.2,
+                                                  child: _buildTactileMagnet(
+                                                    modifier,
+                                                    theme.primaryColor,
+                                                    isCompact: isCompact,
+                                                  ),
+                                                ),
+                                                child: _buildTactileMagnet(
+                                                  modifier,
+                                                  theme.primaryColor,
+                                                  isCompact: isCompact,
+                                                ),
+                                              ),
+
+                                            // Submit Button
+                                            if (!isAnswered &&
+                                                !_pendingJigsaw.value &&
+                                                _targetIndex.value != -1) ...[
+                                              SizedBox(
+                                                height: isCompact ? 8.h : 16.h,
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: horizontalPadding,
+                                                ),
+                                                child: ScaleButton(
+                                                  key: const ValueKey(
+                                                    'finalize_syntax_button',
+                                                  ),
+                                                  onTap: () => _submitAnswer(
+                                                    quest,
+                                                    modifier,
+                                                    words,
+                                                  ),
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    height: isCompact
+                                                        ? 48.h
+                                                        : 65.h,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                        isCompact
+                                                            ? 14.r
+                                                            : 24.r,
+                                                      ),
+                                                      gradient: LinearGradient(
+                                                        colors: [
+                                                          theme.primaryColor,
+                                                          theme.primaryColor
+                                                              .withValues(
+                                                            alpha: 0.8,
                                                           ),
-                                                      decoration: BoxDecoration(
-                                                        color: theme
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: 0.1,
-                                                            ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              12.r,
-                                                            ),
-                                                        border: Border.all(
+                                                        ],
+                                                      ),
+                                                      boxShadow: [
+                                                        BoxShadow(
                                                           color: theme
                                                               .primaryColor
                                                               .withValues(
-                                                                alpha: 0.3,
-                                                              ),
+                                                            alpha: 0.4,
+                                                          ),
+                                                          blurRadius: 25,
+                                                          offset: const Offset(
+                                                            0,
+                                                            12,
+                                                          ),
                                                         ),
-                                                      ),
+                                                      ],
+                                                    ),
+                                                    child: Center(
                                                       child: Text(
-                                                        "MODIFIER: ${quest.modifierType!.toUpperCase()}",
+                                                        "FINALIZE SYNTAX",
                                                         style: TextStyle(
                                                           fontFamily: 'Outfit',
-                                                          fontSize: 12.sp,
-                                                          color: theme
-                                                              .primaryColor,
+                                                          fontSize: isCompact
+                                                              ? 13.sp
+                                                              : 16.sp,
                                                           fontWeight:
-                                                              FontWeight.bold,
-                                                          letterSpacing: 1.2,
+                                                              FontWeight.w900,
+                                                          color: Colors.white,
+                                                          letterSpacing: 2,
                                                         ),
-                                                      ),
-                                                    ).animate().fadeIn(
-                                                      duration: 400.ms,
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 20.h,
-                                                    ),
-                                                  ],
-
-                                                  // Context Card
-                                                  Padding(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 24.w,
-                                                            ),
-                                                        child: Container(
-                                                          width:
-                                                              double.infinity,
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                isCompact
-                                                                    ? 14.r
-                                                                    : 22.r,
-                                                              ),
-                                                          decoration: BoxDecoration(
-                                                            color: isDark
-                                                                ? Colors.white
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.05,
-                                                                      )
-                                                                : Colors.black
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.03,
-                                                                      ),
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  isCompact
-                                                                      ? 18.r
-                                                                      : 28.r,
-                                                                ),
-                                                            border: Border.all(
-                                                              color: theme
-                                                                  .primaryColor
-                                                                  .withValues(
-                                                                    alpha: 0.15,
-                                                                  ),
-                                                              width: 1.5,
-                                                            ),
-                                                          ),
-                                                          child: Text(
-                                                            quest.sentence ??
-                                                                "",
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize:
-                                                                  isCompact
-                                                                  ? 14.sp
-                                                                  : 18.sp,
-                                                              color: isDark
-                                                                  ? Colors
-                                                                        .white70
-                                                                  : Colors
-                                                                        .black87,
-                                                              height: 1.4,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      )
-                                                      .animate()
-                                                      .fadeIn(duration: 600.ms)
-                                                      .slideY(
-                                                        begin: 0.2,
-                                                        end: 0,
-                                                      ),
-
-                                                  // Result Feedback
-
-                                                  // Magnetic Arena
-                                                  Expanded(
-                                                    child: Center(
-                                                      child: ModifierMagneticArena(
-                                                        words: words,
-                                                        modifier: modifier,
-                                                        targetIndex:
-                                                            _targetIndex.value,
-                                                        isAnswered:
-                                                            isAnsweredNotifier
-                                                                .value ||
-                                                            _pendingJigsaw
-                                                                .value,
-                                                        isDark: isDark,
-                                                        primaryColor:
-                                                            theme.primaryColor,
-                                                        onSlotAccepted: (idx) =>
-                                                            _targetIndex.value =
-                                                                idx,
-                                                        onSlotReset: () =>
-                                                            _targetIndex.value =
-                                                                -1,
-                                                        isCompact: isCompact,
                                                       ),
                                                     ),
                                                   ),
+                                                ),
+                                              ),
+                                            ],
 
-                                                  // Draggable Magnet
-                                                  if (!isAnsweredNotifier
-                                                          .value &&
-                                                      !_pendingJigsaw.value &&
-                                                      _targetIndex.value == -1)
-                                                    Draggable<String>(
-                                                      data: modifier,
-                                                      feedback:
-                                                          _buildTactileMagnet(
-                                                            modifier,
-                                                            theme.primaryColor,
-                                                            isDragging: true,
-                                                            isCompact:
-                                                                isCompact,
-                                                          ),
-                                                      childWhenDragging: Opacity(
-                                                        opacity: 0.2,
-                                                        child:
-                                                            _buildTactileMagnet(
-                                                              modifier,
-                                                              theme
-                                                                  .primaryColor,
-                                                              isCompact:
-                                                                  isCompact,
-                                                            ),
-                                                      ),
-                                                      child:
-                                                          _buildTactileMagnet(
-                                                            modifier,
-                                                            theme.primaryColor,
-                                                            isCompact:
-                                                                isCompact,
-                                                          ),
-                                                    ).animate().scale(
-                                                      duration: 400.ms,
-                                                      curve:
-                                                          Curves.easeOutCubic,
-                                                    ),
-
-                                                  // Submit Button
-                                                  if (!isAnsweredNotifier
-                                                          .value &&
-                                                      !_pendingJigsaw.value &&
-                                                      _targetIndex.value !=
-                                                          -1) ...[
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 8.h
-                                                          : 16.h,
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
-                                                          ),
-                                                      child: ScaleButton(
-                                                        onTap: () =>
-                                                            _submitAnswer(
-                                                              quest,
-                                                              modifier,
-                                                              words,
-                                                            ),
-                                                        child: Container(
-                                                          width:
-                                                              double.infinity,
-                                                          height: isCompact
-                                                              ? 48.h
-                                                              : 65.h,
-                                                          decoration: BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  isCompact
-                                                                      ? 14.r
-                                                                      : 24.r,
-                                                                ),
-                                                            gradient: LinearGradient(
-                                                              colors: [
-                                                                theme
-                                                                    .primaryColor,
-                                                                theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.8,
-                                                                    ),
-                                                              ],
-                                                            ),
-                                                            boxShadow: [
-                                                              BoxShadow(
-                                                                color: theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.4,
-                                                                    ),
-                                                                blurRadius: 25,
-                                                                offset:
-                                                                    const Offset(
-                                                                      0,
-                                                                      12,
-                                                                    ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          child: Center(
-                                                            child: Text(
-                                                              "FINALIZE SYNTAX",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize:
-                                                                    isCompact
-                                                                    ? 13.sp
-                                                                    : 16.sp,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w900,
-                                                                color: Colors
-                                                                    .white,
-                                                                letterSpacing:
-                                                                    2,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-
-                                                  SizedBox(height: gapBottom),
-                                                ],
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  if (_pendingJigsaw.value &&
-                                      !isAnsweredNotifier.value &&
-                                      cleanTargetSentence.isNotEmpty)
-                                    SliverToBoxAdapter(
-                                      child: TypeToConfirmOverlay(
-                                        expectedText: cleanTargetSentence,
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () =>
-                                            _submitFinalAnswer(true, quest),
-                                        onSkipped: () =>
-                                            _submitFinalAnswer(false, quest),
-                                        isPositioned: false,
-                                        displayText:
-                                            "Type the complete sentence to lock it in",
-                                      ),
-                                    ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          MediaQuery.of(
-                                                context,
-                                              ).viewInsets.bottom >
-                                              0
-                                          ? MediaQuery.of(
-                                                  context,
-                                                ).viewInsets.bottom +
-                                                40.h
-                                          : 60.h,
+                                            SizedBox(height: gapBottom),
+                                          ],
+                                        );
+                                      },
                                     ),
                                   ),
                                 ],
                               ),
                             ),
+                            if (_pendingJigsaw.value &&
+                                !isAnswered &&
+                                cleanTargetSentence.isNotEmpty)
+                              SliverToBoxAdapter(
+                                child: TypeToConfirmOverlay(
+                                  expectedText: cleanTargetSentence,
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: () =>
+                                      _submitFinalAnswer(true, quest),
+                                  onSkipped: () =>
+                                      _submitFinalAnswer(false, quest),
+                                  isPositioned: false,
+                                  displayText:
+                                      "Type the complete sentence to lock it in",
+                                ),
+                              ),
+                            SliverToBoxAdapter(
+                              child: SizedBox(
+                                height:
+                                    MediaQuery.of(context).viewInsets.bottom > 0
+                                        ? MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom +
+                                            40.h
+                                        : 60.h,
+                              ),
+                            ),
                           ],
-                        );
-                      },
-                    ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
             );
           },
         );
