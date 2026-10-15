@@ -98,10 +98,13 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
     } else {
       hapticService.error();
       soundService.playWrong();
-      submitWrongAnswer(
-        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
-        userAnswer: '',
-      );
+      final state = context.read<AccentBloc>().state;
+      if (state is AccentLoaded) {
+        submitWrongAnswer(
+          quest: state.currentQuest,
+          userAnswer: '',
+        );
+      }
     }
   }
 
@@ -135,10 +138,13 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      submitWrongAnswer(
-        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
-        userAnswer: '',
-      );
+      final state = context.read<AccentBloc>().state;
+      if (state is AccentLoaded) {
+        submitWrongAnswer(
+          quest: state.currentQuest,
+          userAnswer: '',
+        );
+      }
     }
   }
 
@@ -184,8 +190,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
                 showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () =>
-                    context.read<AccentBloc>().add(const AccentHintUsed()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -275,12 +280,10 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
                               physics: const BouncingScrollPhysics(),
                               slivers: [
                                 SliverToBoxAdapter(
-                                  child: IgnorePointer(
-                                    ignoring: isFirstStagePassedNotifier.value,
-                                    child: ConstrainedBox(
-                                      constraints: BoxConstraints(
-                                        minHeight: constraints.maxHeight,
-                                      ),
+                                  child: ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      minHeight: constraints.maxHeight,
+                                    ),
                                       child: Column(
                                         children: [
                                           Padding(
@@ -346,7 +349,10 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
                                                     SizedBox(
                                                       height: gapSpeaker,
                                                     ),
-                                                    buildSlider(),
+                                                    IgnorePointer(
+                                                      ignoring: isAnsweredNotifier.value || isFirstStagePassedNotifier.value,
+                                                      child: buildSlider(),
+                                                    ),
                                                     SizedBox(height: gapBottom),
                                                   ],
                                                 ),
@@ -365,7 +371,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
                                       ),
                                     ),
                                   ),
-                                ),
                                 if (isFirstStagePassedNotifier.value &&
                                     !isAnsweredNotifier.value)
                                   SliverToBoxAdapter(
