@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class QuestionFormatterCrank extends StatelessWidget {
   final double crankRotation;
@@ -29,20 +30,26 @@ class QuestionFormatterCrank extends StatelessWidget {
         onPanUpdate(details.delta.distance);
       },
       child: Stack(
+        key: const ValueKey('question_formatter_crank'),
         alignment: Alignment.center,
         children: [
           // Outer Energy Ring
           Container(
-            width: 180.r,
-            height: 180.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: primaryColor.withValues(alpha: 0.1),
-                width: 2,
-              ),
-            ),
-          ).animate(onPlay: (c) => c.repeat()).rotate(duration: 10.seconds),
+                width: 180.r,
+                height: 180.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: primaryColor.withValues(alpha: 0.1),
+                    width: 2,
+                  ),
+                ),
+              )
+              .animate(
+                onPlay: (c) => c.repeat(),
+                autoPlay: !VowlMotion.shouldReduceMotion(context),
+              )
+              .rotate(duration: 10.seconds),
 
           // The Mechanical Crank
           Container(
@@ -113,6 +120,7 @@ class QuestionFormatterCrank extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
+                  key: const ValueKey('question_formatter_crank_bolt'),
                   onTap: onAutoSpin,
                   child: Container(
                     padding: EdgeInsets.all(12.r),

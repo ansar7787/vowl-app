@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -10,6 +11,7 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_instruction.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_crank.dart';
@@ -48,9 +50,11 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOptionText = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _isCrankComplete.removeListener(_onStateChangeAutoScroll);
     _pendingJigsaw.removeListener(_onStateChangeAutoScroll);
     _crankRotation.dispose();
@@ -72,7 +76,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
 
   void _onStateChangeAutoScroll() {
     if (_isCrankComplete.value || _pendingJigsaw.value) {
-      Future.delayed(const Duration(milliseconds: 150), () {
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 150), () {
         if (mounted && _scrollController.hasClients) {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
@@ -85,6 +90,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   }
 
   void _autoSpin() {
+    final blocState = context.read<GrammarBloc>().state;
+    if (blocState is GrammarLoaded && blocState.answerStatus.isAnswered) return;
     if (isAnsweredNotifier.value ||
         _isCrankComplete.value ||
         _pendingJigsaw.value) {
@@ -113,6 +120,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   }
 
   void _onCrankUpdate(double delta) {
+    final blocState = context.read<GrammarBloc>().state;
+    if (blocState is GrammarLoaded && blocState.answerStatus.isAnswered) return;
     if (isAnsweredNotifier.value ||
         _pendingJigsaw.value ||
         _isCrankComplete.value) {
@@ -128,6 +137,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   }
 
   void _onOptionSelect(int index, int correctIndex, String optionText) {
+    final blocState = context.read<GrammarBloc>().state;
+    if (blocState is GrammarLoaded && blocState.answerStatus.isAnswered) return;
     if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
     bool isCorrect = index == correctIndex;
 
@@ -223,8 +234,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
               useScrolling: false, // Stack layout required for Jigsaw Overlay
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
@@ -254,6 +264,12 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                             context,
                                           ).size.height;
                                           final isCompact = maxHeight < 700;
+                                          final isGameAnswered =
+                                              isAnsweredNotifier.value ||
+                                              (state is GrammarLoaded &&
+                                                  state
+                                                      .answerStatus
+                                                      .isAnswered);
 
                                           return Column(
                                             children: [
@@ -269,12 +285,16 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                             QuestionFormatterInstruction(
                                                               primaryColor: theme
                                                                   .primaryColor,
+                                                              instruction: quest
+                                                                  .instruction,
                                                             ),
                                                       ),
                                                     )
                                                   : QuestionFormatterInstruction(
                                                       primaryColor:
                                                           theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
                                                     ),
                                               SizedBox(
                                                 height: isCompact ? 8.h : 20.h,
@@ -284,44 +304,61 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                   quest.grammarRule !=
                                                       null) ...[
                                                 Container(
-                                                  margin: EdgeInsets.symmetric(
-                                                    horizontal: 24.w,
-                                                  ),
-                                                  padding: EdgeInsets.symmetric(
-                                                    horizontal: 16.w,
-                                                    vertical: 6.h,
-                                                  ),
-                                                  decoration: BoxDecoration(
-                                                    color: theme.primaryColor
-                                                        .withValues(alpha: 0.1),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                          12.r,
-                                                        ),
-                                                    border: Border.all(
-                                                      color: theme.primaryColor
-                                                          .withValues(
-                                                            alpha: 0.3,
+                                                      key: const ValueKey(
+                                                        'grammar_rule_box',
+                                                      ),
+                                                      margin:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 24.w,
                                                           ),
-                                                    ),
-                                                  ),
-                                                  child: Text(
-                                                    quest.grammarRule != null
-                                                        ? "RULE: ${quest.grammarRule!.toUpperCase()}"
-                                                        : "TYPE: ${quest.questionType?.toUpperCase() ?? 'QUESTION'}",
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 12.sp,
-                                                      color: theme.primaryColor,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      letterSpacing: 1.2,
-                                                    ),
-                                                  ),
-                                                ).animate().fadeIn(
-                                                  duration: 400.ms,
-                                                ),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 16.w,
+                                                            vertical: 6.h,
+                                                          ),
+                                                      decoration: BoxDecoration(
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.3,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      child: Text(
+                                                        quest.grammarRule !=
+                                                                null
+                                                            ? "RULE: ${quest.grammarRule!.toUpperCase()}"
+                                                            : "TYPE: ${quest.questionType?.toUpperCase() ?? 'QUESTION'}",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 12.sp,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          letterSpacing: 1.2,
+                                                        ),
+                                                      ),
+                                                    )
+                                                    .animate(
+                                                      autoPlay:
+                                                          !VowlMotion.shouldReduceMotion(
+                                                            context,
+                                                          ),
+                                                    )
+                                                    .fadeIn(duration: 400.ms),
                                                 SizedBox(
                                                   height: isCompact
                                                       ? 12.h
@@ -362,6 +399,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                             );
                                                           },
                                                       child: Container(
+                                                        key: const ValueKey(
+                                                          'question_formatter_sentence_card',
+                                                        ),
                                                         width: double.infinity,
                                                         padding: EdgeInsets.all(
                                                           isCompact
@@ -428,7 +468,12 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                       ),
                                                     ),
                                                   )
-                                                  .animate()
+                                                  .animate(
+                                                    autoPlay:
+                                                        !VowlMotion.shouldReduceMotion(
+                                                          context,
+                                                        ),
+                                                  )
                                                   .fadeIn(duration: 600.ms)
                                                   .scale(
                                                     begin: const Offset(
@@ -445,8 +490,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                               // Game Mechanic Area
                                               Column(
                                                 children: [
-                                                  if (!isAnsweredNotifier
-                                                          .value &&
+                                                  if (!isGameAnswered &&
                                                       !_pendingJigsaw.value &&
                                                       !_isCrankComplete.value)
                                                     ValueListenableBuilder<
@@ -459,8 +503,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                           crankRotation:
                                                               rotation,
                                                           isAnswered:
-                                                              isAnsweredNotifier
-                                                                  .value ||
+                                                              isGameAnswered ||
                                                               _pendingJigsaw
                                                                   .value,
                                                           isDark: isDark,
@@ -472,8 +515,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                         );
                                                       },
                                                     )
-                                                  else if (!isAnsweredNotifier
-                                                          .value &&
+                                                  else if (!isGameAnswered &&
                                                       !_pendingJigsaw.value)
                                                     _buildQuestionOptions(
                                                       options,
@@ -482,10 +524,31 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                       theme.primaryColor,
                                                       isDark,
                                                       isCompact,
+                                                    )
+                                                  else if (_pendingJigsaw
+                                                          .value &&
+                                                      !isGameAnswered &&
+                                                      cleanTargetSentence
+                                                          .isNotEmpty)
+                                                    TypeToConfirmOverlay(
+                                                      expectedText:
+                                                          cleanTargetSentence,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      onConfirmed: () =>
+                                                          _submitFinalAnswer(
+                                                            true,
+                                                          ),
+                                                      onSkipped: () =>
+                                                          _submitFinalAnswer(
+                                                            false,
+                                                          ),
+                                                      isPositioned: false,
+                                                      displayText:
+                                                          "Type the full question to lock it in",
                                                     ),
                                                 ],
                                               ),
-
                                               SizedBox(
                                                 height: isCompact ? 12.h : 40.h,
                                               ),
@@ -495,22 +558,6 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                       ),
                                     ),
                                   ),
-                                  if (_pendingJigsaw.value &&
-                                      !isAnsweredNotifier.value &&
-                                      cleanTargetSentence.isNotEmpty)
-                                    SliverToBoxAdapter(
-                                      child: TypeToConfirmOverlay(
-                                        expectedText: cleanTargetSentence,
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () =>
-                                            _submitFinalAnswer(true),
-                                        onSkipped: () =>
-                                            _submitFinalAnswer(false),
-                                        isPositioned: false,
-                                        displayText:
-                                            "Type the full question to lock it in",
-                                      ),
-                                    ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
@@ -547,44 +594,51 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
     bool isCompact,
   ) {
     return Column(
-      children: options.asMap().entries.map((entry) {
-        return Padding(
-          padding: EdgeInsets.only(
-            bottom: isCompact ? 8.h : 16.h,
-            left: 24.w,
-            right: 24.w,
-          ),
-          child: ScaleButton(
-            onTap: () => _onOptionSelect(entry.key, correctIndex, entry.value),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(isCompact ? 12.r : 20.r),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.black.withValues(alpha: 0.03),
-                borderRadius: BorderRadius.circular(isCompact ? 14.r : 20.r),
-                border: Border.all(
-                  color: primaryColor.withValues(alpha: 0.2),
-                  width: 1.5,
-                ),
+          children: options.asMap().entries.map((entry) {
+            return Padding(
+              padding: EdgeInsets.only(
+                bottom: isCompact ? 8.h : 16.h,
+                left: 24.w,
+                right: 24.w,
               ),
-              child: Center(
-                child: Text(
-                  entry.value,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: isCompact ? 14.sp : 18.sp,
-                    fontWeight: FontWeight.bold,
-                    color: primaryColor,
+              child: ScaleButton(
+                key: ValueKey('question_formatter_option_${entry.key}'),
+                onTap: () =>
+                    _onOptionSelect(entry.key, correctIndex, entry.value),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(isCompact ? 12.r : 20.r),
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(
+                      isCompact ? 14.r : 20.r,
+                    ),
+                    border: Border.all(
+                      color: primaryColor.withValues(alpha: 0.2),
+                      width: 1.5,
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      entry.value,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: isCompact ? 14.sp : 18.sp,
+                        fontWeight: FontWeight.bold,
+                        color: primaryColor,
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-        );
-      }).toList(),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
+            );
+          }).toList(),
+        )
+        .animate(autoPlay: !VowlMotion.shouldReduceMotion(context))
+        .fadeIn(duration: 400.ms)
+        .slideY(begin: 0.1, end: 0);
   }
 }
