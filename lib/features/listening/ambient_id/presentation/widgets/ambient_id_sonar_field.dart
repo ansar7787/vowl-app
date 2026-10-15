@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -84,6 +85,9 @@ class AmbientIdSonarField extends StatelessWidget {
               AnimatedBuilder(
                 animation: radarController,
                 builder: (context, child) {
+                  if (VowlMotion.shouldReduceMotion(context)) {
+                    return child!;
+                  }
                   return Transform.rotate(
                     angle: radarController.value * 6.28,
                     child: child,
@@ -124,7 +128,7 @@ class AmbientIdSonarField extends StatelessWidget {
                 double dist = 135.r;
                 return Transform.translate(
                   offset: Offset(dist * cos(angle), dist * sin(angle)),
-                  child: _buildLocationHub(index, options[index]),
+                  child: _buildLocationHub(context, index, options[index]),
                 );
               }),
             ],
@@ -134,88 +138,103 @@ class AmbientIdSonarField extends StatelessWidget {
     );
   }
 
-  Widget _buildLocationHub(int index, String text) {
+  Widget _buildLocationHub(BuildContext context, int index, String text) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     bool isSelected = selectedIndex == index;
     bool isChoiceCorrect =
         isAnswered && index == correctAnswerIndex && isCorrectState == true;
     bool isChoiceWrong = isAnswered && isSelected && isCorrectState == false;
 
-    return ScaleButton(
-      onTap: () => onSubmitAnswer(index),
-      child:
-          Container(
-                width: 90.r,
-                height: 90.r,
-                decoration: BoxDecoration(
-                  color: isChoiceCorrect
-                      ? AppColors.gameCorrect
-                      : (isChoiceWrong
-                            ? AppColors.gameIncorrect
-                            : (isSelected ? color : _LocalPalette.color1e1e24)),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: isChoiceCorrect || isChoiceWrong || isSelected
-                        ? Colors.white.withValues(alpha: 0.5)
-                        : color.withValues(alpha: 0.3),
-                    width: 2,
-                  ),
-                  boxShadow: [
-                    if (isSelected || isChoiceCorrect || isChoiceWrong)
-                      BoxShadow(
-                        color:
-                            (isChoiceCorrect
-                                    ? AppColors.gameCorrect
-                                    : (isChoiceWrong
-                                          ? AppColors.gameIncorrect
-                                          : color))
-                                .withValues(alpha: 0.4),
-                        blurRadius: 15,
-                        spreadRadius: 2,
-                      ),
-                    // Permanent subtle base shadow
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.3),
-                      offset: const Offset(0, 4),
-                      blurRadius: 10,
+    Widget hub = Container(
+      width: 90.r,
+      height: 90.r,
+      decoration: BoxDecoration(
+        color: isChoiceCorrect
+            ? AppColors.gameCorrect
+            : (isChoiceWrong
+                  ? AppColors.gameIncorrect
+                  : (isSelected ? color : _LocalPalette.color1e1e24)),
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: isChoiceCorrect || isChoiceWrong || isSelected
+              ? Colors.white.withValues(alpha: 0.5)
+              : color.withValues(alpha: 0.3),
+          width: 2,
+        ),
+        boxShadow: [
+          if (isSelected || isChoiceCorrect || isChoiceWrong)
+            BoxShadow(
+              color:
+                  (isChoiceCorrect
+                          ? AppColors.gameCorrect
+                          : (isChoiceWrong
+                                ? AppColors.gameIncorrect
+                                : color))
+                      .withValues(alpha: 0.4),
+              blurRadius: 15,
+              spreadRadius: 2,
+            ),
+          // Permanent subtle base shadow
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.3),
+            offset: const Offset(0, 4),
+            blurRadius: 10,
+          ),
+        ],
+      ),
+      child: Center(
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Padding(
+            padding: EdgeInsets.all(4.r),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  _getLocationIcon(text),
+                  color: Colors.white,
+                  size: 22.r,
+                ),
+                SizedBox(height: 4.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                  child: Text(
+                    text.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      height: 1.1,
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        _getLocationIcon(text),
-                        color: Colors.white,
-                        size: 22.r,
-                      ),
-                      SizedBox(height: 4.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4.w),
-                        child: Text(
-                          text.toUpperCase(),
-                          textAlign: TextAlign.center,
-                          maxLines: 3,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            height: 1.1,
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                 ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.05, 1.05),
-                duration: 1500.ms,
-                delay: (index * 300).ms,
-              ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+
+    if (!reduceMotion) {
+      hub = hub
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.05, 1.05),
+            duration: 1500.ms,
+            delay: (index * 300).ms,
+          );
+    }
+
+    return ScaleButton(
+      key: ValueKey('ambient_hub_$index'),
+      onTap: isAnswered ? null : () => onSubmitAnswer(index),
+      child: hub,
     );
   }
 

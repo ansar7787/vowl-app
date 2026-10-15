@@ -154,7 +154,7 @@ class _HintButton extends StatelessWidget {
     final used = state is ListeningLoaded
         ? (state as ListeningLoaded).hintUsed
         : false;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     Widget button = QuestHintButton(
       used: used,

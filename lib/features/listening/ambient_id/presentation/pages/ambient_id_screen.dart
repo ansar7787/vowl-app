@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
@@ -60,8 +61,18 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     _radarController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
-    )..repeat();
+    );
     initListeningGame();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (VowlMotion.shouldReduceMotion(context)) {
+      _radarController.stop();
+    } else if (!_radarController.isAnimating) {
+      _radarController.repeat();
+    }
   }
 
   @override
@@ -76,11 +87,13 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
   @override
   void onQuestionReset() {
     _selectedIndex.value = null;
+    timerKey?.currentState?.start();
   }
 
   void _submitFinalAnswer(int index, int correct, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
+    timerKey?.currentState?.stop();
     _selectedIndex.value = index;
     bool isCorrect = index == correct;
 
@@ -96,9 +109,12 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
+      listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
       buildWhen: (previous, current) =>
-          current is ListeningLoaded || current is ListeningGameOver,
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
@@ -161,6 +177,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                         ),
                                       ),
                                       AmbientIdInstruction(
+                                        key: const ValueKey('ambient_instruction'),
                                         color: theme.primaryColor,
                                         instruction:
                                             quest.instruction.isNotEmpty
@@ -173,6 +190,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                       ),
                                       SizedBox(height: 24.h),
                                       AmbientIdSonarField(
+                                        key: const ValueKey('ambient_sonar_field'),
                                         options: quest.options ?? [],
                                         correctAnswerIndex:
                                             quest.correctAnswerIndex ?? 0,
@@ -204,10 +222,14 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       AmbientIdEmitterNode(
+                                        key: const ValueKey('ambient_emitter_node'),
                                         onTap: () {
-                                          soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                          );
+                                          final text = quest.textToSpeak ??
+                                              quest.audioTranscript ??
+                                              quest.prompt ??
+                                              quest.question ??
+                                              "";
+                                          soundService.playTts(text);
                                           hapticService.selection();
                                         },
                                         color: theme.primaryColor,
