@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_state.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 
 class _LocalPalette {
@@ -73,7 +74,9 @@ class AccentFeedbackCard extends StatelessWidget {
                     .tr('games.try_again', fallback: 'Try Again')
                     .toUpperCase());
 
-    return Container(
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    Widget card = Container(
       width: 342.w,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
@@ -274,58 +277,72 @@ class AccentFeedbackCard extends StatelessWidget {
           SizedBox(height: 28.h),
 
           // ── CTA button ─────────────────────────────────────────────────
-          Semantics(
-            label: buttonText,
-            button: true,
-            child: ScaleButton(
-              onTap: onContinue,
-              child: Container(
-                width: 342.w,
-                height: 65.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: primaryGradient,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: shadowColor.withValues(alpha: 0.4),
-                      blurRadius: 15,
-                      offset: const Offset(0, 8),
+          Builder(
+            builder: (context) {
+              Widget cta = Semantics(
+                label: buttonText,
+                button: true,
+                child: ScaleButton(
+                  onTap: onContinue,
+                  child: Container(
+                    width: 342.w,
+                    height: 65.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.r),
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: primaryGradient,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: shadowColor.withValues(alpha: 0.4),
+                          blurRadius: 15,
+                          offset: const Offset(0, 8),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: ExcludeSemantics(
-                    child: Text(
-                      buttonText,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: 3,
+                    child: Center(
+                      child: ExcludeSemantics(
+                        child: Text(
+                          buttonText,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            letterSpacing: 3,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ),
-          ).animate().scale(
-            delay: 150.ms,
-            duration: 300.ms,
-            curve: Curves.elasticOut,
+              );
+              if (!reduceMotion) {
+                cta = cta.animate().scale(
+                  delay: 150.ms,
+                  duration: 300.ms,
+                  curve: Curves.elasticOut,
+                );
+              }
+              return cta;
+            },
           ),
         ],
       ),
-    ).animate().slideY(
-      begin: 1,
-      end: 0,
-      curve: Curves.easeOutCubic,
-      duration: 350.ms,
     );
+
+    if (!reduceMotion) {
+      card = card.animate().slideY(
+        begin: 1,
+        end: 0,
+        curve: Curves.easeOutCubic,
+        duration: 350.ms,
+      );
+    }
+
+    return card;
   }
 }
 

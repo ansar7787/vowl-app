@@ -44,11 +44,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
 
   AccentQuest? _lastQuest;
 
-  final List<String> _shuffledOptions = [];
-  final int _shuffledCorrectIndex = 0;
-
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-  Timer? _resetTimer;
+  Timer? _scrollTimer;
 
   late final ScrollController _scrollController;
 
@@ -61,15 +58,16 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _scrollController.dispose();
     _selectedIndex.dispose();
-    _resetTimer?.cancel();
     disposeAccentGame();
     super.dispose();
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -96,34 +94,39 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
     }
   }
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _selectedIndex.value = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -135,12 +138,15 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest
             : _lastQuest;
-        final options = _shuffledOptions.isNotEmpty
-            ? _shuffledOptions
-            : (quest?.options ?? ["A", "B"]);
+        final options = (quest?.options != null && quest!.options!.isNotEmpty)
+            ? quest.options!
+            : const ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -164,7 +170,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                 showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -290,11 +296,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                                       key: ValueKey(quest.id),
                                                       options: options,
                                                       correctIndex:
-                                                          _shuffledOptions
-                                                              .isNotEmpty
-                                                          ? _shuffledCorrectIndex
-                                                          : (quest.correctAnswerIndex ??
-                                                                0),
+                                                          quest.correctAnswerIndex ??
+                                                              0,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
