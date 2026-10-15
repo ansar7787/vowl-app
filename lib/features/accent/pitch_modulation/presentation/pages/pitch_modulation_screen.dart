@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -89,6 +90,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
+  Timer? _scrollTimer;
   final ScrollController _scrollController = ScrollController();
 
   AccentQuest? _lastQuest;
@@ -99,6 +101,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _scrollController.dispose();
     _state.dispose();
     disposeAccentGame();
@@ -112,8 +115,9 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -130,7 +134,11 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
     final state = _state.value;
-    if (state.isAnswered || state.isFirstStagePassed) return;
+    if (isAnsweredNotifier.value ||
+        state.isAnswered ||
+        state.isFirstStagePassed) {
+      return;
+    }
 
     // Increased sensitivity so it tracks 1:1 with the physical track height
     double newRotation = (state.dialRotation - details.delta.dy / 75.0).clamp(
@@ -150,7 +158,10 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
 
   void _onDialRelease() {
     final state = _state.value;
-    if (state.isAnswered || state.isFirstStagePassed || !state.isDragging) {
+    if (isAnsweredNotifier.value ||
+        state.isAnswered ||
+        state.isFirstStagePassed ||
+        !state.isDragging) {
       return;
     }
 
@@ -162,7 +173,11 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
 
   void _submitChoice(int index, int correct) {
     final state = _state.value;
-    if (state.isAnswered || state.isFirstStagePassed) return;
+    if (isAnsweredNotifier.value ||
+        state.isAnswered ||
+        state.isFirstStagePassed) {
+      return;
+    }
 
     bool isCorrect = index == correct;
 
@@ -178,8 +193,6 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
       _state.value = state.copyWith(
         selectedIndex: index,
         dialRotation: index == 0 ? -0.8 : 0.8,
@@ -187,7 +200,17 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
         isAnswered: true,
         isCorrect: false,
       );
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      } else {
+        hapticService.error();
+        soundService.playWrong();
+        context.read<AccentBloc>().add(const SubmitAnswer(false));
+      }
     }
   }
 
@@ -201,11 +224,19 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
       hapticService.success();
       soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      context.read<AccentBloc>().add(const SubmitAnswer(true));
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      } else {
+        hapticService.error();
+        soundService.playWrong();
+        context.read<AccentBloc>().add(const SubmitAnswer(false));
+      }
     }
   }
 
@@ -223,8 +254,11 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
         final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest?
+            ? state.currentQuest
             : _lastQuest;
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
@@ -244,7 +278,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
                 showConfetti: uiState.showConfetti,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -421,6 +455,9 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
                                               }
 
                                               return SpeakToConfirmOverlay(
+                                                key: ValueKey(
+                                                  'speak_overlay_${uiState.spokenMeaningsCount}',
+                                                ),
                                                 expectedText:
                                                     quest.textToSpeak ?? "",
                                                 displayText:
@@ -428,6 +465,16 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
                                                 primaryColor:
                                                     theme.primaryColor,
                                                 isPositioned: false,
+                                                onBypassed: () {
+                                                  context
+                                                      .read<AccentBloc>()
+                                                      .add(
+                                                        const AccentSpeakConfirmed(
+                                                          10,
+                                                        ),
+                                                      );
+                                                  _submitVerbalEvaluation(true);
+                                                },
                                                 onConfirmed: () {
                                                   if (uiState
                                                           .spokenMeaningsCount ==
@@ -439,11 +486,13 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
                                                         );
                                                     soundService.playCorrect();
                                                   } else {
-                                                    context.read<AccentBloc>().add(
-                                                      const AccentSpeakConfirmed(
-                                                        10,
-                                                      ),
-                                                    );
+                                                    context
+                                                        .read<AccentBloc>()
+                                                        .add(
+                                                          const AccentSpeakConfirmed(
+                                                            10,
+                                                          ),
+                                                        );
                                                     _submitVerbalEvaluation(
                                                       true,
                                                     );

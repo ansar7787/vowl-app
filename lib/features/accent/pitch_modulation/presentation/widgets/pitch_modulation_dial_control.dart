@@ -63,9 +63,12 @@ class PitchModulationDialControl extends StatelessWidget {
       value: dialRotation > 0.5
           ? "Top selected"
           : (dialRotation < -0.5 ? "Bottom selected" : "Neutral"),
+      increasedValue: "Top selected",
+      decreasedValue: "Bottom selected",
       onIncrease: () => onSubmitChoice(1, correct),
       onDecrease: () => onSubmitChoice(0, correct),
       child: GestureDetector(
+        key: const ValueKey('pitch_modulation_fader'),
         onPanUpdate: (details) => onDialRotate(details, correct),
         onPanEnd: (_) => onDialRelease(),
         child: Container(
@@ -193,8 +196,8 @@ class PitchModulationDialControl extends StatelessWidget {
     return Semantics(
       button: true,
       label: "$mainText${subText.isNotEmpty ? ', Meaning: $subText' : ''}",
-      onTap: () => onSubmitChoice(index, correctIndex),
       child: ScaleButton(
+        key: ValueKey('pitch_modulation_option_$index'),
         onTap: () => onSubmitChoice(index, correctIndex),
         child:
             AnimatedContainer(
