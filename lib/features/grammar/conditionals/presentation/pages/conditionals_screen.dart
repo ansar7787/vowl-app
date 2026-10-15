@@ -13,6 +13,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/conditionals/presentation/widgets/conditionals_instruction.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ConditionalsScreen extends StatefulWidget {
   final int level;
@@ -72,7 +74,11 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
   }
 
   void _onOptionSelected(int nodeIndex, int correctIndex, GameQuest quest) {
-    if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    final blocState = context.read<GrammarBloc>().state;
+    final isAlreadyAnswered = isAnsweredNotifier.value ||
+        (blocState is GrammarLoaded &&
+            blocState.answerStatus != AnswerStatus.unanswered);
+    if (isAlreadyAnswered || isFirstStagePassedNotifier.value) return;
 
     bool isCorrect = nodeIndex == correctIndex;
 
@@ -167,8 +173,9 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
-              onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-              onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
@@ -188,10 +195,19 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverToBoxAdapter(
-                                    child: Builder(
-                                      builder: (context) {
-                                        final maxHeight = constraints.maxHeight;
-                                        final isCompact = maxHeight < 580;
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight: constraints.maxHeight,
+                                      ),
+                                      child: Builder(
+                                        builder: (context) {
+                                          final maxHeight = constraints.maxHeight;
+                                          final isCompact = maxHeight < 580 ||
+                                              constraints.maxWidth < 360;
+                                          final shouldReduceMotion =
+                                              VowlMotion.shouldReduceMotion(
+                                                context,
+                                              );
 
                                         final double estimatedContentHeight =
                                             (isCompact ? 30.h : 40.h) +
@@ -399,8 +415,10 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                                     ),
                                                   ],
                                                 ),
-                                              ).animate().fadeIn(
-                                                duration: 400.ms,
+                                              ).animate(
+                                                target: shouldReduceMotion ? 0 : 1,
+                                              ).fadeIn(
+                                                duration: shouldReduceMotion ? Duration.zero : 400.ms,
                                               ),
                                               SizedBox(
                                                 height: isCompact ? 12.h : 20.h,
@@ -410,7 +428,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                             // Context Card
                                             Padding(
                                                   padding: EdgeInsets.symmetric(
-                                                    horizontal: 24.w,
+                                                    horizontal: isCompact ? 12.w : 24.w,
                                                   ),
                                                   child: Container(
                                                     width: double.infinity,
@@ -485,9 +503,11 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                                     ),
                                                   ),
                                                 )
-                                                .animate()
-                                                .fadeIn(duration: 600.ms)
-                                                .slideY(begin: 0.2, end: 0),
+                                                .animate(
+                                                  target: shouldReduceMotion ? 0 : 1,
+                                                )
+                                                .fadeIn(duration: shouldReduceMotion ? Duration.zero : 600.ms)
+                                                .slideY(begin: shouldReduceMotion ? 0 : 0.2, end: 0),
 
                                             // Result
                                             SizedBox(
@@ -497,7 +517,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                             // Options List
                                             Padding(
                                               padding: EdgeInsets.symmetric(
-                                                horizontal: 24.w,
+                                                horizontal: isCompact ? 12.w : 24.w,
                                               ),
                                               child: _buildOptionsList(
                                                 quest,
@@ -514,6 +534,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
                                       },
                                     ),
                                   ),
+                                ),
                                   if (isFirstStagePassedNotifier.value &&
                                       !isAnsweredNotifier.value &&
                                       cleanTargetSentence.isNotEmpty)
@@ -603,67 +624,70 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
               : AppColors.gameCorrect)
         : primaryColor;
 
-    return Padding(
+    final shouldReduceMotion = VowlMotion.shouldReduceMotion(context);
+    Widget card = Padding(
       padding: EdgeInsets.only(bottom: 16.h),
-      child:
-          Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: () => _onOptionSelected(i, correctIndex, quest),
-                  borderRadius: BorderRadius.circular(16.r),
-                  child: Container(
-                    width: double.infinity,
-                    constraints: BoxConstraints(minHeight: 65.h),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20.w,
-                      vertical: 16.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.03),
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(
-                        color: blockColor.withValues(
-                          alpha: (isHit || isWrong) ? 0.6 : 0.2,
-                        ),
-                        width: 2,
-                      ),
-                      boxShadow: [
-                        if (isHit)
-                          BoxShadow(
-                            color: blockColor.withValues(alpha: 0.1),
-                            blurRadius: 12,
-                            spreadRadius: 2,
-                          ),
-                      ],
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      text,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: (isHit || isWrong)
-                            ? FontWeight.w800
-                            : FontWeight.w600,
-                        color: isHit
-                            ? (isCorrectNotifier.value == false
-                                  ? AppColors.gameIncorrect
-                                  : AppColors.gameCorrect)
-                            : (isDark ? Colors.white : Colors.black87),
-                      ),
-                    ),
-                  ),
-                ),
-              )
-              .animate(target: isHit ? 1 : 0)
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.02, 1.02),
-                duration: 200.ms,
+      child: ScaleButton(
+        key: ValueKey('conditional_option_$i'),
+        onTap: () => _onOptionSelected(i, correctIndex, quest),
+        child: Container(
+          width: double.infinity,
+          constraints: BoxConstraints(minHeight: 65.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: 20.w,
+            vertical: 16.h,
+          ),
+          decoration: BoxDecoration(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.05)
+                : Colors.black.withValues(alpha: 0.03),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: blockColor.withValues(
+                alpha: (isHit || isWrong) ? 0.6 : 0.2,
               ),
+              width: 2,
+            ),
+            boxShadow: [
+              if (isHit)
+                BoxShadow(
+                  color: blockColor.withValues(alpha: 0.1),
+                  blurRadius: 12,
+                  spreadRadius: 2,
+                ),
+            ],
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            text,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: (isHit || isWrong)
+                  ? FontWeight.w800
+                  : FontWeight.w600,
+              color: isHit
+                  ? (isCorrectNotifier.value == false
+                        ? AppColors.gameIncorrect
+                        : AppColors.gameCorrect)
+                  : (isDark ? Colors.white : Colors.black87),
+            ),
+          ),
+        ),
+      ),
     );
+
+    if (!shouldReduceMotion) {
+      card = card
+          .animate(target: isHit ? 1 : 0)
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.02, 1.02),
+            duration: 200.ms,
+          );
+    }
+
+    return card;
   }
 }
