@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -32,6 +33,8 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: List.generate(options.length, (index) {
@@ -41,81 +44,95 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
         final isChoiceWrong =
             isAnswered && isSelected && isCorrectState == false;
 
-        return Padding(
+        final ventWidget = Padding(
           padding: EdgeInsets.only(bottom: 10.h),
-          child: ScaleButton(
-            onTap: () => onSubmitAnswer(index),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
-              decoration: BoxDecoration(
-                color: isChoiceCorrect
-                    ? tokens.gameCorrect.withValues(alpha: 0.8)
-                    : (isChoiceWrong
-                          ? tokens.gameIncorrect.withValues(alpha: 0.8)
-                          : (isSelected ? color : _LocalPalette.color1e1e24)),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: isChoiceCorrect || isChoiceWrong || isSelected
-                      ? Colors.white.withValues(alpha: 0.5)
-                      : color.withValues(alpha: 0.2),
-                  width: 1.5,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.4),
-                    offset: Offset(0, 4.h),
-                    blurRadius: 8,
+          child: Semantics(
+            label: options[index],
+            button: true,
+            excludeSemantics: true,
+            child: ScaleButton(
+              key: Key('fast_speech_decoder_vent_$index'),
+              onTap: () => onSubmitAnswer(index),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                decoration: BoxDecoration(
+                  color: isChoiceCorrect
+                      ? tokens.gameCorrect.withValues(alpha: 0.8)
+                      : (isChoiceWrong
+                            ? tokens.gameIncorrect.withValues(alpha: 0.8)
+                            : (isSelected ? color : _LocalPalette.color1e1e24)),
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(
+                    color: isChoiceCorrect || isChoiceWrong || isSelected
+                        ? Colors.white.withValues(alpha: 0.5)
+                        : color.withValues(alpha: 0.2),
+                    width: 1.5,
                   ),
-                  if (isSelected || isChoiceCorrect || isChoiceWrong)
+                  boxShadow: [
                     BoxShadow(
-                      color:
-                          (isChoiceCorrect
-                                  ? tokens.gameCorrect
-                                  : (isChoiceWrong
-                                        ? tokens.gameIncorrect
-                                        : color))
-                              .withValues(alpha: 0.4),
-                      blurRadius: 15,
-                      spreadRadius: 2,
+                      color: Colors.black.withValues(alpha: 0.4),
+                      offset: Offset(0, 4.h),
+                      blurRadius: 8,
                     ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    isChoiceCorrect
-                        ? Icons.verified_rounded
-                        : (isChoiceWrong
-                              ? Icons.error_outline_rounded
-                              : Icons.air_rounded),
-                    color: Colors.white,
-                    size: 18.r,
-                  ),
-                  SizedBox(width: 14.w),
-                  Expanded(
-                    child: Text(
-                      options[index],
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: isSelected
-                            ? FontWeight.bold
-                            : FontWeight.w500,
-                        color: Colors.white,
+                    if (isSelected || isChoiceCorrect || isChoiceWrong)
+                      BoxShadow(
+                        color:
+                            (isChoiceCorrect
+                                    ? tokens.gameCorrect
+                                    : (isChoiceWrong
+                                          ? tokens.gameIncorrect
+                                          : color))
+                                .withValues(alpha: 0.4),
+                        blurRadius: 15,
+                        spreadRadius: 2,
+                      ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      isChoiceCorrect
+                          ? Icons.verified_rounded
+                          : (isChoiceWrong
+                                ? Icons.error_outline_rounded
+                                : Icons.air_rounded),
+                      color: Colors.white,
+                      size: 18.r,
+                    ),
+                    SizedBox(width: 14.w),
+                    Expanded(
+                      child: Text(
+                        options[index],
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: isSelected
+                              ? FontWeight.bold
+                              : FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  if (isSelected && !isAnswered)
-                    Icon(
-                      Icons.radio_button_checked,
-                      color: Colors.white,
-                      size: 14.r,
-                    ),
-                ],
+                    if (isSelected && !isAnswered)
+                      Icon(
+                        Icons.radio_button_checked,
+                        color: Colors.white,
+                        size: 14.r,
+                      ),
+                  ],
+                ),
               ),
             ),
           ),
-        ).animate(target: isChoiceWrong ? 1 : 0).shake(duration: 400.ms);
+        );
+
+        if (reduceMotion) {
+          return ventWidget;
+        }
+
+        return ventWidget
+            .animate(target: isChoiceWrong ? 1 : 0)
+            .shake(duration: 400.ms);
       }),
     );
   }

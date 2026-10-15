@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class FastSpeechDecoderCore extends StatelessWidget {
   final String textToSpeak;
@@ -27,12 +28,15 @@ class FastSpeechDecoderCore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Semantics(
       label:
           'Speech speed dial. Current speed: ${(speed * 2).toStringAsFixed(1)}x',
       hint: 'Swipe horizontally or vertically to adjust speech speed',
       slider: true,
       value: (speed * 2).toStringAsFixed(1),
+      explicitChildNodes: true,
       child: GestureDetector(
         onPanUpdate: (details) {
           final RenderBox renderBox = context.findRenderObject() as RenderBox;
@@ -54,12 +58,17 @@ class FastSpeechDecoderCore extends StatelessWidget {
             // The Outer Gear Background
             Transform.rotate(
               angle: rotation * 4,
-              child:
-                  Icon(
-                        Icons.settings_suggest_rounded,
-                        size: 180.r,
-                        color: color.withValues(alpha: 0.05),
-                      )
+              child: reduceMotion
+                  ? Icon(
+                      Icons.settings_suggest_rounded,
+                      size: 180.r,
+                      color: color.withValues(alpha: 0.05),
+                    )
+                  : Icon(
+                      Icons.settings_suggest_rounded,
+                      size: 180.r,
+                      color: color.withValues(alpha: 0.05),
+                    )
                       .animate(onPlay: (controller) => controller.repeat())
                       .rotate(duration: 30.seconds, begin: 0, end: 1),
             ),
@@ -78,61 +87,78 @@ class FastSpeechDecoderCore extends StatelessWidget {
             ),
 
             // Playable Dial
-            ScaleButton(
-              onTap: onTapTts,
-              child: Container(
-                width: 110.r,
-                height: 110.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: RadialGradient(
-                    colors: [
-                      color,
-                      color.withValues(alpha: 0.8),
-                      color.withValues(alpha: 0.9),
-                    ],
-                    stops: const [0.2, 0.8, 1.0],
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: color.withValues(alpha: 0.5),
-                      blurRadius: 25,
-                      spreadRadius: 2,
+            Semantics(
+              label: 'Play audio voice',
+              button: true,
+              container: true,
+              excludeSemantics: true,
+              child: ScaleButton(
+                key: const Key('fast_speech_decoder_play_btn'),
+                onTap: onTapTts,
+                child: Container(
+                  width: 110.r,
+                  height: 110.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: RadialGradient(
+                      colors: [
+                        color,
+                        color.withValues(alpha: 0.8),
+                        color.withValues(alpha: 0.9),
+                      ],
+                      stops: const [0.2, 0.8, 1.0],
                     ),
-                    BoxShadow(
-                      color: Colors.white.withValues(alpha: 0.2),
-                      blurRadius: 10,
-                      offset: const Offset(0, -5),
-                    ),
-                  ],
-                ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    if (isCorrectState == true && emoji != null)
-                      Text(emoji!, style: TextStyle(fontSize: 48.r))
-                          .animate()
-                          .scale(duration: 400.ms, curve: Curves.easeOutCubic)
-                    else ...[
-                      Icon(
-                        Icons.play_arrow_rounded,
-                        color: Colors.white,
-                        size: 60.r,
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withValues(alpha: 0.5),
+                        blurRadius: 25,
+                        spreadRadius: 2,
                       ),
-                      Positioned(
-                        bottom: 20.r,
-                        child: Text(
-                          "LISTEN",
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 7.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white70,
+                      BoxShadow(
+                        color: Colors.white.withValues(alpha: 0.2),
+                        blurRadius: 10,
+                        offset: const Offset(0, -5),
+                      ),
+                    ],
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      if (isCorrectState == true && emoji != null)
+                        reduceMotion
+                            ? Text(
+                                emoji!,
+                                key: const Key('fast_speech_decoder_emoji'),
+                                style: TextStyle(fontSize: 48.r),
+                              )
+                            : Text(
+                                emoji!,
+                                key: const Key('fast_speech_decoder_emoji'),
+                                style: TextStyle(fontSize: 48.r),
+                              )
+                                .animate()
+                                .scale(duration: 400.ms, curve: Curves.easeOutCubic)
+                      else ...[
+                        Icon(
+                          Icons.play_arrow_rounded,
+                          color: Colors.white,
+                          size: 60.r,
+                        ),
+                        Positioned(
+                          bottom: 20.r,
+                          child: Text(
+                            "LISTEN",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 7.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white70,
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ],
-                  ],
+                  ),
                 ),
               ),
             ),
