@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +10,6 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_selection_instruction.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_rotary_dial.dart';
@@ -44,9 +44,11 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
   final ValueNotifier<int> _selectedIndex = ValueNotifier(0);
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _selectedIndex.dispose();
     _pendingJigsaw.dispose();
     _scrollController.dispose();
@@ -62,6 +64,11 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
 
   void _submitAnswer(int correctIndex, GameQuest quest) {
     if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
+    final state = context.read<GrammarBloc>().state;
+    if (state is GrammarLoaded &&
+        state.answerStatus != AnswerStatus.unanswered) {
+      return;
+    }
 
     bool isCorrect = _selectedIndex.value == correctIndex;
 
@@ -71,12 +78,13 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
       _pendingJigsaw.value = true;
 
       // Auto-scroll to show the second stage (TypeToConfirm Jigsaw) at the bottom
-      Future.delayed(const Duration(milliseconds: 150), () {
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 150), () {
         if (!mounted) return;
         if (_scrollController.hasClients) {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 600),
+            duration: const Duration(milliseconds: 400),
             curve: Curves.easeOutCubic,
           );
         }
@@ -92,6 +100,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
   }
 
   void _submitFinalAnswer(bool correct, GameQuest quest) {
+    _scrollTimer?.cancel();
     _pendingJigsaw.value = false;
 
     if (correct) {
@@ -99,7 +108,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     } else {
       String? userAnswer =
           (quest.options != null &&
-              _selectedIndex.value < quest.options!.length)
+              _selectedIndex.value < (quest.options?.length ?? 0))
           ? quest.options![_selectedIndex.value]
           : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
@@ -112,6 +121,33 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     Color primaryColor,
     bool isDark,
   ) {
+    if (!template.contains(RegExp(r'_{3,}'))) {
+      return [
+        TextSpan(text: template),
+        if (selected != null)
+          WidgetSpan(
+            alignment: PlaceholderAlignment.middle,
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 8.w),
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: primaryColor, width: 2),
+                ),
+              ),
+              child: Text(
+                selected,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.bold,
+                  color: primaryColor,
+                ),
+              ),
+            ),
+          ),
+      ];
+    }
     final parts = template.split(RegExp(r'_{3,}'));
     List<InlineSpan> spans = [];
     for (int i = 0; i < parts.length; i++) {
@@ -120,35 +156,32 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
         spans.add(
           WidgetSpan(
             alignment: PlaceholderAlignment.middle,
-            child:
-                Container(
-                      margin: EdgeInsets.symmetric(horizontal: 8.w),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12.w,
-                        vertical: 4.h,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: selected != null
-                                ? primaryColor
-                                : (isDark ? Colors.white38 : Colors.black38),
-                            width: 2,
-                          ),
-                        ),
-                      ),
-                      child: Text(
-                        selected ?? "      ",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.bold,
-                          color: primaryColor,
-                        ),
-                      ),
-                    )
-                    .animate(target: selected != null ? 1 : 0)
-                    .shimmer(duration: 2.seconds),
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 8.w),
+              padding: EdgeInsets.symmetric(
+                horizontal: 12.w,
+                vertical: 4.h,
+              ),
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: selected != null
+                        ? primaryColor
+                        : (isDark ? Colors.white38 : Colors.black38),
+                    width: 2,
+                  ),
+                ),
+              ),
+              child: Text(
+                selected ?? "      ",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.bold,
+                  color: primaryColor,
+                ),
+              ),
+            ),
           ),
         );
       }
@@ -156,9 +189,14 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     return spans;
   }
 
-  Widget _buildGrammarRule(String rule, Color primaryColor) {
+  Widget _buildGrammarRule(
+    String rule,
+    Color primaryColor,
+    double horizontalMargin,
+  ) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      key: const ValueKey('grammar_rule_box'),
+      margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
@@ -197,7 +235,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
           ),
         ],
       ),
-    ).animate().fadeIn(duration: 400.ms);
+    );
   }
 
   Widget _buildContextCard(
@@ -205,14 +243,26 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     List<String> options,
     Color primaryColor,
     bool isDark,
+    double horizontalMargin,
   ) {
+    final template = quest.sentenceWithBlank ??
+        quest.question ??
+        quest.sentence ??
+        "___ sentence.";
+
     return ListenableBuilder(
       listenable: _selectedIndex,
       builder: (context, _) {
+        final selectedText =
+            (options.isNotEmpty && _selectedIndex.value < options.length)
+                ? options[_selectedIndex.value]
+                : null;
+
         return Container(
+          key: const ValueKey('modal_context_card'),
           width: double.infinity,
           padding: EdgeInsets.all(22.r),
-          margin: EdgeInsets.symmetric(horizontal: 24.w),
+          margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
           decoration: BoxDecoration(
             color: isDark
                 ? Colors.white.withValues(alpha: 0.05)
@@ -233,22 +283,27 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                 height: 1.5,
               ),
               children: _buildSentenceWithBlank(
-                quest.question ?? "___ sentence.",
-                options[_selectedIndex.value],
+                template,
+                selectedText,
                 primaryColor,
                 isDark,
               ),
             ),
           ),
-        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0);
+        );
       },
     );
   }
 
-  Widget _buildSubmitButton(GrammarQuest quest, Color primaryColor) {
+  Widget _buildSubmitButton(
+    GrammarQuest quest,
+    Color primaryColor,
+    double horizontalMargin,
+  ) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: horizontalMargin),
       child: ScaleButton(
+        key: const ValueKey('lock_configuration_button'),
         onTap: () => _submitAnswer(quest.correctAnswerIndex ?? 0, quest),
         child: Container(
           width: double.infinity,
@@ -285,8 +340,8 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _selectedIndex.value = 0;
-
     _pendingJigsaw.value = false;
   }
 
@@ -303,160 +358,214 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
             ? state.currentQuest as GrammarQuest?
             : null;
         final options = quest?.options ?? ["CAN", "COULD", "MUST", "SHOULD"];
+        final ruleText = quest?.grammarRule ?? quest?.ruleExplanation;
 
-        return ListenableBuilder(
-          listenable: Listenable.merge([
-            isAnsweredNotifier,
-            isCorrectNotifier,
-            showConfettiNotifier,
-          ]),
-          builder: (context, _) {
-            return GrammarBaseLayout(
-              disablePadding: true,
-              gameType: widget.gameType,
-              level: widget.level,
-              isAnswered: isAnsweredNotifier.value,
-              isCorrect: isCorrectNotifier.value,
-              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: showConfettiNotifier.value,
-              useScrolling: false, // Using our own CustomScrollView
-              onContinue: () =>
-                  context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
-              child: quest == null
-                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          crossAxisMargin: 2,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
-                                padding: EdgeInsets.symmetric(vertical: 20.h),
-                                sliver: SliverList(
-                                  delegate: SliverChildListDelegate([
-                                    ModalsSelectionInstruction(
-                                      primaryColor: theme.primaryColor,
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            final isNarrow = constraints.maxWidth < 360;
+            final isCompact = constraints.maxHeight < 650;
+            final horizontalMargin = isNarrow ? 12.w : 24.w;
+
+            return ListenableBuilder(
+              listenable: Listenable.merge([
+                isAnsweredNotifier,
+                isCorrectNotifier,
+                showConfettiNotifier,
+              ]),
+              builder: (context, _) {
+                final isAnswered = isAnsweredNotifier.value ||
+                    (state is GrammarLoaded &&
+                        state.answerStatus != AnswerStatus.unanswered);
+                final isCorrect = (isCorrectNotifier.value == true) ||
+                    (state is GrammarLoaded &&
+                        state.answerStatus == AnswerStatus.correct);
+
+                return GrammarBaseLayout(
+                  disablePadding: true,
+                  gameType: widget.gameType,
+                  level: widget.level,
+                  isAnswered: isAnswered,
+                  isCorrect: isCorrect,
+                  isFinalFailure:
+                      state is GrammarLoaded && state.isFinalFailure,
+                  showConfetti: showConfettiNotifier.value,
+                  useScrolling: false, // Using our own CustomScrollView
+                  onContinue: () =>
+                      context.read<GrammarBloc>().add(const NextQuestion()),
+                  onHint: () {},
+                  child: quest == null
+                      ? GameShimmerLoading(primaryColor: theme.primaryColor)
+                      : Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor:
+                                  theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              crossAxisMargin: 2,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverPadding(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: isCompact ? 12.h : 20.h,
                                     ),
-                                    SizedBox(height: 24.h),
+                                    sliver: SliverList(
+                                      delegate: SliverChildListDelegate([
+                                        ModalsSelectionInstruction(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                          horizontalMargin: horizontalMargin,
+                                        ),
+                                        SizedBox(
+                                          height: isCompact ? 14.h : 24.h,
+                                        ),
 
-                                    if (quest.grammarRule != null) ...[
-                                      _buildGrammarRule(
-                                        quest.grammarRule!,
-                                        theme.primaryColor,
-                                      ),
-                                      SizedBox(height: 24.h),
-                                    ],
-
-                                    _buildContextCard(
-                                      quest,
-                                      options,
-                                      theme.primaryColor,
-                                      isDark,
-                                    ),
-
-                                    SizedBox(height: 32.h),
-
-                                    Center(
-                                      child: ModalsRotaryDial(
-                                        options: options,
-                                        isAnsweredNotifier: isAnsweredNotifier,
-                                        pendingJigsawNotifier: _pendingJigsaw,
-                                        selectedIndexNotifier: _selectedIndex,
-                                        correctAnswerIndex:
-                                            quest.correctAnswerIndex ?? 0,
-                                        isDark: isDark,
-                                        primaryColor: theme.primaryColor,
-                                      ),
-                                    ),
-
-                                    SizedBox(height: 32.h),
-
-                                    ListenableBuilder(
-                                      listenable: Listenable.merge([
-                                        isAnsweredNotifier,
-                                        _pendingJigsaw,
-                                      ]),
-                                      builder: (context, _) {
-                                        if (!isAnsweredNotifier.value &&
-                                            !_pendingJigsaw.value) {
-                                          return _buildSubmitButton(
-                                            quest,
+                                        if (ruleText != null &&
+                                            ruleText.isNotEmpty) ...[
+                                          _buildGrammarRule(
+                                            ruleText,
                                             theme.primaryColor,
+                                            horizontalMargin,
+                                          ),
+                                          SizedBox(
+                                            height: isCompact ? 14.h : 24.h,
+                                          ),
+                                        ],
+
+                                        _buildContextCard(
+                                          quest,
+                                          options,
+                                          theme.primaryColor,
+                                          isDark,
+                                          horizontalMargin,
+                                        ),
+
+                                        SizedBox(
+                                          height: isCompact ? 20.h : 32.h,
+                                        ),
+
+                                        Center(
+                                          child: ModalsRotaryDial(
+                                            options: options,
+                                            isAnsweredNotifier:
+                                                isAnsweredNotifier,
+                                            pendingJigsawNotifier:
+                                                _pendingJigsaw,
+                                            selectedIndexNotifier:
+                                                _selectedIndex,
+                                            correctAnswerIndex:
+                                                quest.correctAnswerIndex ?? 0,
+                                            isDark: isDark,
+                                            primaryColor: theme.primaryColor,
+                                          ),
+                                        ),
+
+                                        SizedBox(
+                                          height: isCompact ? 20.h : 32.h,
+                                        ),
+
+                                        ListenableBuilder(
+                                          listenable: Listenable.merge([
+                                            isAnsweredNotifier,
+                                            _pendingJigsaw,
+                                          ]),
+                                          builder: (context, _) {
+                                            if (!isAnswered &&
+                                                !_pendingJigsaw.value) {
+                                              return _buildSubmitButton(
+                                                quest,
+                                                theme.primaryColor,
+                                                horizontalMargin,
+                                              );
+                                            }
+                                            return const SizedBox.shrink();
+                                          },
+                                        ),
+                                      ]),
+                                    ),
+                                  ),
+                                  ListenableBuilder(
+                                    listenable: Listenable.merge([
+                                      _pendingJigsaw,
+                                      isAnsweredNotifier,
+                                    ]),
+                                    builder: (context, _) {
+                                      if (_pendingJigsaw.value && !isAnswered) {
+                                        final sentence =
+                                            quest.sentenceWithBlank ??
+                                            quest.question ??
+                                            quest.sentence ??
+                                            "";
+                                        String fullSentence = sentence;
+                                        if (sentence.contains(
+                                            RegExp(r'_{3,}'))) {
+                                          fullSentence = sentence.replaceFirst(
+                                            RegExp(r'_{3,}'),
+                                            options[_selectedIndex.value],
+                                          );
+                                        } else if (quest.sentence != null &&
+                                            quest.sentence!.isNotEmpty) {
+                                          fullSentence = quest.sentence!;
+                                        }
+                                        final cleanTargetSentence =
+                                            fullSentence
+                                                .replaceAll(
+                                                  RegExp(r'\s+'),
+                                                  ' ',
+                                                )
+                                                .trim();
+
+                                        if (cleanTargetSentence.isNotEmpty) {
+                                          return SliverToBoxAdapter(
+                                            child: TypeToConfirmOverlay(
+                                              expectedText: cleanTargetSentence,
+                                              primaryColor: theme.primaryColor,
+                                              onConfirmed: () =>
+                                                  _submitFinalAnswer(
+                                                    true,
+                                                    quest,
+                                                  ),
+                                              onSkipped: () =>
+                                                  _submitFinalAnswer(
+                                                    false,
+                                                    quest,
+                                                  ),
+                                              isPositioned: false,
+                                              displayText:
+                                                  "Type the full sentence to lock it in",
+                                            ),
                                           );
                                         }
-                                        return const SizedBox.shrink();
-                                      },
+                                      }
+                                      return const SliverToBoxAdapter(
+                                        child: SizedBox.shrink(),
+                                      );
+                                    },
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(context)
+                                                      .viewInsets
+                                                      .bottom >
+                                                  0
+                                              ? MediaQuery.of(
+                                                      context,
+                                                    ).viewInsets.bottom +
+                                                  40.h
+                                              : 60.h,
                                     ),
-                                  ]),
-                                ),
+                                  ),
+                                ],
                               ),
-                              ListenableBuilder(
-                                listenable: Listenable.merge([
-                                  _pendingJigsaw,
-                                  isAnsweredNotifier,
-                                ]),
-                                builder: (context, _) {
-                                  if (_pendingJigsaw.value &&
-                                      !isAnsweredNotifier.value) {
-                                    final sentence =
-                                        quest.sentence ?? quest.question ?? "";
-                                    String fullSentence = sentence;
-                                    if (sentence.contains(RegExp(r'_{3,}'))) {
-                                      fullSentence = sentence.replaceFirst(
-                                        RegExp(r'_{3,}'),
-                                        options[_selectedIndex.value],
-                                      );
-                                    }
-                                    final cleanTargetSentence = fullSentence
-                                        .replaceAll(RegExp(r'\s+'), ' ')
-                                        .trim();
-
-                                    if (cleanTargetSentence.isNotEmpty) {
-                                      return SliverToBoxAdapter(
-                                        child: TypeToConfirmOverlay(
-                                          expectedText: cleanTargetSentence,
-                                          primaryColor: theme.primaryColor,
-                                          onConfirmed: () =>
-                                              _submitFinalAnswer(true, quest),
-                                          onSkipped: () =>
-                                              _submitFinalAnswer(false, quest),
-                                          isPositioned: false,
-                                          displayText:
-                                              "Type the full sentence to lock it in",
-                                        ),
-                                      );
-                                    }
-                                  }
-                                  return const SliverToBoxAdapter(
-                                    child: SizedBox.shrink(),
-                                  );
-                                },
-                              ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height:
-                                      MediaQuery.of(context).viewInsets.bottom >
-                                          0
-                                      ? MediaQuery.of(
-                                              context,
-                                            ).viewInsets.bottom +
-                                            40.h
-                                      : 60.h,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                );
+              },
             );
           },
         );

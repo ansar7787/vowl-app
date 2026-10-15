@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
@@ -70,6 +71,10 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
       widget.isAnsweredNotifier.addListener(_onAnsweredChanged);
       _wasAnswered = widget.isAnsweredNotifier.value;
     }
+    if (widget.options.isNotEmpty &&
+        widget.selectedIndexNotifier.value >= widget.options.length) {
+      widget.selectedIndexNotifier.value = 0;
+    }
   }
 
   void _onAnsweredChanged() {
@@ -89,6 +94,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
     if (_isLocked) return;
     final count = widget.options.length;
     if (count == 0) return;
+    if (widget.selectedIndexNotifier.value >= count) return;
 
     final targetNormalized =
         widget.selectedIndexNotifier.value * (2 * pi / count);
@@ -114,6 +120,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final outerSize = 280.r;
     final physicalDialSize = 170.r;
     final dialOffset = 125.r;
@@ -131,6 +138,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
             widget.selectedIndexNotifier.value == widget.correctAnswerIndex;
 
         return Stack(
+          key: const ValueKey('modals_rotary_dial'),
           alignment: Alignment.center,
           children: [
             // Outer Halo
@@ -154,29 +162,42 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                   cos(angle) * dialOffset,
                   sin(angle) * dialOffset,
                 ),
-                child: AnimatedScale(
-                  duration: 300.ms,
-                  scale: isSelected ? 1.25 : 0.9,
-                  child: AnimatedDefaultTextStyle(
-                    duration: 300.ms,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: isSelected
-                          ? FontWeight.w900
-                          : FontWeight.w600,
-                      color: isSelected
-                          ? widget.primaryColor
-                          : (widget.isDark ? Colors.white30 : Colors.black26),
-                      letterSpacing: 1,
+                child: GestureDetector(
+                  key: ValueKey('modal_option_$i'),
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () {
+                    if (_isLocked) return;
+                    if (widget.selectedIndexNotifier.value != i) {
+                      _hapticService.selection();
+                      widget.selectedIndexNotifier.value = i;
+                      _snapToCurrentIndex();
+                    }
+                  },
+                  child: AnimatedScale(
+                    duration: reduceMotion ? Duration.zero : 300.ms,
+                    scale: isSelected ? 1.25 : 0.9,
+                    child: AnimatedDefaultTextStyle(
+                      duration: reduceMotion ? Duration.zero : 300.ms,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: isSelected
+                            ? FontWeight.w900
+                            : FontWeight.w600,
+                        color: isSelected
+                            ? widget.primaryColor
+                            : (widget.isDark ? Colors.white30 : Colors.black26),
+                        letterSpacing: 1,
+                      ),
+                      child: Text(widget.options[i]),
                     ),
-                    child: Text(widget.options[i]),
                   ),
                 ),
               );
             }),
             // The Physical Dial (Glass Morph)
             GestureDetector(
+              key: const ValueKey('modals_rotary_dial_gesture'),
               onPanStart: (details) {
                 if (_isLocked) return;
                 _snapController.stop();
@@ -274,7 +295,8 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                       Align(
                         alignment: Alignment.topCenter,
                         child: isCorrectSelected
-                            ? Container(
+                            ? (reduceMotion
+                                ? Container(
                                     width: 6.r,
                                     height: 35.r,
                                     margin: EdgeInsets.only(top: 15.r),
@@ -284,38 +306,55 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                                       boxShadow: [
                                         BoxShadow(
                                           color: widget.primaryColor,
-                                          blurRadius: 15,
-                                          spreadRadius: 1,
+                                          blurRadius: 20,
+                                          spreadRadius: 2,
                                         ),
                                       ],
                                     ),
                                   )
-                                  .animate(
-                                    onPlay: (controller) =>
-                                        controller.repeat(reverse: true),
-                                  )
-                                  .scale(
-                                    begin: const Offset(1.0, 1.0),
-                                    end: const Offset(1.2, 1.1),
-                                    duration: 600.ms,
-                                    curve: Curves.easeInOut,
-                                  )
-                                  .boxShadow(
-                                    begin: BoxShadow(
-                                      color: widget.primaryColor,
-                                      blurRadius: 15,
-                                      spreadRadius: 1,
-                                    ),
-                                    end: BoxShadow(
-                                      color: Colors.white.withValues(
-                                        alpha: 0.5,
-                                      ),
-                                      blurRadius: 25,
-                                      spreadRadius: 4,
-                                    ),
-                                    duration: 600.ms,
-                                    curve: Curves.easeInOut,
-                                  )
+                                : Container(
+                                        width: 6.r,
+                                        height: 35.r,
+                                        margin: EdgeInsets.only(top: 15.r),
+                                        decoration: BoxDecoration(
+                                          color: widget.primaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(3.r),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: widget.primaryColor,
+                                              blurRadius: 15,
+                                              spreadRadius: 1,
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                      .animate(
+                                        onPlay: (controller) =>
+                                            controller.repeat(reverse: true),
+                                      )
+                                      .scale(
+                                        begin: const Offset(1.0, 1.0),
+                                        end: const Offset(1.2, 1.1),
+                                        duration: 600.ms,
+                                        curve: Curves.easeInOut,
+                                      )
+                                      .boxShadow(
+                                        begin: BoxShadow(
+                                          color: widget.primaryColor,
+                                          blurRadius: 15,
+                                          spreadRadius: 1,
+                                        ),
+                                        end: BoxShadow(
+                                          color: Colors.white.withValues(
+                                            alpha: 0.5,
+                                          ),
+                                          blurRadius: 25,
+                                          spreadRadius: 4,
+                                        ),
+                                        duration: 600.ms,
+                                        curve: Curves.easeInOut,
+                                      ))
                             : Container(
                                 width: 6.r,
                                 height: 35.r,
