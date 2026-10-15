@@ -3,14 +3,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ModalsSelectionInstruction extends StatelessWidget {
   final Color primaryColor;
-  const ModalsSelectionInstruction({super.key, required this.primaryColor});
+  final String? instruction;
+  final double? horizontalMargin;
+
+  const ModalsSelectionInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+    this.horizontalMargin,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.center,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24.w),
+        key: const ValueKey('modals_selection_instruction'),
+        margin: EdgeInsets.symmetric(horizontal: horizontalMargin ?? 24.w),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
@@ -25,8 +34,10 @@ class ModalsSelectionInstruction extends StatelessWidget {
             SizedBox(width: 8.w),
             Flexible(
               child: Text(
-                "CALIBRATE THE MODAL DIAL",
+                instruction ?? "CALIBRATE THE MODAL DIAL",
                 textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
