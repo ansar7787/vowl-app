@@ -69,6 +69,28 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
   void onQuestionReset() {
     _selectedIndex.value = null;
     _pendingSelectedIndex.value = null;
+    timerKey?.currentState?.start();
+  }
+
+  void _playAudio(dynamic quest) {
+    hapticService.selection();
+    if (quest == null) return;
+    try {
+      final audioUrl = quest.audioUrl as String?;
+      if (audioUrl != null && audioUrl.isNotEmpty) {
+        soundService.playUrl(audioUrl);
+        return;
+      }
+    } catch (_) {}
+    final rawText = quest.textToSpeak ?? quest.prompt ?? quest.question ?? '';
+    if (rawText.startsWith('http://') || rawText.startsWith('https://')) {
+      soundService.playUrl(rawText);
+      return;
+    }
+    final text = rawText.replaceAll(RegExp(r'\[pause:\d+\]'), ' ');
+    if (text.isNotEmpty) {
+      soundService.playTts(text);
+    }
   }
 
   void _submitFinalAnswer(GameQuest quest) {
@@ -91,6 +113,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
   }
 
   void _submitWrongAnswer(dynamic quest) {
+    timerKey?.currentState?.stop();
     if (quest is GameQuest) {
       submitWrongAnswer(quest: quest);
     }
@@ -101,9 +124,12 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
+      listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
       buildWhen: (previous, current) =>
-          current is ListeningLoaded || current is ListeningGameOver,
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
@@ -125,7 +151,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
               useScrolling: false,
               disablePadding: true,
               onContinue: dispatchNextQuestion,
-              onHint: dispatchHintUsed,
+              onHint: () => hapticService.selection(),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
@@ -163,20 +189,24 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
                                           ),
                                         ),
                                       SoundImageMatchInstruction(
+                                        key: const Key(
+                                          'sound_image_match_instruction',
+                                        ),
                                         color: theme.primaryColor,
                                         instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
+                                            context.tr(
+                                              'games.soundImageMatch_instruction',
+                                              fallback:
+                                                  InstructionHelper
+                                                      .getInstruction(quest),
                                             ),
                                       ),
                                       SizedBox(height: 24.h),
                                       SoundImageMatchEmitter(
-                                        onTap: () {
-                                          soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                          );
-                                          hapticService.selection();
-                                        },
+                                        key: const Key(
+                                          'sound_image_match_emitter',
+                                        ),
+                                        onTap: () => _playAudio(quest),
                                         color: theme.primaryColor,
                                         emoji: quest.emoji,
                                         isCorrectState: isCorrectNotifier.value,
@@ -198,6 +228,9 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
                                       SizedBox(
                                         width: double.infinity,
                                         child: SoundImageMatchGrid(
+                                          key: const Key(
+                                            'sound_image_match_grid',
+                                          ),
                                           options: quest.options ?? [],
                                           optionEmojis:
                                               quest.optionEmojis ?? [],
@@ -212,6 +245,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
                                             if (isAnsweredNotifier.value) {
                                               return;
                                             }
+                                            hapticService.selection();
                                             timerKey?.currentState?.pause();
                                             _pendingSelectedIndex.value = index;
                                             _submitFinalAnswer(quest);
