@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
@@ -50,6 +52,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
 
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   // Shuffled state
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
@@ -59,7 +62,16 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   final ValueNotifier<double> _mercuryLevel = ValueNotifier(0.5);
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 150), () {
+    _scrollTimer?.cancel();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion) {
+      if (_scrollController.hasClients) {
+        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      }
+      return;
+    }
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
       if (!mounted) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
@@ -86,7 +98,8 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_reactorController.isAnimating) _reactorController.stop();
     } else {
@@ -96,6 +109,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _reactorController.dispose();
     _selectedIndex.dispose();
     _shuffledOptions.dispose();
@@ -169,12 +183,12 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   @override
   void onQuestionReset() {
     _selectedIndex.value = null;
-
     _shuffledOptions.value = [];
-
     _shuffledCorrectIndex.value = -1;
-
     _mercuryLevel.value = 0.5;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -186,7 +200,19 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       listenWhen: roleplayListenWhen,
       listener: onRoleplayStateChanged,
       builder: (context, state) {
-        final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
+        final quest =
+            (state is RoleplayLoaded) ? state.currentQuestOrNull : null;
+
+        if (quest != null &&
+            _shuffledOptions.value.isEmpty &&
+            quest.options != null &&
+            quest.options!.isNotEmpty) {
+          final options = List<String>.from(quest.options!);
+          final correctOption = options[quest.correctAnswerIndex ?? 0];
+          options.shuffle();
+          _shuffledCorrectIndex.value = options.indexOf(correctOption);
+          _shuffledOptions.value = options;
+        }
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -212,9 +238,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
-                  context.read<RoleplayBloc>().add(NextQuestion()),
+                  context.read<RoleplayBloc>().add(const NextQuestion()),
               onHint: () =>
-                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+                  context.read<RoleplayBloc>().add(const RoleplayHintUsed()),
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -227,15 +253,16 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
+                            key: const Key('job_interview_scroll_view'),
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
                               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverPadding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 16.w,
-                                  vertical: isCompact ? 5.h : 10.h,
-                                ),
+                                   horizontal: 16.w,
+                                   vertical: isCompact ? 5.h : 10.h,
+                                 ),
                                 sliver: SliverList(
                                   delegate: SliverChildListDelegate([
                                     JobInterviewInstruction(
@@ -288,7 +315,10 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                       isAnswered:
                                           isAnsweredNotifier.value ||
                                           isFirstStagePassedNotifier.value,
-                                      isCorrect: isCorrectNotifier.value,
+                                      isCorrect: isCorrectNotifier.value ??
+                                          (isFirstStagePassedNotifier.value
+                                              ? true
+                                              : null),
                                       onOptionSelected: (idx, corr) =>
                                           _onOptionSelected(idx, corr, quest),
                                     ),
@@ -302,6 +332,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                   _selectedIndex.value != null)
                                 SliverToBoxAdapter(
                                   child: SpeakToConfirmOverlay(
+                                    key: const Key('job_interview_speak_overlay'),
                                     expectedText: _shuffledOptions
                                         .value[_selectedIndex.value!],
                                     primaryColor: theme.primaryColor,
