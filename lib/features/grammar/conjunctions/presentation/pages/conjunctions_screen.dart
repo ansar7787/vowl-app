@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,9 +47,11 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   final ValueNotifier<String?> _placedBrick = ValueNotifier(null);
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _placedBrick.dispose();
     _pendingJigsaw.dispose();
     _scrollController.dispose();
@@ -62,8 +66,9 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 150), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -79,7 +84,12 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
     List<String> options,
     GameQuest quest,
   ) {
-    if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
+    final grammarState = context.read<GrammarBloc>().state;
+    final isAlreadyAnswered = isAnsweredNotifier.value ||
+        _pendingJigsaw.value ||
+        (grammarState is GrammarLoaded &&
+            grammarState.answerStatus != AnswerStatus.unanswered);
+    if (isAlreadyAnswered) return;
 
     bool isCorrect = conj == options[correctIndex];
 
@@ -104,14 +114,32 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
     } else {
       submitWrongAnswer(quest: quest, userAnswer: _placedBrick.value);
     }
-    _scrollToBottom();
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          0.0,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
   }
 
   @override
   void onQuestionReset() {
     _placedBrick.value = null;
-
     _pendingJigsaw.value = false;
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          0.0,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
   }
 
   @override
@@ -154,30 +182,43 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                   RegExp(r'_{3,}'),
                   " ${_placedBrick.value} ",
                 );
+              } else if (quest.correctSentence != null &&
+                  quest.correctSentence!.isNotEmpty) {
+                fullSentence = quest.correctSentence!;
+              } else {
+                fullSentence = "$question ${_placedBrick.value}";
               }
               cleanTargetSentence = fullSentence
                   .replaceAll(RegExp(r'\s+'), ' ')
                   .trim();
             }
 
+            final isAnswered = isAnsweredNotifier.value ||
+                (state is GrammarLoaded &&
+                    state.answerStatus != AnswerStatus.unanswered);
+            final isCorrect = isCorrectNotifier.value ??
+                (state is GrammarLoaded &&
+                    state.answerStatus == AnswerStatus.correct);
+
             return GrammarBaseLayout(
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnsweredNotifier.value,
-              isCorrect: isCorrectNotifier.value,
+              isAnswered: isAnswered,
+              isCorrect: isCorrect,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
               useScrolling:
                   false, // Stack needs finite space to anchor to bottom
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
+                        final shouldReduceMotion =
+                            VowlMotion.shouldReduceMotion(context);
                         return Stack(
                           children: [
                             RawScrollbar(
@@ -196,7 +237,9 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                     hasScrollBody: true,
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
+                                        horizontal: constraints.maxWidth < 360
+                                            ? 12.w
+                                            : 16.w,
                                       ),
                                       child: Column(
                                         children: [
@@ -276,6 +319,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                         quest.conjunctionPurpose !=
                                                             null) ...[
                                                       Container(
+                                                        key: const ValueKey('conjunction_rule_box'),
                                                         padding:
                                                             EdgeInsets.symmetric(
                                                               horizontal: 16.w,
@@ -371,7 +415,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                             ],
                                                           ],
                                                         ),
-                                                      ).animate().fadeIn(
+                                                      ).animate(target: shouldReduceMotion ? 0 : 1).fadeIn(
                                                         duration: 400.ms,
                                                       ),
                                                       SizedBox(
@@ -386,7 +430,9 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsets.symmetric(
-                                                              horizontal: 24.w,
+                                                              horizontal: constraints.maxWidth < 360
+                                                                  ? 10.w
+                                                                  : 24.w,
                                                             ),
                                                         child: LayoutBuilder(
                                                           builder: (context, constraints) {
@@ -433,6 +479,8 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                                           .primaryColor,
                                                                       isDark,
                                                                       isCompact,
+                                                                      shouldReduceMotion,
+                                                                      constraints.maxWidth < 360,
                                                                     ),
                                                                     SizedBox(
                                                                       height:
@@ -453,7 +501,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                                         theme
                                                                             .primaryColor,
                                                                         isCompact,
-                                                                      ).animate().fadeIn(
+                                                                      ).animate(target: shouldReduceMotion ? 0 : 1).fadeIn(
                                                                         delay: 400
                                                                             .ms,
                                                                       ),
@@ -475,6 +523,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                                           theme.primaryColor,
                                                       isDark: isDark,
                                                       isCompact: isCompact,
+                                                      isAnswered: isAnswered || _pendingJigsaw.value,
                                                       onBrickTapped: (brickText) {
                                                         final index = options
                                                             .indexOf(brickText);
@@ -553,8 +602,11 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
     Color primaryColor,
     bool isDark,
     bool isCompact,
+    bool shouldReduceMotion,
+    bool isNarrow,
   ) {
     return DragTarget<String>(
+      key: const ValueKey('magnetic_junction'),
       onAcceptWithDetails: (details) =>
           _onBridge(details.data, correctIndex, options, quest),
       builder: (context, candidateData, rejectedData) {
@@ -569,7 +621,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                   : primaryColor.withValues(alpha: 0.3));
 
         return Container(
-          width: isCompact ? 140.w : 180.w,
+          width: isCompact ? (isNarrow ? 120.w : 140.w) : 180.w,
           height: isCompact ? 48.h : 70.h,
           decoration: BoxDecoration(
             color: nodeColor.withValues(alpha: 0.1),
@@ -600,13 +652,13 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                       fontWeight: FontWeight.w900,
                       color: nodeColor,
                     ),
-                  ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
+                  ).animate(target: shouldReduceMotion ? 0 : 1).scale(duration: 400.ms, curve: Curves.elasticOut)
                 : (isHighlight
                       ? Icon(
                           Icons.bolt_rounded,
                           color: primaryColor,
                           size: isCompact ? 20.r : 28.r,
-                        ).animate().scale().shimmer()
+                        ).animate(target: shouldReduceMotion ? 0 : 1).scale().shimmer()
                       : Text(
                           "JUNCTION",
                           style: TextStyle(
