@@ -227,7 +227,8 @@ Every game test suite MUST rigorously satisfy:
 
 - [x] **6.1** `grammar_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **6.2** `grammar_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
-- [ ] **6.3** `article_insertion_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **6.3** `article_insertion_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 16/16 tests passing]`
+  - Validates initial quest rendering with sentence and orbs, article rule chip when provided, shimmer loading when state is GrammarLoading, tapping incorrect orb submits wrong answer to GrammarBloc, tapping correct orb transitions to Phase 2 TypeToConfirmOverlay, Phase 2 typing correct sentence confirms and submits answer, Phase 2 skipping confirm dispatches wrong answer, tapping orbs when already answered does nothing, hint button dispatches GrammarHintUsed, level 1 briefing dialog display and dismissal, reduced motion support stopping drift tickers, compact mobile layout (320x568) zero overflow, tablet viewport (768x1024) zero overflow, dark mode rendering, no-article Ø display when option is Ø, and final failure state rendering with correct answer highlighted.
 - [ ] **6.4** `clause_connector_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **6.5** `conditionals_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **6.6** `conjunctions_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
