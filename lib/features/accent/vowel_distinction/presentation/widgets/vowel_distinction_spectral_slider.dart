@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class VowelDistinctionSpectralSlider extends StatelessWidget {
   final List<String> options;
@@ -33,12 +34,13 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      key: const ValueKey('vowel_distinction_spectral_slider'),
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _buildVowelOrb(options[0], 0, correctIndex, color, isDark),
-            _buildVowelOrb(options[1], 1, correctIndex, color, isDark),
+            _buildVowelOrb(context, options[0], 0, correctIndex, color, isDark),
+            _buildVowelOrb(context, options[1], 1, correctIndex, color, isDark),
           ],
         ),
         SizedBox(height: 32.h),
@@ -48,6 +50,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
   }
 
   Widget _buildVowelOrb(
+    BuildContext context,
     String text,
     int index,
     int correctIndex,
@@ -56,6 +59,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
   ) {
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
+    final bool reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     Color orbColor = color.withValues(alpha: 0.1);
     Color textColor = color;
@@ -69,48 +73,52 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
       textColor = Colors.white;
     }
 
+    final orbWidget = Container(
+      width: 100.r,
+      height: 100.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: orbColor,
+        border: Border.all(
+          color: isAnswered && isSelected
+              ? textColor
+              : color.withValues(alpha: isSelected ? 1.0 : 0.3),
+          width: 3,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: isSelected
+                ? (correct
+                      ? AppColors.gameCorrect.withValues(alpha: 0.3)
+                      : color.withValues(alpha: 0.3))
+                : Colors.transparent,
+            blurRadius: 15,
+          ),
+        ],
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 20.sp,
+            fontWeight: FontWeight.bold,
+            color: textColor,
+          ),
+        ),
+      ),
+    );
+
     return Semantics(
       label: 'Option ${index + 1}: $text',
       button: true,
       selected: isSelected,
       child: ScaleButton(
-        onTap: () => onSubmitChoice(index, correctIndex),
-        child:
-            Container(
-                  width: 100.r,
-                  height: 100.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: orbColor,
-                    border: Border.all(
-                      color: isAnswered && isSelected
-                          ? textColor
-                          : color.withValues(alpha: isSelected ? 1.0 : 0.3),
-                      width: 3,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: isSelected
-                            ? (correct
-                                  ? AppColors.gameCorrect.withValues(alpha: 0.3)
-                                  : color.withValues(alpha: 0.3))
-                            : Colors.transparent,
-                        blurRadius: 15,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      text,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.bold,
-                        color: textColor,
-                      ),
-                    ),
-                  ),
-                )
+        key: ValueKey('vowel_orb_$index'),
+        onTap: isAnswered ? () {} : () => onSubmitChoice(index, correctIndex),
+        child: reduceMotion
+            ? orbWidget
+            : orbWidget
                 .animate(onPlay: (c) => c.repeat(reverse: true))
                 .scale(
                   begin: const Offset(1, 1),
@@ -137,13 +145,16 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
           thumbShape: RoundSliderThumbShape(enabledThumbRadius: 16.r),
         ),
         child: Slider(
+          key: const ValueKey('vowel_spectral_slider'),
           value: sliderValue,
-          onChanged: (v) => onSliderUpdate(v, correctIndex),
-          onChangeEnd: (v) {
-            if (onSliderEnd != null) {
-              onSliderEnd!(v, correctIndex);
-            }
-          },
+          onChanged: isAnswered ? null : (v) => onSliderUpdate(v, correctIndex),
+          onChangeEnd: isAnswered
+              ? null
+              : (v) {
+                  if (onSliderEnd != null) {
+                    onSliderEnd!(v, correctIndex);
+                  }
+                },
         ),
       ),
     );

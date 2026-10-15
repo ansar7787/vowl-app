@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class VowelTrapezoidChart extends StatelessWidget {
   final Map<String, dynamic> vowelChart;
@@ -42,7 +43,9 @@ class VowelTrapezoidChart extends StatelessWidget {
             ),
           ),
           SizedBox(height: 12.h),
-          SizedBox(
+          Builder(
+            builder: (context) {
+              final chart = SizedBox(
                 width: 200.w,
                 height: 120.h,
                 child: CustomPaint(
@@ -53,10 +56,15 @@ class VowelTrapezoidChart extends StatelessWidget {
                     y: y,
                   ),
                 ),
-              )
-              .animate()
-              .fadeIn(duration: 400.ms)
-              .scale(begin: const Offset(0.95, 0.95)),
+              );
+              return VowlMotion.shouldReduceMotion(context)
+                  ? chart
+                  : chart
+                      .animate()
+                      .fadeIn(duration: 400.ms)
+                      .scale(begin: const Offset(0.95, 0.95));
+            },
+          ),
         ],
       ),
     );
