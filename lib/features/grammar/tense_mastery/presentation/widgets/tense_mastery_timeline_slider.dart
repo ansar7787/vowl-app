@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
-class TenseMasteryTimelineSlider extends StatelessWidget {
+class TenseMasteryTimelineSlider extends StatefulWidget {
   final double sliderValue;
   final String currentTense;
   final bool isAnswered;
@@ -29,9 +30,33 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
   });
 
   @override
+  State<TenseMasteryTimelineSlider> createState() =>
+      _TenseMasteryTimelineSliderState();
+}
+
+class _TenseMasteryTimelineSliderState
+    extends State<TenseMasteryTimelineSlider> {
+  late double _dragValue;
+
+  @override
+  void initState() {
+    super.initState();
+    _dragValue = widget.sliderValue;
+  }
+
+  @override
+  void didUpdateWidget(covariant TenseMasteryTimelineSlider oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!widget.isDragging) {
+      _dragValue = widget.sliderValue;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final sphereWidth = 60.r;
     final tenses = ["Past", "Present", "Future"];
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Container(
       height: 120.h,
@@ -41,7 +66,7 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
         builder: (context, constraints) {
           final trackWidth = constraints.maxWidth;
           final maxLeft = trackWidth - sphereWidth;
-          final leftPos = sliderValue * maxLeft;
+          final leftPos = widget.sliderValue * maxLeft;
 
           return Stack(
             alignment: Alignment.topCenter,
@@ -56,7 +81,7 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                   height: 6.h,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: isDark
+                    color: widget.isDark
                         ? Colors.white.withValues(alpha: 0.05)
                         : Colors.black.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.circular(3.r),
@@ -68,7 +93,7 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: tenses.map((tense) {
-                  final isCurrent = currentTense == tense;
+                  final isCurrent = widget.currentTense == tense;
                   return Semantics(
                     label: '$tense Tense',
                     hint: isCurrent
@@ -78,17 +103,21 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                     button: true,
                     excludeSemantics: true,
                     child: GestureDetector(
+                      key: ValueKey('tense_node_${tense.toLowerCase()}'),
                       behavior: HitTestBehavior.opaque,
                       onTap: () {
-                        if (isAnswered) return;
-                        onHapticFeedback();
-                        onDraggingChanged(false);
+                        if (widget.isAnswered) return;
+                        widget.onHapticFeedback();
+                        widget.onDraggingChanged(false);
                         if (tense == "Past") {
-                          onSliderChanged(0.0);
+                          _dragValue = 0.0;
+                          widget.onSliderChanged(0.0);
                         } else if (tense == "Future") {
-                          onSliderChanged(1.0);
+                          _dragValue = 1.0;
+                          widget.onSliderChanged(1.0);
                         } else {
-                          onSliderChanged(0.5);
+                          _dragValue = 0.5;
+                          widget.onSliderChanged(0.5);
                         }
                       },
                       child: SizedBox(
@@ -104,15 +133,15 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                                 height: 14.r,
                                 decoration: BoxDecoration(
                                   color: isCurrent
-                                      ? primaryColor
-                                      : (isDark
+                                      ? widget.primaryColor
+                                      : (widget.isDark
                                             ? Colors.white10
                                             : Colors.black12),
                                   shape: BoxShape.circle,
                                   boxShadow: isCurrent
                                       ? [
                                           BoxShadow(
-                                            color: primaryColor.withValues(
+                                            color: widget.primaryColor.withValues(
                                               alpha: 0.4,
                                             ),
                                             blurRadius: 15,
@@ -138,8 +167,8 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                                         ? FontWeight.w900
                                         : FontWeight.w600,
                                     color: isCurrent
-                                        ? primaryColor
-                                        : (isDark
+                                        ? widget.primaryColor
+                                        : (widget.isDark
                                               ? Colors.white24
                                               : Colors.black26),
                                     letterSpacing: 1.5,
@@ -157,7 +186,7 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
 
               // The Draggable Chrono-Sphere
               AnimatedPositioned(
-                duration: isDragging
+                duration: widget.isDragging
                     ? Duration.zero
                     : const Duration(milliseconds: 300),
                 curve: Curves.easeOutCubic,
@@ -167,73 +196,86 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                   label: 'Timeline Slider',
                   hint:
                       'Drag left for Past, right for Future, center for Present',
-                  value: currentTense,
+                  value: widget.currentTense,
                   slider: true,
                   child: GestureDetector(
                     onHorizontalDragStart: (_) {
-                      if (isAnswered) return;
-                      onDraggingChanged(true);
+                      if (widget.isAnswered) return;
+                      _dragValue = widget.sliderValue;
+                      widget.onDraggingChanged(true);
                     },
                     onHorizontalDragUpdate: (details) {
-                      if (isAnswered) return;
-                      onDraggingChanged(true);
-                      final newValue =
-                          (sliderValue + details.delta.dx / maxLeft).clamp(
+                      if (widget.isAnswered) return;
+                      widget.onDraggingChanged(true);
+                      _dragValue =
+                          (_dragValue + details.delta.dx / maxLeft).clamp(
                             0.0,
                             1.0,
                           );
-                      onSliderChanged(newValue);
+                      widget.onSliderChanged(_dragValue);
 
-                      if ((newValue - 0.0).abs() < 0.02 ||
-                          (newValue - 0.5).abs() < 0.02 ||
-                          (newValue - 1.0).abs() < 0.02) {
-                        onHapticFeedback();
+                      if ((_dragValue - 0.0).abs() < 0.02 ||
+                          (_dragValue - 0.5).abs() < 0.02 ||
+                          (_dragValue - 1.0).abs() < 0.02) {
+                        widget.onHapticFeedback();
                       }
                     },
                     onHorizontalDragEnd: (details) {
-                      if (isAnswered) return;
-                      onDraggingChanged(false);
-                      if (sliderValue < 0.25) {
-                        onSliderChanged(0.0);
-                      } else if (sliderValue > 0.75) {
-                        onSliderChanged(1.0);
+                      if (widget.isAnswered) return;
+                      widget.onDraggingChanged(false);
+                      if (_dragValue < 0.25) {
+                        _dragValue = 0.0;
+                        widget.onSliderChanged(0.0);
+                      } else if (_dragValue > 0.75) {
+                        _dragValue = 1.0;
+                        widget.onSliderChanged(1.0);
                       } else {
-                        onSliderChanged(0.5);
+                        _dragValue = 0.5;
+                        widget.onSliderChanged(0.5);
                       }
-                      onHeavyHapticFeedback();
+                      widget.onHeavyHapticFeedback();
                     },
-                    child:
-                        Container(
-                              width: sphereWidth,
-                              height: sphereWidth,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: primaryColor.withValues(alpha: 0.4),
-                                    blurRadius: 25,
-                                    spreadRadius: 5,
-                                  ),
-                                ],
-                                border: Border.all(
-                                  color: primaryColor,
-                                  width: 6.r,
+                    child: Builder(
+                      builder: (context) {
+                        final sphere = Container(
+                          key: const ValueKey('tense_chrono_sphere'),
+                          width: sphereWidth,
+                          height: sphereWidth,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.4,
                                 ),
+                                blurRadius: 25,
+                                spreadRadius: 5,
                               ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.timer_rounded,
-                                  color: primaryColor,
-                                  size: 28.r,
-                                ),
-                              ),
-                            )
+                            ],
+                            border: Border.all(
+                              color: widget.primaryColor,
+                              width: 6.r,
+                            ),
+                          ),
+                          child: Center(
+                            child: Icon(
+                              Icons.timer_rounded,
+                              color: widget.primaryColor,
+                              size: 28.r,
+                            ),
+                          ),
+                        );
+
+                        if (reduceMotion) return sphere;
+                        return sphere
                             .animate(onPlay: (c) => c.repeat(reverse: true))
                             .shimmer(
                               duration: 1500.ms,
-                              color: primaryColor.withValues(alpha: 0.2),
-                            ),
+                              color: widget.primaryColor.withValues(alpha: 0.2),
+                            );
+                      },
+                    ),
                   ),
                 ),
               ),
