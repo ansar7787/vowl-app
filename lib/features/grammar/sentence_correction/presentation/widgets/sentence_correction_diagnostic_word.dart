@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SentenceCorrectionDiagnosticWord extends StatelessWidget {
   final String text;
@@ -81,7 +82,7 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
       ];
     }
 
-    return ScaleButton(
+    final wordWidget = ScaleButton(
           onTap: onTap,
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
@@ -120,13 +121,19 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
                     color: textColor,
                     decoration: textDecoration,
                     decorationColor: decorationColor,
-                    decorationThickness: 2,
+                    decorationThickness: textDecoration != null ? 2 : null,
                   ),
                 ),
               ],
             ),
           ),
-        )
+        );
+
+    if (VowlMotion.shouldReduceMotion(context)) {
+      return wordWidget;
+    }
+
+    return wordWidget
         .animate(target: isSuspected ? 1 : 0)
         .shimmer(
           duration: 400.ms,

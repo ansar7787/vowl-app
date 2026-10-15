@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -54,9 +56,11 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
   final ValueNotifier<bool?> _optionSelectionCorrect = ValueNotifier(null);
 
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _selectedWordIndex.dispose();
     _selectedOption.dispose();
     _wordSelectionCorrect.dispose();
@@ -67,7 +71,8 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -213,6 +218,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _selectedWordIndex.value = null;
 
     _selectedOption.value = null;
@@ -226,6 +232,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
       listenWhen: grammarListenWhen,
@@ -324,7 +331,12 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                       SizedBox(height: 16.h),
 
                                       // Diagnostic Context Card
-                                      Padding(
+                                      Builder(
+                                        builder: (context) {
+                                          final card = Padding(
+                                            key: const ValueKey(
+                                              'sentence_correction_context_card',
+                                            ),
                                             padding: EdgeInsets.symmetric(
                                               horizontal: 24.w,
                                             ),
@@ -421,56 +433,75 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                                 ),
                                               ),
                                             ),
-                                          )
-                                          .animate()
-                                          .fadeIn(duration: 800.ms)
-                                          .slideY(begin: 0.1, end: 0),
+                                          );
+                                          if (reduceMotion) return card;
+                                          return card
+                                              .animate()
+                                              .fadeIn(duration: 800.ms)
+                                              .slideY(begin: 0.1, end: 0);
+                                        },
+                                      ),
 
                                       SizedBox(height: 20.h),
 
                                       // Scanner Status
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                                width: 10.r,
-                                                height: 10.r,
-                                                decoration: BoxDecoration(
-                                                  color: theme.primaryColor,
-                                                  shape: BoxShape.circle,
-                                                ),
-                                              )
-                                              .animate(
-                                                onPlay: (c) =>
-                                                    c.repeat(reverse: true),
-                                              )
-                                              .scale(
-                                                begin: const Offset(1, 1),
-                                                end: const Offset(1.8, 1.8),
-                                                duration: 1.seconds,
-                                              )
-                                              .shimmer(
-                                                color: theme.primaryColor,
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                        ),
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Builder(
+                                                builder: (context) {
+                                                  final dot = Container(
+                                                    width: 10.r,
+                                                    height: 10.r,
+                                                    decoration: BoxDecoration(
+                                                      color: theme.primaryColor,
+                                                      shape: BoxShape.circle,
+                                                    ),
+                                                  );
+                                                  if (reduceMotion) return dot;
+                                                  return dot
+                                                      .animate(
+                                                        onPlay: (c) =>
+                                                            c.repeat(reverse: true),
+                                                      )
+                                                      .scale(
+                                                        begin: const Offset(1, 1),
+                                                        end: const Offset(1.8, 1.8),
+                                                        duration: 1.seconds,
+                                                      )
+                                                      .shimmer(
+                                                        color: theme.primaryColor,
+                                                      );
+                                                },
                                               ),
-                                          SizedBox(width: 14.w),
-                                          Text(
-                                            "SCANNER ARMED: SEEKING GLITCHES",
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 10.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color: theme.primaryColor,
-                                              letterSpacing: 2,
-                                            ),
+                                              SizedBox(width: 14.w),
+                                              Text(
+                                                "SCANNER ARMED: SEEKING GLITCHES",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 10.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: theme.primaryColor,
+                                                  letterSpacing: 2,
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                        ],
+                                        ),
                                       ),
 
                                       // Options Panel
                                       if (_selectedWordIndex.value != null) ...[
                                         SizedBox(height: 24.h),
                                         SentenceCorrectionOptionsPanel(
+                                          key: const ValueKey('sentence_correction_options_panel'),
                                           options: _shuffledOptions ?? [],
                                           selectedOption: _selectedOption.value,
                                           isAnswered:
@@ -498,6 +529,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                           isCorrectNotifier.value == false) ...[
                                         SizedBox(height: 24.h),
                                         SentenceCorrectionFeedback(
+                                          key: const ValueKey('sentence_correction_feedback'),
                                           correction: quest.correctedPart ?? "",
                                           incorrectPart: quest.incorrectPart,
                                           wasWordSelectionCorrect:
