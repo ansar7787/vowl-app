@@ -12,6 +12,8 @@ import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.da
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/clause_connector/presentation/widgets/clause_connector_instruction.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ClauseConnectorScreen extends StatefulWidget {
   final int level;
@@ -64,9 +66,18 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
     List<String> options,
     GameQuest quest,
   ) {
-    if (isAnsweredNotifier.value || _pendingTypeSubmit.value) return;
+    final blocState = context.read<GrammarBloc>().state;
+    final isAlreadyAnswered = isAnsweredNotifier.value ||
+        (blocState is GrammarLoaded &&
+            blocState.answerStatus != AnswerStatus.unanswered);
+    if (isAlreadyAnswered || _pendingTypeSubmit.value) return;
 
-    bool isCorrect = connector == options[correctIndex];
+    final targetAnswer = quest.correctAnswer ??
+        (options.isNotEmpty && correctIndex >= 0 && correctIndex < options.length
+            ? options[correctIndex]
+            : "");
+    final isCorrect =
+        connector.trim().toLowerCase() == targetAnswer.trim().toLowerCase();
 
     if (isCorrect) {
       hapticService.heavy();
@@ -143,7 +154,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
           cleanTargetSentence = cleanTargetSentence
               .replaceAll('[', '')
               .replaceAll(']', '')
-              .replaceAll('  ', ' ');
+              .replaceAll('...', '')
+              .replaceAll('  ', ' ')
+              .trim();
         }
 
         return ListenableBuilder(
@@ -155,19 +168,25 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
             _draggingConnector,
           ]),
           builder: (context, _) {
+            final isAnswered = isAnsweredNotifier.value ||
+                (state is GrammarLoaded &&
+                    state.answerStatus != AnswerStatus.unanswered);
+            final isCorrect = isCorrectNotifier.value ??
+                (state is GrammarLoaded &&
+                    state.answerStatus == AnswerStatus.correct);
+
             return GrammarBaseLayout(
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnsweredNotifier.value,
-              isCorrect: isCorrectNotifier.value,
+              isAnswered: isAnswered,
+              isCorrect: isCorrect,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
               useScrolling: false, // Stack layout
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
@@ -186,13 +205,20 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: false,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 24.w,
-                                        vertical: 24.h,
+                                  SliverToBoxAdapter(
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight: constraints.maxHeight,
                                       ),
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: constraints.maxWidth < 360
+                                              ? 12.w
+                                              : 24.w,
+                                          vertical: constraints.maxHeight < 580
+                                              ? 12.h
+                                              : 24.h,
+                                        ),
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
@@ -231,30 +257,60 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                               ),
                                             ),
                                           ],
-                                          SizedBox(height: 32.h),
+                                          SizedBox(
+                                            height: constraints.maxHeight < 580
+                                                ? 16.h
+                                                : 32.h,
+                                          ),
                                           _buildHolographicPlate(
                                             clauseA,
                                             theme.primaryColor,
                                             isDark,
                                             constraints.maxHeight < 580,
                                           ),
-                                          SizedBox(height: 24.h),
+                                          SizedBox(
+                                            height: constraints.maxHeight < 580
+                                                ? 14.h
+                                                : 24.h,
+                                          ),
                                           _buildMagneticPort(
                                             quest,
                                             options,
                                             theme.primaryColor,
                                             isDark,
                                             constraints.maxHeight < 580,
+                                            isAnswered,
+                                            state,
                                           ),
-                                          SizedBox(height: 24.h),
-                                          _buildHolographicPlate(
-                                            clauseB,
-                                            theme.primaryColor,
-                                            isDark,
-                                            constraints.maxHeight < 580,
-                                          ).animate().fadeIn(delay: 300.ms),
-                                          SizedBox(height: 48.h),
-                                          if (!isAnsweredNotifier.value &&
+                                          SizedBox(
+                                            height: constraints.maxHeight < 580
+                                                ? 14.h
+                                                : 24.h,
+                                          ),
+                                          Builder(
+                                            builder: (context) {
+                                              final plateB =
+                                                  _buildHolographicPlate(
+                                                    clauseB,
+                                                    theme.primaryColor,
+                                                    isDark,
+                                                    constraints.maxHeight < 580,
+                                                  );
+                                              return VowlMotion.shouldReduceMotion(
+                                                    context,
+                                                  )
+                                                  ? plateB
+                                                  : plateB.animate().fadeIn(
+                                                      delay: 300.ms,
+                                                    );
+                                            },
+                                          ),
+                                          SizedBox(
+                                            height: constraints.maxHeight < 580
+                                                ? 20.h
+                                                : 48.h,
+                                          ),
+                                          if (!isAnswered &&
                                               !_pendingTypeSubmit.value)
                                             _buildConnectorPalette(
                                               quest,
@@ -267,6 +323,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
                                         ],
                                       ),
                                     ),
+                                  ),
                                   ),
                                   if (_pendingTypeSubmit.value &&
                                       !isAnsweredNotifier.value &&
@@ -319,32 +376,63 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
     Color primaryColor,
     bool isDark,
     bool isCompact,
+    bool isAnswered,
+    GrammarState state,
   ) {
     return DragTarget<String>(
       onWillAcceptWithDetails: (details) =>
-          !isAnsweredNotifier.value && !_pendingTypeSubmit.value,
+          !isAnswered && !_pendingTypeSubmit.value,
       onAcceptWithDetails: (details) =>
           _onSnap(details.data, quest.correctAnswerIndex ?? 0, options, quest),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
-        final portColor = (isAnsweredNotifier.value || _pendingTypeSubmit.value)
-            ? (isCorrectNotifier.value != false
+        final isSuccess = isAnswered
+            ? (isCorrectNotifier.value == true ||
+                (state is GrammarLoaded &&
+                    state.answerStatus == AnswerStatus.correct))
+            : _pendingTypeSubmit.value;
+        final portColor = (isAnswered || _pendingTypeSubmit.value)
+            ? (isSuccess
                   ? AppColors.gameCorrect
                   : AppColors.gameIncorrect)
             : (isHighlight
                   ? primaryColor
                   : primaryColor.withValues(alpha: 0.3));
 
+        final shouldReduceMotion = VowlMotion.shouldReduceMotion(context);
+        final resolvedConnector = _draggingConnector.value ??
+            (state is GrammarLoaded &&
+                    state.answerStatus != AnswerStatus.unanswered
+                ? (quest.correctAnswer ??
+                    (options.isNotEmpty && quest.correctAnswerIndex != null
+                        ? options[quest.correctAnswerIndex!]
+                        : "---"))
+                : "---");
+
+        final connectorWidget = _buildConnector(
+          resolvedConnector,
+          primaryColor,
+          isDark,
+          isCompact,
+          isCorrect: isSuccess,
+        );
+
         return Container(
-          width: isCompact ? 180.w : 220.w,
-          height: isCompact ? 50.h : 80.h,
+          constraints: BoxConstraints(
+            minWidth: isCompact ? 140.w : 180.w,
+            minHeight: isCompact ? 44.h : 64.h,
+          ),
+          padding: EdgeInsets.symmetric(
+            horizontal: isCompact ? 10.w : 16.w,
+            vertical: isCompact ? 8.h : 12.h,
+          ),
           decoration: BoxDecoration(
             color: portColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(30.r),
             border: Border.all(
               color: portColor.withValues(alpha: 0.4),
               width: 2,
-              style: (isAnsweredNotifier.value || _pendingTypeSubmit.value)
+              style: (isAnswered || _pendingTypeSubmit.value)
                   ? BorderStyle.none
                   : BorderStyle.solid,
             ),
@@ -361,22 +449,21 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
           ),
           child: Center(
             child: (isAnsweredNotifier.value || _pendingTypeSubmit.value)
-                ? _buildConnector(
-                    _draggingConnector.value ?? "---",
-                    primaryColor,
-                    isDark,
-                    isCompact,
-                    isCorrect: isCorrectNotifier.value != false,
-                  ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
-                : Column(
+                ? (shouldReduceMotion
+                    ? connectorWidget
+                    : connectorWidget
+                        .animate()
+                        .scale(duration: 400.ms, curve: Curves.elasticOut))
+                : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
                         Icons.add_link_rounded,
                         color: portColor.withValues(alpha: 0.5),
-                        size: isCompact ? 20.sp : 24.sp,
+                        size: isCompact ? 16.sp : 20.sp,
                       ),
-                      SizedBox(height: 4.h),
+                      SizedBox(width: 8.w),
                       Text(
                         isHighlight ? "RELEASE" : "TAP OR DRAG",
                         textAlign: TextAlign.center,
@@ -441,31 +528,34 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
       alignment: WrapAlignment.center,
       spacing: isCompact ? 10.w : 16.w,
       runSpacing: isCompact ? 10.h : 16.h,
-      children: options
-          .map(
-            (opt) => Draggable<String>(
-              data: opt,
-              feedback: Material(
-                color: Colors.transparent,
-                child: _buildConnector(
-                  opt,
-                  primaryColor,
-                  isDark,
-                  isCompact,
-                  isDragging: true,
-                ),
-              ),
-              childWhenDragging: Opacity(
-                opacity: 0.2,
-                child: _buildConnector(opt, primaryColor, isDark, isCompact),
-              ),
-              child: GestureDetector(
-                onTap: () => _onSnap(opt, correctIndex, options, quest),
-                child: _buildConnector(opt, primaryColor, isDark, isCompact),
+      children: options.asMap().entries.map(
+        (entry) {
+          final index = entry.key;
+          final opt = entry.value;
+          return Draggable<String>(
+            data: opt,
+            feedback: Material(
+              color: Colors.transparent,
+              child: _buildConnector(
+                opt,
+                primaryColor,
+                isDark,
+                isCompact,
+                isDragging: true,
               ),
             ),
-          )
-          .toList(),
+            childWhenDragging: Opacity(
+              opacity: 0.2,
+              child: _buildConnector(opt, primaryColor, isDark, isCompact),
+            ),
+            child: ScaleButton(
+              key: ValueKey('connector_option_$index'),
+              onTap: () => _onSnap(opt, correctIndex, options, quest),
+              child: _buildConnector(opt, primaryColor, isDark, isCompact),
+            ),
+          );
+        },
+      ).toList(),
     );
   }
 
