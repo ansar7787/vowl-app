@@ -46,7 +46,9 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
   @override
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
+  Timer? _scrollTimer;
   final ScrollController _scrollController = ScrollController();
+  AccentQuest? _lastQuest;
 
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<double> _currentSpeed = ValueNotifier(1.0);
@@ -59,6 +61,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _scrollController.dispose();
     _selectedIndex.dispose();
     _currentSpeed.dispose();
@@ -67,8 +70,9 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -97,35 +101,44 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      submitWrongAnswer(
-        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
-        userAnswer: '',
-      );
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(
+          quest: currentQuest,
+          userAnswer: '',
+        );
+      } else {
+        hapticService.error();
+        soundService.playWrong();
+        context.read<AccentBloc>().add(const SubmitAnswer(false));
+      }
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      submitWrongAnswer(
-        quest: (context.read<AccentBloc>().state as AccentLoaded).currentQuest,
-        userAnswer: '',
-      );
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(
+          quest: currentQuest,
+          userAnswer: '',
+        );
+      } else {
+        hapticService.error();
+        soundService.playWrong();
+        context.read<AccentBloc>().add(const SubmitAnswer(false));
+      }
     }
   }
 
@@ -145,9 +158,12 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
         final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest?
-            : null;
+            ? state.currentQuest
+            : _lastQuest;
         final rawOptions = quest?.options ?? ["A", "B"];
         final options = List<String>.from(rawOptions)
           ..shuffle(Random(quest?.id.hashCode ?? 0));
@@ -182,8 +198,8 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
                 isCorrect: isCorrectNotifier.value,
                 showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
-                    context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                    context.read<AccentBloc>().add(const NextQuestion()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -289,6 +305,9 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
                                       children: [
                                         SizedBox(height: 32.h),
                                         ShadowPlaybackCompare(
+                                          key: const ValueKey(
+                                            'shadow_playback_compare',
+                                          ),
                                           expectedText: quest.textToSpeak ?? "",
                                           displayText: quest.textToSpeak ?? "",
                                           primaryColor: theme.primaryColor,

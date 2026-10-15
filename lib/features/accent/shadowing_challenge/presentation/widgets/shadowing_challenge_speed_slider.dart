@@ -66,6 +66,7 @@ class ShadowingChallengeSpeedSlider extends StatelessWidget {
               overlayShape: RoundSliderOverlayShape(overlayRadius: 16.r),
             ),
             child: Slider(
+              key: const ValueKey('shadowing_speed_slider'),
               value: speed,
               min: 0.75,
               max: 1.25,
