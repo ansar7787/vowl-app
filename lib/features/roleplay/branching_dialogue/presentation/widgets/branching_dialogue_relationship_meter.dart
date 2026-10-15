@@ -3,6 +3,7 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class BranchingDialogueRelationshipMeter extends StatelessWidget {
   final int? consequenceScore;
@@ -18,114 +19,135 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+
     // Score defines if it's polite (+1) or rude (-1) or neutral (null/0)
     final double value = consequenceScore == null || consequenceScore == 0
         ? 0.5
         : (consequenceScore! > 0 ? 1.0 : 0.0);
     final Color activeColor = value > 0.5
-        ? tokens.gameCorrect
-        : (value < 0.5 ? tokens.gameIncorrect : primaryColor);
+        ? (tokens?.gameCorrect ?? AppColors.gameCorrect)
+        : (value < 0.5
+              ? (tokens?.gameIncorrect ?? AppColors.gameIncorrect)
+              : primaryColor);
 
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: primaryColor.withValues(alpha: 0.15),
-          width: 1.5,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "RELATIONSHIP STATUS",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  color: primaryColor,
-                  letterSpacing: 1,
-                ),
-              ),
-              Icon(
-                value > 0.5
-                    ? Icons.thumb_up_alt_rounded
-                    : (value < 0.5
-                          ? Icons.thumb_down_alt_rounded
-                          : Icons.thumbs_up_down_rounded),
-                color: activeColor,
-                size: 14.r,
-              ),
-            ],
+    final String statusLabel = value > 0.5
+        ? "Polite"
+        : (value < 0.5 ? "Rude" : "Neutral");
+
+    Widget content = Semantics(
+      label: 'Relationship status: $statusLabel',
+      excludeSemantics: true,
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: isDark ? AppColors.deepDark : Colors.white,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.15),
+            width: 1.5,
           ),
-          SizedBox(height: 8.h),
-          Stack(
-            children: [
-              Container(
-                height: 8.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: primaryColor.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(4.r),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "RELATIONSHIP STATUS",
+                  key: const Key('branching_dialogue_relationship_status_text'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.bold,
+                    color: primaryColor,
+                    letterSpacing: 1,
+                  ),
                 ),
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: FractionallySizedBox(
-                  widthFactor: value,
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 600),
-                    curve: Curves.easeOutCubic,
-                    height: 8.h,
-                    decoration: BoxDecoration(
-                      color: activeColor,
-                      borderRadius: BorderRadius.circular(4.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: activeColor.withValues(alpha: 0.5),
-                          blurRadius: 6,
-                          spreadRadius: 1,
-                        ),
-                      ],
+                Icon(
+                  value > 0.5
+                      ? Icons.thumb_up_alt_rounded
+                      : (value < 0.5
+                            ? Icons.thumb_down_alt_rounded
+                            : Icons.thumbs_up_down_rounded),
+                  key: const Key('branching_dialogue_relationship_icon'),
+                  color: activeColor,
+                  size: 14.r,
+                ),
+              ],
+            ),
+            SizedBox(height: 8.h),
+            Stack(
+              children: [
+                Container(
+                  height: 8.h,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: primaryColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(4.r),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: FractionallySizedBox(
+                    widthFactor: value,
+                    child: AnimatedContainer(
+                      key: const Key('branching_dialogue_relationship_bar'),
+                      duration: const Duration(milliseconds: 600),
+                      curve: Curves.easeOutCubic,
+                      height: 8.h,
+                      decoration: BoxDecoration(
+                        color: activeColor,
+                        borderRadius: BorderRadius.circular(4.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: activeColor.withValues(alpha: 0.5),
+                            blurRadius: 6,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: 4.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Rude",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 9.sp,
-                  color: Colors.grey.shade500,
-                  fontWeight: FontWeight.bold,
+              ],
+            ),
+            SizedBox(height: 4.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Rude",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 9.sp,
+                    color: Colors.grey.shade500,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              Text(
-                "Polite",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 9.sp,
-                  color: Colors.grey.shade500,
-                  fontWeight: FontWeight.bold,
+                Text(
+                  "Polite",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 9.sp,
+                    color: Colors.grey.shade500,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: -0.1);
+    );
+
+    if (!reduceMotion) {
+      content = content.animate().fadeIn(duration: 400.ms).slideY(begin: -0.1);
+    }
+
+    return content;
   }
 }

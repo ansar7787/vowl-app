@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_path_painter.dart';
 
 class BranchingDialogueConsoleBoard extends StatelessWidget {
@@ -39,6 +40,8 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Container(
       color: Colors.transparent,
       child: LayoutBuilder(
@@ -69,6 +72,37 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
             return Offset(x, y);
           });
 
+          Widget probeWidget = Container(
+            width: 72.r,
+            height: 72.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color,
+              boxShadow: [
+                BoxShadow(
+                  color: color.withValues(alpha: 0.4),
+                  blurRadius: 15,
+                  spreadRadius: 2,
+                ),
+              ],
+            ),
+            child: Icon(
+              Icons.gps_fixed_rounded,
+              color: Colors.white,
+              size: 32.r,
+            ),
+          );
+
+          if (!reduceMotion) {
+            probeWidget = probeWidget
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.1, 1.1),
+                  duration: 800.ms,
+                );
+          }
+
           return Stack(
             clipBehavior: Clip.none,
             children: [
@@ -91,7 +125,13 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
               // Orbiting path nodes (Dialogue Terminal options)
               ...List.generate(options.length, (i) {
                 final Offset termPos = terminalCenters[i];
-                return _buildPathTerminalNode(i, options[i], termPos, width);
+                return _buildPathTerminalNode(
+                  i,
+                  options[i],
+                  termPos,
+                  width,
+                  reduceMotion,
+                );
               }),
 
               // Launch pad base
@@ -119,41 +159,22 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                 Positioned(
                   left: launchCenter.dx + probeOffset.dx - 36.r,
                   top: launchCenter.dy + probeOffset.dy - 36.r,
-                  child: GestureDetector(
-                    onPanStart: onProbeDragStart,
-                    onPanUpdate: (details) => onProbeDragUpdate(
-                      details,
-                      launchCenter,
-                      terminalCenters,
+                  child: Semantics(
+                    label: 'Decision probe. Drag to a reply path',
+                    button: true,
+                    excludeSemantics: true,
+                    child: GestureDetector(
+                      key: const Key('branching_dialogue_probe'),
+                      behavior: HitTestBehavior.opaque,
+                      onPanStart: onProbeDragStart,
+                      onPanUpdate: (details) => onProbeDragUpdate(
+                        details,
+                        launchCenter,
+                        terminalCenters,
+                      ),
+                      onPanEnd: (_) => onProbeDragEnd(correctIndex),
+                      child: probeWidget,
                     ),
-                    onPanEnd: (_) => onProbeDragEnd(correctIndex),
-                    child:
-                        Container(
-                              width: 72.r,
-                              height: 72.r,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: color,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: color.withValues(alpha: 0.4),
-                                    blurRadius: 15,
-                                    spreadRadius: 2,
-                                  ),
-                                ],
-                              ),
-                              child: Icon(
-                                Icons.gps_fixed_rounded,
-                                color: Colors.white,
-                                size: 32.r,
-                              ),
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .scale(
-                              begin: const Offset(1, 1),
-                              end: const Offset(1.1, 1.1),
-                              duration: 800.ms,
-                            ),
                   ),
                 ),
             ],
@@ -168,6 +189,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
     String text,
     Offset position,
     double boardWidth,
+    bool reduceMotion,
   ) {
     final bool isHovered = hoveredIndex == index;
     final bool isSelected = selectedIndex == index;
@@ -184,111 +206,125 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
         ? (boardWidth / options.length) - 8.w
         : boardWidth;
 
+    Widget? previewWidget;
+    if (consequencePreviews.length > index && (isHovered || isSelected)) {
+      Widget previewInner = Container(
+        key: Key('branching_dialogue_consequence_preview_$index'),
+        width: nodeWidth,
+        padding: EdgeInsets.symmetric(
+          horizontal: 6.w,
+          vertical: 2.h,
+        ),
+        decoration: BoxDecoration(
+          color: (isSelected && isAnswered)
+              ? (index == correctIndex
+                    ? AppColors.gameCorrect.withValues(alpha: 0.2)
+                    : AppColors.gameIncorrect.withValues(alpha: 0.2))
+              : color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(4.r),
+        ),
+        child: Text(
+          consequencePreviews[index],
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 8.sp,
+            fontWeight: FontWeight.w600,
+            color: (isSelected && isAnswered)
+                ? (index == correctIndex
+                      ? AppColors.gameCorrect
+                      : AppColors.gameIncorrect)
+                : color,
+          ),
+        ),
+      );
+      if (!reduceMotion) {
+        previewInner = previewInner.animate().fadeIn(duration: 200.ms);
+      }
+      previewWidget = Padding(
+        padding: EdgeInsets.only(top: 4.h),
+        child: previewInner,
+      );
+    }
+
     return AnimatedPositioned(
       duration: const Duration(milliseconds: 250),
       left: position.dx - (nodeWidth / 2),
       top: position.dy - 60.h,
-      child: GestureDetector(
-        onTap: () {
-          if (!isAnswered) {
-            onOptionTapped(index);
-          }
-        },
-        child: AnimatedOpacity(
-          duration: const Duration(milliseconds: 300),
-          opacity: hideOther ? 0.0 : 1.0,
-          child: Column(
-            children: [
-              Container(
-                width: 72.r,
-                height: 72.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isHovered
-                      ? color
-                      : (isDark ? AppColors.deepDark : Colors.white),
-                  border: Border.all(
-                    color: isSelected
-                        ? termColor
-                        : color.withValues(alpha: 0.5),
-                    width: isSelected || isHovered ? 3.0 : 1.5,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: (isSelected ? termColor : color).withValues(
-                        alpha: isHovered || isSelected ? 0.35 : 0.1,
-                      ),
-                      blurRadius: 12,
-                      spreadRadius: 1,
-                    ),
-                  ],
-                ),
-                child: Icon(
-                  isAnswered && isSelected
-                      ? (index == correctIndex
-                            ? Icons.verified_rounded
-                            : Icons.cancel_outlined)
-                      : Icons.alt_route_rounded,
-                  color: isHovered || (isAnswered && isSelected)
-                      ? Colors.white
-                      : color,
-                  size: 28.r,
-                ),
-              ),
-              SizedBox(height: 8.h),
-              SizedBox(
-                width: nodeWidth,
-                child: Text(
-                  text,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w600,
+      child: Semantics(
+        label: 'Option ${index + 1}: $text',
+        button: true,
+        excludeSemantics: true,
+        child: GestureDetector(
+          key: Key('branching_dialogue_option_$index'),
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            if (!isAnswered) {
+              onOptionTapped(index);
+            }
+          },
+          child: AnimatedOpacity(
+            duration: const Duration(milliseconds: 300),
+            opacity: hideOther ? 0.0 : 1.0,
+            child: Column(
+              children: [
+                Container(
+                  width: 72.r,
+                  height: 72.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
                     color: isHovered
                         ? color
-                        : (isDark ? Colors.white70 : Colors.black87),
-                    height: 1.25,
+                        : (isDark ? AppColors.deepDark : Colors.white),
+                    border: Border.all(
+                      color: isSelected
+                          ? termColor
+                          : color.withValues(alpha: 0.5),
+                      width: isSelected || isHovered ? 3.0 : 1.5,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: (isSelected ? termColor : color).withValues(
+                          alpha: isHovered || isSelected ? 0.35 : 0.1,
+                        ),
+                        blurRadius: 12,
+                        spreadRadius: 1,
+                      ),
+                    ],
+                  ),
+                  child: Icon(
+                    isAnswered && isSelected
+                        ? (index == correctIndex
+                              ? Icons.verified_rounded
+                              : Icons.cancel_outlined)
+                        : Icons.alt_route_rounded,
+                    color: isHovered || (isAnswered && isSelected)
+                        ? Colors.white
+                        : color,
+                    size: 28.r,
                   ),
                 ),
-              ),
-              if (consequencePreviews.length > index &&
-                  (isHovered || isSelected))
-                Padding(
-                  padding: EdgeInsets.only(top: 4.h),
-                  child: Container(
-                    width: nodeWidth,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                      vertical: 2.h,
+                SizedBox(height: 8.h),
+                SizedBox(
+                  width: nodeWidth,
+                  child: Text(
+                    text,
+                    key: Key('branching_dialogue_option_text_$index'),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isHovered
+                          ? color
+                          : (isDark ? Colors.white70 : Colors.black87),
+                      height: 1.25,
                     ),
-                    decoration: BoxDecoration(
-                      color: (isSelected && isAnswered)
-                          ? (index == correctIndex
-                                ? AppColors.gameCorrect.withValues(alpha: 0.2)
-                                : AppColors.gameIncorrect.withValues(
-                                    alpha: 0.2,
-                                  ))
-                          : color.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(4.r),
-                    ),
-                    child: Text(
-                      consequencePreviews[index],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 8.sp,
-                        fontWeight: FontWeight.w600,
-                        color: (isSelected && isAnswered)
-                            ? (index == correctIndex
-                                  ? AppColors.gameCorrect
-                                  : AppColors.gameIncorrect)
-                            : color,
-                      ),
-                    ),
-                  ).animate().fadeIn(duration: 200.ms),
+                  ),
                 ),
-            ],
+                ?previewWidget,
+              ],
+            ),
           ),
         ),
       ),

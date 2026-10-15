@@ -14,41 +14,52 @@ class BranchingDialogueInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: primaryColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-          ),
-          child: Text(
-            "FLICK DECISION PROBE CHANNELS",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w700,
-              color: primaryColor,
-              letterSpacing: 2.5,
+    final effectiveInstruction =
+        (instruction != null && instruction!.trim().isNotEmpty)
+            ? instruction!
+            : context.tr(
+                'games.branchingDialogue_instruction',
+                fallback: 'Drag the probe to choose your reply.',
+              );
+
+    return Semantics(
+      label: effectiveInstruction,
+      header: true,
+      child: Column(
+        children: [
+          Container(
+            key: const Key('branching_dialogue_instruction_badge'),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+            decoration: BoxDecoration(
+              color: primaryColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(30.r),
+              border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+            ),
+            child: Text(
+              "FLICK DECISION PROBE CHANNELS",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w700,
+                color: primaryColor,
+                letterSpacing: 2.5,
+              ),
             ),
           ),
-        ),
-        SizedBox(height: 10.h),
-        Text(
-          context.tr(
-            'games.branchingDialogue_instruction',
-            fallback: 'Drag the probe to choose your reply.',
+          SizedBox(height: 10.h),
+          Text(
+            effectiveInstruction,
+            key: const Key('branching_dialogue_instruction_text'),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey.shade400,
+            ),
           ),
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey.shade400,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
