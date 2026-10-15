@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -101,6 +102,7 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     return LayoutBuilder(
       builder: (context, constraints) {
         if (widget.spotlightPos.value == const Offset(0, 0)) {
@@ -194,9 +196,14 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                   return Positioned(
                     left: x,
                     top: y,
-                    child: GestureDetector(
-                      onTap: () => widget.onSelect(index),
-                      child: Builder(
+                    child: Semantics(
+                      label: widget.options[index],
+                      button: true,
+                      excludeSemantics: true,
+                      child: GestureDetector(
+                        key: Key('detail_spotlight_tile_$index'),
+                        onTap: () => widget.onSelect(index),
+                        child: Builder(
                         builder: (context) {
                           bool isSelected = widget.selectedIndex == index;
                           bool isActuallyCorrect =
@@ -268,7 +275,8 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                         },
                       ),
                     ),
-                  );
+                  ),
+                );
                 }),
 
                 AnimatedPositioned(
@@ -301,12 +309,17 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                         ],
                       ),
                       child: Center(
-                        child:
-                            Icon(
-                                  Icons.flare_rounded,
-                                  color: Colors.yellowAccent,
-                                  size: 28.r,
-                                )
+                        child: reduceMotion
+                            ? Icon(
+                                Icons.flare_rounded,
+                                color: Colors.yellowAccent,
+                                size: 28.r,
+                              )
+                            : Icon(
+                                Icons.flare_rounded,
+                                color: Colors.yellowAccent,
+                                size: 28.r,
+                              )
                                 .animate(onPlay: (c) => c.repeat(reverse: true))
                                 .scale(
                                   begin: const Offset(0.8, 0.8),
