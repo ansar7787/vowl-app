@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class MinimalPairsDroneOption extends StatelessWidget {
@@ -33,6 +34,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final bool isSelected = selectedDroneIndex == index;
     final bool correct = index == correctIndex;
 
@@ -53,10 +55,13 @@ class MinimalPairsDroneOption extends StatelessWidget {
       enabled: !isAnswered,
       excludeSemantics: true,
       child: ScaleButton(
+        key: ValueKey('minimal_pairs_drone_$index'),
         onTap: () => onShoot(index, correctIndex),
         child: Column(
           children: [
-            AnimatedContainer(
+            Builder(
+              builder: (context) {
+                Widget droneCard = AnimatedContainer(
                   duration: 250.milliseconds,
                   width: 130.w,
                   height: 110.h,
@@ -132,13 +137,21 @@ class MinimalPairsDroneOption extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .moveY(
-                  begin: 0,
-                  end: index == 0 ? 8.h : -8.h,
-                  duration: (2 + index).seconds,
-                ),
+                );
+
+                if (!reduceMotion) {
+                  droneCard = droneCard
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .moveY(
+                        begin: 0,
+                        end: index == 0 ? 8.h : -8.h,
+                        duration: (2 + index).seconds,
+                      );
+                }
+
+                return droneCard;
+              },
+            ),
 
             SizedBox(height: 10.h),
             AnimatedOpacity(

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -74,6 +75,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
     if (_currentCorrectIndex == -1) _currentCorrectIndex = 0;
   }
 
+  Timer? _scrollTimer;
   late final ScrollController _scrollController;
 
   @override
@@ -85,6 +87,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _scrollController.dispose();
     _selectedDroneIndex.dispose();
     disposeAccentGame();
@@ -92,8 +95,9 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -106,17 +110,16 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
     }
   }
 
@@ -138,17 +141,25 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
       _scrollToBottom();
       // Do NOT submit yet! Wait for Phase 2.
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
     }
   }
 
   @override
   void onQuestionReset() {
     _selectedDroneIndex.value = null;
+    _shuffledQuestId = null;
+    _currentOptions = [];
+    _currentCorrectIndex = 0;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -160,8 +171,11 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
         final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest?
+            ? state.currentQuest
             : _lastQuest;
 
         if (quest != null && !isAnsweredNotifier.value) {
@@ -182,7 +196,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
-              onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+              onHint: () {},
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
