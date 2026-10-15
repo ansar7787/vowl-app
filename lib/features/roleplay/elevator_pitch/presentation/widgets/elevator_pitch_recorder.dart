@@ -206,7 +206,11 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
   }
 
   Future<void> _playNative() async {
-    if (_isPlaying.value) return;
+    if (_isPlaying.value) {
+      await _soundService.stopTts();
+      if (mounted) _isPlaying.value = false;
+      return;
+    }
     _isPlaying.value = true;
     try {
       await _soundService
@@ -222,7 +226,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1A1A1A) : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
@@ -259,7 +263,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
       case PitchState.ready:
         return _buildReadyState();
       case PitchState.pitching:
-        return _buildPitchingState();
+        return _buildPitchingState(context);
       case PitchState.failed:
         return _buildFailedState();
       case PitchState.evaluating:
@@ -334,6 +338,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
         ),
         SizedBox(height: 24.h),
         ElevatedButton(
+          key: const Key('elevator_pitch_start_button'),
           onPressed: _startPitch,
           style: ElevatedButton.styleFrom(
             backgroundColor: widget.primaryColor,
@@ -357,28 +362,37 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
     );
   }
 
-  Widget _buildPitchingState() {
+  Widget _buildPitchingState(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+
+    Widget dot = Container(
+      key: const Key('elevator_pitch_recording_dot'),
+      width: 10.r,
+      height: 10.r,
+      decoration: const BoxDecoration(
+        color: Colors.redAccent,
+        shape: BoxShape.circle,
+      ),
+    );
+
+    if (!reduceMotion) {
+      dot = dot
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .fade(begin: 0.2, end: 1.0, duration: 600.ms)
+          .scale(
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.2, 1.2),
+            duration: 600.ms,
+          );
+    }
+
     return Column(
       key: const ValueKey('pitching'),
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-                  width: 10.r,
-                  height: 10.r,
-                  decoration: const BoxDecoration(
-                    color: Colors.redAccent,
-                    shape: BoxShape.circle,
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .fade(begin: 0.2, end: 1.0, duration: 600.ms)
-                .scale(
-                  begin: const Offset(0.8, 0.8),
-                  end: const Offset(1.2, 1.2),
-                  duration: 600.ms,
-                ),
+            dot,
             SizedBox(width: 8.w),
             Text(
               "RECORDING...",
@@ -398,6 +412,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           builder: (context, seconds, _) {
             return Text(
               "00:${seconds.toString().padLeft(2, '0')}",
+              key: const Key('elevator_pitch_countdown_timer'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 48.sp,
@@ -409,6 +424,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
         ),
         SizedBox(height: 24.h),
         GestureDetector(
+          key: const Key('elevator_pitch_mic_button'),
           onTap: _finishPitch,
           child: Container(
             height: 120.r,
@@ -480,6 +496,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
             return ClipRRect(
               borderRadius: BorderRadius.circular(10.r),
               child: LinearProgressIndicator(
+                key: const Key('elevator_pitch_progress_bar'),
                 value: progress,
                 minHeight: 12.h,
                 backgroundColor: widget.primaryColor.withValues(alpha: 0.1),
@@ -529,6 +546,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
         ),
         SizedBox(height: 24.h),
         ElevatedButton(
+          key: const Key('elevator_pitch_failed_continue_button'),
           onPressed: () {
             widget.onFailed();
           },
@@ -572,6 +590,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
 
         // AI Grade Card
         Container(
+          key: const Key('elevator_pitch_ai_analysis_card'),
           width: double.infinity,
           padding: EdgeInsets.all(16.w),
           decoration: BoxDecoration(
@@ -619,8 +638,11 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
         SizedBox(height: 24.h),
 
         // Native example fallback
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 12.w,
+          runSpacing: 8.h,
           children: [
             Text(
               "Want to hear a perfect pitch?",
@@ -630,8 +652,8 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                 color: Colors.grey,
               ),
             ),
-            SizedBox(width: 12.w),
             GestureDetector(
+              key: const Key('elevator_pitch_listen_example_button'),
               onTap: _playNative,
               child: ValueListenableBuilder<bool>(
                 valueListenable: _isPlaying,
@@ -646,6 +668,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                       borderRadius: BorderRadius.circular(100.r),
                     ),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
                           isPlaying
@@ -677,6 +700,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
 
         // Action buttons
         ElevatedButton(
+          key: const Key('elevator_pitch_evaluating_continue_button'),
           onPressed: () {
             _soundService.stopTts();
             if (_passedAutoGrade) {
@@ -718,15 +742,19 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
       children: [
         Icon(icon, size: 16.r, color: isDark ? Colors.white70 : Colors.black87),
         SizedBox(width: 8.w),
-        Text(
-          title,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 12.sp,
-            color: isDark ? Colors.white70 : Colors.black87,
+        Expanded(
+          child: Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              color: isDark ? Colors.white70 : Colors.black87,
+            ),
           ),
         ),
-        const Spacer(),
+        SizedBox(width: 8.w),
         Text(
           value,
           style: TextStyle(
