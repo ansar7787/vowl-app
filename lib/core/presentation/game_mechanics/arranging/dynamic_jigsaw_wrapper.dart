@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -785,13 +786,26 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
           ),
         ),
       ),
-    ).animate().slideY(begin: 1.0, end: 0, duration: 400.ms, curve: Curves.easeOut).fadeIn(duration: 300.ms);
+    );
+
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final animatedContent = reduceMotion
+        ? content
+        : content
+            .animate()
+            .slideY(
+              begin: 1.0,
+              end: 0,
+              duration: 400.ms,
+              curve: Curves.easeOut,
+            )
+            .fadeIn(duration: 300.ms);
 
     if (widget.isPositioned) {
-      return Positioned(bottom: 0, left: 0, right: 0, child: content);
+      return Positioned(bottom: 0, left: 0, right: 0, child: animatedContent);
     }
 
-    return content;
+    return animatedContent;
   }
 
   Widget _buildTile(

@@ -63,13 +63,32 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
   }
 
   @override
+  void onQuestionReset() {
+    super.onQuestionReset();
+    timerKey?.currentState?.start();
+  }
+
+  void _submitWrongAnswer(GameQuest quest) {
+    timerKey?.currentState?.stop();
+    submitWrongAnswer(quest: quest);
+  }
+
+  void _submitCorrectAnswer() {
+    timerKey?.currentState?.stop();
+    submitCorrectAnswer();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
+      listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
       buildWhen: (previous, current) =>
-          current is ListeningLoaded || current is ListeningGameOver,
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
@@ -89,7 +108,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
               useScrolling: false,
               disablePadding: true,
               onContinue: dispatchNextQuestion,
-              onHint: dispatchHintUsed,
+              onHint: () => hapticService.selection(),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : RawScrollbar(
@@ -122,21 +141,36 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
                                       durationSeconds: 15,
                                       primaryColor: theme.primaryColor,
                                       onTimeUp: () =>
-                                          submitWrongAnswer(quest: quest),
+                                          _submitWrongAnswer(quest),
                                     ),
                                   ),
                                   AudioSentenceOrderInstruction(
+                                    key: const Key(
+                                      'audio_sentence_order_instruction',
+                                    ),
                                     color: theme.primaryColor,
                                     instruction: context.tr(
                                       'games.audioSentenceOrder_instruction',
-                                      fallback: quest.instruction,
+                                      fallback:
+                                          quest.instruction.isNotEmpty
+                                              ? quest.instruction
+                                              : 'LISTEN AND ARRANGE THE WORDS IN THE CORRECT ORDER',
                                     ),
                                   ),
                                   SizedBox(height: 24.h),
                                   AudioSentenceOrderOscilloscope(
+                                    key: const Key(
+                                      'audio_sentence_order_oscilloscope',
+                                    ),
                                     onTap: () {
+                                      final audioToPlay = quest.textToSpeak ??
+                                          quest.prompt ??
+                                          quest.question ??
+                                          quest.sentence ??
+                                          quest.audioTranscript ??
+                                          "";
                                       soundService.playTts(
-                                        quest.textToSpeak ?? "",
+                                        audioToPlay,
                                         pauseMarkers: quest.pauseMarkers,
                                       );
                                       hapticService.selection();
@@ -156,10 +190,10 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
                                     isPositioned: false,
                                     allowSkip:
                                         false, // Disables the bypass feature for this game
-                                    onConfirmed: () => submitCorrectAnswer(),
-                                    onBypassed: () => submitCorrectAnswer(),
+                                    onConfirmed: () => _submitCorrectAnswer(),
+                                    onBypassed: () => _submitCorrectAnswer(),
                                     onSkipped: () =>
-                                        submitWrongAnswer(quest: quest),
+                                        _submitWrongAnswer(quest),
                                   ),
                                 ],
                               ),
