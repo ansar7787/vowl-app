@@ -1,4 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -31,6 +33,9 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return LayoutBuilder(
       builder: (context, constraints) {
         return ValueListenableBuilder<Offset>(
@@ -60,6 +65,7 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
                     return Transform.translate(
                       offset: Offset(x, y),
                       child: _buildReservoir(
+                        context,
                         index,
                         options[index],
                         index < optionEmojis.length
@@ -67,6 +73,8 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
                             : '🎭',
                         correctAnswerIndex,
                         color,
+                        tokens,
+                        reduceMotion,
                       ),
                     );
                   }),
@@ -74,53 +82,59 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
                   // The Psychology Core (Draggable Orb)
                   Transform.translate(
                     offset: offset,
-                    child: GestureDetector(
-                      behavior: HitTestBehavior.opaque,
-                      onPanUpdate: (details) =>
-                          onCoreMove(details.delta, constraints),
-                      onPanEnd: (_) {
-                        for (int i = 0; i < options.length; i++) {
-                          double xDist = 115.w;
-                          double yDist = 135.h;
-                          double x = (i % 2 == 0) ? -xDist : xDist;
-                          double y = (i < 2) ? -yDist : yDist;
-                          if ((offset - Offset(x, y)).distance < 65.r) {
-                            onSubmitAnswer(i);
-                            return;
+                    child: Semantics(
+                      label: 'Psychology Core',
+                      button: true,
+                      excludeSemantics: true,
+                      child: GestureDetector(
+                        key: const Key('emotion_recognition_core'),
+                        behavior: HitTestBehavior.opaque,
+                        onPanUpdate: (details) =>
+                            onCoreMove(details.delta, constraints),
+                        onPanEnd: (_) {
+                          for (int i = 0; i < options.length; i++) {
+                            double xDist = 115.w;
+                            double yDist = 135.h;
+                            double x = (i % 2 == 0) ? -xDist : xDist;
+                            double y = (i < 2) ? -yDist : yDist;
+                            if ((offset - Offset(x, y)).distance < 65.r) {
+                              onSubmitAnswer(i);
+                              return;
+                            }
                           }
-                        }
-                        coreOffset.value = Offset.zero;
-                      },
-                      child: Container(
-                        width: 70.r,
-                        height: 70.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: RadialGradient(
-                            colors: [
-                              Colors.white,
-                              color,
-                              color.withValues(alpha: 0.8),
+                          coreOffset.value = Offset.zero;
+                        },
+                        child: Container(
+                          width: 70.r,
+                          height: 70.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: RadialGradient(
+                              colors: [
+                                Colors.white,
+                                color,
+                                color.withValues(alpha: 0.8),
+                              ],
+                              stops: const [0.1, 0.4, 1.0],
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: color.withValues(alpha: 0.6),
+                                blurRadius: 20,
+                                spreadRadius: 5,
+                              ),
+                              BoxShadow(
+                                color: Colors.white.withValues(alpha: 0.4),
+                                blurRadius: 10,
+                                spreadRadius: 2,
+                              ),
                             ],
-                            stops: const [0.1, 0.4, 1.0],
                           ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: color.withValues(alpha: 0.6),
-                              blurRadius: 20,
-                              spreadRadius: 5,
-                            ),
-                            BoxShadow(
-                              color: Colors.white.withValues(alpha: 0.4),
-                              blurRadius: 10,
-                              spreadRadius: 2,
-                            ),
-                          ],
-                        ),
-                        child: Icon(
-                          Icons.blur_on_rounded,
-                          color: Colors.white.withValues(alpha: 0.9),
-                          size: 35.r,
+                          child: Icon(
+                            Icons.blur_on_rounded,
+                            color: Colors.white.withValues(alpha: 0.9),
+                            size: 35.r,
+                          ),
                         ),
                       ),
                     ),
@@ -135,84 +149,95 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
   }
 
   Widget _buildReservoir(
+    BuildContext context,
     int index,
     String text,
     String emoji,
     int correct,
     Color color,
+    AppColorTokens? tokens,
+    bool reduceMotion,
   ) {
     bool isSelected = selectedIndex == index;
     bool isCorrect = isAnswered && index == correct && isCorrectState == true;
     bool isWrong = isAnswered && isSelected && isCorrectState == false;
 
     Color tileColor = isCorrect
-        ? AppColors.gameCorrect
-        : (isWrong ? AppColors.gameIncorrect : color);
+        ? (tokens?.gameCorrect ?? AppColors.gameCorrect)
+        : (isWrong
+            ? (tokens?.gameIncorrect ?? AppColors.gameIncorrect)
+            : color);
 
-    return GestureDetector(
-      onTap: () {
-        if (isAnswered) return;
-        double xDist = 115.w;
-        double yDist = 135.h;
-        double x = (index % 2 == 0) ? -xDist : xDist;
-        double y = (index < 2) ? -yDist : yDist;
-        coreOffset.value = Offset(x, y);
-        Future.delayed(50.ms, () {
+    return Semantics(
+      label: text,
+      button: true,
+      excludeSemantics: true,
+      child: GestureDetector(
+        key: Key('emotion_recognition_reservoir_$index'),
+        onTap: () {
+          if (isAnswered) return;
+          double xDist = 115.w;
+          double yDist = 135.h;
+          double x = (index % 2 == 0) ? -xDist : xDist;
+          double y = (index < 2) ? -yDist : yDist;
+          coreOffset.value = Offset(x, y);
           onSubmitAnswer(index);
-        });
-      },
-      child: AnimatedContainer(
-        duration: 300.ms,
-        width: 100.r,
-        height: 100.r,
-        padding: EdgeInsets.all(6.r),
-        decoration: BoxDecoration(
-          color: tileColor.withValues(alpha: 0.05),
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: tileColor.withValues(
-              alpha: (isCorrect || isWrong) ? 0.8 : 0.2,
+        },
+        child: AnimatedContainer(
+          duration: 300.ms,
+          width: 100.r,
+          height: 100.r,
+          padding: EdgeInsets.all(6.r),
+          decoration: BoxDecoration(
+            color: tileColor.withValues(alpha: 0.05),
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: tileColor.withValues(
+                alpha: (isCorrect || isWrong) ? 0.8 : 0.2,
+              ),
+              width: (isCorrect || isWrong) ? 3 : 1.5,
             ),
-            width: (isCorrect || isWrong) ? 3 : 1.5,
+            boxShadow: (isCorrect || isWrong)
+                ? [
+                    BoxShadow(
+                      color: tileColor.withValues(alpha: 0.3),
+                      blurRadius: 15,
+                      spreadRadius: 2,
+                    ),
+                  ]
+                : [],
           ),
-          boxShadow: (isCorrect || isWrong)
-              ? [
-                  BoxShadow(
-                    color: tileColor.withValues(alpha: 0.3),
-                    blurRadius: 15,
-                    spreadRadius: 2,
-                  ),
-                ]
-              : [],
-        ),
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(emoji, style: TextStyle(fontSize: 22.sp))
-                  .animate(target: (isCorrect || isWrong) ? 1 : 0)
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.2, 1.2),
-                    curve: Curves.elasticOut,
-                  ),
-              SizedBox(height: 2.h),
-              Flexible(
-                child: Text(
-                  text.toUpperCase(),
-                  textAlign: TextAlign.center,
-                  maxLines: 3,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 9.sp,
-                    fontWeight: FontWeight.w900,
-                    color: tileColor,
-                    letterSpacing: 0.5,
-                    height: 1.1,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                reduceMotion
+                    ? Text(emoji, style: TextStyle(fontSize: 22.sp))
+                    : Text(emoji, style: TextStyle(fontSize: 22.sp))
+                        .animate(target: (isCorrect || isWrong) ? 1 : 0)
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.2, 1.2),
+                          curve: Curves.elasticOut,
+                        ),
+                SizedBox(height: 2.h),
+                Flexible(
+                  child: Text(
+                    text.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    maxLines: 3,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.w900,
+                      color: tileColor,
+                      letterSpacing: 0.5,
+                      height: 1.1,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
