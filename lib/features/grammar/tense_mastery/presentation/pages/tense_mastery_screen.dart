@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -53,6 +55,8 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
     _sliderValue.dispose();
     _isDragging.dispose();
     _pendingSubmit.dispose();
+    _scrollTimer?.cancel();
+    _scrollTimer?.cancel();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
@@ -64,8 +68,11 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
     return "Present";
   }
 
+  Timer? _scrollTimer;
+
   void _onStagePassedScroll() {
-    Future.delayed(const Duration(milliseconds: 100), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -145,6 +152,8 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
+    _scrollTimer?.cancel();
     _sliderValue.value = 0.5;
 
     _isDragging.value = false;
@@ -245,7 +254,11 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                                 ),
 
                                                 // Context Card
-                                                Padding(
+                                                Builder(
+                                                  builder: (context) {
+                                                    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+                                                    final card = Padding(
+                                                      key: const ValueKey('tense_sentence_card'),
                                                       padding:
                                                           EdgeInsets.symmetric(
                                                             horizontal: 24.w,
@@ -303,10 +316,14 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                                           ),
                                                         ),
                                                       ),
-                                                    )
-                                                    .animate()
-                                                    .fadeIn(duration: 600.ms)
-                                                    .slideY(begin: 0.2, end: 0),
+                                                    );
+                                                    if (reduceMotion) return card;
+                                                    return card
+                                                        .animate()
+                                                        .fadeIn(duration: 600.ms)
+                                                        .slideY(begin: 0.2, end: 0);
+                                                  },
+                                                ),
 
                                                 SizedBox(
                                                   height: isCompact
@@ -323,6 +340,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                                   ]),
                                                   builder: (context, _) {
                                                     return TenseMasteryTimelineSlider(
+                                                        key: const ValueKey('tense_timeline_slider'),
                                                       sliderValue:
                                                           _sliderValue.value,
                                                       currentTense:
@@ -361,7 +379,11 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                               children: [
                                                 if (!isAnsweredNotifier.value &&
                                                     !_pendingSubmit.value)
-                                                  ScaleButton(
+                                                  Builder(
+                                                    builder: (context) {
+                                                      final reduceMotion = VowlMotion.shouldReduceMotion(context);
+                                                      final button = ScaleButton(
+                                                        key: const ValueKey('tense_freeze_button'),
                                                         onTap:
                                                             _onFreezeTimeline,
                                                         child: Padding(
@@ -444,16 +466,20 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                                             ),
                                                           ),
                                                         ),
-                                                      )
-                                                      .animate(
-                                                        onPlay: (c) => c.repeat(
-                                                          reverse: true,
-                                                        ),
-                                                      )
-                                                      .shimmer(
-                                                        duration: 2.seconds,
-                                                        color: Colors.white24,
-                                                      ),
+                                                      );
+                                                      if (reduceMotion) return button;
+                                                      return button
+                                                          .animate(
+                                                            onPlay: (c) => c.repeat(
+                                                              reverse: true,
+                                                            ),
+                                                          )
+                                                          .shimmer(
+                                                            duration: 2.seconds,
+                                                            color: Colors.white24,
+                                                          );
+                                                    },
+                                                  ),
                                                 SizedBox(
                                                   height: isCompact
                                                       ? 12.h
@@ -470,6 +496,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                       !isAnsweredNotifier.value)
                                     SliverToBoxAdapter(
                                       child: TypeToConfirmOverlay(
+                                        key: const ValueKey('tense_type_overlay'),
                                         expectedText: quest.sentence ?? '',
                                         displayText: null,
                                         primaryColor: theme.primaryColor,
