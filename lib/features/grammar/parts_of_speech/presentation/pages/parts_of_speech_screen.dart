@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
@@ -65,6 +66,10 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
 
   void _onFlick(int targetIndex, int correctIndex, GameQuest quest) {
     if (isAnsweredNotifier.value || _isSubmitting.value) {
+      return;
+    }
+    final blocState = context.read<GrammarBloc>().state;
+    if (blocState is GrammarLoaded && blocState.answerStatus.isAnswered) {
       return;
     }
     _isSubmitting.value = true;
@@ -130,6 +135,12 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
       listener: _onStateChange,
       builder: (context, state) {
         final quest = state is GrammarLoaded ? state.currentQuest : null;
+        final isAnswered =
+            isAnsweredNotifier.value ||
+            (state is GrammarLoaded && state.answerStatus.isAnswered);
+        final isCorrect =
+            isCorrectNotifier.value ??
+            (state is GrammarLoaded ? state.answerStatus.asBoolOrNull : null);
         final options = (quest?.options?.length ?? 0) >= 4
             ? quest!.options!.sublist(0, 4)
             : _fallbackOptions;
@@ -147,15 +158,14 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
             return GrammarBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnsweredNotifier.value,
-              isCorrect: isCorrectNotifier.value,
+              isAnswered: isAnswered,
+              isCorrect: isCorrect,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
               useScrolling: false, // Stack layout constraint
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
@@ -193,8 +203,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
                                                 maxHeight:
                                                     constraints.maxHeight,
                                                 dragOffset: _dragOffset.value,
-                                                isAnswered:
-                                                    isAnsweredNotifier.value,
+                                                isAnswered: isAnswered,
                                                 isWordSelected:
                                                     _isWordSelected.value,
                                                 onWordTap: () {
@@ -357,6 +366,7 @@ class _PosQuestLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final gaps = _computeGaps();
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Column(
       children: [
@@ -369,6 +379,10 @@ class _PosQuestLayout extends StatelessWidget {
           isDark: isDark,
           isCompact: isCompact,
         ),
+        if (quest.grammarRule != null && quest.grammarRule!.isNotEmpty) ...[
+          SizedBox(height: 8.h),
+          _buildGrammarRule(quest.grammarRule!, theme.primaryColor as Color),
+        ],
         Expanded(
           child: Stack(
             alignment: Alignment.center,
@@ -383,24 +397,35 @@ class _PosQuestLayout extends StatelessWidget {
                   onTap: () => onVortexTap(i),
                 ),
               if (!isAnswered)
-                GestureDetector(
-                  onPanUpdate: onPanUpdate,
-                  onPanEnd: onPanEnd,
-                  onTap: onWordTap,
-                  child: Transform.translate(
-                    offset: dragOffset,
-                    child: Transform.rotate(
-                      angle: dragOffset.dx / 100,
-                      child: SpeechDraggableWord(
-                        word: quest.targetWord ?? quest.word ?? '??',
-                        primaryColor: theme.primaryColor as Color,
-                        isDark: isDark,
-                        isCompact: isCompact,
-                        isSelected: isWordSelected,
+                Builder(
+                  builder: (context) {
+                    final draggable = GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onPanUpdate: onPanUpdate,
+                      onPanEnd: onPanEnd,
+                      onTap: onWordTap,
+                      child: Transform.translate(
+                        offset: dragOffset,
+                        child: Transform.rotate(
+                          angle: dragOffset.dx / 100,
+                          child: SpeechDraggableWord(
+                            word: quest.targetWord ?? quest.word ?? '??',
+                            primaryColor: theme.primaryColor as Color,
+                            isDark: isDark,
+                            isCompact: isCompact,
+                            isSelected: isWordSelected,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                ).animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
+                    );
+                    if (reduceMotion) {
+                      return draggable;
+                    }
+                    return draggable
+                        .animate()
+                        .scale(duration: 400.ms, curve: Curves.easeOutCubic);
+                  },
+                ),
             ],
           ),
         ),
@@ -409,9 +434,45 @@ class _PosQuestLayout extends StatelessWidget {
     );
   }
 
+  Widget _buildGrammarRule(String rule, Color primaryColor) {
+    return Container(
+      key: const ValueKey('grammar_rule_box'),
+      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.lightbulb_outline, color: primaryColor, size: 16.sp),
+          SizedBox(width: 8.w),
+          Flexible(
+            child: Text(
+              rule,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                color: primaryColor,
+                fontWeight: FontWeight.w600,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _buildInstruction() {
     final instruction = SpeechInstruction(
       primaryColor: theme.primaryColor as Color,
+      instruction: quest.instruction,
     );
     if (!isCompact) {
       return instruction;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// A rotating radial-gradient vortex that acts as a drag-target bucket.
 ///
@@ -32,10 +33,25 @@ class SpeechVortex extends StatelessWidget {
     final rotationMs = 2600 + index * 400;
     final size = isCompact ? 85.r : 120.r;
     final margin = isCompact ? 4.r : 10.r;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    final circle = Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: RadialGradient(
+          colors: [
+            color.withValues(alpha: 0.6),
+            color.withValues(alpha: 0.1),
+            Colors.transparent,
+          ],
+        ),
+      ),
+    );
 
     return Align(
       alignment: alignment,
       child: GestureDetector(
+        key: ValueKey('speech_vortex_$index'),
         behavior: HitTestBehavior.opaque,
         onTap: onTap,
         child: Semantics(
@@ -47,20 +63,12 @@ class SpeechVortex extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: RadialGradient(
-                          colors: [
-                            color.withValues(alpha: 0.6),
-                            color.withValues(alpha: 0.1),
-                            Colors.transparent,
-                          ],
-                        ),
-                      ),
-                    )
-                    .animate(onPlay: (c) => c.repeat())
-                    .rotate(duration: Duration(milliseconds: rotationMs)),
+                if (reduceMotion)
+                  circle
+                else
+                  circle
+                      .animate(onPlay: (c) => c.repeat())
+                      .rotate(duration: Duration(milliseconds: rotationMs)),
                 Text(
                   label.toUpperCase(),
                   style: TextStyle(
