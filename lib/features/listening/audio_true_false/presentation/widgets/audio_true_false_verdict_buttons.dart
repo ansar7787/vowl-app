@@ -31,6 +31,7 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
             "FALSE",
             Icons.close_rounded,
             tokens.gameIncorrect,
+            const Key('audio_true_false_btn_false'),
           ),
         ),
         SizedBox(width: 16.w),
@@ -41,6 +42,7 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
             "TRUE",
             Icons.check_rounded,
             tokens.gameCorrect,
+            const Key('audio_true_false_btn_true'),
           ),
         ),
       ],
@@ -53,6 +55,7 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
     String label,
     IconData icon,
     Color baseColor,
+    Key key,
   ) {
     bool isSelected = selectedVerdict == value;
     bool isCorrect = isAnswered && isSelected && isCorrectState == true;
@@ -66,44 +69,51 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
 
     Color textColor = isSelected ? Colors.white : baseColor;
 
-    return ScaleButton(
-      onTap: (isAnswered || selectedVerdict != null)
-          ? null
-          : () => onVerdictSelected(value),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
-        width: double.infinity,
-        height: 96.h,
-        decoration: BoxDecoration(
-          color: buttonColor,
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(color: baseColor, width: 2),
-          boxShadow: isSelected
-              ? [
-                  BoxShadow(
-                    color: baseColor.withValues(alpha: 0.3),
-                    blurRadius: 12,
-                    offset: const Offset(0, 4),
-                  ),
-                ]
-              : [],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, color: textColor, size: 32.r),
-            SizedBox(height: 4.h),
-            Text(
-              label,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w900,
-                color: textColor,
-                letterSpacing: 2,
+    return Semantics(
+      label: label,
+      button: true,
+      selected: isSelected,
+      excludeSemantics: true,
+      child: ScaleButton(
+        key: key,
+        onTap: (isAnswered || selectedVerdict != null)
+            ? null
+            : () => onVerdictSelected(value),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          width: double.infinity,
+          height: 96.h,
+          decoration: BoxDecoration(
+            color: buttonColor,
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(color: baseColor, width: 2),
+            boxShadow: isSelected
+                ? [
+                    BoxShadow(
+                      color: baseColor.withValues(alpha: 0.3),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
+                    ),
+                  ]
+                : [],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, color: textColor, size: 32.r),
+              SizedBox(height: 4.h),
+              Text(
+                label,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w900,
+                  color: textColor,
+                  letterSpacing: 2,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

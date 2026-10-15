@@ -22,6 +22,7 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
+      key: const Key('audio_true_false_screen_display_container'),
       width: double.infinity,
       constraints: BoxConstraints(minHeight: 120.h),
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
@@ -47,11 +48,16 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (emoji != null && emoji!.isNotEmpty) ...[
-            Text(emoji!, style: TextStyle(fontSize: 48.sp)),
+            Text(
+              emoji!,
+              key: const Key('audio_true_false_emoji'),
+              style: TextStyle(fontSize: 48.sp),
+            ),
             SizedBox(height: 16.h),
           ],
           Text(
             statement,
+            key: const Key('audio_true_false_statement'),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',

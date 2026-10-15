@@ -1,5 +1,6 @@
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -72,22 +73,31 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
   void _scrollToBottom() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (_scrollController.hasClients) {
-        _scrollController.animateTo(
-          _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOut,
-        );
+        final reduceMotion = VowlMotion.shouldReduceMotion(context);
+        if (reduceMotion) {
+          _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+        } else {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOut,
+          );
+        }
       }
     });
   }
 
   void _submitFinalAnswer(ListeningQuest quest) {
     if (isAnsweredNotifier.value || _selectedVerdict.value == null) return;
+    timerKey?.currentState?.stop();
 
-    final correct = quest.correctAnswer ?? "";
-    bool isCorrect =
-        _selectedVerdict.value.toString().toLowerCase() ==
-        correct.trim().toLowerCase();
+    final correct = (quest.correctAnswer ?? "").trim().toLowerCase();
+    bool isCorrect = false;
+    if (_selectedVerdict.value == true) {
+      isCorrect = correct == "true" || correct == "1" || correct == "yes";
+    } else if (_selectedVerdict.value == false) {
+      isCorrect = correct == "false" || correct == "0" || correct == "no";
+    }
 
     if (isCorrect) {
       submitCorrectAnswer();
@@ -100,16 +110,25 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
   }
 
   void _submitWrongAnswer(ListeningQuest quest) {
+    if (isAnsweredNotifier.value) return;
+    timerKey?.currentState?.stop();
     submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
   }
 
-  void _playAudio(String? textToSpeak) {
-    final text = textToSpeak?.trim();
-    if (text == null || text.isEmpty) return;
+  void _playAudio(ListeningQuest quest) {
+    final rawAudio = quest.textToSpeak ??
+        quest.prompt ??
+        quest.question ??
+        quest.sentence ??
+        quest.audioTranscript ??
+        quest.statement ??
+        "";
+    final text = rawAudio.trim();
+    if (text.isEmpty) return;
     if (text.startsWith('http')) {
       soundService.playUrl(text);
     } else {
-      soundService.playTts(text);
+      soundService.playTts(text, pauseMarkers: quest.pauseMarkers);
     }
     _audioController.forward(from: 0);
     hapticService.selection();
@@ -118,6 +137,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
   @override
   void onQuestionReset() {
     _selectedVerdict.value = null;
+    timerKey?.currentState?.start();
   }
 
   @override
@@ -132,6 +152,10 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
     return BlocConsumer<ListeningBloc, ListeningState>(
       listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
+      buildWhen: (previous, current) =>
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
@@ -143,6 +167,10 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
             _selectedVerdict,
           ]),
           builder: (context, _) {
+            final statementText = quest != null
+                ? (quest.statement ?? quest.question ?? quest.prompt ?? '')
+                : '';
+
             return ListeningBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
@@ -152,7 +180,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
               useScrolling: false,
               disablePadding: true,
               onContinue: dispatchNextQuestion,
-              onHint: dispatchHintUsed,
+              onHint: () => hapticService.selection(),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
@@ -187,22 +215,31 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
                                         ),
                                       ),
                                       AudioTrueFalseInstruction(
+                                        key: const Key(
+                                          'audio_true_false_instruction',
+                                        ),
                                         color: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
+                                        instruction: context.tr(
+                                          'games.audioTrueFalse_instruction',
+                                          fallback:
+                                              quest.instruction.isNotEmpty
+                                                  ? quest.instruction
+                                                  : 'IS THIS STATEMENT TRUE OR FALSE? LISTEN CAREFULLY.',
+                                        ),
                                       ),
                                       SizedBox(height: 32.h),
                                       AudioTrueFalseTuner(
-                                        onTap: () =>
-                                            _playAudio(quest.textToSpeak),
+                                        key: const Key('audio_true_false_tuner'),
+                                        onTap: () => _playAudio(quest),
                                         color: theme.primaryColor,
                                         audioController: _audioController,
                                       ),
                                       SizedBox(height: 32.h),
                                       AudioTrueFalseScreenDisplay(
-                                        statement: quest.statement ?? '',
+                                        key: const Key(
+                                          'audio_true_false_screen_display',
+                                        ),
+                                        statement: statementText,
                                         color: theme.primaryColor,
                                         emoji: quest.emoji,
                                       ),
@@ -217,6 +254,9 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
                                     vertical: 16.h,
                                   ),
                                   child: AudioTrueFalseVerdictButtons(
+                                    key: const Key(
+                                      'audio_true_false_verdict_buttons',
+                                    ),
                                     selectedVerdict: _selectedVerdict.value,
                                     isAnswered: isAnsweredNotifier.value,
                                     isCorrectState: isCorrectNotifier.value,
