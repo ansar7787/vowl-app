@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
@@ -44,6 +46,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
+  final ValueNotifier<Offset> _spotlightPos = ValueNotifier(const Offset(0, 0));
 
   @override
   void dispose() {
@@ -55,8 +58,6 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
     super.dispose();
   }
 
-  final ValueNotifier<Offset> _spotlightPos = ValueNotifier(const Offset(0, 0));
-
   @override
   void initState() {
     super.initState();
@@ -66,6 +67,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
 
   void _submitFinalAnswer(GameQuest quest) {
     if (isAnsweredNotifier.value || _pendingSelectedIndex.value == null) return;
+    timerKey?.currentState?.stop();
 
     final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
@@ -86,18 +88,36 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
   }
 
   void _submitWrongAnswer(dynamic quest) {
+    if (isAnsweredNotifier.value) return;
+    timerKey?.currentState?.stop();
     if (quest is GameQuest) {
       submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
     }
   }
 
+  void _playAudio(ListeningQuest quest) {
+    final rawAudio = quest.textToSpeak ??
+        quest.prompt ??
+        quest.question ??
+        quest.sentence ??
+        quest.audioTranscript ??
+        "";
+    final text = rawAudio.trim();
+    if (text.isEmpty) return;
+    if (text.startsWith('http')) {
+      soundService.playUrl(text);
+    } else {
+      soundService.playTts(text, pauseMarkers: quest.pauseMarkers);
+    }
+    hapticService.selection();
+  }
+
   @override
   void onQuestionReset() {
     _selectedIndex.value = null;
-
     _pendingSelectedIndex.value = null;
-
     _spotlightPos.value = const Offset(0, 0);
+    timerKey?.currentState?.start();
   }
 
   @override
@@ -107,6 +127,10 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
     return BlocConsumer<ListeningBloc, ListeningState>(
       listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
+      buildWhen: (previous, current) =>
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
@@ -119,6 +143,10 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
             _pendingSelectedIndex,
           ]),
           builder: (context, _) {
+            final targetDetail = quest != null
+                ? (quest.targetDetail ?? quest.prompt ?? quest.targetEmotion ?? "Detail")
+                : "Detail";
+
             return ListeningBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
@@ -128,7 +156,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
               useScrolling: false,
               disablePadding: true,
               onContinue: dispatchNextQuestion,
-              onHint: dispatchHintUsed,
+              onHint: () => hapticService.selection(),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
@@ -163,27 +191,36 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
                                         ),
                                       ),
                                       DetailSpotlightInstruction(
+                                        key: const Key(
+                                          'detail_spotlight_instruction',
+                                        ),
                                         isAnswered: isAnsweredNotifier.value,
                                         color: theme.primaryColor,
-                                        instruction:
-                                            'Wipe and tap what you hear',
+                                        instruction: context.tr(
+                                          'games.detailSpotlight_instruction',
+                                          fallback:
+                                              quest.instruction.isNotEmpty
+                                                  ? quest.instruction
+                                                  : 'WIPE AND TAP WHAT YOU HEAR',
+                                        ),
                                       ),
                                       SizedBox(height: 24.h),
                                       DetailSpotlightEmitter(
-                                        onTap: () {
-                                          soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                          );
-                                          hapticService.selection();
-                                        },
+                                        key: const Key(
+                                          'detail_spotlight_emitter',
+                                        ),
+                                        onTap: () => _playAudio(quest),
                                         color: theme.primaryColor,
                                         emoji: quest.emoji,
                                         isCorrectState: isCorrectNotifier.value,
                                       ),
                                       SizedBox(height: 32.h),
                                       DetailSpotlightPrompt(
+                                        key: const Key(
+                                          'detail_spotlight_prompt',
+                                        ),
                                         isAnswered: isAnsweredNotifier.value,
-                                        detail: quest.targetDetail ?? "Detail",
+                                        detail: targetDetail,
                                         color: theme.primaryColor,
                                       ),
                                     ],
@@ -202,6 +239,9 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
                                       SizedBox(
                                         height: 350.h,
                                         child: DetailSpotlightDarkField(
+                                          key: const Key(
+                                            'detail_spotlight_dark_field',
+                                          ),
                                           options: quest.options ?? [],
                                           correctAnswerIndex:
                                               quest.correctAnswerIndex ?? 0,
@@ -222,6 +262,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
                                                     null) {
                                               return;
                                             }
+                                            hapticService.selection();
                                             _pendingSelectedIndex.value = index;
                                             _submitFinalAnswer(quest);
                                           },
