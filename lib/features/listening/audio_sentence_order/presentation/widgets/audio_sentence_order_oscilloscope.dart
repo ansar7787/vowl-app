@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class AudioSentenceOrderOscilloscope extends StatelessWidget {
   final VoidCallback onTap;
@@ -19,6 +20,8 @@ class AudioSentenceOrderOscilloscope extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Semantics(
       label: 'Play sentence audio',
       hint: 'Double tap to hear the speaker',
@@ -26,6 +29,7 @@ class AudioSentenceOrderOscilloscope extends StatelessWidget {
       excludeSemantics:
           true, // Prevents screen readers from trying to read the animated graphic lines
       child: ScaleButton(
+        key: const Key('audio_sentence_order_oscilloscope_btn'),
         onTap: onTap,
         child: Container(
           height: 100.h,
@@ -40,28 +44,33 @@ class AudioSentenceOrderOscilloscope extends StatelessWidget {
             children: [
               ...List.generate(
                 20,
-                (i) =>
-                    Container(
-                          width: 4.w,
-                          height: 20.h + (i % 5 * 10).h,
-                          margin: EdgeInsets.symmetric(horizontal: 2.w),
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.4),
-                            borderRadius: BorderRadius.circular(2.r),
-                          ),
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .scaleY(
-                          begin: 0.5,
-                          end: 1.5,
-                          duration: 500.ms,
-                          delay: (i * 50).ms,
-                        ),
+                (i) {
+                  final bar = Container(
+                    width: 4.w,
+                    height: 20.h + (i % 5 * 10).h,
+                    margin: EdgeInsets.symmetric(horizontal: 2.w),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.4),
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
+                  );
+                  if (reduceMotion) return bar;
+                  return bar
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scaleY(
+                        begin: 0.5,
+                        end: 1.5,
+                        duration: 500.ms,
+                        delay: (i * 50).ms,
+                      );
+                },
               ),
               isCorrectState == true && emoji != null
-                  ? Text(emoji!, style: TextStyle(fontSize: 48.r))
-                        .animate()
-                        .scale(duration: 400.ms, curve: Curves.easeOutCubic)
+                  ? (reduceMotion
+                      ? Text(emoji!, style: TextStyle(fontSize: 48.r))
+                      : Text(emoji!, style: TextStyle(fontSize: 48.r))
+                          .animate()
+                          .scale(duration: 400.ms, curve: Curves.easeOutCubic))
                   : Icon(
                       Icons.graphic_eq_rounded,
                       color: Colors.white,
