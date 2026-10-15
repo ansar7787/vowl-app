@@ -11,6 +11,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 import 'components/shadow_waveform_visualizer.dart';
@@ -516,6 +517,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                             ? 'Stop recording'
                                             : 'Start recording',
                                         child: GestureDetector(
+                                          key: const ValueKey('shadow_mic_btn'),
                                           onTap: () {
                                             if (isRecording) {
                                               _stopRecording();
@@ -767,44 +769,52 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                         // Simplified without waveform (fallback)
                                         if (isPlaying)
                                           RepaintBoundary(
-                                            child:
-                                                Container(
-                                                      height: 70.r,
-                                                      width: 70.r,
-                                                      decoration: BoxDecoration(
-                                                        shape: BoxShape.circle,
-                                                        color: widget
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: 0.15,
-                                                            ),
-                                                      ),
-                                                      child: Center(
-                                                        child: Icon(
-                                                          Icons
-                                                              .graphic_eq_rounded,
-                                                          color: widget
-                                                              .primaryColor,
-                                                          size: 32.sp,
-                                                        ),
-                                                      ),
-                                                    )
-                                                    .animate(
-                                                      onPlay: (c) => c.repeat(
-                                                        reverse: true,
-                                                      ),
-                                                    )
-                                                    .scale(
-                                                      begin: const Offset(
-                                                        0.9,
-                                                        0.9,
-                                                      ),
-                                                      end: const Offset(
-                                                        1.15,
-                                                        1.15,
-                                                      ),
-                                                      duration: 600.ms,
+                                            child: Builder(
+                                              builder: (context) {
+                                                final reduceMotion =
+                                                    VowlMotion.shouldReduceMotion(
+                                                      context,
+                                                    );
+                                                Widget icon = Container(
+                                                  height: 70.r,
+                                                  width: 70.r,
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    color: widget.primaryColor
+                                                        .withValues(alpha: 0.15),
+                                                  ),
+                                                  child: Center(
+                                                    child: Icon(
+                                                      Icons.graphic_eq_rounded,
+                                                      color: widget.primaryColor,
+                                                      size: 32.sp,
                                                     ),
+                                                  ),
+                                                );
+
+                                                if (!reduceMotion) {
+                                                  icon = icon
+                                                      .animate(
+                                                        onPlay: (c) => c.repeat(
+                                                          reverse: true,
+                                                        ),
+                                                      )
+                                                      .scale(
+                                                        begin: const Offset(
+                                                          0.9,
+                                                          0.9,
+                                                        ),
+                                                        end: const Offset(
+                                                          1.15,
+                                                          1.15,
+                                                        ),
+                                                        duration: 600.ms,
+                                                      );
+                                                }
+
+                                                return icon;
+                                              },
+                                            ),
                                           ),
                                       ],
 
