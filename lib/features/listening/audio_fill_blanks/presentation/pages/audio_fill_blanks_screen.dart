@@ -83,6 +83,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen>
   void onQuestionReset() {
     _revealProgress.value = 0.0;
     _controller.clear();
+    timerKey?.currentState?.start();
   }
 
   double _lastHapticProgress = 0.0;
@@ -124,9 +125,12 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen>
     );
 
     return BlocConsumer<ListeningBloc, ListeningState>(
+      listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
       buildWhen: (previous, current) =>
-          current is ListeningLoaded || current is ListeningGameOver,
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = state is ListeningLoaded ? state.currentQuest : null;
 
@@ -162,7 +166,13 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen>
                       compactThreshold: _kCompactHeightThreshold,
                       level: widget.level,
                       onSmear: _onSmear,
-                      onPlayAudio: () => _playAudio(quest.textToSpeak),
+                      onPlayAudio: () => _playAudio(
+                        quest.textToSpeak ??
+                            quest.prompt ??
+                            quest.question ??
+                            quest.sentence ??
+                            quest.audioTranscript,
+                      ),
                       onBlindSubmit: (bool correct) {
                         if (correct) {
                           submitCorrectAnswer();
@@ -265,11 +275,13 @@ class _AudioFillBlanksContent extends StatelessWidget {
                         ),
                       ),
                       AudioFillBlanksInstruction(
+                        key: const ValueKey('audio_fill_blanks_instruction'),
                         instruction: InstructionHelper.getInstruction(quest),
                         color: theme.primaryColor,
                       ),
                       SizedBox(height: 24.h),
                       AudioFillBlanksJar(
+                        key: const ValueKey('audio_fill_blanks_jar'),
                         color: theme.primaryColor,
                         onTap: onPlayAudio,
                       ),
@@ -278,6 +290,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                         valueListenable: revealProgressNotifier,
                         builder: (context, progress, _) {
                           return AudioFillBlanksCanvas(
+                            key: const ValueKey('audio_fill_blanks_canvas'),
                             text:
                                 (isCorrect == true && quest.textToSpeak != null)
                                 ? quest.textToSpeak!
@@ -379,21 +392,26 @@ class _AudioFillBlanksContent extends StatelessWidget {
 
     return Column(
       key: const ValueKey('options_list'),
-      children: options.map((option) {
+      children: options.asMap().entries.map((entry) {
+        final index = entry.key;
+        final option = entry.value;
         return Padding(
           padding: EdgeInsets.only(bottom: 12.h),
           child: Semantics(
             button: true,
             child: ScaleButton(
-              onTap: () {
-                final isCorrect = option == correctWord;
-                if (isCorrect) {
-                  onBlindSubmit(true);
-                } else {
-                  controller.text = option; // For ErrorJournalCollector
-                  onBlindSubmit(false);
-                }
-              },
+              key: ValueKey('option_btn_$index'),
+              onTap: isAnswered
+                  ? null
+                  : () {
+                      final isCorrect = option == correctWord;
+                      if (isCorrect) {
+                        onBlindSubmit(true);
+                      } else {
+                        controller.text = option; // For ErrorJournalCollector
+                        onBlindSubmit(false);
+                      }
+                    },
               child: Container(
                 width: double.infinity,
                 height: 60.h,

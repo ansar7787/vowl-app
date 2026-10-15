@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Constants
@@ -47,6 +48,7 @@ class AudioFillBlanksCanvas extends StatelessWidget {
       onTapHint: 'partially reveal transcription',
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
+        onTap: () => onSmear(0.5),
         onPanUpdate: (details) {
           // Normalise horizontal + vertical movement so diagonal smearing
           // feels natural and consistent with straight strokes.
@@ -145,20 +147,27 @@ class _InkBlob extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-          width: _kBlobSize.r,
-          height: _kBlobSize.r,
-          decoration: BoxDecoration(shape: BoxShape.circle, color: color),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .scale(
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(1.2, 1.2),
-          duration: 2.seconds,
-          // Stagger each blob slightly so they don't all pulse in sync,
-          // creating a more organic ink-drip feel.
-          delay: Duration(milliseconds: index * 200),
-          curve: Curves.easeInOut,
-        );
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    Widget blob = Container(
+      width: _kBlobSize.r,
+      height: _kBlobSize.r,
+      decoration: BoxDecoration(shape: BoxShape.circle, color: color),
+    );
+
+    if (!reduceMotion) {
+      blob = blob
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.2, 1.2),
+            duration: 2.seconds,
+            // Stagger each blob slightly so they don't all pulse in sync,
+            // creating a more organic ink-drip feel.
+            delay: Duration(milliseconds: index * 200),
+            curve: Curves.easeInOut,
+          );
+    }
+
+    return blob;
   }
 }
