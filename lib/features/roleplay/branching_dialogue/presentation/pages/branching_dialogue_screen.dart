@@ -55,6 +55,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   final ValueNotifier<Offset> _probeOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<int?> _hoveredIndex = ValueNotifier(null);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isDraggingProbe = ValueNotifier(false);
 
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 150), () {
@@ -94,17 +95,28 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     _probeOffset.dispose();
     _hoveredIndex.dispose();
     _selectedIndex.dispose();
+    _isDraggingProbe.dispose();
     _scrollController.dispose();
     disposeRoleplayGame();
     super.dispose();
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
-    soundService.playTts(quest.scene ?? "");
+    hapticService.selection();
+    final rawText = quest.textToSpeak ?? quest.scene ?? quest.prompt ?? '';
+    if (rawText.startsWith('http://') || rawText.startsWith('https://')) {
+      soundService.playUrl(rawText);
+      return;
+    }
+    final text = rawText.replaceAll(RegExp(r'\[pause:\d+\]'), ' ');
+    if (text.isNotEmpty) {
+      soundService.playTts(text);
+    }
   }
 
   void _onProbeDragStart(DragStartDetails details) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
+    _isDraggingProbe.value = true;
     _springController.stop();
   }
 
@@ -117,8 +129,8 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
 
     Offset newOffset = _probeOffset.value + details.delta;
     final double distance = newOffset.distance;
-    if (distance > 240.h) {
-      newOffset = Offset.fromDirection(newOffset.direction, 240.h);
+    if (distance > 380.h) {
+      newOffset = Offset.fromDirection(newOffset.direction, 380.h);
     }
     _probeOffset.value = newOffset;
 
@@ -130,8 +142,13 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     int? activeHoverIndex;
 
     for (int i = 0; i < terminalCenters.length; i++) {
-      final double dist = (currentProbePos - terminalCenters[i]).distance;
-      if (dist < 48.r) {
+      final Offset nodeCenter = terminalCenters[i] - Offset(0, 30.h);
+      final double distToAnchor =
+          (currentProbePos - terminalCenters[i]).distance;
+      final double distToNode = (currentProbePos - nodeCenter).distance;
+      final double dist = math.min(distToAnchor, distToNode);
+
+      if (dist < 64.r) {
         activeHoverIndex = i;
         break;
       }
@@ -147,6 +164,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   }
 
   void _onProbeDragEnd(int correctIndex, RoleplayQuest quest) {
+    _isDraggingProbe.value = false;
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     if (_hoveredIndex.value != null) {
@@ -196,11 +214,13 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
 
   @override
   void onQuestionReset() {
+    _isDraggingProbe.value = false;
     _probeOffset.value = Offset.zero;
-
     _hoveredIndex.value = null;
-
     _selectedIndex.value = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -211,6 +231,12 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     return BlocConsumer<RoleplayBloc, RoleplayState>(
       listenWhen: roleplayListenWhen,
       listener: onRoleplayStateChanged,
+      buildWhen: (previous, current) =>
+          current is RoleplayInitial ||
+          current is RoleplayLoading ||
+          current is RoleplayLoaded ||
+          current is RoleplayGameOver ||
+          current is RoleplayGameComplete,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? [];
@@ -237,8 +263,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              onHint: () {
+                hapticService.selection();
+              },
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -256,10 +283,21 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
+                          child: ListenableBuilder(
+                            listenable: Listenable.merge([
+                              _isDraggingProbe,
+                              isFirstStagePassedNotifier,
+                              isAnsweredNotifier,
+                            ]),
+                            builder: (context, _) {
+                              return CustomScrollView(
+                                controller: _scrollController,
+                                physics:
+                                    (!isFirstStagePassedNotifier.value &&
+                                            !isAnsweredNotifier.value)
+                                        ? const NeverScrollableScrollPhysics()
+                                        : const BouncingScrollPhysics(),
+                                slivers: [
                               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverToBoxAdapter(
                                 child: Padding(
@@ -269,6 +307,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                   child: Column(
                                     children: [
                                       BranchingDialogueInstruction(
+                                        key: const Key(
+                                          'branching_dialogue_instruction',
+                                        ),
                                         primaryColor: theme.primaryColor,
                                         instruction:
                                             InstructionHelper.getInstruction(
@@ -286,6 +327,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                             bottom: 12.h,
                                           ),
                                           child: BranchingDialogueRelationshipMeter(
+                                            key: const Key(
+                                              'branching_dialogue_relationship_meter',
+                                            ),
                                             consequenceScore:
                                                 quest
                                                     .consequenceScores![_selectedIndex
@@ -295,6 +339,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                           ),
                                         ),
                                       BranchingDialoguePersonaConsole(
+                                        key: const Key(
+                                          'branching_dialogue_persona_console',
+                                        ),
                                         quest: quest,
                                         color: theme.primaryColor,
                                         isDark: isDark,
@@ -319,6 +366,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                       ]),
                                       builder: (context, _) {
                                         return BranchingDialogueConsoleBoard(
+                                          key: const Key(
+                                            'branching_dialogue_console_board',
+                                          ),
                                           options: options,
                                           consequencePreviews:
                                               quest.consequencePreviews ?? [],
@@ -358,6 +408,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                       bottom: 16.h,
                                     ),
                                     child: SpeakToConfirmOverlay(
+                                      key: const Key(
+                                        'branching_dialogue_speak_overlay',
+                                      ),
                                       expectedText:
                                           options[_selectedIndex.value!],
                                       primaryColor: theme.primaryColor,
@@ -386,8 +439,10 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                 ),
                               ),
                             ],
-                          ),
-                        );
+                          );
+                        },
+                      ),
+                    );
                       },
                     ),
             );
