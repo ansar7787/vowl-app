@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -82,8 +83,82 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    Widget chipsWrap = Wrap(
+      key: const Key('emergency_hub_word_chips_wrap'),
+      spacing: 8.w,
+      runSpacing: 8.h,
+      alignment: WrapAlignment.center,
+      children: List.generate(_shuffledWords.length, (index) {
+        final isSelected = _selectedIndices.contains(index);
+        return Semantics(
+          button: true,
+          label: _shuffledWords[index],
+          hint: isSelected
+              ? "Double tap to remove word from terminal"
+              : "Double tap to add word to terminal",
+          child: GestureDetector(
+            key: Key('emergency_hub_word_chip_$index'),
+            onTap: () => _toggleWord(index),
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.w,
+                vertical: 10.h,
+              ),
+              decoration: BoxDecoration(
+                color: isSelected
+                    ? (widget.isDark ? Colors.white12 : Colors.black12)
+                    : (widget.isDark
+                          ? Colors.grey.shade800
+                          : Colors.white),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: isSelected
+                      ? Colors.transparent
+                      : (widget.isDark ? Colors.white24 : Colors.black26),
+                ),
+                boxShadow: isSelected
+                    ? []
+                    : [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.05),
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+              ),
+              child: Text(
+                _shuffledWords[index],
+                key: Key('emergency_hub_word_chip_text_$index'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: isSelected
+                      ? (widget.isDark ? Colors.white38 : Colors.black38)
+                      : (widget.isDark ? Colors.white : Colors.black87),
+                  letterSpacing: 1.0,
+                ),
+              ),
+            ),
+          ),
+        );
+      }),
+    );
+
+    if (!reduceMotion) {
+      chipsWrap = chipsWrap.animate().fadeIn(
+        duration: 400.ms,
+        curve: Curves.easeOut,
+      );
+    }
+
     return Container(
-      width: 1.sw,
+      width: double.infinity,
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
         color: widget.isDark
@@ -122,6 +197,7 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
           SizedBox(height: 12.h),
 
           TextField(
+            key: const Key('emergency_hub_terminal_text_field'),
             controller: widget.controller,
             readOnly:
                 true, // Prevent manual typing to force using the jumbled chips
@@ -163,6 +239,7 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
               ),
               suffixIcon: _selectedIndices.isNotEmpty
                   ? IconButton(
+                      key: const Key('emergency_hub_backspace_button'),
                       icon: Icon(
                         Icons.backspace_rounded,
                         color: Colors.grey,
@@ -179,65 +256,7 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
           ),
 
           SizedBox(height: 16.h),
-          Wrap(
-            spacing: 8.w,
-            runSpacing: 8.h,
-            alignment: WrapAlignment.center,
-            children: List.generate(_shuffledWords.length, (index) {
-              final isSelected = _selectedIndices.contains(index);
-              return Semantics(
-                button: true,
-                label: _shuffledWords[index],
-                hint: isSelected
-                    ? "Double tap to remove word from terminal"
-                    : "Double tap to add word to terminal",
-                child: GestureDetector(
-                  onTap: () => _toggleWord(index),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 200),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 10.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: isSelected
-                          ? (widget.isDark ? Colors.white12 : Colors.black12)
-                          : (widget.isDark
-                                ? Colors.grey.shade800
-                                : Colors.white),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: isSelected
-                            ? Colors.transparent
-                            : (widget.isDark ? Colors.white24 : Colors.black26),
-                      ),
-                      boxShadow: isSelected
-                          ? []
-                          : [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.05),
-                                blurRadius: 4,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
-                    ),
-                    child: Text(
-                      _shuffledWords[index],
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isSelected
-                            ? (widget.isDark ? Colors.white38 : Colors.black38)
-                            : (widget.isDark ? Colors.white : Colors.black87),
-                        letterSpacing: 1.0,
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            }),
-          ).animate().fadeIn(duration: 400.ms, curve: Curves.easeOut),
+          chipsWrap,
         ],
       ),
     );

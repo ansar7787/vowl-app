@@ -38,7 +38,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
     final bool isValveAligned = rotation >= 0.85;
 
     return Container(
-      width: 1.sw,
+      width: double.infinity,
       padding: EdgeInsets.symmetric(vertical: 24.h),
       decoration: BoxDecoration(
         color: isDark
@@ -59,6 +59,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
             button: true,
             onTap: onValveAccessibleAlign,
             child: GestureDetector(
+              key: const Key('emergency_hub_valve_gesture'),
               onPanUpdate: (details) => onValveDragged(details, center),
               child: Container(
                 width: size,
@@ -92,6 +93,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
                     Transform.rotate(
                       angle: rotation * 2 * math.pi,
                       child: Container(
+                        key: const Key('emergency_hub_valve_wheel_knob'),
                         width: 120.r,
                         height: 120.r,
                         decoration: BoxDecoration(
@@ -162,7 +164,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
                                   isValveAligned
                                       ? Icons.lock_open_rounded
                                       : Icons.lock_rounded,
-                                  key: ValueKey<bool>(isValveAligned),
+                                  key: const Key('emergency_hub_valve_lock_icon'),
                                   color: Colors.white,
                                   size: 24.r,
                                 ),
@@ -192,8 +194,10 @@ class EmergencyHubValveChamber extends StatelessWidget {
           SizedBox(height: 20.h),
 
           // Valve status indicators text
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Wrap(
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 6.w,
             children: [
               Text(
                 "VALVE LEVEL: ",
@@ -205,6 +209,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
                 ),
               ),
               AnimatedDefaultTextStyle(
+                key: const Key('emergency_hub_valve_status_text'),
                 duration: const Duration(milliseconds: 300),
                 style: TextStyle(
                   fontFamily: 'Outfit',
