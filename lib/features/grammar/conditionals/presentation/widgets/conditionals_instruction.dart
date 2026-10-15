@@ -14,7 +14,7 @@ class ConditionalsInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(30.r),
@@ -24,17 +24,19 @@ class ConditionalsInstruction extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.bolt_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
+          SizedBox(width: 8.w),
           Flexible(
             child: Text(
               instruction.toUpperCase(),
               textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,
-                letterSpacing: 1.5,
+                letterSpacing: 1.0,
               ),
             ),
           ),
