@@ -66,6 +66,7 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
     }
 
     return ScaleButton(
+      key: ValueKey('shadowing_option_$index'),
       onTap: isAnswered ? null : () => onSubmitChoice(index, correctIndex),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
