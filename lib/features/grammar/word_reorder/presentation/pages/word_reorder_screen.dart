@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
@@ -44,9 +46,12 @@ class _WordReorderScreenState extends State<WordReorderScreen>
   final ValueNotifier<List<int>> _assembledIndices = ValueNotifier([]);
   final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
+  int? _lastProcessedIndex;
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _availableIndices.dispose();
     _assembledIndices.dispose();
     _pendingTypeSubmit.dispose();
@@ -59,6 +64,31 @@ class _WordReorderScreenState extends State<WordReorderScreen>
   void initState() {
     super.initState();
     initGrammarGame();
+  }
+
+  void _initForQuest(GrammarQuest? quest) {
+    _assembledIndices.value = [];
+    _pendingTypeSubmit.value = false;
+    if (quest?.shuffledWords != null) {
+      _availableIndices.value = List.generate(
+        quest!.shuffledWords!.length,
+        (i) => i,
+      );
+    } else {
+      _availableIndices.value = [];
+    }
+  }
+
+  @override
+  void onGrammarStateChanged(BuildContext context, GrammarState state) {
+    super.onGrammarStateChanged(context, state);
+    if (state is GrammarLoaded) {
+      if (_lastProcessedIndex != state.currentIndex ||
+          (_availableIndices.value.isEmpty && _assembledIndices.value.isEmpty)) {
+        _lastProcessedIndex = state.currentIndex;
+        _initForQuest(state.currentQuestOrNull);
+      }
+    }
   }
 
   void _onWordTap(int index) {
@@ -94,8 +124,9 @@ class _WordReorderScreenState extends State<WordReorderScreen>
       hapticService.success();
       soundService.playCorrect();
       _pendingTypeSubmit.value = true;
-      Future.delayed(const Duration(milliseconds: 100), () {
-        if (_scrollController.hasClients) {
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 100), () {
+        if (mounted && _scrollController.hasClients) {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
             duration: const Duration(milliseconds: 400),
@@ -134,11 +165,10 @@ class _WordReorderScreenState extends State<WordReorderScreen>
 
   @override
   void onQuestionReset() {
-    _availableIndices.value = [];
-
-    _assembledIndices.value = [];
-
-    _pendingTypeSubmit.value = false;
+    _scrollTimer?.cancel();
+    final state = context.read<GrammarBloc>().state;
+    final quest = state is GrammarLoaded ? state.currentQuestOrNull : null;
+    _initForQuest(quest);
   }
 
   @override
@@ -148,7 +178,7 @@ class _WordReorderScreenState extends State<WordReorderScreen>
       _lastKeyboardHeight = keyboardHeight;
       if (keyboardHeight > 0 && _pendingTypeSubmit.value) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          if (_scrollController.hasClients) {
+          if (mounted && _scrollController.hasClients) {
             _scrollController.animateTo(
               _scrollController.position.maxScrollExtent,
               duration: const Duration(milliseconds: 300),
@@ -166,7 +196,14 @@ class _WordReorderScreenState extends State<WordReorderScreen>
       listenWhen: grammarListenWhen,
       listener: onGrammarStateChanged,
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final quest = (state is GrammarLoaded) ? state.currentQuestOrNull : null;
+        if (state is GrammarLoaded &&
+            (_lastProcessedIndex != state.currentIndex ||
+             (_availableIndices.value.isEmpty && _assembledIndices.value.isEmpty))) {
+          _lastProcessedIndex = state.currentIndex;
+          _initForQuest(quest);
+        }
+
         final hintUsed = (state is GrammarLoaded) ? state.hintUsed : false;
         final shuffledWords = quest?.shuffledWords ?? [];
         final correctOrder = quest?.correctOrder ?? [];
@@ -206,6 +243,9 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                       builder: (context, _) {
                         return LayoutBuilder(
                           builder: (context, constraints) {
+                            final maxHeight = constraints.maxHeight;
+                            final isCompact = maxHeight < 700;
+
                             return Stack(
                               children: [
                                 RawScrollbar(
@@ -225,7 +265,7 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                         ),
                                         sliver: SliverList(
                                           delegate: SliverChildListDelegate([
-                                            SizedBox(height: 10.h),
+                                            SizedBox(height: isCompact ? 6.h : 10.h),
                                             Center(
                                               child: WordReorderInstruction(
                                                 primaryColor:
@@ -233,17 +273,18 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                                 instruction: quest.instruction,
                                               ),
                                             ),
-                                            SizedBox(height: 16.h),
+                                            SizedBox(height: isCompact ? 10.h : 16.h),
                                             if (quest.structureType != null)
                                               Container(
+                                                key: const ValueKey('word_target_structure'),
                                                 margin: EdgeInsets.only(
-                                                  bottom: 16.h,
+                                                  bottom: isCompact ? 10.h : 16.h,
                                                   left: 8.w,
                                                   right: 8.w,
                                                 ),
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 16.w,
-                                                  vertical: 12.h,
+                                                  vertical: isCompact ? 8.h : 12.h,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: theme.primaryColor
@@ -268,16 +309,19 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                                       size: 16.sp,
                                                     ),
                                                     SizedBox(width: 8.w),
-                                                    Text(
-                                                      "TARGET STRUCTURE: ${quest.structureType!.toUpperCase()}",
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 12.sp,
-                                                        fontWeight:
-                                                            FontWeight.w800,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        letterSpacing: 1.5,
+                                                    Flexible(
+                                                      child: Text(
+                                                        "TARGET STRUCTURE: ${quest.structureType!.toUpperCase()}",
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: isCompact ? 11.sp : 12.sp,
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                          color:
+                                                              theme.primaryColor,
+                                                          letterSpacing: 1.5,
+                                                        ),
+                                                        overflow: TextOverflow.ellipsis,
                                                       ),
                                                     ),
                                                   ],
@@ -295,7 +339,7 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                                   _pendingTypeSubmit.value,
                                               onWordRemove: _onWordRemove,
                                             ),
-                                            SizedBox(height: 32.h),
+                                            SizedBox(height: isCompact ? 16.h : 32.h),
                                             Wrap(
                                               spacing: 12.w,
                                               runSpacing: 16.h,
@@ -303,6 +347,7 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                               children: _availableIndices.value
                                                   .map((idx) {
                                                     return WordReorderFloatingTile(
+                                                      key: ValueKey('word_tile_$idx'),
                                                       word: shuffledWords[idx],
                                                       index: idx,
                                                       onTap: () =>
@@ -317,7 +362,7 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                                   })
                                                   .toList(),
                                             ),
-                                            SizedBox(height: 32.h),
+                                            SizedBox(height: isCompact ? 16.h : 32.h),
                                             if (!isAnsweredNotifier.value &&
                                                 !_pendingTypeSubmit.value)
                                               WordReorderCheckButton(
@@ -345,6 +390,7 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                               bottom: 24.h,
                                             ),
                                             child: TypeToConfirmOverlay(
+                                              key: const ValueKey('word_type_overlay'),
                                               expectedText:
                                                   quest.sentence ??
                                                   correctOrder

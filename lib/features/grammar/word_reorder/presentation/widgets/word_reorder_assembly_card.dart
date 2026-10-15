@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class WordReorderAssemblyCard extends StatelessWidget {
   final List<int> assembledIndices;
@@ -23,7 +24,10 @@ class WordReorderAssemblyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    final card = Container(
+      key: const ValueKey('word_assembly_card'),
       width: double.infinity,
       constraints: BoxConstraints(minHeight: 120.h),
       padding: EdgeInsets.all(22.r),
@@ -44,7 +48,9 @@ class WordReorderAssemblyCard extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: assembledIndices.isEmpty
               ? [
-                  Text(
+                  Builder(
+                    builder: (context) {
+                      final text = Text(
                         "TAP WORDS TO BUILD SENTENCE",
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -54,13 +60,18 @@ class WordReorderAssemblyCard extends StatelessWidget {
                           letterSpacing: 1.5,
                         ),
                         textAlign: TextAlign.center,
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .shimmer(duration: 2.seconds),
+                      );
+                      if (reduceMotion) return text;
+                      return text
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .shimmer(duration: 2.seconds);
+                    },
+                  ),
                 ]
               : assembledIndices.map((idx) {
                   final word = shuffledWords[idx];
-                  return ScaleButton(
+                  final wordButton = ScaleButton(
+                    key: ValueKey('assembled_word_$idx'),
                     onTap: isAnswered ? null : () => onWordRemove(idx),
                     child: Container(
                       padding: EdgeInsets.symmetric(
@@ -84,10 +95,17 @@ class WordReorderAssemblyCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ).animate().scale(duration: 400.ms, curve: Curves.elasticOut);
+                  );
+                  if (reduceMotion) return wordButton;
+                  return wordButton
+                      .animate()
+                      .scale(duration: 400.ms, curve: Curves.elasticOut);
                 }).toList(),
         ),
       ),
-    ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0);
+    );
+
+    if (reduceMotion) return card;
+    return card.animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0);
   }
 }
