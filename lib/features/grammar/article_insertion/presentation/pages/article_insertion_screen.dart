@@ -14,6 +14,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/widgets/article_insertion_instruction.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/widgets/article_floating_orb.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ArticleInsertionScreen extends StatefulWidget {
   final int level;
@@ -44,6 +45,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
   final ValueNotifier<String?> _selectedArticle = ValueNotifier(null);
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
+  GrammarQuest? _lastQuest;
 
   @override
   void dispose() {
@@ -61,7 +63,10 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
   }
 
   void _onPop(String article, String correctAnswer, GameQuest quest) {
-    if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
+    final bloc = context.read<GrammarBloc>();
+    final isStateAnswered = bloc.state is GrammarLoaded &&
+        (bloc.state as GrammarLoaded).answerStatus.isAnswered;
+    if (isAnsweredNotifier.value || _pendingJigsaw.value || isStateAnswered) return;
 
     hapticService.selection();
     bool isCorrect = article.toLowerCase() == correctAnswer.toLowerCase();
@@ -109,45 +114,49 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
   ) {
     final parts = template.split(RegExp(r'_{3,}'));
     List<InlineSpan> spans = [];
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     for (int i = 0; i < parts.length; i++) {
       spans.add(TextSpan(text: parts[i]));
       if (i < parts.length - 1) {
+        Widget placeholder = Container(
+          margin: EdgeInsets.symmetric(horizontal: 8.w),
+          padding: EdgeInsets.symmetric(
+            horizontal: isCompact ? 8.w : 12.w,
+            vertical: isCompact ? 2.h : 4.h,
+          ),
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: selected != null
+                    ? primaryColor
+                    : (isDark ? Colors.white38 : Colors.black38),
+                width: 2,
+              ),
+            ),
+          ),
+          child: Text(
+            selected == null
+                ? "      "
+                : (selected.toLowerCase() == "(no article)"
+                      ? "Ø"
+                      : selected),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: isCompact ? 18.sp : 22.sp,
+              fontWeight: FontWeight.bold,
+              color: primaryColor,
+            ),
+          ),
+        );
+        if (!reduceMotion) {
+          placeholder = placeholder
+              .animate(target: selected != null ? 1 : 0)
+              .shimmer(duration: 2.seconds);
+        }
         spans.add(
           WidgetSpan(
             alignment: PlaceholderAlignment.middle,
-            child:
-                Container(
-                      margin: EdgeInsets.symmetric(horizontal: 8.w),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: isCompact ? 8.w : 12.w,
-                        vertical: isCompact ? 2.h : 4.h,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: selected != null
-                                ? primaryColor
-                                : (isDark ? Colors.white38 : Colors.black38),
-                            width: 2,
-                          ),
-                        ),
-                      ),
-                      child: Text(
-                        selected == null
-                            ? "      "
-                            : (selected.toLowerCase() == "(no article)"
-                                  ? "Ø"
-                                  : selected),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: isCompact ? 18.sp : 22.sp,
-                          fontWeight: FontWeight.bold,
-                          color: primaryColor,
-                        ),
-                      ),
-                    )
-                    .animate(target: selected != null ? 1 : 0)
-                    .shimmer(duration: 2.seconds),
+            child: placeholder,
           ),
         );
       }
@@ -164,68 +173,75 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
-    return BlocConsumer<GrammarBloc, GrammarState>(
-      listenWhen: grammarListenWhen,
-      listener: onGrammarStateChanged,
-      builder: (context, state) {
-        final quest = (state is GrammarLoaded)
-            ? state.currentQuest as GrammarQuest?
-            : null;
-        final options = quest?.options ?? ["a", "an", "the", "Ø"];
-        final correctAnswer = quest?.correctAnswer ?? "";
+    return MediaQuery(
+      data: mediaQuery.copyWith(
+        textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+      ),
+      child: BlocConsumer<GrammarBloc, GrammarState>(
+        listenWhen: grammarListenWhen,
+        listener: onGrammarStateChanged,
+        builder: (context, state) {
+          if (state is GrammarLoaded) {
+            _lastQuest = state.currentQuest as GrammarQuest?;
+          }
+          final quest = (state is GrammarLoaded)
+              ? (state.currentQuest as GrammarQuest?) ?? _lastQuest
+              : _lastQuest;
+          final options = quest?.options ?? ["a", "an", "the", "Ø"];
+          final correctAnswer = quest?.correctAnswer ?? "";
 
-        return ListenableBuilder(
-          listenable: Listenable.merge([
-            isAnsweredNotifier,
-            isCorrectNotifier,
-            _selectedArticle,
-            showConfettiNotifier,
-            _pendingJigsaw,
-          ]),
-          builder: (context, _) {
-            String cleanTargetSentence = "";
-            if (quest != null) {
-              final sentence = quest.sentence ?? quest.question ?? "";
-              String fullSentence = sentence;
-              if (sentence.contains("___") && _selectedArticle.value != null) {
-                String replaceWith =
-                    _selectedArticle.value!.toLowerCase() == "(no article)"
-                    ? ""
-                    : _selectedArticle.value!;
-                fullSentence = sentence.replaceFirst(
-                  RegExp(r'_{3,}'),
-                  replaceWith,
-                );
+          return ListenableBuilder(
+            listenable: Listenable.merge([
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              _selectedArticle,
+              showConfettiNotifier,
+              _pendingJigsaw,
+            ]),
+            builder: (context, _) {
+              String cleanTargetSentence = "";
+              if (quest != null) {
+                final sentence = quest.sentence ?? quest.question ?? "";
+                String fullSentence = sentence;
+                if (sentence.contains("___") && _selectedArticle.value != null) {
+                  String replaceWith =
+                      _selectedArticle.value!.toLowerCase() == "(no article)"
+                      ? ""
+                      : _selectedArticle.value!;
+                  fullSentence = sentence.replaceFirst(
+                    RegExp(r'_{3,}'),
+                    replaceWith,
+                  );
+                }
+                cleanTargetSentence = fullSentence
+                    .replaceAll(RegExp(r'\s+'), ' ')
+                    .trim();
+                if (cleanTargetSentence.isNotEmpty) {
+                  cleanTargetSentence =
+                      cleanTargetSentence[0].toUpperCase() +
+                      cleanTargetSentence.substring(1);
+                }
               }
-              cleanTargetSentence = fullSentence
-                  .replaceAll(RegExp(r'\s+'), ' ')
-                  .trim();
-              if (cleanTargetSentence.isNotEmpty) {
-                cleanTargetSentence =
-                    cleanTargetSentence[0].toUpperCase() +
-                    cleanTargetSentence.substring(1);
-              }
-            }
 
-            return GrammarBaseLayout(
-              disablePadding: true,
-              gameType: widget.gameType,
-              level: widget.level,
-              isAnswered: isAnsweredNotifier.value,
-              isCorrect: isCorrectNotifier.value,
-              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-              showConfetti: showConfettiNotifier.value,
-              useScrolling: false, // CustomScrollView handles it internally
-              onContinue: () =>
-                  context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
-              child: quest == null
-                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : LayoutBuilder(
+              return GrammarBaseLayout(
+                disablePadding: true,
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
+                isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+                showConfetti: showConfettiNotifier.value,
+                useScrolling: false, // CustomScrollView handles it internally
+                onContinue: () =>
+                    context.read<GrammarBloc>().add(const NextQuestion()),
+                onHint: () {},
+                child: quest == null
+                    ? GameShimmerLoading(primaryColor: theme.primaryColor)
+                    : LayoutBuilder(
                       builder: (context, constraints) {
                         return Stack(
                           children: [
@@ -241,13 +257,11 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: true,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: Builder(
-                                            builder: (context) {
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: constraints.maxHeight,
+                                      child: Builder(
+                                        builder: (context) {
                                               final maxHeight =
                                                   constraints.maxHeight;
                                               final isCompact = maxHeight < 580;
@@ -287,6 +301,18 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                     )
                                                   : 15.0;
 
+                                              final reduceMotion =
+                                                  VowlMotion.shouldReduceMotion(
+                                                    context,
+                                                  );
+                                              final isStateAnswered =
+                                                  (state is GrammarLoaded) &&
+                                                  state.answerStatus.isAnswered;
+                                              final isAlreadyAnswered =
+                                                  isAnsweredNotifier.value ||
+                                                  _pendingJigsaw.value ||
+                                                  isStateAnswered;
+
                                               return Column(
                                                 children: [
                                                   SizedBox(height: gapTop),
@@ -320,43 +346,53 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
 
                                                   if (quest.articleRule !=
                                                       null) ...[
-                                                    Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 16.w,
-                                                            vertical: 6.h,
-                                                          ),
-                                                      decoration: BoxDecoration(
-                                                        color: theme
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: 0.1,
-                                                            ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              12.r,
-                                                            ),
-                                                        border: Border.all(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.3,
+                                                    Builder(
+                                                      builder: (context) {
+                                                        Widget ruleChip = Container(
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal: 16.w,
+                                                                vertical: 6.h,
                                                               ),
-                                                        ),
-                                                      ),
-                                                      child: Text(
-                                                        quest.articleRule!,
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 12.sp,
-                                                          color: theme
-                                                              .primaryColor,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                                      ),
-                                                    ).animate().fadeIn(
-                                                      duration: 400.ms,
+                                                          decoration: BoxDecoration(
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.1,
+                                                                ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  12.r,
+                                                                ),
+                                                            border: Border.all(
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.3,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          child: Text(
+                                                            quest.articleRule!,
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: 12.sp,
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                            ),
+                                                          ),
+                                                        );
+                                                        if (!reduceMotion) {
+                                                          ruleChip = ruleChip
+                                                              .animate()
+                                                              .fadeIn(
+                                                                duration: 400.ms,
+                                                              );
+                                                        }
+                                                        return ruleChip;
+                                                      },
                                                     ),
                                                     SizedBox(
                                                       height: isCompact
@@ -366,7 +402,9 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                   ],
 
                                                   // Context Card
-                                                  Padding(
+                                                  Builder(
+                                                    builder: (context) {
+                                                      Widget card = Padding(
                                                         padding:
                                                             EdgeInsets.symmetric(
                                                               horizontal: 24.w,
@@ -420,7 +458,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                     : Colors
                                                                           .black87,
                                                                 height: 1.5,
-                                                              ),
+                                                             ),
                                                               children: _buildSentenceWithBlank(
                                                                 quest.sentence ??
                                                                     quest
@@ -436,13 +474,21 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                             ),
                                                           ),
                                                         ),
-                                                      )
-                                                      .animate()
-                                                      .fadeIn(duration: 600.ms)
-                                                      .slideY(
-                                                        begin: 0.2,
-                                                        end: 0,
-                                                      ),
+                                                      );
+                                                      if (!reduceMotion) {
+                                                        card = card
+                                                            .animate()
+                                                            .fadeIn(
+                                                              duration: 600.ms,
+                                                            )
+                                                            .slideY(
+                                                              begin: 0.2,
+                                                              end: 0,
+                                                            );
+                                                      }
+                                                      return card;
+                                                    },
+                                                  ),
 
                                                   // Floating Orb Bubble Area
                                                   Expanded(
@@ -476,10 +522,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                   isDark:
                                                                       isDark,
                                                                   isAnswered:
-                                                                      isAnsweredNotifier
-                                                                          .value ||
-                                                                      _pendingJigsaw
-                                                                          .value,
+                                                                      isAlreadyAnswered,
                                                                   isSelected:
                                                                       _selectedArticle
                                                                           .value ==
@@ -524,10 +567,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                   isDark:
                                                                       isDark,
                                                                   isAnswered:
-                                                                      isAnsweredNotifier
-                                                                          .value ||
-                                                                      _pendingJigsaw
-                                                                          .value,
+                                                                      isAlreadyAnswered,
                                                                   isSelected:
                                                                       _selectedArticle
                                                                           .value ==
@@ -582,10 +622,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                     isDark:
                                                                         isDark,
                                                                     isAnswered:
-                                                                        isAnsweredNotifier
-                                                                            .value ||
-                                                                        _pendingJigsaw
-                                                                            .value,
+                                                                        isAlreadyAnswered,
                                                                     isSelected:
                                                                         _selectedArticle
                                                                             .value ==
@@ -630,10 +667,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                     isDark:
                                                                         isDark,
                                                                     isAnswered:
-                                                                        isAnsweredNotifier
-                                                                            .value ||
-                                                                        _pendingJigsaw
-                                                                            .value,
+                                                                        isAlreadyAnswered,
                                                                     isSelected:
                                                                         _selectedArticle
                                                                             .value ==
@@ -665,9 +699,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                             },
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  ),
+                                      ),
                                   if (_pendingJigsaw.value &&
                                       !isAnsweredNotifier.value &&
                                       cleanTargetSentence.isNotEmpty)
@@ -709,6 +741,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
           },
         );
       },
+    ),
     );
   }
 }

@@ -2,6 +2,8 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ArticleFloatingOrb extends StatefulWidget {
   final String article;
@@ -13,7 +15,6 @@ class ArticleFloatingOrb extends StatefulWidget {
   final bool isSelected;
   final bool isCorrectAnswer;
   final bool isFinalFailure;
-
   final bool isCompact;
 
   const ArticleFloatingOrb({
@@ -50,9 +51,23 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final disableAnimations = MediaQuery.of(context).disableAnimations;
-    if (disableAnimations) {
-      _driftController.stop();
+    _updateDrift();
+  }
+
+  @override
+  void didUpdateWidget(covariant ArticleFloatingOrb oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.isAnswered != oldWidget.isAnswered) {
+      _updateDrift();
+    }
+  }
+
+  void _updateDrift() {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    if (reduceMotion || widget.isAnswered) {
+      if (_driftController.isAnimating) {
+        _driftController.stop();
+      }
     } else if (!_driftController.isAnimating) {
       _driftController.repeat(reverse: true);
     }
@@ -67,7 +82,7 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final disableAnimations = MediaQuery.of(context).disableAnimations;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     Color textColor;
     Color borderColor;
@@ -149,11 +164,49 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
       }
     }
 
+    Widget orbContent = Container(
+      width: widget.isCompact ? 65.r : 90.r,
+      height: widget.isCompact ? 65.r : 90.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: RadialGradient(
+          center: const Alignment(-0.3, -0.3),
+          colors: gradientColors,
+        ),
+        border: Border.all(color: borderColor, width: 1.5),
+        boxShadow: shadows,
+      ),
+      child: Center(
+        child: Text(
+          widget.article.toLowerCase() == "(no article)"
+              ? "Ø"
+              : widget.article.toUpperCase(),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: widget.isCompact ? 14.sp : 18.sp,
+            fontWeight: FontWeight.w900,
+            color: textColor,
+          ),
+        ),
+      ),
+    );
+
+    if (!reduceMotion && !widget.isAnswered) {
+      orbContent = orbContent
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.08, 1.08),
+            duration: 2500.ms,
+            curve: Curves.easeInOutSine,
+          );
+    }
+
     return AnimatedBuilder(
       animation: _driftController,
       builder: (context, child) {
         return Transform.translate(
-          offset: disableAnimations
+          offset: (reduceMotion || widget.isAnswered)
               ? Offset.zero
               : Offset(
                   12.w * (1 - _driftController.value),
@@ -161,48 +214,10 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
                 ),
           child: Opacity(
             opacity: opacity,
-            child: GestureDetector(
-              onTap: widget.onTap,
-              child:
-                  Container(
-                        width: widget.isCompact ? 65.r : 90.r,
-                        height: widget.isCompact ? 65.r : 90.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: RadialGradient(
-                            center: const Alignment(-0.3, -0.3),
-                            colors: gradientColors,
-                          ),
-                          border: Border.all(color: borderColor, width: 1.5),
-                          boxShadow: shadows,
-                        ),
-                        child: Center(
-                          child: Text(
-                            widget.article.toLowerCase() == "(no article)"
-                                ? "Ø"
-                                : widget.article.toUpperCase(),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: widget.isCompact ? 14.sp : 18.sp,
-                              fontWeight: FontWeight.w900,
-                              color: textColor,
-                            ),
-                          ),
-                        ),
-                      )
-                      .animate(
-                        onPlay: disableAnimations
-                            ? null
-                            : (c) => c.repeat(reverse: true),
-                      )
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: disableAnimations
-                            ? const Offset(1, 1)
-                            : const Offset(1.08, 1.08),
-                        duration: 2500.ms,
-                        curve: Curves.easeInOutSine,
-                      ),
+            child: ScaleButton(
+              key: ValueKey('article_orb_${widget.index}'),
+              onTap: widget.isAnswered ? null : widget.onTap,
+              child: orbContent,
             ),
           ),
         );

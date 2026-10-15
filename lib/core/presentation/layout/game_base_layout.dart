@@ -90,6 +90,12 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
   }
 
   @override
+  void didUpdateWidget(covariant GameBaseLayout<B, S> oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _updateState();
+  }
+
+  @override
   void dispose() {
     _stateHash.dispose();
     _nudgeTimer?.cancel();
