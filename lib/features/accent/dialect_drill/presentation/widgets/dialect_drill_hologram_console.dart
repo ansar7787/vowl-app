@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dialect_drill_transmission_tower.dart';
 import 'dialect_drill_data_probe_pin.dart';
 
@@ -57,19 +58,36 @@ class _DialectDrillHologramConsoleState
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return ValueListenableBuilder<int?>(
       valueListenable: _hoveredTowerIndex,
       builder: (context, hoveredTowerIndex, child) {
-        return Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ScaleButton(
-                  onTap: widget.onPlayTargetAudio,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 32.w,
-                      vertical: 16.h,
-                    ),
+        Widget dragHint = Text(
+          "DRAG PIN OR TAP TO SELECT",
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 10.sp,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2,
+            color: widget.color.withValues(alpha: 0.6),
+          ),
+        );
+        if (!reduceMotion) {
+          dragHint = dragHint.animate().fadeIn().slideY(begin: 0.2);
+        }
+
+        Widget content = Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ScaleButton(
+              key: const ValueKey('dialect_drill_play_audio'),
+              onTap: widget.onPlayTargetAudio,
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 32.w,
+                  vertical: 16.h,
+                ),
                     decoration: BoxDecoration(
                       color: widget.color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20.r),
@@ -119,6 +137,7 @@ class _DialectDrillHologramConsoleState
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Draggable<int>(
+                        key: const ValueKey('dialect_probe_pin'),
                         data: 0,
                         onDragStarted: () => _hapticService.selection(),
                         onDraggableCanceled: (_, _) => _hapticService.error(),
@@ -148,30 +167,28 @@ class _DialectDrillHologramConsoleState
                         ),
                       ),
                       SizedBox(height: 12.h),
-                      Text(
-                        "DRAG PIN OR TAP TO SELECT",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2,
-                          color: widget.color.withValues(alpha: 0.6),
-                        ),
-                      ).animate().fadeIn().slideY(begin: 0.2),
+                      dragHint,
                     ],
                   ),
                 ],
               ],
-            )
-            .animate()
-            .fadeIn(duration: 400.ms)
-            .scale(begin: const Offset(0.95, 0.95));
+            );
+
+        if (!reduceMotion) {
+          content = content
+              .animate()
+              .fadeIn(duration: 400.ms)
+              .scale(begin: const Offset(0.95, 0.95));
+        }
+
+        return content;
       },
     );
   }
 
   Widget _buildDragTarget(int index) {
     return GestureDetector(
+      key: ValueKey('dialect_tower_$index'),
       onTap: () {
         if (!widget.isAnswered) {
           _hapticService.selection();

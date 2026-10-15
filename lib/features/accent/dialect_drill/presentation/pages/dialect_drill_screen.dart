@@ -106,30 +106,39 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      _scrollToBottom();
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
+    }
+  }
+
+  @override
+  void onQuestionReset() {
+    _shuffledOptions = null;
+    _shuffledCorrectIndex = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
     }
   }
 
@@ -142,6 +151,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
         final AccentQuest? originalQuest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
             : _lastQuest;
@@ -192,12 +204,14 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
                 showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
                     : LayoutBuilder(
                         builder: (context, constraints) {
+                          final bool isCompact = constraints.maxHeight < 580;
+
                           return RawScrollbar(
                             controller: _scrollController,
                             thumbColor: theme.primaryColor.withValues(
@@ -223,7 +237,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
                                         Padding(
                                           padding: EdgeInsets.symmetric(
                                             horizontal: 16.w,
-                                            vertical: 24.h,
+                                            vertical: isCompact ? 12.h : 24.h,
                                           ),
                                           child: IgnorePointer(
                                             ignoring: isFirstStagePassedNotifier
@@ -247,7 +261,11 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
                                                     ),
                                                     if (quest.dialectRegion !=
                                                         null) ...[
-                                                      SizedBox(height: 16.h),
+                                                      SizedBox(
+                                                        height: isCompact
+                                                            ? 10.h
+                                                            : 16.h,
+                                                      ),
                                                       DialectDrillRegionMap(
                                                         region: quest
                                                             .dialectRegion!,
@@ -256,7 +274,11 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
                                                         isDark: isDark,
                                                       ),
                                                     ],
-                                                    SizedBox(height: 24.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 14.h
+                                                          : 24.h,
+                                                    ),
                                                     DialectDrillHologramConsole(
                                                       quest: quest,
                                                       color: theme.primaryColor,

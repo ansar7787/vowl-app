@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import 'package:vowl/core/theme/vowl_motion.dart';
+
 class DialectDrillTransmissionTower extends StatelessWidget {
   final int index;
   final String label;
@@ -30,6 +32,8 @@ class DialectDrillTransmissionTower extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     Color towerColor = color;
     if (isAnswered && hoveredTowerIndex == index) {
       towerColor = (isCorrect ?? false)
@@ -44,25 +48,31 @@ class DialectDrillTransmissionTower extends StatelessWidget {
     String displayLabel = label.replaceAll(RegExp(r'\(.*\)'), '').trim();
     IconData regionIcon = Icons.record_voice_over_rounded;
 
+    Widget pulseWidget = Container(
+      width: 140.w,
+      height: 140.w,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: towerColor.withValues(alpha: 0.1),
+      ),
+    );
+
+    if (!reduceMotion) {
+      pulseWidget = pulseWidget
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.1, 1.1),
+            duration: 1.seconds,
+          );
+    }
+
     return Stack(
       alignment: Alignment.center,
       clipBehavior: Clip.none,
       children: [
         if (isHovered || (isAnswered && hoveredTowerIndex == index))
-          Container(
-                width: 140.w,
-                height: 140.w,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: towerColor.withValues(alpha: 0.1),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(0.8, 0.8),
-                end: const Offset(1.1, 1.1),
-                duration: 1.seconds,
-              ),
+          pulseWidget,
 
         Container(
           width: 140.w,
