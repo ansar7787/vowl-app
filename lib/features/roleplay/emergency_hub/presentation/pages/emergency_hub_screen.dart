@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
@@ -55,8 +57,20 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   ); // Valve rotation progress (0.0 to 1.0)
   final ScrollController _scrollController = ScrollController();
 
+  Timer? _scrollTimer;
+
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 150), () {
+    final reduceMotion =
+        MediaQuery.maybeDisableAnimationsOf(context) ?? false ||
+        VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion) {
+      if (_scrollController.hasClients) {
+        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      }
+      return;
+    }
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
       if (!mounted) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
@@ -85,7 +99,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_pulseController.isAnimating) _pulseController.stop();
     } else {
@@ -95,6 +111,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _pulseController.dispose();
     _codeController.dispose();
     _rotation.dispose();
@@ -172,6 +189,11 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   @override
   void onQuestionReset() {
     _rotation.value = 0.0;
+    _lastHapticProgress = 0.0;
+    _codeController.clear();
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -208,8 +230,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              onHint: () {
+                hapticService.selection();
+              },
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(
@@ -243,6 +266,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                         children: [
                                           // Critical dispatcher prompt telex
                                           EmergencyHubTelexCard(
+                                            key: const Key('emergency_hub_telex_card'),
                                             instruction:
                                                 InstructionHelper.getInstruction(
                                                   quest,
@@ -259,6 +283,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
                                           // Retro terminal input text field
                                           EmergencyHubTerminalInput(
+                                            key: const Key('emergency_hub_terminal_input'),
                                             controller: _codeController,
                                             correctAnswer:
                                                 quest.correctAnswer ?? "",
@@ -271,6 +296,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
                                           // Mechanical safety valve chamber
                                           EmergencyHubValveChamber(
+                                            key: const Key('emergency_hub_valve_chamber'),
                                             correctAnswer:
                                                 quest.correctAnswer ?? "",
                                             inputText: _codeController.text,
@@ -292,7 +318,11 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                               builder: (context) {
                                                 final bool isValveAligned =
                                                     _rotation.value >= 0.85;
-                                                return ScaleButton(
+                                                final reduceMotion =
+                                                    MediaQuery.disableAnimationsOf(context) ||
+                                                    VowlMotion.lowAnimationModeOverride.value;
+                                                Widget launchBtn = ScaleButton(
+                                                  key: const Key('emergency_hub_launch_button'),
                                                   onTap: isValveAligned
                                                       ? () => _submitCode(
                                                           _codeController.text,
@@ -386,9 +416,14 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                                       ],
                                                     ),
                                                   ),
-                                                ).animate().fadeIn(
-                                                  duration: 300.ms,
                                                 );
+
+                                                if (!reduceMotion) {
+                                                  launchBtn = launchBtn.animate().fadeIn(
+                                                    duration: 300.ms,
+                                                  );
+                                                }
+                                                return launchBtn;
                                               },
                                             ),
 

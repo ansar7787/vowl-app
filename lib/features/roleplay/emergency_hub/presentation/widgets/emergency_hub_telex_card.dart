@@ -3,6 +3,7 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class EmergencyHubTelexCard extends StatelessWidget {
   final String instruction;
@@ -21,61 +22,74 @@ class EmergencyHubTelexCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    Widget iconWidget = Container(
+      key: const Key('emergency_hub_telex_warning_icon'),
+      padding: EdgeInsets.all(8.r),
+      decoration: BoxDecoration(
+        color: tokens.gameIncorrect,
+        shape: BoxShape.circle,
+      ),
+      child: Icon(
+        Icons.warning_amber_rounded,
+        color: isDark ? AppColors.deepDark : Colors.white,
+        size: 20.r,
+      ),
+    );
+
+    if (!reduceMotion) {
+      iconWidget = iconWidget
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.1, 1.1),
+            duration: 1.2.seconds,
+            curve: Curves.easeInOut,
+          );
+    }
+
+    Widget broadcastText = Text(
+      "INCOMING BROADCAST",
+      key: const Key('emergency_hub_telex_broadcast_title'),
+      style: TextStyle(
+        fontFamily: 'Outfit',
+        fontSize: 12.sp,
+        color: tokens.gameIncorrect,
+        letterSpacing: 2.0,
+        fontWeight: FontWeight.w800,
+      ),
+      softWrap: true,
+    );
+
+    if (!reduceMotion) {
+      broadcastText = broadcastText
+          .animate(onPlay: (c) => c.repeat())
+          .shimmer(duration: 2.seconds);
+    }
+
     return Container(
-      width: 1.sw,
+      width: double.infinity,
       padding: EdgeInsets.all(22.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(
-          16.r,
-        ), // More utilitarian border radius
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: tokens.gameIncorrect, // Solid border, no alpha, flat design
+          color: tokens.gameIncorrect,
           width: 2.0,
         ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min, // Allow it to shrink wrap
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
             children: [
-              Container(
-                    padding: EdgeInsets.all(8.r),
-                    decoration: BoxDecoration(
-                      color: tokens.gameIncorrect,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.warning_amber_rounded,
-                      color: isDark ? AppColors.deepDark : Colors.white,
-                      size: 20.r,
-                    ),
-                  )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.1, 1.1),
-                    duration: 1.2.seconds,
-                    curve: Curves.easeInOut,
-                  ),
+              iconWidget,
               SizedBox(width: 10.w),
-              Expanded(
-                child:
-                    Text(
-                          "INCOMING BROADCAST",
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            color: tokens.gameIncorrect,
-                            letterSpacing: 2.0,
-                            fontWeight: FontWeight.w800,
-                          ),
-                          softWrap: true,
-                        )
-                        .animate(onPlay: (c) => c.repeat())
-                        .shimmer(duration: 2.seconds),
-              ),
+              Expanded(child: broadcastText),
             ],
           ),
           SizedBox(height: 16.h),
@@ -83,6 +97,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
           // Instruction Field (First)
           Text(
             instruction,
+            key: const Key('emergency_hub_telex_instruction_text'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
@@ -90,7 +105,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
               color: isDark ? Colors.white70 : Colors.black87,
               height: 1.3,
             ),
-            softWrap: true, // Never overflow, wrap to next line
+            softWrap: true,
           ),
           SizedBox(height: 12.h),
 
@@ -98,6 +113,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
           if (dispatcherQuestion.isNotEmpty)
             Text(
               dispatcherQuestion,
+              key: const Key('emergency_hub_telex_question_text'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
@@ -105,7 +121,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
                 color: isDark ? Colors.white : Colors.black,
                 height: 1.4,
               ),
-              softWrap: true, // Never overflow, wrap to next line
+              softWrap: true,
             ),
 
           SizedBox(height: 20.h),
@@ -119,6 +135,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
             children: [
               Text(
                 "URGENCY LEVEL",
+                key: const Key('emergency_hub_telex_urgency_label'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
@@ -134,6 +151,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
                     final isActive = index < urgencyLevel;
                     return Expanded(
                       child: Container(
+                        key: Key('emergency_hub_urgency_bar_$index'),
                         height: 8.h,
                         margin: EdgeInsets.symmetric(horizontal: 2.w),
                         decoration: BoxDecoration(
@@ -144,9 +162,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
                                           ? Colors.orange
                                           : Colors.yellow))
                               : (isDark ? Colors.white10 : Colors.black12),
-                          borderRadius: BorderRadius.circular(
-                            2.r,
-                          ), // Sharper, utilitarian
+                          borderRadius: BorderRadius.circular(2.r),
                         ),
                       ),
                     );
