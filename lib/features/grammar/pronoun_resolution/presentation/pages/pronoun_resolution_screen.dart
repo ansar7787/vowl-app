@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
@@ -70,6 +71,8 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
     GameQuest quest,
   ) {
     if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
+    final blocState = context.read<GrammarBloc>().state;
+    if (blocState is GrammarLoaded && blocState.answerStatus.isAnswered) return;
 
     bool isCorrect = nodeIndex == correctIndex;
 
@@ -97,8 +100,8 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
       _targetIndex.value = nodeIndex;
       String? userAnswer =
           (quest.options != null && nodeIndex < quest.options!.length)
-          ? quest.options![nodeIndex]
-          : null;
+              ? quest.options![nodeIndex]
+              : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
@@ -111,10 +114,10 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
     } else {
       String? userAnswer =
           (_targetIndex.value != -1 &&
-              quest.options != null &&
-              _targetIndex.value < quest.options!.length)
-          ? quest.options![_targetIndex.value]
-          : null;
+                  quest.options != null &&
+                  _targetIndex.value < quest.options!.length)
+              ? quest.options![_targetIndex.value]
+              : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
@@ -122,9 +125,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
   @override
   void onQuestionReset() {
     _rotation.value = 0.0;
-
     _targetIndex.value = -1;
-
     _pendingJigsaw.value = false;
   }
 
@@ -171,12 +172,10 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
               isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
-              useScrolling:
-                  false, // Stack needs finite space to anchor to bottom
+              useScrolling: false,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
@@ -211,16 +210,19 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
 
                                         final double gapUnit =
                                             remainingHeight > 0
-                                            ? remainingHeight / 5
-                                            : 0;
+                                                ? remainingHeight / 5
+                                                : 0;
                                         final double gapTop =
                                             remainingHeight > 0
-                                            ? (gapUnit * 1).clamp(4.0, 15.0)
-                                            : 4.0;
+                                                ? (gapUnit * 1).clamp(4.0, 15.0)
+                                                : 4.0;
                                         final double gapMiddle =
                                             remainingHeight > 0
-                                            ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                                            : 6.0;
+                                                ? (gapUnit * 1.5).clamp(
+                                                    6.0,
+                                                    20.0,
+                                                  )
+                                                : 6.0;
 
                                         return Column(
                                           children: [
@@ -232,9 +234,9 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
                                                       fit: BoxFit.scaleDown,
                                                       child:
                                                           PronounResolutionInstruction(
-                                                            primaryColor: theme
-                                                                .primaryColor,
-                                                          ),
+                                                        primaryColor:
+                                                            theme.primaryColor,
+                                                      ),
                                                     ),
                                                   )
                                                 : PronounResolutionInstruction(
@@ -245,80 +247,116 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
 
                                             if (quest.referentHighlight !=
                                                 null) ...[
-                                              Container(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: 8.h,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  color: theme.primaryColor
-                                                      .withValues(alpha: 0.1),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
+                                              Builder(
+                                                builder: (context) {
+                                                  final reduceMotion =
+                                                      VowlMotion.shouldReduceMotion(
+                                                    context,
+                                                  );
+                                                  final ruleBox = Container(
+                                                    key: const ValueKey(
+                                                      'grammar_rule_box',
+                                                    ),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                      horizontal: 16.w,
+                                                      vertical: 8.h,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: theme.primaryColor
+                                                          .withValues(
+                                                              alpha: 0.1),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
                                                         16.r,
                                                       ),
-                                                  border: Border.all(
-                                                    color: theme.primaryColor
-                                                        .withValues(alpha: 0.3),
-                                                  ),
-                                                ),
-                                                child: Column(
-                                                  children: [
-                                                    Text(
-                                                      quest.referentHighlight
-                                                                  ?.toUpperCase() ==
-                                                              "TARGET NOUN"
-                                                          ? "FIND THE MATCH"
-                                                          : "REFERENT: ${quest.referentHighlight!.toUpperCase()}",
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 12.sp,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        letterSpacing: 1.2,
+                                                      border: Border.all(
+                                                        color: theme.primaryColor
+                                                            .withValues(
+                                                                alpha: 0.3),
                                                       ),
                                                     ),
-                                                    SizedBox(height: 4.h),
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
+                                                    child: Column(
                                                       children: [
                                                         Text(
-                                                          "Pronoun",
+                                                          quest.referentHighlight
+                                                                      ?.toUpperCase() ==
+                                                                  "TARGET NOUN"
+                                                              ? "FIND THE MATCH"
+                                                              : "REFERENT: ${quest.referentHighlight!.toUpperCase()}",
                                                           style: TextStyle(
-                                                            fontSize: 10.sp,
-                                                            color: theme
-                                                                .primaryColor
-                                                                .withValues(
-                                                                  alpha: 0.7,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                        Icon(
-                                                          Icons
-                                                              .arrow_forward_rounded,
-                                                          color: theme
-                                                              .primaryColor,
-                                                          size: 16.sp,
-                                                        ),
-                                                        Text(
-                                                          "Matching Word",
-                                                          style: TextStyle(
-                                                            fontSize: 10.sp,
-                                                            color: theme
-                                                                .primaryColor,
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: 12.sp,
+                                                            color:
+                                                                theme.primaryColor,
                                                             fontWeight:
                                                                 FontWeight.bold,
+                                                            letterSpacing: 1.2,
                                                           ),
                                                         ),
+                                                        SizedBox(height: 4.h),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          children: [
+                                                            Text(
+                                                              "Pronoun",
+                                                              style: TextStyle(
+                                                                fontSize: 10.sp,
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                  alpha: 0.7,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Icon(
+                                                              Icons
+                                                                  .arrow_forward_rounded,
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              size: 16.sp,
+                                                            ),
+                                                            Text(
+                                                              "Matching Word",
+                                                              style: TextStyle(
+                                                                fontSize: 10.sp,
+                                                                color: theme
+                                                                    .primaryColor,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        if (state is GrammarLoaded &&
+                                                            state.hintUsed &&
+                                                            quest.hint != null) ...[
+                                                          SizedBox(height: 6.h),
+                                                          Text(
+                                                            quest.hint!,
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: 11.sp,
+                                                              color: theme.primaryColor,
+                                                              fontStyle: FontStyle.italic,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ],
                                                     ),
-                                                  ],
-                                                ),
-                                              ).animate().fadeIn(
-                                                duration: 400.ms,
+                                                  );
+                                                  if (reduceMotion) {
+                                                    return ruleBox;
+                                                  }
+                                                  return ruleBox
+                                                      .animate()
+                                                      .fadeIn(
+                                                        duration: 400.ms,
+                                                      );
+                                                },
                                               ),
                                               SizedBox(
                                                 height: isCompact ? 12.h : 20.h,
@@ -326,11 +364,20 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
                                             ],
 
                                             // Context Card
-                                            Padding(
+                                            Builder(
+                                              builder: (context) {
+                                                final reduceMotion =
+                                                    VowlMotion.shouldReduceMotion(
+                                                  context,
+                                                );
+                                                final contextCard = Padding(
                                                   padding: EdgeInsets.symmetric(
                                                     horizontal: 24.w,
                                                   ),
                                                   child: Container(
+                                                    key: const ValueKey(
+                                                      'pronoun_context_card',
+                                                    ),
                                                     width: double.infinity,
                                                     padding: EdgeInsets.all(
                                                       isCompact ? 14.r : 22.r,
@@ -338,25 +385,25 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
                                                     decoration: BoxDecoration(
                                                       color: isDark
                                                           ? Colors.white
-                                                                .withValues(
-                                                                  alpha: 0.05,
-                                                                )
+                                                              .withValues(
+                                                              alpha: 0.05,
+                                                            )
                                                           : Colors.black
-                                                                .withValues(
-                                                                  alpha: 0.03,
-                                                                ),
+                                                              .withValues(
+                                                              alpha: 0.03,
+                                                            ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                            isCompact
-                                                                ? 18.r
-                                                                : 28.r,
-                                                          ),
+                                                        isCompact
+                                                            ? 18.r
+                                                            : 28.r,
+                                                      ),
                                                       border: Border.all(
                                                         color: theme
                                                             .primaryColor
                                                             .withValues(
-                                                              alpha: 0.15,
-                                                            ),
+                                                          alpha: 0.15,
+                                                        ),
                                                         width: 1.5,
                                                       ),
                                                     ),
@@ -378,32 +425,31 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
                                                       ),
                                                     ),
                                                   ),
-                                                )
-                                                .animate()
-                                                .fadeIn(duration: 600.ms)
-                                                .slideY(begin: 0.2, end: 0),
-
-                                            // Result
+                                                );
+                                                if (reduceMotion) {
+                                                  return contextCard;
+                                                }
+                                                return contextCard
+                                                    .animate()
+                                                    .fadeIn(duration: 600.ms)
+                                                    .slideY(begin: 0.2, end: 0);
+                                              },
+                                            ),
                                           ],
                                         );
                                       },
                                     ),
                                   ),
-                                  SliverFillRemaining(
-                                    hasScrollBody: false,
+                                  SliverToBoxAdapter(
                                     child: Builder(
                                       builder: (context) {
                                         final isCompact =
                                             constraints.maxHeight < 580;
-                                        return ConstrainedBox(
-                                          constraints: BoxConstraints(
-                                            minHeight: isCompact
-                                                ? 220.h
-                                                : 320.h,
-                                          ),
+                                        return SizedBox(
+                                          height: isCompact ? 220.h : 320.h,
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(
-                                              vertical: 20.h,
+                                              vertical: 10.h,
                                             ),
                                             child: _buildGravityWell(
                                               options,
@@ -439,15 +485,13 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
-                                          MediaQuery.of(
-                                                context,
-                                              ).viewInsets.bottom >
-                                              0
-                                          ? MediaQuery.of(
-                                                  context,
-                                                ).viewInsets.bottom +
-                                                40.h
-                                          : 60.h,
+                                          MediaQuery.of(context).viewInsets.bottom >
+                                                  0
+                                              ? MediaQuery.of(context)
+                                                      .viewInsets
+                                                      .bottom +
+                                                  40.h
+                                              : 60.h,
                                     ),
                                   ),
                                 ],
@@ -474,34 +518,31 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
     bool hasSecondStage,
     GameQuest quest,
   ) {
-    return Builder(
-      builder: (context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final size = Size(constraints.maxWidth, constraints.maxHeight);
+        final centerPoint = PronounResolutionGravityPainter.getCenterPoint(
+          size,
+          isCompact,
+        );
+        final nodePoints = PronounResolutionGravityPainter.getNodePoints(
+          size,
+          options.length,
+          isCompact,
+        );
+
         void handlePointer(Offset localPos) {
           if (isAnsweredNotifier.value || _pendingJigsaw.value) return;
-
-          final RenderBox? box = context.findRenderObject() as RenderBox?;
-          if (box == null) return;
-          final size = box.size;
-
-          final centerPoint = Offset(
-            size.width / 2,
-            size.height / 2 + (isCompact ? 10.h : 20.h),
-          );
-          final nodeCount = options.length;
-          final double orbitRadius = isCompact ? 80.r : 130.r;
-
-          final nodePoints = List.generate(nodeCount, (i) {
-            final angle = (i * (2 * pi / nodeCount)) - (pi / 2);
-            return Offset(
-              centerPoint.dx + cos(angle) * orbitRadius,
-              centerPoint.dy + sin(angle) * orbitRadius,
-            );
-          });
+          final blocState = context.read<GrammarBloc>().state;
+          if (blocState is GrammarLoaded && blocState.answerStatus.isAnswered) return;
 
           _rotation.value = atan2(
             localPos.dy - centerPoint.dy,
             localPos.dx - centerPoint.dx,
           );
+
+          final dist = (localPos - centerPoint).distance;
+          if (dist < 35.r) return;
 
           for (int i = 0; i < nodePoints.length; i++) {
             final nodeAngle = atan2(
@@ -518,24 +559,58 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
           }
         }
 
-        return Listener(
-          behavior: HitTestBehavior.opaque,
-          onPointerDown: (event) => handlePointer(event.localPosition),
-          onPointerMove: (event) => handlePointer(event.localPosition),
-          child: CustomPaint(
-            size: Size.infinite,
-            painter: PronounResolutionGravityPainter(
-              rotationNotifier: _rotation,
-              options: options,
-              primaryColor: primaryColor,
-              isAnswered: isAnsweredNotifier.value || _pendingJigsaw.value,
-              isCorrect: isCorrectNotifier.value ?? _pendingJigsaw.value,
-              targetNode: _targetIndex.value,
-              correctNode: correctIndex,
-              pronoun: pronoun,
-              isDark: isDark,
-              isCompact: isCompact,
-            ),
+        final double nodeW = isCompact ? 75.w : 110.w;
+        final double nodeH = isCompact ? 32.h : 45.h;
+
+        return SizedBox(
+          width: constraints.maxWidth,
+          height: constraints.maxHeight,
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: Listener(
+                  key: const ValueKey('pronoun_gravity_canvas'),
+                  behavior: HitTestBehavior.opaque,
+                  onPointerDown: (event) => handlePointer(event.localPosition),
+                  onPointerMove: (event) => handlePointer(event.localPosition),
+                  child: CustomPaint(
+                    size: size,
+                    painter: PronounResolutionGravityPainter(
+                      rotationNotifier: _rotation,
+                      options: options,
+                      primaryColor: primaryColor,
+                      isAnswered:
+                          isAnsweredNotifier.value || _pendingJigsaw.value,
+                      isCorrect:
+                          isCorrectNotifier.value ?? _pendingJigsaw.value,
+                      targetNode: _targetIndex.value,
+                      correctNode: correctIndex,
+                      pronoun: pronoun,
+                      isDark: isDark,
+                      isCompact: isCompact,
+                    ),
+                  ),
+                ),
+              ),
+              for (int i = 0; i < nodePoints.length; i++)
+                Positioned(
+                  left: nodePoints[i].dx - (nodeW / 2),
+                  top: nodePoints[i].dy - (nodeH / 2),
+                  width: nodeW,
+                  height: nodeH,
+                  child: GestureDetector(
+                    key: ValueKey('pronoun_node_$i'),
+                    behavior: HitTestBehavior.translucent,
+                    onTap: () =>
+                        _onFire(i, correctIndex, hasSecondStage, quest),
+                    child: Semantics(
+                      button: true,
+                      label: 'Option ${options[i]}',
+                      child: const SizedBox.expand(),
+                    ),
+                  ),
+                ),
+            ],
           ),
         );
       },

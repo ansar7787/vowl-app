@@ -28,21 +28,31 @@ class PronounResolutionGravityPainter extends CustomPainter {
     this.isCompact = false,
   }) : super(repaint: rotationNotifier);
 
-  @override
-  void paint(Canvas canvas, Size size) {
-    final centerPoint = Offset(
+  static Offset getCenterPoint(Size size, bool isCompact) {
+    return Offset(
       size.width / 2,
       size.height / 2 + (isCompact ? 10.h : 20.h),
     );
+  }
+
+  static List<Offset> getNodePoints(Size size, int count, bool isCompact) {
+    final centerPoint = getCenterPoint(size, isCompact);
     final double orbitRadius = isCompact ? 80.r : 130.r;
 
-    final nodes = List.generate(options.length, (i) {
-      final angle = (i * (2 * pi / options.length)) - (pi / 2);
+    return List.generate(count, (i) {
+      final angle = (i * (2 * pi / count)) - (pi / 2);
       return Offset(
         centerPoint.dx + cos(angle) * orbitRadius,
         centerPoint.dy + sin(angle) * orbitRadius,
       );
     });
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final centerPoint = getCenterPoint(size, isCompact);
+    final double orbitRadius = isCompact ? 80.r : 130.r;
+    final nodes = getNodePoints(size, options.length, isCompact);
 
     final double nodeW = isCompact ? 75.w : 110.w;
     final double nodeH = isCompact ? 32.h : 45.h;
