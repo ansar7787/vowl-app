@@ -1,11 +1,13 @@
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
@@ -51,7 +53,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     if (reduceMotion) {
       if (_pulseController.isAnimating) _pulseController.stop();
     } else {
@@ -82,6 +84,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   void _submitFinalAnswer(int index, int correct, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
     _pulseController.stop();
+    timerKey?.currentState?.stop();
 
     _selectedIndex.value = index;
     bool isCorrect = index == correct;
@@ -98,10 +101,29 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   }
 
   void _submitWrongAnswer(dynamic quest) {
+    if (isAnsweredNotifier.value) return;
+    _pulseController.stop();
+    timerKey?.currentState?.stop();
     if (quest is GameQuest) {
-      _pulseController.stop();
       submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
     }
+  }
+
+  void _playAudio(ListeningQuest quest) {
+    final rawAudio = quest.textToSpeak ??
+        quest.prompt ??
+        quest.question ??
+        quest.sentence ??
+        quest.audioTranscript ??
+        "";
+    final text = rawAudio.trim();
+    if (text.isEmpty) return;
+    if (text.startsWith('http')) {
+      soundService.playUrl(text);
+    } else {
+      soundService.playTts(text, pauseMarkers: quest.pauseMarkers);
+    }
+    hapticService.selection();
   }
 
   void _showTranscriptBottomSheet(
@@ -185,6 +207,11 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   @override
   void onQuestionReset() {
     _selectedIndex.value = null;
+    timerKey?.currentState?.start();
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    if (!reduceMotion && !_pulseController.isAnimating) {
+      _pulseController.repeat();
+    }
   }
 
   @override
@@ -194,6 +221,10 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     return BlocConsumer<ListeningBloc, ListeningState>(
       listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
+      buildWhen: (previous, current) =>
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
@@ -214,7 +245,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
               useScrolling: false,
               disablePadding: true,
               onContinue: dispatchNextQuestion,
-              onHint: dispatchHintUsed,
+              onHint: () => hapticService.selection(),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
@@ -242,27 +273,31 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                         padding: EdgeInsets.only(bottom: 16.h),
                                         child: SpeedChallengeTimer(
                                           key: timerKey,
-                                          durationSeconds: 15,
+                                          durationSeconds: 30,
                                           primaryColor: theme.primaryColor,
                                           onTimeUp: () =>
                                               _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       ListeningInferenceInstruction(
+                                        key: const Key(
+                                          'listening_inference_instruction',
+                                        ),
                                         color: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
+                                        instruction: context.tr(
+                                          'games.listeningInference_instruction',
+                                          fallback:
+                                              quest.instruction.isNotEmpty
+                                                  ? quest.instruction
+                                                  : 'INFER THE MEANING',
+                                        ),
                                       ),
                                       SizedBox(height: 24.h),
                                       ListeningInferenceRadarCore(
-                                        onTap: () {
-                                          soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                          );
-                                          hapticService.selection();
-                                        },
+                                        key: const Key(
+                                          'listening_inference_radar_core',
+                                        ),
+                                        onTap: () => _playAudio(quest),
                                         pulseController: _pulseController,
                                         color: theme.primaryColor,
                                         emoji: quest.emoji,
@@ -270,6 +305,9 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                       ),
                                       SizedBox(height: 16.h),
                                       GestureDetector(
+                                        key: const Key(
+                                          'listening_inference_show_text_btn',
+                                        ),
                                         onTap: () {
                                           hapticService.selection();
                                           _showTranscriptBottomSheet(
@@ -345,6 +383,9 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       ListeningInferenceGrid(
+                                        key: const Key(
+                                          'listening_inference_grid',
+                                        ),
                                         options: quest.options ?? [],
                                         correctAnswerIndex:
                                             quest.correctAnswerIndex ?? 0,
@@ -353,6 +394,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                         isCorrectState: isCorrectNotifier.value,
                                         selectedIndex: _selectedIndex.value,
                                         onSubmitAnswer: (index) {
+                                          hapticService.selection();
                                           _submitFinalAnswer(
                                             index,
                                             quest.correctAnswerIndex ?? 0,
@@ -373,6 +415,9 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                             ),
                                             child:
                                                 ListeningInferenceExplanation(
+                                                  key: const Key(
+                                                    'listening_inference_explanation',
+                                                  ),
                                                   explanation:
                                                       quest.explanation!,
                                                   color: theme.primaryColor,
