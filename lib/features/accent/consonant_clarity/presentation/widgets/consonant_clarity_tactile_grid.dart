@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ConsonantClarityTactileGrid extends StatelessWidget {
   final List<String> options;
@@ -28,15 +29,16 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     // If only 2 options, we can put them in a row. If more, wrap them.
     final bool useRow = options.length <= 2;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Center(
       child: useRow
           ? Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _buildKeycap(options[0], 0),
+                _buildKeycap(options[0], 0, reduceMotion),
                 SizedBox(width: 40.w),
-                _buildKeycap(options[1], 1),
+                _buildKeycap(options[1], 1, reduceMotion),
               ],
             )
           : Wrap(
@@ -45,13 +47,13 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
               runSpacing: 24.h,
               children: List.generate(
                 options.length,
-                (index) => _buildKeycap(options[index], index),
+                (index) => _buildKeycap(options[index], index, reduceMotion),
               ),
             ),
     );
   }
 
-  Widget _buildKeycap(String text, int index) {
+  Widget _buildKeycap(String text, int index, bool reduceMotion) {
     final bool isSelected = selectedIndex == index;
     final bool isCorrect = index == correctIndex;
     final bool showResult = isAnswered && isSelected;
@@ -76,7 +78,8 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
       textColor = color;
     }
 
-    return ScaleButton(
+    Widget keycap = ScaleButton(
+      key: ValueKey('tactile_keycap_$index'),
       onTap: () {
         if (!isAnswered) onSubmitChoice(index, correctIndex);
       },
@@ -119,6 +122,15 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fadeIn(delay: (50 * index).ms).slideY(begin: 0.2);
+    );
+
+    if (!reduceMotion) {
+      keycap = keycap
+          .animate()
+          .fadeIn(delay: (50 * index).ms)
+          .slideY(begin: 0.2);
+    }
+
+    return keycap;
   }
 }

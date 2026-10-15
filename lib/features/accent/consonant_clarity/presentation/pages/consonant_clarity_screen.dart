@@ -112,7 +112,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
     _selectedIndex.value = index;
 
-    bool isCorrect = index == correct;
+    final bool isCorrect = index == correct;
 
     if (isCorrect) {
       hapticService.selection();
@@ -120,34 +120,39 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
+      }
     }
   }
 
   @override
   void onQuestionReset() {
     _selectedIndex.value = null;
+    _shuffledQuestId = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -159,8 +164,11 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
       listenWhen: accentListenWhen,
       listener: onAccentStateChanged,
       builder: (context, state) {
+        if (state is AccentLoaded) {
+          _lastQuest = state.currentQuest;
+        }
         final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest?
+            ? state.currentQuest
             : _lastQuest;
 
         if (quest != null && !isAnsweredNotifier.value) {
@@ -199,12 +207,23 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
                 showConfetti: showConfettiNotifier.value,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                onHint: () {},
                 useScrolling: false,
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
                     : LayoutBuilder(
                         builder: (context, constraints) {
+                          final maxHeight = constraints.maxHeight;
+                          final bool isCompact = maxHeight < 580;
+
+                          final double estimatedContentHeight =
+                              24.h +
+                              (isCompact ? 90.h : 120.h) +
+                              100.h +
+                              (isCompact ? 100.h : 120.h);
+                          final remainingHeight =
+                              maxHeight - estimatedContentHeight;
+
                           return RawScrollbar(
                             controller: _scrollController,
                             thumbColor: theme.primaryColor.withValues(
@@ -214,103 +233,124 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
                             thickness: 4.w,
                             child: CustomScrollView(
                               controller: _scrollController,
-                              physics: (!isFirstStagePassedNotifier.value)
+                              physics: (!isFirstStagePassedNotifier.value &&
+                                      remainingHeight >= 0)
                                   ? const NeverScrollableScrollPhysics()
                                   : const BouncingScrollPhysics(),
                               slivers: [
-                                SliverFillRemaining(
-                                  hasScrollBody: false,
+                                SliverToBoxAdapter(
                                   child: IgnorePointer(
                                     ignoring: isFirstStagePassedNotifier.value,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 24.w,
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight: constraints.maxHeight,
                                       ),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SizedBox(height: 16.h),
-                                          Semantics(
-                                            liveRegion: true,
-                                            child: ConsonantClarityInstruction(
-                                              primaryColor: theme.primaryColor,
-                                              instruction:
-                                                  isFirstStagePassedNotifier
-                                                      .value
-                                                  ? "Great job! Now confirm by speaking the word."
-                                                  : quest.instruction,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SizedBox(
+                                              height: isCompact ? 8.h : 16.h,
                                             ),
-                                          ),
-                                          const Spacer(),
-                                          ConsonantClarityPromptCard(
-                                            word: quest.word ?? "",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered:
-                                                isAnsweredNotifier.value ||
-                                                isFirstStagePassedNotifier
-                                                    .value,
-                                          ),
-                                          const Spacer(),
-                                          if (isFirstStagePassedNotifier
-                                                  .value &&
-                                              quest.voicing != null &&
-                                              quest.airflow != null)
-                                            ConsonantClarityThroatIndicator(
-                                              voicing: quest.voicing!,
-                                              airflow: quest.airflow!,
+                                            Semantics(
+                                              liveRegion: true,
+                                              child:
+                                                  ConsonantClarityInstruction(
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                instruction:
+                                                    isFirstStagePassedNotifier
+                                                            .value
+                                                        ? "Great job! Now confirm by speaking the word."
+                                                        : quest.instruction,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: isCompact ? 12.h : 24.h,
+                                            ),
+                                            ConsonantClarityPromptCard(
+                                              word: quest.word ?? "",
                                               color: theme.primaryColor,
                                               isDark: isDark,
-                                            )
-                                          else
-                                            ConsonantClarityPulseSpeaker(
-                                              text: quest.textToSpeak ?? "",
-                                              color: theme.primaryColor,
-                                              onPlayTts: _playTts,
+                                              isAnswered:
+                                                  isAnsweredNotifier.value ||
+                                                  isFirstStagePassedNotifier
+                                                      .value,
                                             ),
-                                          const Spacer(flex: 2),
-                                          ConsonantClarityTactileGrid(
-                                            options: options,
-                                            correctIndex: correctIndex,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered:
-                                                isAnsweredNotifier.value ||
-                                                isFirstStagePassedNotifier
-                                                    .value,
-                                            selectedIndex: _selectedIndex.value,
-                                            onSubmitChoice: _submitChoice,
-                                          ),
-                                          SizedBox(height: 24.h),
-                                        ],
+                                            SizedBox(
+                                              height: isCompact ? 12.h : 24.h,
+                                            ),
+                                            if (isFirstStagePassedNotifier
+                                                    .value &&
+                                                quest.voicing != null &&
+                                                quest.airflow != null)
+                                              ConsonantClarityThroatIndicator(
+                                                voicing: quest.voicing!,
+                                                airflow: quest.airflow!,
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                              )
+                                            else
+                                              ConsonantClarityPulseSpeaker(
+                                                text: quest.textToSpeak ?? "",
+                                                color: theme.primaryColor,
+                                                onPlayTts: _playTts,
+                                              ),
+                                            SizedBox(
+                                              height: isCompact ? 16.h : 32.h,
+                                            ),
+                                            ConsonantClarityTactileGrid(
+                                              options: options,
+                                              correctIndex: correctIndex,
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                              isAnswered:
+                                                  isAnsweredNotifier.value ||
+                                                  isFirstStagePassedNotifier
+                                                      .value,
+                                              selectedIndex:
+                                                  _selectedIndex.value,
+                                              onSubmitChoice: _submitChoice,
+                                            ),
+                                            SizedBox(
+                                              height:
+                                                  (isAnsweredNotifier.value ||
+                                                      isFirstStagePassedNotifier
+                                                          .value)
+                                                  ? 10.h
+                                                  : 40.h,
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-
                                 if (isFirstStagePassedNotifier.value &&
-                                    !isAnsweredNotifier.value)
+                                    (!isAnsweredNotifier.value ||
+                                        isCorrectNotifier.value == null))
                                   SliverToBoxAdapter(
                                     child: Column(
                                       children: [
-                                        if (isFirstStagePassedNotifier.value &&
-                                            !isAnsweredNotifier.value)
-                                          ShadowPlaybackCompare(
-                                            expectedText: quest.word ?? "",
-                                            primaryColor: theme.primaryColor,
-                                            isPositioned: false,
-                                            onConfirmed: () {
-                                              context.read<AccentBloc>().add(
-                                                const AccentSpeakConfirmed(5),
-                                              );
-                                              _submitVerbalEvaluation(true);
-                                            },
-                                            onSkipped: () {
-                                              _submitVerbalEvaluation(false);
-                                            },
-                                          ),
-
+                                        SizedBox(height: 32.h),
+                                        ShadowPlaybackCompare(
+                                          expectedText: quest.word ?? "",
+                                          primaryColor: theme.primaryColor,
+                                          isPositioned: false,
+                                          onConfirmed: () {
+                                            context.read<AccentBloc>().add(
+                                              const AccentSpeakConfirmed(5),
+                                            );
+                                            _submitVerbalEvaluation(true);
+                                          },
+                                          onSkipped: () {
+                                            _submitVerbalEvaluation(false);
+                                          },
+                                        ),
                                         SizedBox(height: 60.h),
                                       ],
                                     ),
