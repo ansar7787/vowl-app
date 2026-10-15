@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -25,13 +26,14 @@ class VoiceSwapToggle extends StatelessWidget {
   Widget build(BuildContext context) {
     final hapticService = di.sl<HapticService>();
     final soundService = di.sl<SoundService>();
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _buildToggleLabel("ACTIVE", !isPassive),
+            _buildToggleLabel("ACTIVE", !isPassive, const ValueKey("voice_label_active")),
             SizedBox(width: 20.w),
             Semantics(
               button: true,
@@ -39,6 +41,7 @@ class VoiceSwapToggle extends StatelessWidget {
               label:
                   'Voice mode toggle. Currently ${isPassive ? "Passive" : "Active"}. Double tap to switch to ${isPassive ? "Active" : "Passive"}.',
               child: GestureDetector(
+                key: const ValueKey('voice_toggle_switch'),
                 onTap: () {
                   if (isAnswered) return;
                   onToggle(!isPassive);
@@ -62,60 +65,99 @@ class VoiceSwapToggle extends StatelessWidget {
                     children: [
                       // Energy Pulse Track
                       Center(
-                        child:
-                            Container(
-                                  width: 100.w,
-                                  height: 4.h,
-                                  decoration: BoxDecoration(
-                                    color: primaryColor.withValues(alpha: 0.1),
-                                    borderRadius: BorderRadius.circular(10.r),
-                                  ),
-                                )
-                                .animate(onPlay: (c) => c.repeat())
-                                .shimmer(duration: 2.seconds),
+                        child: reduceMotion
+                            ? Container(
+                                width: 100.w,
+                                height: 4.h,
+                                decoration: BoxDecoration(
+                                  color: primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              )
+                            : Container(
+                                width: 100.w,
+                                height: 4.h,
+                                decoration: BoxDecoration(
+                                  color: primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              )
+                              .animate(onPlay: (c) => c.repeat())
+                              .shimmer(duration: 2.seconds),
                       ),
                       AnimatedPositioned(
                         duration: const Duration(milliseconds: 400),
                         curve: Curves.elasticOut,
                         left: isPassive ? 66.w : 4.w,
                         top: 4.h,
-                        child:
-                            Container(
-                                  width: 58.w,
-                                  height: 53.h,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        primaryColor,
-                                        primaryColor.withValues(alpha: 0.8),
-                                      ],
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ),
-                                    borderRadius: BorderRadius.circular(30.r),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: primaryColor.withValues(
-                                          alpha: 0.4,
-                                        ),
-                                        blurRadius: 15,
-                                        offset: const Offset(0, 5),
-                                      ),
+                        child: reduceMotion
+                            ? Container(
+                                width: 58.w,
+                                height: 53.h,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      primaryColor,
+                                      primaryColor.withValues(alpha: 0.8),
                                     ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
                                   ),
-                                  child: Icon(
-                                    isPassive
-                                        ? Icons.waves_rounded
-                                        : Icons.bolt_rounded,
-                                    color: Colors.white,
-                                    size: 26.r,
-                                  ),
-                                )
-                                .animate(key: ValueKey(isPassive))
-                                .scale(
-                                  begin: const Offset(0.8, 0.8),
-                                  end: const Offset(1, 1),
+                                  borderRadius: BorderRadius.circular(30.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: primaryColor.withValues(
+                                        alpha: 0.4,
+                                      ),
+                                      blurRadius: 15,
+                                      offset: const Offset(0, 5),
+                                    ),
+                                  ],
                                 ),
+                                child: Icon(
+                                  isPassive
+                                      ? Icons.waves_rounded
+                                      : Icons.bolt_rounded,
+                                  color: Colors.white,
+                                  size: 26.r,
+                                ),
+                              )
+                            : Container(
+                                width: 58.w,
+                                height: 53.h,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      primaryColor,
+                                      primaryColor.withValues(alpha: 0.8),
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(30.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: primaryColor.withValues(
+                                        alpha: 0.4,
+                                      ),
+                                      blurRadius: 15,
+                                      offset: const Offset(0, 5),
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  isPassive
+                                      ? Icons.waves_rounded
+                                      : Icons.bolt_rounded,
+                                  color: Colors.white,
+                                  size: 26.r,
+                                ),
+                              )
+                              .animate(key: ValueKey(isPassive))
+                              .scale(
+                                begin: const Offset(0.8, 0.8),
+                                end: const Offset(1, 1),
+                              ),
                       ),
                     ],
                   ),
@@ -123,11 +165,13 @@ class VoiceSwapToggle extends StatelessWidget {
               ),
             ),
             SizedBox(width: 20.w),
-            _buildToggleLabel("PASSIVE", isPassive),
+            _buildToggleLabel("PASSIVE", isPassive, const ValueKey("voice_label_passive")),
           ],
         ),
         SizedBox(height: 32.h),
-        Text(
+        Builder(
+          builder: (context) {
+            final textWidget = Text(
               "MODE: ${(isPassive ? "PASSIVE" : "ACTIVE")}",
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -136,16 +180,21 @@ class VoiceSwapToggle extends StatelessWidget {
                 color: primaryColor.withValues(alpha: 0.6),
                 letterSpacing: 2,
               ),
-            )
-            .animate(key: ValueKey(isPassive))
-            .fadeIn()
-            .scale(begin: const Offset(0.9, 0.9)),
+            );
+            if (reduceMotion) return textWidget;
+            return textWidget
+                .animate(key: ValueKey(isPassive))
+                .fadeIn()
+                .scale(begin: const Offset(0.9, 0.9));
+          },
+        ),
       ],
     );
   }
 
-  Widget _buildToggleLabel(String label, bool isActive) {
+  Widget _buildToggleLabel(String label, bool isActive, [Key? key]) {
     return AnimatedDefaultTextStyle(
+      key: key,
       duration: const Duration(milliseconds: 300),
       style: TextStyle(
         fontFamily: 'Outfit',

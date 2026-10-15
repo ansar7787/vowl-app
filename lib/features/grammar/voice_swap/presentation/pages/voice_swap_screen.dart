@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,14 +49,18 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
   @override
   void dispose() {
     _isPassive.dispose();
+    _scrollTimer?.cancel();
     _scrollController.dispose();
     disposeGrammarGame();
     super.dispose();
   }
 
+  Timer? _scrollTimer;
+
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -65,7 +71,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
   }
 
   void _onStagePassedScroll() {
-    Future.delayed(const Duration(milliseconds: 100), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -119,7 +126,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
       soundService.playWrong();
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
-      submitWrongAnswer(quest: quest, userAnswer: '');
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -134,16 +141,17 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
     if (nailedIt) {
       hapticService.success();
       soundService.playCorrect();
-      context.read<GrammarBloc>().add(SubmitAnswer(true));
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
       hapticService.error();
       soundService.playWrong();
-      submitWrongAnswer(quest: quest, userAnswer: '');
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _isPassive.value = false;
   }
 
@@ -265,7 +273,11 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                 ),
 
                                                 // Context Card
-                                                Padding(
+                                                Builder(
+                                                  builder: (context) {
+                                                    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+                                                    final card = Padding(
+                                                      key: const ValueKey('voice_sentence_card'),
                                                       padding:
                                                           EdgeInsets.symmetric(
                                                             horizontal: 24.w,
@@ -323,15 +335,20 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                           ),
                                                         ),
                                                       ),
-                                                    )
-                                                    .animate()
-                                                    .fadeIn(duration: 600.ms)
-                                                    .slideY(begin: 0.2, end: 0),
+                                                    );
+                                                    if (reduceMotion) return card;
+                                                    return card
+                                                        .animate()
+                                                        .fadeIn(duration: 600.ms)
+                                                        .slideY(begin: 0.2, end: 0);
+                                                  },
+                                                ),
 
                                                 SizedBox(height: 60.h),
 
                                                 // Voice Toggle
                                                 VoiceSwapToggle(
+                                                  key: const ValueKey('voice_swap_toggle'),
                                                   isPassive: _isPassive.value,
                                                   isAnswered:
                                                       isAnsweredNotifier
@@ -358,10 +375,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                                         ),
                                                     child:
                                                         ScaleButton(
-                                                              onTap: () =>
-                                                                  _submitAnswer(
-                                                                    quest,
-                                                                  ),
+                                                              key: const ValueKey('voice_engage_button'),
+                                                              onTap: () => _submitAnswer(quest),
                                                               child: Container(
                                                                 width: double
                                                                     .infinity,
@@ -481,6 +496,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
                                         child: Column(
                                           children: [
                                             TypeToConfirmOverlay(
+                                              key: const ValueKey('voice_type_overlay'),
                                               expectedText: expectedConversion,
                                               displayText:
                                                   "Type the $targetVoiceStr conversion to lock it in",
