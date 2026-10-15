@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
@@ -78,6 +80,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
 
   void _submitFinalAnswer(GameQuest quest) {
     if (isAnsweredNotifier.value || _pendingSelectedIndex.value == null) return;
+    timerKey?.currentState?.stop();
 
     final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
@@ -96,17 +99,37 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
     }
   }
 
-  void _submitWrongAnswer(GameQuest quest) {
-    submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
+  void _submitWrongAnswer(dynamic quest) {
+    if (isAnsweredNotifier.value) return;
+    timerKey?.currentState?.stop();
+    if (quest is GameQuest) {
+      submitWrongAnswer(quest: quest, userAnswer: '[Timeout]');
+    }
+  }
+
+  void _playAudio(ListeningQuest quest) {
+    final rawAudio = quest.textToSpeak ??
+        quest.prompt ??
+        quest.question ??
+        quest.sentence ??
+        quest.audioTranscript ??
+        "";
+    final text = rawAudio.trim();
+    if (text.isEmpty) return;
+    if (text.startsWith('http')) {
+      soundService.playUrl(text);
+    } else {
+      soundService.playTts(text, pauseMarkers: quest.pauseMarkers);
+    }
+    hapticService.selection();
   }
 
   @override
   void onQuestionReset() {
     _coreOffset.value = Offset.zero;
-
     _selectedIndex.value = null;
-
     _pendingSelectedIndex.value = null;
+    timerKey?.currentState?.start();
   }
 
   @override
@@ -116,6 +139,10 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
     return BlocConsumer<ListeningBloc, ListeningState>(
       listenWhen: listeningListenWhen,
       listener: onListeningStateChanged,
+      buildWhen: (previous, current) =>
+          current is ListeningLoaded ||
+          current is ListeningGameOver ||
+          current is ListeningGameComplete,
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
@@ -137,7 +164,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
               useScrolling: false,
               disablePadding: true,
               onContinue: dispatchNextQuestion,
-              onHint: dispatchHintUsed,
+              onHint: () => hapticService.selection(),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
@@ -165,25 +192,32 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
                                         padding: EdgeInsets.only(bottom: 16.h),
                                         child: SpeedChallengeTimer(
                                           key: timerKey,
-                                          durationSeconds: 15,
+                                          durationSeconds: 30,
                                           primaryColor: theme.primaryColor,
                                           onTimeUp: () =>
                                               _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       EmotionRecognitionInstruction(
+                                        key: const Key(
+                                          'emotion_recognition_instruction',
+                                        ),
                                         isAnswered: isAnsweredNotifier.value,
                                         color: theme.primaryColor,
-                                        instruction: "DETECT EMOTION",
+                                        instruction: context.tr(
+                                          'games.emotionRecognition_instruction',
+                                          fallback:
+                                              quest.instruction.isNotEmpty
+                                                  ? quest.instruction
+                                                  : "DETECT EMOTION",
+                                        ),
                                       ),
                                       SizedBox(height: 24.h),
                                       EmotionRecognitionEmitter(
-                                        onTap: () {
-                                          soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                          );
-                                          hapticService.selection();
-                                        },
+                                        key: const Key(
+                                          'emotion_recognition_emitter',
+                                        ),
+                                        onTap: () => _playAudio(quest),
                                         color: theme.primaryColor,
                                         emoji: quest.emoji,
                                         isCorrectState: isCorrectNotifier.value,
@@ -205,6 +239,9 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
                                       SizedBox(
                                         height: 350.h,
                                         child: EmotionRecognitionQuadrant(
+                                          key: const Key(
+                                            'emotion_recognition_quadrant',
+                                          ),
                                           options: quest.options ?? [],
                                           optionEmojis:
                                               quest.optionEmojis ?? [],
@@ -223,6 +260,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
                                                     null) {
                                               return;
                                             }
+                                            hapticService.selection();
                                             _pendingSelectedIndex.value = index;
                                             _submitFinalAnswer(quest);
                                           },
