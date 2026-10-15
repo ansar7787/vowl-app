@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import 'package:vowl/core/theme/vowl_motion.dart';
+
 class IntonationMimicRollercoaster extends StatelessWidget {
   final List<int> contour;
   final Color color;
@@ -20,6 +22,8 @@ class IntonationMimicRollercoaster extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Container(
       width: 342.w,
       height: 70.h,
@@ -57,7 +61,7 @@ class IntonationMimicRollercoaster extends StatelessWidget {
                   ),
                 ),
               // Cart (Glowing Spaceship)
-              _buildCart(contour, color, width, height),
+              _buildCart(contour, color, width, height, reduceMotion),
             ],
           );
         },
@@ -70,6 +74,7 @@ class IntonationMimicRollercoaster extends StatelessWidget {
     Color color,
     double width,
     double height,
+    bool reduceMotion,
   ) {
     double posX = (cartPosition * width) - 18.r;
     double posY = _getYForPosition(cartPosition, contour) * height - 18.r;
@@ -77,12 +82,17 @@ class IntonationMimicRollercoaster extends StatelessWidget {
     if (posX > width - 36.r) posX = width - 36.r;
     if (posY < 0) posY = 0;
 
+    Widget cartIcon = Icon(Icons.navigation_rounded, color: color, size: 36.r);
+    if (!reduceMotion) {
+      cartIcon = cartIcon
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(begin: -2, end: 2, duration: 500.ms);
+    }
+
     return Positioned(
       left: posX,
       bottom: posY,
-      child: Icon(Icons.navigation_rounded, color: color, size: 36.r)
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: -2, end: 2, duration: 500.ms),
+      child: cartIcon,
     );
   }
 

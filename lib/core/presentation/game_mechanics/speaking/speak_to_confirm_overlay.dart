@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speaking_self_evaluation_controls.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// A self-evaluation overlay for speaking tasks.
 ///
@@ -117,7 +118,7 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                               Builder(
                                 builder: (context) {
                                   final reduceMotion =
-                                      MediaQuery.disableAnimationsOf(context);
+                                      VowlMotion.shouldReduceMotion(context);
                                   Widget iconContainer = Container(
                                     padding: EdgeInsets.all(10.r),
                                     decoration: BoxDecoration(
