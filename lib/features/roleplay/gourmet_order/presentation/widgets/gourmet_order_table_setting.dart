@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_steam_painter.dart';
 
 class _LocalPalette {
@@ -48,6 +49,9 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
     Color ringColor = widget.color;
     if (widget.isAnswered) {
       ringColor = (widget.isCorrect ?? false)
@@ -56,6 +60,7 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
     }
 
     return DragTarget<String>(
+      key: const Key('gourmet_order_table_drag_target'),
       onWillAcceptWithDetails: (data) => !widget.isAnswered,
       onAcceptWithDetails: (details) {
         widget.onItemDropped(details.data);
@@ -77,117 +82,127 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
             final bool isActiveGlow =
                 isHovering || widget.selectedItems.isNotEmpty;
 
-            return AnimatedContainer(
-                  duration: const Duration(milliseconds: 250),
-                  width: 210.r,
-                  height: 210.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: widget.isDark
-                        ? _LocalPalette.color07070f
-                        : Colors.black.withValues(alpha: 0.02),
-                    border: Border.all(
-                      color: ringColor.withValues(
-                        alpha: isActiveGlow ? 0.75 : 0.2,
-                      ),
-                      width: isActiveGlow ? 4.5 : 2.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: ringColor.withValues(
-                          alpha: isActiveGlow ? 0.22 : 0.04,
-                        ),
-                        blurRadius: isActiveGlow ? 20 : 10,
-                      ),
-                    ],
+            Widget containerWidget = AnimatedContainer(
+              key: const Key('gourmet_order_table_container'),
+              duration: const Duration(milliseconds: 250),
+              width: 210.r,
+              height: 210.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: widget.isDark
+                    ? _LocalPalette.color07070f
+                    : Colors.black.withValues(alpha: 0.02),
+                border: Border.all(
+                  color: ringColor.withValues(
+                    alpha: isActiveGlow ? 0.75 : 0.2,
                   ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      // Glowing steam custom wave painter
-                      if (widget.selectedItems.isNotEmpty)
-                        Positioned.fill(
-                          child: ClipOval(
-                            child: AnimatedBuilder(
-                              animation: widget.steamAnimation,
-                              builder: (context, child) {
-                                return CustomPaint(
-                                  painter: SteamWavesPainter(
-                                    animationValue: widget.steamAnimation.value,
-                                    themeColor: ringColor,
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
+                  width: isActiveGlow ? 4.5 : 2.5,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: ringColor.withValues(
+                      alpha: isActiveGlow ? 0.22 : 0.04,
+                    ),
+                    blurRadius: isActiveGlow ? 20 : 10,
+                  ),
+                ],
+              ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // Glowing steam custom wave painter
+                  if (widget.selectedItems.isNotEmpty)
+                    Positioned.fill(
+                      child: ClipOval(
+                        child: AnimatedBuilder(
+                          animation: widget.steamAnimation,
+                          builder: (context, child) {
+                            return CustomPaint(
+                              painter: SteamWavesPainter(
+                                animationValue: widget.steamAnimation.value,
+                                themeColor: ringColor,
+                              ),
+                            );
+                          },
                         ),
+                      ),
+                    ),
 
-                      // Cloche cover icon/platter details
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            widget.isAnswered
-                                ? ((widget.isCorrect ?? false)
-                                      ? Icons.done_all_rounded
-                                      : Icons.close_rounded)
-                                : Icons.room_service_outlined,
-                            color: ringColor.withValues(
-                              alpha: isActiveGlow ? 0.9 : 0.25,
-                            ),
-                            size: 72.r,
+                  // Cloche cover icon/platter details
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        widget.isAnswered
+                            ? ((widget.isCorrect ?? false)
+                                  ? Icons.done_all_rounded
+                                  : Icons.close_rounded)
+                            : Icons.room_service_outlined,
+                        key: const Key('gourmet_order_table_cloche_icon'),
+                        color: ringColor.withValues(
+                          alpha: isActiveGlow ? 0.9 : 0.25,
+                        ),
+                        size: 72.r,
+                      ),
+                      SizedBox(height: 8.h),
+                      Text(
+                        widget.isAnswered
+                            ? ((widget.isCorrect ?? false)
+                                  ? "SERVED PERFECTLY"
+                                  : "WRONG DISHES")
+                            : "SERVING PLATTER",
+                        key: const Key('gourmet_order_table_status_text'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          color: ringColor.withValues(
+                            alpha: isActiveGlow ? 0.9 : 0.35,
                           ),
-                          SizedBox(height: 8.h),
-                          Text(
-                            widget.isAnswered
-                                ? ((widget.isCorrect ?? false)
-                                      ? "SERVED PERFECTLY"
-                                      : "WRONG DISHES")
-                                : "SERVING PLATTER",
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                      if (widget.selectedItems.isNotEmpty) ...[
+                        SizedBox(height: 8.h),
+                        Container(
+                          key: const Key('gourmet_order_table_loaded_badge'),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: ringColor.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
+                          child: Text(
+                            "${widget.selectedItems.length} PLATES LOADED",
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              color: ringColor.withValues(
-                                alpha: isActiveGlow ? 0.9 : 0.35,
-                              ),
+                              fontSize: 9.sp,
                               fontWeight: FontWeight.bold,
-                              letterSpacing: 1.5,
+                              color: ringColor,
                             ),
                           ),
-                          if (widget.selectedItems.isNotEmpty) ...[
-                            SizedBox(height: 8.h),
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 10.w,
-                                vertical: 4.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: ringColor.withValues(alpha: 0.15),
-                                borderRadius: BorderRadius.circular(12.r),
-                              ),
-                              child: Text(
-                                "${widget.selectedItems.length} PLATES LOADED",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 9.sp,
-                                  fontWeight: FontWeight.bold,
-                                  color: ringColor,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ],
-                      ),
+                        ),
+                      ],
                     ],
                   ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.03, 1.03),
-                  duration: 2.2.seconds,
-                  curve: Curves.easeInOut,
-                );
+                ],
+              ),
+            );
+
+            if (!reduceMotion) {
+              containerWidget = containerWidget
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.03, 1.03),
+                    duration: 2.2.seconds,
+                    curve: Curves.easeInOut,
+                  );
+            }
+
+            return containerWidget;
           },
         );
       },
