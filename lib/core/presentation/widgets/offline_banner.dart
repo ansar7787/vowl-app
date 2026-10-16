@@ -66,6 +66,7 @@ class OfflineBanner extends StatelessWidget {
                             child: Text(
                               context.tr(
                                 'connectivity.offline_banner_with_count',
+                                args: [remaining.toString(), max.toString()],
                                 fallback:
                                     'Playing offline • $remaining/$max plays left',
                               ),

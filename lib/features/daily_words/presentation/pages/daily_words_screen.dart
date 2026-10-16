@@ -767,6 +767,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       title: context.tr('games.pause_title', fallback: 'Pause Lesson?'),
       description: context.tr(
         'games.pause_desc',
+        args: [
+          (state.currentIndex + 1).toString(),
+          state.totalWords.toString(),
+        ],
         fallback:
             'You are on word ${state.currentIndex + 1} of ${state.totalWords}. Leaving now will pause your progress.',
       ),

@@ -22,32 +22,45 @@ class SpeakOppositePositivePolePanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassTile(
+      key: const Key('speak_opposite_positive_pole_panel'),
       padding: EdgeInsets.all(22.r),
       borderRadius: BorderRadius.circular(26.r),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Icon(Icons.school_rounded, color: primaryColor, size: 14.r),
-                  SizedBox(width: 6.w),
-                  Text(
-                    "GIVEN WORD",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: Colors.grey.shade400,
-                      letterSpacing: 1.0,
-                    ),
+              Flexible(
+                child: Semantics(
+                  header: true,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.school_rounded, color: primaryColor, size: 14.r),
+                      SizedBox(width: 6.w),
+                      Flexible(
+                        child: Text(
+                          "GIVEN WORD",
+                          key: const Key('speak_opposite_given_word_label'),
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            color: Colors.grey.shade400,
+                            letterSpacing: 1.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
               Semantics(
                 label: 'Listen to the target word',
                 button: true,
                 child: ScaleButton(
+                  key: const Key('speak_opposite_listen_button'),
                   onTap: onPlayTts,
                   child: Icon(
                     Icons.volume_up_rounded,
@@ -60,6 +73,7 @@ class SpeakOppositePositivePolePanel extends StatelessWidget {
           ),
           SizedBox(height: 24.h),
           Container(
+            key: const Key('speak_opposite_target_word_container'),
             padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: primaryColor.withValues(alpha: 0.15),
@@ -75,15 +89,19 @@ class SpeakOppositePositivePolePanel extends StatelessWidget {
                 ),
               ],
             ),
-            child: Text(
-              targetWord,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w900,
-                color: primaryColor,
-                letterSpacing: 1.2,
+            child: Semantics(
+              label: 'Target word to find opposite: $targetWord',
+              child: Text(
+                targetWord,
+                key: const Key('speak_opposite_target_word_text'),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w900,
+                  color: primaryColor,
+                  letterSpacing: 1.2,
+                ),
               ),
             ),
           ),
@@ -91,6 +109,7 @@ class SpeakOppositePositivePolePanel extends StatelessWidget {
             SizedBox(height: 16.h),
             Text(
               contextText,
+              key: const Key('speak_opposite_context_text'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -105,16 +124,19 @@ class SpeakOppositePositivePolePanel extends StatelessWidget {
           Divider(color: Colors.grey.withValues(alpha: 0.2)),
           SizedBox(height: 16.h),
           Row(
+            key: const Key('speak_opposite_mic_hint'),
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.mic_rounded, color: Colors.grey, size: 16.r),
               SizedBox(width: 8.w),
-              Text(
-                "Hold mic to say the opposite",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  color: Colors.grey,
+              Flexible(
+                child: Text(
+                  "Hold mic to say the opposite",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    color: Colors.grey,
+                  ),
                 ),
               ),
             ],

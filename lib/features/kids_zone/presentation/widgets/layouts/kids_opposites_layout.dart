@@ -515,7 +515,10 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
                     fit: BoxFit.scaleDown,
                     child: Text(
                       context.tr(
-                        'games.opposite_of',
+                        premiseWord == 'CLUE'
+                            ? 'games.find_opposite'
+                            : 'games.opposite_of',
+                        args: premiseWord == 'CLUE' ? const [] : [premiseWord],
                         fallback: premiseWord == 'CLUE'
                             ? 'Find the opposite'
                             : 'Opposite of “$premiseWord”',
