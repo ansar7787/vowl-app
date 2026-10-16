@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,9 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
@@ -46,6 +49,8 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
 
   late AnimationController _vortexController;
   late AnimationController _pullController;
+  Timer? _scrollTimer;
+  String? _lastQuestId;
 
   // Option states
   final ValueNotifier<List<String>> _dynamicOptions = ValueNotifier([]);
@@ -55,13 +60,29 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
 
   final ScrollController _scrollController = ScrollController();
 
+  void _syncQuest(SpeakingQuest? quest) {
+    if (quest == null) return;
+    if (_lastQuestId != quest.id) {
+      _lastQuestId = quest.id;
+      final options = quest.options;
+      _dynamicOptions.value = (options != null && options.isNotEmpty)
+          ? List<String>.from(options)
+          : (quest.missingWord != null ? [quest.missingWord!] : <String>[]);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
+    initGameLifecycle();
+
     _vortexController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
-    )..repeat();
+    );
+    if (!VowlMotion.lowAnimationModeOverride.value) {
+      _vortexController.repeat();
+    }
 
     _pullController = AnimationController(
       vsync: this,
@@ -70,36 +91,57 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
 
     _pullController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        if (isAnsweredNotifier.value || _isWordPlaced.value) return;
-        _isWordPlaced.value = true;
-
-        final state = context.read<SpeakingBloc>().state;
-        if (state is SpeakingLoaded) {
-          final expectedWord = state.currentQuest.missingWord ?? "";
-          final wordIsCorrect =
-              _selectedWord.value?.toLowerCase() == expectedWord.toLowerCase();
-
-          if (!wordIsCorrect) {
-            _submitVerbalEvaluation(
-              false,
-              expectedWord,
-              forceImmediateFail: true,
-            );
-            return;
-          }
-        }
-
-        hapticService.success();
-        soundService.playClick();
-        _scrollToBottom();
+        _onPullCompleted();
       }
     });
+
+    final current = context.read<SpeakingBloc>().state;
+    if (current is SpeakingLoaded) {
+      _syncQuest(current.currentQuest);
+    }
 
     initSpeakingGame();
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value) {
+      _vortexController.stop();
+    } else if (!_vortexController.isAnimating) {
+      _vortexController.repeat();
+    }
+  }
+
+  void _onPullCompleted() {
+    if (isAnsweredNotifier.value || _isWordPlaced.value) return;
+    _isWordPlaced.value = true;
+
+    final state = context.read<SpeakingBloc>().state;
+    if (state is SpeakingLoaded) {
+      final expectedWord = state.currentQuest.missingWord ?? "";
+      final wordIsCorrect =
+          _selectedWord.value?.toLowerCase() == expectedWord.toLowerCase();
+
+      if (!wordIsCorrect) {
+        _submitVerbalEvaluation(
+          false,
+          expectedWord,
+          forceImmediateFail: true,
+        );
+        return;
+      }
+    }
+
+    hapticService.success();
+    soundService.playClick();
+    _scrollToBottom();
+  }
+
+  @override
   void dispose() {
+    _scrollTimer?.cancel();
     _vortexController.dispose();
     _pullController.dispose();
     _dynamicOptions.dispose();
@@ -112,7 +154,14 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 100), () {
+    _scrollTimer?.cancel();
+    if (VowlMotion.lowAnimationModeOverride.value) {
+      if (_scrollController.hasClients) {
+        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      }
+      return;
+    }
+    _scrollTimer = Timer(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -144,7 +193,12 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     if (isAnsweredNotifier.value || _isWordPlaced.value) return;
     hapticService.selection();
     _selectedWord.value = word;
-    _pullController.value = 1.0; // Instantly complete the pull
+    if (VowlMotion.lowAnimationModeOverride.value) {
+      _pullController.value = 1.0;
+      _onPullCompleted();
+    } else {
+      _pullController.forward(from: 0.99);
+    }
   }
 
   void _submitVerbalEvaluation(
@@ -189,12 +243,11 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
+    _lastQuestId = null;
     _dynamicOptions.value = [];
-
     _selectedWord.value = null;
-
     _isListening.value = false;
-
     _isWordPlaced.value = false;
   }
 
@@ -206,9 +259,24 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listenWhen: speakingListenWhen,
-      listener: onSpeakingStateChanged,
+      listener: (context, state) {
+        onSpeakingStateChanged(context, state);
+        if (state is SpeakingLoaded) {
+          _syncQuest(state.currentQuest);
+        }
+      },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
+        if (quest != null && _dynamicOptions.value.isEmpty) {
+          final options = quest.options;
+          final fallbackOptions = (options != null && options.isNotEmpty)
+              ? List<String>.from(options)
+              : (quest.missingWord != null ? [quest.missingWord!] : <String>[]);
+          if (fallbackOptions.isNotEmpty) {
+            _lastQuestId = quest.id;
+            _dynamicOptions.value = fallbackOptions;
+          }
+        }
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -293,8 +361,8 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                       SizedBox(height: 24.h),
                                       SpeakMissingWordVortexSentence(
                                         text: _isWordPlaced.value
-                                            ? userCompletedSentence
-                                            : initialBlankSentence,
+                                             ? userCompletedSentence
+                                             : initialBlankSentence,
                                         insertedWord: _isWordPlaced.value
                                             ? (_selectedWord.value ?? "")
                                             : "",
@@ -323,6 +391,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                 !isAnsweredNotifier.value)
                               SliverToBoxAdapter(
                                 child: ShadowPlaybackCompare(
+                                  key: const Key('speak_missing_word_shadow_compare'),
                                   expectedText: userCompletedSentence,
                                   primaryColor: theme.primaryColor,
                                   isPositioned: false,
