@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -15,6 +16,8 @@ class PrefixSuffixController extends ChangeNotifier {
   onSubmitAnswer;
 
   bool _isDisposed = false;
+  Timer? _stageTimer;
+  Timer? _hintTimer;
 
   bool isAnswered = false;
   bool? isCorrect;
@@ -38,10 +41,14 @@ class PrefixSuffixController extends ChangeNotifier {
   @override
   void dispose() {
     _isDisposed = true;
+    _stageTimer?.cancel();
+    _hintTimer?.cancel();
     super.dispose();
   }
 
   void reset(VocabularyQuest? quest, int index) {
+    _stageTimer?.cancel();
+    _hintTimer?.cancel();
     lastQuest = quest;
     lastProcessedIndex = index;
     isAnswered = false;
@@ -192,7 +199,8 @@ class PrefixSuffixController extends ChangeNotifier {
       _hapticService.success();
 
       // Wait a moment for the user to register the success, then transition!
-      Future.delayed(const Duration(milliseconds: 250), () {
+      _stageTimer?.cancel();
+      _stageTimer = Timer(const Duration(milliseconds: 250), () {
         if (_isDisposed) return;
         isFirstStagePassed = true;
         notifyListeners();
@@ -255,7 +263,8 @@ class PrefixSuffixController extends ChangeNotifier {
 
       _hapticService.light();
 
-      Future.delayed(const Duration(milliseconds: 1500), () {
+      _hintTimer?.cancel();
+      _hintTimer = Timer(const Duration(milliseconds: 1500), () {
         if (_isDisposed) return;
         if (!isAnswered) {
           hintedAffix = null;
