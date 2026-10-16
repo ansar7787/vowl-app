@@ -35,7 +35,8 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
-      width: 1.sw,
+      key: const Key('medical_consult_diagnostic_tray'),
+      width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
@@ -87,6 +88,7 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
               return ScaleButton(
                 onTap: () => onSymptomTapped(s),
                 child: Container(
+                  key: Key('medical_consult_symptom_chip_${s.replaceAll(' ', '_')}'),
                   constraints: BoxConstraints(maxWidth: 1.sw - 60.w),
                   padding: EdgeInsets.symmetric(
                     horizontal: 14.w,
