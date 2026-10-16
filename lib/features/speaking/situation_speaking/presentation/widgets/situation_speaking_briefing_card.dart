@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
@@ -70,9 +71,12 @@ class _SituationSpeakingBriefingCardState
 
   @override
   Widget build(BuildContext context) {
+    final bool reduceMotion = VowlMotion.lowAnimationModeOverride.value;
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(28.r),
       child: GestureDetector(
+        key: const Key('situation_speaking_briefing_card_gesture'),
         onTap: () {
           if (!_isFinishedTyping) {
             _finishTyping();
@@ -134,12 +138,17 @@ class _SituationSpeakingBriefingCardState
                             children: [
                               Padding(
                                 padding: EdgeInsets.only(top: 2.h),
-                                child:
-                                    Icon(
-                                          Icons.assignment_late_rounded,
-                                          color: widget.primaryColor,
-                                          size: 16.r,
-                                        )
+                                child: reduceMotion
+                                    ? Icon(
+                                        Icons.assignment_late_rounded,
+                                        color: widget.primaryColor,
+                                        size: 16.r,
+                                      )
+                                    : Icon(
+                                        Icons.assignment_late_rounded,
+                                        color: widget.primaryColor,
+                                        size: 16.r,
+                                      )
                                         .animate(onPlay: (c) => c.repeat())
                                         .shake(hz: 2, curve: Curves.easeInOut)
                                         .then(delay: 2.seconds),
@@ -148,6 +157,9 @@ class _SituationSpeakingBriefingCardState
                               Expanded(
                                 child: Text(
                                   "SCENARIO BRIEFING",
+                                  key: const Key(
+                                    'situation_speaking_briefing_title',
+                                  ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
@@ -161,19 +173,21 @@ class _SituationSpeakingBriefingCardState
                           ),
                         ),
                         if (_isFinishedTyping || widget.isAnswered)
-                          ScaleButton(
-                            onTap: widget.onPlayTts,
-                            child: Padding(
-                              padding: EdgeInsets.all(8.r),
-                              child: Icon(
-                                Icons.volume_up_rounded,
-                                color: widget.primaryColor,
-                                size: 24.r,
+                          Semantics(
+                            button: true,
+                            label: 'Listen to scenario briefing audio',
+                            child: ScaleButton(
+                              key: const Key('situation_speaking_tts_button'),
+                              onTap: widget.onPlayTts,
+                              child: Padding(
+                                padding: EdgeInsets.all(8.r),
+                                child: Icon(
+                                  Icons.volume_up_rounded,
+                                  color: widget.primaryColor,
+                                  size: 24.r,
+                                ),
                               ),
                             ),
-                          ).animate().scale(
-                            duration: 300.ms,
-                            curve: Curves.easeOutCubic,
                           ),
                       ],
                     ),
@@ -186,6 +200,7 @@ class _SituationSpeakingBriefingCardState
                           ? Text(
                               widget.quest.situationText ??
                                   "Situation description.",
+                              key: const Key('situation_speaking_body_text'),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -198,6 +213,9 @@ class _SituationSpeakingBriefingCardState
                               ),
                             )
                           : _TypewriterText(
+                              key: const Key(
+                                'situation_speaking_typewriter_text',
+                              ),
                               text:
                                   widget.quest.situationText ??
                                   "Situation description.",
@@ -225,84 +243,82 @@ class _SituationSpeakingBriefingCardState
                         child: (_isFinishedTyping || widget.isAnswered)
                             ? Padding(
                                 padding: EdgeInsets.only(top: 24.h),
-                                child:
-                                    Container(
-                                          padding: EdgeInsets.all(16.r),
-                                          decoration: BoxDecoration(
-                                            color: widget.primaryColor
-                                                .withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(
-                                              16.r,
-                                            ),
-                                            border: Border.all(
-                                              color: widget.primaryColor
-                                                  .withValues(alpha: 0.2),
-                                            ),
-                                          ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.stretch,
-                                            children: [
-                                              Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Padding(
-                                                    padding: EdgeInsets.only(
-                                                      top: 1.h,
-                                                    ),
-                                                    child: Icon(
-                                                      Icons
-                                                          .lightbulb_outline_rounded,
-                                                      color:
-                                                          widget.primaryColor,
-                                                      size: 16.r,
-                                                    ),
-                                                  ),
-                                                  SizedBox(width: 6.w),
-                                                  Expanded(
-                                                    child: Text(
-                                                      "SPEAKING GUIDE",
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 10.sp,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color:
-                                                            widget.primaryColor,
-                                                        letterSpacing: 1.2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                child: Semantics(
+                                  container: true,
+                                  label:
+                                      'Speaking guide hint: ${widget.quest.hint}',
+                                  child: Container(
+                                    key: const Key(
+                                      'situation_speaking_hint_container',
+                                    ),
+                                    padding: EdgeInsets.all(16.r),
+                                    decoration: BoxDecoration(
+                                      color: widget.primaryColor
+                                          .withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(
+                                        16.r,
+                                      ),
+                                      border: Border.all(
+                                        color: widget.primaryColor
+                                            .withValues(alpha: 0.2),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.stretch,
+                                      children: [
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                top: 1.h,
                                               ),
-                                              SizedBox(height: 8.h),
-                                              Text(
-                                                widget.quest.hint!,
+                                              child: Icon(
+                                                Icons
+                                                    .lightbulb_outline_rounded,
+                                                color: widget.primaryColor,
+                                                size: 16.r,
+                                              ),
+                                            ),
+                                            SizedBox(width: 6.w),
+                                            Expanded(
+                                              child: Text(
+                                                "SPEAKING GUIDE",
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  fontSize: 14.sp,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: widget.isDark
-                                                      ? Colors.white70
-                                                      : Colors.black87,
-                                                  height: 1.4,
+                                                  fontSize: 10.sp,
+                                                  fontWeight:
+                                                      FontWeight.bold,
+                                                  color:
+                                                      widget.primaryColor,
+                                                  letterSpacing: 1.2,
                                                 ),
                                               ),
-                                            ],
-                                          ),
-                                        )
-                                        .animate()
-                                        .fade(
-                                          duration: 400.ms,
-                                          curve: Curves.easeOut,
-                                        )
-                                        .slideY(
-                                          begin: 0.2,
-                                          end: 0,
-                                          duration: 400.ms,
-                                          curve: Curves.easeOut,
+                                            ),
+                                          ],
                                         ),
+                                        SizedBox(height: 8.h),
+                                        Text(
+                                          widget.quest.hint!,
+                                          key: const Key(
+                                            'situation_speaking_hint_text',
+                                          ),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w500,
+                                            color: widget.isDark
+                                                ? Colors.white70
+                                                : Colors.black87,
+                                            height: 1.4,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               )
                             : const SizedBox.shrink(),
                       ),
@@ -324,6 +340,7 @@ class _TypewriterText extends StatefulWidget {
   final VoidCallback onFinished;
 
   const _TypewriterText({
+    super.key,
     required this.text,
     required this.style,
     required this.speed,
@@ -342,6 +359,20 @@ class _TypewriterTextState extends State<_TypewriterText>
   @override
   void initState() {
     super.initState();
+    final bool reduceMotion = VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion || widget.text.isEmpty) {
+      _controller = AnimationController(
+        vsync: this,
+        duration: Duration.zero,
+      );
+      _characterCount =
+          StepTween(begin: widget.text.length, end: widget.text.length)
+              .animate(_controller);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) widget.onFinished();
+      });
+      return;
+    }
     _controller = AnimationController(
       vsync: this,
       duration: widget.speed * widget.text.length,
@@ -349,7 +380,7 @@ class _TypewriterTextState extends State<_TypewriterText>
     _characterCount =
         StepTween(begin: 0, end: widget.text.length).animate(_controller)
           ..addListener(() {
-            setState(() {});
+            if (mounted) setState(() {});
           })
           ..addStatusListener((status) {
             if (status == AnimationStatus.completed) {
@@ -360,6 +391,40 @@ class _TypewriterTextState extends State<_TypewriterText>
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value) {
+      if (_controller.isAnimating) {
+        _controller.stop();
+        _controller.value = 1.0;
+        widget.onFinished();
+      }
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant _TypewriterText oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.text != widget.text) {
+      _controller.stop();
+      if (VowlMotion.lowAnimationModeOverride.value || widget.text.isEmpty) {
+        _characterCount =
+            StepTween(begin: widget.text.length, end: widget.text.length)
+                .animate(_controller);
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) widget.onFinished();
+        });
+      } else {
+        _controller.duration = widget.speed * widget.text.length;
+        _characterCount =
+            StepTween(begin: 0, end: widget.text.length).animate(_controller);
+        _controller.forward(from: 0.0);
+      }
+    }
+  }
+
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
@@ -367,7 +432,13 @@ class _TypewriterTextState extends State<_TypewriterText>
 
   @override
   Widget build(BuildContext context) {
-    String visibleText = widget.text.substring(0, _characterCount.value);
-    return Text(visibleText, style: widget.style, textAlign: TextAlign.center);
+    final count = _characterCount.value.clamp(0, widget.text.length);
+    final visibleText = widget.text.substring(0, count);
+    return Text(
+      visibleText,
+      key: const Key('situation_speaking_body_text'),
+      style: widget.style,
+      textAlign: TextAlign.center,
+    );
   }
 }

@@ -16,6 +16,7 @@ import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_header.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_briefing_card.dart';
 
@@ -50,15 +51,19 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   final ValueNotifier<bool> _isBriefingComplete = ValueNotifier(false);
 
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   @override
   void initState() {
     super.initState();
+    initGameLifecycle();
     initSpeakingGame();
   }
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
+    _scrollTimer = null;
     _isBriefingComplete.dispose();
     _scrollController.dispose();
     disposeSpeakingGame();
@@ -97,7 +102,17 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 100), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = null;
+    if (VowlMotion.lowAnimationModeOverride.value) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+        }
+      });
+      return;
+    }
+    _scrollTimer = Timer(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -116,6 +131,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
+    _scrollTimer = null;
     _isBriefingComplete.value = false;
   }
 
@@ -134,7 +151,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
 
         return MediaQuery(
           data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.5),
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
@@ -186,6 +203,9 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                     ),
                                     SizedBox(height: 24.h),
                                     SituationSpeakingBriefingCard(
+                                      key: const Key(
+                                        'situation_speaking_briefing_card',
+                                      ),
                                       quest: quest,
                                       primaryColor: theme.primaryColor,
                                       isDark: isDark,
@@ -211,6 +231,9 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                 _isBriefingComplete.value)
                               SliverToBoxAdapter(
                                 child: SpeakToConfirmOverlay(
+                                  key: const Key(
+                                    'situation_speaking_confirm_overlay',
+                                  ),
                                   expectedText:
                                       quest.correctAnswer ??
                                       quest.textToSpeak ??
