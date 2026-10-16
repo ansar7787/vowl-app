@@ -16,6 +16,7 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
   final bool isDark;
   final Function(DragUpdateDetails, double) onTiltDragged;
   final VoidCallback onTiltDragEnd;
+  final ValueChanged<bool>? onGateSelected;
 
   const YesNoSpeakingTiltArena({
     super.key,
@@ -25,6 +26,7 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
     required this.isDark,
     required this.onTiltDragged,
     required this.onTiltDragEnd,
+    this.onGateSelected,
   });
 
   @override
@@ -67,11 +69,17 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
               "NO",
               tokens.gameIncorrect,
               tiltValue <= -0.85,
+              onGateSelected != null ? () => onGateSelected!(false) : null,
             ),
           ),
           Positioned(
             right: 20.w,
-            child: _buildGateZone("YES", tokens.gameCorrect, tiltValue >= 0.85),
+            child: _buildGateZone(
+              "YES",
+              tokens.gameCorrect,
+              tiltValue >= 0.85,
+              onGateSelected != null ? () => onGateSelected!(true) : null,
+            ),
           ),
 
           // 3. Central dragging glowing sphere
@@ -82,9 +90,10 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
               onHorizontalDragEnd: (_) => onTiltDragEnd(),
               child: Transform.translate(
                 offset: Offset(tiltValue * (trackWidth / 2 - 40.w), 0),
-                child: ScaleButton(
-                  onTap: () {},
+                child: Semantics(
+                  label: isSnapped ? 'Alignment locked' : 'Tilt sphere',
                   child: Container(
+                    key: const Key('yes_no_speaking_sphere'),
                     width: 66.r,
                     height: 66.r,
                     decoration: BoxDecoration(
@@ -127,28 +136,36 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
     );
   }
 
-  Widget _buildGateZone(String label, Color color, bool isActive) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: isActive ? color : color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: isActive ? Colors.white24 : color.withValues(alpha: 0.3),
-          width: 1.5,
-        ),
-        boxShadow: isActive
-            ? [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 12)]
-            : [],
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w800,
-          letterSpacing: 1.5,
-          color: isActive ? Colors.white : color,
+  Widget _buildGateZone(String label, Color color, bool isActive, VoidCallback? onTap) {
+    return ScaleButton(
+      key: Key('yes_no_speaking_gate_${label.toLowerCase()}'),
+      onTap: onTap ?? () {},
+      child: Semantics(
+        button: true,
+        label: '$label gate',
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: isActive ? color : color.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: isActive ? Colors.white24 : color.withValues(alpha: 0.3),
+              width: 1.5,
+            ),
+            boxShadow: isActive
+                ? [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 12)]
+                : [],
+          ),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 1.5,
+              color: isActive ? Colors.white : color,
+            ),
+          ),
         ),
       ),
     );

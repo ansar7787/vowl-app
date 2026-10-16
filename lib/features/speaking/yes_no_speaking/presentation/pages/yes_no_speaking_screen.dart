@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
@@ -15,6 +16,7 @@ import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_c
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_header_instruction.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_audition_card.dart';
@@ -51,17 +53,39 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
   final ValueNotifier<bool> _isSnapped = ValueNotifier(false);
 
   Timer? _autoplayTimer;
+  Timer? _scrollTimer;
   final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
+    initGameLifecycle();
     initSpeakingGame();
+
+    final initialBlocState = context.read<SpeakingBloc>().state;
+    if (initialBlocState is SpeakingLoaded &&
+        !initialBlocState.answerStatus.isAnswered) {
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _triggerAutoPlay(initialBlocState.currentQuest);
+      } else {
+        _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
+          if (mounted) _triggerAutoPlay(initialBlocState.currentQuest);
+        });
+      }
+    }
+  }
+
+  void _triggerAutoPlay(SpeakingQuest quest) {
+    final prompt = quest.prompt?.trim() ?? "";
+    if (prompt.isNotEmpty) {
+      soundService.playTts(prompt);
+    }
   }
 
   @override
   void dispose() {
     _autoplayTimer?.cancel();
+    _scrollTimer?.cancel();
     _tiltValue.dispose();
     _isSnapped.dispose();
     _scrollController.dispose();
@@ -70,7 +94,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 100), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -79,6 +104,68 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
         );
       }
     });
+  }
+
+  void _handleSnapChoice(bool chosenMatch, bool doTheyMatch) {
+    _tiltValue.value = chosenMatch ? 1.0 : -1.0;
+    _isSnapped.value = true;
+    _scrollToBottom();
+
+    final bool binaryIsCorrect = chosenMatch == doTheyMatch;
+
+    if (!binaryIsCorrect) {
+      isAnsweredNotifier.value = true;
+      isCorrectNotifier.value = false;
+      hapticService.error();
+      soundService.playWrong();
+
+      final authState = context.read<AuthBloc>().state;
+      final speakingState = context.read<SpeakingBloc>().state;
+      String actualQuestion = 'Yes/No Listening Match';
+      if (speakingState is SpeakingLoaded &&
+          speakingState.currentQuestOrNull != null) {
+        final q = speakingState.currentQuestOrNull!;
+        actualQuestion =
+            q.targetWord ??
+            q.sentence ??
+            q.textToSpeak ??
+            q.question ??
+            q.prompt ??
+            'Yes/No Listening Match';
+      }
+
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: actualQuestion,
+          userAnswer: chosenMatch ? 'Yes' : 'No',
+          correctAnswer: doTheyMatch ? 'Yes' : 'No',
+          level: widget.level,
+        );
+      }
+
+      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
+    } else {
+      // Correctly answered the Phase 1 interaction. Proceed to Phase 2 (Speaking).
+      soundService.playClick();
+      hapticService.selection();
+    }
+  }
+
+  void _onGateSelected(bool isYes) {
+    if (isAnsweredNotifier.value || _isSnapped.value) return;
+    final state = context.read<SpeakingBloc>().state;
+    if (state is! SpeakingLoaded) return;
+
+    final quest = state.currentQuest;
+    final String rawPrompt = quest.prompt ?? "";
+    final String rawSample = quest.sampleAnswer ?? "";
+    final bool doTheyMatch =
+        rawPrompt.trim().toLowerCase() == rawSample.trim().toLowerCase();
+
+    _handleSnapChoice(isYes, doTheyMatch);
   }
 
   void _onTiltDragged(DragUpdateDetails details, double trackWidth) {
@@ -100,50 +187,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
 
     if (_tiltValue.value <= -0.85 || _tiltValue.value >= 0.85) {
       final bool chosenMatch = _tiltValue.value >= 0.85;
-      _tiltValue.value = chosenMatch ? 1.0 : -1.0;
-      _isSnapped.value = true;
-      _scrollToBottom();
-
-      final bool binaryIsCorrect = chosenMatch == doTheyMatch;
-
-      if (!binaryIsCorrect) {
-        isAnsweredNotifier.value = true;
-        isCorrectNotifier.value = false;
-        hapticService.error();
-        soundService.playWrong();
-
-        final authState = context.read<AuthBloc>().state;
-        final speakingState = context.read<SpeakingBloc>().state;
-        String actualQuestion = 'Yes/No Listening Match';
-        if (speakingState is SpeakingLoaded &&
-            speakingState.currentQuestOrNull != null) {
-          final q = speakingState.currentQuestOrNull!;
-          actualQuestion =
-              q.targetWord ??
-              q.sentence ??
-              q.textToSpeak ??
-              q.question ??
-              'Yes/No Listening Match';
-        }
-
-        if (authState.status == AuthStatus.authenticated &&
-            authState.user != null) {
-          ErrorJournalCollector.record(
-            userId: authState.user!.id,
-            gameType: widget.gameType.name,
-            question: actualQuestion,
-            userAnswer: chosenMatch ? 'Yes' : 'No',
-            correctAnswer: doTheyMatch ? 'Yes' : 'No',
-            level: widget.level,
-          );
-        }
-
-        context.read<SpeakingBloc>().add(const SubmitAnswer(false));
-      } else {
-        // Correctly answered the Phase 1 interaction. Proceed to Phase 2 (Speaking).
-        soundService.playClick();
-        hapticService.selection();
-      }
+      _handleSnapChoice(chosenMatch, doTheyMatch);
     }
   }
 
@@ -154,6 +198,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
     isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
+      showConfettiNotifier.value = true;
       hapticService.success();
       soundService.playCorrect();
       context.read<SpeakingBloc>().add(const SubmitAnswer(true));
@@ -178,11 +223,25 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
     }
   }
 
+  @visibleForTesting
+  void snapTo(bool isYes) => _onGateSelected(isYes);
+
+  @visibleForTesting
+  void submitEvaluation(bool nailedIt, String expectedText) =>
+      _submitVerbalEvaluation(nailedIt, expectedText);
+
+  @visibleForTesting
+  ValueNotifier<double> get tiltValueNotifier => _tiltValue;
+
+  @visibleForTesting
+  ValueNotifier<bool> get isSnappedNotifier => _isSnapped;
+
   @override
   void onQuestionReset() {
     _tiltValue.value = 0.0;
-
     _isSnapped.value = false;
+    _scrollTimer?.cancel();
+    _autoplayTimer?.cancel();
   }
 
   @override
@@ -193,13 +252,25 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listenWhen: speakingListenWhen,
-      listener: onSpeakingStateChanged,
+      listener: (context, state) {
+        onSpeakingStateChanged(context, state);
+        if (state is SpeakingLoaded && !state.answerStatus.isAnswered) {
+          _autoplayTimer?.cancel();
+          if (VowlMotion.lowAnimationModeOverride.value) {
+            _triggerAutoPlay(state.currentQuest);
+          } else {
+            _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
+              if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          }
+        }
+      },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
         return MediaQuery(
           data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.5),
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
@@ -223,11 +294,13 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
                     : RawScrollbar(
+                        key: const Key('yes_no_speaking_scrollbar'),
                         controller: _scrollController,
                         thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                         radius: Radius.circular(8.r),
                         thickness: 4.w,
                         child: CustomScrollView(
+                          key: const Key('yes_no_speaking_scroll_view'),
                           controller: _scrollController,
                           physics: const BouncingScrollPhysics(
                             parent: AlwaysScrollableScrollPhysics(),
@@ -245,6 +318,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       YesNoSpeakingHeaderInstruction(
+                                        key: const Key(
+                                          'yes_no_speaking_header_instruction',
+                                        ),
                                         primaryColor: theme.primaryColor,
                                         isSnapped: _isSnapped.value,
                                         instruction:
@@ -254,6 +330,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
                                       ),
                                       SizedBox(height: 24.h),
                                       YesNoSpeakingAuditionCard(
+                                        key: const Key(
+                                          'yes_no_speaking_audition_card',
+                                        ),
                                         quest: quest,
                                         primaryColor: theme.primaryColor,
                                         isDark: isDark,
@@ -273,6 +352,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
                                         valueListenable: _tiltValue,
                                         builder: (context, tiltValue, _) {
                                           return YesNoSpeakingTiltArena(
+                                            key: const Key(
+                                              'yes_no_speaking_tilt_arena',
+                                            ),
                                             tiltValue: tiltValue,
                                             isSnapped: _isSnapped.value,
                                             primaryColor: theme.primaryColor,
@@ -283,6 +365,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
                                                 _tiltValue.value = 0.0;
                                               }
                                             },
+                                            onGateSelected: _onGateSelected,
                                           );
                                         },
                                       ),
@@ -294,7 +377,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
                             if (_isSnapped.value && !isAnsweredNotifier.value)
                               SliverToBoxAdapter(
                                 child: ShadowPlaybackCompare(
-                                  key: ValueKey(quest.id),
+                                  key: const Key(
+                                    'yes_no_speaking_shadow_compare',
+                                  ),
                                   expectedText: quest.sampleAnswer ?? "",
                                   primaryColor: theme.primaryColor,
                                   isPositioned: false,
