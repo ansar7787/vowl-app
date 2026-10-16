@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,11 +17,6 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
   final int correctAnswerIndex;
   final bool isDark;
   final Color primaryColor;
-  // FIX: was `final Function(int shuffledIndex) onOptionSelected;` — a bare
-  // `Function` type accepts a callback of *any* signature and only fails at
-  // runtime if misused. `ValueChanged<int>` (Flutter's own alias for
-  // `void Function(int)`) gives the same call-site ergonomics with real
-  // compile-time type safety.
   final ValueChanged<int> onOptionSelected;
 
   const IdiomMatchOptionsPanel({
@@ -39,7 +35,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final tokens = Theme.of(context).extension<AppColorTokens>();
     return Column(
       children: List.generate(shuffledOptions.length, (index) {
         final option = shuffledOptions[index];
@@ -70,6 +66,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
             label: semanticLabel,
             excludeSemantics: true,
             child: ScaleButton(
+              key: Key('idiom_match_option_$index'),
               onTap: isAnswered ? null : () => onOptionSelected(index),
               child: GlassTile(
                 borderRadius: BorderRadius.circular(20.r),
@@ -111,7 +108,9 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                                   : Icons.psychology_alt_rounded),
                         color: (isCorrect || isSelected)
                             ? Colors.green
-                            : (isWrong ? tokens.gameIncorrect : primaryColor),
+                            : (isWrong
+                                ? (tokens?.gameIncorrect ?? AppColors.red500)
+                                : primaryColor),
                         size: 18.r,
                       ),
                     ),
