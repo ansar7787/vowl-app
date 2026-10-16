@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'dart:math' as math;
@@ -9,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
@@ -50,6 +52,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   late AnimationController _sweepController;
+  Timer? _scrollTimer;
 
   final ValueNotifier<List<String>> _diagnosedSymptoms = ValueNotifier([]);
   final ScrollController _scrollController = ScrollController();
@@ -62,14 +65,19 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   final ValueNotifier<List<String>> _scannedGlitches = ValueNotifier([]);
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 150), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
       if (!mounted) return;
       if (_scrollController.hasClients) {
-        _scrollController.animateTo(
-          _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 600),
-          curve: Curves.easeOutCubic,
-        );
+        if (VowlMotion.shouldReduceMotion(context)) {
+          _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+        } else {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.easeOutCubic,
+          );
+        }
       }
     });
   }
@@ -89,7 +97,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     if (reduceMotion) {
       if (_sweepController.isAnimating) _sweepController.stop();
     } else {
@@ -99,6 +107,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _sweepController.dispose();
     _diagnosedSymptoms.dispose();
     _scanOffset.dispose();
@@ -324,10 +333,11 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   @override
   void onQuestionReset() {
     _diagnosedSymptoms.value = [];
-
     _scanOffset.value = Offset.zero;
-
     _scannedGlitches.value = [];
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override
@@ -339,7 +349,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
       listenWhen: roleplayListenWhen,
       listener: onRoleplayStateChanged,
       builder: (context, state) {
-        final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
+        final quest =
+            (state is RoleplayLoaded) ? state.currentQuestOrNull : null;
         final symptoms = quest?.symptoms ?? [];
 
         return ListenableBuilder(
@@ -365,9 +376,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
-                  context.read<RoleplayBloc>().add(NextQuestion()),
+                  context.read<RoleplayBloc>().add(const NextQuestion()),
               onHint: () =>
-                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+                  context.read<RoleplayBloc>().add(const RoleplayHintUsed()),
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
@@ -379,6 +390,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
+                            key: const Key('medical_consult_scroll_view'),
                             controller: _scrollController,
                             physics: _isDragging.value
                                 ? const NeverScrollableScrollPhysics()
@@ -463,6 +475,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
 
                                           // Submit controls
                                           if (!isAnsweredNotifier.value &&
+                                              !isFirstStagePassedNotifier.value &&
                                               _diagnosedSymptoms
                                                   .value
                                                   .isNotEmpty)
@@ -470,6 +483,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                               children: [
                                                 // Confirm Button
                                                 ScaleButton(
+                                                  key: const Key(
+                                                    'medical_consult_confirm_button',
+                                                  ),
                                                   onTap: () => _submitDiagnosis(
                                                     quest.correctAnswer ?? "",
                                                     quest,
@@ -532,6 +548,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                 SizedBox(height: 12.h),
                                                 // Reset Button
                                                 ScaleButton(
+                                                  key: const Key('medical_consult_reset_button'),
                                                   onTap: _clearDiagnosis,
                                                   child: Container(
                                                     width: double.infinity,
@@ -609,6 +626,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                   !isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
                                   child: SpeakToConfirmOverlay(
+                                    key: const Key('medical_consult_speak_overlay'),
                                     expectedText:
                                         quest.correctAnswer ??
                                         _diagnosedSymptoms.value.join(', '),

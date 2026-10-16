@@ -16,6 +16,7 @@ class MedicalConsultInstruction extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
+      key: const Key('medical_consult_instruction'),
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 16.w),
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),

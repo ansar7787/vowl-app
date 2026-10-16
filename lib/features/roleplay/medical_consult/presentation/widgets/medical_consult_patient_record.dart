@@ -17,7 +17,8 @@ class MedicalConsultPatientRecord extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1.sw,
+      key: const Key('medical_consult_patient_record'),
+      width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,

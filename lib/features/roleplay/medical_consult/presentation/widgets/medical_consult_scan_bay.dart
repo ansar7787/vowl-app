@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -118,8 +119,11 @@ class MedicalConsultScanBay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Container(
-      width: 1.sw,
+      key: const Key('medical_consult_scan_bay'),
+      width: double.infinity,
       height: 330.h,
       decoration: BoxDecoration(
         color: isDark
@@ -132,10 +136,15 @@ class MedicalConsultScanBay extends StatelessWidget {
               : Colors.black.withValues(alpha: 0.03),
         ),
       ),
-      child: Stack(
-        alignment: Alignment.center,
-        clipBehavior: Clip.none,
-        children: [
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final centerX = constraints.maxWidth / 2;
+          final centerY = constraints.maxHeight / 2;
+
+          return Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
+            children: [
           // Cybernetic scan matrix background grids
           Positioned.fill(
             child: ClipRRect(
@@ -156,12 +165,17 @@ class MedicalConsultScanBay extends StatelessWidget {
 
           // Glowing wireframe patient body
           Center(
-            child:
-                Icon(
-                      Icons.accessibility_new_rounded,
-                      size: 260.r,
-                      color: color.withValues(alpha: 0.1),
-                    )
+            child: reduceMotion
+                ? Icon(
+                    Icons.accessibility_new_rounded,
+                    size: 260.r,
+                    color: color.withValues(alpha: 0.1),
+                  )
+                : Icon(
+                    Icons.accessibility_new_rounded,
+                    size: 260.r,
+                    color: color.withValues(alpha: 0.1),
+                  )
                     .animate(onPlay: (c) => c.repeat(reverse: true))
                     .shimmer(
                       duration: 2.2.seconds,
@@ -176,57 +190,61 @@ class MedicalConsultScanBay extends StatelessWidget {
             final Offset pos = _getAnatomicalOffset(s, index, symptoms.length);
             final bool isResolved = scannedGlitches.contains(s);
 
+            final anomalyChild = Container(
+              key: Key('medical_consult_anomaly_$index'),
+              width: 32.r,
+              height: 32.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isResolved
+                    ? color.withValues(alpha: 0.2)
+                    : tokens.gameIncorrect.withValues(
+                        alpha: 0.08,
+                      ),
+                border: Border.all(
+                  color: isResolved
+                      ? color
+                      : tokens.gameIncorrect.withValues(
+                          alpha: 0.7,
+                        ),
+                  width: 2.0,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color:
+                        (isResolved
+                                ? color
+                                : tokens.gameIncorrect)
+                            .withValues(alpha: 0.25),
+                    blurRadius: 8,
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Icon(
+                  isResolved
+                      ? Icons.check_circle_outline_rounded
+                      : Icons.warning_rounded,
+                  color: isResolved
+                      ? color
+                      : tokens.gameIncorrect,
+                  size: 14.r,
+                ),
+              ),
+            );
+
             return Positioned(
-              left: (1.sw / 2) - 16.w + pos.dx,
-              top: (330.h / 2) - 16.h + pos.dy,
+              left: (centerX - 16.r + pos.dx).clamp(12.w, constraints.maxWidth - 44.w),
+              top: (centerY - 16.r + pos.dy).clamp(12.h, constraints.maxHeight - 44.h),
               child: Semantics(
                 label: "Scan anomaly: $s",
                 hint: isResolved ? "Already scanned" : "Double tap to scan",
                 button: true,
                 child: GestureDetector(
                   onTap: () => onSymptomScannedDirectly(s),
-                  child:
-                      Container(
-                            width: 32.r,
-                            height: 32.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: isResolved
-                                  ? color.withValues(alpha: 0.2)
-                                  : tokens.gameIncorrect.withValues(
-                                      alpha: 0.08,
-                                    ),
-                              border: Border.all(
-                                color: isResolved
-                                    ? color
-                                    : tokens.gameIncorrect.withValues(
-                                        alpha: 0.7,
-                                      ),
-                                width: 2.0,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color:
-                                      (isResolved
-                                              ? color
-                                              : tokens.gameIncorrect)
-                                          .withValues(alpha: 0.25),
-                                  blurRadius: 8,
-                                ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Icon(
-                                isResolved
-                                    ? Icons.check_circle_outline_rounded
-                                    : Icons.warning_rounded,
-                                color: isResolved
-                                    ? color
-                                    : tokens.gameIncorrect,
-                                size: 14.r,
-                              ),
-                            ),
-                          )
+                  child: reduceMotion
+                      ? anomalyChild
+                      : anomalyChild
                           .animate(onPlay: (c) => c.repeat(reverse: true))
                           .scale(
                             begin: const Offset(1, 1),
@@ -255,6 +273,7 @@ class MedicalConsultScanBay extends StatelessWidget {
                     child: GestureDetector(
                       onPanUpdate: (d) => onScanUpdate(d, symptoms),
                       child: Container(
+                        key: const Key('medical_consult_scan_lens'),
                         width: 100.r,
                         height: 100.r,
                         decoration: BoxDecoration(
@@ -283,7 +302,9 @@ class MedicalConsultScanBay extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
+      );
+    },
+  ),
+);
   }
 }

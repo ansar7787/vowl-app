@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -21,9 +22,11 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
     if (quest.medicalVocab == null || quest.medicalVocab!.isEmpty) {
       return const SizedBox();
     }
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Container(
-      width: 1.sw,
+      key: const Key('medical_consult_body_diagram'),
+      width: double.infinity,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark
@@ -73,12 +76,17 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
                   ),
                 ),
                 child: Center(
-                  child:
-                      Icon(
-                            Icons.accessibility_new_rounded,
-                            size: 60.r,
-                            color: primaryColor.withValues(alpha: 0.7),
-                          )
+                  child: reduceMotion
+                      ? Icon(
+                          Icons.accessibility_new_rounded,
+                          size: 60.r,
+                          color: primaryColor.withValues(alpha: 0.7),
+                        )
+                      : Icon(
+                          Icons.accessibility_new_rounded,
+                          size: 60.r,
+                          color: primaryColor.withValues(alpha: 0.7),
+                        )
                           .animate(onPlay: (c) => c.repeat(reverse: true))
                           .fadeIn(duration: 1000.ms),
                 ),
