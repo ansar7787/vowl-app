@@ -27,22 +27,28 @@ class ContextCluesEvidenceTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final content = Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Row(
             children: [
               Icon(Icons.label_important_rounded, size: 14.r, color: color),
               SizedBox(width: 8.w),
-              Text(
-                "IDENTIFY REDACTED COMPONENT",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  color: color.withValues(alpha: 0.7),
-                  letterSpacing: 1.5,
+              Expanded(
+                child: Text(
+                  "IDENTIFY REDACTED COMPONENT",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.bold,
+                    color: color.withValues(alpha: 0.7),
+                    letterSpacing: 1.5,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
@@ -128,6 +134,8 @@ class ContextCluesEvidenceTags extends StatelessWidget {
           ),
         ),
       ],
-    ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2);
+    );
+    if (reduceMotion) return content;
+    return content.animate().fadeIn(delay: 400.ms).slideY(begin: 0.2);
   }
 }

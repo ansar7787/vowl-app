@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:ui';
@@ -51,6 +52,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
   final ValueNotifier<Offset> _lensPosition = ValueNotifier(Offset.zero);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   VocabularyQuest? _lastQuest;
 
@@ -62,6 +64,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _lensPosition.dispose();
     _selectedOption.dispose();
     _scrollController.dispose();
@@ -70,8 +73,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -150,6 +154,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _lensPosition.value = Offset.zero;
 
     _selectedOption.value = null;
@@ -167,11 +172,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
         );
 
         if (state is VocabularyLoaded) {
-          _lastQuest = state.currentQuest;
+          _lastQuest = state.currentQuestOrNull;
         }
 
         final quest = (state is VocabularyLoaded)
-            ? state.currentQuest
+            ? state.currentQuestOrNull
             : _lastQuest;
 
         return ListenableBuilder(
@@ -196,6 +201,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
+              customHintText: quest?.hint,
               isAnswered: isBaseAnswered,
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
@@ -204,10 +210,19 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                 final currentState = context.read<VocabularyBloc>().state;
                 if (currentState is VocabularyLoaded &&
                     !currentState.isFinalFailure &&
+                    currentState.livesRemaining > 0 &&
                     isCorrectNotifier.value == false) {
                   isAnsweredNotifier.value = false;
                   isCorrectNotifier.value = null;
+                  isFirstStagePassedNotifier.value = false;
                   _selectedOption.value = null;
+                  if (_scrollController.hasClients) {
+                    _scrollController.animateTo(
+                      0,
+                      duration: const Duration(milliseconds: 400),
+                      curve: Curves.easeOutCubic,
+                    );
+                  }
                 } else {
                   context.read<VocabularyBloc>().add(NextQuestion());
                 }
@@ -245,6 +260,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                                           isFinalFailure,
                                           sceneIsAnswered,
                                           sceneIsCorrect,
+                                          state is VocabularyLoaded
+                                              ? state.currentIndex
+                                              : 0,
                                         ),
                                       ),
                                     ),
@@ -289,6 +307,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
     bool isFinalFailure,
     bool sceneIsAnswered,
     bool? sceneIsCorrect,
+    int questIndex,
   ) {
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -313,6 +332,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
             ? (gapUnit * 2.5).clamp(10.0, 30.0)
             : 10.0;
 
+        final reduceMotion =
+            MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+
         return Column(
           children: [
             SizedBox(height: gapTop),
@@ -323,14 +345,14 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                       fit: BoxFit.scaleDown,
                       child: ContextCluesCaseHeader(
                         level: widget.level,
-                        questIndex: lastProcessedIndex,
+                        questIndex: questIndex,
                         color: color,
                       ),
                     ),
                   )
                 : ContextCluesCaseHeader(
                     level: widget.level,
-                    questIndex: lastProcessedIndex,
+                    questIndex: questIndex,
                     color: color,
                   ),
             SizedBox(height: 4.h),
@@ -364,7 +386,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                           begin: 5.0,
                           end: sceneIsAnswered ? 0.0 : 5.0,
                         ),
-                        duration: const Duration(milliseconds: 500),
+                        duration: reduceMotion
+                            ? Duration.zero
+                            : const Duration(milliseconds: 500),
                         curve: Curves.easeOut,
                         builder: (context, blurValue, child) {
                           return ImageFiltered(
@@ -376,7 +400,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                           );
                         },
                         child: AnimatedOpacity(
-                          duration: const Duration(milliseconds: 500),
+                          duration: reduceMotion
+                              ? Duration.zero
+                              : const Duration(milliseconds: 500),
                           opacity: sceneIsAnswered ? 1.0 : 0.4,
                           child: ContextCluesEvidenceSentence(
                             sentence: quest.sentence ?? "",
@@ -425,6 +451,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                                     left: centerPos.dx - lensRadius,
                                     top: centerPos.dy - lensRadius,
                                     child: GestureDetector(
+                                      behavior: HitTestBehavior.opaque,
                                       onPanUpdate: (d) => _onLensMove(
                                         d,
                                         innerConstraints,

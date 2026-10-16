@@ -48,7 +48,7 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
                     children: [
                       _buildTextSpan(parts[0]),
                       WidgetSpan(
-                        child: _buildRedactedBlock(),
+                        child: _buildRedactedBlock(context),
                         alignment: PlaceholderAlignment.middle,
                       ),
                       if (parts.length > 1) _buildTextSpan(parts[1]),
@@ -81,9 +81,12 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
     );
   }
 
-  Widget _buildRedactedBlock() {
+  Widget _buildRedactedBlock(BuildContext context) {
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+
     if (isAnswered) {
-      return Container(
+      final answeredBlock = Container(
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
         decoration: BoxDecoration(
           color: isCorrect == true
@@ -103,17 +106,26 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
             color: isCorrect == true ? Colors.green : Colors.red,
           ),
         ),
-      ).animate().scale(duration: 400.ms, curve: Curves.elasticOut);
+      );
+      if (reduceMotion) return answeredBlock;
+      return answeredBlock.animate().scale(
+        duration: 400.ms,
+        curve: Curves.elasticOut,
+      );
     }
 
-    return Container(
-          width: isCompact ? 70.w : 100.w,
-          height: isCompact ? 18.h : 24.h,
-          decoration: BoxDecoration(
-            color: _LocalPalette.color1a1a1a,
-            borderRadius: BorderRadius.circular(2.r),
-          ),
-        )
+    final redactedContainer = Container(
+      width: isCompact ? 70.w : 100.w,
+      height: isCompact ? 18.h : 24.h,
+      decoration: BoxDecoration(
+        color: _LocalPalette.color1a1a1a,
+        borderRadius: BorderRadius.circular(2.r),
+      ),
+    );
+
+    if (reduceMotion) return redactedContainer;
+
+    return redactedContainer
         .animate(onPlay: (c) => c.repeat(reverse: true))
         .shimmer(duration: 2.seconds, color: Colors.white10);
   }
