@@ -2,7 +2,6 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
-
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class _LocalPalette {
@@ -26,6 +25,8 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sampleAnswerText = quest.sampleAnswer ?? "";
+
     return Container(
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
@@ -69,43 +70,48 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
               ),
               SizedBox(width: 8.w),
               ScaleButton(
+                key: const Key('yes_no_speaking_replay_button'),
                 onTap: onPlayTts,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 12.w,
-                    vertical: 6.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: primaryColor.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.volume_up_rounded,
-                        color: primaryColor,
-                        size: 16.r,
-                      ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        "REPLAY AUDIO",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
+                child: Semantics(
+                  button: true,
+                  label: 'Replay audio prompt',
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: primaryColor.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.volume_up_rounded,
                           color: primaryColor,
-                          fontWeight: FontWeight.bold,
+                          size: 16.r,
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 6.w),
+                        Text(
+                          "REPLAY AUDIO",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            color: primaryColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ],
           ),
           SizedBox(height: 16.h),
-
           Text(
             "WRITTEN TARGET CARD:",
+            key: const Key('yes_no_speaking_target_card_label'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,
@@ -113,16 +119,21 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
             ),
           ),
           SizedBox(height: 4.h),
-          Text(
-            quest.sampleAnswer ?? "",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 22.sp,
-              fontWeight: FontWeight.w600,
-              color: isDark ? Colors.white : AppColors.slate800,
-              height: 1.35,
-              letterSpacing: 0.5,
+          Semantics(
+            container: true,
+            label: 'Target sentence: $sampleAnswerText',
+            child: Text(
+              sampleAnswerText,
+              key: const Key('yes_no_speaking_target_text'),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white : AppColors.slate800,
+                height: 1.35,
+                letterSpacing: 0.5,
+              ),
             ),
           ),
         ],
