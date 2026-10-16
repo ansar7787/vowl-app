@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_painter.dart';
 
@@ -35,6 +36,9 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
     return LayoutBuilder(
       builder: (context, constraints) {
         final double width = constraints.maxWidth;
@@ -78,6 +82,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
         }
 
         return Container(
+          key: const Key('social_spark_galaxy_board'),
           width: width,
           height: containerHeight,
           decoration: BoxDecoration(
@@ -124,7 +129,14 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
               // Orbiting verbal stars
               ...List.generate(words.length, (i) {
                 final Offset pos = starOffsets[i];
-                return _buildStarNode(i, words[i], pos, color, isDark);
+                return _buildStarNode(
+                  i,
+                  words[i],
+                  pos,
+                  color,
+                  isDark,
+                  reduceMotion,
+                );
               }),
             ],
           ),
@@ -139,6 +151,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
     Offset pos,
     Color color,
     bool isDark,
+    bool reduceMotion,
   ) {
     final bool isSelected = selectedIndices.contains(index);
     final int selectOrderIndex = selectedIndices.indexOf(index) + 1;
@@ -150,103 +163,112 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
           : AppColors.gameIncorrect;
     }
 
+    final nodeWidget = Semantics(
+      button: true,
+      label:
+          'Word $text, ${isSelected ? "selected order $selectOrderIndex" : "unselected"}',
+      child: ScaleButton(
+        key: Key('social_spark_star_$index'),
+        onTap: () => onStarTap(index),
+        child: Container(
+          width: 108.w,
+          height: 72.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(22.r),
+            color: isSelected
+                ? nodeColor
+                : (isDark ? AppColors.deepDark : Colors.white),
+            border: Border.all(
+              color: isSelected
+                  ? Colors.white
+                  : color.withValues(alpha: 0.4),
+              width: isSelected ? 2.5 : 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: (isSelected ? nodeColor : color).withValues(
+                  alpha: isSelected ? 0.4 : 0.1,
+                ),
+                blurRadius: 10,
+                spreadRadius: 1,
+              ),
+            ],
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Tiny connection index tag
+              if (isSelected)
+                Positioned(
+                  top: 6.h,
+                  left: 8.w,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                      vertical: 2.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.25),
+                      borderRadius: BorderRadius.circular(6.r),
+                    ),
+                    child: Text(
+                      "$selectOrderIndex",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+
+              // Sparkle particle stars
+              Positioned(
+                right: 8.w,
+                top: 6.h,
+                child: Icon(
+                  Icons.star_rounded,
+                  size: 12.r,
+                  color: isSelected
+                      ? Colors.white
+                      : color.withValues(alpha: 0.3),
+                ),
+              ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10.w,
+                  vertical: 6.h,
+                ),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.bold,
+                      color: isSelected
+                          ? Colors.white
+                          : (isDark ? Colors.white70 : Colors.black87),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+
     return Positioned(
       left: pos.dx - 54.w,
       top: pos.dy - 36.h,
-      child:
-          ScaleButton(
-                onTap: () => onStarTap(index),
-                child: Container(
-                  width: 108.w,
-                  height: 72.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(22.r),
-                    color: isSelected
-                        ? nodeColor
-                        : (isDark ? AppColors.deepDark : Colors.white),
-                    border: Border.all(
-                      color: isSelected
-                          ? Colors.white
-                          : color.withValues(alpha: 0.4),
-                      width: isSelected ? 2.5 : 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: (isSelected ? nodeColor : color).withValues(
-                          alpha: isSelected ? 0.4 : 0.1,
-                        ),
-                        blurRadius: 10,
-                        spreadRadius: 1,
-                      ),
-                    ],
-                  ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      // Tiny connection index tag
-                      if (isSelected)
-                        Positioned(
-                          top: 6.h,
-                          left: 8.w,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 6.w,
-                              vertical: 2.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.25),
-                              borderRadius: BorderRadius.circular(6.r),
-                            ),
-                            child: Text(
-                              "$selectOrderIndex",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-
-                      // Sparkle particle stars
-                      Positioned(
-                        right: 8.w,
-                        top: 6.h,
-                        child: Icon(
-                          Icons.star_rounded,
-                          size: 12.r,
-                          color: isSelected
-                              ? Colors.white
-                              : color.withValues(alpha: 0.3),
-                        ),
-                      ),
-
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 6.h,
-                        ),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            text,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
-                              color: isSelected
-                                  ? Colors.white
-                                  : (isDark ? Colors.white70 : Colors.black87),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              )
+      child: reduceMotion
+          ? nodeWidget
+          : nodeWidget
               .animate(onPlay: (c) => c.repeat(reverse: true))
               .moveY(
                 begin: -4,
