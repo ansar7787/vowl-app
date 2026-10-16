@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class DailyJournalPrompt extends StatelessWidget {
   final String text;
@@ -17,7 +18,20 @@ class DailyJournalPrompt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    Widget iconWidget = Icon(
+      Icons.edit_note_rounded,
+      color: Colors.amberAccent,
+      size: 28.r,
+    );
+    if (!reduceMotion) {
+      iconWidget = iconWidget
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .shimmer(duration: 3.seconds);
+    }
+
     return Container(
+      key: const Key('daily_journal_prompt'),
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24.r),
@@ -46,13 +60,7 @@ class DailyJournalPrompt extends StatelessWidget {
           const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Row(
             children: [
-              Icon(
-                    Icons.edit_note_rounded,
-                    color: Colors.amberAccent,
-                    size: 28.r,
-                  )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .shimmer(duration: 3.seconds),
+              iconWidget,
               SizedBox(width: 16.w),
               Expanded(
                 child: Text(

@@ -49,6 +49,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                 : (isDark ? Colors.white24 : Colors.black26);
 
             return GestureDetector(
+              key: Key('daily_journal_token_$k'),
               onTap: () {
                 // Speak the token loudly so they learn pronunciation!
                 di.sl<TtsService>().speak(k);

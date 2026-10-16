@@ -57,6 +57,7 @@ class DailyJournalScratchArea extends StatelessWidget {
       child: Column(
         children: [
           TextField(
+            key: const Key('daily_journal_input_field'),
             controller: controller,
             focusNode: focusNode,
             maxLines: 5,
