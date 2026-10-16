@@ -25,8 +25,11 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
       children: [
         Divider(color: primaryColor.withValues(alpha: 0.2), thickness: 2),
         SizedBox(height: 8.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 10.w,
+          runSpacing: 4.h,
           children: [
             Text(
               "PHASE 2: SPEAKING",
@@ -38,8 +41,7 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
                 color: primaryColor,
               ),
             ),
-            if (bonusCoins != null) ...[
-              SizedBox(width: 10.w),
+            if (bonusCoins != null)
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                 decoration: BoxDecoration(
@@ -59,7 +61,6 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
           ],
         ),
         if (textToSpeak.trim().isNotEmpty) ...[

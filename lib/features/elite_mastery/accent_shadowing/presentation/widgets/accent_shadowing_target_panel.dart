@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -30,7 +31,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final tokens = Theme.of(context).extension<AppColorTokens>();
     final isErrorState = isCorrect == false && attempts > 0;
     final words = text
         .split(RegExp(r'\s+'))
@@ -43,8 +44,8 @@ class AccentShadowingTargetPanel extends StatelessWidget {
       border: (isAnswered || isErrorState)
           ? Border.all(
               color: isCorrect == true
-                  ? tokens.gameCorrect
-                  : tokens.gameIncorrect,
+                  ? (tokens?.gameCorrect ?? AppColors.emerald500)
+                  : (tokens?.gameIncorrect ?? AppColors.red500),
               width: 2,
             )
           : null,
@@ -58,6 +59,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
             ),
             excludeSemantics: true,
             child: GestureDetector(
+              key: const Key('accent_shadowing_listen_button'),
               onTap: onListenTap,
               behavior: HitTestBehavior.opaque,
               child: ConstrainedBox(
@@ -87,11 +89,9 @@ class AccentShadowingTargetPanel extends StatelessWidget {
   }
 
   Widget _buildTargetWords(BuildContext context, List<String> words) {
-    // FIX: previously each word was its own bare `Text`, so a screen reader
-    // would traverse them one at a time with no indication of overall match
-    // progress. A single combined Semantics node (mirroring the pattern
-    // already used in EliteFeedbackCard) announces the full sentence plus
-    // progress in one pass instead.
+    final reduceMotion = VowlMotion.shouldReduceMotion(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
     return Semantics(
       container: true,
       excludeSemantics: true,
@@ -106,18 +106,24 @@ class AccentShadowingTargetPanel extends StatelessWidget {
         runSpacing: 8.h,
         children: List.generate(words.length, (index) {
           final isMatched = matchedIndices.contains(index);
-          return Text(
-                words[index],
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 24.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isMatched
-                      ? AppColors.gameCorrect
-                      : (isDark ? Colors.white : AppColors.slate800),
-                  height: 1.4,
-                ),
-              )
+          final wordText = Text(
+            words[index],
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 24.sp,
+              fontWeight: FontWeight.w900,
+              color: isMatched
+                  ? AppColors.gameCorrect
+                  : (isDark ? Colors.white : AppColors.slate800),
+              height: 1.4,
+            ),
+          );
+
+          if (reduceMotion) {
+            return wordText;
+          }
+
+          return wordText
               .animate(target: isMatched ? 1 : 0)
               .scale(
                 begin: const Offset(1, 1),

@@ -69,9 +69,8 @@ class EliteBaseLayout extends StatelessWidget {
       isDark: isDark,
       isMidnight: isMidnight,
     );
-    final quest = state is EliteMasteryLoaded
-        ? (state as EliteMasteryLoaded).currentQuest
-        : null;
+    final s = state;
+    final quest = s is EliteMasteryLoaded ? s.currentQuestOrNull : null;
 
     final wrappedChild = fullScreenContent
         ? child

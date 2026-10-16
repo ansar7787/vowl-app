@@ -79,7 +79,7 @@ class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
   bool get hintUsed => isHintUsed;
 
   @override
-  GameQuest? get currentQuestOrNull => currentQuest;
+  GameQuest? get currentQuestOrNull => quests.isEmpty ? null : currentQuest;
 
   @override
   int get totalQuests => quests.length;
