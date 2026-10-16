@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
@@ -46,11 +48,15 @@ class _IdiomsScreenState extends State<IdiomsScreen>
 
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
+  Timer? _submitTimer;
+  Timer? _scrollTimer;
 
   VocabularyQuest? _lastQuest;
 
   @override
   void dispose() {
+    _submitTimer?.cancel();
+    _scrollTimer?.cancel();
     _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
@@ -71,12 +77,14 @@ class _IdiomsScreenState extends State<IdiomsScreen>
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
-    Future.delayed(600.ms, () {
+    _submitTimer?.cancel();
+    _submitTimer = Timer(const Duration(milliseconds: 600), () {
       if (!mounted) return;
       if (isCorrect) {
         hapticService.success();
         isFirstStagePassedNotifier.value = true;
-        Future.delayed(const Duration(milliseconds: 300), () {
+        _scrollTimer?.cancel();
+        _scrollTimer = Timer(const Duration(milliseconds: 300), () {
           if (mounted && _scrollController.hasClients) {
             _scrollController.animateTo(
               _scrollController.position.maxScrollExtent,
@@ -118,6 +126,8 @@ class _IdiomsScreenState extends State<IdiomsScreen>
 
   @override
   void onQuestionReset() {
+    _submitTimer?.cancel();
+    _scrollTimer?.cancel();
     _selectedOption.value = null;
   }
 
@@ -132,11 +142,11 @@ class _IdiomsScreenState extends State<IdiomsScreen>
           level: widget.level,
         );
         if (state is VocabularyLoaded) {
-          _lastQuest = state.currentQuest;
+          _lastQuest = state.currentQuestOrNull ?? _lastQuest;
         }
 
         final quest = (state is VocabularyLoaded)
-            ? state.currentQuest
+            ? state.currentQuestOrNull
             : _lastQuest;
 
         final isDarkMode = Theme.of(context).brightness == Brightness.dark;
@@ -180,8 +190,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                   context.read<VocabularyBloc>().add(NextQuestion());
                 }
               },
-              onHint: () =>
-                  context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+              onHint: () {},
               useScrolling: false,
               disablePadding: true,
               child: quest == null
@@ -204,12 +213,11 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                     : const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverToBoxAdapter(
-                                    child: IgnorePointer(
-                                      ignoring:
-                                          isFirstStagePassedNotifier.value,
-                                      child: ConstrainedBox(
-                                        constraints: BoxConstraints(
-                                          minHeight: constraints.maxHeight,
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                          minHeight: isFirstStagePassedNotifier.value
+                                              ? 0
+                                              : constraints.maxHeight,
                                         ),
                                         child: Stack(
                                           children: [
@@ -232,11 +240,15 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                                     ),
                                                 child: Column(
                                                   children: [
-                                                    _buildChatInterface(
-                                                      quest,
-                                                      theme.primaryColor,
-                                                      isDarkMode,
-                                                      constraints.maxHeight,
+                                                    IgnorePointer(
+                                                      ignoring:
+                                                          isFirstStagePassedNotifier.value,
+                                                      child: _buildChatInterface(
+                                                        quest,
+                                                        theme.primaryColor,
+                                                        isDarkMode,
+                                                        constraints.maxHeight,
+                                                      ),
                                                     ),
                                                     if (isFirstStagePassedNotifier
                                                         .value)
@@ -292,8 +304,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  if (isFirstStagePassedNotifier.value &&
+                                    if (isFirstStagePassedNotifier.value &&
                                       (!isAnsweredNotifier.value ||
                                           isCorrectNotifier.value == null))
                                     SliverToBoxAdapter(
@@ -470,7 +481,13 @@ class _IdiomsScreenState extends State<IdiomsScreen>
 
         SizedBox(height: gapMiddle),
 
-        Container(
+        Builder(
+          builder: (context) {
+            final reduceMotion =
+                (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
+                VowlMotion.lowAnimationModeOverride.value;
+
+            final optionsBox = Container(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Wrap(
                 spacing: 12.w,
@@ -490,16 +507,35 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                   );
                 }).toList(),
               ),
-            )
-            .animate()
-            .fadeIn(delay: 800.ms)
-            .slideY(begin: 0.3, curve: Curves.easeOutCubic),
+            );
+
+            return reduceMotion
+                ? optionsBox
+                : optionsBox
+                    .animate()
+                    .fadeIn(delay: 800.ms)
+                    .slideY(begin: 0.3, curve: Curves.easeOutCubic);
+          },
+        ),
         SizedBox(height: gapBottom),
       ],
     );
   }
 
   Widget _buildHeaderBadge(Color color, {bool isCompact = false}) {
+    final reduceMotion =
+        (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    final dot = Container(
+      width: 8.r,
+      height: 8.r,
+      decoration: const BoxDecoration(
+        color: AppColors.gameCorrect,
+        shape: BoxShape.circle,
+      ),
+    );
+
     return Container(
       padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
       margin: EdgeInsets.symmetric(horizontal: 20.w),
@@ -511,23 +547,24 @@ class _IdiomsScreenState extends State<IdiomsScreen>
       child: Row(
         mainAxisSize: isCompact ? MainAxisSize.min : MainAxisSize.max,
         children: [
-          Container(
-            width: 8.r,
-            height: 8.r,
-            decoration: const BoxDecoration(
-              color: AppColors.gameCorrect,
-              shape: BoxShape.circle,
-            ),
-          ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+          reduceMotion
+              ? dot
+              : dot.animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
           SizedBox(width: 10.w),
-          Text(
-            "EMOJIFY: SECURE CHANNEL",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              color: color,
-              letterSpacing: 2,
-              fontWeight: FontWeight.bold,
+          Flexible(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "EMOJIFY: SECURE CHANNEL",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 10.sp,
+                  color: color,
+                  letterSpacing: 2,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
           isCompact ? SizedBox(width: 15.w) : const Spacer(),
