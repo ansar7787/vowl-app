@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/models/summarize_story_frame_slot.dart';
 
 class SummarizeStoryFilmStrip extends StatelessWidget {
@@ -57,64 +58,74 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                     final text = slot.sentence;
                     final isHovering = candidateData.isNotEmpty;
 
+                    final slotContainer = Container(
+                      constraints: BoxConstraints(minHeight: 60.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 12.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: text != null
+                            ? color.withValues(alpha: 0.15)
+                            : (isHovering
+                                  ? color.withValues(alpha: 0.05)
+                                  : (isDark
+                                        ? Colors.black12
+                                        : Colors.black.withValues(
+                                            alpha: 0.02,
+                                          ))),
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: text != null
+                              ? color
+                              : (isHovering
+                                    ? color.withValues(alpha: 0.5)
+                                    : (isDark
+                                          ? Colors.white24
+                                          : Colors.black12)),
+                          width: 2,
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          text ?? "Drop event here...",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                            height: 1.4,
+                            color: text != null
+                                ? (isDark
+                                      ? Colors.white
+                                      : Colors.black87)
+                                : (isDark
+                                      ? Colors.white30
+                                      : Colors.black38),
+                          ),
+                        ),
+                      ),
+                    );
+
+                    if (VowlMotion.lowAnimationModeOverride.value) {
+                      return GestureDetector(
+                        key: Key('summarize_story_slot_${slot.index}'),
+                        onTap: () => onRemoveFrame(slot.index),
+                        child: slotContainer,
+                      );
+                    }
+
                     return GestureDetector(
+                      key: Key('summarize_story_slot_${slot.index}'),
                       onTap: () => onRemoveFrame(slot.index),
-                      child:
-                          Container(
-                                constraints: BoxConstraints(minHeight: 60.h),
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 16.w,
-                                  vertical: 12.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: text != null
-                                      ? color.withValues(alpha: 0.15)
-                                      : (isHovering
-                                            ? color.withValues(alpha: 0.05)
-                                            : (isDark
-                                                  ? Colors.black12
-                                                  : Colors.black.withValues(
-                                                      alpha: 0.02,
-                                                    ))),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  border: Border.all(
-                                    color: text != null
-                                        ? color
-                                        : (isHovering
-                                              ? color.withValues(alpha: 0.5)
-                                              : (isDark
-                                                    ? Colors.white24
-                                                    : Colors.black12)),
-                                    width: 2,
-                                  ),
-                                ),
-                                child: Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    text ?? "Drop event here...",
-                                    textAlign: TextAlign.start,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.4,
-                                      color: text != null
-                                          ? (isDark
-                                                ? Colors.white
-                                                : Colors.black87)
-                                          : (isDark
-                                                ? Colors.white30
-                                                : Colors.black38),
-                                    ),
-                                  ),
-                                ),
-                              )
-                              .animate(target: text != null ? 1 : 0)
-                              .scale(
-                                begin: const Offset(1, 1),
-                                end: const Offset(1.02, 1.02),
-                              )
-                              .tint(color: color.withValues(alpha: 0.1)),
+                      child: slotContainer
+                          .animate(target: text != null ? 1 : 0)
+                          .scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.02, 1.02),
+                          )
+                          .tint(color: color.withValues(alpha: 0.1)),
                     );
                   },
                 ),

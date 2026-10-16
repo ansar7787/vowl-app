@@ -177,7 +177,9 @@ class WritingBaseLayout extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  QuestHintButton(
+                  Builder(
+                    builder: (context) {
+                      final hintBtn = QuestHintButton(
                         used: (state is WritingLoaded) ? state.hintUsed : false,
                         primaryColor: theme.primaryColor,
                         hintText: quest.hint,
@@ -188,23 +190,26 @@ class WritingBaseLayout extends StatelessWidget {
                           );
                           onHint();
                         },
-                      )
-                      .animate(
-                        target:
-                            (hintShouldGlow &&
-                                !VowlMotion.shouldReduceMotion(context))
-                            ? 1
-                            : 0,
-                        onPlay: (c) => c.repeat(reverse: true),
-                      )
-                      .shimmer(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        duration: 1.seconds,
-                      )
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.1, 1.1),
-                      ),
+                      );
+
+                      if (hintShouldGlow &&
+                          !VowlMotion.shouldReduceMotion(context)) {
+                        return hintBtn
+                            .animate(
+                              onPlay: (c) => c.repeat(reverse: true),
+                            )
+                            .shimmer(
+                              color: Colors.white.withValues(alpha: 0.5),
+                              duration: 1.seconds,
+                            )
+                            .scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.1, 1.1),
+                            );
+                      }
+                      return hintBtn;
+                    },
+                  ),
                   if (quest.hint != null &&
                       ((state is WritingLoaded) ? state.hintUsed : false)) ...[
                     SizedBox(width: 8.w),
@@ -252,7 +257,7 @@ class WritingBaseLayout extends StatelessWidget {
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Column(
+    final col = Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(
@@ -280,7 +285,13 @@ class WritingBaseLayout extends StatelessWidget {
         SizedBox(height: 0.h),
         VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId),
       ],
-    ).animate().fadeIn().slideX(begin: 0.1, end: 0);
+    );
+
+    if (VowlMotion.shouldReduceMotion(context)) {
+      return col;
+    }
+
+    return col.animate().fadeIn().slideX(begin: 0.1, end: 0);
   }
 
   VowlMascotState _getMascotState(WritingState state, int lives) {

@@ -127,7 +127,6 @@ class _SummarizeStoryWritingScreenState
       _pendingSubmit.value = true;
       _scrollToBottom();
     } else {
-      hapticService.error();
       final userAns = _slots.value.map((s) => s.sentence ?? '').join('; ');
       submitWrongAnswer(quest: quest, userAnswer: userAns);
     }
@@ -139,11 +138,10 @@ class _SummarizeStoryWritingScreenState
     final state = context.read<WritingBloc>().state;
     if (state is! WritingLoaded) return;
 
-    final WritingQuest? quest = state.currentQuest as WritingQuest?;
+    final WritingQuest? quest = state.currentQuestOrNull;
     if (quest == null) return;
 
     if (!nailedTyping) {
-      hapticService.error();
       submitWrongAnswer(quest: quest);
       return;
     }
@@ -153,9 +151,8 @@ class _SummarizeStoryWritingScreenState
 
   void _onTimerExpired() {
     if (_pendingSubmit.value) return;
-    hapticService.error();
     final state = context.read<WritingBloc>().state;
-    final quest = (state is WritingLoaded) ? state.currentQuest : _lastQuest;
+    final quest = (state is WritingLoaded) ? state.currentQuestOrNull : _lastQuest;
     if (quest != null) {
       submitWrongAnswer(quest: quest);
     }
@@ -175,6 +172,9 @@ class _SummarizeStoryWritingScreenState
 
   @override
   void onQuestionReset() {
+    isAnsweredNotifier.value = false;
+    isCorrectNotifier.value = null;
+
     final newSlots = List<SummarizeStoryFrameSlot>.from(_slots.value);
     for (int i = 0; i < newSlots.length; i++) {
       newSlots[i] = newSlots[i].copyWith(clearSentence: true);
@@ -200,15 +200,12 @@ class _SummarizeStoryWritingScreenState
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
-      listenWhen: (prev, curr) =>
-          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
-          (curr is WritingGameOver && prev is! WritingGameOver) ||
-          (curr is WritingLoaded && !curr.answerStatus.isAnswered),
+      listenWhen: writingListenWhen,
       listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         if (isLoaded) {
-          final newQuest = state.currentQuest as WritingQuest?;
+          final newQuest = state.currentQuestOrNull;
           if (_lastQuest?.id != newQuest?.id) {
             _lastQuest = newQuest;
             if (newQuest != null) {
@@ -228,10 +225,12 @@ class _SummarizeStoryWritingScreenState
 
         final options = quest?.options ?? [];
 
-        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
+        final bool isAnswered =
+            (isLoaded && state.answerStatus.isAnswered) ||
+            isAnsweredNotifier.value;
         final bool? isCorrect = isLoaded
-            ? state.answerStatus.asBoolOrNull
-            : null;
+            ? (state.answerStatus.asBoolOrNull ?? isCorrectNotifier.value)
+            : isCorrectNotifier.value;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -243,11 +242,12 @@ class _SummarizeStoryWritingScreenState
           disablePadding: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<WritingBloc>().add(const WritingHintUsed()),
+          onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
               showConfettiNotifier,
+              isAnsweredNotifier,
+              isCorrectNotifier,
               _slots,
               _pendingSubmit,
             ]),
@@ -264,6 +264,7 @@ class _SummarizeStoryWritingScreenState
                       radius: Radius.circular(8.r),
                       thickness: 4.w,
                       child: CustomScrollView(
+                        key: const Key('summarize_story_scroll_view'),
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
@@ -340,6 +341,7 @@ class _SummarizeStoryWritingScreenState
                                       !isAnswered &&
                                       !_pendingSubmit.value)
                                     ScaleButton(
+                                      key: const Key('summarize_story_check_button'),
                                       onTap: () =>
                                           _submitAnswer(isAnswered, quest),
                                       child: Container(
