@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -34,6 +35,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String targetSound = quest.targetPhoneme ?? "[r]";
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return GlassTile(
       padding: EdgeInsets.all(20.r),
@@ -43,16 +45,21 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "TARGET PHONETIC CORE",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: Colors.grey.shade400,
-                  letterSpacing: 1.0,
+              Expanded(
+                child: Text(
+                  "TARGET PHONETIC CORE",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    color: Colors.grey.shade400,
+                    letterSpacing: 1.0,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
+              SizedBox(width: 8.w),
               ScaleButton(
+                key: const Key('pronunciation_focus_position_guide_button'),
                 onTap: onToggleGuide,
                 child: Container(
                   padding: EdgeInsets.symmetric(
@@ -64,6 +71,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.r),
                   ),
                   child: Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
                         Icons.help_outline_rounded,
@@ -89,52 +97,60 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
           SizedBox(height: 16.h),
 
           // Glowing liquid metal sphere capsule
-          Container(
-                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 14.h),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.lerp(
-                        _LocalPalette.color1f1c2c,
-                        _LocalPalette.colorff512f,
-                        heatLevel,
-                      )!,
-                      Color.lerp(
-                        _LocalPalette.color928dab,
-                        _LocalPalette.colordd2476,
-                        heatLevel,
-                      )!,
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(24.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.lerp(
-                        Colors.blue,
-                        Colors.orangeAccent,
-                        heatLevel,
-                      )!.withValues(alpha: 0.35 + heatLevel * 0.25),
-                      blurRadius: 15.r + heatLevel * 10.r,
-                    ),
+          Semantics(
+            label: "Target phonetic sound: $targetSound",
+            child: Container(
+              key: const Key('pronunciation_focus_target_phoneme_badge'),
+              padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 14.h),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color.lerp(
+                      _LocalPalette.color1f1c2c,
+                      _LocalPalette.colorff512f,
+                      heatLevel,
+                    )!,
+                    Color.lerp(
+                      _LocalPalette.color928dab,
+                      _LocalPalette.colordd2476,
+                      heatLevel,
+                    )!,
                   ],
                 ),
-                child: Text(
-                  targetSound,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 32.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: 1.0,
+                borderRadius: BorderRadius.circular(24.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.lerp(
+                      Colors.blue,
+                      Colors.orangeAccent,
+                      heatLevel,
+                    )!.withValues(alpha: 0.35 + heatLevel * 0.25),
+                    blurRadius: 15.r + heatLevel * 10.r,
                   ),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .slideY(
-                begin: -0.05,
-                end: 0.05,
-                duration: const Duration(milliseconds: 1500),
+                ],
               ),
+              child: Text(
+                targetSound,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 32.sp,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  letterSpacing: 1.0,
+                ),
+              ),
+            )
+                .animate(
+                  target: reduceMotion ? 0 : 1,
+                  onPlay: (c) =>
+                      reduceMotion ? c.stop() : c.repeat(reverse: true),
+                )
+                .slideY(
+                  begin: -0.05,
+                  end: 0.05,
+                  duration: const Duration(milliseconds: 1500),
+                ),
+          ),
 
           AnimatedCrossFade(
             firstChild: const SizedBox(),
